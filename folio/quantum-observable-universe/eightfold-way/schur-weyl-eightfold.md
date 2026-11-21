@@ -127,8 +127,7 @@ construction directions are:
    whose interaction space is three-dimensional (T3b).
 2. **Octonionic $G_2$ stabilizer:** the Günaydin--Gürsey
    $\mathbf{7} = \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$
-   provides a non-self-dual triple from $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2$
-   ([Proposition](#prop:color-su3-from-g2)).
+   provides a non-self-dual triple from $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2$.
 
 **Status of the $\mathrm{Sym}^2$ gate.**  The gate is the
 requirement that $\mathrm{Sym}^2(W)$ contain no singlet.  Its

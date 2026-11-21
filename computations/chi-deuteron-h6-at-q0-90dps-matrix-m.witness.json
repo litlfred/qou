@@ -1,8 +1,11 @@
 {
   "computation": "chi-deuteron-h6-at-q0-90dps-matrix-m",
-  "description": "Numerical \u03c7^\u03bb_q(\u03b2_atomic(1, 1)) = deuteron per partition \u03bb \u22a2 6 at q_0, 90 dps, matrix-M mpfr backend. Lossless (every \u03bb) unless max_dim is set.",
+  "description": "Numerical χ^λ_q(β_atomic(1, 1)) = deuteron per partition λ ⊢ 6 at q_0, 90 dps, matrix-M mpfr backend. Lossless (every λ) unless max_dim is set.",
   "producer": "matrix-m-chi-q-via-gp",
   "convention": "sign-only-crossings",
+  "pn_split_carried": false,
+  "pn_split_note": "isobars are degenerate by construction: the (sign, gen) wire format drops the crossing-type field. See beans qou-sgv5 (mechanism, measured) and qou-fv0s (representation; retargeted from the COMPLETED qou-gdtb, which closed the pair form, not the sign wire).",
+  "isospinDegeneracyNote": "ISOSPIN DEGENERACY WARNING (bean qou-sgv5): The chi-*-matrix-m / _word_for_braid_word_3a sign-only wire family does NOT carry proton-neutron or isobar splitting (tr_M(p) == tr_M(n) and tr_M(T) == tr_M(3He) to all 50 digits, Delta == 0 identically by construction). `atom_braid_word_3A(Z, N)` returns (c, d, gen_0based) triples representing `c*sigma_g + d*1` with `c == +1.0` for EVERY crossing of EVERY nucleus, while the crossing type (sigma: d=0, sigma_inv: d=-h, averaged: d=-h/2, averaged_weighted: d=-h*(1/2 - delta/4)) lives entirely in `d`. `_word_for_braid_word_3a` reads `1 if c >= 0 else -1` off the constant `c == +1` field and drops `d`, collapsing every word to an all-positive braid word whose generator sequence depends on A = Z + N alone. Even decoding `d` via `sign_for_ctype` maps averaged/averaged_weighted crossings to `0` (not in B_n). For physical isospin/isobar splittings (e.g. Delta(n-p), Delta(3He-T), E_0 = Q_beta/|Delta tr_M|), use the exact-triple Hoefsmit (`chi_at_q0_via_hoefsmit_mpfr.py` -> `chi-{atom}-h{n}-at-q0-50dps.witness.json`) or closed-form Wenzl bridge (`closed_form_tau_M.py`) routes. Verified by `computations/probes/chi_matrix_m_isospin_degeneracy_diagnostic_probe.py`.",
   "q_0_90dps": "1.1099785827513808075916690956107688798744991218736",
   "dps": 90,
   "n_strands": 6,

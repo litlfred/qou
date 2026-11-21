@@ -20,5 +20,3 @@ A heuristic argument follows. The mass-gap dissipation $\Delta_q \asymp \varepsi
 This conjecture is speculative. It is formulated in the Reeb--surreal framework. A proof would reduce the $q$-to-classical compression obstruction to the structural non-existence of a $\mathrm{BQP}_q \to \mathbf{P}$ functor, consistent with the Freedman--Kitaev--Larsen--Wang topological model at $q$-generic.
 
 This surreal-squeeze route is one of two independent attacks on the same separation. The obstruction-class route ([$\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q$](#conj:qou-p-neq-np)) instead states the separation as non-vanishing of the resolution-tree residue $\mathrm{res}_{\mathcal{R}}(\chi(A)) \neq 0$ at $q_0$. The two carriers share the conclusion $\mathrm{P} \neq \mathrm{NP}$ but neither is derived from the other; both remain open.
-
-See [Surreal bound for P vs NP](#rem:p-vs-np-surreal-bound) for the squeeze-inequality statement implied by this conjecture.

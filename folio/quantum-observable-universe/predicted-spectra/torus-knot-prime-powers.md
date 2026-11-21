@@ -13,7 +13,7 @@ Embeddability requires $p^k - 1 \leq 4$, which implies $p^k \leq 5$.
 
 | $k$ | Knot | Genus $= 2^k - 1$ | Crossings | Embeddable? | Assignment |
 |-----|------|--------------------|-----------|-------------|------------|
-| $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Electron $e^-$, up quark $\mathfrak{u}$ |
+| $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Electron $e^-$ (lepton partner of $\mathfrak{u}$) |
 | $2$ | $T_{3,4}$ ($8_{19}$) | $3$ | $8$ | Yes | Hopf${}^2$ color binding |
 | $3$ | $T_{3,8}$ | $7$ | $21$ | **No** | Excluded |
 | $4$ | $T_{3,16}$ | $15$ | $45$ | **No** | Excluded |
@@ -28,7 +28,7 @@ $$
   T_{2,3} \in \{T_{2,n}\}_{n \text{ odd}} \qquad\text{and}\qquad T_{3,2} \in \{T_{3,p^k}\}_{p \neq 3}.
 $$
 
-The trefoil is the unique generator at the intersection of the $m = 2$ (leptonic) and $m = 3$ (quark) families. This self-intersection explains why the same knot type encodes both the electron and the up quark: the trefoil is the common seed for both families.
+The trefoil is the unique generator at the intersection of the $m = 2$ (leptonic) and $m = 3$ (quark) families. It places the trefoil in both families. It does not make the trefoil the up quark's knot type: by the [knot–particle dictionary](#rem:knot-particle-dictionary) the up quark is an unknot strand of $\mathcal{B}_3$ whose lepton partner is the trefoil.
 
 | Family | Generators from trefoil seed |
 |--------|----------------------------|
@@ -62,7 +62,7 @@ The $p = 2$ tower contributes the trefoil (matter) and $T_{3,4}$ (Hopf${}^2$ col
 
 The power tower $T_{3,2^k}$ establishes a physical pattern:
 
-- $k = 1$: $T_{3,2}$ = trefoil. Lightest matter (electron, up quark).
+- $k = 1$: $T_{3,2}$ = trefoil. Lightest matter (the electron, lepton partner of the up quark).
 - $k = 2$: $T_{3,4}$. Hopf${}^2$ color binding ($H^{0,1}$ force carrier).
 - $k = 3$: Excluded. Bring's surface forbids a third level.
 

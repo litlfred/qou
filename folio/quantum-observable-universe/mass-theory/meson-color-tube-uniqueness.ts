@@ -12,6 +12,7 @@ export default proposition({
   tags: ["normalization", "frobenius", "no-fitting", "uniqueness", "meson"],
   lean: { ref: "qou:QOU.BraidKnot.meson_ratio_via_alpha_shift" },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): *The $q$-integer indices are forced by the $\\alpha_{\\text{shift}} = k \\cdot (p - 1)$ formula ([Pole order at $q=0$ of the torus-knot character](#prop:alpha-shift-torus-knot)).*" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Lean structure\n\nWe stage the uniqueness via the conditional-class pattern:\n- `MesonGMORFactorization R mK2_over_mpi2 qChar m n`: the substrate factorisation axiom.\n- `MesonForceCarrierPair`: the derived index assertion $\\alpha_{\\text{shift}}(T(2, 3)) = 3$ and $\\alpha_{\\text{shift}}(T(2, 4)) = 4$.\n- `theorem meson_ratio_via_alpha_shift`: proves the factorisation using the specific indices." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (`prop:alpha-shift-torus-knot`)" },
     {

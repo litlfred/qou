@@ -8,14 +8,14 @@ The strangelet proposition yields three facts.
 2. Its crossing energy is purely strong.
 3. Its strong binding per baryon exceeds neutron matter by a factor of $4/3$.
 
-Replacing down quarks ($T_{2,3}^{\sigma}$, $3$ negative crossings) with strange quarks ($T_{2,5}^{\sigma}$, $5$ negative crossings) grants each baryon $2q^{-1}$ additional strong binding. At $q = q_0$, this gives $1.802$ Skein units per baryon.
+Replacing down quarks (lepton partner $T_{2,3}^{\sigma}$, $3$ negative crossings) with strange quarks (lepton partner $T_{2,5}^{\sigma}$, $5$ negative crossings) grants each baryon $2q^{-1}$ additional strong binding. At $q = q_0$, this gives $1.802$ Skein units per baryon.
 
 **Jones polynomial obstruction.**
 If crossing energy dominated, strange matter would be the ground state. However, all torus knots have zero hyperbolic volume. The mass of a baryon derives entirely from the Borromean linking, not the constituent knots ([building block knots](#rem:building-block-knots)). The strange quark is heavier because of its Jones polynomial.
 
 The terminal resolution ([terminal resolution](#prop:terminal-resolution)) decomposes each hadronic link into a sum of unknots and Hopf links. These are weighted by coefficients dependent on the constituent Jones polynomials. At $q = q_0$:
 
-| Quark | Knot | Jones polynomial | $\lvert J(q_0)\rvert$ |
+| Quark | Lepton partner | Jones polynomial | $\lvert J(q_0)\rvert$ |
 |-------|------|-----------------|:-------------:|
 | Up $\mathfrak{u}$ | $T_{2,3}$ | $-q^{-4} + q^{-3} + q^{-1}$ | $0.973$ |
 | Down $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $-q^{4} + q^{3} + q$ | $0.960$ |

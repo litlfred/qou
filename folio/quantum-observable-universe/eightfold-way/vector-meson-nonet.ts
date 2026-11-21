@@ -46,5 +46,6 @@ export default remark({
   cites: ["gellmann1962"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Values from\n[`nonet-mixing-purity.witness.json`](../../../computations/nonet-mixing-purity.witness.json);\nPDG central values\n\n(`QOU/Eightfold/DecupletEqualSpacing.lean`, established later in this\nchapter)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The decuplet\nequal-spacing rule behind the $\\Omega^-$ prediction is the same\n([established later in this\nchapter](#rem:decuplet-equal-spacing))." },
   ],
 });

@@ -67,8 +67,6 @@ The deuteron candidate $T(2, 3)$ is motivated by the following rationale:
 This is the $A\ge3$ analogue of:
 - [`meson-color-tube-uniqueness`](#prop:meson-color-tube-uniqueness)
   for $m_K / m_\pi$ (smallest non-trivial pair $\{T(2, 3), T(2, 4)\}$);
-- [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
-  for $1/\alpha_{\rm EM}$ (genus-4 Bring pair $\{T(2, 9), T(3, 5)\}$);
 - the T(2, k) tower for lepton + electroweak masses
   (W k=4, Z k=6, τ k=7, H k=8).
 

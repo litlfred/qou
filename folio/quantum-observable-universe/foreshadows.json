@@ -157,12 +157,12 @@
     "conj:gb-depth-period-correspondence": {
       "derived": [
         "conj:bring-figure-eight-depth-2-witness",
-        "prop:curvature-rank-gb-stratification"
+        "conj:curvature-rank-gb-stratification"
       ],
       "declared": [],
       "effective": [
         "conj:bring-figure-eight-depth-2-witness",
-        "prop:curvature-rank-gb-stratification"
+        "conj:curvature-rank-gb-stratification"
       ]
     },
     "conj:geom-yekutieli-alignment": {
@@ -480,13 +480,13 @@
     "conj:two-filtration-bridge": {
       "derived": [
         "conj:gb-depth-period-correspondence",
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:quantum-dilogarithm-stratified"
       ],
       "declared": [],
       "effective": [
         "conj:gb-depth-period-correspondence",
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:quantum-dilogarithm-stratified"
       ]
     },
@@ -499,7 +499,7 @@
         "conj:casimir-epsilon-vacuum"
       ]
     },
-    "conj:weak-spectral-completeness": {
+    "prop:weak-spectral-completeness": {
       "derived": [
         "prop:bar-t-duality-substrate",
         "prop:weak-symmetric-normalization"
@@ -1200,7 +1200,7 @@
         "rem:mass-ordering-corrected"
       ]
     },
-    "prf:curvature-rank-gb-stratification": {
+    "rem:curvature-rank-gb-stratification-proof-sketch": {
       "derived": [
         "tbl:curvature-rank-gb-stratification-table-data",
         "thm:knot-mass-formula-unified"
@@ -1611,13 +1611,13 @@
     },
     "prf:phi-q-categorical-truncation": {
       "derived": [
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:spectral-sequence-collapse",
         "prop:unified-curvature-rank-mass-formula"
       ],
       "declared": [],
       "effective": [
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:spectral-sequence-collapse",
         "prop:unified-curvature-rank-mass-formula"
       ]
@@ -1731,7 +1731,7 @@
       "derived": [
         "conj:hoefsmit-scattering-pipeline",
         "prf:spectral-sequence-collapse",
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:phi-q-categorical-truncation",
         "prop:plancherel-weight-boundedness"
       ],
@@ -1739,7 +1739,7 @@
       "effective": [
         "conj:hoefsmit-scattering-pipeline",
         "prf:spectral-sequence-collapse",
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:phi-q-categorical-truncation",
         "prop:plancherel-weight-boundedness"
       ]

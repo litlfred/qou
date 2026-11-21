@@ -61,5 +61,6 @@ export default conjecture({
       see:
         "computations/per-observable-100x-status.witness.json",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): These coefficients are stated as conjectures, so downstream claims such as the [$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder) hold conditionally on them." },
   ],
 });

@@ -177,7 +177,8 @@ def main() -> int:
     # laundering above.
     from codata_constants import M_E_MEV as _ME  # noqa: E402
     _me = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
-    alpha = _me / (q0 * (q0 - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    alpha = _qbeta_e0.order_zero_scaled(_me, q0)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     prod_f = lambda t: -alpha * mp.log(t)          # noqa: E731
     b3_prod = b3_of(prod_f, mu)
     print(f"     b3 = {mp.nstr(b3_prod, 12)}")

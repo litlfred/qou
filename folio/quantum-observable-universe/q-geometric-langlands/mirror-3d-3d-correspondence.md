@@ -61,6 +61,6 @@ spacetime are two computations of the same hyperbolic invariant.
 
 - [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](../mass-theory/borromean-bloch-group-element.md)
   — K-theoretic regulator parallel
-- [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)
+- [Kashaev volume conjecture](../mass-theory/kashaev-volume-conjecture.md)
   — Volume Conjecture is the leading-order 3d–3d statement
 - [Dimofte–Gaiotto–Gukov 2014; Terashima–Yamazaki 2011]

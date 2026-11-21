@@ -21,6 +21,22 @@ export default theorem({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "T₃ and mixing tested against the skew charge (sorry-free, same Lean " +
+        "sibling). `ewT3Double_not_affine_in_charge`: the table is not λ·Q + μ. " +
+        "`t3OfSkew_values`: Q/Q(W⁺) gives 1, −1, 0 on W⁺, W⁻, H and ≠ 0 on Z. " +
+        "`sgnT3Double_values` / `_vs_table`: the def:spin-involution rule with " +
+        "the sign read off Q (ordered field, a > 1) gives Z ↦ 1, disagreeing " +
+        "with the table only at Z; H ↦ 0 follows from H ∈ A₊. " +
+        "`mixing_neutral_both_iff` / `mixing_cannot_neutralise_model`: a " +
+        "rotation with c² + s² = 1 preserves x² + y², so linear mixing cannot " +
+        "make Z and γ both neutral when Q(W³) ≠ 0; the previous sentence " +
+        "attributing Z neutrality to mixing is withdrawn. The ewT3Double values " +
+        "±1 read as 2·T₃ are doublet values, not the triplet T₃ = ±1 of the .md.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-11-20",
       body:
@@ -131,6 +147,7 @@ export default theorem({
         "RELOCATES the postulate, does not close it. Whole file lean-direct " +
         "exit 0 (no warnings) on lake-cache/qou-v4-24-0.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  is the [$P_{\\mathrm{skew}}$ functional](#prop:vdw-pskew-isolation)" },
   ],
   tags: [
     "electroweak",

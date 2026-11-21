@@ -29,8 +29,6 @@ The formula $d_{H,q} = (2q-1)^2/q^3$ is exact within the $q$-deformed framework.
 
 The classical $d_H$ depends on the transcendental quantity $\ln 2$ and requires the analytic structure of $\mathbb{C}$. The $q$-deformed $d_{H,q}$ is a rational function of $q$. It applies over any field, including $\mathbb{F}_p$ or $\mathbb{Q}_p$. The two dimensions agree at $q = 1$ and at $q = \varphi^2$, but diverge elsewhere. The $3.9\%$ difference at $q = q_0$ is structural: classical conformal dynamics uses $\ln 2$ for the topological entropy, whereas the $q$-deformed dynamics uses $\eta_q$. One proposes that $d_{H,q}$, rather than $d_H$, governs the physics.
 
-Gravitational self-consistency forces this formula, without fitting ([operational entropy is forced by self-consistency](#rem:operational-entropy-self-consistency)).
-
 **Physical interpretation.**
 Each iteration of $f_q$ corresponds to one application of the $q$-connection $\nabla_q$ across a fibre ([Reeb operations per Planck unit](#prop:reeb-operations-per-planck)). The operational entropy $\eta_q$ measures the information generated per iteration, representing the number of distinguishable $q$-bits produced by one $R$-matrix evaluation. The total information processed per Planck time is:
 

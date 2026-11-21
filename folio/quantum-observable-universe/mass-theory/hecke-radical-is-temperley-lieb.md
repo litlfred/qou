@@ -6,9 +6,7 @@ Because the fundamental representation of $SU(2)$ is two-dimensional, no
 $q$-antisymmetriser exists on three of its strands, and the Wedderburn weight of any
 partition with three or more rows vanishes identically --- not numerically at $q_0$,
 but as a rational function of $q$. The surviving blocks of $H_n(q)$ are therefore
-exactly the two-row shapes, which is the stratum
-[the two-row stratum](#def:two-row-stratum) isolates for the ${}^4\mathrm{He}$
-fingerprint. Summing the squared Specht dimensions over those shapes gives, level by
+exactly the two-row shapes. Summing the squared Specht dimensions over those shapes gives, level by
 level, the Catalan numbers:
 
 | $n$ | surviving shapes | $\sum \dim^{2}$ | $\dim H_n(q)$ | $C_n$ |

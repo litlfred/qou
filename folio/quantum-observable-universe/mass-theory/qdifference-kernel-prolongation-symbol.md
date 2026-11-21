@@ -33,9 +33,6 @@ $\tfrac12$.
 > the Newton polygon is a module invariant and its slope multiset is preserved
 > by every gauge transformation ([rsz2013] Thm 2.2.1(i), Thm 2.2.4), no
 > isomorphism of $q$-difference modules $\mathcal{K}\cong\mathcal{G}$ exists.
-> The surviving — and genuinely non-trivial — relationship between the two is
-> stated separately as
-> [The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces](#conj:c1-ggm-bar-parity-faces).
 
 Two consequences follow:
 
@@ -128,9 +125,8 @@ local monodromy, not fitted numerically.
 >    connection-matrix datum the previous note already places the symbol in.
 > 2. **Parity.** An even shift commutes with the covering monodromy
 >    $t \mapsto -t$; an odd shift anti-commutes, so its jet tower's monodromy
->    eigenvalue alternates as $(-1)^n$ — the Door-v residual of
->    [The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces](#conj:c1-ggm-bar-parity-faces). Carrying
->    that residual needs an **odd** shift.
+>    eigenvalue alternates as $(-1)^n$. Carrying
+>    that alternation needs an **odd** shift.
 >
 > So $D_q$ must have an odd shift and a non-derivative component. Both
 > conditions are derived from the local geometry of $\Sigma$ and the two
@@ -157,8 +153,7 @@ local monodromy, not fitted numerically.
 > a level $n_0$ on kills the residue from level $n_0+2$ on and leaves levels
 > $2,\dots,n_0+1$ alive. The
 > distinction matters, because the Door-v alternation of the carrier
-> $\mathcal{G}$ in [The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces](#conj:c1-ggm-bar-parity-faces)
-> cannot hold at every level — while $2-q^{m+1}>0$ no solution flips at two
+> $\mathcal{G}$ cannot hold at every level — while $2-q^{m+1}>0$ no solution flips at two
 > consecutive pairs, so at the substrate value
 > the alternation is absent for $m \le 5$ and persistent only from
 > $m \approx 11$ on. The conclusion above therefore stands for sums only

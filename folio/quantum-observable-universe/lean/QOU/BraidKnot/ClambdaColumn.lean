@@ -56,4 +56,12 @@ theorem clambda_4111 : (rowClass (ofRowLens [4, 1, 1, 1] (by decide))).card = 10
     (by apply YoungDiagram.ext; decide) (by decide)
   rw [show QOU.BraidKnot.IdentityI.dimHLF [4, 1, 1, 1] = 20 from by decide] at h; omega
 
+/-- Subtracting the hook-length dimension from twice the row-class cardinality cancels to zero (`qou-fs4r`). -/
+theorem two_mul_card_rowClass_sub_dimHLF_eq_zero (l : List ℕ) (hl : l.Sorted (· ≥ ·))
+    (hpos : ∀ a ∈ l, 0 < a)
+    (hsc : (ofRowLens l hl).transpose = ofRowLens l hl)
+    (hn : 2 ≤ (ofRowLens l hl).cells.card) :
+    2 * (rowClass (ofRowLens l hl)).card - QOU.BraidKnot.IdentityI.dimHLF l = 0 := by
+  rw [two_mul_card_rowClass_eq_dimHLF l hl hpos hsc hn, Nat.sub_self]
+
 end QOU.BraidKnot.ClambdaColumn

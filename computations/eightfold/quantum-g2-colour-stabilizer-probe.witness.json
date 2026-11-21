@@ -2,6 +2,8 @@
  "producer": "computations/eightfold/quantum_g2_colour_stabilizer_probe.py",
  "bean": "qou-cb3r",
  "arithmetic": "fractions.Fraction (exact)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact fractions.Fraction at the rational sample points q in {1, 2, 3, 5/2}; the substrate q0 is never read",
  "result": {
   "M_module_relations_failing": {
    "2": [],

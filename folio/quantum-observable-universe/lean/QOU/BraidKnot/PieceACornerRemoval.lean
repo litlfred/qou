@@ -146,4 +146,10 @@ theorem corner_removal (hrow : s + 1 = μ.rowLen r) (hnext : μ.rowLen (r + 1) �
   have gr := two_mul_sum_range_id r
   linear_combination (-1 : ℤ) * gs - gr - 2 * hn
 
+/-- Subtracting the right-hand corner-removal quadratic expression from the hook-sum corner contribution yields zero. -/
+theorem corner_removal_sub_eq_zero (hrow : s + 1 = μ.rowLen r) (hnext : μ.rowLen (r + 1) ≤ s) :
+    (1 + ∑ j ∈ range s, (2 * hook μ (r, j) - 1) + ∑ i ∈ range r, (2 * hook μ (i, s) - 1))
+      - (((s : ℤ) - r) ^ 2 + 2 * (μ.cells.card : ℤ) - 1) = 0 := by
+  rw [corner_removal hrow hnext, sub_self]
+
 end QOU.BraidKnot.PieceACornerRemoval

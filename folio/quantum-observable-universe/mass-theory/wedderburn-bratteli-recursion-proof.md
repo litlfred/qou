@@ -1,26 +1,22 @@
-## Proof sketch of existence
+## Proof
 
-By [Jones–Markov trace](#thm:jones-markov-trace), the Markov property
-$\mathrm{tr}_M(x \cdot T_n) = z \cdot \mathrm{tr}_M(x)$ (and hence $\mathrm{tr}_M(x \cdot T_n^{-1}) = (z - h) \cdot \mathrm{tr}_M(x)$, $h = q - q^{-1}$)
-extends $\mathrm{tr}_M$ uniquely from $H_n$ to $H_{n+1}$.  In the
-Wedderburn block decomposition, this fixes
-$\{y_\lambda^{(n+1)}\}_{\lambda \vdash n+1}$ in terms of
-$\{y_\mu^{(n)}\}_{\mu \vdash n}$ via the central-character expansion
-([linear-system characterisation](#conj:alpha-k-derivation-procedure)).
+Write $t = [2]_q = q + q^{-1}$ and $d = a - b + 1$. The balanced $q$-integers satisfy
 
-The Bratteli diagram of the Hecke tower $H_1 \subset H_2 \subset \cdots$
-is **multiplicity-free at generic $q$** by Hoefsmit's seminormal-form
-construction ([Hoefsmit](#prop:hoefsmit-seminormal-form)): each edge
-$\mu \nearrow \lambda$ corresponds to a unique addable cell of $\mu$
-to form $\lambda$.  The branching $V_\lambda \big\downarrow_{H_n} =
-\bigoplus_{\mu \nearrow \lambda} V_\mu$ together with the Markov
-condition therefore yields a **finite** linear relation between
-$y_\lambda^{(n+1)}$ and the $y_\mu^{(n)}$ for $\mu \nearrow \lambda$.
+$$
+  [d+1]_q + [d-1]_q \;=\; t\,[d]_q,
+$$
 
-The coefficients are $z$ times a $q$-rational function of the added
-cell's $q$-content and of the hook structure of $\lambda$ — concretely
-the Hoefsmit eigenvalue of $T_n$ on the per-edge orthogonal idempotent
-$e_{\mu \to \lambda}$.  $\square$
+since $(q^{d+1} - q^{-d-1}) + (q^{d-1} - q^{1-d}) = (q + q^{-1})(q^d - q^{-d})$.
+
+*Restriction.* $y_{(a+1,b)} + y_{(a,b+1)} = \bigl([d+1]_q + [d-1]_q\bigr)/t^{a+b+1} = t\,[d]_q / t^{a+b+1} = y_{(a,b)}$.
+
+*Single edge.* Adding a cell to the first row raises $a - b$ by one and the total by one, so $t\,[d]_q\, y_{(a+1,b)} = [d+1]_q\,[d]_q / t^{a+b} = [d+1]_q\, y_{(a,b)}$. The second row is the same with $[d-1]_q$.
+
+Three-row shapes carry weight $0$ under convention D, so the recursion on two-row shapes is the whole recursion. The divisions are by $[2]_q$ and $[d]_q$, non-zero at generic $q$. At $n = 3$ the weights are $([4]_q/[2]_q^3,\; 1/[2]_q^2,\; 0)$. $\square$
+
+The normalisation $\sum_{\lambda \vdash n} f^\lambda y_\lambda = 1$ follows from the restriction form and the branching rule $f^\lambda = \sum_{\mu \nearrow \lambda} f^\mu$; it is not formalised.
+
+> **The sections below are convention-C history.** They were computed with the Markov parameter $z = \sqrt{q}/(q+1)$, excised on 2026-08-15. Under convention D the sign-rep tower weights are $0$, not alternating, and the $n = 2$ weights are $y_{(2)} = [3]_q/[2]_q^2$, $y_{(1,1)} = 1/[2]_q^2$. They are kept as a record, not as statements about the canonical weights.
 
 ## Empirical extraction at generic $q_0$
 

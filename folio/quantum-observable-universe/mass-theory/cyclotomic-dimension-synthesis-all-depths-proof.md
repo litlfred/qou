@@ -42,8 +42,7 @@ $\square$
 
 ### Lower bound — Beilinson-conditional
 
-Borel's theorem
-([Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution)):
+Borel's theorem:
 for prime $K$, $\mathbb{Q}(\zeta_K)$ is totally complex with $r_2 =
 (K - 1)/2$.
 
@@ -60,7 +59,6 @@ as stated.
 ### Depth-2 case is theorem-level (no Beilinson)
 
 For $n = 2$: Bloch–Suslin
-([Depth-2 identification of $G^{(2)}(\mathcal{H}_q)$ with $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$](#prop:depth-2-identification-bloch-suslin))
 proves the regulator image is precisely $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
 without invoking Beilinson. So:
 

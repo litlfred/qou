@@ -22,7 +22,7 @@ On the two-dimensional block (2,1), V has determinant 1 and trace −1 − h², 
 ## What this does and does not settle
 
 - **Separated:** link type, volume, the level-character profile and the (2,1) rotation all distinguish the three candidates.
-- **Not separated:** components, linking numbers, chirality. **None of the three is chiral**, so none of them can carry handedness on its own. A chiral electron needs a letter outside the γγ vertex V, such as the twists L₊ = σ₀σ₁ and L₋ = σ₁σ₀ (writhe +2; neither is a photon: L₊ is one term of a photon's support and L₋ first appears in a product of two photons, per `def:photon`, PR #8367) raised by the weak-vertex thread (bean qou-99qc).
+- **Not separated:** components, linking numbers, chirality. **None of the three is chiral**, so none of them can carry handedness on its own. A chiral electron needs a letter outside the γγ vertex V, such as the twists L₊ = σ₀σ₁ and L₋ = σ₁σ₀ (writhe +2; neither is a photon. Under the corrected `def:photon` (owner ruling 2026-11-20, PR #8583) a photon's fourth term is the chiral vertex V = σ₀σ₁⁻¹ = L₊ − hσ₀, so L₊ appears only inside a photon's normal-form expansion and L₋ first appears in a product of two photons. The candidates here are powers of that same V; their closures V⁰, V³, V⁶ are amphichiral, as the table shows.) raised by the weak-vertex thread (bean qou-99qc).
 - V⁰ means the electron carries no crossings at all; its closure is the unlink.
 - V³ makes electron and nucleon the same word when the nucleon is V³.
 - No observable here picks a candidate. Volume and every other number are not compared with any measured electron quantity. The choice is the owner's.

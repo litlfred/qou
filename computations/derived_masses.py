@@ -137,6 +137,7 @@ with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
@@ -161,37 +162,26 @@ _NET_COEFF_DPS = 30
 
 @lru_cache(maxsize=None)
 def _q_0() -> mp.mpf:
-    """Substrate parameter q_0 at 50-dps from the q-pinning witness.
+    """Substrate parameter q_0: the EXPERIMENTAL (proton) pin, 60 dps.
 
-    Pulled from `q-pinning-50-digit.witness.json:derived_50_digit.q`, which is
-    the **ideal / CAL-2 (muon) anchor** -- that field is what
-    `qou_substrate.witness._q0_value_for_anchor("muon")` returns, so this
-    module computes at the muon pin regardless of what `q_parameter` would
-    resolve for it.
+    CHANGED 2026-11-20 (owner, on PR #8591; AGENTS.md: "all agents and all production code
+    default to the experimental (proton) anchor", "never straddle the two layers"). Until this
+    date `_q_0` read the ideal/CAL-2 MUON anchor out of `q-pinning-50-digit.witness.json`, while
+    callers such as `m_p_substrate_identity_50dps` combined the result with proton-pinned
+    quantities: a layer straddle of −11.54 ppb in q (bean `qou-aj91`, triage
+    `docs/audits/2026-08-24-mech5-producer-layer-triage.md` bucket E). The muon pin is still
+    available, but only on explicit request: `_q_0_muon()` or `_resolve_q(anchor="muon")`.
+    """
+    from qou_substrate.constants import q_at
+    return q_at(60)
 
-    CORRECTED 2026-08-24 (bean `qou-aj91`).  This docstring previously called
-    `q_parameter.Q_50_DIGIT_STR` a "legacy float64 fallback" that is
-    "identical to ~50 digits".  Both clauses are wrong, and the second one is
-    a false all-clear on a production module -- `derived_masses` predicts MASS
-    and BINDING observables, so "the two pins agree" is exactly the statement
-    that stops a reader from investigating.  Measured:
 
-        pin  (muon) : 1.1099785955573347198997632204...
-        q_parameter : 1.1099785827513808075916690956...
-        first differing digit : index 9
-        separation            : -1.1537118e-8  =  -11.5371 ppb
+@lru_cache(maxsize=None)
+def _q_0_muon() -> mp.mpf:
+    """The ideal / CAL-2 (muon) anchor, `q-pinning-50-digit.witness.json:derived_50_digit.q`.
 
-    They agree to **9** digits, not ~50, and the separation *is* the mu-p
-    substrate tension.  Nor is `Q_50_DIGIT_STR` a legacy fallback: it is the
-    **experimental (proton) pin**, the standing default for all production
-    code since the 2026-08-07 owner directive.
-
-    The layer question -- whether these mass/binding quantities belong on the
-    proton pin -- is triaged in
-    `docs/audits/2026-08-24-mech5-producer-layer-triage.md` (bucket `E`) and
-    is NOT decided here; only the false equivalence is removed.  Changing the
-    read would move every number this module emits by ~11.54 ppb, which is
-    the `qou-1c4y` sweep.
+    Explicit opt-in only (comparison / CAL-2 producers). It differs from `_q_0()` by
+    −11.54 ppb in q at the 9th digit, which IS the μ–p substrate tension.
     """
     with _Q_PINNING_WITNESS.open() as fh:
         d = json.load(fh)
@@ -280,7 +270,7 @@ def e_0_n0_mev() -> mp.mpf:
     `e_0_n_mev(n)` for an explicit truncation depth.
     """
     q0 = _q_0()
-    return M_E_MEV / (q0 * (q0 - 1))
+    return _qbeta_e0.order_zero_scaled(M_E_MEV, q0)
 
 
 @lru_cache(maxsize=None)
@@ -455,9 +445,13 @@ def e_0_calibrated_mev() -> mp.mpf:
     return q_beta_codata / abs(delta_net)
 
 
-def _resolve_q(q=None) -> mp.mpf:
-    """Resolve optional q argument to an mpf at ≥50 dps (defaults to _q_0())."""
+def _resolve_q(q=None, anchor: str = "proton") -> mp.mpf:
+    """Resolve optional q to an mpf at ≥50 dps (default: the proton pin; anchor='muon' opts in)."""
     if q is None:
+        if anchor == "muon":
+            return _q_0_muon()
+        if anchor != "proton":
+            raise ValueError(f"unknown anchor {anchor!r} (use 'proton' or 'muon')")
         return _q_0()
     if isinstance(q, mp.mpf):
         return q
@@ -476,7 +470,7 @@ def e_0_scale_hierarchy_matter_mev(q=None) -> mp.mpf:
     """
     with mp.workdps(max(50, mp.mp.dps)):
         q0 = _resolve_q(q)
-        e0_q = M_E_MEV / (q0 * (q0 - 1))
+        e0_q = _qbeta_e0.order_zero_scaled(M_E_MEV, q0)
         return e0_q * (q0 ** 2) * (1 - 1 / q0)
 
 
@@ -499,7 +493,7 @@ def borromean_v3_e21_strong_qcd_diff_mev(q=None, scale: str = "E0_full") -> mp.m
         q2 = q0 ** 2
         tr_e21 = -(q2 ** 2 - q2 + 1) * (q2 ** 4 - 2 * q2 ** 3 - 2 * q2 + 1) / (q2 ** 3)
         d_qcd = (q0 - 1 / q0) * tr_e21
-        e0_n0 = M_E_MEV / (q0 * (q0 - 1))
+        e0_n0 = _qbeta_e0.order_zero_scaled(M_E_MEV, q0)
         hbar_q = (q0 - 1) / q0
         if scale is True or scale in ("E0_full", "full"):
             scale_mev = e0_n0 / (1 - hbar_q ** 2)
@@ -515,83 +509,43 @@ def borromean_v3_e21_strong_qcd_diff_mev(q=None, scale: str = "E0_full") -> mp.m
         return scale_mev * d_qcd
 
 
-def borromean_v3_connected_qed_proton_mev(q=None, k_weighted: bool = False) -> mp.mpf:
-    """Proton connected 4th-order Borromean V³ electromagnetic self-energy M_p^{QED,conn} in MeV.
+def borromean_v3_connected_qed_proton_mev(q=None, weighting: str = "derived", insertion=None) -> mp.mpf:
+    """Proton connected 4th-order Borromean V³ electromagnetic term M_p^{QED,conn} in MeV.
 
-    Implements Lean theorem
-    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3`:
-        tr((Q_{12}^{(p)} + Q_{23}^{(p)}) V_p³) = −2(q − 1)⁴(q + 1)⁴(q⁴ + q² + 1) / (9 q⁶)
-        tr_conn(p, V³) = (1/3) tr((Q_{12}^{(p)} + Q_{23}^{(p)}) V_p³)
-                       = −2(q² − 1)⁴(q⁴ + q² + 1) / (27 q⁶)
-        M_p^{QED,conn} = m_e · w(q) · |tr_conn(p, V³)|,
-    where w(q) = q if `k_weighted=True` (K_p^{⊗3} weight q) and 1 otherwise.
-    At q_0 and with the m_e scale, M_p^{QED,conn} ≈ +0.000220077 MeV (+0.22008 keV).
+        M_p^{QED,conn} = −m_e · t_conn(W_p),  t_conn(W_p) = q·tr((Q₁₂+Q₂₃)_p V_p³)/[2]_q³
+    (`trace_QAdjp_borromeanV3`; weighting derived 2026-11-19, bean qou-99qc, Lean
+    `NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD`). ≈ +0.0901243 keV at the proton q₀.
+    weighting='plain' (1/3) and 'Kp' (q/3) are historical comparisons only.
 
-    NOT A DERIVED PREDICTION (2026-11-19, bean qou-99qc). The word dependence of the
-    "connected" trace comes only from keeping quark pairs 1-2 and 2-3 and dropping 1-3;
-    summed over all three pairs the insertion is word-independent (`trace_QPair_diff_word`).
-    The m_e scale and the weighting options were chosen against targets (the 211 ppb μ–p
-    tension among them), so the figure is a record of a selected combination and does not
-    "close" that tension. The canonical masses are `canonical_mass.proton_neutron_mass_mev`.
+    INSERTION (owner ruling 2026-11-20 16:44): default (None, derived weighting) is the covariant
+    all-pairs insertion, whose connected part is 0 on V³ — so the canonical value is 0. The
+    figures above are `insertion='adjacent'`, a labelled comparison. See
+    `canonical_mass._TWO_TERM_SCOPE_NOTE`.
     """
+    from two_term_qtrace_weighting import m_p_qed_conn_mev
     with mp.workdps(max(50, mp.mp.dps)):
-        q0 = _resolve_q(q)
-        q2 = q0 ** 2
-        tr_conn_p = -2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (27 * (q2 ** 3))
-        w = q0 if k_weighted else mp.mpf(1)
-        return M_E_MEV * w * abs(tr_conn_p)
+        return m_p_qed_conn_mev(_resolve_q(q), M_E_MEV, weighting, insertion)
 
 
-def borromean_v3_connected_qed_diff_mev(q=None, weighting: str = "plain") -> mp.mpf:
+def borromean_v3_connected_qed_diff_mev(q=None, weighting: str = "derived", insertion=None) -> mp.mpf:
     """(n − p) connected 4th-order Borromean V³ QED mass splitting Δm_QED^{conn} in MeV.
 
-    Implements Lean theorems
-    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjn_borromeanV3_connected` and
-    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3`:
-        tr_conn(p, V³) = −2(q² − 1)⁴(q⁴ + q² + 1) / (27 q⁶)
-        tr_conn(n, V³) = +(q² − 1)⁴(2q⁴ − q² + 2) / (27 q⁶)
-        Δtr_conn(V³)   = tr_conn(n, V³) − tr_conn(p, V³)
-                       = +(q² − 1)⁴(4q⁴ + q² + 4) / (27 q⁶)
-        Δm_QED^{conn}  = −m_e · Δtr_conn^{(w)}(V³) < 0.
+        Δm_QED^{conn} = −m_e · [t_conn(W_n) − t_conn(W_p)]
+                      = −m_e · (q−1)⁴(q+1)⁴(q²+2)(2q⁴+1)/(9q⁴(q²+1)³)
+    (`NucleonWeightSpaceQTrace.deltaT_adjacent_connected_eq`). ≈ −0.1272243 keV at the proton q₀.
 
-    Parameters
-    ----------
-    q : optional substrate parameter (defaults to `_q_0()`).
-    weighting : {'plain', 'KnKp', 'Kp3', 'q'}
-        Cartan weight factor on the (n, p) connected traces:
-        - 'plain' : tr_conn(n) − tr_conn(p)                 (≈ −0.000331696 MeV)
-        - 'KnKp'  : q⁻¹ tr_conn(n) − q tr_conn(p)           (≈ −0.000344840 MeV)
-        - 'Kp3'   : tr_conn(n) − q tr_conn(p)               (≈ −0.000355900 MeV)
-        - 'q'     : q (tr_conn(n) − tr_conn(p))             (≈ −0.000368176 MeV)
+    weighting : 'derived' (canonical). Historical comparisons: 'plain' (≈ −0.3316960 keV),
+    'KnKp' (≈ −0.3448405 keV, = ([2]_q³/3)·derived), 'Kp3' (≈ −0.3558998 keV),
+    'q' (≈ −0.3681755 keV).
 
-    NOT A DERIVED PREDICTION (2026-11-19, bean qou-99qc): the four weightings and the
-    m_e scale are choices compared against targets, and the word dependence comes only
-    from dropping quark pair 1-3. See `borromean_v3_connected_qed_proton_mev`.
+    NOT A DERIVED PREDICTION: see `borromean_v3_connected_qed_proton_mev`.
     """
+    from two_term_qtrace_weighting import delta_m_qed_conn_mev
     with mp.workdps(max(50, mp.mp.dps)):
-        q0 = _resolve_q(q)
-        q2 = q0 ** 2
-        q2_m1_4 = (q2 - 1) ** 4
-        denom = 27 * (q2 ** 3)
-        tr_conn_p = -2 * q2_m1_4 * (q2 ** 2 + q2 + 1) / denom
-        tr_conn_n = q2_m1_4 * (2 * (q2 ** 2) - q2 + 2) / denom
-        if weighting == "plain":
-            delta_tr = tr_conn_n - tr_conn_p
-        elif weighting == "KnKp":
-            delta_tr = (tr_conn_n / q0) - (q0 * tr_conn_p)
-        elif weighting == "Kp3":
-            delta_tr = tr_conn_n - (q0 * tr_conn_p)
-        elif weighting == "q":
-            delta_tr = q0 * (tr_conn_n - tr_conn_p)
-        else:
-            raise ValueError(
-                f"borromean_v3_connected_qed_diff_mev: unknown weighting {weighting!r} "
-                "(use 'plain', 'KnKp', 'Kp3', or 'q')"
-            )
-        return -M_E_MEV * delta_tr
+        return delta_m_qed_conn_mev(_resolve_q(q), M_E_MEV, weighting, insertion)
 
 
-def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "plain") -> mp.mpf:
+def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "derived", insertion=None) -> mp.mpf:
     """Two-term (strong Kashiwara N=2 + connected 4th-order Borromean QED) Q_β prediction in MeV.
 
     Combines the Convention-D Kashiwara N=2 strong β-decay Q-value `q_beta_kashiwara_n2_mev`
@@ -599,8 +553,9 @@ def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "plain") -> mp.mpf
     pair 1-3 left out and the m_e scale chosen; issue #8524, probes/two_term_qed_pair_choice)
     `borromean_v3_connected_qed_diff_mev(q, weighting)`:
         Q_β^{two-term} = Q_{N2}^D + Δm_QED^{conn}(V³).
-    Reduces the Convention-D Q_{N2}^D residual from +600.6 ppm to +176.6 ppm ('plain')
-    or +130.0 ppm ('q'). These are records of selected combinations, not predictions.
+    Weighting is the derived quantum trace (default); 'plain' (historically +176.6 ppm) and
+    'q' (+130.0 ppm) are kept as comparisons. These are records of selected combinations,
+    not predictions.
     """
     with mp.workdps(max(50, mp.mp.dps)):
         if q is None:
@@ -616,7 +571,7 @@ def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "plain") -> mp.mpf
             b = mp.sqrt(1 - q_sq / (q_sq + 1) ** 2)
             q_n1 = q_a * mp.cos(alpha - b * hbar_q ** 2 / 2)
             q_n2 = q_n1 * (1 - b ** 2 * hbar_q ** 4)
-        return q_n2 + borromean_v3_connected_qed_diff_mev(q=q, weighting=weighting)
+        return q_n2 + borromean_v3_connected_qed_diff_mev(q=q, weighting=weighting, insertion=insertion)
 
 
 # ── Q_β predictions (FULL framework chain) ──────────────────────
@@ -922,7 +877,7 @@ def derivation_summary() -> dict:
         "phase": "0b.4 (FULL Q_β chain wired; nucleon + light-nucleus masses stubbed)",
         "calibration_inputs_loaded": {
             "CAL-1_m_e_MeV": str(M_E_MEV),
-            "CAL-2_q_0": str(_q_0()),
+            "q_0_proton_pin": str(_q_0()),
             "CAL-3_Q_beta_MeV": str(Q_BETA_MEV) + " (cross-check only; predicted by framework below)",
         },
         "wired_predictions": {
@@ -946,13 +901,21 @@ def derivation_summary() -> dict:
             "Delta_m_QCD_e21_E0_full_MeV": str(borromean_v3_e21_strong_qcd_diff_mev(scale="E0_full")),
             "Delta_m_QCD_e21_E0_N0_MeV": str(borromean_v3_e21_strong_qcd_diff_mev(scale="E0_N0")),
             "Delta_m_QCD_e21_alpha_bind_MeV": str(borromean_v3_e21_strong_qcd_diff_mev(scale="alpha_bind")),
-            "M_p_QED_conn_plain_MeV": str(borromean_v3_connected_qed_proton_mev(k_weighted=False)),
-            "M_p_QED_conn_Kp_MeV": str(borromean_v3_connected_qed_proton_mev(k_weighted=True)),
+            "weighting_canonical": "derived quantum trace Tr(K^{⊗3}·)/[2]_q³ (qou-99qc)",
+            "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): M_p and Delta_m are 0 on V³",
+            "M_p_QED_conn_scored_MeV": str(borromean_v3_connected_qed_proton_mev()),
+            "Delta_m_QED_conn_scored_MeV": str(borromean_v3_connected_qed_diff_mev()),
+            "M_p_QED_conn_derived_adjacent_MeV": str(borromean_v3_connected_qed_proton_mev(insertion="adjacent")),
+            "M_p_QED_conn_plain_MeV": str(borromean_v3_connected_qed_proton_mev(weighting="plain")),
+            "M_p_QED_conn_Kp_MeV": str(borromean_v3_connected_qed_proton_mev(weighting="Kp")),
+            "Delta_m_QED_conn_derived_adjacent_MeV": str(borromean_v3_connected_qed_diff_mev(insertion="adjacent")),
             "Delta_m_QED_conn_plain_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="plain")),
             "Delta_m_QED_conn_KnKp_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="KnKp")),
             "Delta_m_QED_conn_Kp3_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="Kp3")),
             "Delta_m_QED_conn_q_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="q")),
             "Q_beta_kashiwara_n2_MeV": str(q_beta_kashiwara_n2_mev()),
+            "Q_beta_kashiwara_n2_two_term_scored_MeV": str(q_beta_kashiwara_n2_two_term_mev()),
+            "Q_beta_kashiwara_n2_two_term_derived_adjacent_MeV": str(q_beta_kashiwara_n2_two_term_mev(insertion="adjacent")),
             "Q_beta_kashiwara_n2_two_term_plain_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="plain")),
             "Q_beta_kashiwara_n2_two_term_KnKp_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="KnKp")),
             "Q_beta_kashiwara_n2_two_term_Kp3_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="Kp3")),

@@ -21,7 +21,14 @@ export default conjecture({
     "def:coulomb-charge",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): the scope caveat on the -29.37 ppb miss is formalised in Lean as `QOU.StandardModel.EwVevDecomposition`." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): As formalized in [`QOU/StandardModel/ElectroweakBringSchwingerBridge.lean`](../lean/QOU/StandardModel/ElectroweakBringSchwingerBridge.lean) and verified at 50 dps in [`electroweak_bring_schwinger_bridge_probe.py`](../../../computations/probes/electroweak_bring_schwinger_bridge_probe.py): | `ewFixedPoint_iff_cubic` | conditional on `ElectroweakVevFixedPointClass` | the first-principles derivation of `ElectroweakVevFixedPointClass`" },
+    {
+      kind: "caveat",
+      date: "2026-11-20",
+      body: "**Two quantities are both called N_v (owner chose to record this, 2026-11-20).** `conj:electroweak-higgs-torus-link-triplet` and `ElectroweakBringSchwingerBridge.lean` define $N_v = v/m_p \\approx 262.418$ ($q\\,\\tfrac{[2]_q}{2}[4]_q[6]_q[8]_q + 1/\\pi$ minus the 1-loop term), with no $\\mathcal{N}_{\\rm sym}$ factor. `computations/n_sym_numerical_anchor.py` defines $N_v = v/(E_\\times \\mu_0) = 3v/m_e \\approx 1.4455 \\times 10^6$ and divides by $\\prod_{k=2,3,4} [2k]_q^2/[2]_q \\approx 6782.9$ to get the anchor $\\mathcal{N}_{\\rm sym}(q_0) \\approx 213.11$. Under the block's $N_v$ the same quotient is $\\approx 0.0387$. So 213.11 exists only under the script's definition; it is also back-solved from $G_F$, so it is a fit either way. No numbers are changed here.",
+      see: "computations/n_sym_numerical_anchor.py",
+    },
     {
       kind: "status",
       date: "2026-07-05",

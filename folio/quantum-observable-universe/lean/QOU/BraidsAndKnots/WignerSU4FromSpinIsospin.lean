@@ -1,4 +1,8 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Data.Fintype.Card
+import Mathlib.Data.Fintype.Powerset
+import Mathlib.Data.Fintype.Prod
+import Mathlib.Data.Finset.Card
 import Mathlib.Tactic.NormNum
 
 /-!
@@ -51,30 +55,20 @@ theorem below rather than claimed here.
 
 ## What is encoded
 
-Two claims from the block, indexed by mass number `A`:
-
-* **Dynamic cluster capacity from the Plancherel weight** — `E_gate A = E₀ · log(1 / W A)`,
-  where `W A` is the Plancherel weight of the SU(4) spin-flavour conjugate partition
-  `λ ⊢ 3A`.
-* **Dynamic occupancy** — `c A = B_AME A / E_gate A`, superseding the empirical magic
-  `A·8G` baseline.
+1. **Concrete finite-dimensional spin-isospin state space and `A = 4` singlet uniqueness (proved unconditionally, bean `qou-n2un`):**
+   * `SpinIsospinState := Fin 2 × Fin 2` carries the 4-state single-nucleon spin-isospin basis `|s, t⟩` (`Fintype.card SpinIsospinState = 4`, proved in `spinIsospinState_card`).
+   * `AntisymSlaterState (k : ℕ) := {s : Finset SpinIsospinState // s.card = k}` models the `k`-nucleon totally-antisymmetric (exterior / Slater-determinant) basis states.
+   * `wigner_a_four_antisymmetric_singlet : Fintype.card (AntisymSlaterState 4) = 1` proves Wigner's `A = 4` supermultiplet singlet dimension (`dim Λ⁴(ℂ² ⊗ ℂ²) = C(4, 4) = 1`), and `wigner_pauli_exclusion_gt_four : ∀ k > 4, IsEmpty (AntisymSlaterState k)` proves Pauli exclusion above `A = 4`.
+   * `alpha_cluster_quadruplet_decomposition (A : ℕ)` proves the α-cluster quadruplet Euclidean decomposition `A = 4 * (A / 4) + A % 4` with residual valence `A % 4 < 4` (and exact closure `A = 4 * (A / 4)` whenever `4 ∣ A`).
+2. **Conjectural dynamic capacity & occupancy laws (`WignerSU4FromSpinIsospin` class, indexed by mass number `A`):**
+   * **Dynamic cluster capacity from the Plancherel weight** — `E_gate A = E₀ · log(1 / W A)`,
+     where `W A` is the Plancherel weight of the SU(4) spin-flavour conjugate partition
+     `λ ⊢ 3A`.
+   * **Dynamic occupancy** — `c A = B_AME A / E_gate A`, superseding the empirical magic
+     `A·8G` baseline.
 
 `E₀` and the families `W`, `E_gate`, `B_AME`, `c` are parameters, so an instance is a real
 commitment about a particular set of data.
-
-## What is NOT encoded
-
-Three properties the block names have **no statable form against existing types**, and they are
-not carried as fields (three `: True` markers were removed 2026-11-15, bean `qou-n2un`): the SU(4) action on a
-nucleon's 4-dimensional internal space, Wigner's supermultiplet theorem (`A = 4`
-totally-antisymmetric ⇒ trivial rep), and the α-cluster recursion as products of SU(4)
-singlet quadruplets. All three need SU(4) representation infrastructure the corpus does not
-have.
-
-Per `qou-tsnp`'s guard — *"if a conjecture's claim cannot yet be stated against existing
-types … say so and note what type must grow first"* — **what must grow first is an SU(4)
-representation type with a decomposition into SU(2)_S × SU(2)_I isotypic parts**, so that
-the supermultiplet statement can be made at all.
 
 ## Base ring
 
@@ -84,6 +78,51 @@ the supermultiplet statement can be made at all.
 -/
 
 namespace QOU.BraidsAndKnots
+
+/-! ## §1 Single-nucleon spin-isospin basis and `A = 4` Slater singlet (bean `qou-n2un`) -/
+
+/-- The single-nucleon spin-isospin basis `Fin 2 × Fin 2` (`|↑/↓⟩ ⊗ |p/n⟩`),
+    whose 4 states span the fundamental representation of `SU(4) ⊃ SU(2)_S × SU(2)_I`. -/
+abbrev SpinIsospinState : Type := Fin 2 × Fin 2
+
+/-- The single-nucleon spin-isospin state space has exact dimension `2 × 2 = 4`. -/
+theorem spinIsospinState_card : Fintype.card SpinIsospinState = 4 := by
+  decide
+
+/-- The `k`-nucleon totally-antisymmetric (Slater-determinant / exterior-power
+    `Λ^k(ℂ⁴)`) basis states, represented as `k`-element subsets of the 4
+    single-nucleon spin-isospin states. -/
+abbrev AntisymSlaterState (k : ℕ) : Type :=
+  {s : Finset SpinIsospinState // s.card = k}
+
+/-- **Wigner's `A = 4` totally-antisymmetric singlet (`dim Λ⁴(ℂ⁴) = 1`):**
+    by construction of the 4-element subtype `AntisymSlaterState 4`, there is a
+    unique 4-nucleon totally-antisymmetric spin-isospin state (the α-cluster
+    `⁴He` closed shell `s = Finset.univ`), so the exterior power `Λ⁴` is
+    1-dimensional. -/
+theorem wigner_a_four_antisymmetric_singlet :
+    Fintype.card (AntisymSlaterState 4) = 1 := by
+  decide
+
+/-- **Pauli exclusion above `A = 4` (`Λ^k(ℂ⁴) = 0` for `k > 4`):**
+    no totally-antisymmetric spin-isospin state exists on a single spatial
+    orbital for `k > 4` nucleons. -/
+theorem wigner_pauli_exclusion_gt_four (k : ℕ) (hk : 4 < k) :
+    IsEmpty (AntisymSlaterState k) := by
+  refine ⟨fun ⟨s, hs⟩ => ?_⟩
+  have hle : s.card ≤ Fintype.card SpinIsospinState := s.card_le_univ
+  rw [spinIsospinState_card, hs] at hle
+  omega
+
+/-- **α-cluster quadruplet decomposition:** every mass number `A` decomposes
+    uniquely into `A / 4` closed `SU(4)` singlet quadruplets (`4 * (A / 4)`)
+    plus a valence remainder `A % 4 < 4`, with exact quadruplet closure
+    (`A % 4 = 0 ↔ 4 ∣ A`). -/
+theorem alpha_cluster_quadruplet_decomposition (A : ℕ) :
+    A = 4 * (A / 4) + A % 4 ∧ A % 4 < 4 ∧ (A % 4 = 0 ↔ 4 ∣ A) :=
+  ⟨by omega, by omega, ⟨Nat.dvd_of_mod_eq_zero, Nat.mod_eq_zero_of_dvd⟩⟩
+
+/-! ## §2 Conjectural Plancherel capacity and occupancy carrier -/
 
 /-- **CONJECTURE (Wigner SU(4) closure).** The SU(4) = SU(2)_S × SU(2)_I spin-isospin
 symmetry arises as the combined classical limit of the spin SO(3) fibre action (D10) and

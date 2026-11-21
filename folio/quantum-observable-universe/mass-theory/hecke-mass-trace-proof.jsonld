@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-hecke-mass-trace-sketch",
@@ -17,7 +17,7 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-hecke-mass-trace"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hecke-mass-trace",
   "text": "hecke-mass-trace-proof.md",
-  "provenance": "authored",
-  "interprets": "papers/quantum-observable-universe/blocks/conj-hecke-mass-trace"
+  "provenance": "authored"
 }

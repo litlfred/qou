@@ -36,6 +36,8 @@ $$
 
 with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. The energy scale is the tower-summed $E_0$; the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$ (owner ruling 2026-09-08). It compares to the CODATA value of $0.7823$ MeV at $-42.59\%$ ($-333.2$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
 
+The value scored on the L2 scorecard is a different functional on a different element: the $T^3$ weight split of the same $z_D$ trace on the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$, $\mathfrak{Q}_\beta^{\mathrm{scored}} = |\varepsilon_{\mathrm{flavour}}(V^3)|\,E_0 \approx 0.3254$ MeV ($-58.40\%$), which gives $\mathfrak{m}_n - \mathfrak{m}_p \approx 0.8364$ MeV ($-35.3\%$). The $0.4491$ MeV above is kept as an unscored comparison.
+
 The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV. This compares to the CODATA value of $1.2933$ MeV ($-26.11\%$ error, no CODATA $m_n - m_p$ input).
 
 *Retired Form A (historical cross-check only).* The earlier closed form $m_e\,|q_0^2 - 2q_0 - 1|\,(q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$, giving $m_n - m_p \approx 1.295$ MeV) evaluates $\varepsilon$ at $z = 1$, which is not an admissible Markov parameter under convention D. It is kept for comparison and is not the prediction.

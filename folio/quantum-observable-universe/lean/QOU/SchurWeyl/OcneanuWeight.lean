@@ -61,6 +61,13 @@ resulting functional as a Markov trace on the strength of a numerical check, whi
 laundering `HeckeWedderburnDataGeneral`'s docstring warns against.  The general-`n` Markov property
 has to be *proved* before that instantiation is honest.
 
+**Update 2026-11-20 — it is now proved, at every `z` and every `n`**, in
+`OcneanuMarkovTraceEveryZ` (`SeminormalRep.ocneanuMarkovTraceEveryZ`): normalisation, branching and
+the Markov condition for `ocneanuWeight q z` follow by polynomial interpolation in `z` from the
+proved Wenzl-level theorems, because `ocneanuWeight q z_r = wenzlWeight r (q²)` on the infinite
+lattice `z_r = Q^r/(q·[r]_Q)`. The sentences above describe this file, which still proves only the
+definition and the `n = 3` checks.
+
 ## Base ring (§7c)
 
 `ocneanuWeight` is stated over a generic `[Field R]`: it is a rational function of `q` and `z` with

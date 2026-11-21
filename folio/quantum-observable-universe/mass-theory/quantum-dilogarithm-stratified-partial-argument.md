@@ -1,7 +1,7 @@
 **Partial argument for [the stratified quantum dilogarithm conjecture](#conj:quantum-dilogarithm-stratified).** Steps 1, 2 and 4 below are argued; Step 3 is not established, and as written it cannot be: $F_n(z)$ in (d) is a single power of $z$, so the product expansion $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)}\, u_n(q)$ fails for it. What is proved is Step 1, the mutual orthogonality of the depth strata under the Frobenius pairing.
 
 *Step 1 (Frobenius dual decomposition of $Z(A)$).* By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+[curvature-rank stratification](#conj:curvature-rank-gb-stratification)
 — **together with the partition-vs-word identification this proof itself
 flags as unestablished at Step 3 below, and which is not supplied by that
 proposition** —
@@ -70,8 +70,7 @@ structure:
 (a) The q-deformed Wedderburn-block weight is
 $w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
 classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$ —
-the two coincide at $q = 1$; see
-[Plancherel weights define a probability distribution: $\sum_\lambda w_\lambda = 1$, $0 \leq w_\lambda \leq 1$](#prop:plancherel-weight-boundedness)),
+the two coincide at $q = 1$),
 where
 $\dim_q V_\lambda = [n]_q! \,/\, \prod_{\square \in \lambda} [h(\square)]_q$
 and $[h]_q = (q^h - q^{-h})/(q - q^{-1})$ is the symmetric quantum
@@ -84,7 +83,7 @@ $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_{\square \in \lambda} h(\square)$
 (the partition's **maximum hook length**) is a *definition* — the
 supremum of the hook length over the
 cells of $\lambda$ — not a consequence of
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+[curvature-rank stratification](#conj:curvature-rank-gb-stratification),
 which stratifies $J^{\,r}/J^{\,r+1}$ by the curvature rank $r(T_w)$ of
 **words** and mentions no partition. The two are different indexings of
 depth, and the reading of $\mathrm{depth}_{\mathrm{GB}}(\lambda)$ as
@@ -188,7 +187,7 @@ product diverges at $|z_i| = q$ in a way that the finite Frobenius
 truncation does not capture in real-valued terms. Step 3's
 identification (a)–(f) reduces the cyclotomic-factor / depth-stratum
 correspondence to the standard $q$-content / hook-length formula plus
-[curvature-rank stratification §Step 3](#prop:curvature-rank-gb-stratification)
+[curvature-rank stratification §Step 3](#conj:curvature-rank-gb-stratification)
 (GB-depth = max hook length), so the structural identification is now
 explicit — **but "explicit" here means *written down*, not *established*.
 The citation does not supply the identification; the passage above, at

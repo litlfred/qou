@@ -110,4 +110,14 @@ theorem s_channel_sign_neg {S : ℝ → ℝ} [ch : SDeformedVolumeChannel S]
   apply mul_neg_of_pos_of_neg (mul_pos hA cuspModulus_pos)
   linarith
 
+/-- **T5 boost-spin critical balance (`qou-w49j`).** At the critical angular
+threshold `ϑ² = (ln q₀)²`, the substrate S-channel vanishes identically (`S q₀ = 0`). -/
+theorem s_channel_eq_zero_of_sq_eq {S : ℝ → ℝ} [ch : SDeformedVolumeChannel S]
+    (hV : ch.V = V₄₁) {q₀ : ℝ} (hq : 1 < q₀)
+    (hRe : (ch.u q₀).re = Real.log q₀)
+    {ϑ : ℝ} (hIm : (ch.u q₀).im = ϑ)
+    (hcrit : ϑ ^ 2 = Real.log q₀ ^ 2) :
+    S q₀ = 0 := by
+  rw [s_channel_at_substrate hV hq hRe hIm, hcrit, sub_self, mul_zero]
+
 end QOU.QBeta.DeltaLambdaT5Assembly

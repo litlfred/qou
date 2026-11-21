@@ -116,4 +116,13 @@ theorem rossmann_cc_two_parity_fails :
       e - o ≠ target := by
   refine ⟨1, 1, 2, 2, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;> norm_num
 
+/-- **Double even-degree mass decomposition from concentration (`qou-zcjg`).**
+Combining `C.total l` (`e + o = dim`) with `rossmann_cc_realizes_deltaLambda l`
+(`e - o = target`) yields `2 * e = dim + target`. -/
+theorem rossmann_cc_double_even_eq_dim_add_target [C : RossmannCCConcentration Λ] (l : Λ) :
+    2 * C.e l = C.dim l + C.target l := by
+  have htot := C.total l
+  have hdiff := rossmann_cc_realizes_deltaLambda (C := C) l
+  linarith
+
 end QOU.BraidsAndKnots

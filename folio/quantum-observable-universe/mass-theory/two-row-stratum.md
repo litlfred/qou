@@ -10,8 +10,6 @@ $$
   \;=\; \{\, (n-k, k) : 0 \le k \le \lfloor n/2 \rfloor \,\}.
 $$
 
-The orthogonal projection onto this two-row Wedderburn subalgebra — the two-row projection $\pi_{\mathrm{2-row}}$ — and the induced splitting of the canonical Markov trace are given in [Two-row projection $\pi_{\mathrm{2-row}}$ onto the two-row Wedderburn subalgebra](#def:two-row-projection).
-
 ## Structural significance
 
 The two-row stratum carries the $\mathrm{SU}(2)$ Schur–Weyl image. Restrict to the $\mathrm{SU}(2)$ action:
@@ -41,6 +39,6 @@ The non-self-conjugate partitions $(n-k, k)$ with $k < n/2$ form mirror pairs un
 
 ## Empirical use
 
-The per-partition decomposition is $c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$ across all 77 partitions of 12. The two-row stratum $\Lambda^2(12)$ carries the total trace $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ **exactly** — $100\,\%$, not as a measurement but as an identity, since $y_\lambda = 0$ for the $70$ partitions of $12$ with $\ell(\lambda) > 2$. The figure $86.6\,\%$ previously quoted here is the convention-C value and is withdrawn (2026-08-09); with it goes the reading of the result as a *dominance* rather than a support statement. This is stated precisely in [Two-row stratum carries $\ge 80\%$ of $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ at $q_0$](#prop:he4-two-row-dominance).
+The per-partition decomposition is $c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$ across all 77 partitions of 12. The two-row stratum $\Lambda^2(12)$ carries the total trace $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ **exactly** — $100\,\%$, not as a measurement but as an identity, since $y_\lambda = 0$ for the $70$ partitions of $12$ with $\ell(\lambda) > 2$. The figure $86.6\,\%$ previously quoted here is the convention-C value and is withdrawn (2026-08-09); with it goes the reading of the result as a *dominance* rather than a support statement.
 
 The same pattern holds across the $\{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$ series. The dominant block for each atom always lies in $\Lambda^2(3A)$.

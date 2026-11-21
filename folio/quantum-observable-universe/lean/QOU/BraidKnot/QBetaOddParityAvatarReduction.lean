@@ -93,4 +93,11 @@ theorem qbeta_odd_parity_avatar_reduction {R : Type*} [CommRing R]
       = 1 - u ^ 2 + g * u ^ 3 - g * u ^ 5 := by
   ring
 
+/-- Subtracting the cubic scalar term from the stripped two-factor product yields zero. -/
+theorem qbeta_odd_parity_c3_content_sub_g_eq_zero {R : Type*} [CommRing R]
+    (a2 g u : R) :
+    ((1 + a2 * u ^ 2) * (1 + g * u ^ 3) - (1 + a2 * u ^ 2) - a2 * g * u ^ 5)
+      - g * u ^ 3 = 0 := by
+  rw [qbeta_odd_parity_c3_content_eq_g, sub_self]
+
 end QOU.BraidKnot

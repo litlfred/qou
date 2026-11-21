@@ -75,4 +75,4 @@ This quantity is maximised when both $p$ and $n$ are even. Even-even nuclei host
 1. **Skein factorization**: It remains to prove that the Skein polynomial $J_{\mathcal{N}(Z, N)}(q)$ factors when $(p, n)$ admits an $\alpha$-cluster decomposition. This requires a direct computation in the Skein algebra of the Hopf link.
 2. **Shell energy scale**: It remains to derive $\lambda_{\mathrm{shell}}$ directly from the categorical action. It is expected to be expressible in terms of $q$, $a_V$, and the Skein polynomial of $\mathcal{N}(2,2)$.
 3. **Corrected stability formula**: It remains to show that the total binding energy $\mathcal{L}_{\mathrm{bind}} + \delta E_{\mathrm{shell}}$ reproduces all observed stable isotopes to within $|\Delta n| \leq 1$ for all $p \leq 103$.
-4. **Genus lift**: It remains to show that including $\delta E_{\mathrm{shell}}$ lifts the stability cubic from genus $0$ to genus $1$. This establishes a connection to the [elliptic stability conjecture](#rem:elliptic-stability-locus).
+4. **Genus lift**: It remains to show that including $\delta E_{\mathrm{shell}}$ lifts the stability cubic from genus $0$ to genus $1$.

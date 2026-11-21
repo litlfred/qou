@@ -131,6 +131,16 @@ QDIM_STD = qint(2)              # dim_q((2,1)) = [2]_q ≈ 2.011 at q_0
 QDIM_ALT = mp.mpf(1)            # dim_q((1,1,1)) = 1 always
 NF3      = qint(1) * qint(2) * qint(3)   # [3]_q!
 
+# OWNER RULING 2026-11-20 (PR #8590): this V-hat deliberately keeps the
+# pre-convention-D W_sym/W_std/W_alt (q-Plancherel) mixture. The 11-18 ruling
+# moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+# the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+# (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
 W_SYM = QDIM_SYM**2 / NF3
 W_STD = QDIM_STD**2 / NF3
 W_ALT = QDIM_ALT**2 / NF3
@@ -383,6 +393,7 @@ def main():
         .add_parameter("q_0_mpf50", mp.nstr(Q0, 50))
         .add_parameter("m_e_MeV", M_E_MEV)
         .add_parameter("mpmath_dps", mp.mp.dps)
+        .add_parameter("vhat_weights", VHAT_WEIGHTS_LABEL)
         .add_data("particles", results)
         .add_data("ratios_at_50dps", {
             "m_p_over_m_e": mp.nstr(m_p_over_m_e, 30),

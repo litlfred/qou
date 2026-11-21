@@ -45,22 +45,27 @@ $H_n(R, q)$:*
 | $\Phi_3$ | sym $/$ alt | ratio of eigenvalues (chirality) |
 
 *The three invariants correspond to the three **extremal** Wedderburn
-blocks of $H_n(R, q)$ (those associated with the symmetric, standard,
-and alternating representations).  For $n \geq 4$, the Hecke algebra
-has additional irreducible representations (one per partition of $n$),
-producing additional invariants not captured by the $2 \times 2$
-transfer matrix.  The partition-by-partition computation
-(the formal derivation) computes all partitions exactly via
-Young's seminormal form in polynomial time.  The mass functional
-uses the three extremal invariants as the leading-order formula;
-the full partition sum gives the exact Markov trace.*
+blocks of $H_n(R, q)$ (those associated with the symmetric $[n]$, standard
+$[n{-}1,1]$, and alternating $[1^n]$ representations).  These three
+extremal blocks exhaust the partition lattice if and only if $n \le 3$
+($p(1)=1$, $p(2)=2$, $p(3)=3$); already at $n = 4$ ($p(4)=5$), two
+non-extremal blocks $[2,2]$ and $[2,1,1]$ enter, and for $A \ge 3$ nucleons the
+adjacent-chain bridge count $A - 1$ grows strictly slower than the
+all-pairs count $A(A-1)/2$.
+The partition-by-partition computation (the formal derivation) computes
+all partitions exactly via Young's seminormal form in polynomial time.
+The mass functional uses the three extremal invariants as the
+leading-order formula; the full partition sum gives the exact Markov
+trace.*
 
 *The coefficients are:*
 - *$\alpha = m_e \times 8G$
   ([binding scale](#conj:binding-scale-catalan)),*
-- *$[3]_q = (q^3 - q^{-3})/(q - q^{-1})$, the quantum 3-integer
-  ([degree-2 weight](#prop:degree-two-baryon-weight)),*
-- *$h_{\mathrm{A}} = q - q^{-1}$, the Hecke parameter.*
+- *$[3]_q = (q^3 - q^{-3})/(q - q^{-1})$, the quantum 3-integer,*
+- *$h_{\mathrm{A}} = q - q^{-1}$, the Hecke parameter, satisfying the exact
+  algebraic dependency $h_{\mathrm{A}}^2 = [3]_q - 3$, i.e.
+  $2\beta_3 + \beta_2 + 6 = 0$ where $\beta_2 = -2[3]_q$ and
+  $\beta_3 = h_{\mathrm{A}}^2$.*
 
 *All quantities are derived from $q_0$ and $m_e$.  The formula has
 zero fitted parameters.*

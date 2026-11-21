@@ -1,6 +1,6 @@
 > **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is
 > the structurally-wrong leading-order ansatz; the operator-valued form supersedes
-> it ([`mass-endomorphism-tower`](../mass-theory/mass-endomorphism-tower.md)). The canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$ graded expansion [`prop:rho-k-graded-expansion`](../mass-endomorphism/rho-k-graded-expansion.md).
+> it ([`mass-endomorphism-tower`](../mass-theory/mass-endomorphism-tower.md)). The canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$ graded expansion [graded expansion of $\rho_K$](../mass-endomorphism/rho-k-graded-expansion.md).
 
 The molecular-binding framework uses the Hartree energy $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale. The question is whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke structure rather than as an empirical input. The result is a **clean conditional theorem**.
 
@@ -32,9 +32,9 @@ Every mechanism question is resolved. The coupling-parity routes are refuted. Th
 
 1. **The bare LP/SDP framework.** The $H_2$ molecular braid and its primal/dual program are set up rigorously in [LP dual binding](#prop:h2-lp-dual-binding) and [ILP covalent bond](#prop:ilp-covalent-bond). Strong duality ([operator-selection LP](#prop:operator-selection-lp)) gives $y_{\mathrm{cov}}^{*}$ as the binding energy per shared electron.
 
-2. **The bare formula.** The singlet-idempotent / Bring force-carrier complexity ([EM coupling projection](#prop:em-coupling-projection)) rigorously derives the leading expression $1/\alpha_{EM} = q\,[9]_q\,[10]_q$. It lies in $R$. It admits the equivalent shift-exponent form $1/\alpha_{EM} = q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q \cdot [\alpha_{\mathrm{shift}}(T_{3,5})]_q$ ([multiplicative-chain form](#prop:alpha-em-shift-multiplicative-chain)). This exposes the same combinatorial primitive that controls the atomic-shift framework. The primitive is the pole order at $q = 0$ of a seminormal Hecke trace.
+2. **The bare formula.** The singlet-idempotent / Bring force-carrier complexity ([EM coupling projection](#prop:em-coupling-projection)) rigorously derives the leading expression $1/\alpha_{EM} = q\,[9]_q\,[10]_q$. It lies in $R$.
 
-3. **The Frobenius / curvature-rank decomposition.** The Gröbner–Shirshov spectral sequence collapses at $E_1$ ([spectral sequence collapse](#prop:spectral-sequence-collapse)). The molecular operator decomposes by curvature rank ([curvature-rank GB stratification](#prop:curvature-rank-gb-stratification)). The covalent bond shares two electrons through two crossings. It sits at curvature rank $2$.
+3. **The Frobenius / curvature-rank decomposition.** The Gröbner–Shirshov spectral sequence collapses at $E_1$ ([spectral sequence collapse](#prop:spectral-sequence-collapse)). The molecular operator decomposes by curvature rank ([curvature-rank GB stratification](#conj:curvature-rank-gb-stratification)). The covalent bond shares two electrons through two crossings. It sits at curvature rank $2$.
 
 4. **Closed-form dressed characters.** All five irrep characters of the bare $H_2$ braid $\sigma_1\sigma_2\sigma_3 \in B_4$ are single $q$-monomials (See [Table 12](#tbl:e-hartree-categorical-derivation-table12-data)). The force-carrier sum is $\chi_{(3,1)} + \chi_{(2,1,1)} = -q + q^{-1} = -h$. Replacing the middle crossing with the K-shell-dressed $T^{\mathrm{dr}}$ with eigenvalues $q^{5}, -q^{-5}$ activates the $(2,2)$ channel. This breaks the bare $(2,2) = 0$ selection rule. It amplifies the force-carrier channel by $\approx [5]_q$ (See [Table 13](#tbl:e-hartree-categorical-derivation-table13-data)). This is the algebraic signature of the dressing power.
 

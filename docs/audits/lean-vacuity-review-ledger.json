@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-11-20T14:24:17.319Z",
+  "updated_at": "2026-11-21T00:00:00Z",
   "entries": {
     "folio/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -4197,6 +4197,16 @@
       "disposition": "false-positive",
       "evidence": "`h.length_eq` is Mathlib's `List.Perm.length_eq` applied to the hypothesis `h : l.Perm l'`, not a projection of a class field equal to the conclusion. The conclusion `l.length = l'.length` is a genuine consequence of the permutation hypothesis. Detector field-projection pattern matches dot-notation on any hypothesis. W8 2026-11-20.",
       "source": "agent:W8-session_01VQDpPeHYJSSw93f8BpmnnY 2026-11-20T09:00:00Z PR #8533"
+    },
+    "folio/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean::beta_decay_energy_negative::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "unbound-existential",
+      "line": null,
+      "verdict": "genuine",
+      "file_sha": "27d2e1250f93",
+      "disposition": "state-the-real-proposition",
+      "evidence": "Statement was `∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par` with every hypothesis unused (_q, _hq, _p, _n, _hn); `⟨1, 0, one_pos⟩` proved it, so it asserted nothing about any parent or daughter. The detector did NOT flag it (measured: 0 hits on this file before and after the fix), so this entry is agent-recorded; the next --review-ledger run will prune it because the declaration no longer exists. Replaced by sorry-free, model-scoped `beta_decay_energy_sub_shortModel` (E(p) - E(n) = -|h|) and `beta_decay_energy_negative_shortModel` (q > 1); no model-free statement, since PR #8682 measured the opposite nucleon-only sign in the 11-letter model (scope (a)). Bean qou-n2un.",
+      "source": "agent:session_01VQDpPd74VuvpxRU87z8ogX 2026-11-21 (owner request)"
     }
   }
 }

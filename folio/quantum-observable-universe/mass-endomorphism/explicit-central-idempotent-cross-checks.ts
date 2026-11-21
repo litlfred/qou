@@ -1,11 +1,11 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:explicit-central-idempotent",
+export default theorem({
+  label: "thm:explicit-central-idempotent-cross-checks",
   title:
-    "The four Murphy–Lagrange cross-checks for $e_\\lambda$ follow from Lagrange interpolation in commuting variables",
+    "The Murphy–Lagrange elements $e_\\lambda$ are the central primitive idempotents of $H_n(q)$: sum to one, orthogonality, bar-invariance, conjugate pairing",
   lean: {
-    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotent.ExplicitCentralIdempotentConjecture",
+    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks",
     validation: "not_checked",
   },
   uses: [
@@ -18,10 +18,22 @@ export default conjecture({
     "murphy-elements",
     "lagrange-interpolation",
     "hecke-algebra",
-    "open-problem",
-    "primary-conjecture",
+    "bar-involution",
+    "sign-twist",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-20",
+      body:
+        "**Promoted from conjecture to theorem (owner ruling, 2026-11-20: 'Go ahead and make theorem').** Label " +
+        "conj:explicit-central-idempotent -> thm:explicit-central-idempotent-cross-checks, files renamed from " +
+        "conj-explicit-central-idempotent.*. All four cross-checks are proved sorry-free in Lean for every n " +
+        "(ExplicitCentralIdempotentGeneral, CentralIdempotentInvolution, CentralIdempotentSignTwist). The scalar " +
+        "carrier ExplicitCentralIdempotentConjecture is retired (owner, 2026-11-20): its library module " +
+        "QOU.BraidKnot.ExplicitCentralIdempotent and the prop block's sibling .lean, its only consumer, were removed. " +
+        "The relocated notes below that call the cross-checks open or conditional are historical.",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): That proposition is proved in Lean *conditionally* on them, with the class carrying them as an explicit instance hypothesis. Naming the conjecture as its own block is what lets the proposition's `uses[]` record the dependency, so the conditional cone is auditable from the manifest and not only from the Lean signature. | ## Status in Lean\n\nAll four cross-checks are proved, sorry-free, on the real Iwahori–Hecke algebra `QOU.SchurWeyl.Hecke`, for every $n$: | - Cross-checks 1 and 2, and centrality: `explicit_central_idempotent_cross_checks` in `QOU.BraidKnot.ExplicitCentralIdempotentGeneral`. The Wedderburn isomorphism sends each Lagrange projector to a diagonal matrix unit (`JMProjector.heckeWedderburn_symm_single`). `mulProj_eq_proj` identifies the formula above, written in the multiplicative $J_k$, with that projector. | - Cross-check 3: `IsBar.fixes_centralIdem` in `QOU.BraidKnot.CentralIdempotentInvolution`. Every map | - Cross-check 4: `hashMap_centralIdem` in `QOU.BraidKnot.CentralIdempotentSignTwist`. The sign twist" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): That proposition is proved in Lean *conditionally* on them, with the class carrying them as an explicit instance hypothesis. Naming the conjecture as its own block is what lets the proposition's `uses[]` record the dependency, so the conditional cone is auditable from the manifest and not only from the Lean signature.\n\nThe carrier is the class `QOU.BraidKnot.ExplicitCentralIdempotent.ExplicitCentralIdempotentConjecture`, whose field states cross-check 2 — the one downstream Lean consumes — quantified over every partition of every $n$, so it is a claim about the whole construction and not about one $\\lambda$. **No instance of the class exists anywhere in the corpus**, which is the correct representation of an unproved primary conjecture: an instance would assert the statement, not prove it.\n\nThe `J_k` diagonal action that the interpolation argument rests on is itself established — [`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou) gives\n\n## Scope of the Lean carrier\n\nThe class carries the **interpolation-theoretic inputs**\n\nCross-checks 1, 3 and 4 (sum-to-identity, self-adjointness, bar-pairing) are\nstated above but are still not encoded — they have no downstream consumer yet.\nOrthogonality is now encoded, at the projector level, because idempotency needs\nit. The class has **no instance**: the conjecture is open." },
     {
@@ -33,7 +45,7 @@ export default conjecture({
         "(sigma -> sigma^-1, q -> q^-1) fixes every e_lambda (`IsBar.fixes_centralIdem`). Cross-check 4 now reads: the " +
         "sign twist (sigma -> -sigma^-1) sends e_lambda to e_lambda' (`hashMap_centralIdem`, a constructed map). The " +
         "statement now takes the inner product over all contents |d| <= n-1, the well-defined form of the prop block; " +
-        "it had read 'over the boxes of lambda'. Ground field: characteristic 0, generic q. The block kind is still " +
+        "it had read 'over the boxes of lambda'. Ground field: any characteristic, generic q (char-0 hypothesis removed 2026-11-20). The block kind is still " +
         "`conjecture`, and `lean.ref` still names the old scalar carrier; promotion is an owner call.",
     },
     {
@@ -55,7 +67,7 @@ export default conjecture({
       body:
         "**Cross-checks 1 and 2, and centrality, are now PROVED for every n (bean qou-2150).** " +
         "`QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks`: at generic q (q != 0, " +
-        "not a root of unity, characteristic 0) the Murphy-Lagrange elements e_lambda in the real Hecke algebra are " +
+        "not a root of unity, any characteristic) the Murphy-Lagrange elements e_lambda in the real Hecke algebra are " +
         "central, idempotent, pairwise orthogonal and sum to 1. `mulProj_eq_proj` shows that the boxed formula in the " +
         "multiplicative J_k equals the corpus' additive-JM projector, and `heckeWedderburn_symm_single` (JMProjector) maps " +
         "that projector to the matrix unit E_TT. Sorry-free; axioms propext, Classical.choice, Quot.sound. Still OPEN: " +
@@ -112,5 +124,6 @@ export default conjecture({
         "pairwise orthogonal, summing to e_lambda) and the theorem DERIVES " +
         "idempotency from them.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The form above, over all contents $|d| \\le n - 1$, is the one in [Explicit central primitive idempotents $e_\\lambda$ via Murphy elements](#prop:explicit-central-idempotent)." },
   ],
 });

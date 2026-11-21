@@ -111,5 +111,9 @@ export default conjecture({
         "exactly what the standard-part form records.",
       see: "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): (see\n [analytic obstructions](#rem:analytic-obstructions))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Read\n   through [$\\mathrm{st}$ as median resummation](#rem:st-is-median-resummation),\n   the cocycle supplies precisely the real-single-valued function\n   whose surreal evaluation $\\mathrm{st}$ selects: the\n   quantum-modular functional equation is the inequality-free form of\n   the asymptotic statement." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ; it\nis unrelated to the alien derivative $\\Delta_\\omega$ of\n[Écalle--Borel resummation](#def:ecalle-borel-resummation) and to the\nper-partition binding weight $\\Delta_\\lambda$, both of which carry the\ncapital" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): — see [algebraic core survives](#rem:algebraic-core-survives)" },
   ],
 });

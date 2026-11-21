@@ -36,5 +36,6 @@ export default remark({
       kind: "note",
       body: "The rejected Wedderburn pair-generator extension was recorded in\n`fsh-guts/deprecated/computations/rho-k-pair-gen-v2-wedderburn.witness.json`;\nthat witness is deprecated. The rejection itself (it worsens the fit\nto ~4.7% MAE) stays in the prose.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([rem:u1-phase-tube](#rem:u1-phase-tube))" },
   ],
 });

@@ -83,7 +83,7 @@ The substrate-bound polynomial $P_K(q)$ is a dimensionless
 topological multiplier; its Markov normalisation by $[N]_q$ is fixed
 by the categorical structure, while the conversion to a macroscopic
 mass requires a separate dimensional anchor $m_0$ chosen by
-calibration ([three calibration discipline](#def:three-calibration-discipline)).
+calibration.
 QOU pins $m_0 = m_e$; the Higgs-VEV and Planck-mass choices are
 mathematically admissible alternatives that re-route the calibration
 through the electroweak or gravitational sector respectively.

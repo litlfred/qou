@@ -1,4 +1,4 @@
-The vertex operator algebra $(V, Y, |0\rangle)$ ([vertex operator](#def:vertex-operator)) inherits every QU and QUO axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$ of $H_n(R, q)$, translated into **knot coordinates**: braid words in $\sigma_i$, the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace $\mathrm{tr}_M$, and cup/cap morphisms $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$, $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$. The generators obey the Hecke relation
+The vertex operator algebra $(V, Y, |0\rangle)$ inherits every QU and QUO axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$ of $H_n(R, q)$, translated into **knot coordinates**: braid words in $\sigma_i$, the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace $\mathrm{tr}_M$, and cup/cap morphisms $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$, $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$. The generators obey the Hecke relation
 
 $$
   \sigma_i^2 = (q - q^{-1})\sigma_i + 1 \qquad (1 \leq i \leq n-1),

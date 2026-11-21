@@ -141,7 +141,7 @@ The category $\mathbf{Arch}$ is the target of $\tau$, not the name of a functor.
 |---|---|---|
 | $\tau \colon \mathbf{C} \to \mathbf{Arch}$ | the fibre functor itself | enriched (canonical) |
 | $\tau \colon \mathbf{C} \to \mathbf{Vec}_{\mathbb{R}}$ | $U \circ \tau$ | forget archimedean enrichment |
-| $\tau \colon \mathbf{C} \to \mathbf{Type}$ (Lean `C ⥤ Type*`) | underlying set-valued functor (Tannakian $\omega$) | forget linear structure |
+| $\tau \colon \mathbf{C} \to \mathbf{Type}$ | underlying set-valued functor (Tannakian $\omega$) | forget linear structure |
 | $\tau \colon \mathbf{C} \to \mathbf{D}$ (spatial realisation) | $\tau$ into a chosen geometric model $\mathbf{D}$ | model-specific |
 
 These are genuine functors (they act on morphisms). What is **not** a functor is the archimedean **evaluation** $\pi_\infty \colon \mathrm{Obj}(\mathbf{Arch}) \to \mathbb{R}$ (an object-level map / place), and the *ring-level* realisations it induces: the motivic measure $\mathcal{R}_{\mathrm{top}} \colon K_0(\mathrm{Var}) \to \mathbb{R}$ (a ring homomorphism) and the standard-part map $\mathrm{st} \colon \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$ (a ring homomorphism). Reserve "functor" for $\tau$, $U$, and $\mathrm{St}$; call the maps into $\mathbb{R}$ *realisations / evaluations*.

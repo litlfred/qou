@@ -22,11 +22,26 @@ for Bean qou-eas4 (Epic qou-9pl8):
 
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
+import sys as _sys_tt
+from pathlib import Path as _Path_tt
+_sys_tt.path.insert(0, str(_Path_tt(__file__).resolve().parents[1]))
+import two_term_qtrace_weighting as _ttq  # noqa: E402  (derived weighting, PR #8591)
+
 import json
 import sys
 from pathlib import Path
 import mpmath as mp
 import sympy as sp
+
+for _p in Path(__file__).resolve().parents:
+    if (_p / "computations" / "_path_bridge.py").exists():
+        sys.path.insert(0, str(_p / "computations"))
+        break
+import _path_bridge  # noqa: E402,F401
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
+from substrate.q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 
 # Ensure 50-dps working precision (+30 guard digits during internal solves)
 DPS = 50
@@ -288,7 +303,7 @@ def run_symbolic_charge_operator_checks() -> dict:
 
     # `hadronicScaleE0_mul_hbar_eq_me`: E_0(m_e, q) * q^2 * (1 - q^-1) == m_e
     me_sym = sp.Symbol("m_e", positive=True)
-    E0_sym = me_sym / (q * (q - 1))
+    E0_sym = _qbeta_e0.order_zero_scaled(me_sym, q)
     assert sp.simplify(E0_sym * (q**2 * (1 - 1 / q)) - me_sym) == 0
 
     # (f) Section 8 of NucleonWeightSpaceTwoTerm.lean:
@@ -325,7 +340,9 @@ def run_symbolic_charge_operator_checks() -> dict:
     assert sp.simplify(Bor_p - Bor_p_nf) == sp.zeros(3, 3)
     assert sp.simplify(Bor_n - Bor_n_nf) == sp.zeros(3, 3)
 
-    # (g) Section 9 of NucleonWeightSpaceTwoTerm.lean (`qou-99qc` switched 4-term photon):
+    # (g) Section 9 of NucleonWeightSpaceTwoTerm.lean (`qou-99qc` switched 4-term photon;
+    #     since the owner ruling of 2026-11-18, confirmed 2026-11-20, this IS def:photon,
+    #     gamma = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, here with phi0 = phi1 = 0):
     # `borromeanV3A_eq_switched_photon_product`: V^3 = (I_3 + q*h*V) * (I_3 - q^-1*h*V)
     sw_plus_p = sp.eye(3) + q * h * Vp
     sw_minus_p = sp.eye(3) - (1 / q) * h * Vp
@@ -561,7 +578,7 @@ def alpha_em_qou(q: mp.mpf) -> mp.mpf:
 
 def solve_q_for_mp_target(target_mp_over_me: mp.mpf, vol: mp.mpf) -> mp.mpf:
     """Newton solve for q > 1 such that mp_over_me_qcd(q, vol) == target_mp_over_me."""
-    q = mp.mpf("1.1099785827513808")
+    q = mp.mpf(Q_50_DIGIT_STR)  # Newton seed: the proton pin, from the substrate
     for _ in range(40):
         f = mp_over_me_qcd(q, vol) - target_mp_over_me
         dq = q * mp.mpf("1e-35")
@@ -585,8 +602,8 @@ def main() -> int:
     mmu_me_err = mp.mpf("0.0000046")
 
     m_e_mev = mp.mpf("0.51099895069")
-    m_p_exp_mev = mp.mpf("938.27208816")
-    m_n_exp_mev = mp.mpf("939.56542052")
+    m_p_exp_mev = mp.mpf(str(M_P_MEV_VALIDATION))  # CODATA 2022, codata_constants
+    m_n_exp_mev = mp.mpf(str(M_N_MEV_VALIDATION))  # (these two previously carried CODATA 2018 literals)
     dm_np_exp_mev = m_n_exp_mev - m_p_exp_mev  # 1.29333236 MeV (or 1.29333378 from mass difference)
     dm_np_codata_direct = mp.mpf("1.29333378")
     q_beta_exp_mev = dm_np_codata_direct - m_e_mev  # 0.78233482931 MeV
@@ -618,7 +635,7 @@ def main() -> int:
     hbar_p = (q_proton - 1) / q_proton
     h_p = q_proton - 1 / q_proton
     zD_p = q_proton**3 / (q_proton**2 + 1)
-    E0_p = m_e_mev / (q_proton * (q_proton - 1))
+    E0_p = _qbeta_e0.order_zero_scaled(m_e_mev, q_proton)
     E0_full_p = E0_p / (1 - hbar_p**2)
 
     # =========================================================================
@@ -643,6 +660,12 @@ def main() -> int:
 
     mp_qed_candidates = [
         ("Baseline (no QED correction, M_p^QED = 0)", mp.mpf(0)),
+        # RULED 2026-11-20 16:44 (owner): covariant all-pairs insertion, derived quantum-trace weighting.
+        # Q12+Q23+Q13 = 0 on W_p, so M_p^QED = 0 (= the baseline row). Lean deltaT_allPairs_connected_eq_zero.
+        ("RULED covariant all-pairs, derived qtrace weighting: M_p^QED = 0",
+         _ttq.m_p_qed_conn_mev(q_proton, m_e_mev)),
+        ("Option 1 (unscored): adjacent, derived qtrace weighting: +m_e*|q tr_adj(p)/[2]^3| [= +0.090124 keV]",
+         _ttq.m_p_qed_conn_mev(q_proton, m_e_mev, "derived", "adjacent")),
         ("Exact gap target -(m_p^QCD(q_mu) - m_p^exp) [reference only]", -delta_mp_mev),
         # PRIMARY BORROMEAN (selection, not derived; issue #8524) V^3 CONNECTED 4TH-ORDER TRACE (NucleonWeightSpaceTwoTerm.lean)
         ("DERIVED-Bor-V3 (plain): +m_e * |tr_conn(p, V^3)| [= +0.220077 keV]", +m_e_mev * abs(tr_conn_Bor_p_val)),
@@ -696,7 +719,7 @@ def main() -> int:
         h = q - 1 / q
         hbar = (q - 1) / q
         zD = q**3 / (q**2 + 1)
-        E0 = m_e_mev / (q * (q - 1))
+        E0 = _qbeta_e0.order_zero_scaled(m_e_mev, q)
         E0_full = E0 / (1 - hbar**2)
         a_em = alpha_em_qou(q)
 
@@ -795,6 +818,10 @@ def main() -> int:
 
         qed_cands = {
             "QED-0 (none = 0)": mp.mpf(0),
+            # RULED 2026-11-20 16:44: covariant all-pairs, derived weighting; connected part 0 on V^3.
+            "RULED covariant all-pairs, derived qtrace: Delta m = 0": _ttq.delta_m_qed_conn_mev(q, m_e_mev),
+            "Option 1 (unscored): adjacent conn, derived qtrace: -m_e*(q^-1 tr_n - q tr_p)_conn/[2]^3":
+                _ttq.delta_m_qed_conn_mev(q, m_e_mev, "derived", "adjacent"),
             # PRIMARY BORROMEAN (selection, not derived; issue #8524) V^3 TRACES (NucleonWeightSpaceTwoTerm.lean)
             "DERIVED-Bor-V3-Conn (plain): -m_e * Delta tr_conn(V^3)": -m_e_mev * diff_conn_V3_norm,
             "DERIVED-Bor-V3-Conn (K_n/K_p-wt): -m_e * (q^-1 tr_n - q tr_p)_conn": -m_e_mev * diff_conn_V3_KnKp_norm,
@@ -1175,6 +1202,10 @@ def main() -> int:
         "test1_mup_tension_rows": test1_rows,
         "test2b_qbeta_ladder_rows": qbeta_ladder_rows,
     }
+    witness_payload.update(q0_comparison(
+        muon=q_muon, proton=q_proton,
+        reason="measures the mu-p substrate tension: the probe solves both pins itself "
+               "(q_proton from m_p/m_e, q_muon from m_mu/m_e) and reports each under its own key"))
     witness_out = Path(__file__).with_name("np-two-term-qed-mup-tension-probe.witness.json")
     witness_out.write_text(json.dumps(witness_payload, indent=2, ensure_ascii=False) + "\n")
 

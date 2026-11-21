@@ -20,11 +20,9 @@ orders used downstream.
 - **Resolvent equation.** Given the hypothesis, the canonical resolvent
   $F_n(q) = (1 - h_q \cdot q^n)^{-1}$ satisfies
   $(1 - h_q \cdot q^n) \cdot F_n(q) = 1$.
-- Three specialisations:
+- Two specialisations:
   - pole order 10, used by p-n averaging
     ([p-n averaging uniqueness](#prop:pn-averaging-uniqueness));
-  - pole order 9, used by 1/α_EM
-    ([fine-structure observation](#rem:fine-structure-observation));
   - pole orders 3 and 4, used by
     $m_K^2/m_\pi^2$
     ([meson color-tube uniqueness](#prop:meson-color-tube-uniqueness)).
@@ -37,11 +35,9 @@ Establishing the pole non-vanishing hypothesis at order $n$ requires either:
    circle integrals) applied to the
    $\sigma$-action on Hecke representations at the torus-knot
    surface.
-2. **Algebraic route:** via the substrate's Bloch-Suslin framework
-   of the [Bring zero mode](#prop:em-coupling-bring-zero-mode),
+2. **Algebraic route:** via the substrate's Bloch-Suslin framework,
    identifying the contour integral with a specific Bloch-group
-   class on Bring's surface (the open computational sub-problem
-   already scoped there).
+   class on Bring's surface.
 
 Both routes converge on the same closed form
 $F_n(q) = 1 / (1 - h_q \cdot q^n)$.  Until the hypothesis is
@@ -55,7 +51,6 @@ into a **single shared open hypothesis**:
 
 | where used | downstream form | pole order $n$ |
 |---|---|---|
-| [fine-structure observation](#rem:fine-structure-observation) | $1/\alpha_{\rm EM} = q \cdot [9]_q \cdot [10]_q + 2/(3\pi)$ | $9$ and $10$ (genus-4 pair) |
 | [p-n averaging uniqueness](#prop:pn-averaging-uniqueness) | $\sigma_{pn}(q)$ Bring color-tube weight $1/(1 - h_q \cdot q^{10})$ | $10$ |
 | [meson color-tube uniqueness](#prop:meson-color-tube-uniqueness) | $m_K^2 / m_\pi^2 = [3]_q \cdot [4]_q$ | $3$ and $4$ (meson pair) |
 

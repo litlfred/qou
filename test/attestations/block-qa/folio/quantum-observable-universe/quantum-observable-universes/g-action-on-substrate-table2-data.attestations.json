@@ -50,6 +50,36 @@
         "reviewed_at": "2026-11-20T15:52:18.311Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.270Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.922Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -83,6 +113,36 @@
         "reviewed_at": "2026-11-20T15:52:18.341Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.294Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.945Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-em-dash": [
@@ -116,6 +176,36 @@
         "reviewed_at": "2026-11-20T15:52:18.367Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.318Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.968Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-triples": [
@@ -149,6 +239,36 @@
         "reviewed_at": "2026-11-20T15:52:18.398Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.342Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.991Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-closing-aphorism": [
@@ -182,6 +302,36 @@
         "reviewed_at": "2026-11-20T15:52:18.423Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.366Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:56.014Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-meta-commentary": [
@@ -215,6 +365,36 @@
         "reviewed_at": "2026-11-20T15:52:18.452Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.389Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:56.040Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-thesis-restatement": [
@@ -248,6 +428,36 @@
         "reviewed_at": "2026-11-20T15:52:18.477Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.413Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:56.064Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-performed-warmth": [
@@ -281,6 +491,36 @@
         "reviewed_at": "2026-11-20T15:52:18.508Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.435Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:56.089Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-superlative": [
@@ -314,6 +554,36 @@
         "reviewed_at": "2026-11-20T15:52:18.539Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.458Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:56.125Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "trap-nonspeakable": [
@@ -347,6 +617,36 @@
         "reviewed_at": "2026-11-20T15:52:18.569Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Read g-action-on-substrate-table2-data.md and .ts title in full; table cells only, no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.481Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Table of factors with one-line meanings; no prose pattern of this kind. Values checked: [4]^2[6]≈107.89, 2[4]+[6]≈14.607, [4][6]≈26.25 at q0."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:56.148Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Table of factors/values with one-line meanings; no prose pattern of this kind. Values recomputed with mpmath at proton q0=1.10997858275138080759166909561: [3]^2=9.264147483859, [4]^2[6]=107.891521558, 2[4]+[6]=14.607451415, [4][6]=26.253007109 — all match."
       }
     ],
     "expo-milnor-clarity": [
@@ -383,6 +683,36 @@
         "reviewed_at": "2026-11-20T15:52:17.980Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.135Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.614Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "compute_no_mpf_to_float_cast": [
@@ -400,6 +730,36 @@
         "reviewed_at": "2026-11-20T15:52:18.007Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.157Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.645Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "respects_archimedean_wall": [
@@ -417,6 +777,36 @@
         "reviewed_at": "2026-11-20T15:52:18.034Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.181Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.676Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "code_is_commented": [
@@ -434,6 +824,36 @@
         "reviewed_at": "2026-11-20T15:52:18.061Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.204Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.706Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "variables_typed": [
@@ -451,6 +871,36 @@
         "reviewed_at": "2026-11-20T15:52:18.084Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.227Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.730Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "has_references_to_paper": [
@@ -468,6 +918,36 @@
         "reviewed_at": "2026-11-20T15:52:18.109Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.251Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.753Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "connected_to_ci_pipeline": [
@@ -485,6 +965,36 @@
         "reviewed_at": "2026-11-20T15:52:18.140Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.274Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.775Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "deprecated": [
@@ -502,6 +1012,36 @@
         "reviewed_at": "2026-11-20T15:52:18.171Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.298Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.798Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "uses_library_framework_appropriately": [
@@ -519,6 +1059,36 @@
         "reviewed_at": "2026-11-20T15:52:18.203Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.327Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.820Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "assertions_are_falsifiable": [
@@ -536,6 +1106,36 @@
         "reviewed_at": "2026-11-20T15:52:18.231Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion; table block .ts has no computation field, so there is no script to audit."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:11.351Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.843Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "fit-section-chapter": [
@@ -553,6 +1153,36 @@
         "reviewed_at": "2026-11-20T15:52:18.255Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Data table for conj:g-action-on-substrate, placed in its subsection sec:emergence-g-action; factors 1,[4],[4],[6] match the corrected (G-4)."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.222Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Data table extracted from conj:g-action-on-substrate, placed beside it."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.866Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Data table extracted from conj:g-action-on-substrate and placed beside it; the new (H1) row matches the parent's new section 'The value on the strand-pair slots'."
       }
     ],
     "uses-editorial-completeness": [
@@ -571,6 +1201,36 @@
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "uses = [conj:g-action-on-substrate], the only block the table depends on.",
         "notes": "The 'meaning' column calls the [4]_q/[6]_q factors 'Goldstone' modes; (G-2) speaks of components A^(W±), A^(Z), not Goldstones. Consider 'W^+ component (W-host)' to match the source block."
+      },
+      {
+        "field_hash": {
+          "md": "78b1d8841c71",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:34.246Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "uses[] = conj:g-action-on-substrate, the only block the table depends on."
+      },
+      {
+        "field_hash": {
+          "md": "835ed8f72658",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:55.899Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "uses[] = conj:g-action-on-substrate, the only block the table depends on; (H1), (G-2)-(G-4) are defined there."
       }
     ]
   }

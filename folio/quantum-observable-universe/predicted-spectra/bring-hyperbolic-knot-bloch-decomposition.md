@@ -24,7 +24,7 @@ $$
 
 ## Framing
 
-The mass sector delivers Bloch-Wigner content via $\tau_{\mathrm{arch}}$ ([`figure-8-archimedean-illustration`](#rem:figure-8-archimedean-illustration)). Each hyperbolic knot $K \subset S^3$ contributes a class $[Z_K] \in B(F_K)$. The Bloch-Wigner image of this class is the hyperbolic volume of $S^3 \setminus K$. The force-carrier sector features torus knots $T(2,9)$ and $T(3,5)$. These knots produce the multiplicative bare formula $q[9]_q[10]_q$. They contribute zero to the Bloch-Wigner image. They are Seifert-fibered and lack ideal-tetrahedron triangulations. The additive correction $2/(3\pi)$ in [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode) originates in the hyperbolic sector of knots embedded in Bring's surface.
+The mass sector delivers Bloch-Wigner content via $\tau_{\mathrm{arch}}$ ([`figure-8-archimedean-illustration`](#rem:figure-8-archimedean-illustration)). Each hyperbolic knot $K \subset S^3$ contributes a class $[Z_K] \in B(F_K)$. The Bloch-Wigner image of this class is the hyperbolic volume of $S^3 \setminus K$. The force-carrier sector features torus knots $T(2,9)$ and $T(3,5)$. These knots produce the multiplicative bare formula $q[9]_q[10]_q$. They contribute zero to the Bloch-Wigner image. They are Seifert-fibered and lack ideal-tetrahedron triangulations. The additive correction $2/(3\pi)$ in [additive Bring zero-mode form of $1/\alpha_{EM}$](#prop:em-coupling-bring-zero-mode) originates in the hyperbolic sector of knots embedded in Bring's surface.
 
 ## Field structure
 

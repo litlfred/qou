@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:58:18.488970+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T16:13:43.967120+00:00",
+  "commitSha": "4a121127e76f8e04a03c941f92d80787356bf07d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 6,
   "computation": "symmetrized-binding-closure",
   "scriptFile": "symmetrized_binding_closure.py",
-  "scriptHash": "375987e236ef",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "ead62dcaef68",
+  "scriptCommitSha": "68cf6abfe6a35ebe3fdc40a84c2740ee1f30740e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
   },
   "invocation": {
     "argv": [
@@ -34,39 +35,39 @@
   },
   "description": "Task 2 — wires the block-swap symmetrization shift ΔB=scale·log(S_free/S_atom) (task 1) into the ⁴He log-ratio binding and tests closure. RESULT: the shift is O(0.3–1.5 MeV), a few %% of the O(20–26 MeV) AME gap, and sign-only points the wrong way — so the identical-nucleon symmetrization is a real but SUB-DOMINANT correction; the binding form/convention is the dominant gate, not the symmetrization. Sign-only convention (self-consistent); averaged is the slow refinement, verdict convention-robust.",
   "data": {
-    "S_atom": 0.5352578968316513,
-    "S_free": 0.37422067813386156,
+    "S_atom": 1.0625544053624754,
+    "S_free": 0.6907825610797088,
     "rows": [
       {
         "scale": "Q_beta",
         "scale_MeV": 0.78233355931,
-        "B_log_naive_MeV": 1.6300093745272526,
-        "B_log_sym_MeV": 1.3500098396013693,
-        "symmetrization_shift_MeV": -0.2799995349258833,
-        "gap_to_AME_naive_MeV": 26.665664625472747,
-        "gap_to_AME_sym_MeV": 26.945664160398632,
-        "shift_over_gap": 0.010500377127611883
+        "B_log_naive_MeV": 1.149794186964291,
+        "B_log_sym_MeV": 0.8129166598915365,
+        "symmetrization_shift_MeV": -0.3368775270727545,
+        "gap_to_AME_naive_MeV": 27.14586821303571,
+        "gap_to_AME_sym_MeV": 27.482745740108463,
+        "shift_over_gap": 0.012409900631249016
       },
       {
         "scale": "E_0",
-        "scale_MeV": 4.185981363294476,
-        "B_log_naive_MeV": 8.721585291297306,
-        "B_log_sym_MeV": 7.223409965718011,
-        "symmetrization_shift_MeV": -1.4981753255792953,
-        "gap_to_AME_naive_MeV": 19.574088708702693,
-        "gap_to_AME_sym_MeV": 21.07226403428199,
-        "shift_over_gap": 0.07653870113060245
+        "scale_MeV": 4.2274833556290305,
+        "B_log_naive_MeV": 6.213124478614479,
+        "B_log_sym_MeV": 4.392744767635955,
+        "symmetrization_shift_MeV": -1.8203797109785238,
+        "gap_to_AME_naive_MeV": 22.08253792138552,
+        "gap_to_AME_sym_MeV": 23.902917632364044,
+        "shift_over_gap": 0.08243525800608284
       }
     ],
     "verdict": "Symmetrization does NOT close the ⁴He gate: the shift scale·log(S_free/S_atom) is O(0.3–1.5 MeV) — only a few %% of the O(20–26 MeV) gap to AME — and (sign-only) it points the WRONG way (S_free<S_atom ⇒ negative shift, deepening the under-prediction). The binding-form / trace-convention is the dominant gap, NOT the identical-particle symmetrization. The symmetrization is a real but sub-dominant O(1 MeV) correction; the averaged-convention sign/magnitude is the slow-path refinement, but the order-of-magnitude verdict (shift ≪ gap) is convention-robust.",
     "upstream_witness_hashes": [
       {
         "path": "block-swap-binding.witness.json",
-        "sha256": "1510e96ae752ec84bf5817f188fd0fe5763df3d4279c0d707ce565aa5e024e59",
-        "size_bytes": 2344,
-        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
-        "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
-        "computedAt": "2026-06-22T14:26:20.228718+00:00"
+        "sha256": "f9c8de5637a9b6fe59622ea2f263cd365235cbdbddc07433388bfec822619703",
+        "size_bytes": 2588,
+        "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+        "scriptCommitSha": "6e1009bed880a0ebec181fd38a134930f7df82b3",
+        "computedAt": "2026-08-30T09:15:57.343959+00:00"
       }
     ]
   }

@@ -24,7 +24,7 @@ is selection against the target.
 
 PIN. The census traces ``tr_conv_D`` are recorded at the proton pin, so every
 D cell is evaluated at the proton pin (``q_parameter.Q_50_DIGIT_STR``).
-``derived_masses`` computes Q_β at the muon pin (``_q_0``, bean ``qou-aj91``);
+``derived_masses`` computed Q_β at the muon pin until 2026-11-20 (bean ``qou-aj91``); it now uses the proton pin;
 the probe records that separately as a second straddle and does not mix it into
 the D cells. ``Delta_S`` has a closed-form trace, so it is also evaluated at the
 muon pin to measure how much the pin itself moves a cell.
@@ -43,6 +43,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 
 set_compute_dps()
 
@@ -73,7 +74,7 @@ def main() -> int:
     m_p_prod, m_n_prod = (mp.mpf(str(v)) for v in proton_neutron_mass_mev())
     q_beta_prod = mp.mpf(derived_masses.q_beta_kashiwara_n2_mev())
     q_a = mp.mpf(derived_masses.q_beta_predicted_mev())
-    q_muon = mp.mpf(derived_masses._q_0())
+    q_muon = mp.mpf(derived_masses._q_0_muon())
     q_prot = mp.mpf(Q_50_DIGIT_STR)
 
     census = json.loads(CENSUS.read_text())["data"]["per_candidate"]
@@ -129,7 +130,7 @@ def main() -> int:
         "m_p_MeV": fmt(m_p_prod),
         "m_n_MeV": fmt(m_n_prod),
         "m_n_err_ppb": fmt(_ppb(m_n_prod), 8),
-        "Q_beta_pin": "muon (derived_masses._q_0, bean qou-aj91)",
+        "Q_beta_pin": "proton (derived_masses._q_0; muon straddle removed 2026-11-20, PR #8591, bean qou-aj91)",
         "why_mixed": "base Q_A is the z=1 cell retired 2026-09-08; the phase "
                      "alpha=(z-1)h/2 uses z_D",
     })
@@ -158,7 +159,16 @@ def main() -> int:
                      tolerance="1e-20",
                      source="tr_{z_D}(Delta_S) closed form vs census tr_conv_D")
     wb.add_upstream(CENSUS)
-    wb.save()
+    # Both pins are read ON PURPOSE: the d_cells are at the proton pin, the
+    # production value is derived_masses' muon pin, and delta_S_pin_effect /
+    # production_q0_straddle measure the difference. Stamp the values this run
+    # actually computed with, so the audit re-checks each leg.
+    wb.save(q0_comparison(
+        muon=q_muon, proton=q_prot,
+        reason="records the production m_n (Q_beta at derived_masses._q_0, the "
+               "muon pin) beside every convention-D cell at the proton pin "
+               "(q_parameter.Q_50_DIGIT_STR), and measures the muon-vs-proton "
+               "shift of both; both pins are read on purpose"))
 
     print(f"production m_n  {mp.nstr(m_n_prod, 15)}  err {mp.nstr(_ppb(m_n_prod), 6)} ppb  (retired mixed base)")
     for r in rows:

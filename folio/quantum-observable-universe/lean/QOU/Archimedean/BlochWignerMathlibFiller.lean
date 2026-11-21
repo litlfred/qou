@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.BlochWignerUnitCircle
 
 
 /-!
@@ -55,9 +55,13 @@ namespace QOU.Archimedean
 /-- The **Bloch-Wigner dilogarithm restricted to the unit circle**:
     for `z = e^{iθ}` with `|z| = 1`, the boundary correction
     `log|z| · arg(1-z)` vanishes, leaving
-    `D(e^{iθ}) = Im(Li_2(e^{iθ})) = Cl_2(θ)`. -/
+    `D(e^{iθ}) = Im(Li_2(e^{iθ})) = Cl_2(θ)`.
+    Imported from `QOU.Archimedean.BlochWignerUnitCircle` (bean `qou-tc8y`). -/
 -- Ref: [zagier1986], [bloch2000]
-noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ
+@[simp] theorem BlochWigner_unit_circle_eq_Cl_2 (θ : ℝ) :
+    BlochWigner_unit_circle θ = Cl_2 θ := by
+  unfold BlochWigner_unit_circle
+  ring
 
 /-- **Boundary lemma:** `D(e^{i · 0}) = D(1) = 0`. -/
 @[simp] theorem BlochWigner_unit_circle_zero :

@@ -5,16 +5,16 @@ Introduce a compact notation to express the knot content of composite particles.
 See [Table 1](#tbl:knot-formula-table-table1-data).
 
 **Derived shorthand for quarks.** 
-The up and down quarks are not independent generators. They are expressed in terms of $T_{2,3}$:
+The up and down quarks are not independent generators. Each is an unknot strand of the Borromean braid $\mathcal{B}_3$ ([up quark](#def:up-quark)), distinguished by crossing orientation, and each has a lepton partner in the [knot–particle dictionary](#rem:knot-particle-dictionary):
 
 $$
-  \mathfrak{u} =  T_{2,3}, \qquad
-  \mathfrak{d} =  T_{2,3}^{\sigma}.
+  \mathfrak{u} \leftarrow  T_{2,3}, \qquad
+  \mathfrak{d} \leftarrow  T_{2,3}^{\sigma}.
 $$
 
-Here $\mathfrak{d}$ denotes the mirror trefoil $T_{2,-3}$, of three crossings; the mirror marks the down-type member of the doublet, not an antiparticle. The heavier quarks follow a similar pattern:
-$\mathfrak{s} = T_{2,5}^{\sigma}$, $\mathfrak{c} = T_{2,5}$,
-$\mathfrak{b} = T_{2,7}^{\sigma}$, $\mathfrak{t} = T_{3,4}$.
+Here $T_{2,3}^{\sigma}$ is the mirror trefoil $T_{2,-3}$; the mirror marks the down-type member of the doublet, not an antiparticle. The arrow names the lepton partner, not the quark's knot type. The heavier quarks follow a similar pattern:
+$\mathfrak{s} \leftarrow T_{2,5}^{\sigma}$, $\mathfrak{c} \leftarrow T_{2,5}$,
+$\mathfrak{b} \leftarrow T_{2,7}^{\sigma}$, $\mathfrak{t} \leftarrow T_{3,4}$.
 
 **Nucleon shorthand.** 
 The proton and neutron are color-tube-linked triples bound by Hopf links:

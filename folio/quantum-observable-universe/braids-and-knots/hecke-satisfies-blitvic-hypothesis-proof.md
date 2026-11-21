@@ -46,8 +46,7 @@ $$
   \;=\;
   (q - q^{-1}) z + 1 - z^2,
 $$
-which is positive for every real $q > 0$ under convention D
-([centred Hecke variance positivity](#prop:centered-hecke-variance-positive)).
+which is positive for every real $q > 0$ under convention D.
 
 The general matching is therefore
 $\mathrm{tr}_M(\tilde\sigma_i \tilde\sigma_j) =

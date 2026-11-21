@@ -6,14 +6,14 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/conj-explicit-central-idempotent",
+  "@id": "papers/quantum-observable-universe/blocks/thm-explicit-central-idempotent-cross-checks",
   "@type": [
-    "folio-assistant-sci:Conjecture",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
-  "label": "conj:explicit-central-idempotent",
-  "kind": "conjecture",
-  "title": "The four Murphy–Lagrange cross-checks for $e_\\lambda$ follow from Lagrange interpolation in commuting variables",
+  "label": "thm:explicit-central-idempotent-cross-checks",
+  "kind": "theorem",
+  "title": "The Murphy–Lagrange elements $e_\\lambda$ are the central primitive idempotents of $H_n(q)$: sum to one, orthogonality, bar-invariance, conjugate pairing",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-jucys-murphy-central-elements-qou",
     "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form"
@@ -23,10 +23,10 @@
     "murphy-elements",
     "lagrange-interpolation",
     "hecke-algebra",
-    "open-problem",
-    "primary-conjecture"
+    "bar-involution",
+    "sign-twist"
   ],
-  "leanRef": "qou:QOU.BraidKnot.ExplicitCentralIdempotent.ExplicitCentralIdempotentConjecture",
-  "text": "conj-explicit-central-idempotent.md",
+  "leanRef": "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks",
+  "text": "explicit-central-idempotent-cross-checks.md",
   "provenance": "authored"
 }

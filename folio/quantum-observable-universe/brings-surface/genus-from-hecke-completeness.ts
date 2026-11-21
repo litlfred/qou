@@ -20,5 +20,6 @@ export default lemma({
       date: "2026-09-15",
       body: "The Lean sibling's `torusKnotEmbeddingCount` disagreed with this block's own table and was corrected in the same pass: it gave `4 => 5` where the table gives 6, and attributed `T_{3,5}` to `g = 3` where its Seifert genus `(3-1)(5-1)/2 = 4` puts it at `g = 4`. The understated value was exactly the one that made the theorem's `= 5` hold; with the true count the honest statement is `5 <= N(4)`, which is what the lemma claims.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The spanning statement is separated out as [the block-rank remark](#rem:torus-evaluation-block-rank), which records that the evaluation matrix has rank $4$ at $g = 4$, not $5$." },
   ],
 });

@@ -509,7 +509,9 @@ def nucleon_gen_chains(quarks, *, q=None, allow_float64: bool = False):
     # after h_loc itself was exact.
     if q is None:
         import mpmath as _mpm
-        with _mpm.workdps(max(_mpm.mp.dps, 60)):
+        # Use max(_mpm.mp.dps, 70) so import-time _PROTON_G0/_NEUTRON_G0 match
+        # calls made after set_compute_dps() (COMPUTE_DPS = 70; bean qou-qpj5).
+        with _mpm.workdps(max(_mpm.mp.dps, 70)):
             from q_parameter import Q_50_DIGIT_STR as _Q50
             _qx = _mpm.mpf(str(_Q50))
             h_loc = _qx - _mpm.mpf(1) / _qx

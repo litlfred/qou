@@ -122,7 +122,8 @@ theorem stokesAmplitude_eq_zero_of_dim_zero {R : Type*} [CommRing R] {d : ℕ}
     (coeff v : Fin d → R) (hd : d = 0) :
     stokesAmplitude d coeff v = 0 := by
   subst hd
-  simp [stokesAmplitude]
+  dsimp [stokesAmplitude]
+  simp
 
 /-- **C1's `∞` supplies zero local moduli (sorry-free).**  The pure-isoclinic single edge
     `(r, d) = (2, 1)` at C1's `∞` (after the forced ramified pullback, `k = 1`) has
@@ -220,5 +221,16 @@ class GlobalBirkhoffSuppliesAmplitude {R : Type*} [Field R] [LinearOrder R]
   /-- and it drives the even-face correction to the physical lift `κ > 1` (unreachable by the
       self-adjoint branching Schur complement, `A3OffBlockDerivation.magnitudeFactor_le_one`). -/
   gives_lift : evenFaceCorrection A (crossTerm B (Csa + E) D) = κ ∧ 1 < κ
+
+/-- Linearity of `stokesAmplitude d coeff` in the coordinate vector `v`:
+`stokesAmplitude d coeff (v + w) = stokesAmplitude d coeff v + stokesAmplitude d coeff w`. -/
+theorem stokesAmplitude_add_right {R : Type*} [CommRing R] (d : ℕ)
+    (coeff v w : Fin d → R) :
+    stokesAmplitude d coeff (fun i => v i + w i) =
+      stokesAmplitude d coeff v + stokesAmplitude d coeff w := by
+  dsimp [stokesAmplitude]
+  rw [← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  ring
 
 end QOU.QBeta.StokesAmplitudeE

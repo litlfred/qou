@@ -198,3 +198,308 @@ striking, but the label is provably not the n/p distinction, so adopting it woul
 `down-quark`, `up-quark`, `down-quark-properties`, `hydrogen-knot-structure`, `electron-knot`), and **36** `.md` blocks use
 "typed crossing". Rewriting them needs the label decision above: under C, u and d are T³ weights (`OverStrandWeight`);
 under B they are J₄ lines. Not edited until the owner picks.
+
+## 10. Owner choice "3 2" (2026-11-20): keep A and B side by side; research label C — first result
+
+**Recorded:** no label ruling. Labels A and B stay side by side; the round-trip theorem is on `main` (#8615). ε remains the
+2026-09-08 ruling.
+
+**Label C, measured.** Probe `computations/qbeta/qbeta_label_c_quantum_trace_probe.py` (5/5 exact checks over ℚ(q)). With
+u = e₁ (T³ = +½), H₃ acting on (ℂ²)^⊗3 through the Jimbo Ř and K = diag(q, q⁻¹), the quantum trace Tr(K^⊗3 ·) restricted
+to each natural subspace gives:
+
+| restriction | τ(J) | Q_β (order-zero E₀) |
+|---|---|---|
+| whole (ℂ²)^⊗3 | (q⁴+1)/(q²+1)² = convention-D y₃ | −43.16 % |
+| T³ = +½ or −½ weight space (p or n charge sector) | 1/3 for every q | −62.51 % |
+| isospin-½ = H₃ (2,1) block (the nucleon's own sector) | **0** | **Q_β = 0** |
+| isospin-3/2 = H₃ (3) block | 1 | +12.47 % |
+
+**Structural reading (provable, and the useful part).** τ(Δ_S) = −(h[2]/2)(y₃ − y₁₁₁) and χ₍₂,₁₎(Δ_S) = 0
+(`QBetaChiralityReduction.chi21_deltaS`). So **Q_β sees only the weight a functional puts on the isospin-3/2 block; the
+nucleon's own isospin-½ block contributes exactly zero.** The CODATA value needs y₃ ≈ 0.889 (order-zero E₀): roughly 89 %
+of the weight on the (3) block. Label B's round trip lands at 0.892 *because* its Ja line is the (3) sector. No label-C
+restriction of the quantum trace reaches it; the values are z_D, 1/3, 0 and 1.
+
+**What that leaves for label C.** A derivation must explain why the decay functional weights the isospin-3/2 channel by
+≈ [2]²·[2]_{q²}/[3]² (or an E₀-dependent equivalent), e.g. an E/F round trip through an intermediate isospin-3/2 state.
+That is the next research target, and it is the same object label B points at, now with its physical meaning named.
+
+## 11. Option 2, first attempt: the single-quark E/F round trip (scope-(a) negative)
+
+β decay changes **one** quark d → u, so the label-C transition is a single-site raising operator E_k on (ℂ²)^⊗3. The
+coproduct Δ(E) = Σ E_k (K on the right) commutes with H₃ (checked) and therefore cannot leave the nucleon's isospin-½
+sector. A single-site E_k can, so it is the natural route "through isospin 3/2".
+
+Probe `computations/qbeta/qbeta_label_c_single_quark_flip_probe.py`, exact over ℚ(q): A = Σ_k E_k P_n F_k, with P_n the
+nucleon (2,1) block at T³ = −½, and τ_A(J) = Tr(K^⊗3 A J)/Tr(K^⊗3 A).
+
+* τ_A(J) = q⁴ / (2(q⁴+q²+1)) = 0.20239 at the proton pin, identical for the bare and the coproduct-dressed site operators.
+* The (3)-block (isospin-3/2) fraction of A is 0.169 (bare) / 0.168 (dressed), i.e. ≈ 1/6, the classical branching.
+* Q_β = 0.17808 MeV, **−77.2 %**.
+
+**Scope (a):** this construction, alone, misses by −77 %. It does not exclude the isospin-3/2 channel; it measures that a
+single-quark flip from the nucleon sends only ≈ 1/6 of its weight there, while CODATA needs ≈ 0.889 on that block.
+
+**Status of the whole arc (one table).** All values are y₃ = τ(J), and Q_β uses the order-zero E₀:
+
+| construction | y₃ | Q_β | status |
+|---|---|---|---|
+| ruled ε: Markov trace at z_D (= label-A round trip, = whole-space quantum trace) | 0.5054 | −43.2 % | ruled 2026-09-08; now explained by two proved identities |
+| augmentation / isospin-3/2 block alone | 1 | +12.5 % | admissible |
+| label-B round trip through the strand-4 γγ vertex (J₄ lines) | 0.8921 | **+0.33 %** | proved identity; label is isospin multiplicity, not n↔p; not adopted |
+| label C: one T³ charge sector | 1/3 | −62.5 % | measured |
+| label C: nucleon isospin-½ block | 0 | 0 | proved (χ₍₂,₁₎(Δ_S) = 0) |
+| label C: single-quark E/F round trip | 0.2024 | −77.2 % | measured, this section |
+| needed for CODATA | 0.8891 | 0 | — |
+
+The only construction near the measurement is the strand-4 (J₄) round trip. Its weight sits on the isospin-3/2 block,
+which Q_β alone sees. Every label-C construction tried so far weights that block at ≤ 1/3.
+
+## 12. Cross-reference: the sibling label-C work (PR #8632, open at time of writing)
+
+A parallel workstream reached the same label-C picture independently, and goes further on one point:
+
+* `QOU/QuarkState/IsospinRaisingRoundTrip.lean` (`Rc_comm_K`) **proves** every Hecke element preserves charge, so labels A and
+  B, being flips inside the Hecke algebra, **cannot be n ↔ p (scope b)**. §9's "label B is isospin multiplicity, not n↔p" is
+  therefore a theorem, not a scoping remark.
+* Its coproduct round trip ε_C(X) = tr_{W₋}(T⁻T⁺X)/tr_{W₋}(T⁻T⁺) gives y₃ = [2]²/([2]²+2) = 0.6691, i.e. Q_β −24.75 %
+  (order-zero E₀). It agrees with §§10–11 on z_D (whole space), 1/3 (weight space) and 0 (isospin ½); the single-quark flip of
+  §11 (−77 %) is the complementary construction.
+* Briefing to all workstreams: `docs/coordination/2026-11-20-w2-qbeta-ud-briefing.md`; posted on #8526 and on the open
+  qou-99qc / photon PRs.
+
+## 13. Walking the chain from the fundamentals (owner request, same day)
+
+Owner: *"start from the fundamentals of the pairing and the categorical lagrangian and the
+non-abelian Stokes and see where it comes out if you walk through the whole thing."*
+
+### 13.1 The chain, as the corpus states it
+
+1. **Frobenius pairing** (`def:frobenius-pairing`): `∫_A ∘ μ`, non-degenerate. For
+   `O(SU(2))` it is the Haar pairing, spin-`j` weight `1/(2j+1)`.
+2. **Categorical Lagrangian and action** (`def:categorical-lagrangian`,
+   `prop:qou-canonical-action`): `𝔖_q = tr(𝓛_q)`, `tr = ∫_A ∘ tr_A`. Nothing in these
+   blocks names a functional on Hecke elements or an energy scale. They reach `Q_β` only
+   through the mass identity.
+3. **Mass identity and non-abelian holonomy** (`def:mass-identity`): the mass of a cycle is
+   `‖∫_A(u · hol(w))‖`, with `hol(w)` the ordered (multiplicative-integral) product of the
+   segment transports. On `V^{⊗n}` each crossing is `T(σ^{±1}) = q^{±1} − e`. This is the
+   non-abelian Stokes step: the cycle's value is the ordered product, and a single crossing
+   flip changes it by `σ − σ⁻¹ = h·1`, the skein.
+4. **Trace on braids** (`prop:feynman-categorical-trace`): for `C = Rep(SU_q(2))`,
+   `∫_A ρ(β)` is the quantum trace on `V^{⊗n}` normalised by `dim_q V^{⊗n}`. Its block
+   weights are `dim_q(V_λ)/[2]^n`, i.e. the Markov trace at `z_D = q³/(q²+1)`.
+5. **Braid classes**: the mass of a braid class is the framing-corrected form
+   `(1+q²)^n q^{−n−2w(β)} ∫_A ρ(β)`, not the raw trace.
+
+### 13.2 What comes out
+
+**(a) The walk lands on the ruled `z_D`.** Steps 1–4 give `ε` = the quantum trace of
+`Rep(SU_q(2))` on `V^{⊗3}`. That is `z_D`: `Q_β = 0.44470` MeV (−43.157 %) with the
+order-zero `E₀`, `0.44911` MeV (−42.594 %) with the tower `E₀`. The ruling of 2026-09-08 is
+therefore *derivable* from the corpus's own chain once `C = Rep(SU_q(2))` and `V` the
+fundamental are granted. It was recorded as a ruling; the chain supplies the derivation.
+
+**(b) One closed form covers every rank.** Replace `SU_q(2)` by `SU_q(N)` and write
+`a = q^N`, `q = e^λ`. On `Δ_S` the quantum-trace functional is
+
+$$
+  |\varepsilon_N(\Delta_S)| = \frac{h^2}{2}\,\frac{a^2+1}{a^2-1} = \frac{h^2}{2}\coth(N\lambda).
+$$
+
+`QOU/QBeta/QuantumTraceFamilyCoth.lean`, sorry-free over a generic field of characteristic
+≠ 2 (`qtrace_family_closed_form`, `_rank_one`, `_rank_two`). Every row of the table was
+already on record under another name:
+
+| rank `N` | what it is | `Q_β`, order-zero `E₀` | tower `E₀` |
+|---|---|---|---|
+| 1 | augmentation (`z = q`) | 0.87989 (+12.47 %) | +13.59 % |
+| 2 | **`z_D`, the ruling** | 0.44470 (−43.16 %) | −42.59 % |
+| 3 | colour `SU_q(3)` | 0.30172 (−61.43 %) | −61.05 % |
+| ∞ | standard trace `τ(σ_w) = δ_{w,e}` | 0.09148 (−88.31 %) | −88.19 % |
+
+The `N → ∞` limit is the **canonical symmetrising form of `H_n`**, the actual Frobenius form
+of the Hecke algebra as a symmetric algebra (the Haar analogue of step 1). It is the
+furthest from CODATA. `coth` is decreasing, so **no integer rank lands**: CODATA sits
+between `N = 1` and `N = 2`. As a diagnostic only, the real rank that would land is
+`N* = 1.1258` (order zero) / `1.1371` (tower). It is not a natural value and is not adopted.
+
+Scope note: the `z_D` trace is degenerate on `H_3` (it kills the sign block), so it is a
+Frobenius form only on the Temperley–Lieb quotient `TL_3`, where `Δ_S` is unaffected
+(`neutron-qvalue-symbolic`, sign-block paragraph).
+
+**(c) The framing-corrected mass does not see the crossing sign.** At `z_D`, `σ` (writhe 1)
+and `σ⁻¹` (writhe −1) both have framed trace `q/(q²+1) = 1/[2]`
+(`framed_sigma_eq_framed_sigmaInv`). On three strands their closures are the same
+two-component unlink, so this is isotopy, not an accident. Consequence: under step 5's
+definition of mass, a `uu` crossing and a `dd` crossing are equal, and the typed-crossing
+`Δ` is zero. It is nonzero only under the *raw* (blackboard-framed) trace, which is what
+`neutron-qvalue-symbolic` uses. So in this construction **`Q_β` is entirely a writhe
+effect**. The framed form also does not extend to a linear functional consistent with the
+rewrite `σ⁻¹ = σ − h` (framed value of `σ − h·1` is `1/[2] − h ≠ 1/[2]`). The corpus uses
+the framed form for masses and the raw form for `Q_β`; this is a tension in the
+definitions, recorded here, not resolved.
+
+**(d) The energy scale is not on the chain.** No step above produces `E₀ =
+m_e/(q(q−1))`. On the ruled trace CODATA needs `7.3641` MeV `= 1.7592 × E₀` — the same
+`F_required = 1.75924` already in AGENTS.md §Canonical derivation chain. The mass channel's
+own scale for a unit of trace, `2 m_μ [3]_q!/q³ = 945.76` MeV, sends the same `Δ` to
+`100.47` MeV. The canonical neutron mass does not use it either: `canonical_mass` sets
+`m_n = m_p + Q_β + m_e` with `Q_β` from the retired mixed base, so the mass channel has no
+`n − p` mechanism of its own.
+
+### 13.3 Where this leaves `qou-99qc`
+
+- Derived: `ε = z_D` follows from the chain given `C = Rep(SU_q(2))`. This is the ruled
+  value, −43 %.
+- Not derived, and the chain does not supply it: the scale `E₀`, and the choice between the
+  raw and the framed trace for a crossing-sign difference.
+- Excluded by the closed form, scope (b) (invariant: `coth` is monotone in `N`): every
+  quantum-trace functional of a rank-`N` fundamental, for integer `N ≥ 2`, lies at or below
+  −43 %. Changing the gauge rank cannot close the gap; only `N = 1` lies above CODATA.
+- Open: whether the 1.759 belongs to the scale or to the functional. The fundamentals
+  derive the functional and leave the scale unexplained, which points at the scale.
+
+Probe: `computations/qbeta/qbeta_quantum_trace_rank_family_probe.py` (5/5 exact checks).
+
+## 14. Option 1 attempted: is the scale `E₀` on the chain? (owner "Try", same day)
+
+Scope-(a) negative. The chain does not produce `E₀`, and it cannot produce `Q_β` with any
+scale that it also uses for the nucleon mass.
+
+**(a) `E₀` is the chain's conversion times one `ℏ_q`.** The corpus converts mass to energy by
+`𝔈 = 𝔪·c_q²`, `c_q = 1/(q−1)` (`def:information-speed-of-light`). Exactly,
+
+$$
+  E_0 = \frac{m_e}{q(q-1)} = m_e\,c_q^2\,\hbar_q, \qquad \hbar_q = \frac{q-1}{q}.
+$$
+
+`m_e c_q² = 42.248` MeV. The extra `ℏ_q` is the "per Planck tick" factor of
+`beta-decay-energy-scale`. No step of the action or the mass identity supplies it. CODATA
+needs `0.17431 · m_e c_q² = 1.7592 ℏ_q · m_e c_q²` on the ruled trace.
+
+**(b) Δ is too large relative to the nucleon.** On the single wrap at `z_D` (Hopf factor
+read as `z_D²`; the census of readings is in `qbeta_delta_candidate_census_probe.py`), the proton
+trace is `t_p = 0.31134` and `Δt/t_p = −0.3412`. The physical ratio is
+`(Q_β + m_e)/m_p = 0.0013784`, which is 248× smaller. Any normalisation that sets the
+nucleon mass and the difference from the same trace overshoots:
+
+| normalisation | `Q_β + m_e` |
+|---|---|
+| linear, scaled so `t_p ↦ m_p` | 320.2 MeV |
+| quadratic, the mass identity's Frobenius norm `⟨x,x⟩` | 531.1 MeV |
+| mass channel `2m_μ[3]!/q³` per unit trace | 100.5 MeV (`Q_β` alone) |
+| `m_e c_q²` | 4.49 MeV |
+
+**Conclusion.** `Q_β` is right only if its scale is decoupled from the nucleon-mass scale.
+`E₀` does that decoupling, and its `ℏ_q` is an extra factor, not something derived. Writing
+`E₀` with CAL-1 and CAL-2 alone makes it fit-free in form. It does not make it a step of the
+chain. The open question is now which element of `m_e·ℚ(q₀)` the decay channel's scale is,
+and why. That is a gap, not a closure. Probe: same file, last block.
+
+## 15. At what order can an n/p splitting appear? (owner "keep exploring", 2026-11-21)
+
+§14 found that every n/p construction on record is first order in `h` relative to the
+nucleon. That covers the typed-crossing `Δ_S` (`|Δt|/t_p = 0.341`) and the four-strand state
+difference of PR #8636 (first order in `q − 1`). The physical ratio
+`(Q_β + m_e)/m_p = 1.378e-3` is 248× smaller. This section asks where a first-order term
+comes from and what would remove it. It is a structural reading with order counting. It is
+not a derivation, and it selects no knot.
+
+**(a) The first-order term is a writhe change.** Replacing a `uu` crossing `σ` by a `dd`
+crossing `σ⁻¹` lowers the writhe by 2. §13(c) showed the framing-corrected trace cannot see
+that change. The γγ vertex `σ₀σ₁⁻¹` has writhe 0, and so does every γγ word, including the
+Borromean base `V³`. For words of equal strand count and equal writhe, the raw Markov trace
+is the framing-corrected one times a common factor (`def:mass-identity`, braid classes).
+So a difference between two γγ words is a difference of **link invariants**.
+
+**(b) Link-invariant differences start at second order.** For knots, the Jones polynomial
+in `x = t − 1` is `1 + 0·x + c₂x² + …`: `V(1) = 1` and `V′(1) = 0` [jones1987]. The
+coefficient of `x^k` is a Vassiliev invariant of order ≤ k [birmanlin1993], and it is an
+integer. Two knots read with one shared scale therefore differ first at the order `k ≥ 2`
+where their coefficients first differ. Checked in the probe for 0₁, 3₁, 4₁, 5₁, 5₂
+(`c₂ = −3a₂`).
+
+**(c) Order counting at the proton pin, `x = q₀² − 1 = 0.23205`.** If the leading term were
+`d_k x^k`, the physical ratio would need:
+
+| order `k` | `x^k` | needed `|d_k|` |
+|---|---|---|
+| 2 | 0.05385 | 0.0256 |
+| 3 | 0.01250 | 0.110 |
+| 4 | 0.002900 | 0.475 |
+| 5 | 0.000673 | 2.05 |
+
+The `d_k` are integers, so orders 2 and 3 cannot carry the splitting as a leading term. The
+first order that could is 4 or 5. Caveat: this is heuristic. Jones coefficients grow by about
+2–4× per order while `x = 0.23`, so the tail is not small. A claim about a specific pair has to
+evaluate the full polynomial, not its leading term.
+
+**What this gives.** A test that can be stated before any candidate is chosen. A single-scale
+route, with no separate `E₀`, is consistent with CODATA only if the n and p links have equal
+Jones coefficients through `x³` (or equal finite-type data through order 3) and differ from
+order 4 on. Every construction on record fails this:
+- typed crossings change the writhe (order 1);
+- #8636's state-weighted split is a projected trace, not a link invariant (order 1);
+- at `q₀` the γγ selection gives the same word for n and p (difference 0).
+
+The test is a requirement on a future γγ-derived n/p pair, not a lead on any specific pair.
+Probe: `computations/qbeta/qbeta_framed_splitting_order_probe.py` (8/8 checks).
+
+## 16. Correction to §15, and the owner's "1 2" (2026-11-21)
+
+**Correction.** §15(b) and PR #8714's title say that a difference between writhe-0 γγ words
+"starts at second order". That holds for **knots** only. For links the first-order term is the
+linking number. Measured exactly: every braid word on 3 strands up to length 7 and on 4 strands
+up to length 6, as a dual number at `q = 1 + e` (probe below, 3/3 checks plus a one-crossing
+sanity check). The `z_D` trace of an `n`-strand word whose closure has `c` components, writhe
+`w` and total linking number `lk` is
+
+$$
+  \mathrm{tr}_{z_D}(w) = 2^{-(n-c)}\Bigl(1 + (2w - 3\,\mathrm{lk})\,e + O(e^2)\Bigr),
+  \qquad e = q - 1 .
+$$
+
+So two words on the same number of strands differ:
+- at **order 0** if their component counts differ;
+- at **order 1** by `2^{-(n-c)}(2Δw − 3Δlk)` otherwise.
+
+Example: σ₁σ₃⁻¹ and σ₁σ₃σ₂⁻² on 4 strands both have writhe 0 and 2 components, but `lk` is 0
+and −1. Their first-order coefficients are 0 and 3/4.
+
+The §15 test, "equal Jones coefficients through `x³`", is unaffected. It already requires
+equal component count and equal `lk`. What was wrong is the claim that writhe 0 alone buys the
+second order. What else repeated it:
+- PR #8714's title and body;
+- bean `qou-99qc`'s 2026-11-21 entry, corrected there;
+- nothing in content blocks or code.
+
+The general formula above is **measured, not proved**.
+
+**Option 2 (Lean).** `QOU/QBeta/CrossingChangeTrace.lean`, sorry-free over a generic
+commutative ring and algebra; axioms `propext`, `Quot.sound`.
+- `inv_of_quadratic`: if `g² = h·g + 1` then `g⁻¹ = g − h`.
+- `crossing_change`: for every linear `tr`,
+  `tr(a g b) − tr(a g⁻¹ b) = h·tr(a b)`. One crossing change costs `h` times the smoothed
+  trace, which is the algebraic kernel of the counting.
+
+The closed first-order formula is not formalised. It needs braid words, closure components and
+a constructed Ocneanu trace on the Hecke tower, and the corpus has none of these in Lean
+(`MathlibExt/OcneanuTrace.lean` axiomatises the trace and constructs it on no Hecke tower).
+
+**Option 1 (γγ beyond four strands).**
+- **Scope (b), by construction.** The ruled selection (γγ words plus reading 3,
+  `χ_λ(w) ≥ 0` on blocks with `y_λ > 0`) takes no nucleon argument. It returns the same word
+  for n and p on every number of strands. Distinct n and p links need a rule that sees the
+  nucleon. That is an added premise, not something more strands supply.
+- **The one labelled rule on record** (PR #8636: state-weighted positivity S-w, with strand 4
+  a lepton) gives the same word for n and p at `q₀`.
+  - The selections split only above `q* = 1.1510`: n gets σ₁σ₃⁻¹ (2 components), p gets
+    `V₁³` or `V₂³` (4 components).
+  - So the pair fails the §15 test at **order 0**: the leading traces are `1/4` and `1`.
+- **Not run.** S-w on 5 or 6 strands. It needs a choice of how the lepton pair attaches
+  (which strands, which orientation), and no ruling fixes that. Running every attachment and
+  keeping the one that passes would be selection against the target.
+
+Probe: `computations/qbeta/qbeta_splitting_first_order_linking_probe.py`.

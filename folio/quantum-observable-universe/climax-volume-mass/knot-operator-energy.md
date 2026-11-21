@@ -15,8 +15,6 @@ $$
 
 *where $w_\lambda(q) = d_q(\lambda)^2 / [k]_q!$ is the Wedderburn weight, $d_\lambda(q) = \dim_q V_\lambda$ is the quantum dimension, and $1/[k]_q!$ is $\min_\lambda\, w_\lambda/d_\lambda$, the minimum taken across partitions of $k$ and attained by the trivial $1$-dimensional $(k)$ and $(1^k)$ representations.*
 
-**Interpretation of the subtrahend $1/[k]_q!$.** In [the operator-selection LP](#prop:operator-selection-lp), the net-constraint dual multiplier is identically zero at every $n$ and $q$ because the normal-form basis contains the identity and the first Frobenius row coincides with the objective vector. The subtrahend $1/[k]_q!$ in the displayed formula is therefore the minimum normalized weight $\min_{\lambda \vdash k} w_\lambda(q)/d_\lambda(q)$ across partitions of $k$ (attained on the one-dimensional representations $(k)$ and $(1^k)$), rather than a nonzero dual multiplier of the normalisation constraint.
-
 **Values.**
 *The energy takes values in:*
 - *Archimedean realisation $R = \mathbb{R}$: $E(\lambda, q) \in \mathbb{R}_{\geq 0}$ (totally ordered).*

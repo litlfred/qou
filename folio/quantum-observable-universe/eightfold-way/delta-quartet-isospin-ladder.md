@@ -38,9 +38,7 @@ degree have the same $n_u$ and the same $n_d$, so the label is injective. $\squa
 the symmetric channel has four basis vectors.  Attainment and closure fix the
 value set of $2I_3$ as exactly $\{3, 1, -1, -3\}$, the weight set of isospin
 $\tfrac32$.  Injectivity makes the four vectors four *distinctly labelled*
-states.  This is the opposite of the situation for the octet, where the weight
-map is proved non-injective
-([Proposition](#prop:baryon-octet-decomposition)).
+states.
 
 **Scope.**  The statement concerns weights only.  It constructs no action of
 the isospin group and no raising or lowering operators, and it makes no

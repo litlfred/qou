@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T01:19:55.168022+00:00",
-  "commitSha": "105774c17e58621f1ddc5181478533454bc1281e",
+  "computedAt": "2026-11-20T16:13:45.775636+00:00",
+  "commitSha": "4a121127e76f8e04a03c941f92d80787356bf07d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "borromean-binding-recompute",
   "scriptFile": "borromean_binding_recompute.py",
-  "scriptHash": "bffacadcc257",
-  "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
+  "scriptHash": "dc71c3fb30fb",
+  "scriptCommitSha": "68cf6abfe6a35ebe3fdc40a84c2740ee1f30740e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
   },
   "invocation": {
     "argv": [
@@ -42,81 +43,81 @@
       "Z": 1,
       "N": 1,
       "B_AME": 2.224573,
-      "B_can0": 1.6166217381550836,
-      "B_tower": 2.063076949816325,
-      "delta_K_residual": 1.0782792179409755
+      "B_can0": 1.6326497653157164,
+      "B_tower": 2.0835313657168983,
+      "delta_K_residual": 1.0676935498086788
     },
     {
       "iso": "3H",
       "Z": 1,
       "N": 2,
       "B_AME": 8.481821,
-      "B_can0": 3.137225560748612,
-      "B_tower": 4.741966424926435,
-      "delta_K_residual": 1.7886716690811626
+      "B_can0": 3.1683296436085238,
+      "B_tower": 4.788980741794565,
+      "delta_K_residual": 1.7711119458003135
     },
     {
       "iso": "3He",
       "Z": 2,
       "N": 1,
       "B_AME": 7.718058,
-      "B_can0": 2.6033579456523555,
-      "B_tower": 3.94272358063608,
-      "delta_K_residual": 1.9575447890655435
+      "B_can0": 2.6291689878256377,
+      "B_tower": 3.9818137890291827,
+      "delta_K_residual": 1.9383272068786928
     },
     {
       "iso": "4He",
       "Z": 2,
       "N": 2,
-      "B_AME": 28.295673,
-      "B_can0": 3.531353053597401,
-      "B_tower": 6.475459552758949,
-      "delta_K_residual": 4.3696779772092444
+      "B_AME": "28.2956624",
+      "B_can0": 3.5663647210276785,
+      "B_tower": 6.539660620417266,
+      "delta_K_residual": "4.326778412882622072456207516273875791158225170467"
     },
     {
       "iso": "6Li",
       "Z": 3,
       "N": 3,
       "B_AME": 31.994564,
-      "B_can0": 3.994499199157953,
-      "B_tower": 11.487453061658872,
-      "delta_K_residual": 2.7851747317938336
+      "B_can0": 4.034102737911734,
+      "B_tower": 11.60134563487695,
+      "delta_K_residual": 2.757832152144078
     },
     {
       "iso": "7Li",
       "Z": 3,
       "N": 4,
       "B_AME": 39.244533,
-      "B_can0": 4.081357830856327,
-      "B_tower": 15.049168650906994,
-      "delta_K_residual": 2.6077542162194307
+      "B_can0": 4.121822531176318,
+      "B_tower": 15.198373921496112,
+      "delta_K_residual": 2.5821534068518828
     },
     {
       "iso": "12C",
       "Z": 6,
       "N": 6,
       "B_AME": 92.161728,
-      "B_can0": 4.111993208477736,
-      "B_tower": 37.55866561603116,
-      "delta_K_residual": 2.453807303544421
+      "B_can0": 4.152761643835431,
+      "B_tower": 37.931041725050875,
+      "delta_K_residual": 2.4297178197226637
     },
     {
       "iso": "16O",
       "Z": 8,
       "N": 8,
       "B_AME": 127.619,
-      "B_can0": 4.090571050647856,
-      "B_tower": 65.09570286743161,
-      "delta_K_residual": 1.9604827105085267
+      "B_can0": 4.131127095611785,
+      "B_tower": 65.74109545926349,
+      "delta_K_residual": 1.9412362861990822
     },
     {
       "iso": "56Fe",
       "Z": 26,
       "N": 30,
       "B_AME": 492.254,
-      "B_can0": 3.861919751291598,
-      "B_tower": 806.8411704090365,
-      "delta_K_residual": 0.6101002502765777
+      "B_can0": 3.9002088285723024,
+      "B_tower": 814.840612633778,
+      "delta_K_residual": 0.6041107823638125
     }
   ]
 }

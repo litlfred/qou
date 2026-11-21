@@ -1,4 +1,4 @@
-**Proposition (q-difference recurrence of the binding generating function; conditional on [Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$](#conj:binding-manybody-eq-jet-filtration)).**
+**Proposition (q-difference recurrence of the binding generating function).**
 
 Let $G(x;q)=\sum_{n\geq 0} B_n(K)\,x^n$ be the generating function of the
 body-order binding terms
@@ -51,8 +51,7 @@ the binding series.
 > **$q$-Borel / Gevrey-normalized** carrier $b_n = f_n/[n]_q!$, predicting depth
 > $d = 2$. The normalized carrier provably satisfies
 > $[m+2]_q\,b_{m+2} = b_{m+1} + b_m$, i.e. the operator
-> $L_{\mathcal{K}} = (q^2x-1)\sigma^2 - (q-1)\sigma - (q-1)$ named by
-> [The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module](#conj:qdifference-kernel-prolongation-symbol).
+> $L_{\mathcal{K}} = (q^2x-1)\sigma^2 - (q-1)\sigma - (q-1)$.
 >
 > A scalar kernel is a first-order right factor $\sigma - a$ of
 > $L_{\mathcal{K}}$, i.e. a solution $a\in K(x)$ of the $q$-Riccati equation

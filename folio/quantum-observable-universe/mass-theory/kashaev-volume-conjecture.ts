@@ -2,7 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:kashaev-volume-conjecture",
-  title: "Kashaev volume conjecture (axiomatised as Lean class)",
+  title: "Kashaev volume conjecture",
   lean: {
     ref: "qou:QOU.Kashaev.VolumeConjecture",
     validation: "not_checked",

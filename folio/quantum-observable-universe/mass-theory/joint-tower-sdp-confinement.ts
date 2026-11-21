@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Joint mass-tower confinement SDP at $q_0$ with GB-filtration + jet-order tracking",
   lean: {
-    ref: "qou:QOU.BraidKnot.joint_tower_sdp_confinement",
+    ref: "qou:QOU.BraidKnot.JointTowerSdp",
     validation: "not_checked",
   },
   uses: ["conj:atom-knot-mass-derivation"],
@@ -26,6 +26,11 @@ export default conjecture({
     status: "verified",
   },
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-20",
+      body: "The Lean sibling encodes the SDP's input data and its well-formedness only. The predicates formerly named `WedderburnBlockPositivity`, `GbFiltrationGrading`, `JetOrderOrdering` and `CrossLevelConsistency` checked `n_0 ≥ 1`, a cutoff bound, a non-empty list and `m ≤ n`; they are renamed to say so, and `joint_tower_sdp_feasible`, which returned its hypothesis, is removed. `lean.ref` now names `JointTowerSdp`, which exists; the old ref named no declaration. Block positivity, the filtration and jet-order conditions, cross-level consistency and joint feasibility are not formalised (bean `qou-w8cg`).",
+    },
     {
       kind: "status",
       date: "2026-11-20",

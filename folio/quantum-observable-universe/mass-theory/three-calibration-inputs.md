@@ -1,5 +1,4 @@
-**Conjecture.** *Beyond the three calibration inputs of the
-[three-calibration discipline](#def:three-calibration-discipline), no
+**Conjecture.** *Beyond the three calibration inputs, no
 further empirical, fitting, or numerological input is needed: every
 other mass, Q-value, binding energy, coupling constant, mixing angle,
 and dimensionless ratio in the paper is a prediction.* Precisely, it is

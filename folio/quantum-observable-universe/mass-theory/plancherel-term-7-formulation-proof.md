@@ -2,7 +2,7 @@
 
 Each $\{\lambda : \mathrm{depth}(\lambda) = k\}$ is finite, so each
 $\Phi_k$ is a finite $R$-valued sum.  By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+[curvature-rank stratification](#conj:curvature-rank-gb-stratification),
 the central idempotent $e_\lambda$ has GB-filtration depth
 $\mathrm{depth}(\lambda)$ — **assumed, not established; see the gap note
 below** — so binning

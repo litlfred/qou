@@ -72,7 +72,21 @@ attribute [instance] CRManifoldData.topM
     `F_A|_H = *_H F_A|_H`.  More generally, it minimises the Yang–Mills
     functional `∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`.
 
-    LaTeX: `\label{def:instanton}` -/
+    LaTeX: `\label{def:instanton}`
+
+    **Vacuity status (bean `qou-dx7g`, 2026-11-20) — this structure does NOT
+    yet encode `def:instanton`.**  `curvature_H` is a real-valued proxy for
+    `‖F_A|_H‖`, `hodgeStar` is an arbitrary involution supplied with the
+    connection, and `yang_mills_minimises` asserts only `YM(A) ≥ 0`.  So
+    `curvature_H := 0`, `hodgeStar := id`, `yangMillsEnergy := 0` is an
+    inhabitant, and neither self-duality nor minimisation is constrained.
+    Repairing it needs (i) curvature as an `Ad(P)`-valued 2-form on `H`,
+    (ii) the Hodge star of the Webster metric `g_θ` on `Λ²H` (fixed by `θ`
+    and `J`, not by the instance), and (iii) `YM` as the integral
+    `∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ` minimised over the gauge orbit — none of which
+    the corpus or Mathlib defines on a CR manifold.  The fields are kept
+    unchanged rather than constrained by stand-ins, because a constraint on a
+    real-valued proxy would not be a constraint on the curvature. -/
 structure InstantonConnection (cr : CRManifoldData) where
   /-- Abstract connection data (gauge potential).
       Full type: a 𝔤-valued 1-form on `P`. Modelled as `C(M, ℝ)` —
@@ -94,8 +108,9 @@ structure InstantonConnection (cr : CRManifoldData) where
   /-- The Yang–Mills energy functional `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`.
       Returns the energy evaluated on `curvature_H`. -/
   yangMillsEnergy : ℝ
-  /-- Yang–Mills minimisation: the energy is at most that of any
-      perturbation (abstractly: `YM(A) ≤ YM(A')` for nearby `A'`). -/
+  /-- Non-negativity of the Yang–Mills energy.  Named `minimises`, but it
+      does NOT state `YM(A) ≤ YM(A')` for any competitor `A'` (GAP, bean
+      `qou-dx7g`; see the structure docstring). -/
   yang_mills_minimises : yangMillsEnergy ≥ 0
   /-- **Self-duality**: when `dim_ℝ H = 4` (CR dimension `n = 2`), the
       curvature restricted to `H` is self-dual with respect to the Hodge star.

@@ -46,7 +46,8 @@ q, K = g.q, g.K
 Q0 = mp.mpf(g.Q_50_DIGIT_STR)
 ME = mp.mpf("0.51099895069")            # CODATA 2022 m_e, MeV (string literal)
 QB_CODATA = mp.mpf("0.78233341")       # m_n - m_p - m_e, MeV (as the corpus quotes it)
-E0 = ME / (Q0 * (Q0 - 1))
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.order_zero_scaled(ME, Q0)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
 SHAPES = g.two_row_shapes(4)           # (4,0), (3,1), (2,2)
 
 ok = True

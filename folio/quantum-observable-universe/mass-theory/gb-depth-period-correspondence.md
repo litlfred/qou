@@ -77,10 +77,7 @@ Surreal infinitesimals $1/\omega^k$ sit at depth $k$ as *literal*
 infinitesimal scaling factors — there is no recourse to distributions
 or limits. The "delta at depth $n$" of graded Mikusiński is the
 surreal element $1/\omega^n$, and $\mathrm{std}$ collapses each layer
-to its archimedean image. This makes the *algebraic core survives*
-mechanism ([algebraic core survives](#rem:algebraic-core-survives))
-into a quantitative statement: it survives **at the depth at which it
-lives**.
+to its archimedean image.
 
 ### Existing depth-2 evidence
 
@@ -89,9 +86,7 @@ The paper already records a depth-2 instance in
 the figure-8 knot, embedded in Bring's surface, has hyperbolic
 volume $2\,\mathrm{Cl}_2(\pi/3) = 2\,\mathrm{Im}\,\mathrm{Li}_2(e^{i\pi/3})$.
 One $\mathrm{Li}_2$ factor $\Rightarrow$ iterated-integral depth $2$,
-matching the Bloch-regulator class of the archimedean image. See the
-explicit canonical witness in
-[Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness).
+matching the Bloch-regulator class of the archimedean image.
 
 ### Discharge targets
 
@@ -114,7 +109,7 @@ period theory:
 
 - *Cellular vs iterated-integral depth.* The cellular GB-depth on
   $Z(H_n(q))$ — attributed here to
-  [Curvature-rank stratification of the GB spectral sequence](#prop:curvature-rank-gb-stratification),
+  [Curvature-rank stratification of the GB spectral sequence](#conj:curvature-rank-gb-stratification),
   though **that proposition stratifies by the curvature rank of *words* and
   mentions no partition**; the max-hook statistic is
   a definition, and the step joining them is

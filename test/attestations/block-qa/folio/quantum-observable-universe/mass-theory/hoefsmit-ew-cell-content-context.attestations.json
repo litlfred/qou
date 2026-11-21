@@ -1,0 +1,589 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context",
+    "path": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.701Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "\"identifying these algebraic actions with physical carriers is an interpretive alignment, not a derivation\" is exactly the substantive-epistemic contrast the corpus wants kept; the other near-contrasts (\"treats W, Z, H as independent\" vs the corrected braid) are content."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.534Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:46 'an interpretive alignment, not a derivation' and :13 'This is a naming of constructions' are substantive epistemic scoping."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.747Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The disjoint-product-then-interface-knot sequence is a genuine refinement, not a manufactured setup."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.561Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.796Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Zero em-dashes."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.584Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No em-dash in the body (strand ranges use en dashes)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.848Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No reflex triple; the one list is four items."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.611Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:30 four-item list of unsupported effects ('modifies pattern multiplicities, impacts bar-self-duality, gives ... a concrete form, and twists the 8 pure patterns') reads as a rhetorical list rather than claims."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.906Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Closes on an honest scope statement (\"an interpretive alignment, not a derivation\") — the opposite of a manufactured closer."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.635Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Ends on a scoping sentence, not an aphorism."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.949Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No narration of emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.659Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:38 'The earlier Plancherel-weighted multiplier framing is incorrect' narrates the document's history in the prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.988Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "The \"Plancherel weight is a degenerate special case\" and \"Implication for N_v derivation\" sections make overlapping points, but the second adds the PSLQ-basis consequence, so it is not pure restatement."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.680Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.029Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Institutional register."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.706Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.086Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "\"preserves bar-self-duality automatically\" is the only intensifier and is a structural claim about the disjoint-pair construction."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.736Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.129Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "\"This modifies pattern multiplicities, impacts bar-self-duality, gives the Higgs-vev automorphism a concrete form, and twists the 8 pure patterns\" is a four-verb compression with no agent detail, but it reads aloud.",
+        "notes": "Separate (non-trap) findings: (1) \"parallels Morita's quaternionic formulation of the electroweak sector\" attributes a named result with NO citation — the .ts carries no cites[] at all. (2) The projector bookkeeping is internally consistent and checks against the table I independently reproduced: six EW projectors of rank 1 to 3 (multiplicities 2,1,3,3,1,2) plus two non-EW (vacuum 4, fully-broken 4) = eight, summing to the 20 pure tableaux. (3) \"The earlier Plancherel-weighted multiplier framing is incorrect\" retracts an earlier framing without naming the block that carried it, so a reader cannot find and cross-check the superseded claim."
+      },
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.766Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Symbols speakable; ⋈_K is introduced in words as 'interface knot'."
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.167Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.195Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.217Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.241Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.267Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.287Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.308Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.330Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.351Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.376Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.404Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Interpretive remark on thm:hoefsmit-ew-cell-content, placed beside it in mass-theory; the new Naming section is exactly the content cut from the theorem."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.429Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:46 cites Morita's quaternionic electroweak formulation with no cites[] entry and no bibliography key; folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:38-42 rely on a pure cell-content trace defined only in prop:weak-spectral-completeness, which is not in uses[]."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.450Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:13 names the six patterns 'W^±, Z^±, H^±' although Z and H are neutral (conj:electroweak-higgs-torus-link-triplet makes H the A_+ singlet), so the ± on Z, H has no stated meaning; folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:38 uses tr_pure undefined in this block; folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:30 'impacts bar-self-duality, gives the Higgs-vev automorphism a concrete form, and twists the 8 pure patterns' asserts effects with no derivation or pointer; folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:34 'rank-1 to rank-3 projectors in End_R(V^{⊗6})' — 1-3 are the pure-tableau multiplicities, not ranks on V^{⊗6}, and prop:weak-spectral-completeness gives ranks 11/9 on ⊕V_λ; 'dimension-collapse issue' is never explained. The Naming section itself (:1-13) is clear and correctly scoped."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "680fa4785405",
+          "ts": "57ac3874b0a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.490Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-context.md:36-42: the 'Plancherel weight is a degenerate special case' and 'Implication for N_v' sections make the same point (use tr_pure, demote Plancherel) twice in four sentences."
+      }
+    ]
+  }
+}

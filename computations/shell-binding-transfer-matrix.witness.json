@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T15:31:42.116111+00:00",
-  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "computedAt": "2026-11-20T18:34:16.507162+00:00",
+  "commitSha": "1f1c4b2bab68c58a1eac2b61fe04aa10266135c2",
   "assertions": [
     {
       "name": "deuteron_sign_correct",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 48,
+  "durationMs": 47,
   "computation": "shell-binding-transfer-matrix",
   "scriptFile": "shell_binding_transfer_matrix.py",
-  "scriptHash": "828c83087e54",
-  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "scriptHash": "fd995c83cb94",
+  "scriptCommitSha": "d23a26722131262e5a00e4f8ab7922e3d44a7d93",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,11 +29,11 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "ae1028699afd20c5"
   },
   "invocation": {
     "argv": [
@@ -42,88 +42,88 @@
     "reproduce": "python3 -u computations/shell_binding_transfer_matrix.py"
   },
   "data": {
-    "E0_MeV": "4.185981363",
+    "E0_MeV": "4.227483356",
     "method": "Transfer-matrix unfold: B = E₀ × |tr_free - tr_atom| / q₀",
     "results": [
       {
         "atom": "D",
         "Z": 1,
         "N": 1,
-        "B_pred_MeV": 7.5425,
+        "B_pred_MeV": 7.6172,
         "B_AME_MeV": 2.2245662,
-        "err_pct": 239.05
+        "err_pct": 242.41
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
-        "B_pred_MeV": 3.6888,
+        "B_pred_MeV": 3.7254,
         "B_AME_MeV": 8.4817962,
-        "err_pct": -56.51
+        "err_pct": -56.08
       },
       {
         "atom": "³He",
         "Z": 2,
         "N": 1,
-        "B_pred_MeV": 3.6888,
+        "B_pred_MeV": 3.7254,
         "B_AME_MeV": 7.71804132,
-        "err_pct": -52.21
+        "err_pct": -51.73
       },
       {
         "atom": "⁴He",
         "Z": 2,
         "N": 2,
-        "B_pred_MeV": 15.0849,
+        "B_pred_MeV": 15.2345,
         "B_AME_MeV": 28.2956624,
-        "err_pct": -46.69
+        "err_pct": -46.16
       },
       {
         "atom": "⁶Li",
         "Z": 3,
         "N": 3,
-        "B_pred_MeV": 22.6274,
+        "B_pred_MeV": 22.8517,
         "B_AME_MeV": 31.9939872,
-        "err_pct": -29.28
+        "err_pct": -28.58
       },
       {
         "atom": "⁷Li",
         "Z": 3,
         "N": 4,
-        "B_pred_MeV": 18.7737,
+        "B_pred_MeV": 18.9599,
         "B_AME_MeV": 39.2450807,
-        "err_pct": -52.16
+        "err_pct": -51.69
       },
       {
         "atom": "⁹Be",
         "Z": 4,
         "N": 5,
-        "B_pred_MeV": 26.3162,
+        "B_pred_MeV": 26.5771,
         "B_AME_MeV": 58.165,
-        "err_pct": -54.76
+        "err_pct": -54.31
       },
       {
         "atom": "¹²C",
         "Z": 6,
         "N": 6,
-        "B_pred_MeV": 45.2547,
+        "B_pred_MeV": 45.7034,
         "B_AME_MeV": 92.163,
-        "err_pct": -50.9
+        "err_pct": -50.41
       },
       {
         "atom": "¹⁶O",
         "Z": 8,
         "N": 8,
-        "B_pred_MeV": 60.3396,
+        "B_pred_MeV": 60.9379,
         "B_AME_MeV": 127.621,
-        "err_pct": -52.72
+        "err_pct": -52.25
       },
       {
         "atom": "⁴⁰Ca",
         "Z": 20,
         "N": 20,
-        "B_pred_MeV": 150.8491,
+        "B_pred_MeV": 152.3447,
         "B_AME_MeV": 342.052,
-        "err_pct": -55.9
+        "err_pct": -55.46
       }
     ]
   }

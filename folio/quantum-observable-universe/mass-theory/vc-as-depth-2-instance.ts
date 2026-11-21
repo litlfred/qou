@@ -6,6 +6,9 @@ export default remark({
     "Volume Conjecture as the depth-2 instance of GS $\\leftrightarrow$ period correspondence",
   interprets: "conj:kashaev-volume-conjecture",
   uses: ["conj:gb-depth-period-correspondence"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([The algebraic core of QOU lifts to any real-closed field](#rem:algebraic-core-survives))" },
+  ],
   cites: [
     "kashaev1997",
     "murakami-murakami2001",

@@ -16,6 +16,12 @@ export default chapter({
   title: "Formalisation notes",
   sections: [
     {
+      title: "Coverage",
+      blocks: [
+        "formalisation-coverage",
+      ],
+    },
+    {
       title: "Mathlib infrastructure for the dilogarithm chain",
       blocks: [
         "three-substantive-mathlib-fillers",
@@ -32,10 +38,10 @@ export default chapter({
         "upstream-mathlib-additions-table2-data",
         "bloch-group-quotient-construction",
         "bloch-group-quotient-construction-table-data",
-        "cl2-pentagon-and-faddeev-partial-formalization-status",
         "cl2-pentagon-and-faddeev-partial-table1-data",
         "cl2-pentagon-and-faddeev-partial-table2-data",
         "cl2-pentagon-and-faddeev-partial-table3-data",
+        "cl2-pentagon-and-faddeev-partial-formalization-status",
         "type-b-folded-crystal-combinatorics-table-data",
       ],
     },

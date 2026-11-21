@@ -32,7 +32,7 @@ MLLIB=".lake/packages/mathlib/.lake/build/lib/lean"
 [ -d "$MLLIB" ] || { echo "no mathlib build tree at $MLLIB" >&2; exit 2; }
 
 mapfile -t IMPORTS < <(
-  find content -path '*/lean/*' -prune -o -name '*.lean' -print |
+  find folio -path '*/lean/*' -prune -o -name '*.lean' -print |
     xargs grep -ho '^import Mathlib[A-Za-z0-9_.]*' 2>/dev/null |
     sed 's/^import //' | sort -u)
 
