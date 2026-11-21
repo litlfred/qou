@@ -8927,3 +8927,11 @@ Written before any computation. Ruled photon (#8583, owner-rulings 2026-11-18/20
 **Also measured (the reason for the redo, ε-Y5):** writhe of each letter and of each selected word; whether the arm is writhe-0. ε-Y5 excluded the γγ route to the twist bound on the premise "every γγ word has writhe 0".
 **Questions, no predicted answer:** 1. Arm A minimum, and is it split? 2. Is β_Bor = V³ feasible / minimal in arm A? 3. Does the writhe-0 premise of ε-Y5 hold for arm A, or only for arm V?
 **Not allowed:** changing letters, cost, bound or floor after results; choosing among ties by Q_β or any mass. Nothing compared with measurement.
+
+### RESULT 2026-11-21 — stage 7R, γγ grammar on the ruled photon (probe gg_ruled_photon_grammar_probe.py, witness gg-ruled-photon-grammar-stage7r, 2/2; exact engine agrees with mpmath to 1.1e-39; 269 exact zeros, 0 undecided)
+Run under the 12:20Z pre-registration, ≤ 10 crossings, proton pin, convention D.
+- **Arm V (current Lean grammar, V-words only):** 5 words, only V³ = β_Bor feasible ⇒ selected, cost 6, writhe 0. Agrees with GammaGammaSelectionAllK (#8747).
+- **Arm A (primary: the nine bilinear terms of γ(φ)γ(ψ)):** 5766 braids, 1991 feasible, minimum cost 2, tie σ₀² / σ₁² (split: Hopf link ⊔ unknot). Same minimum as the superseded-photon stage 7. β_Bor is NOT reachable (V enters only paired or dressed by σ), so not feasible.
+- **Arm B (all twelve terms, comparison):** minimum σ₁ (cost 1); β_Bor reachable and feasible but not minimal.
+- **Writhe (the ε-Y5 question).** Letter writhes in A: σσ terms 2, σV / Vσ terms 1, V·V 0. Every candidate has writhe ≥ 0 (0…10); the only writhe-0 words are V², V⁴, both infeasible. So the "every γγ word has writhe 0" premise holds ONLY in arm V. Under arm A the grammar is one-signed (chiral), not writhe-0, and the writhe is unbounded in length, so it supplies no per-strand twist bound either.
+Consequence for ε-Y5: its exclusion stands for the V-only grammar and is VOID as stated for the full photon product. Neither arm derives |t| ≤ 1; Y = ±1/3 stays a labelled conditional input. Scope (a) throughout. Nucleon element still underived under arm A; which arm is the grammar is the owner's call (stage-7 card, still unruled). Bean stays OPEN.
