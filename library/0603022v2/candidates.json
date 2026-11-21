@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "0603022v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "46e24c0289f61d4400005c3a8775d9d7d01e75b52a3880b2399517c7c914a6ba",
   "file": "0603022v2.pdf"
@@ -11,181 +14,11 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
-  "by_kind": {
-   "recommendation": 11
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall call a scored 2-surface a ribbon graph \u0393.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "4: The new decomposition is in terms of untwisted and unbraided trinions and braids connecting them. pointed out in [3], a noiseless subsystem (or nearly noiseless) in a background independent theory means that there are degrees of freedom that are noiseless un- der the Planckian evolution A evol and therefore should appear in the low energy theory.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "But if this is to be a good theory there should be a no- tion of classical spacetime geometry that emerges from the quantum geometry.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-009.md",
-   "section_title": "Page 9",
-   "pages": "9-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In- stead, the notion of macro-locality should be de\ufb01ned di- rectly from the interactions of the noiseless subsystems that we identify with the elementary particles.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-009.md",
-   "section_title": "Page 9",
-   "pages": "9-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To see the advantage of this approach we should con- sider that for one of these models of quantum gravity to have a good low energy limit it must be the case that the emergent symmetries that act on the space of noiseless subsystems includes an approximate transla- tion invariance in space and time.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-009.md",
-   "section_title": "Page 9",
-   "pages": "9-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "From the present NS perspective these translation sym- metries should emerge as additional symmetries which protect the degrees of freedom we have identi\ufb01ed as el- ementary particles.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-009.md",
-   "section_title": "Page 9",
-   "pages": "9-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "These should be justi\ufb01ed in a fundamental theory.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-010.md",
-   "section_title": "Page 10",
-   "pages": "10-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The only thing we can say about the mass matrix at this stage is that it should be constructed from topo- logical invariants of the states which are preserved un- der evolution.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-010.md",
-   "section_title": "Page 10",
-   "pages": "10-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(2) Non-trivially braided states with both pos- itive and negative twisted strands incident on the same vertex should have a heavy mass M.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-010.md",
-   "section_title": "Page 10",
-   "pages": "10-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "How then should these be chosen?",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-011.md",
-   "section_title": "Page 11",
-   "pages": "11-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "There are still states that correspond to products of rep- resentations of the spacetime SU(2)L \u2295SU(2)R, but they must be built up by hand from braided triplets of edges.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-011.md",
-   "section_title": "Page 11",
-   "pages": "11-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

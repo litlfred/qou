@@ -1,1 +1,0 @@
-There one must use a reduced $A_R^*$ that does not contain the part ascribable to $\dvij$, and explicitly evaluate $\langle \dvij \rangle$; doing so results in a softer equation of state for dense matter.

@@ -1,0 +1,1 @@
+Let A be a DG ring, let M be an abelian category, and let {Mx}x∈X be a collection of objects of C(A, M). Assume that C(A, M) has enough K-injectives, and that the direct sum M := L x∈X Mx exists in Cstr(A, M). Then M is the direct sum of the collection {Mx}x∈X in D(A, M).

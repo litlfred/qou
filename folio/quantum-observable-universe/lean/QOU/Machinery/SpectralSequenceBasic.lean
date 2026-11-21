@@ -9,7 +9,7 @@ This file scaffolds the minimal spectral-sequence infrastructure for
 the GB (Gröbner-Shirshov) filtration analyses appearing in:
 - `spectral_sequence_h3_explicit.lean` (sorry'd `d_1`, `d_2` differentials)
 - `e_infinity_identifications.lean` (sorry'd 6-term E_∞ page)
-- `terms_2_6_higher_operations.lean` (sorry'd Hochschild μ_2, μ_6)
+- `terms_2_6_higher_operations.lean` (conjecture carrier for Terms 2 and 6; the Hochschild μ_2, μ_6 route it once encoded is closed, HH¹(H₃) = 0)
 
 These are categorical-spectral promotion targets that, per Explore-agent
 scan (PR #1781), are orthogonal to the Habiro `[3]_q / 25` structure

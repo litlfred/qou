@@ -1,1 +1,0 @@
-Presumably to allay any concerns about priority, Onsager assures Kaufman at the end of the letter that "There will be time for all these things." As one reads [@Ons2] [@Ons3], one senses the faint hint of regret that Onsager must have felt for such optimism.

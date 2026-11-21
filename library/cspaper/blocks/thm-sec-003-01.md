@@ -1,0 +1,1 @@
+The sequence J: 0 −→C0 α −→C1 β −→J β∗ −→C1 α∗ −→C0 −→0 is a chain complex. Tensored with Z[ 1 2], it is exact except in the middle, where its homology is the ﬁrst homology of ∂K0: (Ker β∗/ Im β) ⊗Z[1 2] = H1(∂K0; Z[1 2]) = a V ∈K0 H1(LV ; Z[1 2]). Moreover, the bilinear form ⟨, ⟩on (Ker β∗/ Im β)⊗Z[ 1 2] is twice the intersection form on H1(∂K0; Z[ 1 2]).

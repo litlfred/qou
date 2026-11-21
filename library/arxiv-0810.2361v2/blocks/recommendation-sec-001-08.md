@@ -1,1 +1,0 @@
-For the most part, since the construction we mean to give is invariant under equivalence of groupoids, and taking the $A_i$ to be skeletal makes this strict, we will assume strict commutativity, though we shall indicate where the argument must be changed to accommodate the weak case.

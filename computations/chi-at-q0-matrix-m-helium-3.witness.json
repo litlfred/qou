@@ -8,8 +8,8 @@
   "durationMs": 61,
   "computation": "chi-at-q0-matrix-m-helium-3",
   "scriptFile": "chi_at_q0_via_matrix_m_mpfr.py",
-  "scriptHash": "b7dee1a17d13",
-  "scriptCommitSha": "1ac0dadaa4cc2541d6423e7e273d89e96f1a1e69",
+  "scriptHash": "9423ac383fe0",
+  "scriptCommitSha": "ed78b60a0ffe233f132df45a37bb1456ec237832",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,7 +25,10 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Per-λ χ^λ(β_atomic(2, 1); q_0) cache for helium-3 via the matrix-M mpfr backend. Format matches `chi_at_q0_via_hoefsmit_mpfr.py` so downstream consumers swap transparently. NO f64 in compute path.",
+  "description": "Per-\u03bb \u03c7^\u03bb(\u03b2_atomic(2, 1); q_0) cache for helium-3 via the matrix-M mpfr backend. Format matches `chi_at_q0_via_hoefsmit_mpfr.py` so downstream consumers swap transparently. NO f64 in compute path.",
+  "pn_split_carried": false,
+  "pn_split_note": "isobars are degenerate by construction: the (sign, gen) wire format drops the crossing-type field. See beans qou-sgv5 (mechanism, measured) and qou-fv0s (representation; retargeted from the COMPLETED qou-gdtb, which closed the pair form, not the sign wire).",
+  "isospinDegeneracyNote": "ISOSPIN DEGENERACY WARNING (bean qou-sgv5): The chi-*-matrix-m / _word_for_braid_word_3a sign-only wire family does NOT carry proton-neutron or isobar splitting (tr_M(p) == tr_M(n) and tr_M(T) == tr_M(3He) to all 50 digits, Delta == 0 identically by construction). `atom_braid_word_3A(Z, N)` returns (c, d, gen_0based) triples representing `c*sigma_g + d*1` with `c == +1.0` for EVERY crossing of EVERY nucleus, while the crossing type (sigma: d=0, sigma_inv: d=-h, averaged: d=-h/2, averaged_weighted: d=-h*(1/2 - delta/4)) lives entirely in `d`. `_word_for_braid_word_3a` reads `1 if c >= 0 else -1` off the constant `c == +1` field and drops `d`, collapsing every word to an all-positive braid word whose generator sequence depends on A = Z + N alone. Even decoding `d` via `sign_for_ctype` maps averaged/averaged_weighted crossings to `0` (not in B_n). For physical isospin/isobar splittings (e.g. Delta(n-p), Delta(3He-T), E_0 = Q_beta/|Delta tr_M|), use the exact-triple Hoefsmit (`chi_at_q0_via_hoefsmit_mpfr.py` -> `chi-{atom}-h{n}-at-q0-50dps.witness.json`) or closed-form Wenzl bridge (`closed_form_tau_M.py`) routes. Verified by `computations/probes/chi_matrix_m_isospin_degeneracy_diagnostic_probe.py`.",
   "data": {
     "atom": "helium-3",
     "lean_uniqueness_ref": {
@@ -40,6 +43,9 @@
     "n_partitions": 30,
     "tr_M_at_q0": "1.0860240058218428921913699499413612355786846551455",
     "compute_time_sec": "0.00",
-    "cache_path": "/home/user/qou/computations/chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json"
+    "cache_path": "/home/user/qou/computations/chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
+    "pn_split_carried": false,
+    "pn_split_note": "isobars are degenerate by construction: the (sign, gen) wire format drops the crossing-type field. See beans qou-sgv5 (mechanism, measured) and qou-fv0s (representation; retargeted from the COMPLETED qou-gdtb, which closed the pair form, not the sign wire).",
+    "isospinDegeneracyNote": "ISOSPIN DEGENERACY WARNING (bean qou-sgv5): The chi-*-matrix-m / _word_for_braid_word_3a sign-only wire family does NOT carry proton-neutron or isobar splitting (tr_M(p) == tr_M(n) and tr_M(T) == tr_M(3He) to all 50 digits, Delta == 0 identically by construction). `atom_braid_word_3A(Z, N)` returns (c, d, gen_0based) triples representing `c*sigma_g + d*1` with `c == +1.0` for EVERY crossing of EVERY nucleus, while the crossing type (sigma: d=0, sigma_inv: d=-h, averaged: d=-h/2, averaged_weighted: d=-h*(1/2 - delta/4)) lives entirely in `d`. `_word_for_braid_word_3a` reads `1 if c >= 0 else -1` off the constant `c == +1` field and drops `d`, collapsing every word to an all-positive braid word whose generator sequence depends on A = Z + N alone. Even decoding `d` via `sign_for_ctype` maps averaged/averaged_weighted crossings to `0` (not in B_n). For physical isospin/isobar splittings (e.g. Delta(n-p), Delta(3He-T), E_0 = Q_beta/|Delta tr_M|), use the exact-triple Hoefsmit (`chi_at_q0_via_hoefsmit_mpfr.py` -> `chi-{atom}-h{n}-at-q0-50dps.witness.json`) or closed-form Wenzl bridge (`closed_form_tau_M.py`) routes. Verified by `computations/probes/chi_matrix_m_isospin_degeneracy_diagnostic_probe.py`."
   }
 }

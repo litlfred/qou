@@ -8,7 +8,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:nuclear-knot-classification",
+    "conj:nuclear-knot-classification",
     "rem:fibre-functor-rigidity",
     "prop:confinement-frobenius-reciprocity",
     "def:q-casimir",

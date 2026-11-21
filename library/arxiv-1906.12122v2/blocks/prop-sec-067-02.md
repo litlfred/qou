@@ -1,0 +1,1 @@
+(2017b) have found no renormalization evidence for a 3N force in LO or O(Q/MQCD), but they obtain a triton binding energy which is only about half of the experimental value, perhaps because this is a very-low energy observables in the sense of being within the regime of Pionless EFT.

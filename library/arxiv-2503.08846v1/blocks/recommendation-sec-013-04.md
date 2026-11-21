@@ -1,1 +1,0 @@
-In terms of diagrams this means that one should be able to draw a closed contour over the diagram that is crossed by only these two lines and only once, as illustrated by the following example: = 1 d .

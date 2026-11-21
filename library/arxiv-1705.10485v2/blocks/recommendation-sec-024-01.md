@@ -1,1 +1,0 @@
-To simplify the discussion, we shall also assume that the Markov chain is stationary, that is to say that the initial measure (*i.e.* the law of $M_0$) is $\pi$; most results have easy corollaries for any initial measure, using the fast mixing of such Markov chains.

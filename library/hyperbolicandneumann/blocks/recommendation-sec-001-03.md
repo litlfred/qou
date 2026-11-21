@@ -1,1 +1,0 @@
-It should perhaps also be mentioned that HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN 7 simpler proofs of the last results described could probably have been obtained by using the second rather than the ﬁrst volume formula in (4).

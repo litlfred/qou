@@ -16,5 +16,3 @@ $$
 $$
 
 the cyclic permutation of the three branches; it is the $\mathrm{SU}(2)$ generator $\alpha$ of [the $\mathrm{SU}(2)$ generators](#def:su2-generators). The **dihedral relation** $\sigma_1\,\alpha\,\sigma_1=\alpha^{-1}$ exhibits $D_3\cong S_3$.
-
-The four spectral resolvents $w_1,\dots,w_4$ carry this action through the conjugate pairs $(w_1,w_4)$ and $(w_2,w_3)$ and the projective ratios $\eta_1=w_1/w_2$, $\eta_2=w_3/w_4$ ([the braid-group action](#rem:braid-group-action)): the reflection swaps the conjugate pairs, and the rotation cycles the three branches. The action lives on the branches rather than on the resolvents because $S_3$ has no faithful action on four points ($4\nmid 6$).

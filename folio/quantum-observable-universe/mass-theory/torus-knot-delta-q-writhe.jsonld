@@ -2,18 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-torus-knot-delta-q-writhe",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:torus-knot-delta-q-writhe",
   "kind": "proposition",
-  "title": "Writhe exponent of the torus-knot $\\delta_q$ decoration: $\\delta_q(T_{m,p}) = h\\,[(m-1)p]_q$",
+  "title": "Writhe exponent of the torus-knot $\\delta_q$ decoration: $\\delta^{\\mathrm{top}}_q(T_{m,p}) = h\\,[(m-1)p]_q$",
   "uses": [
+    "papers/quantum-observable-universe/blocks/def-torus-knot-top-channel-decoration",
     "papers/quantum-observable-universe/blocks/prop-alpha-basis-knot-delta-q",
     "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio"
   ],

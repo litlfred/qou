@@ -24,6 +24,4 @@ far-commutation relations on the length-rule module, require only
 $s_i \neq s_j$ per pair: nothing about lengths or words survives in the
 residue. What remains of Tits faithfulness, per generator pair, is
 exactly injectivity of the simple-reflection map — the point where the
-geometric representation classically enters, and which it settles
-unconditionally
-([simple-injectivity](#prop:coxeter-geometric-representation)).
+geometric representation classically enters.

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "lee-yang-1956-physrev-104-254",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "843105e97ca1fe26cd4b3a2075c81794cfad0cfca712ee02e5fec1d9bf07ae2c",
   "file": "lee-yang-1956-physrev-104-254.pdf"
@@ -11,181 +14,91 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
+  "candidates": 3,
   "by_kind": {
-   "recommendation": 11
+   "proposition": 3
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "It supplies rather an incentive for an examination of the question of parity conservation. ) To decide unequivocally whether parity is conserved in weak interactions, one must perform an experiment to deter- mine whether weak interactions differentiate the right from the left.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "PRESENT EXPERIMENTAL LIMIT ON PARITY NONCONSERVATION ECENT experimental data indicate closely iden- tical masses' and lifetimes' of the W(=E,s+)\u2014 and ~ ~ ~ ~ ~ ~ ~ the r+(=E s+) mesons.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-001.md (p. 1-1)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/page-001.md",
    "section_title": "Page 1",
    "pages": "1-1",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-001.md (p. 1-1)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-001-01",
+   "block_iri": "library/lee-yang-1956-physrev-104-254/blocks/prop-page-001-01",
+   "claim_id": "lee-yang-1956-physrev-104-254#prop-page-001-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "As we shall see, however, the accuracy of these experi- ments is not good.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "The experimental result therefore requires 5 &10 ', or $'&10 '.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-001.md (p. 1-1)",
+   "external_refs": [],
+   "quantitative_values": [
+    "5 &10"
+   ],
    "section_file": "sections/page-001.md",
    "section_title": "Page 1",
    "pages": "1-1",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-001.md (p. 1-1)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-001-02",
+   "block_iri": "library/lee-yang-1956-physrev-104-254/blocks/prop-page-001-02",
+   "claim_id": "lee-yang-1956-physrev-104-254#prop-page-001-02"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "We shall see, however, that even this high degree of accuracy is not. sufhcient to supply an experimental proof of parity conservation in the weak interactions.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Thus it may seem to oGer another possible experimental test of parity conservation.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-002.md (p. 2-2)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/page-002.md",
    "section_title": "Page 2",
    "pages": "2-2",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus the observed probability function must be an even function of y~.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, this polarization must be circular in nature and therefore may not lend itself to easy experimental detection.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "POSSIBLE EXPERIMENTAL TESTS OF PARITY CONSERVATION IN MESON AND HYPERON DECAYS To have a sensitive unequivocal test of whether parity is conserved in weak interactions, one must decide whether the weak interactions differentiate between the right and the left.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A reQection with respect to the production plane must then leave the whole process invariant.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If this is the case, it should be pointed out, there must exist two kinds of protons ptr and pr\u201ethe right-handed one and the left-handed one.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Furthermore, at the present time the protons in the laboratory must be predomi- nantly of one kind in order to produce the supposedly observed asymmetry, and also to give rise to the observed Fermi-Dirac statistical character of the proton.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This means that the free oscillation period between them must be longer than the age of the universe.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Furthermore, the numbers of ps and pr, must be separately conserved.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-002.md (p. 2-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-002-01",
+   "block_iri": "library/lee-yang-1956-physrev-104-254/blocks/prop-page-002-01",
+   "claim_id": "lee-yang-1956-physrev-104-254#prop-page-002-01"
   }
  ]
 }

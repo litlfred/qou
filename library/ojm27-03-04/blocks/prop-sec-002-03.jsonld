@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ojm27-03-04/blocks/prop-sec-002-03",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Thurston [3]",
+  "pageStart": 11,
+  "pageEnd": 16,
+  "text": "prop-sec-002-03.md",
+  "derivedFrom": "library/ojm27-03-04/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ojm27-03-04/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.2",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-002-3-infinitely-many-mutually-non-isometric-hyperbo.md (p. 11-16) citing Thurston [3], [3]",
+    "claim_id": "ojm27-03-04#proposition:3.2",
+    "lean_status": "unformalized"
+  }
+}

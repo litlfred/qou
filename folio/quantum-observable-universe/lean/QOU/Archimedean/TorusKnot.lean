@@ -71,7 +71,8 @@ def TorusKnotLabel.degree (τ : TorusKnotLabel) : ℕ :=
 
 /-! ### Particle labels — torus knot labels for fundamental fermions. -/
 
-/-- Electron / up quark: `e = τ(2,3)` (trefoil). -/
+/-- Electron: `e = τ(2,3)` (trefoil), the up quark's lepton partner; the up
+    quark itself is an unknot strand of the Borromean braid. -/
 def e_label : TorusKnotLabel := ⟨2, 3, by omega, by omega, by decide⟩
 
 /-- Second generation: `τ(2,5)` (cinquefoil). -/

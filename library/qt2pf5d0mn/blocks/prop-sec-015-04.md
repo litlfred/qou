@@ -1,0 +1,1 @@
+Let T , T ′ be two ordered triangulations which diﬀer by a typical 2-4 pachner move, see Table 4.2 for their comparison. Then the identity in Equation 4.27 holds, assuming all simplices which do not present among the summation variables have been assigned a ﬁxed coloring.

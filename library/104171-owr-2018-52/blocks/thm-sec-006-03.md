@@ -1,0 +1,1 @@
+[1] Let Km|n be the complexiﬁed reduced Grothendieck group of Om|n. Then Ei, Fi induce linear operators ei, fi : Km|n →Km|n. Furthermore ei, fi, i ∈ Z satisfy Serre’s relation for the inﬁnite-dimensional Lie algebra sl(∞) with the Dynkin diagram A∞. Thus, Km|n is an integrable sl(∞)-module, sl(∞)-weight spaces correspond to the blocks in Om|n.

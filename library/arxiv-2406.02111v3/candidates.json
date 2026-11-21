@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2406.02111v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "d7be0c3f08b4d42a20fe9ae75651bec95417263c9e92d1796bb3d2cb3ea2f8e7",
   "file": "2406.02111v3.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To compute $C_M$ for $A=\\mathcal{D}(G)$, we must find the representation $R_M$ of the universal $R$-matrix in the submodule $M$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-derivation-of-the-categorical-volume-operator.md",
-   "section_title": "Derivation of the categorical volume operator",
-   "pages": "6-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\label{subsec:Hermicity} For the volume operator to be a physical observable, it must be Hermitian.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-hermiticity-of-the-categorical-volume-operator.md",
-   "section_title": "Hermiticity of the categorical volume operator",
-   "pages": "11-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For instance, unlike in the Regge case, where the partition function sums over all admissible spin labelings of tetrahedra edges, a spin network also includes quantum degrees of freedom at the nodes (the intertwiners), which must also be considered.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-discussion-and-conclusions.md",
-   "section_title": "Discussion and Conclusions",
-   "pages": "14-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

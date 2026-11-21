@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0310280v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310280v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Stabilization in the braid groups II: Transversal simplicity of knots Introduction and description of results",
+  "title": "Stabilization in the braid groups II: Transversal simplicity of knots",
   "contains": [
     "library/0310280v4/sections/sec-front-matter",
     "library/0310280v4/sections/sec-000",
@@ -34,8 +34,8 @@
     "pages": 28,
     "arxiv": null,
     "doi": "10.2140/gt.2006.10.1425",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

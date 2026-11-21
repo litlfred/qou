@@ -33,7 +33,7 @@ $N$ chosen by the target precision.*
 
 ### Correctness conditions
 
-*[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
+*[$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)
 establishes the precision ladder and the convergence rate.*
 
 *The $c_k$ coefficients are **tiered**:*

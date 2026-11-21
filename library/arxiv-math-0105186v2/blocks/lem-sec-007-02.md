@@ -1,0 +1,1 @@
+Let U ⊂S be a nonempty open subset, such that any partial section u : U →E|U which is horizontal and satisﬁes u(∂S ∩U) ⊂Q is the restriction of some u′ ∈Mh. Then, given some J ∈Jh(E, π, j), there are J′ ∈Jh(E, π, j) arbitrarily close to it and which agree with it outside π−1(U), with the property that any u ∈MJ′ \ Mh is regular.

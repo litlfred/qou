@@ -1197,6 +1197,9 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Gödel 1931: incompleteness theorems ──────────────────────
   { id: "goedel1931" },
 
+  // ── Gödel 1949: rotating cosmological solution ──────────────
+  { id: "goedel1949" },
+
   // ── Turing 1936: computable numbers ────────────────────────
   { id: "turing1936" },
 
@@ -1596,6 +1599,7 @@ const ORDER: Array<FileSlot | Reference> = [
   // separately. The 5 baryon-product-from-alt.lean Ref lines need to be
   // re-keyed to `fulton-harris1991` in a follow-up cleanup.
   { id: "fulton-harris1991" },
+  { id: "farkas-kra1992" },
 
   { id: "wald1984" },
 
@@ -2810,6 +2814,35 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "pati2017" },
   { id: "rosso1988" },
   { id: "milnor1950" },
+  // 2026-11-18: owner uploads Batch A ingested into library/ (commit 521b87dca7, epic qou-s4ws).
+  { id: "morton-2001-skein-murphy" },
+  { id: "morton-lukac-2001" },
+  { id: "lukac-2001" },
+  { id: "hadji-morton-2009" },
+  { id: "kauffman-lomonaco-2007" },
+  { id: "geer-patureau-mirand-turaev-2013" },
+  { id: "tubbenhauer-vaz-2023" },
+  { id: "dudek-edwards-thomas-2012" },
+  { id: "horsley-et-al-2012-octet-baryon" },
+  { id: "walker-loud-carlson-miller-2012" },
+  { id: "borsanyi-et-al-2015" },
+  { id: "gasser-hoferichter-leutwyler-rusetsky-2020" },
+  { id: "horsley-et-al-2016-qcd-qed" },
+  { id: "giusti-et-al-2017" },
+  { id: "bakshi-gupta-2020" },
+  // 2026-11-18: owner uploads Batch B (commit 521b87dca7) ingested into library/ (epic qou-s4ws).
+  { id: "walker-loud-2019" },
+  { id: "gasser-leutwyler-rusetsky-2020-epjc" },
+  { id: "gasser-leutwyler-rusetsky-2021" },
+  { id: "sutton-tubbenhauer-wedrich-zhu-2023" },
+  { id: "romiti-2022" },
+  { id: "can-qcdsf-2025" },
+  { id: "aiston-morton-1997" },
+  { id: "pimsner-popa-1986" },
+  { id: "kauffman-tlcat" },
+  { id: "geer-patureau-mirand-turaev-2009" },
+  { id: "lickorish1993skeins" },
+  { id: "jones2015vonneumann" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

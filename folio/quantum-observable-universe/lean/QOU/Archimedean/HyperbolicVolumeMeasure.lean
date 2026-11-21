@@ -50,7 +50,12 @@
     translation** (`hypVolume_add_left`), where the `v 2 = 0` hypothesis is
     essential rather than technical, since a *vertical* translation genuinely
     is not an isometry.  Together these are the boundary's similarity group.
-    **Still missing:** the rest of the isometry group of `H³`, i.e. the Möbius
+    **Update (2026-11-20, bean `qou-h2mb`):** inversion in the unit sphere and
+    height-fixing linear maps with `|det| = 1` (vertical-axis rotations) are now
+    proved in `QOU.Archimedean.HyperbolicVolumeInversion`
+    (`hypVolume_inversion_image`, `hypVolume_linear_image`).  The paragraph
+    below is the state before that file.
+    **Still missing (before 2026-11-20):** the rest of the isometry group of `H³`, i.e. the Möbius
     action of `PSL₂(ℂ)` -- in particular inversion, which is the generator that
     makes the group act transitively and is not reachable from these two.  So
     the measure is **not** yet known invariant under all hyperbolic isometries.

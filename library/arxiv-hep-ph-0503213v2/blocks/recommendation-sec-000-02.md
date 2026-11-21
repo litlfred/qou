@@ -1,1 +1,0 @@
-The reader should note the subtle yet important distinction that this is not a preon model *per se*, based upon point-like particles, but rather a preon-*inspired* model, which may be realised as a topological feature of some more comprehensive theory.

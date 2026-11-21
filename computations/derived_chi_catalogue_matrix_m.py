@@ -642,12 +642,43 @@ def cross_validate(
 
 # ── Sweep: validate against catalogue's compute scope ─────────────
 
+ISOSPIN_DEGENERACY_NOTE = (
+    "ISOSPIN DEGENERACY WARNING (bean qou-sgv5): The chi-*-matrix-m / "
+    "_word_for_braid_word_3a sign-only wire family does NOT carry proton-neutron "
+    "or isobar splitting (tr_M(p) == tr_M(n) and tr_M(T) == tr_M(3He) to all 50 "
+    "digits, Delta == 0 identically by construction). `atom_braid_word_3A(Z, N)` "
+    "returns (c, d, gen_0based) triples representing `c*sigma_g + d*1` with "
+    "`c == +1.0` for EVERY crossing of EVERY nucleus, while the crossing type "
+    "(sigma: d=0, sigma_inv: d=-h, averaged: d=-h/2, averaged_weighted: "
+    "d=-h*(1/2 - delta/4)) lives entirely in `d`. `_word_for_braid_word_3a` reads "
+    "`1 if c >= 0 else -1` off the constant `c == +1` field and drops `d`, "
+    "collapsing every word to an all-positive braid word whose generator sequence "
+    "depends on A = Z + N alone. Even decoding `d` via `sign_for_ctype` maps "
+    "averaged/averaged_weighted crossings to `0` (not in B_n). For physical "
+    "isospin/isobar splittings (e.g. Delta(n-p), Delta(3He-T), E_0 = Q_beta/|Delta tr_M|), "
+    "use the exact-triple Hoefsmit (`chi_at_q0_via_hoefsmit_mpfr.py` -> "
+    "`chi-{atom}-h{n}-at-q0-50dps.witness.json`) or closed-form Wenzl bridge "
+    "(`closed_form_tau_M.py`) routes. Verified by "
+    "`computations/probes/chi_matrix_m_isospin_degeneracy_diagnostic_probe.py`."
+)
+
 
 def _word_for_braid_word_3a(Z: int, N: int) -> tuple[int, list[tuple[int, int]]]:
     """Bridge to the production atom braid word — uses the existing
     `mass_at_3A_proper.atom_braid_word_3A` and translates from the
     `(c, d, gen_0based)` triple format into the `(sign, gen_1based)`
     pairs that `chi_q_via_gp` and our Python pipeline both consume.
+
+    WARNING (bean `qou-sgv5`): Because `atom_braid_word_3A(Z, N)` sets
+    `c == +1.0` on every crossing and encodes the `sigma` / `sigma_inv` /
+    `averaged` / `averaged_weighted` distinction in `d`, reading the sign
+    from `1 if c >= 0 else -1` and dropping `d` produces an all-positive
+    `(sign=+1, gen_1based)` word that depends ONLY on `A = Z + N`. Isobars
+    such as `(1,0)` vs `(0,1)` (proton vs neutron) and `(1,2)` vs `(2,1)`
+    (tritium vs helium-3) therefore receive byte-identical words and
+    identical `tr_M` (`Delta == 0` by construction). See
+    `ISOSPIN_DEGENERACY_NOTE` and
+    `computations/probes/chi_matrix_m_isospin_degeneracy_diagnostic_probe.py`.
     """
     from mass_at_3A_proper import atom_braid_word_3A
     triples = atom_braid_word_3A(Z, N)

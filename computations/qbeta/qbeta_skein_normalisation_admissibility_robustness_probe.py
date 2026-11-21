@@ -163,6 +163,7 @@ probes are not exempt).
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import sys
 from pathlib import Path
@@ -197,7 +198,7 @@ def main() -> int:
     u = sp.sqrt(q)
     h = q - 1 / q
     s = u - 1 / u
-    E0 = 1 / (q * (q - 1))                       # in units of m_e
+    E0 = _qbeta_e0.order_zero_scaled(1, q)                       # in units of m_e
 
     # ---- 1. the transport map, exact ------------------------------------
     zC = sp.sqrt(q) / (q + 1)
@@ -310,7 +311,7 @@ def main() -> int:
     q0 = sp.Rational(Q_50_DIGIT_STR)
     m_e = sp.Rational(str(CONST.M_E_MEV))
     Qexp = sp.Rational(str(CONST.Q_NEUTRON_MEV))
-    T = Qexp / (m_e / (q0 * (q0 - 1)))            # |tr| CODATA demands
+    T = Qexp / (_qbeta_e0.order_zero_scaled(m_e, q0))            # |tr| CODATA demands
     P = sp.simplify((pub_lo / E0).subs(q, q0))   # |tr| the PUBLISHED FORM sits at
 
     def f(e):
@@ -397,7 +398,7 @@ def main() -> int:
               "the NONE above is a finding, not a broken matcher")
 
     # ---- 6. what the (J) admissible parameters would give, in MeV -------
-    E0_MeV = m_e / (q0 * (q0 - 1))
+    E0_MeV = _qbeta_e0.order_zero_scaled(m_e, q0)
     Qc = mp.mpf(str(CONST.Q_NEUTRON_MEV))
     rows = []
     for k, za in zeta_adm.items():

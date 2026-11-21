@@ -18,7 +18,7 @@ The shift $\Delta q_{\mathrm{eff}}$ is exactly the $q$-anomaly $\delta_q$ of the
 
 ## Effect on the decay rate
 
-The differential shift $\Delta q_{\mathrm{eff}}$ modifies the effective substrate parameter at the converting nucleon. The decay rate depends on $q$ with sensitivity $\approx 48$ ([half-life regimes](#rem:hadron-half-life-regimes)). A shift of $\Delta q / q_0 \sim 0.1$--$0.4\%$ induces a measurable change in the decay rate.
+The differential shift $\Delta q_{\mathrm{eff}}$ modifies the effective substrate parameter at the converting nucleon. A shift of $\Delta q / q_0 \sim 0.1$--$0.4\%$ induces a measurable change in the decay rate.
 
 For ${}^{3}\mathrm{H}$ ($A = 3$), the shift $\Delta q_{\mathrm{eff}} = (2/9) \times \hbar_q^2 \approx 0.00218$ is the maximum correction. This categorical quantity derives directly from $q$, $A$, and the linking structure of the nuclear braid.
 

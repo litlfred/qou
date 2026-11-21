@@ -1,1 +1,0 @@
-Since the degener- ate cases, where one dihedral angle is zero, all have zero volume, the maximum must occur at an interior point, where the derivative JI'(0) = -log(2 sin 9) is defined and satisfies jiV) = Ji'(0) = Ji'(y), hence sin a = sin ft = sin y.

@@ -110,7 +110,7 @@ and
 [`rem:baryon-period-ratio`](#rem:baryon-period-ratio)).**
 *The piecewise geometric invariant
 $\mathrm{Geom}(K)$
-([topological mass formula](#prop:topological-mass-formula))
+([topological mass formula](#conj:topological-mass-formula))
 is the evaluation of the Yekutieli rigid dualizing complex
 $\omega_A^\bullet$ on the algebraic stratification of the braid
 $\beta$ with closure $K = \widehat\beta$ (per

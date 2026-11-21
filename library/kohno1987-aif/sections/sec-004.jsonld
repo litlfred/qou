@@ -14,11 +14,13 @@
   "pageEnd": 23,
   "contains": [
     "library/kohno1987-aif/blocks/prose-sec-004",
-    "library/kohno1987-aif/blocks/recommendation-sec-004-01",
-    "library/kohno1987-aif/blocks/recommendation-sec-004-02",
-    "library/kohno1987-aif/blocks/recommendation-sec-004-03"
+    "library/kohno1987-aif/blocks/thm-sec-004-01",
+    "library/kohno1987-aif/blocks/thm-sec-004-02",
+    "library/kohno1987-aif/blocks/thm-sec-004-03",
+    "library/kohno1987-aif/blocks/cor-sec-004-04",
+    "library/kohno1987-aif/blocks/thm-sec-004-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -97,7 +97,7 @@ def main():
     env["LEAN_PATH"] = os.pathsep.join(
         [str(dest)] + [str(p / ".lake/build/lib/lean")
                        for p in (PKG / ".lake/packages").iterdir() if p.is_dir()])
-    opts = ["-DautoImplicit=false", "-s", "65536"]
+    opts = ["-DautoImplicit=false", "-DmaxSynthPendingDepth=3", "-s", "65536"]  # mirror Mathlib lakefile mathlibLeanOptions
     t0, ok, red = time.time(), 0, {}
 
     def build(m):

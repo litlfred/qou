@@ -1,0 +1,1 @@
+The problem to be solved in lattice QCD is actually the inverse of that just described - we start with the ﬁnite-volume spectrum determined through analysis of correlation functions and want to ﬁnd the phase-shifts as a function of scattering momentum.

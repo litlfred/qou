@@ -26,19 +26,20 @@ $$
 
 **The gate.** $F$ *passes* when
 $F_{\text{target}}(q_0)/10 \le |F(q_0)| \le 10\,F_{\text{target}}(q_0)$
-(same order of magnitude, one decade each way) and is refuted
-otherwise. The operational test
-$|F(q_0) - F_{\text{target}}(q_0)|/F_{\text{target}}(q_0) > 10$ is a
-sufficient condition for failure: it forces either
-$|F(q_0)| > 11\,F_{\text{target}}(q_0)$ or a sign reversal, both
-outside the window.
+(same order of magnitude, one decade each way) and is screened out
+otherwise. The additive test
+$|F(q_0) - F_{\text{target}}(q_0)|/F_{\text{target}}(q_0) > 10$ is
+**not** a sufficient condition for failure when $F(q_0)$ may be
+negative: $F_{\text{target}}=1$, $F(q_0)=-19/2$ passes the window but
+fails the additive test. For $F(q_0)\ge0$ it is sufficient, but it
+never rejects a too-small magnitude
+([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 6).
 
 **Step 1 — the target has order of magnitude one.** Every ladder
 factor satisfies $|c_k u_0^k| \le |c_2|\,u_0^2 \approx 7.3\times
 10^{-5}$, with the sequence $|c_k|\,u_0^k$ decreasing to the flat
 asymptote $\approx 2.1\times 10^{-13}$ measured on the window
-$c_2, \ldots, c_{10}$ (witness
-`computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json`).
+$c_2, \ldots, c_{10}$ (radius-of-convergence gate computation).
 Hence
 
 $$
@@ -62,12 +63,14 @@ canonical $c_k$ — evaluates at $q_0$ to the correction product of
 Step 1, hence within $2\times 10^{-4}$ (in log) of order unity and,
 up to the sub-percent accuracy of the ladder itself (negligible at a
 decade threshold), to $F_{\text{target}}(q_0)$. Its window ratio is
-$\approx 1 \ll 10$: the true kernel passes at any decade threshold,
-so no false refutation is possible. Contrapositively, a candidate
-whose magnitude falls outside the decade window has $F(q_0) \ne
-F_{\text{true}}(q_0)$, and two fibre elements with distinct
-archimedean evaluations at $q_0$ are distinct: the refuted candidate
-is not the true kernel. Rejection is definitive; passage is only
+$\approx 1 \ll 10$: *granted that ladder comparison*, the true kernel
+passes at any decade threshold, so the screen raises no false refutation. Contrapositively, *if* the true kernel passes, a candidate whose
+magnitude falls outside the decade window has $F(q_0) \ne
+F_{\text{true}}(q_0)$ ([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 2).
+That premise rests on the comparison of the ladder with
+$\mathfrak{Q}_\beta^{\text{CODATA}}$ and on the infinite ladder
+bound, whose convergence is not proved, so rejection is conditional,
+not definitive. Passage is only
 necessary — a passing candidate still faces the exact $\S 4(c)$
 integer shadows and the $\S 4(a)$ pole-location test, which is
 conditional on the [radius-of-convergence conjecture](q-beta-radius-of-convergence-gate.md).
@@ -109,16 +112,19 @@ $$
 \;\approx\; 0.998 \cdot 1.632^{\,m},
 $$
 
-which exceeds $10$ first at $m = 5$ (where it is $\approx 11.6$;
-at $m = 4$ it is $\approx 7.1$). Repeated stabilisation can only
+which, at the retired $z = 1$ base target $\approx 0.998$, exceeds
+$10$ first at $m = 5$ (where it is $\approx 11.6$; at $m = 4$ it is
+$\approx 7.1$). The first rejected $m$ depends on the target: it is
+$m = 4$ at the convention-D target $\approx 1.76$. Repeated stabilisation can only
 shrink the magnitude — it can never climb to a target of order unity,
 let alone to the linking-weight scale $\approx 2.5$ of the precedent —
-and the gate refutes every member with $m \ge 5$. The members with
+and, at that target, the gate screens out every member with $m \ge 5$
+([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 5). The members with
 $m \le 4$ are not caught by the decade threshold; their exclusion
 rests on the direction argument itself, not on this gate.
 $\blacksquare$
 
-Until 2026-10-10 this step used the excised convention-C weight
+Under the alternative Convention-C weight
 $z = 1/(q^{1/2} + q^{-1/2})$. That weight satisfies $0 < z < 1/2$ for
 every $q > 1$ by AM–GM, which made the obstruction hold at all $q > 1$
 with first exceedance at $m = 4$ (ratio $\approx 16$). Neither holds

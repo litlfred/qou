@@ -1,41 +1,90 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "0110001v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f30f603ac1c555e0aba08f07e4d55e1a23e8b6d08ce93e89f4963849d6f19050",
   "file": "0110001v3.pdf"
  },
  "provenance": {
-  "title": "A geometric interpretation of Milnor\u2019s triple linking numbers Introduction",
+  "title": "A geometric interpretation of Milnor's triple linking numbers",
   "authors": "Blake Mellor",
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 1
+   "lemma": 2
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
    "name": null,
-   "statement": "It is understood that the path begins at the center of the disk, and that the center should be pushed slightly beyond the endpoint of the path.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "If F is of type 1, then mijk(F) \u2261\u00af\u00b5ijk. Proof By the classi\ufb01cation of surfaces, each component of F can be viewed as a 2-dimensional handlebody, i.e. a disk (0-handle) with bands (1-handles) attached, while the clasps between any two components can be viewed as pairs of feelers, i.e. bands attached at one end to their respective disks and clasped with each other at the other end. Algebraic & Geometric Topology, Volume 3 (2003) A geometric interpretation of Milnor\u2019s triple linking numbers Of course the bands and feelers may be highly linked and twisted, so consider the e\ufb00ect of a band pass (moving one such through another or through itself). C",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-3-proof-of-the-theorem.md (p. 6-12)",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-001-3-proof-of-the-theorem.md",
    "section_title": "Proof of the theorem",
    "pages": "6-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-001-3-proof-of-the-theorem.md (p. 6-12)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-001-01",
+   "block_iri": "library/0110001v3/blocks/lem-sec-001-01",
+   "claim_id": "0110001v3#lemma:1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "The di\ufb00erence mijk \u2212tijk is invariant under all three \ufb01nger moves. Proof Each move is, to be exact, six possible moves, since the roles of the three surfaces can be permuted. We will consider only one of the six cases, the ones depicted in the \ufb01gures, since the others can be proved similarly. The \ufb01rst \ufb01nger move (Figure 4) clearly does not change the number of triple points, so tijk remains the same. Also, since the words wj and wk (around the boundaries of Fj and Fk) are unchanged, so are eijk and ekij . The word wi is only changed by adding a cancelling pair, so ejki is unchanged. Therefore mijk is \ufb01xed as well, and so is the di\ufb00erence mijk",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-3-proof-of-the-theorem.md (p. 6-12)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-3-proof-of-the-theorem.md",
+   "section_title": "Proof of the theorem",
+   "pages": "6-12",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-001-3-proof-of-the-theorem.md (p. 6-12)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-001-02",
+   "block_iri": "library/0110001v3/blocks/lem-sec-001-02",
+   "claim_id": "0110001v3#lemma:2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

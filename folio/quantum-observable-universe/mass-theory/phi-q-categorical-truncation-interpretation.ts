@@ -8,5 +8,6 @@ export default remark({
     "conj:phi-q-categorical-truncation",
     "cor:habiro-expansion-atomic",
     "conj:brane-tower-z-habiro",
+    "prop:cell-depth-truncation",
   ],
 });

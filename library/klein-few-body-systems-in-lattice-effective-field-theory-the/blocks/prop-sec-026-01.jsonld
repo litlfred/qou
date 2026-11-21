@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-026-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 46,
+  "pageEnd": 49,
+  "text": "prop-sec-026-01.md",
+  "derivedFrom": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-026",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "computational-claim",
+    "claim_domain": "science",
+    "evidence_kind": "computational-simulation",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper computational simulation in sections/sec-026-the-lattice-hamiltonian.md (p. 46-49)",
+    "claim_id": "klein-few-body-systems-in-lattice-effective-field-theory-the#prop-sec-026-01"
+  }
+}

@@ -1,1 +1,1 @@
-tells us that these algebras have Auslander rigid dualizing complexes.
+tells us that these algebras have Auslander rigid dualizing complexes. In the same way we may use Theorems 0.7 and 0.6 to show that many qu antum algebras and their factor algebras have Auslander rigid dualizing com plexes. A key step in the proof of Theorem 0.7 is the following theorem (see Theore m 5.1 for full details and proof).

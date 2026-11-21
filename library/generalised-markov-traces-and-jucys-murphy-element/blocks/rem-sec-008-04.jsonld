@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/rem-sec-008-04",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "rem-sec-008-04.md",
+  "derivedFrom": "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.1.6",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-008-markov-traces-via-jucys-murphy-elements.md (p. 5-6)",
+    "claim_id": "generalised-markov-traces-and-jucys-murphy-element#remark:3.1.6"
+  }
+}

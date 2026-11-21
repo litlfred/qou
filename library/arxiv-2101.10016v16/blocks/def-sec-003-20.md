@@ -1,0 +1,1 @@
+Let C and C ′ be tensor ∗ -categories. A unitary weak quasi tensor functor is a weak quasi tensor ∗-functor F : C → C ′ defined by (F, G) such that F∗ and G are isometries. A strongly unitary weak quasi tensor functor we have in addition F ∗ = G. For quasi-tensor ∗-functors we recover the usual notion of unitarity F ∗ ρ,σ = F −1 ρ,σ .

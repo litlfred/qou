@@ -1,1 +1,0 @@
-In fact, the image of the map $i$ from Remark [\[r:inclusion\]](#r:inclusion){reference-type="ref" reference="r:inclusion"} contains *all* of the symmetric affine simplices; the symmetrization of an affine simplex which drops dimension must vanish:

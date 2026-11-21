@@ -1,0 +1,1 @@
+Suppose φ1 : P1 →Q1 and φ2 : P2 →Q2 are quasi-isomorphisms in C(Aop) and C(A) respectively, and either of the conditions below holds: (i) Q1 and P1 are both K-ﬂat. (ii) P2 and Q2 are both K-ﬂat. Then the homomorphism φ1 ⊗φ2 : P1 ⊗A P2 →Q1 ⊗A Q2 in C(K) is a quasi-isomorphism.

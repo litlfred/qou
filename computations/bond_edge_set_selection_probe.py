@@ -43,7 +43,6 @@ Output: bond-edge-set-selection.witness.json
 from __future__ import annotations
 
 import json
-import math
 
 import mpmath as mp
 import sys
@@ -55,7 +54,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 # The float64 drain in this PR put mpmath into a probe that had none. Without
 # this call every mp.mpf/mp.log below would run at mpmath's DEFAULT dps=15 --
@@ -70,12 +69,14 @@ _UPSTREAM_RECORDS: list = []
 
 
 def _dp(x, places: int):
-    """Serialize one enumeration cell at its declared width, as a STRING.
+    """Serialize one enumeration cell at full substrate precision via _precision.fmt.
 
-    Replaces `round(x, n)`, which emitted a JSON float. 1,879 of them: the
-    full `pp/pn/nn` edge-multiset enumeration is written out per atom.
+    Previously used `f"{x:.{places}f}"` over `mpf`, which both truncated to
+    3–4 decimal places (causing rounded-vs-unrounded comparison drift in bean
+    qou-wc9f) and raised `TypeError: unsupported format string passed to
+    mpf.__format__` under mpmath 1.3.0 (bean qou-eg4l).
     """
-    return None if x is None else f"{x:.{places}f}"
+    return None if x is None else fmt(x)
 
 
 def _constants():
@@ -105,7 +106,8 @@ def _constants():
         delta = mp.mpf(_avg_color_delta())
     except Exception:
         delta = mp.mpf(0)
-    E0 = me / (q0 * (q0 - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(me, q0)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     return q0, h, z, delta, me, E0
 
 
@@ -145,8 +147,12 @@ def main() -> int:
         max_pp, max_pn, max_nn = Z * (Z - 1) // 2, Z * N, N * (N - 1) // 2
 
         # EXACT enumeration of every integer edge multiset (the static class).
+        # Compare unrounded mpf values against unrounded mpf values for both
+        # `best` and `closable` (bean qou-wc9f).
         best = None
+        best_miss_mp = None
         combos = []
+        miss_mp_list = []
         for npp in range(max_pp + 1):
             for npn in range(max_pn + 1):
                 for nnn in range(max_nn + 1):
@@ -155,15 +161,15 @@ def main() -> int:
                     combos.append({"pp": npp, "pn": npn, "nn": nnn,
                                    "L": _dp(L, 4),
                                    "miss_x": _dp(miss, 3)})
+                    if miss is not None:
+                        miss_mp_list.append(miss)
                     if L > 0 and (best is None or
-                                  abs(mp.log(miss)) < abs(mp.log(mp.mpmathify(best["miss_x"])))):
+                                  abs(mp.log(miss)) < abs(mp.log(best_miss_mp))):
                         best = combos[-1]
+                        best_miss_mp = miss
         L_complete = max_pp * lg["pp"] + max_pn * lg["pn"] + max_nn * lg["nn"]
-        # cells are decimal strings now; compare the values, not their text
-        closable = any(c["miss_x"] is not None
-                       and mp.mpf("0.95") <= mp.mpmathify(c["miss_x"])
-                       <= mp.mpf("1.05")
-                       for c in combos)
+        closable = any(mp.mpf("0.95") <= m <= mp.mpf("1.05")
+                       for m in miss_mp_list)
         if not closable:
             joint_closure_possible = False
 
@@ -227,17 +233,18 @@ def main() -> int:
     )
     w.add_assertion(
         name="he4_requires_more_than_complete_graph",
-        computed=he4_row["complete_vs_required"], expected="1.2",
+        computed=he4_row["complete_vs_required"], expected="1.6469",
         tolerance="0.05",
-        source="L_required/L_complete for ⁴He ≈ 1.20 > 1: even the complete "
-               "graph under-binds; pairwise-additive closure impossible.",
+        source="L_required/L_complete for ⁴He ≈ 1.647 > 1 under Convention D "
+               "(was 1.20 under Convention C): even the complete graph "
+               "(1pp+4pn+1nn) under-binds; pairwise-additive closure impossible.",
     )
-    out = w.save()
+    out = w.save({"q0Anchor": "proton", "q0Value": fmt(q0)})
 
     print("=" * 88)
     print(" Edge-set selection — EXACT enumeration of static integer bond graphs")
-    print(f"   per-bond E [MeV]: pp={E0*lg['pp']:.3f}  pn={E0*lg['pn']:.3f}  "
-          f"nn={E0*lg['nn']:.3f}   (derived, fixed)")
+    print(f"   per-bond E [MeV]: pp={float(E0*lg['pp']):.3f}  pn={float(E0*lg['pn']):.3f}  "  # float64-ok: stdout display only
+          f"nn={float(E0*lg['nn']):.3f}   (derived, fixed)")  # float64-ok: stdout display only
     print("=" * 88)
     print(f" {'atom':>7}{'A':>3}{'L_req':>8}{'box(pp,pn,nn)':>15}{'L_complete':>11}"
           f"{'req/compl':>10}{'best set':>16}{'best miss':>10}{'closable':>9}")
@@ -247,22 +254,32 @@ def main() -> int:
         bs = f"({b['pp']},{b['pn']},{b['nn']})"
         eb = r["edge_box"]
         # row cells are decimal strings; float() only for the display width
-        _lr, _lc = float(r['L_required']), float(r['L_complete_graph'])
-        _cv = float(r['complete_vs_required']) if r['complete_vs_required'] else 0.0
-        _mx = float(b['miss_x']) if b['miss_x'] else 0.0
+        _lr, _lc = float(r['L_required']), float(r['L_complete_graph'])  # float64-ok: stdout display only
+        _cv = float(r['complete_vs_required']) if r['complete_vs_required'] else 0.0  # float64-ok: stdout display only
+        _mx = float(b['miss_x']) if b['miss_x'] else 0.0  # float64-ok: stdout display only
         print(f" {r['atom']:>7}{r['A']:>3}{_lr:>8.3f}"
               f"{str((eb['pp'], eb['pn'], eb['nn'])):>15}{_lc:>11.3f}"
               f"{_cv:>10.2f}{bs:>16}{_mx:>9.2f}×"
               f"{str(r['closable_within_5pct']):>9}")
     print(" " + "-" * 86)
     print(" VERDICT: no static integer edge set closes jointly —")
-    print("   D: 1 bond overshoots 1.75× (needs occupancy ~0.57, halo-loose);")
-    print("   ⁴He: complete graph under-binds 1.20× (needs many-body/magic term).")
+    print("   D: 1 bond overshoots 1.27× (needs occupancy ~0.79, halo-loose);")
+    print("   ⁴He: complete graph under-binds 1.65× (needs many-body/magic term).")
     print("   → fractional occupancy / shell weighting (per-nucleus volume, #2078),")
     print("     NOT an edge-set choice. Static-graph direction refuted; recorded.")
     print(f"\n Witness: {out}")
     return 0
 
 
+def _selftest() -> int:
+    q0, h, z, delta, me, E0 = _constants()
+    assert isinstance(q0, mp.mpf) and isinstance(E0, mp.mpf)
+    assert isinstance(_dp(E0, 4), str) and len(_dp(E0, 4)) > 30
+    print("self-test: ok (_constants returns mpf and _dp formats at full substrate precision)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:] or "--selftest" in sys.argv[1:]:
+        raise SystemExit(_selftest())
     raise SystemExit(main())

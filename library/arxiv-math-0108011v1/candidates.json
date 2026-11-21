@@ -1,0 +1,222 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0108011v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "e4af4b5d3c5ff6cd74aade171241729533beefc5d0c937407d3b050ab26bde44",
+  "file": "0108011v1.pdf"
+ },
+ "provenance": {
+  "title": "The Homfly polynomial of the decorated Hopf link",
+  "authors": "HUGH R. MORTON and SASCHA G. LUKAC 1",
+  "arxiv": {
+   "id": "math/0108011",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "2 Aug 2001"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "lemma": 5,
+   "corollary": 1,
+   "theorem": 1,
+   "remark": 2
+  },
+  "formalization_candidates": 7,
+  "by_domain": {
+   "math": 9
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 7,
+   "explanatory": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 7,
+   "both": 1,
+   "elsewhere": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1.1",
+   "name": null,
+   "statement": "We can write t\u03bb(Y ) = \u27e8Q\u03bb, Y \u27e9/ \u27e8Q\u03bb\u27e9.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-005-15-the-hopf-link.md (p. 6-7)",
+   "external_refs": [],
+   "proof_excerpt": "Suppose that \u03bb has n cells. Then \u03c8n(Y )e\u03bb = t\u03bb(Y )e\u03bb. Apply the closure map \u02c6 : Hn \u2192C to both sides. The left-hand side becomes \u03d5(Y )(\u02c6e\u03bb). Now apply the evaluation map \u27e8\u27e9to both sides, using the fact that \u02c6e\u03bb = \u03b1\u03bbQ\u03bb, to get \u27e8\u03b1\u03bbQ\u03bb, Y \u27e9= t\u03bb(Y ) \u27e8\u03b1\u03bbQ\u03bb\u27e9. This gives the expression fo",
+   "section_file": "sections/sec-005-15-the-hopf-link.md",
+   "section_title": "The Hopf link",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-005-15-the-hopf-link.md (p. 6-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1.2",
+   "name": null,
+   "statement": "For any elements X and Y of C and any Young diagram \u03bb we have \u27e8Q\u03bb, X\u27e9\u27e8Q\u03bb, Y \u27e9= \u27e8Q\u03bb\u27e9\u27e8Q\u03bb, XY \u27e9.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-005-15-the-hopf-link.md (p. 6-7)",
+   "external_refs": [],
+   "proof_excerpt": "Use the formula of lemma 1.1 and the fact that t\u03bb is a homomor- phism. \u2737 Since any Y \u2208C+ can be written as a polynomial in the skein elements {ci} we only need to know the values of \u27e8Q\u03bb, ci\u27e9for integers i \u22650 in order to compute \u27e8Q\u03bb, Y \u27e9for all Y \u2208C+. In particular we can then com",
+   "section_file": "sections/sec-005-15-the-hopf-link.md",
+   "section_title": "The Hopf link",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-005-15-the-hopf-link.md (p. 6-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
+   "name": null,
+   "statement": "We have s\u00b5(E\u03bb(t)) = \u27e8\u03bb\u27e9\u27e8\u03bb, \u00b5\u27e9 for any Young diagrams \u03bb and \u00b5.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-22-applications-in-the-skein-of-the-annulus.md (p. 8-10)",
+   "external_refs": [],
+   "proof_excerpt": "Applying the homomorphism t\u03bb to the power series P citi gives E\u03bb(t) = t\u03bb(P citi). Then s\u00b5(E\u03bb(t)) = t\u03bb(s\u00b5( X citi)) = t\u03bb(\u00b5) = 1 \u27e8\u03bb\u27e9\u27e8\u03bb, \u00b5\u27e9. \u2737 We also de\ufb01ne H\u03bb(t) = 1 \u27e8\u03bb\u27e9 X j\u22650 \u27e8\u03bb, dj\u27e9tj = t\u03bb( X djtj) for any Young diagram \u03bb, taking d0 = 1.",
+   "section_file": "sections/sec-008-22-applications-in-the-skein-of-the-annulus.md",
+   "section_title": "Applications in the skein of the annulus",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-22-applications-in-the-skein-of-the-annulus.md (p. 8-10)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "We have E\u03bb(t)H\u03bb(\u2212t) = 1 for any Young diagram \u03bb.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-008-22-applications-in-the-skein-of-the-annulus.md (p. 8-10) citing [1]",
+   "external_refs": [
+    "[1]"
+   ],
+   "proof_excerpt": "Apply the homomorphism t\u03bb to the two power series with coe\ufb03cients in C in the equation \uf8eb \uf8edX i\u22650 citi \uf8f6 \uf8f8 \uf8eb \uf8edX j\u22650 dj(\u2212t)j \uf8f6 \uf8f8= 1 proved by direct skein theory in [1]. The equation follows alternatively from the fact that the elements dj in C are the Schur functions corresponding ",
+   "section_file": "sections/sec-008-22-applications-in-the-skein-of-the-annulus.md",
+   "section_title": "Applications in the skein of the annulus",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-008-22-applications-in-the-skein-of-the-annulus.md (p. 8-10) citing [1]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "We have \u27e8ci, dj\u27e9= \u27e8ci\u27e9\u27e8dj\u27e9v\u22121(s2j \u2212s2(j\u2212i) + s\u22122i) \u2212v v\u22121 \u2212v for any integers i \u22650 and j \u22650.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-009-3-the-hopf-link-decorated-with-columns-and-rows.md (p. 10-13)",
+   "external_refs": [],
+   "proof_excerpt": "We shall prove the lemma by expressing the Hom\ufb02y polynomial of a certain decorated link in two di\ufb00erent ways and comparing the results. The link in question is the 2-parallel of the unknot with framing 1 as shown below, decorated with ci on one component and dj on the other compo",
+   "section_file": "sections/sec-009-3-the-hopf-link-decorated-with-columns-and-rows.md",
+   "section_title": "The Hopf link decorated with columns and rows",
+   "pages": "10-13",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-009-3-the-hopf-link-decorated-with-columns-and-rows.md (p. 10-13)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let \u03bb be a Young diagram and let N \u2265l(\u03bb). Then the special- isation EN \u03bb (t) is a polynomial in t of degree \u2264N.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md (p. 13-21)",
+   "external_refs": [],
+   "proof_excerpt": "We must show that t\u03bb(cr)N = 0 for r > N. Since \u27e8\u03bb\u27e9N\u0338 = 0 it is enough to show that \u27e8\u03bb, cr\u27e9N = 0 for r > N. By (13) we know that \u27e8cr\u27e9N = 0 for r > N, and so \u27e8cr, \u03bb\u27e9N = tcr(\u03bb)N \u27e8cr\u27e9N = 0. The result follows since \u27e8\u03bb, cr\u27e9= \u27e8cr, \u03bb\u27e9. \u2737 We now \ufb01nd a factorisation of this polynomial EN ",
+   "section_file": "sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md",
+   "section_title": "The Hopf link decorated with any Young diagrams",
+   "pages": "13-21",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md (p. 13-21)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.4",
+   "name": null,
+   "statement": "We have E\u03bb(t) = l(\u03bb) Y j=1 1 + v\u22121s2\u03bbj\u22122j+1t 1 + v\u22121s\u22122j+1t E\u2205(t) for any Young diagram \u03bb.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md (p. 13-21)",
+   "external_refs": [],
+   "proof_excerpt": "For any integer N \u2265l(\u03bb) we have EN \u03bb (sN\u22121t) = Q i\u2208I\u03bb(1 + qit) by lemma 4.3. Now I\u03bb = I\u2205\u222al(\u03bb) j=1 {\u03bbj + N \u2212j} \u2212\u222al(\u03bb) j=1{N \u2212j}. Hence EN \u03bb (sN\u22121t) = l(\u03bb) Y j=1 1 + q\u03bbj+N\u2212jt 1 + qN\u2212jt EN \u2205(sN\u22121t) 18 and so EN \u03bb (t) = l(\u03bb) Y j=1 1 + s2(\u03bbj+N\u2212j)s1\u2212Nt 1 + s2(N\u2212j)s1\u2212Nt EN \u2205(t) = l(\u03bb) Y",
+   "section_file": "sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md",
+   "section_title": "The Hopf link decorated with any Young diagrams",
+   "pages": "13-21",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md (p. 13-21)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The rational function above can be expressed in terms of the content polynomial C\u03bb(t) de\ufb01ned by C\u03bb(t) = Y x\u2208\u03bb (1 + qcn(x)t). It is easy to check, by decomposing \u03bb as a disjoint union of simple hooks based on the diagonal cells, that d(\u03bb) Y i=1 1 + v\u22121s2ai+1t 1 + v\u22121s\u22122bi\u22121t = C\u03bb(v\u22121st)/C\u03bb(v\u22121s\u22121t). This leads to an alternative proof of theorem 4.5 using theorem 3.10 of [9], once it is established that the product of the Gyoja-Aiston idempotent e\u03bb, with |\u03bb| = n, and the polynomial EM(t), whose coe\ufb03cients are the ele- mentary symmetric functions of the Murphy operators in Hn, satis\ufb01es the equation EM(t)e\u03bb = C\u03bb(t)e\u03bb.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [9] in sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md",
+   "external_refs": [
+    "[9]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md",
+   "section_title": "The Hopf link decorated with any Young diagrams",
+   "pages": "13-21",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "Since \u27e8\u03bb, \u00b5\u27e9= s\u00b5(E\u03bb(t)) \u27e8\u03bb\u27e9= s\u03bb(E\u00b5(t)) \u27e8\u00b5\u27e9the calculation in our example could have been done with the roles of \u03bb and \u00b5 interchanged. In this case we would have had a more complicated expression for E\u00b5(t) since d(\u00b5) = 2, and in addition the expression for s\u03bb would involve terms up to degree 4 from the Jacobi-Trudy formula s = det \uf8eb \uf8ec \uf8ed e2 e3 e4 e1 e2 e1 \uf8f6 \uf8f7 \uf8f8. In general \u27e8\u03bb, \u00b5\u27e9contains some form of least common multiple of \u27e8\u03bb\u27e9and \u27e8\u00b5\u27e9, and a \u2018core\u2019 part, such as the expression C in the example above. To \ufb01nd \u27e8\u03bb, \u00b5\u27e9N we can make the substitution v = s\u2212N. When either \u27e8\u03bb\u27e9N = 0 or \u27e8\u00b5\u27e9N = 0 this will vanish. This happens when one of the partitions h",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-011-42-an-explicit-example.md (p. 21-24)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-011-42-an-explicit-example.md",
+   "section_title": "An explicit example",
+   "pages": "21-24",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

@@ -257,7 +257,7 @@ def main() -> int:
             "7.2e-5 residual; the match lands on the BARE value, i.e. the algebraic form "
             "rather than the physical coupling. Downgraded: the closed form is kept, the "
             "EM link is withdrawn."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 40},

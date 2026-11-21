@@ -1,0 +1,1 @@
+For λ, µ ∈ Λ +(q), let Fλ,µ : Vλ ⊗ Vµ → Vλ ⊠ Vµ, Gλ,µ : Vλ ⊠ Vµ → Vλ ⊗ Vµ be the morphisms in T(g, q, ℓ) respectively defined as the restriction of pλ⊗pµ = pnλ+nµ pλ⊗ pµpnλ+nµto Vλ ⊗ Vµ and that of pλ ⊗ pµ to Vλ ⊠ Vµ. Thus we have linear maps Fλ,µ : W(Vλ) ⊗ W(Vµ) → W(Vλ ⊠ Vµ), Gλ,µ : W(Vλ ⊠ Vµ) → W(Vλ) ⊗ W(Vµ).

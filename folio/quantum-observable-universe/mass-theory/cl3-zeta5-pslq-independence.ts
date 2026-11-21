@@ -15,7 +15,10 @@ export default proposition({
       "computations/cl3-zeta5-pslq-search.witness.json",
     status: "verified",
   },
-  uses: ["rem:b1-current-status"],
+  // rem:b1-current-status dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: [],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "pslq",

@@ -1,0 +1,1 @@
+Put dm = dim Xm. (i) (πm)∗¯Ql[dm] is a semisimple perverse sheaf on Xm, equipped with Sm-action, and is decomposed as (πm)∗¯Ql[dm] ≃ M λ∈P(m) Vλ ⊗IC(Oλ, ¯Ql)[dim Oλ]. (ii) The Springer correspondence is given by a 0≤m≤n (Sm × Sn−m)∧≃ a 0≤m≤n {Oλ | λ ∈P(m)} = Xuni/∼G .

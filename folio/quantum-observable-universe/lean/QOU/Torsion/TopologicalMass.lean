@@ -58,8 +58,37 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
         linarith
       · linarith
 
-/-- **Topological Decomposition of Mass** (data).
-    LaTeX: `\label{thm:topological-mass}` -/
+/-- **Topological Decomposition of Mass** (conjecture carrier).
+    LaTeX: `\label{conj:topological-mass}` (demoted from `thm:` 2026-11-20,
+    bean `qou-27ys`; the label in this docstring read `thm:` until bean
+    `qou-dx7g`).
+
+    **Vacuity status (bean `qou-dx7g`, 2026-11-20).**  `decomposition` carries
+    the open equality `m = baseline + Σ exceptional` as a hypothesis, and every
+    quantity in it — `totalMass`, `baselineHolonomy`, `exceptionalContribution`
+    — is a free real supplied with the instance.  So `numBlowups := 0`,
+    `totalMass = baselineHolonomy := 0` inhabits it (given any
+    `ArchimedeanMassIdentity` / `BraneBoundary`), and the structure does not
+    say which mass decomposes.  The content block
+    (`mass-endomorphism/topological-mass.md`) states the intended objects:
+    `m(γ) = ‖tr(γ)‖`, `baseline = ‖tr_desc(γ)‖ = ‖tr(τγ)‖`, transient terms
+    `‖tr_trans(γ, pᵢ)‖`, and records why the equality is open — the idempotent
+    splitting makes the *traces* add (`idempotent_gives_mass_decomposition`),
+    not their norms.  Tying these reals to norms of traces of a vortex morphism
+    needs the trace on `End_𝒞(A_{n+1})` and the vortex `γ` as data of this
+    structure; neither is available on the bare type `M`, so the fields are
+    left as they are and the gap is recorded here rather than papered over.
+
+    **Which trace (added 2026-11-21).**  The `‖tr(γ)‖` above is a single trace of
+    the vortex morphism.  The corpus's mass functional is the **two-term
+    Lagrangian trace** `τ(ℒ_q) = τ(𝒟²) + τ(ψ*𝒟ψ)`
+    (`QOU.CategoricalLagrangianTwoTermBridge.trace_lagrangian_two_term_split`,
+    epic `qou-7xl8`), with `τ` the quantum trace `Tr(K^{⊗n} ·)/[2]_q^n` (owner ruling
+    2026-11-20, option 2), which is the convention-D Markov trace
+    (`JimboActionKernel.jimboMarkov`).  A faithful repair of this carrier must
+    decompose `τ(ℒ_q)` — both the `𝒟²` term and the matter term — not a single
+    `‖tr(γ)‖`; whether the blow-up decomposition applies to the matter term is
+    not addressed anywhere in the corpus. -/
 structure TopologicalMassDecomposition (M : Type*) where
   mi : ArchimedeanMassIdentity M
   di : DescentInvolution (M → ℝ)

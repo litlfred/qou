@@ -1,0 +1,1 @@
+There is a projection map P : GL+ q (2, R) −→SL+ q (2, R) given by  z11 z12 z21 z22  7→  a b c d  :=  N −1/2z11 q−1/2N −1/2z12 q1/2N −1/2z21 N −1/2z22  , (7.9) where a, b, c, d satisﬁes the usual relations for SLq(2, R): ab = qba, ac = qca, ad = qda, bd = qdb, cd = qdc, bc = cb, ad −qbc = da −q−1cb = 1. (7.10)

@@ -1,1 +1,0 @@
-This may be interpreted as representing exactly two levels of substructure within quarks and leptons.\ The helon model also improves on the original rishon model by explaining why the ordering of helons (which are analogous to rishons) should matter.

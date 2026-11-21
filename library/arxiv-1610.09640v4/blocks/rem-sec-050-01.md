@@ -1,0 +1,1 @@
+The results to follow in this subsection will be stated for right Ore localizations only. They all have “left” versions, with identical proofs (just a matter of reversing some arrows or compositions), and therefore they will be omitted. To reinforce the last remark, we give:

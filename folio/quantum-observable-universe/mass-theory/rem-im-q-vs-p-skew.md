@@ -19,14 +19,14 @@ real number, and $P_{\mathrm{skew}}$ content is **real-valued**.
 For torus knots this is explicit:
 $Q_m(\eta) = \sinh((2m+1)\eta) / (2 \cosh \eta)$ is real at real $q_0$.
 Per
-[`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md),
+[the physical interpretation of strong binding and Coulomb repulsion](../observations/crossing-energy-interpretation.md),
 $\sinh(\log q)$ is the **EM / Coulomb channel**. So the EM /
 P_skew content **exists** for real $q$ and is discarded by the
 canonical projection.
 
 ### Mechanism 2 — modulus projection (complex-q phenomenon)
 
-Per [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md),
+Per [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md),
 the categorical mass formula is
 
 $$\mathfrak{m}_{q, \mathcal{K}} = \mathrm{tr}_M(\rho(\beta_\mathcal{K})).$$
@@ -66,7 +66,7 @@ Quantitative consequences differ between the two mechanisms:
      content given above.
 
 2. **Resolving the canonical lepton-mass formula** $F_\ell(q)$
-   ([`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)):
+   ([Canonical operator-level lepton-mass-tower formula](lepton-mass-tower-canonical.md)):
    the ratio $|\mathrm{tr}_M(K_\mu)| / |\mathrm{tr}_M(K_e)|$ is
    robust against $\mathrm{Im}(q)$ at leading order (modulus
    projection invariance), but **NOT** robust against the
@@ -81,8 +81,8 @@ Quantitative consequences differ between the two mechanisms:
 
 ## Cross-references
 
-- [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
-- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
-- [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
-- [`bar-involution.md`](../braids-and-knots/bar-involution.md) — bar projection definition
-- [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification
+- [Lusztig bar vs Hermitian-$\ast$](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
+- [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
+- [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
+- [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) — bar projection definition
+- [Physical interpretation: strong binding and Coulomb repulsion](../observations/crossing-energy-interpretation.md) — $\sinh(\log q)$ = Coulomb channel identification

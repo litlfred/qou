@@ -1,1 +1,0 @@
-On the other hand, an ideal triangulation that contains an edge which belongs to exactly one (or two) ideal tetrahedra does not admit a strict angle structure since the angle equations around that edge should add to $2$.

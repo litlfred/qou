@@ -1,1 +1,0 @@
-(For all these facts see \cite{Bour}, Chap.\ IV, \S 2, Ex.\ 23.) We then also have the following relations. \[ g_w g_{w'}=g_{ww'} \quad \mbox{ if $l(ww')=l(w)+l(w')$}.\] The embeddings $W_0 \subset W_1 \subset W_2 \subset \ldots$ of (2.1) induce corresponding embeddings of algebras $H_0 \subset H_1 \subset H_2 \subset \ldots$ and we shall denote \[ H:=\bigcup_{n \geq 0} H_n.\]

@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
-  "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-08-16T13:00:29.067389+00:00",
-  "commitSha": "fc9819f75c7b82f1235a47fe9533978a7100b621",
+  "engineVersion": "snappea (not installed)",
+  "computedAt": "2026-11-20T08:05:18.914809+00:00",
+  "commitSha": "b500d8e9a850d6bcd3fa6bcf557875e6d82c969e",
   "assertions": [
     {
       "name": "Vol_p_present",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 47,
+  "durationMs": 3,
   "computation": "per-atom-hyperbolic-volume",
   "scriptFile": "per_atom_hyperbolic_volume_witness.py",
-  "scriptHash": "79eeeb72e18d",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "e6d67b15f03d",
+  "scriptCommitSha": "615b5553363a7e159ec40fa99bb156e48be9b1c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,32 +66,40 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "1909bbe0316e1236"
   },
-  "description": "Per-atom hyperbolic volumes Vol(K_atom) for the canonical atom-knot atlas (proton=𝓑₃, ²H=6_2, ³H=8_11, ³He=L6a4, ⁴He=4·8G magic-A). Input to Subgoal-1 per-knot mass formula via vol_density_per_block(vol_K, tr_M_K, q).",
+  "invocation": {
+    "argv": [
+      "computations/per_atom_hyperbolic_volume_witness.py"
+    ],
+    "reproduce": "python3 -u computations/per_atom_hyperbolic_volume_witness.py"
+  },
+  "description": "Per-atom hyperbolic volumes Vol(K_atom) for the canonical atom-knot atlas (proton=𝓑₃, ²H=6_2, ³H=8_11, ³He=L6a4, ⁴He=4·8G magic-A). Input to Subgoal-1 per-knot mass formula via per_knot_density_per_block(vol_K, tr_M_K, q).",
   "data": {
-    "Vol_p": "0.02263780480881132",
+    "Vol_p": "0.13606790385837692",
     "knot_p": "B_3 (Borromean)",
     "tag_p": "principled-derivation",
-    "Vol_n": "-0.11929656567536379",
+    "Vol_n": "-0.012332039874749623",
     "knot_n": "B_3 (Borromean)",
     "tag_n": "principled-derivation",
-    "Vol_D": "-1.1754776225650418",
+    "Vol_D": "-0.5530857284027163",
     "knot_D": "6_2",
     "tag_D": "manual-historical-volume-match",
-    "Vol_T": "-2.7409598694596227",
+    "Vol_T": "-1.4726800338106787",
     "knot_T": "8_11",
     "tag_T": "manual-historical-volume-match",
-    "Vol_3He": "-1.9635842533032033",
+    "Vol_3He": "-0.9069172087994741",
     "knot_3He": "L6a4",
     "tag_3He": "manual-historical-volume-match",
-    "Vol_4He": "-3.529066500197784",
+    "Vol_4He": "-1.8265115142074366",
     "knot_4He": "A·8G magic-A",
     "tag_4He": "magic-A-formula"
   }

@@ -1,0 +1,1 @@
+The perturbation series of the coef- ﬁcient cf 1(−Q2) does contain contributions of order g2 that are not enhanced by a logarithm – their role in the context of the Cottingham formula will be discussed in section 15.

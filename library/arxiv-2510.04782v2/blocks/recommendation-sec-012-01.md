@@ -1,1 +1,0 @@
-The Verschiebung $V_p\colon \qIW_{p^{\alpha-1}}\Omega_{S/A}^*\rightarrow \qIW_{p^{\alpha}}\Omega_{S/A}^*$ satisfies $F_p\circ V_p=p$ and $\qIW_{p^{\alpha-1}}\Omega_{S/A}^*$ is degree-wise $p$-torsion free by [@qWitt Proposition ], hence $V_p$ must be injective.

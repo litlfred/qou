@@ -1,0 +1,1 @@
+In this section, we have only treated the Habiro ring HR and not its modules HR,ξ indexed by ξ ∈K3(K). Given that Theorem 1 implies the completion H bR,ξ is a free H bR- module, we can use similar descriptions to that of Proposition 5.4 to describe the modules by simply dividing elements by a chosen generator of H bR,ξ.

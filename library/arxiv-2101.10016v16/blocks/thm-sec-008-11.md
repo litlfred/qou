@@ -1,1 +1,1 @@
-guaranties that A has an antipode.
+guaranties that A has an antipode. □

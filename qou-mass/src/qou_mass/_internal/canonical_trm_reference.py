@@ -130,9 +130,13 @@ def _rows_for_pin() -> dict[str, dict]:
     from q_parameter import Q_50_DIGIT_STR                  # noqa: PLC0415
     want = mp.mpf(Q_50_DIGIT_STR)
     seen = []
+    # In computations/, the witnesses sit beside this file (_HERE); in the
+    # vendored layout (qou_mass/_internal/), they sit one directory up in
+    # qou_mass/ (_HERE.parent). Search both (bean qou-72f8).
+    search_dirs = (_HERE, _HERE.parent)
     for name in _WITNESSES:
-        p = _HERE / name
-        if not p.exists():
+        p = next((d / name for d in search_dirs if (d / name).exists()), None)
+        if p is None:
             continue
         d = json.loads(p.read_text())
         w = d.get("witness", d)

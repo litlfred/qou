@@ -1,0 +1,1 @@
+If M is a compact, irreducible 3-manifold and h : S × [0, 1] →M is a homotopy equivalence, then h is homotopic to an orientation-preserving homeomorphism (see Section 10 of Hempel [39]). It follows that CC(S × [0, 1]) = CC0(S × [0, 1]).

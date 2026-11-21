@@ -1,1 +1,0 @@
-139 In this case the vanishing r6 = r5,1 = 0 can again be checked directly, using the observation that pδ 6 ⊕pδ 5,1 = pδ 1 ∗pδ 5 = δW1 ∗δ−W1 must be supported on the two-dimensional closed subset W1 −W1 ⊂X.

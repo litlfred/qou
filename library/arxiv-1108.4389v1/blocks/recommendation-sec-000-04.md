@@ -1,1 +1,0 @@
-Instead, we wish to associate a simple "building block" theory $T_{\Delta}$ to each tetrahedron $\Delta$, and to define the field theory analogue of the geometric gluing with a simple constraint in mind: different triangulations of the same manifold must give equivalent definitions of the corresponding theory, in the sense that they flow to the same SCFT in the IR.

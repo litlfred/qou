@@ -20,7 +20,7 @@ import sympy as sp
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from w_braid_reconcile_probe import q  # noqa: E402
 from word_dressing_chirality_probe import I2, I4, PL, PR, S, U, D, idx, kr, on_quarks  # noqa: E402
-from word_level_epsilon_probe import Q0, apply, deltaS_op, word_ops  # noqa: E402
+from word_level_epsilon_probe import Q0_STR, Q0, apply, deltaS_op, word_ops  # noqa: E402
 
 t = sp.Symbol("t")
 EMIT = kr(I2, I2, S, I2)
@@ -125,7 +125,10 @@ def main():
             print("J1", jr["word"], sn, jr["ratio"], jr["ratio_equals_q"], flush=True)
     res = {"producer": "computations/probes/neutron_vector_epsilon_probe.py", "bean": "qou-99qc",
            "preregistration": ["ε-N1", "ε-J1"], "arithmetic": "exact (sympy over Q(q)); q0 only for display",
-           "q0_anchor": "proton (display only)", "checks": checks, "rows_N1": rows, "rows_J1": jrows}
+           "q0_anchor": "proton (display only)",
+           "q0Anchor": "proton", "q0Value": Q0_STR,
+           "q0AnchorReason": "all published results are exact over Q(q); q0 enters only the display-only *_q0 fields, evaluated at word_level_epsilon_probe.Q0 = the proton pin truncated to 16 significant digits",
+           "checks": checks, "rows_N1": rows, "rows_J1": jrows}
     pathlib.Path(__file__).with_name("neutron-vector-epsilon.witness.json").write_text(
         json.dumps(res, indent=1, ensure_ascii=False) + "\n")
 

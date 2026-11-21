@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "2bc66a26d3901a2979d0591dc4e85fb46bc78e8defecc123002d4d2222195c89",
   "file": "bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf"
@@ -11,181 +14,11 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
-  "by_kind": {
-   "recommendation": 11
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The existence of diminishing returns implies that as the average difference of the triad \u00afd := 1/2(d1 + d2) increases, the propor- tion of selecting one test over the other should approach chance.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-analysis.md",
-   "section_title": "Analysis",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If the differences were additive, as Thurstone (56) suggests, participants should select t2 with the same frequency for both triads.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-analysis.md",
-   "section_title": "Analysis",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If diminishing returns exist, the degree of consensus should decrease with increased average difference in the triad.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-analysis.md",
-   "section_title": "Analysis",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To transform binary responses from a 2AFC task into a perceptual scale, certain assumptions about the underlying process must be made.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-analysis.md",
-   "section_title": "Analysis",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The frequency of selecting one test should adhere to the cumulative normal distribution where \u03bc = 0,# as illustrated in Fig.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-analysis.md",
-   "section_title": "Analysis",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Here, however, the parameters are discrete, so MLE must be performed numerically.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-analysis.md",
-   "section_title": "Analysis",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Our findings hint at the potential existence of a second- order Weber\u2013Fechner law stating that the perceived differences, or their derivatives as the case may be, grow logarithmically with the physical differences of the stimuli as well.|| More research must go into the validation of this conjecture, however, because the measurement of the absolute differences allows for some degree of freedom other than the L\u2217units and because other areas of color space and other areas of sensation might behave significantly differently.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-discussion.md",
-   "section_title": "Discussion",
-   "pages": "8-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "More experiments should be performed to cover the whole color space to achieve this overarching goal in the future.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-discussion.md",
-   "section_title": "Discussion",
-   "pages": "8-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The key idea is that for a space to be Riemannian, distances \u0394E between stimuli A, B, C along a geodesic must satisfy additivity: that is, \u0394E(A, B) + \u0394E(B, C) = \u0394E(A, C), [1] while diminishing returns require the strict inequality of this relation (Eq.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Lastly, the interested reader should review Wyszecki and Stiles (1) for an introduction to color theory, Resnikoff (22) for an excellent summary of the historical development of the idea of color space, and Vos (23, 24) for superb visualizations of the different line elements of color perception and a historical account on their development.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, if diminishing returns should exist, the means of the green and orange Gaussians should be scaled as demonstrated by the dashed distributions in the second row.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-First, there is a stability theorem [loc. cit., 6.2], which tells us in this context that dim Hi ét((Xa n)Fq; Qλ) = dim Hi ét((Xa n+D)Fq; Qλ) (2.8) for all n > Ai + B, where A, B, and D are constants we shall specify.

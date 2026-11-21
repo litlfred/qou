@@ -160,6 +160,7 @@ Q0 = float(Q_FLOAT)
 from _precision import set_compute_dps, fmt  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 from qou_substrate.constants import Q_50_DIGIT_STR as _Q50  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # BEFORE the mpf below, not after: this producer never called
 # `set_compute_dps()` at all, so `mp.dps` was the mpmath default of 15 and
@@ -227,7 +228,7 @@ REGISTRY = [
         "constituent_offsets": [0, 3, 6],
         "binding_link_name": "L6a4 (3-component link)",
         "observed_rho": 2,
-        "B_AME_MeV": 7.71806,
+        "B_AME_MeV": float(AME_B_HE3_MEV_VALIDATION),
     },
 ]
 

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-descent-physical-two",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:descent-physical-two",
+  "kind": "remark",
+  "title": "Physical implications of a $2$-dimensional base",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/rem-betti-numbers-brane",
+    "papers/quantum-observable-universe/blocks/prop-euler-char-stability"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-identity",
+  "cites": [
+    "references/yekutieli2015"
+  ],
+  "tags": [
+    "descent",
+    "vortex",
+    "mass",
+    "lepton",
+    "surface",
+    "central"
+  ],
+  "text": "descent-physical-two.md",
+  "provenance": "authored"
+}

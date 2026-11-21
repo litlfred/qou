@@ -1,0 +1,1 @@
+4.2 ([32], Theorem 5.1). Consider the maps Pd ( ) 7T d U ------0- End W (>9 ... (>9 W ~ 'Hd. 1. The actions ofU and 'Hd on W (>9 ... (>9 W commute. 2. As a (U, 'Hd)-bimodule, tensor space decomposes into simples W (>9 ... (>9 W ~ EB L(>") (>9 S(>..). AEi\+(111.d) (III.27) (III.28) (III.29) III.5. The Super Temperley-Lieb Algebra III. 5.1 Defin·ition of STLd.

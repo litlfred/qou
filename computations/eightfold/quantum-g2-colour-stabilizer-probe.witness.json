@@ -1,0 +1,226 @@
+{
+ "producer": "computations/eightfold/quantum_g2_colour_stabilizer_probe.py",
+ "bean": "qou-cb3r",
+ "arithmetic": "fractions.Fraction (exact)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact fractions.Fraction at the rational sample points q in {1, 2, 3, 5/2}; the substrate q0 is never read",
+ "result": {
+  "M_module_relations_failing": {
+   "2": [],
+   "3": [],
+   "5/2": []
+  },
+  "A": {
+   "K2_on_3": [
+    "1",
+    "1/8",
+    "8"
+   ],
+   "Kbeta_on_3": [
+    "8",
+    "1",
+    "1/8"
+   ],
+   "note": "all powers of q^3 = 8: long-root Cartan acts through q_long = q^3"
+  },
+  "B": [
+   {
+    "q": "1",
+    "kernel_dim": 1,
+    "kernel": [
+     [
+      "-1",
+      "3",
+      "-3",
+      "1"
+     ]
+    ],
+    "kernel_acts_nonzero_on_3": [
+     true
+    ]
+   },
+   {
+    "q": "2",
+    "kernel_dim": 0,
+    "kernel": [],
+    "kernel_acts_nonzero_on_3": []
+   },
+   {
+    "q": "3",
+    "kernel_dim": 0,
+    "kernel": [],
+    "kernel_acts_nonzero_on_3": []
+   },
+   {
+    "q": "5/2",
+    "kernel_dim": 0,
+    "kernel": [],
+    "kernel_acts_nonzero_on_3": []
+   }
+  ],
+  "C": [
+   {
+    "q": "1",
+    "hom_dim": 1,
+    "L_e_diagonal_in_weight_basis": true,
+    "L_e_on_3": [
+     "1",
+     "1",
+     "1"
+    ],
+    "L_e_on_3bar": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "R_e_on_3": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "R_e_on_3bar": [
+     "1",
+     "1",
+     "1"
+    ],
+    "L_e_on_e": "0",
+    "L_e_constant_on_3": true,
+    "L_e_constant_on_3bar": true,
+    "ratio_L3bar_over_L3": "-1",
+    "ratio_R3_over_L3": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "ratio_R3bar_over_L3bar": [
+     "-1",
+     "-1",
+     "-1"
+    ]
+   },
+   {
+    "q": "2",
+    "hom_dim": 1,
+    "L_e_diagonal_in_weight_basis": true,
+    "L_e_on_3": [
+     "1",
+     "1/16",
+     "1/16"
+    ],
+    "L_e_on_3bar": [
+     "-1/64",
+     "-1/4",
+     "-1/4"
+    ],
+    "R_e_on_3": [
+     "-1/64",
+     "-1/4",
+     "-1/4"
+    ],
+    "R_e_on_3bar": [
+     "1",
+     "1/16",
+     "1/16"
+    ],
+    "L_e_on_e": "-3/16",
+    "L_e_constant_on_3": false,
+    "L_e_constant_on_3bar": false,
+    "ratio_L3bar_over_L3": "-1/64",
+    "ratio_R3_over_L3": [
+     "-1/64",
+     "-4",
+     "-4"
+    ],
+    "ratio_R3bar_over_L3bar": [
+     "-64",
+     "-1/4",
+     "-1/4"
+    ]
+   },
+   {
+    "q": "3",
+    "hom_dim": 1,
+    "L_e_diagonal_in_weight_basis": true,
+    "L_e_on_3": [
+     "1",
+     "1/81",
+     "1/81"
+    ],
+    "L_e_on_3bar": [
+     "-1/729",
+     "-1/9",
+     "-1/9"
+    ],
+    "R_e_on_3": [
+     "-1/729",
+     "-1/9",
+     "-1/9"
+    ],
+    "R_e_on_3bar": [
+     "1",
+     "1/81",
+     "1/81"
+    ],
+    "L_e_on_e": "-8/81",
+    "L_e_constant_on_3": false,
+    "L_e_constant_on_3bar": false,
+    "ratio_L3bar_over_L3": "-1/729",
+    "ratio_R3_over_L3": [
+     "-1/729",
+     "-9",
+     "-9"
+    ],
+    "ratio_R3bar_over_L3bar": [
+     "-729",
+     "-1/9",
+     "-1/9"
+    ]
+   },
+   {
+    "q": "5/2",
+    "hom_dim": 1,
+    "L_e_diagonal_in_weight_basis": true,
+    "L_e_on_3": [
+     "1",
+     "16/625",
+     "16/625"
+    ],
+    "L_e_on_3bar": [
+     "-64/15625",
+     "-4/25",
+     "-4/25"
+    ],
+    "R_e_on_3": [
+     "-64/15625",
+     "-4/25",
+     "-4/25"
+    ],
+    "R_e_on_3bar": [
+     "1",
+     "16/625",
+     "16/625"
+    ],
+    "L_e_on_e": "-84/625",
+    "L_e_constant_on_3": false,
+    "L_e_constant_on_3bar": false,
+    "ratio_L3bar_over_L3": "-64/15625",
+    "ratio_R3_over_L3": [
+     "-64/15625",
+     "-25/4",
+     "-25/4"
+    ],
+    "ratio_R3bar_over_L3bar": [
+     "-15625/64",
+     "-4/25",
+     "-4/25"
+    ]
+   }
+  ],
+  "verdict": {
+   "A": "V7 restricts to 1 + 3 + 3bar under long-root-weight operators (weights alone); the long-root Cartan acts through q^3, so the colour sl3 inside U_q(g2) is deformed at q_long = q^3.",
+   "B": "q=1: exactly one weight-(3a1+a2) element of U(n+) (ad_E1^3 E2) has Delta preserving 3(x)3; q in {2,3,5/2}: none in U_q(n+) (kernel 0). The triplet is not a sub-object under the U_q(g2) coproduct.",
+   "C": "Hom(V7(x)V7,V7) is 1-dim at every q tested (the q-cross-product). q=1: L_e = +1 on 3, -1 on 3bar, R_e = -L_e. q != 1: L_e eigenvalues on 3 are (1, q^-4, q^-4) and on 3bar (-q^-6, -q^-2, -q^-2) up to one overall scale; L_e is not scalar on 3, so it does not commute with the long-root operators, and R_e/L_e on 3 is (-q^-6, -q^2, -q^2), not -1. The sign separating 3 from 3bar survives.",
+   "scope": "(a): exact at rational points q in {1,2,3,5/2}; B searches U_q(n+) only (times Cartan), Jantzen coproduct; a q-deformed embedding of the triplet other than the weight subspace is not searched."
+  }
+ }
+}

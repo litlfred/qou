@@ -1,0 +1,1 @@
+Equation (6.7) is the multivariate analogue of relationship (3.5) between the radius of convergence of a univariate power series and exponential growth, however in the multivariate case we get an inequality instead of an equality. The dual rate is an example of a Legendre transform (see the notes at the end of this chapter).

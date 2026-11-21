@@ -1,0 +1,1 @@
+For a polynomial p(z) = Yigca Coz” with non-zero coefficients Co for a € A, the leading term of the polynomial p under a monomial ordering > is the term LT(p) := cgz® with maximum monomial z° according to >.

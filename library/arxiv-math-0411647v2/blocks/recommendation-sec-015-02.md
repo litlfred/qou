@@ -1,1 +1,0 @@
-A careful reader might observe that after rotating the Figure [4](#fig:step3){reference-type="ref" reference="fig:step3"} upside--down the roles played by $p_1$, $q_1$ are interchanged with $q_n$ and $p_n$ therefore the above rule is not very precise which labels should be carried by the vertices of the surviving block; but in fact we do not really care about these labels.

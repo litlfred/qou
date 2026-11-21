@@ -1,1 +1,0 @@
-In the following subsection we shall show the birational equivalence of ([\[eq: P2 model of Bring\]](#eq: P2 model of Bring){reference-type="ref" reference="eq: P2 model of Bring"}) and ([\[eq: P4 model of Bring\]](#eq: P4 model of Bring){reference-type="ref" reference="eq: P4 model of Bring"}).

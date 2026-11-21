@@ -1,1 +1,0 @@
-When we advance to depth 2, the geodesics of the Bianchi tessellation map to wedge products of elements parametrized by 픭-torsion points, and the triangles must map to certain elements parametrized by three 픭-torsion points.

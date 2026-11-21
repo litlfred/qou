@@ -1,0 +1,1 @@
+plays a crucial role in the new version of our paper [Ye1] on twisted deformation quantization of algebraic varieties. This is explained in Remark 3.2. Acknowledgments. I wish to thank Matan Prezma, Ronald Brown, Sharon Hol- lander, Vladimir Hinich, Behrang Noohi and Lawrence Breen for useful discussions.

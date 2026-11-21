@@ -38,6 +38,7 @@ Self-contained (mpmath only). No fit; no production wiring.
 import mpmath as mp
 import itertools
 
+mp.mp.dps = max(50, mp.mp.dps)
 I = mp.mpc(0, 1)
 L1 = mp.mpf("1.3790860299")
 L3 = mp.mpf("-2.7580990292")

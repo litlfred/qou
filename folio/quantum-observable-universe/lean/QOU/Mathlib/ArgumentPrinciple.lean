@@ -20,8 +20,9 @@ $$\frac{1}{2\pi i}\oint_{|z-c|=R} \frac{f'(z)}{f(z)}\,dz
 This is the **argument principle**. It is the least-Analysis-blocked of the three
 `PentagonRigidity` infra walls (PI-1 Hadamard factorization, PI-2 elliptic
 divisor-degree, PI-3 here): PI-2's degree-zero theorem and PI-1's canonical-product
-zero-counting BOTH reduce to it (`elliptic_divisor_degree_zero` names the argument
-principle as its explicit open core; a canonical product's zero count is this
+zero-counting BOTH reduce to it (`elliptic_divisor_degree_zero` is now proved in
+`QOU.Mathlib.LiouvilleThird` via the annulus version of this theorem,
+`QOU.Mathlib.ArgumentPrincipleAnnulus`; a canonical product's zero count is this
 integral applied to an entire `f`). The `f'/f`-integrand carries the *analytic*
 content; the RHS is the purely-combinatorial divisor sum.
 

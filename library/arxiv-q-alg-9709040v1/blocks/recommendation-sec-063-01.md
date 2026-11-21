@@ -1,1 +1,0 @@
-The picture is something like . .. . . . . . . . p1 2p Points p1 and p2 should not be connected by an edge because otherwise the integral vanishes, there is no directions over which we can integrate form dφ(p1, p2).

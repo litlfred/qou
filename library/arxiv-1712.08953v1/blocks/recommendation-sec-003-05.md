@@ -1,1 +1,0 @@
-We must show that $(\theta^{-1}(\theta(f_{x,y}) S_i))(S_z) = (f_{x,y} S_{d+i}) (S_z)$, i.e., $$ (\theta^{-1}(\i_{r,s}(S_x \otimes S_y S_{d+i})c)(S_z) = f_{x,y}(S_z S_{d+i}). $$ This time, $y s_{d+i} \in \mathfrak{D}$ always.

@@ -1,0 +1,1 @@
+One of the signiﬁcant consequences of 1.29 is that, for nondegenerate P, if one can ﬁnd a ﬁnite set of tangles which linearly span Pk, the calculation of dim Pk is reduced to the ﬁnite problem of calculating the rank of the bilinear form deﬁned on Pk by Tr. Of course this may not be easy!

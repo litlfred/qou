@@ -191,7 +191,7 @@ with _mpm.workdps(_CONST_DPS):
 # (17 + 6 + 4 + 4 importers), so the `f"{x:.6f}"` break that made three
 # producers un-runnable in qou-9q4h has no site to fire at here.
 with _mpm.workdps(_CONST_DPS):
-    G_F_MEV     = _mpm.mpf("1.1663788e-11")   # ± 0.0000006e-11 MeV⁻²
+    G_F_MEV     = _mpm.mpf("1.1663787e-11")   # ± 0.0000006e-11 MeV⁻²; CODATA 2022 (library/codata-2022/values.json). Was 1.1663788 (the PDG value), 2026-11-20.
     G_F_MEV_ERR = _mpm.mpf("0.0000006e-11")
 
 # DERIVED EXACTLY, not stored. Since the 2019 SI redefinition both h and e are

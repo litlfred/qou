@@ -6,7 +6,7 @@ import { conjecture } from "../../schema/builders";
  * The class axiomatisation lives in the `qou` Lake library at
  * folio/quantum-observable-universe/lean/QOU/AppendixQValues/ProtonBorromeanAssembly.lean
  * (class `ProtonBorromeanAssembly`); no sibling `.lean` here, so it does not
- * shadow the library class. The downstream `prop:proton-mass-substrate-identity`
+ * shadow the library class. The downstream `conj:proton-mass-substrate-identity`
  * takes this class as an explicit `[Instance]` hypothesis and DERIVES the
  * published flat identity from it (sorry-free modulo the class instance).
  */
@@ -21,6 +21,7 @@ export default conjecture({
     "def:f-bor-borromean-observable",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The conjecture is axiomatised as the Lean class `QOU.AppendixQValues.ProtonBorromeanAssembly`: its fields are exactly these hypotheses (the two structural integers and the factored assembly law), and [Substrate evaluation](proton-mass-substrate-identity.md) derives the published flat identity from them, sorry-free modulo the class instance. Also: the transpose-pair identity \"is Lean-proved\"." },
     {
       kind: "note",
       date: "2026-05-25",

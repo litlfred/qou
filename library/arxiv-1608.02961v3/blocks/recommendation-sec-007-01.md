@@ -1,1 +1,0 @@
-This was justified in \cite{DIgukov-2003} by embedding $SU(2)$ Chern-Simons theory (which computes colored Jones polynomials) into a holomorphic sector of $SL(2,\BC)$ Chern-Simons theory, and arguing that the asymptotic expansions of $SU(2)$ and (holomorphic) $SL(2,\BC)$ theories should coincide.

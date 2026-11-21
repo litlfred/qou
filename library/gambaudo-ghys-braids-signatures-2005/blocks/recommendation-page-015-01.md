@@ -1,1 +1,0 @@
-In the general case of a root of unity ω which is diﬀerent from −1, we shall see in 3.4 that there is a similar interpretation of the ω-signature of an oriented link in terms of signatures of 4-manifolds.

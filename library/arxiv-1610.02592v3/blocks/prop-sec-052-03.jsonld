@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/blocks/prop-sec-052-03",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 311,
+  "pageEnd": 318,
+  "text": "prop-sec-052-03.md",
+  "derivedFrom": "library/arxiv-1610.02592v3/sections/sec-052",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "10.1.6",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-052-101-lens-spaces.md (p. 311-318)",
+    "claim_id": "arxiv-1610.02592v3#proposition:10.1.6",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

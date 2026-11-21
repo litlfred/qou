@@ -1,0 +1,1 @@
+Let L ∈D(A⊗Bop), and consider the K-linear triangulated functors F := RHomA(L, −) : D(A) →D(B) and G := L ⊗L B (−) : D(B) →D(A). Then: (1) The functor F is a right adjoint of G. (2) The functor F is an equivalence if and only if the functor G is an equiva- lence.

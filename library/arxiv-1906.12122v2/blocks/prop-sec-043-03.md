@@ -1,0 +1,1 @@
+Using again the experimental result for the $^{10}$Be charge radius~\cite{Nortershauser:2008vp}, the prediction for the charge radius of $^{11}$Be$^*$ at LO is $\langle r_E^2 \rangle^{1/2}_{^{11}{\rm Be}^*} = (2.43 \pm 0.1)~\fm$.

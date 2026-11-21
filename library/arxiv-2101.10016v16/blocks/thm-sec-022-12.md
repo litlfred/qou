@@ -1,1 +1,1 @@
-can be seen as a special case of the following more abstract result which
+Let V be a unitary vertex operator algebra satisfying assumptions (a), (b), (c) and such that the forgetful functor : Rep+(V ) → Rep(V ) is a linear equivalence and assume that the functor FV : Rep(V ) → Vec satisfies the weak dimension condition in Remark 23.3. Assume that Rep(V ) is tensor equivalent to a tensor C ∗ -category. Then Rep+(V ) admits a structure of tensor C ∗ -category with unitary braided symmetry such that the forgetful functor: Rep+(V ) → Rep(V ) is a braided tensor equivalence.

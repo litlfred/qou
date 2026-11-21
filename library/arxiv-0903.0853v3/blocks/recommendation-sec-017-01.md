@@ -1,1 +1,0 @@
-Multiplying $P$ by a unit $a \sigma_q^{k}$ of ${{\mathcal{D}}_{q}}$ just translates the Newton polygon by a vector of ${\mathbf Z}^{2}$, and we shall actually consider $N(P)$ as defined up to such a translation (or, which amounts to the same, choose a unitary entire $P$).

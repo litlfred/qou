@@ -27,7 +27,7 @@ NOT as an independent calibration input.
 Audit the calibration constant E_0 (CAL-3, free-neutron β-decay
 Q-value) used across the QOU witness pipeline.
 
-Per `prop:three-calibration-inputs` (CAL-3), every mass prediction
+Per `conj:three-calibration-inputs` (CAL-3), every mass prediction
 in the paper traces back to the hadronic energy scale
 
     E_0 = Q_β(n) / |Δ(net)|
@@ -261,7 +261,7 @@ def main() -> int:
         ),
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "reference_blocks": [
-            "prop:three-calibration-inputs",
+            "def:three-calibration-discipline",
             "rem:calibration-inputs",
         ],
         "pdg_inputs_2022": {

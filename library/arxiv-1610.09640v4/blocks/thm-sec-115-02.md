@@ -1,0 +1,1 @@
+Under Setup 17.2.1, suppose that (R, β) and (R′, β′) are balanced dualizing complexes over A. Then there is a unique iso- morphism ψ : R′ ≃ −→R in D(Aen, gr), such that β ◦RΓm(ψ) = β′ as isomorphisms RΓm(R′) ≃ −→A∗in D(Aen, gr).

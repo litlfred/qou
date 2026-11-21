@@ -1,1 +1,0 @@
-Second, one should separate the analogue of the complicated prefactor (quasiclassical contribution): CV {Λ} = (2π)n2/2etr(ΛV ′(Λ)−V (Λ)) q detV ′′(Λ) , (2.40) Then the function that describes pure ”quantum” contribution 12 ZV {T} ≡CV {Λ}−1FV {V ′(Λ)} (2.41) 12The ”classical action” in (2.40) can be also represented as tr (ΛV ′(Λ) −V (Λ)) = tr R ΛdV ′(Λ).

@@ -1,1 +1,0 @@
-\begin{thm}\label{thm::4.7.4} The Shimura curve $\mathcal{X}_\Gamma$ is defined over $\ovl{\Q}$, and may be considered, in a canonical way, both as a complex orbifold and as a $p$-adic orbifold (for any critical $v\mid p$).

@@ -1,0 +1,1 @@
+We have (i) s(0, k + 1, p) := ck = 3(p + 1 −k) p + k + 1 , k ≥1, (1.38) (ii) s(l, k + 1, p) = ck −6k l(l + 2) p + k + 1 + 6Z, (1.39) If k = 1 one can obtain an exact formula for the remainder term in (1.39) (see [Kir7] or Exercise 11). Dilogarithm identities

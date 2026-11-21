@@ -1,0 +1,1 @@
+We do not know if the corollary remains true if A is just left noetherian. Now we pass to derived categories and functors. Deﬁnition 16.3.15. Under Setup 16.3.1, we denote by Dtor(A ⊗Bop, gr) the full subcategory of D(A ⊗Bop, gr) on the complexes M whose cohomology modules Hp(M) belong to Mtor(A ⊗Bop, gr) for all p.

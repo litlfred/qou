@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/aif-2009-59-1-347-0/blocks/prop-sec-004-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "text": "prop-sec-004-02.md",
+  "derivedFrom": "library/aif-2009-59-1-347-0/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.5",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-004-12-confluence.md (p. 10-14)",
+    "claim_id": "aif-2009-59-1-347-0#proposition:1.5",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

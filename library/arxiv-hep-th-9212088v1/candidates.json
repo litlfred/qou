@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-9212088v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "ecb2c02ec6fe11bdd92808d4ddfdd5122f5e33e3e328cdb15ddd1ddbdc83129c",
   "file": "9212088v1.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The order parameter in the study of chiral symmetry breaking is the quark condensate < \u00afqfqf > de\ufb01ned by < \u00afqfqf >= lim mf \u21920 lim N\u2192\u221e\u22121 N d dmf log Z(\u03b8), (2.4) where the order of the limits should be taken as indicated in the formula.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-2-random-matrix-model.md",
-   "section_title": "Random matrix model",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(A.2) It should be noted that no approximations have been made.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-appendix-a.md",
-   "section_title": "Appendix A",
-   "pages": "14-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

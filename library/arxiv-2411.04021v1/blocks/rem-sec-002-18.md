@@ -1,0 +1,1 @@
+We have confirmed that a(2) λ is even for any even partition λ. So if there is a partition µ such that a(2) µ is odd, then µ must necessarily be odd as well. The reason this can occur for odd partitions relies critically in the failure of Lemma

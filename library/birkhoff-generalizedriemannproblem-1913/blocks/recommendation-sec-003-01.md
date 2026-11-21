@@ -1,1 +1,0 @@
-Following Plemelj (loc. cit.) we shall term a function g+(x) of this description a regular inner function and affix to it a superscript + ; likewise a superscript ? will indicate that a function is a regular outer function, i. e. is analytic in the extended plane without C, and continuous along C.

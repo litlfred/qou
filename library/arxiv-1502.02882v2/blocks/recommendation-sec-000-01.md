@@ -1,1 +1,0 @@
-The rule (at least for simple objects V ) is that if left and right dual structure maps appear in a diagram, then they cannot be chosen independently but must be correlated in the following way: when paired together, they must give the fusion dimension of V .

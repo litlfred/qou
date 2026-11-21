@@ -1,1 +1,0 @@
-18 is at tL = −∞.21 We must have ˜rh > rh since the horizon jumps out when it swallows the shock, and in fact the two horizon radii are related by ˜rh = rh r M + E M = rh √ 1 + ϵ, (B.3) where we’ve deﬁned ϵ ≡E/M.

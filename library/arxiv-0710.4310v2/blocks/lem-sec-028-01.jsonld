@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-0710.4310v2/blocks/lem-sec-028-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "[\\[WKL\\]](#WKL",
+  "pageStart": 27,
+  "pageEnd": 33,
+  "text": "lem-sec-028-01.md",
+  "derivedFrom": "library/arxiv-0710.4310v2/sections/sec-028",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0710.4310v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-028-the-dependence-of-the-surface-holonomy-on-a-smoo.md (p. 27-33)",
+    "claim_id": "arxiv-0710.4310v2#lem-sec-028-01",
+    "lean_status": "unformalized"
+  }
+}

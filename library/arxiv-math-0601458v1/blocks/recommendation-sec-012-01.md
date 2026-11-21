@@ -1,1 +1,0 @@
-In the case where the set we get is finite, it should be clear that when we take cardinalities, we just get that the cardinality $|\left\langle{\psi,\phi}\right\rangle|$ is just $\left\langle{|\psi|,|\phi|}\right\rangle$.

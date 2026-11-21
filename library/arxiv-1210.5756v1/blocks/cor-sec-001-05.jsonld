@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1210.5756v1/blocks/cor-sec-001-05",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "cor-sec-001-05.md",
+  "derivedFrom": "library/arxiv-1210.5756v1/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1210.5756v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-001-2-proof-of-i-in-theorem-1.md (p. 3-6)",
+    "claim_id": "arxiv-1210.5756v1#corollary:2",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

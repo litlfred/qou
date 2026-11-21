@@ -1,1 +1,0 @@
-By letting C1 −= [−√−1, 0], C2 −= [1 −√−1, −√−1], and C3 −= [1, 1 −√−1] and Ii −(r) = Z Ci − (tan(πrx) + √ −1)gr(x)dx we ﬁnd (now by the use of (4.27)) an upper bound for |Ii −(r)| identical with the upper bound for |Ii +(r)|, i = 1, 2, 3, with the exception that exp(2A+2Bπ/r) should be replaced by exp(2A + 4Bπ/r) in these bounds.

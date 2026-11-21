@@ -1,0 +1,1 @@
+A careful reader may notice that we subtract a half integer (ab+1)/2 from the second term if ab is even, which is not allowed in SL(2; C) theory. We may be using PSL(2; C) theory indeed (see [33, p. 543] and Remark 1.6). Now we will compare this formula with the h function derived from H in (4.5).

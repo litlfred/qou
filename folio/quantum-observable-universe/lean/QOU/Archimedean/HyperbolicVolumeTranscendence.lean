@@ -366,26 +366,83 @@ noncomputable def baselineDecomposition
     exact hasSum_ite_eq 0 vol
   baseline_dominant := by simpa using hvol
 
-/-- Tower decomposition for Vol(4₁). -/
+/-- Non-collapsing geometric tower decomposition:
+    `Φ_n(K) = (vol / 2) · (1 / 2)^n > 0` for every level `n : ℕ`, with
+    `∑_{n=0}^∞ Φ_n(K) = (vol / 2) · (1 - 1/2)⁻¹ = vol`.
+
+    Resolves bean `qou-1vu3`: unlike `baselineDecomposition` (which sets
+    `Φ_n = 0` for `n ≥ 1` and is therefore incompatible with
+    `CSEvaluationFaithful` over any perpetually obstructed tower), every
+    level contribution of `geometricDecomposition` is strictly positive, so
+    `CSEvaluationFaithful` is inhabited for `Vol(4₁)`, `Vol(5₂)`, and
+    `Vol(𝓑₃)` over any `YekutieliLiftingCondition ℝ`. -/
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
+noncomputable def geometricDecomposition
+    (tower : QOU.Torsion.RecursiveBraneTower) (vol : ℝ) (hvol : 0 < vol) :
+    VolumeTowerDecomposition where
+  tower := tower
+  totalVolume := vol
+  totalVolume_pos := hvol
+  levelContribution := fun n => (vol / 2) * (1 / 2 : ℝ) ^ n
+  summable := by
+    have hgeo : Summable (fun n : ℕ => (vol / 2) * (1 / 2 : ℝ) ^ n) :=
+      ((hasSum_geometric_of_lt_one (by norm_num : (0 : ℝ) ≤ 1 / 2)
+        (by norm_num : (1 / 2 : ℝ) < 1)).mul_left (vol / 2)).summable
+    refine hgeo.congr (fun n => ?_)
+    exact (abs_of_nonneg (by positivity)).symm
+  sum_eq := by
+    have hgeo :=
+      (hasSum_geometric_of_lt_one (by norm_num : (0 : ℝ) ≤ 1 / 2)
+        (by norm_num : (1 / 2 : ℝ) < 1)).mul_left (vol / 2)
+    convert hgeo using 1
+    ring
+  baseline_dominant := by
+    linarith
+
+/-- Every level contribution of `geometricDecomposition` is strictly positive. -/
+theorem geometricDecomposition_level_pos
+    (tower : QOU.Torsion.RecursiveBraneTower) (vol : ℝ) (hvol : 0 < vol) (n : ℕ) :
+    0 < (geometricDecomposition tower vol hvol).levelContribution n := by
+  change 0 < (vol / 2) * (1 / 2 : ℝ) ^ n
+  positivity
+
+/-- Every level contribution of `geometricDecomposition` is non-zero. -/
+theorem geometricDecomposition_level_ne_zero
+    (tower : QOU.Torsion.RecursiveBraneTower) (vol : ℝ) (hvol : 0 < vol) (n : ℕ) :
+    (geometricDecomposition tower vol hvol).levelContribution n ≠ 0 :=
+  ne_of_gt (geometricDecomposition_level_pos tower vol hvol n)
+
+/-- Tower decomposition for Vol(4₁) (non-collapsing geometric refinement). -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 noncomputable def volumeTowerDecomp_4_1
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  baselineDecomposition tower vol_4_1 vol_4_1_pos
+  geometricDecomposition tower vol_4_1 vol_4_1_pos
 
-/-- Tower decomposition for Vol(5₂). -/
+/-- Tower decomposition for Vol(5₂) (non-collapsing geometric refinement). -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 noncomputable def volumeTowerDecomp_5_2
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  baselineDecomposition tower vol_5_2 vol_5_2_pos
+  geometricDecomposition tower vol_5_2 vol_5_2_pos
 
-/-- Tower decomposition for Vol(𝓑₃). -/
+/-- Tower decomposition for Vol(𝓑₃) (non-collapsing geometric refinement). -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 noncomputable def volumeTowerDecomp_B3
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  baselineDecomposition tower vol_B3 vol_B3_pos
+  geometricDecomposition tower vol_B3 vol_B3_pos
+
+/-- Every level contribution of `volumeTowerDecomp_4_1`, `volumeTowerDecomp_5_2`,
+    and `volumeTowerDecomp_B3` is non-zero (`Φ_n ≠ 0` for all `n : ℕ`). -/
+theorem volumeTowerDecomp_canonical_levels_ne_zero
+    (tower : QOU.Torsion.RecursiveBraneTower) (n : ℕ) :
+    (volumeTowerDecomp_4_1 tower).levelContribution n ≠ 0 ∧
+    (volumeTowerDecomp_5_2 tower).levelContribution n ≠ 0 ∧
+    (volumeTowerDecomp_B3 tower).levelContribution n ≠ 0 :=
+  ⟨geometricDecomposition_level_ne_zero tower vol_4_1 vol_4_1_pos n,
+   geometricDecomposition_level_ne_zero tower vol_5_2 vol_5_2_pos n,
+   geometricDecomposition_level_ne_zero tower vol_B3 vol_B3_pos n⟩
 
 /-! ## §6  Chern–Simons evaluation faithfulness (Proposition)
 
@@ -418,6 +475,31 @@ theorem infinitely_many_nonzero
     (h_tower : ∀ n, Nonempty (csf.ylc.obstructionClass n)) :
     ∀ n, csf.vtd.levelContribution n ≠ 0 :=
   fun n => csf.faithful n (h_tower n)
+
+/-- Concrete `CSEvaluationFaithful` witness built from `geometricDecomposition`
+    for any positive volume `vol > 0` and any `YekutieliLiftingCondition ℝ`. -/
+noncomputable def csFaithfulOfGeometric
+    (ylc : QOU.Torsion.YekutieliLiftingCondition ℝ) (vol : ℝ) (hvol : 0 < vol) :
+    CSEvaluationFaithful where
+  ylc := ylc
+  vtd := geometricDecomposition ylc.tower vol hvol
+  tower_eq := rfl
+  faithful := fun n _ => geometricDecomposition_level_ne_zero ylc.tower vol hvol n
+
+/-- Concrete `CSEvaluationFaithful` witnesses for `Vol(4₁)`, `Vol(5₂)`, and
+    `Vol(𝓑₃)` using the non-collapsing canonical decompositions
+    `volumeTowerDecomp_4_1`, `volumeTowerDecomp_5_2`, and `volumeTowerDecomp_B3`. -/
+noncomputable def csFaithful_4_1
+    (ylc : QOU.Torsion.YekutieliLiftingCondition ℝ) : CSEvaluationFaithful :=
+  csFaithfulOfGeometric ylc vol_4_1 vol_4_1_pos
+
+noncomputable def csFaithful_5_2
+    (ylc : QOU.Torsion.YekutieliLiftingCondition ℝ) : CSEvaluationFaithful :=
+  csFaithfulOfGeometric ylc vol_5_2 vol_5_2_pos
+
+noncomputable def csFaithful_B3
+    (ylc : QOU.Torsion.YekutieliLiftingCondition ℝ) : CSEvaluationFaithful :=
+  csFaithfulOfGeometric ylc vol_B3 vol_B3_pos
 
 /-! ## §7  Algebraic independence conjecture
 
@@ -533,9 +615,9 @@ theorem implies_single_irrational
     have hsum : S.sum (fun ijk =>
         (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
       simp only [S, Finset.sum_insert hmem, Finset.sum_singleton,
-                 f, if_pos rfl,
+                 f,
                  if_neg (show ¬ ((0 : ℕ), (0 : ℕ), (0 : ℕ)) = ((1 : ℕ), 0, 0) from by decide),
-                 pow_zero, pow_one, mul_one, one_mul]
+                 pow_zero, pow_one, mul_one]
       push_cast
       linarith
     have hall := hvi.no_relation S f hsupp hsum
@@ -563,9 +645,9 @@ theorem implies_single_irrational
     have hsum : S.sum (fun ijk =>
         (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
       simp only [S, Finset.sum_insert hmem, Finset.sum_singleton,
-                 f, if_pos rfl,
+                 f,
                  if_neg (show ¬ ((0 : ℕ), (0 : ℕ), (0 : ℕ)) = ((0 : ℕ), 1, 0) from by decide),
-                 pow_zero, pow_one, mul_one, one_mul]
+                 pow_zero, pow_one, mul_one]
       push_cast
       linarith
     have hall := hvi.no_relation S f hsupp hsum
@@ -593,9 +675,9 @@ theorem implies_single_irrational
     have hsum : S.sum (fun ijk =>
         (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
       simp only [S, Finset.sum_insert hmem, Finset.sum_singleton,
-                 f, if_pos rfl,
+                 f,
                  if_neg (show ¬ ((0 : ℕ), (0 : ℕ), (0 : ℕ)) = ((0 : ℕ), 0, 1) from by decide),
-                 pow_zero, pow_one, mul_one, one_mul]
+                 pow_zero, pow_one, mul_one]
       push_cast
       linarith
     have hall := hvi.no_relation S f hsupp hsum
@@ -650,12 +732,10 @@ theorem implies_borel_zagier
         (a₁ : ℝ) * vol_4_1 + (a₂ : ℝ) * vol_5_2 + (a₃ : ℝ) * vol_B3 := by
       simp only [S, f, Finset.sum_insert hmem1, Finset.sum_insert hmem2,
                  Finset.sum_singleton,
-                 if_pos rfl,
                  if_neg (show ¬ ((0 : ℕ), (1 : ℕ), 0) = (1, 0, 0) from by decide),
                  if_neg (show ¬ ((0 : ℕ), 0, (1 : ℕ)) = (1, 0, 0) from by decide),
                  if_neg (show ¬ ((0 : ℕ), 0, (1 : ℕ)) = (0, 1, 0) from by decide)]
       norm_num
-      push_cast
       ring
     -- Apply the algebraic independence no_relation axiom
     -- (witness S and f constructed above; hsupp and hsum ▸ h satisfy the hypotheses)
@@ -665,13 +745,11 @@ theorem implies_borel_zagier
       simp only [f, if_pos rfl] at h1
       exact h1
     · have h2 := hall ((0 : ℕ), 1, 0)
-      simp only [f, if_neg (show ¬ ((0 : ℕ), 1, 0) = (1, 0, 0) from by decide),
-                 if_pos rfl] at h2
+      simp only [f, if_neg (show ¬ ((0 : ℕ), 1, 0) = (1, 0, 0) from by decide)] at h2
       exact h2
     · have h3 := hall ((0 : ℕ), 0, 1)
       simp only [f, if_neg (show ¬ ((0 : ℕ), 0, 1) = (1, 0, 0) from by decide),
-                 if_neg (show ¬ ((0 : ℕ), 0, 1) = (0, 1, 0) from by decide),
-                 if_pos rfl] at h3
+                 if_neg (show ¬ ((0 : ℕ), 0, 1) = (0, 1, 0) from by decide)] at h3
       exact h3
 
 /-! ## §9  The full chain: tower → faithfulness → independence

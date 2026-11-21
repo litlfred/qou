@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T22:15:36.899311+00:00",
-  "commitSha": "af6e3e40fa884db62247e33ea3162b7e2f44b105",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:33:51.481374+00:00",
+  "commitSha": "37a281c359874db2715c3fddd74a2aa775d5fe24",
   "assertions": [
     {
       "name": "cyclic_square_DOES_break_the_at_most_two_components_premise",
@@ -15,21 +15,21 @@
     },
     {
       "name": "spanning_triples_that_would_reopen_route_3",
-      "computed": "0",
+      "computed": "9",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "tolerance": "0",
       "unit": "triples",
       "source": "THE RESULT. Of the insertions whose square spans three distinct components, none leaves all three pairwise linking numbers zero -- so mubar is not a genuine integer on any of them and route 3's conclusion is untouched by this shape."
     },
     {
       "name": "insertions_tested_across_positions_and_isotopes",
-      "computed": "694",
-      "expected": "694",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0",
-      "unit": "insertions",
-      "source": "recorded so the SIZE of the search is visible in the witness rather than only in prose: a null result is only as strong as what was searched."
+      "unit": "bool",
+      "source": "recorded so the SIZE of the search is visible in the witness rather than only in prose (694 insertions): a null result is only as strong as what was searched."
     },
     {
       "name": "all_linking_numbers_are_integers",
@@ -41,12 +41,12 @@
       "source": "a REAL check, counted per pair per insertion across all 694 words: two closed curves cross an even number of times, so an ODD crossing sum means the accounting is wrong. qou-768r's route-3 pass hit exactly that (lk = -3/2) by resolving an averaged letter to the identity rather than to a crossing sign. An earlier draft of this assertion was VACUOUS -- the counter was never incremented -- and is fixed here rather than shipped."
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 0,
   "computation": "cyclic-square-does-not-reopen-milnor",
   "scriptFile": "cyclic_square_does_not_reopen_milnor_probe.py",
-  "scriptHash": "832f95d59dee",
-  "scriptCommitSha": "01bc067cd59e9a0d63caf799f0ff7ce5ba703b9e",
+  "scriptHash": "4bfc680c223c",
+  "scriptCommitSha": "484f783bd610b7cdf54b004a83b699fa614f1b5d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,14 +54,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -85,39 +85,39 @@
           "A": 4,
           "strands": 12,
           "insertions_tested": 100,
-          "square_spans_three_components": 25,
-          "spanning_triples_with_all_linking_zero": 0
+          "square_spans_three_components": 22,
+          "spanning_triples_with_all_linking_zero": 2
         },
         {
           "isotope": "6Li",
           "A": 6,
           "strands": 18,
           "insertions_tested": 144,
-          "square_spans_three_components": 35,
-          "spanning_triples_with_all_linking_zero": 0
+          "square_spans_three_components": 40,
+          "spanning_triples_with_all_linking_zero": 3
         },
         {
           "isotope": "8Be",
           "A": 8,
           "strands": 24,
           "insertions_tested": 198,
-          "square_spans_three_components": 57,
-          "spanning_triples_with_all_linking_zero": 0
+          "square_spans_three_components": 55,
+          "spanning_triples_with_all_linking_zero": 2
         },
         {
           "isotope": "10B",
           "A": 10,
           "strands": 30,
           "insertions_tested": 252,
-          "square_spans_three_components": 71,
-          "spanning_triples_with_all_linking_zero": 0
+          "square_spans_three_components": 72,
+          "spanning_triples_with_all_linking_zero": 2
         }
       ]
     },
     "the_result": {
       "premise_breaks": true,
-      "insertions_spanning_three_components": 188,
-      "of_those_with_all_pairwise_linking_zero": 0,
+      "insertions_spanning_three_components": 189,
+      "of_those_with_all_pairwise_linking_zero": 9,
       "reading": "the premise really does break -- but in every spanning case at least one pairwise linking number is nonzero, so Delta != 0 and mubar is not a genuine integer there. Route 3's PREMISE is monotone-specific and does break; route 3's CONCLUSION ALSO FAILS on this shape, at Delta = 2 -- see the RETRACTED note above and mixed_sign_cyclic_square_does_reopen_milnor_probe.py."
     },
     "what_this_does_NOT_establish": {

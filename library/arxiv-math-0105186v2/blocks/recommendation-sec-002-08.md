@@ -1,1 +1,0 @@
-In addition, $x_0$ should admit a holomorphic Morse chart $(\xi,\Xi)$ where $\Xi$ is defined on $W = \{x \in \C^{n+1} \suchthat ||x|| \leq 2\sqrt{r}, \; |q(x)| \leq r\}$, where $\xi = \id_{\bar{D}(r)}$, and such that $\Xi^*\Omega$, $\Xi^*\Theta$ are standard.

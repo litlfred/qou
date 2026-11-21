@@ -1,1 +1,0 @@
-(T(t?yk) R <r(t ? ?i)...<r(t ? ?k) But this quotient when multiplied by 4> (t), wh product of sigma functions, must yield \p (t), an e necessitates that for each zero of a (t ? jj) i (i = 1, . . ., p) there must be a congruent zero x the denominator.

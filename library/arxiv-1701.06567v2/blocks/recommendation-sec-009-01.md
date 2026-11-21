@@ -1,1 +1,0 @@
-The main reason is that, in principle, there are infinitely many possible boundary conditions that could be considered.[^1] Identifying the correct subset that appears in ([\[BlockD2S1\]](#BlockD2S1){reference-type="ref" reference="BlockD2S1"}) may be subtle, yet possible, as we shall see in concrete examples.

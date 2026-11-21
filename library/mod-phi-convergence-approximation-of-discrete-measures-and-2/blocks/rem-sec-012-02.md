@@ -1,0 +1,1 @@
+— Suppose in particular that φ(ξ) = eiξ −1 is the exponent of the Poisson law P(1). We then have µn({k}) −ρn({k}) = βn (r+1)∧k X l=0 (−1)r+1−l r + 1 l  (λn)k−l e−λn (k −l)! = βn ν(0) n ({k}) (r+1)∧k X l=0 (−1)r+1−l r + 1 l  (λn)−l k! (k −l)! = βn ν(0) n ({k}) c(r + 1, k, λn), where c(r+1, k, λn) is a Poisson–Charlier polynomial, see [56, Section 2.8.1].

@@ -1,1 +1,0 @@
-In fact, as we shall see below, interesting physical quantities in the SL(2,C) Chern-Simons theory can be also expressed in terms of the period integrals on the curve L deﬁned as the zero locus of the A-polynomial.

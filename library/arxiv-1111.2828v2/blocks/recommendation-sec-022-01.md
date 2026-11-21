@@ -1,1 +1,0 @@
-Then the vector $y_{\{1,\dots,j-1\},\{j\}}$ consisting of the part above the counter diagonal of the $j$th column vector of $y$ must satisfy \begin{equation}A_{\{n-j+2,\dots,n\},\{1,\dots,j-1\}}y_{\{1,\dots, j-1\},\{j\}} +A_{\{n-j+2,\dots,n\},\{j\}}=0. \end{equation}

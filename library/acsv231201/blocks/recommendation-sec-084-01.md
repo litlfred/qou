@@ -1,1 +1,0 @@
-With integer coeﬃcients, the spaces of chains, cycles, and boundaries are Z-modules, and their quotients are abelian groups, hence “ho- mology group” rather than “homology vector space.” To discuss the homology of a manifold, we must deﬁne an appropriate chain complex.

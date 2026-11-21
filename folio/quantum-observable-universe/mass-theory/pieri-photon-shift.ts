@@ -8,7 +8,7 @@ export default proposition({
     ref: "qou:QOU.Photon.pieri_one_box_shift",
     validation: "not_checked",
   },
-  uses: ["lem:degree-one-braid-trivial-volume"],
+  uses: ["lem:degree-one-braid-trivial-volume", "def:photon"],
   cites: ["fulton1997", "kassel1995"],
   tags: [
     "pieri-rule",

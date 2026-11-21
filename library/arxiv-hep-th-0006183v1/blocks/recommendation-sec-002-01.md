@@ -1,1 +1,0 @@
-To set the boundary conditions, one observes that the cutoﬀeﬀective action Γ[Φ, γ; Λ, Λ0] at Λ = Λ0 becomes the bare action and to ensure perturbative renormalizability it must be local, thus irrelevant vertices must vanish at Λ = Λ0.

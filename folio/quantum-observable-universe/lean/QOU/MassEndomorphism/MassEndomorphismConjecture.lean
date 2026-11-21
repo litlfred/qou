@@ -25,7 +25,7 @@ reasons.
 
 -- Ref: [leitner2026] conj:mass-endomorphism
 -- Ref: [leitner2026] conj:brane-tower-z-habiro
--- Ref: [leitner2026] prop:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
 LaTeX label: `conj:mass-endomorphism`
 -/
 

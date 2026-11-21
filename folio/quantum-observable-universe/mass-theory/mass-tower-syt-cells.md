@@ -126,9 +126,6 @@ factorization theorem.
  no distance filter).
 4. Iterate over jet levels $n = 0, 1, \ldots, N$ and sum.
 
-Implementation is stubbed in the
-[multi-level jet sum simulator](#sim:multi-level-jet-sum).
-
 ## Empirical validation
 
 A first-pass implementation

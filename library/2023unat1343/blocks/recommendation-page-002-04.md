@@ -1,1 +1,0 @@
-It provides that “[a] disability benefit shall, subject to article 41, be payable to a participant who is found by the Board to be incapacitated for further service in a member organization reasonably compatible with his or her abilities, due to injury or illness constituting an impairment to health which is likely to be permanent or of long duration”.

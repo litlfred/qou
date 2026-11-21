@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2933v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1001.2933v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,7 +39,7 @@
     "library/arxiv-1001.2933v4/sections/sec-024"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-1001.2933v4",
     "title_source": "corroborated",

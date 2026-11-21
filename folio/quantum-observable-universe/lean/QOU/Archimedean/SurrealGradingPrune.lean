@@ -10,7 +10,7 @@ the hypothesis class *"transport the surreal-squeeze / `ordω` grade-separation
 mechanism — the one that powers the q-NS blowup bound, the q-Collatz drift
 bound and the P-vs-NP budget bound — to the algebraic independence of
 `Vol(4₁)`, `Vol(5₂)`, `Vol(𝓑₃)`"*
-([`conj:hyperbolic-volume-transcendence`](../../../quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md),
+([`conj:hyperbolic-volume-transcendence`](../../../quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.md),
 [`rem:yekutieli-transcendence-shadow`](../../../quantum-observable-universe/predicted-spectra/yekutieli-transcendence-shadow.md)).
 
 ## The mechanism being pruned

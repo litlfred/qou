@@ -1,36 +1,56 @@
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Data.Real.Basic
+import QOU.Mathlib.LieValuedForms
 
 /-!
-# QOU.Mathlib.NonAbelianStokes — Yekutieli's non-abelian Stokes (axiomatised)
+# QOU.Mathlib.NonAbelianStokes — Yekutieli's non-abelian Stokes
 
-The QOU substrate's GB-filtration argument relies on Yekutieli
-(2015), *Nonabelian Multiplicative Integration on Surfaces*
-(World Scientific, DOI 10.1142/9165).  Mathlib has differential
-forms (`Mathlib.Geometry.Manifold.MFDeriv`, etc.) but **not**
-Lie-algebra-valued forms or the multiplicative line / surface
-integral.
+The QOU substrate's GB-filtration argument relies on Yekutieli (2015),
+*Nonabelian Multiplicative Integration on Surfaces* (World Scientific,
+DOI 10.1142/9165).  This file states that theorem as a §3b-cond class
+**over concrete Lie-algebra-valued forms**.
 
-This file is the **smallest §3b-cond class hypothesis** that
-abstracts away the genuine Mathlib infrastructure.  It supplies:
+## What is concrete (definitions and proved lemmas, no hypotheses)
 
-1. `LieValuedOneForm` — abstract carrier for `Ω¹(M; 𝔤)`.
-2. `MultiplicativeLineIntegral` — abstract `MI₁(α; γ) ∈ G`.
-3. `MultiplicativeSurfaceIntegral` — abstract `MI₂(α, β; σ)`.
-4. The Yekutieli-Stokes identity `MI₁(α; ∂σ) = MI₂(d_α β; σ)`
-   as a class field.
-5. The **finite-slice** corollary: on a piecewise-affine
-   manifold (the Young-diagram braid surface), the multiplicative
-   integral is a literal finite product of generator-actions.
+The forms, the connection calculus and the boundary of a 2-cell are
+Mathlib objects, taken from `QOU.Mathlib.LieValuedForms` (bean `qou-ghc6`):
 
-Concrete instances are deferred to Mathlib.  The class allows
-downstream theorems to take `[YekutieliFiniteSliceMultiplicativeTrace
-T_w]` as a §3b-cond instance hypothesis.
+* `LieValuedOneForm E 𝔤` / `LieValuedTwoForm E 𝔤` are **abbreviations** for
+  `LieValuedForms.OneForm E 𝔤 = E → E [⋀^Fin 1]→L[ℝ] 𝔤` and
+  `LieValuedForms.TwoForm E 𝔤` — Mathlib differential forms on a real normed
+  space `E` with values in a normed space `𝔤`.  The Lie bracket is a
+  `LieValuedForms.ContinuousLieBracket 𝔤` (a continuous bilinear bracket, which
+  `ContinuousLieBracket.toLieAlgebra` shows is a genuine Lie algebra).
+* The curvature `F_α = dα + ½[α ∧ α]` (`LieValuedForms.curvature`, built from
+  Mathlib's `extDeriv`) and the covariant exterior derivative
+  `d_α β = dβ + [α ∧ β]` (`LieValuedForms.covExtDeriv`).  These were class
+  **fields** (`covariantD`) before; they are now definitions.
+* `cellBoundary σ` — the boundary loop of a 2-cell `σ : ℝ → ℝ → E`
+  (parametrised on `[0, 1]²`), traversed on `[0, 4]`.  Also a former field
+  (`boundary`), now a definition; `cellBoundary_closed` proves the loop closes.
+* `piecewiseAffineLineIntegral` — the finite-slice ordered product.
 
-**File status**: upstreamable scaffolding.  ~3000-5000 LoC of
-genuine Mathlib infrastructure (Lie-valued forms,
-non-commutative path-ordered exponential, Yekutieli-Stokes
-proof) is the upstream target.
+## What is still assumed (the §3b-cond class `NonAbelianStokes E 𝔤 G L`)
+
+Mathlib (pinned `f897ebcf`) has **no** path-ordered exponential, holonomy,
+parallel transport, multiplicative line or surface integral, and no forms on
+**manifolds**.  So the class still carries, as data plus axioms:
+
+1. `lineIntegral` — the multiplicative line integral `MI₁(α; γ) ∈ G`;
+2. `surfaceIntegral` — the multiplicative surface integral `MI₂(α, β; σ) ∈ G`;
+3. `slice` — the finite generator decomposition of `MI₁(α; γ)`;
+4. `stokes` — **Yekutieli-Stokes** `MI₁(α; ∂σ) = MI₂(α, F_α; σ)`, with `∂σ`
+   the concrete `cellBoundary σ` and `F_α` the concrete `curvature L α`;
+5. `finite_slice` — `MI₁(α; γ) = piecewiseAffineLineIntegral (slice α γ)`.
+
+Consequences proved from the concrete calculus, not assumed: the abelian
+reduction of Stokes to `dα` (`stokes_of_bracket_eq_zero`), the flat-constant
+connection case (`stokes_const_flat`), the restatement through `d_α α`
+(`stokes_via_covExtDeriv`), and the finite-slice form of Stokes
+(`stokes_finite_slice`).
+
+The only model given is the degenerate `punitInstance` (all integrals `1`),
+a `def` and not an `instance`.  It shows consistency, not content.
 
 **References**:
 - Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*
@@ -40,159 +60,15 @@ proof) is the upstream target.
 
 namespace QOU.Mathlib.NonAbelianStokes
 
+open QOU.Mathlib.LieValuedForms
+
 universe u
 
-/-- Abstract carrier for a Lie-algebra-valued 1-form on a
-    manifold `M` with values in a Lie group `G`.  Concrete
-    instances would be `Ω¹(M; 𝔤)` from the Mathlib geometry
-    library. -/
-structure LieValuedOneForm (M G : Type u) where
-  /-- The underlying form-evaluation map (concrete instance:
-      pointwise tangent-vector evaluation into 𝔤). -/
-  eval : M → M → G
+/-! ### Finite-slice (piecewise-affine) multiplicative integral
 
-/-- Abstract carrier for a Lie-algebra-valued 2-form. -/
-structure LieValuedTwoForm (M G : Type u) where
-  /-- The underlying form-evaluation map (pointwise on
-      tangent bivectors). -/
-  eval : M → M → M → G
-
-/-- The **multiplicative line integral** `MI₁(α; γ) ∈ G` of
-    a Lie-valued 1-form `α` along a path `γ`.  Defined as
-    the limit of left-ordered products of `exp(α(γ'(t_i)) Δt)`
-    in the genuine theory; abstracted here. -/
-structure MultiplicativeLineIntegral (M G : Type u) where
-  /-- The integral-evaluation map. -/
-  integrate : LieValuedOneForm M G → (M → M) → G
-
-/-- The **multiplicative surface integral** `MI₂(α, β; σ) ∈ G`
-    of a 2-form `β` (with auxiliary 1-form `α`) over a 2-cell
-    `σ`.  Abstracted as a function. -/
-structure MultiplicativeSurfaceIntegral (M G : Type u) where
-  /-- The surface-integral-evaluation map. -/
-  integrate : LieValuedOneForm M G → LieValuedTwoForm M G →
-              (M → M → M) → G
-
-/-- **Yekutieli's non-abelian Stokes** as a §3b-cond class.
-
-    The class fields encode the integral-equality content of
-    Yekutieli (2015):
-      `MI₁(α; ∂σ) = MI₂(d_α β; σ)`
-    where `d_α β = dβ + [α, β]` is the gauge-covariant derivative.
-
-    For the QOU substrate, the **finite-slice** version applies
-    on the piecewise-affine Young-diagram braid surface: every
-    multiplicative integral is a literal finite product of
-    generator-actions; no analytic limit. -/
-class NonAbelianStokes (M G : Type u) [Group G] where
-  /-- The line integral. -/
-  lineIntegral : MultiplicativeLineIntegral M G
-  /-- The surface integral. -/
-  surfaceIntegral : MultiplicativeSurfaceIntegral M G
-  /-- The boundary `∂σ` of a 2-cell, as a path.  A field because this file
-      abstracts the manifold away; stating Stokes needs a boundary and there
-      was none to refer to. -/
-  boundary : (M → M → M) → (M → M)
-  /-- The gauge-covariant derivative `d_α β = dβ + [α, β]` at the level of the
-      group-valued forms this class works with.  (`gaugeCovariantDerivative`
-      below is the Lie-algebra-valued counterpart.) -/
-  covariantD : LieValuedOneForm M G → LieValuedTwoForm M G →
-    LieValuedTwoForm M G
-  /-- The piecewise-affine slicing of a path into finitely many generator
-      actions.  A field for the same reason as `boundary`: the finite-slice
-      axiom is a statement ABOUT such a decomposition. -/
-  slice : (M → M) → List G
-  /-- **Yekutieli-Stokes identity**: `MI₁(α; ∂σ) = MI₂(α, d_α β; σ)`.
-
-      Was `stokes_holds : Prop` with a sibling witness — a field typed with
-      the UNIVERSE `Prop`, so the instance supplied both the proposition and
-      its proof.  Its own docstring called itself a "placeholder Prop". -/
-  stokes : ∀ (α : LieValuedOneForm M G) (β : LieValuedTwoForm M G)
-      (σ : M → M → M),
-    lineIntegral.integrate α (boundary σ)
-      = surfaceIntegral.integrate α (covariantD α β) σ
-  /-- **Finite-slice axiom**: on a piecewise-affine surface the
-      multiplicative integral IS the finite generator product.
-
-      Written as the fold rather than as `piecewiseAffineLineIntegral (slice
-      γ)` only because that definition lands below this class in the file;
-      `finite_slice_eq_piecewiseAffine` immediately after it records that the
-      two are the same, so the link is stated rather than left to the reader
-      to notice. -/
-  finite_slice : ∀ (α : LieValuedOneForm M G) (γ : M → M),
-    lineIntegral.integrate α γ = (slice γ).foldl (· * ·) 1
-
-/-- **Skeleton model** — both multiplicative integrals are constantly
-    `1` and both `Prop` fields are `True`.  It encodes no Stokes
-    identity and no finite-slice reduction.  Genuine models over
-    `M = ℝ²`, `G = SU(n)`, etc., arrive once Mathlib's
-    Lie-valued-forms library lands.
-
-    **A `def`, not an `instance`, since 2026-08-24.**  This file's own
-    prose at §"Substrate theorem" already named the defect: because
-    `NonAbelianStokes` pairs `stokes_holds : Prop` with
-    `stokes_holds_witness : stokes_holds`, it is a *self-certifying
-    carrier*, inhabited by taking the `Prop` to be `True` — *"which
-    `punitInstance` below literally does"*.  That was written to
-    justify restating a `∃ (_ : NonAbelianStokes M G), True` claim
-    against real content; the instance it names was left resolvable, so
-    any future `[NonAbelianStokes M G]` hypothesis would still have
-    been discharged with `True` before its author noticed.
-
-    Blast radius of the demotion, measured: **zero** — no declaration
-    in the corpus takes `[NonAbelianStokes M G]`.  A caller wanting the
-    skeleton writes `letI := punitInstance M G`. -/
-def punitInstance (M G : Type u) [Group G] : NonAbelianStokes M G where
-  lineIntegral := { integrate := fun _ _ => 1 }
-  surfaceIntegral := { integrate := fun _ _ _ => 1 }
-  boundary σ := fun m => σ m m
-  covariantD _ β := β
-  -- Every path slices to the empty product, which is the only slicing
-  -- consistent with both integrals being constantly `1`.
-  slice _ := []
-  -- Both relations now have to HOLD rather than be chosen, and they do:
-  -- `1 = 1`, and `piecewiseAffineLineIntegral [] = 1` by
-  -- `piecewiseAffineLineIntegral_nil`.  That is a real (degenerate) model,
-  -- which is a different thing from the `True` it used to write.
-  stokes _ _ _ := rfl
-  finite_slice _ _ := rfl
-
-/-! ### Substrate theorem (S-Yekutieli-finite-slice)
-
-    The substrate claim — at finite slice depth the multiplicative
-    integral on a Young-diagram braid surface IS a finite product
-    of generator-actions — is stated as
-    `yekutieli_finite_slice_substrate`, below the
-    `YekutieliFiniteSliceMultTrace` class it quantifies over.
-
-    **Moved + restated 2026-08-21** (vacuity ledger,
-    `proof-no-trivial-true` / `exists-true-tautology`).  It stood
-    here as `∃ (_ : NonAbelianStokes M G), True :=
-    ⟨inferInstance, trivial⟩` — an existence claim its own
-    docstring already flagged as "tautologically true given a
-    default class instance".  It is worse than tautological:
-    `NonAbelianStokes` is a **self-certifying carrier**
-    (`stokes_holds : Prop` *together with*
-    `stokes_holds_witness : stokes_holds`), so it is inhabited by
-    taking the `Prop` to be `True` — which `punitInstance` below
-    literally does.  No existence or `Nonempty` statement about
-    that class is falsifiable, so restating against real content
-    was required rather than merely dropping the `True`. -/
-
-/-! ### Substantive Yekutieli content
-
-    Beyond the abstract class skeleton, this section supplies:
-    1. **Piecewise-affine line integral**: for a path realised
-       as a finite sequence of `G`-valued generator-actions,
-       the multiplicative line integral is the literal ordered
-       product.
-    2. **Braid-surface multiplicative trace**: for a braid word
-       `β = σ_{i_1} ··· σ_{i_ℓ}`, the surface integral over the
-       Young-diagram braid surface is `T_β · T_β⁻¹ = 1` (closed
-       surface, identity holonomy after closure).
-    3. **Stokes identity at finite slicing**: explicit equation
-       relating the boundary line integral to the surface
-       integral via the gauge-covariant derivative. -/
+    Group-level material, independent of the forms: for a path realised as a
+    finite sequence of `G`-valued generator-actions, the multiplicative line
+    integral is the literal ordered product. -/
 
 /-- **Piecewise-affine line integral**: for a list of generator
     actions `g₁, g₂, …, gₖ : G`, the multiplicative line integral
@@ -205,15 +81,6 @@ def piecewiseAffineLineIntegral {G : Type u} [Group G]
 /-- The empty path's line integral is the identity. -/
 theorem piecewiseAffineLineIntegral_nil {G : Type u} [Group G] :
     piecewiseAffineLineIntegral ([] : List G) = 1 := rfl
-
-/-- The `NonAbelianStokes.finite_slice` field's right-hand side IS
-    `piecewiseAffineLineIntegral` of the slice.  The field is spelled as the
-    raw fold only because this definition lands below the class; recording the
-    identification here keeps the axiom readable as what it means. -/
-theorem finite_slice_eq_piecewiseAffine {M G : Type u} [Group G]
-    [S : NonAbelianStokes M G] (α : LieValuedOneForm M G) (γ : M → M) :
-    S.lineIntegral.integrate α γ = piecewiseAffineLineIntegral (S.slice γ) :=
-  S.finite_slice α γ
 
 /-- The line integral of a single generator is that generator. -/
 theorem piecewiseAffineLineIntegral_singleton {G : Type u} [Group G]
@@ -249,6 +116,203 @@ theorem piecewiseAffineLineIntegral_inverse {G : Type u} [Group G]
   show 1 * g * g⁻¹ = 1
   rw [one_mul, mul_inv_cancel]
 
+/-! ### Lie-algebra-valued forms (concrete, from `LieValuedForms`)
+
+    Until 2026-11-21 this file carried its own abstract carriers,
+    `structure LieValuedOneForm (M G : Type u) where eval : M → M → G` and a
+    3-argument `LieValuedTwoForm`, with no model: the "form" took two points of
+    `M` and returned a **group** element, so it was neither linear in a tangent
+    vector nor Lie-algebra-valued.  They are replaced by the Mathlib forms of
+    `QOU.Mathlib.LieValuedForms` (owner-approved refactor, bean `qou-ghc6`). -/
+
+section Forms
+
+/-- The **boundary loop** of a 2-cell `σ : ℝ → ℝ → E` (the cell being
+    `σ` restricted to `[0, 1]²`), traversed counter-clockwise on `[0, 4]`:
+    bottom edge, right edge, top edge reversed, left edge reversed.
+
+    This was the `boundary` field of `NonAbelianStokes`, carried because the
+    abstract carrier had no 2-cells to take the boundary of. -/
+noncomputable def cellBoundary {E : Type*} (σ : ℝ → ℝ → E) : ℝ → E := fun t =>
+  if t ≤ 1 then σ t 0
+  else if t ≤ 2 then σ 1 (t - 1)
+  else if t ≤ 3 then σ (3 - t) 1
+  else σ 0 (4 - t)
+
+theorem cellBoundary_zero {E : Type*} (σ : ℝ → ℝ → E) : cellBoundary σ 0 = σ 0 0 := by
+  simp [cellBoundary]
+
+theorem cellBoundary_one {E : Type*} (σ : ℝ → ℝ → E) : cellBoundary σ 1 = σ 1 0 := by
+  simp [cellBoundary]
+
+theorem cellBoundary_two {E : Type*} (σ : ℝ → ℝ → E) : cellBoundary σ 2 = σ 1 1 := by
+  simp only [cellBoundary]; norm_num
+
+theorem cellBoundary_three {E : Type*} (σ : ℝ → ℝ → E) : cellBoundary σ 3 = σ 0 1 := by
+  simp only [cellBoundary]; norm_num
+
+theorem cellBoundary_four {E : Type*} (σ : ℝ → ℝ → E) : cellBoundary σ 4 = σ 0 0 := by
+  simp only [cellBoundary]; norm_num
+
+/-- The boundary of a 2-cell is a **closed** loop. -/
+theorem cellBoundary_closed {E : Type*} (σ : ℝ → ℝ → E) : cellBoundary σ 4 = cellBoundary σ 0 := by
+  rw [cellBoundary_four, cellBoundary_zero]
+
+
+variable {E 𝔤 : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [NormedAddCommGroup 𝔤] [NormedSpace ℝ 𝔤]
+
+variable (E 𝔤) in
+/-- `Ω¹(E; 𝔤)`: a `𝔤`-valued 1-form on the real normed space `E`. -/
+abbrev LieValuedOneForm := OneForm E 𝔤
+
+variable (E 𝔤) in
+/-- `Ω²(E; 𝔤)`: a `𝔤`-valued 2-form on the real normed space `E`. -/
+abbrev LieValuedTwoForm := TwoForm E 𝔤
+
+/-- The **multiplicative line integral** `MI₁(α; γ) ∈ G` of a `𝔤`-valued
+    1-form `α` along a path `γ : ℝ → E`.  In the genuine theory it is the limit
+    of ordered products of `exp(α_{γ(tᵢ)}(γ'(tᵢ)) Δt)`; Mathlib has no
+    path-ordered exponential, so it is data here. -/
+structure MultiplicativeLineIntegral (E 𝔤 G : Type*) [NormedAddCommGroup E]
+    [NormedSpace ℝ E] [NormedAddCommGroup 𝔤] [NormedSpace ℝ 𝔤] where
+  /-- The integral-evaluation map. -/
+  integrate : LieValuedOneForm E 𝔤 → (ℝ → E) → G
+
+/-- The **multiplicative surface integral** `MI₂(α, β; σ) ∈ G` of a `𝔤`-valued
+    2-form `β`, with auxiliary connection 1-form `α`, over a 2-cell `σ`.  Data,
+    for the same reason as `MultiplicativeLineIntegral`. -/
+structure MultiplicativeSurfaceIntegral (E 𝔤 G : Type*) [NormedAddCommGroup E]
+    [NormedSpace ℝ E] [NormedAddCommGroup 𝔤] [NormedSpace ℝ 𝔤] where
+  /-- The surface-integral-evaluation map. -/
+  integrate : LieValuedOneForm E 𝔤 → LieValuedTwoForm E 𝔤 → (ℝ → ℝ → E) → G
+
+/-- **Yekutieli's non-abelian Stokes** as a §3b-cond class, over the concrete
+    forms, for a fixed continuous Lie bracket `L` on `𝔤`.
+
+    Only the two multiplicative integrals and the finite slicing are data;
+    the boundary (`cellBoundary`) and the curvature (`curvature L`) are
+    definitions.  The Stokes field is Yekutieli's
+      `MI₁(α; ∂σ) = MI₂(α, F_α; σ)`,  `F_α = dα + ½[α ∧ α]`.
+
+    **Restated 2026-11-21.**  The abstract version read
+    `MI₁(α; ∂σ) = MI₂(α, covariantD α β; σ)` for an arbitrary 2-form `β` and a
+    `covariantD` that was itself a field.  Over concrete forms that does not
+    typecheck as mathematics: the covariant derivative of a 2-form is a 3-form,
+    which cannot be integrated over a 2-cell.  The degree-consistent statement,
+    and the one Yekutieli proves, puts the curvature of `α` on the right; by
+    `stokes_via_covExtDeriv` it is equivalently written through
+    `covExtDeriv L α α = d_α α`.
+
+    **`slice` now takes `α`.**  The abstract field was `slice : path → List G`,
+    which forced `MI₁(α; γ)` to be the same for every connection `α` — false in
+    any model with a non-trivial connection.  The generator actions of the
+    finite slicing depend on the connection being integrated. -/
+class NonAbelianStokes (E 𝔤 G : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [NormedAddCommGroup 𝔤] [NormedSpace ℝ 𝔤] [Group G]
+    (L : ContinuousLieBracket 𝔤) where
+  /-- The line integral. -/
+  lineIntegral : MultiplicativeLineIntegral E 𝔤 G
+  /-- The surface integral. -/
+  surfaceIntegral : MultiplicativeSurfaceIntegral E 𝔤 G
+  /-- The piecewise-affine slicing of `MI₁(α; γ)` into finitely many generator
+      actions. -/
+  slice : LieValuedOneForm E 𝔤 → (ℝ → E) → List G
+  /-- **Yekutieli-Stokes identity**: `MI₁(α; ∂σ) = MI₂(α, F_α; σ)`. -/
+  stokes : ∀ (α : LieValuedOneForm E 𝔤) (σ : ℝ → ℝ → E),
+    lineIntegral.integrate α (cellBoundary σ)
+      = surfaceIntegral.integrate α (curvature L α) σ
+  /-- **Finite-slice axiom**: on a piecewise-affine surface the
+      multiplicative integral IS the finite generator product. -/
+  finite_slice : ∀ (α : LieValuedOneForm E 𝔤) (γ : ℝ → E),
+    lineIntegral.integrate α γ = piecewiseAffineLineIntegral (slice α γ)
+
+/-- **Skeleton model** — both multiplicative integrals are constantly `1` and
+    every slicing is empty.  It satisfies both equations (by `rfl`), so it shows
+    the axioms are consistent and nothing more: in it the Stokes identity
+    carries no information about `α` or `F_α`.
+
+    **A `def`, not an `instance`** (since 2026-08-24): as an instance it would
+    discharge every `[NonAbelianStokes E 𝔤 G L]` hypothesis behind its author's
+    back.  A caller wanting it writes `letI := punitInstance E 𝔤 G L`. -/
+def punitInstance (E 𝔤 G : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [NormedAddCommGroup 𝔤] [NormedSpace ℝ 𝔤] [Group G]
+    (L : ContinuousLieBracket 𝔤) : NonAbelianStokes E 𝔤 G L where
+  lineIntegral := { integrate := fun _ _ => 1 }
+  surfaceIntegral := { integrate := fun _ _ _ => 1 }
+  slice _ _ := []
+  stokes _ _ := rfl
+  finite_slice _ _ := rfl
+
+variable {G : Type*} [Group G] {L : ContinuousLieBracket 𝔤}
+
+/-- The `finite_slice` field, named as the identification it records. -/
+theorem finite_slice_eq_piecewiseAffine [S : NonAbelianStokes E 𝔤 G L]
+    (α : LieValuedOneForm E 𝔤) (γ : ℝ → E) :
+    S.lineIntegral.integrate α γ = piecewiseAffineLineIntegral (S.slice α γ) :=
+  S.finite_slice α γ
+
+/-- **Stokes at finite slice depth**: the ordered generator product along the
+    boundary loop equals the surface integral of the curvature. -/
+theorem stokes_finite_slice [S : NonAbelianStokes E 𝔤 G L]
+    (α : LieValuedOneForm E 𝔤) (σ : ℝ → ℝ → E) :
+    piecewiseAffineLineIntegral (S.slice α (cellBoundary σ))
+      = S.surfaceIntegral.integrate α (curvature L α) σ := by
+  rw [← S.finite_slice, S.stokes]
+
+/-- `F_α = d_α α − ½[α ∧ α]`, from `LieValuedForms.covExtDeriv_self`. -/
+theorem curvature_eq_covExtDeriv_sub (L : ContinuousLieBracket 𝔤) (α : LieValuedOneForm E 𝔤) :
+    curvature L α = fun x => covExtDeriv L α α x - (1 / 2 : ℝ) • bracketWedge L α α x := by
+  funext x
+  rw [covExtDeriv_self, add_sub_cancel_right]
+
+/-- **Stokes through the covariant exterior derivative**:
+    `MI₁(α; ∂σ) = MI₂(α, d_α α − ½[α ∧ α]; σ)`. -/
+theorem stokes_via_covExtDeriv [S : NonAbelianStokes E 𝔤 G L]
+    (α : LieValuedOneForm E 𝔤) (σ : ℝ → ℝ → E) :
+    S.lineIntegral.integrate α (cellBoundary σ)
+      = S.surfaceIntegral.integrate α
+          (fun x => covExtDeriv L α α x - (1 / 2 : ℝ) • bracketWedge L α α x) σ := by
+  rw [S.stokes, curvature_eq_covExtDeriv_sub]
+
+/-- **Abelian reduction**: for the zero bracket, the Stokes identity has the
+    ordinary exterior derivative `dα` on the right
+    (`LieValuedForms.curvature_of_bracket_eq_zero`). -/
+theorem stokes_of_bracket_eq_zero [S : NonAbelianStokes E 𝔤 G L] (hL : L.bracket = 0)
+    (α : LieValuedOneForm E 𝔤) (σ : ℝ → ℝ → E) :
+    S.lineIntegral.integrate α (cellBoundary σ)
+      = S.surfaceIntegral.integrate α (extDeriv α) σ := by
+  rw [S.stokes, curvature_of_bracket_eq_zero L hL]
+
+/-- **Flat constant connection**: if a constant 1-form `A` has all brackets
+    `⁅A v, A w⁆ = 0`, its curvature vanishes
+    (`LieValuedForms.curvature_const_eq_zero_iff`), so the boundary holonomy is
+    the surface integral of the zero 2-form. -/
+theorem stokes_const_flat [S : NonAbelianStokes E 𝔤 G L] (A : E [⋀^Fin 1]→L[ℝ] 𝔤)
+    (hA : ∀ v w : E, L.bracket (A (fun _ => v)) (A (fun _ => w)) = 0) (σ : ℝ → ℝ → E) :
+    S.lineIntegral.integrate (fun _ => A) (cellBoundary σ)
+      = S.surfaceIntegral.integrate (fun _ => A) 0 σ := by
+  rw [S.stokes, (curvature_const_eq_zero_iff L A).mpr hA]
+
+end Forms
+
+/-! ### Substrate theorem (S-Yekutieli-finite-slice)
+
+    The substrate claim — at finite slice depth the multiplicative
+    integral on a Young-diagram braid surface IS a finite product
+    of generator-actions — is stated as
+    `yekutieli_finite_slice_substrate`, below the
+    `YekutieliFiniteSliceMultTrace` class it quantifies over.
+
+    **Moved + restated 2026-08-21** (vacuity ledger,
+    `proof-no-trivial-true` / `exists-true-tautology`).  It stood
+    here as `∃ (_ : NonAbelianStokes M G), True :=
+    ⟨inferInstance, trivial⟩`, an existence claim that any default
+    instance discharges; no existence statement about that class is
+    falsifiable, so it was restated against real content. -/
+
+/-! ### Braid-surface multiplicative trace -/
+
 /-- **Braid-surface multiplicative trace**: for a braid word
     expressed as a list of generators, the trace of the closed
     braid is the multiplicative line integral over the closure
@@ -272,8 +336,9 @@ theorem braidSurfaceMultTrace_succ {G : Type u} [Group G] (z : G) (n : ℕ) :
 
 /-- **Stokes identity** for the trivial case: on a trivial
     surface (no boundary), both line and surface integrals
-    reduce to the identity.  This is the simplest non-vacuous
-    case of `stokes_holds`. -/
+    reduce to the identity.  It is the empty-product fact
+    `piecewiseAffineLineIntegral [] = 1`, which is the right side of the
+    `NonAbelianStokes.finite_slice` field for an empty slicing. -/
 theorem stokes_trivial_case {G : Type u} [Group G] :
     piecewiseAffineLineIntegral ([] : List G)
       = (1 : G) := piecewiseAffineLineIntegral_nil
@@ -324,146 +389,90 @@ theorem yekutieli_finite_slice_substrate {G : Type u} [Group G] {z : G}
   | zero => simpa using Y.trace_zero
   | succ k ih => rw [Y.trace_succ, ih, pow_succ]
 
-/-! ### Lie-valued forms (substantive — item #4)
 
-    A genuine Lie-valued form `α : Ω¹(M; 𝔤)` is a smooth section
-    of the bundle `T*M ⊗ 𝔤` over a manifold `M` with values in
-    a Lie algebra `𝔤`.  Mathlib has `Mathlib.Analysis.NormedSpace.LieAlgebra`
-    and `Mathlib.Geometry.Manifold.MFDeriv`; combining them
-    requires building the bundle structure explicitly.
+/-! ### Lie-valued (additive) Stokes — over the concrete forms
 
-    This file supplies the **algebraic skeleton** — Lie algebras,
-    Lie brackets, and the formal-grade-1 / grade-2 carriers —
-    deferring the manifold part to upstream Mathlib. -/
+    **Changed 2026-11-21 (bean `qou-ghc6`).**  This section used to define
+    its own abstract Lie algebra and forms:
 
-/-- **Lie algebra structure** as an abstract class.  In Mathlib
-    proper, this is `LieAlgebra k 𝔤`; here we re-export the
-    bracket axioms (with bilinearity) that the Yekutieli-Stokes
-    proof requires. -/
-class LieAlgebraStructure (𝔤 : Type u) [AddCommGroup 𝔤] where
-  /-- The Lie bracket. -/
-  bracket : 𝔤 → 𝔤 → 𝔤
-  /-- Antisymmetry on the diagonal: `[x, x] = 0`. -/
-  bracket_self : ∀ x, bracket x x = 0
-  /-- Bilinearity (left): `[x + y, z] = [x, z] + [y, z]`. -/
-  bracket_add_left : ∀ x y z,
-    bracket (x + y) z = bracket x z + bracket y z
-  /-- Bilinearity (right): `[x, y + z] = [x, y] + [x, z]`. -/
-  bracket_add_right : ∀ x y z,
-    bracket x (y + z) = bracket x y + bracket x z
-  /-- Jacobi identity: `[[x,y],z] + [[y,z],x] + [[z,x],y] = 0`. -/
-  jacobi : ∀ x y z,
-    bracket (bracket x y) z + bracket (bracket y z) x +
-      bracket (bracket z x) y = 0
+    - `class LieAlgebraStructure 𝔤` (bracket, bilinearity, Jacobi) with
+      `bracket_antisym` — replaced by `LieValuedForms.ContinuousLieBracket`,
+      which `ContinuousLieBracket.toLieAlgebra` shows is a genuine Mathlib
+      `LieAlgebra ℝ 𝔤`; `bracket_antisym` below is now its antisymmetry;
+    - `structure LieAlgebraOneForm M 𝔤 := (eval : M → 𝔤)` and
+      `LieAlgebraTwoForm M 𝔤 := (eval : M → M → 𝔤)` — replaced by
+      `LieValuedOneForm E 𝔤` / `LieValuedTwoForm E 𝔤`;
+    - `gaugeCovariantDerivative α β := β + [α, β]` — replaced by
+      `LieValuedForms.covExtDeriv L α β = dβ + [α ∧ β]`.  The removed
+      definition had **no exterior derivative in it**, so it was not the
+      covariant derivative its name and docstring claimed.
 
-/-- Antisymmetry corollary: `[x, y] = -[y, x]`.
+    `LieValuedStokes` keeps its shape — a connection `alpha`, a form `beta`,
+    two `𝔤`-valued integrals carried as data, and the identity
+    `∫_{∂σ} α = ∫_σ d_α β` — with the boundary and `d_α` now concrete.
+    `beta` is a **1-form**: `d_α` raises degree by one, so a 2-cell integrand
+    `d_α β` needs `β` of degree 1 (the old `β` was a 2-form only because the
+    old `d_α` did not raise degree). -/
 
-    Derivation: `[x+y, x+y] = 0` (by `bracket_self`); expand
-    via bilinearity to `[x,x] + [x,y] + [y,x] + [y,y] = 0`;
-    apply `bracket_self` to drop `[x,x]` and `[y,y]`; conclude
-    `[x,y] + [y,x] = 0`, i.e. `[x,y] = -[y,x]`. -/
-theorem bracket_antisym {𝔤 : Type u}
-    [AddCommGroup 𝔤] [L : LieAlgebraStructure 𝔤] (x y : 𝔤) :
-    L.bracket x y = -L.bracket y x := by
-  have h1 : L.bracket (x + y) (x + y) = 0 := L.bracket_self (x + y)
-  rw [L.bracket_add_left, L.bracket_add_right, L.bracket_add_right,
-      L.bracket_self, L.bracket_self] at h1
-  -- h1 : 0 + L.bracket x y + (L.bracket y x + 0) = 0
-  simp at h1
-  -- h1 : L.bracket x y + L.bracket y x = 0
-  exact add_eq_zero_iff_eq_neg.mp h1
+section LieValued
 
-/-- **Lie-valued 1-form** as an abstract function `M → 𝔤`. -/
-structure LieAlgebraOneForm (M : Type u) (𝔤 : Type u) where
-  /-- The underlying form-evaluation. -/
-  eval : M → 𝔤
+variable {E 𝔤 : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [NormedAddCommGroup 𝔤] [NormedSpace ℝ 𝔤]
 
-/-- **Lie-valued 2-form**. -/
-structure LieAlgebraTwoForm (M : Type u) (𝔤 : Type u) where
-  /-- The underlying bivector-evaluation. -/
-  eval : M → M → 𝔤
+/-- Antisymmetry of a continuous Lie bracket: `⁅x, y⁆ = -⁅y, x⁆`
+    (`ContinuousLieBracket.swap`, derived from `⁅x, x⁆ = 0` and bilinearity). -/
+theorem bracket_antisym (L : ContinuousLieBracket 𝔤) (x y : 𝔤) :
+    L.bracket x y = -L.bracket y x :=
+  L.swap y x
 
-/-- The **gauge-covariant derivative** `d_α β = dβ + [α, β]`
-    appearing in Yekutieli-Stokes.  Abstract here as a function
-    of the underlying 1-form `α` and 2-form `β`; concrete
-    instance requires the manifold + Lie-algebra structure. -/
-def gaugeCovariantDerivative {M 𝔤 : Type u}
-    [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤]
-    (α : LieAlgebraOneForm M 𝔤) (β : LieAlgebraTwoForm M 𝔤) :
-    LieAlgebraTwoForm M 𝔤 :=
-  { eval := fun p q => β.eval p q +
-      LieAlgebraStructure.bracket (α.eval p) (β.eval p q) }
+/-- For the zero bracket, `d_α β = dβ` whatever the connection `α`. -/
+theorem covExtDeriv_of_bracket_eq_zero (L : ContinuousLieBracket 𝔤) (hL : L.bracket = 0)
+    (α β : LieValuedOneForm E 𝔤) : covExtDeriv L α β = extDeriv β := by
+  funext x; ext v
+  simp [covExtDeriv, bracketWedge_apply, hL]
 
-/-- **Class hypothesis**: a Lie-valued non-abelian Stokes
-    framework.  Bundles the 1-form, 2-form, gauge-covariant
-    derivative, and the Yekutieli-Stokes identity. -/
-class LieValuedStokes (M : Type u) (𝔤 : Type u)
-    [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤] where
-  /-- The 1-form `α`. -/
-  alpha : LieAlgebraOneForm M 𝔤
-  /-- The 2-form `β`. -/
-  beta : LieAlgebraTwoForm M 𝔤
+/-- **Class hypothesis**: a Lie-valued (additive) Stokes framework over the
+    concrete forms, for a continuous Lie bracket `L`.  The two `𝔤`-valued
+    integrals are data; `cellBoundary` and `covExtDeriv` are definitions. -/
+class LieValuedStokes (E 𝔤 : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [NormedAddCommGroup 𝔤] [NormedSpace ℝ 𝔤] (L : ContinuousLieBracket 𝔤) where
+  /-- The connection 1-form `α`. -/
+  alpha : LieValuedOneForm E 𝔤
+  /-- The 1-form `β` whose covariant derivative is integrated. -/
+  beta : LieValuedOneForm E 𝔤
   /-- Line integral of a 1-form along a path, valued in `𝔤`. -/
-  lineIntegral : LieAlgebraOneForm M 𝔤 → (M → M) → 𝔤
+  lineIntegral : LieValuedOneForm E 𝔤 → (ℝ → E) → 𝔤
   /-- Surface integral of a 2-form over a 2-cell, valued in `𝔤`. -/
-  surfaceIntegral : LieAlgebraTwoForm M 𝔤 → (M → M → M) → 𝔤
-  /-- The boundary `∂σ` of a 2-cell. -/
-  boundary : (M → M → M) → (M → M)
+  surfaceIntegral : LieValuedTwoForm E 𝔤 → (ℝ → ℝ → E) → 𝔤
   /-- **Yekutieli-Stokes, infinitesimal form**: `∫_{∂σ} α = ∫_σ d_α β`, with
-      `d_α β` the `gaugeCovariantDerivative` defined above.
+      `∂σ = cellBoundary σ` and `d_α β = covExtDeriv L alpha beta`. -/
+  stokes_identity : ∀ σ : ℝ → ℝ → E,
+    lineIntegral alpha (cellBoundary σ)
+      = surfaceIntegral (covExtDeriv L alpha beta) σ
 
-      This is bean `qou-ewc4`, filed by
-      `UpstreamSubstrateBridge.lean` when it REMOVED a
-      `∃ S : LieValuedStokes M 𝔤, True` rather than restate it: *"making the
-      carrier content-bearing (a real `stokes_identity` field rather than a
-      `Prop` + witness pair)"*.  That is this field.  The three integrals it
-      quantifies over are carried because this class had the forms and no way
-      to integrate them, which is why it could not state its own subject. -/
-  stokes_identity : ∀ σ : M → M → M,
-    lineIntegral alpha (boundary σ)
-      = surfaceIntegral (gaugeCovariantDerivative alpha beta) σ
-
-/-! ### The zero model of `LieValuedStokes`
-
-    **This declaration used to claim it was non-vacuous, and it was not.**
-    Its docstring read *"Non-vacuous (uses a concrete predicate, not True)"*
-    over `stokes_identity := (0 : 𝔤) = 0`, witnessed by `rfl`, with an inline
-    comment conceding "Holds tautologically".  `0 = 0` is exactly as vacuous
-    as `True`; the difference is cosmetic, and the docstring asserting
-    otherwise is the more serious half, because a reader who greps for
-    "non-vacuous" finds a false all-clear.
-
-    It was also an **`instance`**, so `[LieValuedStokes M 𝔤]` was discharged
-    globally with that tautology — precisely the defect `punitInstance` was
-    demoted for on 2026-08-24, one class up in this same file, and the reason
-    `UpstreamSubstrateBridge.lean` deleted its `lie_valued_stokes_discharged`
-    rather than restate it (bean `qou-ewc4`).
-
-    With `stokes_identity` now a real equation the zero model still exists —
-    consistency is not the problem — but it holds it rather than choosing it,
-    and it is a `def`. -/
+/-- **Abelian reduction** of `LieValuedStokes`: for the zero bracket the right
+    side is `∫_σ dβ`. -/
+theorem LieValuedStokes.stokes_of_bracket_eq_zero {L : ContinuousLieBracket 𝔤}
+    [S : LieValuedStokes E 𝔤 L] (hL : L.bracket = 0) (σ : ℝ → ℝ → E) :
+    S.lineIntegral S.alpha (cellBoundary σ) = S.surfaceIntegral (extDeriv S.beta) σ := by
+  rw [S.stokes_identity, covExtDeriv_of_bracket_eq_zero L hL]
 
 /-- **The zero model**: `α = 0`, `β = 0`, both integrals constantly `0`.
 
-    A `def`, not an `instance`, for the reason recorded at `punitInstance`: a
-    global instance discharges every downstream `[LieValuedStokes …]` behind
-    its author's back.  A caller wanting it writes
-    `letI := LieValuedStokes_canonical M 𝔤`.
-
-    What it establishes is consistency and nothing more.  By the `qou-z9ws`
-    inhabitation discriminator, a model in which every integral is `0` is
-    evidence the axioms can be satisfied and no evidence that they constrain
-    anything; a non-degenerate model needs the analytic theory this file
-    abstracts away, and `qou-ewc4` stays open for it. -/
-def LieValuedStokes_canonical (M : Type u) (𝔤 : Type u)
-    [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤] :
-    LieValuedStokes M 𝔤 where
-  alpha := { eval := fun _ => 0 }
-  beta := { eval := fun _ _ => 0 }
+    A `def`, not an `instance`, for the reason recorded at `punitInstance`.  It
+    establishes consistency and nothing more: a model in which every integral
+    is `0` is no evidence that the axioms constrain anything.  A non-degenerate
+    model needs the analytic theory Mathlib lacks; `qou-ewc4` records this. -/
+def LieValuedStokes_canonical (E 𝔤 : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [NormedAddCommGroup 𝔤] [NormedSpace ℝ 𝔤] (L : ContinuousLieBracket 𝔤) :
+    LieValuedStokes E 𝔤 L where
+  alpha := 0
+  beta := 0
   lineIntegral _ _ := 0
   surfaceIntegral _ _ := 0
-  boundary σ := fun m => σ m m
   stokes_identity _ := rfl
+
+end LieValued
 
 /-! ### Closed-path holonomy
 

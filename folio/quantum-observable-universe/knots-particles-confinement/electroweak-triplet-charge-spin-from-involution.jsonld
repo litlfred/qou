@@ -2,24 +2,23 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/thm-ew-triplet-charge-spin-from-involution",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:ew-triplet-charge-spin-from-involution",
   "kind": "theorem",
-  "title": "Charge and spin of the electroweak triplet are forced by the spin-involution sector selection",
+  "title": "Sector label and charge of the electroweak triplet computed through the spin involution",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-spin-involution",
     "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content",
     "papers/quantum-observable-universe/blocks/prop-self-dual-higgs-real-volume",
-    "papers/quantum-observable-universe/blocks/prop-vdw-pskew-isolation",
-    "papers/quantum-observable-universe/blocks/def-coulomb-charge",
-    "papers/quantum-observable-universe/blocks/rem-chirality-trefoil-electron-positron"
+    "papers/quantum-observable-universe/blocks/prop-vdw-pskew-isolation"
   ],
   "tags": [
     "electroweak",

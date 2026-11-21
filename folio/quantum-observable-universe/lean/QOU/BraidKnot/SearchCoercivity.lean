@@ -226,4 +226,12 @@ theorem le_of_le_join {f g h : ℕ → ℝ} {B V : ℝ} {L : ℕ}
   by_contra hcon
   exact absurd hV (not_le.mpr (join_lt_of_lt_sum hf hg hh (Nat.lt_of_not_le hcon)))
 
+/-- Positive margin between the incumbent threshold `V` and the joined evaluation past `L`. -/
+theorem sub_join_pos_of_lt_sum {f g h : ℕ → ℝ} {B V : ℝ} {L : ℕ}
+    (hf : ∀ a, f a ≤ B) (hg : ∀ b, g b ≤ B)
+    (hh : ∀ l, L < l → h l < V - 2 * B)
+    {a b : ℕ} (hab : L < a + b) :
+    0 < V - (f a + h (a + b) + g b) :=
+  sub_pos.mpr (join_lt_of_lt_sum hf hg hh hab)
+
 end QOU.BraidKnot.SearchCoercivity

@@ -2,20 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-nuclear-knot-classification",
+  "@id": "papers/quantum-observable-universe/blocks/rem-nuclear-knot-classification-argument",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:nuclear-knot-classification",
-  "kind": "proof",
-  "title": "Proof of nuclear knot classification",
+  "label": "rem:nuclear-knot-classification-argument",
+  "kind": "remark",
+  "title": "Argument for the nuclear knot classification (not a proof)",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-nuclear-knot-classification"
+    "papers/quantum-observable-universe/blocks/conj-nuclear-knot-classification"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-nuclear-knot-classification",
   "text": "nuclear-knot-classification-proof.md",
   "provenance": "authored"
 }

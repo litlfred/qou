@@ -1,1 +1,0 @@
-(The functions introduced above should not be confused with the functions cosq and sinq considered in [6, Exercise 1.14].) Clearly we have the formal (termwise) limits cos((1 −q)z; q2) −→cos z and sin((1 −q)z; q2) −→sin z as q ↑1.

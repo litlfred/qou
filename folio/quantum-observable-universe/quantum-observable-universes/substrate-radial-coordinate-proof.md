@@ -15,7 +15,7 @@ affine coordinate of a state.
    $\mathbb{CP}^1$ fibre.
 
 Furthermore, the $q$-deformed Reeb flow
-([q-Reeb flow](#ex:q-reeb-flow)) rotates the phase of $Z$ at a rate
+([the $q$-Reeb flow example](#ex:q-reeb-flow)) rotates the phase of $Z$ at a rate
 proportional to the quantum Planck constant:
 
 $$

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-9711057v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "acf5cdd7fe848f43b32d96d9b344fc222b0c7d3d1fa8950ce39495e2076237bb",
   "file": "9711057v2.pdf"
@@ -16,106 +19,89 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 3,
   "by_kind": {
-   "recommendation": 6
+   "proposition": 3
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "This implies that the low-lying Dirac eigenvalues must be spaced like $\\sim 1/V$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Whether the results obtained in RMT correctly describe the microscopic spectrum of full QCD is a question that can only be answered by empirical evidence, most importantly by large-scale lattice QCD simulations.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-000-1-introduction.md",
    "section_title": "Introduction",
    "pages": "1-2",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-hep-th-9711057v2#prop-sec-000-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "Based on an analysis of sum rules derived by Leutwyler and Smilga \\cite{Leut92} for the inverse powers of the Dirac eigenvalues in a finite volume, Shuryak and Verbaarschot conjectured that the microscopic spectral density should be a universal quantity which depends only on global symmetries, the number of flavors $N_f$, and the topological charge $\\nu$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Recently, a high-statistics lattice calculation directly demonstrated agreement between the random-matrix results and lattice data, not only for $\\rho_s$ but also for the distribution of the smallest eigenvalue and for the microscopic spectral two-point correlator \\cite{Berb97a}.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-000-1-introduction.md",
    "section_title": "Introduction",
    "pages": "1-2",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-02",
+   "block_iri": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-000-02",
+   "claim_id": "arxiv-hep-th-9711057v2#prop-sec-000-02"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "Here we proceed as follows: Since the polynomial $p_n^{(N_f)}(x,M)$ has to be invariant under permutations of the masses $M_f$ and must have a finite limit when all quark masses are degenerate, a reasonable guess for the normalization function is \\begin{eqnarray} C_n^{(N_f)}(M) \\ = \\ \\det\\left[L_{n+f-1}^{(0)} (-N\\Sigma^2M_{f^\\prime}^2)\\right]_{f,f^\\prime=1,\\ldots,N_f}\\:, \\label{polnorm} \\end{eqnarray} see Sec.~\\ref{sec23} below, in particular Eq.~(\\ref{chefformel}).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-22-construction-of-orthogonal-polynomials.md",
-   "section_title": "Construction of orthogonal polynomials",
-   "pages": "4-5",
+   "statement": "In the context of lattice QCD, it applies to SU(3) with dynamical staggered fermions.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-008-4-discussion.md (p. 9-10)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-008-4-discussion.md",
+   "section_title": "Discussion",
+   "pages": "9-10",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the limit $m_f\\to 0$, our results must reduce to those obtained earlier in the chiral limit \\cite{Verb93}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-31-microscopic-spectral-correlators-and-density.md",
-   "section_title": "Microscopic spectral correlators and density",
-   "pages": "6-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The RMT result should be universal and identical with that of full QCD under the same conditions as the microscopic spectral density.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-32-distribution-of-the-smallest-eigenvalue.md",
-   "section_title": "Distribution of the smallest eigenvalue",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The factor $c_N^{(N_f)}(m)$ ensures that $E(0,0)=1$ and should not be confused with the normalization constant defined in Eqs.~(\\ref{polnorm}) and (\\ref{CNfm}).",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-32-distribution-of-the-smallest-eigenvalue.md",
-   "section_title": "Distribution of the smallest eigenvalue",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-008-4-discussion.md (p. 9-10)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-008-01",
+   "claim_id": "arxiv-hep-th-9711057v2#prop-sec-008-01"
   }
  ]
 }

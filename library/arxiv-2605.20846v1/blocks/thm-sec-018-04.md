@@ -1,0 +1,1 @@
+1.4. (First isomorphism theorem of category theory) Let H : C →D be a functor. Then H defines a congruence ≡H on C by f ≡H f′ if and only if H(f) = H(f′). Moreover, H factors uniquely through the quotient: H = H ◦Q where Q : C →C/ ≡H and H : C/ ≡H→D where H(a) = H(a) and H([f]) = H(f).

@@ -1,4 +1,4 @@
-We re-derive and cross-check the tritium $Q$-value.
+The tritium $Q$-value is re-derived and cross-checked.
 
 ## Derivation chain
 

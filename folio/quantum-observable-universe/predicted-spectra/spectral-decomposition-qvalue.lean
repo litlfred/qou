@@ -105,6 +105,13 @@ theorem knot_operator_product_collapse
     (iv)  The product collapses to a single term (shell cancellation)
     (v)   The decomposition is exact — terminates at degree 2 on Σ₄
 
+    **Scope (2026-11-16).** Under convention D the Pauli (fully filled shell)
+    factor `|tr_M(e_(1³)·τ·T_β·e_(1³))| / |tr_M(T_β)|` is identically `0`, since
+    the Ocneanu weight of every three-row partition vanishes at `z = q³/(q²+1)`
+    (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`). The
+    corollary is asserted only for non-magic converting shells; this theorem is
+    the generic collapse and takes the active factor `F active` as given.
+
     **Restated 2026-08-22** (vacuity ledger, `proof-no-unused-hypothesis-rfl`).
     The prior form `∃ Q_q, Q_q = Q_bare · knotOperator` was a trivial existential
     (`⟨rhs, rfl⟩`) that asserted nothing.  This states the `(iv)` collapse of the

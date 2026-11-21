@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:52:10.709910+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T06:22:48.800581+00:00",
+  "commitSha": "c9cee1158806ca016924837e635a8d65d83c65fb",
   "assertions": [
     {
       "name": "tau_adj_4_1_amplitude_crosscheck",
@@ -15,18 +15,18 @@
     {
       "name": "vol_5_2_geometric_shape",
       "computed": "2.82812208833078316276389880927663494277098131730064947704352",
-      "expected": "2.828122088330783",
+      "expected": "2.8281220883307831627638988092766349427709813173006",
       "passed": true,
       "tolerance": "1e-12",
       "source": "Vol(5₂) = 3·|D(z)|, z root of z³-z²+1 (disc -23); SnapPy value 2.828122088330783"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 21,
   "computation": "rhoF-vs-adjoint-torsion",
   "scriptFile": "rhoF_vs_adjoint_torsion.py",
-  "scriptHash": "852e76051a8b",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "d64b82de9cb9",
+  "scriptCommitSha": "615b5553363a7e159ec40fa99bb156e48be9b1c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [

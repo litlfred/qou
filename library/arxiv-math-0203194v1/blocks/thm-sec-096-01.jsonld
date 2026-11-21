@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/blocks/thm-sec-096-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 232,
+  "pageEnd": 235,
+  "text": "thm-sec-096-01.md",
+  "derivedFrom": "library/arxiv-math-0203194v1/sections/sec-096",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [Mu79], [Kat98] in sections/sec-096-j-mumfords-fake-projective-plane.md",
+    "claim_id": "arxiv-math-0203194v1#theorem:5.1",
+    "lean_status": "unformalized"
+  }
+}

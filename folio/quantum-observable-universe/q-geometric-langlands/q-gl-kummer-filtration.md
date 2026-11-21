@@ -1,4 +1,4 @@
-The Kummer tower $\mu_1 \subset \mu_2 \subset \cdots \subset \mu_\infty \subset \mathbb{G}_m$ ([Kummer filtration](#rem:kummer-filtration-obstruction)) induces a descending filtration on the moduli of $q$-local systems. For each $n \geq 1$, we define the **level-$n$ sublocus**:
+The Kummer tower $\mu_1 \subset \mu_2 \subset \cdots \subset \mu_\infty \subset \mathbb{G}_m$ ([Kummer filtration](#rem:kummer-filtration-obstruction)) induces a descending filtration on the moduli of $q$-local systems. For each $n \geq 1$, define the **level-$n$ sublocus**:
 
 $$
   \mathrm{LocSys}_{\check{G}_q}^{(n)}(X)

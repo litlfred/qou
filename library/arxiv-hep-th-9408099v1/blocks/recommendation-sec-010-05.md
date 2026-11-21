@@ -1,1 +1,0 @@
-If this is the right interpretation and the theory is indeed dual, there should also be massive Spin(8)-invariant BPS-saturated states of spins ≤1 and charges (nm, ne) = (2k, 2l) with arbitrary relatively prime k and l.

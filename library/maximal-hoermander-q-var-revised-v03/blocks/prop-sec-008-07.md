@@ -1,0 +1,1 @@
+Let (Ω, µ) be a σ-ﬁnite measure space. Let A be a self-adjoint positive oper- ator on L2(Ω) such that e−tA is positivity preserving for all t ⩾0 (more generally, such that |e−tAf| ⩽St|f| where St : L2(Ω) →L2(Ω) is a positive contraction semigroup). Let δ > 2. Then for any f ∈D(Aδ), for a.e. x ∈Ω, the function ( R 7−→C t 7−→exp(itA)f(x) is continuous.

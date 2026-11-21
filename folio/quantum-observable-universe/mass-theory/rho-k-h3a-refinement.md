@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:hoefsmit-scattering-pipeline`](#conj:hoefsmit-scattering-pipeline)).**
+**Proposition.**
 
 *Fix an atom $K$ with $A = Z + N$ nucleons and braid word $\mathcal{B}_K \in B_{3A}$, and let $\Lambda$ be the list of partitions $\lambda \vdash 3A$ carried by the Wedderburn decomposition. Suppose the categorical density satisfies the division-free refinement balance*
 
@@ -27,4 +27,4 @@ The leading-order piece $\rho_K^{\mathrm{LO}}$ isolates the constituent mass. Th
 
 The mass formula $M(K) = \rho_K \cdot m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|$ defines $\rho_K$, so the decomposition above says where the binding contribution sits rather than how accurate $M(K)$ is: given the balance, the whole of $\rho_K - \rho_K^{\mathrm{LO}}$ is carried by the partition-indexed $\Delta_\lambda$ profile. The collapse at $\Delta_\lambda \equiv 0$ is stated as part of the claim rather than as commentary because it follows from the balance and is not a separate assertion. The result is a decomposition parallel to the phenomenological six-term narrative, conditional on the scattering pipeline.
 
-The partition list $\Lambda$ is fixed with the atom rather than quantified over. That is not a presentational choice: a hypothesis asserting the displayed identity *for every* list of partitions would force the correction sum to be independent of the list it sums over, which fails as soon as a single $y_\lambda \chi^\lambda \Delta_\lambda$ term is nonzero. The Lean sibling records that refutation as `not_rhoKH3ARefinementNaive`.
+The partition list $\Lambda$ is fixed with the atom rather than quantified over. That is not a presentational choice: a hypothesis asserting the displayed identity *for every* list of partitions would force the correction sum to be independent of the list it sums over, which fails as soon as a single $y_\lambda \chi^\lambda \Delta_\lambda$ term is nonzero. That refutation is proved.

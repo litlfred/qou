@@ -2,7 +2,7 @@
 > below is the structurally-wrong leading-order ansatz; the operator-valued
 > form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](../mass-endomorphism/rho-k-graded-expansion.md).
+> graded expansion [graded expansion of $\rho_K$](../mass-endomorphism/rho-k-graded-expansion.md).
 
 The **Kashaev volume conjecture (KVC)** asserts that, for every
 hyperbolic knot $K \subseteq S^3$, the Kashaev limit of the colored
@@ -33,52 +33,17 @@ recovers the hyperbolic volume; this is the content of the per-block
 [Kashaev as archimedean realization](#rem:kashaev-as-archimedean-realization)
 remark.
 
-### Lean axiomatisation
+### KVC as an explicit hypothesis
 
-KVC is
-encoded in Lean as a **typeclass**
-
-```
-class VolumeConjecture (q : ℝ) where
-  hypVolume       : Braid → ℝ
-  kashaevLimit    : Braid → ℝ
-  kvc_holds       : ∀ β, hypVolume β = kashaevLimit β
-  hypVolume_nonneg : ∀ β, 0 ≤ hypVolume β
-```
-
-The class fields encode the conjectural identification of hyperbolic
-volume with the Kashaev limit. Any instance of `VolumeConjecture` is
-**conjecture-bearing**: the `kvc_holds` field plays the role of
-`sorry`, but as an axiomatised class field rather than a tactic
-failure. Downstream results that depend on KVC take it as an
-`[VolumeConjecture q]` typeclass argument and are then **fully
-verified** by Lean — the only unproved input is the class instance.
-
-This is the same pattern used for `MassEvaluation` in
-[mass endomorphism tower](#prop:mass-endomorphism-tower): the
-canonical computation is axiomatised so that the algebraic tower
-identities are machine-checked.
-
-### Rationale for a class rather than an axiom
-
-Three reasons:
-
-1. **Locality.** A typeclass instance can be supplied per knot family
-   (figure-eight, torus, etc.) where KVC is actually proved; downstream
-   theorems then specialise to verified ground.
-
-2. **Compositionality.** A bridge theorem of the form
-   $\Phi_q(V_S) = \rho_q \cdot \mathrm{Vol}(K_S)$ depends only on KVC
-   restricted to $K_S$; the typeclass scope makes that dependency
-   visible in the type signature.
-
-3. **No global axiom pollution.** Mathlib's axiom audit
-   (`#print axioms`) records typeclass dependencies but does not flag
-   them as global axioms; the conditional nature of every downstream
-   result is preserved.
+KVC is used throughout as an explicit hypothesis. Every downstream
+result that depends on it is conditional on KVC — and only on KVC
+restricted to the knots involved: a bridge statement of the form
+$\Phi_q(V_S) = \rho_q \cdot \mathrm{Vol}(K_S)$ depends only on KVC
+for $K_S$. Such a result becomes unconditional for a knot family
+(figure-eight, torus, etc.) exactly where KVC is actually proved.
 
 The conjecture itself remains open at the level of $\pi_0$ —
-no claim of proof is made by introducing the class.
+no claim of proof is made by stating it as a hypothesis.
 
 ### Motivic perspective
 

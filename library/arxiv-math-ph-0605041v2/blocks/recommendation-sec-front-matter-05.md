@@ -1,1 +1,0 @@
-This leads to the control of the measures (2.1) and their Λ →P limit [6]. [Throughout this paper, operations and relations involving boldface symbols should be understood componentwisely, for instance ρ ≤µ indicates ργ ≤µγ, γ ∈P ; −z = {−zγ}γ∈P ; ρ Π = {ργΠγ}γ∈P ; |z| = {|zγ|}γ∈P, etc.] The truncated functions satisfy the alternating-sign property φT (γ0, γ1, . . . , γn) = (−1)n

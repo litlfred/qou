@@ -1,1 +1,0 @@
-Moreover we should warn the reader that the sequence ([\[Gamma on a test sequence\]](#Gamma on a test sequence){reference-type="ref" reference="Gamma on a test sequence"}) is not obtained applying $\Gamma$ on the test sequence, unless $J$ and $K$ are finite, even if $\Gamma$ is defined (or extended) to the whole $\mathop{\mathrm{\textup{QCoh}}}\stX$.

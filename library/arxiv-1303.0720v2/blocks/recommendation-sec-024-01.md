@@ -1,1 +1,0 @@
-We shall be concerned with the (small) bidisk ${\mathbb D}(z_0,r)\times{\mathbb D}(z_0,r)$ where $M_m(z,w)$ is well-defined, by our assumptions (A:i)--(A:iv) above.To extend the kernel beyond the bidisk, we multiply by a smooth cut-off function $\chi_0(w)$, and think of the product as $0$ off the support of $\chi_0$ (also where $M_m(z,w)$ is undefined).

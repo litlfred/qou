@@ -1,1 +1,0 @@
-Further comments on the complexiﬁcation bound If we want a notion of complexity such that local Hamiltonian evolution leads to com- plexity growth linear in t and the number n of active degrees of freedom, then the Hamiltonian should ﬁrst be normalized so that the energy is extensive in n.

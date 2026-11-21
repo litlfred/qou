@@ -48,7 +48,7 @@ Reuses the verified LR table + character machinery from
 `sublemma_2_1_deuteron_branching.py`.
 
 Cited residual (`prop:rho-k-graded-expansion`): the content block
-`content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md`
+`content/quantum-observable-universe/mass-theory/rho-k-graded-expansion.md`
 line 43 cites "machine precision (3.2 × 10⁻¹⁴)". As of 2026-09-14 that
 UNDERSTATES this probe by 56 orders. The block was deliberately NOT
 edited alongside this producer — it belongs to the mass-endomorphism

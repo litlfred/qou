@@ -1,0 +1,1 @@
+For all knots K, strictly positive integers N and n, and a primitive N-th root of unity ζ, we have (62) ⟨K⟩N,n = JK n+1(ζ)1N where 1N denotes the identity N × N matrix. In particular, ⟨K⟩N,0 = 1N is a trivial invariant coming from a nontrivial r-matrix over an N-dimensional vector space.

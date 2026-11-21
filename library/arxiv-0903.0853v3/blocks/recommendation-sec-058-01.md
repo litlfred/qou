@@ -1,1 +1,0 @@
-One thereby deduces a summation process of $\hat F$ with respect to each generic partition of divisors for $A_0$; we shall denote: $${{{\mathcal{F}}}}^A: (\Lambda_1,\ldots,\Lambda_{k-1}) \mapsto F^A_{(\Lambda_1,\ldots,\Lambda_{k-1})}.$$ The $q$-analogue of Stokes phenomenon is displayed by the existence of various \"sums\" of $\hat F$.

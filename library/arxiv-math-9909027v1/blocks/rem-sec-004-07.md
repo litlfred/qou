@@ -1,0 +1,1 @@
+We did not use the full force of the hypotheses. The result will hold in a ﬁnite-dimensional general C∗-planar algebra provided isolated circles can be removed with a multiplicative factor δ, that the tangle formula for orthogonal projection onto P1,k+1 is correct, and dim P1 = 1.

@@ -1,1 +1,0 @@
-The Bruhat order then has the geometric interpretation that $u<w$ is equivalent to the fact that whenever $u(C_{\ell})$ and $v(C_{\ell})$ lie on opposite sides of a hyperplane, $u(C_{\ell})$ must be on the negative and $w(C_{\ell})$ must be on the positive side of that hyperplane.

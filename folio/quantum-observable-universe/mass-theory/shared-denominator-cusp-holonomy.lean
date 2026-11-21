@@ -207,4 +207,77 @@ come from the Newton–Raphson gluing pipeline
 (`computations/q-pochhammer-seed.witness.json` records the trefoil case) —
 and by `seed_is_not_the_cusp_shape` it is not the seed itself. -/
 
+/-! ## Index-blindness of `τ_arch` under tetrahedron isometry (`qou-v57s`)
+
+In `snappy-cusp-seeding.witness.json`, `m004` (`n = 2`), `m003` (`n = 2`) and
+`L6a4` (`n = 8`) have `n` pairwise-distinct algebraic denominator roots `q₀^{-k}`
+while all ideal tetrahedra in each triangulation lie in a **single** edge-relabelling
+isometry class (`m = 1`; on `L6a4` the two recorded shapes `1 + i` and `(1 + i)/2`
+are related by two applications of `z ↦ 1/(1 − z)`).
+
+By pigeonhole (`Fintype.card_le_of_injective`), no map `τ_arch : Fin n → Fin m`
+from `n` roots to `m < n` shape/isometry classes can be injective, and for
+`m = 1` every root index maps to the exact same class. -/
+
+/-- **First step of the `L6a4` edge-relabelling orbit (`qou-v57s`).**
+In cleared-denominator form for `z ↦ 1/(1 − z)`, rotating `z₀ = 1 + i` gives
+`z₁ = i` since `(1 − (1 + i)) · i = −i² = 1`. -/
+theorem l6a4_orbit_step_one :
+    (1 - (1 + Complex.I)) * Complex.I = (1 : ℂ) := by
+  calc (1 - (1 + Complex.I)) * Complex.I
+      = -(Complex.I ^ 2) := by ring
+    _ = 1 := by rw [Complex.I_sq]; ring
+
+/-- **Second step of the `L6a4` edge-relabelling orbit (`qou-v57s`).**
+Rotating `z₁ = i` under `z ↦ 1/(1 − z)` gives SnapPy's second recorded `L6a4`
+shape `z₂ = (1 + i)/2` since `(1 − i) · (1 + i)/2 = (1 − i²)/2 = 1`. -/
+theorem l6a4_orbit_step_two :
+    (1 - Complex.I) * ((1 + Complex.I) / 2) = (1 : ℂ) := by
+  calc (1 - Complex.I) * ((1 + Complex.I) / 2)
+      = (1 - Complex.I ^ 2) / 2 := by ring
+    _ = 1 := by rw [Complex.I_sq]; ring
+
+/-- **Third step closing the `L6a4` 3-cycle (`qou-v57s`).**
+Rotating `z₂ = (1 + i)/2` returns to `z₀ = 1 + i` since
+`(1 − (1 + i)/2) · (1 + i) = (1 − i²)/2 = 1`. -/
+theorem l6a4_orbit_step_three :
+    (1 - (1 + Complex.I) / 2) * (1 + Complex.I) = (1 : ℂ) := by
+  calc (1 - (1 + Complex.I) / 2) * (1 + Complex.I)
+      = (1 - Complex.I ^ 2) / 2 := by ring
+    _ = 1 := by rw [Complex.I_sq]; ring
+
+/-- **Pigeonhole non-injectivity of `τ_arch` (`qou-v57s`).**
+Whenever a triangulation has `m` distinct shape or tetrahedron-isometry classes
+and `n > m` distinct algebraic denominator roots, no map
+`tau_arch : Fin n → Fin m` can be injective. -/
+theorem tau_arch_not_injective_of_lt_roots {n m : ℕ} (hmn : m < n)
+    (tau_arch : Fin n → Fin m) : ¬ Function.Injective tau_arch := by
+  intro hinj
+  have hcard := Fintype.card_le_of_injective tau_arch hinj
+  simp only [Fintype.card_fin] at hcard
+  omega
+
+/-- **Complete index-blindness on a single-isometry-class triangulation (`qou-v57s`).**
+When all tetrahedra belong to one isometry class (`m = 1`, as for `m004`, `m003`
+and `L6a4` up to edge relabelling), `tau_arch : Fin n → Fin 1` assigns the exact
+same class to every root index `j, k : Fin n`. -/
+theorem tau_arch_constant_of_single_isometry_class {n : ℕ}
+    (tau_arch : Fin n → Fin 1) (j k : Fin n) :
+    tau_arch j = tau_arch k :=
+  Subsingleton.elim (tau_arch j) (tau_arch k)
+
+/-- **Instantiation on the three `snappy-cusp-seeding` manifolds (`qou-v57s`).**
+Neither the `n = 2 → m = 1` assignments (`m004`, `m003`) nor the `n = 8 → m = 2`
+raw-shape and `n = 8 → m = 1` isometry-class assignments (`L6a4`) can be injective. -/
+theorem snappy_cusp_seeding_non_injective
+    (tau_m004 : Fin 2 → Fin 1)
+    (tau_l6a4_raw : Fin 8 → Fin 2)
+    (tau_l6a4_iso : Fin 8 → Fin 1) :
+    ¬ Function.Injective tau_m004
+      ∧ ¬ Function.Injective tau_l6a4_raw
+      ∧ ¬ Function.Injective tau_l6a4_iso :=
+  ⟨tau_arch_not_injective_of_lt_roots (by decide) tau_m004,
+   tau_arch_not_injective_of_lt_roots (by decide) tau_l6a4_raw,
+   tau_arch_not_injective_of_lt_roots (by decide) tau_l6a4_iso⟩
+
 end QOU.QPochhammer

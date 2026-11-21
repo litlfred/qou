@@ -1,0 +1,1 @@
+Let Sn ∼= L ⊂M be a Lagrangian sphere. Fix a Lagrangian disk ∆n+1 ⊂H with ∂∆= L in a smooth element H ⊂P of the pencil, and with ∆∩M = L. There is a Lagrangian sphere Sn+2 ∼= ˆL ⊂(BlM(P), Ωλ). The Hamiltonian isotopy class of ˆL is determined by the Lagrangian isotopy class of ∆.

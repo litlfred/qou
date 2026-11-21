@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0705.1468v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "4ff578cb3657e4a4d5990917131b99beb2bc69ef556bfc1ec387b0d3649123c1",
   "file": "0705.1468v1.pdf"
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Over thirty years ago Faddeev suggested [@Fa2] that in three-dimensional space the $O(3)$ sigma model, modified by the addition of a Skyrme term, should have interesting string-like topological solitons stabilized by the integer-valued Hopf charge.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Strictly speaking, in order to have two-dimensional solitons with a finite size in this model then a potential term must also be included, upon which the two-dimensional solitons are known as baby Skyrmions [@PSZ], but this aspect is not crucial for the discussion here.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-the-skyrme-faddeev-model-and-low-charge-solitons.md",
-   "section_title": "The Skyrme-Faddeev model and low charge solitons",
-   "pages": "3-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that this notation does not display the Hopf charge of the configuration, which is determined by the twist number as well as the crossing number, but this should not cause any confusion in what follows.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-the-skyrme-faddeev-model-and-low-charge-solitons.md",
-   "section_title": "The Skyrme-Faddeev model and low charge solitons",
-   "pages": "3-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For a string-like soliton it is expected that one of the contributions to the energy should have an interpretation in terms of the string length.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-higher-charge-solitons.md",
-   "section_title": "Higher charge solitons",
-   "pages": "11-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As the soliton energy grows like $Q^{3/4}$ then this suggests that the string length should have a similar growth.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-higher-charge-solitons.md",
-   "section_title": "Higher charge solitons",
-   "pages": "11-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

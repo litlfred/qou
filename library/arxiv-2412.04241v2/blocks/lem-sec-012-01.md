@@ -1,0 +1,1 @@
+For every m, we have fm(t, x) ∈e V (t) m2 log(1+x/ζm) p δ(t) Um(t)(1 + x t1/m Q[ζm][[t1/m]][[x]]), fm(0, x) = 1 . (68) When F(t, q) = FA(t, q) is given by (31), we will denote the corresponding series fA(t, q), VA(t), δA(t) and UA,m(t), respectively.

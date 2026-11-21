@@ -1,1 +1,0 @@
-It is equivalent to saying that knowledge of the labels in the Bruhat graph is superﬂuous when computing the KL polynomials, or in other words, this conjecture says that there should be a completely combina- torial formula to compute the coeﬃcients of Px,y(q).

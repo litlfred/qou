@@ -12,10 +12,10 @@ the body-order series equals the jet-graded total.
 
 The grading match (Steps 1–2 of the proof) and exhaustiveness are
 packaged as the structure hypothesis (`prop:gb-spectral-sequence`,
-`prop:jet-prefix-gb-filtration`), so the series identity is extracted
+`conj:jet-prefix-gb-filtration`), so the series identity is extracted
 sorry-free.
 
-LaTeX label: `lem:bond-order-eq-jet-degree`.
+LaTeX label: `conj:bond-order-eq-jet-degree`.
 
 ## References
 

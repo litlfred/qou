@@ -1,1 +1,0 @@
-If we replace L by L in the left-hand sides of these three equations, then their right-hand sides must be replaced by piecewise continuous functions whose values depend on the positions of the arguments: L(1) in the ﬁrst equation, 2L(1) for x > 0 or −L(1) for x < 0 in the second, and −3L(1) for x, y < 0, xy > 1 and +3L(1) otherwise in the third.

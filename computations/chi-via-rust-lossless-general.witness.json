@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-08T04:09:37.799539+00:00",
-  "commitSha": "29126ed0ed6265720b337780d89b8c16185c25b7",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:03:49.485259+00:00",
+  "commitSha": "f550098a1cfe304f1ca955217c0981694e060f68",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13327,
+  "durationMs": 11134,
   "computation": "chi-via-rust-lossless-general",
   "scriptFile": "chi_via_rust_lossless.py",
-  "scriptHash": "9de0388711a0",
-  "scriptCommitSha": "3b95e967cd8269dd2067a7db7a6961228a698f98",
+  "scriptHash": "2ef3dd74c322",
+  "scriptCommitSha": "c902ae566f63940ee7618786ddb22119612ae795",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,59 +17,44 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
       "computations/chi_via_rust_lossless.py",
-      "--fresh",
-      "5Li",
-      "6Li",
       "D",
       "T",
-      "3He"
+      "3He",
+      "4He",
+      "5Li",
+      "6Li",
+      "--fresh",
+      "--backend",
+      "path-sum"
     ],
-    "reproduce": "python3 -u computations/chi_via_rust_lossless.py --fresh 5Li 6Li D T 3He"
+    "reproduce": "python3 -u computations/chi_via_rust_lossless.py D T 3He 4He 5Li 6Li --fresh --backend path-sum"
   },
   "description": "Lossless per-λ χ(q₀) caches for arbitrary nuclides (generalizes chi_4he_via_rust_lossless.py). Default backend is the dim-free seminormal path-sum (chi_path_sum_seminormal.py; ⁵Li H₁₅ 176 λ in ~3 s, ⁶Li H₁₈ 385 λ in ~9 s); `--backend gp` selects the Rust chi_q_via_gp route (5.6 s/λ at n=12, infeasible at n=15 — bean qou-d9wf). Consumes the closed-form y_λ tower for n>12. Produces the canonical chi-{atom}-h{n}-...-matrix-m.witness.json the active-set / binding consumers read. Sign-only convention; borromean intra-nucleon word (qou-92u9); matches the matrix-M backend to the 50-dps floor (#2062 §8).",
   "data": {
     "chi_backend": "path-sum",
     "braid_word_intra_order": "borromean",
     "atoms": [
-      "lithium-5",
-      "lithium-6",
       "deuteron",
       "tritium",
-      "helium-3"
+      "helium-3",
+      "helium-4",
+      "lithium-5",
+      "lithium-6"
     ],
     "results": [
-      {
-        "atom": "lithium-5",
-        "n_strands": 15,
-        "Z": 3,
-        "N": 2,
-        "n_partitions": 176,
-        "tr_M_at_q0": "1.224030280417967209559058337937914985997929390622156447117087448652934",
-        "compute_time_sec": 2,
-        "cache_path": "/home/user/qou/.claude/worktrees/agent-ad0b15d6e2775d982/computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json"
-      },
-      {
-        "atom": "lithium-6",
-        "n_strands": 18,
-        "Z": 3,
-        "N": 3,
-        "n_partitions": 385,
-        "tr_M_at_q0": "1.15557589531859474633630189239359264294829682065917828155652320780058",
-        "compute_time_sec": 10,
-        "cache_path": "/home/user/qou/.claude/worktrees/agent-ad0b15d6e2775d982/computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json"
-      },
       {
         "atom": "deuteron",
         "n_strands": 6,
@@ -78,7 +63,7 @@
         "n_partitions": 11,
         "tr_M_at_q0": "1.45469928113236160140269429406582653107014302061056187321137412159102",
         "compute_time_sec": 0,
-        "cache_path": "/home/user/qou/.claude/worktrees/agent-ad0b15d6e2775d982/computations/chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json"
+        "cache_path": "/home/claude/qou/computations/chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json"
       },
       {
         "atom": "tritium",
@@ -88,7 +73,7 @@
         "n_partitions": 30,
         "tr_M_at_q0": "1.373344639513192347441190161114008138495886936855186683715902718567812",
         "compute_time_sec": 0,
-        "cache_path": "/home/user/qou/.claude/worktrees/agent-ad0b15d6e2775d982/computations/chi-tritium-h9-at-q0-50dps-matrix-m.witness.json"
+        "cache_path": "/home/claude/qou/computations/chi-tritium-h9-at-q0-50dps-matrix-m.witness.json"
       },
       {
         "atom": "helium-3",
@@ -98,9 +83,39 @@
         "n_partitions": 30,
         "tr_M_at_q0": "1.373344639513192347441190161114008138495886936855186683715902718567812",
         "compute_time_sec": 0,
-        "cache_path": "/home/user/qou/.claude/worktrees/agent-ad0b15d6e2775d982/computations/chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json"
+        "cache_path": "/home/claude/qou/computations/chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json"
+      },
+      {
+        "atom": "helium-4",
+        "n_strands": 12,
+        "Z": 2,
+        "N": 2,
+        "n_partitions": 77,
+        "tr_M_at_q0": "1.296539788905008853709577074263780588634279281454226192106720498390741",
+        "compute_time_sec": 0,
+        "cache_path": "/home/claude/qou/computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json"
+      },
+      {
+        "atom": "lithium-5",
+        "n_strands": 15,
+        "Z": 3,
+        "N": 2,
+        "n_partitions": 176,
+        "tr_M_at_q0": "1.224030280417967209559058337937914985997929390622156447117087448652934",
+        "compute_time_sec": 2,
+        "cache_path": "/home/claude/qou/computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json"
+      },
+      {
+        "atom": "lithium-6",
+        "n_strands": 18,
+        "Z": 3,
+        "N": 3,
+        "n_partitions": 385,
+        "tr_M_at_q0": "1.15557589531859474633630189239359264294829682065917828155652320780058",
+        "compute_time_sec": 8,
+        "cache_path": "/home/claude/qou/computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json"
       }
     ],
-    "total_time_sec": 13
+    "total_time_sec": 11
   }
 }

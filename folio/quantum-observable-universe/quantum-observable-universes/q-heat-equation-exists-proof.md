@@ -5,7 +5,7 @@ which lives in $\mathrm{End}(\mathcal{S}) \otimes u_0$ as a formal
 power series in $t$.  On Peter--Weyl isotypic components
 $\pi_j(u_0)$, the solution is the eigenfunction expansion
 $u(t) = \sum_j e^{-\lambda_j(q) t} \pi_j(u_0)$
-([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)), which is
+(the Peter--Weyl decomposition of the heat kernel, proved in the information-theory chapter), which is
 a finite sum on each irrep summand and therefore exists
 categorically without convergence hypotheses.  Over $\mathbb{C}$ the
 sum converges to a smooth solution; over $\mathbb{F}_p, \mathbb{Q}_p$

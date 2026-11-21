@@ -1,0 +1,1 @@
+Note that Brg;n.c/ is not a specialization of BMWg;n.c; q; a/ as the q D a D 1 limit of BMWg;n.c; q; a/ has c1 D 2. This technicality will not play any role for us, so we strategically ignore it. In the specialization Brg;n.c/, we can use a simplified notation for the crossings: D D :

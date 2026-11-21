@@ -13,9 +13,10 @@
   "pageStart": 30,
   "pageEnd": 32,
   "contains": [
-    "library/black-samson-phd2010sp/blocks/prose-sec-006"
+    "library/black-samson-phd2010sp/blocks/prose-sec-006",
+    "library/black-samson-phd2010sp/blocks/thm-sec-006-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
   "provenance": "ingested"
 }

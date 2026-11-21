@@ -234,6 +234,21 @@
         "severity": "critical",
         "evidence": "CRITICAL: statement .md:4 J_k = q^{1−k}Σ_{i<k}σ_{i,k} gives J₁ = 0, but .md:18 / proof.md:42 claim eigenvalue q^{2c}=1 on cell of 1; n=2: J₂ = q⁻¹σ₁ has eigenvalues 1 and −q⁻² vs claimed q² and q⁻². proof.md:28-33 'each σ_j acts on the sum by permuting the transpositions' invalid in H_n(q)",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "afb028ea0d35",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.165Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Checked: sigma_k J_k = J_{k+1} sigma_k^{-1} and sigma_k J_{k+1} = h J_{k+1} + J_k sigma_k sum to commutation with J_k+J_{k+1}; Step 1 cites Mathas Ch.3."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1722,6 +1737,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:31.583Z",
+  "updated_at": "2026-11-16T07:13:24.165Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

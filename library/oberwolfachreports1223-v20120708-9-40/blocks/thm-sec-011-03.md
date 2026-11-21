@@ -1,0 +1,1 @@
+The signature σK of an alternating knot K given by its Conway symbol is σK = ! P −2 *ni + ci + 2c0, where the sum is taken over all parallel twists ni, ci ∈{1, −1} is the sign of crossings belonging to a parallel twist ni, and 2c0 is an integer constant which can be computed from the signature of the generating knot.

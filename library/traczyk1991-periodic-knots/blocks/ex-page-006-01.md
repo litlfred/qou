@@ -1,0 +1,1 @@
+p=7, k=5, s=1. A direct computation shows that Ty =3/?+ — 317% 43/78 —3 9943192, T, = 196 — 168 4 79 — 172 4 174 4. 3176 3178, and there- fore Ly=317 32-3] 3°43)1- 78 —3]- 76 4.31-74, A, = —317 78 431-7°. The con- sidered equality takes the form

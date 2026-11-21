@@ -1,1 +1,0 @@
-Translation invariance implies that the expectation value of G( n; fl.))) must be independent of space-time and hence we will have, in the continuum limit, (gp,.;(x »=lim(G(na; fl.)) »=A6'pII a~o (5-7) for some constant A.

@@ -1,0 +1,1 @@
+Assuming (4.10, 4.11) and that dimC(B) > 1, there is a fully faithful em- bedding DπF(B; 0)֒ →DπF(Y ). This is exactly the content of Lemmas 4.31 and 4.38. Now take B = Q0 ∩Q1 ⊂P2g+1 for some g > 1, so the space Y →P1 is the relative quadric. Lemma 4.4 shows that the crucial hypothesis (4.11) holds, and Proposition 4.39 yields one of the embeddings of Theorem 1.1.

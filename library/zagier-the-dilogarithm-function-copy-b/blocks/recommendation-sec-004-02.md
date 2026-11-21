@@ -1,1 +1,0 @@
-If instead of taking any r2 linearly independent elements we choose the ξj to 2 It should be mentioned that the deﬁnition of BF which we gave for F = C or Q must be modiﬁed slightly when F is a number ﬁeld because F × is no longer divisible; however, this is a minor point, aﬀecting only the torsion in the Bloch group, and will be ignored here.

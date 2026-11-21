@@ -1,1 +1,0 @@
-It is reasonable to think that inequality (29) should be true under suitable conditions in higher dimension, with the right-hand side replaced by R |τ ν∇f|2 dν up to a constant, where τ ν is the Stein kernel constructed by Fathi in [Fat18] using moment maps.

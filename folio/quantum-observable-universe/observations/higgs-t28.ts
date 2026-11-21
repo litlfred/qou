@@ -22,4 +22,7 @@ export default conjecture({
     "scalar",
     "genus-3",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The identity is proved in [`QOU/StandardModel/ElectroweakBringSchwingerBridge.lean`](../lean/QOU/StandardModel/ElectroweakBringSchwingerBridge.lean). The 1-loop factor comparison: see [`electroweak_bring_schwinger_bridge_probe.py`](../../../computations/probes/electroweak_bring_schwinger_bridge_probe.py)." },
+  ],
 });

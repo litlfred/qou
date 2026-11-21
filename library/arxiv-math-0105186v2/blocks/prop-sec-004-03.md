@@ -1,0 +1,1 @@
+Let c be a path satisfying (1.22), and l the loop in S \ Scrit obtained by “doubling” c, as in Figure 1. Then the monodromy around l is isotopic to the Dehn twist along the vanishing cycle Vc: [ρl] = [τVc] ∈π0(Sympe(Ec(a))). (1.23)

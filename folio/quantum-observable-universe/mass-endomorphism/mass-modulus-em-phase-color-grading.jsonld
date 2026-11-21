@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-mass-modulus-em-phase-color-grading",
@@ -15,7 +16,8 @@
   "title": "Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-color-spacetime-s5-factorization",
-    "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume"
+    "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume",
+    "papers/quantum-observable-universe/blocks/conj-bar-parity-split"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-color-spacetime-s5-factorization",
   "cites": [

@@ -1,0 +1,1 @@
+Let T L~ (0) consist of the q v)-vector space on the set of isotopy classes of Temperley-Lieb diagrams [D] on d strands, endowed with a multiplication defined by (II.23) The quantity 0 is called the loop value, which we assume is non-zero.

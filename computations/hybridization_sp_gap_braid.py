@@ -12,13 +12,13 @@ n=2→3 location — from two EXISTING framework facts, no new fit:
   (A) palindromicity-orbital-type: an orbital's angular momentum is ℓ = ½·(its
       Hecke-NF palindromic defect). s-orbitals (ℓ=0) are PALINDROMIC ⇒
       SELF-DUAL (invariant under the longest-element involution w↦w₀w); the
-      s-electron trefoil e⁻ = σ₀σ₁σ₀ is literally a palindrome. p-orbitals
+      s-electron word e⁻ = σ₀σ₁σ₀ is literally a palindrome. p-orbitals
       (ℓ≥1) are CHIRAL (non-self-dual). So the self-dual s carries SYMMETRIC-
       block (trivial-rep) character — the very q² block — while p carries
       chiral (standard-rep) character. s and p sit in DIFFERENT Wedderburn
       blocks; hybridisation must MIX them, at the cost of the s–p promotion gap.
 
-  (B) electron-shell-braid-capacity: each electron is a trefoil Hopf-linked to
+  (B) electron-shell-braid-capacity: each electron is the word σ₀σ₁σ₀ Hopf-linked to
       the core. The valence ns electron penetrates and Hopf-links the (n−1)
       inner closed shells; each link deepens (stabilises) the ns. So the s–p
       promotion gap Δ(n) ∝ (n−1) = the inner-shell count = the central atom's
@@ -27,7 +27,7 @@ n=2→3 location — from two EXISTING framework facts, no new fit:
 
 THE FLIP: hybridise (s active, sp³) iff Δ(n) < the bonding stabilisation.
 Δ(n) ∝ (n−1) is an INTEGER (inner-shell count), so the flip is DISCRETE; with
-the gap and bond stabilisation both single-trefoil-link Φ₁ scale, the window
+the gap and bond stabilisation both single-electron-link Φ₁ scale, the window
 closes between (n−1)=1 and (n−1)=2, i.e. at n=2→3 — matching O (sp³) vs S
 (pure-p). The group-16 trend (O 104.5° → S/Se/Te ~90° flat) confirms the
 discreteness: the angle saturates once s drops out.
@@ -114,7 +114,7 @@ def main() -> None:
     w.set_description(
         "Shell-braid derivation of the sp³↔pure-p bond-angle base flip. (A) "
         "palindromicity-orbital-type: s (ℓ=0) is palindromic/self-dual ⇒ "
-        "symmetric-block (trivial) character; the s trefoil e⁻=σ₀σ₁σ₀ is a "
+        "symmetric-block (trivial) character; the s electron word e⁻=σ₀σ₁σ₀ is a "
         "palindrome; p is chiral ⇒ standard block. s,p sit in different "
         "Wedderburn blocks; hybridisation mixes them at the s–p promotion gap. "
         "(B) electron-shell-braid-capacity: ns Hopf-links the (n−1) inner "
@@ -131,7 +131,7 @@ def main() -> None:
     w.add_data("penetration_flip_by_shell", rows)
     w.add_data("group16_trend", grp16)
     w.add_assertion(
-        "s-electron trefoil is a palindrome (self-dual ⇒ ℓ=0, symmetric block)",
+        "s-electron word is a palindrome (self-dual ⇒ ℓ=0, symmetric block)",
         computed=bool(s_pal and not p_pal), expected=True,
         source="palindromicity-orbital-type: ℓ = ½ palindromic defect; "
                "e⁻=σ₀σ₁σ₀ is a palindrome, the chiral p-word is not",
@@ -147,11 +147,11 @@ def main() -> None:
     w.add_data(
         "finding",
         "The sp³↔pure-p base flip is DERIVED from the framework: (A) s-orbitals "
-        "are self-dual (palindromic Hecke NF, the e⁻ trefoil is a palindrome) ⇒ "
+        "are self-dual (palindromic Hecke NF, the e⁻ word is a palindrome) ⇒ "
         "symmetric-block character = the q² block; p-orbitals are chiral ⇒ "
         "standard block; hybridisation mixes the blocks at the s–p promotion "
         "gap. (B) the ns penetrates the (n−1) inner shells (each a Hopf-linked "
-        "trefoil), so the gap Δ(n) ∝ (n−1) = the central-atom SIZE — the owner's "
+        "electron word), so the gap Δ(n) ∝ (n−1) = the central-atom SIZE — the owner's "
         "size-amplification, now structural. Δ integer ⇒ DISCRETE flip; window "
         "closes at n=2→3 (O sp³ vs S pure-p), group-16 saturation confirms. "
         "Open: the exact Φ₁ penetration numbers pinning the threshold value.",

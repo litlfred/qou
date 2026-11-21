@@ -1,0 +1,1 @@
+Let V be a convex polygon in the hyperbolic plane H2, such that all the vertices of V lie within a distance r of a certain point O. Then, the sum of the exterior angles of V is smaller than 2π cosh(r).

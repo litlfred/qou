@@ -1,0 +1,1 @@
+So far for general positive links only o > 0 is known [361, 90], and for positive knots ¢ > 4 if 2g =1— x > 4 (it follows from [379]). For positive braid links the answer is positive, and also for special alternating links by Murasugi [303].

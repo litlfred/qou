@@ -1,0 +1,1 @@
+Under the assumptions of Theorem 13.1.18, let ⋆be one of the boundedness conditions b, +, −or ⟨empty⟩, and let −⋆be the reversed boundedness condition. Then the functor D : D⋆ f (A)op →D−⋆ f (A) is an equivalence of triangulated categories.

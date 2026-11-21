@@ -1,1 +1,0 @@
-Informally, the complex $\bbS_\beta$ should be thought as sheaf homology of the $2$-periodic complex $\bcalC_\beta\otimes \bcalC'_\parallel\in \MF_{B^2}(\calXr_2(G_n),0)$ followed by the restriction to the stable part of $\calXr_2(G_n)$ and extracting $B$ invariant part of the product ($B$ is embedded diagonally inside $B^2$).

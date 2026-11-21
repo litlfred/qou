@@ -1,1 +1,0 @@
-Since they are only used for the proof of [\[thm:bound_joint_cumulants\]](#thm:bound_joint_cumulants){reference-type="ref" reference="thm:bound_joint_cumulants"} and since the proofs in the different regimes are independent from each other, this should not create any difficulty. :::

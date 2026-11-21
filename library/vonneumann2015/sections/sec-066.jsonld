@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-066",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix B",
+  "pageStart": 157,
+  "pageEnd": 157,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-066",
+    "library/vonneumann2015/blocks/thm-sec-066-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

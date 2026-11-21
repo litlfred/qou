@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sym2-adjoint-traceless-spin-two",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sym2-adjoint-traceless-spin-two",
+  "kind": "proposition",
+  "title": "The traceless part of $\\mathrm{Sym}^2(V_1)$ is the spin-$2$ object $V_2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-su2-emergence",
+    "papers/quantum-observable-universe/blocks/prop-spin-labels",
+    "papers/quantum-observable-universe/blocks/ex-spin-labels-su2",
+    "papers/quantum-observable-universe/blocks/thm-ew-triplet-charge-spin-from-involution"
+  ],
+  "cites": [
+    "references/fulton-harris1991"
+  ],
+  "tags": [
+    "spin",
+    "gauge-group",
+    "symmetric-square",
+    "clebsch-gordan"
+  ],
+  "leanRef": "qou:QOU.Eightfold.Sym2AdjointSpinTwo.adjoint_sym2_traceless_is_spin_two",
+  "text": "sym2-adjoint-traceless-spin-two.md",
+  "provenance": "authored"
+}

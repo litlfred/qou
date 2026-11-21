@@ -278,6 +278,62 @@ for nuc in nuclei:
     print()
 
 # ── Assemble witness ─────────────────────────────────────────────
+from codata_constants import M_E_MEV as _M_E_MEV_L1  # noqa: E402
+import two_term_qtrace_weighting as _ttq  # noqa: E402
+_q_l1 = Q_MP
+_q2_l1 = _q_l1 ** 2
+_me_l1 = mp.mpf(str(_M_E_MEV_L1))
+_alpha_bind_l1 = _me_l1 * 8 * mp.catalan
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+_e0_n0_l1 = _qbeta_e0.order_zero_scaled(_me_l1, _q_l1)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
+_e0_full_l1 = _e0_n0_l1 / (1 - hbar_q_sq)
+_tr_v3_l1 = (-_q2_l1**6 + 3*_q2_l1**5 - 3*_q2_l1**4 + 5*_q2_l1**3 - 3*_q2_l1**2 + 3*_q2_l1 - 1) / (_q2_l1**3)
+_tr_e21_l1 = -(_q2_l1**2 - _q2_l1 + 1) * (_q2_l1**4 - 2*_q2_l1**3 - 2*_q2_l1 + 1) / (_q2_l1**3)
+_d_qcd_v3_l1 = (_q_l1 - 1 / _q_l1) * _tr_v3_l1
+_d_qcd_e21_l1 = (_q_l1 - 1 / _q_l1) * _tr_e21_l1
+_denom_e21_qadj_l1 = 9 * (_q2_l1**3) * (_q2_l1**2 + _q2_l1 + 1)
+_tr_e21_qadjp_l1 = -2 * ((_q_l1 - 1)**2) * ((_q_l1 + 1)**2) * (_q2_l1**6 - _q2_l1**3 + 1) / _denom_e21_qadj_l1
+_tr_e21_qadjn_l1 = (
+    4*_q2_l1**8 - 11*_q2_l1**7 + 13*_q2_l1**6 - 22*_q2_l1**5
+    + 20*_q2_l1**4 - 22*_q2_l1**3 + 13*_q2_l1**2 - 11*_q2_l1 + 4
+) / _denom_e21_qadj_l1
+_tr_e21_qadj_diff_l1 = (
+    2*_q2_l1**8 - 5*_q2_l1**7 + 5*_q2_l1**6 - 8*_q2_l1**5
+    + 8*_q2_l1**4 - 8*_q2_l1**3 + 5*_q2_l1**2 - 5*_q2_l1 + 2
+) / (3 * (_q2_l1**3) * (_q2_l1**2 + _q2_l1 + 1))
+_tr_conn_p_l1 = -2 * ((_q2_l1 - 1)**4) * (_q2_l1**2 + _q2_l1 + 1) / (27 * (_q2_l1**3))
+_tr_conn_n_l1 = ((_q2_l1 - 1)**4) * (2*_q2_l1**2 - _q2_l1 + 2) / (27 * (_q2_l1**3))
+_tr_conn_diff_l1 = ((_q2_l1 - 1)**4) * (4*_q2_l1**2 + _q2_l1 + 4) / (27 * (_q2_l1**3))
+
+borromean_v3_two_term_diagnostics = {
+    "lean_ref": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm",
+    "tr_V3": fmt(_tr_v3_l1),
+    "tr_e3_V3": fmt(mp.mpf(1)),
+    "tr_e21_V3": fmt(_tr_e21_l1),
+    "Delta_tr_QCD_V3": fmt(_d_qcd_v3_l1),
+    "Delta_tr_QCD_e21_V3": fmt(_d_qcd_e21_l1),
+    "Delta_m_QCD_V3_alpha_bind_MeV": fmt(_alpha_bind_l1 * _d_qcd_v3_l1),
+    "Delta_m_QCD_e21_E0_full_MeV": fmt(_e0_full_l1 * _d_qcd_e21_l1),
+    "Delta_m_QCD_e21_E0_N0_MeV": fmt(_e0_n0_l1 * _d_qcd_e21_l1),
+    "Delta_m_QCD_e21_alpha_bind_MeV": fmt(_alpha_bind_l1 * _d_qcd_e21_l1),
+    "tr_e21_QAdjp_V3": fmt(_tr_e21_qadjp_l1),
+    "tr_e21_QAdjn_V3": fmt(_tr_e21_qadjn_l1),
+    "Delta_tr_e21_QAdj_V3": fmt(_tr_e21_qadj_diff_l1),
+    "Delta_m_QED_e21_me_MeV": fmt(_me_l1 * _tr_e21_qadj_diff_l1),
+    "tr_conn_p_V3": fmt(_tr_conn_p_l1),
+    "tr_conn_n_V3": fmt(_tr_conn_n_l1),
+    "Delta_tr_conn_V3": fmt(_tr_conn_diff_l1),
+    "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); scored insertion is covariant all-pairs (owner 2026-11-20 16:44), connected part 0 on V³; *_derived_covariant are the scored values (0); *_derived_adjacent is the option-1 comparison; M_p/Delta_m without suffix are the historical 1/3-normalised adjacent 'plain' entries",
+    # Ruled scored form: derived weighting, covariant all-pairs insertion (library default).
+    "M_p_QED_conn_derived_covariant_MeV": fmt(_ttq.m_p_qed_conn_mev(_q_l1, _me_l1, "derived")),
+    "Delta_m_QED_conn_derived_covariant_MeV": fmt(_ttq.delta_m_qed_conn_mev(_q_l1, _me_l1, "derived")),
+    # Labelled comparison (option 1, unscored): derived weighting, adjacent Q12+Q23.
+    "M_p_QED_conn_derived_adjacent_MeV": fmt(_ttq.m_p_qed_conn_mev(_q_l1, _me_l1, "derived", "adjacent")),
+    "Delta_m_QED_conn_derived_adjacent_MeV": fmt(_ttq.delta_m_qed_conn_mev(_q_l1, _me_l1, "derived", "adjacent")),
+    "M_p_QED_conn_MeV": fmt(_me_l1 * abs(_tr_conn_p_l1)),
+    "Delta_m_QED_conn_MeV": fmt(-_me_l1 * _tr_conn_diff_l1),
+}
+
 witness = {
     "computation": "level1-qvalues",
     "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -291,6 +347,7 @@ witness = {
     "q_digits": _Q_DIGITS,
     "hbar_q_sq": fmt(hbar_q_sq),
     "nuclei": results,
+    "borromean_v3_two_term_diagnostics": borromean_v3_two_term_diagnostics,
     "notes": [
         "Block ordering [protons first] is NOT the ground state for Level 1.",
         "Ground-state search at Level 1 has binom(3A, total_u) orderings.",

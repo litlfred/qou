@@ -1,1 +1,0 @@
-Since $\alpha_{i+1}+\alpha_{i+2}+\cdots +\alpha_{u}$ is assumed to be in $S_2(x)$, it must be the 'cut off' from a root $\gamma=\alpha_p+\alpha_{p+1}+ \cdots +\alpha_u\in S(P)$, $p\leq i$, where $\gamma$ arises from the rectangle corresponding to $Z$.

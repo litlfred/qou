@@ -1,1 +1,0 @@
-This operation is called a *layering* on $e$, where the first layering onto the Möbius strip must always go on the interior edge of the Möbius strip, see Figure [1](#fig:layering){reference-type="ref" reference="fig:layering"}.

@@ -1,1 +1,0 @@
-Lamel (personal communication), intrinsic complexiﬁca- tions of strata of any stratiﬁed space (see Remark 5.12) should ﬁt together to form a complex stratiﬁed space, provided the (real) tangent spaces E at every point satisfy E∩iE = {0}.

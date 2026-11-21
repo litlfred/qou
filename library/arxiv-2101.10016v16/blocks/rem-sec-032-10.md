@@ -1,0 +1,1 @@
+If one knew that this CFT-type pre-associator is an associator, then it must coincide with the former associator of A(Vgk ) constructed in Theorem 2.8. It would also follow that A(Vgk ) becomes a weak Hopf algebra in this way.

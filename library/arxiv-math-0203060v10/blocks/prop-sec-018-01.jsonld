@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203060v10/blocks/prop-sec-018-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "prop-sec-018-01.md",
+  "derivedFrom": "library/arxiv-math-0203060v10/sections/sec-018",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203060v10/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.10",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-018-45-sufficient-conditions-for-semisimplicity.md (p. 17-18)",
+    "claim_id": "arxiv-math-0203060v10#proposition:4.10",
+    "lean_status": "unformalized"
+  }
+}

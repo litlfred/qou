@@ -1,0 +1,1 @@
+Assume that ν has a a ﬁnite ﬁrst moment and a density p with respect to the Lebesgue measure that has a connected support. If g ∈L∞(ν) and h ∈L1 (ν) are absolutely contin- uous and h is 1-Lipschitz, then |Cov (g, h)| ≤E 

@@ -1,1 +1,0 @@
-Since we denote the original state $s$ with $R_K$ as $s_1$, $s_2$ must include a another choice of $R_K$ call it ${R_K}_{-}$ such that $\left({R_{K}}-\frac{R_{K\!-\!1}+R_{K\!+\!1}}{2} \right)^2=\left({R_{K-}}-\frac{R_{K\!-\!1}+R_{K\!+\!1}}{2} \right)^2$.

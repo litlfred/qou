@@ -1,1 +1,0 @@
-It is also covarίant under full isotopy; it gains a factor of # ± 3 / 4 under the first Reidemeister move: 3/4* = fl « (Since Wι is 1-dimensional, these two webs must be proportional.) This polynomial is known as the Kauffman bracket, and up to normalization it equals the Jones polynomial.

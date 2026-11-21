@@ -1,1 +1,0 @@
-Otherwise the index array of the syllables of β must contain the same entry with distance 2, and such a word is conjugate to the ones excluded. ✷ 14 3 Xu’s form and Seifert surfaces Theorem 3.3 Any closed braid of Xu’s form L−1R is ﬁbered.

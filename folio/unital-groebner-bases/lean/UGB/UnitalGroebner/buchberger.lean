@@ -43,7 +43,7 @@ open UGB.GrobnerShirshov
 
 universe u v
 
-variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+variable {G : Type u} {k : Type v} [CommRing k] [DecidableEq G]
 
 /-- **Buchberger's theorem — confluence consequence.**
 
@@ -59,7 +59,11 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     quasi-zeros** (Leitner–Pawloski; `monomial-basis.md`) is carried
     explicitly as `hnqz`: it is what the S-polynomial half of the
     composition lemma needs, and it is discharged for the free algebra on
-    any non-empty generating set by `noQuasiZerosFree_of_generator`. -/
+    any non-empty generating set by `noQuasiZerosFree_of_generator`.
+
+    **Restated 2026-11-20 (bean `qou-lc7q`):** the common reduct is up to
+    `CoeffEq`, over a commutative ring. A structurally equal common reduct
+    need not exist (`LocalConfluenceSupportRefutation`). -/
 -- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/buchberger.ts
 theorem buchberger
     (ord : AdmissibleOrder G)
@@ -70,8 +74,9 @@ theorem buchberger
     (f g₁ g₂ : AlgElement G k)
     (h₁ : MultiStepReduction ord sys f g₁)
     (h₂ : MultiStepReduction ord sys f g₂) :
-    ∃ h : AlgElement G k,
-      MultiStepReduction ord sys g₁ h ∧ MultiStepReduction ord sys g₂ h :=
+    ∃ h₁ h₂ : AlgElement G k,
+      MultiStepReduction ord sys g₁ h₁ ∧ MultiStepReduction ord sys g₂ h₂ ∧
+        AlgElement.CoeffEq h₁ h₂ :=
   -- Confluence of a GS basis (Newman's lemma over the resolved S-polys).
   confluence ord sys hgs hnqz hlc f g₁ g₂ h₁ h₂
 

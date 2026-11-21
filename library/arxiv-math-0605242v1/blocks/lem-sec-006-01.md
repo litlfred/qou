@@ -1,0 +1,1 @@
+Fix any pair of integer matrices A ∈Zr×q and B ∈Zs×q. Then there is a polynomial time algorithm that, given n, objective vector c ∈Nnq, and nonnegative integer vector x ∈Nnq, solves the generalized n-fold integer programming problem in which x is feasible, i.e. the one with b := [A, B](n)x.

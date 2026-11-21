@@ -2,7 +2,7 @@
   "computation": "qbeta-kd-monodromy-reading-closed",
   "engine": "sympy",
   "description": "qou-pdix branch 3. Entry 5 defines the one contentful branch as a connection 'whose monodromy reproduces the Hecke braiding', escaping the rationality exclusion 'because a holonomy is transcendental'. That escape fails for the monodromy reading: Kohno-Drinfeld gives holonomies GAUGE-CONJUGATE to the braid-image matrices, conjugation PRESERVES THE TRACE, and the carrier condition is on the trace. Verified symbolically: every generator has det = -1 exactly so an even-length word has det = +1 and the carrier's `M.det = 1` field is AUTOMATIC and free (it was never the obstruction); every word trace is a Laurent polynomial in Z[q,q^-1], the seminormal radical cancelling identically; and (sigma_0 sigma_1)^3 = I exactly, so the rep factors through B_3/centre = PSL(2,Z) and the achievable traces are a countable set of Laurent polynomials. 2*cos((z-1)h/2) is transcendental over Q(q,z) by entry 4, so the trace field is impossible. Branch 3 AS WORDED is closed, with no associator and no zeta(3) computation — superseding the zeta(3) proposal noted earlier today. SURVIVES: the open-path / non-abelian Stokes reading, which is not a monodromy, not trace-pinned, and gauge-dependent rather than conjugation-covariant.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "generators_have_det_minus_one_so_the_det_field_is_free",
@@ -119,13 +119,13 @@
     "supersedes": "the zeta(3) t^3 test proposed earlier today, which targeted the monodromy reading now closed by a cheaper argument.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
   },
-  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "gitCommit": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "durationMs": 0,
   "scriptFile": "qbeta_kd_monodromy_reading_closed_probe.py",
-  "scriptHash": "f0d98e3eecb7",
-  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
-  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
-  "computedAt": "2026-09-04T12:40:10.711136+00:00",
+  "scriptHash": "0344cdc22e3b",
+  "scriptCommitSha": "1bc2558e4627e77333cf92b0e9db6e0abf7e26a9",
+  "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
+  "computedAt": "2026-11-20T17:25:44.442853+00:00",
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "independent",
   "q0AnchorReason": "exact symbolic identities in q: every quantity here is a Laurent polynomial in the sympy symbol q, and no pin is read anywhere in the file or its import cone (stdlib + sympy only). No q0Value is recorded because a single value would assert the one pin this label denies."

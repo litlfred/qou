@@ -1,0 +1,1 @@
+14. In the following cases, the local product structure in Theo- rem D.9 is induced by a diﬀeomorphism. 1. When Z is a smooth algebraic hypersurface. 2. When Z is the simplex or the complexiﬁcation of a simplex. 3. When Z is a hyperplane arrangement.

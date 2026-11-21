@@ -20,6 +20,10 @@ meta = None
 for c in chains:
     d = json.load(open(c))
     meta = meta or {k: d[k] for k in ("q0", "z", "dps", "self_check_worst_residual")}
+    # carry the chain's q0 anchor into the witness (q0-anchor refill ratchet)
+    for k in ("q0Anchor", "q0Value"):
+        if k in d:
+            meta.setdefault(k, d[k])
     for r in d["rows"]:
         rows.append(r)
         f = CERT / f"certificate-{r['isotope']}.json"

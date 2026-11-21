@@ -10,4 +10,8 @@ export default remark({
     "def:coulomb-charge",
     "rem:self-dual-2group",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): `QOU/StandardModel/WritheMarkovInvariance.lean` proves `writhe_conj` (conjugation preserves the writhe) alongside `writhe_stabilize` (the vertical stabilisation move shifts the writhe by ±1)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , which is the structural seed of the truncation picture in [the Standard-Model truncation conjecture](#conj:sm-gauge-truncation): morphisms of large action are suppressed at observable scales" },
+  ],
 });

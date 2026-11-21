@@ -38,12 +38,12 @@ the origin of the cubic:
 | knot sector | crossings | $\Delta^{\mathrm{odd}}_{\mathrm{sector}}$ |
 |---|---|---|
 | virtual ($\sigma_0, \sigma_1$) | 1 | $0$ |
-| trefoil ($\sigma_0\sigma_1\sigma_0$) | 3 | $0$ |
+| electron ($\sigma_0\sigma_1\sigma_0$) | 3 | $0$ |
 | unknot ($\mathbf{1}$) | 0 | $\frac{h}{4} \cdot (2y^2 - 7y + 4) = \frac{h}{4} \cdot C_{\mathrm{unknot}}(y)$ |
-| Hopf ($\sigma_0\sigma_1 + \sigma_1\sigma_0$) | 2 | $\frac{h}{4} \cdot (y^3 - 6y^2 + 10y - 6) = \frac{h}{4} \cdot C_{\mathrm{Hopf}}(y)$ |
+| $L_\pm$ ($\sigma_0\sigma_1 + \sigma_1\sigma_0$) | 2 | $\frac{h}{4} \cdot (y^3 - 6y^2 + 10y - 6) = \frac{h}{4} \cdot C_{\mathrm{Hopf}}(y)$ |
 
 with $C = C_{\mathrm{Hopf}} + C_{\mathrm{unknot}}$. The odd-crossing sectors
-(virtual, trefoil) are bar-even and vanish; the identity contributes only a
+(virtual, electron) are bar-even and vanish; the identity contributes only a
 quadratic; the **cubic — hence the degree-3 field — is sourced entirely by the
 Hopf-link (double-crossing) sector**. $C_{\mathrm{Hopf}}$ is itself irreducible
 (discriminant $-76 = -2^2 \cdot 19$), and the prime $19$ is the arithmetic

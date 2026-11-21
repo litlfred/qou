@@ -1,4 +1,4 @@
-**Conjecture (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
+**Conjecture (conditional on [Quarks as Borromean-linked unknots in the exceptional divisor](#conj:borromean-quark)).**
 The topological mass formula is a knot invariant (R-I, R-II,
 R-III).  The binding energy of linked particles is an
 embedding invariant (R-II, R-III but not R-I).  Shell

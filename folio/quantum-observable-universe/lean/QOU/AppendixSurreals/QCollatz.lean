@@ -61,7 +61,26 @@ namespace QOU.AppendixSurreals
     Conjectural class furnished by a QOU — see
     [`conj:q-collatz`](../../../quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md).
     The `reaches_cycle` field is the open conjecture; the class carries
-    the full definitional content of the Skein-Collatz map. -/
+    the full definitional content of the Skein-Collatz map.
+
+    **🛑 Vacuity status (audited 2026-11-20, bean `qou-dx7g`; triage rank 9).**
+    The cone `pos` is a free field, constrained only from above
+    (`pos_domain_stable`: it lies inside the domain-stable set).  So
+    `pos := fun _ => False` satisfies both `pos_domain_stable` and
+    `reaches_cycle`, and with `Skein := ℤ`, `qgen := 1`, the classical map and
+    `attractor := 1` every field holds — the class does not state the
+    conjecture.  The conjecture's cone is a *specific* set: the domain-stable
+    elements of `ℤ[q^{±1}]` that are positive at every real `q > 1`.  Stating it
+    needs `Skein := LaurentPolynomial ℤ`, `qgen := T 1`, and `pos` as that
+    definition (evaluation at real `q > 1` plus domain stability), after which
+    `pos_domain_stable` is a theorem and only `reaches_cycle` remains as the
+    conjecture.  That pins the carrier, and the ~15 consumers
+    (`SkeinObservationBridge`, `SkeinCounterfactual`, `collatz_block_descent`,
+    `reaches_cycle_of_descent` …) are stated over a generic `Skein`; the
+    repair is a coordinated refactor and is not attempted here.  Until then
+    `pos` (and the model `Skein`, `qgen`) are free, and every
+    `[QCollatz Skein]`-conditional result holds for any cone that has
+    the reaching property, including the empty one. -/
 class QCollatz (Skein : Type u) [CommRing Skein] where
   -- Witness: computations/none
   /-- Image of the formal substrate parameter `q` in the Skein ring

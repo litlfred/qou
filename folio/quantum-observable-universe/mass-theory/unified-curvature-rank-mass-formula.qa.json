@@ -1124,6 +1124,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708",
+          "lean": "8aba57851774",
+          "lean_statement": "83a8437190fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:09:32.746Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "lean.ref is a def (the weighted sum), not a theorem. The md says the categorical mass 'decomposes perfectly' as sum alpha_k m^(k); with arbitrary alpha_k this is a regrouping only when alpha_k = 1, and alpha_k and depth(lambda) are not defined in the md."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2123,6 +2141,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:19:46.005Z",
+  "updated_at": "2026-11-16T07:09:32.746Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,6 +1,1 @@
-Macroscopic structures typically average over substrate variation, blurring the precise local value of $q$. Crystal resonance avoids this. A perfect lattice forces constructive interference of Reeb shifts. This section specifies the crystal experiments.
-- Experimental configuration outlines the necessary hardware, from continuous-wave drivers to ultra-pure crystalline targets.
-- Resonance spectrum and measurement defines the observables, linking the $q$-dependent Bragg peaks to the underlying geometry.
-- Expected bounds and sensitivity analyses the projected accuracy of the measurement.
-
-We establish the $q$-crystal shift effect first.
+In bulk amorphous matter, thermal disorder averages out local fluctuations in the Reeb phase shift. In an ultra-pure single crystal, however, the periodic Bravais lattice enforces constructive Bragg interference of the $q$-Reeb phase across $10^{23}$ unit cells. This section designs a continuous-wave crystal-resonance experiment, derives the $q$-dependent Bragg peak splitting and magnetic friction signature, and establishes the projected sensitivity bounds for detecting substrate $q$-anisotropy in the laboratory.

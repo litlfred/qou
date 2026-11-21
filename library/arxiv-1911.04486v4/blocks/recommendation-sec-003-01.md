@@ -1,1 +1,0 @@
-To this end, the canonical basis $\{ dx^i \}$ on $\mathbb{R}^3$ must be extended to the corresponding basis on $\mathbb{R}^{1,3}$, denoted by $\{ d x^{\mu} \} = \{ dx^0 = dt, dx^i \}$, by including the time-like 1-form $dx^0$.

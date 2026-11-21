@@ -59,6 +59,7 @@ from hecke_core import alpha_em, E_HARTREE_EV as E_hartree_eV, E_MOL as E_mol
 # one definition; the import is hard on purpose, because a fallback would
 # silently compute the blind convention while reporting success.
 from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+from codata_constants import M_HE4_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
 TWO_Q = q0 + qi
 
 
@@ -215,7 +216,7 @@ print()
 
 isotopes = [
     (1, 0, "H",   938.783),
-    (2, 2, "He",  3728.401),
+    (2, 2, "He",  float(M_HE4_ATOMIC_MEV_VALIDATION)),
     (3, 4, "Li",  6535.367),
     (4, 5, "Be",  8394.794),
     (5, 6, "B",  10255.103),

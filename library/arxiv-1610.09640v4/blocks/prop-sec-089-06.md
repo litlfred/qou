@@ -1,0 +1,1 @@
+Let A →B be a homomorphism of weakly commutative DG rings. The DG bifunctor (12.10.10) has a right derived bifunctor RHomA(−, −) : D(B)op × D(A) →D(B). This is an H0(A)-bilinear triangulated bifunctor.

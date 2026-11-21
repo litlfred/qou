@@ -1,0 +1,1 @@
+In order to demonstrate the formalism, we will brieﬂy break away from analysis of lattice QCD obtained ﬁnite- volume spectra to consider a simple toy-model of ππ scat- tering in which the scattering amplitudes are known to us.

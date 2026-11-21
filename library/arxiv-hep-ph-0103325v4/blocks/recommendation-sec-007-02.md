@@ -1,1 +1,0 @@
-Insisting on the asymptotical coincidence $\lambda^{\rm as}(\pi)=\lambda^{\rm as}(K)$ we may predict for kaon intercepts: {\it at any transverse momentum}, {\it the intercept} $\lambda(K)$ {\it of 2-kaon correlations should not exceed} $0.80194$.

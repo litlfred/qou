@@ -1,0 +1,1 @@
+Assume that KA and LA are split and that A is symmetric with symmetrising form τ. For any simple KA-module V , let sV ∈R be the Schur element with respect to τ. Then LA is semisimple if and only if θ(sV )̸ = 0 for all V ∈Irr(KA). Chapter 2

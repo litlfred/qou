@@ -68,6 +68,28 @@ structure Partition where
 /-- The shadow-price discipline for the mass-formula coefficients, polymorphic
     in the ground ring `R` (with `2` invertible).
 
+    **🛑 Vacuity status (audited 2026-11-20, bean `qou-dx7g`; triage rank 67).**
+    This class does **not** encode the proposition's claim, and the repair is
+    not available in the corpus.  `h`, `w`, `C`, `S` and `uStar` are all fields
+    chosen by the instance, and `factor` is `uStar λ = C λ * S λ` with `S` free,
+    so any instance satisfies it by *defining* `uStar := C * S` (e.g. `h = 0`,
+    `w = S = 0`).  The claim the block intends is that the optimal dual
+    variables of a **partition-indexed operator-selection program** factor as a
+    partition-only coefficient times a scaling function of the nuclear datum
+    `(Z, N, A)` alone.  Encoding that needs (i) the program itself — its
+    objective, its block-diagonal Gram `G_λ = (w_λ/d_λ) I` and its net
+    constraint, indexed by a finite set of partitions — so that `uStar` is its
+    certified optimal dual (cf. `QOU.BraidKnot.HasFiniteLPDuality`) rather than
+    a field; and (ii) a nuclear datum in that program's data, so that `S` can be
+    *derived* as a function of `(Z, N, A)`.  Neither exists: the block's own
+    caveat (2026-10-11, bean `qou-wg3c`) records that the stated LP's dual
+    constraints carry no `(Z, N)`, so no program on record can produce the
+    factorisation.  What *does* carry content below is the conditional
+    direction: **if** `w̃_λ = 0` then `uStar λ = 0`
+    (`shadow_price_eq_zero_of_weight_eq_zero`) — true for any instance, and
+    meaningful once `uStar` is a genuine dual.  Free fields that remain:
+    `h`, `w`, `contentSum`, `C` (pinned only relative to `w`, `h`), `S`, `uStar`.
+
     An instance records, for the nuclear operator-selection LP:
       • the canonical Wedderburn weight `tilde w_λ` and the Hecke scalar `h`;
       • the partition-only LP coefficient `C_λ = tilde w_λ · h·⅟2`;

@@ -1,1 +1,0 @@
-Finally, aμðQEDÞ based on the 2022 recommended value of α and lepton mass ratios is aμðQEDÞ ¼ 0.001 165 847 188 14ð84Þ½7.2 × 10−10: ð96Þ For the electroweak and hadronic corrections to the muon anomaly, we follow the recommendations of the PDG (Workman et al., 2022).

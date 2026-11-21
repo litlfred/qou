@@ -1,1 +1,0 @@
-All internal vertices have valency at least $3$, and every such vertex should be thought of as a splitting point: a trajectory of the vector field $v_{\gamma,t}$ is split at a vertex into several trajectories of vector fields $v_{\gamma_1,t},\dots,v_{\gamma_k,t}$ such that $\gamma=\gamma_1+\dots+\gamma_k$.

@@ -1,0 +1,1 @@
+We have Li(p) n (z) = gn(1/(1 −z)) for a power series gn(v) in Q[[v]], convergent for v in Cp with |v| < p1/(p−1). It is determined inductively by g0(v) = v −1 − (v −1)p vp −(v −1)p , g′ n+1(v) = −gn(v) v −v2 = −gn(v) v (1 + v + v2 + · · · ) (n ≥0) , and gn(0) = 0 (n ≥1) .

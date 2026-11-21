@@ -1,1 +1,0 @@
-Fig- ure 6.6(c) shows the same situation on <9T, but redrawn to emphasize that in order for this singularity to be possible, there must be a joining arc between μ12 and μ^ on the F + side of the braid strand.

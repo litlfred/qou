@@ -1,1 +1,0 @@
-46Notice that we set up the fundamental group such that Gv is a subgroup of it, but the edge groups are only naturally included via the boundary monomorphisms, so the coset G/Ge should be understood as, say, G/∂− e (Ge). – 92 – Pictorially, we have: gGe− geGe+ gGe .

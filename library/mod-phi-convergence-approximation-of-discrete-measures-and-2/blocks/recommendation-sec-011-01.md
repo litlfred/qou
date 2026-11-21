@@ -1,1 +1,0 @@
-The second result should be compared with a computation in [26, Chap- ter 4], which ensures that dK(Xn, Yn) = |ψ′(0)| √2π λn + o  1 √λn  if (Xn)n∈N is a sequence of random real numbers that converges mod- Gaussian with parameters λn, and if (Yn)n∈N is a sequence of random Gaussian variables with means 0 and variances λn.

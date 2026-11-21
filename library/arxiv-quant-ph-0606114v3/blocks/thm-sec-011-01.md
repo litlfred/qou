@@ -1,0 +1,1 @@
+If g = a + bu and h = c + dv are pure unit quaternions,then, without loss of generality, the braid relation ghg = hgh is true if and only if h = a + bv, and φg(v) = φh−1(u). Furthermore, given that g = a + bu and h = a+bv, the condition φg(v) = φh−1(u) is satisﬁed if and only if u·v = a2−b2 2b2 when u̸ = v. If u = v then then g = h and the braid relation is trivially satisﬁed.

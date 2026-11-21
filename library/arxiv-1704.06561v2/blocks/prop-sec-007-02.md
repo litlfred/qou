@@ -1,0 +1,1 @@
+M 2 16π2f2 0 ! + A K 1 M 2 16π2f2 0 # + D Ka2 + F K M 2 16π2f2 0 e−ML (ML)3/2 (64) where the chiral extrapolation is based on the SU(3) ChPT formulae of Ref. [32] expanded as a power series in terms of the quantity mℓ/ms, while FSEs are described by a phenomenological term inspired by the leading FSE correction in QCD to the pion and kaon masses in the p-regime (ML ≫1) [33].

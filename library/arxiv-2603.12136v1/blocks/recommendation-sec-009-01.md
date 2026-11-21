@@ -1,1 +1,0 @@
-The notion of bipolar and unipolar parts in [\[def_symmetric\]](#def_symmetric){reference-type="ref" reference="def_symmetric"} is very similar to an observation by Bödi, Herr and Joswig [@Bodi2013], who show that the orbits of reflection symmetry groups are either unipolar or bipolar, where bipolar orbits must consist of only pairs $w^+,w^-$ for some subset of $W$.

@@ -1,1 +1,0 @@
-\int_{ \lambda}^{\tilde \lambda} J}: \nn \ee This identity can be of course obtained within fermionic theory, one should only take into account that $\psi$-operators are nilpotent, so that exponent of a single $\psi$-operator would be just a sum of two terms (polinomial). } if $J( z) = \partial\phi( z)$, \be \tilde\psi(\tilde \lambda) \sim \ :e^{

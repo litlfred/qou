@@ -86,7 +86,13 @@ class ConfinementFrobeniusReciprocityContext where
   /-- Active ⇔ positive shadow price. -/
   active_iff_pos_shadow : ∀ i : Fin d, i ∈ A_star ↔ 0 < u_star i
   /-- Strong duality.
-      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
+      (Still an assumption, but not for the reason once given here: finite LP strong
+      duality IS proved in-repo, unconditionally, as
+      `QOU.Optimization.lp_strong_duality_uncond` (via Farkas from
+      `QOU.Mathlib.isClosed_coneSpan`). It cannot discharge this field because the
+      carrier records the objective values as free reals with no feasibility or
+      optimality data; discharging it needs the carrier to carry `(A, a, c, x)` with
+      `PrimalOptimal`. Bean `qou-9h4t`.) -/
   strong_duality : primal_obj = dual_obj
 
 /-- **Confinement Frobenius reciprocity** ([`prop:confinement-frobenius-reciprocity`]).

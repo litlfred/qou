@@ -1,1 +1,0 @@
-We thank Paul Wedrich for providing us with his computations of the colored HOMFLY polynomials.} Nevertheless, such exponential growth property should hold in general but only asymptotically, as we briefly explain in the following subsection.

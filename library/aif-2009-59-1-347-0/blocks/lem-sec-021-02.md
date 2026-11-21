@@ -1,0 +1,1 @@
+— Let Eq be the set of all the entire functions having a q-exponential growth of order 1 at ∞, and let C{x} be the set of all power series having a positive convergence radius. Then Eq = Bq(xC{x}) = Bq(xC{x}). The following function space Hq has been introduced in [23] and [15]; see also [20].

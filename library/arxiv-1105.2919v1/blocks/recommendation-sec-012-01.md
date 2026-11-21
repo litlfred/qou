@@ -1,1 +1,0 @@
-From the above derivation, it should also be clear that Eq.~(\ref{eq_nu}) is suitable only for systems with $A \geq 2$ nucleons while Eq.~(\ref{eq_nuw}) may be used for connected graphs with $A \leq 2$.

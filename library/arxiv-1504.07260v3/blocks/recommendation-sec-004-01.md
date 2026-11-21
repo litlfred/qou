@@ -1,1 +1,0 @@
-In section [\[sec:CHL\]](#sec:CHL){reference-type="ref" reference="sec:CHL"} we introduce the CHL models that we shall analyse in the paper and we discuss them from the point of view of heterotic-type II duality.

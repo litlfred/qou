@@ -1,0 +1,1 @@
+Let G be a finitely generated, torsion-free group which is not virtually abelian. If two discrete faithful representations ρ1 : G →PSL(2, C) and ρ2 : G →PSL(2, C) are con- jugate by an orientation-preserving homeomorphism ϕ of ∂H3, then they are quasiconformally conjugate. Moreover, if ϕ is conformal on Ω(ρ1(G)), then ϕ is conformal.

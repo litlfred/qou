@@ -1,1 +1,0 @@
-When C(N) = N, the same argument shows that h must be constant, since the flow cannot exist. □ Combining the Tameness Theorem, the minimum principle Theorem 4.1 and Ahlfors’ proof of his Measure Theorem, one immediately obtains a proof of Ahlfors’ Measure Conjecture.

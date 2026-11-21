@@ -1,1 +1,0 @@
-By identifying $T \iso TS^n$ and using the interpretation of $\sigma$ as normalized geodesic flow, one sees that $y$ must be a positive multiple of $c'(1)$, where $c: [0;1] \rightarrow S^n$ is the minimal geodesic from $c(0) = y_0$ to $c(1) = y_1$.

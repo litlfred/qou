@@ -3,7 +3,7 @@
 Three formal derivation paths stand open:
 
 1. **Khovanov–Rozansky polynomial at finite $q$**: Compute $\mathrm{Kh}(L)(q, t)$ for the typed-$\mathbf{B}_3$ Markov-closure link $L$ at the substrate $q_0$ (not merely $q = 1$). The Taylor coefficients should return $c_4, c_5, c_6, c_7$.
-2. **KLR canonical-basis trace formula**: Calculate the per-Wedderburn-block canonical-basis Markov trace at orders $\varepsilon^8, \varepsilon^{10}, \varepsilon^{12}$. The Hecke–KLR bridge supplies scaffolding ([`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)). We require the explicit per-block trace formula.
+2. **KLR canonical-basis trace formula**: Calculate the per-Wedderburn-block canonical-basis Markov trace at orders $\varepsilon^8, \varepsilon^{10}, \varepsilon^{12}$. The explicit per-block trace formula is required.
 3. **Spectral-sequence stratification**: Currently declined; the framework lacks a suitable candidate spectral sequence.
 
 ## Comparison with extracted values
@@ -15,7 +15,7 @@ Three formal derivation paths stand open:
 | $c_6$ | $c_3^2 \cdot b^2 = 4 \cdot b^2$ | **14%** residual | Hopf Jones squared $\times$ Kashiwara $b^2$ |
 | $c_7$ | $c_3^3 = -8$ | **signed error $+114\%$** | Hopf Jones cubed |
 
-Match quality degrades at higher $k$. For $c_7$, the signed relative error is approximately $114\%$ (magnitude error $86\%$). We retain the conjecture because the $N=7$ correction's leverage on the cumulative $\mathfrak{Q}_\beta$ residual operates at the $10^{-13}$ scale. Any $c_7 \in [-100, +100]$ closes the gap to within $10^{-4}$ ppb, leaving the numerical value highly under-determined.
+Match quality degrades at higher $k$. For $c_7$, the signed relative error is approximately $114\%$ (magnitude error $86\%$). One retains the conjecture because the $N=7$ correction's leverage on the cumulative $\mathfrak{Q}_\beta$ residual operates at the $10^{-13}$ scale. Any $c_7 \in [-100, +100]$ closes the gap to within $10^{-4}$ ppb, leaving the numerical value highly under-determined.
 
 ## Precision
 
@@ -35,7 +35,7 @@ written:
    convention.
 2. **Functional.** The published form rests on $z = 1$, which is
    **inadmissible**: it is the coordinate sum, and provably not a Markov root
-   under convention D (`ConventionDAdmissibleRoots.lean`).
+   under convention D.
 
 Against the same $7.797$ ppb target, the live per-observable dashboard scores
 $\mathfrak{Q}_\beta$ on the ruled base at $1.668\times10^{8}$ ppb — a miss of
@@ -88,7 +88,7 @@ extracting a rung by inverting the target drives the next residual to exactly
 zero. They are retained as the calibration record they were, and should not be
 cited as current extractions.
 
-The empirical $c_k$ from `binding_q_target_sweep` are **fits**: each is extracted
+The empirical $c_k$ are **fits**: each is extracted
 by matching the truncated product to the measured CODATA $\mathfrak{Q}_\beta$
 value, so it encodes the datum it is matched against. That is a calibration
 tautology, not a derivation, and it is why the rungs carry no predictive content.

@@ -1,0 +1,65 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "lattice2021-543",
+ "source_sha256": "3a255daa50ebd5a4",
+ "brief": "The neutron-proton mass difference — 9 sections: Front matter; QCD+QED at LO; Introduction",
+ "extended": "**The neutron-proton mass difference**\n\n*Rome, Italy*\n\n12 pp, 9 sections.\n\n**Outline.** Front matter; QCD+QED at LO; Introduction; LIBEs in the hadronic spectrum; Counterterms and separation between QCD and QE; Details of simulation and analysis; Nucleons spectrum; Summary and outlook; Acknowledgements",
+ "tokens": {
+  "brief": 22,
+  "extended": 75
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-qcdqed-at-lo",
+   "title": "QCD+QED at LO",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-libes-in-the-hadronic-spectrum",
+   "title": "LIBEs in the hadronic spectrum",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-counterterms-and-separation-between-qcd-and-qed",
+   "title": "Counterterms and separation between QCD and QED",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-details-of-simulation-and-analysis",
+   "title": "Details of simulation and analysis",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-nucleons-spectrum",
+   "title": "Nucleons spectrum",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-006-summary-and-outlook",
+   "title": "Summary and outlook",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-007-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "10-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

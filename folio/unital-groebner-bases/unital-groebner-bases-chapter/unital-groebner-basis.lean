@@ -3,6 +3,7 @@ import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.RingTheory.Ideal.Basic
+import Mathlib.LinearAlgebra.Basis.Basic
 
 
 /-!
@@ -44,18 +45,73 @@ structure GroebnerBasis (R : Type u) [CommRing R]
   -- TODO: refine has_representation to produce actual Gröbner data
   -- (multipliers λ_k, u_k, v_k, γ_k with leading monomial control)
 
-/-- The **unital condition** on a Gröbner basis:
-    1. All generators have leading coefficient in R×
-    2. All products α · g · β have leading coefficient in R× (when nonzero)
+/-- The **leading coefficient** of `a ∈ A` with respect to an admissible
+    system given as an `R`-basis `bas : Module.Basis B R A` of `A` (the
+    paper's `A` is free over `R` with basis `B`): the coefficient of the
+    `<`-greatest basis element in the support of `bas.repr a`, and `0` for
+    `a = 0`.  This is the paper's `LC(a)`; it is a definition, not data, so an
+    instance of `IsUnital` cannot choose it. -/
+noncomputable def leadingCoeff (bas : Module.Basis B R A) (a : A) : R :=
+  if h : (bas.repr a).support.Nonempty then
+    bas.repr a ((bas.repr a).support.max' h)
+  else 0
 
-    Over a field, every Gröbner basis is automatically unital. -/
+omit [WellFoundedLT B] in
+/-- A nonzero element has a nonzero leading coefficient. -/
+theorem leadingCoeff_ne_zero (bas : Module.Basis B R A) {a : A} (ha : a ≠ 0) :
+    leadingCoeff R B A bas a ≠ 0 := by
+  have hne : (bas.repr a).support.Nonempty := by
+    rw [Finsupp.support_nonempty_iff]
+    intro h0
+    exact ha (bas.repr.map_eq_zero_iff.mp h0)
+  unfold leadingCoeff
+  rw [dif_pos hne]
+  exact Finsupp.mem_support_iff.mp (Finset.max'_mem _ hne)
+
+/-- The **unital condition** on a Gröbner basis, relative to the basis
+    `bas` that realises the admissible system `(B, <)`:
+    1. every nonzero generator has leading coefficient in `R×`;
+    2. for every generator `g` and basis elements `α, β ∈ B`, the product
+       `α · g · β` has leading coefficient in `R×` whenever it is nonzero.
+
+    Both fields read the genuine leading coefficient `leadingCoeff`
+    (definition `def:unital-groebner-basis`, conditions 1–2 of the paper).
+    The generator clause carries `g ≠ 0` because the paper's generators are
+    nonzero by convention and `LC(0)` is undefined there.
+
+    Over a field every Gröbner basis is automatically unital
+    (`isUnital_of_field`). -/
 -- Ref: [leitner2026] §1/unital-groebner-basis
-structure IsUnital (G : GroebnerBasis R B A) where
-  /-- Leading coefficients of generators are units. -/
-  lc_units : ∀ g ∈ G.generators, True
-  /-- Products preserve the unit leading coefficient property. -/
-  product_lc_units : ∀ g ∈ G.generators, True
-  -- TODO: replace True with actual leading-coefficient unit conditions
+structure IsUnital (bas : Module.Basis B R A) (G : GroebnerBasis R B A) : Prop where
+  /-- Leading coefficients of (nonzero) generators are units. -/
+  lc_units : ∀ g ∈ G.generators, g ≠ 0 → IsUnit (leadingCoeff R B A bas g)
+  /-- Products `α · g · β` with `α, β ∈ B` have unit leading coefficient
+      whenever they are nonzero. -/
+  product_lc_units : ∀ g ∈ G.generators, ∀ α β : B,
+    bas α * g * bas β ≠ 0 → IsUnit (leadingCoeff R B A bas (bas α * g * bas β))
+
+/-- **Over a field every Gröbner basis is unital** — the remark closing
+    `def:unital-groebner-basis`: a nonzero element has a nonzero, hence
+    invertible, leading coefficient. -/
+theorem isUnital_of_field {K : Type u} [Field K] [Algebra K A]
+    (bas : Module.Basis B K A) (G : GroebnerBasis K B A) : IsUnital K B A bas G where
+  lc_units _ _ hg := (leadingCoeff_ne_zero K B A bas hg).isUnit
+  product_lc_units _ _ _ _ h := (leadingCoeff_ne_zero K B A bas h).isUnit
+
+/-- **The condition is not automatic over `ℤ`.** For `A = ℤ` with the
+    one-element basis, the generator `2` has leading coefficient `2 ∉ ℤ×`, so
+    `{2}` is not unital.  (Before 2026-11-20 both fields of `IsUnital` were
+    `True` and every `G` satisfied it; this is the witness that the encoding
+    now carries content.) -/
+theorem not_isUnital_two_over_int :
+    ¬ IsUnital ℤ Unit ℤ (Module.Basis.singleton Unit ℤ)
+      { generators := {2}, ideal := ∅, has_representation := fun _ h => h.elim } := by
+  intro h
+  have := h.lc_units 2 rfl (by norm_num)
+  simp [leadingCoeff] at this
+  split_ifs at this with hs
+  · rw [Int.isUnit_iff] at this; omega
+  · exact absurd this (by simp)
 
 /-- An **S-polynomial** about f, f' ∈ A is constructible when their
     leading terms can be aligned:

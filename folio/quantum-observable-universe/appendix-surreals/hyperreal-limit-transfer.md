@@ -1,11 +1,11 @@
 ## Limit transfer, at the hyperreals, without the surreal apparatus
 
-The appendix carries a conjecture class packaging "limits become surreal equalities": an $\omega$-evaluation sending each real sequence to a surreal number, compatible with the algebra and the order, and computing limits through the standard part. It is stated over `SurrealField` and carried with **no instance**.
+The appendix carries a conjecture class packaging "limits become surreal equalities": an $\omega$-evaluation sending each real sequence to a surreal number, compatible with the algebra and the order, and computing limits through the standard part. It is stated over the appendix's axiomatic surreal field and is **not established**: no model of it is exhibited.
 
 The content needs none of that structure.
 
 **Theorem.**
-*Let $a_n \to L$ in the $\varepsilon$–$N$ sense. Then, in Mathlib's hyperreals $\mathbb{R}^*$,*
+*Let $a_n \to L$ in the $\varepsilon$–$N$ sense. Then, in the hyperreals $\mathbb{R}^*$,*
 
 $$
   \mathrm{st}\bigl(\,{}^{*}\!a\,\bigr) \;=\; L ,
@@ -21,11 +21,11 @@ $$
   \forall \varepsilon > 0,\quad \lvert x - r\rvert < \varepsilon ,
 $$
 
-which is *literally* Mathlib's characterisation of `IsSt`. The two agree by `rfl`. So the conjecture's analytic content is the standard part of the hyperreals, and the surreal carrier plays no role in it.
+which is *literally* the defining condition for $r$ to be the standard part of $x$. The two agree by definition. So the conjecture's analytic content is the standard part of the hyperreals, and the surreal carrier plays no role in it.
 
 ## ⚠ What this does not do
 
-Hyperfilter convergence is strictly weaker than convergence along `atTop`. The arrow
+Hyperfilter convergence is strictly weaker than convergence along $\mathrm{atTop}$ (ordinary convergence as $n \to \infty$). The arrow
 
 $$
   a_n \to L \ \text{along } \mathrm{atTop}
@@ -33,13 +33,13 @@ $$
   \mathrm{IsSt}({}^{*}\!a, L)
 $$
 
-is available; **the converse is false**. Everything here therefore *pushes* real limits into $\mathbb{R}^*$. Nothing here discharges a goal of the form $\text{Tendsto} \dots \text{atTop}$ by a standard-part computation, because $\mathrm{IsSt}({}^{*}\!a, r)$ says $a(\omega) \approx r$ for one specific $\omega$, not for every infinite hypernatural — which is what a genuine nonstandard limit argument requires, and which Mathlib does not package.
+is available; **the converse is false**. Everything here therefore *pushes* real limits into $\mathbb{R}^*$. Nothing here proves a statement of the form $\text{Tendsto} \dots \text{atTop}$ by a standard-part computation, because $\mathrm{IsSt}({}^{*}\!a, r)$ says $a(\omega) \approx r$ for one specific $\omega$, not for every infinite hypernatural — which is what a genuine nonstandard limit argument requires.
 
 **So surreal and standard-part machinery does not replace this corpus's $\varepsilon$–$\delta$ arguments.** That was the hoped-for payoff.
 
 ## A defect in the surrounding axioms
 
-Attempting to instantiate the class exposed something about `SurrealField` itself. The two-valued function
+Attempting to instantiate the class exposed something about the surreal-field axioms themselves. The two-valued function
 
 $$
   \mathrm{birthday}(x) \;=\; \begin{cases} 0 & x = 0\\ 1 & x \neq 0\end{cases}

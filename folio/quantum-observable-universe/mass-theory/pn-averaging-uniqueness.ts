@@ -9,6 +9,7 @@ export default proposition({
   tags: ["normalization", "frobenius", "no-fitting", "uniqueness"],
   lean: { ref: "qou:QOU.BraidKnot.pn_averaging_unique" },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Lean structure\n\n- `pnZD_inv`: $\\overline{z} = z - h$ under convention D.\n- `pn_averaging_bar_iff`: the bar-invariance criterion $(c + \\overline{c} - 1)h = 0$.\n- `pn_averaging_unique`: constant $c$ and $h \\neq 0$ force $2c = 1$.\n- `pn_averaging_uniform_bar`: $z - h/2$ is bar-invariant.\n- `pn_averaging_unique_via_weight`: two averagings with the same 9-pair colour weight agree. Choosing that weight is open.\n\nAll are sorry-free." },
     {
       kind: "caveat",
       date: "2026-11-15",

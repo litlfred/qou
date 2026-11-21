@@ -1,1 +1,0 @@
-- Because $\mathcal{H}_B$ and $\mathcal{H}_R$ are shared with Charlie, we must have $\rho^{\{Alice\}}_{BR}=\rho^{\{Charlie\}}_{BR}$.

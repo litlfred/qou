@@ -1,0 +1,1 @@
+Note that ac acts on both Λ*n c and S"(g*) semisimply with non-positive weight. Thus if we compute the ac-homology first we immediately see that the spectral sequence is degenerate at the first term and yields the above result.

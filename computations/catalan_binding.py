@@ -47,6 +47,8 @@ from codata_constants import (
     M_P_MEV_VALIDATION as _M_P_MEV,
     M_N_MEV_VALIDATION as _M_N_MEV,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 HBAR_Q = (q0 - 1.0) / q0
 HBAR_Q_SQ = HBAR_Q * HBAR_Q
@@ -131,13 +133,16 @@ if __name__ == "__main__":
     print("=" * 100)
 
     ATOMS = [
-        ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
-        ("4He",  2, 2, 28.295674),
-        ("6Li",  3, 3, 32.0),
-        ("12C",  6, 6, 92.161728),
+        ("D",    1, 1, "2.22452"),
+        ("T",    1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+        ("3He",  2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)),
+        ("4He",  2, 2, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
+        ("6Li",  3, 3, "32.0"),
+        ("12C",  6, 6, "92.161728"),
     ]
+    # NO-FLOAT64: the AME targets enter as decimal strings and are carried as
+    # mpf, so the comparison values in the witness are not binary64 literals.
+    ATOMS = [(nm, z, n, mp.mpf(b)) for (nm, z, n, b) in ATOMS]
 
     # ── Formula 1: Wedderburn-aggregated log form ──────────
     print("\n" + "=" * 80)
@@ -182,16 +187,16 @@ if __name__ == "__main__":
         try:
             pa = phi_atom_tower_per_block(Z, N, include_inter=True)
             B_pred = M_E_MEV * pa["total"]
-            err = float(((B_pred - B_AME) / B_AME * 100)
-                    if B_AME else float("nan"))
+            err = ((B_pred - B_AME) / B_AME * 100
+                    if B_AME else mp.nan)
             print(f"  {name:>6} {B_AME:>10.4f} "
                   f"{float(pa['sym']):>+12.4f} {float(pa['std']):>+12.4f} "
                   f"{float(pa['alt']):>+12.4f} {float(pa['total']):>+12.4f} "
                   f"{float(B_pred):>+10.4f} {err:>+9.3f}%")
             results_f2b.append({"atom": name, "Z": Z, "N": N,
                                   "A": Z + N, "B_AME": B_AME,
-                                  "phi_atom_total": float(pa["total"]),
-                                  "B_pred_MeV": float(B_pred),
+                                  "phi_atom_total": pa["total"],
+                                  "B_pred_MeV": B_pred,
                                   "err_pct": err})
         except Exception as e:
             print(f"  {name:>6}: ERR {type(e).__name__}: {str(e)[:60]}")

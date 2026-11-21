@@ -1,1 +1,0 @@
-$\overline{\hspace{2in}}$\ According to [\[sonetorsion\]](#sonetorsion){reference-type="eqref" reference="sonetorsion"}, the coefficient $S_1^{({\rm geom})} (u)$ in the perturbative Chern-Simons partition function should be related to the Reidemeister-Ray-Singer torsion of $M$ twisted by ${\cal A}^{({\rm geom})}$, which has been independently computed.

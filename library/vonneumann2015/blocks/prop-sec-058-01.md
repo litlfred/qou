@@ -1,0 +1,1 @@
+Let x ∈ℓ(V )′′ be such that φ(x) = 0. Then there is a sequence xi with ||xi|| ≤||x|| of linear combinations of products of the form ℓ(f1)ℓ(f2) · · · ℓ(fm)ℓ(g1)∗· · · ℓ(gn)∗(with m or n diﬀerent from zero) such that xi tends strongly to x.

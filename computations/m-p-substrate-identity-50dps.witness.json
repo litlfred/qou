@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-15T22:05:18.838229+00:00",
-  "commitSha": "b2b349f3607b14633db66340b2e643563a868ddf",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T04:37:58.464849+00:00",
+  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -15,20 +15,38 @@
     },
     {
       "name": "m_n_matches_codata_within_10ppb",
-      "computed": "501.4316327877401803316635910708273218008129439157289562765830380455309",
+      "computed": "501.4569351393812824617363059782341515404278357807621566341538281253553",
       "expected": 0.0,
       "passed": false,
       "tolerance": 10.0,
       "unit": "ppb",
       "source": "m_n via the parameter-free Kashiwara b² Q_β (n→p+e+ν̄) should match CODATA m_n within 10 ppb. Under convention D it does not: +501 ppb (the ~1 ppb once recorded was convention C, excised). TIER: near-match; exact Q_β gated on the s5bb Habiro keystone."
+    },
+    {
+      "name": "borromean_v3_e3_plus_e21_equals_full_trace",
+      "computed": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-45",
+      "unit": "dimensionless",
+      "source": "Exact central idempotent trace decomposition tr(e_{(3)} V³) + tr(e_{(2,1)} V³) = tr(V³) on the 3-strand nucleon weight spaces W_p and W_n (QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e3p_borromeanV3, trace_e21p_borromeanV3)."
+    },
+    {
+      "name": "borromean_v3_conn_proton_closes_mup_gap_within_1sigma",
+      "computed": "0.36221687584065042857121592477269110063680957194783702852597928157126",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0",
+      "unit": "sigma",
+      "source": "RECORD OF A SELECTED COMBINATION, not a zero-parameter prediction (bean qou-99qc, 2026-11-19): connected 4th-order Borromean proton QED term M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| (+0.220077 keV, QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3), with the m_e scale and the adjacent-pair restriction both chosen. Checks that the recorded combination reproduces +8.06 ppb = +0.36σ; it is not evidence that the μ–p tension (9.5σ on the ratio) is closed."
     }
   ],
   "allPassed": false,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "53079b79c6a8",
-  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
+  "scriptHash": "bb91ceae5015",
+  "scriptCommitSha": "056a00fc678a0c1d03d33d77c14f59479044eb86",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,11 +58,10 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "24ca776b0ad05497"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -53,7 +70,7 @@
     "reproduce": "python3 -u computations/m_p_substrate_identity_50dps.py"
   },
   "description": "Production substrate-categorical prediction of m_p and m_n from (m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e with Q_β the parameter-free Kashiwara b² truncation (near-match, +501 ppb on m_n under convention D); the Hecke-skein flavor-split is a secondary ratio. CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where the '12' is the Ocneanu cancellation reciprocal.",
-  "contentBlock": "prop:proton-mass-substrate-identity",
+  "contentBlock": "conj:proton-mass-substrate-identity",
   "auditOnly": "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
   "parameters": {
     "q0": "1.109978582751380807591669",
@@ -71,17 +88,17 @@
     },
     "predictions": {
       "m_p_MeV": "938.27208942732424736394",
-      "m_n_MeV": "939.565893067823634276241",
-      "M_N_MeV": "938.9189912475739408200905",
-      "Q_beta_MeV": "0.7828046898093869123009924",
-      "Delta_m_pn_MeV": "1.293803640499386912300992"
+      "m_n_MeV": "939.5658930915968489719874",
+      "M_N_MeV": "938.9189912594605481679637",
+      "Q_beta_MeV": "0.7828047135826016080473667",
+      "Delta_m_pn_MeV": "1.293803664272601608047367"
     },
     "predictions_pathC": {
-      "m_n_MeV": "939.565893067823634276241",
-      "m_n_residual_ppm": "0.501431632788",
-      "Delta_m_pn_MeV": "1.293803640499386912300992",
-      "Delta_m_pn_ppb": "364276.3912173771",
-      "Q_beta_N3_MeV": "0.7828046898093869123009924",
+      "m_n_MeV": "939.5658930915968489719874",
+      "m_n_residual_ppm": "0.501456935139",
+      "Delta_m_pn_MeV": "1.293803664272601608047367",
+      "Delta_m_pn_ppb": "364294.77258064755",
+      "Q_beta_N3_MeV": "0.7828047135826016080473667",
       "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e"
     },
     "neutron_diagnostics": {
@@ -96,11 +113,11 @@
       "m_p_codata_MeV": "938.27208943",
       "m_p_residual_ppm": "-2.85178752113e-6",
       "m_n_codata_MeV": "939.56542194",
-      "m_n_residual_ppm": "0.501431632788",
+      "m_n_residual_ppm": "0.501456935139",
       "M_N_codata_MeV": "938.918755685",
-      "M_N_residual_ppm": "0.250887068252",
+      "M_N_residual_ppm": "0.250899728141",
       "Q_beta_codata_MeV": "0.78233355931",
-      "Q_beta_residual_ppm": "602.211797999"
+      "Q_beta_residual_ppm": "602.242185567"
     },
     "lean_uniqueness_ref": {
       "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
@@ -110,6 +127,59 @@
       "helium3": "qou:QOU.BraidKnot.helium3_uniqueness_closed",
       "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level. The real per-nucleus SDP (multi-term cost from this mass-identity formula + non-empty constraints) is per-nucleus substantive open work; see docs/coordination/2026-05-30-sdp-uniqueness-status.md."
+    },
+    "two_term_borromean_qed_diagnostics": {
+      "tr_V3": "2.9941858129799640867281993680187167000891395825118",
+      "tr_e3_V3": "1.0",
+      "tr_e21_V3": "1.9941858129799640867281993680187167000891395825118",
+      "tr_conn_p": "-0.00043068052000266024235560236898394814154521611023626",
+      "tr_conn_n": "0.00021843244619284935898487185709951454250316070405609",
+      "tr_conn_diff": "0.00064911296619550960134047422608346268404837681429235",
+      "tr_e21_QAdjp": "-0.0044830495350147474178464981546131574861661152639793",
+      "tr_e21_QAdjn": "-0.4440926095333612989858128672900247129230645474682",
+      "tr_e21_QAdj_diff": "-0.43960955999834655156796636913541155543689843220422",
+      "weighting_canonical": "derived: Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); *_MeV without suffix, *_Kp, *_KnKp, *_plain are historical",
+      "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): connected part 0 on V³; *_derived_* = adjacent (option 1), labelled",
+      "M_p_QED_conn_scored_MeV": "0.0",
+      "Delta_m_QED_conn_scored_MeV": "0.0",
+      "Q_beta_two_term_derived_adjacent_MeV": "0.7826774892816377059126632",
+      "q_two_term_borromean_scored": "1.1099785827513808075916690956107688798744991218736",
+      "M_p_QED_conn_derived_MeV": "0.0000901242572668167005355174",
+      "Delta_m_QED_conn_derived_MeV": "-0.0001272243009639021347035417",
+      "M_p_QED_conn_MeV": "0.0002200772938039829398522939",
+      "M_p_QED_conn_Kp_MeV": "0.0002442810826723042242804662",
+      "Delta_m_QED_conn_MeV": "-0.0003316960446051788476748025",
+      "Delta_m_QED_conn_KnKp_MeV": "-0.000344840456101401187346409",
+      "Q_beta_two_term_plain_MeV": "0.7824730175379964291996919",
+      "Q_beta_two_term_MeV": "0.7828047135826016080473667",
+      "Q_beta_two_term_residual_ppm": "602.242185567",
+      "m_n_two_term_MeV": "939.5658930915968489719874",
+      "m_n_two_term_derived_adjacent_MeV": "939.5657658672958850698527",
+      "q_two_term_borromean_derived": "1.1099785878291231819349164390040016027877615118272",
+      "dq_two_term_derived_vs_muon_ppb": "-7.0394293146",
+      "mup_tension_two_term_derived_ppb": "128.01454681",
+      "mup_tension_two_term_derived_sigma": "5.75420608795",
+      "m_n_two_term_residual_ppb": "501.456935139",
+      "q_two_term_borromean_plain": "1.1099785951508859990875652035986826212141034805412",
+      "q_two_term_borromean_k_weighted": "1.1099785965145670927758217612084780842969279530571",
+      "dq_two_term_plain_vs_muon_ppb": "-0.443119398451",
+      "dq_two_term_k_weighted_vs_muon_ppb": "0.785445818069",
+      "mup_tension_one_term_ppb": "211.16491436",
+      "mup_tension_two_term_plain_ppb": "8.05828440953",
+      "mup_tension_two_term_plain_sigma": "0.362216875841",
+      "mup_tension_two_term_k_weighted_ppb": "-14.2836122692",
+      "mup_tension_two_term_k_weighted_sigma": "-0.642043039057",
+      "lean_theorems": {
+        "trace_borromeanV3A": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_borromeanV3A",
+        "trace_e3p_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e3p_borromeanV3",
+        "trace_e21p_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21p_borromeanV3",
+        "trace_e21_strong_cartan_diff_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21_strong_cartan_diff_borromeanV3",
+        "trace_QAdjp_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3",
+        "trace_QAdjn_borromeanV3_connected": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjn_borromeanV3_connected",
+        "trace_QAdj_connected_diff_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
+        "trace_e21_QAdj_diff_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21_QAdj_diff_borromeanV3"
+      },
+      "note": "Tier A non-breaking diagnostic block (bean qou-7ph7): evaluates the connected 4th-order Borromean V³ = (σ₁σ₂⁻¹)³ quark charge traces proved sorry-free in QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean. WEIGHTING DERIVED 2026-11-20 (qou-99qc): Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs, connected part 0 on V³, so m_n_two_term / Q_beta_two_term equal the one-term values. Adjacent comparison (option 1): M_p^QED,conn = +0.0901243 keV, Δm = -0.1272243 keV. Historical 1/3-normalised adjacent 'plain': +0.220077 / -0.331696 keV. NOT DERIVED PREDICTIONS (bean qou-99qc, 2026-11-19): the word dependence comes only from dropping quark pair 1-3 (summed over all pairs the insertion is word-independent, trace_QPair_diff_word), and the scale/weighting were chosen against the μ–p and Q_β targets. Records of selected combinations; they do not close either residual."
     },
     "upstream_witness_hashes": [
       {

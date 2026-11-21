@@ -1,0 +1,1 @@
+Up to this point, the semi-log-concavity of the measure ν has not been used, meaning that the bound (20) holds true for general measures. Semi-log-concavity will play a role when bounding the integrand on the right hand side of the above equation. In light of the above bound, the proof boils down to the following estimate on the transportation distance between two close tilts.

@@ -1,1 +1,0 @@
-To get a low-energy eﬀective Lagrangian realization of QCD, for the light-quark sector (u, d, s), we should write the most general Lagrangian involving the matrix U(φ), which is consistent with chiral symmetry.

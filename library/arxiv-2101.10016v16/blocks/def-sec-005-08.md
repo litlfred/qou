@@ -1,1 +1,1 @@
-Let A be a weak quasi-bialgebra with coproduct ∆ and counit ε.
+Let A be a weak quasi-bialgebra with coproduct ∆ and counit ε. a) A twist is a pair of elements T, T −1 ∈ A ⊗ A such that T −1 is a partial left inverse of T, that is T −1T = ∆(I) and such that ε ⊗ 1(T) = 1 ⊗ ε(T) = I.

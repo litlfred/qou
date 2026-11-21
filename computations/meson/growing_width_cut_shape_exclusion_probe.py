@@ -70,7 +70,7 @@ from __future__ import annotations
 import pathlib
 import re
 import sys
-from math import factorial
+from math import factorial  # float64-ok: exact integer factorial for hook_dim
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
@@ -338,8 +338,9 @@ def main() -> int:
     _flush_assertions(wb)
     wb.save()
 
+    ntotal = len(_CHECKS)
     print("\n" + "=" * 92)
-    print(f"{7 - len(_FAILED)}/7 assertions passed")
+    print(f"{ntotal - len(_FAILED)}/{ntotal} assertions passed")
     print("=" * 92)
     return 1 if _FAILED else 0
 

@@ -1,1 +1,0 @@
-Note that a simplicial set is determined by its $(\infty, 0)$ path groupoid and therefore the category of simplicial sets should be thought of as the $(\infty, 1)$ category of all $(\infty, 0)$ groupoids.

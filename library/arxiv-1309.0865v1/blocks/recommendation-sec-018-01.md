@@ -1,1 +1,0 @@
-In this section we will discuss the technical assumptions one must make on the realization in order for the diagrammatics to behave well, and the further assumptions needed for Soergel bimodules to behave well.

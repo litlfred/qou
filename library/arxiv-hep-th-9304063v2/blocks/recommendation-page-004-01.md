@@ -1,1 +1,0 @@
-We mention also that an argument can be given that (1.16) must be reducible to one of the 50 canonical types of diﬀerential equations found by Painlev´e, without an explicit veriﬁcation being necessary.

@@ -9,7 +9,7 @@ $$
 
 where $\xi$ is the normal form and $\ell(w)$ is the word length. Then:
 
-1. **Only Hecke reductions change energy.** The Yang--Baxter relation and far commutativity preserve coefficients and lengths. The Hecke relation is the unique energy-changing generator.
+1. **Only Hecke reductions change energy.** The Yang--Baxter relation, far commutativity and the other Bokut--Shiao rules preserve coefficients and lengths. The Hecke relation is the unique energy-changing generator.
 2. **Energy is path-independent.** Along any reduction path $\xi_0 \to \xi_1 \to \cdots \to \xi_m$ the step changes sum to $E(\xi_m) - E(\xi_0)$. By confluence every path ends at the same normal form, so the total change depends only on $\xi_0$.
 3. **Energy change of one Hecke step.** Let $h = q - q^{-1}$. Applied to an isolated monomial $c\,w$ with $w = u\,\sigma_i\sigma_i\,v$ of length $\ell$, the replacement of $\sigma_i^2$ by $h\,\sigma_i + 1$ changes the energy by
 
@@ -20,3 +20,12 @@ $$
 The sign is not fixed: for $|h|\,(\ell - 1) < 2$ the step lowers the energy.
 
 **Archimedean specialisation.** The absolute values in $E$ are taken over $\mathbb{R}$, so the functional sits on the archimedean side of the substrate wall. Near the substrate value, $h \approx 0.21$, so a Hecke step on a short word lowers the energy.
+
+**β decay in the short typed-crossing model.** In $H_3(q)$ take the short-model nucleon normal forms $p = \sigma_1\sigma_2 - (h/2)\,\sigma_1$ and $n = \sigma_1\sigma_2 - h\,\sigma_1 - (h/2)\,\sigma_2 + h^2/2$. Then
+
+$$
+  E(p) - E(n) = -|h|,
+$$
+
+so for $q > 1$ the daughter proton has the lower energy. The statement is specific to this model. In the 11-letter typed-crossing model the nucleon-only change has the opposite sign at the substrate value, and on the common base $(\sigma_1\sigma_2^{-1})^3$ it is zero, so no model-free sign of the β-decay energy change follows from $E$.
+

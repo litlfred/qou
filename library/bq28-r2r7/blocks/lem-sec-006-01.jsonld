@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/bq28-r2r7/blocks/lem-sec-006-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "text": "lem-sec-006-01.md",
+  "derivedFrom": "library/bq28-r2r7/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bq28-r2r7/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-006-a-granularity-and-quantum-advantage.md (p. 10-11) citing [40]",
+    "claim_id": "bq28-r2r7#lemma:4",
+    "lean_status": "unformalized"
+  }
+}

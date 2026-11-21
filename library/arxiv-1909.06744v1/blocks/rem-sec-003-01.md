@@ -1,0 +1,1 @@
+In the case where G = GLn, ZG(x) is connected, hence AG(x) = {1}. For G = SpN, SON, AG(x) ≃(Z/2Z)c for some c. In turn, for G of type G2, F4, E8, there exist a unique class O in G such that AG(x) ≃S3, S4 and S5 for x ∈O, respectively. The following theorem is the original form of the Springer correspondence due to Springer.

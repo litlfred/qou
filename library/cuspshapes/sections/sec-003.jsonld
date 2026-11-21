@@ -13,9 +13,12 @@
   "pageStart": 4,
   "pageEnd": 6,
   "contains": [
-    "library/cuspshapes/blocks/prose-sec-003"
+    "library/cuspshapes/blocks/prose-sec-003",
+    "library/cuspshapes/blocks/lem-sec-003-01",
+    "library/cuspshapes/blocks/lem-sec-003-02",
+    "library/cuspshapes/blocks/lem-sec-003-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
   "provenance": "ingested"
 }

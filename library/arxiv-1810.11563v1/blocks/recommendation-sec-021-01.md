@@ -1,1 +1,0 @@
-The argument is due to Sherlock Holmes; I quote the great detective: ``When you have excluded the impossible whatever remains, however improbable, must be the truth." We can and will subject item 2 to rigorous testing.

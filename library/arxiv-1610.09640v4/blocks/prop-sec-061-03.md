@@ -1,0 +1,1 @@
+Let C, D and E be categories. There is an isomorphism of categories Ξ : Fun(C × D, E) →Fun(C, Fun(D, E)) with the following formula: for a functor F : C × D →E, the functor Ξ(F) : C →Fun(D, E) is Ξ(F)(C) := F(C, −). Exercise 8.2.10. Prove Proposition 8.2.9.

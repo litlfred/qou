@@ -1,0 +1,1 @@
+The lengths of the boundary edges of a compact lateral hexagon smoothly depend on the lengths of its internal edges, and the dihedral angles of a compact truncated tetrahedron smoothly depend on the lengths of its internal edges. Thus Proposition 3.5 implies the following results. Algebraic & Geometric Topology 6 (2006) Deforming hyperbolic 3–manifolds with boundary

@@ -1,1 +1,1 @@
-The ∗-representations ρr together with their opposites ρ−r, exhaust
+The ∗-representations ρr together with their opposites ρ−r, exhaust the irreducible ∗–representations of A up to unitary equivalence. Furthermore any ∗- representation of A decomposes as an orthogonal direct sum of copies of them. Finally, Ω is positive if and only of for all s, t, ρs⊗ρt is an orthogonal direct sum of ρr only.

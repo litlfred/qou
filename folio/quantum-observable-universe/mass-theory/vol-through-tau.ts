@@ -16,6 +16,7 @@ export default proposition({
     validation: "not_checked",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Proposition (conditional on [`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)).**\n\n([`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture), Lean class `VolumeConjecture`, field `kvc_holds`)\n\n — this composition is the Lean-derived step (`vol_through_tau_of_volumeConjecture`), with the Kashaev identification consumed as the class hypothesis rather than asserted." },
     {
       kind: "refined-framing",
       date: "2026-08-25",

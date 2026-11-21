@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-cyclotomic-strand-doubling-habiro-observation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cyclotomic-strand-doubling-habiro-observation",
+  "kind": "remark",
+  "title": "The $\\Phi_8^2$ prefactor observed in atomic-step Habiro elements",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-strand-doubling"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-cyclotomic-strand-doubling",
+  "tags": [
+    "cyclotomic",
+    "habiro",
+    "computed-observation"
+  ],
+  "text": "cyclotomic-strand-doubling-habiro-observation.md",
+  "provenance": "authored"
+}

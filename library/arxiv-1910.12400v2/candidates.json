@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1910.12400v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "fdab4ab385400e3437d15bfe4a45cb27680587680167954303860ff5728dc5e9",
   "file": "1910.12400.pdf"
@@ -16,31 +19,164 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
+  "candidates": 6,
   "by_kind": {
-   "recommendation": 1
+   "proposition": 6
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 6
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 5,
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 5,
+   "elsewhere": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Fundamentally, the angular modula- tions, both in \u03b8 and \u03c6, come about because the total spin of the J = 2 composite state must be encoded into the orbital angular momentum of the daughter particles.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "The total measured cross section agrees with all three calculations at the \u00b11\u03c3 level.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-star.md (p. 6-9)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-star.md",
+   "section_title": "STAR",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-star.md (p. 6-9)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-1910.12400v2/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-1910.12400v2#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Klein et al., STARlight: A Monte Carlo simulation program for ultra-peripheral collisions of relativistic ions, Comput.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-star.md (p. 6-9)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-star.md",
+   "section_title": "STAR",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-star.md (p. 6-9)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-02",
+   "block_iri": "library/arxiv-1910.12400v2/blocks/prop-sec-000-02",
+   "claim_id": "arxiv-1910.12400v2#prop-sec-000-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The measurements reveal a large fourth-order angular modulation of cos 4\u2206\u03c6 = (16.8 \u00b1 2.5)% and smooth invariant mass distribution absent of vector mesons (\u03c6, \u03c9 and \u03c1) at the experimental limit of \u22640.2% of the observed yields.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)",
+   "external_refs": [],
+   "quantitative_values": [
+    "16.8 \u00b1 2.5"
+   ],
    "section_file": "sections/sec-front-matter.md",
    "section_title": "Front matter",
    "pages": "1-6",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-01",
+   "block_iri": "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-01",
+   "claim_id": "arxiv-1910.12400v2#prop-sec-front-matter-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The cross section for exclusively produced e+e\u2212pairs was measured in a \ufb01du- cial phase space de\ufb01ned by the acceptance for daughter particles, corresponding to pairs with an invariant mass of 0.4 < Mee < 2.6 GeV and with transverse momentum of P\u22a5< 0.1 GeV.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External scientific/empirical source cited in sections/sec-front-matter.md",
+   "external_refs": [],
+   "quantitative_values": [
+    "2.6 GeV",
+    "0.1 GeV"
+   ],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: elsewhere \u2014 External scientific/empirical source cited in sections/sec-front-matter.md). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-02",
+   "block_iri": "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-02",
+   "claim_id": "arxiv-1910.12400v2#prop-sec-front-matter-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The quoted uncertainties on the measured cross section are for statistical, systematic and the overall scale un- certainty, respectively.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-03",
+   "block_iri": "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-03",
+   "claim_id": "arxiv-1910.12400v2#prop-sec-front-matter-03"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The contribution from isotropic e+e\u2212 emission is determined via a template \ufb01t and found to be consistent with zero [(1 \u00b1 2)% of the measured cross section].",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)",
+   "external_refs": [],
+   "quantitative_values": [
+    "1 \u00b1 2"
+   ],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-04",
+   "block_iri": "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-04",
+   "claim_id": "arxiv-1910.12400v2#prop-sec-front-matter-04"
   }
  ]
 }

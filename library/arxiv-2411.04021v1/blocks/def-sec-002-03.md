@@ -1,0 +1,1 @@
+We set an equivalence relation on the set of odd branches of λ by saying that µ1 ∼µ2 for partitions µ1, µ2 ∈Podd λ if and only if D(µ1) = D(µ2). For any odd branch µ of λ we denote with (µ)∼the equivalence class of µ. We may also write D((µ)∼) := D(µ).

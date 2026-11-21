@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-joint-galois-braid-figure-8-verified-interpretation",
@@ -14,11 +15,11 @@
   "kind": "remark",
   "title": "Structural triviality of the figure-8 cell and the remaining chiral-pair cases",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-joint-galois-braid-figure-8-verified",
+    "papers/quantum-observable-universe/blocks/conj-joint-galois-braid-figure-8-verified",
     "papers/quantum-observable-universe/blocks/conj-joint-galois-braid-action",
     "papers/quantum-observable-universe/blocks/prop-b1-figure-8-row-theorem"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-joint-galois-braid-figure-8-verified",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-joint-galois-braid-figure-8-verified",
   "text": "joint-galois-braid-figure-8-verified-interpretation.md",
   "provenance": "authored"
 }

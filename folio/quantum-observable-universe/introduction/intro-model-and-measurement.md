@@ -11,8 +11,8 @@ chapter collects them.
 Three measured numbers are admitted, and only three. They are the
 calibration inputs, and they match one for one the three real degrees
 of freedom of the first cohomology of the genus-four state space
-([calibration–cohomology alignment](#prop:calibration-cohomology-alignment);
-[three calibration inputs](#prop:three-calibration-inputs)):
+([calibration–cohomology alignment](#conj:calibration-cohomology-alignment);
+[three calibration inputs](#conj:three-calibration-inputs)):
 
 - the electron mass $m_e$ fixes the unit of mass, the *scale*;
 - the neutron $\beta$-decay channel fixes the substrate parameter

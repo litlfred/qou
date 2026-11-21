@@ -1,1 +1,0 @@
-Here, if we want to ``integrate out'' open strings ending on the D3$'$-branes, only the second gauge factor should be considered dynamical, while $U(N)$ should be treated as a global symmetry of the two-dimensional $U(r)$ gauge theory on the brane intersection.

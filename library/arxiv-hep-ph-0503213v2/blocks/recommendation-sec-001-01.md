@@ -1,1 +1,0 @@
-We hope to deduce the properties of quarks and leptons and their interactions from the behaviour of their constituent tweedles, and to do so we shall employ a set of assumptions that govern their behaviour:\ **1) Unordered pairing:** *Tweedles combine in pairs, so that their total twist is $\,0$ modulo $2\pi$, and the ordering of tweedles within a pair is unimportant*.

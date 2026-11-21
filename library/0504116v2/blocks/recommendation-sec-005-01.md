@@ -1,1 +1,0 @@
-On the other hand, since T is a good triangulation, a non-compact lateral hexagon F is actually a pentagon with four right angles and an ideal vertex: we shall say in this case that F is an exceptional lateral hexagon.

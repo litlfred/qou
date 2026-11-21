@@ -1,0 +1,1 @@
+Let G be a cosimplicial crossed groupoid. The gauge transfor- mations form an equivalence relation on the set Desc(G). We call this relation gauge equivalence. Actually Desc(G) has a lot more struc- ture; see Remark 3.5.

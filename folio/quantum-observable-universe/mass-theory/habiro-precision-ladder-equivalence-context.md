@@ -4,7 +4,7 @@ While the existence of the Habiro expansion for quantum invariants with integer 
 The denominator-cleared numerator of the proton's Markov trace has
 $M = 8$ (series terminates). Under convention D the proton trace is
 $p_p(u)/d_p(u)$ with $d_p = 4u^{18}(u^4+1)^2$, and the expansion of
-$p_p$ is ([`habiro-coefficients-atomic.witness.json`](../../../computations/habiro/habiro-coefficients-atomic.witness.json)):
+$p_p$ is:
 
 | $m$ | $a_m(u) \in \mathbb{Z}[u]$ |
 |-----|---------------------------|
@@ -18,8 +18,7 @@ $p_p$ is ([`habiro-coefficients-atomic.witness.json`](../../../computations/habi
 | 7 | $-16u^7 - 23u^6 - 31u^5 - 33u^4 - 47u^3 - 62u^2 - 77u - 114$ |
 | 8 | $u^8 + u^7 + 2u^6 + 3u^5 + 2u^4 + 4u^3 + 5u^2 + 6u + 15$ |
 
-The table that stood here until 2026-11-15 ($a_0 = 4$, $a_1 = -74u - 74$, …)
-was the convention-C expansion.
+In contrast, the Convention-C expansion yields non-monic coefficients ($a_0 = 4$, $a_1 = -74u - 74$, ...).
 
 The neutron has the same structure with $M = 8$ and different integer
 coefficients. The deuteron has $M = 13$ under convention D (it was $12$ under C).
@@ -48,7 +47,7 @@ data. An observable such as $\mathfrak{Q}_\beta$ is
 $m_e \cdot f(\mathrm{tr}_M(\beta_n), \mathrm{tr}_M(\beta_p),
 q_0)$, and the exact Habiro evaluation of that map lands at the
 substrate's *intrinsic* accuracy (improving once the derived low-order
-$\mathrm{tr}_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
+$\mathrm{tr}_M$ corrections of the [asymptotic representation-theoretic $\mathrm{tr}_M$ expansion](#prop:tau-M-asymptotic-rep-theory) are
 included; specific intrinsic-accuracy and ladder-correction figures
 live in the archimedean witness ledger, not here).
 Reaching experiment-grade precision requires higher-order

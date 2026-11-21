@@ -9,8 +9,8 @@ $$
 
 **Categorical statement.** The cyclotomic projection of $\Phi_q \cdot \mathrm{tr}_{M,\ell}$ in the Habiro completion forms the residue contribution attached to stratum $\ell$ by the filtered Hochschild spectral sequence.
 
-**Lean encoding.** The conjecture is axiomatised as the class `QOU.BraidKnot.ResidueAtRoot` (fields: the target ring family `target : ℕ → Type` and the cyclotomic projection `project : (n : ℕ) → R →+* target n`); an instance supplies the Habiro-completion projection whose existence is the conjectural content, and [`prop:residue-at-root`](#prop:residue-at-root) is stated conditionally on it per the conditional-class convention. The archimedean per-level residue values enter downstream as the class field `residue : Fin levelBound → ℝ` of `GBResidueSpectralSum`. A fully constructive definition requires Mathlib infrastructure for meromorphic functions and the Habiro completion as a topological ring.
+**What is proved and what is open.** The Habiro-completion projection onto each cyclotomic target ring exists: it is constructed, and [Cyclotomic residues of $\Phi_q \cdot \mathrm{tr}_{M, \ell}$ — algebraic definition](#prop:residue-at-root) proves the residue is its image for any element of the Habiro ring. The conjectural content is the rest: that $\Phi_q \cdot \mathrm{tr}_{M, \ell}(T_w)$ is such an element, that its residue is real, and that it depends only on the class of $T_w$ modulo $J^{\ell+1}(q)$. The archimedean per-level residue values enter downstream as given data.
 
-**Conjectural status.** The analytic literature guarantees the existence and reality of the residue. A Lean proof awaits the meromorphic-function infrastructure. Instances supply the value directly.
+**Conjectural status.** The analytic literature guarantees the existence and reality of the residue. A proof within the present framework awaits that meromorphic-function infrastructure; downstream results take the residue values as given.
 
 **Empirical witness.** The canonical residues for the proton, neutron, and deuteron at $q_0$ match the Habiro side at machine precision.

@@ -1,0 +1,1 @@
+Let E, E′ ∈Irr(W). (a) The baby Verma module ∆(E) has a simple head, L(E). Hence, ∆(E) is indecomposable. (b) ∆(E) ∼= ∆(E′) if and only if E ∼= E′. (c) The set {L(E) | E ∈Irr(W)} is a complete set of pairwise non-isomorphic simple H0,c-modules.

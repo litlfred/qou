@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/rem-sec-003-03",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "text": "rem-sec-003-03.md",
+  "derivedFrom": "library/maximal-hoermander-q-var-revised-v03/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.7",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-003-umd-lattices.md (p. 9-11)",
+    "claim_id": "maximal-hoermander-q-var-revised-v03#remark:2.7"
+  }
+}

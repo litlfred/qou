@@ -1,1 +1,0 @@
-Since we took a maximal cusp neighborhood of $M$, that is, since we expanded cusps until they bumped, there must be some full--sized horoball $H$ projecting to a cusp of $M$, tangent to the horoball of height $1$ about infinity.

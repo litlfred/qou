@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T14:59:34.983966+00:00",
-  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T07:15:38.183052+00:00",
+  "commitSha": "d3dcd4c4757a988299ad0246ed502bd2358a90e4",
   "assertions": [
     {
       "name": "unknot Jones = 1",
@@ -186,11 +186,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "total_curvature_is_the_computable_half_probe",
   "scriptFile": "total_curvature_is_the_computable_half_probe.py",
-  "scriptHash": "d8761f46afb3",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptHash": "7a2874aa81af",
+  "scriptCommitSha": "d3dcd4c4757a988299ad0246ed502bd2358a90e4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -213,7 +213,7 @@
     ],
     "reproduce": "python3 -u computations/probes/total_curvature_is_the_computable_half_probe.py"
   },
-  "description": "Total curvature as the computable half of the serpenoid tower. Milnor: inf over the isotopy class of the total curvature equals 2*pi*b(L), and b(L) >= mu + #knotted components. The canonical closure has mu = A+1 components (exact, Lean-proved) of which A are (2,odd)-torus knots on both classical branches (exact-integer Kauffman bracket), so inf total curvature >= 2*pi*(2A+1): extensive with slope 4*pi per nucleon. Under Crofton, curvature = pi * (mean number of critical points of the height functions), which is the precise form of 'the oscillations happen at the saddle points'. The twist is not produced here.",
+  "description": "Total curvature as the computable half of the serpenoid tower. Milnor: inf over the isotopy class of the total curvature equals 2*pi*b(L), and b(L) >= mu + #knotted components. The canonical closure has mu = A+1 components (exact integer permutation cycle count, probe-derived at A=2,3,4,6; carried as hypothesis hmu : mu = A+1 in SLq2LabelParity.lean:77 and TorusKnotPages.lean:82, bean qou-d5hn) of which A are (2,odd)-torus knots on both classical branches (exact-integer Kauffman bracket), so inf total curvature >= 2*pi*(2A+1): extensive with slope 4*pi per nucleon. Under Crofton, curvature = pi * (mean number of critical points of the height functions), which is the precise form of 'the oscillations happen at the saddle points'. The twist is not produced here.",
   "data": {
     "2H_sigma_mu": "3",
     "2H_sigma_components": "['T(2,7)', 'T(2,7)', 'unknot']",

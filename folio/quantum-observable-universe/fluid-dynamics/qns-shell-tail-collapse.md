@@ -14,5 +14,3 @@
    $$
 
 4. *(Stability under nonlocal transfer.) The equilibrium and the collapse persist when each rung is forced by its two predecessors with weight $\gamma \geq 0$ (pairwise maxima decay at rate $\theta$ per pair), and when every pair of rungs is coupled with geometric weight $\lambda^{\,n-m-1}$, $0 \leq \lambda < 1$ (every rung beyond the band is uniformly $\theta$-suppressed under $B \leq \theta(1-\lambda)\nu k_n$).*
-
-The six Lean declarations, in `QOU.FluidDynamics.PhysicalLayerLeray`: `rung_equilibrium_forced` (1), `trajectory_ladder_bounds` (2), `trajectory_tail_collapse` (3), and `rung_equilibrium_two_source`, `two_source_ladder_collapse`, `trajectory_two_source_bounds`, `multi_source_ladder_uniform` (4).

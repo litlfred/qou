@@ -1523,7 +1523,7 @@
   "QOUBlocks:BraidsAndKnots.SkeinResolutionObstruction": {
    "library": "QOUBlocks",
    "module": "BraidsAndKnots.SkeinResolutionObstruction",
-   "source": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean",
+   "source": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -1875,7 +1875,7 @@
   "QOUBlocks:BringsSurface.Su2Generators": {
    "library": "QOUBlocks",
    "module": "BringsSurface.Su2Generators",
-   "source": "folio/quantum-observable-universe/brings-surface/su2-generators.lean",
+   "source": "folio/quantum-observable-universe/braids-and-knots/su2-generators.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -3184,7 +3184,7 @@
   "QOUBlocks:KnotsParticlesConfinement.ConfinementPhaseStratification": {
    "library": "QOUBlocks",
    "module": "KnotsParticlesConfinement.ConfinementPhaseStratification",
-   "source": "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.lean",
+   "source": "folio/quantum-observable-universe/nuclear-interactions/confinement-phase-stratification.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -3217,7 +3217,7 @@
   "QOUBlocks:KnotsParticlesConfinement.DeltaSkeinSubstrateIdentity": {
    "library": "QOUBlocks",
    "module": "KnotsParticlesConfinement.DeltaSkeinSubstrateIdentity",
-   "source": "folio/quantum-observable-universe/knots-particles-confinement/delta-skein-substrate-identity.lean",
+   "source": "folio/quantum-observable-universe/mass-theory/delta-skein-substrate-identity.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -3624,7 +3624,7 @@
   "QOUBlocks:KnotsParticlesConfinement.UnstableAtomDecayChannel": {
    "library": "QOUBlocks",
    "module": "KnotsParticlesConfinement.UnstableAtomDecayChannel",
-   "source": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean",
+   "source": "folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -3980,7 +3980,7 @@
   "QOUBlocks:LiftingAndDescent.QuantumDilogarithm": {
    "library": "QOUBlocks",
    "module": "LiftingAndDescent.QuantumDilogarithm",
-   "source": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean",
+   "source": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -4178,7 +4178,7 @@
   "QOUBlocks:MassEndomorphism.ConjRhoKPairGenCanonicalForm": {
    "library": "QOUBlocks",
    "module": "MassEndomorphism.ConjRhoKPairGenCanonicalForm",
-   "source": "folio/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.lean",
+   "source": "folio/quantum-observable-universe/mass-theory/conj-rho-k-pair-gen-canonical-form.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -4348,7 +4348,7 @@
   "QOUBlocks:MassEndomorphism.MultiLinkJonesQ1Extension": {
    "library": "QOUBlocks",
    "module": "MassEndomorphism.MultiLinkJonesQ1Extension",
-   "source": "folio/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean",
+   "source": "folio/quantum-observable-universe/mass-theory/multi-link-jones-q1-extension.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -4403,7 +4403,7 @@
   "QOUBlocks:MassEndomorphism.RhoKGradedExpansion": {
    "library": "QOUBlocks",
    "module": "MassEndomorphism.RhoKGradedExpansion",
-   "source": "folio/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean",
+   "source": "folio/quantum-observable-universe/mass-theory/rho-k-graded-expansion.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -4414,7 +4414,7 @@
   "QOUBlocks:MassEndomorphism.TauMAsymptoticRepTheory": {
    "library": "QOUBlocks",
    "module": "MassEndomorphism.TauMAsymptoticRepTheory",
-   "source": "folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.lean",
+   "source": "folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -5404,7 +5404,7 @@
   "QOUBlocks:MassTheory.GramDeterminantPlancherelRatio": {
    "library": "QOUBlocks",
    "module": "MassTheory.GramDeterminantPlancherelRatio",
-   "source": "folio/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.lean",
+   "source": "folio/quantum-observable-universe/predicted-spectra/gram-determinant-plancherel-ratio.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -5569,7 +5569,7 @@
   "QOUBlocks:MassTheory.HoefsmitEwCellContent": {
    "library": "QOUBlocks",
    "module": "MassTheory.HoefsmitEwCellContent",
-   "source": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean",
+   "source": "folio/quantum-observable-universe/knots-particles-confinement/hoefsmit-ew-cell-content.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -6064,7 +6064,7 @@
   "QOUBlocks:MassTheory.PFromBraidMirror": {
    "library": "QOUBlocks",
    "module": "MassTheory.PFromBraidMirror",
-   "source": "folio/quantum-observable-universe/mass-theory/p-from-braid-mirror.lean",
+   "source": "folio/quantum-observable-universe/nuclear-interactions/p-from-braid-mirror.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -6625,7 +6625,7 @@
   "QOUBlocks:MassTheory.SpectralSequenceCollapse": {
    "library": "QOUBlocks",
    "module": "MassTheory.SpectralSequenceCollapse",
-   "source": "folio/quantum-observable-universe/mass-theory/spectral-sequence-collapse.lean",
+   "source": "folio/quantum-observable-universe/mass-endomorphism/spectral-sequence-collapse.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -7878,7 +7878,7 @@
   "QOUBlocks:NuclearInteractions.UniversalIlpAlgorithm": {
    "library": "QOUBlocks",
    "module": "NuclearInteractions.UniversalIlpAlgorithm",
-   "source": "folio/quantum-observable-universe/nuclear-interactions/universal-ilp-algorithm.lean",
+   "source": "folio/quantum-observable-universe/knots-particles-confinement/universal-ilp-algorithm.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -7900,7 +7900,7 @@
   "QOUBlocks:Observations.BorromeanQuark": {
    "library": "QOUBlocks",
    "module": "Observations.BorromeanQuark",
-   "source": "folio/quantum-observable-universe/observations/borromean-quark.lean",
+   "source": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -8131,7 +8131,7 @@
   "QOUBlocks:Observations.NucleonBorromeanTopology": {
    "library": "QOUBlocks",
    "module": "Observations.NucleonBorromeanTopology",
-   "source": "folio/quantum-observable-universe/observations/nucleon-borromean-topology.lean",
+   "source": "folio/quantum-observable-universe/mass-theory/nucleon-borromean-topology.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -8230,7 +8230,7 @@
   "QOUBlocks:Observations.TraceRatioObservable": {
    "library": "QOUBlocks",
    "module": "Observations.TraceRatioObservable",
-   "source": "folio/quantum-observable-universe/observations/trace-ratio-observable.lean",
+   "source": "folio/quantum-observable-universe/predicted-spectra/trace-ratio-observable.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -8549,7 +8549,7 @@
   "QOUBlocks:PredictedSpectra.EllipticStabilityLocus": {
    "library": "QOUBlocks",
    "module": "PredictedSpectra.EllipticStabilityLocus",
-   "source": "folio/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean",
+   "source": "folio/quantum-observable-universe/observations/elliptic-stability-locus.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,
@@ -10858,7 +10858,7 @@
   "QOUBlocks:QuantumUniverses.Su2CharactersAndQuantumDimension": {
    "library": "QOUBlocks",
    "module": "QuantumUniverses.Su2CharactersAndQuantumDimension",
-   "source": "folio/quantum-observable-universe/quantum-universes/su2-characters-and-quantum-dimension.lean",
+   "source": "folio/quantum-observable-universe/quantum-observable-universes/su2-characters-and-quantum-dimension.lean",
    "verdict": "green",
    "class": null,
    "exit": 0,

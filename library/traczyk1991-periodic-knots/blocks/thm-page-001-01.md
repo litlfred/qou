@@ -1,0 +1,1 @@
+If K is a p-periodic knot (p +2) and the linking number of the periodic version of K with the axis of rotation is equal to k, then in the polynomial Py(K) =Yaz,I*‘ the sum az;+4);+ of two consecutive coefficients is equal to 0, except possibly when 2i+1= +k(mod p).

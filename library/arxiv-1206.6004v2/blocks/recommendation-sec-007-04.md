@@ -1,1 +1,0 @@
-Referring to the expansions [\[eq:x0exp1\]](#eq:x0exp1){reference-type="eqref" reference="eq:x0exp1"} and [\[eq:x0exp2\]](#eq:x0exp2){reference-type="eqref" reference="eq:x0exp2"} we see that a real path starting with $x < 0$ moving towards $x=0$ must be approaching $[0,0,1]$ along the expansion $y = 2^{-1/3} x^{1/3} +\cdots$ (i.e. $y\rightarrow 0$ too).

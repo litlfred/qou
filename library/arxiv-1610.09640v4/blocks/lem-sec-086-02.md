@@ -1,0 +1,1 @@
+Let u : A →B be a quasi-isomorphism of DG K-rings, let N ∈ D(B), and let ρ : P →N be a K-projective resolution in Cstr(A). (1) The homomorphism qu,P : P →B ⊗A P in Cstr(A) from equation (12.6.4), and the homomorphism ψ : B ⊗A P →N, ψ(b ⊗p) := b·ρ(p), in Cstr(B), are both quasi-isomorphisms. (2) B ⊗A P is a K-projective DG B-module. Derived Categories | Amnon Yekutieli |

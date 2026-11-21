@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0604094v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f0c4c36ab0acf537819987a2db5166320182388e6d87fff89bb9f2ab7ccd4d9a",
   "file": "0604094v1.pdf"
  },
  "provenance": {
-  "title": "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN\u2013ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF",
+  "title": "Generalized volume conjecture and the A-polynomials: the Neumann-Zagier potential function as a classical limit of quantum invariant",
   "authors": "QUANTUM INVARIANT",
   "arxiv": {
    "id": "math/0604094",
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Combining this with a fact that our quantum invariant $Z_\\gamma(\\mathcal{M})$ may be regarded as a quantization of the Bloch invariant, we should have \\begin{equation} \\lim_{\\gamma \\to 0} 2 \\, \\gamma\\, \\log \\left( Z_\\gamma(\\mathcal{M}) \\right) = \\Vol(\\mathcal{M}) + \\I \\, \\CS(\\mathcal{M}) \\end{equation} as a variant of the volume conjecture~\\cite{Hikam00d}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-quantum-dilogarithm-function.md",
-   "section_title": "Quantum Dilogarithm Function",
-   "pages": "3-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This result should be comparable with a conjecture~\\eqref{Gukov_conjecture}, and the invariant $Z_\\gamma(\\mathcal{M}_u)$ is a \\emph{non-compact} generalization of the Jones--Witten invariant.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-quantum-dilogarithm-function.md",
-   "section_title": "Quantum Dilogarithm Function",
-   "pages": "3-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In this sense, our invariant Z\u03b3(M) for M with complete hyperbolic structure can be regarded as a non-compact Uq(sl(2; R)) analogue of the Kashaev invariant, and an asymptotic behavior of Z\u03b3(S 3 \\ K) in the limit \u03b3 \u21920 should coincide with that of the Kashaev invariant JK \u0010 N; e2\u03c0i/N\u0011 in the limit N \u2192\u221e.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In Section 3, we shall reveal that the three- dimensional hyperbolic geometry naturally arises from the quantum dilogarithm function in the classical limit \u03b3 \u21920 as was clari\ufb01ed in Ref.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

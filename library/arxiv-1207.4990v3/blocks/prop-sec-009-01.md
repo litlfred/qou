@@ -1,0 +1,1 @@
+However, as was observed in [@IJK], in the case of algebraic matrix functions $\varphi(z)$ one can take advantage of the algebro-geometric method that had been developed in the late 70s to the early 90s in soliton theory (see e.g. [@BBEIM]).

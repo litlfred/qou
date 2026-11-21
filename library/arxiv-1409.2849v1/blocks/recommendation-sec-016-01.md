@@ -1,1 +1,0 @@
-By gathering these contributions, one can reduce further the complexity of the sum, see \S\ref{subsec:functionalN}.\vspace{1mm} \end{enumerate} In the end, we shall obtain an exact formula for $\kappa(\sigma(\mathbf{1}),\ldots,\sigma(\mathbf{2r}))$ that writes as a sum over Dyck paths of length $2r-2$, with simple coefficients; see Theorem \ref{thm:jointcumulant}.

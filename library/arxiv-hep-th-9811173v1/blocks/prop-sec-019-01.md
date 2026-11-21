@@ -1,0 +1,1 @@
+Following work that involved comparable Clausen values [@Sixth; @Ising], it was observed in [@9806174] that light-by-light scattering yields remarkable results at $s=t=n\in\{4,5,6,7\}$, where the dilogs give rational multiples of the volumes of links.

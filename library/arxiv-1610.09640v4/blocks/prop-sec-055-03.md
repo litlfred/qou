@@ -1,0 +1,1 @@
+Assume A is a nonpositive DG ring. (1) The diﬀerential of every M ∈Cstr(A, M) is A0-linear. (2) The smart truncations from Deﬁnition 7.3.6 are functors from Cstr(A, M) to itself. Exercise 7.3.9. Prove this proposition.

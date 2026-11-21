@@ -1,1 +1,0 @@
-Next, we must convert Theorem A into a count for the number of points (x(1), . . . , x(2r)) ∈A2nr(κ) (later denoted as collections {x(1), . . . , x(2r)}) such that a given upper bound for |S(x(1), . . . , x(2r))| holds.

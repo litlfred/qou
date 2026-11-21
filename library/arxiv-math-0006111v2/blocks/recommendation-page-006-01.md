@@ -1,1 +1,0 @@
-A similar argument using Lemma 4.3.2 of [B] would apply to (2.1.3), we shall therefore restrict the sums in (2.1.2) and (2.1.3) to i′s and j′s in the range 1, . . . , q, and replace (2.1.4) by a sum (2.1.6) X π 1 (q + 1)2 (q)comp(π)ψ(π) over partitions π of {1, 2, . . . , n1} ∪{1′, 2′, . . . , n′ 2}.

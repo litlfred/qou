@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s0097316524000426-main",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s0097316524000426-main/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Journal of Combinatorial Theory, Series A Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+  "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
   "contains": [
     "library/1-s20-s0097316524000426-main/sections/sec-front-matter",
     "library/1-s20-s0097316524000426-main/sections/sec-000",
@@ -32,8 +32,8 @@
     "pages": 10,
     "arxiv": null,
     "doi": "10.1016/j.jcta.2024.105903",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

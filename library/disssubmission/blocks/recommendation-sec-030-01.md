@@ -1,1 +1,0 @@
-To show that the monodromy group G must be a subgroup of W(E6), we give in section 5.3 and 5.4 a detailed study of the integral cohomology and of the N´eron-Severi lattices of the smooth surfaces Yx and Y + x for general x ∈X(C).

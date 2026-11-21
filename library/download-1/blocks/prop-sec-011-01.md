@@ -1,0 +1,1 @@
+Let T be an R-tree and  a ﬁnite Borel measure. Then, for any  > 0, we have  BT m; Sep ; m 3 ;         m  ; ð5:1Þ where m is a median of the measure . In particular, letting X be an mm-space, we have ObsDiamTðX; Þ  2 Sep X; m 3 ;    : ð5:2Þ

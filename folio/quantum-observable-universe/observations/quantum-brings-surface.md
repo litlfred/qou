@@ -1,4 +1,4 @@
-We provide an advanced interactive simulator of quantum Bring's surface.
+This is an advanced interactive simulator of quantum Bring's surface.
 
 This extends the basic simulator with multi-canvas analysis panels:
 

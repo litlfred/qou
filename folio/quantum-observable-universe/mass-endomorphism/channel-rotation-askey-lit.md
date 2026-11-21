@@ -8,7 +8,7 @@ $$
 h_n(x \mid q) \;=\; i^{-n}\, H_n(ix \mid q^{-1}).
 $$
 
-The two channel recurrences are identical up to this rotation. We formalize this generically over a commutative ring $R$ equipped with a bar involution $\sigma$ and a formal rotation element $\iota$ satisfying $\iota^2 = -1$. The Lean declaration `rotation_step` (sibling to [`conj:binding-qbeta-complex-volume`](#conj:binding-qbeta-complex-volume)) encodes this: a sequence satisfies the odd-channel step at $(q, x)$ if and only if its $\iota$-rotation satisfies the even-channel step at $(\sigma q, \iota x)$. The archimedean $i$ emerges only downstream of the functor $\tau$.
+The two channel recurrences are identical up to this rotation. This is proved generically over a commutative ring $R$ equipped with a bar involution $\sigma$ and a formal rotation element $\iota$ satisfying $\iota^2 = -1$: a sequence satisfies the odd-channel step at $(q, x)$ if and only if its $\iota$-rotation satisfies the even-channel step at $(\sigma q, \iota x)$. The archimedean $i$ emerges only downstream of the functor $\tau$.
 
 ## Orthogonality measures
 
@@ -21,7 +21,7 @@ The shared recurrence does not imply a shared spectral measure. The asymmetry re
 | measure | $q$-Plancherel weight (determinate) | indeterminate moment problem |
 | at $q_0 > 1$ | does not exist archimedeanly | native regime |
 
-At the substrate anchor $q_0 > 1$, the even channel has no Bożejko–Speicher $q$-Fock realisation ([`prop:q-gaussian-obstruction-at-q0`](../mass-theory/q-gaussian-obstruction-at-q0.md)); its moment sequence is still positive definite, but no representing measure has a finite moment-generating function. The rotation is therefore irreducibly fibre-level, consistent with observable $\mathrm{Im}(q_0) = 0$. Measure asymmetry explains why parity projection left the binding error unchanged while the recurrence tie holds. A three-term recurrence is measure-independent, whereas a projection is not.
+At the substrate anchor $q_0 > 1$, the even channel has no Bożejko–Speicher $q$-Fock realisation ([Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$](../mass-theory/q-gaussian-obstruction-at-q0.md)); its moment sequence is still positive definite, but no representing measure has a finite moment-generating function. The rotation is therefore irreducibly fibre-level, consistent with observable $\mathrm{Im}(q_0) = 0$. Measure asymmetry explains why parity projection left the binding error unchanged while the recurrence tie holds. A three-term recurrence is measure-independent, whereas a projection is not.
 
 ## Literature precedents
 
@@ -31,7 +31,7 @@ At the substrate anchor $q_0 > 1$, the even channel has no Bożejko–Speicher $
 
 ## Leonard pairs
 
-Zhedanov's $AW(3)$ algebra \cite{zhedanov1991} embeds the rotation as an operator identity. It pairs two operators, each tridiagonal in the other's eigenbasis, with Askey–Wilson polynomials forming the overlap matrix. The generic statement—that any eigencolumn of the channel tridiagonal operator has orthogonal-polynomial entries—is proved as `eigencolumn_eq_overlap`. The self-duality that places the channel overlap into the Askey–Wilson family via Terwilliger's classification \cite{terwilliger2001} is axiomatized by the conjecture class `ChannelLeonardDuality`.
+Zhedanov's $AW(3)$ algebra \cite{zhedanov1991} embeds the rotation as an operator identity. It pairs two operators, each tridiagonal in the other's eigenbasis, with Askey–Wilson polynomials forming the overlap matrix. The generic statement—that any eigencolumn of the channel tridiagonal operator has orthogonal-polynomial entries—is proved. The self-duality that places the channel overlap into the Askey–Wilson family via Terwilliger's classification \cite{terwilliger2001} remains a conjectural hypothesis.
 
 ## Vertex-algebra shadow
 

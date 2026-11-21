@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1901.01312v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a480da38283622d6e9e89a10085df082351fe3e7687c88b86e0da444742cb0c6",
   "file": "1901.01312v1.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For one, the preons must be con\ufb01ned but via what mechanism is not known.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Care must be taken to account for the permutations induced by braidings when systematically exchanging braiding for twisting [@Bilson-Thompson2009].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-51-helon-braids-as-the-basis-states-of-minimal-l.md",
-   "section_title": "Helon braids as the basis states of minimal left ideals of $C\\ell(6)$",
-   "pages": "6-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since $$\\begin{aligned} \\sigma_1^2 \\mapsto I,\\qquad \\sigma_2^2 \\mapsto J,\\qquad \\sigma_3^2\\mapsto K, \\end{aligned}$$ these quaternions must be ruled out from representing physical states.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-62-equivalence-classes-of-braids-from-mathbbh.md",
-   "section_title": "Equivalence classes of braids from $\\mathbb{H}$",
-   "pages": "7-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Jordan algebras arose from Jordan's 1932 attempt to reformulate quantum mechanics by identifying the minimal axioms that should be satisfied by an algebra of observables [@mccrimmon2006taste].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-63-from-one-generation-to-exactly-three.md",
-   "section_title": "From one generation to exactly three",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

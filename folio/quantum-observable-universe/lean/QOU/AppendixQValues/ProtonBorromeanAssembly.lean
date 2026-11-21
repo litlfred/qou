@@ -10,7 +10,7 @@ import Mathlib.Tactic.Ring
 §3b-cond conjecture class for the proton's Borromean mass assembly, and the
 proton-mass substrate identity *derived* from it.
 
-The proposition `prop:proton-mass-substrate-identity` states
+The proposition `conj:proton-mass-substrate-identity` states
   `m_p = 2 · m_μ · F_Bor(q₀) − 12 · m_e`
 (0.24 ppm vs CODATA, 50-dps MPFR verified). The numerics are compute-verified;
 the OPEN categorical content (block "Open work §1") is *why* the structural
@@ -74,5 +74,14 @@ theorem proton_mass_substrate_identity (R : Type*) [CommRing R]
     [A : ProtonBorromeanAssembly R] :
     A.protonMass = 2 * A.mMu * A.fBor - 12 * A.mE := by
   rw [A.assembly, A.multiplicity_eq_two, A.bindingCount_eq_six]; ring
+
+/-- **Isolated total electron-binding deficit (`bean qou-9f4h`):** under
+    `ProtonBorromeanAssembly`, the difference between the dressed constituent
+    term `2 · m_μ · F_Bor` and `protonMass` equals `12 · m_e`. -/
+theorem proton_mass_binding_deficit (R : Type*) [CommRing R]
+    [A : ProtonBorromeanAssembly R] :
+    2 * A.mMu * A.fBor - A.protonMass = 12 * A.mE := by
+  rw [proton_mass_substrate_identity R]
+  ring
 
 end QOU.AppendixQValues

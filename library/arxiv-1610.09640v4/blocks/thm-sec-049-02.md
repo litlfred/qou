@@ -1,0 +1,1 @@
+Let S be a multiplicatively closed set of morphisms in a category A. A localization (AS, Q) of A with respect to S, in the sense of Deﬁnition 6.1.2, exists, and it is unique up to a unique isomorphism.

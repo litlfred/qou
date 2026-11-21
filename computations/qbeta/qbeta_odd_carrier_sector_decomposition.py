@@ -13,7 +13,7 @@ virtual / Hopf / trefoil), reading the neutron/proton amplitudes exactly from
 
 **Result (exact ℚ-Laurent arithmetic, no sympy, no floats, no fit):**
 
-- virtual (σ₀,σ₁; 1 crossing) → **0**;  trefoil (σ₀σ₁σ₀; 3 crossings) → **0**
+- virtual (σ₀,σ₁; 1 crossing) → **0**;  electron word (σ₀σ₁σ₀; 3 crossings; key "trefoil" below) → **0**
   (the odd-crossing sectors are bar-EVEN).
 - unknot (𝟏; identity) → a **quadratic** ``C_unknot(y) = 2y² − 7y + 4``
   (disc 17, field ℚ(√17)).
