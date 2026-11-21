@@ -372,6 +372,18 @@ def main() -> int:
           f"{cur_types}. det V = det(s0) det(s1)^-1 = 1, so V^3 is in SL_2; "
           "a cosh >= 1 would need real positive spectrum, which none has.")
 
+    # exact form of the eigenphase (QOU.QBeta.PhotonVertexEigenphase)
+    trV_ok = sp.simplify(Vb.trace() + (1 + HQ ** 2)) == 0
+    trV3_ok = sp.simplify(2 - V3.trace() - HQ ** 4 * (q ** 2 + 1 + q ** -2)) == 0
+    theta3 = 2 * mp.asin(mpv(HQ ** 2 * sp.sqrt(q ** 2 + 1 + q ** -2) / 2))
+    theta3_direct = mp.acos(mpv(V3.trace()) / 2)
+    check("vertex_eigenphase_exact_form",
+          trV_ok and trV3_ok and abs(theta3 - theta3_direct) < mp.mpf(10) ** -50,
+          "tr V = -(1 + h^2) and 2 - tr V^3 = h^4 [3]_q exactly in Q(q), so the "
+          "V^3 eigenphase is theta = 2 arcsin(h^2 sqrt([3]_q)/2) = "
+          f"{mp.nstr(theta3, 25)} at q_0: real, O(h^2). A ladder factor built on it "
+          f"is cos(theta) = {mp.nstr(mp.cos(theta3), 20)} < 1.")
+
     # scored cell: eps_flavour(V^3) = (q^2-1) P(q) / (q^4 (q^2+1)^3)
     # (QOU.QBeta.FlavourWeightSplit.epsFlavour_V3_eq, sorry-free)
     Pq = q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1
@@ -448,6 +460,7 @@ def main() -> int:
             "two_term_note": "connected two-term part is 0 on three quark "
                              "strands (BetaRoutesTwoTerm.pairSum_eq_of_total_eq)",
             "elements": cur_rows,
+            "theta_V3": mp.nstr(theta3, 40),
             "eps_flavour_V3": mp.nstr(epsF0, 40),
             "E0_canonical_MeV": mp.nstr(E0c, 30),
             "Q_beta_scored_MeV": mp.nstr(QB_scored, 30),
