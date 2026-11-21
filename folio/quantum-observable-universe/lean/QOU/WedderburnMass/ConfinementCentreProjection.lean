@@ -5,7 +5,14 @@ import Mathlib.LinearAlgebra.Span.Basic
 
 
 /-!
-# Confinement = spectral-sequence collapse
+# Confinement: the centre projection and the Frobenius integral
+
+Moved 2026-11-21 from the content-block sibling
+`mass-theory/confinement-categorical.lean`, which shadowed the canonical
+declaration `QOU.WedderburnMass.confinement_categorical`
+(`WedderburnMass/confinement_categorical.lean`) because the `lean.ref`
+resolver picks a sibling by path (QA on #8888). The results here are
+supporting lemmas, not the block's statement.
 
 The collapse of the GB-filtration spectral sequence is the
 categorical statement of color confinement: only the centre
