@@ -312,4 +312,32 @@ theorem trace_scalar_insertion_connected {K ι : Type*} [CommRing K] [Fintype ι
 
 end Charges
 
+/-! ## §6 B: the sign of `χ_(3,1)` of the passage process word
+
+The probe computes, exactly in `ℚ(q)`, `χ_(4)(W_B) = q³`, `χ_(3,1)(W_B) = −(q⁶ − q⁴ + 1)/q`,
+`χ_(2,2)(W_B) = 0` for `W_B = σ₀σ₁σ₂·β_Bor` (tier symbolic-exact; the characters themselves are not
+formalised here). The sign step is: `q⁶ − q⁴ + 1 > 0` for every `q` in an ordered field, so the
+reading-3 vector `(q³, −(q⁶−q⁴+1)/q)` has entries of both strict signs at EVERY `q > 0`. That pattern
+survives any non-zero scalar (both flip) and any conjugation (characters are class functions). -/
+
+section Ordered
+
+variable {F : Type*} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+
+theorem passage_chi31_numerator_pos (q : F) : 0 < q ^ 6 - q ^ 4 + 1 := by
+  nlinarith [sq_nonneg (q ^ 3 - q), sq_nonneg (q ^ 2 - 1), sq_nonneg q, sq_nonneg (q ^ 2),
+    sq_nonneg (q ^ 3)]
+
+theorem passage_readingThree_mixed {q : F} (hq : 0 < q) (c : F) (hc : c ≠ 0) :
+    (0 < c * q ^ 3 ∧ c * (-(q ^ 6 - q ^ 4 + 1) / q) < 0) ∨
+      (c * q ^ 3 < 0 ∧ 0 < c * (-(q ^ 6 - q ^ 4 + 1) / q)) := by
+  have hp := passage_chi31_numerator_pos q
+  have h3 : 0 < q ^ 3 := pow_pos hq 3
+  have hneg : -(q ^ 6 - q ^ 4 + 1) / q < 0 := div_neg_of_neg_of_pos (by linarith) hq
+  rcases lt_or_gt_of_ne hc with h | h
+  · exact Or.inr ⟨mul_neg_of_neg_of_pos h h3, mul_pos_of_neg_of_neg h hneg⟩
+  · exact Or.inl ⟨mul_pos h h3, mul_neg_of_pos_of_neg h hneg⟩
+
+end Ordered
+
 end QOU.QBeta.PairCreationExclusions
