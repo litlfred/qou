@@ -40,7 +40,10 @@ export default proposition({
   label: "prop:alpha-shift-torus-knot",
   title:
     "Pole order at $q=0$ of the torus-knot character: $\\alpha_{\\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$",
-  uses: ["prop:force-carrier-intertwining-correspondence"],
+  uses: [
+    // prop:force-carrier-intertwining-correspondence removed (qou-tm3c): alpha_shift is a pole order of the seminormal characters; which channel a force carrier dominates is not used.
+    "def:delta-q-decoration",
+  ],
   computation: {
     engine: "sympy",
     script: "computations/alpha/alpha_shift_torus.py",

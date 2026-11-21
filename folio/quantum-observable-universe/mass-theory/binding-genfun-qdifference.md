@@ -1,4 +1,4 @@
-**Proposition (q-difference recurrence of the binding generating function; conditional on [Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$](#conj:binding-manybody-eq-jet-filtration)).**
+**Proposition (q-difference recurrence of the binding generating function).**
 
 Let $G(x;q)=\sum_{n\geq 0} B_n(K)\,x^n$ be the generating function of the
 body-order binding terms

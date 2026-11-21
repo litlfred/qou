@@ -94,7 +94,7 @@ ambient index alone is not excluded by stripping and rearrangement.
 Normalisation and stability are therefore part of the axiom set, but they are
 not enough either: if stripping, stability and cyclicity are quantified over
 every word, they force $\mathrm{tr}_M(\beta) = z^{\ell(\beta)}$, which
-contradicts $\mathrm{tr}_M(\sigma_1^2) = hz + 1$. The Lean formalisation
+contradicts $\mathrm{tr}_M(\sigma_1^2) = hz + 1$. The axiom set
 therefore restricts stripping, stability and cyclicity to words of $H_n$ and adds
 the Hecke quadratic, braid and far-commutation relations. From these axioms it
 proves $\mathrm{tr}_M(\sigma_n^2) = hz + 1$ and the product law when $\beta$ is

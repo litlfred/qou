@@ -48,12 +48,10 @@ $H_n(R, q)$:*
 blocks of $H_n(R, q)$ (those associated with the symmetric $[n]$, standard
 $[n{-}1,1]$, and alternating $[1^n]$ representations).  These three
 extremal blocks exhaust the partition lattice if and only if $n \le 3$
-($p(1)=1$, $p(2)=2$, $p(3)=3$, proved in Lean as
-`extremal_exhausts_iff_n_le_three`); already at $n = 4$ ($p(4)=5$), two
-non-extremal blocks $[2,2]$ and $[2,1,1]$ enter
-(`non_extremal_irreps_at_n_eq_four`), and for $A \ge 3$ nucleons the
+($p(1)=1$, $p(2)=2$, $p(3)=3$); already at $n = 4$ ($p(4)=5$), two
+non-extremal blocks $[2,2]$ and $[2,1,1]$ enter, and for $A \ge 3$ nucleons the
 adjacent-chain bridge count $A - 1$ grows strictly slower than the
-all-pairs count $A(A-1)/2$ (`adjacentChain_twice_lt_allPairs_twice`).
+all-pairs count $A(A-1)/2$.
 The partition-by-partition computation (the formal derivation) computes
 all partitions exactly via Young's seminormal form in polynomial time.
 The mass functional uses the three extremal invariants as the
@@ -67,7 +65,7 @@ trace.*
 - *$h_{\mathrm{A}} = q - q^{-1}$, the Hecke parameter, satisfying the exact
   algebraic dependency $h_{\mathrm{A}}^2 = [3]_q - 3$, i.e.
   $2\beta_3 + \beta_2 + 6 = 0$ where $\beta_2 = -2[3]_q$ and
-  $\beta_3 = h_{\mathrm{A}}^2$ (`QOU.Mass.WedderburnMassFormulaCoefficients.beta3_of_beta2`).*
+  $\beta_3 = h_{\mathrm{A}}^2$.*
 
 *All quantities are derived from $q_0$ and $m_e$.  The formula has
 zero fitted parameters.*

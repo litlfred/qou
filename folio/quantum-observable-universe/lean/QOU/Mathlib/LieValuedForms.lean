@@ -6,9 +6,8 @@ import Mathlib.Tactic.NoncommRing
 /-!
 # QOU.Mathlib.LieValuedForms — a concrete model of Lie-algebra-valued forms
 
-`QOU.Mathlib.NonAbelianStokes.LieValuedOneForm` is an abstract carrier with no
-model.  This file gives a **concrete** model on a real normed space `E`, built
-on Mathlib's differential forms
+This file gives a **concrete** model of Lie-algebra-valued forms on a real
+normed space `E`, built on Mathlib's differential forms
 (`Mathlib.Analysis.Calculus.DifferentialForm.Basic`, where an `n`-form is
 `E → E [⋀^Fin n]→L[ℝ] F` and `extDeriv` is the exterior derivative).
 
@@ -51,7 +50,9 @@ supplies the (generally non-abelian) commutator bracket on any normed
 No multiplicative (path-ordered) integral, no holonomy, no parallel
 transport, no non-abelian Stokes theorem, no forms on manifolds, and no
 Bianchi identity: Mathlib has none of this infrastructure, and nothing here
-supplies it.  `QOU.Mathlib.NonAbelianStokes` remains an axiomatised class.
+supplies it.  `QOU.Mathlib.NonAbelianStokes` uses these forms as its carriers
+(`LieValuedOneForm E 𝔤 := OneForm E 𝔤`) and still axiomatises the
+multiplicative integrals and the Stokes identity as a §3b-cond class.
 
 -- Ref: [leitner2026] standard: Kobayashi–Nomizu, Foundations of Differential Geometry I, Ch. II §5 (curvature form, structure equation)
 -/

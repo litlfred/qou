@@ -55,6 +55,11 @@ describe("L3 person", () => {
   it("Roman numerals and 'US' are not pronouns", () => {
     expect(failing("Regime I and Type I; Part I; the US convention")).toEqual([]);
   });
+  it("person inside a quotation is the quoted author's, not the paper's", () => {
+    expect(failing('Heisenberg wrote that "what we observe is not nature in itself".')).toEqual([]);
+    expect(failing('> “We may assume the existence of an ether.”')).toEqual([]);
+    expect(failing('Wigner, a "wonderful gift", which we keep.')).toContain("L3:we");
+  });
 });
 
 describe("L4 premature q", () => {

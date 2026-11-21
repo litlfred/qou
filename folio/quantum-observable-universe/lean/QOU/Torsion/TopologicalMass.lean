@@ -77,7 +77,18 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
     not their norms.  Tying these reals to norms of traces of a vortex morphism
     needs the trace on `End_𝒞(A_{n+1})` and the vortex `γ` as data of this
     structure; neither is available on the bare type `M`, so the fields are
-    left as they are and the gap is recorded here rather than papered over. -/
+    left as they are and the gap is recorded here rather than papered over.
+
+    **Which trace (added 2026-11-21).**  The `‖tr(γ)‖` above is a single trace of
+    the vortex morphism.  The corpus's mass functional is the **two-term
+    Lagrangian trace** `τ(ℒ_q) = τ(𝒟²) + τ(ψ*𝒟ψ)`
+    (`QOU.CategoricalLagrangianTwoTermBridge.trace_lagrangian_two_term_split`,
+    epic `qou-7xl8`), with `τ` the quantum trace `Tr(K^{⊗n} ·)/[2]_q^n` (owner ruling
+    2026-11-20, option 2), which is the convention-D Markov trace
+    (`JimboActionKernel.jimboMarkov`).  A faithful repair of this carrier must
+    decompose `τ(ℒ_q)` — both the `𝒟²` term and the matter term — not a single
+    `‖tr(γ)‖`; whether the blow-up decomposition applies to the matter term is
+    not addressed anywhere in the corpus. -/
 structure TopologicalMassDecomposition (M : Type*) where
   mi : ArchimedeanMassIdentity M
   di : DescentInvolution (M → ℝ)

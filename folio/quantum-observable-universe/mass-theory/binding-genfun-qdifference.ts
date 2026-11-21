@@ -8,7 +8,7 @@ export default proposition({
   },
   title: "The binding generating function's q-difference equation gives a depth-d recurrence",
   uses: [
-    "conj:binding-manybody-eq-jet-filtration",
+    // conj:binding-manybody-eq-jet-filtration removed (qou-tm3c): items (1)-(2) hold for any q-difference kernel R; the conjecture only names the terms B_n.
     "prop:sw-period-residue-sum",
   ],
   proofs: ["prf:binding-genfun-qdifference"],
