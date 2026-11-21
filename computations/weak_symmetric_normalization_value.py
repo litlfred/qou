@@ -66,8 +66,8 @@ def main() -> int:
     wb.data["symbolic_factorisation_exact"] = sym_ok
     wb.data["scope"] = (
         "Evaluates the stated polynomial only. Its reading as the electroweak "
-        "symmetric-channel weight rests on open premises "
-        "(prop:weak-spectral-completeness, conj:electroweak-higgs-torus-link-triplet). "
+        "symmetric-channel weight uses prop:weak-spectral-completeness (proved) "
+        "and conj:electroweak-higgs-torus-link-triplet (open). "
         "Not the G_F-back-solved 213.11 of n_sym_numerical_anchor.py.")
     wb.add_assertion("symbolic_factorisation_exact",
                      computed=1 if sym_ok else 0, expected=1, tolerance=0)
