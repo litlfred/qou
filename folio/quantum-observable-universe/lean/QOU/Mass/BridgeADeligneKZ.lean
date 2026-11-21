@@ -30,6 +30,15 @@ generators to the whole braid group by `intertwine_of_closure`.
    kill `ℂ`.
 
 No hypothesis is placed on the Lagrangian connection beyond its monodromy.
+
+## Which ring `S` the hypotheses are meant for
+
+The theorem holds for every `S`, but it says something only when `S` is a ring of functions on
+the genuine universal cover of the configuration space, with the deck group acting by analytic
+continuation. On other rings hypotheses 1 and 2 decouple from the connection. On the sheet ring
+`Γ → S₀`, every local solution and every monodromy homomorphism give a `FundamentalSolution`
+(`BridgeADeligneTrivialCover`, PR #8692), and `DeligneFullyFaithful` is then not Deligne's
+theorem. Building that universal-cover ring is the open step.
 -/
 
 namespace QOU.Mass.BridgeADeligneKZ
