@@ -4,7 +4,7 @@ title: 'Part C''s Q_MP sweep created 31 PRECISION STRADDLES: mpmath side moved t
 status: todo
 type: task
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-21T05:25:00Z
+updated_at: 2026-11-21T06:35:00Z
 parent: qou-9nnz
 ---
 
@@ -103,3 +103,31 @@ The loosest is **7.8e+7× tighter** than the `1e-50` bound, and the smallest gen
 **And the fix surfaced ties I had not found.** My hand analysis identified the V1/V2 `nn=pn` pair; V3 and V4 carry `pn=pp` ties as well, so there are **8 tied pairs** across the four vertices, not 2. The strict order was hiding real structure, which is the strongest argument for the fix being a correction rather than a relaxation.
 
 **Remaining for this bean:** `pyhecke_native` built for the python 3.13 that now has sympy, then refresh `gamma_gamma_isospin_channel_probe` under it with a budget above 860 s. That should close D4 and let all three witnesses land provenance-clean. The nine confirmed-mixing straddles (taint analysis above) are the separate tranche.
+
+### 2026-11-21 — the straddle tranche is 7 confirmed, and SEVERITY-RANKED
+
+**36 straddles → 7 confirmed genuine mixes**, reached by taint analysis plus four rounds of false-positive elimination. Each round was found by **reading a flagged site**, not by improving the pattern in the abstract, and each removed a distinct class:
+
+| round | count | class removed |
+|---|---:|---|
+| raw taint | 10 | — |
+| exclusion 1 | — | a name tainted BOTH ways (a reassignment, or `p` as a loop variable in a path-bridge comprehension) carries no information |
+| exclusion 2 | 9 | display-only sites (`print`, `_log`) |
+| exclusion 3 | 8 | the enclosing call of an f-string: excluding a `JoinedStr`'s *descendants* does not exclude the `check(cond, f"… {H0} …")` that walks into it — `qbeta_gamma_gamma_crossing_energy_probe`'s `H0` occurs **solely** in a message |
+| reading | **7** | a *deliberate* sympy-vs-mpmath cross-check whose inner `BinOp` was flagged while the enclosing `abs(...)` was the real node — `qbeta_per_block_chi_borromean_closed_forms_probe`'s own print says *"independent-path cross-check at q0"* |
+
+**The 7, ranked by whether the mix can actually move a verdict:**
+
+| severity | file | the mix | tolerance it meets |
+|---|---|---|---|
+| **can flip an assertion** | `delta_lambda_binding_reading_probe` | `abs(tr[p]["W.s"] − z·tr[p]["W"]) < tol` | **`1e-50`** — same shape *and* same tolerance as the one already fixed |
+| touches a published number | `qbeta_option_e_required_level_probe` | `(abs(aug_S)·E0/MP_QB − 1)·100` | `0.001` on a figure AGENTS.md quotes as **+12.470 %** |
+| wrong, unasserted | `colour_weighting_markov_universality_probe` | `d_for_ctype("averaged_weighted", h, delta=delta)` | — |
+| wrong, unasserted | `deuteron_interface_colour_weighting_probe` | same `d_for_ctype` shape | — |
+| wrong, unasserted | `diproton_response_closed_form_probe` | `r_val = h2 · c_val` | — |
+| wrong, unasserted | `long_braid_limit_dominant_line_probe` | `abs(y21n·chi / (y3n·q0^{2N}))` | — |
+| wrong, unasserted | `two_nucleon_bond_response_arity_probe` | `B = −alpha · mp.log(ratio_v)` | — |
+
+**`delta_lambda_binding_reading_probe` is the one to do next**: it is the same `abs(tr − z·tr) < 1e-50` construction as the probe whose three checks broke, so it is the candidate most likely to be a *live* failure rather than a latent one. The other six mix at `2.1e-50` against tolerances of `1e-38`, `0.001` or nothing, so they are wrong numbers that nothing currently asserts tightly enough to catch — exactly the population this bean exists for.
+
+**A caveat on the one deliberate cross-check**, worth a line because it is not a defect but is weaker than it looks: `qbeta_per_block_chi_borromean_closed_forms_probe` compares its two routes at tolerance `1e-38` while the routes themselves sit at *different* `q` (sympy 50-digit vs `Q_MP`, `2.1e-50` apart). It passes, and it would pass whatever the routes disagreed about below `1e-38` — the q difference is not what limits it, but the cross-check cannot see anything finer than its own tolerance either.
