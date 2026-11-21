@@ -1,0 +1,17 @@
+{
+  "$schema": "wheel-cache-member/v1",
+  "member": "pyhecke-native-0.9.0-cp313-linux_x86_64-e4aa6f046952",
+  "package": "pyhecke-native",
+  "version": "0.9.0",
+  "python": "cp313",
+  "platform": "linux_x86_64",
+  "sourceKey": "e4aa6f046952",
+  "sourceTrees": {
+    "tools/pyhecke-native": "810fca148ccb972fed430fe34b2b3488dfffb48f",
+    "tools/hecke-engine": "126895a008e54fc6e059ec980dc2313554557ad2"
+  },
+  "wheel": "pyhecke_native-0.9.0-cp313-cp313-manylinux_2_35_x86_64.whl",
+  "sha256": "7a180a3d2079405fcd54bf0c77a937c5726b4a13cf89223202479da5f35a2911",
+  "builtFrom": "5d986517ee3bbbc1dfc24e71c329065c01fa7788",
+  "builtAt": "2026-11-21T18:25:01Z"
+}
