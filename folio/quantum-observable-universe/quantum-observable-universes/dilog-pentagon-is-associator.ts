@@ -8,7 +8,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["def:q-dilogarithm", "prop:q-dilogarithm-exists"],
-  cites: ["faddeev_kashaev1994"],
+  cites: ["faddeev_kashaev1994", "mcphail-snyder-reshetikhin2025"],
   tags: ["dilogarithm", "pentagon-identity", "associator", "monoidal"],
   authorNotes: [
     {

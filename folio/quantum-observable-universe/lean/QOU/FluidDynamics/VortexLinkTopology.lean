@@ -56,7 +56,8 @@ the standard diagrammatic definition).
   sibling `fluid-dynamics/helicity-conservation.lean` (Călugăreanu–White–Fuller as
   a hypothesis), not here.
 * Conjugation (Markov I) invariance of component linking for non-pure braids is
-  not proved here.
+  not proved here; it is proved in `QOU.FluidDynamics.VortexLinkMarkov`
+  (`markovI_conj`).
 -/
 
 namespace QOU.FluidDynamics.VortexLink

@@ -1207,6 +1207,7 @@ import QOU.Mathlib.HadamardFactorization
 import QOU.Mathlib.JensenZeroCounting
 import QOU.Mathlib.ExponentOfConvergence
 import QOU.Mathlib.HadamardZeroFree
+import QOU.Mathlib.C1GevreyLinearCoeff
 import QOU.Mathlib.CanonicalProductGrowth
 import QOU.Mathlib.HadamardQuotient
 import QOU.Mathlib.HadamardMinimumModulus
@@ -1799,6 +1800,7 @@ import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
 import QOU.BraidsAndKnots.NucleonWeightSpaceQTrace
 import QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace
+import QOU.BraidsAndKnots.StrangeStrandOctet
 import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
 import QOU.MassTheory.GPMTThreeRowCumulantBridge
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation

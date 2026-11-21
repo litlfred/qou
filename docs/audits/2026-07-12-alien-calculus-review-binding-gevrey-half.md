@@ -279,3 +279,17 @@ Formalize-first: the Gevrey sandwich was proved (Lean, sorry-free, lean-direct e
 and the ξ = 1/√2 expectation derived from proved asymptotics *before* the numerical
 hunt. Binding `D(n)`/`a_D^(n)` only — **not** the Q_β `c_k` ladder (distinct objects;
 the c_k flip-flop discipline is untouched). All exploratory; owner closes (§4a).
+
+## Addendum 6 (2026-11-21, bean qou-xfog) — the exact-WKB/TBA route, and why it has no hook here
+
+Grassi, Gu and Mariño show, for the quantum Seiberg–Witten curve of N = 2 SU(2)
+super Yang–Mills (the modified Mathieu operator), that the resurgent structure of the
+all-orders WKB quantum periods is encoded in the Gaiotto–Moore–Neitzke TBA equations,
+which are fixed by the BPS spectrum, and they solve those equations in the
+strong-coupling region (`grassi-gu-marino2019qsw`, arXiv:1908.07065v3, §3, §§3.1–3.3).
+The route needs a quantum curve whose WKB periods are Gevrey-1 with Borel
+singularities at BPS central charges. The binding period reviewed here does not meet
+that entry condition: it is Gevrey-1/2 with an entire level-1 Borel transform (§2),
+and its tail is not q-holonomic (§1 verdict table, Stages 3–6). So the technique is
+recorded as unavailable as-is, not as an open route; using it would first need a
+quantum curve whose periods are the binding period, and none is known in the corpus.
