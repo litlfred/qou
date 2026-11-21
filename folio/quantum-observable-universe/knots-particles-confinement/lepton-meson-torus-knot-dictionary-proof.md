@@ -1,11 +1,11 @@
 **Proof.** 
 The lepton assignment follows from the torus-knot mass tower \cite{jones1987}. The electron is the trefoil $T(2,3)$ (3 crossings), the muon is the cinquefoil $T(2,5)$ (5 crossings), and the tau is the septafoil $T(2,7)$ (7 crossings). Each is a braid $\sigma_1^n$ in $H_2(q)$.
 
-The meson assignment follows from the quark flavor–torus-knot identification. The $d$-quark carries the $T(2,3)$ crossing structure (3 crossings per constituent), and the $s$-quark carries $T(2,5)$ (5 crossings per constituent). A meson $q_1\bar{q}_2$ at $H_3$ has total crossings $n_1 + n_2$:
+The meson assignment uses the quark flavour–lepton partner relation. Each quark is an unknot strand carrying one crossing letter, whose orientation ($\sigma$ or $\sigma^{-1}$) is the quark's own. Its index is the crossing count of its lepton partner: $3$ for the $u$- and $d$-quarks (partner $T(2,3)$) and $5$ for the $s$-quark (partner $T(2,5)$). These indices are generation labels, not crossings carried by the quark strands. A meson $q_1\bar{q}_2$ at $H_3$ is assigned the label sum $n_1 + n_2$:
 
-- $\pi$: $\bar{u}d = 3 + 3 = 6$ crossings
-- $K$: $\bar{u}s = 3 + 5 = 8$ crossings
-- $\phi$: $s\bar{s} = 5 + 5 = 10$ crossings; $\eta$ sits at the same rung but is an $\mathrm{SU}(3)_{\mathrm{f}}$-octet mixture of $u\bar{u}$, $d\bar{d}$ and $s\bar{s}$ rather than pure $s\bar{s}$
+- $\pi$: $\bar{u}d = 3 + 3 = 6$
+- $K$: $\bar{u}s = 3 + 5 = 8$
+- $\phi$: $s\bar{s} = 5 + 5 = 10$; $\eta$ sits at the same rung but is an $\mathrm{SU}(3)_{\mathrm{f}}$-octet mixture of $u\bar{u}$, $d\bar{d}$ and $s\bar{s}$ rather than pure $s\bar{s}$
 
 The normal form in $H_3(q)$ is determined by the Hecke reduction of the meson braid word $\mathfrak{M}_+$ ([Meson (categorical)](categorical-meson.md)). $\square$
 
