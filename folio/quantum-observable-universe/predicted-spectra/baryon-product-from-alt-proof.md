@@ -49,7 +49,7 @@ $$
   \;=\; \lambda_{\mathrm{baryon}},
 $$
 
-an identity in any commutative ring (Lean: `QOU.Archimedean.baryonProductFromAlt`). Every antisymmetric polynomial is divisible by each $v_j - v_i$, hence by $\lambda_{\mathrm{baryon}}$, with symmetric quotient; so $\lambda_{\mathrm{baryon}}$ spans the lowest-degree part of the sign isotype.
+an identity in any commutative ring. Every antisymmetric polynomial is divisible by each $v_j - v_i$, hence by $\lambda_{\mathrm{baryon}}$, with symmetric quotient; so $\lambda_{\mathrm{baryon}}$ spans the lowest-degree part of the sign isotype.
 
 **$R$-rationality.** By implicit differentiation $v_k = -(\partial F/\partial z)/(\partial F/\partial c)$ at $(z, c_k)$, a rational function of $c_k$ over $R(z)$. The ratio $\lambda_{\mathrm{baryon}} / V_3(c_1, c_2, c_3)$ is symmetric in the roots, hence lies in $R(z)$, and the squared Vandermonde of the roots is the discriminant of the cubic ([color-tube cubic](#rem:color-tube-cubic)):
 

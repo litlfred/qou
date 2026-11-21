@@ -66,7 +66,7 @@ are tabulated by the formal derivation.  Each table records:*
   every shape with three or more rows and equals
   $[a-b+1]_q/[2]_q^{a+b}$ on the two-row shape $(a, b)$, exactly and for
   generic $q$ ([Wedderburn–Bratteli recursion](#conj:wedderburn-bratteli-recursion));
-  the witness `y-lambda-jones-markov-witness.json` evaluates it at
+  it is evaluated at
   $60$ digits at the proton pin $q_0 \approx 1.1099785827513808$;*
 - *linear-system condition number and residual.*
 
