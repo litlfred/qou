@@ -596,7 +596,22 @@ def paper_six_term_mass(Z, N, include_inter=True,
             "produces ~10⁵× isospin pathologies — it has been "
             "removed."
         )
-    t1 = canonical_t1(isotope_label)
+    # T1 FREE vs BOUND (2026-11-21, issue #8960). `canonical_t1(label)` is
+    # keyed on the isotope label alone, so it returned the BOUND atom trace
+    # for both the `include_inter=True` and `include_inter=False` calls, and
+    # `assemble_per_derivation_weights`' binding_T1 = E0·(T1_free − T1_atom)
+    # was identically 0 for every isotope. Its ⁴He entry was also a stale
+    # inline literal (0.0553483…, pre-2026-09-05 ordering) where the live
+    # trace is 0.0112374…. The corpus fixes both values: `tr_m_atom_zn`
+    # (manifest `physical_proton`) returns (tr_atom, tr_free) from the same
+    # canonical word, and reproduces the witness entries for p, n, D, T, ³He
+    # bit-for-bit. Use it for A >= 2; A = 1 keeps the witness (free = atom).
+    if Z + N >= 2:
+        from tr_m_atom_via_transfer import tr_m_atom_zn
+        _tr_atom, _tr_free = tr_m_atom_zn(Z, N)[:2]
+        t1 = abs(mp.mpf(_tr_atom if include_inter else _tr_free))
+    else:
+        t1 = canonical_t1(isotope_label)
 
     # T2, T3 evaluation per `tower_mode`:
     if tower_mode in ("brane-legacy", "brane"):
