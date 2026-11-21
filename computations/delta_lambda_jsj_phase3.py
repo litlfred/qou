@@ -91,16 +91,17 @@ def load_atom_braids() -> dict:
         _proton_braid_word,
         _neutron_braid_word,
         he4_compositional_braids,
+        shift_word,
     )
     p = _proton_braid_word()
     n = _neutron_braid_word()
 
     # Deuteron at H_6: p (strands 1-3) + I_pn (σ_3) + n (strands 4-6)
-    D = list(p) + [3] + [g + 3 for g in n]
+    D = list(p) + [3] + shift_word(n, 3)
     # Tritium at H_9: p (1-3) + I_pn (σ_3) + n (4-6) + I_nn (σ_6⁻¹) + n (7-9)
-    T = list(p) + [3] + [g + 3 for g in n] + [-6] + [g + 6 for g in n]
+    T = list(p) + [3] + shift_word(n, 3) + [-6] + shift_word(n, 6)
     # ³He at H_9: p (1-3) + I_pp (σ_3) + p (4-6) + I_pn (σ_6) + n (7-9)
-    He3 = list(p) + [3] + [g + 3 for g in p] + [6] + [g + 6 for g in n]
+    He3 = list(p) + [3] + shift_word(p, 3) + [6] + shift_word(n, 6)
     # ⁴He at H_12: canonical pppnnn (per probe_he4_jsj_topology.py)
     He4 = he4_compositional_braids()["canonical_pppnnn"][0]
 
@@ -188,10 +189,13 @@ def main() -> int:
     builder.add_data("jsj_volumes", vols)
 
     # 2b. Strand-count consistency: what SnapPy actually got vs what we
-    #     declared.  These disagree today — `[g + 3 for g in n]` shifts the
-    #     SIGNED generator, so σ_2⁻¹ (-2) becomes +1 instead of -5 and the
-    #     inter-nucleon braid collapses.  Recorded, not silently repaired:
-    #     fixing it moves every volume below and is a content change.
+    #     declared.  They disagreed until 2026-11-21: the sub-words were
+    #     shifted with a bare `g + k` on the SIGNED generator, so σ_2⁻¹ (-2)
+    #     became +1 instead of -5 and the inter-nucleon braid collapsed.
+    #     Fixed at the builder (`atom_braid_words.shift_word`, bean
+    #     qou-yaqm); this check stays as the regression guard.  The
+    #     committed witness predates the fix and must be regenerated
+    #     (needs SnapPy) before its volumes are read.
     strand_mismatch = {
         a: {"declared_n_strands": n,
             "strands_snappy_infers": strands_snappy_will_use(w)}
@@ -201,7 +205,7 @@ def main() -> int:
     builder.add_data("declared_vs_inferred_strand_counts", strand_mismatch)
     if strand_mismatch:
         builder.add_caveat(
-            "BRAID CONSTRUCTION DEFECT (open, not fixed here): the "
+            "BRAID CONSTRUCTION DEFECT (regression of bean qou-yaqm, fixed 2026-11-21): the "
             "shifted sub-words use `g + k` on the SIGNED generator, so a "
             "negative generator is reflected instead of translated "
             "(σ_2⁻¹ + 3 = +1, not -5). SnapPy therefore closes a braid on "

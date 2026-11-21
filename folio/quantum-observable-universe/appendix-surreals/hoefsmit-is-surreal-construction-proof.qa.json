@@ -1000,6 +1000,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] The channel labelling is false (counterexample above). \"Compatibility with sums is forced\" refers to no stated sum structure. Self-described \"proof sketch\", with the embedding axiomatised in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "a046af02cc28",
+          "ts": "85f29c0ccd19"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:57:21.393Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: Mathlib and Lean references reworded; the embedding is still taken as a hypothesis. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: [sidecar review 2026-11-15, issue #8030] The channel labelling is false (counterexample above). \"Compatibility with sums is forced\" refers to no stated sum structure. Self-described \"proof sketch\", with the embedding axiomatised in Lean."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1717,6 +1733,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:10.495Z",
+  "updated_at": "2026-11-21T07:57:21.393Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

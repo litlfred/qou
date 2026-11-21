@@ -16,7 +16,9 @@ LaTeX label: `prop:emergence-to-quantum-flat`
 
 ## References
 
-- [baez2004] https://doi.org/10.4310/ATMP.2004.v8.n6.a3
+- [baez2004] https://arxiv.org/abs/math/0307200 (Baez–Lauda, 2-groups)
+- [baez-schreiber2007] https://arxiv.org/abs/math/0511710 §4 (2-connections:
+  the vanishing fake curvature condition)
 - [leitner2026] §1-quantum-observable-universe/emergence-to-quantum-flat
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
@@ -33,7 +35,7 @@ namespace QOU
     instanton equation F_A⁻ = 0 under the simplicity constraint.
     The 2-group INN(G_q) is the unique strict 2-group for which
     this equivalence holds. -/
--- Ref: [baez2004], [leitner2026] §1
+-- Ref: [baez2004], [baez-schreiber2007] §4, [leitner2026] §1
 structure QuantumFlatnessEmergence where
   /-- The curvature F_A (scalar representative of the norm). -/
   curvature_norm : ℝ
@@ -60,7 +62,7 @@ structure QuantumFlatnessEmergence where
     flatness on the anti-self-dual component) and B⁻ = 0 (simplicity).
     The conclusion is *derived* by composing the two hypotheses — it is
     no longer carried as a field. -/
--- Ref: [baez2004], [leitner2026] §1
+-- Ref: [baez-schreiber2007] §4, [leitner2026] §1
 theorem emergence_to_quantum_flat
     (qfe : QuantumFlatnessEmergence) :
     qfe.anti_self_dual = 0 :=

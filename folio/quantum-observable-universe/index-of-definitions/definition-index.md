@@ -4,6 +4,7 @@
 
 | Label | Title | Chapter |
 |-------|-------|---------|
+| [def:leray-profile](#def:leray-profile) | Discretely self-similar Leray profile | Ch 18 |
 | [def:qz-bicompletion](#def:qz-bicompletion) | $(q, z)$-bicompletion $\widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z}$ | Ch 11 |
 | [def:Q-value-transition](#def:Q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 14 |
 | [def:su2-basis](#def:su2-basis) | $\mathfrak{su}(2)$ basis | Ch 5 |
@@ -522,7 +523,6 @@
 | [prop:reeb-operations-per-planck](#prop:reeb-operations-per-planck) | Discrete iterations per Reeb circuit | Ch 20 |
 | [prop:sdp-regime-switch](#prop:sdp-regime-switch) | Discrete regime switches in SDP cross-channel couplings across isotopes | Ch 15 |
 | [prop:discrete-vortex-spectrum](#prop:discrete-vortex-spectrum) | Discrete vortex mode spectrum | Ch 18 |
-| [prop:leray-profile](#prop:leray-profile) | Discretely self-similar blowup profile: the Leray equations with $\mathrm{SU}_q(2)$ constraints | Ch 18 |
 | [prop:magic-A-binding-formula](#prop:magic-A-binding-formula) | Doubly-magic light-nucleus binding formula: $\mathfrak{B}(^A_Z\mathfrak{X}) = \rho_F \cdot \mathfrak{m}_e \cdot A \cdot 8G$ | Ch 11 |
 | [prop:hadron-q-self-correction](#prop:hadron-q-self-correction) | Effective substrate parameter: hadron self-deformation of $q$ | Ch 14 |
 | [prop:descent-eigenspaces](#prop:descent-eigenspaces) | Eigenspaces of the descent involution | Ch 4 |
@@ -1184,7 +1184,7 @@
 | [conj:orbital-fourier-decomposition](#conj:orbital-fourier-decomposition) | Quantum numbers from Fourier decomposition of normal-bundle sections | Ch 6 |
 | [conj:borromean-quark](#conj:borromean-quark) | Quarks as Borromean-linked unknots in the exceptional divisor | Ch 15 |
 | [conj:borel-zagier-qou-volumes](#conj:borel-zagier-qou-volumes) | Rational linear independence of QOU hyperbolic volumes (Borel--Zagier) | Ch 14 |
-| [conj:regularity-breakdown](#conj:regularity-breakdown) | Regularity breakdown at $q = 1$: the classical limit as a phase transition | Ch 18 |
+| [conj:regularity-breakdown](#conj:regularity-breakdown) | Regularity breakdown at $q = 1$ and a discretely self-similar blow-up scenario | Ch 18 |
 | [conj:reidemeister-mass-invariance](#conj:reidemeister-mass-invariance) | Reidemeister invariance of mass and binding energy | Ch 11 |
 | [conj:stokes-dt-bps-bridge](#conj:stokes-dt-bps-bridge) | Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies (the closed-sector state-integral bridge, GGM Conjecture 3(d) + GPPV) | Ch 11 |
 | [conj:reverse-limit-q-to-infinity](#conj:reverse-limit-q-to-infinity) | Reverse limit $q \to \infty$ — symmetric counterpart of Kashiwara crystal $q \to 0$ via bar involution (algebraic fragment) | Ch 19 |

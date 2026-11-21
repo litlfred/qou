@@ -57,7 +57,7 @@ $$
 
 ## Shell $n$ from the $n$-th power
 
-Shell $n$ of an atom is the $n$-th power of the transfer matrix at the electron-nucleus junction. Each power corresponds to one **R-I move** (Reidemeister I). This adds one curl to the electron trefoil, increasing the writhe by $1$ without altering the knot type.
+Shell $n$ of an atom is the $n$-th power of the transfer matrix at the electron-nucleus junction. Each power corresponds to one **R-I move** (Reidemeister I). This adds one curl to the diagram of the electron's closure, increasing the writhe by $1$ without altering the link type. (In the backup model the closure is the trefoil; under the electron ruling ([electron](#def:electron-knot)) it is the Hopf link.)
 
 Diagonalize $T_{\gamma e} = S \Lambda S^{-1}$:
 

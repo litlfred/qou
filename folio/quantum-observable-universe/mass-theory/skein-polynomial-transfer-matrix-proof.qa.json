@@ -344,6 +344,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "S↔L: the sibling has no `skein_polynomial_transfer_matrix`, so the ref resolves to the library stub `lean/QOU/Archimedean/skein_polynomial_transfer_matrix.lean:113-118`. That stub is a self-assuming projection `⟨ctx.claim_i_factorisation, ctx.claim_ii_degree_bound, ctx.claim_iii_binomial_cost⟩` of class fields (library:40-49) and is self-described \"**Placeholder canonical** … The full Lean statement is pending\" (library:9-12). It also states the stale convention-C claim `degree ≤ (Z + N) ^ 2 - 1` (library:44, docstring z = 1/(q^{1/2}+q^{-1/2}) at library:80), while the md now claims a rational function with numerator span ≤ (A−1)(A+3) (md:18-20). The sibling differs from the ref: its theorems are bare arithmetic, `2 * choose A 2 + (A - 1) = A ^ 2 - 1` (sibling lean:103-104, the stale C bound) and Σ(A−i−1) = C(A,2). The sibling docstring still says \"Each V̂_i(q) is a polynomial in q^{1/2}\" (sibling lean:10). Nothing about P_N, z_D, the denominator (q²+1)^{A−1} or the (A−1)(A+3) span is formalised. S↔P: the span bound is correct. Entry exponents of M_i lie in [−k_i, k_i]; the numerator q³M₁₁ + (q²+1)M₂₁ spans ≤ 2k_i+3; the sum is A(A−1)+3(A−1) = (A−1)(A+3) (prf:53-73). The table checks for A = 2, 3, 4, 14, 56, 210 (5, 12, 21, 221, 3245, 44517). Gaps: P_N = ∏V̂_i is taken from the cited factorisation theorem, not proved here. \"The bound is attained\" rests on \"a symbolic check over random crossing sequences for A ≤ 5\" (prf:76-77), though it is not in the statement. The beta-decay consequence calls Q \"the ratio of two Skein polynomials\" but displays a difference (prf:120-130).",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
+      },
+      {
+        "field_hash": {
+          "md": "005492f416c3",
+          "ts": "eb53f6ee2622"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:22.038Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: chi(A) relabelled chi_eu(M_0) in a dictionary table, convention-C history sentence reworded to 'alternative Convention-C', parenthetical glosses removed. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: S↔L: the sibling has no `skein_polynomial_transfer_matrix`, so the ref resolves to the library stub `lean/QOU/Archimedean/skein_polynomial_transfer_matrix.lean:113-118`. That stub is a self-assuming projection `⟨ctx.claim_i_factorisation, ctx.claim_ii_degree_bound, ctx.claim_iii_binomial_cost⟩` of class fields (library:40-49) and is self-described \"**Placeholder canonical** … The full Lean statement is pending\" (library:9-12). It also states the stale convention-C claim `degree ≤ (Z + N) ^ 2 - 1` (library:44, docstring z = 1/(q^{1/2}+q^{-1/2}) at library:80), while the md now claims a rational function with numerator span ≤ (A−1)(A+3) (md:18-20). The sibling differs from the ref: its theorems are bare arithmetic, `2 * choose A 2 + (A - 1) = A ^ 2 - 1` (sibling lean:103-104, the stale C bound) and Σ(A−i−1) = C(A,2). The sibling docstring still says \"Each V̂_i(q) is a polynomial in q^{1/2}\" (sibling lean:10). Nothing about P_N, z_D, the denominator (q²+1)^{A−1} or the (A−1)(A+3) span is formalised. S↔P: the span bound is correct. Entry exponents of M_i lie in [−k_i, k_i]; the numerator q³M₁₁ + (q²+1)M₂₁ spans ≤ 2k_i+3; the sum is A(A−1)+3(A−1) = (A−1)(A+3) (prf:53-73). The table checks for A = 2, 3, 4, 14, 56, 210 (5, 12, 21, 221, 3245, 44517). Gaps: P_N = ∏V̂_i is taken from the cited factorisation theorem, not proved here. \"The bound is attained\" rests on \"a symbolic check over random crossing sequences for A ≤ 5\" (prf:76-77), though it is not in the statement. The beta-decay consequence calls Q \"the ratio of two Skein polynomials\" but displays a difference (prf:120-130)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1919,6 +1934,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:27.940Z",
+  "updated_at": "2026-11-21T08:16:22.038Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -2,7 +2,7 @@ The conventional periodic table indexes each element by its atomic
 number $Z$ and electron configuration, an ordering imposed from
 outside the object it catalogues.  In the present framework an
 element *is* a knot: a nuclear Borromean shell structure dressed by
-electron trefoil resonance modes.  Its most natural label is
+electrons, the level words $e_n = \sigma_0\sigma_1\sigma_0\sigma_2\cdots\sigma_n$ of its occupied shells.  Its most natural label is
 therefore intrinsic — the braid whose closure realizes that knot —
 and organizing the table knot-centrically replaces the external
 atomic-number bookkeeping with the element's own topological data.

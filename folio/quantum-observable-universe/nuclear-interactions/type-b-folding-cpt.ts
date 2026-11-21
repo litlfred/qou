@@ -20,6 +20,7 @@ export default conjecture({
     "khovanovlauda2009",
     "brundankleshchev2009",
     "lecouvey2007",
+    "geck-lambropoulou-2004",
   ],
   authorNotes: [
     {

@@ -1154,6 +1154,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "Sibling `.lean:56` (ref resolves only there): hypothesis `crossing_sum < vol_binding·q⁻²`, conclusion `−vol_binding·q⁻² + crossing_sum < 0`: the conclusion is the hypothesis rearranged (tautology). No baryon, generator set, Hopf link or χ(A)=−6. Proof: step 1 calls ½(n₊+n₋)(q+q⁻¹) a \"negative baseline crossing energy\" (prf:4), but that expression is positive for q>0; step 2 \\ | Q\\ | ≤ 1 is asserted from an unstated \"genus constraint\"; step 3 uses tanh(ln q₀) ≈ 0.104 (correct at q₀: (q₀²−1)/(q₀²+1)), so the argument is numerical at one q while the statement has no q-range and quantifies over every baryon. No bound relating the Coulomb term to the baseline is derived"
+      },
+      {
+        "field_hash": {
+          "md": "993e79b37973",
+          "ts": "decfc1615cd7",
+          "lean": "d074dfa42a10",
+          "lean_statement": "4c86ef82e915"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:10:14.196Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the Euler characteristic symbol chi(A) renamed chi_eu(M_0). No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Sibling `.lean:56` (ref resolves only there): hypothesis `crossing_sum < vol_binding·q⁻²`, conclusion `−vol_binding·q⁻² + crossing_sum < 0`: the conclusion is the hypothesis rearranged (tautology). No baryon, generator set, Hopf link or χ(A)=−6. Proof: step 1 calls ½(n₊+n₋)(q+q⁻¹) a \"negative baseline crossing energy\" (prf:4), but that expression is positive for q>0; step 2 \\ | Q\\ | ≤ 1 is asserted from an unstated \"genus constraint\"; step 3 uses tanh(ln q₀) ≈ 0.104 (correct at q₀: (q₀²−1)/(q₀²+1)), so the argument is numerical at one q while the statement has no q-range and quantifies over every baryon. No bound relating the Coulomb term to the baseline is derived"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2301,6 +2319,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:59.409Z",
+  "updated_at": "2026-11-21T08:10:14.196Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
