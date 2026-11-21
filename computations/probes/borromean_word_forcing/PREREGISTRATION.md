@@ -148,3 +148,25 @@ it will be reported with its word.
 
 **E7 (side check, no prediction).** Whether "same χ ⇒ conjugate" fails for *some*
 writhe-0 class in general (other traces), e.g. via a braid and its reverse.
+
+## Addendum 6 (2026-11-21 23:35Z, owner chose "1 2", part 2; written before the run)
+
+**Why three strands.** Brunnian braid on n strands: non-trivial, and deleting any one
+strand gives the identity of B_{n−1}. For n = 3 this is exactly "pure, zero pairwise
+linking, non-trivial" (deleting a strand leaves σ^{2·lk}).
+
+* **E8 (Lean).** n = 2 is impossible: a word in σ₀^{±1} alone with zero linking is the
+  identity. This is a proof, not a prediction.
+* **E9 (counting, a proof).** At length ≤ 6 at most 6 strands can take part. A strand
+  that takes part in no crossing can be deleted without changing the braid, so a
+  Brunnian braid has none. In a pure braid each pair crosses an even number of times,
+  so each strand that takes part is in ≥ 2 crossings, giving ≤ 12/2 = 6 strands.
+* **E10 (search).** All reduced words of length 2, 4, 6 on n = 4, 5, 6 strands. Test
+  pure + zero linking, then deletions, then non-triviality. A deletion with Burau
+  (generic t) ≠ I is non-trivial for certain. For B₂ and B₃ Burau is faithful, so
+  Burau = I is conclusive there; for B₄, B₅ a survivor with Burau = I is reported, not
+  called trivial. Prediction: **no Brunnian braid on 4, 5 or 6 strands of length ≤ 6.**
+  With E8 and the n = 3 result, β_Bor's class would then be the unique Brunnian braid
+  of minimal length over all strand counts, so minimal crossing number forces n = 3.
+* **E11 (no prediction).** Shortest Brunnian 4-strand word found up to length 12, or
+  "none ≤ 12".
