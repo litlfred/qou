@@ -16,8 +16,23 @@
         "reviewed_at": "2026-11-17T00:43:10.959Z",
         "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
         "evidence": "Steps follow; a-function labelling with index rep (n) <-> a = binom(n,2) is consistent with the KL cell order used."
+      },
+      {
+        "field_hash": {
+          "md": "bb86c3628c2a",
+          "ts": "bcefb9119481"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:57.018Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-17 review: the Lean paragraph listing sibling declarations removed and the cited KL-cell fact reworded as taken from the literature; items 1-4 and their argument unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Steps follow; a-function labelling with index rep (n) <-> a = binom(n,2) is consistent with the KL cell order used."
       }
     ]
   },
-  "updated_at": "2026-11-17T00:43:10.959Z"
+  "updated_at": "2026-11-21T08:17:57.018Z"
 }

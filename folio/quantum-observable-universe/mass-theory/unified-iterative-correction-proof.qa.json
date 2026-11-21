@@ -341,6 +341,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "unified-iterative-correction.md:36 'At A = 2 the AME2020 binding is +2.2246 MeV'; proof.md:4-5 'C_λ = m_e · H_q(λ)'; proof.md:27 'discharged by nothing here'",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "55f41aedd6d9",
+          "ts": "be1464e36419"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:03.187Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: Lean declaration names, axiom footprint and witness filename replaced by prose ('established', 'computation record'); the cited findings (AME2020 figure in the statement, unproved hypothesis at proof.md:26) are unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: unified-iterative-correction.md:36 'At A = 2 the AME2020 binding is +2.2246 MeV'; proof.md:4-5 'C_λ = m_e · H_q(λ)'; proof.md:27 'discharged by nothing here'"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1936,6 +1951,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:36.258Z",
+  "updated_at": "2026-11-21T08:17:03.187Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

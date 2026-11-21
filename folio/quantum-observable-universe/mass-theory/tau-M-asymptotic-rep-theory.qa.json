@@ -110,6 +110,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "Lean (sibling) theorem returns three class fields (`c_0_zero`, `c_1_eq_b`, `p_1_vanish`) — self-assuming; it pins c₁ = b, which the statement's ladder (product over k ≥ 2, c₂ = −1) does not contain; c₂ = −1, the factorisation and the parity are not encoded. Proof: the parity step is false — under the bar involution q↦q⁻¹, ħ_q = (q−1)/q ↦ 1−q = −q·ħ_q, not −ħ_q, so bar-invariance does not give evenness in ħ_q; \"c₂ = −1 proved categorically through the bar-even constraint\" gives no argument; \"c₀ = 0\" refers to a factor not in the product. Statement claims \"proved\" rows (c₂) the proof does not establish; mentions production-neutron wiring"
+      },
+      {
+        "field_hash": {
+          "md": "7b6449b26d3b",
+          "ts": "06b3d1e35b6d",
+          "lean": "13d9dd2075fe",
+          "lean_statement": "1b13faa43aad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:52.022Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. The md was rewritten (md:1-37): banner now 'conditional on the open recursion kernel'; the evenness in hbar_q is stated as a property of the ansatz with the correct remark that q->1/q sends hbar_q to -q hbar_q (the earlier false parity step is gone); the status table now marks c_2 = -1 as 'structural ... the factor itself is not derived', c_3 open. These fix the md-side defects in the earlier verdict. The Lean is unchanged: tau_M_asymptotic_rep_theory (tau-M-asymptotic-rep-theory.lean:105-118) returns the three class fields KashiwaraCrystal.c_0_zero, c_1_eq_b and JucysMurphySpectrum.p_1_vanish (self-assuming projection). It pins c_1 = b, a rung the md's product (k >= 2) does not contain; the boxed factorisation, the q=1 and 1-d-irrep rows (F = 1), the N=1 cosine envelope and c_2 = -1 are not stated anywhere in the Lean; the docstring still calls c_2 = -1 'the proved bar-even seed' and 'the production neutron's N=2 wire', which contradicts the md's 'not derived'. The Lean does not encode the claim. No photon/electron/quark ruling conflict."
       }
     ],
     "proof-statement-integrity": [
@@ -2678,6 +2696,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:58.230Z",
+  "updated_at": "2026-11-21T08:17:52.022Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
