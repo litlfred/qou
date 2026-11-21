@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-11-21T20:24:03Z
+updated_at: 2026-11-21T22:42:04Z
 parent: qou-5p7n
 ---
 
@@ -359,3 +359,6 @@ markovTrace_disjointProduct proves DisjointProductLaw from the restricted IsMark
 
 
 2026-11-21 (N2 thread): item-5 projection fixed in PR #8958 commit 3393c8cfa85. The library item QOU.BraidKnot.markovTraceRecursiveReducer (class field projection, no importers) is deleted, and the block's lean.ref now names markovTrace_disjointProduct (sorry-free). Not formalised: the real reducer's termination (the _terminates lemma is met by a constant tracer), its O(l n!) bound, and the correctness of its output. Those stay open here.
+
+
+2026-11-21 (N2 thread): uniqueness merged (#8971, markovTrace_unique). Computable evaluator trWord in PR #8972: Hecke-basis expansion plus Markov peeling, structurally recursive (Lean checks termination), kernel-checked examples. Remaining: prove trWord satisfies IsMarkovTrace (existence, Ocneanu); then uniqueness identifies it with the trace.
