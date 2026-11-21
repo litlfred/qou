@@ -18,14 +18,19 @@ Proved here, sorry-free:
   multiplication by `S x`: `h(x a, b) = h(a, S(x) b)`. With `S² = id` and
   `S(xy) = S(y)S(x)` this makes `†` involutive and contravariant on these
   operators;
-* **restriction to scalars** — `S` fixes `End(𝟙) ≅ R`;
 * **uniqueness** — if `h` is positive definite, the adjoint is unique, so
-  `†` is well defined;
-* **positivity** — if `h` is positive definite, `f† ∘ f > 0` for `f ≠ 0`.
+  `†` is well defined on left multiplications;
+* **involution and contravariance** — `(L x)†† = L x` (from `S² = id`) and
+  `(L (x y))† = L (S y) ∘ L (S x)` (from `S(xy) = S(y)S(x)`);
+* **restriction to scalars** — on `End(𝟙) ≅ R` the dagger is `S`, which is
+  the identity there;
+* **positivity** — `f† ∘ f = h(f, f) > 0` for `f ≠ 0`. This is immediate from
+  the definition once `h` is positive definite (`frobeniusDagger_pos`).
 
-Positivity of `h` is a hypothesis, as in the `.md`: it does not follow from
-non-degeneracy. The `.md`'s "self-adjoint for the pairing" hypothesis is not
-needed for these statements.
+Scope: the dagger is formalised on morphisms `𝟙 → A` and on the left
+multiplication operators of `A`, not on arbitrary morphisms `𝟙 → X` of the
+ambient category. Positivity of `h` is a hypothesis: it does not follow from
+non-degeneracy. The pairing self-adjointness of `S` is not used.
 
 Until 2026-11-21 this file checked only the scalar case `f = z • id` on
 `ℂ²` (QA on #8888).
@@ -77,34 +82,57 @@ theorem frobeniusHerm_sub_right [F : FrobeniusAntipodeData R A] (a u v : A) :
     frobeniusHerm (R := R) a (u - v) = frobeniusHerm a u - frobeniusHerm a v := by
   simp [frobeniusHerm, mul_sub, map_sub]
 
+/-- `U` is an adjoint of `T` for `h`: `h(T a, b) = h(a, U b)`. -/
+def IsFrobeniusAdjoint [F : FrobeniusAntipodeData R A] (T U : A → A) : Prop :=
+  ∀ a b, frobeniusHerm (R := R) (T a) b = frobeniusHerm a (U b)
+
+/-- `f† ∘ f > 0` for `f ≠ 0` when `h` is positive definite. This is immediate
+from `f† ∘ f = h(f, f)` (`frobeniusDagger_comp_self`); nothing else is used. -/
+theorem frobeniusDagger_pos {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {B : Type*} [Ring B] [Algebra K B] [FrobeniusAntipodeData K B]
+    (hpos : ∀ a : B, a ≠ 0 → 0 < frobeniusHerm (R := K) a a) (f : B) (hf : f ≠ 0) :
+    0 < frobeniusDagger (R := K) f f := by
+  rw [frobeniusDagger_comp_self]; exact hpos f hf
+
 /-- **Frobenius dagger is positive-definite** ([`prop:positive-definite-dagger`]).
 
-Over an ordered field, if `h` is positive definite then
-1. left multiplication by `x` has adjoint left multiplication by `S x`;
-2. that adjoint is unique: any `R`-linear `U` with `h(x a, b) = h(a, U b)` is
-   `b ↦ S(x) b`;
-3. `S` fixes the scalars `End(𝟙) ≅ R`;
-4. `f† ∘ f > 0` for every `f ≠ 0`. -/
+Over an ordered field `R`, with `h` positive definite, write `L x` for left
+multiplication by `x`. Then
+1. `L (S x)` is an adjoint of `L x`, and it is the only `R`-linear one;
+2. the dagger `L x ↦ L (S x)` is involutive: `L x` is the adjoint of `L (S x)`
+   (uses `S² = id`);
+3. it is contravariant: the adjoint of `L (x y)` is `L (S y) ∘ L (S x)`
+   (uses `S(xy) = S(y) S(x)`);
+4. on scalars `End(𝟙) ≅ R` it is `S`, and `S` is the identity there.
+Positivity `f† ∘ f > 0` is `frobeniusDagger_pos`, which holds by definition. -/
 theorem frobenius_dagger_positive_definite {R : Type*} [Field R] [LinearOrder R]
     [IsStrictOrderedRing R] {A : Type*} [Ring A] [Algebra R A]
     [F : FrobeniusAntipodeData R A]
     (hpos : ∀ a : A, a ≠ 0 → 0 < frobeniusHerm (R := R) a a) :
-    (∀ x a b : A, frobeniusHerm (R := R) (x * a) b = frobeniusHerm a (F.S x * b)) ∧
-    (∀ (x : A) (U : A →ₗ[R] A),
-        (∀ a b, frobeniusHerm (R := R) (x * a) b = frobeniusHerm a (U b)) →
-        ∀ b, U b = F.S x * b) ∧
-    (∀ r : R, F.S (algebraMap R A r) = algebraMap R A r) ∧
-    (∀ f : A, f ≠ 0 → 0 < frobeniusDagger (R := R) f f) := by
-  refine ⟨frobeniusHerm_mul_left, ?_, antipode_algebraMap, fun f hf => hpos f hf⟩
-  intro x U hU b
-  by_contra hne
-  set c := U b - F.S x * b with hcdef
-  have hc : c ≠ 0 := sub_ne_zero.mpr hne
-  have h1 := hU c b
-  rw [frobeniusHerm_mul_left] at h1
-  have h0 : frobeniusHerm (R := R) c c = 0 := by
-    conv_lhs => rw [hcdef]
-    rw [frobeniusHerm_sub_right, h1, sub_self]
-  exact lt_irrefl _ (h0 ▸ hpos c hc)
+    (∀ x : A, IsFrobeniusAdjoint (R := R) (x * ·) (F.S x * ·) ∧
+      ∀ U : A →ₗ[R] A, IsFrobeniusAdjoint (R := R) (x * ·) U → ∀ b, U b = F.S x * b) ∧
+    (∀ x : A, IsFrobeniusAdjoint (R := R) (F.S x * ·) (x * ·)) ∧
+    (∀ x y : A, IsFrobeniusAdjoint (R := R) (x * y * ·) (fun b => F.S y * (F.S x * b))) ∧
+    (∀ r : R, IsFrobeniusAdjoint (R := R) (algebraMap R A r * ·)
+        (F.S (algebraMap R A r) * ·) ∧ F.S (algebraMap R A r) = algebraMap R A r) := by
+  refine ⟨fun x => ⟨fun a b => frobeniusHerm_mul_left x a b, ?_⟩, ?_, ?_, ?_⟩
+  · intro U hU b
+    by_contra hne
+    set c := U b - F.S x * b with hcdef
+    have hc : c ≠ 0 := sub_ne_zero.mpr hne
+    have h1 := hU c b
+    rw [frobeniusHerm_mul_left] at h1
+    have h0 : frobeniusHerm (R := R) c c = 0 := by
+      conv_lhs => rw [hcdef]
+      rw [frobeniusHerm_sub_right, h1, sub_self]
+    exact lt_irrefl _ (h0 ▸ hpos c hc)
+  · intro x a b
+    have := frobeniusHerm_mul_left (R := R) (F.S x) a b
+    rwa [F.S_invol] at this
+  · intro x y a b
+    have := frobeniusHerm_mul_left (R := R) (x * y) a b
+    simpa [F.S_anti, mul_assoc] using this
+  · intro r
+    exact ⟨fun a b => frobeniusHerm_mul_left _ a b, antipode_algebraMap r⟩
 
 end QOU
