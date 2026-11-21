@@ -8,7 +8,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:gauge-action-groupoid", "def:coulomb-charge"],
-  cites: ["habiro2000", "bilson-thompson2005", "baez-huerta2010"],
+  cites: ["habiro2000", "bilson-thompson2005", "bilsonthompson2007", "baez-huerta2010"],
   defines: ["strand-twist-datum"],
   tags: ["appendix", "standard-model", "framing", "ribbon", "hypercharge"],
   authorNotes: [

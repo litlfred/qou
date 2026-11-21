@@ -21,7 +21,7 @@ $$
 $$
 
 which IS the Bloch-Wigner / Rogers Pentagon identity for the
-dilogarithm.  Bloch–Suslin showed $B(\mathbb{C}) \otimes \mathbb{Q}
+dilogarithm \cite[\S1.1.4, \S2.3.1]{kirillov1995}.  Bloch–Suslin showed $B(\mathbb{C}) \otimes \mathbb{Q}
 \cong K_3^{\text{ind}}(\mathbb{C}) \otimes \mathbb{Q}$. The extended Bloch group $\widehat{B}(\mathbb{C})$ of Neumann, which refines $B(\mathbb{C})$ so that the complexified volume (volume plus $i$ times the Chern--Simons invariant, valued in $\mathbb{C}/4\pi^2\mathbb{Z}$) of a hyperbolic $3$-manifold is defined on it, is surveyed in \cite[\S3]{arxiv-2304.12545v1}.
 
 The **Beilinson regulator** $r_2: B(\mathbb{C}) \to \mathbb{R}$ is
