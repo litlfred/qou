@@ -8802,3 +8802,11 @@ The P3 side finding about `beta_decay_energy_negative` is resolved in Lean: the 
   - #8636's split above q* has 2 vs 4 components and fails at order 0.
   - S-w on 5–6 strands was not run: no ruling fixes how the lepton pair attaches.
 - Still open.
+
+## 2026-11-21 — scoreboard on the two-term Lagrangian trace, every row (PR #8723)
+
+Owner, 04:57: *"Update the scoreboard to use the two-term Lagrangian trace."* Every row of `per-observable-100x-status` now records how the two-term object reaches it, in `two_term_entry` and `summary.two_term_coverage`:
+- mass_decomposition: m_p (anchor, unscored), Q_β, m_n, Δ_pn.
+- q0_pin_only: m_μ, α_em⁻¹, m_K/m_π. The row's own QED term is `not_defined`: muon carrier (qou-6gf9); no meson QED operator on V⊗V*; α_em is a coupling.
+- not_defined: m_e (CAL-1 unit).
+α_em⁻¹ and m_K/m_π are switched to `two_term_covariant_all_pairs_qtrace` with `one_term` kept. **No scored value moved**: the covariant pin equals the one-term pin (`deltaT_allPairs_connected_eq_zero`), asserted to 1e-65. Scoreable count is 1/6 before and after. Unscored adjacent-pin alternatives: α_em⁻¹ 30.895 ppb (derived weighting) and 75.970 ppb (#8554 plain); m_K/m_π 53.283 and 55.889 ppb. Already stale before this PR: docs/precision-goals.md:55 and the AGENTS.md precision section quote the old trio miss factors.
