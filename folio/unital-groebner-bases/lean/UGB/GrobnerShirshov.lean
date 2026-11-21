@@ -13,6 +13,8 @@ import UGB.GrobnerShirshov.StrongMultiplicativity
 import UGB.GrobnerShirshov.JetOrder
 import UGB.GrobnerShirshov.SplayPBW
 import UGB.GrobnerShirshov.LiePBW
+import UGB.GrobnerShirshov.QuadraticPBW
+import UGB.GrobnerShirshov.BlockSplayPBW
 
 /-!
 # Gröbner–Shirshov Bases — Module Root
@@ -37,6 +39,8 @@ provides the algebraic engine behind the QOU lifting mechanism.
 | `Flatness` | Flat deformation from GS confluence |
 | `StrongMultiplicativity` | tensor-product presentation (Bokut–Chen); see `leitner2006` Def. 1.11 for strong multiplicativity |
 | `SplayPBW` | twisted splay rewriting system `ab → c·ba + π(a,b)`; its compositions are trivial iff the Jacobi condition holds; sorted words then form a basis |
+| `QuadraticPBW` | quadratic rewriting systems `ab → R(a,b)`: trivial compositions iff the triple-overlap condition `a·R(b,c) − R(a,b)·c ∈ JM(abc)`; normal words then form a basis |
+| `BlockSplayPBW` | Thm. 1.9 of leitner2006 for basis-presented coordinate algebras: block products + cross-block commutations; associativity, the two derivation conditions and Jacobi give the PBW basis of ordered monomials |
 | `LiePBW` | PBW for a Lie algebra with a finite basis: the Jacobi condition from Mathlib's `lie_jacobi`, under a rank deg-lex order |
 | `JetOrder` | Jet-stratified reduction: ordering extension + complexity |
 
