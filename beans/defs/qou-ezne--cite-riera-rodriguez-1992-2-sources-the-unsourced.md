@@ -73,3 +73,6 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8480, closed o
 ## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
 
 Done on branch `claude/expo-chapter-drain-2026-11-21` (354d4bddc): `riera-rodriguez-1992` added to `em-coupling-bring-zero-mode.ts` cites. Locator checked in the held copy: `library/pjm-v154-n1-p09-s/sections/page-003.md`–`page-004.md` = journal pp. 180–181 (the bean's "pp. 2–8" is PDF pagination): Γ* the (2,4,5) triangle group from the 20-gon with angles π/5, π/4, π/2; φ: Γ* → S₅; Γ = ker φ torsion-free; B = Δ/Γ genus 4. Not done: the two `-- Ref: [riera-rodriguez-1992] pp. 180–181` lines in `EmCouplingBringZeroMode.lean` (need lean-direct).
+
+
+2026-11-21 (expo-chapter, 36f528e0e, PR #8889): Lean residue done. Riera-Rodriguez `-- Ref:` lines added at bringFundamentalTriangleArea and bringTilingFaces; lean-direct exit 0. Stays todo until #8889 merges.

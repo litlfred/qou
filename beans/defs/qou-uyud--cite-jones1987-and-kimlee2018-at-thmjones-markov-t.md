@@ -47,3 +47,6 @@ neither of which [kimlee2018] states.
 ## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
 
 Done on branch `claude/expo-chapter-drain-2026-11-21` (bd9168d5a): `cites: ["jones1987", "kimlee2018"]` on `jones-markov-trace.ts`. Kim–Lee checked in the held copy (`library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-003.md`, page-004): the standard-monomial count is the Catalan number C_n. Not done: Fan 1997 (not registered), the Catalan citation at `markov-trace-frobenius-selection.md:82`, and a `-- Ref:` on `TemperleyLiebTower.lean` (needs lean-direct).
+
+
+2026-11-21 (expo-chapter, 36f528e0e, PR #8889): Lean residue done. TemperleyLiebTower.lean carries `-- Ref: [jones1987]` and `[kimlee2018]`; markov-trace-frobenius-selection now cites kimlee2018 for dim TL_n = Catalan(n). Sum-of-squares step still needs semisimplicity (not in Kim-Lee). Fan 1997 still unregistered. Stays todo until #8889 merges.
