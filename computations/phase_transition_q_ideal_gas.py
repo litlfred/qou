@@ -12,15 +12,16 @@ The gap is reported honestly, and marked tier=open.
 """
 
 from __future__ import annotations
-import math
 import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
+sys.path.insert(0, str(_HERE / "substrate"))
 import _path_bridge  # noqa: F401
 from mpmath import mp  # noqa: E402
-mp.dps = 50
+from _precision import fmt as _fmt, set_compute_dps  # noqa: E402
+set_compute_dps()
 
 try:
     from qou_substrate.constants import q_at
@@ -48,10 +49,10 @@ except Exception:
     from witness_base import WitnessBuilder
 
 # Constants
-R_gas = 8.314462618  # J / (mol K)
-h = Q0 - 1.0 / Q0
+R_gas = mp.mpf("8.314462618")  # J / (mol K), exact SI molar gas constant R = N_A * k_B
+h = Q0 - 1 / Q0
 h2 = h * h
-dim_q = Q0 + 1.0 / Q0  # [2]_q
+dim_q = Q0 + 1 / Q0  # [2]_q
 
 # Molecule Data: (E_cov kJ/mol, n_HB, n_K, T_boil_obs K, T_melt_obs K)
 #
@@ -65,10 +66,10 @@ MOLECULES = {
     "NH3": (mp.mpf("391.0"), 1, 3, mp.mpf("239.81"), mp.mpf("195.4"))
 }
 
-def q_integer(n: int, q: float) -> float:
+def q_integer(n: int, q: mp.mpf) -> mp.mpf:
     return (q**n - q**(-n)) / (q - 1/q)
 
-def main() -> None:
+def main() -> int:
     w = WitnessBuilder("phase-transition-q-ideal-gas", engine="python")
     
     print("=" * 80)
@@ -83,7 +84,7 @@ def main() -> None:
         print(f"[{name}]")
 
         # 1. Cohesion Energy S_q^(∂)
-        S_q_boundary = n_hb * h2 * e_cov * 1000.0  # J/mol
+        S_q_boundary = n_hb * h2 * e_cov * 1000  # J/mol
         
         # 2. Boiling Point (Gas -> Liquid)
         t_boil_pred = S_q_boundary / (dim_q * R_gas)
@@ -94,69 +95,34 @@ def main() -> None:
         t_melt_pred = S_q_boundary / (dim_q * n_k_q * R_gas)
         melt_ratio = t_melt_pred / t_melt_obs
         
-        w.add_data(f"{name}_T_boil_pred", t_boil_pred)
-        w.add_data(f"{name}_T_boil_obs", t_boil_obs)
-        w.add_data(f"{name}_boil_ratio", boil_ratio)
-        # NOT `float(boil_ratio)`. `boil_ratio` is already an mpf — collapsing
-        # it here to populate the dict is what put `boil_ratios.*` and
-        # `boil_ratio_range.{min,max}` into the witness as raw float64, five
-        # fields the raw-float64 ratchet counted as a REGRESSION (6 -> 11).
-        # AGENTS.md permits `float(x)` only inside an f-string for display,
-        # which is where the casts below legitimately are.
+        w.add_data(f"{name}_T_boil_pred", _fmt(t_boil_pred))
+        w.add_data(f"{name}_T_boil_obs", _fmt(t_boil_obs))
+        w.add_data(f"{name}_boil_ratio", _fmt(boil_ratio))
         boil_ratios[name] = boil_ratio
-        w.add_data(f"{name}_T_melt_pred", t_melt_pred)
-        w.add_data(f"{name}_T_melt_obs", t_melt_obs)
-        w.add_data(f"{name}_melt_ratio", melt_ratio)
+        w.add_data(f"{name}_T_melt_pred", _fmt(t_melt_pred))
+        w.add_data(f"{name}_T_melt_obs", _fmt(t_melt_obs))
+        w.add_data(f"{name}_melt_ratio", _fmt(melt_ratio))
         
-        print(f"  T_boil(pred) = {float(t_boil_pred):.1f} K | obs = {float(t_boil_obs):.1f} K | gap ratio = {float(boil_ratio):.2f}x")
-        print(f"  T_melt(pred) = {float(t_melt_pred):.1f} K | obs = {float(t_melt_obs):.1f} K | gap ratio = {float(melt_ratio):.2f}x")
+        print(f"  T_boil(pred) = {float(t_boil_pred):.1f} K | obs = {float(t_boil_obs):.1f} K | gap ratio = {float(boil_ratio):.2f}x")  # float64-ok: stdout display only
+        print(f"  T_melt(pred) = {float(t_melt_pred):.1f} K | obs = {float(t_melt_obs):.1f} K | gap ratio = {float(melt_ratio):.2f}x")  # float64-ok: stdout display only
         print()
 
     print("CONCLUSION: The strict geometric mapping P_q V_q = n_q R T over-predicts temperatures.")
     print("The empirical 'entropy of vaporization' involves a missing topological factor beyond the simple [2]_q.")
     
-    # Was `computed=True, expected=True` under the name "Direct substitution
-    # of [2]_q yields gap ratio ~6-10x" (bean `qou-26f2`). This probe's
-    # finding is a NEGATIVE one — the strict geometric mapping over-predicts —
-    # and the size of the miss is its whole content. A literal `True` recorded
-    # that a conclusion had been reached, not that the numbers supported it:
-    # every ratio could have come out at 1.0, confirming the method works, and
-    # it would still have passed.
-    #
-    # Draining it showed the name was wrong about this script's own numbers.
-    # The measured boil ratios are H2O 6.45x, HF 5.04x, NH3 4.26x — a range of
-    # **4.26-6.45x**, with only one of three inside the stated "6-10x". The
-    # constant had been covering that since the assertion was written.
-    #
-    # RESOLVED (bean `qou-3hre`): the band was wrong when written, not stale.
-    # The two candidates wanted opposite fixes, so both were tested:
-    #   * q₀ moved — the excised literal 1.1099780333553254 gives 4.26-6.44x,
-    #     against 4.26-6.45x at today's `q_at()`. A ~495 ppb shift moves these
-    #     by 0.01x.
-    #   * inputs moved — `MOLECULES` and the cohesion formula were introduced
-    #     once and never modified; every later commit is the float64 excision,
-    #     the q₀ fallback hardening, or the qou-26f2 drain.
-    # The model has not moved, so the prose was corrected to the computation
-    # rather than the reverse. That is not the fit this file's header forbids:
-    # nothing about the model was adjusted to match an observation.
-    #
-    # What is asserted instead is the over-prediction finding itself, which is
-    # what the probe actually establishes and is falsifiable in the direction
-    # that matters: if the geometric mapping ever started working, the ratios
-    # would approach 1 and this would fail.
-    _over = {n: r for n, r in boil_ratios.items() if r > 1.0}
-    w.add_data("boil_ratios", boil_ratios)
-    w.add_data("boil_ratio_range", {"min": min(boil_ratios.values()),
-                                    "max": max(boil_ratios.values()),
+    _over = {n: r for n, r in boil_ratios.items() if r > 1}
+    w.add_data("boil_ratios", {n: _fmt(r) for n, r in boil_ratios.items()})
+    w.add_data("boil_ratio_range", {"min": _fmt(min(boil_ratios.values())),
+                                    "max": _fmt(max(boil_ratios.values())),
                                     "previously_claimed_band": "6-10x (wrong when written; see bean qou-3hre)",
                                     "matches_claimed_band": False})
     w.add_assertion(
         "Direct substitution of [2]_q over-predicts T_boil for every material",
-        computed=len(_over), expected=len(boil_ratios), tolerance=0,
+        computed=str(len(_over)), expected=str(len(boil_ratios)), tolerance="0",
         source=f"T_boil_pred = S_q / ([2]_q R) misses high everywhere: "
-               f"{', '.join(f'{n} {r:.2f}x' for n, r in boil_ratios.items())} "
-               f"(range {min(boil_ratios.values()):.2f}-"
-               f"{max(boil_ratios.values()):.2f}x, NOT the 6-10x the previous "
+               f"{', '.join(f'{n} {float(r):.2f}x' for n, r in boil_ratios.items())} "  # float64-ok: source prose formatting only
+               f"(range {float(min(boil_ratios.values())):.2f}-"  # float64-ok: source prose formatting only
+               f"{float(max(boil_ratios.values())):.2f}x, NOT the 6-10x the previous "  # float64-ok: source prose formatting only
                f"assertion name claimed — see bean qou-3hre)"
     )
     
@@ -190,8 +156,19 @@ def main() -> None:
     # a model adjusted to match an observation.
     w.add_data("finding", "The bare mapping P_q V_q = [2]_q R T over-predicts T_boil by 4.26-6.45x (H2O 6.45, HF 5.04, NH3 4.26) and T_melt by 1.38-2.56x. A derived topological factor for ΔS_vap is required. No fit applied. Status remains OPEN.")
     
-    w.save()
+    w.save({"q0Anchor": "proton", "q0Value": _fmt(Q0)})
     print("Saved witness: phase-transition-q-ideal-gas.witness.json")
+    return 0
+
+
+def _selftest() -> int:
+    assert isinstance(Q0, mp.mpf) and isinstance(R_gas, mp.mpf)
+    assert abs(q_integer(2, Q0) - dim_q) < mp.mpf("1e-60")
+    print("self-test: ok (Q0 and R_gas are mpf, q_integer(2, Q0) == [2]_q)")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    if "--self-test" in sys.argv[1:] or "--selftest" in sys.argv[1:]:
+        raise SystemExit(_selftest())
+    raise SystemExit(main())
