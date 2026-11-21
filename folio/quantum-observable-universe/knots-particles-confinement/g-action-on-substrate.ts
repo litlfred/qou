@@ -6,6 +6,8 @@ export default conjecture({
     "Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate",
   lean: { ref: "qou:QOU.QuantumObservableUniverses.GActionOnSubstrate", validation: "stub" },
   uses: [
+    "thm:ew-triplet-charge-spin-from-involution",
+    "prop:weak-spectral-completeness",
     "def:frobenius-hopf-substrate",
     "rem:hecke-algebra-from-braiding",
     "prop:higgs-vacuum-residual-idempotent",
@@ -22,20 +24,33 @@ export default conjecture({
     "n-sym",
     "open-problem",
   ],
-  // The witness below provides the q_0 numerical anchor cited via
-  // :val[q_0] in the body — it does NOT verify this conjecture
-  // (which is tagged `open-problem`). Status reflects the
-  // conjecture's open status, not the witness script's correctness.
+  // The witness below computes the N_sym(q_0) ≈ 213.11 target the body
+  // compares against (back-solved from CODATA G_F, so a fit, not a
+  // derivation). It does NOT verify this conjecture (tagged
+  // `open-problem`); status reflects the conjecture's open status.
+  // Previously pointed at q_pinning_50_digit.py, which never computes
+  // N_sym; the body carries no :val[q_0] reference (checked 2026-11-20).
   computation: {
     engine: "mpmath",
-    script: "computations/q_pinning_50_digit.py",
-    witness: "computations/q-pinning-50-digit.witness.json",
+    script: "computations/n_sym_numerical_anchor.py",
+    witness: "computations/n-sym-numerical-anchor.witness.json",
     status: "not_run",
   },
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The nearest corpus object is the disjoint-strand-pair realisation of [the Hoefsmit cell-content theorem](#thm:hoefsmit-ew-cell-content), where $W$, $Z$ and $H$ act on separate strand pairs of $V^{\\otimes 6}$. That object has a single $W$ slot rather than separate $W^+$ and $W^-$ hosts, and it assigns $H$ the link $T(2,8)$, not the $q$-dimension $[2]_q$ of (G-2). So it does not establish reading (a)." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): , Lean `VacuumPairing.tr_proj_eq_one`) | that `computations/n_sym_numerical_anchor.py` obtains by dividing" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3):  for a unit-normalised cyclic trace (Lean: `VacuumPairing.tr_proj_eq_one`)." },
+    {
+      kind: "caveat",
+      date: "2026-11-20",
+      body: "**Two quantities are both called N_v (owner chose to record this, 2026-11-20).** `conj:electroweak-higgs-torus-link-triplet` and `ElectroweakBringSchwingerBridge.lean` define $N_v = v/m_p \\approx 262.418$ ($q\\,\\tfrac{[2]_q}{2}[4]_q[6]_q[8]_q + 1/\\pi$ minus the 1-loop term), with no $\\mathcal{N}_{\\rm sym}$ factor. `computations/n_sym_numerical_anchor.py` defines $N_v = v/(E_\\times \\mu_0) = 3v/m_e \\approx 1.4455 \\times 10^6$ and divides by $\\prod_{k=2,3,4} [2k]_q^2/[2]_q \\approx 6782.9$ to get the anchor $\\mathcal{N}_{\\rm sym}(q_0) \\approx 213.11$. Under the block's $N_v$ the same quotient is $\\approx 0.0387$. So 213.11 exists only under the script's definition; it is also back-solved from $G_F$, so it is a fit either way. No numbers are changed here.",
+      see: "computations/n_sym_numerical_anchor.py",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body: "**Derivation attempts after the 'left open' ruling.** (1) Settled: the product in $\\mathrm{tr}_F(e_{\\rm sym}\\cdot e_H)$ must be a tensor product for the value to be a $q$-dimension; read as a composite it is a vacuum matrix element, $0$ or $1$ (`QOU.QuantumObservableUniverses.NSymTraceAlgebra`). (2) Not settled by the trace: whether the electroweak host is a direct sum or a tensor product. (3) The corpus structure elsewhere (Hoefsmit strand pairs, one $W$ slot with $W^-$ the swap-image of $W^+$) matches neither (a) nor (b) and gives $[4]_q[6]_q \\approx 26.25$, conditional on the torus-link identification (`NSymHostStructure`). The ruling stands: no reading is adopted. Audits: `docs/audits/2026-11-20-nsym-host-trace-route.md`, `docs/audits/2026-11-20-nsym-host-corpus-route.md`.",
+    },
     {
       kind: "note",
       date: "2026-11-20",

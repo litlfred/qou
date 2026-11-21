@@ -6,20 +6,20 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-curvature-rank-gb-stratification",
+  "@id": "papers/quantum-observable-universe/blocks/conj-curvature-rank-gb-stratification",
   "@type": [
-    "folio-assistant-sci:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:curvature-rank-gb-stratification",
-  "kind": "proposition",
-  "title": "Curvature-rank stratification of the GB spectral sequence",
+  "label": "conj:curvature-rank-gb-stratification",
+  "kind": "conjecture",
+  "title": "Curvature-rank stratification of the GB filtration",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-frobenius-s-classification",
     "papers/quantum-observable-universe/blocks/def-hecke-curvature-2-cocycle",
     "papers/quantum-observable-universe/blocks/def-curvature-rank"
   ],
-  "leanRef": "qou:QOU.WedderburnMass.curvature_rank_gb_stratification",
+  "leanRef": "qou:QOU.WedderburnMass.CurvatureRankGbStratificationContext",
   "text": "curvature-rank-gb-stratification.md",
   "leanSource": "curvature-rank-gb-stratification.lean",
   "provenance": "authored"
