@@ -1697,6 +1697,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7",
+          "graph": "ba9b3251b965"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1752,6 +1770,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7",
+          "graph": "ba9b3251b965"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1953,6 +1990,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7",
+          "graph": "ba9b3251b965"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2423,6 +2478,22 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). Line 31: 'the other models overshoot |Delta|, giving |Q| > 0.87 MeV' is false for Model D, whose row gives |Delta x E0| = 0.8693 MeV < 0.87. Pre-existing on main (same sentence at main line 31); the PR rewrote the sentence before it but kept this clause. '> 0.86 MeV' or 'at least 0.869 MeV' would be true.",
+        "severity": "minor"
       }
     ],
     "da-vacuous": [
@@ -2483,6 +2554,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "da-circular": [
@@ -2575,6 +2661,21 @@
         "reviewed_at": "2026-11-21T15:53:43.000Z",
         "reviewed_sha": "e286d40a6ca9d857bbc15ada632b05d6c9494e52",
         "evidence": "Resolved (QA major on #8892): the opening now states the no-extra-gluon choice as the model's, gives the double-counting argument as its reason, and says the fitted-E₀ comparison does not test it."
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). The opening no longer rests on the table: it states the choice as the model's, gives the double-counting argument (Interpretation) as its reason, and says the comparison does not test it because E0 is fitted. Resolves the previous major finding."
       }
     ],
     "da-overclaim": [
@@ -2650,6 +2751,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). 'double-counts the gluon contribution' is asserted rather than derived, but the opening now presents the whole no-extra-gluon NF as the model's choice resting on that argument, so the block does not claim more than it supports."
       }
     ],
     "da-hidden-dof": [
@@ -2710,6 +2826,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). E0 = Q/Delta_A is stated three times as a fit outside CAL-1/2/3; the degree of freedom is visible, not hidden."
       }
     ],
     "da-non-sequitur": [
@@ -2770,6 +2901,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2830,6 +2976,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "da-citation-misuse": [
@@ -2890,6 +3051,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "da-definitional-ambiguity": [
@@ -2982,6 +3158,21 @@
         "reviewed_at": "2026-11-21T15:53:43.000Z",
         "reviewed_sha": "e286d40a6ca9d857bbc15ada632b05d6c9494e52",
         "evidence": "Resolved: 'Δ×E₀ = −2.51 MeV, about 3.2 times Model A's value' (2.51/0.7823 = 3.21); color neutrality stated as not met exactly, no tolerance fixed."
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). 'gives Delta x E0 = -2.51 MeV ... about 3.2 times Model A's value' (2.51/0.7823 = 3.21) is consistent; the absolute-value-equals-negative wording is gone."
       }
     ],
     "da-empirical-fragility": [
@@ -3042,6 +3233,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "da-physical-implausibility": [
@@ -3102,6 +3308,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "da-reproducibility": [
@@ -3162,6 +3383,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "da-referee-verdict": [
@@ -3222,6 +3458,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "milnor-amalgamated-flow": [],
@@ -3669,6 +3920,21 @@
         "reviewed_at": "2026-11-21T15:50:53.000Z",
         "reviewed_sha": "96874d030c6a066b4ef4d26783e43b7d6b3d1447",
         "evidence": "Full re-read of the block at PR #8892 head 96874d030c after d18cf2eb2 (E0 = Q/Δ_A stated as a fit; Model A's row 'not a test'; table ranks models only relative to A). Arithmetic checked: -0.1883×4.155 = -0.7824, -0.3521×4.155 = -1.4630, -0.78233/-0.3521 = 2.222. New negations ('its row is not a test', 'a fitted scale, not one of the calibrations CAL-1/2/3', 'This is a fit') carry information a reader needs about the comparison boundary, so they are not the trap. The older ', not an additional factor' was judged pass by agent:q00 and is unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3703,6 +3969,21 @@
         "reviewed_at": "2026-08-15T20:33:56.918Z",
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "full-block read; no rhetorical pivot construction present"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-em-dash": [
@@ -3737,6 +4018,21 @@
         "reviewed_at": "2026-08-15T20:33:57.032Z",
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "full-block read; no em dash construction present"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-triples": [
@@ -3771,6 +4067,21 @@
         "reviewed_at": "2026-08-15T20:33:57.077Z",
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "full-block read; no triples construction present"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-closing-aphorism": [
@@ -3805,6 +4116,21 @@
         "reviewed_at": "2026-08-15T20:33:57.173Z",
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "full-block read; no closing aphorism construction present"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-meta-commentary": [
@@ -3839,6 +4165,21 @@
         "reviewed_at": "2026-08-15T20:33:57.289Z",
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "full-block read; no meta commentary construction present"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-thesis-restatement": [
@@ -3873,6 +4214,21 @@
         "reviewed_at": "2026-08-15T20:33:57.342Z",
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "full-block read; no thesis restatement construction present"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-performed-warmth": [
@@ -3907,6 +4263,21 @@
         "reviewed_at": "2026-08-15T20:33:57.382Z",
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "full-block read; no performed warmth construction present"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-superlative": [
@@ -3972,6 +4343,21 @@
         "reviewed_at": "2026-11-21T15:53:43.000Z",
         "reviewed_sha": "e286d40a6ca9d857bbc15ada632b05d6c9494e52",
         "evidence": "Full re-read after this round; no remaining overclaims in the edited text."
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "trap-nonspeakable": [
@@ -4006,6 +4392,21 @@
         "reviewed_at": "2026-08-15T20:33:57.461Z",
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "full-block read; no nonspeakable construction present"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance of this construction; no em dashes in the block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -4190,6 +4591,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7",
+          "graph": "ba9b3251b965"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0"
       }
     ],
     "da-arity-conflation": [
@@ -4237,6 +4656,21 @@
         },
         "reviewed_tree": "73693aae36069aae41386043e8023e242ae321e1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ff1639b074d5",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (opening now states the no-extra-gluon NF as the model's choice resting on the double-counting argument; '-2.51 MeV, about 3.2 times Model A's value'; color neutrality 'not met exactly, no tolerance fixed'; display math joined onto single lines). No instance found."
       }
     ],
     "dak-companion-present": [
@@ -4424,6 +4858,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:43.000Z",
+  "updated_at": "2026-11-21T15:57:36.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
