@@ -25,6 +25,11 @@ export default proposition({
     "1ppb-roadmap",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-21",
+      body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner: fix issues): Mechanism 1 opened \"Per the [exponential decay of the archimedean brane-tower truncation remainder](#conj:archimedean-remainder-exponential-decay), the truncation residual at depth $N$ satisfies:\"; the dependence is now stated as the conditional banner at the start of the block.",
+    },
     { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): from [$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)" },
     {
       kind: "status",
