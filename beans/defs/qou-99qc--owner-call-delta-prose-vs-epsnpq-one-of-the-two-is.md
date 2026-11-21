@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T12:00:00Z
+updated_at: 2026-11-21T04:21:07Z
 parent: qou-10v9
 ---
 
@@ -8776,3 +8776,11 @@ The P3 side finding about `beta_decay_energy_negative` is resolved in Lean: the 
 - #8698 (meson cluster, option 1) merged with the conjecture restated (option A): κ = ε · partnerCrossings.
 
 - **Correction (owner, 2026-11-21 04:52 CET):** route L is **HELD, not stopped by ruling**. The entry above ("STOPPED as an energy theory (owner option 3)") overstated it. L is paused pending derived nucleon/lepton words; κ's sign and scale stay open choices, nothing ruled against the route. Same correction posted on PR #8693.
+
+## 2026-11-21 — order of an n/p splitting (PR #8714 merged, audit §15)
+
+- Every n/p construction on record (Δ_S, the #8636 state split) is O(h) relative to the nucleon. The O(h) term comes from a writhe change: uu→dd lowers w by 2.
+- γγ words have writhe 0. Between two such words of equal strand count, a trace difference is a link-invariant difference. For knots V(1)=1 and V′(1)=0, and the x^k coefficients are integer Vassiliev invariants (Jones; Birman–Lin), so the difference starts at order ≥ 2.
+- At q₀, x = 0.232. The physical ratio would need |d_k| of 0.026 (k=2), 0.11 (k=3), 0.48 (k=4) or 2.0 (k=5), so orders 2–3 are excluded as leading terms. This is heuristic: the tail is not small.
+- Test for any future γγ n/p pair: a single-scale route with no E₀ needs n and p to be Jones-equal through x³.
+- Still open.
