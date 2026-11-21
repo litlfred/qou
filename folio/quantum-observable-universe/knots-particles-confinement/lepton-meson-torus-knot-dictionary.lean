@@ -1,9 +1,14 @@
 /-
-  Torus-knot dictionary: leptons at H₂ vs mesons at H₃.
+  Generation dictionary: leptons vs mesons.
 
-  Formalizes the structural correspondence between the lepton mass
-  tower (torus knots T(2,n) in H₂(q)) and the meson mass tower
-  (Hopf-bound quark-antiquark pairs in H₃(q)).
+  Formalizes the label arithmetic between the lepton generations
+  (crossing counts n = 3, 5, 7) and the meson tower (Hopf-bound
+  quark-antiquark pairs in H₃(q)). Under the owner ruling of 2026-11-21
+  the electron is σ₀σ₁σ₀ ∈ B₃ (closure: the Hopf link, 3 crossings); the
+  trefoil T(2,3) is the backup reading. The muon and tau labels 5 and 7
+  are the crossing counts of T(2,5) and T(2,7); no three-strand word has
+  been derived for them yet. The theorems below are integer arithmetic
+  on these labels only.
 
   Reading (owner rulings 2026-11-20 and 2026-11-21): a quark is an
   unknot strand carrying one crossing letter, not a torus knot. The
@@ -20,10 +25,10 @@ import Mathlib.Tactic
 
 namespace QOU.ParticleInteractions
 
-/-- Lepton generation index: odd primes 3, 5, 7 indexing the torus
-  knot T(2, n) for electron, muon, tau respectively. -/
+/-- Lepton generation label: the crossing counts 3, 5, 7 of the
+  electron (σ₀σ₁σ₀, Hopf-link closure), the muon and the tau. -/
 def leptonTorusKnotIndex : Fin 3 → ℕ
-  | 0 => 3   -- electron: trefoil T(2,3)
+  | 0 => 3   -- electron: σ₀σ₁σ₀ (3 crossings); backup trefoil T(2,3)
   | 1 => 5   -- muon: cinquefoil T(2,5)
   | 2 => 7   -- tau: septafoil T(2,7)
 

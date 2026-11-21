@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T09:07:14.916952+00:00",
-  "commitSha": "82cd4b6256ea098e23f642958dffa32380bd4ab2",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T12:04:26.961857+00:00",
+  "commitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
   "assertions": [
     {
       "name": "index_matches_primary_source",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 3,
   "computation": "figure-eight-3d-index",
   "scriptFile": "figure_eight_3d_index.py",
-  "scriptHash": "2bc34356bc22",
-  "scriptCommitSha": "82cd4b6256ea098e23f642958dffa32380bd4ab2",
+  "scriptHash": "a1c7acd38c2b",
+  "scriptCommitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,10 +34,17 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/figure_eight_3d_index.py"
+    ],
+    "reproduce": "python3 -u computations/probes/figure_eight_3d_index.py"
   },
   "description": "GGM 3D-index of the figure-eight 4_1 assembled on the triality-validated tetrahedron index I_Delta (Garoufalidis-Hodgson-Hoffman-Rubinstein 1604.02688 Ex 4.1). I_T(x mu + y lam) = sum_k q^k J_D(2k,k,x) J_D(2k-x+2y,k,-2y), with J_D the symmetric index (eq 4) whose S_3-invariance IS the triality pinned in #3868. Exact integer q-series validated to 11 coefficients: I_T(0) = 1-2q-3q^2+2q^3+8q^4+18q^5+18q^6+14q^7-12q^8-52q^9-106q^10; I_T(lam), I_T(2mu) also match. Corrects the #3868 gluing record (the [1,-8,-9,...] target was a wrong secondary value; the real one is [1,-2,-3,2,8,18,...] and the normalization is eq 4, not an open problem). Audit-only; scope-(a); no fit.",
   "contentBlock": "conj:faddeev-phi-b-quasiperiod",

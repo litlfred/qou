@@ -13,6 +13,7 @@ export default conjecture({
     "dimofte-gaiotto-gukov2014",
     "terashima-yamazaki2011",
     "neumann-zagier1985",
+    "arxiv-1803.04009v2",
   ],
   tags: [
     "tier:S",
