@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-20T17:26:36Z
+updated_at: 2026-11-21T02:45:00Z
 parent: qou-9nnz
 ---
 
@@ -438,3 +438,44 @@ Eight orders on a multiplicativity residual is not a precision effect.
 **Scope, measured not assumed:** exactly **1** of the 221 in `da44c4efb5a` carries LP/SDP dual fields — `probes/collision-gradient-lagrangian-probe` — and it is **sound**: every assertion passes both ways and its `primal_obj`/`dual_obj`/`y0_star` moved only at the ~50th digit (`…089723648607` -> `…088136197499`). No other committed witness is implicated.
 
 Known D skips: `atomic_chirality_residue` (timeout 420s), `fitted_ideal_low_isotope_calibration` (rc=1, 'cannot create mpf from None' — real producer defect, pre-existing), `m_tau_complex_volume_search` (SnapPy absent).
+
+## 2026-11-21 — D died TWICE at the turn boundary, not in a probe; relaunched harness-tracked
+
+**The refresh was never 27/78-complete — it was 27/78-dead.** Measured: no `python3` process, log silent for 39 minutes, no `/tmp/refresh4_result.json`. Relaunched over the remaining 52, and it **died again at 6/52**. Both deaths looked like probe failures, because the log's last line was mid-producer each time and on a *different* producer (`gamma_gamma_isospin_composition_rule_probe`, then `particle_gram_bond_locality_probe`).
+
+**The timestamps settle it. Both deaths coincided with the turn ending.**
+
+| death | log last written | last tool call that turn |
+|---|---|---|
+| 1st, 27/78 | 19:19:09 | ~19:19 |
+| 2nd, 6/52 | 19:59:27 | ~19:59 |
+
+Cause: the driver was launched as `nohup python3 -u … &` **inside** a `run_in_background: true` Bash call. That forks and the launcher exits at once, so the harness tracked the *wrapper* and the real work was orphaned with nothing holding it through container idle. The completion notification arriving seconds later saying `exit code 0` was the wrapper succeeding — and reading that as "the refresh finished" is how 27/78 got recorded as a completion in the first place.
+
+**Relaunched correctly**: the compute passed to `run_in_background: true` **directly**, no `nohup`, no `&`, so the harness owns it and the notification will be about the compute. Recorded as a TRAP in `.claude/agent-memory/compute-precision-auditor/measurement-hygiene-traps.md` (`d34f5008caa`) with a pointer in that agent's `MEMORY.md`.
+
+**What saved the run is that the driver is STATELESS.** It baselines every candidate against `git show HEAD:<file>`, not an in-memory snapshot, so a resume re-derives verdicts rather than trusting the dead run's. Two deaths therefore cost coverage, not correctness. A driver holding its baseline in memory would have had to start over — or worse, would have committed verdicts computed against a reference that no longer existed.
+
+**MERGED MAIN FIRST, deliberately** (`73854df6192`, 131 commits). The gate baselines against `HEAD`, and main had moved **67 witnesses** since the merge base, so running on the pre-merge reference would have produced verdicts against the wrong baseline. Measured before merging: main changed **0** of the 52 remaining producers, so the merge was safe for the refresh itself.
+
+### Landed this pass
+
+| commit | what |
+|---|---|
+| `86d22df14d6` | 3 witnesses past the gate (worst `2.81e-34`, `0`, `0`; no flips), each re-verified independently of the driver |
+| `73854df6192` | merge of main; 3 conflicts resolved — see below |
+| `1d993f366ce` | `qbeta-mn-mixed-base-d-cells` re-run forced by that resolution; KEEP at worst `2.125e-49` over 19 fields |
+| `960fdde658b` | `markov_normalisation_convention_span_probe` **could not run at all** — fixed |
+| `d34f5008caa` | the `nohup` TRAP in agent memory |
+
+**The merge conflict worth recording.** `qbeta_mn_mixed_base_d_cells_probe.py`: main renamed `derived_masses._q_0 → _q_0_muon` **and** switched the proton pin from `Q_MP` to `mp.mpf(Q_50_DIGIT_STR)`. Resolved by taking one half from each side, measured rather than guessed — **both** names still exist in `derived_masses`, so main's rename was a preference and not a break-fix, and it was taken; but `Q_MP` carries **90** significant digits against `Q_50_DIGIT_STR`'s **50**, agreeing only to `1.9e-50`, and with `OUTPUT_DPS = 60` a 50-digit input pads digits 51–60 of every serialized result — the float64-padding defect one order up. `Q_MP` kept under AGENTS.md exemption 1. The re-run's gate verdict confirms the reasoning quantitatively: worst move `2.125e-49`, which is the expected ~10× amplification of a `1.9e-50` input difference, so the diff is precision at digit 49–50 and touches no physics. **Scoped to that one file — NOT swept corpus-wide**, which needs the owner.
+
+**The producer that could not run.** `markov_normalisation_convention_span_probe.py` raised `UnboundLocalError: cannot access local variable '_qbeta_e0'`. Root cause is a Python scoping trap, not anything numerical: `_qbeta_e0` is imported at module level (line 98), and #8590 added a **function-local** re-import at line 205 inside `main()` (lines 125–270). A local `import X as name` binds that name as a local of the *entire* enclosing function, not from the statement onward — so the use at line ~178, twenty-seven lines *earlier*, stopped resolving to the global. Confirmed by AST, not by eye. The line-205 statement was wholly redundant (line 98 already does the identical `sys.path` insert and import) and was removed.
+
+**That fix changes no number, and that is measured.** Re-running the repaired producer and gating against `HEAD` gives worst relative move **0.000e+00 over ZERO moved fields**, `allPassed` `True → True`. So the committed witness was correct all along: the bug made the producer *un-runnable* without invalidating its recorded output, which is why nothing downstream had noticed.
+
+### Still open
+
+- **47 producers remain** (`/tmp/refresh_todo_r2.json`), the two expensive `gamma_gamma_*` last.
+- **`hbar_q_order_of_binding_observables_probe` gated out at worst `1.33e+01`** — a 13× move, not rounding. Correctly refused: the gate cannot distinguish a real upstream change from an environment difference at that size, so the committed witness stands. Not diagnosed.
+- **`precision-gates.sh --changed` still owes a clean pass.** It was **SIGTERM'd (exit 143)** by my own 400 s timeout while CPU-starved by D — it never passed, and no commit has claimed it did.
