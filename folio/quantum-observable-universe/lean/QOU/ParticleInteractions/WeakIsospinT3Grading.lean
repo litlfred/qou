@@ -11,7 +11,7 @@ import Mathlib.Tactic
 **Reading of `κ` (owner rulings 2026-11-20 and 2026-11-21).** A quark is an
 **unknot strand** of the pure braid `B₃`, carrying one crossing letter (`σ` or
 `σ⁻¹`); it is **not** a torus knot `T(2,n)`. The torus knot `T(2,n)` is the
-quark's **lepton partner** (`T(2,3)` the electron, `T(2,5)` the muon, `T(2,7)`
+quark's **lepton partner** (the electron — word σ₀σ₁σ₀, Hopf-link closure, owner ruling 2026-11-21; trefoil `T(2,3)` as backup — `T(2,5)` the muon, `T(2,7)`
 the tau). So the integer `κ` below is read as follows:
 
 * `|κ| = n` is the **lepton partner's crossing count** — a generation label,
@@ -366,8 +366,9 @@ theorem partner_flips_T3_same_generation (q : Quark) :
 
 /-! ### The lepton partner's crossing count (owner rulings 2026-11-20 / 2026-11-21) -/
 
-/-- **Crossing count of the quark's lepton partner** `T(2,n)`: the electron
-    trefoil `T(2,3)` for the first generation, `T(2,5)` for the second,
+/-- **Crossing count of the quark's lepton partner** `T(2,n)`: for the first
+    generation the electron, whose word σ₀σ₁σ₀ (closure: the Hopf link, owner
+    ruling 2026-11-21) has 3 crossings, as does the backup trefoil `T(2,3)`; `T(2,5)` for the second,
     `T(2,7)` for the third.  Stated by generation, not read off
     `signedWrithe`, so that `genWinding_eq_partnerCrossings` below is a check
     and not a tautology. -/

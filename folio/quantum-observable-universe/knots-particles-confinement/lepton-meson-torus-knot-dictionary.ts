@@ -8,6 +8,20 @@ export default proposition({
   uses: ["def:categorical-meson"],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-21",
+      body:
+        "**Electron word ruling (owner, 2026-11-21) — not yet propagated through this block.** " +
+        "The electron is now $\\sigma_0\\sigma_1\\sigma_0 \\in B_3$, whose closure is the Hopf link; " +
+        "the trefoil $\\sigma_0^3 \\in B_2$ (leptons in $H_2$) is kept as the **backup** reading " +
+        "(`docs/coordination/owner-rulings.md`). This block was written in the backup reading " +
+        "(electron $= T(2,3)$, lepton tower $\\sigma_1^{2k+1}$ in $H_2$). Under the ruling: the " +
+        "first-generation label $3$ survives as the crossing count of the word $\\sigma_0\\sigma_1\\sigma_0$; " +
+        "the muon and tau entries ($T(2,5)$, $T(2,7)$) are not re-derived; and the closure of the " +
+        "electron word is the same link type (Hopf link) that the notation table assigns to the gluon, " +
+        "a collision not yet resolved.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-11-21",
       body:

@@ -21,9 +21,12 @@ import Mathlib.Tactic
 namespace QOU.ParticleInteractions
 
 /-- Lepton generation index: odd primes 3, 5, 7 indexing the torus
-  knot T(2, n) for electron, muon, tau respectively. -/
+  knot T(2, n) for electron, muon, tau respectively (backup reading). Under the
+  owner ruling of 2026-11-21 the electron is the word σ₀σ₁σ₀ ∈ B₃ (closure: Hopf
+  link), whose crossing count is still 3; the muon and tau entries are not
+  re-derived under that ruling. -/
 def leptonTorusKnotIndex : Fin 3 → ℕ
-  | 0 => 3   -- electron: trefoil T(2,3)
+  | 0 => 3   -- electron: σ₀σ₁σ₀ (Hopf-link closure, owner ruling 2026-11-21); trefoil T(2,3) is the backup reading
   | 1 => 5   -- muon: cinquefoil T(2,5)
   | 2 => 7   -- tau: septafoil T(2,7)
 
