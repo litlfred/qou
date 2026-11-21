@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T04:21:07Z
+updated_at: 2026-11-21T04:28:55Z
 parent: qou-10v9
 ---
 
@@ -8786,3 +8786,19 @@ The P3 side finding about `beta_decay_energy_negative` is resolved in Lean: the 
 - Still open.
 
 - **2026-11-21 (PR #8704, branch claude/beta-em-self-energy-split-2026-11-21) — pairwise EM escapes the β conserved-charge no-go (proved), but only in the static part the scored two-term convention discards.** Lean `QOU.QuarkState.PairwiseChargeEnergyBeta` (sorry-free, generic field). #8676's no-go assumes an energy that is a function of the total of a per-strand additive SEPARABLE charge. A pairwise energy w·Σ_{i<j}Q_iQ_j + s·ΣQ² = (w/2)Q_tot² + (s−w/2)ΣQ², and ΣQ² is additive but not separable (Q² = (T³+Y/2)² has a T³·Y cross term), so the n⊗ν − p⊗e⁻ split is (s−w/2)(Q_u−Q_d)(Y_ℓ−Y_q) = (2w−4s)/3 at SM charges (`uniform_split`, `uniform_split_SM`; zero iff w = 2s). Two weights: w_L − w_N/3 − s_q/3 − s_ℓ (`twoWeight_split_SM`); nucleon-only −w_N/3 − s_q/3 < 0 for w_N>0, s_q≥0 (`nucleon_em_split_neg`: EM makes p heavier, physical sign). Corpus two-term term: the covariant all-pairs insertion is a scalar on each weight space (−1/3 on n⊗ν, −1 on p⊗e⁻ with a spectator lepton strand, premise E1, [2]_q⁴ normalisation E2), raw split −2P/(3q²(q²+1)⁴) (`covariant_raw_split`), connected identically 0 (`covariant_connected_split`, `connTrace_smul_one`): the 'connected' subtraction removes exactly the pairwise EM term. Numbers (proton q₀, 70 dps, m_e·t, + sign; − sign is the negation): nucleon all-pairs raw n−p −0.0565059 MeV (−4.37 % of CODATA m_n−m_p 1.29333); β covariant raw +0.0623804 MeV (7.97 % of Q_β 0.78233); adjacent comparison raw +0.0107875, connected +0.000390788 MeV. DERIVED: charge structure, quantum-trace weighting, covariant all-pairs (owner-ruled). SELECTED/not fixed: coupling w (never derived; NeutronProtonEMSign), raw vs connected, overall sign of m_e·t, lepton-strand extension E1/E2, w_N vs w_L. Not identified with Q_β.
+
+## 2026-11-21 — owner "1 2": correction to the entry above, Lean, γγ beyond 4 strands (PR #8721 merged, audit §16)
+
+- **CORRECTION** to the "order of an n/p splitting" entry above. "γγ (writhe-0) differences start at order ≥ 2" holds for KNOTS only. Measured exactly (3 strands up to length 7, 4 strands up to length 6):
+  - tr_{z_D} = 2^{−(n−c)}(1 + (2w − 3·lk)e + O(e²)), with e = q − 1.
+  - So a difference in c gives order 0, and a difference in lk gives order 1.
+  - The test "Jones-equal through x³" stands, because it already requires equal c and lk.
+- **Lean** (`CrossingChangeTrace.lean`, sorry-free):
+  - g² = hg + 1 ⇒ g⁻¹ = g − h;
+  - tr(agb) − tr(ag⁻¹b) = h·tr(ab).
+  - The closed first-order formula is NOT proved (no braid / Ocneanu infrastructure in Lean).
+- **γγ beyond 4 strands:**
+  - Reading 3 has no nucleon argument, so it gives the same word for n and p on any strand count (scope b).
+  - #8636's split above q* has 2 vs 4 components and fails at order 0.
+  - S-w on 5–6 strands was not run: no ruling fixes how the lepton pair attaches.
+- Still open.
