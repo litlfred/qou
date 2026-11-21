@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T04:07:55Z
-updated_at: 2026-10-04T15:24:58Z
+updated_at: 2026-11-21T15:28:29Z
 parent: qou-5vkl
 ---
 
@@ -61,3 +61,5 @@ Consequences for this bean:
 Recorded in `.claude/agent-memory/lean-verifier/verification-harness.md` §17a.
 
 - **Round 94 (`litlfred/qou#8424`)**: Advanced in `feat/round94-parity-level-lever1depth2-tauclosed-chainlog-43c1` (Commit 1 `c1698951b30460bb111c1e97552482f0b0622bd0`, Commit 2 `5a166eac86b999ab31c9bdd39f5908e1c848e122`, probe sha256 `1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb`).
+
+2026-11-21 (PR #8885): wired. lean-library-sweep.py runs lean-sync-olean-trees.sh at start. lean-shadow-verify.sh (and so lean-content-sweep.sh) runs it when its imbalance check fires. Because it runs every sweep, it also re-unions a tree that the SessionStart build is still writing. Closes when #8885 merges.
