@@ -1,13 +1,13 @@
 ---
 # qou-9xla
 title: 'PRODUCER (missing): prf:interface-knot-markov-z''s 4-atom table has no producer -- write one, regenerate under D'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T22:49:46Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T14:30:00Z
 parent: qou-v2om
 ---
 
@@ -112,3 +112,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8313, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** the table it would regenerate is convention C, and convention C is superseded (use D). Recommend: scrap the convention-C producer request; if the 4-atom table is still wanted, it is a new producer under D on the γγ word.
+
+## 2026-11-21 — owner cleanup (binding-hygiene, session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+**Scrapped on owner approval** (tap "Do all three", 2026-11-21). Evidence: the bean asks for a producer of a convention-C table (`z_s`, √q/(q+1)). Convention C is excised (owner ruling 2026-08-15, D canonical). A new producer would have to be written under D on the γγ-selected word (PR #7876), which is a different task, not this one.

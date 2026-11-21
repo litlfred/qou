@@ -1,13 +1,13 @@
 ---
 # qou-7xa5
 title: 'derive-binding-bond-type: the committed witness is a green PASS for a REFUTED law, and its numbers no longer reproduce (7.515 -> 1.795, ordering flipped)'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-26T12:21:32Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T14:30:00Z
 parent: qou-v2om
 ---
 
@@ -247,3 +247,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8296, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** the producer implements the REFUTED Δtr law and the old letters; route (c) (SUPERSEDED banner) is on main (`derive_binding_bond_type.py` line 2). Defect C (hardcoded `<`) is also fixed on main (line 156-161 computes the operator). Recommend: scrap, pointing at the banner; route (b) would be a new arc on the γγ word.
+
+## 2026-11-21 — owner cleanup (binding-hygiene, session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+**Scrapped on owner approval** (tap "Do all three", 2026-11-21). Evidence: the bean asks to refresh a witness for a law the corpus has refuted (the Δtr bond-type law); `computations/derive_binding_bond_type.py` line 2 carries a SUPERSEDED banner; the code defect C it also names is already fixed on main (lines 156-161). Any redo belongs on the γγ-selected word (PR #7876), not this producer.
