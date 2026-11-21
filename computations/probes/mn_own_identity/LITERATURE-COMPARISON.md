@@ -598,3 +598,36 @@ sorry-free, lean-direct exit 0, axioms `propext, Classical.choice, Quot.sound`).
   i.e. a vanishing own-sector constant.
 - No 12. The 12 would now have to be the `∇`-eigenvalue of the nucleon state (in units where the
   overall scale is CAL-1), which makes the open question spectral and scale-free.
+
+## 20. ∇ from the corpus SU(2) calculus: μ = 0 under the flat connection (2026-11-21)
+
+Pre-registered in `PREREGISTRATION-su2-calculus-nabla.md` (commit 87ff912a34b, before the run).
+
+**Corpus search.** The only concrete connection is on `O(SU(2))` with the left-invariant calculus
+(`connection-su2.md`, `reeb-su2.md`): Reeb `ξ = ½ diag(1, −1)`, horizontal = no `ω₃` component.
+Lean `nablaEndo` is never instantiated; the nucleon weight-space files define braid generators and
+charge operators only. The connection 1-form `𝒜` is free data.
+
+**Identification (mine, can be rejected).** On `(C²)^{⊗3}`, Reeb = Cartan `ξ_tot` and horizontal =
+root vectors `E, F`, acting through the U_q(sl₂) coproduct; flat connection `𝒜 = 0`. The U_q
+relations `KE = q²EK`, `KF = q⁻²FK`, `[E,F] = (K − K⁻¹)/(q − q⁻¹)` all check exactly.
+
+**Results, exact, for every normalised state in each weight space (generic symbolic state):**
+
+| | ⟨E⟩, ⟨F⟩ | ⟨ξ⟩ | K-weight | tr(Kψφ ξ) |
+|---|---|---|---|---|
+| proton `W(2,1)` | 0, 0 | +1/2 | q | q/2 |
+| neutron `W(1,2)` | 0, 0 | −1/2 | q⁻¹ | −1/(2q) |
+
+- Horizontal: `μ = 0`. Under the flat connection the own-sector constant `c` vanishes for every
+  normalised weight state, because `E, F` shift weight. This agrees with the §19 route (the bridge's
+  `hHoriz` forces `μ = 0`) and reaches it independently.
+- Reeb: `ξ_tot` is the isospin `T³`. The K-weighted Reeb matter difference is
+  `n − p = −(q² + 1)/(2q) = −[2]_q/2`, so the matter term contributes `−(1 − q⁻¹)[2]_q/2` to
+  `τℒ_n − τℒ_p`. This is a model quantity; its sign is not compared to the mass splitting here,
+  because the map from the sign of a trace of `ℒ` to a mass has not been derived.
+- The 12: not attainable in this class.
+
+**What would change this.** A non-zero own-sector constant needs a connection 1-form `𝒜` with a
+weight-zero horizontal component. The corpus leaves `𝒜` free, so supplying one is a modelling
+choice for the owner.
