@@ -17,7 +17,7 @@ export default remark({
   },
   uses: [
     "conj:borromean-baryon-mass-formula",
-    "prop:q-beta-spectral-bridge",
+    "conj:q-beta-spectral-bridge",
   ],
   cites: ["codata2022"],
   tags: [

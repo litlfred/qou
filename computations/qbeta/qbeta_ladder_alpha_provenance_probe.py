@@ -14,7 +14,7 @@ Nobody had asked the prior question: **what derives the form?** The corpus
 answers with one citation. The precision-ladder block says
 
     alpha = (z-1)h/2 is the single-wrap eigenphase on V_(2,1)
-    (per prop:q-beta-spectral-bridge)
+    (per conj:q-beta-spectral-bridge)
 
 so this probe reads that source and measures whether it supports the use.
 
@@ -113,7 +113,7 @@ def main() -> int:
     print(f"  h  = {mp.nstr(h, 14)}   u = b*hbar^2 = {mp.nstr(u, 14)}")
 
     # ---- 1. what the cited source actually contains -----------------------
-    print("\n[1] the cited source: prop:q-beta-spectral-bridge")
+    print("\n[1] the cited source: conj:q-beta-spectral-bridge")
     hits: dict[str, int] = {t: 0 for t in CLAIMED_TERMS}
     missing = [p for p in BRIDGE_FILES if not p.exists()]
     for path in BRIDGE_FILES:
@@ -128,7 +128,7 @@ def main() -> int:
         "cited_source_names_no_eigenphase",
         not missing and all(v == 0 for v in hits.values()),
         "the ladder attributes alpha to 'the single-wrap eigenphase on V_(2,1) "
-        "per prop:q-beta-spectral-bridge'; that source contains zero "
+        "per conj:q-beta-spectral-bridge'; that source contains zero "
         f"occurrences of any of {CLAIMED_TERMS}"
         + (f" (MISSING FILES: {[p.name for p in missing]})" if missing else ""),
     )
@@ -223,7 +223,7 @@ def main() -> int:
     out = {
         "probe": "qbeta_ladder_alpha_provenance_probe",
         "bean": "qou-cds1",
-        "question": "does prop:q-beta-spectral-bridge derive the ladder phase "
+        "question": "does conj:q-beta-spectral-bridge derive the ladder phase "
                     "alpha = (z-1)h/2, as the precision-ladder block claims?",
         "answer": "no -- it produces (z-1)h/2 as the first-order coefficient of "
                   "a multiplicative form-ratio, names no eigenphase and no "
