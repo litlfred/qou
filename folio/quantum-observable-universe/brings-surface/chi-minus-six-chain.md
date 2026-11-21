@@ -10,7 +10,7 @@ $$
   \chi(M_0, V) = d + r(1 - g) = 0 + 2(1 - g) = 2 - 2g
 $$
 
-**Step 4: Obstructions require $g \geq 1$.** The lifting obstructions require $\kappa_n \neq 0$ at every level of the brane tower. The obstruction classes lie in $H^2(M_0, B)$. For these to be non-trivial, necessarily $H^2(M_0, \mathbb{C}^*) \neq 0$, which requires $g \geq 1$.
+**Step 4: Obstructions require $g \geq 1$.** The lifting obstructions require $\kappa_n \neq 0$ at some level of the tower; in the Kummer reading of item 3 of [QU-to-QOU](#thm:qu-to-qou) this holds exactly at the levels $n \nmid \chi$. The obstruction classes lie in $H^2(M_0, B)$. For these to be non-trivial, necessarily $H^2(M_0, \mathbb{C}^*) \neq 0$, which requires $g \geq 1$.
 
 **Step 5: The Frobenius--Hopf structure fixes 6 branch points.** The Frobenius--Hopf structure forces the algebra to have exactly 6 branch points in its geometric :refterm[descent]{#descent} (from the six Weierstrass points fixed by each transposition in $S_5$ -- Bring's curve carries $60$ in a single $\mathrm{Aut}$-orbit and $60 = 6 \times 10$ -- whose degree-$2$ quotient has genus $1$). This fixes $|\chi_{\mathrm{eu}}(M_0)| = 6$.
 
