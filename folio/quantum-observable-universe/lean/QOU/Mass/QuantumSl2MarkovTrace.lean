@@ -237,4 +237,162 @@ theorem wtrace_extLast_mul_pembed {n : ℕ} (A : Matrix (Fin (n + 1) → ι) (Fi
 
 end Generic
 
+/-! ## The `U_q(sl₂)` quantum trace on the Artin tower -/
+
+section Sl2
+
+open QOU.Mass.QuantumSl2.Markov
+open QOU.IwahoriHecke.BraidTower (braidTower braidTower_gen)
+open QOU.IwahoriHecke.JonesNormalisation (writhe writhe_braidGen braidWritheZ_braidTower)
+open QOU.Torsion.MassTraceMarkovClass (artinTower)
+open QOU.MathlibExt.MarkovMoves
+
+variable {𝕜 : Type*} [Field 𝕜] (s : 𝕜) (hs : s ≠ 0) (d : ℕ)
+  (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (hint : ∀ k, 0 < k → k ≤ 2 * d → qint (s ^ 2) k ≠ 0)
+
+/-- The weight `K = q^H` on `V_{d+1}`: `r ↦ s^{2(d−2r)}`. -/
+def qWt : Fin (d + 1) → 𝕜 := fun r => s ^ (2 * wt d r)
+
+include hs in
+theorem conserves_of_grade (M : Matrix (Fin (d + 1) × Fin (d + 1)) (Fin (d + 1) × Fin (d + 1)) 𝕜)
+    (hgr : ∀ x y : Fin (d + 1) × Fin (d + 1), (x.1 : ℕ) + x.2 ≠ y.1 + y.2 → M x y = 0) :
+    Conserves (qWt s d) M := by
+  intro x y h
+  have e : (x.1 : ℕ) + x.2 = y.1 + y.2 := by
+    by_contra e; exact h (hgr x y e)
+  have e' : ((x.1 : ℕ) : ℤ) + (x.2 : ℕ) = ((y.1 : ℕ) : ℤ) + (y.2 : ℕ) := by exact_mod_cast e
+  simp only [qWt, ← zpow_add₀ hs]
+  congr 1
+  unfold wt
+  linarith
+
+theorem ptrScalar_of_ptr (M : Matrix (Fin (d + 1) × Fin (d + 1)) (Fin (d + 1) × Fin (d + 1)) 𝕜)
+    (t : 𝕜) (h : ptr s M = t • (1 : Matrix (Fin (d + 1)) (Fin (d + 1)) 𝕜)) :
+    PtrScalar (qWt s d) M t := by
+  intro x y
+  have := congrFun (congrFun h x) y
+  simpa [ptr, smul_apply, one_apply, qWt] using this
+
+/-- The quantum trace `τ_n(β) = tr(K^{⊗(n+1)} ρ_n(β))` on the whole tower. -/
+noncomputable def qtrace (p : Tot BraidGroupN) : 𝕜 :=
+  wtrace (qWt s d) ((rCheckRep s hs d hq2 hint p.1 p.2 :
+    (Matrix (Fin (p.1 + 1) → Fin (d + 1)) (Fin (p.1 + 1) → Fin (d + 1)) 𝕜)ˣ) :
+      Matrix (Fin (p.1 + 1) → Fin (d + 1)) (Fin (p.1 + 1) → Fin (d + 1)) 𝕜)
+
+/-- `τ_0(1) = Σ_r q^{d−2r} = [d+1]_q`, the quantum dimension of `V_{d+1}`. -/
+theorem qtrace_one : qtrace s hs d hq2 hint ⟨0, 1⟩ = ∑ r : Fin (d + 1), qWt s d r := by
+  simp [qtrace, wtrace, siteWt]
+  exact (Equiv.funUnique (Fin 1) (Fin (d + 1))).sum_comp (qWt s d)
+
+/-- `K^{⊗(m+1)}` commutes with the whole braid group action. -/
+theorem commute_rCheckRep (m : ℕ) (x : BraidGroupN m) :
+    Commute (diagonal (siteWt (qWt s d)))
+      ((rCheckRep s hs d hq2 hint m x :
+        (Matrix (Fin (m + 1) → Fin (d + 1)) (Fin (m + 1) → Fin (d + 1)) 𝕜)ˣ) :
+          Matrix (Fin (m + 1) → Fin (d + 1)) (Fin (m + 1) → Fin (d + 1)) 𝕜) := by
+  have hx : x ∈ Subgroup.closure (Set.range (PresentedGroup.of : Fin m → BraidGroupN m)) := by
+    rw [PresentedGroup.closure_range_of]; trivial
+  induction hx using Subgroup.closure_induction with
+  | mem y hy =>
+      obtain ⟨a, rfl⟩ := hy
+      rw [show (PresentedGroup.of a : BraidGroupN m) = braidGen (coxA m) a from rfl,
+        rCheckRep_braidGen, strandMat]
+      exact commute_diag_pembed _ (by simp [Fin.ext_iff])
+        (conserves_of_grade s hs d _ (rCheck_grade s hs d))
+  | one => simp
+  | mul y z _ _ hy hz => rw [map_mul, Units.val_mul]; exact hy.mul_right hz
+  | inv y _ hy => rw [map_inv]; exact hy.units_inv_right
+
+/-- **The tower square.** Adding an inert strand to a braid acts as `A ↦ A ⊗ 1`. -/
+theorem rCheckRep_braidTower (n : ℕ) (x : BraidGroupN n) :
+    ((rCheckRep s hs d hq2 hint (n + 1) (braidTower x) :
+      (Matrix (Fin (n + 2) → Fin (d + 1)) (Fin (n + 2) → Fin (d + 1)) 𝕜)ˣ) :
+        Matrix (Fin (n + 2) → Fin (d + 1)) (Fin (n + 2) → Fin (d + 1)) 𝕜)
+      = extLast ((rCheckRep s hs d hq2 hint n x :
+          (Matrix (Fin (n + 1) → Fin (d + 1)) (Fin (n + 1) → Fin (d + 1)) 𝕜)ˣ) :
+            Matrix (Fin (n + 1) → Fin (d + 1)) (Fin (n + 1) → Fin (d + 1)) 𝕜) := by
+  have h : (rCheckRep s hs d hq2 hint (n + 1)).comp (braidTower (m := n))
+      = (Units.map (extLastHom (n + 1))).comp (rCheckRep s hs d hq2 hint n) := by
+    refine PresentedGroup.ext fun a => Units.ext ?_
+    simp only [MonoidHom.comp_apply, Units.coe_map]
+    rw [show (PresentedGroup.of a : BraidGroupN n) = braidGen (coxA n) a from rfl,
+      braidTower_gen, rCheckRep_braidGen, rCheckRep_braidGen, strandMat, strandMat]
+    change _ = extLast _
+    rw [extLast_pembed]
+    rfl
+  exact congrArg Units.val (DFunLike.congr_fun h x)
+
+/-- `ρ(σ_a^{-1})` is `Ř⁻¹` on strands `a, a+1`. -/
+theorem rCheckRep_braidGen_inv (m : ℕ) (a : Fin m) :
+    ((rCheckRep s hs d hq2 hint m (braidGen (coxA m) a)⁻¹ :
+      (Matrix (Fin (m + 1) → Fin (d + 1)) (Fin (m + 1) → Fin (d + 1)) 𝕜)ˣ) :
+        Matrix (Fin (m + 1) → Fin (d + 1)) (Fin (m + 1) → Fin (d + 1)) 𝕜)
+      = strandMat (rCheckInv s hs d) a := by
+  rw [map_inv]
+  apply Units.inv_eq_of_mul_eq_one_right
+  rw [rCheckRep_braidGen, strandMat, strandMat, pembed_mul (by simp [Fin.ext_iff]),
+    rCheck_mul_inv, pembed_one (by simp [Fin.ext_iff])]
+
+/-- **Markov I.** `τ_n(xy) = τ_n(yx)`. -/
+theorem qtrace_conj (n : ℕ) (x y : BraidGroupN n) :
+    qtrace s hs d hq2 hint ⟨n, x * y⟩ = qtrace s hs d hq2 hint ⟨n, y * x⟩ := by
+  simp only [qtrace, map_mul, Units.val_mul]
+  exact wtrace_mul_comm _ (commute_rCheckRep s hs d hq2 hint n x)
+
+include hq2 hint in
+/-- **Markov II, positive.** `τ_{n+1}(β σ_n) = θ · τ_n(β)`. -/
+theorem qtrace_stab (n : ℕ) (x : BraidGroupN n) :
+    qtrace s hs d hq2 hint ⟨n + 1, artinTower.incl n x * artinTower.gen n⟩
+      = theta s d * qtrace s hs d hq2 hint ⟨n, x⟩ := by
+  simp only [qtrace]
+  rw [show artinTower.incl n x = braidTower x from rfl,
+    show artinTower.gen n = braidGen (coxA (n + 1)) (Fin.last n) from rfl,
+    map_mul, Units.val_mul, rCheckRep_braidTower, rCheckRep_braidGen, strandMat, Fin.succ_last]
+  exact wtrace_extLast_mul_pembed _ _
+    (ptrScalar_of_ptr s d _ _ (ptr_rCheck s hs d hq2 hint))
+
+include hq2 hint in
+/-- **Markov II, negative.** `τ_{n+1}(β σ_n⁻¹) = θ⁻¹ · τ_n(β)`. -/
+theorem qtrace_stabInv (n : ℕ) (x : BraidGroupN n) :
+    qtrace s hs d hq2 hint ⟨n + 1, artinTower.incl n x * (artinTower.gen n)⁻¹⟩
+      = (theta s d)⁻¹ * qtrace s hs d hq2 hint ⟨n, x⟩ := by
+  simp only [qtrace]
+  rw [show artinTower.incl n x = braidTower x from rfl,
+    show artinTower.gen n = braidGen (coxA (n + 1)) (Fin.last n) from rfl,
+    map_mul, Units.val_mul, rCheckRep_braidTower, rCheckRep_braidGen_inv, strandMat,
+    Fin.succ_last]
+  exact wtrace_extLast_mul_pembed _ _
+    (ptrScalar_of_ptr s d _ _ (ptr_rCheckInv s hs d hq2 hint))
+
+include hs in
+theorem theta_ne_zero : theta s d ≠ 0 := zpow_ne_zero _ hs
+
+/-- `θ` as a unit. -/
+noncomputable def thetaU : 𝕜ˣ := Units.mk0 (theta s d) (theta_ne_zero s hs d)
+
+/-- **The quantum trace is a scaled Markov functional** on the Artin tower, with Markov
+parameters `θ` and `θ⁻¹`. -/
+theorem qtrace_isScaledMarkov :
+    IsScaledMarkov artinTower (qtrace s hs d hq2 hint) (thetaU s hs d) (thetaU s hs d)⁻¹ where
+  conj := qtrace_conj s hs d hq2 hint
+  stab _ _ := by rw [qtrace_stab]; rfl
+  stabInv _ _ := by rw [qtrace_stabInv, Units.val_inv_eq_inv_val]; rfl
+
+/-- **The writhe framing** of the Artin tower: exponent sum, unchanged by adding a strand, and
+`1` on the new generator. -/
+def artinFraming : Framing artinTower where
+  w n := writhe (coxA n) coxA_symm
+  w_incl _ x := Multiplicative.toAdd.injective (braidWritheZ_braidTower x)
+  w_gen _ := writhe_braidGen _ _ _
+
+/-- **The `U_q(sl₂)` link invariant, colour `N = d+1`.** `θ^{−w(β)} τ_n(β)` is unchanged by
+both Markov moves. Dividing by the constant `τ_0(1) = [N]_q` gives `J_N`. -/
+theorem jonesSl2_isMarkovInvariant :
+    IsMarkovInvariant artinTower
+      (normalise artinFraming (thetaU s hs d)⁻¹ 1 (qtrace s hs d hq2 hint)) :=
+  (qtrace_isScaledMarkov s hs d hq2 hint).normalise_isMarkovInvariant _
+    (by rw [mul_one, inv_mul_cancel]) (one_mul _)
+
+end Sl2
+
 end QOU.Mass.QuantumSl2.MarkovTrace
