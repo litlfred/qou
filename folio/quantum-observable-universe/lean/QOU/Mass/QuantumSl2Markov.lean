@@ -256,4 +256,94 @@ theorem ptr_rCheck : ptr s (rCheckMat s hs d d) = theta s d • (1 : Matrix (Fin
 
 end RCheck
 
+section RCheckInv
+
+variable (d : ℕ)
+
+open QOU.Mass.QuantumSl2.BraidAction (isUnit_rCheckMat)
+
+/-- `Ř⁻¹` on `V_{d+1} ⊗ V_{d+1}`. -/
+noncomputable def rCheckInv : Matrix (Fin (d + 1) × Fin (d + 1)) (Fin (d + 1) × Fin (d + 1)) 𝕜 :=
+  ((isUnit_rCheckMat s hs d).unit⁻¹ : (Matrix (Fin (d + 1) × Fin (d + 1)) (Fin (d + 1) × Fin (d + 1)) 𝕜)ˣ)
+
+theorem rCheck_mul_inv : rCheckMat s hs d d * rCheckInv s hs d = 1 :=
+  (isUnit_rCheckMat s hs d).mul_val_inv
+
+theorem rCheckInv_mul : rCheckInv s hs d * rCheckMat s hs d d = 1 :=
+  (isUnit_rCheckMat s hs d).val_inv_mul
+
+/-- The row of `Ř` at `v_r ⊗ v_d` is a multiple of a unit row. -/
+theorem rCheckMat_row_last (r : Fin (d + 1)) (x : Fin (d + 1) × Fin (d + 1)) :
+    rCheckMat s hs d d (r, Fin.last d) x
+      = s ^ (wt d (Fin.last d) * wt d r) * (if x = (Fin.last d, r) then 1 else 0) := by
+  rw [rCheckMat_apply]
+  simp only [Prod.swap]
+  rw [rSum_apply_bot s hs d d (rOrder d d) r x]
+
+/-- The row of `Ř⁻¹` at `v_d ⊗ v_r`: `Ř⁻¹_{(d,r),w} = c⁻¹ δ_{w,(r,d)}`. -/
+theorem rCheckInv_row_last (r : Fin (d + 1)) (w : Fin (d + 1) × Fin (d + 1)) :
+    rCheckInv s hs d (Fin.last d, r) w
+      = (s ^ (wt d (Fin.last d) * wt d r))⁻¹ * (1 : Matrix _ _ 𝕜) (r, Fin.last d) w := by
+  have h := congrFun (congrFun (rCheck_mul_inv s hs d) (r, Fin.last d)) w
+  rw [mul_apply, Finset.sum_eq_single (Fin.last d, r)] at h
+  · rw [rCheckMat_row_last, if_pos rfl, mul_one] at h
+    rw [← h, ← mul_assoc, inv_mul_cancel₀ (zpow_ne_zero _ hs), one_mul]
+  · intro x _ hx
+    rw [rCheckMat_row_last, if_neg hx, mul_zero, zero_mul]
+  · simp
+
+/-- The bottom diagonal entry of `ptr Ř⁻¹` is `θ⁻¹`. -/
+theorem ptr_rCheckInv_bot :
+    ptr s (rCheckInv s hs d) (Fin.last d) (Fin.last d) = (theta s d)⁻¹ := by
+  unfold ptr
+  rw [Finset.sum_eq_single (Fin.last d)]
+  · rw [rCheckInv_row_last, one_apply, if_pos rfl, mul_one, wt_last, theta,
+      ← zpow_neg, ← zpow_add₀ hs, ← zpow_neg]
+    congr 1; ring
+  · intro r _ hr
+    rw [rCheckInv_row_last, one_apply, if_neg, mul_zero, mul_zero]
+    intro he
+    exact hr (congrArg Prod.fst he)
+  · simp
+
+/-- `Ř` preserves each graded piece: it commutes with the projector onto grade `c`. -/
+theorem rCheck_commute_proj (c : ℕ) :
+    Commute (rCheckMat s hs d d)
+      (diagonal fun z : Fin (d + 1) × Fin (d + 1) => if (z.1 : ℕ) + z.2 = c then (1 : 𝕜) else 0) := by
+  ext a b
+  rw [mul_diagonal, diagonal_mul]
+  by_cases h : (a.1 : ℕ) + a.2 = b.1 + b.2
+  · rw [h]; ring
+  · rw [rCheck_grade s hs d a b h]; ring
+
+/-- `Ř⁻¹` preserves the grading. -/
+theorem rCheckInv_grade : ∀ x y : Fin (d + 1) × Fin (d + 1),
+    (x.1 : ℕ) + x.2 ≠ y.1 + y.2 → rCheckInv s hs d x y = 0 := by
+  intro x y h
+  have hc := rCheck_commute_proj s hs d ((y.1 : ℕ) + y.2)
+  rw [← (isUnit_rCheckMat s hs d).unit_spec] at hc
+  have hi := hc.units_inv_left
+  have e := congrFun (congrFun hi.eq x) y
+  rw [mul_diagonal, diagonal_mul, if_pos rfl, if_neg h, mul_one, zero_mul] at e
+  exact e
+
+variable (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0)
+  (hint : ∀ k, 0 < k → k ≤ 2 * d → qint (s ^ 2) k ≠ 0)
+
+include hq2 hint in
+theorem rCheckInv_deltaF :
+    rCheckInv s hs d * deltaF (s ^ 2) d d = deltaF (s ^ 2) d d * rCheckInv s hs d := by
+  have hc : Commute (rCheckMat s hs d d) (deltaF (s ^ 2) d d) := rCheck_deltaF s hs d hq2 hint
+  rw [← (isUnit_rCheckMat s hs d).unit_spec] at hc
+  exact hc.units_inv_left.eq
+
+include hq2 hint in
+/-- **Markov II, local form (negative crossing).** `ptr(Ř⁻¹) = θ⁻¹ · 1`. -/
+theorem ptr_rCheckInv :
+    ptr s (rCheckInv s hs d) = (theta s d)⁻¹ • (1 : Matrix (Fin (d + 1)) (Fin (d + 1)) 𝕜) := by
+  rw [ptr_eq_smul_one s hs _ (rCheckInv_deltaF s hs d hq2 hint) (rCheckInv_grade s hs d)
+    (fun k hk => hint (k + 1) (by omega) (by omega)) (Fin.last d), ptr_rCheckInv_bot]
+
+end RCheckInv
+
 end QOU.Mass.QuantumSl2.Markov
