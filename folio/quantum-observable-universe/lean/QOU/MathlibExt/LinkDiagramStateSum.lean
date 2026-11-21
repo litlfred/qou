@@ -588,4 +588,182 @@ theorem value_r3 (R₀ : Code E) (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ :
 
 end R3
 
+/-! ### Relabelling and contraction -/
+
+section Relabel
+
+variable {E F : Type u} (M : Model R ι)
+
+omit [Fintype ι] [DecidableEq ι] in
+theorem xw_map (f : E → F) (xs : Multiset (Crossing E)) (L : F → ι) :
+    xw M (xs.map (Crossing.map f)) L = xw M xs (L ∘ f) := by
+  simp [xw, Multiset.map_map, Crossing.map]
+
+omit [Fintype ι] in
+theorem jw_map (f : E → F) (js : Multiset (E × E)) (L : F → ι) :
+    jw (R := R) (js.map (Prod.map f f)) L = jw js (L ∘ f) := by
+  simp [jw, Multiset.map_map]
+
+omit [Fintype ι] [DecidableEq ι] in
+theorem occurs_map (f : E → F) (D : Code E) (y : F) :
+    (D.map f).Occurs y ↔ ∃ e, D.Occurs e ∧ f e = y := by
+  simp only [Code.Occurs, Code.map, Multiset.mem_map, Crossing.Mentions, Crossing.map,
+    Prod.map]
+  constructor
+  · rintro (⟨_, ⟨x, hx, rfl⟩, h⟩ | ⟨_, ⟨j, hj, rfl⟩, h⟩)
+    · rcases h with h | h | h | h
+      exacts [⟨_, Or.inl ⟨x, hx, Or.inl rfl⟩, h⟩, ⟨_, Or.inl ⟨x, hx, Or.inr (Or.inl rfl)⟩, h⟩,
+        ⟨_, Or.inl ⟨x, hx, Or.inr (Or.inr (Or.inl rfl))⟩, h⟩,
+        ⟨_, Or.inl ⟨x, hx, Or.inr (Or.inr (Or.inr rfl))⟩, h⟩]
+    · rcases h with h | h
+      exacts [⟨_, Or.inr ⟨j, hj, Or.inl rfl⟩, h⟩, ⟨_, Or.inr ⟨j, hj, Or.inr rfl⟩, h⟩]
+  · rintro ⟨e, (⟨x, hx, h⟩ | ⟨j, hj, h⟩), rfl⟩
+    · refine Or.inl ⟨_, ⟨x, hx, rfl⟩, ?_⟩
+      rcases h with rfl | rfl | rfl | rfl <;> simp
+    · refine Or.inr ⟨_, ⟨j, hj, rfl⟩, ?_⟩
+      rcases h with rfl | rfl <;> simp
+
+/-- **Relabelling along an embedding.** The value does not change when a code is moved into a
+larger edge type: the new edges do not occur, so they are pinned to the base label. -/
+theorem value_embed [Fintype E] [DecidableEq E] [Fintype F] [DecidableEq F]
+    (f : E ↪ F) (D : Code E) : value M (D.map f) = value M D := by
+  classical
+  let φ : (F → ι) ≃ (E → ι) × ({ y // y ∉ Set.range f } → ι) :=
+    { toFun := fun L => (L ∘ f, fun y => L y.1)
+      invFun := fun p y => if h : y ∈ Set.range f then p.1 h.choose else p.2 ⟨y, h⟩
+      left_inv := by
+        intro L; funext y
+        by_cases h : y ∈ Set.range f
+        · simp only [h, dif_pos, Function.comp_apply]; rw [h.choose_spec]
+        · simp [h]
+      right_inv := by
+        rintro ⟨w, v⟩
+        refine Prod.ext (funext fun x => ?_) (funext fun ⟨y, hy⟩ => by simp [hy])
+        have h : f x ∈ Set.range f := ⟨x, rfl⟩
+        simp only [Function.comp_apply, h, dif_pos]
+        rw [f.injective h.choose_spec] }
+  let A : (E → ι) → R := weight M D
+  let B : ({ y // y ∉ Set.range f } → ι) → R := fun v =>
+    ∏ y, if v y = M.base then 1 else 0
+  have hw : ∀ L, weight M (D.map f) L = A (φ L).1 * B (φ L).2 := by
+    intro L
+    simp only [weight, A, B, φ, Equiv.coe_fn_mk]
+    rw [show (D.map f).xs = D.xs.map (Crossing.map f) from rfl,
+      show (D.map f).js = D.js.map (Prod.map f f) from rfl, xw_map, jw_map]
+    rw [← Finset.prod_filter_mul_prod_filter_not univ (· ∈ Set.range f)]
+    have hr : univ.filter (· ∈ Set.range f) = univ.map f := by
+      ext y; simp [eq_comm]
+    have h1 : ∏ y ∈ univ.filter (· ∈ Set.range f), uf M (D.map f) y L = ∏ e, uf M D e (L ∘ f) := by
+      rw [hr, Finset.prod_map]
+      refine Finset.prod_congr rfl fun e _ => ?_
+      have : (D.map f).Occurs (f e) ↔ D.Occurs e := by
+        rw [occurs_map]
+        exact ⟨fun ⟨e', h, he'⟩ => f.injective he' ▸ h, fun h => ⟨e, h, rfl⟩⟩
+      simp only [uf, this, Function.comp_apply]
+    have h2 : ∏ y ∈ univ.filter (fun y => ¬ y ∈ Set.range f), uf M (D.map f) y L =
+        ∏ y : { y // y ∉ Set.range f }, if L y.1 = M.base then 1 else 0 := by
+      rw [Finset.prod_subtype (p := fun y => y ∉ Set.range f) _ (fun y => by simp)]
+      refine Finset.prod_congr rfl fun ⟨y, hy⟩ _ => ?_
+      have : ¬ (D.map f).Occurs y := by
+        rw [occurs_map]; rintro ⟨e, _, rfl⟩; exact hy ⟨e, rfl⟩
+      simp only [uf, this, if_false]
+    rw [h1, h2]
+    ring
+  have hB : ∑ v, B v = 1 := by
+    rw [Fintype.sum_eq_single (fun _ => M.base)]
+    · simp [B]
+    · intro v hv
+      obtain ⟨y, hy⟩ : ∃ y, v y ≠ M.base := by
+        by_contra h; push_neg at h; exact hv (funext h)
+      exact Finset.prod_eq_zero (Finset.mem_univ y) (by simp [hy])
+  have hsum : ∑ L, A (φ L).1 * B (φ L).2 =
+      ∑ p : (E → ι) × ({ y // y ∉ Set.range f } → ι), A p.1 * B p.2 :=
+    φ.sum_comp (fun p => A p.1 * B p.2)
+  have hA : A = weight M D := rfl
+  clear_value φ A B
+  unfold value
+  rw [Finset.sum_congr rfl fun L _ => hw L, hsum, Fintype.sum_prod_type, ← Finset.sum_mul_sum]
+  rw [hB, mul_one, hA]
+
+/-- **Contracting a join.** Removing the join `(a, b)` and renaming `b` to `a` does not change the
+value, provided `a` or `b` occurs elsewhere. -/
+theorem value_contract [Fintype E] [DecidableEq E] (R₀ : Code E) (a b : E) (hab : a ≠ b)
+    (hR : R₀.Occurs a ∨ R₀.Occurs b) :
+    value M (R₀.map (Function.update id b a)) = value M (R₀ + Code.ofJs {(a, b)}) := by
+  classical
+  set f : E → E := Function.update id b a with hf
+  have hfb : ∀ x, f x = if x = b then a else x := fun x => by
+    by_cases h : x = b <;> simp [hf, h]
+  have hocc : ∀ y, (R₀.map f).Occurs y ↔ (y ≠ b ∧ (R₀.Occurs y ∨ (y = a ∧ R₀.Occurs b))) := by
+    intro y
+    rw [occurs_map]
+    constructor
+    · rintro ⟨e, he, rfl⟩
+      rw [hfb]
+      by_cases h : e = b
+      · subst h; simp [hab, he]
+      · simp [h, he]
+    · rintro ⟨hyb, hy | ⟨rfl, hb⟩⟩
+      · exact ⟨y, hy, by rw [hfb, if_neg hyb]⟩
+      · exact ⟨b, hb, by rw [hfb, if_pos rfl]⟩
+  have hJ : ∀ y, (Code.ofJs {(a, b)} : Code E).Occurs y ↔ a = y ∨ b = y :=
+    occurs_ofJs_single a b
+  have hcomp : ∀ L : E → ι, L b = M.base →
+      Function.update L b (L a) = L ∘ f := fun L _ => by
+    funext x; rw [Function.comp_apply, hfb]
+    by_cases h : x = b
+    · subst h; simp
+    · simp [h]
+  unfold value
+  rw [sum_split b M.base (weight M (R₀ + Code.ofJs {(a, b)}))]
+  refine Finset.sum_congr rfl fun L _ => ?_
+  have hpin : weight M (R₀.map f) L = if L b = M.base then weight M (R₀.map f) L else 0 := by
+    split_ifs with h
+    · rfl
+    · have hnb : ¬ (R₀.map f).Occurs b := by rw [hocc]; tauto
+      simp only [weight]
+      rw [Finset.prod_eq_zero (Finset.mem_univ b) (by simp [uf, hnb, h]), mul_zero]
+  rw [hpin]
+  split_ifs with hLb
+  swap; · rfl
+  rw [Fintype.sum_eq_single (L a)]
+  · rw [hcomp L hLb]
+    simp only [weight, Code.add_xs, Code.add_js, xw_add, jw_add]
+    rw [show (R₀.map f).xs = R₀.xs.map (Crossing.map f) from rfl,
+      show (R₀.map f).js = R₀.js.map (Prod.map f f) from rfl, xw_map, jw_map]
+    have hx0 : xw M (Code.ofJs {(a, b)} : Code E).xs (L ∘ f) = 1 := by simp [xw, Code.ofJs]
+    have hj0 : jw (R := R) (Code.ofJs {(a, b)} : Code E).js (L ∘ f) = 1 := by
+      simp [jw, Code.ofJs, hfb, hab]
+    rw [hx0, hj0, mul_one, mul_one]
+    congr 1
+    refine Finset.prod_congr rfl fun e _ => ?_
+    by_cases heb : e = b
+    · subst heb
+      have h1 : (R₀ + Code.ofJs {(a, e)}).Occurs e := by rw [occurs_add, hJ]; tauto
+      have h2 : ¬ (R₀.map f).Occurs e := by rw [hocc]; tauto
+      simp only [uf, h1, h2, hLb, if_true, if_false]
+    · by_cases hea : e = a
+      · subst hea
+        have h1 : (R₀ + Code.ofJs {(e, b)}).Occurs e := by rw [occurs_add, hJ]; tauto
+        have h2 : (R₀.map f).Occurs e := by rw [hocc]; tauto
+        simp only [uf, h1, h2, if_true]
+      · have h12 : (R₀ + Code.ofJs {(a, b)}).Occurs e ↔ (R₀.map f).Occurs e := by
+          rw [occurs_add, hJ, hocc]
+          constructor
+          · rintro (h | h | h)
+            · exact ⟨heb, Or.inl h⟩
+            · exact absurd h.symm hea
+            · exact absurd h.symm heb
+          · rintro ⟨_, h | ⟨h, _⟩⟩
+            · exact Or.inl h
+            · exact absurd h hea
+        simp only [uf, h12, Function.comp_apply, hfb, if_neg heb]
+  · intro i hi
+    simp only [weight, Code.add_js, jw_add]
+    have : jw (R := R) (Code.ofJs {(a, b)} : Code E).js (Function.update L b i) = 0 := by
+      simp [jw, Code.ofJs, hab, Function.update_apply, Ne.symm hi]
+    rw [this]; ring
+
+end Relabel
+
 end QOU.MathlibExt.PL.Diagram
