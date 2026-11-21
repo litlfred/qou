@@ -1,13 +1,13 @@
 ---
 # qou-m8xt
 title: 'BUILD: retype IdealTetrahedron over Mathlib UpperHalfPlane (ℍ) — 62 QOU files hand-roll 0 < im, zero use ℍ'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:08Z
-updated_at: 2026-11-17T10:33:06Z
+updated_at: 2026-11-21T03:18:24Z
 parent: qou-c8p8
 ---
 
@@ -59,3 +59,7 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §B4, §H1.
 - **80-dps Probe & 2-Commit Witness:** `computations/probes/alternating_three_form_primary_factor_upper_half_plane_catalan_clausen_symmetry_probe.py` + `computations/probes/alternating-three-form-primary-factor-upper-half-plane-catalan-clausen-symmetry.witness.json` (`scriptHash = 0ee532c9f9a2`, `scriptCommitSha = 0caff4971a8a2c0d7aec04c9a5a8e20f7218d2b3`, `allPassed = True`).
 - **Adversarial Cross-Review (Round 61):** Verified `litlfred/qou#8285` (`250465c60a6cea44d9f569e88cc79ee2c8d8051b`, `0` advisories on all 5 added theorems, valid witness `39a564805d3e`) and `litlfred/qou#8299` (`7794a07bbdcd4212b670d7ed777098efe60dc9a4`, `0` advisories, valid witness `001b12183bba`).
 - **Status:** Kept at `in-progress` pending Merge Manager verification and merge.
+
+## 2026-11-21 — DONE (PR #8700)
+
+`IdealTetrahedron.shape : ℍ`; `im_pos` is now a theorem from the type; `ofIm` constructor; 4 consumers updated. Sweep 0 RED across MostowRigidity (54), FigureEightTriangulation (23), FlatTetrahedra (22), ManifoldVolumePositive (41). NOT done: `rotate` via Mathlib Möbius action (needs `UpperHalfPlane.MoebiusAction` olean), and the 50 other files hand-rolling `0 < _.im` (out of scope; ask before sweeping).

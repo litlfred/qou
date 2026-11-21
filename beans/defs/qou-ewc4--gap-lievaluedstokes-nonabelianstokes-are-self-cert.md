@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T17:00:30Z
-updated_at: 2026-10-04T15:20:10Z
+updated_at: 2026-11-21T03:18:24Z
 parent: qou-6qbv
 ---
 
@@ -103,3 +103,7 @@ Lie-algebra-valued 1-forms on a normed space).
 
 ## Progress (Round 52 — PR #8218)
 - Resolved in PR `litlfred/qou#8218` (`claude/round52-devacuify-6qbv-uot9`, HEAD `31f749976663905d17c11fe898c73116da2e8d1b`) with 80-dps mpmath witness `computations/probes/round52-devacuify-6qbv-uot9.witness.json` (`scriptCommitSha = 5355a18ce7a60c5cabb79019663bff82e103d505`).
+
+## 2026-11-21 — partial (PR #8700)
+
+`NonAbelianStokes` boundary + curvature are now definitions, not class fields; the integrals, slicing and Stokes identity remain a §3b-cond class whose only models are degenerate (`punitInstance`, all 1). `LieValuedStokes` with additive real integrals likely has ONLY the zero model: `∫_{∂σ} α = ∫_σ (dβ + [α∧β])` is not classical Stokes. Stays open.

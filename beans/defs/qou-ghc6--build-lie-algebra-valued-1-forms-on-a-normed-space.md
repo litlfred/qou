@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:07:55Z
-updated_at: 2026-11-20T19:56:42Z
+updated_at: 2026-11-21T03:18:24Z
 parent: qou-c8p8
 ---
 
@@ -58,3 +58,7 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §B2.
 ## 2026-11-20 — DONE (PR #8678)
 
 `QOU/Mathlib/LieValuedForms.lean`, sorry-free, standard axioms: bracket-wedge, curvature `dα + ½[α∧α]`, covariant d; graded symmetry, bilinearity, constant-connection curvature and flatness criterion. Bracket carried as a continuous bilinear map (Mathlib has no normed Lie algebras; `toLieRing`/`toLieAlgebra` bridges). NOT done: rewiring `NonAbelianStokes.lean` onto this model, Bianchi, holonomy (absent from Mathlib).
+
+## 2026-11-21 — NonAbelianStokes rewired (PR #8700)
+
+The 'NOT done' above is now done: `NonAbelianStokes` carriers are `OneForm/TwoForm`, `cellBoundary` and curvature are definitions, Stokes RHS is the curvature. Integrals and Stokes still assumed (Mathlib lacks path-ordered exponential).
