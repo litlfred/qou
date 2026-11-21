@@ -267,3 +267,28 @@ origin, `dim V_(2,1)`, belongs to the volume-term derivation, not to this thread
 **Still open.** The neutron's `q⁻²`: the labelled count is 6 on both sectors, so the split still
 needs the `K^{⊗3}` weight with the extra `q⁻¹` (K1). And why the constant term is the labelled
 count of the `S_3` permutation braids at all.
+
+## 9. The neutron's q⁻² from the Markov condition at z_D (`MarkovPivotalNucleonWeights.lean`, sorry-free)
+
+Earlier the `q²` ratio came from assuming the symmetric weight `K = diag(q, q⁻¹)`. Here nothing
+is assumed about `K` except that it is diagonal, `K = diag(a, b)`. Jimbo's `Ř` and the Markov
+condition (weighted partial trace over the closed strand is a scalar) give:
+
+- `markov_forces_ratio`: the condition holds iff `b = a q⁻²`, for every scale `a`;
+- `markov_z_eq_zD`: the Markov parameter is then `z_D = q³/(q² + 1)`, for every scale;
+- `nucleon_weight_ratio`: proton sector weight `a²b`, neutron `ab²`, so neutron = `q⁻²` × proton.
+
+So the neutron's `q⁻²` relative to the proton follows from convention D's Markov condition. It
+is no longer an assumption about `K`.
+
+What it does not fix is the overall scale. With the trace normalised (`a + b = 1`) and the
+framing factor `(1 + q²)³ q⁻³` from `def:mass-identity`, the weights are exactly `q` and `q⁻¹`
+(`framed_unit_scale`). That is the K2 reading, which the proton test falsified. The surviving K1
+reading (proton weight 1, neutron `q⁻²`) needs a further overall `q⁻¹`, still not found.
+
+Two consequences for §7–8. (i) A diagonal pivotal trace on `V^{⊗n}` always gives `z = z_D`, so the
+`z = q` normalisation the labelled count needs is not a pivotal trace on `V`; it is the trivial
+(one-row) channel, which is the only channel the labelled closure of a permutation braid sees,
+since consistent labellings only meet same-label crossings where `Ř` acts by `q`. (ii) The ratio
+`q⁻²` (from `z_D`) and the count `6` (from `z = q`) therefore come from two different traces. Whether
+one mass functional can use both is open.
