@@ -21,7 +21,8 @@ Owner ruling 2026-06-24: there is ONE correct [now: m_e-scaled] nucleon mass, th
     proton pin q₀ is solved from this identity, so m_p is a round trip there.
     m_μ   = m_e · Vol(4₁) / ℏ_q²                      (muon = figure-8 knot 4₁)
     F_Bor = |tr_M(β_Bor)| · [3]_q! / q³               (dimensionless Hecke factor)
-        → m_p ≈ 938.27 MeV, m_n ≈ 939.56 MeV  (matches CODATA; m_n predicted)
+        → m_p ≈ 938.27 MeV (round trip at the proton pin), m_n ≈ 939.11 MeV
+          (scored D1 = A Q_β, −486 ppm, conditional on C1–C3; issue #8769)
 
 The c_q² (= 1/ℏ_q²) factor is applied ONCE, in the muon anchor m_μ, then
 dressed by the *dimensionless* Borromean factor F_Bor.
@@ -108,7 +109,7 @@ def proton_mass_mev() -> float:
 
 
 def neutron_mass_mev() -> float:
-    """Canonical neutron mass (MeV) — muon-anchored Hecke energy ≈ 939.56."""
+    """Canonical neutron mass (MeV): m_p + scored D1 = A Q_β + m_e ≈ 939.11 (C1–C3 conditional)."""
     return proton_neutron_mass_mev()[1]
 
 
