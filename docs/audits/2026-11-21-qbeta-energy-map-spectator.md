@@ -499,3 +499,11 @@ fails is summing it over (1,2), (1,3), (2,3) with a fixed orientation. A symmetr
 both orientations or over the braid word's actual crossings, is the open derivation. The bare
 symmetrisation (𝒮_ab + 𝒮_ba)/2 = (q² + q⁻²)(μ_a + μ_b)/(2[2]_q) gives m_N ∝ Σμ_a, and so gives
 n–p factor (q² + q⁻²)/[2]_q again. Symmetry alone does not remove the factor.
+
+**Correction to §19, from the same algebra.** The symmetrised sum is (q² + q⁻²)/[2]_q times the plain
+sum Σμ_a, which is itself a log map, with scale c′ = c·(q² + q⁻²)/[2]_q. S fixes the form of the map
+and never its scale (§1). So the §19 "inconsistency" holds only if the per-quark map and the nucleon map
+are required to share one c. Without that requirement, the symmetrised pair-Skein is compatible with
+S, and its only content is a scale factor 1.016316 at the proton q₀. What survives is narrower:
+(i) the ordered-pair sum fails T1/T2; (ii) a symmetrised sum is a log map up to scale; (iii) the scale
+|c| is still open, as it was in §1.
