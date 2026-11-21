@@ -8,7 +8,9 @@ $$
   \Delta \circ \pi \;=\; (\cdot \otimes \pi \;+\; \pi \otimes \cdot \;+\; \pi \otimes \pi)
   \circ (1 \otimes \tau \otimes 1) \circ \Delta,
 $$
-where $\tau$ is the flip of tensor factors.
+where $\tau$ is the flip of tensor factors, $\pi$ is read as a map
+$T \otimes T \to T$, and the rightmost $\Delta$ acts on $T \otimes T$ as
+$\Delta \otimes \Delta$.
 
 **Consequence** (\cite{leitner2006}, Proposition 1.13). If each $A_i$ carries
 an algebra map $\Delta_i \colon A_i \to A_i \otimes A_i$ and the induced

@@ -45,6 +45,25 @@ coproducts `Δx`, `Δy`. -/
 noncomputable def smRHS (π : A →ₗ[R] A →ₗ[R] A) (Δx Δy : A ⊗[R] A) : A ⊗[R] A :=
   smOp π (tensorTensorTensorComm R A A A A (Δx ⊗ₜ Δy))
 
+/-- **Strong multiplicativity** (Def. 1.11 of arXiv:math/0602138):
+`Δ ∘ π = (· ⊗ π + π ⊗ · + π ⊗ π) ∘ (1 ⊗ τ ⊗ 1) ∘ (Δ ⊗ Δ)` as linear maps
+`A ⊗ A → A ⊗ A`, with `π` read through `TensorProduct.lift`. -/
+def IsStronglyMultiplicative (Δ : A →ₗ[R] A ⊗[R] A) (π : A →ₗ[R] A →ₗ[R] A) : Prop :=
+  Δ ∘ₗ TensorProduct.lift π =
+    smOp π ∘ₗ (tensorTensorTensorComm R A A A A).toLinearMap ∘ₗ TensorProduct.map Δ Δ
+
+/-- Def. 1.11 is equivalent to its pointwise form on pure tensors `x ⊗ y`. -/
+theorem isStronglyMultiplicative_iff (Δ : A →ₗ[R] A ⊗[R] A) (π : A →ₗ[R] A →ₗ[R] A) :
+    IsStronglyMultiplicative Δ π ↔ ∀ x y, Δ (π x y) = smRHS π (Δ x) (Δ y) := by
+  constructor
+  · intro h x y
+    have := LinearMap.congr_fun h (x ⊗ₜ y)
+    simpa [smRHS] using this
+  · intro h
+    apply TensorProduct.ext'
+    intro x y
+    simpa [smRHS] using h x y
+
 /-- The primitive coproduct `x ⊗ 1 + 1 ⊗ x`. -/
 def prim (x : A) : A ⊗[R] A := x ⊗ₜ 1 + 1 ⊗ₜ x
 
@@ -71,6 +90,13 @@ theorem strongMult_prim_iff (Δ : A →ₗ[R] A ⊗[R] A) {x y : A}
     (hx : Δ x = prim x) (hy : Δ y = prim y) :
     Δ (π x y) = smRHS π (Δ x) (Δ y) ↔ Δ (π x y) = prim (π x y) := by
   rw [hx, hy, smRHS_prim π hl hr]
+
+/-- A strongly multiplicative `Δ` sends the bracket of two primitives to a
+primitive (Remark 1.12). -/
+theorem prim_of_isStronglyMultiplicative (Δ : A →ₗ[R] A ⊗[R] A)
+    (h : IsStronglyMultiplicative Δ π) {x y : A}
+    (hx : Δ x = prim x) (hy : Δ y = prim y) : Δ (π x y) = prim (π x y) :=
+  (strongMult_prim_iff π hl hr Δ hx hy).1 ((isStronglyMultiplicative_iff Δ π).1 h x y)
 
 end
 
