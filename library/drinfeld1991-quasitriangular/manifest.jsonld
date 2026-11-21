@@ -5,24 +5,32 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/drinfeld1991-quasitriangular",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/drinfeld1991-quasitriangular/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "drinfeld1991-quasitriangular",
   "contains": [
-    "library/drinfeld1991-quasitriangular/sections/sec-front-matter",
-    "library/drinfeld1991-quasitriangular/sections/sec-000",
-    "library/drinfeld1991-quasitriangular/sections/sec-001",
-    "library/drinfeld1991-quasitriangular/sections/sec-002",
-    "library/drinfeld1991-quasitriangular/sections/sec-003",
-    "library/drinfeld1991-quasitriangular/sections/sec-004",
-    "library/drinfeld1991-quasitriangular/sections/sec-005",
-    "library/drinfeld1991-quasitriangular/sections/sec-006",
-    "library/drinfeld1991-quasitriangular/sections/sec-back-matter"
+    "library/drinfeld1991-quasitriangular/sections/page-001",
+    "library/drinfeld1991-quasitriangular/sections/page-002",
+    "library/drinfeld1991-quasitriangular/sections/page-003",
+    "library/drinfeld1991-quasitriangular/sections/page-004",
+    "library/drinfeld1991-quasitriangular/sections/page-005",
+    "library/drinfeld1991-quasitriangular/sections/page-006",
+    "library/drinfeld1991-quasitriangular/sections/page-007",
+    "library/drinfeld1991-quasitriangular/sections/page-008",
+    "library/drinfeld1991-quasitriangular/sections/page-009",
+    "library/drinfeld1991-quasitriangular/sections/page-010",
+    "library/drinfeld1991-quasitriangular/sections/page-011",
+    "library/drinfeld1991-quasitriangular/sections/page-012",
+    "library/drinfeld1991-quasitriangular/sections/page-013",
+    "library/drinfeld1991-quasitriangular/sections/page-014",
+    "library/drinfeld1991-quasitriangular/sections/page-015",
+    "library/drinfeld1991-quasitriangular/sections/page-016",
+    "library/drinfeld1991-quasitriangular/sections/page-017"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "drinfeld1991-quasitriangular",
     "title_source": "slug",

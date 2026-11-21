@@ -1,0 +1,51 @@
+The Dilogarithm Function 35
+
+Finally, the “strange many-variable equation” given in eq. (1) of Chapter I
+corresponds to the expression
+
+non
+
+€ = [eq] — OV fai/aj),
+
+i=1 j=l
+
+where 21,... , 2p and aj,... ,@, are the roots (counted with multiplicity) of
+f(x) = z and f(a) = 1, respectively, for some polynomial f of degree n
+without constant term. Then from the two identities CT];(t — 2;) = f(t) — z
+and CJ], (t — aj) = f(t) — 1, where C 4 0 is the coefficient of ¢” in f(t), we
+find (modulo 2-torsion)
+
+ale) = (AU=2) - Deen (I m2) Yen (IIe. -»))
+- (A= Diy nd— a+ Yaa EZ)
+= @)na~2)- (SE) na-2 + (CRS
+
+= 0.
+
+The corresponding calculation for the yet more general functional equation
+given in the first line after equation (6) of Chapter I is left to the reader.
+
+As already mentioned, the criterion > ni(xi(t)) A (1 — xi(t)) = 0 for a
+functional equation of the dilogarithm can be reformulated as saying that
+the element € = > n;[x;(t)] belongs to the Bloch group of the corresponding
+function field. It is then reasonable to ask whether it in fact must be zero
+in this Bloch group, i-e., whether € is necessarily equal (modulo Z[C]) to a
+linear combination of five-term relations. This is conjectured, but not known
+to be true, when the 2;(t) are allowed to be algebraic functions or rational
+functions of more than one variable. But in the case of rational functions of
+one variable, an elementary proof was found by Wojtkowiak. We reproduce
+his argument here in a slightly modified form.
+
+Proposition 4 [40]. (i) Any rational function of one variable is equivalent
+modulo the five-term relation to a linear combination of linear functions.
+
+(ii) Any functional equation of the dilogarithm with rational functions of one
+variable as arguments is a consequence of the five-term relation.
+
+(Part (ii) is to be interpreted up to constants, i.e. the five-term relation suffices
+to give all relations >; D(x;(t)) = C but not necessarily to determine C.)
+
+Proof. (i) Let f(t) be an element of the field C(t) of rational functions in one
+variable. We want to show that the element [f] € Z[C(¢)] is equivalent modulo
+
+five-term relations to a Z-linear combination of elements of the form [a;t + bj].
+We do this by induction on the degree. Write f(t) as A(t)/B(t), where A(t) and

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1412.4711v1/blocks/prose-sec-018",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Deforming representations: another way to parametrize the components",
-  "pageStart": 22,
-  "pageEnd": 28,
-  "text": "../sections/sec-018-5-deforming-representations-another-way-to-param.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1412.4711v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1412.4711v1",
+  "title": "Where are some already known representations ?",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "text": "../sections/sec-018-42-where-are-some-already-known-representations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1412.4711v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1412.4711v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -28,7 +28,7 @@ owner-gated keystone residual): the first probe found that no bare-period quanti
 reproduces `τ = 2.6424` (the prolongation operator `λ_SW^(n) → a_D^(n)` is non-trivial — the anchors
 are not the curve's bare power sums), so that step stays open. Base ring `ℝ` (the analytic/archimedean
 realisation, matching the color-curve and `BindingRecurrenceSpectral` files).
-Ref: [manuscript] content/.../mass-theory/sl2-prolongation-recurrence.md
+Ref: [leitner2026] content/.../mass-theory/sl2-prolongation-recurrence.md
 -/
 
 namespace QOU.Mass.Lever1Tau

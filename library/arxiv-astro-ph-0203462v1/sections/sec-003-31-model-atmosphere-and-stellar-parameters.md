@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.877
+doc_brief: "arXiv:astro-ph/0203462v1 26 Mar 2002 — We present a high-resolution (R=75,000, S/N ∼500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = −2.9), obtained in an"
 ---
 The adopted model atmospheres (OSMARCS) were computed with the latest version of the MARCS code, initially developed by Gustafsson et al. ([@gben75]) and subsequently updated by Plez et al. ([@pbn92]), Edvardsson et al. ([@edvardsson]), and Asplund et al. ([@agke97]). The current version includes up-to-date continuum and line opacities for atomic and molecular species, treated in opacity sampling with more than 10$^5$ sampling points between 910Å and 20$\mu$m. Models for CS 31082-001 were computed for a metallicity 1/1000th Solar, with the $\alpha$-elements boosted by 0.4 dex relative to iron.
 

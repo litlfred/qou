@@ -1,0 +1,55 @@
+1388 S.G. Bobkov and F. Gétze
+
+Example 2. Let all X; = &, where & is uniformly distributed in [—1, 1]. Note that all random
+variables are identically distributed with EX; = 0. The joint distribution jz represents a uniform
+distribution on the main diagonal of the cube [—1, 1]", so it satisfies (1.1) and (1.2) with o =
+
+n, where c is absolute. In this case, F is a uniform distribution on [—1, 1], so M = 1/2 and B
+is of order 1. Hence, both sides of (1.6) are of order 1.
+
+Next, we restrict the above statements to the empirical spectral measures F, of the n eigen-
+values Xj <--- < X, of a random symmetric matrix (Ein), 1< j,k <n, with independent
+entries above and on the diagonal (n > 2). Assume that E&;, = 0 and Var(&jx) = 1 so that the
+means F = EF, converge to the semicircle law G with mean zero and variance one. The bound-
+
+edness of moments of & jx of any order will be guaranteed by (1.1).
+
+Theorem 1.3. [f the distributions of the & ;x’s satisfy the Poincaré-type inequality PI(c7) on the
+real line, then
+
++00 Co
+E | |Fn(Qx) — F(x)| dx < (1.7)
+
+A732?
+- nis
+
+where C is an absolute constant. Moreover, under LSI(a”),
+2/3
+o 1/3
+iF, ~Gi <c(2) log’/°n + ||F — Gl. (1.8)
+
+By the convexity of the distance, we always have E]| F;, — G|| > ||F — G||. In some random
+matrix models, the Kolmogorov distance ||F — G|| is known to tend to zero at rate at most
+n~2/3+, For instance, it is true when the distributions of the &;,4’s have a non-trivial Gaussian
+component (see [22]). Hence, if, additionally, LSI(o2) is satisfied, then we get that for any e > 0,
+
+E||F, — Gil < Cen 7/3**.
+
+It is unknown whether this bound is optimal. Note, however, that in the case of Gaussian &),x, the
+distance || F — G|| is known to be of order 1/n [21]. Therefore,
+
+log! n
+El|Fn — Gl| SC— aR. (1.9)
+which is a slight improvement of a bound obtained in [42]. In fact, as was recently shown in [8],
+we have || F — G|| < C,n~?/3 in the presence of the PI(o)-hypothesis. Hence, the bound (1.9)
+always holds under LSI(c7) with constants depending only ono.
+It seems natural to try to relax the LSI(o7)-hypothesis in (1.8) and (1.9) to PI(o?). In this
+context, let us mention a result of Chatterjee and Bose [14], who used Fourier transforms to
+derive from PI(c”) a similar bound,
+
+1/4
+
+Co
+Ell Fn — Gil <
+
+rt 2ilF - Gi.

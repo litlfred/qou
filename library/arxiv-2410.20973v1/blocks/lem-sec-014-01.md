@@ -1,1 +1,1 @@
-B.1. Suppose that Im( τ ) > 0 and ε∈ R>0. Then as τ→ i∞ with ﬁxed argument
+1. For P(z) = (−z)A −(1 −z)B with A, B ∈Z>0 with A̸ = B there are no solutions to the equations P(z) = P(z′) = 0 . (97)

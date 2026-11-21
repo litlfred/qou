@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1508.01627v4/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
-  "pageStart": 2,
+  "title": "Regular semisimple elements",
+  "pageStart": 3,
   "pageEnd": 5,
-  "text": "../sections/sec-003-21-weyl-groups-and-maximal-tori-in-symplectic-an.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
+  "text": "../sections/sec-003-22-regular-semisimple-elements.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.01627v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.01627v4/manifest.jsonld",
   "provenance": "ingested"
 }

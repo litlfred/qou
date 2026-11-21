@@ -1,0 +1,95 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-180
+section_title: "Page 180"
+section_number: null
+pages: 180-180
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+552
+[163]
+[164]
+[165]
+[166]
+[167]
+[168]
+
+[169]
+
+[170]
+
+171]
+[172]
+[173]
+
+[174]
+[175]
+[176]
+[177]
+[178]
+[179]
+[180]
+
+[181]
+
+T. Ohtsuki (Editor)
+
+N Habegger, X-SLin, The classification of links up to link-homotopy, J.
+Amer. Math. Soc. 3 (1990) 389-419
+
+N Habegger, G Masbaum, The Kontsevich integral and Milnor’s invariants,
+Topology 39 (2000) 1253-1289
+
+K Habiro, Claspers and finite type invariants of links, Geom. Topol. 4 (2001)
+1-83
+
+K Habiro, On the quantum slz invariants of knots and integral homology
+spheres, from: “Invariants of Knots and 3-manifolds (Kyoto 2001)” (T Ohtsuki,
+et al, editors), Geom. Topol. Monogr. 4 (2002) 55-68
+
+K Habiro, T T Q Le, in preparation
+
+SK Hansen, Reshetikhin-Turaev invariants of Seifert 3-manifolds, and their
+asymptotic expansions, PhD Thesis, Aarhus University (1999)
+
+T Harikae, Y Uchida, Irregular dihedral branched coverings of knots, Topics
+in knot theory (Erzurum 1992), NATO Adv. Sci. Inst. Ser. C Math. Phys. Sci.
+399, Kluwer Acad. Publ. Dordrecht (1993) 269-276
+
+R Hartley, A Kawauchi, Polynomials of amphicheiral knots, Math. Ann. 243
+(1979) 63-70
+
+A Hatcher, Spaces of knots, preprint, arXiv:math.GT/9909095
+N J Hitchin, Lie groups and Teichmiiller space, Topology 31 (1992) 449-473
+
+J Hoste, M Kidwell, Dichromatic link invariants, Trans. Amer. Math. Soc.
+321 (1990) 197-229; see also Invariants of colored links, preprint (March 1987)
+
+J Hoste, JH Przytycki, An invariant of dichromatic links, Proc. Amer. Math.
+Soc. 105 (1989) 1003-1007
+
+JHoste, JH Przytycki, Homotopy skein modules of oriented 3-manifolds,
+Math. Proc. Cambridge Phil. Soc. 108 (1990) 475-488
+
+J Hoste, JH Przytycki, A survey of skein modules of 3-manifolds, from:
+“Knots 90 (Osaka 1990)”, de Gruyter, Berlin (1992) 363-379
+
+J Hoste, JH Przytycki, The (2,00)-skein module of lens spaces; a general-
+ization of the Jones polynomial, J. Knot Theory Ramifications 2 (1993) 321-333
+J Hoste, J H Przytycki, The Kauffman bracket skein module of S'S? , Math.
+Z. 220 (1995) 65-73
+
+J Hoste, J H Praytycki, The (2,00) -skein module of Whitehead manifolds, J.
+Knot Theory Ramifications 4 (1995) 411-427
+
+J Hoste, M Thistlethwaite, J Weeks, The first 1,701,936 knots, Math. Intel-
+ligencer 20 (1998) 33-48
+
+A Inoue, Quandle homomorphisms of knot quandles to Alexander quandles, J.
+Knot Theory Ramifications 10 (2001) 813-821
+
+Geometry & Topology Monographs, Volume 4 (2002)

@@ -1,0 +1,71 @@
+---
+doc_id: cherednik1991-kz-dunkl
+doc_title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras"
+section_id: page-017
+section_title: "Page 17"
+pages: 17-17
+pdf_page: 17
+source_pdf: cherednik1991-kz-dunkl.pdf
+source_sha256: cae9cf747bb98a46
+text_source: ocr
+granularity: page
+doc_brief: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 21 sections: Page 1; Page 2; Page 3"
+---
+Affine Hecke algebras 427
+
+Lemma 3.5 In the setup of Sect. 2 let A = EndcV,
+gi —1=h,=Kh, heC,1<isn. (3.13)
+We will assume that the homomorphism v: H + EndcV from Sect. 2 (or its counter-
+
+part for H’ = C[W]) depends on (small) h. Moreover, let us suppose that for vo:
+W — A* = Aut. V above
+
+V(T;) = vo(s:) + hipivo(s;) + o(h) (3.14)
+or
+v(s;) = Vo(s;) + hipivo(s;) + o(h) (3.15)
+and
+Vo(w)v(Ti)vo(w)"! = v(Tj) if w(a;) = 4, (3.16)
+or
+Vo(w)v(s;)¥o(w)~! = v(sj) if wa) = a, (3.17)
+
+where 1 Si, j Sn. Then p,, = p; satisfy (3.10) because of (1.2) and the set
+R= T? ¥o(s:) or R= 5? 0(s:), 1SisSn, (3.18)
+
+for T?, s? from Theorem 2.1 and %o from (3.9) can be uniquely extended to a quantum
+A-valued W-invariant R-matrix with respect to %). The corresponding classical
+r-matrix (see Proposition 3.3) coincides with (3.11), (3.12) for 6° =1= 6".
+
+Thanks to the lemma we obtain the statement of Theorem 3.4 for A = EndoV
+and 6’ = 1 = 6”. Really,
+
+Rj = TP ¥o(s;) = 1 + he (Yi — 1)7* (1 — ;)v0 (s;) + hx 9;
+
+(see (2.1)). Here and further we will identify Y? and Y;. As for (3.12), we can apply
+(2.3). In the case 5’ = 0 = 6” Theorem 3.4 was proven in [Ch1, Ch2]. The case
+6’ = 6" +00 is completely analogous to the previous one. A direct consideration
+for A», Bz, G2 shows that this is enough to prove the theorem. 0
+
+Now let us first combine all p, in D, (r, are as above), then secondly add some
+“scalar” terms to D,.
+
+Corollary 3.6 The following elements from A are pairwise commutative (1 < i S n):
+
+DB; = Y,8g/0¥; + vo(xi) + Y) Katle( Ye — 1)" *vo(se)(1 — 5a52), (3-19)
+
+aed+
+
+Dy, = dg/dyi + vo(x?) + YL Kaba Ya ‘voll — 5554) (3.20)
+
+aely
+for ¥ and y respectively and g from C(Y)" or C(y)”. Here [x;,x;] =Oforl Si,j<n
+and x; satisfy relation (1.5) for y¥ = ox, hi = — (ai, 0%) 4/2 ({aF}-are the dual
+weights), {x?} obey the same relations but for h, = 0 (1 S$ i Sn). These {x;} or {x?}
+are added to {s;} and the homomorphism vo: C[W] — A is assumed to be extended to
+
+{xi}, {xP}.
+
+Proof. We will only check here that
+
+vols) = Y. ati(pa— 1/2, aeZ, 1SiSn
+
+a>O

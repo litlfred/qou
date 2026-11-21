@@ -1,1 +1,1 @@
-In the regime of Theorem 3.2, we have the following large
+In the regime of Theorem 3.2, we have the following large deviation bound for the convergence of the minimum eigenvalue of mnρΓ, denoted by λmin below, to 1−2√a: there exist three constants 0 < ϵ1, c1 < 1 and l1 ∈N such that Pr  λmin ≤1 −2√a −ϵ

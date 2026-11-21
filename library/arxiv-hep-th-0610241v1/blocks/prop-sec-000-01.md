@@ -1,0 +1,1 @@
+(1.5) After applying the renormalization group to the Yukawa couplings, assuming that the Yukawa coupling for the ντ is comparable to the one for the top quark, one obtains good agreement with the measured value.

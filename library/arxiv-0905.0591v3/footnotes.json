@@ -1,0 +1,1927 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-0905.0591v3",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p040-1",
+   "page": 40,
+   "mark": "197",
+   "text": "(2006) [Na78] Y. Nakagawa, On the Alexander polynomials of slice links, Osaka J. Math. 15 (1978), no. 1, 161–182 [Ni08] Y. Ni, Addendum to:“Knots, sutures and excision”, Preprint (2008) [Nic03] L. Nicolaescu, The Reidemeister torsion of 3-manifolds, de Gruyter Studies in Mathematics,",
+   "block": "library/arxiv-0905.0591v3/blocks/prose-sec-046"
+  },
+  {
+   "id": "fn-p040-2",
+   "page": 40,
+   "mark": "30",
+   "text": "Walter de Gruyter & Co., Berlin, 2003. P. Ozsv´ath and Z. Szab´o, Holomorphic disks and 3-manifold invariants: properties and appli- [OS04] cations, Annals of Mathematics 159 (2004) no. 3, 1159-1245. A. Pajitnov, Novikov homology, twisted Alexander polynomials, and Thurston cones, St. Pe- [Pa07] tersburg Math. J. 18 (2007), no. 5, 809–835 A. Pajitnov, On the tunnel number and the Morse-Novikov number of knots, Preprint (2008) [Pa08] [Po97] J. Porti, Torsion de Reidemeister pour les vari´et´es hyperboliques, vol. 128, Mem. Amer. Math. Soc., no. 612, AMS (1997) [Ri71] R. Riley, Homomorphisms of knot groups on ﬁnite groups, Math. of Computation, 25, 603619 (1971) [Ri72] R. Riley, Parabolic representations of knot groups, I. Proc. London Math. Soc. (3) 24 (1972), 217–242. [Ri84] R. Riley, Nonabelian representations of 2–bridge knots groups, Quart. J. Math. Oxford Ser. (2)",
+   "block": "library/arxiv-0905.0591v3/blocks/prose-sec-046"
+  },
+  {
+   "id": "fn-p040-3",
+   "page": 40,
+   "mark": "35",
+   "text": "(1984), 191–208",
+   "block": "library/arxiv-0905.0591v3/blocks/prose-sec-046"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "The twistedAlexanderpolynomialforaknotK⊂S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "andgivenalinkL ⊂S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "dgivenalinkL ⊂S3wedenotebyνLa(open)tubularneighborhoodofLinS"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "Q(R[F])"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "C∗( ˜N) ⊗Z[π1(N)] Q(R[F])"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "ofNto˜N.TogetherwiththecanonicalbasisforQ(R[F])"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "complexC∗( ˜N) ⊗Z[π1(N)] Q(R[F])"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "(2)IfNistheexteriorofalinkL⊂S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "(2)IfNistheexteriorofalinkL⊂S3,ψ:π1(S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "γ: π→GL(k, R)arepresentation,thenwewriteτ(L, γ)forτ(S"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "(1 −g1, 1 −g2, . . . , 1 −gn)"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "n a p×q matrix B= (brs) with entries in Z[π] we write brs=Pb"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "rs"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "rsg for"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "rsg for b"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "b"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "b"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "det((γ ⊗ψ)(Bi))(−1)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Inparticular,H∗(N; Q(R[F])"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "ofanon–splitlinkL⊂S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Wirtingerpresentationofπ1(S"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "det((γ ⊗ψ)(Bi))(−1)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Inparticular,wehaveH∗(N; Q(R[F])"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "P−→S"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "S"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "N,iwhichequals"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "(1)WeidentifyR[Z]withR[t±1]andR[Z"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "(2)GivenalinkL⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "(2)GivenalinkL⊂S3togetherwiththeabelianizationψ:π1(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "representationγ: π1(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": " anordered orientedlink,thenwehaveacanonicalisomorphismF∼= Z"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "K⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "entedm–componentlinkL⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "L,i(t"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "L,i(t1, . . . , t"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "Withalltheseconventions,givenaknotK⊂S"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "N,i̸= 0for"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "N,i̸= 0fori = 0,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "N,i̸= 0fori = 0, 1,"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "\u0001(−1)"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "N,i= 1for"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "\u0001(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "(1)Givena link L ⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "(1)Givena link L ⊂S3and a representationγ: π1(S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": ".= ∆γ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "∆γ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "\u0011(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "\u0001(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "R[F]kwiththestandardhermitianinnerproduct⟨v, w⟩= v"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "(α(g)−1)"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "N,i̸= 0 for all"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Z[π"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Z[π"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "N)]R"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Z[π"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "3.6.Twistedinvariantsofknotsandlinks.LetL = L1 ∪· · · ∪Lm⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Recallthatgivenarepresentationγ:π1(S"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "L,i(t"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "L,i(t1, . . . , t"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Lǫ,i(t"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Lǫ,i(t1, . . . , t"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "L,i(tǫ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "1, . . . , tǫ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "L = L1 ∪. . . Lk−1 ∪Lk⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "ofLandL′= L1 ∪. . . Lk−1⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Theorem3.10.LetL = L1 ∪. . . Lk−1 ∪Lk⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "etL = L1 ∪. . . Lk−1 ∪Lk⊂S3bealink.WriteL′= L1 ∪. . . Lk−1⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "andletγ′: π1(S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "representationπ1(S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "representationπ1(S3\\ νL) →π1(S"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "T"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ǫiT"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ǫiTi+ (−1)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "tlk(L"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "tlk(Li,L"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "links.RecallthatgivenanorientedknotK⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "orientation.GivenaknotK⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "reﬂectingKinS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "reﬂectingKinS2⊂S"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "metabelian, orthogonal, unitary) representations of π1(S"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(2)GivenKconsiderallconjugacyclassesofhomomorphismsofπ1(S"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "Theorem4.1.LetL⊂S"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "thereexistsanepimorphismγ: π1(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "LetL=L1∪· · ·∪Lm⊂S"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "disjointlyembeddedlocallyﬂatdisksinD"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "linksK=K1∪· · · ∪Km⊂S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "linksK=K1∪· · · ∪Km⊂S3andL=L1∪· · · ∪Lm⊂S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "isjointly embedded locally ﬂat cylinders C1, . . . , Cm in S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "such that ∂Ci= Ki ×0 ∪−Li ×1.(Givenan oriented knot K⊂S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": ".1.TwistedAlexanderpolynomialsofzero–surgeries.GivenaknotK⊂S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "zero–framedsurgeryNKofS"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "NK= S"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "NK= S3\\ νK ∪TS"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "NK= S3\\ νK ∪TS1× D"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "whereT=∂(S"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "whereT=∂(S3\\ νK)andTisgluedtoS"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "whereT=∂(S3\\ νK)andTisgluedtoS1× D"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "whereT=∂(S3\\ νK)andTisgluedtoS1× D2bygluingthemeridiantoS"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "inclusion map induces an isomorphism Z∼= H1(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "Lemma5.1.LetK⊂S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "inducedrepresentationα : π1(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "τ(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "summary.ConsiderthedecompositionNK= S"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "mary.ConsiderthedecompositionNK= S3\\ νK ∪TSasabove,whereS= S"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": ".ConsiderthedecompositionNK= S3\\ νK ∪TSasabove,whereS= S1× D"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "τ(NK, α) =τ(S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "LetKbeaknot,asabovewedenotebyNKthezero–framedsurgeryofS"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "Nowsuppose thatKhas aslicedisk D.Notethat∂(D"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "(1)αfactorsthrougharepresentationπ1(D"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "(2)theinducedtwistedmodulesH∗(D"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "slicediskcomplement.ItcanbeshownthatH∗(D"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "In the following let Kagain be a knot in S"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "NotethatH"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "NotethatH1(NK; Z) = Z,inparticularH"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "knownthatgivenkthereexistsacanonicalisomorphismH/(t"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "π→Z ⋉H→Z ⋉H/(t"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "andonH/(t"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "andonH/(tk−1)viamultiplicationbyt"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Fixk∈N.Letχ:H1(Wk; Z)→Z/q→S"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "characterH→H/(t"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "characterH→H/(tk−1) = H1(Wk; Z) →S"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "α(k, χ) : π→Z ⋉H/(t"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "χ(t"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "any oddprime power n and any character χ : H1(Wk; Z) →Z/n →S"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "twisted Alexander polynomials of a cyclic cover of S"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": ", . . . , kn∈N.Assumewearegivencharactersχi:H1(Wki; Z)→Z/q→S"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "λk1, . . . , λ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "λk1, . . . , λknsuch that for any choice of characters χ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "λk1, . . . , λknsuch that for any choice of characters χi: H"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ", . . . , λknsuch that for any choice of characters χi: H1(W"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "such that for any choice of characters χi: H1(Wki; Z) →Z/q→S"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "∆α(k"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "∆α(k1,χ"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "∆α(k1,χ1)⊗···⊗α(k"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "∆α(k1,χ1)⊗···⊗α(kn,χ"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "existsaslicediskDsuchthatπ1(NK)→π1(D"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "LetK⊂S"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "thatforanykthereexistsacanonicalisomorphismH1(NK; Z[t±1])/(t"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "thatM/(t"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "thatM/(tk−1)⊂H1(NK; Z[t±1])/(t"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "Theorem 5.4.Let K⊂S"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "S1ofprimepowervanishingonM/(t"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "AknotK⊂S"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "S⊂S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "S⊂S4suchthatS∩S"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "andanycharacterχ:H1(Lk; Z)→Z/n→S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "LetL⊂S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "π(S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": " νL) →GL(k, R)be aunitary representation.Suppose thatψ: π1(S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "theseassumptionswecanendowH1(S"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "theseassumptionswecanendowH1(S3\\ νL; Q(R[F])"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "theseassumptionswecanendowH1(S3\\ νL; Q(R[F])k)andH2(S"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "sumptionswecanendowH1(S3\\ νL; Q(R[F])k)andH2(S3\\ νL; Q(R[F])"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "d ∈det(α(π1(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "For example, if L is the m–component unlink in S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "withd ∈det(α(π1(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "LetR⊂Cbeasubringclosedundercomplexconjugationandletα:π1(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "ψ: H1(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "forsomed ∈det(α(π1(S"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "6.1.TwistedAlexanderpolynomialsandﬁberedmanifolds.Letφ∈H"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Wesay(N, φ)ﬁbersoverS"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "p:N→S"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "p:N→S1suchthattheinducedmapp∗:π1(N)→π1(S"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "P"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "i=1max{−χ(S"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "i=1max{−χ(Si),"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "i=1max{−χ(Si), 0}.Thurston[Th86]showedthatthisdeﬁnes"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ax{−χ(Si), 0}.Thurston[Th86]showedthatthisdeﬁnesaseminormonH"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "whichcanbeextendedtoaseminormonH"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "whichcanbeextendedtoaseminormonH1(N; R).AsanexampleconsiderS"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "whereK⊂S"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "whereK⊂S3isanon–trivialknot.Letφ ∈H"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "whereK⊂S3isanon–trivialknot.Letφ ∈H1(S"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "LetNbea3–manifoldNwithemptyortoroidalboundaryandletφ∈H"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "mialsp(t), q(t)∈R[t±1]with"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Lemma6.1.LetNbea3–manifoldwithemptyortoroidalboundary.Letφ∈H"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "det(idn −(γ ⊗φ)(c1)) = det(idn −tφ(c"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Theorem6.2.LetNbea3–manifold.Letφ∈H"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "ﬁbersoverS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "ﬁbersoverS1andsuchthatN̸=S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "ﬁbersoverS1andsuchthatN̸=S1× D"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "ﬁbersoverS1andsuchthatN̸=S1× D2, N̸=S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "ﬁbersoverS1andsuchthatN̸=S1× D2, N̸=S1× S"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "orem6.3.LetNbea3–manifoldwithemptyortoroidalboundary.Letφ ∈H"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "holds,then(N, φ)ﬁbersoverS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "manifoldandifS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "manifoldandifS1× Nissymplectic,thenNﬁbersoverS"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "eorem6.4.LetNbea3–manifoldwithemptyortoroidalboundaryandφ ∈H"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "(1)N= S"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "then(N, φ)ﬁbersoverS"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "Theorem6.5.LetK⊂S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "Theorem6.5.LetK⊂S3aknot.Thenthereexistsanepimorphismγ: π1(S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "K= 0ifandonlyiftheuniversalabeliancoverofS"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "ofAlexanderthatgivenaknotK⊂S"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "φ∈H"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Alexanderpolynomials detectthe Thurston norm foranyφ ∈H"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "=Pa"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "=Paif"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "=Paififora"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "A= 0forallφ ∈H"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "andfi∈F.Givenφ ∈H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "A:= max{φ(f"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "A:= max{φ(fi −f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "A:= max{φ(fi −fj) | (f"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "A:= max{φ(fi −fj) | (fi, f"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "A:= max{φ(fi −fj) | (fi, fj)suchthat"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "A:= max{φ(fi −fj) | (fi, fj)suchthata"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "A:= max{φ(fi −fj) | (fi, fj)suchthatai"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "A:= max{φ(fi −fj) | (fi, fj)suchthataia"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "deﬁnesaseminormonH"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "K⊂S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "K⊂S3a knot and let γ: π1(S"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "oftheformǫ"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "InthefollowingwesaythatSisafreeSeifertsurfaceforKifπ1(S"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "i=k"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=ka"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "i=kai"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=kait"
+  },
+  {
+   "page": 23,
+   "mark": "l",
+   "context": "polynomialp=P"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "Theorem6.8.GivenaknotK⊂S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "Theorem6.8.GivenaknotK⊂S3andarepresentationγ:π1(S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "GivenaknotK⊂S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "7.1.Parabolicrepresentations.LetK⊂S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "arabolicrepresentations.LetK⊂S3beaknot.Arepresentationγ:π1(S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "representation π1(S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "3\\νK) →PSL(2, C) lifts to a parabolic representation γ: π1(S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "π1(S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "γζ: π1(S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "epresentationisconjugatetoanintegralrepresentationγφ(t):π1(S"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "= 2"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "= 2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "= 2dm"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "Kis"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "conjugacyclassesofrepresentationsπ1(S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "anaﬃnealgebraiccurveinC"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "7.3.Twistedinvariantsofhyperbolicknotsandlinks.LetL⊂S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "link.Thenthecorrespondingrepresentationπ1(S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "representationγcan:π1(S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "γadj: π1(S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "quotientπ1(S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "quotientπ1(S3\\νK)/π1(S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "8.1.APartialorderonknots.GivenaknotKwewriteπ1(S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "8.1.APartialorderonknots.GivenaknotKwewriteπ1(S3\\ νK):=π1(S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "Theorem8.1.LetK1andK2betwoknotsinS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "8.2.Periodicandfreelyperiodicknots.AknotK⊂S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "q,ifthereexistsasmoothtransformationofS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "suchthattheﬁxedpointsetisacircleAdisjointfromK.NotethatA ⊂S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "NowassumethatK⊂S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "f:S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "f:S3→S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "f:S3→S3.NotethatS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "f:S3→S3.NotethatS3/fisdiﬀeomorphictoS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "S3→S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "S3→S3/f= S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "γ:π1(S"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "F(t, e"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "A⊂S"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "Theorem8.3.LetKbeaperiodicknotofperiodq=p"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "γ:π1(S"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "id"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "K(t)"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "whereweviewAasanelementinπ1(S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "AknotK⊂S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "fofS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "theprojectionmapS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "theprojectionmapS3→Σ := S"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "K(t"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "K(e"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "K(e2πik/q"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "α(g)"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "Denotebyφ∈Hom(π1(N), Z)=H"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "8.5.Homologyofcycliccovers.LetK⊂S"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "8.5.Homologyofcycliccovers.LetK⊂S3beaknot.WedenotebyH:=H1(S"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "RecallthatwehaveacanonicalisomorphismH/(t"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "∆K(e"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "e2πiθ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "e2πiθ1, . . . , e"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "e2πiθ1, . . . , e2πiθ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "e2πiθ1, . . . , e2πiθ1\u0001\f\fdθ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "e2πiθ1, . . . , e2πiθ1\u0001\f\fdθ1 . . . dθ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "nlog|Tor H"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "nlog|Tor H1(L"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "8.6.AlexanderpolynomialsforlinksinRP"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "8.6.AlexanderpolynomialsforlinksinRP3.GivenalinkL⊂RP"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Givena2–complexXTuraev[Tu02c]introducedanormonH"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "9.3.Planealgebraiccurves.LetC⊂C"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "letL∞bethelinkatinﬁnity(wereferto[CF07]fordetails).NotethatC"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "thetwistedAlexanderpolynomialofC"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "thetwistedAlexanderpolynomialofC2\\ νC.Nowletγ:π1(C"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "epresentationwhereF⊂Cisasubringclosedunderconjugation.Letφ:C"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Theorem1.1]thenrelatetwistedAlexanderpolynomialofC"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "dimensional representations is to use the theory of L"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "deﬁnitionofvariousL"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "EventhoughL"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "[Tu02b].ThistheoryisdiﬀerentinspirittotheforementionedL"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "i=−r"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "i=−ra"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "i=−rai"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "i=−rait"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "i=−raitiwith"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "i=−raitiwitha"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "overK.TheelementsinK[t±1]areformalsumsP"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "inK[t±1]isgivenbytherulet"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "inK[t±1]isgivenbytheruletia = γ"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "inK[t±1]isgivenbytheruletia = γi(a)t"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Let Nbe a 3–manifold and let φ ∈H"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "N,φ,i:=Q"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "k=1"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "k=1p"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "andequalityholdsifφisaﬁberedclassandN̸= S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "andequalityholdsifφisaﬁberedclassandN̸= S1× D"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "andequalityholdsifφisaﬁberedclassandN̸= S1× D2, N̸= S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "andequalityholdsifφisaﬁberedclassandN̸= S1× D2, N̸= S1× S"
+  },
+  {
+   "page": 33,
+   "mark": "k",
+   "context": "| g"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "Forexampleif Kis a knot,γ= π1(S"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "triple for πif there exist epimorphisms ϕ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "2: γ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "2: γ1→γ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "2: γ1→γ2and φ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "2: γ1→γ2and φ2: γ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "2: γ1→γ2and φ2: γ2→Z such that ϕ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "2: γ1→γ2and φ2: γ2→Z such that ϕ2= ϕ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "2◦ϕ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "ϕ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "~ϕ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "ori.Let(ϕ1, ϕ2, φ)beanadmissibletripleforπ1(N).Supposethat∆ϕ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "followsthat∆ϕ"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "di:= deg(∆ϕ"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "N,φ) −deg(∆ϕ"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "N,φ,0) −deg(∆ϕ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "N,φ,2), i = 1,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "N∈Z[t±1]isnon–trivial,then"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "N∈Z[t±1]isnon–trivial,thend"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "N∈Z[t±1]isnon–trivial,thend1 −d"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Proof.Thefactthat∆ϕ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "N,φ̸= 0impliesthat∆ϕ"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "N,φ̸= 0andtheinequality"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "N,φ̸= 0andtheinequalityd"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "N,φ̸= 0andtheinequalityd2≥d"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "deﬁnesaseminormonH"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "generalizingthek–thAlexanderpolynomialofaknotK⊂S"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "(2)LetK⊂S"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "(2)LetK⊂S3aknotandletγ:π1(S"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "(7)LetK⊂S"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "(8)LetNbea3–manifoldwithemptyortoroidalboundary,N̸=S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(8)LetNbea3–manifoldwithemptyortoroidalboundary,N̸=S1× D"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "(8)LetNbea3–manifoldwithemptyortoroidalboundary,N̸=S1× D2, S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "etNbea3–manifoldwithemptyortoroidalboundary,N̸=S1× D2, S1× S"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "letφ∈H"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "(10)LetKbeahyperbolicknotandρ:π1(S"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "(11)DoesthereexistaknotK⊂S"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "Cochran,K.OrrandP.Teichner,Knotconcordance,WhitneytowersandL"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "Dodziuk,P.Linnell,V.Mathai,T.SchickandS.Yates,ApproximatingL"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "S.Friedl,C.LeidyandL.Maxim,L"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "S.FriedlandS.Vidussi,SymplecticS"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "S.FriedlandS.Vidussi,SymplecticS1× N"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "S.FriedlandS.Vidussi,SymplecticS"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "S.FriedlandS.Vidussi,SymplecticS1×N"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "P.Kronheimer,MinimalgenusinS"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "P.Kronheimer,MinimalgenusinS1× M"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "andC.Taubes,Seiberg-WittenFloerhomologyandsymplecticformsonS"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": ".Taubes,Seiberg-WittenFloerhomologyandsymplecticformsonS1× M"
+  },
+  {
+   "page": 39,
+   "mark": "s",
+   "context": "W. Li and L. Xu, CountingSL2(F2"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "W.LiandW.Zhang,AnL"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "W. Li and W. Zhang, An L"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "W.L¨uck,L"
+  },
+  {
+   "page": 41,
+   "mark": "c",
+   "context": "V.Turaev,TorsioninvariantsofSpin"
+  }
+ ]
+}

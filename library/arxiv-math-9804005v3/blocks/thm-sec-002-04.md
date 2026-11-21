@@ -1,1 +1,1 @@
-Assume A is a noetherian connected graded k-algebra which has a
+Assume A is a noetherian connected graded k-algebra which has a balanced dualizing complex R and satisﬁes the similar submodule condition (e.g. A is FBN or has enough normal elements ). Then the balanced dualizing complex R is graded Auslander. Next, Theorem 6.2 says:

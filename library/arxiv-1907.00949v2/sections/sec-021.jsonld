@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1907.00949v2/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Newton and other algorithms over a flag manifold",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-1907.00949v2/blocks/prose-sec-021"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.00949v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.00949v2/manifest.jsonld",
+  "provenance": "ingested"
+}

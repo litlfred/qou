@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2607.03827v1
-doc_title: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS"
+doc_title: "Affine cellular algebras and asymptotic algebras"
 section_id: sec-004-5-properties-of-the-embedding-into-the-asymptoti
 section_title: "Properties of the embedding into the asymptotic algebra"
 section_number: 5
 pages: 17-22
 source_pdf: 2607.03827v1.pdf
 source_sha256: 965d69603381942a
-doc_brief: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.953
+doc_brief: "Affine cellular algebras and asymptotic algebras — The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between"
 ---
 In this section we will provide further information related with the embedding
 into the asymptotic algebra by considering the restriction functor associated to the

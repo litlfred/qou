@@ -8,6 +8,7 @@ pages: 29-29
 source_pdf: cspaper.pdf
 source_sha256: 1910c380cf79bf42
 toc_source: inferred
+doc_brief: "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds — 7 sections: Front matter; Introduction; Consistency and cusp conditions, a"
 ---
 [CS]
 M. Culler and P. B. Shalen, Varieties of group representations and splittings of 3-manifolds,

@@ -29,7 +29,7 @@ Markov-trace equivalence ([jones1987]) is the open refactor.
 
 ## References
 
-- [manuscript] §4-braids-and-knots/hadron-unique
+- [leitner2026] §4-braids-and-knots/hadron-unique
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
 

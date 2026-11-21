@@ -8,7 +8,7 @@
   "pages": 28,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,24 +21,24 @@
    "stamp_date": "15 May 2019"
   },
   "doi": null,
-  "title": "ON O\u2019HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS",
+  "title": "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS",
   "authors_raw": "SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA",
   "title_lines": [
-   "ON O\u2019HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS"
+   "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS"
   ],
-  "abstract": "We develop a regularity theory for extremal knots of scale invariant knot ener- gies de\ufb01ned by J. O\u2019hara in 1991. This class contains as a special case the M\u00a8obius energy. For the M\u00a8obius energy, due to the celebrated work of Freedman, He, and Wang, we have a relatively good understanding. Their approch is crucially based on the invariance of the M\u00a8obius energy under M\u00a8obius transforms, which fails for all the other O\u2019hara energies. We overcome this di\ufb03culty by re-interpreting the scale invariant O\u2019hara knot energies as a nonlinear, nonlocal Lp-energy acting on the unit tangent of the knot parametriza- tion. This allows us to draw a connection to the theory of (fractional) harmonic maps into spheres. Using this connection we are able to adapt the regularity theory for degenerate fractional harmonic maps in the critical dimension to prove regularity for minimizers and critical knots of the scale-invariant O\u2019hara knot energies.",
+  "abstract": "We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991. This class contains as a special case the M¨obius energy. For the M¨obius energy, due to the celebrated work of Freedman, He, and Wang, we have a relatively good understanding. Their approch is crucially based on the invariance of the M¨obius energy under M¨obius transforms, which fails for all the other O’hara energies. We overcome this diﬃculty by re-interpreting the scale invariant O’hara knot energies as a nonlinear, nonlocal Lp-energy acting on the unit tangent of the knot parametriza- tion. This allows us to draw a connection to the theory of (fractional) harmonic maps into spheres. Using this connection we are able to adapt the regularity theory for degenerate fractional harmonic maps in the critical dimension to prove regularity for minimizers and critical knots of the scale-invariant O’hara knot energies.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.17",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20190516003128Z"
   },
-  "title_raw": "ON O\u2019HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS",
+  "title_raw": "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "ON O\u2019HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS C ontents Introduction A new energy E \u03b1, p Regularity theory for E \u03b1, p -critical maps: Proof of Theorem I Extremal cases \u03b1 = 4 and \u03b1 = 0, and no M\u00a8obius invariance for p = 2 Appendix A. A new norm for W \u03b2, p Appendix B. Computations Reference",
+   "heading": "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS C ontents Introduction A new energy E α, p Regularity theory for E α, p -critical maps: Proof of Theorem I Extremal cases α = 4 and α = 0, and no M¨obius invariance for p = 2 Appendix A. A new norm for W β, p Appendix B. Computations Reference",
    "outline": "1. Introduction",
-   "text": "ON O\u2019HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS",
+   "text": "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS",
    "corroborated_by": [],
    "browser_print": false
   }
@@ -76,7 +76,7 @@
   },
   {
    "level": 1,
-   "title": "Extremal cases p=1 and p=infty, and no M\u00f6bius invariance for p=2",
+   "title": "Extremal cases p=1 and p=infty, and no Möbius invariance for p=2",
    "page": 17,
    "source": "outline",
    "number": "4",
@@ -121,7 +121,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The square Q (left) and a station curve \u03c3 (right) inverted on",
+   "title": "The square Q (left) and a station curve σ (right) inverted on",
    "page": 21,
    "confidence": 0.9,
    "evidence": [
@@ -134,7 +134,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Plot of \u03b1 7\u21921",
+   "title": "Plot of α 7→1",
    "page": 22,
    "confidence": 0.9,
    "evidence": [
@@ -351,8 +351,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1067,
-   "n_words": 169,
+   "n_chars": 1064,
+   "n_words": 168,
    "label_start": null,
    "label_end": null
   },
@@ -363,8 +363,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 10694,
-   "n_words": 1889,
+   "n_chars": 10707,
+   "n_words": 1890,
    "label_start": null,
    "label_end": null
   },
@@ -374,14 +374,50 @@
    "title": "A new energy E",
    "level": 1,
    "page_start": 4,
-   "page_end": 26,
-   "n_chars": 37267,
-   "n_words": 7705,
+   "page_end": 10,
+   "n_chars": 10722,
+   "n_words": 2149,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-appendix-b-computations",
+   "id": "sec-002-3-regularity-theory-for-e-critical-maps-proof-of",
+   "number": "3",
+   "title": "Regularity theory for E-critical maps: Proof of Theorem I",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 17,
+   "n_chars": 13341,
+   "n_words": 2753,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-extremal-cases-p1-and-pinfty-and-no-möbius-inv",
+   "number": "4",
+   "title": "Extremal cases p=1 and p=infty, and no Möbius invariance for p=2",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 22,
+   "n_chars": 7900,
+   "n_words": 1623,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-appendix-a-a-new-norm-for-wsp",
+   "number": null,
+   "title": "Appendix A. A new norm for W(s,p)",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 5134,
+   "n_words": 1145,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-appendix-b-computations",
    "number": null,
    "title": "Appendix B. Computations",
    "level": 1,
@@ -393,7 +429,7 @@
    "label_end": null
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -416,13 +452,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 5,
-  "chars_total": 57002,
+  "sections": 8,
+  "chars_total": 56842,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "pknot23.tex",
    "tex_sections": 16,
-   "overlaid": 2,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -445,18 +482,39 @@
     {
      "id": "sec-001-2-a-new-energy-e",
      "title": "A new energy E",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-appendix-b-computations",
+     "id": "sec-002-3-regularity-theory-for-e-critical-maps-proof-of",
+     "title": "Regularity theory for E-critical maps: Proof of Theorem I",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-extremal-cases-p1-and-pinfty-and-no-möbius-inv",
+     "title": "Extremal cases p=1 and p=infty, and no Möbius invariance for p=2",
+     "prose_ratio": 0.743,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-appendix-a-a-new-norm-for-wsp",
+     "title": "Appendix A. A new norm for W(s,p)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-appendix-b-computations",
      "title": "Appendix B. Computations",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-references",
+     "id": "sec-006-references",
      "title": "References",
      "result": "no matching \\section"
     }

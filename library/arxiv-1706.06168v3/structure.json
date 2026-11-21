@@ -8,9 +8,15 @@
   "pages": 36,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 14,
+    "reason": "16 of 658 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,25 +27,25 @@
    "stamp_date": "6 Aug 2021"
   },
   "doi": null,
-  "title": "A Representation Theoretic Explanation of the Borcea-Br\u00e4nd\u00e9n Characterization",
+  "title": "A Representation Theoretic Explanation of the Borcea-Brändén Characterization",
   "authors_raw": "Jonathan Leake",
   "title_lines": [
-   "A Representation Theoretic Explanation of the Borcea-Br\u00e4nd\u00e9n",
+   "A Representation Theoretic Explanation of the Borcea-Brändén",
    "Characterization"
   ],
-  "abstract": "In 2009, Borcea and Br\u00a8and\u00b4en characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their \ufb01ndings, which generalizes and simpli\ufb01es their result and leads to a conceptual uni\ufb01cation of many related results in polynomial stability theory. At the heart of this uni\ufb01cation is a generalized Grace\u2019s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea-Br\u00a8and\u00b4en result to characterize a certain subclass of the linear operators which preserve such polynomials.",
+  "abstract": "In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea-Br¨and´en result to characterize a certain subclass of the linear operators which preserve such polynomials.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20210808210056-04'00'"
   },
-  "title_raw": "A Representation Theoretic Explanation of the Borcea-Br\u00e4nd\u00e9n Characterization",
+  "title_raw": "A Representation Theoretic Explanation of the Borcea-Brändén Characterization",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "A Representation Theoretic Explanation of the Borcea-Br\u00a8and\u00b4en Characterization",
+   "heading": "A Representation Theoretic Explanation of the Borcea-Br¨and´en Characterization",
    "outline": "1 Introduction",
-   "text": "A Representation Theoretic Explanation of the Borcea-Br\u00e4nd\u00e9n Characterization",
+   "text": "A Representation Theoretic Explanation of the Borcea-Brändén Characterization",
    "corroborated_by": [],
    "browser_print": false
   }
@@ -227,7 +233,7 @@
   },
   {
    "level": 2,
-   "title": "Deriving the Complex Borcea-Br\u00e4nd\u00e9n Characterization",
+   "title": "Deriving the Complex Borcea-Brändén Characterization",
    "page": 22,
    "source": "outline",
    "number": "6.3",
@@ -267,7 +273,7 @@
   },
   {
    "level": 2,
-   "title": "Deriving the Real Borcea-Br\u00e4nd\u00e9n Characterization",
+   "title": "Deriving the Real Borcea-Brändén Characterization",
    "page": 25,
    "source": "outline",
    "number": "7.3",
@@ -694,46 +700,46 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 14284,
-   "n_words": 2416,
-   "label_start": "1",
-   "label_end": "4"
-  },
-  {
-   "id": "sec-001-21-notation",
-   "number": "2.1",
-   "title": "Notation",
-   "level": 2,
-   "page_start": 4,
    "page_end": 5,
-   "n_chars": 2941,
-   "n_words": 457,
-   "label_start": "4",
+   "n_chars": 17340,
+   "n_words": 2898,
+   "label_start": "1",
    "label_end": "5"
   },
   {
-   "id": "sec-002-2-preliminaries",
+   "id": "sec-001-2-preliminaries",
    "number": "2",
    "title": "Preliminaries",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 124,
-   "n_words": 18,
+   "n_chars": 13,
+   "n_words": 1,
    "label_start": "5",
    "label_end": "5"
+  },
+  {
+   "id": "sec-002-21-notation",
+   "number": "2.1",
+   "title": "Notation",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1250,
+   "n_words": 258,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-003-22-homogeneous-polynomials",
    "number": "2.2",
    "title": "Homogeneous Polynomials",
    "level": 2,
-   "page_start": 5,
+   "page_start": 6,
    "page_end": 7,
-   "n_chars": 5081,
-   "n_words": 1048,
-   "label_start": "5",
+   "n_chars": 3827,
+   "n_words": 790,
+   "label_start": "6",
    "label_end": "7"
   },
   {
@@ -766,22 +772,22 @@
    "title": "An Important Invariant Map, and Apolarity",
    "level": 2,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 2131,
-   "n_words": 407,
+   "page_end": 9,
+   "n_chars": 3753,
+   "n_words": 714,
    "label_start": "8",
-   "label_end": "8"
+   "label_end": "9"
   },
   {
    "id": "sec-007-33-the-symbol-of-an-operator",
    "number": "3.3",
    "title": "The Symbol of an Operator",
    "level": 2,
-   "page_start": 8,
+   "page_start": 9,
    "page_end": 11,
-   "n_chars": 5584,
-   "n_words": 1057,
-   "label_start": "8",
+   "n_chars": 4060,
+   "n_words": 768,
+   "label_start": "9",
    "label_end": "11"
   },
   {
@@ -802,26 +808,50 @@
    "title": "Polar Derivatives",
    "level": 2,
    "page_start": 11,
-   "page_end": 13,
-   "n_chars": 6239,
-   "n_words": 1155,
+   "page_end": 12,
+   "n_chars": 2637,
+   "n_words": 496,
    "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-010-42-projective-convexity-and-laguerres-theorem",
+   "number": "4.2",
+   "title": "Projective Convexity and Laguerre's Theorem",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3557,
+   "n_words": 654,
+   "label_start": "12",
    "label_end": "13"
   },
   {
-   "id": "sec-010-43-real-stable-polynomials",
+   "id": "sec-011-43-real-stable-polynomials",
    "number": "4.3",
    "title": "Real Stable Polynomials",
    "level": 2,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 7224,
-   "n_words": 1339,
+   "page_end": 14,
+   "n_chars": 5230,
+   "n_words": 978,
    "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-012-5-graces-theorem",
+   "number": "5",
+   "title": "Grace's Theorem",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1965,
+   "n_words": 373,
+   "label_start": "14",
    "label_end": "15"
   },
   {
-   "id": "sec-011-51-other-regions",
+   "id": "sec-013-51-other-regions",
    "number": "5.1",
    "title": "Other Regions",
    "level": 2,
@@ -833,7 +863,7 @@
    "label_end": "16"
   },
   {
-   "id": "sec-012-52-evaluation-symbols",
+   "id": "sec-014-52-evaluation-symbols",
    "number": "5.2",
    "title": "Evaluation Symbols",
    "level": 2,
@@ -845,45 +875,45 @@
    "label_end": "17"
   },
   {
-   "id": "sec-013-6-stability-properties-of-complex-linear-operato",
+   "id": "sec-015-6-stability-properties-of-complex-linear-operato",
    "number": "6",
    "title": "Stability Properties of Complex Linear Operators",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 887,
-   "n_words": 135,
+   "n_chars": 1430,
+   "n_words": 213,
    "label_start": "17",
    "label_end": "18"
   },
   {
-   "id": "sec-014-62-strong-stability-preservation",
-   "number": "6.2",
-   "title": "Strong Stability Preservation",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 433,
-   "n_words": 61,
-   "label_start": "18",
-   "label_end": "18"
-  },
-  {
-   "id": "sec-015-61-weak-stability-preservation",
+   "id": "sec-016-61-weak-stability-preservation",
    "number": "6.1",
    "title": "Weak Stability Preservation",
    "level": 2,
    "page_start": 18,
-   "page_end": 22,
-   "n_chars": 12042,
-   "n_words": 2378,
+   "page_end": 19,
+   "n_chars": 1853,
+   "n_words": 318,
    "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-017-62-strong-stability-preservation",
+   "number": "6.2",
+   "title": "Strong Stability Preservation",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 10184,
+   "n_words": 2059,
+   "label_start": "19",
    "label_end": "22"
   },
   {
-   "id": "sec-016-63-deriving-the-complex-borcea-br\u00e4nd\u00e9n-character",
+   "id": "sec-018-63-deriving-the-complex-borcea-brändén-character",
    "number": "6.3",
-   "title": "Deriving the Complex Borcea-Br\u00e4nd\u00e9n Characterization",
+   "title": "Deriving the Complex Borcea-Brändén Characterization",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
@@ -893,31 +923,31 @@
    "label_end": "23"
   },
   {
-   "id": "sec-017-7-stability-properties-of-real-linear-operators",
+   "id": "sec-019-7-stability-properties-of-real-linear-operators",
    "number": "7",
    "title": "Stability Properties of Real Linear Operators",
    "level": 1,
    "page_start": 23,
-   "page_end": 23,
-   "n_chars": 153,
-   "n_words": 23,
-   "label_start": "23",
-   "label_end": "23"
-  },
-  {
-   "id": "sec-018-71-weak-real-stability-preservation",
-   "number": "7.1",
-   "title": "Weak Real Stability Preservation",
-   "level": 2,
-   "page_start": 23,
    "page_end": 24,
-   "n_chars": 2489,
-   "n_words": 420,
+   "n_chars": 1341,
+   "n_words": 206,
    "label_start": "23",
    "label_end": "24"
   },
   {
-   "id": "sec-019-72-strong-real-stability-preservation",
+   "id": "sec-020-71-weak-real-stability-preservation",
+   "number": "7.1",
+   "title": "Weak Real Stability Preservation",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1408,
+   "n_words": 254,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-021-72-strong-real-stability-preservation",
    "number": "7.2",
    "title": "Strong Real Stability Preservation",
    "level": 2,
@@ -929,9 +959,9 @@
    "label_end": "25"
   },
   {
-   "id": "sec-020-73-deriving-the-real-borcea-br\u00e4nd\u00e9n-characteriza",
+   "id": "sec-022-73-deriving-the-real-borcea-brändén-characteriza",
    "number": "7.3",
-   "title": "Deriving the Real Borcea-Br\u00e4nd\u00e9n Characterization",
+   "title": "Deriving the Real Borcea-Brändén Characterization",
    "level": 2,
    "page_start": 25,
    "page_end": 26,
@@ -941,7 +971,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-021-74-ray-and-interval-stability",
+   "id": "sec-023-74-ray-and-interval-stability",
    "number": "7.4",
    "title": "Ray and Interval Stability",
    "level": 2,
@@ -953,19 +983,31 @@
    "label_end": "31"
   },
   {
-   "id": "sec-022-a-tensor-product-decomposition-of-sl2c-represent",
+   "id": "sec-024-a-tensor-product-decomposition-of-sl2c-represent",
    "number": null,
    "title": "A Tensor Product Decomposition of SL2(C) Representations",
    "level": 1,
    "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1496,
+   "n_words": 248,
+   "label_start": "31",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-025-a1-decomposition-of-vn-tensor-vm",
+   "number": null,
+   "title": "A.1 Decomposition of V(n) tensor V(m)",
+   "level": 2,
+   "page_start": 31,
    "page_end": 34,
-   "n_chars": 8605,
-   "n_words": 1703,
+   "n_chars": 7078,
+   "n_words": 1449,
    "label_start": "31",
    "label_end": "34"
   },
   {
-   "id": "sec-023-b-the-grace-walsh-szego-coincidence-theorem",
+   "id": "sec-026-b-the-grace-walsh-szego-coincidence-theorem",
    "number": null,
    "title": "B The Grace-Walsh-Szego Coincidence Theorem",
    "level": 1,
@@ -977,7 +1019,7 @@
    "label_end": "34"
   },
   {
-   "id": "sec-024-b1-polarization-and-projection",
+   "id": "sec-027-b1-polarization-and-projection",
    "number": null,
    "title": "B.1 Polarization and Projection",
    "level": 2,
@@ -989,7 +1031,7 @@
    "label_end": "35"
   },
   {
-   "id": "sec-025-b2-the-coincidence-theorem",
+   "id": "sec-028-b2-the-coincidence-theorem",
    "number": null,
    "title": "B.2 The Coincidence Theorem",
    "level": 2,
@@ -1012,13 +1054,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 27,
-  "chars_total": 118813,
+  "sections": 30,
+  "chars_total": 119018,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "rep_theory_BB.tex",
    "tex_sections": 28,
-   "overlaid": 16,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1033,28 +1076,28 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.872,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-21-notation",
-     "title": "Notation",
-     "prose_ratio": 0.358,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.043,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-002-2-preliminaries",
-     "title": "Preliminaries",
-     "prose_ratio": 0.435,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-002-21-notation",
+     "title": "Notation",
+     "prose_ratio": 0.404,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-22-homogeneous-polynomials",
      "title": "Homogeneous Polynomials",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.598,
+     "coverage_ratio": 0.671,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1077,14 +1120,16 @@
     {
      "id": "sec-006-32-an-important-invariant-map-and-apolarity",
      "title": "An Important Invariant Map, and Apolarity",
-     "prose_ratio": 0.579,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-33-the-symbol-of-an-operator",
      "title": "The Symbol of an Operator",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.751,
+     "prose_ratio": 0.97,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1099,21 +1144,37 @@
     {
      "id": "sec-009-41-polar-derivatives",
      "title": "Polar Derivatives",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-43-real-stable-polynomials",
+     "id": "sec-010-42-projective-convexity-and-laguerres-theorem",
+     "title": "Projective Convexity and Laguerre's Theorem",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-43-real-stable-polynomials",
      "title": "Real Stable Polynomials",
-     "prose_ratio": 0.948,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-51-other-regions",
+     "id": "sec-012-5-graces-theorem",
+     "title": "Grace's Theorem",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-51-other-regions",
      "title": "Other Regions",
      "prose_ratio": 0.978,
      "coverage_ratio": 1.0,
@@ -1121,7 +1182,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-52-evaluation-symbols",
+     "id": "sec-014-52-evaluation-symbols",
      "title": "Evaluation Symbols",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.98,
@@ -1129,50 +1190,55 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-6-stability-properties-of-complex-linear-operato",
+     "id": "sec-015-6-stability-properties-of-complex-linear-operato",
      "title": "Stability Properties of Complex Linear Operators",
-     "prose_ratio": 0.739,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-62-strong-stability-preservation",
-     "title": "Strong Stability Preservation",
-     "prose_ratio": 0.102,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-015-61-weak-stability-preservation",
+     "id": "sec-016-61-weak-stability-preservation",
      "title": "Weak Stability Preservation",
      "prose_ratio": 0.963,
-     "coverage_ratio": 0.313,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-016-63-deriving-the-complex-borcea-br\u00e4nd\u00e9n-character",
-     "title": "Deriving the Complex Borcea-Br\u00e4nd\u00e9n Characterization",
+     "id": "sec-017-62-strong-stability-preservation",
+     "title": "Strong Stability Preservation",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-63-deriving-the-complex-borcea-brändén-character",
+     "title": "Deriving the Complex Borcea-Brändén Characterization",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-7-stability-properties-of-real-linear-operators",
+     "id": "sec-019-7-stability-properties-of-real-linear-operators",
      "title": "Stability Properties of Real Linear Operators",
-     "prose_ratio": 0.149,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-018-71-weak-real-stability-preservation",
-     "title": "Weak Real Stability Preservation",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.6,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-72-strong-real-stability-preservation",
+     "id": "sec-020-71-weak-real-stability-preservation",
+     "title": "Weak Real Stability Preservation",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-72-strong-real-stability-preservation",
      "title": "Strong Real Stability Preservation",
      "prose_ratio": 0.94,
      "coverage_ratio": 1.0,
@@ -1180,15 +1246,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-73-deriving-the-real-borcea-br\u00e4nd\u00e9n-characteriza",
-     "title": "Deriving the Real Borcea-Br\u00e4nd\u00e9n Characterization",
+     "id": "sec-022-73-deriving-the-real-borcea-brändén-characteriza",
+     "title": "Deriving the Real Borcea-Brändén Characterization",
      "prose_ratio": 0.922,
      "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-74-ray-and-interval-stability",
+     "id": "sec-023-74-ray-and-interval-stability",
      "title": "Ray and Interval Stability",
      "prose_ratio": 0.968,
      "coverage_ratio": 0.723,
@@ -1196,22 +1262,27 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-a-tensor-product-decomposition-of-sl2c-represent",
+     "id": "sec-024-a-tensor-product-decomposition-of-sl2c-represent",
      "title": "A Tensor Product Decomposition of SL2(C) Representations",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-023-b-the-grace-walsh-szego-coincidence-theorem",
+     "id": "sec-025-a1-decomposition-of-vn-tensor-vm",
+     "title": "A.1 Decomposition of V(n) tensor V(m)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-b-the-grace-walsh-szego-coincidence-theorem",
      "title": "B The Grace-Walsh-Szego Coincidence Theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-024-b1-polarization-and-projection",
+     "id": "sec-027-b1-polarization-and-projection",
      "title": "B.1 Polarization and Projection",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-025-b2-the-coincidence-theorem",
+     "id": "sec-028-b2-the-coincidence-theorem",
      "title": "B.2 The Coincidence Theorem",
      "result": "no matching \\section"
     }

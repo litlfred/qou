@@ -1,0 +1,56 @@
+3. THE SEMISTANDARD BASIS THEOREM AB
+
+Proof. We have already remarked that gqaqa is the identity map on M>. There-
+fore, we compute that
+
+(ep. $P)Prp = Ppryrpp =¥Ypp mod Sd, n);
+
+so (@.,.¢.) = 1. In particular, L* # 0. Parts (i) and (ii) now follow from
+Theorem 2.13. Oo
+
+4.17 Corollary (Parshall-Wang) Suppose that R is a field) Then Y(d,n) is
+quasi-hereditary.
+
+Proof. This is immediate from Theorem 4.16(ii) and Corollary 2.19. Oo
+
+Given two partitions \ and jr in A(d.n) let dy, = [W> : L“] be the composition
+multiplicity of the simple module L" in W>. Corollary 2.14 yields the next result.
+
+4.18 Corollary Suppose that R is a field and let X and yt be partitions in At (d,n).
+Then dy, = 1 and if dy, > 0 then pp X.
+
+In Chapter 3 we defined dy, to be the decomposition multiplicity [S* : D“];
+we close this chapter by investigating more closely the links between the Iwahori-—
+Hecke algebras and the g—Schur algebras when d > n. In particular, we show that
+if pe is e-restricted then [S* : D"] = [W> : L"]; thus, the notation d),, is consistent
+in this case. (If these two sets of decomposition numbers being equal worries you,
+reread the warning on page 25.)
+
+For the remainder of this section we assume that w € A*(d,n); or equivalently,
+that d > n. In this case, Homy(#, #) is an R-submodule of “(d,n). Further-
+more, there is a canonical isomorphism of R-modules # = Homy (7, .#) given
+by ht pa where pp is the homomorphism given by left multiplication by h. In
+fact, # = prow S(d,n)yrwq« since given standard \-tableaux $ € 7o(A, 4) and
+TE To(A,v) we have that gree gsrprete = Ou pdvw Sst-
+
+Noting that ¢greq. is idempotent in (d,n), we can define a functor from the
+category of right .(d,n)-modules to the category of right #—-modules; the Schur
+functor is the functor which sends a right -“(d,n)-module M to Meer.
+
+4.19 Proposition Suppose that R is a field and that d >n. Let be a partition
+ofn. Then, as right #-modules,
+(i) W orem = S>;
+(ii) DAgpeqe = D>.
+Furthermore, if js is an e-restricted partition of n then [W> : L#] = [S* : D*].
+Proof. Suppose that T is a standard A-tableau of type p. Then gry ere = 0
+unless pp = w and, if p= w, then T= t is a standard \-tableau and grywere = ¢t.
+Consequently, Were is free as an R-module with basis { gy | t € Std(\) } and
+the map W>yrer. + S* which sends gy to ¢(mu) = m, is an isomorphism (cf.
+Proposition 4.15).
+Part (ii) of the Proposition nows follows from Theorem 3.39(ii) and Corol-
+lary 4.18. In particular, this shows that if [> greq. # 0 then is e-restricted.
+Finally, let W* = W! > --. > W* > 0 be a composition series for W».
+Then S* = W! ppeqe > W pqs > 0 gives an #-module filtration
+of S* with quotients Wig. /Witl pene = (WI/W't!) pepe & Li gqeqe for
+some partitions #;. By the last paragraph, D!tgzeqe is simple when jj; is e—
+restricted and zero otherwise. Therefore, by omitting the modules Wiyquqe such

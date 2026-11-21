@@ -16,29 +16,20 @@ The identity holds whether $(i,j)$ are adjacent ($j = i+1$)
 or non-adjacent ($j \ge i+2$).
 ## Operator interpretation
 
-> **Retracted and replaced, 2026-08-09.** This section read:
->
-> > The value $z^2$ is the **Jones polynomial of the Hopf link** (unknotted
-> > two-component linking) evaluated at the substrate parameter:
-> > $J_{\mathrm{Hopf}}(q) = -(q^{1/2} + q^{-1/2})\cdot z^2
-> > = -(q + q^{-1})/(q^{1/2} + q^{-1/2})$.
->
-> That is wrong three times over, and only the third is about the convention.
->
-> 1. **Wrong link.** $z^2 = \mathrm{tr}_M(\sigma_i\sigma_j)$. The closure of
->    $\sigma_1\sigma_2$ in $B_3$ is the **unknot**; the closure of
->    $\sigma_1\sigma_3$ in $B_4$ is the **two-component unlink**. Neither is the
->    Hopf link, which is the closure of $\sigma_1^2$ in $B_2$ and has trace
->    $\mathrm{tr}_M(\sigma_1^2) = hz + 1$, not $z^2$.
-> 2. **Wrong kind of object.** A raw Markov-trace value is not a Jones
->    polynomial. Without the loop factor $\delta^{\,n-1}$ and the framing
->    correction it is not even an invariant of the closure — it changes under
->    Markov stabilisation, which is exactly what $z$ measures.
-> 3. **Wrong loop parameter.** $q^{1/2}+q^{-1/2}$ is $[2]_{\sqrt q} = 2.0027\ldots$
->    at $q_0$; the Temperley–Lieb loop value of the production trace is
->    $\delta = [2]_q = q+q^{-1} = 2.010896866707122\ldots$ — the same conflation
->    as $1/\delta = 0.4972905456\ldots$ against the excised
->    $z_{\mathrm{C}} = 0.4993203342\ldots$.
+The value $z^2 = \mathrm{tr}_M(\sigma_i\sigma_j)$ is not a Hopf-link invariant,
+for three separate reasons.
+
+1. **It is not the Hopf link.** The closure of $\sigma_1\sigma_2$ in $B_3$ is the
+   **unknot**; the closure of $\sigma_1\sigma_3$ in $B_4$ is the **two-component
+   unlink**. The Hopf link is the closure of $\sigma_1^2$ in $B_2$, with trace
+   $\mathrm{tr}_M(\sigma_1^2) = hz + 1$, not $z^2$.
+2. **A raw Markov-trace value is not a Jones polynomial.** Without the loop factor
+   $\delta^{\,n-1}$ and the framing correction it is not even an invariant of the
+   closure: it changes under Markov stabilisation, which is exactly what $z$
+   measures.
+3. **The loop parameter is $[2]_q$.** $q^{1/2}+q^{-1/2} = [2]_{\sqrt q} = 2.0027\ldots$
+   at $q_0$, whereas the Temperley–Lieb loop value of the production trace is
+   $\delta = [2]_q = q+q^{-1} = 2.010896866707122\ldots$.
 
 **The correct normalisation.** For $\beta \in B_n$ with exponent sum $e$,
 
@@ -80,8 +71,7 @@ polynomials:
 
 The last two rows are the point. Rows 2 and 4 have the **same** trace value
 $z^2$ and different links; only $n$ distinguishes them. Any account that reads a
-Jones polynomial off a raw trace value cannot tell them apart at all — which is
-how the retracted sentence came to call the unknot a Hopf link.
+Jones polynomial off a raw trace value cannot tell them apart at all.
 
 For the Hopf row the sign sits entirely in the branch of $t^{1/2}$: with
 $t^{1/2} := A^{-2} = -q^{-1}$, $-t^{1/2}-t^{5/2} = q^{-1}+q^{-5}$. In $q$ there is
@@ -113,53 +103,24 @@ one, on its own, **forces** it, needing only $q \neq 0$. Hence:
 That the two stabilisations independently pin the *same* $z$ is a genuine
 consistency check on the normalisation, not a restatement — and it passes.
 
-Under this statement the retracted prefactor $q^{1/2}+q^{-1/2}$ is not a
+Under this statement the alternative prefactor $q^{1/2}+q^{-1/2}$ is not a
 near-miss. With it the quantity fails to survive a stabilisation move, so it is
 not an invariant of anything at all.
 
-Proved in
-[`JonesNormalisation.lean`](../lean/QOU/QBeta/JonesNormalisation.lean) —
-`tl_generator_sq`, `sigma_inv`, `stab_pos_iff_conventionD`,
-`stab_neg_iff_conventionD`, `jonesV_stabilise_pos`, `jonesV_stabilise_neg`,
-`conventionD_iff_markov_invariant`, plus the four closure values
-(`unknot_two_strand`, `unknot_three_strand`, `hopf_link`,
-`two_component_unlink`) and `kauffman_loop`. Sorry-free; every hypothesis is
-`IsConventionD` plus $q \neq 0$, and $q^2+1 \neq 0$ is *derived* rather than
-assumed (`q_sq_add_one_ne_zero`) — in a general field it can vanish, so assuming
-it would have been a hidden hypothesis.
+All of the above is proved over a general field under convention D and
+$q \neq 0$ alone: the Temperley–Lieb relation for $e_i$, the inverse
+$\sigma^{-1} = \sigma - h$, the equivalence of each stabilisation condition
+with convention D, the invariance under both stabilisations, the four closure
+values, and the Kauffman loop value. The condition $q^2+1 \neq 0$ is *derived*
+rather than assumed — in a general field it can vanish, so assuming it would
+have been a hidden hypothesis.
 
 The four closure rows are retained as sanity checks — they confirm the invariant
 is normalised so the unknot is $1$ — but they are no longer load-bearing.
 
-**The proposition above is unaffected.** $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
+**The proposition is convention-independent.** $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
 follows from the Markov axiom alone and holds for any Markov parameter. So the
 pair blow-up centre at coordinate $\hat V_i\hat V_j$ still carries weight $z^2$
 regardless of its position in the braid, matching the empirically-verified
-all-pairs set on atoms $A \ge 6$ (cf. `adjacent-vs-full-canonical evaluation.witness.json`,
-[jet-tower remark](#rem:mass-endomorphism-jet-tower)). Only the knot-theoretic
-gloss was wrong.
-
-> **The proposition is convention-independent; the Hopf-link normalisation above
-> is not, and has NOT been re-derived.** Flagged 2026-08-09, not fixed.
->
-> $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$ follows from the Markov axiom alone and
-> holds for any Markov parameter, so switching $z$ to **convention D**
-> ($z = q^3/(q^2+1)$, as the cited theorem now states) leaves the proposition
-> untouched.
->
-> The normalisation $J_{\mathrm{Hopf}}(q) = -(q^{1/2}+q^{-1/2})\cdot z^2$ is a
-> different matter. Its prefactor is the loop parameter at **half argument**,
-> $[2]_{\sqrt q} = q^{1/2}+q^{-1/2} = 2.0027\ldots$ at $q_0$, whereas the
-> Temperley–Lieb loop value of the production trace is
-> $\delta = [2]_q = q + q^{-1} = 2.010896866707122\ldots$ — a $0.4\%$ difference,
-> and the two are conflated across the corpus (the reciprocal $1/\delta =
-> 0.497290545604915556$ against $z_C = 0.499320334183694452$ is the same
-> confusion). The identity was derived when $z$ was $z_C$, and under convention D
-> — which *is* the Jones/Temperley–Lieb trace — both the prefactor and $z^2$
-> change, so the displayed second equality
-> $-(q+q^{-1})/(q^{1/2}+q^{-1/2})$ cannot be assumed to survive.
->
-> Deliberately left as-is rather than patched: getting the Jones normalisation
-> right under D is a derivation, not a substitution, and quietly editing the
-> prefactor would produce a formula nobody has checked. Bean `qou-98g5`
-> (δ vs $z_C$ conflation) and `qou-emyt`.
+all-pairs set on atoms $A \ge 6$
+([jet-tower remark](#rem:mass-endomorphism-jet-tower)).

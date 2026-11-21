@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1309.0865v1/blocks/prose-sec-023",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Generators and relations",
-  "pageStart": 37,
-  "pageEnd": 42,
-  "text": "../sections/sec-023-51-generators-and-relations.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
+  "title": "Diagrammatics for Standard Bimodules",
+  "pageStart": 31,
+  "pageEnd": 31,
+  "text": "../sections/sec-023-4-diagrammatics-for-standard-bimodules.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,9 +8,23 @@
   "pages": 256,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 22,
+    "reason": "10 of 494 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 34,
+    "reason": "10 of 416 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 121,
+    "reason": "15 of 449 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,27 +35,28 @@
    "stamp_date": "19 Mar 2002"
   },
   "doi": null,
-  "title": "Period mappings and differential equations. From C to Cp T\u00f4hoku-Hokkaid\u00f4 lectures in Arithmetic Geometry",
-  "authors_raw": "Yves Andr\u00e9",
+  "title": "Period mappings and differential equations. From C to Cp",
+  "authors_raw": "Yves André",
   "title_lines": [
    "Period mappings and differential",
    "equations. From C to Cp",
-   "T\u00f4hoku-Hokkaid\u00f4 lectures in Arithmetic Geometry"
+   "Tôhoku-Hokkaidô lectures in Arithmetic Geometry"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "CreationDate": "D:20241126162549-05'00'"
   },
-  "title_raw": "Period mappings and differential equations. From C to Cp T\u00f4hoku-Hokkaid\u00f4 lectures in Arithmetic Geometry",
+  "title_raw": "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "Period mappings and di\ufb00erential equations. From C to C p Yves Andr\u00b4e",
-   "text": "Period mappings and differential equations. From C to Cp T\u00f4hoku-Hokkaid\u00f4 lectures in Arithmetic Geometry",
+   "heading": "Period mappings and diﬀerential equations. From C to C p Yves Andr´e",
+   "text": "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry"
  },
  "toc": [
   {
@@ -206,32 +221,6 @@
    "page": 27,
    "source": "inferred",
    "number": "2.3",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$\\widehat{\\mathcal{R}^{\\mathrm{et}}}$ and unit-root $F$-crystals.",
-   "page": 29,
-   "source": "inferred",
-   "number": "2.4",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$p$-adic chiaroscuro: overconvergence.",
-   "page": 33,
-   "source": "inferred",
-   "number": "2.5",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -449,32 +438,6 @@
   },
   {
    "level": 2,
-   "title": "$p$-adic Betti lattices for abelian varieties with multiplicative reduction.",
-   "page": 58,
-   "source": "inferred",
-   "number": "5.2",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$p$-adic Betti lattices for abelian varieties with supersingular reduction.",
-   "page": 60,
-   "source": "inferred",
-   "number": "5.3",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
    "title": "Conclusion and vista.",
    "page": 66,
    "source": "inferred",
@@ -531,19 +494,6 @@
    "page": 76,
    "source": "inferred",
    "number": "7",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$p$-divisible groups and quasi-isogenies.",
-   "page": 76,
-   "source": "inferred",
-   "number": "7.1",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -708,32 +658,6 @@
    "page_label": null
   },
   {
-   "level": 1,
-   "title": "$p$-adic period domains.",
-   "page": 91,
-   "source": "inferred",
-   "number": "10",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$p$-adic flag spaces.",
-   "page": 91,
-   "source": "inferred",
-   "number": "10.1",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
    "level": 2,
    "title": "Symmetric domains via stability theory.",
    "page": 92,
@@ -817,32 +741,6 @@
    "page": 99,
    "source": "inferred",
    "number": "11.4",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "$p$-adic uniformization of Shimura varieties.",
-   "page": 100,
-   "source": "inferred",
-   "number": "12",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$p$-integral models of Shimura varieties.",
-   "page": 100,
-   "source": "inferred",
-   "number": "12.1",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -1216,62 +1114,10 @@
   },
   {
    "level": 2,
-   "title": "$p$-adic uniformizing differential equations.",
-   "page": 173,
-   "source": "inferred",
-   "number": "16.6",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$p$-adic Shimura orbifolds and uniformizing differential equations.",
-   "page": 175,
-   "source": "inferred",
-   "number": "16.7",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "$p$-adic triangle groups.",
-   "page": 179,
-   "source": "inferred",
-   "number": "17",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
    "title": "Review of Schwarz triangle groups.",
    "page": 179,
    "source": "inferred",
    "number": "17.1",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$p$-adic Schwarz orbifolds and triangle groups.",
-   "page": 181,
-   "source": "inferred",
-   "number": "17.2",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -1589,19 +1435,6 @@
     "body"
    ],
    "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "$p$-adic symmetric domains.",
-   "page": 240,
-   "source": "inferred",
-   "number": "N",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
   }
  ],
  "toc_source": "inferred",
@@ -1634,7 +1467,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "a wild underground loop In our special case, the discussion of 2.3.3 tells us that e\u2212\u03c0z admits an",
+   "title": "a wild underground loop In our special case, the discussion of 2.3.3 tells us that e−πz admits an",
    "page": 32,
    "confidence": 0.8,
    "evidence": [
@@ -1646,7 +1479,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "T for p = 2 For any disc D centered in Qp, let \u03b7D denote its Berkovich \u201cgeneric",
+   "title": "T for p = 2 For any disc D centered in Qp, let ηD denote its Berkovich “generic",
    "page": 93,
    "confidence": 0.9,
    "evidence": [
@@ -3495,8 +3328,8 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 3333,
-   "n_words": 555,
+   "n_chars": 3330,
+   "n_words": 554,
    "label_start": null,
    "label_end": null
   },
@@ -3507,8 +3340,8 @@
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 702,
-   "n_words": 112,
+   "n_chars": 752,
+   "n_words": 118,
    "label_start": null,
    "label_end": null
   },
@@ -3542,26 +3375,38 @@
    "title": "Berkovich geometry and the principle of monodromy",
    "level": 2,
    "page_start": 17,
-   "page_end": 21,
-   "n_chars": 10011,
-   "n_words": 1680,
+   "page_end": 20,
+   "n_chars": 5607,
+   "n_words": 936,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-007-15-connections-with-locally-constant-sheaves-of",
+   "id": "sec-007-14-topological-coverings-and-etale-coverings",
+   "number": "1.4",
+   "title": "Topological coverings and 'etale coverings.",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 4354,
+   "n_words": 738,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-15-connections-with-locally-constant-sheaves-of",
    "number": "1.5",
    "title": "Connections with locally constant sheaves of solutions.",
    "level": 2,
    "page_start": 21,
    "page_end": 25,
-   "n_chars": 7343,
-   "n_words": 1290,
+   "n_chars": 7331,
+   "n_words": 1277,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-008-2-analytic-continuation-algebraic-approach",
+   "id": "sec-009-2-analytic-continuation-algebraic-approach",
    "number": "2",
    "title": "Analytic continuation; algebraic approach.",
    "level": 1,
@@ -3573,7 +3418,7 @@
    "label_end": null
   },
   {
-   "id": "sec-009-21-limits-of-rational-functions",
+   "id": "sec-010-21-limits-of-rational-functions",
    "number": "2.1",
    "title": "Limits of rational functions.",
    "level": 2,
@@ -3585,19 +3430,79 @@
    "label_end": null
   },
   {
-   "id": "sec-010-22-limits-of-algebraic-functions-complex-case",
+   "id": "sec-011-22-limits-of-algebraic-functions-complex-case",
    "number": "2.2",
    "title": "Limits of algebraic functions; complex case.",
    "level": 2,
    "page_start": 26,
-   "page_end": 43,
-   "n_chars": 34125,
-   "n_words": 6569,
+   "page_end": 27,
+   "n_chars": 3104,
+   "n_words": 598,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-011-34-the-tate-and-dwork-serre-tate-parameters",
+   "id": "sec-012-23-limits-of-algebraic-functions-p-adic-case",
+   "number": "2.3",
+   "title": "Limits of algebraic functions; $p$-adic case.",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 33,
+   "n_chars": 13567,
+   "n_words": 2475,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-26-overconvergence-and-frobenius-dworks-derivati",
+   "number": "2.6",
+   "title": "(Overconvergence and Frobenius) Dwork's derivation of the $p$-adic Gamma function and exponential sums.",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 39,
+   "n_chars": 8910,
+   "n_words": 1769,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-31-dworks-hypergeometric-function",
+   "number": "3.1",
+   "title": "Dwork's hypergeometric function.",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2173,
+   "n_words": 439,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-32-the-ordinary-unit-root-f-crystal",
+   "number": "3.2",
+   "title": "The ordinary unit-root $F$-crystal.",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2531,
+   "n_words": 507,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-33-analytic-continuation-a-precis",
+   "number": "3.3",
+   "title": "Analytic continuation: a pr'ecis.",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 3551,
+   "n_words": 741,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-34-the-tate-and-dwork-serre-tate-parameters",
    "number": "3.4",
    "title": "The Tate and Dwork-Serre-Tate parameters.",
    "level": 2,
@@ -3609,7 +3514,7 @@
    "label_end": null
   },
   {
-   "id": "sec-012-35-complex-counterpart-the-supersingular-locus",
+   "id": "sec-018-35-complex-counterpart-the-supersingular-locus",
    "number": "3.5",
    "title": "Complex counterpart: the supersingular locus.",
    "level": 2,
@@ -3621,19 +3526,55 @@
    "label_end": null
   },
   {
-   "id": "sec-013-4-abelian-periods-as-algebraic-integrals",
+   "id": "sec-019-4-abelian-periods-as-algebraic-integrals",
    "number": "4",
    "title": "Abelian periods as algebraic integrals.",
    "level": 1,
    "page_start": 47,
-   "page_end": 53,
-   "n_chars": 12368,
-   "n_words": 2482,
+   "page_end": 47,
+   "n_chars": 1813,
+   "n_words": 352,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-014-46-periods-of-cm-elliptic-curves-and-values-of-t",
+   "id": "sec-020-42-over-the-p-adics-prolegomena",
+   "number": "4.2",
+   "title": "Over the $p$-adics; prolegomena",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 51,
+   "n_chars": 6662,
+   "n_words": 1360,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-021-44-colmez-construction-of-abelian-p-adic-periods",
+   "number": "4.4",
+   "title": "Colmez' construction of abelian $p$-adic periods.",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 1943,
+   "n_words": 382,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-45-some-computations-of-elliptic-p-adic-periods",
+   "number": "4.5",
+   "title": "Some computations of elliptic $p$-adic periods.",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 1808,
+   "n_words": 369,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-46-periods-of-cm-elliptic-curves-and-values-of-t",
    "number": "4.6",
    "title": "Periods of CM elliptic curves and values of the Gamma function.",
    "level": 2,
@@ -3645,7 +3586,7 @@
    "label_end": null
   },
   {
-   "id": "sec-015-5-periods-as-solutions-of-the-gauss-manin-connec",
+   "id": "sec-024-5-periods-as-solutions-of-the-gauss-manin-connec",
    "number": "5",
    "title": "Periods as solutions of the Gauss-Manin connection.",
    "level": 1,
@@ -3657,79 +3598,139 @@
    "label_end": null
   },
   {
-   "id": "sec-016-51-stokes",
+   "id": "sec-025-51-stokes",
    "number": "5.1",
    "title": "Stokes.",
    "level": 2,
    "page_start": 56,
    "page_end": 66,
-   "n_chars": 23576,
-   "n_words": 4437,
+   "n_chars": 22330,
+   "n_words": 4187,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-017-54-conclusion-and-vista",
+   "id": "sec-026-54-conclusion-and-vista",
    "number": "5.4",
    "title": "Conclusion and vista.",
    "level": 2,
    "page_start": 66,
    "page_end": 69,
-   "n_chars": 1492,
-   "n_words": 234,
+   "n_chars": 2760,
+   "n_words": 487,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-018-6-a-survey-of-moduli-and-period-mappings-over-ma",
+   "id": "sec-027-6-a-survey-of-moduli-and-period-mappings-over-ma",
    "number": "6",
    "title": "A survey of moduli and period mappings over $\\mathbb{C}$.",
    "level": 1,
    "page_start": 69,
    "page_end": 70,
-   "n_chars": 514,
-   "n_words": 80,
+   "n_chars": 561,
+   "n_words": 89,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-019-61-moduli-spaces",
+   "id": "sec-028-61-moduli-spaces",
    "number": "6.1",
    "title": "Moduli spaces.",
    "level": 2,
    "page_start": 70,
    "page_end": 72,
-   "n_chars": 5185,
-   "n_words": 908,
+   "n_chars": 5182,
+   "n_words": 907,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-020-62-period-mappings",
+   "id": "sec-029-62-period-mappings",
    "number": "6.2",
    "title": "Period mappings.",
    "level": 2,
    "page_start": 72,
-   "page_end": 79,
-   "n_chars": 16407,
-   "n_words": 3063,
+   "page_end": 76,
+   "n_chars": 8844,
+   "n_words": 1694,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-021-8-a-stroll-in-the-crystalline-world",
+   "id": "sec-030-7-preliminaries-on-p-divisible-groups",
+   "number": "7",
+   "title": "Preliminaries on $p$-divisible groups.",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 76,
+   "n_chars": 2110,
+   "n_words": 387,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-031-72-two-theorems-on-p-divisible-groups",
+   "number": "7.2",
+   "title": "Two theorems on $p$-divisible groups.",
+   "level": 2,
+   "page_start": 76,
+   "page_end": 79,
+   "n_chars": 5428,
+   "n_words": 980,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-032-8-a-stroll-in-the-crystalline-world",
    "number": "8",
    "title": "A stroll in the crystalline world.",
    "level": 1,
    "page_start": 79,
-   "page_end": 82,
-   "n_chars": 8811,
-   "n_words": 1602,
+   "page_end": 79,
+   "n_chars": 145,
+   "n_words": 19,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-022-84-crystals-and-connections",
+   "id": "sec-033-81-from-dieudonne-modules-to-crystals",
+   "number": "8.1",
+   "title": "From Dieudonn'e modules to crystals.",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 80,
+   "n_chars": 2623,
+   "n_words": 461,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-034-82-the-dieudonne-crystal-of-a-p-divisible-group",
+   "number": "8.2",
+   "title": "The Dieudonn'e crystal of a $p$-divisible group.",
+   "level": 2,
+   "page_start": 80,
+   "page_end": 81,
+   "n_chars": 2200,
+   "n_words": 413,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-035-83-the-hodge-filtration",
+   "number": "8.3",
+   "title": "The Hodge filtration.",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 82,
+   "n_chars": 3743,
+   "n_words": 694,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-036-84-crystals-and-connections",
    "number": "8.4",
    "title": "Crystals and connections.",
    "level": 2,
@@ -3741,31 +3742,43 @@
    "label_end": null
   },
   {
-   "id": "sec-023-85-interlude-analytic-spaces-associated-with-for",
+   "id": "sec-037-85-interlude-analytic-spaces-associated-with-for",
    "number": "8.5",
    "title": "Interlude : analytic spaces associated with formal schemes and tubes.",
    "level": 2,
    "page_start": 83,
    "page_end": 84,
-   "n_chars": 2278,
-   "n_words": 464,
+   "n_chars": 1633,
+   "n_words": 337,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-024-86-convergent-isocrystals",
+   "id": "sec-038-86-convergent-isocrystals",
    "number": "8.6",
    "title": "Convergent isocrystals.",
    "level": 2,
    "page_start": 84,
    "page_end": 87,
-   "n_chars": 6053,
-   "n_words": 1087,
+   "n_chars": 6532,
+   "n_words": 1190,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-025-92-examples",
+   "id": "sec-039-9-moduli-problems-for-p-divisible-groups",
+   "number": "9",
+   "title": "Moduli problems for $p$-divisible groups.",
+   "level": 1,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 122,
+   "n_words": 18,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-040-92-examples",
    "number": "9.2",
    "title": "Examples.",
    "level": 2,
@@ -3777,7 +3790,7 @@
    "label_end": null
   },
   {
-   "id": "sec-026-93-decorated-variants",
+   "id": "sec-041-93-decorated-variants",
    "number": "9.3",
    "title": "Decorated variants.",
    "level": 2,
@@ -3789,7 +3802,7 @@
    "label_end": null
   },
   {
-   "id": "sec-027-102-symmetric-domains-via-stability-theory",
+   "id": "sec-042-102-symmetric-domains-via-stability-theory",
    "number": "10.2",
    "title": "Symmetric domains via stability theory.",
    "level": 2,
@@ -3801,31 +3814,31 @@
    "label_end": null
   },
   {
-   "id": "sec-028-103-examples",
+   "id": "sec-043-103-examples",
    "number": "10.3",
    "title": "Examples.",
    "level": 2,
    "page_start": 92,
    "page_end": 94,
-   "n_chars": 2491,
-   "n_words": 474,
+   "n_chars": 2272,
+   "n_words": 445,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-029-113-examples-and-formulas",
-   "number": "11.3",
-   "title": "Examples and formulas.",
-   "level": 2,
+   "id": "sec-044-11-the-p-adic-period-mapping-and-the-gauss-manin",
+   "number": "11",
+   "title": "The $p$-adic period mapping and the Gauss-Manin connection.",
+   "level": 1,
    "page_start": 94,
    "page_end": 94,
-   "n_chars": 0,
-   "n_words": 0,
+   "n_chars": 220,
+   "n_words": 28,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-030-111-construction",
+   "id": "sec-045-111-construction",
    "number": "11.1",
    "title": "Construction.",
    "level": 2,
@@ -3837,19 +3850,43 @@
    "label_end": null
   },
   {
-   "id": "sec-031-112-properties",
+   "id": "sec-046-112-properties",
    "number": "11.2",
    "title": "Properties.",
    "level": 2,
    "page_start": 94,
-   "page_end": 101,
-   "n_chars": 15122,
-   "n_words": 2744,
+   "page_end": 95,
+   "n_chars": 1974,
+   "n_words": 326,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-032-122-the-uniformization-theorem",
+   "id": "sec-047-113-examples-and-formulas",
+   "number": "11.3",
+   "title": "Examples and formulas.",
+   "level": 2,
+   "page_start": 95,
+   "page_end": 99,
+   "n_chars": 7917,
+   "n_words": 1487,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-048-114-de-jongs-viewpoint-on-p-adic-period-mappings",
+   "number": "11.4",
+   "title": "De Jong's viewpoint on $p$-adic period mappings.",
+   "level": 2,
+   "page_start": 99,
+   "page_end": 101,
+   "n_chars": 5149,
+   "n_words": 919,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-049-122-the-uniformization-theorem",
    "number": "12.2",
    "title": "The uniformization theorem.",
    "level": 2,
@@ -3861,103 +3898,235 @@
    "label_end": null
   },
   {
-   "id": "sec-033-123-global-uniformization",
+   "id": "sec-050-123-global-uniformization",
    "number": "12.3",
    "title": "Global uniformization",
    "level": 2,
    "page_start": 103,
-   "page_end": 113,
-   "n_chars": 24970,
-   "n_words": 4650,
+   "page_end": 103,
+   "n_chars": 1566,
+   "n_words": 271,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-034-127-conclusion",
+   "id": "sec-051-124-example-the-cerednik-drinfeld-uniformization",
+   "number": "12.4",
+   "title": "Example: the Cerednik-Drinfeld uniformization of Shimura curves at a critical prime.",
+   "level": 2,
+   "page_start": 103,
+   "page_end": 107,
+   "n_chars": 7632,
+   "n_words": 1410,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-052-125-other-examples-of-global-p-adic-uniformizati",
+   "number": "12.5",
+   "title": "Other examples of global $p$-adic uniformization.",
+   "level": 2,
+   "page_start": 107,
+   "page_end": 110,
+   "n_chars": 6349,
+   "n_words": 1193,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-053-126-application-of-the-theory-of-p-adic-betti-la",
+   "number": "12.6",
+   "title": "Application of the theory of $p$-adic Betti lattices.",
+   "level": 2,
+   "page_start": 110,
+   "page_end": 113,
+   "n_chars": 8303,
+   "n_words": 1563,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-054-127-conclusion",
    "number": "12.7",
    "title": "Conclusion.",
    "level": 2,
    "page_start": 113,
-   "page_end": 116,
-   "n_chars": 2950,
-   "n_words": 461,
+   "page_end": 115,
+   "n_chars": 3047,
+   "n_words": 523,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-035-131-more-on-the-topological-fundamental-group",
+   "id": "sec-055-13-etale-coverings-and-fundamental-groups-in-p-a",
+   "number": "13",
+   "title": "'Etale coverings and fundamental groups in $p$-adic geometry.",
+   "level": 1,
+   "page_start": 115,
+   "page_end": 116,
+   "n_chars": 786,
+   "n_words": 120,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-056-131-more-on-the-topological-fundamental-group",
    "number": "13.1",
    "title": "More on the topological fundamental group.",
    "level": 2,
    "page_start": 116,
-   "page_end": 123,
-   "n_chars": 17638,
-   "n_words": 3300,
+   "page_end": 118,
+   "n_chars": 6150,
+   "n_words": 1020,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-036-134-the-formalism-of-fundamental-groups",
+   "id": "sec-057-132-etale-versus-topological-coverings-again",
+   "number": "13.2",
+   "title": "'Etale versus topological coverings (again).",
+   "level": 2,
+   "page_start": 118,
+   "page_end": 121,
+   "n_chars": 6216,
+   "n_words": 1171,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-058-133-existence-of-etale-paths",
+   "number": "13.3",
+   "title": "Existence of 'etale paths.",
+   "level": 2,
+   "page_start": 121,
+   "page_end": 123,
+   "n_chars": 5117,
+   "n_words": 1074,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-059-134-the-formalism-of-fundamental-groups",
    "number": "13.4",
    "title": "The formalism of fundamental groups.",
    "level": 2,
    "page_start": 123,
-   "page_end": 130,
-   "n_chars": 15494,
-   "n_words": 2946,
+   "page_end": 129,
+   "n_chars": 13410,
+   "n_words": 2590,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-037-14-temperate-fundamental-groups",
+   "id": "sec-060-135-example-rameros-locally-algebraic-etale-fund",
+   "number": "13.5",
+   "title": "Example: Ramero's locally algebraic 'etale fundamental group.",
+   "level": 2,
+   "page_start": 129,
+   "page_end": 130,
+   "n_chars": 2016,
+   "n_words": 348,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-061-14-temperate-fundamental-groups",
    "number": "14",
    "title": "Temperate fundamental groups.",
    "level": 1,
    "page_start": 130,
-   "page_end": 137,
-   "n_chars": 17761,
-   "n_words": 3209,
+   "page_end": 130,
+   "n_chars": 421,
+   "n_words": 58,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-038-142-interlude-tangential-base-points",
+   "id": "sec-062-141-temperate-etale-coverings-and-temperate-fund",
+   "number": "14.1",
+   "title": "Temperate 'etale coverings and temperate fundamental groups.",
+   "level": 2,
+   "page_start": 130,
+   "page_end": 137,
+   "n_chars": 17269,
+   "n_words": 3142,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-063-142-interlude-tangential-base-points",
    "number": "14.2",
    "title": "Interlude: tangential base-points.",
    "level": 2,
    "page_start": 137,
    "page_end": 139,
-   "n_chars": 5149,
-   "n_words": 1007,
+   "n_chars": 5189,
+   "n_words": 1011,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-039-143-description-of-some-temperate-fundamental-gr",
+   "id": "sec-064-143-description-of-some-temperate-fundamental-gr",
    "number": "14.3",
    "title": "Description of some temperate fundamental groups.",
    "level": 2,
    "page_start": 139,
    "page_end": 145,
-   "n_chars": 13464,
-   "n_words": 2544,
+   "n_chars": 12473,
+   "n_words": 2399,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-040-151-introduction",
+   "id": "sec-065-15-local-and-global-monodromy-of-p-adic-differen",
+   "number": "15",
+   "title": "Local and global monodromy of $p$-adic differential equations.",
+   "level": 1,
+   "page_start": 145,
+   "page_end": 145,
+   "n_chars": 927,
+   "n_words": 136,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-066-151-introduction",
    "number": "15.1",
    "title": "Introduction.",
    "level": 2,
    "page_start": 145,
-   "page_end": 152,
-   "n_chars": 16206,
-   "n_words": 2890,
+   "page_end": 148,
+   "n_chars": 6630,
+   "n_words": 1233,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-041-154-a-non-archimedean-riemann-hilbert-equivalenc",
+   "id": "sec-067-152-local-monodromy-of-p-adic-differential-equat",
+   "number": "15.2",
+   "title": "Local monodromy of $p$-adic differential equations. Outline of Christol-Mebkhout theory.",
+   "level": 2,
+   "page_start": 148,
+   "page_end": 150,
+   "n_chars": 5250,
+   "n_words": 950,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-068-153-local-monodromy-of-p-adic-differential-equat",
+   "number": "15.3",
+   "title": "Local monodromy of $p$-adic differential equations and Galois representations.",
+   "level": 2,
+   "page_start": 150,
+   "page_end": 152,
+   "n_chars": 4195,
+   "n_words": 689,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-069-154-a-non-archimedean-riemann-hilbert-equivalenc",
    "number": "15.4",
    "title": "A non-archimedean Riemann-Hilbert equivalence.",
    "level": 2,
@@ -3969,19 +4138,31 @@
    "label_end": null
   },
   {
-   "id": "sec-042-155-examples-and-applications",
+   "id": "sec-070-155-examples-and-applications",
    "number": "15.5",
    "title": "Examples and applications.",
    "level": 2,
    "page_start": 156,
    "page_end": 162,
-   "n_chars": 14870,
-   "n_words": 2574,
+   "n_chars": 14605,
+   "n_words": 2541,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-043-161-review-of-complex-orbifolds",
+   "id": "sec-071-16-non-archimedean-orbifolds-uniformizing-differ",
+   "number": "16",
+   "title": "Non-archimedean orbifolds, uniformizing differential equations and period mappings.",
+   "level": 1,
+   "page_start": 162,
+   "page_end": 162,
+   "n_chars": 209,
+   "n_words": 28,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-072-161-review-of-complex-orbifolds",
    "number": "16.1",
    "title": "Review of complex orbifolds.",
    "level": 2,
@@ -3993,43 +4174,55 @@
    "label_end": null
   },
   {
-   "id": "sec-044-162-orbifold-fundamental-groups",
+   "id": "sec-073-162-orbifold-fundamental-groups",
    "number": "16.2",
    "title": "Orbifold fundamental groups.",
    "level": 2,
    "page_start": 165,
-   "page_end": 167,
-   "n_chars": 4033,
-   "n_words": 774,
+   "page_end": 166,
+   "n_chars": 1798,
+   "n_words": 339,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-045-164-non-archimedean-orbifolds",
+   "id": "sec-074-163-uniformizing-differential-equations",
+   "number": "16.3",
+   "title": "Uniformizing differential equations.",
+   "level": 2,
+   "page_start": 166,
+   "page_end": 167,
+   "n_chars": 2193,
+   "n_words": 431,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-075-164-non-archimedean-orbifolds",
    "number": "16.4",
    "title": "Non-archimedean orbifolds.",
    "level": 2,
    "page_start": 167,
    "page_end": 170,
-   "n_chars": 8213,
-   "n_words": 1539,
+   "n_chars": 7706,
+   "n_words": 1447,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-046-165-non-archimedean-orbifold-fundamental-groups",
+   "id": "sec-076-165-non-archimedean-orbifold-fundamental-groups",
    "number": "16.5",
    "title": "Non-archimedean orbifold fundamental groups.",
    "level": 2,
    "page_start": 170,
    "page_end": 179,
-   "n_chars": 20047,
-   "n_words": 3631,
+   "n_chars": 20554,
+   "n_words": 3723,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-047-171-review-of-schwarz-triangle-groups",
+   "id": "sec-077-171-review-of-schwarz-triangle-groups",
    "number": "17.1",
    "title": "Review of Schwarz triangle groups.",
    "level": 2,
@@ -4041,7 +4234,7 @@
    "label_end": null
   },
   {
-   "id": "sec-048-173-mumford-schwarz-orbifolds",
+   "id": "sec-078-173-mumford-schwarz-orbifolds",
    "number": "17.3",
    "title": "Mumford-Schwarz orbifolds.",
    "level": 2,
@@ -4053,43 +4246,103 @@
    "label_end": null
   },
   {
-   "id": "sec-049-174-arithmetic-triangle-groups-review-of-takeuch",
+   "id": "sec-079-174-arithmetic-triangle-groups-review-of-takeuch",
    "number": "17.4",
    "title": "Arithmetic triangle groups. Review of Takeuchi's list.",
    "level": 2,
    "page_start": 186,
-   "page_end": 192,
-   "n_chars": 13038,
-   "n_words": 2474,
+   "page_end": 188,
+   "n_chars": 3638,
+   "n_words": 757,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-050-176-on-special-values-of-hypergeometric-function",
+   "id": "sec-080-175-arithmetic-p-adic-triangle-groups-a-p-adic-a",
+   "number": "17.5",
+   "title": "Arithmetic $p$-adic triangle groups. A $p$-adic analogue of Takeuchi's list.",
+   "level": 2,
+   "page_start": 188,
+   "page_end": 192,
+   "n_chars": 9327,
+   "n_words": 1707,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-081-176-on-special-values-of-hypergeometric-function",
    "number": "17.6",
    "title": "On special values of hypergeometric functions attached to arithmetic $p$-adic triangle groups.",
    "level": 2,
    "page_start": 192,
-   "page_end": 200,
-   "n_chars": 12729,
-   "n_words": 2549,
+   "page_end": 194,
+   "n_chars": 3359,
+   "n_words": 619,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-051-183-triadic-uniformization",
+   "id": "sec-082-181-eschers-triangle-group-delta246",
+   "number": "18.1",
+   "title": "Escher's triangle group $\\Delta(2,4,6)$.",
+   "level": 2,
+   "page_start": 194,
+   "page_end": 195,
+   "n_chars": 1855,
+   "n_words": 399,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-083-182-some-shimura-curves-attached-to-d-23",
+   "number": "18.2",
+   "title": "Some Shimura curves attached to $D_{2.3}$.",
+   "level": 2,
+   "page_start": 195,
+   "page_end": 200,
+   "n_chars": 7429,
+   "n_words": 1517,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-084-183-triadic-uniformization",
    "number": "18.3",
    "title": "Triadic uniformization.",
    "level": 2,
    "page_start": 200,
-   "page_end": 211,
-   "n_chars": 18147,
-   "n_words": 3625,
+   "page_end": 202,
+   "n_chars": 3428,
+   "n_words": 723,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-052-a-introduction",
+   "id": "sec-085-184-the-non-archimedean-triangle-groups-delta-32",
+   "number": "18.4",
+   "title": "The non-archimedean triangle groups $\\Delta_3(2,4,6), \\Delta_2(2,4,6)$ and Herrlich's tree.",
+   "level": 2,
+   "page_start": 202,
+   "page_end": 208,
+   "n_chars": 11536,
+   "n_words": 2284,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-086-186-a-triadic-analogue-of-gauss-formula-and-spec",
+   "number": "18.6",
+   "title": "A triadic analogue of Gauss' formula, and special values of $F(\\frac{1}{24}, \\frac{7}{24},\\frac{5}{6}; z)$ at CM points.",
+   "level": 2,
+   "page_start": 208,
+   "page_end": 211,
+   "n_chars": 3046,
+   "n_words": 595,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-087-a-introduction",
    "number": "A",
    "title": "Introduction.",
    "level": 1,
@@ -4101,7 +4354,7 @@
    "label_end": null
   },
   {
-   "id": "sec-053-b-rigid-analytic-spaces",
+   "id": "sec-088-b-rigid-analytic-spaces",
    "number": "B",
    "title": "Rigid analytic spaces.",
    "level": 1,
@@ -4113,7 +4366,7 @@
    "label_end": null
   },
   {
-   "id": "sec-054-c-relation-with-formal-geometry",
+   "id": "sec-089-c-relation-with-formal-geometry",
    "number": "C",
    "title": "Relation with Formal Geometry.",
    "level": 1,
@@ -4125,62 +4378,122 @@
    "label_end": null
   },
   {
-   "id": "sec-055-d-topology-of-rigid-analytic-space",
+   "id": "sec-090-d-topology-of-rigid-analytic-space",
    "number": "D",
    "title": "Topology of Rigid Analytic Space.",
    "level": 1,
    "page_start": 220,
-   "page_end": 225,
-   "n_chars": 10624,
-   "n_words": 1919,
+   "page_end": 222,
+   "n_chars": 5415,
+   "n_words": 993,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-056-f-bruhat-tits-building",
+   "id": "sec-091-e-berkovich-approach-to-non-archimedean-analysis",
+   "number": "E",
+   "title": "Berkovich' approach to non-archimedean analysis",
+   "level": 1,
+   "page_start": 222,
+   "page_end": 225,
+   "n_chars": 5157,
+   "n_words": 920,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-092-f-bruhat-tits-building",
    "number": "F",
    "title": "Bruhat-Tits building.",
    "level": 1,
    "page_start": 225,
-   "page_end": 225,
-   "n_chars": 144,
-   "n_words": 23,
+   "page_end": 226,
+   "n_chars": 3071,
+   "n_words": 615,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-057-g-drinfeld-symmetric-space",
+   "id": "sec-093-g-drinfeld-symmetric-space",
    "number": "G",
    "title": "Drinfeld symmetric space.",
    "level": 1,
-   "page_start": 225,
+   "page_start": 226,
    "page_end": 230,
-   "n_chars": 10172,
-   "n_words": 2002,
+   "n_chars": 7289,
+   "n_words": 1419,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-058-h-uniformization",
+   "id": "sec-094-h-uniformization",
    "number": "H",
    "title": "Uniformization.",
    "level": 1,
    "page_start": 230,
    "page_end": 231,
-   "n_chars": 2444,
-   "n_words": 476,
+   "n_chars": 2492,
+   "n_words": 483,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-059-i-examples",
+   "id": "sec-095-i-examples",
    "number": "I",
    "title": "Examples.",
    "level": 1,
    "page_start": 231,
+   "page_end": 232,
+   "n_chars": 4628,
+   "n_words": 815,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-096-j-mumfords-fake-projective-plane",
+   "number": "J",
+   "title": "Mumford's fake projective plane.",
+   "level": 1,
+   "page_start": 232,
+   "page_end": 235,
+   "n_chars": 4134,
+   "n_words": 803,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-097-k-weakly-admissible-filtered-isocrystals",
+   "number": "K",
+   "title": "Weakly admissible filtered isocrystals.",
+   "level": 1,
+   "page_start": 235,
+   "page_end": 236,
+   "n_chars": 2488,
+   "n_words": 451,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-098-l-filtered-isocrystals-with-g-structure",
+   "number": "L",
+   "title": "Filtered isocrystals with $G$-structure.",
+   "level": 1,
+   "page_start": 236,
+   "page_end": 237,
+   "n_chars": 1053,
+   "n_words": 189,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-099-m-totaros-theorem",
+   "number": "M",
+   "title": "Totaro's theorem.",
+   "level": 1,
+   "page_start": 237,
    "page_end": 256,
-   "n_chars": 47597,
-   "n_words": 7890,
+   "n_chars": 35149,
+   "n_words": 5614,
    "label_start": null,
    "label_end": null
   }
@@ -4188,10 +4501,10 @@
  "diagnostics": {
   "pages_without_text": 6,
   "likely_scanned": false,
-  "toc_entries": 120,
+  "toc_entries": 106,
   "toc_inferred_entries": 120,
   "toc_inferred_mean_confidence": 0.996,
-  "toc_inferred_empty_share": 0.017,
+  "toc_inferred_empty_share": 0.0,
   "toc_inferred_method": "latex",
   "figure_entries": 4,
   "figure_sequence_gaps": [
@@ -4201,13 +4514,111 @@
    "count": 0,
    "items": []
   },
-  "sections": 61,
-  "chars_total": 548235,
+  "sections": 101,
+  "chars_total": 546420,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "$\\widehat{\\mathcal{R}^{\\mathrm{et}}}$ and unit-root $F$-crystals.",
+    "page": 29,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic chiaroscuro: overconvergence.",
+    "page": 33,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic Betti lattices for abelian varieties with multiplicative reduction.",
+    "page": 58,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic Betti lattices for abelian varieties with supersingular reduction.",
+    "page": 60,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-divisible groups and quasi-isogenies.",
+    "page": 76,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic period domains.",
+    "page": 91,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic flag spaces.",
+    "page": 91,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic uniformization of Shimura varieties.",
+    "page": 100,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-integral models of Shimura varieties.",
+    "page": 100,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic uniformizing differential equations.",
+    "page": 173,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic Shimura orbifolds and uniformizing differential equations.",
+    "page": 175,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic triangle groups.",
+    "page": 179,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic Schwarz orbifolds and triangle groups.",
+    "page": 181,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$p$-adic symmetric domains.",
+    "page": 240,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
+  "pages_read_in_print_order": [
+   20,
+   66,
+   81,
+   84,
+   99,
+   110,
+   113,
+   166,
+   170
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 106,
-   "overlaid": 48,
+   "overlaid": 84,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -4270,21 +4681,29 @@
     {
      "id": "sec-006-13-berkovich-geometry-and-the-principle-of-monod",
      "title": "Berkovich geometry and the principle of monodromy",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.856,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-15-connections-with-locally-constant-sheaves-of",
+     "id": "sec-007-14-topological-coverings-and-etale-coverings",
+     "title": "Topological coverings and 'etale coverings.",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.76,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-15-connections-with-locally-constant-sheaves-of",
      "title": "Connections with locally constant sheaves of solutions.",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-2-analytic-continuation-algebraic-approach",
+     "id": "sec-009-2-analytic-continuation-algebraic-approach",
      "title": "Analytic continuation; algebraic approach.",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.98,
@@ -4292,7 +4711,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-009-21-limits-of-rational-functions",
+     "id": "sec-010-21-limits-of-rational-functions",
      "title": "Limits of rational functions.",
      "prose_ratio": 0.946,
      "coverage_ratio": 0.976,
@@ -4300,15 +4719,55 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-22-limits-of-algebraic-functions-complex-case",
+     "id": "sec-011-22-limits-of-algebraic-functions-complex-case",
      "title": "Limits of algebraic functions; complex case.",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-34-the-tate-and-dwork-serre-tate-parameters",
+     "id": "sec-012-23-limits-of-algebraic-functions-p-adic-case",
+     "title": "Limits of algebraic functions; $p$-adic case.",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-26-overconvergence-and-frobenius-dworks-derivati",
+     "title": "(Overconvergence and Frobenius) Dwork's derivation of the $p$-adic Gamma function and exponential sums.",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-31-dworks-hypergeometric-function",
+     "title": "Dwork's hypergeometric function.",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-32-the-ordinary-unit-root-f-crystal",
+     "title": "The ordinary unit-root $F$-crystal.",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-33-analytic-continuation-a-precis",
+     "title": "Analytic continuation: a pr'ecis.",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-34-the-tate-and-dwork-serre-tate-parameters",
      "title": "The Tate and Dwork-Serre-Tate parameters.",
      "prose_ratio": 0.99,
      "coverage_ratio": 0.98,
@@ -4316,7 +4775,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-35-complex-counterpart-the-supersingular-locus",
+     "id": "sec-018-35-complex-counterpart-the-supersingular-locus",
      "title": "Complex counterpart: the supersingular locus.",
      "prose_ratio": 0.952,
      "coverage_ratio": 0.976,
@@ -4324,15 +4783,39 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-4-abelian-periods-as-algebraic-integrals",
+     "id": "sec-019-4-abelian-periods-as-algebraic-integrals",
      "title": "Abelian periods as algebraic integrals.",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-46-periods-of-cm-elliptic-curves-and-values-of-t",
+     "id": "sec-020-42-over-the-p-adics-prolegomena",
+     "title": "Over the $p$-adics; prolegomena",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-44-colmez-construction-of-abelian-p-adic-periods",
+     "title": "Colmez' construction of abelian $p$-adic periods.",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-45-some-computations-of-elliptic-p-adic-periods",
+     "title": "Some computations of elliptic $p$-adic periods.",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-46-periods-of-cm-elliptic-curves-and-values-of-t",
      "title": "Periods of CM elliptic curves and values of the Gamma function.",
      "prose_ratio": 0.964,
      "coverage_ratio": 0.981,
@@ -4340,7 +4823,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-015-5-periods-as-solutions-of-the-gauss-manin-connec",
+     "id": "sec-024-5-periods-as-solutions-of-the-gauss-manin-connec",
      "title": "Periods as solutions of the Gauss-Manin connection.",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.981,
@@ -4348,23 +4831,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-016-51-stokes",
+     "id": "sec-025-51-stokes",
      "title": "Stokes.",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-54-conclusion-and-vista",
+     "id": "sec-026-54-conclusion-and-vista",
      "title": "Conclusion and vista.",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.945,
+     "coverage_ratio": 0.627,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-6-a-survey-of-moduli-and-period-mappings-over-ma",
+     "id": "sec-027-6-a-survey-of-moduli-and-period-mappings-over-ma",
      "title": "A survey of moduli and period mappings over $\\mathbb{C}$.",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.517,
@@ -4372,7 +4855,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-019-61-moduli-spaces",
+     "id": "sec-028-61-moduli-spaces",
      "title": "Moduli spaces.",
      "prose_ratio": 0.874,
      "coverage_ratio": 0.992,
@@ -4380,23 +4863,63 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-62-period-mappings",
+     "id": "sec-029-62-period-mappings",
      "title": "Period mappings.",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.931,
+     "coverage_ratio": 0.896,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-021-8-a-stroll-in-the-crystalline-world",
+     "id": "sec-030-7-preliminaries-on-p-divisible-groups",
+     "title": "Preliminaries on $p$-divisible groups.",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-72-two-theorems-on-p-divisible-groups",
+     "title": "Two theorems on $p$-divisible groups.",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-8-a-stroll-in-the-crystalline-world",
      "title": "A stroll in the crystalline world.",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.667,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-022-84-crystals-and-connections",
+     "id": "sec-033-81-from-dieudonne-modules-to-crystals",
+     "title": "From Dieudonn'e modules to crystals.",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-82-the-dieudonne-crystal-of-a-p-divisible-group",
+     "title": "The Dieudonn'e crystal of a $p$-divisible group.",
+     "prose_ratio": 0.759,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-83-the-hodge-filtration",
+     "title": "The Hodge filtration.",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.774,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-84-crystals-and-connections",
      "title": "Crystals and connections.",
      "prose_ratio": 0.974,
      "coverage_ratio": 0.975,
@@ -4404,23 +4927,29 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-85-interlude-analytic-spaces-associated-with-for",
+     "id": "sec-037-85-interlude-analytic-spaces-associated-with-for",
      "title": "Interlude : analytic spaces associated with formal schemes and tubes.",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.936,
+     "prose_ratio": 0.712,
+     "coverage_ratio": 0.912,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-024-86-convergent-isocrystals",
+     "id": "sec-038-86-convergent-isocrystals",
      "title": "Convergent isocrystals.",
-     "prose_ratio": 0.826,
-     "coverage_ratio": 0.956,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.856,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-025-92-examples",
+     "id": "sec-039-9-moduli-problems-for-p-divisible-groups",
+     "title": "Moduli problems for $p$-divisible groups.",
+     "prose_ratio": 0.124,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-040-92-examples",
      "title": "Examples.",
      "prose_ratio": 0.977,
      "coverage_ratio": 0.653,
@@ -4428,7 +4957,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-026-93-decorated-variants",
+     "id": "sec-041-93-decorated-variants",
      "title": "Decorated variants.",
      "prose_ratio": 0.978,
      "coverage_ratio": 0.979,
@@ -4436,25 +4965,27 @@
      "converter": "latex"
     },
     {
-     "id": "sec-027-102-symmetric-domains-via-stability-theory",
+     "id": "sec-042-102-symmetric-domains-via-stability-theory",
      "title": "Symmetric domains via stability theory.",
-     "prose_ratio": 0.436,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.478,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-028-103-examples",
+     "id": "sec-043-103-examples",
      "title": "Examples.",
      "prose_ratio": 0.231,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-029-113-examples-and-formulas",
-     "title": "Examples and formulas.",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-044-11-the-p-adic-period-mapping-and-the-gauss-manin",
+     "title": "The $p$-adic period mapping and the Gauss-Manin connection.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-030-111-construction",
+     "id": "sec-045-111-construction",
      "title": "Construction.",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.966,
@@ -4462,14 +4993,31 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-112-properties",
+     "id": "sec-046-112-properties",
      "title": "Properties.",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.284,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-032-122-the-uniformization-theorem",
+     "id": "sec-047-113-examples-and-formulas",
+     "title": "Examples and formulas.",
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-048-114-de-jongs-viewpoint-on-p-adic-period-mappings",
+     "title": "De Jong's viewpoint on $p$-adic period mappings.",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.849,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-049-122-the-uniformization-theorem",
      "title": "The uniformization theorem.",
      "prose_ratio": 0.991,
      "coverage_ratio": 0.952,
@@ -4477,71 +5025,159 @@
      "converter": "latex"
     },
     {
-     "id": "sec-033-123-global-uniformization",
+     "id": "sec-050-123-global-uniformization",
      "title": "Global uniformization",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-034-127-conclusion",
+     "id": "sec-051-124-example-the-cerednik-drinfeld-uniformization",
+     "title": "Example: the Cerednik-Drinfeld uniformization of Shimura curves at a critical prime.",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-052-125-other-examples-of-global-p-adic-uniformizati",
+     "title": "Other examples of global $p$-adic uniformization.",
+     "prose_ratio": 0.816,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-053-126-application-of-the-theory-of-p-adic-betti-la",
+     "title": "Application of the theory of $p$-adic Betti lattices.",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-054-127-conclusion",
      "title": "Conclusion.",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.939,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.798,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-035-131-more-on-the-topological-fundamental-group",
+     "id": "sec-055-13-etale-coverings-and-fundamental-groups-in-p-a",
+     "title": "'Etale coverings and fundamental groups in $p$-adic geometry.",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.69,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-056-131-more-on-the-topological-fundamental-group",
      "title": "More on the topological fundamental group.",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-036-134-the-formalism-of-fundamental-groups",
-     "title": "The formalism of fundamental groups.",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.979,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-037-14-temperate-fundamental-groups",
-     "title": "Temperate fundamental groups.",
+     "id": "sec-057-132-etale-versus-topological-coverings-again",
+     "title": "'Etale versus topological coverings (again).",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.978,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-038-142-interlude-tangential-base-points",
+     "id": "sec-058-133-existence-of-etale-paths",
+     "title": "Existence of 'etale paths.",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-059-134-the-formalism-of-fundamental-groups",
+     "title": "The formalism of fundamental groups.",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-060-135-example-rameros-locally-algebraic-etale-fund",
+     "title": "Example: Ramero's locally algebraic 'etale fundamental group.",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-061-14-temperate-fundamental-groups",
+     "title": "Temperate fundamental groups.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-062-141-temperate-etale-coverings-and-temperate-fund",
+     "title": "Temperate 'etale coverings and temperate fundamental groups.",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-063-142-interlude-tangential-base-points",
      "title": "Interlude: tangential base-points.",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-039-143-description-of-some-temperate-fundamental-gr",
+     "id": "sec-064-143-description-of-some-temperate-fundamental-gr",
      "title": "Description of some temperate fundamental groups.",
-     "prose_ratio": 0.967,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-065-15-local-and-global-monodromy-of-p-adic-differen",
+     "title": "Local and global monodromy of $p$-adic differential equations.",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-066-151-introduction",
+     "title": "Introduction.",
+     "prose_ratio": 0.992,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-040-151-introduction",
-     "title": "Introduction.",
-     "prose_ratio": 0.976,
+     "id": "sec-067-152-local-monodromy-of-p-adic-differential-equat",
+     "title": "Local monodromy of $p$-adic differential equations. Outline of Christol-Mebkhout theory.",
+     "prose_ratio": 0.903,
      "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-041-154-a-non-archimedean-riemann-hilbert-equivalenc",
+     "id": "sec-068-153-local-monodromy-of-p-adic-differential-equat",
+     "title": "Local monodromy of $p$-adic differential equations and Galois representations.",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.888,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-069-154-a-non-archimedean-riemann-hilbert-equivalenc",
      "title": "A non-archimedean Riemann-Hilbert equivalence.",
      "prose_ratio": 0.963,
      "coverage_ratio": 0.98,
@@ -4549,7 +5185,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-042-155-examples-and-applications",
+     "id": "sec-070-155-examples-and-applications",
      "title": "Examples and applications.",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.961,
@@ -4557,7 +5193,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-043-161-review-of-complex-orbifolds",
+     "id": "sec-071-16-non-archimedean-orbifolds-uniformizing-differ",
+     "title": "Non-archimedean orbifolds, uniformizing differential equations and period mappings.",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.842,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-072-161-review-of-complex-orbifolds",
      "title": "Review of complex orbifolds.",
      "prose_ratio": 0.993,
      "coverage_ratio": 0.993,
@@ -4565,31 +5209,39 @@
      "converter": "latex"
     },
     {
-     "id": "sec-044-162-orbifold-fundamental-groups",
+     "id": "sec-073-162-orbifold-fundamental-groups",
      "title": "Orbifold fundamental groups.",
-     "prose_ratio": 0.75,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.857,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-045-164-non-archimedean-orbifolds",
+     "id": "sec-074-163-uniformizing-differential-equations",
+     "title": "Uniformizing differential equations.",
+     "prose_ratio": 0.626,
+     "coverage_ratio": 0.877,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-075-164-non-archimedean-orbifolds",
      "title": "Non-archimedean orbifolds.",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.81,
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.798,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-046-165-non-archimedean-orbifold-fundamental-groups",
+     "id": "sec-076-165-non-archimedean-orbifold-fundamental-groups",
      "title": "Non-archimedean orbifold fundamental groups.",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-047-171-review-of-schwarz-triangle-groups",
+     "id": "sec-077-171-review-of-schwarz-triangle-groups",
      "title": "Review of Schwarz triangle groups.",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.994,
@@ -4597,7 +5249,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-048-173-mumford-schwarz-orbifolds",
+     "id": "sec-078-173-mumford-schwarz-orbifolds",
      "title": "Mumford-Schwarz orbifolds.",
      "prose_ratio": 0.987,
      "coverage_ratio": 0.992,
@@ -4605,71 +5257,135 @@
      "converter": "latex"
     },
     {
-     "id": "sec-049-174-arithmetic-triangle-groups-review-of-takeuch",
+     "id": "sec-079-174-arithmetic-triangle-groups-review-of-takeuch",
      "title": "Arithmetic triangle groups. Review of Takeuchi's list.",
-     "prose_ratio": 0.972,
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-080-175-arithmetic-p-adic-triangle-groups-a-p-adic-a",
+     "title": "Arithmetic $p$-adic triangle groups. A $p$-adic analogue of Takeuchi's list.",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-081-176-on-special-values-of-hypergeometric-function",
+     "title": "On special values of hypergeometric functions attached to arithmetic $p$-adic triangle groups.",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-082-181-eschers-triangle-group-delta246",
+     "title": "Escher's triangle group $\\Delta(2,4,6)$.",
+     "prose_ratio": 0.943,
      "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-050-176-on-special-values-of-hypergeometric-function",
-     "title": "On special values of hypergeometric functions attached to arithmetic $p$-adic triangle groups.",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.992,
+     "id": "sec-083-182-some-shimura-curves-attached-to-d-23",
+     "title": "Some Shimura curves attached to $D_{2.3}$.",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-051-183-triadic-uniformization",
+     "id": "sec-084-183-triadic-uniformization",
      "title": "Triadic uniformization.",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-052-a-introduction",
-     "title": "Introduction.",
-     "prose_ratio": 0.265,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-085-184-the-non-archimedean-triangle-groups-delta-32",
+     "title": "The non-archimedean triangle groups $\\Delta_3(2,4,6), \\Delta_2(2,4,6)$ and Herrlich's tree.",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-053-b-rigid-analytic-spaces",
+     "id": "sec-086-186-a-triadic-analogue-of-gauss-formula-and-spec",
+     "title": "A triadic analogue of Gauss' formula, and special values of $F(\\frac{1}{24}, \\frac{7}{24},\\frac{5}{6}; z)$ at CM points.",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-087-a-introduction",
+     "title": "Introduction.",
+     "prose_ratio": 0.304,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-088-b-rigid-analytic-spaces",
      "title": "Rigid analytic spaces.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-054-c-relation-with-formal-geometry",
+     "id": "sec-089-c-relation-with-formal-geometry",
      "title": "Relation with Formal Geometry.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-055-d-topology-of-rigid-analytic-space",
+     "id": "sec-090-d-topology-of-rigid-analytic-space",
      "title": "Topology of Rigid Analytic Space.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-056-f-bruhat-tits-building",
+     "id": "sec-091-e-berkovich-approach-to-non-archimedean-analysis",
+     "title": "Berkovich' approach to non-archimedean analysis",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-092-f-bruhat-tits-building",
      "title": "Bruhat-Tits building.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-057-g-drinfeld-symmetric-space",
+     "id": "sec-093-g-drinfeld-symmetric-space",
      "title": "Drinfeld symmetric space.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-058-h-uniformization",
+     "id": "sec-094-h-uniformization",
      "title": "Uniformization.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-059-i-examples",
+     "id": "sec-095-i-examples",
      "title": "Examples.",
-     "prose_ratio": 0.7,
-     "coverage_ratio": 0.1,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.408,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-096-j-mumfords-fake-projective-plane",
+     "title": "Mumford's fake projective plane.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-097-k-weakly-admissible-filtered-isocrystals",
+     "title": "Weakly admissible filtered isocrystals.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-098-l-filtered-isocrystals-with-g-structure",
+     "title": "Filtered isocrystals with $G$-structure.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-099-m-totaros-theorem",
+     "title": "Totaro's theorem.",
+     "result": "no matching \\section"
     }
    ]
   }

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "arXiv:math/0008040v1 [math.QA] 4 Aug 2000"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-002-3-the-lusztig-cones-and-their-spanning-vectors
 section_title: "The Lusztig cones and their spanning vectors"
 section_number: 3
@@ -10,7 +10,8 @@ source_sha256: a72319b55dbaf20b
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.992
+latex_coverage_ratio: 0.984
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 Lusztig [@lusztig7] introduced certain regions which, in low rank, give rise to canonical basis elements of a particularly simple form. The *Lusztig cone*, $C_{\mathbf{i}}$, corresponding to $\mathbf{i}\in \chi_n$, is defined to be the set of points ${{\mathbf{a}}}\in {\N}^k$ satisfying the following inequalities:\
 (\*) For every pair $s,s'\in [1,k]$ with $s<s'$, $i_s=i_{s'}=i$ and $i_p\not=i$ whenever $s<p<s'$, we have $$(\sum_p a_p)-a_s - a_{s'}\geq 0,$$ where the sum is over all $p$ with $s<p<s'$ such that $i_p$ is joined to $i$ in the Dynkin diagram (we call such a pair $s,s'$ a *minimal pair*).

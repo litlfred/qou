@@ -57,7 +57,7 @@ nothing is wired.
 
 ## References
 
-- [manuscript] `QOU.QBeta.A3AntiSelfAdjointLift` (`factor_affine_in_amplitude`,
+- [leitner2026] `QOU.QBeta.A3AntiSelfAdjointLift` (`factor_affine_in_amplitude`,
   `amplitude_surjective`/`_injective`, `evenFaceCorrection`, `crossTerm`);
   `QOU.QBeta.BirkhoffAmplitudeE` (`E = χ(P)`, the unit-modulus type tension);
   `QOU.QBeta.DTIndexAmplitudeE` (`amplitude_barOdd`, `σ E = −E`);

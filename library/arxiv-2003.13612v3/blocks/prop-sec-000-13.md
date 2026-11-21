@@ -1,0 +1,1 @@
+(13) 4 This distinguishes our evaluation of the Cottingham formula from those in the literature [8–12], where the integral as well as the counter term are evaluated at a ﬁnite value of the cutoﬀaround Λ2 ≈2 GeV2.

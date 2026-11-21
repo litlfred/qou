@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""`lem:bond-order-eq-jet-degree` names one filtration and cites a block that names another.
+"""`conj:bond-order-eq-jet-degree` names one filtration and cites a block that names another.
 
 Bean `qou-5jqv`.  One hop downstream of `qou-sw8n` (2026-09-14), which
 established that `prop:gb-spectral-sequence` names a FOURTH reading of the
@@ -8,7 +8,7 @@ symbol `J^•` -- the energy-indexed confinement filtration of
 filtrations-one-name.md` tabulated.  This probe identifies that block's first
 CONSUMER, and measures that the consumer reads `J^•` the other way.
 
-WHAT IS MEASURED, in one sentence.  `lem:bond-order-eq-jet-degree` opens by
+WHAT IS MEASURED, in one sentence.  `conj:bond-order-eq-jet-degree` opens by
 equipping `H_{3A}(q)` with "the Gröbner--Shirshov filtration by Coxeter length
 ℓ(w)" and attributes that to `prop:gb-spectral-sequence`; that proposition's
 own text says the filtration is "the confinement filtration J^•(q)" and never
@@ -214,7 +214,7 @@ def section4() -> None:
     check(bool(a), "2026-08-25-spectral-sequence-is-a-no-go-not-a-tool.md exists")
     check(
         "bond-order-eq-jet-degree" in a,
-        "it draws the dependency edge through `lem:bond-order-eq-jet-degree`",
+        "it draws the dependency edge through `conj:bond-order-eq-jet-degree`",
     )
     # Whitespace-tolerant: the phrase is WRAPPED across a line break in the
     # source ("...the same\n$J^\bullet$ that has..."), so a single-line literal
@@ -364,7 +364,7 @@ def section7() -> None:
 def section8() -> None:
     print("\n=== 8. what is NOT claimed ===\n")
     print(
-        """    NOT claimed: that `lem:bond-order-eq-jet-degree` is false.  Its own Lean
+        """    NOT claimed: that `conj:bond-order-eq-jet-degree` is false.  Its own Lean
     carrier is a legitimate §3b-cond conditional whose `body_eq_graded` is a
     hypothesis field; nothing here touches its truth.
 

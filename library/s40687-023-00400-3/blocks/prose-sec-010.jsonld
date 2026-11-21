@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/s40687-023-00400-3/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proofs: twisted 1-loop invariant",
-  "pageStart": 16,
-  "pageEnd": 21,
-  "text": "../sections/sec-010-4-proofs-twisted-1-loop-invariant.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s40687-023-00400-3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s40687-023-00400-3",
+  "title": "The knot 63",
+  "pageStart": 14,
+  "pageEnd": 16,
+  "text": "../sections/sec-010-32-the-knot-63.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40687-023-00400-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40687-023-00400-3/manifest.jsonld",
   "provenance": "ingested"
 }

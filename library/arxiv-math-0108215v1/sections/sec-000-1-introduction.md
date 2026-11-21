@@ -10,7 +10,8 @@ source_sha256: 191784d2ccb3415a
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.946
+latex_coverage_ratio: 0.942
+doc_brief: "arXiv:math/0108215v1 [math.GT] 30 Aug 2001 — The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling."
 ---
 In this paper, we exhibit a bound for the Möbius energy of a knot, in terms of the amount of "rope" needed to make the knot. This is the energy introduced in [@O1] and studied extensively in [@FHW; @KS]. We follow an overall approach suggested by G. Buck for showing that any inverse-square knot energy should be bounded by the $4/3$ power of the ropelength.
 

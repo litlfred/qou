@@ -4,35 +4,20 @@ $$
   \subset \cdots \subset
   \mu_\infty \subset \mathbb{G}_m.
 $$
-The subgroup $\mu_\infty = \bigcup_{n \geq 1} \mu_n$ contains all roots of unity. This filtration induces a descending filtration on the obstruction:
-$$
-  \kappa  \in 
-  F^1 H^2 \supset F^2 H^2 \supset F^3 H^2
-  \supset \cdots,
-  \qquad
-  F^n H^2 = nH^2(\mathcal{S}, \mathbb{G}_m).
-$$
-The class $\kappa$ lies in $F^n$ if and only if it is $n$-divisible ($\kappa \bmod n = 0$).
+The subgroup $\mu_\infty = \bigcup_{n \geq 1} \mu_n$ contains all roots of unity. On a closed surface $\mathcal{S}$ the obstruction does not live in $H^2(\mathcal{S}, \mathbb{G}_m)$; on a curve that group is zero. It lives at each finite level. The Kummer sequence $1 \to \mu_n \to \mathrm{U}(1) \xrightarrow{(\cdot)^n} \mathrm{U}(1) \to 1$ assigns to a circle bundle $\xi$ the obstruction to an $n$-th root, a class in $H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$.
 
-**The trace and divisibility.** The [QU-to-QOU theorem](#thm:qu-to-qou) establishes that the first obstruction is the Euler class of the Reeb bundle: $\kappa_0 = e(\xi)$, with trace $\mathrm{tr}(\kappa_0) = \chi(A)$. The divisibility of this trace controls the Kummer reduction at level $n$:
+**The Euler class and divisibility.** Item 2 of the [QU-to-QOU theorem](#thm:qu-to-qou) identifies the first obstruction of the Reeb bundle with its Euler class, $\kappa_0 = c_1(\xi) = e(\xi) = \chi(\mathcal{S})$. Item 3 identifies its image at Kummer level $n$:
 $$
   \kappa_0 \bmod n = 0
   \quad\Longleftrightarrow\quad
-  n  \big|  \chi(A).
+  n  \big|  \chi(\mathcal{S}).
 $$
-The obstruction $\kappa_0$ vanishes at precisely the Kummer levels $n$ that divide $|\chi(A)|$. It persists at all others. For any non-zero Euler characteristic, this gives a finite set of vanishing levels and a density-$1$ set of persisting levels.
+The obstruction vanishes at precisely the Kummer levels $n$ that divide $|\chi(\mathcal{S})|$, and persists at all others. For non-zero Euler characteristic this gives a finite set of vanishing levels and a density-$1$ set of persisting levels. On Bring's surface, $\chi = -6$ and the vanishing levels are $n \in \{1, 2, 3, 6\}$; the case $n = 2$ is a spin structure.
 
-**Complementary subgroup structure.** The obstruction at level $n$ in the brane tower ([QU-to-QOU](#thm:qu-to-qou), item 3) decomposes as:
-$$
-  \kappa_n = \kappa_0 + \delta_n,
-$$
-where $\delta_n$ is the jet correction at level $n$. The classes $\kappa_0$ and $\delta_n$ live in complementary subgroups of $H^2(\mathcal{S}, \mathbb{G}_m)$. The Euler class $\kappa_0$ is a topological invariant. The class $\delta_n$ is an analytic correction. They cannot cancel. Their sum $\kappa_n$ is nonzero whenever $\kappa_0$ is non-torsion.
+**Not a jet-tower statement.** Earlier versions of this remark derived a *perpetual obstruction* at every level of the jet-prolongation tower from a complementary-subgroup decomposition $\kappa_n = \kappa_0 + \delta_n$. That decomposition is retracted. On a closed surface the jet corrections $\delta_n$ lie in the image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, and $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. Persistence holds in the Kummer tower above, not in the jet tower. For the jet tower itself, see the [remark on jet-tower splitting](#rem:jet-tower-splitting-bring).
 
-This establishes the **perpetual obstruction** phenomenon. A non-torsion Euler class $\kappa_0$ produces a non-vanishing obstruction at every level of the brane tower. Jet refinement cannot remove it.
-
-**Summary.** For any quantum universe with non-zero Euler characteristic $\chi(A) \neq 0$:
-1. The obstruction $\kappa_0$ is non-trivial.
-2. The Kummer tower filters the obstruction space by divisibility.
-3. The obstruction persists at all Kummer levels $n \nmid \chi(A)$.
-4. The complementary subgroup structure prevents jet corrections from cancelling the topological obstruction.
-5. Properties of $\mathbf{C}_q$ depending on the vanishing of $\kappa_0 \bmod n$ must contend with this arithmetic obstruction at each level.
+**Summary.** For a surface with non-zero Euler characteristic $\chi(\mathcal{S}) \neq 0$:
+1. The obstruction $\kappa_0 = \chi(\mathcal{S})$ is non-trivial.
+2. At Kummer level $n$ the obstruction is $\chi(\mathcal{S}) \bmod n \in H^2(\mathcal{S}, \mu_n)$.
+3. The obstruction persists at all Kummer levels $n \nmid \chi(\mathcal{S})$.
+4. Properties of $\mathbf{C}_q$ depending on the vanishing of $\kappa_0 \bmod n$ must contend with this arithmetic obstruction at each level.

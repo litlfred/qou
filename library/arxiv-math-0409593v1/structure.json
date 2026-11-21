@@ -7,10 +7,21 @@
   "bytes": 318321,
   "pages": 22,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 3,
+    "reason": "13 of 376 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 20,
+    "reason": "29 of 305 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,23 +31,28 @@
    "stamp_date": "30 Sep 2004"
   },
   "doi": null,
-  "title": "CATEGORIFICATION OF THE BRAID GROUPS RAPHA\u00cbL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in representation theory, for constructible sheaves on flag varieties and for coherent",
-  "authors_raw": null,
+  "title": "Categorification of sl_2 and braid groups",
+  "authors_raw": "RAPHAËL ROUQUIER",
   "title_lines": [
-   "CATEGORIFICATION OF THE BRAID GROUPS",
-   "RAPHA\u00cbL ROUQUIER",
-   "1. Introduction",
-   "Actions of braid groups on triangulated categories are quite widesp read. They arise for",
-   "instance in representation theory, for constructible sheaves on flag varieties and for coherent"
+   "CATEGORIFICATION OF THE BRAID GROUPS"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181026123241-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20181026123241-04'00'"
+  },
+  "title_raw": "CATEGORIFICATION OF THE BRAID GROUPS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CATEGORIFICATION OF THE BRAID GROUPS 1. Introduction Actions of braid groups on triangulated categories are quite widespread. They arise for instance in representation theory, for constructible sheaves on ﬂag varieties and for coherent sheaves on Calabi-Yau varieties (cf [RouZi] and [SeiTho] for ear",
+   "outline": "1. Introduction",
+   "text": "CATEGORIFICATION OF THE BRAID GROUPS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "CATEGORIFICATION OF THE BRAID GROUPS"
  },
  "toc": [
   {
@@ -44,156 +60,429 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Self-equivalences",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "A general construction",
    "page": 2,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Applications",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The 2-braid group",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Coxeter group action",
    "page": 6,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Braid group action",
    "page": 6,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Rigidification",
    "page": 10,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Principal block of a semi-simple complex Lie algebra",
    "page": 11,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Review of category O",
    "page": 11,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Link with bimodules",
    "page": 12,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Flag varieties",
    "page": 13,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Classical results",
    "page": 13,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Genuine braid group action",
    "page": 14,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Link with bimodules",
    "page": 14,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Appendix : associativity of kernel transforms",
    "page": 15,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Classical isomorphisms",
    "page": 15,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Kernel transforms",
    "page": 16,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "References",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 99,
+   "n_words": 12,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 279,
-   "n_words": 42
+   "page_end": 2,
+   "n_chars": 2546,
+   "n_words": 423,
+   "label_start": null,
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-self-equivalences",
    "number": "2",
    "title": "Self-equivalences",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 2,
-   "n_chars": 3787,
-   "n_words": 642
+   "n_chars": 1550,
+   "n_words": 248,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-21-a-general-construction",
@@ -202,8 +491,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 5560,
-   "n_words": 1198
+   "n_chars": 4985,
+   "n_words": 949,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-003-22-applications",
@@ -212,8 +503,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 4810,
-   "n_words": 1009
+   "n_chars": 4517,
+   "n_words": 878,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-004-3-the-2-braid-group",
@@ -223,7 +516,9 @@
    "page_start": 6,
    "page_end": 6,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-005-31-coxeter-group-action",
@@ -232,8 +527,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1852,
-   "n_words": 390
+   "n_chars": 1696,
+   "n_words": 366,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-006-32-braid-group-action",
@@ -241,69 +538,83 @@
    "title": "Braid group action",
    "level": 2,
    "page_start": 6,
-   "page_end": 11,
-   "n_chars": 12472,
-   "n_words": 2798
+   "page_end": 10,
+   "n_chars": 7752,
+   "n_words": 1724,
+   "label_start": "6",
+   "label_end": "10"
   },
   {
-   "id": "sec-007-4-principal-block-of-a-semi-simple-complex-lie-a",
+   "id": "sec-007-33-rigidification",
+   "number": "3.3",
+   "title": "Rigidification",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3598,
+   "n_words": 662,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-008-4-principal-block-of-a-semi-simple-complex-lie-a",
    "number": "4",
    "title": "Principal block of a semi-simple complex Lie algebra",
    "level": 1,
    "page_start": 11,
    "page_end": 11,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-008-41-review-of-category-o",
+   "id": "sec-009-41-review-of-category-o",
    "number": "4.1",
    "title": "Review of category O",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 3477,
-   "n_words": 811
+   "n_chars": 3365,
+   "n_words": 717,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-009-42-link-with-bimodules",
+   "id": "sec-010-42-link-with-bimodules",
    "number": "4.2",
    "title": "Link with bimodules",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2992,
-   "n_words": 588
+   "n_chars": 2808,
+   "n_words": 522,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-010-5-flag-varieties",
+   "id": "sec-011-5-flag-varieties",
    "number": "5",
    "title": "Flag varieties",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-011-51-classical-results",
+   "id": "sec-012-51-classical-results",
    "number": "5.1",
    "title": "Classical results",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1178,
-   "n_words": 231
-  },
-  {
-   "id": "sec-012-52-genuine-braid-group-action",
-   "number": "5.2",
-   "title": "Genuine braid group action",
-   "level": 2,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 904,
-   "n_words": 202
+   "n_chars": 220,
+   "n_words": 52,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
    "id": "sec-013-53-link-with-bimodules",
@@ -311,19 +622,23 @@
    "title": "Link with bimodules",
    "level": 2,
    "page_start": 14,
-   "page_end": 15,
-   "n_chars": 2105,
-   "n_words": 409
+   "page_end": 14,
+   "n_chars": 764,
+   "n_words": 144,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-014-6-appendix-associativity-of-kernel-transforms",
-   "number": "6",
-   "title": "Appendix : associativity of kernel transforms",
-   "level": 1,
-   "page_start": 15,
+   "id": "sec-014-52-genuine-braid-group-action",
+   "number": "5.2",
+   "title": "Genuine braid group action",
+   "level": 2,
+   "page_start": 14,
    "page_end": 15,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 890,
+   "n_words": 194,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
    "id": "sec-015-61-classical-isomorphisms",
@@ -331,32 +646,68 @@
    "title": "Classical isomorphisms",
    "level": 2,
    "page_start": 15,
-   "page_end": 21,
-   "n_chars": 9507,
-   "n_words": 1886
+   "page_end": 15,
+   "n_chars": 1967,
+   "n_words": 367,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-016-references",
+   "id": "sec-016-6-appendix-associativity-of-kernel-transforms",
+   "number": "6",
+   "title": "Appendix : associativity of kernel transforms",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 28,
+   "n_words": 3,
+   "label_start": "15",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-017-62-kernel-transforms",
+   "number": "6.2",
+   "title": "Kernel transforms",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 7184,
+   "n_words": 1590,
+   "label_start": "16",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-018-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 3112,
-   "n_words": 462
+   "n_chars": 3057,
+   "n_words": 425,
+   "label_start": "21",
+   "label_end": "22"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 19,
-  "sections": 17,
-  "chars_total": 52035,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 47026,
+  "furniture_lines_stripped": 38,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 47,
-   "overlaid": 9,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -364,16 +715,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.19,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-2-self-equivalences",
      "title": "Self-equivalences",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.517,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -381,7 +739,7 @@
      "id": "sec-002-21-a-general-construction",
      "title": "A general construction",
      "prose_ratio": 0.986,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 0.936,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -389,7 +747,7 @@
      "id": "sec-003-22-applications",
      "title": "Applications",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -397,88 +755,100 @@
      "id": "sec-004-3-the-2-braid-group",
      "title": "The 2-braid group",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-31-coxeter-group-action",
      "title": "Coxeter group action",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.947,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-32-braid-group-action",
      "title": "Braid group action",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.924,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-4-principal-block-of-a-semi-simple-complex-lie-a",
+     "id": "sec-007-33-rigidification",
+     "title": "Rigidification",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-4-principal-block-of-a-semi-simple-complex-lie-a",
      "title": "Principal block of a semi-simple complex Lie algebra",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-41-review-of-category-o",
+     "id": "sec-009-41-review-of-category-o",
      "title": "Review of category O",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-42-link-with-bimodules",
+     "id": "sec-010-42-link-with-bimodules",
      "title": "Link with bimodules",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.967,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-5-flag-varieties",
+     "id": "sec-011-5-flag-varieties",
      "title": "Flag varieties",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-51-classical-results",
+     "id": "sec-012-51-classical-results",
      "title": "Classical results",
-     "prose_ratio": 0.909,
-     "coverage_ratio": 0.943,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-012-52-genuine-braid-group-action",
-     "title": "Genuine braid group action",
-     "prose_ratio": 0.33,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.164,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-013-53-link-with-bimodules",
      "title": "Link with bimodules",
-     "prose_ratio": 0.342,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.149,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-014-6-appendix-associativity-of-kernel-transforms",
-     "title": "Appendix : associativity of kernel transforms",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-014-52-genuine-braid-group-action",
+     "title": "Genuine braid group action",
+     "prose_ratio": 0.357,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-015-61-classical-isomorphisms",
      "title": "Classical isomorphisms",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.963,
+     "prose_ratio": 0.299,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-6-appendix-associativity-of-kernel-transforms",
+     "title": "Appendix : associativity of kernel transforms",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-62-kernel-transforms",
+     "title": "Kernel transforms",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.642,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-references",
+     "id": "sec-018-references",
      "title": "References",
      "result": "no matching \\section"
     }

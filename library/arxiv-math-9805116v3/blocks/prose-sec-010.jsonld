@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-9805116v3/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The canonical grouplike element",
-  "pageStart": 35,
-  "pageEnd": 40,
-  "text": "../sections/sec-010-113-the-canonical-grouplike-element.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805116v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805116v3",
+  "title": "First consequences of the $C^*$-structure",
+  "pageStart": 31,
+  "pageEnd": 33,
+  "text": "../sections/sec-010-111-first-consequences-of-the-c-structure.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9805116v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9805116v3/manifest.jsonld",
   "provenance": "ingested"
 }

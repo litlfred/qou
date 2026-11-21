@@ -2,45 +2,70 @@
  "_schema": "library-summary/v1",
  "doc_id": "generalised-markov-traces-and-jucys-murphy-element",
  "source_sha256": "9246e10a44d0b4aa",
- "brief": "Glasgow Mathematical Journal (2026), 1–10 RESEARCH ARTICLE — We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An",
- "extended": "**Glasgow Mathematical Journal (2026), 1–10 RESEARCH ARTICLE**\n\n*Generalised Markov traces and Jucys–Murphy elements*\n\n10 pp, 7 sections.\n\n**Abstract.** We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn.I nt y p e sB and D, it is new and generalises a known construction in typeA employing symmetric polynomials in multiplicative Jucys–Murphy elements.\n\n**Outline.** Iwahori-Hecke algebras; Coxeter groups; Introduction; Some central elements in the classical Iwahori; Markov traces; General Markov traces in types B, D; Geometric Markov traces",
+ "brief": "Glasgow Mathematical Journal (2026), 1–10 — We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn.",
+ "extended": "**Glasgow Mathematical Journal (2026), 1–10**\n\n*RESEARCH ARTICLE*\n\n10 pp, 12 sections.\n\n**Abstract.** We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn. In types B and D, it is new and generalises a known construction in type A employing symmetric polynomials in multiplicative Jucys–Murphy elements.\n\n**Outline.** Front matter; Iwahori-Hecke algebras; Introduction; Coxeter groups; Iwahori-Hecke algebras and multiplicative Jucy; Trace functional and a pairing on H(W,S); `Full twist' and Jucys-Murphy elements; Some central elements in the classical Iwahori; Markov traces; Markov traces via Jucys-Murphy elements; General Markov traces in types B, D; Geometric Markov traces",
  "tokens": {
-  "brief": 49,
-  "extended": 160
+  "brief": 48,
+  "extended": 194
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-iwahori-hecke-algebras",
    "title": "Iwahori-Hecke algebras",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-coxeter-groups",
-   "title": "Coxeter groups",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-introduction",
+   "id": "sec-001-introduction",
    "title": "Introduction",
-   "pages": "1-4"
+   "pages": "1-2"
   },
   {
-   "id": "sec-003-some-central-elements-in-the-classical-iwahori-h",
+   "id": "sec-002-coxeter-groups",
+   "title": "Coxeter groups",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-iwahori-hecke-algebras-and-multiplicative-jucys",
+   "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-trace-functional-and-a-pairing-on-hws",
+   "title": "Trace functional and a pairing on H(W,S)",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-full-twist-and-jucys-murphy-elements",
+   "title": "`Full twist' and Jucys-Murphy elements",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-006-some-central-elements-in-the-classical-iwahori-h",
    "title": "Some central elements in the classical Iwahori-Hecke algebras",
    "pages": "4-5"
   },
   {
-   "id": "sec-004-markov-traces",
+   "id": "sec-007-markov-traces",
    "title": "Markov traces",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-008-markov-traces-via-jucys-murphy-elements",
+   "title": "Markov traces via Jucys-Murphy elements",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-general-markov-traces-in-types-b-d",
+   "id": "sec-009-general-markov-traces-in-types-b-d",
    "title": "General Markov traces in types B, D",
    "pages": "6-8"
   },
   {
-   "id": "sec-006-geometric-markov-traces",
+   "id": "sec-010-geometric-markov-traces",
    "title": "Geometric Markov traces",
    "pages": "8-10"
   }

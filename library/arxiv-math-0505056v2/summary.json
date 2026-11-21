@@ -3,12 +3,17 @@
  "doc_id": "arxiv-math-0505056v2",
  "source_sha256": "1b6580406c3d35b5",
  "brief": "Matrix factorizations and link homology II — To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces.",
- "extended": "**Matrix factorizations and link homology II**\n\n*Mikhail Khovanov and Lev Rozansky*\n\n37 pp, 2 sections.\n\n**Abstract.** To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces. The Euler charac teristic of this complex (and of its triply-graded cohomology groups ) is the HOMFLYPT polynomial of the link. We show that the dimension o f each cohomology group is a link invariant. 1 Matrix factorizations with a parameter In the paper [KR] we constructed, for each n > 0, a bigraded cohomology theory of links in R3 whose Euler characteristic is a certain one-variable specialization (qn,q ) of the HOMFLYPT polynomial [HOMFLY], [PT]. The n = 0 specialization is the Alexander polynomial, equal to the Euler char- acteristic of the knot homology theory discovered by Ozsv´ ath, R asmussen and Szab´ o [OS], [R1]. The approach in [KR] fails for n = 0, assigning trivial groups to any link. In this sequel to [KR] we assume that the reader is familiar with that paper.\n\n**Outline.** Matrix factorizations with a parameter; Proofs\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Given two braid diagrams D1,D 2 of an oriented link L, the\n- Theorem 2: For any braid diagram D the Euler characteristic ⟨D⟩ ofH(D)\n- Proposition 1: LetD be a marked tangle diagram. Then C(D), as an object\n- Proposition 1: is proved in the next section.\n- Proposition 2: If diagrams D1,D 2 are related by a Reidemeister move of\n- Proposition 3: Factorizations (a′, b′) and (a, b)′ are chain homotopy equiv-",
+ "extended": "**Matrix factorizations and link homology II**\n\n*Mikhail Khovanov and Lev Rozansky*\n\n37 pp, 3 sections.\n\n**Abstract.** To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces. The Euler characteristic of this complex (and of its triply-graded cohomology groups) is the HOMFLYPT polynomial of the link. We show that the dimension of each cohomology group is a link invariant. 1 Matrix factorizations with a parameter In the paper [KR] we constructed, for each n > 0, a bigraded cohomology theory of links in R3 whose Euler characteristic is a certain one-variable specialization (qn, q) of the HOMFLYPT polynomial [HOMFLY], [PT]. The n = 0 specialization is the Alexander polynomial, equal to the Euler char- acteristic of the knot homology theory discovered by Ozsv´ath, Rasmussen and Szab´o [OS], [R1]. The approach in [KR] fails for n = 0, assigning trivial groups to any link. In this sequel to [KR] we assume that the reader is familiar with that paper.\n\n**Outline.** Front matter; Matrix factorizations with a parameter; Proofs",
  "tokens": {
   "brief": 38,
-  "extended": 386
+  "extended": 271
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-matrix-factorizations-with-a-parameter",
    "title": "Matrix factorizations with a parameter",
@@ -24,8 +29,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

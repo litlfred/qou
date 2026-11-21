@@ -2,435 +2,510 @@
  "_schema": "library-summary/v1",
  "doc_id": "acsv231201",
  "source_sha256": "1a664d0bf666041e",
- "brief": "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction",
- "extended": "**Analytic Combinatorics in Several Variables**\n\n*Expanded Second Edition*\n\n589 pp, 85 sections.\n\n**Outline.** Preface to the second edition; List of Symbols; Introduction; Generating functions and asymptotics; New multivariate methods; Outline of the remaining chapters; Generating functions; Power series; Rational operations on generating functions; Algebraic generating functions; Labeled classes; Univariate asymptotics; An explicit formula for rational functions; Meromorphic asymptotics; Transfer theorems; The saddle point method; Fourier–Laplace integrals in one variable; Real integrands",
+ "brief": "Analytic Combinatorics in Several Variables Expanded Second Edition — 100 sections: Front matter; Preface to the second edition; Preface to the first edition",
+ "extended": "**Analytic Combinatorics in Several Variables Expanded Second Edition**\n\n*Expanded Second Edition*\n\n589 pp, 100 sections.\n\n**Outline.** Front matter; Preface to the second edition; Preface to the first edition; List of Symbols; Introduction; Generating functions and asymptotics; New multivariate methods; Outline of the remaining chapters; Generating functions; Power series; Rational operations on generating functions; Algebraic generating functions; D-finite generating functions and diagonals; Labeled classes; Univariate asymptotics; An explicit formula for rational functions; Meromorphic asymptotics; Darboux's method",
  "tokens": {
-  "brief": 29,
-  "extended": 149
+  "brief": 39,
+  "extended": 156
  },
  "sections": [
   {
-   "id": "sec-000-preface-to-the-second-edition",
-   "title": "Preface to the second edition",
-   "pages": "9-15"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-9"
   },
   {
-   "id": "sec-001-list-of-symbols",
+   "id": "sec-000-preface-to-the-second-edition",
+   "title": "Preface to the second edition",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-001-preface-to-the-first-edition",
+   "title": "Preface to the first edition",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-002-list-of-symbols",
    "title": "List of Symbols",
    "pages": "15-21"
   },
   {
-   "id": "sec-002-introduction",
+   "id": "sec-003-introduction",
    "title": "Introduction",
    "pages": "21-23"
   },
   {
-   "id": "sec-003-generating-functions-and-asymptotics",
+   "id": "sec-004-generating-functions-and-asymptotics",
    "title": "Generating functions and asymptotics",
    "pages": "23-27"
   },
   {
-   "id": "sec-004-new-multivariate-methods",
+   "id": "sec-005-new-multivariate-methods",
    "title": "New multivariate methods",
    "pages": "27-30"
   },
   {
-   "id": "sec-005-outline-of-the-remaining-chapters",
+   "id": "sec-006-outline-of-the-remaining-chapters",
    "title": "Outline of the remaining chapters",
    "pages": "30-35"
   },
   {
-   "id": "sec-006-generating-functions",
+   "id": "sec-007-generating-functions",
    "title": "Generating functions",
    "pages": "35-35"
   },
   {
-   "id": "sec-007-power-series",
+   "id": "sec-008-power-series",
    "title": "Power series",
    "pages": "35-38"
   },
   {
-   "id": "sec-008-rational-operations-on-generating-functions",
+   "id": "sec-009-rational-operations-on-generating-functions",
    "title": "Rational operations on generating functions",
    "pages": "38-48"
   },
   {
-   "id": "sec-009-algebraic-generating-functions",
+   "id": "sec-010-algebraic-generating-functions",
    "title": "Algebraic generating functions",
-   "pages": "48-69"
+   "pages": "48-58"
   },
   {
-   "id": "sec-010-labeled-classes",
+   "id": "sec-011-d-finite-generating-functions-and-diagonals",
+   "title": "D-finite generating functions and diagonals",
+   "pages": "58-69"
+  },
+  {
+   "id": "sec-012-labeled-classes",
    "title": "Labeled classes",
    "pages": "69-78"
   },
   {
-   "id": "sec-011-univariate-asymptotics",
+   "id": "sec-013-univariate-asymptotics",
    "title": "Univariate asymptotics",
    "pages": "78-78"
   },
   {
-   "id": "sec-012-an-explicit-formula-for-rational-functions",
+   "id": "sec-014-an-explicit-formula-for-rational-functions",
    "title": "An explicit formula for rational functions",
    "pages": "78-80"
   },
   {
-   "id": "sec-013-meromorphic-asymptotics",
+   "id": "sec-015-meromorphic-asymptotics",
    "title": "Meromorphic asymptotics",
-   "pages": "80-88"
+   "pages": "80-85"
   },
   {
-   "id": "sec-014-transfer-theorems",
+   "id": "sec-016-darbouxs-method",
+   "title": "Darboux's method",
+   "pages": "85-88"
+  },
+  {
+   "id": "sec-017-transfer-theorems",
    "title": "Transfer theorems",
    "pages": "88-95"
   },
   {
-   "id": "sec-015-the-saddle-point-method",
+   "id": "sec-018-the-saddle-point-method",
    "title": "The saddle point method",
    "pages": "95-107"
   },
   {
-   "id": "sec-016-fourierlaplace-integrals-in-one-variable",
+   "id": "sec-019-fourierlaplace-integrals-in-one-variable",
    "title": "Fourier–Laplace integrals in one variable",
    "pages": "107-109"
   },
   {
-   "id": "sec-017-real-integrands",
+   "id": "sec-020-real-integrands",
    "title": "Real integrands",
    "pages": "109-115"
   },
   {
-   "id": "sec-018-complex-phase",
+   "id": "sec-021-complex-phase",
    "title": "Complex phase",
    "pages": "115-123"
   },
   {
-   "id": "sec-019-analytic-versus-smooth-functions",
+   "id": "sec-022-analytic-versus-smooth-functions",
    "title": "Analytic versus smooth functions",
    "pages": "123-132"
   },
   {
-   "id": "sec-020-multivariate-fourierlaplace-integrals",
+   "id": "sec-023-multivariate-fourierlaplace-integrals",
    "title": "Multivariate Fourier–Laplace integrals",
    "pages": "132-132"
   },
   {
-   "id": "sec-021-overview",
+   "id": "sec-024-overview",
    "title": "Overview",
    "pages": "132-136"
   },
   {
-   "id": "sec-022-standard-phase",
+   "id": "sec-025-standard-phase",
    "title": "Standard phase",
    "pages": "136-139"
   },
   {
-   "id": "sec-023-real-part-of-phase-has-a-strict-minimum",
+   "id": "sec-026-real-part-of-phase-has-a-strict-minimum",
    "title": "Real part of phase has a strict minimum",
-   "pages": "139-147"
+   "pages": "139-143"
   },
   {
-   "id": "sec-024-higher-order-terms-in-the-expansions",
+   "id": "sec-027-general-nondegenerate-phase-with-finite-critical",
+   "title": "General nondegenerate phase with finite critical set",
+   "pages": "143-147"
+  },
+  {
+   "id": "sec-028-higher-order-terms-in-the-expansions",
    "title": "Higher order terms in the expansions",
    "pages": "147-152"
   },
   {
-   "id": "sec-025-laurent-series-amoebas-and-convex-geometry",
+   "id": "sec-029-laurent-series-amoebas-and-convex-geometry",
    "title": "Laurent series, amoebas, and convex geometry",
-   "pages": "152-159"
+   "pages": "152-153"
   },
   {
-   "id": "sec-026-polynomial-amoebas",
+   "id": "sec-030-laurent-series",
+   "title": "Laurent series",
+   "pages": "153-159"
+  },
+  {
+   "id": "sec-031-polynomial-amoebas",
    "title": "Polynomial amoebas",
    "pages": "159-165"
   },
   {
-   "id": "sec-027-convex-cones-and-exponential-bounds",
+   "id": "sec-032-convex-cones-and-exponential-bounds",
    "title": "Convex cones and exponential bounds",
    "pages": "165-171"
   },
   {
-   "id": "sec-028-singularities-amoeba-boundaries-and-minimal-poin",
+   "id": "sec-033-singularities-amoeba-boundaries-and-minimal-poin",
    "title": "Singularities, amoeba boundaries, and minimal points",
    "pages": "171-180"
   },
   {
-   "id": "sec-029-additional-constructions",
+   "id": "sec-034-additional-constructions",
    "title": "Additional constructions",
    "pages": "180-187"
   },
   {
-   "id": "sec-030-overview-of-analytic-methods-for-multivariate-gf",
+   "id": "sec-035-overview-of-analytic-methods-for-multivariate-gf",
    "title": "Overview of analytic methods for multivariate GFs",
    "pages": "187-189"
   },
   {
-   "id": "sec-031-some-illustrative-examples",
+   "id": "sec-036-some-illustrative-examples",
    "title": "Some illustrative examples",
    "pages": "189-200"
   },
   {
-   "id": "sec-032-the-smooth-case",
+   "id": "sec-037-the-smooth-case",
    "title": "The smooth case",
-   "pages": "200-224"
+   "pages": "200-214"
   },
   {
-   "id": "sec-033-geometry",
+   "id": "sec-038-the-general-case-via-stratified-morse-theory",
+   "title": "The general case via stratified Morse theory",
+   "pages": "214-224"
+  },
+  {
+   "id": "sec-039-geometry",
    "title": "Geometry",
    "pages": "224-232"
   },
   {
-   "id": "sec-034-deformations",
+   "id": "sec-040-deformations",
    "title": "Deformations",
-   "pages": "232-240"
+   "pages": "232-239"
   },
   {
-   "id": "sec-035-techniques-for-polynomial-systems",
+   "id": "sec-041-effective-computations-and-acsv",
+   "title": "Effective computations and ACSV",
+   "pages": "239-240"
+  },
+  {
+   "id": "sec-042-techniques-for-polynomial-systems",
    "title": "Techniques for polynomial systems",
    "pages": "240-244"
   },
   {
-   "id": "sec-036-computing-critical-points",
+   "id": "sec-043-computing-critical-points",
    "title": "Computing critical points",
    "pages": "244-253"
   },
   {
-   "id": "sec-037-verifying-minimal-points",
+   "id": "sec-044-verifying-minimal-points",
    "title": "Verifying minimal points",
    "pages": "253-256"
   },
   {
-   "id": "sec-038-further-computations-for-asymptotics",
+   "id": "sec-045-further-computations-for-asymptotics",
    "title": "Further computations for asymptotics",
    "pages": "256-263"
   },
   {
-   "id": "sec-039-smooth-point-asymptotics",
+   "id": "sec-046-smooth-point-asymptotics",
    "title": "Smooth point asymptotics",
    "pages": "263-271"
   },
   {
-   "id": "sec-040-finitely-minimal-points-and-the-surgery-method",
+   "id": "sec-047-finitely-minimal-points-and-the-surgery-method",
    "title": "Finitely minimal points and the surgery method",
    "pages": "271-275"
   },
   {
-   "id": "sec-041-the-method-of-residue-forms",
+   "id": "sec-048-the-method-of-residue-forms",
    "title": "The method of residue forms",
    "pages": "275-280"
   },
   {
-   "id": "sec-042-smooth-bivariate-functions",
+   "id": "sec-049-smooth-bivariate-functions",
    "title": "Smooth bivariate functions",
    "pages": "280-297"
   },
   {
-   "id": "sec-043-additional-formulae-for-asymptotics",
+   "id": "sec-050-additional-formulae-for-asymptotics",
    "title": "Additional formulae for asymptotics",
    "pages": "297-309"
   },
   {
-   "id": "sec-044-multiple-point-asymptotics",
+   "id": "sec-051-multiple-point-asymptotics",
    "title": "Multiple point asymptotics",
    "pages": "309-311"
   },
   {
-   "id": "sec-045-a-taxonomy-of-multiple-points",
+   "id": "sec-052-a-taxonomy-of-multiple-points",
    "title": "A taxonomy of multiple points",
    "pages": "311-317"
   },
   {
-   "id": "sec-046-main-results-on-integrals",
+   "id": "sec-053-main-results-on-integrals",
    "title": "Main results on integrals",
-   "pages": "317-340"
+   "pages": "317-320"
   },
   {
-   "id": "sec-047-classifying-multiple-points",
+   "id": "sec-054-main-results-on-coefficient-asymptotics",
+   "title": "Main results on coefficient asymptotics",
+   "pages": "320-340"
+  },
+  {
+   "id": "sec-055-classifying-multiple-points",
    "title": "Classifying multiple points",
    "pages": "340-345"
   },
   {
-   "id": "sec-048-surgery-non-generic-directions-and-non-arrangeme",
+   "id": "sec-056-surgery-non-generic-directions-and-non-arrangeme",
    "title": "Surgery, non-generic directions, and non-arrangement points",
    "pages": "345-357"
   },
   {
-   "id": "sec-049-cone-point-asymptotics",
+   "id": "sec-057-cone-point-asymptotics",
    "title": "Cone point asymptotics",
    "pages": "357-359"
   },
   {
-   "id": "sec-050-results-on-cones-and-deformations",
+   "id": "sec-058-results-on-cones-and-deformations",
    "title": "Results on cones and deformations",
    "pages": "359-365"
   },
   {
-   "id": "sec-051-proof-of-theorem-111",
+   "id": "sec-059-proof-of-theorem-111",
    "title": "Proof of Theorem 11.1",
    "pages": "365-379"
   },
   {
-   "id": "sec-052-evaluating-asymptotics",
+   "id": "sec-060-evaluating-asymptotics",
    "title": "Evaluating asymptotics",
    "pages": "379-386"
   },
   {
-   "id": "sec-053-examples-and-consequences",
+   "id": "sec-061-examples-and-consequences",
    "title": "Examples and consequences",
    "pages": "386-399"
   },
   {
-   "id": "sec-054-combinatorial-applications",
+   "id": "sec-062-combinatorial-applications",
    "title": "Combinatorial applications",
+   "pages": "399-399"
+  },
+  {
+   "id": "sec-063-some-classifications",
+   "title": "Some classifications",
    "pages": "399-403"
   },
   {
-   "id": "sec-055-powers-quasi-powers-and-riordan-arrays",
+   "id": "sec-064-powers-quasi-powers-and-riordan-arrays",
    "title": "Powers, quasi-powers, and Riordan arrays",
    "pages": "403-408"
   },
   {
-   "id": "sec-056-lagrange-inversion",
+   "id": "sec-065-lagrange-inversion",
    "title": "Lagrange inversion",
    "pages": "408-411"
   },
   {
-   "id": "sec-057-transfer-matrices",
+   "id": "sec-066-transfer-matrices",
    "title": "Transfer matrices",
    "pages": "411-417"
   },
   {
-   "id": "sec-058-higher-order-asymptotics",
+   "id": "sec-067-higher-order-asymptotics",
    "title": "Higher order asymptotics",
    "pages": "417-420"
   },
   {
-   "id": "sec-059-algebraic-generating-functions",
+   "id": "sec-068-algebraic-generating-functions",
    "title": "Algebraic generating functions",
    "pages": "420-422"
   },
   {
-   "id": "sec-060-additional-worked-examples",
+   "id": "sec-069-additional-worked-examples",
    "title": "Additional worked examples",
    "pages": "422-430"
   },
   {
-   "id": "sec-061-limit-laws-from-probability-theory",
+   "id": "sec-070-limit-laws-from-probability-theory",
    "title": "Limit laws from probability theory",
    "pages": "430-442"
   },
   {
-   "id": "sec-062-challenges-and-extensions",
+   "id": "sec-071-challenges-and-extensions",
    "title": "Challenges and extensions",
    "pages": "442-442"
   },
   {
-   "id": "sec-063-contributing-singularities-and-diagonals",
+   "id": "sec-072-contributing-singularities-and-diagonals",
    "title": "Contributing singularities and diagonals",
    "pages": "442-444"
   },
   {
-   "id": "sec-064-phase-transitions",
+   "id": "sec-073-phase-transitions",
    "title": "Phase transitions",
    "pages": "444-444"
   },
   {
-   "id": "sec-065-degenerate-phase",
+   "id": "sec-074-degenerate-phase",
    "title": "Degenerate phase",
-   "pages": "444-448"
+   "pages": "444-447"
   },
   {
-   "id": "sec-066-algebraic-gfs",
+   "id": "sec-075-critical-points-at-infinity",
+   "title": "Critical points at infinity",
+   "pages": "447-448"
+  },
+  {
+   "id": "sec-076-algebraic-gfs",
    "title": "Algebraic GFs",
    "pages": "448-450"
   },
   {
-   "id": "sec-067-asymptotic-formulae",
+   "id": "sec-077-asymptotic-formulae",
    "title": "Asymptotic formulae",
    "pages": "450-451"
   },
   {
-   "id": "sec-068-symmetric-functions",
+   "id": "sec-078-symmetric-functions",
    "title": "Symmetric functions",
    "pages": "451-453"
   },
   {
-   "id": "sec-069-conclusion",
+   "id": "sec-079-conclusion",
    "title": "Conclusion",
    "pages": "453-456"
   },
   {
-   "id": "sec-070-manifolds",
+   "id": "sec-080-manifolds",
    "title": "Manifolds",
-   "pages": "456-470"
+   "pages": "456-461"
   },
   {
-   "id": "sec-071-integration-of-forms",
+   "id": "sec-081-vector-fields-and-differential-forms",
+   "title": "Vector fields and differential forms",
+   "pages": "461-470"
+  },
+  {
+   "id": "sec-082-integration-of-forms",
    "title": "Integration of forms",
-   "pages": "470-480"
+   "pages": "470-474"
   },
   {
-   "id": "sec-072-chain-complexes-and-homology-theory",
+   "id": "sec-083-complex-manifolds-and-differential-forms-in-cn",
+   "title": "Complex manifolds and differential forms in Cn",
+   "pages": "474-480"
+  },
+  {
+   "id": "sec-084-chain-complexes-and-homology-theory",
    "title": "Chain complexes and homology theory",
    "pages": "480-486"
   },
   {
-   "id": "sec-073-tools-for-homology",
+   "id": "sec-085-tools-for-homology",
    "title": "Tools for homology",
    "pages": "486-493"
   },
   {
-   "id": "sec-074-cohomology",
+   "id": "sec-086-cohomology",
    "title": "Cohomology",
    "pages": "493-495"
   },
   {
-   "id": "sec-075-topology-of-complex-manifolds",
+   "id": "sec-087-topology-of-complex-manifolds",
    "title": "Topology of complex manifolds",
-   "pages": "495-498"
+   "pages": "495-499"
   },
   {
-   "id": "sec-076-intersection-classes",
+   "id": "sec-088-intersection-classes",
    "title": "Intersection classes",
-   "pages": "498-503"
+   "pages": "499-503"
   },
   {
-   "id": "sec-077-residue-forms-and-the-residue-integral-theorem",
+   "id": "sec-089-residue-forms-and-the-residue-integral-theorem",
    "title": "Residue forms and the residue integral theorem",
-   "pages": "503-516"
+   "pages": "503-517"
   },
   {
-   "id": "sec-078-classical-morse-theory",
+   "id": "sec-090-classical-morse-theory",
    "title": "Classical Morse theory",
-   "pages": "516-523"
+   "pages": "517-523"
   },
   {
-   "id": "sec-079-description-at-the-level-of-homology",
+   "id": "sec-091-description-at-the-level-of-homology",
    "title": "Description at the level of homology",
-   "pages": "523-536"
+   "pages": "523-531"
   },
   {
-   "id": "sec-080-critical-points-and-the-fundamental-lemma",
+   "id": "sec-092-whitney-stratified-spaces",
+   "title": "Whitney stratified spaces",
+   "pages": "531-536"
+  },
+  {
+   "id": "sec-093-critical-points-and-the-fundamental-lemma",
    "title": "Critical points and the fundamental lemma",
    "pages": "536-541"
   },
   {
-   "id": "sec-081-description-of-the-attachments",
+   "id": "sec-094-description-of-the-attachments",
    "title": "Description of the attachments",
-   "pages": "541-551"
+   "pages": "541-545"
   },
   {
-   "id": "sec-082-references",
+   "id": "sec-095-stratified-morse-theory-for-complex-manifolds",
+   "title": "Stratified Morse theory for complex manifolds",
+   "pages": "545-551"
+  },
+  {
+   "id": "sec-096-references",
    "title": "References",
    "pages": "551-571"
   },
   {
-   "id": "sec-083-author-index",
+   "id": "sec-097-author-index",
    "title": "Author Index",
    "pages": "571-577"
   },
   {
-   "id": "sec-084-subject-index",
+   "id": "sec-098-subject-index",
    "title": "Subject Index",
    "pages": "577-589"
   }

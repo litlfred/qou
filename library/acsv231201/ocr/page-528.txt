@@ -1,0 +1,47 @@
+510 Residue forms and classical Morse theory
+
+d-— 1. The (d — 1)-homology is given by Hy_\(X,-00) = C”, where m is the
+number of critical points. A basis {yp} may be chosen, indexed by the critical
+points p of h on X, with the property that h is maximized on Yp at p. By the
+isomorphism of smooth homology and singular homology, each yp may be
+chosen to be smooth.
+
+Proof First assume distinct critical values c) < +++ < cj with corresponding
+critical points p“, ...,p, and let X; denote the space X<c,+.. Inducting on j,
+we show that the conclusion of the theorem holds for X; in place of X. First,
+we note that each pair (X;, X;-1) is homotopy equivalent to a (d — 1)-ball B*!
+modulo its boundary, whose homology has rank 1 in dimension d-— | and zero
+in every other dimension. For the base step j = 1, where we take Xp = X<; for
+any ft < c,, the conclusion is immediate.
+
+Now assume the conclusion holds with X = X; for some j < m, and consider
+the short exact sequence of chain complexes of pairs
+
+0 > C(Xj, 0) > C.(Xjn1,-09) @ Cr(Xj41, Xj) 2 0.
+
+None of these pairs has any homology in dimensions higher than d — 1, there-
+fore the long exact sequence is as follows, with an arrow from the rightmost
+element of each row other than the bottom row to the leftmost element of the
+next row down.
+
+0 > Aai(Xj,-0) > Ha-i(Xjx1,-0) > Hai (Xj1, Xj)
+Fg-2(Xj,-) > Ha-2(Xj41,-09) > Ag-2(Xju1, Xj)
+Fq-3(Xj,-~) > Ha-3(Xj41,-09) > Ag-3(Xju1, Xj)
+
+Ao(Xj,-09) > Ao(Xjx1,-0) = > A(X ju, Xj) > 0.
+Identifying each H,(Xj,1, Xj) as C if k = d— 1 and 0 otherwise, and using the
+
+induction hypothesis, fills in most of this sequence:
+
+0 > COs Aai(Xjn,-~) > C
+0 > Ayg-2(Xj+1,-%) 0
+0 > Ag-3(Xj11,-0) > 0
+
+J
+
+0 > Apl(Xjx1,-0) > 0,
+
+from which we deduce that Hy(Xj,1,—00) has rank one more than that of
+#Aiy,(X;,-00) when k = d — 1 and rank zero otherwise. The extra generator
+comes from the attachment of B“-! modulo its boundary, for which the gen-
+erator yj; may be chosen to maximize h at p (see Exercise C.10), thereby

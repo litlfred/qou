@@ -1,0 +1,1 @@
+In [72] it was shown that Conjectures 3.11 and 3.4 in loc. cit. are equivalent and would follow from either Conjecture 3.13 or Conjecture 3.14 in that same paper. Counterexample 1 above shows that all these conjectures fail. Next we show that the above construction actually yields a counterexample to

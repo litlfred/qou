@@ -1,0 +1,53 @@
+108 Fourier-Laplace integrals in one variable
+
+The C® Big-O Lemma
+
+The smooth counterpart to Lemma 4.3 is established by showing that the main
+contribution to Z(A) comes from an interval of size A~!/*, The increase in length
+for the proof of this result compared to the very short proof of Lemma 4.3
+comes from the need to keep track of a partition of unity function and its
+derivatives.
+
+Lemma 4.11. [f 7 is smooth and compactly supported and € > 1 and k > 2
+
+Lf el xn(x) dx
+
+for a constant C depending only on k, €, and the first € derivatives of n.
+
+are integers, then
+
+< Ca dik (4.16)
+
+Proof Let a@ be a smooth bump function taking values in [0, 1] that is equal
+to 1 on |x| < 1 and vanishes on |x| > 2. Choose € > 0 and rewrite (4.16) as
+
+f. e™ x(xJa(x/e) dx+ f. et x(x) EL — a(x/e)] dx. (4.17)
+
+co
+
+For any S C R let 1s(x) denote the indicator function that equals one when
+x € S and zero otherwise. The absolute value of the first integrand in (4.17) is
+everywhere bounded by |x|°- SUP) y}<2 l77(4)]+ Upj<2e, $0 its integral is bounded by
+Cye!*! where C; = 2° supy yes nC).
+
+The second integral will be done by parts, and to prepare for this we examine
+the iteration of the operator D : f 1 (d/dx)(f/x*"') applied to the function
+f(x) = x) - a(x/e)). The result will be a sum of monomials, each mono-
+mial being a product of a power of x, a derivative of 7, a derivative of a, and a
+power of e: if [a, b,c, d] is shorthand for the term x“ (x) a (x/e) e@ then
+
+D.-[a, b, c,d] = (a—k+1)[a-k, b, c, d]+[a—k+1, b+1, c, d]+[a—k+1, b, c+1, d-1]
+
+whenever a > 0. By induction, we see that DN - [a,b, c,d] is the sum of terms
+of the form C[r, s, t, u] where
+
+rt+uz>atd-KkN, S<bD+N, t<ctQN,
+
+and C is bounded above by the factorial of max{kN, a}. In particular, since
+€ < x we may replace positive powers of ¢ by the same power of x to arrive at
+the upper bound
+
+|D® [xn = a(x/e))]] < AyyeColal™, (4.18)
+
+where C> is the product of 2 - 3% - sup jewjxjec1.2) 7? (4) and the maximum of 1
+and sup jen,xfe(1,2) a(x),

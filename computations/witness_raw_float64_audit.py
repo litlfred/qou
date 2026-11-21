@@ -754,6 +754,8 @@ def main() -> int:
              "only the latter is forbidden (bean qou-irzg).")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on a NEW dirty witness or an INCREASED count")
+    ap.add_argument("--no-write", action="store_true",
+                    help="read-only mode: evaluate and gate without writing the audit witness (bean qou-y8d0)")
     ap.add_argument("--rebaseline", action="store_true",
                     help="regenerate the baseline (draining only — totals must go DOWN)")
     args = ap.parse_args()
@@ -1022,8 +1024,9 @@ def main() -> int:
     _prov_payload_2.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         _prov_payload_2, script_path=__file__, engine=None, q0_anchor=False)
-    out.write_text(json.dumps(_prov_payload_2, indent=2) + "\n")
-    print(f"\nWrote {out.name}")
+    if not args.no_write:
+        out.write_text(json.dumps(_prov_payload_2, indent=2) + "\n")
+        print(f"\nWrote {out.name}")
     # ADVISORY-MODE NOTICE (qou-6sts). Without --strict this function returns 0
     # no matter how red the corpus is, so `$?` is not a gate. The documented
     # paths already pass --strict (scripts/precision-gates.sh,

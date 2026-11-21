@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1811.05376v4/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 5,
+  "contains": [
+    "library/arxiv-1811.05376v4/blocks/prose-sec-front-matter",
+    "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-01",
+    "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-02",
+    "library/arxiv-1811.05376v4/blocks/rem-sec-front-matter-03",
+    "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-04",
+    "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1811.05376v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1811.05376v4/manifest.jsonld",
+  "provenance": "ingested"
+}

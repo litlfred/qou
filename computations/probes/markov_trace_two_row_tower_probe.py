@@ -283,7 +283,8 @@ def main():
         print(r["isotope"], r["tr_markov_d"][:40])
     print(f"elapsed {time.time() - t0:.1f}s")
     if args.out:
-        json.dump({"q0": Q0_STR, "z": "q^3/(q^2+1)", "dps": args.dps,
+        json.dump({"q0": Q0_STR, "q0Anchor": "proton", "q0Value": Q0_STR,
+                   "z": "q^3/(q^2+1)", "dps": args.dps,
                    "self_check_worst_residual": mp.nstr(worst, 5), "rows": rows},
                   open(args.out, "w"), indent=1)
 

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0811.2435v1/blocks/prose-sec-019",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Topology on the space of stability structures",
-  "pageStart": 56,
-  "pageEnd": 60,
-  "text": "../sections/sec-019-topology-on-the-space-of-stability-structures.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0811.2435v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0811.2435v1",
+  "title": "Ind-constructible Calabi-Yau categories and potentials",
+  "pageStart": 53,
+  "pageEnd": 56,
+  "text": "../sections/sec-019-ind-constructible-calabi-yau-categories-and-pote.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
   "provenance": "ingested"
 }

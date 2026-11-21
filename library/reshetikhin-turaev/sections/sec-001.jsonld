@@ -9,14 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction",
-  "pageStart": 1,
-  "pageEnd": 2,
+  "title": "Compact Braided Categories",
+  "pageStart": 2,
+  "pageEnd": 4,
   "contains": [
-    "library/reshetikhin-turaev/blocks/prose-sec-001",
-    "library/reshetikhin-turaev/blocks/def-sec-001-01"
+    "library/reshetikhin-turaev/blocks/prose-sec-001"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
   "provenance": "ingested"
 }

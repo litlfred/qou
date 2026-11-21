@@ -1,0 +1,908 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-hep-th-0205308v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "Department of Mathematicsand Statistics,University of Edinburgh,Edinburgh EH9 3JZ Scotland; e-mail address: hwb@ed.ac.uk",
+   "marks": [
+    {
+     "page": 1,
+     "context": "H.W.Braden"
+    },
+    {
+     "page": 1,
+     "context": "dinatesuchthatthematrixF"
+    },
+    {
+     "page": 1,
+     "context": "distinguishedoperator,theidentityoperatorΦ"
+    }
+   ],
+   "block": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "2",
+   "text": "Theory Department, Lebedev Physics Institute,Moscow117924, Russia and ITEP, Moscow 117259, Russia; e-mail address: mars@lpi.ru; andrei@heron.itep.ru",
+   "marks": [
+    {
+     "page": 1,
+     "context": "H.W.Braden1and A.Marshakov"
+    }
+   ],
+   "block": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "3",
+   "text": "Intheoriginalsupergravitycontextsuchamanifold wascalled“rigid specialK¨ahler”with“special K¨ahler” referring to the local (supergravity) setting; since [6] the local setting is often known by “projective special K¨ahler”. See [7] for a survey of these manifolds.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "aspecial"
+    }
+   ],
+   "block": "library/arxiv-hep-th-0205308v2/blocks/prose-sec-000"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "F"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "· F"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "· Fk= F"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "· F"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "Herethematrices∥F"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "∂a"
+  },
+  {
+   "page": 1,
+   "mark": "j",
+   "context": "∂ai∂a"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "∂ai∂aj∂a"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "relatedtothree-pointfunctionsvia⟨Φ"
+  },
+  {
+   "page": 1,
+   "mark": "j",
+   "context": "relatedtothree-pointfunctionsvia⟨ΦiΦ"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "relatedtothree-pointfunctionsvia⟨ΦiΦjΦ"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∂a"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "∂ai∂a"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "ds2= gi¯j da"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "a"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "Herea"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "a"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "atoricﬁbration(theanglesx"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "ω= dx"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "ω= dxi∧dy"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "(ImT )ij da"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "a"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "andtherealcoordinates{x"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "andtherealcoordinates{xi, y"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∂a"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∂x"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "a"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∂a"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "4Fijk,andthereisalso"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∇= D + Asuchthat∇dx"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "∇= D + Asuchthat∇dxi= 0 = ∇dy"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "ida"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "da"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "a"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "a"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∂a"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "jk=D"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "jk=(A"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "C"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "ijC"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "C"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "ilC"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "C"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "φ"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "φi ◦φ"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "ijφ"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "C"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "Ci · C"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "Ci · Cj= C"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "Ci · Cj= Cj· C"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "(Ci)"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "m= C"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "derivativesofsomefunctionF(a"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "C"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "jα"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "jαj(a)F"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "jαj(a)Fj,butforsimplicitywewillmostlyconsiderη=F"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "[∂i −(F"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "[∂i −(Fj)−1F"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "[∂i −(Fj)−1Fi ∂j, ∂k −(F"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "[∂i −(Fj)−1Fi ∂j, ∂k −(Fj)−1F"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "C"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "C"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ijda"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ijdai= ηkl∂iTjlda"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ijdai= ηkl∂iTjldai= ηklFijlda"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "WithoneformC= η−1dT(i.e.C"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "[C"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "[Ci, C"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "whereTijaresomeknownfunctionsand{ϕ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ϕ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ϕi= F"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ϕi= F1"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Tij= Tij(a"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "dTij= C"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "ijdϕ"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "dϕk= ηklda"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "r=∂α"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "dηkl ∧da"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "dηkl ∧dal= 0 ⇐⇒M"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "sFirk= M"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "∂a"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "wheretheα"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "constantα"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "C"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "C"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "ijdϕ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "a)"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "a)"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "b)"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "· C"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "· C"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "· C"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "· C"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "· C"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "ϕ"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "bC"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "bCa)"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "aC"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "aCc)"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "cC"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "cCb)"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "bC"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "aC"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "cC"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "cCb)"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "l= δ"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "bC"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "bCa)"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "bC"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "cC"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "aC"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "aCc)"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "cC"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "cCb)"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "aC"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "aCc)"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "C"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "· C"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "= δ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "ai −a"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "ijlog"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "ilog"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "ilog a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "ln aji= ln a"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "log (e"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "log (e"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "eˆ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "eˆx+ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "eˆx+ˆy+ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "eˆx+ˆy+ˆz+ e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "e−ˆx−e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "e−ˆx−e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "e−ˆx−e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "eˆ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "eˆx+ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "eˆx+ˆy+ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "eˆx+ˆy+ˆz+ e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "e−ˆx−e−ˆ"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "= δ"
+  },
+  {
+   "page": 8,
+   "mark": "11",
+   "context": "eT"
+  },
+  {
+   "page": 8,
+   "mark": "12",
+   "context": "eT11+T"
+  },
+  {
+   "page": 8,
+   "mark": "13",
+   "context": "eT11+T12+T"
+  },
+  {
+   "page": 8,
+   "mark": "23",
+   "context": "eT11+T12+T13−T"
+  },
+  {
+   "page": 8,
+   "mark": "13",
+   "context": "eT11+T12+T13−T23+ eT"
+  },
+  {
+   "page": 8,
+   "mark": "23",
+   "context": "eT11+T12+T13−T23+ eT13+T"
+  },
+  {
+   "page": 8,
+   "mark": "33",
+   "context": "eT11+T12+T13−T23+ eT13+T23+T"
+  },
+  {
+   "page": 8,
+   "mark": "12",
+   "context": "eT11+T12+T13−T23+ eT13+T23+T33−T"
+  },
+  {
+   "page": 8,
+   "mark": "12",
+   "context": "eT11+T12+T13−T23+ eT13+T23+T33−T12−eT"
+  },
+  {
+   "page": 8,
+   "mark": "22",
+   "context": "eT11+T12+T13−T23+ eT13+T23+T33−T12−eT12+T"
+  },
+  {
+   "page": 8,
+   "mark": "23",
+   "context": "eT11+T12+T13−T23+ eT13+T23+T33−T12−eT12+T22+T"
+  },
+  {
+   "page": 8,
+   "mark": "13",
+   "context": "eT11+T12+T13−T23+ eT13+T23+T33−T12−eT12+T22+T23−T"
+  },
+  {
+   "page": 8,
+   "mark": "12",
+   "context": "eT"
+  },
+  {
+   "page": 8,
+   "mark": "22",
+   "context": "eT12+T"
+  },
+  {
+   "page": 8,
+   "mark": "23",
+   "context": "eT12+T22+T"
+  },
+  {
+   "page": 8,
+   "mark": "13",
+   "context": "eT12+T22+T23−eT"
+  },
+  {
+   "page": 8,
+   "mark": "33",
+   "context": "eT12+T22+T23−eT13+T"
+  },
+  {
+   "page": 8,
+   "mark": "23",
+   "context": "eT12+T22+T23−eT13+T33+T"
+  },
+  {
+   "page": 8,
+   "mark": "23",
+   "context": "eT12+T22+T23−eT13+T33+T23= e−T"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "(realizingaij= a"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(realizingaij= ai −a"
+  }
+ ]
+}

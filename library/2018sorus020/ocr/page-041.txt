@@ -1,0 +1,44 @@
+the A-module H,(M) the Alerander module. Notice it is the y-twisted homology of
+M with coefficient in A.
+
+Proposition 1.4.3. The A-modules H;(M) are trivial fori > 2, Ho(M) ~ Z[t*]/(t—
+
+1) and the Alexander module is a torsion A-module.
+
+Proof. Since M has a non-empty boundary, it has the homotopy type of a two
+dimensional cell complex, that can be obtained by collapsing all 3-cells adjacent to
+the boundary in any cell decomposition of M, hence H;(M) = 0 for i > 3. Moreover,
+it follows from Chapter V| that any presentation of 7(/) obtained from this
+cell decomposition has deficiency one, that is 7(M) = (a1,...,@n|T1,---,1Tn—1) and
+one can assume that y() is a generator of Z. In fact this cell complex can be chosen
+to be composed of an unique 0-cell e9, n loops et,...,e} based in eg corresponding
+to the generators 21,...,%, and n — 1 disks e3,..., ent such that the boundary of
+the disk e!, follows the loops {e%, k = 1...n} as indicated by the relator 7;.
+Now we consider the complex C2(M) + Ci(M) > Co(M), which is nothing but
+An! _, A" + A. The first boundary map is given by the (n x n — 1) matrix
+= (0(02,r;))ij, Where ¢ : Z[[] — ZZ] is the natural ring extension of the abe-
+lianization homomorphism, and the operators 0,, are the Fox derivation operators
+(see for details). Theorem 9.10 from the given reference states that this
+matrix has maximal rank, hence H»(M) = 0. The second boundary map is the line
+matrix (ole 1-1... (an) - 1), and the rest of the proposition follows from the
+obvious fact that ‘ole =t. Oo
+
+Definition 1.4.4. Let Aj; = gcd({(n — 1) minors of A}) € Z[t*"], where A is the
+matrix of the proof above (we call A a presentation matrix for H,(M). We call
+this polynomial the (first) Alexander polynomial of M. Similarly, we call A,(M) =
+gcd({(n — k) minors of A}) € Z[t*"] the k-th Alexander polynomial of M.
+
+Remark 1.4.5. It follows from the fact that A has maximal rank that none of
+those polynomials are zero. A proof that they only depend on M and are in fact
+topological invariants can be found in [|BZH14]. Note that they are defined up to a
+
+power of t.
+
+Proposition 1.4.6. The Alexander polynomial has the following proper-
+ties : Awn(t) = Awm(t7!) and Aw(1) =1
+
+The following theorem is due to Burde and DeRham [Bur67] |deR67], see [HPSPO1
+
+for a more recent treatment and improvement of the result. We give a proof of this
+
+40

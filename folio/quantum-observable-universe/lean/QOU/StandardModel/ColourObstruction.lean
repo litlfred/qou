@@ -67,7 +67,7 @@ Mathlib, so its centre cannot be computed here. That is the same split
 `BringsSurface/OctonionInvariantObstruction.lean` uses: abstract kernel in Lean,
 the one unavailable fact named in the narrative rather than papered over.
 
--- Ref: [manuscript] quantum-observable-universe/bring_tetraplectic.md
+-- Ref: [leitner2026] quantum-observable-universe/bring_tetraplectic.md
 -/
 
 namespace QOU.StandardModel.ColourObstruction

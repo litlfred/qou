@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.944
 latex_coverage_ratio: 0.981
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 Another application of the scaling applications is to 'hole probabilities', i.e. the probability that a ball $B_{r}(z_0)$ of radius $r$ around a point $z_0 \in M$ is zero-free. The following result combines our scaling asymptotics and Sodin's reformulation (and substantial simplification) of Offord's large deviations results on hole probabilities for entire analytic functions in the plane [@O; @So]. It is based on the Poincare-Lelong formula, so at this time of writing it has only been proved for one holomorphic section, and no comparable results have been proved for random spherical harmonics.
 

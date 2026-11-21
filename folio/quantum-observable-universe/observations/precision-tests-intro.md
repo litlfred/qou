@@ -1,11 +1,5 @@
-Strangelets test the framework at extreme density. This section tests it at ordinary density but extreme precision. We first examine photonic and electromagnetic precision data.
-- Photonic quantum Hall effect and $q$-deformed braiding matches the measured Hall conductance plateaux against $q$-deformed braiding amplitudes.
-- Fine structure constant compares the predicted $\alpha$ to the CODATA value.
+Whereas neutron-star cores test the categorical topological transitions at extreme baryon density, high-precision laboratory measurements test the $q$-deformed gauge and braid structure at ordinary density and part-per-billion accuracy. This section confronts three precision sectors with experiment:
 
-The confinement sector follows.
-- Color confinement as $q$-chromaticity reads confinement as a positivity constraint on Feynman amplitudes.
-- Curvature-rank as confinement layer supplies the categorical reformulation in terms of curvature rank.
-- Physics names $\leftrightarrow$ categorical knot operations tabulates the dictionary between physics names and categorical knot operations at $q_0$.
-
-The section closes with lepton anomalies.
-- Electron--muon discrepancies and Lepton anomalies data record the discrepancies. The subsequent proton-radius and gravity-test section reads these as a single-substrate observable.
+1. **Photonic quantum Hall plateaux and the fine-structure constant:** Comparing $q$-deformed braiding amplitudes against photonic quantum Hall conductance measurements and comparing the Chern–Simons resummed fine-structure constant $\alpha_{\mathrm{EM}}^{-1}(q_0) = 137.0359351$ against the CODATA 2022 value $137.035999177(21)$ ($-0.468\;\mathrm{ppm}$).
+2. **Colour confinement and curvature rank:** Formulating colour confinement as $q$-chromatic positivity and curvature-rank stratification, paired with the complete dictionary between Standard Model observables and categorical knot operations.
+3. **Lepton magnetic-moment and mass anomalies:** Evaluating the electron–muon anomalous magnetic moment and mass-ratio residuals at $q_0$.

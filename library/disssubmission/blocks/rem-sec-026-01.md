@@ -1,0 +1,1 @@
+Suppose that the nearby cycles Ψ(δYη) are tame. If the morphism f : Y →S is proper and if the geometric generic ﬁbre Yη is smooth, then after replacing f by its base change under some ﬁnite branched covering of S we can assume that H•(Ys,Ψ̸=1(δYη)) = 0.

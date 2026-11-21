@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2510.21576v1",
  "source_sha256": "17a79b59d590c8da",
- "brief": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 7 sections: Relativistic corrections for lepto; Introduction; Short-time approximation",
- "extended": "**Relativistic corrections for lepton-nucleus scattering in the short-time approximation**\n\n*L. Andreoli1,2,∗ R. Weiss3,† G. Chambers-Wall 3,‡ A. Gnech 1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗ and S. Gandolfi 5*\n\n17 pp, 7 sections.\n\n**Outline.** Relativistic corrections for lepton-nucleus sc; Introduction; Short-time approximation; Results; Cross Sections; Conclusions; Acknowledgments",
+ "brief": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 16 sections: Relativistic corrections for lepto; Introduction; Electron-nucleus scattering cross",
+ "extended": "**Relativistic corrections for lepton-nucleus scattering in the short-time approximation**\n\n*L. Andreoli1,2,∗R. Weiss3,† G. Chambers-Wall3,‡ A. Gnech1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗and S. Gandolfi5*\n\n17 pp, 16 sections.\n\n**Outline.** Relativistic corrections for lepton-nucleus sc; Introduction; Electron-nucleus scattering cross section; One-Body Electromagnetic Current; Low-momentum transfer nonrelativistic reductio; High-momentum transfer nonrelativistic reducti; Comparing low- and high-momentum transfer nonr; Short-time approximation; Relativistic Final-States Kinematics; Results; High-q expansion scheme and relativistic final; Convergence of the high-q expansion scheme; Cross Sections; Conclusions; Acknowledgments; Comparison with the Rosenbluth cross section",
  "tokens": {
-  "brief": 43,
-  "extended": 96
+  "brief": 46,
+  "extended": 194
  },
  "sections": [
   {
@@ -17,32 +17,77 @@
   {
    "id": "sec-001-introduction",
    "title": "Introduction",
-   "pages": "1-6"
+   "pages": "1-2"
   },
   {
-   "id": "sec-002-short-time-approximation",
+   "id": "sec-002-electron-nucleus-scattering-cross-section",
+   "title": "Electron-nucleus scattering cross section",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-one-body-electromagnetic-current",
+   "title": "One-Body Electromagnetic Current",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-low-momentum-transfer-nonrelativistic-reduction",
+   "title": "Low-momentum transfer nonrelativistic reduction",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-high-momentum-transfer-nonrelativistic-reduction",
+   "title": "High-momentum transfer nonrelativistic reduction",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-comparing-low--and-high-momentum-transfer-nonrel",
+   "title": "Comparing low- and high-momentum transfer nonrelativistic reductions",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-short-time-approximation",
    "title": "Short-time approximation",
-   "pages": "6-8"
+   "pages": "6-7"
   },
   {
-   "id": "sec-003-results",
+   "id": "sec-008-relativistic-final-states-kinematics",
+   "title": "Relativistic Final-States Kinematics",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-009-results",
    "title": "Results",
-   "pages": "8-11"
+   "pages": "8-10"
   },
   {
-   "id": "sec-004-cross-sections",
+   "id": "sec-010-high-q-expansion-scheme-and-relativistic-final-s",
+   "title": "High-q expansion scheme and relativistic final-state kinematics",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-011-convergence-of-the-high-q-expansion-scheme",
+   "title": "Convergence of the high-q expansion scheme",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-012-cross-sections",
    "title": "Cross Sections",
    "pages": "11-11"
   },
   {
-   "id": "sec-005-conclusions",
+   "id": "sec-013-conclusions",
    "title": "Conclusions",
    "pages": "11-12"
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-014-acknowledgments",
    "title": "Acknowledgments",
-   "pages": "12-17"
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-015-comparison-with-the-rosenbluth-cross-section",
+   "title": "Comparison with the Rosenbluth cross section",
+   "pages": "16-17"
   }
  ],
  "provenance": {

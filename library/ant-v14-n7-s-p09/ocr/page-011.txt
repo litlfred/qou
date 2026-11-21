@@ -1,0 +1,46 @@
+Galois action on the principal block and cyclic Sylow subgroups 1963
+
+Step 5. Let N be a minimal normal subgroup of G. We may assume PN < G. Suppose the contrary. By
+
+Step 1 and the fact that Ng(P) < G (so G is not a p-group), we have that N is the direct product of t
+copies of a nonabelian simple group S of order divisible by p (which are transitively permuted by G). By
+Theorem C there exist 1s 4 @ € Itr,,(Bo(S))*! X-invariant for some X € Syl, (Aut(S)). By Lemma 2.5,
+there is some ly 4 € Irrp(Bo(N))”! that extends to a o-invariant character x € Irr(G). Since Bo(G)
+is the only block covering Bo(N) by [Navarro 1998, Corollary 9.6], we have that x € Irrp(Bo(G))”!
+contradicting Step 3.
+
+Final Step. Since NP < G by Step 5, if |Irr,(Bo(NP))*'| = p, then we are done by induction. Hence
+we may assume that |Irr,(Bo(NP))*'| > p by Lemma 1.4. By Step 3, we have that PN /N is cyclic, and
+hence |Irr,(Bo(PN/N))*'| = p. Therefore there exists some 6 € Irr,(Bo(NP))*! such that N g ker(@)
+(here we are using that NP/WN has just one p-block). By Step 4, some x € Irr,(Bo(G))”! lies over @. In
+particular N ¢ ker x, a contradiction with Step 3. oO
+
+3. Simple groups
+In this Section we prove Theorem C, which will complete the proof of Theorem A.
+
+3A. Some generalities on groups of Lie type. Since the groups of Lie type play a large role in what
+follows, we begin by recalling some essentials about their blocks and characters.
+
+Let q be a power of a prime. When G = G" is the group of fixed points of a connected reductive
+algebraic group G defined over F, under a Steinberg map F, the set of irreducible characters Irr(G) can be
+written as a disjoint union [|_| €(G, s) of so-called rational Lusztig series corresponding to G*-conjugacy
+classes of semisimple elements s € G* (i.e., elements of order relatively prime to q). Here G* = (Gy,
+where (G*, F*) is dual to (G, F).
+
+With this notation, we record the following lemma, proved in [Schaeffer Fry and Taylor 2018,
+Lemma 3.4], which describes the action of on the set of rational Lusztig series and will be useful
+throughout this section.
+
+Lemma 3.1. Let p be a prime and let s € G* be a semisimple element. Let f and b be integers and let
+o EH be such that o (€) = ep! for all p'-roots of unity € and o(¢) = ¢° for all p-power roots of unity ¢.
+If x € E(G, s), then x° € E(G, ssh),
+
+The characters in the series E€(G, 1) are called unipotent characters, and there is a bijection E€(G, s) >
+E(Cg«(s), 1). Hence, characters of Irr(G) may be indexed by pairs (s, ), where s € G* is a semisimple
+element, up to G*-conjugacy, and w € Irr(Cg-(s)) is a unipotent character of Cg«(s). We remark that
+C@*(s) may fail to be connected, in which case unipotent characters of Cg+(s) are taken to be those lying
+over a unipotent character of (C, g«(s)°)*. In particular, we will denote by x, the character indexed by
+(8, Legx(s)), Which are semisimple, and they have degree |G* : Cg+(s)|q'-
+
+Using [Cabanes and Enguehard 2004, Theorem 9.12], it follows that when p{q, the set EG, I=
+U&(G, s), where s ranges over elements of p-power order in G*, is a union of p-blocks (first shown

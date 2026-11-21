@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-9806163v1/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Weight Formula",
-  "pageStart": 16,
-  "pageEnd": 21,
-  "text": "../sections/sec-005-5-the-weight-formula.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9806163v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9806163v1",
+  "title": "Representations of the Hecke algebra of type $B$ onto a Reduced Hecke Algebra of type $A$",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "text": "../sections/sec-005-3-representations-of-the-hecke-algebra-of-type-b.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
   "provenance": "ingested"
 }

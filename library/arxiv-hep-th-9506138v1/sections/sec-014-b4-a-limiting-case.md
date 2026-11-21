@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9506138v1
-doc_title: "arXiv:hep-th/9506138v1 21 Jun 1995"
+doc_title: "Black Hole Complementarity vs. Locality"
 section_id: sec-014-b4-a-limiting-case
 section_title: "A Limiting Case"
 section_number: B.4
@@ -8,6 +8,7 @@ pages: 27-28
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
 toc_source: inferred
+doc_brief: "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument"
 ---
 For completeness we evaluate the commutator (B.13) in a limit where it is possible to
 obtain an analytic expression, namely α1, α4 →0 with other quantities held ﬁxed. Solving
@@ -101,4 +102,3 @@ and are dominated by the lower endpoints. Thus,
 (B.21)
 Under simultaneous scaling of α1,4 and x+
 1,4 one recovers the behavior found previously.
-26

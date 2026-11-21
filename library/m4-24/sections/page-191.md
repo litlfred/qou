@@ -1,0 +1,80 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-191
+section_title: "Page 191"
+section_number: null
+pages: 191-191
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 563
+
+[347]
+[348]
+
+[349]
+
+[360]
+[361]
+
+[362]
+
+JD Roberts, Classical 6j—symbols and the tetrahedron, Geom. Topol. 3 (1999)
+21-66
+
+JD Roberts, Rozansky—Witten theory, from: “Proceedings of Georgia Topol-
+ogy conference, May 2001”; also arXiv:math.QA/0112209
+
+JD Roberts, J Sawon, Generalisations of Rozansky-Witten invariants, from:
+“Invariants of Knots and 3—manifolds (Kyoto 2001)” (T Ohtsuki, et al, editors),
+Geom. Topol. Monogr. 4 (2002) 263-279
+
+JD Roberts, J Sawon, S Willerton, The Rozansky—Witten TQFT, in prepa-
+ration
+
+Y Rong, Link polynomials of higher order, J. London Math. Soc. 56(2) (1997)
+189-208
+
+LRozansky, Witten’s invariant of 3-dimensional manifolds: loop expansion
+and surgery calculus, from: “Knots and applications”, Ser. Knots Everything 6,
+World Scientific, River Edge, NJ (1995) 271-299
+
+LRozansky, A large k asymptotics of Witten’s invariant of Seifert manifolds,
+Comm. Math. Phys. 171 (1995) 279-322
+
+LRozansky, Residue formulas for the large k asymptotics of Witten’s invari-
+ants of Seifert manifolds: The case of SU(2), Comm. Math. Phys. 178 (1996)
+27-60
+
+LRozansky, On p-adic convergence of perturbative invariants of some rational
+homology spheres, Duke Math. J. 91 (1998) 353-380
+
+L Rozansky, On p-adic properties of the Witten—Reshetikhin—Turaev invari-
+ant, preprint, arXiv:math.QA/9806075
+
+LRozansky, A rational structure of generating functions for Vassiliev invari-
+ants, Notes accompanying lectures at the summer school on quantum invariants
+of knots and three-manifolds, Joseph Fourier Institute, University of Grenoble,
+org. C. Lescop, June 1999
+
+LRozansky, A rationality conjecture about Kontsevich integral of knots and
+its implications to the structure of the colored Jones polynomial, Proceedings
+of the Pacific Institute for the Mathematical Sciences Workshop “Invariants of
+Three—Manifolds (Calgary, AB 1999)”, Topology Appl. 127 (2003) 47-76
+
+L Rozansky, pol2.mws, Maple V computer program, available from:
+rozansky@math.unc.edu
+
+LRozansky, E Witten, Hyper-Kahler geometry and invariants of three—
+manifolds, Selecta Math. (N.S.) 3 (1997) 401-458
+
+LRudolph, Nontrivial positive braids have positive signature, Topology 21
+(1982) 325-327
+
+N Sato, Constructing a non-degenerate commuting square from equivalent sys-
+tems of bimodules, Internat. Math. Res. Notices (1997) 969-981
+
+Geometry & Topology Monographs, Volume 4 (2002)

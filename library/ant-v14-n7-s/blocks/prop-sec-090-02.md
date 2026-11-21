@@ -1,1 +1,1 @@
-La conjecture 4.10 entraîne que les nombres de Betti ℓ-adiques des motifs mixtes sur k
+La conjecture 4.10 entraîne que les nombres de Betti ℓ-adiques des motifs mixtes sur k ne dépendent pas de ℓ. Démonstration. On ﬁxe un motif M ∈DA´et ct(k; Q). Si le Q-champs d’Artin XK,B est une gerbe, les AK, B-modules Hi(Rnew, B(M)), pour i ∈Z, sont libres de rang constant sur Spec(AK, B). Le résultat recherché découle alors des théorèmes de comparaison (voir les remarques 3.18 et 3.17). □ Il est également naturel de faire la conjecture suivante qui renforce la remarque 4.11.

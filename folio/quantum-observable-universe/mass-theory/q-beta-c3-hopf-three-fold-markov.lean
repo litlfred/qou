@@ -42,7 +42,7 @@ to `-2`. -/
 noncomputable def jonesHopf (q : ℝ) : ℝ := -q^2 * (1 + q^2)
 
 -- Ref: [jones1985] doi:10.2307/1971403
--- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov §"Fact 4"
+-- Ref: [leitner2026] prop:q-beta-c3-hopf-three-fold-markov §"Fact 4"
 /-- At q=1 (the classical / Kazhdan-Lusztig decategorification limit per
     AGENTS.md §7b), the Hopf-link Jones polynomial equals -2. -/
 theorem jones_hopf_at_q_eq_one_eq_neg_two :
@@ -83,7 +83,7 @@ class ThreeFoldMarkovHopfExtraction (q : ℝ) : Type where
 The categorical-derivation result: under the axiomatic class hypothesis,
 `c_3 = -2 = J_Hopf(q=1)` is structurally derived. -/
 
--- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov
+-- Ref: [leitner2026] prop:q-beta-c3-hopf-three-fold-markov
 -- Ref: [jones1985] doi:10.2307/1971403   (Jones polynomial)
 -- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)   (KL crystal)
 /-- **$Q_\beta$ precision-ladder $c_3$ structural derivation.** Under

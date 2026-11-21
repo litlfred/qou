@@ -20,4 +20,7 @@ export default proposition({
     "1ppQ",
     "draft",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - Sibling Lean identity (cyclotomic strand-doubling): [`cyclotomic-strand-doubling.md`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.md)" },
+  ],
 });

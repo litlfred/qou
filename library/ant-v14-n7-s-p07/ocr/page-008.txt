@@ -1,0 +1,49 @@
+1902 Jordan S. Ellenberg, Wanlin Li and Mark Shusterman
+We begin by computing the main term:
+Tr(Froby | Hea ((Xi)¢,; Q.) = 4".
+
+This follows immediately from the fact that (X’ nF, = (xX wk, is irreducible. When n is odd, this is shown
+in the proof of [Ellenberg et al. 2016, Theorem 8.8] as a consequence of a big monodromy theorem
+of J.K. Yu. (This is actually the only place where we need n to be large, and indeed n = 3 would be
+enough.) When n is even, we argue as follows. The map from X,, to the configuration space Conf” A!
+sending a G-cover to its branch locus is a finite cover [loc. cit., Section 2.2], and irreducibility of X,, is
+equivalent to the monodromy group of this cover acting transitively on the fiber. It suffices to check that
+this holds on a closed subvariety of the base. So write Z for the subvariety of Conf” A! consisting of
+those configurations containing some specified point po € P! (7), and let Y be the preimage of Z in X,,.
+An automorphism of P! taking po to 00 now identifies Y with Hng ,—1» which we know to be irreducible
+since n — 1 is odd. This implies that X,, is irreducible.
+
+We now turn to the error term. The moduli space X,, is a closed and open subscheme of Hn n> so its
+Betti numbers are bounded by those of Hn@ ,,; by [loc. cit., (7.8.1)] we have
+
+dim H2%' (Xz; Q,) < Ke(Bo)!
+
+c,ét
+where Ky, By are constants depending only on @.
+Using the Deligne bound [1980], the eigenvalue of Frobenius on Hi (Xe, | Q,) is bounded in
+absolute value by q‘/*; so the absolute value of the contribution of all i < 2n to (2.5) is bounded above by
+the sum of a geometric series which converges for all g > B?. In particular, as in [Ellenberg et al. 2016,
+
+Section 1.8], this contribution is at most
+KeBeq (1 — Beg!) 1g".
+
+So if we take Q; = 4B? and g > Q¢, we may take Cy, = 2K, By and conclude
+
+2n-1
+IXi(F) —a"l=| 0D! TrFroby | He (Xe, 3 Qi)| < Coq”?
+i=0
+which proves (2.4) and thus the desired result. oO
+
+Proposition 2.1 allows us to bound the proportion of hyperelliptic curves whose étale cohomology has
+
+a Frobenius eigenvalue congruent to a mod £. Recall from Section 2A that Ons is the set of squarefree
+
+polynomials over Fy of degree n such that m,(f) is greater than 0.
+
+Corollary 2.6. There are constants C;, Qe, Ne such that for any a € (Z/€Z)* we have
+
+a,
+lil <b eign
+1Qn.q| £—-1
+
+foralln > Ne,q = Qe.

@@ -10,7 +10,7 @@
   Round 11 deliverable: extends conditional-result coverage in
   `braids-and-knots/`.
 
-  Ref: [manuscript]
+  Ref: [leitner2026]
     - conj:hyperbolic-volume-transcendence
     - rem:baryon-period-ratio
 -/

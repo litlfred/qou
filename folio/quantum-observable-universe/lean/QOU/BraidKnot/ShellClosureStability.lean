@@ -75,7 +75,7 @@ open QOU.Archimedean
     than sweeping in: `bindingMultiplicity` is `ℕ`-valued, so `μ ≥ 2` is over
     `ℕ`'s genuine order. The same probe rejects `… ≥ 2 := trivial` with a
     type mismatch. Only the `σ_F` comparisons collapsed. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
+-- Ref: [leitner2026] particle-interactions/confinement-sdp
 class HasFrobeniusStability (D : DressedParticle) where
   /-- The stability index `σ_F(D, q)`, real-valued: it is an SDP dual
       objective, and it is compared with `≤`. -/
@@ -87,7 +87,7 @@ def frobeniusStability (D : DressedParticle) [h : HasFrobeniusStability D]
   h.sigma q
 
 /-- Is `D` a one-step dressing of `D_prev` (one extra electron)? -/
--- Ref: [manuscript] braids-and-knots/dressed-particle
+-- Ref: [leitner2026] braids-and-knots/dressed-particle
 def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
   D_prev.bare = D.bare ∧
   D.shell.nElectrons = D_prev.shell.nElectrons + 1
@@ -103,7 +103,7 @@ def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
     which depend on Mathlib SDP infrastructure. By packaging the
     inequality as a class, the conjectural content is visible at
     every use site rather than asserted universally. -/
--- Ref: [manuscript] particle-interactions/shell-closure-stability
+-- Ref: [leitner2026] particle-interactions/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
 --      analysis — value-function monotonicity under domain expansion)
 class ShellClosureMonotone
@@ -120,7 +120,7 @@ instance shellClosureMonotone_refl
     (D : DressedParticle) [HasFrobeniusStability D]
     (q : R_q) (h : isOneStepDressing D D) :
     ShellClosureMonotone D D q h :=
-  -- Ref: [manuscript] particle-interactions/shell-closure-stability
+  -- Ref: [leitner2026] particle-interactions/shell-closure-stability
   -- Now `le_refl` on `ℝ`. It used to be `⟨trivial⟩`, and the comment here
   -- said why: "`≤` on `R_q` is the trivial (`fun _ _ => True`) order". That
   -- was an accurate description of the mechanism and it did not draw the
@@ -128,8 +128,16 @@ instance shellClosureMonotone_refl
   ⟨le_refl _⟩
 
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
-    Per-instance form backed by `ShellClosureMonotone`. -/
--- Ref: [manuscript] particle-interactions/shell-closure-stability
+    Per-instance form backed by `ShellClosureMonotone`.
+
+    **Assumed, not derived here** — the body projects
+    `ShellClosureMonotone.monotone`, so the stability inequality is carried as
+    a context-class hypothesis (§3b-conditional, derivation pending), not
+    established below. Boyd–Vandenberghe is cited for the perturbation and
+    sensitivity-analysis background, not for a proof performed here; because
+    `D_prev`, `D`, and `q` are arbitrary, this projection may not be converted
+    to a global `axiom`. -/
+-- Ref: [leitner2026] particle-interactions/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
 --      analysis — value-function monotonicity under domain expansion)
 theorem shell_closure_monotone
@@ -146,7 +154,7 @@ theorem shell_closure_monotone
 /-- **Shell-closure stability, claim (2) — noble-gas multiplicity.**
     At `Z ∈ nobleGasMagic`, the binding multiplicity satisfies
     `μ(S, q) ≥ 2`, giving the multi-operator regime. -/
--- Ref: [manuscript] particle-interactions/shell-closure-stability
+-- Ref: [leitner2026] particle-interactions/shell-closure-stability
 theorem shell_closure_noble_multiplicity
     (D : DressedParticle) [HasBindingMultiplicity D.shell] (q : R_q)
     (h : D.shell.nElectrons ∈ nobleGasMagic)
@@ -162,7 +170,7 @@ theorem shell_closure_noble_multiplicity
     `μ ≥ 2` tight dual blocks of the confinement SDP.
     Stated here as: the stability of any strict upgrade does not
     exceed that of `D` in the generic locus. -/
--- Ref: [manuscript] particle-interactions/shell-closure-stability
+-- Ref: [leitner2026] particle-interactions/shell-closure-stability
 theorem shell_closure_terminality
     (D D' : DressedParticle)
     [HasFrobeniusStability D] [HasFrobeniusStability D']
@@ -183,7 +191,7 @@ theorem shell_closure_terminality
     for a noble-gas-dressed particle, binding multiplicity ≥ 2 and
     any subsequent one-step dressing cannot reduce Frobenius
     stability. -/
--- Ref: [manuscript] particle-interactions/shell-closure-stability
+-- Ref: [leitner2026] particle-interactions/shell-closure-stability
 theorem ShellClosureStability
     (D : DressedParticle) [HasBindingMultiplicity D.shell] (q : R_q)
     (h : D.shell.nElectrons ∈ nobleGasMagic)

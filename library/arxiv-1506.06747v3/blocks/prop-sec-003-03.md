@@ -1,0 +1,1 @@
+The overall normalization, S1(0), can in princi- ple be determined from the diﬀerence between the mag- netic polarizabilities of proton and neutron, albeit the experimental value is subject to rather large uncertain- ties [37].

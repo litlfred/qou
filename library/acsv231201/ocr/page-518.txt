@@ -1,0 +1,47 @@
+500 Residue forms and classical Morse theory
+
+that the space X under consideration is a manifold. More general spaces are
+handled in Appendix D.
+
+Homotopy equivalence except at critical points
+
+Let X be a smooth manifold and let h : X — R be a smooth function; we think
+of / as giving the points on X a height (see Figure C.4 below). The critical
+points of the height function h are the points p € X for which the differential
+dh\p is zero on the tangent space T,(X). The values h(p) of h at its critical
+points p are called the critical values of the height function h. A critical point
+p is a nondegenerate critical point for h if the quadratic form given by the
+quadratic terms in the Taylor approximation for / at p has no zero eigenvalues.
+
+In coordinates, this means that the determinant of the Hessian matrix | aa )|
+OX}
+
+is non-zero when X is locally coordinatized by x;,...,xy near p. While the
+Hessian matrix itself depends on the coordinates, its (non)singularity does not;
+see [Mil63, Section 2.1]. While it is traditional to require Morse functions to
+be proper and have distinct critical values, we will not require this.
+
+Definition C.26 (Morse function). A smooth function h : X — R is called a
+Morse function if the critical points of h are nondegenerate. If h is a proper
+map (meaning the inverse image of any closed and bounded interval is com-
+pact) then we call h a proper Morse function. If the critical values of h are
+distinct, then h is a Morse function with distinct critical values.
+
+Exercise C.2. In which of the following cases is h a proper Morse function on
+Xx?
+
+(1) X is the surface of a doughnut lying on a table and h is height.
+(2) X is the infinite cylinder {(x, y, z) : e+ y = 1} and / is the z coordinate.
+(3) X is the unit sphere and h is the distance to the point (—2, 0,0).
+
+Let X be a smooth manifold with proper Morse function h. If a is a real
+number, we let X<, denote the topological subspace {a € X : h(x) < a}. The
+fundamental Morse Lemma states that the topology of X<q changes only when
+ais a critical value of h.
+
+Lemma C.27 (Morse Lemma). Let a < b be real numbers, suppose that the
+interval [a,b] contains no critical values of h, and assume that h-\({a, b]) is
+compact. Then the inclusion X<q — Xzp is a homotopy equivalence.
+
+Proof The Morse Lemma is proven in [Mil63, Theorem 3.1] by constructing
+a homotopy on X<, that follows the orthogonal trajectories of the level-sets

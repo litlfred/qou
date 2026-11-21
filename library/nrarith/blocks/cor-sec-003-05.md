@@ -1,0 +1,1 @@
+If Γ is arithmetic and satisﬁes the condition of Corollary 2.3 (or, more generally, Γ = Γ(2)P ), then Γ is derived from a quaternion algebra. In particular, this holds if M = H3/Γ is a link complement in a Z/2-homology sphere. 4.3. The main result of this section is the following theorem and its corollary.

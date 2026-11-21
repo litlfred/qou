@@ -38,7 +38,7 @@ Companion: `computations/qbeta/qbeta_counit_trace_transport_overshoot_probe.py`
 (G1–G5, 6/6). Verified `T` even-part = 1 symbolically (sympy) two ways before
 formalising.
 
--- Ref: [manuscript] prop:q-beta-cos-resummation
+-- Ref: [leitner2026] prop:q-beta-cos-resummation
 -/
 
 namespace QOU.QBeta.LadderCosClash

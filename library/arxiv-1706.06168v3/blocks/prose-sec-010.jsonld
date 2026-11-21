@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1706.06168v3/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Real Stable Polynomials",
-  "pageStart": 13,
-  "pageEnd": 15,
-  "text": "../sections/sec-010-43-real-stable-polynomials.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
+  "title": "Projective Convexity and Laguerre's Theorem",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-010-42-projective-convexity-and-laguerres-theorem.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06168v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06168v3/manifest.jsonld",
   "provenance": "ingested"
 }

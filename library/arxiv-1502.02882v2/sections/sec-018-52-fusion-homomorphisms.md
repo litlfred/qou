@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1502.02882v2
-doc_title: "Fusion categories via string diagrams Bruce Bartlett"
+doc_title: "Fusion categories via string diagrams"
 section_id: sec-018-52-fusion-homomorphisms
 section_title: "Fusion homomorphisms"
 section_number: 5.2
 pages: 27-28
 source_pdf: 1502.02882v2.pdf
 source_sha256: 43641c6f3aed63dd
-doc_brief: "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
-latex_coverage_ratio: 0.959
+latex_coverage_ratio: 0.968
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 We write $[\cat{C}]$ for the Grothendieck ring of a fusion category. The following property of quantum dimensions is well-known.
 \begin{lem} Given a pivotal structure $\gamma$ on a fusion category $\cat{C}$, the quantum dimension map $\dim_{\gamma} \colon [\cat{C}] \rightarrow

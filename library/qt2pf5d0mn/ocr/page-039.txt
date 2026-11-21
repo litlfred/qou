@@ -1,0 +1,41 @@
+Section 2.3 Monoidal 2-categories with Duals
+
+respectively, and a 2-morphism Ty : (i4@A)o(A@e,4) => I, called the triangulator
+
+of A.
+
+Again these structures need satisfy certain compatible axioms. See [831].
+Now we show that from a G-BSFC we can construct a monoidal 2-category with duals
+and certain extra structures as well. Let CG be a G-BSFC and we denote the morphism
+
+space Hom(A, B) by Home (A, B) to avoid confusion. Define a 2-category C as follows.
+e 0-morphisms C:=G.
+
+e 1-morphisms Hom!(g1, g2) := Co, 2 {0 91,92 € G; namely, the 1-morphisms from g;
+
+to gz are objects in Cj,,,, where g; is the inverse of gj.
+
+e 2-morphisms Hom?(A, B) := Home (A, B) for A, B € Hom! (91, g2) = CB, gg) Name-
+ly, the 2-morphisms from A to B are the regular morphisms from A to B in CG.
+Note that here and only in this example, the notations for each level of morphisms
+are different from those specified at the beginning of the section. Namely, in C,
+
+we will use gi, g{,:--, for objects, capital letters A, B,--- , for 1-morphisms, and
+
+Greek letters a, 3,--- , for 2-morphisms.
+
+e For A € Hom!(g1,92),B € Hom'(g2, 93), the composition Ao B := A@BeE
+
+Hom! (1, 93).
+
+e For a € Hom?(A, B), 8 € Hom?(B,C), the vertical composition a * 8 := ao BE
+Hom?(A, C); namely, vertical composition in C corresponds to regular composition
+
+; x
+in CG.
+
+e For a € Hom?(A, B),a’ € Hom?(A’, B’), where A,B € Hom'(q1,92), A’, B’ €
+
+Hom!'(g2, 93), the horizontal composition aoa’ := a@ a’ € Hom?(A® A’, B® B’).
+
+30

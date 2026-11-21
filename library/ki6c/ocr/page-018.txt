@@ -1,0 +1,49 @@
+By calculating a solution of these equations by Newton’s method from (w,s) = (1,0.3),
+we obtain (t+5+)max = 0.925048... . Therefore, we obtain an estimate of t+ s+ u in A’
+as
+
+t+s+u < 0.94.
+
+Remark 3.2. To be precise, the above argument is not partially rigorous, since we do
+not estimate the error term of the numerical solution of Newton’s method, though the
+above argument is practically useful, since we can guess that such an error term would
+be sufficiently small for the above purpose. In order to complete the above argument, we
+give a rigorous proof of an estimate of a solution of (36) in Lemma A.2.
+
+3.3. Calculation of the critical value
+
+In this section, we calculate the concrete values of a critical point and the Hesse matrix
+of V.
+
+The differentials of V are presented by
+
+SHU $,u) = —2 log(1— 2) + 2mV—1 (3t + 25 +u— 5). (37)
+2 V(t.s,u) = —log(1— y) + 2rV—1 (2t + 2s +u—1), (38)
+2 vt, s,u) = —log(1—z)+2r/-1(t+s+u- 5): (39)
+
+where a = e2"V—!t y = e2"V-15 and z = e2™V—!™,
+Lemma 3.3. V has a unique critical point (to, 89,to) in P~!(A'), where P : C3? > R? is
+the projection to the real parts of the entries.
+
+Proof. Any critical point of V is given by a solution of ov = 2V = 2V =0, and these
+: : 1s Ou
+equations are rewritten,
+
+(l—2)? = -a3 y’z, l-y = a yz, l-z = -ryz.
+
+Putting y’ = xy and 2’ = xyz, they are rewritten,
+
+y' Zz
+(l-2)? = -ay'z’, 1-L = yz, 1-—= = -2,
+x y
+From the third formula, we have that y’ = z'/(1+ 2’). Hence, from the second formula, we
+have that « = —z'/(z” — z'— 1). By substituting them into the first formula, we obtain
+that
+
+a2 — 2-2? 42741 = 0.
+
+Its solutions are given by
+
+zg = —0.677958... + V—1- 0.15778... , 0.927958... + /—T- 0.413327... .
+
+18

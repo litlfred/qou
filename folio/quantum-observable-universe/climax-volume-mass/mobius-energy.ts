@@ -65,7 +65,7 @@ export default proposition({
   tags: ["mobius-energy", "categorical-mass", "knot-energy", "q-deformation"],
   uses: [
     "def:categorical-action",
-    "thm:topological-mass",
+    "def:mass-identity",
     "rem:frobenius-simplification",
   ],
   proofs: ["prf:mobius-energy"],

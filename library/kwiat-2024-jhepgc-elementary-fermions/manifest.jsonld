@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kwiat-2024-jhepgc-elementary-fermions/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons",
+  "contains": [
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-front-matter",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-000",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-001",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-002",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-003",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-004",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-005",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-006",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-007",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-008",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-009",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-010",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-011",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-012",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-013",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-014",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-015",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-016",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "kwiat-2024-jhepgc-elementary-fermions",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "kwiat-2024-jhepgc-elementary-fermions.pdf",
+    "source_sha256": "5a2d73e878d7fa8f25f119e1ed71076550be449cd11decf5abd70993211de36b",
+    "pages": 19,
+    "arxiv": null,
+    "doi": "10.4236/jhepgc.2024.101008",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

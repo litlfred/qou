@@ -1,0 +1,1 @@
+Some of the results are obtained from a calcu- lation that simulates QCD+QED, others stay within QCD, calculate the part due to the diﬀerence between mu and md and determine the part that comes from the e.m. interaction by comparing the calculated part with the experimental value.

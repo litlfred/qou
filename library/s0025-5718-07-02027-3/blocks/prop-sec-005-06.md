@@ -1,1 +1,1 @@
-s 5.6 and 5.8 to write Lin(z)= Hn(z −1) −logn−1(z)l o g ( 1−z)/(n −1)!.
+For n ≥1 set Gn(t) = logn(1 + t)/n!, and for n ≥2 let Hn(t) = n  j=2 (j −1)! (n −1)! logn−j(1 + t)Ej(1 + t) . Then Gn(t) and Hn(t) for |t| < 1 are given by power series in Qp[[t]], with Hn(t) satisfying H′ 2(t) = 1 −t/2 + t2/3 −· · · , (5.9) H′ n(t) = Hn−1(t) 1 + t + Gn−1(t) t (n ≥3) (5.10) as well as Hn(0) = 2n−1Lin(−1)/(1 −2n−1) . AMNON BESSER AND ROB DE JEU If p = 2, then also Hn(0) = 2n−1 1 −2n (Hn(−2) −Hn(0)) . (5.11)

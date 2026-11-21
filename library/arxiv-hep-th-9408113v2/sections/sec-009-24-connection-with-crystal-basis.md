@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-009-24-connection-with-crystal-basis
 section_title: "Connection with crystal basis."
 section_number: 2.4
@@ -8,6 +8,7 @@ pages: 60-79
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 2.4.1. Level 1 vacuum representation Λ0 of the aﬃne Lie algebra c
 sln.
@@ -125,7 +126,6 @@ see [Ma], Chapter III,
 62
 Anatol N. Kirillov
 Therefore, in order to prove Theorem 9 we have to decompose the symmetric function
-X
 λ
 sλ(x)Kλ,(1n)(q) = Q(1n)
 
@@ -154,7 +154,6 @@ j
 Thus, using the Euler result
 (−z; q)∞=
 ∞
-X
 n=0
 znq
 n(n−1)
@@ -892,7 +891,6 @@ j≥k+1
 It follows from the hook-formula (see Proposition F) that
 Kλ,(1L)(q) =
 (q)L
-Y
 x∈λ
 (1 −qh(x))
 .
@@ -1242,69 +1240,58 @@ X
 sλ(x)bλ(q),
 where bλ(q) = lim
 N→∞q−k(N2−N)KλN,(k2N)(q).
-Dilogarithm identities
-73
-Consequently, bλ(q) is the branching function of level k vacuum-c
-sl2 representation kΛ0.
-We assume that any branching function bΛ
-λ(q) of integrable highest weight representa-
-tion V (Λ) of the aﬃne Lie algebra c
-sln can be constructed as an appropriate limit of the
+Dilogarithm identities 73
+
+Consequently, b,(q) is the branching function of level k vacuum-sl5 representation kA.
+|
+We assume that any branching function bh (q) of integrable highest weight representa-
+tion V(A) of the affine Lie algebra Sly can be constructed as an appropriate limit of the
 Kostka-Foulkes polynomials. More exactly:
-Conjecture 4. Let Λ = kΛ0 be the level k vacuum representation of the aﬃne Lie
-algebra c
-sln. Then
-bΛ
-λ(q) = lim
-N→∞KλN,(kNn)(q),
-where λN := λ + ((kN)n), λ = (λ1 ≥λ2 ≥· · · ≥λn) and |λ| = 0.
-Remark. There exists an interesting connection between the Milne polynomials ([Ml1],
-[Ml2], [Ga])
-Mµ(x; q) :=
-X
-λ
-sλ(x)Kλ,µ(q) = Qµ
-
-x
-1 −q
-
-,
-where x = (x1, . . ., xn), and the characters chV (Λ) of integrable highest weight represen-
-tations V (Λ) of the aﬃne Lie algebra bsln. Roughly speaking, the character chV (Λ) is
+
+Conjecture 4. Let A = kAo be the level k vacuum representation of the affine Lie
+algebra sl,. Then
+
+bX (q) = Nim, Ey canny(q),
+where An := A+ ((KN)"), A= (Ar > Ap > +++ > An) and |A| = 0.
+
+Remark. There exists an interesting connection between the Milne polynomials ([MI11],
+[M12], [Gal])
+
+My(as0) = Yo sale) Kala) = Qu (<<).
+where x = (x1,...,%,), and the characters chV (A) of integrable highest weight represen-
+tations V(A) of the affine Lie algebra Sl,. Roughly speaking, the character chV(A) is
 an appropriate limit of Milne’s polynomials (see the proofs of Theorems 11,13 and 14).
 It would be interesting to know the solutions to what kind of hierarchy (= a system of
-nonlinear partial diﬀerential equations) the characters of integrable highest weight repre-
-sentations of bsln are.
+nonlinear partial differential equations) the characters of integrable highest weight repre-
+sentations of $1, are.
+
 2.4.4. Crystal basis and Robinson-Schensted correspondence.
-In this section we are going to discuss brieﬂy a connection between a combinatorial
-description of the so-called crystal basis [Ka] of an integrable c
-sln-module V k
-n of level k,
+
+In this section we are going to discuss briefly a connection between a combinatorial
+description of the so-called crystal basis [Ka] of an integrable sl,,-module V* of level k,
 found by Jimbo, Misra, Miwa and Okado in [JMMO] (see also [MM], [KKNMMNN] and
-[DJKMO1], [DJKMO2]) and the Kostka-Foulkes polynomials via the Robinson-Schemsted-
+[DJKMO]1], [DJKMO2]) and the Kostka-Foulkes polynomials via the Robinson-Schemsted-
 Knuth (RSK) correspondence (see e.g. [Sa], where a construction and basic properties of
 RSK are given).
+
 The starting point for us is the following variant of the Jimbo-Misra-Miwa-Okado for-
-mula for the character ch(V k
-n ) in the paths realization of the crystal basis, due to E. Frenkel
-and A. Szenes [FrSz2]. Thus (see [FrSz2], Section 6), let us introduce the set
-Sk
-n = {a = (a1, . . ., an) | ai ≥0, a1 + · · · + an = k}.
-Denote by τ : (a1, a2, . . ., an) →(an, a1, . . ., an−1) the cyclic permutation acting on Sk
-n
-and deﬁne the element ak ∈Sk
-n by ak = (k, 0, . . ., 0). Now the ground state path µ is
-the sequence (ak, τak, τ 2ak, . . .), and the set of restricted paths Rk
-n is the set of sequences
-η = (η0, η1, . . .) of elements ηj ∈Sk
-n, which coincide with µ except for a ﬁnite set of indices.
-Deﬁne the weight function w on Rk
-n by the formula
-w(η) =
-∞
-X
+mula for the character ch(V,*) in the paths realization of the crystal basis, due to E. Frenkel
+and A. Szenes [FrSz2]. Thus (see [Fr$z2], Section 6), let us introduce the set
+
+Sh = {a=(a1,...,4n) | ai > 0, ay +--+ + Gn =k}.
+
+Denote by 7 : (a1,42,---,;@n) — (Gn, 41,---,@n—1) the cyclic permutation acting on S*
+and define the element a* € S* by a* = (k,0,...,0). Now the ground state path pu is
+the sequence (a*, ra*,r?a*,...), and the set of restricted paths R* is the set of sequences
+n = (no,m,---) of elements nj € S*_ which coincide with jz except for a finite set of indices.
+
+Define the weight function w on R* by the formula
+
+fe)
+
+w(n) = > m[H(tm—1;,%m) _ A(tm—1;lm)] 5
+
 m=1
-m [H(ηm−1, ηm) −H(µm−1, µm)] ,
 74
 Anatol N. Kirillov
 where Hn(a, b) := max
@@ -1470,7 +1457,6 @@ Des(T) is the so-called descent set of tableau T (j ∈Des(T) iﬀ(j + 1) lies i
 strictly below than j). This result allows to give a pure combinatorial proof of Theorem 9.
 Indeed, it is also well-known result (see e.g. [Ma]) that
 Kλ,(1|λ|)(q) =
-X
 T ∈STY(λ,1|λ|)
 qind(T ).
 A relation between g
@@ -1688,4 +1674,3 @@ m ar] ∈C(F).
 Remark. Let b be the image of b in the Bloch group B(F). It is an interesting problem
 to ﬁnd an eﬀective criteria when b ∈B(F)tor.
 Dilogarithm identities
-79

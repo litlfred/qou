@@ -1,0 +1,29 @@
+In R*, if we start with a smooth, compactly supported current flow V, then its
+magnetic field BS(V) is a smooth vector field (although not in general compactly
+supported) which has the following properties:
+(1) It is divergence-free, V « BS(V) = 0.
+(2) It satisfies Maxwell's equation
+
+Vy XBS(V)(y) = V(y) + Vy Fas V(x) © Vx bo(x, y) dx,
+
+where @o is the fundamental solution of the Laplacian in R°.
+
+(3) BS(V)(y) > O as y > ow.
+
+To see that equation (2) is one of Maxwell's equations, first integrate by parts to get
+Jas VOX) © Vx bo(x, y) dx = — Jas (Vie V(x) Golx. y) dx,
+and then insert this to get
+Vy XBS(V)(y) = V(y) — Vy Jes (Vx V(X) dolx, y) dx.
+
+If we think of the vector field V(x) as a steady current, then the negative divergence,
+—V, ¢V(x), is the time rate of accumulation of charge at x , and hence the integral
+
+~V, Jas (Vie V(x)) do(x, y) dx
+
+is the time rate of increase of the electric field E at y. Thus equation (2) is simply
+Maxwell's equation
+
+V XB = V + OE/Ct.
+
+In R?, S’ and H’, alinear operator satisfying conditions (1), (2) and (3) above
+will be referred to as a Biot-Savart operator.

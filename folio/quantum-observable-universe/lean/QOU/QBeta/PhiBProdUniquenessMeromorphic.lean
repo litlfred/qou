@@ -23,7 +23,7 @@ genuine meromorphic function" means.
 
 Verified `lean`-direct against the merged `phiBProd` chain. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md
+-- Ref: [leitner2026] docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md
 -/
 
 open Complex Set

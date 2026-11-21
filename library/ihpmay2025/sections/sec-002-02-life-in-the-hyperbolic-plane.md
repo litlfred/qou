@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
 toc_source: outline
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 One tenet of the Thurstonian viewpoint is that one should obtain a visceral feeling for what
 it is like to love there. Here we explore sports in the hyperbolic plane.

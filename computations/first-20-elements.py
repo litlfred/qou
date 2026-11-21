@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q
+from codata_constants import M_C12_ATOMIC_MEV_VALIDATION, M_HE4_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 q = Q
 hbar_q = 1.0 - 1.0 / q
@@ -26,11 +27,11 @@ m_e = M_E_MEV                             # electron (CODATA 2022)
 # (Z, N, symbol, name, B/A in MeV from AME2020, observed atomic mass MeV)
 elements = [
     ( 1,  0, "H-1",   "Hydrogen",     0.0000,    938.783),
-    ( 2,  2, "He-4",  "Helium",       7.0739,   3728.401),
+    ( 2,  2, "He-4",  "Helium",       7.0739,   float(M_HE4_ATOMIC_MEV_VALIDATION)),
     ( 3,  4, "Li-7",  "Lithium",      5.6063,   6535.366),
     ( 4,  5, "Be-9",  "Beryllium",    6.4628,   8394.794),
     ( 5,  6, "B-11",  "Boron",        6.9277,  10252.547),
-    ( 6,  6, "C-12",  "Carbon",       7.6801,  11177.929),
+    ( 6,  6, "C-12",  "Carbon",       7.6801,  float(M_C12_ATOMIC_MEV_VALIDATION)),
     ( 7,  7, "N-14",  "Nitrogen",     7.4756,  13043.781),
     ( 8,  8, "O-16",  "Oxygen",       7.9762,  14899.169),
     ( 9, 10, "F-19",  "Fluorine",     7.7790,  17692.300),

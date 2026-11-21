@@ -1,0 +1,74 @@
+The Dilogarithm Function 27
+
+Mn
+
+. ue"
+Lia(ey) = YO 1 (x, ye, ly <1, |ey| <1).
+
+mn
+0<m<n
+
+The remarkable fact here is that the function Li,,1, which has two arguments
+and hence is a priori a more complicated type of object than the one-argument
+function Lig, can in fact be expressed in terms only of the latter:
+
+Proposition 1. For x,y €C with |xy| <1, |y| <1 we have
+
+Lis(7—) ~ Lia(ey). (2)
+
+=H) -
+1
+
+. xy
+Lipi(z,y) = Lin(— —_
+
+Before proving this identity, we mention some equivalent formulas and con-
+sequences. First of all, the double logarithm function satisfies the identity—the
+simplest case of the “shuffle relations” satisfied by all multiple zeta values and
+multiple polylogarithms—
+
+Lisa(z,y) + Lira(y, x) + Lig(wy) = Liy(x) Lis (y), (3)
+
+which is an immediate consequence of the fact that any pair of positive integers
+(m,n) must satisfy exactly one of the three conditions 0 <m<n,0<n<m,
+or 0 << m=n. Combining this with (2) and interchanging the roles of « and
+y, we can rewrite (2) in the equivalent form
+
+Lina(2,y) = Lin(e)Lin(y) + Lie(j—*-) — Lin(2—*), (a)
+
+l-«x
+which is slightly less pretty than (2) in that it involves products of logarithms
+as well as dilogarithms, but has the advantage of containing only two rather
+than three dilogarithms. And if we use (4) to express both Li,1(#,y) and
+Li: ,1(y, x) in (3) in terms of dilogarithms, we obtain what is perhaps the most
+natural proof of the five-term relation.
+
+We now give the proof of Proposition 1 (in the form (4) or (2)). In fact,
+just for fun we give three proofs.
+
+(i) We have
+
+m y™
+
+x re
+
+ee ee
+0<m<n m=1
+~ 1, 1
+
+-Ty og
+The derivative with respect to y of the right-hand side of (4) (or of (2)) has
+the same value and both sides of (4) (or of (2)) vanish at y = 0.
+(ii) We have
+
+a)
+oy Liz (a, y)
+
+l-ay”
+
+O.. iy" Sta art yn
+9g Lhaley) = > x 1 = y= 4
+“ 0<m<n n=1 “
+1 1 1 1
+= log - O;
+

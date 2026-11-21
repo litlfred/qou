@@ -1,0 +1,32 @@
+56. Proof of Theorem 1, formulas (2) and (3).
+
+We start on S*, and begin with the same set-up and notation used in the preceding
+section. We must show that in parallel transport format, we have
+
+Lk(K,, Ka) = 1/4a7 Jxyvx, Py dx/ds Xdy/dt ¢ V, (x, y) ds dt,
+where (a) = (W—aQ)csca.
+
+We take Theorem 2, formula (2) for the Biot-Savart operator in parallel transport
+format and apply it to the current flow V along the loop K, to get
+
+BS(V)(y) = Iki PyxV(x) x Vy (x, y) ds,
+where (a) = (-1/4n’) (w— a) csc a.
+Then we compute the circulation of BS(V) around the loop K2, as follows.
+Jk. BS(V)(y) ¢ dy/dt dt =
+= fxr (Sx: P,x dx/ds x Vy (x, y) ds) ¢ dy/dt dt
+= Jxix, Py dx/ds x Vy (x,y) © dy/dt ds dt
+= —Jki«x. Py, dx/ds x dy/dt « Vy (x,y) ds dt,
+where we still have (a) = (—1/4n’) (n—@) csc a,
+= 1/4n7 fxpx2 Py, dx/ds X dy/dt « V,o(x,y) dsdt,
+where now $(a) = (t—a) csc a.
+As before, we apply Ampere's Law to the field BS(V) and conclude that
+Lk(Ky, Ko) = 1/4m° Jxpx: Py dx/ds xdy/dt ¢ Vy (x, y) ds dt.
+
+Then, as in the preceding section, we can drop the assumptions that the loop K,
+is simple and is parametrized by arc length, completing the proof of Theorem 1,
+formula (2) for the Gauss linking integral on S° in parallel transport format
+
+The proof of Theorem 1, formula (3) for the Gauss linking integral on H’
+in parallel transport format is the same, and we are done.
+
+106

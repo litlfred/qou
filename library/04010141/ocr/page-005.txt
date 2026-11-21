@@ -1,0 +1,40 @@
+Cellular algebras and diagram algebras 145
+
+If t,n are positive integers of the same parity, a finite (planar) dia-
+gram yp: t —> n is represented by a set of non-intersecting arcs which
+are contained in the “fundamental rectangle” (see below). These arcs
+divide the fundamental rectangle into regions, among which there is a
+unique “left region” as shown below.
+
+'
+| left region
+‘
+1
+'
+
+A marked diagram is a (finite planar) diagram, where the interior
+of the boundary arcs of the leftmost region may be marked with one or
+more e symbols (“marks”) (see below).
+
+i
+\
+1
+| left region
+'
+1
+1
+1
+
+L\
+
+t
+
+L™“
+
+The R-linear combinations of unmarked diagrams from t to n constitute
+the morphisms in the Temperley-Lieb category T, where the objects are
+the non negative integers Z>o. If t,n respectively denote the number of
+bottom and top nodes in a diagram D, then D is a morphism from t
+to n in T. Composition of morphisms corresponds to concatenation of
+diagrams, with closed loops being deleted and replaced by the scalar 6,.
+In the composition D,D 2 of diagrams D, and D2, D, is placed above

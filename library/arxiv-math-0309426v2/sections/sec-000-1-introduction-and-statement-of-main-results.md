@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0309426v2
-doc_title: "arXiv:math/0309426v2 [math.RT] 1 Jul 2004"
+doc_title: "ELEMENTARY DIVISORS OF SPECHT MODULES"
 section_id: sec-000-1-introduction-and-statement-of-main-results
 section_title: "Introduction and statement of main results"
 section_number: 1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 1.0
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 9 sections: Front matter; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 The irreducible representations of the symmetric groups and their
 Iwahori-Hecke algebras have been classified and constructed by

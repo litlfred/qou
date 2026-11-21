@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1707.00196v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1707.00196v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,10 +25,11 @@
     "library/arxiv-1707.00196v3/sections/sec-010",
     "library/arxiv-1707.00196v3/sections/sec-011",
     "library/arxiv-1707.00196v3/sections/sec-012",
-    "library/arxiv-1707.00196v3/sections/sec-013"
+    "library/arxiv-1707.00196v3/sections/sec-013",
+    "library/arxiv-1707.00196v3/sections/sec-014"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-1707.00196v3",
     "title_source": "corroborated",

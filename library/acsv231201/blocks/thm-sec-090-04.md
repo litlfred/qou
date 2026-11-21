@@ -1,0 +1,1 @@
+28. Suppose that h−1([a, b]) is compact and contains precisely one critical point p, with critical value h(p) strictly between a and b. Then the space X≤b has the homotopy type of X≤a with a λ-cell attached along its boundary, where λ is the Morse index of the critical point p (a 0-cell is a point with empty boundary). Proof See [Mil63, Theorem 3.2]. □

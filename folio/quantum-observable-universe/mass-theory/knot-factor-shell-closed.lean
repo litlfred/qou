@@ -13,7 +13,7 @@ LaTeX label: `cor:knot-factor-shell-closed`
 
 ## References
 
-- [manuscript] Ch. Braids and Knots, §Knot factor / shell-closed
+- [leitner2026] Ch. Braids and Knots, §Knot factor / shell-closed
 -/
 
 namespace QOU.BraidKnot
@@ -35,7 +35,7 @@ structure MarkovEquilibrium {R : Type*} [Field R] {n : ℕ}
 
     Under the Markov equilibrium hypothesis on the trivial idempotent
     `e_{(n)}`, the knot factor equals one exactly. -/
--- Ref: [manuscript] Ch. Braids and Knots, §Knot factor / shell-closed
+-- Ref: [leitner2026] Ch. Braids and Knots, §Knot factor / shell-closed
 theorem knot_factor_shell_closed
     {R : Type*} [Field R] {n : ℕ} (β β_mirror : HeckeExpansion R n)
     (trivialPartition : List ℕ)
@@ -43,7 +43,7 @@ theorem knot_factor_shell_closed
     (triv_nz : β.trivial trivialPartition ≠ 0) :
     knotFactor n β β_mirror
       = β.weight trivialPartition := by
-  -- Ref: [manuscript] Ch. Braids and Knots, §Knot factor / shell-closed
+  -- Ref: [leitner2026] Ch. Braids and Knots, §Knot factor / shell-closed
   unfold knotFactor
   rw [Finset.sum_eq_single trivialPartition]
   · -- Surviving trivialPartition term:

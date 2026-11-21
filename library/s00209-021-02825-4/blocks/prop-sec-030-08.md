@@ -1,0 +1,1 @@
+10 (c.f. Proposition A.7) Let μ ≤λ. We have the following decomposition of V (λ) ⊗V (μ), as a representation of (SL2(C))m, into irreducible components. V (λ) ⊗V (μ) ∼=  α≤μ V (λ + μ −2α) Proof We compute: V (λ) ⊗V (μ) ∼=  V (λ1) ⊠· · · ⊠V (λm)

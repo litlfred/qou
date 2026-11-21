@@ -8,6 +8,7 @@ pages: 51-52
 source_pdf: 1409.0848v3.pdf
 source_sha256: 5af73ef812ccee40
 toc_source: outline
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 [At] Atiyah, Michael. Thom complexes, Proc. London Math. Soc. (3), no. 11 (1961), 291–310.
 [AF1] Ayala, David; Francis, John. Factorization homology of topological manifolds. J. Topol. 8 (2015), no. 4, 1045–

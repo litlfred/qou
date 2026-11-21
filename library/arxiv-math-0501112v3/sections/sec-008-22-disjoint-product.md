@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.842
 latex_coverage_ratio: 0.944
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 []{#subsec:disjoint label="subsec:disjoint"} Usually by a product of normalized conjugacy classes $\Sigma_{k_1,\dots,k_m}$ we understand their product as elements of the group algebra ${\mathbb{C}}(S_q)$. However, sometimes it is convenient to consider their disjoint product defined by $$\label{eq:disjoint} \Sigma_{k_1,\dots,k_m} \bullet
 \Sigma_{l_1,\dots,l_n}= \Sigma_{k_1,\dots,k_m,l_1,\dots,l_n}.$$

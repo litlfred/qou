@@ -1,0 +1,3230 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "hdr",
+ "status": "determined",
+ "pages_unread": [
+  32,
+  52
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "1",
+   "text": "TheparabolicsubgroupsofacomplexreﬂectiongroupW⊂GL(h)arethepointwisestabilisersofthesubsetsofh.It is a remarkable theorem by Steinberg [St2, Theorem 1.5] that all parabolic subgroups of W are again complex reﬂection groups.",
+   "marks": [
+    {
+     "page": 28,
+     "context": "t,0vt,"
+    },
+    {
+     "page": 28,
+     "context": "t,1),sE(1,"
+    },
+    {
+     "page": 29,
+     "context": "ion, because parabolic subgroups of complex reﬂection groups"
+    }
+   ],
+   "block": "library/hdr/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p045-1",
+   "page": 45,
+   "mark": "1",
+   "text": "forG4thiswasalreadyknownby[Bel1].",
+   "marks": [
+    {
+     "page": 45,
+     "context": "h4],heshowedthatPart(a)ofMartino’sConjectureholdsineverycase"
+    }
+   ],
+   "block": "library/hdr/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p063-1",
+   "page": 63,
+   "mark": "1",
+   "text": "Similardiagrammaticproofscanbegivenfortheremainingﬁvepairs.",
+   "marks": [
+    {
+     "page": 62,
+     "context": "Θd(q, z)(bα) = Θ"
+    },
+    {
+     "page": 62,
+     "context": "Θd(q, z)(bα) = dk−1Θ"
+    },
+    {
+     "page": 62,
+     "context": "Θd(q, λD)(bα) = E"
+    },
+    {
+     "page": 62,
+     "context": "Θ"
+    },
+    {
+     "page": 62,
+     "context": "Θ1(q, λD)(bα) = E"
+    },
+    {
+     "page": 62,
+     "context": "Θd(bα) = E"
+    },
+    {
+     "page": 63,
+     "context": "qλDΦd,D(L−) = (q"
+    },
+    {
+     "page": 63,
+     "context": "qλDΘd(L−) = (q"
+    }
+   ],
+   "block": "library/hdr/blocks/prose-sec-028"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "i)"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "i)i∈IdenotethedualbasisofAwithrespecttoτ,thatis,τ(b"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "i)i∈IdenotethedualbasisofAwithrespecttoτ,thatis,τ(bi"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "j)=δij.LetKbe"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "0(KA)bethesubsetofR"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "W= ⟨S | (st)"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "min { r | w= s"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "min { r | w= si1 . . . s"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "min { r | w= si1 . . . sirwiths"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Example2.1LetW=S3.WehaveW=⟨s, t | s"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Example2.1LetW=S3.WehaveW=⟨s, t | s2=t"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "Example2.1LetW=S3.WehaveW=⟨s, t | s2=t2=(st)"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "Hq(W, l) := Hq(W, L) = ⟨Ts, Tt | TsTtTs= TtTsTt,(Ts −q"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "W, L) = ⟨Ts, Tt | TsTtTs= TtTsTt,(Ts −ql)(Ts + q−l) = (Tt −q"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Letw∈Wandletw=s"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Letw∈Wandletw=si1 . . . s"
+  },
+  {
+   "page": 20,
+   "mark": "w",
+   "context": "etw=si1 . . . sirbeareducedexpressionforw,thatis,r=ℓ(w).SetT"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "T"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Ts"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "Tsi1. . . T"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "s= 1 + (qL(s) −q−L(s)) T"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "T"
+  },
+  {
+   "page": 20,
+   "mark": "w",
+   "context": "w−1forall"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "e three irreducible representations.Let E(3), E(2,1)and E(1,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "sE(3)= (q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= (q2"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "sE(3)= (q2l+ 1)(q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= (q2l+ 1)(q4"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "sE(3)= (q2l+ 1)(q4l+ q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= (q2l+ 1)(q4l+ q2"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "sE(3)= (q2l+ 1)(q4l+ q2l+ 1),sE(2,1)= q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= (q2l+ 1)(q4l+ q2l+ 1),sE(2,1)= q2"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= (q2l+ 1)(q4l+ q2l+ 1),sE(2,1)= q2l+ 1 + q−2"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "sE(3)= (q2l+ 1)(q4l+ q2l+ 1),sE(2,1)= q2l+ 1 + q−2l,sE(1,"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "(q2l+ 1)(q4l+ q2l+ 1),sE(2,1)= q2l+ 1 + q−2l,sE(1,1,1)= (q−2"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "q4l+ q2l+ 1),sE(2,1)= q2l+ 1 + q−2l,sE(1,1,1)= (q−2l+ 1)(q−4"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "2l+ 1),sE(2,1)= q2l+ 1 + q−2l,sE(1,1,1)= (q−2l+ 1)(q−4l+ q−2"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "aE(3)= 0,aE(2,1)= 2l,aE(1,"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "AE(3)= −6l,AE(2,1)= −2l,AE(1,"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Φ(q"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "sE(3)= Φ2(q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= Φ2(q2"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "sE(3)= Φ2(q2l)Φ3(q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= Φ2(q2l)Φ3(q2"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= Φ2(q2l)Φ3(q2l),sE(2,1)= q−2"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "sE(3)= Φ2(q2l)Φ3(q2l),sE(2,1)= q−2lΦ3(q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= Φ2(q2l)Φ3(q2l),sE(2,1)= q−2lΦ3(q2"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "sE(3)= Φ2(q2l)Φ3(q2l),sE(2,1)= q−2lΦ3(q2l),sE(1,"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "sE(3)= Φ2(q2l)Φ3(q2l),sE(2,1)= q−2lΦ3(q2l),sE(1,1,1)= q−6"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(3)= Φ2(q2l)Φ3(q2l),sE(2,1)= q−2lΦ3(q2l),sE(1,1,1)= q−6lΦ2(q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "3)= Φ2(q2l)Φ3(q2l),sE(2,1)= q−2lΦ3(q2l),sE(1,1,1)= q−6lΦ2(q2"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(q2l)Φ3(q2l),sE(2,1)= q−2lΦ3(q2l),sE(1,1,1)= q−6lΦ2(q2l)Φ3(q"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "q2l)Φ3(q2l),sE(2,1)= q−2lΦ3(q2l),sE(1,1,1)= q−6lΦ2(q2l)Φ3(q2"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "I(M)and"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈Irr(WIi)suchthatM"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i⇝LE"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i⇝LE"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "RK(q) := ZK[q, q−1, (q"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Example2.6,thealgebraQ(η)Hη(S3, l)issemisimpleifandonlyifη"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "Example2.6,thealgebraQ(η)Hη(S3, l)issemisimpleifandonlyifη2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "thealgebraQ(η)Hη(S3, l)issemisimpleifandonlyifη2l/∈{−1, ω, ω"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": " 1, . . . , n −1,whichareallconjugateinW.Setl:= L(s1)andletη"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "1, . . . , n −1,whichareallconjugateinW.Setl:= L(s1)andletη2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "•Thereexistsapositiveintegernsuchthat(W, h)∼= (Sn, C"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "gersl, p, nwithl/p ∈Zandl > 1suchthat(W, h)∼= (G(l, p, n), C"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Remark3.2WehaveG(l, 1, n)∼= (Z/lZ) ≀Sn∼= (Z/lZ)"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "H∈AHandBW:=π"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "H∈AHandBW:=π1(hreg/W, x"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "onthegroupalgebraofWwhenuC,j7→ζ"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "uC,j= ζ"
+  },
+  {
+   "page": 27,
+   "mark": "v",
+   "context": "eC"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "(s −vs,0)(s −ζlvs,1) · · · (s −ζ"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "ϕm: ZK[v, v−1] →ZK[q, q−1],vC,j7→q"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "(s −q)(s"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "(s −q)(sl−1+ s"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "C,j"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "C,jv"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "C,jis"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "C,jisamonomialinZK[v,"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "C,jisamonomialinZK[v, v−1]withP"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "j=0"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "(d)(ΨE,i)"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "C,j"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "C,jv"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "(e)(ME,i)"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "andP"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "j=0"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "hefactorisationofsEintoirreduciblefactors.Themonomials(ME,i)"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "t,1)Φ"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "t,1)Φ3(v"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "t,1)Φ3(vt,"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "t,1)Φ3(vt,0"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "t,1),"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "t,0"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "t,0v"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "t,0vt,1Φ"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "t,0vt,1Φ3(v"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "t,0vt,1Φ3(vt,"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "t,0vt,1Φ3(vt,0"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "t,1),"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "t,1Φ"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "t,1Φ2(v"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "t,1Φ2(vt,"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "t,1Φ2(vt,0"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "t,1)Φ"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "t,1)Φ3(v"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "t,1)Φ3(vt,"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "t,1)Φ3(vt,0"
+  },
+  {
+   "page": 28,
+   "mark": "v",
+   "context": "t,0"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "t,0v"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "Letϕm:vC,j7→q"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "specialisesviaϕ"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "Hϕm(W)withrespecttoτϕmare(ϕ"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "canagaindeﬁnethea-functiona"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "canagaindeﬁnethea-functionam: Irr(W) →ZandtheA-functionA"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "a"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "A"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "E:= −val"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "E:= −valq(ϕ"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "E:= −degq(ϕ"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "Letϕm:vC,j7→q"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "RK(q) = ZK[q, q−1, (q"
+  },
+  {
+   "page": 29,
+   "mark": "v",
+   "context": "C,j"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "C,jv"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "C"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "C,j"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "C,jmC,j"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "beafamilyofintegersandletϕm:vC,j7→q"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "it is the unique essential hyperplane for S3.Let ϕm: vt,j7→q"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "t is the unique essential hyperplane for S3.Let ϕm: vt,j7→qm"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "(s −ζ"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "(s −ζs"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "e)(s −ζ"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "e)(s −ζs"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "e) · · · (s −ζ"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "e) · · · (s −ζs"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "where(s0, . . . , sl−1)∈Z"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "that,forasuitablechoiceofm,thecorrespondingfunctiona"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "j:= #{i | 1 ⩽i ⩽hsuchthatλ"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "i,j:= λ"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "that|λ| :=P"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "i=0|λ(i)| = n.WedenotebyP(l, n)thesetof"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "i=0|λ(i)| = n.WedenotebyP(l, n)thesetofl-partitionsof"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "pposethatwehaveagivenweightsystemm:=(m0, m1, . . . , ml−1)∈Q"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "j)"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "Lets∈Zwiths⩾hcλ.LetBc"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "λbethe"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "therowsbys −hcλ.Letκ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "therowsbys −hcλ.Letκ1⩾κ"
+  },
+  {
+   "page": 34,
+   "mark": "t",
+   "context": "therowsbys −hcλ.Letκ1⩾κ2⩾· · ·⩾κ"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "therowsbys −hcλ.Letκ1⩾κ2⩾· · ·⩾κt,witht=ls +P"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i=0[m"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "Bc"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "λwrittenindecreasingorder(if"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "Letτ: H"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "τ(X"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "τ(Xa"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "1X"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1Xa"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "2. . . X"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "2. . . Xa"
+  },
+  {
+   "page": 34,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 34,
+   "mark": "w",
+   "context": "nt"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "ofbasisofH"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "thatτisacanonicalsymmetrisingformonH"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "nwheneverallQ"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "Chapter6,τistheMarkovtraceonH"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "RsuchthatKH"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "Tits’sdeformationtheorem,thesimplemodulesofKH"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "nareparametrisedbythe"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "nareparametrisedbythel-partitionsof"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "Inthiscase,wecallH"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "nthegenericAriki–Koikealgebra,andwehave"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "TheSchurelementsofH"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "ofH"
+  },
+  {
+   "page": 35,
+   "mark": "h",
+   "context": "(q"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "sλ(q) = (−1)"
+  },
+  {
+   "page": 35,
+   "mark": "h",
+   "context": "(q"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "sλ(q) = (−1)"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "where[m]q:= (q"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "where[m]q:= (qm−1)/(q −1) = q"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "where[m]q:= (qm−1)/(q −1) = qm−1+ q"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "Ariki’ssemisimplicitycriterion(4.2).Further,ifwetakeq=u"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "ki’ssemisimplicitycriterion(4.2).Further,ifwetakeq=urandQi=ζ"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "l"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "lu"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "lur"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "luriforall"
+  },
+  {
+   "page": 35,
+   "mark": "q",
+   "context": "isanindeterminate,r∈Z>0andr0, . . . , rl−1∈Z,thenthealgebraH"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "nis"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "l"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "lu"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "lur"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "bra(sinceitcanbeobtainedviathecyclotomicspecialisationϕ:q7→u"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "ceitcanbeobtainedviathecyclotomicspecialisationϕ:q7→ur,Qi7→ζ"
+  },
+  {
+   "page": 35,
+   "mark": "l",
+   "context": "Setmi:=ri/rforalli=0, . . . , l −1andm:=(m0, . . . , ml−1)∈Q"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "Proposition4.4LetH"
+  },
+  {
+   "page": 35,
+   "mark": "l",
+   "context": "ri/rforall i = 0, . . . , l −1and m := (m0, . . . , ml−1) ∈Q"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "ϕ(q) = u"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "ϕ(Qi) = ζ"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "l"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "lu"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "lur"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "lisnot"
+  },
+  {
+   "page": 35,
+   "mark": "l",
+   "context": "lisnotaunitinZ[ζ"
+  },
+  {
+   "page": 35,
+   "mark": "s",
+   "context": "•kr + rs −rt= 0forall−n < k< nifζ"
+  },
+  {
+   "page": 35,
+   "mark": "t",
+   "context": "l−ζ"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "q7→u"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "q7→ur, Q07→u"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "q7→ur, Q07→ur"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "q7→ur, Q07→urs, Q17→−u"
+  },
+  {
+   "page": 36,
+   "mark": "t",
+   "context": "q7→ur, Q07→urs, Q17→−ur"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "(s −ζ"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(s −ζs"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "e)(s −ζ"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "e)(s −ζs"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "e) · · · (s −ζ"
+  },
+  {
+   "page": 36,
+   "mark": "l",
+   "context": "e) · · · (s −ζs"
+  },
+  {
+   "page": 36,
+   "mark": "l",
+   "context": "where(s0, . . . , sl−1) ∈Z"
+  },
+  {
+   "page": 36,
+   "mark": "m",
+   "context": "ingfunctiona"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "(s −ζ"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "(s −ζs"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "e)(s −ζ"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "e)(s −ζs"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "e) · · · (s −ζ"
+  },
+  {
+   "page": 37,
+   "mark": "l",
+   "context": "e) · · · (s −ζs"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "(ti −ζ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "e)(t"
+  },
+  {
+   "page": 37,
+   "mark": "l",
+   "context": "where(s0, . . . , sl−1)∈Z"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "s∈htobe"
+  },
+  {
+   "page": 38,
+   "mark": "s",
+   "context": "c(s) (y, α"
+  },
+  {
+   "page": 38,
+   "mark": "s",
+   "context": "(α∨s , α"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "Example5.1LetW= Snandh = C"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ij= y"
+  },
+  {
+   "page": 38,
+   "mark": "j",
+   "context": "ij= yi−y"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "ij, αij)=2.Thereis"
+  },
+  {
+   "page": 38,
+   "mark": "c",
+   "context": "ij, αij)=2.ThereisasingleconjugacyclassinS,sotake"
+  },
+  {
+   "page": 38,
+   "mark": "c",
+   "context": "ij, αij)=2.ThereisasingleconjugacyclassinS,sotakec∈C.ThenHt,"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": " αij)=2.ThereisasingleconjugacyclassinS,sotakec∈C.ThenHt,c(S"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "s′foralls,"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "s′foralls,s′∈WH\\ {1}.SetαH:=α"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "(s −exp(2πikC,0))(s −ζeCexp(2πikC,1)) · · · (s −ζ"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "C∈A/W )(0⩽j⩽eC−1)be a family of integers and let ϕm: vC,j7→q"
+  },
+  {
+   "page": 41,
+   "mark": "r",
+   "context": "eforsome"
+  },
+  {
+   "page": 41,
+   "mark": "r",
+   "context": "assumefromnowonthatηisarootofunityofordere > 1,namelyη= ζ"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "functionsa"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "functionsamandA"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E+ A"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "Equation (5.2) implies that a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "Equation (5.2) implies that am+A"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "inthiscasecE∈QforallE∈Irr(W)).Thus,a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "inthiscasecE∈QforallE∈Irr(W)).Thus,am+ A"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "if[∆(E):L(E′)]̸=0forsomeE, E′∈Irr(W),theneitherE=E′ora"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E′+A"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E′<a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E+A"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "thefunctiona"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "thefunctionamiscompatiblewitha"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "thefunctionamiscompatiblewitham+ A"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E′+A"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E′<a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E+A"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "⇒a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E′<a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "then a"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E,E′∈Irr(W).If[∆(E):L(E′)]̸=0,theneitherE=E′ora"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "E′<a"
+  },
+  {
+   "page": 42,
+   "mark": "r",
+   "context": "ifEbelongstothecanonicalbasicsetofHϕm(W)withrespecttoθ: q7→ζ"
+  },
+  {
+   "page": 42,
+   "mark": "r",
+   "context": "respecttoθ: q7→ζ"
+  },
+  {
+   "page": 43,
+   "mark": "r",
+   "context": "canonicalbasicsetofHq(W, −L)withrespecttoθ: q7→ζ"
+  },
+  {
+   "page": 43,
+   "mark": "r",
+   "context": "tothecanonicalbasicsetofHq(W, −L)withrespecttoθ:q7→ζ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "(thereexistsonlyoneorbitCinA/W).Letη"
+  },
+  {
+   "page": 43,
+   "mark": "l",
+   "context": "(thereexistsonlyoneorbitCinA/W).Letη2"
+  },
+  {
+   "page": 43,
+   "mark": "r",
+   "context": "(thereexistsonlyoneorbitCinA/W).Letη2l:= ζ"
+  },
+  {
+   "page": 43,
+   "mark": "s",
+   "context": "case,therearetwohyperplaneorbitsinA/W;wewilldenotethembyC"
+  },
+  {
+   "page": 43,
+   "mark": "t",
+   "context": "se,therearetwohyperplaneorbitsinA/W;wewilldenotethembyCsandC"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "eCt= 2.Let(s"
+  },
+  {
+   "page": 43,
+   "mark": "l",
+   "context": "eCt= 2.Let(s0, . . . , s"
+  },
+  {
+   "page": 43,
+   "mark": "l",
+   "context": "eCt= 2.Let(s0, . . . , sl−1) ∈Z"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "eCt= 2.Let(s0, . . . , sl−1) ∈Zlande ∈Z>0.Wedeﬁnek = (kCs,"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": " sl−1) ∈Zlande ∈Z>0.Wedeﬁnek = (kCs,0, . . . , kCs,l−1, kCt,"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "∈Zlande ∈Z>0.Wedeﬁnek = (kCs,0, . . . , kCs,l−1, kCt,0, kCt,"
+  },
+  {
+   "page": 43,
+   "mark": "j",
+   "context": "kCs,j=s"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "e,"
+  },
+  {
+   "page": 43,
+   "mark": "t",
+   "context": "e,kC"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "e,kCt,"
+  },
+  {
+   "page": 43,
+   "mark": "s",
+   "context": "(s −ζ"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "(s −ζs"
+  },
+  {
+   "page": 43,
+   "mark": "s",
+   "context": "e)(s −ζ"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "e)(s −ζs"
+  },
+  {
+   "page": 43,
+   "mark": "s",
+   "context": "e) · · · (s −ζ"
+  },
+  {
+   "page": 43,
+   "mark": "l",
+   "context": "e) · · · (s −ζs"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "nofthenodesofλandλ′respectively,andnon-negativeintegersµ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "nofthenodesofλandλ′respectively,andnon-negativeintegersµ1, µ"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "fλandλ′respectively,andnon-negativeintegersµ1, µ2, . . . , µ"
+  },
+  {
+   "page": 43,
+   "mark": "l",
+   "context": "i)mod"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "i) −ϑ(γ"
+  },
+  {
+   "page": 43,
+   "mark": "l",
+   "context": "u=(u0, . . . , ul−1)∈Q"
+  },
+  {
+   "page": 44,
+   "mark": "m",
+   "context": "turesalla-functionsforG(l, 1, n)intheliterature:thefunctiona"
+  },
+  {
+   "page": 44,
+   "mark": "l",
+   "context": "Corollary5.17LetW=G(l, 1, n).Let(s0, . . . , sl−1)∈Z"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "integers,dandn,andaparameter q.Forq= p"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "integers,dandn,andaparameter q.Forq= pmandd = p"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "t"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "i= q + (q −1)"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "i= q + (q −1) e"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "i= q + (q −1) ei"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "i= q + (q −1) eig"
+  },
+  {
+   "page": 48,
+   "mark": "s",
+   "context": "t"
+  },
+  {
+   "page": 48,
+   "mark": "t",
+   "context": "i"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "i= 1 + (q −1)"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "i= 1 + (q −1) e"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "i= 1 + (q −1) ei+ (q −1)"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "i= 1 + (q −1) ei+ (q −1) e"
+  },
+  {
+   "page": 49,
+   "mark": "g",
+   "context": "i= 1 + (q −1) ei+ (q −1) ei"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "ationchangedin[ChPdA1],whereweconsideredYd,n(q)deﬁnedoverC[q"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "generatedbyelementseg"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "generatedbyelementseg1, . . . , eg"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "generatedbyelementseg1, . . . , egn−1, t"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "generatedbyelementseg1, . . . , egn−1, t1, . . . , t"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "i= 1 + (q"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "i= 1 + (q1/2 −q−1/2)"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "i= 1 + (q1/2 −q−1/2) e"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "i= 1 + (q1/2 −q−1/2) ei"
+  },
+  {
+   "page": 49,
+   "mark": "g",
+   "context": "i= 1 + (q1/2 −q−1/2) eie"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "i= 1 + (q1/2 −q−1/2) eieg"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "eg"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "By taking g"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "By taking gi:= eg"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "By taking gi:= egi +(q"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "By taking gi:= egi +(q1/2−1) e"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "By taking gi:= egi +(q1/2−1) eieg"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "By taking gi:= egi +(q1/2−1) eiegi(and thus, eg"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "By taking gi:= egi +(q1/2−1) eiegi(and thus, egi= g"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "king gi:= egi +(q1/2−1) eiegi(and thus, egi= gi +(q−1/2−1) e"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "g gi:= egi +(q1/2−1) eiegi(and thus, egi= gi +(q−1/2−1) ei g"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "the Yokonuma–Hecke algebra.By taking g"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "the Yokonuma–Hecke algebra.By taking gi:= q"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "the Yokonuma–Hecke algebra.By taking gi:= q1/2eg"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "Nowletw∈S"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "Nowletw∈Sn,andletw=s"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "Nowletw∈Sn,andletw=si1s"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "Nowletw∈Sn,andletw=si1si2 . . . s"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "si1si2 . . . sirbeareducedexpressionforw.Sincethegeneratorsg"
+  },
+  {
+   "page": 49,
+   "mark": "w",
+   "context": "theoremimpliesthattheelementg"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "theoremimpliesthattheelementgw:=g"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "theoremimpliesthattheelementgw:=gi1g"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "theoremimpliesthattheelementgw:=gi1gi2 . . . g"
+  },
+  {
+   "page": 49,
+   "mark": "r",
+   "context": "d,n:= { t"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "d,n:= { tr"
+  },
+  {
+   "page": 49,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 49,
+   "mark": "w",
+   "context": "ng"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "ngw|w∈S"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "ngw|w∈Sn,"
+  },
+  {
+   "page": 49,
+   "mark": "j",
+   "context": "ngw|w∈Sn,0 ⩽r"
+  },
+  {
+   "page": 49,
+   "mark": "j",
+   "context": "ngw|w∈Sn,0 ⩽rj⩽d −1forall"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "ngw|w∈Sn,0 ⩽rj⩽d −1forallj= 1,"
+  },
+  {
+   "page": 49,
+   "mark": "r",
+   "context": "1. . . t"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "1. . . tr"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "Inparticular,Yd,n(q)isafreeC[q, q−1]-moduleofrankd"
+  },
+  {
+   "page": 49,
+   "mark": "y",
+   "context": "p(θ) := itobethepositionofθandc(θ) := q"
+  },
+  {
+   "page": 50,
+   "mark": "j",
+   "context": "t"
+  },
+  {
+   "page": 50,
+   "mark": "p",
+   "context": "tj(vT ) = ξ"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 50,
+   "mark": "c",
+   "context": "gi(vT ) =q"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "gi(vT ) =qc"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "gi(vT ) =qci+1 −c"
+  },
+  {
+   "page": 50,
+   "mark": "c",
+   "context": "vT+q"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "vT+qc"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "vT+qci+1 −c"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "(1 + q + · · · + q"
+  },
+  {
+   "page": 50,
+   "mark": "r",
+   "context": "τ(t"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "τ(tr"
+  },
+  {
+   "page": 50,
+   "mark": "r",
+   "context": "1. . . t"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "1. . . tr"
+  },
+  {
+   "page": 50,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 50,
+   "mark": "w",
+   "context": "ng"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "sλ= d"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "bra.NotethatinallcasestheresulthasbeenobtainedovertheringC[q"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "generatorseg"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "Compd(n) = {µ = (µ0, µ1, . . . , µd−1) ∈N"
+  },
+  {
+   "page": 51,
+   "mark": "l",
+   "context": "l−1]if"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "1X"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "J"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Jn,a"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Jn,an,b"
+  },
+  {
+   "page": 53,
+   "mark": "f",
+   "context": "Jn,an,bn. . ."
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "J"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "J2,a"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "J2,a2,b"
+  },
+  {
+   "page": 53,
+   "mark": "f",
+   "context": "J2,a2,b2"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "J"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Jn,a"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Jn,an,b"
+  },
+  {
+   "page": 53,
+   "mark": "f",
+   "context": "Jn,an,bn. . ."
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "J"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "J2,a"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "J2,a2,b"
+  },
+  {
+   "page": 53,
+   "mark": "f",
+   "context": "J2,a2,b2"
+  },
+  {
+   "page": 53,
+   "mark": "e",
+   "context": "d,l,nand"
+  },
+  {
+   "page": 53,
+   "mark": "e",
+   "context": "d,l,n,"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "d,l,nisanR"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Y(d, l, n)isafreeRl-moduleand,ifl < ∞,itsrankisequalto(dl)"
+  },
+  {
+   "page": 53,
+   "mark": "d",
+   "context": "−1)),whereλ(i)isanl-partitionforalli=0, 1, . . . , d −1,andP"
+  },
+  {
+   "page": 53,
+   "mark": "d",
+   "context": "j= 0, 1, . . . , l −1,andP"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "P"
+  },
+  {
+   "page": 53,
+   "mark": "y",
+   "context": "rtitionλ(i,j).Wedeﬁnep(θ):=itobethed-positionofθandc(θ):=Qjq"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "generatorsg"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "generatorsg1, . . . , g"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "generatorsg1, . . . , gn−1, t"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "generatorsg1, . . . , gn−1, t1, . . . , t"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 53,
+   "mark": "i",
+   "context": "X"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "Proposition6.10Letθ:R"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "Proposition6.10Letθ:Rl→Cbearinghomomorphismsuchthatθ(q)Q"
+  },
+  {
+   "page": 53,
+   "mark": "j",
+   "context": "j=0θ(Q"
+  },
+  {
+   "page": 53,
+   "mark": "i",
+   "context": "(1 + q + · · · + q"
+  },
+  {
+   "page": 53,
+   "mark": "k",
+   "context": "(q"
+  },
+  {
+   "page": 54,
+   "mark": "a",
+   "context": "τ(X"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "τ(Xa"
+  },
+  {
+   "page": 54,
+   "mark": "a",
+   "context": "1. . . X"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "1. . . Xa"
+  },
+  {
+   "page": 54,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 54,
+   "mark": "b",
+   "context": "nt"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "ntb"
+  },
+  {
+   "page": 54,
+   "mark": "b",
+   "context": "1. . . t"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "1. . . tb"
+  },
+  {
+   "page": 54,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 54,
+   "mark": "w",
+   "context": "ng"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "sλ= d"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": " is,for λ ∈P(n),Vλis an irreducible representation of C(q)TL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "an irreducible representation of C(q)TLn(q) if and only if g"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": " irreducible representation of C(q)TLn(q) if and only if g1,"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "representationnotbeingadirectsummandoftherestrictionResS"
+  },
+  {
+   "page": 55,
+   "mark": "w",
+   "context": "1,n= {g"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "1,n= {gw| w∈S"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "1,n= {gw| w∈Sn} = {gi,k| (i, k) ∈H"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "1,n:= {gi,k| (i, k) ∈T"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "n| = C"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "n| = Cn,whereC"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "n| = Cn,whereCnisthe"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "g"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "g1,"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "tation not being a direct summand of the restriction ResG(d,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "P"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "dimC(q)(C(q)YTLd,n(q)) =n(d"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "dimC(q)(C(q)YTLd,n(q)) =n(d2 −d) + d"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "Cn −(d"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "t"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "tr"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "1. . . t"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "1. . . tr"
+  },
+  {
+   "page": 55,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "ngi,k|(i, k) ∈H"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "ngi,k|(i, k) ∈Hn,"
+  },
+  {
+   "page": 55,
+   "mark": "j",
+   "context": "ngi,k|(i, k) ∈Hn,0 ⩽r"
+  },
+  {
+   "page": 55,
+   "mark": "j",
+   "context": "ngi,k|(i, k) ∈Hn,0 ⩽rj⩽d −1forall"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "ngi,k|(i, k) ∈Hn,0 ⩽rj⩽d −1forallj= 1,"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "t"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "tr"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "1. . . t"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "1. . . tr"
+  },
+  {
+   "page": 56,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "ngi,k|(i, k) ∈T"
+  },
+  {
+   "page": 56,
+   "mark": "0",
+   "context": "ngi,k|(i, k) ∈Tn,"
+  },
+  {
+   "page": 56,
+   "mark": "j",
+   "context": "ngi,k|(i, k) ∈Tn,0 ⩽r"
+  },
+  {
+   "page": 56,
+   "mark": "j",
+   "context": "ngi,k|(i, k) ∈Tn,0 ⩽rj⩽d −1forall"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "ngi,k|(i, k) ∈Tn,0 ⩽rj⩽d −1forallj= 1,"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "d,n| = d"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "d,n| = dnC"
+  },
+  {
+   "page": 56,
+   "mark": "a",
+   "context": "d,nthatis"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "|{(r1, . . . , rn) ∈{0, . . . , d −1}n| t"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "|{(r1, . . . , rn) ∈{0, . . . , d −1}n| tr"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "d,n}| = 2"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "d,n}| = 2n−wi,k−1(d"
+  },
+  {
+   "page": 56,
+   "mark": "w",
+   "context": "d,n}| = 2n−wi,k−1(d2 −d) + d −δ"
+  },
+  {
+   "page": 56,
+   "mark": "0",
+   "context": "d,n}| = 2n−wi,k−1(d2 −d) + d −δwi,k,"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "d,n}| = 2n−wi,k−1(d2 −d) + d −δwi,k,0(d"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "1. . . t"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "1. . . tr"
+  },
+  {
+   "page": 56,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 56,
+   "mark": "t",
+   "context": "0⩽a,b⩽d−1"
+  },
+  {
+   "page": 56,
+   "mark": "a",
+   "context": "0⩽a,b⩽d−1t"
+  },
+  {
+   "page": 56,
+   "mark": "t",
+   "context": "1"
+  },
+  {
+   "page": 56,
+   "mark": "b",
+   "context": "1t"
+  },
+  {
+   "page": 56,
+   "mark": "t",
+   "context": "2"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "andonlyife"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "andonlyife1e"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "andonlyife1e2g"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "andonlyife1e2g1,"
+  },
+  {
+   "page": 56,
+   "mark": "b",
+   "context": "0"
+  },
+  {
+   "page": 56,
+   "mark": "i",
+   "context": "1,µiforall"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "1,µiforalli = 0, . . . , d −1,"
+  },
+  {
+   "page": 56,
+   "mark": "m",
+   "context": "k,ldenotestheelementary"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "k,ldenotestheelementarymµ × mµmatrixwith"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "quotientoftheYokonuma–HeckealgebraYd,n(q)bytheidealKd,n:= ⟨P"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "s=0"
+  },
+  {
+   "page": 57,
+   "mark": "s",
+   "context": "s=0t"
+  },
+  {
+   "page": 57,
+   "mark": "e",
+   "context": "1"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "1e"
+  },
+  {
+   "page": 57,
+   "mark": "e",
+   "context": "1e1"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "1e1e"
+  },
+  {
+   "page": 57,
+   "mark": "g",
+   "context": "1e1e2"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "1e1e2g"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "1e1e2g1,"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "0⩽a,b,c⩽d−1"
+  },
+  {
+   "page": 57,
+   "mark": "a",
+   "context": "0⩽a,b,c⩽d−1t"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "1"
+  },
+  {
+   "page": 57,
+   "mark": "b",
+   "context": "1t"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "2"
+  },
+  {
+   "page": 57,
+   "mark": "c",
+   "context": "2t"
+  },
+  {
+   "page": 57,
+   "mark": "g",
+   "context": "3"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "3g"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "3g1,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "representationofC(q)CTLd,n(q)ifandonlyifP"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "s=0"
+  },
+  {
+   "page": 57,
+   "mark": "s",
+   "context": "s=0t"
+  },
+  {
+   "page": 57,
+   "mark": "e",
+   "context": "1"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "1e"
+  },
+  {
+   "page": 57,
+   "mark": "e",
+   "context": "1e1"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "1e1e"
+  },
+  {
+   "page": 57,
+   "mark": "g",
+   "context": "1e1e2"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "1e1e2g"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "1e1e2g1,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "1e1e2g1,2(vT) = 0foreverystandard"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "Theorem6.2.Leti"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "Theorem6.2.Leti0∈{0, . . . , d −1}besuchthatξ"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "representationofC(q)CTLd,n(q)ifandonlyiftheYoungdiagramofλ(i"
+  },
+  {
+   "page": 57,
+   "mark": "b",
+   "context": "0"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "1,µiforall"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "1,µiforalli = 1, . . . , d −1,"
+  },
+  {
+   "page": 57,
+   "mark": "m",
+   "context": "k,ldenotestheelementary"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "k,ldenotestheelementarymµ × mµmatrixwith"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "µCµ0µ"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "µCµ0µ1! . . . µ"
+  },
+  {
+   "page": 58,
+   "mark": "k",
+   "context": "trd(at"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "taryframings”(framing1onthej-thstrand).Therelations t"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "Foranyα∈F"
+  },
+  {
+   "page": 58,
+   "mark": "f",
+   "context": "wehavethatL"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "wehavethatLf:=∪n{bα | α∈F"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "n),forany"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "n)doesnotfactorthroughtr"
+  },
+  {
+   "page": 59,
+   "mark": "d",
+   "context": "ED= 1 ⇔|D| = 1 ⇔x"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "1= 1and"
+  },
+  {
+   "page": 59,
+   "mark": "k",
+   "context": "1= 1andx"
+  },
+  {
+   "page": 59,
+   "mark": "k",
+   "context": "1= 1andxk= x"
+  },
+  {
+   "page": 59,
+   "mark": "k",
+   "context": "d⇔D= Z/dZ ⇔x"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "Φd,D(bα) := Λ"
+  },
+  {
+   "page": 59,
+   "mark": "d",
+   "context": "Remark6.24Notethat,foreveryd∈N∗,wehave2"
+  },
+  {
+   "page": 59,
+   "mark": "d",
+   "context": "aboveconstructionyields2"
+  },
+  {
+   "page": 60,
+   "mark": "n",
+   "context": "R[F"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "R[Fn]ontoYd,n(q)givenbyσ"
+  },
+  {
+   "page": 60,
+   "mark": "j",
+   "context": "R[Fn]ontoYd,n(q)givenbyσi7→giandt"
+  },
+  {
+   "page": 60,
+   "mark": "j",
+   "context": "R[Fn]ontoYd,n(q)givenbyσi7→giandtj7→t"
+  },
+  {
+   "page": 60,
+   "mark": "s",
+   "context": "βt"
+  },
+  {
+   "page": 60,
+   "mark": "s",
+   "context": "βt"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "qλDΦd,D(L−) =q"
+  },
+  {
+   "page": 60,
+   "mark": "n",
+   "context": "cal links.By the Alexander Theorem, we have L = ∪n{bα | α ∈B"
+  },
+  {
+   "page": 60,
+   "mark": "n",
+   "context": "cal braid group Bninjects into the framed braid group Fn∼= Z"
+  },
+  {
+   "page": 60,
+   "mark": "n",
+   "context": "Θd,D(bα) := Λ"
+  },
+  {
+   "page": 60,
+   "mark": "d",
+   "context": "Remark6.27FollowingRemark6.24,theaboveconstructionyields2"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "P(bα) := Θ"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "qλH P(L−) = (q"
+  },
+  {
+   "page": 61,
+   "mark": "3",
+   "context": "q−1g"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "q−1g"
+  },
+  {
+   "page": 61,
+   "mark": "i",
+   "context": "i−g"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "n.The construction of the invariants Θd,Dyielded seemingly 2"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "Θ"
+  },
+  {
+   "page": 62,
+   "mark": "n",
+   "context": "Moregenerally,forallα ∈B"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "Θ"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "Θd(q, z)(bα) = d"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "Θd(q, z)(bα) = dk−1Θ1(q, dz)(bα) = d"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "Θ"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "Θ"
+  },
+  {
+   "page": 64,
+   "mark": "d",
+   "context": "c(bα)Θ"
+  },
+  {
+   "page": 64,
+   "mark": "k",
+   "context": "bα∈N(L)"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "E"
+  },
+  {
+   "page": 64,
+   "mark": "k",
+   "context": "bα∈N(L)"
+  },
+  {
+   "page": 64,
+   "mark": "k",
+   "context": "variables(q, λD),foralldisjointunionsofknotsbα ∈N(L)"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "Θ(L) = E"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "qλ Θ(L−) = (q"
+  },
+  {
+   "page": 65,
+   "mark": "e",
+   "context": "l−1]ifl < ∞,andR∞:= C[q±1].Wedeﬁneinductivelyelements"
+  },
+  {
+   "page": 65,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 65,
+   "mark": "e",
+   "context": "X1,"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 65,
+   "mark": "e",
+   "context": "X2, . . . ,"
+  },
+  {
+   "page": 65,
+   "mark": "i",
+   "context": "i−1,a,0forall"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "i−1,a,0foralli = 1, . . . , nand"
+  },
+  {
+   "page": 65,
+   "mark": "t",
+   "context": "i−1,a,0foralli = 1, . . . , nanda ∈Z.Wehave"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "i−1,a,0foralli = 1, . . . , nanda ∈Z.Wehavet"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "iforall"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "X"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "X"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "X"
+  },
+  {
+   "page": 65,
+   "mark": "t",
+   "context": "i"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "it"
+  },
+  {
+   "page": 65,
+   "mark": "e",
+   "context": "Notethat"
+  },
+  {
+   "page": 65,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 65,
+   "mark": "§",
+   "context": "n⩾0Y(d, l, n)asfollows(cf.[ChPdA2,"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "X"
+  },
+  {
+   "page": 65,
+   "mark": "t",
+   "context": "n+1"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "n+1t"
+  },
+  {
+   "page": 65,
+   "mark": "e",
+   "context": "trd,l(u"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "n.Thus,thealgebraY(d, l, n)canbeseenas"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "n,wedenoteby"
+  },
+  {
+   "page": 65,
+   "mark": "0",
+   "context": "n]ontoY(d, l, n)givenbyσ"
+  },
+  {
+   "page": 65,
+   "mark": "1",
+   "context": "n]ontoY(d, l, n)givenbyσ07→X"
+  },
+  {
+   "page": 66,
+   "mark": "0",
+   "context": "(xa,"
+  },
+  {
+   "page": 66,
+   "mark": "1",
+   "context": "(xa,0, xa,"
+  },
+  {
+   "page": 66,
+   "mark": "j",
+   "context": "(xa,0, xa,1, . . . , xa,d−1) ∈SpanRl({(1, ζ"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "d, ζ"
+  },
+  {
+   "page": 66,
+   "mark": "j",
+   "context": "d, ζ2"
+  },
+  {
+   "page": 66,
+   "mark": "j",
+   "context": "d, . . . , ζ(d−1)"
+  },
+  {
+   "page": 66,
+   "mark": "e",
+   "context": "Wealsoset"
+  },
+  {
+   "page": 66,
+   "mark": "l",
+   "context": "WealsoseteR"
+  },
+  {
+   "page": 66,
+   "mark": "l",
+   "context": "WealsoseteRl:= R"
+  },
+  {
+   "page": 66,
+   "mark": "n",
+   "context": "Ψd,l,D(bα) := Λ"
+  },
+  {
+   "page": 66,
+   "mark": "l",
+   "context": "→eR"
+  },
+  {
+   "page": 67,
+   "mark": "k",
+   "context": "•YTLd,n(q)onlyifx1isad-throotofunityandxk= x"
+  },
+  {
+   "page": 67,
+   "mark": "k",
+   "context": "1forall"
+  },
+  {
+   "page": 67,
+   "mark": "k",
+   "context": "eparametersx1, . . . , xd−1.Ifnowx1isad-throotofunityandxk=x"
+  }
+ ]
+}

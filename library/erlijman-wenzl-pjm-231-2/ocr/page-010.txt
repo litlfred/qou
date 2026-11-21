@@ -1,0 +1,50 @@
+368 JULIANA ERLIJMAN AND HANS WENZL
+
+2A. General definitions. We recall some basic definitions and set up notations.
+
+In the following, will always denote a strict monoidal complex tensor category
+with unit 1. This means that € is a category with a functor @:€ x € —> € called the
+tensor product which satisfies certain associativity conditions such as the Pentagon
+Axiom. There are similar axioms involving the morphisms ly : 1@ X — X and
+ry : X @1— X called the left and right unit constraints. Moreover, € being a
+complex category just means that the homomorphisms Hom(X, Y) form a complex
+vector space for any objects X and Y in ©.
+
+The complex tensor category @ is called a * tensor category if there exists a
+contragredient complex conjugate functor « : 6 — € which is compatible with ® .
+This means in detail that:
+
+— if f ¢Hom(X, Y), then f* € Hom(Y, X),
+
+— (af)* =a f* for alla € C and f € Hom(X, Y),
+
+— (fg)* = g* f* for f ¢ Hom(X, Y) and g e Hom(U, X),
+
+— (f ®g)* = f* @ g* for f e Hom(X, Y) and g e Hom(U, V),
+
+— 1) = 1x for the identity morphism | y for any object X in €.
+
+2B. Duality and Frobenius reciprocity. An object X ina strict monoidal category
+€ is called left rigid if there exists an object X € @ and a pair of morphisms
+iy:1—> X@X anddy:X@X—>1 such that the maps (1x @dx)(ix@1lx):X > X
+and (dx @ 1z)(1x @ixz): X > X are ly and ly. An object X is called right rigid
+if we can find an object X’ and morphisms i : 1 > X’@ X anddy: X@X’> 1
+satisfying analogous identities. It is easy to check that in a * category any left rigid
+object is also right rigid, with X’ = X, i, =d% and dy =i%. Hence we will in the
+following only talk about rigid objects. A category € is called rigid if every object
+of € is rigid.
+
+With this notion of duality, we also have the usual Frobenius reciprocity iso-
+morphism between Hom(V, W @ X) and Hom(V @ X, W) for any objects V, W
+in @. One checks easily that these isomorphisms are given by the maps
+
+at> (lw @dy)o(a@lx) and brs (b@ly)o (Uy @ix)
+
+for a € Hom(V, W @ X) and b € Hom(V @ Y, W). In particular, one obtains as a
+special case that dim Hom(1, X ® X) = dimEnd(X) = 1 if X isa simple object.
+Hence the morphisms iy and dy are unique up to scalar multiples for X simple. We
+shall say that the rigidity morphisms iy and dy are normalized if ixix = dxdyx.
+
+2C. Dimension, trace and conditional expectation. In the following we always
+assume the rigidity morphisms iy and dy to be normalized for any object X. If X is
+simple, this can always be assumed after some rescaling in view of the discussion

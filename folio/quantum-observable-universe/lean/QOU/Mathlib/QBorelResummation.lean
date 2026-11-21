@@ -28,7 +28,7 @@
 
   Archimedean (ℝ): uses `qIntReal`, `qFactReal` from `QHookBound.lean`.
 
-  -- Ref: [manuscript] q-borel-resummation, 1ppQ gap-closure
+  -- Ref: [leitner2026] q-borel-resummation, 1ppQ gap-closure
 -/
 
 import QOU.Archimedean.QHookBound

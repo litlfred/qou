@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-013",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Examples",
-  "pageStart": 16,
+  "title": "Structure Theorem (Informal)",
+  "pageStart": 17,
   "pageEnd": 17,
-  "text": "../sections/sec-013-examples.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
+  "text": "../sections/sec-013-structure-theorem-informal.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
   "provenance": "ingested"
 }

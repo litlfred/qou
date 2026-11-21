@@ -9,8 +9,9 @@ source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.893
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 1.0
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 A *twist* on a braided category $\mathcal{B}$ is a natural isomorphism $\theta_X \colon X \to X$ satisfying: $\theta_{X\otimes Y}=(\theta_X \otimes \theta_Y)\tau_{Y,X}\tau_{X,Y}$. If $\mathcal{B}$ is braided and autonomous, a twist $\theta$ on $\mathcal{B}$ is *self-dual* if $\leftidx{^\vee}{\!(}{}\theta_X)=\theta_{\leftidx{^\vee}{\!X}{}}$ (or, equivalently, $(\theta_X{)}^\vee=\theta_{{X}^\vee}$).
 

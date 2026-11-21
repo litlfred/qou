@@ -8,10 +8,10 @@
   "pages": 27,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,7 +21,7 @@
    "stamp_date": "26 May 2004"
   },
   "doi": null,
-  "title": "arXiv:math/0405508v1 [math.RT] 26 May 2004",
+  "title": "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B",
   "authors_raw": "Meinolf Geck and Sofia Lambropoulou",
   "title_lines": [
    "Markov traces and knot invariants related to",
@@ -45,7 +45,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0405508v1 [math.RT] 26 May 2004"
  },
  "toc": [
   {
@@ -310,14 +311,74 @@
  ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Document",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 157,
+   "n_words": 22,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introductory-remarks-on-knots-braids-and-trace",
+   "number": "1",
+   "title": "Introductory remarks on knots, braids and trace functions",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7713,
+   "n_words": 1438,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-computations-in-the-braid-group-of-type-b-n",
+   "number": "2",
+   "title": "Computations in the braid group of type $B_n$",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 9934,
+   "n_words": 2066,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-trace-functions-on-the-iwahori-hecke-algebra-o",
+   "number": "3",
+   "title": "Trace functions on the Iwahori-Hecke algebra of type $B$",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 6666,
+   "n_words": 1394,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-markov-traces-for-iwahori-hecke-algebras-of-ty",
+   "number": "4",
+   "title": "Markov traces for Iwahori-Hecke algebras of type $B$",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 20,
+   "n_chars": 15851,
+   "n_words": 3447,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-the-knot-invariants-related-to-the-hecke-algeb",
+   "number": "5",
+   "title": "The knot invariants related to the Hecke algebras of $B$-type",
+   "level": 1,
+   "page_start": 20,
    "page_end": 27,
-   "n_chars": 53319,
-   "n_words": 10844,
+   "n_chars": 12748,
+   "n_words": 2442,
    "label_start": null,
    "label_end": null
   }
@@ -336,13 +397,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 1,
-  "chars_total": 53319,
+  "sections": 6,
+  "chars_total": 53069,
+  "furniture_lines_stripped": 1,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Iwahori.tex",
    "tex_sections": 5,
-   "overlaid": 0,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -350,9 +412,49 @@
    },
    "sections": [
     {
-     "id": "sec-000-document",
-     "title": "Document",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introductory-remarks-on-knots-braids-and-trace",
+     "title": "Introductory remarks on knots, braids and trace functions",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-computations-in-the-braid-group-of-type-b-n",
+     "title": "Computations in the braid group of type $B_n$",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-trace-functions-on-the-iwahori-hecke-algebra-o",
+     "title": "Trace functions on the Iwahori-Hecke algebra of type $B$",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-markov-traces-for-iwahori-hecke-algebras-of-ty",
+     "title": "Markov traces for Iwahori-Hecke algebras of type $B$",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-the-knot-invariants-related-to-the-hecke-algeb",
+     "title": "The knot invariants related to the Hecke algebras of $B$-type",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.843,
+     "result": "overlaid",
+     "converter": "latex"
     }
    ]
   }

@@ -1,0 +1,51 @@
+4.5. Proof of the main theorem 85
+
+of a smooth non-hyperelliptic curve. As in lemma 4.11 the singular loci of
+the relative theta divisor Os and of the fibre ©, satisfy
+
+Sing(@s) C Sing(®s),
+
+so it follows from corollary 4.10 that the specialization sp(de, ) admits the
+simple perverse sheaf dg, as a subquotient. Then the same holds for the
+nearby cycles Y( 50;) as well, and this proves our claim since by the result
+for Jacobian varieties in [106], the Brill-Noether sheaf dg, corresponds to
+the g— 1%! fundamental representation of its Tannaka group which in the
+non-hyperelliptic case is G(de,) = Slzg—2(A) /Me-1- Oo
+
+s
+
+4.5. Proof of the main theorem
+
+Let X be a complex ppav of dimension g and © C X a symmetric theta
+divisor defining the polarization. Consider the Tannaka group G = G(de)
+and its representation
+
+V = @(d0) € Repe(G)
+
+which corresponds to the perverse intersection cohomology sheaf dg un-
+der the equivalence @ : (6g) —> Repc(G) in corollary 3.10. The Tannaka
+group does not have to be connected, but fortunately it is not very far from
+being connected either. Indeed we have the following
+
+LEMMA 4.13. If the theta divisor is irreducible, then V restricts to an
+irreducible representation V| 0 of the connected component GCG.
+
+Proof. The irreducibility of the theta divisor implies that dg is a simple
+perverse sheaf, and accordingly V is an irreducible representation of the
+Tannaka group G. But by the fundamental result of [109] the group G/G°
+is abelian, hence if the claim of our lemma were not true, then by lemma B.4
+in the appendix we would have an isomorphism V ® x = V for a suitable
+non-trivial character ¥ : G —> C*. The classification of perverse sheaves
+with Euler characteristic one in proposition 1.6 shows that 7 corresponds
+to a skyscraper sheaf 5, of rank one, supported in some closed point x 4 0
+of the ppav X. Hence the above isomorphism would on the geometric side
+correspond to an isomorphism
+
+6g * Oy = do,
+
+meaning that t,(®) = © for the translation tf; : X > X,y+> y+.x. But this is
+impossible for any point x 4 0, indeed the morphism
+
+X — Pic®(X), x [6x(@-1.(0))]
+
+is an isomorphism since the theta divisor gives a principal polarization. UO

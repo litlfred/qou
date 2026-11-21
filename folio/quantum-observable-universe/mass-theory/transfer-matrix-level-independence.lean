@@ -15,7 +15,7 @@ LaTeX label: `prop:transfer-matrix-level-independence`
 
 ## References
 
-- [manuscript] §4/transfer-matrix-level-independence
+- [leitner2026] §4/transfer-matrix-level-independence
 - [jones1987] https://doi.org/10.2307/1971403
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -60,7 +60,7 @@ structure HadronConfig where
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [manuscript] §4/transfer-matrix-level-independence
+-- Ref: [leitner2026] §4/transfer-matrix-level-independence
 /-! ## The composite polynomial is FREE DATA -- axiom deleted 2026-09-06
 
 **A SECOND axiom of the same name was found false, and fixed, in
@@ -141,7 +141,7 @@ theorem transfer_matrix_level_independence_of_derived
 
 /- **External axiom (manuscript §4/bundle-isotopy-equivalence):
     isotopy-equivalent configurations yield equal transfer matrices.** -/
--- Ref: [manuscript] §4/transfer-matrix-level-independence
+-- Ref: [leitner2026] §4/transfer-matrix-level-independence
 /- **REMOVED 2026-05-17**: the previous
     `transfer_matrix_path_independence_axiom` used `True` as the
     isotopy-equivalence hypothesis, making it equivalent to
@@ -177,7 +177,7 @@ namespace QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit
     evaluator `raise : ℕ → ℤ` (indexed by simple root `i`) applied to
     the canonical word that returns `0` on every index — the algebraic
     highest-weight signature. -/
--- Ref: [manuscript] conj:crystal-graph-realization
+-- Ref: [leitner2026] conj:crystal-graph-realization
 class CrystalGraphRealization : Prop where
   /-- The canonical normal form is a crystal highest-weight vector:
       every Kashiwara raising operator annihilates it. -/

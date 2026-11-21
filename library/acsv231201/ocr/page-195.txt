@@ -1,0 +1,36 @@
+7.1 Some illustrative examples 177
+
+V
+
+Figure 7.3 A visualization of the tubular neighborhood v.
+
+taking M — oo shows that the integral over T, is zero for n > 0, and thus
+
+_ ol fr ) dxdy _ 1 f 1 dxdy
+Ann = Qniy J, wY atl yet ~ Oni » L—x—y)( 43x) ett lyet
+
+The tubular neighborhood y is the union of circles with centers on C, and each
+
+point of C corresponds to a simple pole of F(x, y), where 1 — x- y = 0, soa
+generalization of the classical univariate residue theorem implies
+
+1 1 dx
+Onn = OFF Sono BS (= x-y)(1 + 3x) xtthynt!
+1 1 dx
+© ni Ixj=1/10 14 3x x71) — yl
+
+(7.6)
+
+As in the last example, the integrand of (7.6) becomes a saddle point integral
+near x = 1/2. The difference is that while we previously used a residue to
+localize near the saddle point, this time we took a more “convenient” residue
+and obtained a univariate integral away from the saddle point. Because we
+are dealing with an integrand having a linear denominator, we can move our
+domain of integration to pass through the critical point without much difficulty.
+We now describe three methods for doing this, listed in decreasing order of
+explicitness but increasing order of generality.
+
+Method One: Because the only singularity of the integrand in (7.6) between
+the circles |x| = 1/10 and |x| = 1/2 occurs at x = —1/3, the domain of in-
+tegration in (7.6) can be replaced by the union of the circle |x| = 1/2 and a
+sufficiently small clockwise circle around x = —1/3 (see Figure 7.4 left). The

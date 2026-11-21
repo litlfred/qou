@@ -28,8 +28,8 @@ Wedderburn T1 trustable trace.
 
 ## References
 
--- Ref: [manuscript] Frame–Robinson–Thrall hook-length formula (1954)
--- Ref: [manuscript] James–Kerber, The Representation Theory of the Symmetric Group (1981)
+-- Ref: [leitner2026] Frame–Robinson–Thrall hook-length formula (1954)
+-- Ref: [leitner2026] James–Kerber, The Representation Theory of the Symmetric Group (1981)
 -/
 
 namespace QOU.BraidsAndKnots
@@ -69,7 +69,7 @@ theorem hookProduct_21 : hookProduct [2, 1] = 3 := by decide
 
     This is the factor "2" in the proton substrate identity
     `m_p = dim V_{(2,1)} · m_μ · F_Bor(q₀) − 12 · m_e`. -/
--- Ref: [manuscript] Frame–Robinson–Thrall hook-length formula (1954)
+-- Ref: [leitner2026] Frame–Robinson–Thrall hook-length formula (1954)
 theorem dim_V_21_eq_two : classicalDim [2, 1] = 2 := by decide
 
 /-! ## Cross-checks: all partitions of 3 -/

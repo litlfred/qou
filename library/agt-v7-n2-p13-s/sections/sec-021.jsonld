@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/agt-v7-n2-p13-s/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Invariants of cusped manifolds and surgery formulas",
+  "pageStart": 52,
+  "pageEnd": 64,
+  "contains": [
+    "library/agt-v7-n2-p13-s/blocks/prose-sec-021",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-021-01",
+    "library/agt-v7-n2-p13-s/blocks/lem-sec-021-02",
+    "library/agt-v7-n2-p13-s/blocks/thm-sec-021-03",
+    "library/agt-v7-n2-p13-s/blocks/thm-sec-021-04",
+    "library/agt-v7-n2-p13-s/blocks/cor-sec-021-05",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-021-06",
+    "library/agt-v7-n2-p13-s/blocks/lem-sec-021-07",
+    "library/agt-v7-n2-p13-s/blocks/lem-sec-021-08",
+    "library/agt-v7-n2-p13-s/blocks/prop-sec-021-09",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-021-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "provenance": "ingested"
+}

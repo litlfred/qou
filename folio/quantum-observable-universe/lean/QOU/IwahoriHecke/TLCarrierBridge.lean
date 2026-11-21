@@ -118,7 +118,7 @@ ideals or radicals at all.
 Recorded here rather than in a bean because this is the file a reader reaches *after* the
 carrier stops being the obstacle, and the counting argument is what they will reach for next.
 
--- Ref: [manuscript] beans qou-jb7k, qou-0fmb, qou-0cyu.
+-- Ref: [leitner2026] beans qou-jb7k, qou-0fmb, qou-0cyu.
 -/
 
 namespace QOU.IwahoriHecke.TLCarrierBridge

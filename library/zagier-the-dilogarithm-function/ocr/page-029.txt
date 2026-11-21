@@ -1,0 +1,60 @@
+The Dilogarithm Function 31
+
+- _ (sti ;
+> Go" dm an u™ oe” = > (-1)°4 (3 ) ap ag a, ur ts ystt
+
+m,n>0 r,8,t>0
+
+with a, as in (10) or, comparing coefficients of like monomials, to the combi-
+natorial identity
+
+qt _ 1 — .
+2 Waa ~ Dae mre. 013)
+
+r+s=m,s+t=n
+
+(Amusingly, if we write (12) in the equivalent form (v)5!(—vu)3}(u)!
+(u)5(v)3! and expand each term (x)x! using (8) instead of (7), then the
+combinatorial identity to be proved turns out to exactly the same formula
+(13), but with q replaced by q~!.) Identity (13) can be proved either using
+generating functions (now commutative!) by multiplying both sides by z™y",
+
+summing over m, n > 0, and applying (8) and the easy identity 7 4 ae a=
+
+(zy) oo
+(2) o0
+a of the q-binomial coefficient [] = ot to show that the numbers
+
+Cnn = TT] ge e-9 satisfy Onin = "Cm +(1—9")Cmn—1
+
+, or else by using the standard recursion property petty = q {| +
+
+s
+
+and hence by induction Cy, = 1 for all m, n > 0.
+
+E. The p-adic dilogarithm and the dianalog. The next dilogarithm
+variant we mention is the p-adic dilogarithm, studied by R. Coleman and
+other authors. We fix a prime number p and define
+
+Lie) = So x (14)
+
+n>0, pin
+
+This function can be written as Lig(x) — p~*Lig(x?), so in the complex domain
+it is simply a combination of ordinary dilogarithms and of no independent
+interest, but because we have omitted the terms in (14) with p’s in the de-
+nominator, the power series converges p-adically for all p-adic numbers x with
+valuation ||, < 1. The function Li?) (2), and the corresponding higher p-adic
+polylogarithms Lif? (x), have good properties of analytic continuation and are
+related to p-adic L-functions [11]. Furthermore, the p-adic dilogarithm and p-
+adic polylogarithms have modified versions analogous to the Bloch-Wigner
+dilogarithm and Bloch-Wigner-Ramakrishnan polylogarithms which satisfy
+the same “clean” functional equations as their complex counterparts [41].
+
+Finally, instead of working over the p-adic numbers we can work over the
+finite field F, and consider the finite sum
+
+£,(2) = £P(e) = YO - (15)
+
+0<n<p

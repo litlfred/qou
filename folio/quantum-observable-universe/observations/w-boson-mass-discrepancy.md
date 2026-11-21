@@ -1,4 +1,4 @@
-We apply the local substrate proposition ([local substrate $q$](#prop:local-substrate-q)) to electroweak boson mass measurements. This yields a zero-free-parameter formula for the vertex substrate perturbation $\delta q$.
+Apply the local substrate proposition ([local substrate $q$](#prop:local-substrate-q)) to electroweak boson mass measurements. This yields a zero-free-parameter formula for the vertex substrate perturbation $\delta q$.
 
 ## The vertex $\delta q$ formula
 
@@ -74,7 +74,7 @@ See [Table 6](#tbl:w-boson-mass-discrepancy-table6-data).
 
 ## Correlation analysis
 
-We test four patterns against the forward prediction:
+Four patterns are tested against the forward prediction:
 
 **1. Collision type (W boson): strongest signal.** Match.
 **2. Decay channel (Higgs): suggestive but noisy.** Not statistically significant.

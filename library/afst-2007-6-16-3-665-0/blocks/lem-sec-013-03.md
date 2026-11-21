@@ -1,0 +1,1 @@
+— Let λ < 0. The subspace H(λ) :={⊕|q|−λ<|c|⩽1Ce(cz−λ)}[ℓ] of K[{e(c)}, ℓ]e(z−λ) has the following properties: H(λ) →coker(φ −1, K[{e(c)}, ℓ]e(z−λ)) is bijective and H(λ) is invariant under the actions of Γ, ∆and D.

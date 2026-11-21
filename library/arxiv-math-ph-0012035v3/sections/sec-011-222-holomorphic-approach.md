@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-011-222-holomorphic-approach
 section_title: "Holomorphic approach"
 section_number: 2.2.2
-pages: 21-27
+pages: 21-28
 source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.829
-latex_coverage_ratio: 0.924
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.931
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 #### Quantum-mechanics background
 

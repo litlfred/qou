@@ -1,0 +1,1 @@
+AssumeA has a noetherian connected ﬁltration and grA has a balanced dualizing complex. Let R be the rigid dualizing complex of A. If a bimodule M has a two-sided good ﬁltration then R HomA(M,R ) ∼= R HomA◦ (M,R ).

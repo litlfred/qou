@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations",
   "contains": [
+    "library/quaternioms/sections/sec-front-matter",
     "library/quaternioms/sections/sec-000",
     "library/quaternioms/sections/sec-001",
     "library/quaternioms/sections/sec-002",
@@ -50,10 +51,14 @@
     "library/quaternioms/sections/sec-036",
     "library/quaternioms/sections/sec-037",
     "library/quaternioms/sections/sec-038",
-    "library/quaternioms/sections/sec-039"
+    "library/quaternioms/sections/sec-039",
+    "library/quaternioms/sections/sec-040",
+    "library/quaternioms/sections/sec-041",
+    "library/quaternioms/sections/sec-042",
+    "library/quaternioms/sections/sec-043"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "quaternioms",
     "title_source": "pdf-info",

@@ -1,0 +1,150 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0707.3910v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "ad31f3cba16c4ea4ba12e789dae066ac6642f519613076b901067d0a7bf5b6de",
+  "file": "0707.3910v1.pdf"
+ },
+ "provenance": {
+  "title": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS",
+  "authors": "GEORGE BOROS AND VICTOR H. MOLL",
+  "arxiv": {
+   "id": "0707.3910",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "26 Jul 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "lemma": 4
+  },
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "both": 2,
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
+   "name": null,
+   "statement": "1. Let k, N be positive integers with k \u2264N. Then N\u2212k X j=0 \u00122N + 1 2j \u0013\u0012N \u2212j k \u0013 = \u00122N \u2212k k \u0013 4N\u2212k. (A.1)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-007-appendix-a-two-binomial-sums.md (p. 17-19) citing [19]",
+   "external_refs": [
+    "[19]"
+   ],
+   "proof_excerpt": "Multiply the left hand side of (A.1) by xk and sum over k to produce N X k=0 N\u2212k X j=0 \u00122N + 1 2j \u0013\u0012N \u2212j k \u0013 xk = N X j=0 \u00122N + 1 2j \u0013 N\u2212j X k=0 \u0012N \u2212j k \u0013 xk = N X j=0 \u00122N + 1 2j \u0013 (x + 1)N\u2212j = (1 + \u221ax + 1)2N+1 \u2212(1 \u2212\u221ax + 1)2N+1 2\u221ax + 1 = N X k=0 \u00122N \u2212k k \u0013 4N\u2212kxk. In order to jus",
+   "section_file": "sections/sec-007-appendix-a-two-binomial-sums.md",
+   "section_title": "Appendix A. Two binomial sums",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-007-appendix-a-two-binomial-sums.md (p. 17-19) citing [19]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-007-01",
+   "block_iri": "library/arxiv-0707.3910v1/blocks/lem-sec-007-01",
+   "claim_id": "arxiv-0707.3910v1#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
+   "name": null,
+   "statement": "2. Let N \u2208N. Then N X j=0 \u00122N + 1 2j \u0013 (1 + z2)N\u2212j = N X j=0 \u0012N + j 2j \u0013 4jz2(N\u2212j).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-007-appendix-a-two-binomial-sums.md (p. 17-19)",
+   "external_refs": [],
+   "proof_excerpt": "The coe\ufb03cient of z2k on the left hand side is N\u2212k X j=0 \u00122N + 1 2j \u0013\u0012N \u2212j k \u0013 , and the corresponding coe\ufb03cient on the right hand side is \u00002N\u2212k k \u0001 4N\u2212k. The result then follows from Lemma A.1.",
+   "section_file": "sections/sec-007-appendix-a-two-binomial-sums.md",
+   "section_title": "Appendix A. Two binomial sums",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-007-appendix-a-two-binomial-sums.md (p. 17-19)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-007-02",
+   "block_iri": "library/arxiv-0707.3910v1/blocks/lem-sec-007-02",
+   "claim_id": "arxiv-0707.3910v1#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
+   "name": null,
+   "statement": "3. Let k, N \u2208N with k \u2264N. Then k X j=0 \u00122N 2j \u0013\u0012N \u2212j N \u2212k \u0013 = 22k\u22121N k \u0012k + N \u22121 N \u2212k \u0013 .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-007-appendix-a-two-binomial-sums.md (p. 17-19) citing [16]",
+   "external_refs": [
+    "[16]"
+   ],
+   "proof_excerpt": "This lemma could be proven in the same style as Lemma A.1. Instead we use the WZ-method as explained in [16]. Indeed, let F(k; j) = k \u00002N 2j \u0001\u0000N\u2212j N\u2212k \u0001 N22k\u22121\u0000k+N\u22121 N\u2212k \u0001, and de\ufb01ne, with the package EKHAD, the function G(k; j) = F(k; j) \u00d7 j(2j \u22121) 2(N + k)(k \u2212j + 1). Then F(k; ",
+   "section_file": "sections/sec-007-appendix-a-two-binomial-sums.md",
+   "section_title": "Appendix A. Two binomial sums",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-007-appendix-a-two-binomial-sums.md (p. 17-19) citing [16]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-007-03",
+   "block_iri": "library/arxiv-0707.3910v1/blocks/lem-sec-007-03",
+   "claim_id": "arxiv-0707.3910v1#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
+   "name": null,
+   "statement": "4. Let p \u2208N, d1, d2, \u00b7 \u00b7 \u00b7 , dp be parameters, and de\ufb01ne dp+1 := 1. Then p X k=0 dp+1\u2212kz2k p\u2212k X j=0 \u00122p \u22122k 2j \u0013 (1 + z2)p\u2212k\u2212j = (A.3) \uf8eb \uf8ed p+1 X j=1 dj \uf8f6 \uf8f8z2p + p X i=1 22i\u22121z2(p\u2212i) \uf8eb \uf8ed p+1\u2212i X j=1 j + i \u22121 i \u0012j + 2i \u22122 j \u22121 \u0013 dj+i \uf8f6 \uf8f8. LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS 19",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-007-appendix-a-two-binomial-sums.md (p. 17-19)",
+   "external_refs": [],
+   "proof_excerpt": "For \ufb01xed 0 \u2264i \u2264p \u22121 the coe\ufb03cient of z2i on the right hand side of (A.3) is [RHS] (2i) = 22(p\u2212i)\u22121 p \u2212i p+1 X r=p\u2212i+1 (r \u22121) \u0012r + p \u2212i \u22122 r \u2212p + i \u22121 \u0013 dr, and for i = p we have [RHS] (2p) = 1 + Pp j=1 dj. Similarly, for the left hand side of (A.3), [LHS] (2i) = p+1 X r=p+1\u2212i dr ",
+   "section_file": "sections/sec-007-appendix-a-two-binomial-sums.md",
+   "section_title": "Appendix A. Two binomial sums",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-007-appendix-a-two-binomial-sums.md (p. 17-19)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-007-04",
+   "block_iri": "library/arxiv-0707.3910v1/blocks/lem-sec-007-04",
+   "claim_id": "arxiv-0707.3910v1#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

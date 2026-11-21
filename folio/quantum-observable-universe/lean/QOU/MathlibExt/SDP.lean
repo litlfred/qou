@@ -101,76 +101,6 @@ structure SDPDual (sdp : SDPPrimal n R ι) where
   /-- The dual variables, one per primal equality constraint. -/
   y : ι → R
 
-/-! ## §2  Strong duality (Boyd-Vandenberghe Theorem 5.5)
-
-The headline result: if the primal SDP `(P)` is Slater-strictly
-feasible, then strong duality holds:
-`inf{ ⟨T, Φ⟩ : Φ ⪰ 0, A_i Φ = b_i } = sup{ Σ b_i y_i : T - Σ y_i A_i ⪰ 0 }`.
-
-The full proof requires convex-cone separation in
-`Matrix.PosSemidef`, KKT conditions for matrix-cone constraints,
-and value-function continuity. We package the conclusion as a
-typeclass; concrete instances are the conjectural input. -/
-
-/-- **Strong duality witness** — abstract skeleton for any
-    `R : Type*` (with appropriate algebraic structure).  Per
-    Copilot review: the `dual_feas` and `obj_eq` fields are
-    intentionally `True` placeholders here because PSD-ness
-    cannot be expressed without `[Fintype ι]` and `R := ℝ`.
-
-    The **ℝ-specialised** form `RealStrongDualityPair` (in
-    `QOU.MathlibExt.SDPRealUniqueness`) carries the actual
-    PSD-ness + objective-equality content.  Downstream code
-    that needs the categorical content should consume that
-    structure, not this abstract skeleton. -/
-structure StrongDualityPair (sdp : SDPPrimal n R ι) where
-  /-- Primal-optimal point. -/
-  Φstar : Matrix (Fin n) (Fin n) R
-  /-- Dual-optimal point. -/
-  ystar : ι → R
-  /-- Primal feasibility witness. -/
-  primal_feas : sdp.IsFeasible Φstar
-  /-- Dual feasibility — `opaque marker` for genuinely-open
-      infrastructure: PSD-ness `(sdp.dualSlack ystar).PosSemidef`
-      requires `[Fintype ι]` + the `StarOrderedRing` of `R := ℝ`
-      and so cannot be stated over the generic `R` carrier here.
-      The content-bearing ℝ-specialised field is
-      `RealStrongDualityPair.dualSlack_psd` (in
-      `QOU.MathlibExt.SDPRealUniqueness`); consume that, not this
-      abstract skeleton. -/
-  dual_feas : True
-  /-- Strong-duality identity — `opaque marker` for genuinely-open
-      infrastructure: the content-bearing ℝ-specialised field is
-      `RealStrongDualityPair.obj_eq_dualObj`
-      (`objAt Φstar = dualObjAt ystar`, in
-      `QOU.MathlibExt.SDPRealUniqueness`). Kept `True` here so the
-      generic skeleton stays usable by the empty-constraint witness
-      `trivialStrongDualityPair`; consume the ℝ form for the real
-      objective-equality content. -/
-  obj_eq : True
-
-/-- **Strong-duality typeclass**: witnesses that an SDP satisfies
-    the primal-dual identity (Slater's condition + strong duality
-    for convex problems, Boyd-Vandenberghe §5.2.3 + §5.3). -/
--- Ref: [boyd-vandenberghe-2004] §5.2.3 + §5.3 (Slater's condition
---      implies strong duality for convex problems).
---      Note: Boyd doesn't number theorems; "Theorem 5.5" was a
---      misattribution — the result is stated in §5.2.3 and proved
---      in §5.3.2.
-class HasStrongDuality (sdp : SDPPrimal n R ι)
-    (_h : sdp.IsStrictlyFeasible) : Prop where
-  /-- A strong-duality pair exists. -/
-  pair : Nonempty (StrongDualityPair sdp)
-
-/-- **Strong duality** (per-instance form). -/
--- Ref: [boyd-vandenberghe-2004] §5.2.3 + §5.3
---      (Slater's condition implies strong duality for convex problems;
---      Boyd doesn't number theorems — "Theorem 5.5" was a misattribution.)
-theorem strong_duality (sdp : SDPPrimal n R ι)
-    (h : sdp.IsStrictlyFeasible) [hStrong : HasStrongDuality sdp h] :
-    Nonempty (StrongDualityPair sdp) :=
-  hStrong.pair
-
 /-! ## §2.1  Dual slack matrix
 
 The dual slack `S(y) := T - Σ y_i A_i` is the matrix whose
@@ -215,6 +145,80 @@ theorem SDPPrimal.dualSlack_trace_eq (sdp : SDPPrimal n R ι)
   rw [Matrix.smul_mul, Matrix.trace_smul]
   congr 1
   exact h_feas.2 i
+
+/-! ## §2  Strong duality (Boyd-Vandenberghe Theorem 5.5)
+
+The headline result: if the primal SDP `(P)` is Slater-strictly
+feasible, then strong duality holds:
+`inf{ ⟨T, Φ⟩ : Φ ⪰ 0, A_i Φ = b_i } = sup{ Σ b_i y_i : T - Σ y_i A_i ⪰ 0 }`.
+
+The full proof requires convex-cone separation in
+`Matrix.PosSemidef`, KKT conditions for matrix-cone constraints,
+and value-function continuity. We package the conclusion as a
+typeclass; concrete instances are the conjectural input. -/
+
+/-- **Strong-duality pair** at an optimum.
+
+    A primal point `Φstar`, a dual point `ystar`, and the two facts that
+    make them a primal-dual optimal pair: `Φstar` is primal-feasible,
+    the dual slack `S(ystar) = T - Σ ystar_i A_i` is PSD (dual
+    feasibility), and the two objectives agree (zero duality gap).
+
+    Until 2026-11-15 the last two fields were `True`, on the stated
+    ground that PSD-ness "cannot be expressed without `[Fintype ι]` and
+    `R := ℝ`".  Only the first half of that was right: `Matrix.PosSemidef`
+    is defined over any `CommRing R` with `PartialOrder` and `StarRing`,
+    which this file already assumes for `IsFeasible`.  `[Fintype ι]` is
+    the only extra input, and it is carried here.  `RealStrongDualityPair`
+    (`QOU.MathlibExt.SDPRealUniqueness`) states the same two fields at
+    `R := ℝ`; see `StrongDualityPair.toReal`. -/
+-- Ref: [boyd-vandenberghe-2004] §5.2.3, §5.3 (dual of an SDP, duality gap).
+structure StrongDualityPair (sdp : SDPPrimal n R ι) where
+  /-- Primal-optimal point. -/
+  Φstar : Matrix (Fin n) (Fin n) R
+  /-- Dual-optimal point. -/
+  ystar : ι → R
+  /-- Primal feasibility witness. -/
+  primal_feas : sdp.IsFeasible Φstar
+  /-- Dual feasibility: the dual slack `T - Σ ystar_i A_i` is PSD. -/
+  dual_feas : (sdp.dualSlack ystar).PosSemidef
+  /-- Zero duality gap: primal and dual objectives agree. -/
+  obj_eq : sdp.objAt Φstar = sdp.dualObjAt ystar
+
+/-- **Strong-duality typeclass**: witnesses that an SDP satisfies
+    the primal-dual identity (Slater's condition + strong duality
+    for convex problems, Boyd-Vandenberghe §5.2.3 + §5.3). -/
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 + §5.3 (Slater's condition
+--      implies strong duality for convex problems).
+--      Note: Boyd doesn't number theorems; "Theorem 5.5" was a
+--      misattribution — the result is stated in §5.2.3 and proved
+--      in §5.3.2.
+-- NOTE (2026-11-20): primal strict feasibility ALONE does not give a pair.
+--      `QOU.Mathlib.SDPStrongDuality.not_forall_hasStrongDuality` proves a
+--      1×1 counterexample (cost −1, no constraints: strictly feasible,
+--      unbounded below). For `R = ℝ` the class is proved under the extra
+--      hypotheses symmetric data and dual Slater:
+--      `QOU.Mathlib.SDPStrongDuality.hasStrongDuality_of_slater'`.
+class HasStrongDuality (sdp : SDPPrimal n R ι)
+    (_h : sdp.IsStrictlyFeasible) : Prop where
+  /-- A strong-duality pair exists. -/
+  pair : Nonempty (StrongDualityPair sdp)
+
+/-- **Strong duality** (per-instance form).
+
+    **Assumed, not derived here** — the body projects `HasStrongDuality.pair`
+    verbatim, so existence of a strong-duality pair is carried by the
+    context-class axiom (§3b-conditional, derivation pending) rather than
+    proved from `sdp.IsStrictlyFeasible` below. Boyd–Vandenberghe is cited for
+    the external convex-optimisation theorem motivating the class, not for a
+    proof performed in this file. -/
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 + §5.3
+--      (Slater's condition implies strong duality for convex problems;
+--      Boyd doesn't number theorems — "Theorem 5.5" was a misattribution.)
+theorem strong_duality (sdp : SDPPrimal n R ι)
+    (h : sdp.IsStrictlyFeasible) [hStrong : HasStrongDuality sdp h] :
+    Nonempty (StrongDualityPair sdp) :=
+  hStrong.pair
 
 /-! ## §3  Strict complementarity → primal-optimum uniqueness
 

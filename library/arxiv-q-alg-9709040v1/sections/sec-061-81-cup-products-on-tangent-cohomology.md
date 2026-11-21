@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-061-81-cup-products-on-tangent-cohomology
 section_title: "Cup-products on tangent cohomology"
 section_number: 8.1
@@ -8,6 +8,7 @@ pages: 36-37
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Diﬀerential graded Lie algebras Tpoly, Dpoly and (more generally) shifted by [1] Hochschild complexes of
 arbitrary associative algebras, all carry an additional structure. We do not know at the moment a deﬁnition,

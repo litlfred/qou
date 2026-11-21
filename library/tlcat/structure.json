@@ -1,0 +1,99 @@
+{
+  "source": {
+    "file": "TLCat.pdf",
+    "sha256": "a730322ec9fe281c20846b6311cb6221e06a402ca33071267ff508bc4514601a",
+    "bytes": 221803,
+    "mtime": "2026-11-18T18:23:09Z",
+    "mimetype_sniffed": "application/pdf",
+    "mimetype_source": "magic-bytes",
+    "pages": 6,
+    "text_source": "ocr",
+    "runContext": {
+      "sha256": "9c33f4b323f276770cb6f86d5d31c356f0425564d07208f4762ad318c7c17364"
+    }
+  },
+  "metadata": {
+    "title": "The Temperley-Lieb Category",
+    "docinfo": {},
+    "title_raw": null,
+    "title_source": "filename",
+    "title_verified": false,
+    "title_evidence": {
+      "corroborated_by": [],
+      "browser_print": false
+    },
+    "title_correction": {
+      "title": "The Temperley-Lieb Category",
+      "basis": "Handwritten title on page 1 (by Louis H. Kauffman); scanned document had no embedded title before OCR",
+      "extracted_title": null,
+      "corrected_on": "2026-11-18"
+    }
+  },
+  "_schema": "pdf-structure/v1",
+  "doc_id": "tlcat",
+  "toc_source": "none",
+  "granularity": "page",
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "n_chars": 834,
+      "n_words": 180
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "page_start": 2,
+      "page_end": 2,
+      "n_chars": 505,
+      "n_words": 104
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "page_start": 3,
+      "page_end": 3,
+      "n_chars": 60,
+      "n_words": 14
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "page_start": 4,
+      "page_end": 4,
+      "n_chars": 86,
+      "n_words": 21
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "page_start": 5,
+      "page_end": 5,
+      "n_chars": 28,
+      "n_words": 7
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "page_start": 6,
+      "page_end": 6,
+      "n_chars": 485,
+      "n_words": 84
+    }
+  ],
+  "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
+}

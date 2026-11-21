@@ -1,1 +1,1 @@
-CdimM = max{CdimL, CdimM/L}
+CdimM = max{CdimL, CdimM/L} for every L ⊂M .

@@ -28,7 +28,7 @@ variable {R : Type*} [CommRing R] {V : Type*} [AddCommGroup V] [Module R V]
 operator `B` satisfies the `SL₂` Cayley–Hamilton relation `B² = τ • B − 1`
 (`det B = 1`, `τ = tr B`), then its powers — and hence the prolonged
 periods `a n = φ(Bⁿ v₀)` — obey `a_{n+2} = τ · a_{n+1} − a_n`. -/
--- Ref: [manuscript] §mass-theory/sl2-prolongation-recurrence
+-- Ref: [leitner2026] §mass-theory/sl2-prolongation-recurrence
 theorem sl2_prolongation_recurrence (B : Module.End R V) (τ : R)
     (hCH : B ^ 2 = τ • B - 1) (n : ℕ) :
     B ^ (n + 2) = τ • B ^ (n + 1) - B ^ n := by

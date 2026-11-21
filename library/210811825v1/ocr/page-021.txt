@@ -1,0 +1,53 @@
+similar treatise to that of Osserman, covering the extension of isoperimetric inequalities
+to physical properties of surfaces. Whilst being a thorough survey of key research up
+to 1967, the fact that the spectral theory of surfaces is still a hot-topic means that this
+reference is good introduction to early work in the field butLisl far from complete. A
+slightly more up to date survey article is given by Ashbaugh [1]. This mainly pertains to
+the Laplacian on Euclidean domains, but as one sees in [15], many of these results can
+be generalized to different geometries, including hyperbolic.
+
+Of course, here the physical property we are interested in is elgenvalues; in particular,
+,. The most important result is the following, which gives a lower bound on the first
+
+positive eigenvalue of a domain 2 satisfying Definition 1.13.
+
+Théorem Faber-Krahn inequality) Let Q be an open domain in a hyperbolic
+
+surface S, and D be a disk in hyperbolic space (more information on such disks is given
+
+in Section 2.3.1). If Q satisfies the isoperimetric inequality, then
+A(Q) = A(D) => Ai(Q) > A (YD),
+where A, is the first Dirichlet eigenvalue.
+
+To prove the Faber-Krahn inequality, the levels sets of eigenfunctions on an open
+domain are radially symmetrized so that the first Dirichlet eigenvalue can be compared
+to that of a geodesic disk with equal area. This theorem can be stated more generally for
+n-dimensiobal
+
+found _in {15} While Theorem 1.14 is a powerful tool for analyzing domains that satisfy
+
+Definition 1.13, not every domain that we will study has this property. In particular,
+
+manifol equivalent isoperimetric property; details can be
+
+domains in surfaces that resemble annuli can have a boundary that is shorter than that
+of the disk with equal area.
+
+Another tool for creating lower bounds on A; is Cheeger’s inequality. For the cases
+investigated in this work, it is not as strong as the Faber-Krahn inequality, so we will
+not actually use it. However, we state it as a key result in the theory of isoperimetric
+
+problems.
+
+Definition 1.15 (Cheeger constant) Let M be a non-compact Riemann manifold of
+dimension n > 2, possibly with boundary, and possibly having compact closure. The
+
+Cheeger constant (M) is defined as the following infimum:
+
+py ae (OQ)
+(M) = inf Area()’
+
+where Q ranges over all open domains of S with compact closure and smooth boundary
+and 1(0Q) denotes the length of the boundary of Q.
+
+11

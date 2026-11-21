@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Smooth bivariate functions",
-  "pageStart": 280,
-  "pageEnd": 297,
+  "title": "Techniques for polynomial systems",
+  "pageStart": 240,
+  "pageEnd": 244,
   "contains": [
-    "library/acsv231201/blocks/prose-sec-042"
+    "library/acsv231201/blocks/prose-sec-042",
+    "library/acsv231201/blocks/def-sec-042-01",
+    "library/acsv231201/blocks/def-sec-042-02",
+    "library/acsv231201/blocks/ex-sec-042-03",
+    "library/acsv231201/blocks/ex-sec-042-04",
+    "library/acsv231201/blocks/ex-sec-042-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "provenance": "ingested"
 }

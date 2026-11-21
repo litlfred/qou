@@ -21,7 +21,7 @@ Two pieces:
 
 Archimedean throughout (`ℝ`): `Real.log`, `atTop` limits, Lebesgue `volume`.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md; bean qou-a0li
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md; bean qou-a0li
 -/
 
 namespace QOU.Archimedean

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1608.03227v4
-doc_title: "January 30, 2018"
+doc_title: "Knot homology and sheaves on the Hilbert scheme of points on the plane"
 section_id: sec-008-22-matrix-factorizations-three-lemmas
 section_title: "Matrix factorizations: three lemmas"
 section_number: 2.2
 pages: 8-11
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
-doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.995
-latex_coverage_ratio: 0.946
+latex_coverage_ratio: 0.958
+doc_brief: "Knot homology and sheaves on the Hilbert scheme of points on the plane — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on the"
 ---
 In this subsection we fix notations for matrix factorizations and remind some basic facts about them. In particular we prove three lemmas that we will use in the main body of the paper. These lemmas essentially contain all facts about matrix factorizations that are used here. For more thorough review of the theory of matrix factorization the reader could consult the beautiful original paper [@E] or later surveys in [@D].
 

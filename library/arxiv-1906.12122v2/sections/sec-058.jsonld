@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1906.12122v2/sections/sec-058",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "f Isospin violation",
+  "pageStart": 45,
+  "pageEnd": 46,
+  "contains": [
+    "library/arxiv-1906.12122v2/blocks/prose-sec-058"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1906.12122v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1906.12122v2/manifest.jsonld",
+  "provenance": "ingested"
+}

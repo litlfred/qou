@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1207.6711v1/blocks/prose-sec-033",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "From shape assignments to cocycles",
-  "pageStart": 39,
-  "pageEnd": 41,
-  "text": "../sections/sec-033-11-from-shape-assignments-to-cocycles.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.6711v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.6711v1",
+  "title": "Explicit formulas for the natural cocycles",
+  "pageStart": 31,
+  "pageEnd": 31,
+  "text": "../sections/sec-033-10-explicit-formulas-for-the-natural-cocycles.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
   "provenance": "ingested"
 }

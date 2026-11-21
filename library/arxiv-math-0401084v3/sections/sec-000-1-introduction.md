@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-2
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.989
+latex_prose_ratio: 0.877
+latex_coverage_ratio: 0.901
+doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine"
 ---
 Let $K$ be a knot and $J_N(K;t)$ be the colored Jones polynomial of $K$ in the three-sphere $S^3$ corresponding to the $N$-dimensional representation of $sl_2(\mathbb{C})$ (see for example [@Kirby/Melvin:INVEM91]). We normalize it so that $J_N(\text{unknot};t)=1$.
 

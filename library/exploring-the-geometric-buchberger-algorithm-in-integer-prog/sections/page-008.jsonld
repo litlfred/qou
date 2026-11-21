@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 8",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "contains": [
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/exploring-the-geometric-buchberger-algorithm-in-integer-prog/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/exploring-the-geometric-buchberger-algorithm-in-integer-prog/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,29 @@
+Oo
+
+Definition 1.5.3. Given a complex C*, and a system of basis {c’} of the C’’s,
+c= {d,...4,}, then Ac=aA..Ac, is a basis of det(C"), and then we denote
+by c= @ Ac)?" the induced basis of det (C*).
+
+Then the torsion of the based complex is defined by
+tor(C*, {c'}) = Eu(c) € det(H*(C*))
+Remark 1.5.4. The two definitions coincide in the following sense :
+
+tor(C*, {c'}, {h'}) = tor(C", {c"}) @; (Ak) 28-9
+
+1.5.3 Third definition : torsion of an exact complex (Cayley
+
+formula)
+
+If the complex is exact, one has the following alternative description : pick a system
+of basis {c’} of the C’’s that induces, for each i, a splitting C' = ker d; @ K', where
+K’ is a supplementary of kerd; in C’. Then each d; restricts to an isomorphism
+q
+
+_,  K’ + ker di,1, and we define
+Ki
+
+tor(C*, {c'}) = [Laer d\i) you
+
+Again, it’s defined up to sign since we haven’t fixed an order for the basis.
+
+44

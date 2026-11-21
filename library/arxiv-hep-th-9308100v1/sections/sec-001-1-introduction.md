@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9308100v1
-doc_title: "arXiv:hep-th/9308100v1 20 Aug 1993"
+doc_title: "Gedanken Experiments Involving Black Holes"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -8,6 +8,7 @@ pages: 2-4
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
 toc_source: inferred
+doc_brief: "Gedanken Experiments Involving Black Holes — Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles."
 ---
 One of the most interesting open questions in theoretical physics is whether the unitary
 evolution of states in quantum theory is violated by gravitational eﬀects [1]. The debate

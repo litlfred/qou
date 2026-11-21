@@ -3,13 +3,14 @@
  "doc_id": "arxiv-0810.1064v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b2d7514c5382ceaaa1824e32bc21518f43155a83644c9967642788a5cf0c79a9",
   "file": "0810.1064v1.pdf"
  },
  "provenance": {
-  "title": "Multiple polylogarithm values at roots of unity Jianqiang Zhao",
-  "authors": "Department of Mathematics, Eckerd College, St. Petersburg, FL 33711, USA",
+  "title": "Multiple polylogarithm values at roots of unity",
+  "authors": "Jianqiang Zhao",
   "arxiv": {
    "id": "0810.1064",
    "version": "1",
@@ -20,119 +21,45 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 8,
+  "candidates": 1,
   "by_kind": {
-   "proposition": 2,
-   "remark": 2,
-   "theorem": 3,
-   "conjecture": 1
+   "remark": 1
   },
-  "formalization_candidates": 5
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "elsewhere": 1
+  }
  },
  "candidates": [
   {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "1",
-   "name": null,
-   "statement": "([4, 5.25]) Let N be a positive integer. Let \u03d5 be the Euler\u2019s totient function and \u03bd(N )",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
    "kind": "remark",
    "source_kind": "remark",
    "number": "1",
    "name": null,
-   "statement": "For arbitrary N the set {0, \u221e} \u222a \u00b5 N possesses the dihedral symmetry. However, when we",
-   "section_file": "sections/sec-001-the-motivic-setup.md",
-   "section_title": "The motivic setup",
-   "pages": "2-9",
+   "statement": "For arbitrary N the set {0, \u221e} \u222a\u00b5N possesses the dihedral symmetry. However, when we apply this in N = 4 cases (weight 3 or 4) all the relations produced are already known to us by standard relations. This should be true in general (cf. [5, Thm. 4.1]).",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [5, Thm. 4.1] in sections/sec-002-standard-relations-in-mpvw4.md",
+   "external_refs": [
+    "[5, Thm. 4.1]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-002-standard-relations-in-mpvw4.md",
+   "section_title": "Standard relations in MPV(w,4)",
+   "pages": "3-4",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "Let p \u2265 5 be a prime. Then",
-   "section_file": "sections/sec-001-the-motivic-setup.md",
-   "section_title": "The motivic setup",
-   "pages": "2-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2",
-   "name": null,
-   "statement": "(a) Notice that when p \u2265 11 the vector space ker \u03b2p contains a subspace isomorphic to the",
-   "section_file": "sections/sec-001-the-motivic-setup.md",
-   "section_title": "The motivic setup",
-   "pages": "2-9",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "If p \u2265 5 is a prime then ker \u03b2p2 \u2044= 0 and d(2, p2) < p 2(p \u2212 1)2/4.",
-   "section_file": "sections/sec-001-the-motivic-setup.md",
-   "section_title": "The motivic setup",
-   "pages": "2-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "claim",
-   "number": null,
-   "name": null,
-   "statement": "Let h = (p \u2212 3)/2. Then one has",
-   "section_file": "sections/sec-001-the-motivic-setup.md",
-   "section_title": "The motivic setup",
-   "pages": "2-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "Suppose N is non-standard. Then the non-standard relations exist in MPV (3, N) for",
-   "section_file": "sections/sec-001-the-motivic-setup.md",
-   "section_title": "The motivic setup",
-   "pages": "2-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "1",
-   "name": null,
-   "statement": "If N is a standard level then the standard relations always provi de the sharp bounds of",
-   "section_file": "sections/sec-001-the-motivic-setup.md",
-   "section_title": "The motivic setup",
-   "pages": "2-9",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "rem-sec-002-01",
+   "block_iri": "library/arxiv-0810.1064v1/blocks/rem-sec-002-01",
+   "claim_id": "arxiv-0810.1064v1#remark:1"
   }
  ]
 }

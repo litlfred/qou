@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-017",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of Theorem",
-  "pageStart": 16,
-  "pageEnd": 19,
-  "text": "../sections/sec-017-62-proof-of-theorem.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
+  "title": "Bridge from the polynomial torsion to the non--abelian Reidemeister torsion",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-017-61-bridge-from-the-polynomial-torsion-to-the-non.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0906.1500v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0906.1500v4/manifest.jsonld",
   "provenance": "ingested"
 }

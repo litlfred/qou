@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The multi-dimensional Wiener algebra",
+  "pageStart": 60,
+  "pageEnd": 69,
+  "contains": [
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-021",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-021-01",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-021-02",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-021-03",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/cor-sec-021-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "provenance": "ingested"
+}

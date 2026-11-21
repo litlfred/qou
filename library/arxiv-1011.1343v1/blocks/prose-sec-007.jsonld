@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1011.1343v1/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Flash forward: Combining nuclear EFT with lattice simulations",
-  "pageStart": 13,
-  "pageEnd": 19,
-  "text": "../sections/sec-007-5-flash-forward-combining-nuclear-eft-with-latti.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.1343v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.1343v1",
+  "title": "Back to square one - meson-exchange currents",
+  "pageStart": 11,
+  "pageEnd": 13,
+  "text": "../sections/sec-007-44-back-to-square-one---meson-exchange-currents.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.1343v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.1343v1/manifest.jsonld",
   "provenance": "ingested"
 }

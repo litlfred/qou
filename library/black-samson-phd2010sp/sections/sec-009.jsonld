@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/black-samson-phd2010sp/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL",
+  "pageStart": 42,
+  "pageEnd": 45,
+  "contains": [
+    "library/black-samson-phd2010sp/blocks/prose-sec-009",
+    "library/black-samson-phd2010sp/blocks/thm-sec-009-01",
+    "library/black-samson-phd2010sp/blocks/lem-sec-009-02",
+    "library/black-samson-phd2010sp/blocks/thm-sec-009-03",
+    "library/black-samson-phd2010sp/blocks/figure-img-p044-1",
+    "library/black-samson-phd2010sp/blocks/figure-img-p045-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "provenance": "ingested"
+}

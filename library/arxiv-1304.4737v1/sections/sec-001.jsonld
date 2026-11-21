@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1304.4737v1/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "II The model and solitons in 1+1 and 2+1 dimensions",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-1304.4737v1/blocks/prose-sec-001",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-1",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-4",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-7",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-10",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-11",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-12",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-13",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-14",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-15",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-16",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-17",
+    "library/arxiv-1304.4737v1/blocks/figure-img-p005-18"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.4737v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.4737v1/manifest.jsonld",
+  "provenance": "ingested"
+}

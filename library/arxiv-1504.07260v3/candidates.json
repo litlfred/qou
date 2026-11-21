@@ -3,12 +3,13 @@
  "doc_id": "arxiv-1504.07260v3",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "707cb014400a3f051998942233f468bfff970cb8c213a8b1eaf35753fe127330",
   "file": "1504.07260v3.pdf"
  },
  "provenance": {
-  "title": "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden",
+  "title": "Fricke S-duality in CHL models",
   "authors": null,
   "arxiv": {
    "id": "1504.07260",
@@ -20,9 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Lattice of electric-magnetic charges In this section, we determine the lattice of electric-magnetic charges in a CHL model with \u03bb > 1 under the assumption that string-string duality and heterotic S-duality (or, equiva- lently, type IIA T-duality along S1 \u00d7 \u02dcS1) hold.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-029-a4-lattice-of-electric-magnetic-charges.md (p. 44-47)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-029-a4-lattice-of-electric-magnetic-charges.md",
+   "section_title": "A.4 Lattice of electric-magnetic charges",
+   "pages": "44-47",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-029-a4-lattice-of-electric-magnetic-charges.md (p. 44-47)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-029-01",
+   "block_iri": "library/arxiv-1504.07260v3/blocks/prop-sec-029-01",
+   "claim_id": "arxiv-1504.07260v3#prop-sec-029-01"
+  }
+ ]
 }

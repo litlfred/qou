@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9707006v1
-doc_title: "arXiv:q-alg/9707006v1 4 Jul 1997"
+doc_title: "Drinfeld twist for quantum su(2) in the adjoint representation"
 section_id: sec-010-51-the-universal-r-matrix-in-the-adjoint-represe
 section_title: "The universal R-matrix in the adjoint representation"
 section_number: 5.1
@@ -8,7 +8,9 @@ pages: 9-9
 source_pdf: 9707006v1.pdf
 source_sha256: b9513be9294f56d9
 toc_source: inferred
+doc_brief: "Drinfeld twist for quantum su(2) in the adjoint representation — We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2)."
 ---
+The universal R-matrix in the adjoint representation
 The block diagonal form of the matrices involved simpliﬁes signiﬁcantly the computation of R ≡ρ⊗2
 r (R). Applying
 ρ⊗2
@@ -122,4 +124,3 @@ factors, in the order they appear above, to the powers 5, 3 and 1. Had we includ
 a 16-dimensional matrix for ˆR, the minimal polynomial would turn out to be quintic, the extra two factors being
 ( ˆR −I)( ˆR + I), coming from the c-sector in which ˆR is a permutation matrix. The above two factors would be
 raised to the power 3 and 4 respectively in the characteristic polynomial of ˆR.
-5.2

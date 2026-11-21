@@ -1,0 +1,1 @@
+If 6 | k, then Xˆγm,k(q, Λ) = Xˆγm+ k 6 ,−k(q, Λ). The links Lm,k all contain either two or three circles, motivating us to consider how ∆L(−1) would behave if L had braid index at most 3 but was forced to be a knot. Surpris- ingly, we prove the following third main result in Section 3.2.

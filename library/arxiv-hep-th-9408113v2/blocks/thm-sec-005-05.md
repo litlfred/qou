@@ -1,0 +1,1 @@
+i) ebj(0) = − "j −1 2# , ii) ebj(1) = 2j  2j + 2  −j(j −1) , iii) ebj(2) = 2 j  3j + 3  − "j −1 2# . On the other hand (r ≡1(mod 2)), iv) b1(r) = 0, v) b2(r) = 0, if r ≥3, vi) b3(r) = 1, if r ≥7.

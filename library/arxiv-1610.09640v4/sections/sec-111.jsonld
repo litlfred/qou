@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-111",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Symmetry of Derived Torsion",
+  "pageStart": 371,
+  "pageEnd": 377,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-111",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-111-01",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-111-02",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-111-03",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-111-04",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-111-05",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-111-06",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-111-07",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-111-08",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-111-09",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-111-10",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-111-11",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-111-12",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-111-13",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-111-14",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-111-15"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

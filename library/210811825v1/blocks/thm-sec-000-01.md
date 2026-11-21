@@ -1,1 +1,1 @@
-LetS be a compact Riemann surface without boundary,
+Let S be a compact Riemann surface without boundary, with Gaussian curvature K. Then Z S K dA = 2πχ(S), where dA is the area measure of S, and χ(S) is its Euler characteristic. χ(S) is another topological invariant, and can be calculated from the genus g using the formula χ(S) = 2 −2g.

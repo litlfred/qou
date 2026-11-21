@@ -32,9 +32,9 @@
   is assumed anywhere; the constant is DERIVED from `Λ(0) = 0` plus the
   boundedness of `logSinc`.
 
-  -- Ref: [manuscript] QOU/Knot/LogSincNearZero.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevReflectionTrapezoid.lean
-  -- Ref: [manuscript] QOU/Archimedean/BlochWignerLobachevsky.lean
+  -- Ref: [leitner2026] QOU/Knot/LogSincNearZero.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevReflectionTrapezoid.lean
+  -- Ref: [leitner2026] QOU/Archimedean/BlochWignerLobachevsky.lean
 -/
 import QOU.Knot.LogSincNearZero
 import QOU.Knot.KashaevReflectionTrapezoid

@@ -33,7 +33,7 @@ combinatorial object (`dc₃/dq ≈ 4.7×10⁶`, smooth deformation excluded). T
 observable is beaned separately; nothing here is wired or fitted. §7c: generic
 `{R : Type*} [CommRing R]`, no `ℝ`. Sorry-free.
 
--- Ref: [manuscript] docs/scope/2026-07-11-qbeta-c3-barodd-tetraplectic-combinatorial-reduction.md
+-- Ref: [leitner2026] docs/scope/2026-07-11-qbeta-c3-barodd-tetraplectic-combinatorial-reduction.md
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic.Ring

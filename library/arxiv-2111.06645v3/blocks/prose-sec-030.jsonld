@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-030",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Arithmetic aspects",
-  "pageStart": 63,
-  "pageEnd": 63,
-  "text": "../sections/sec-030-9-arithmetic-aspects.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
+  "title": "The J-matrix for the 5_2 knot",
+  "pageStart": 54,
+  "pageEnd": 55,
+  "text": "../sections/sec-030-72-the-j-matrix-for-the-5-2-knot.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
   "provenance": "ingested"
 }

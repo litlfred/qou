@@ -1,0 +1,3910 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2105.09342v1",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 36,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: 2D Crystal growth and growth of rotated Young diagrams. A crystal unit is compared with a single box in the Young diagram. Single crystals are falling from sky under gravity and being deployed at possible stable positions."
+      ],
+      "labels": [
+        {
+          "text": "45o",
+          "bbox": [
+            329.34,
+            213.96,
+            341.28,
+            224.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.0
+          ]
+        },
+        {
+          "text": "Figure 1: 2D Crystal growth and growth of rotated Young diagrams. A crystal unit is compared with a",
+          "bbox": [
+            64.51,
+            251.24,
+            530.83,
+            261.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "single box in the Young diagram. Single crystals are falling from sky under gravity and being deployed at",
+          "bbox": [
+            64.51,
+            263.19,
+            530.86,
+            273.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "possible stable positions.",
+          "bbox": [
+            64.51,
+            275.15,
+            172.17,
+            285.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "shape is a unique solution of the automodel equation in far future with a Young diagram",
+          "bbox": [
+            64.51,
+            320.36,
+            530.84,
+            332.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "with no boxes as an initial condition in the far past.",
+          "bbox": [
+            64.51,
+            334.8,
+            332.03,
+            346.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The partition function of UMM admits a description in terms of representations of uni-",
+          "bbox": [
+            82.07,
+            349.25,
+            530.8,
+            361.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tary group. In the large N limit, there exists a correspondence between dominant eigenvalue",
+          "bbox": [
+            64.51,
+            363.7,
+            530.78,
+            375.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "distributions and Young diagrams associated with unitary representations. Such a relation",
+          "bbox": [
+            64.51,
+            378.14,
+            530.84,
+            390.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "allows a droplet description for diﬀerent large N phases of the matrix model under consid-",
+          "bbox": [
+            64.51,
+            392.59,
+            530.78,
+            404.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "eration. This was ﬁrst observed in [6] in the context of GWW model, and later in [7, 8] for",
+          "bbox": [
+            64.51,
+            407.03,
+            530.81,
+            418.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a generic class of UMM. From the shapes of these 2D droplets, one can ﬁnd the dominant",
+          "bbox": [
+            64.51,
+            421.48,
+            530.8,
+            433.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Young diagrams corresponding to the large N phases of UMM. Thus, the evolution or growth",
+          "bbox": [
+            64.51,
+            435.93,
+            530.79,
+            447.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of Young diagrams follows from the evolution of large N phases of a UMM. It was shown in",
+          "bbox": [
+            64.51,
+            450.37,
+            530.77,
+            462.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[1] that the Plancherel growth of Young diagrams is captured by GWW model. Evolution",
+          "bbox": [
+            64.51,
+            464.82,
+            530.82,
+            476.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of no-gap phase of GWW model with respect to a parameter of the model exactly matches",
+          "bbox": [
+            64.51,
+            479.26,
+            530.81,
+            491.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "with the evolution of Young diagrams in the automodel class of Kerov. The limit shape was",
+          "bbox": [
+            64.51,
+            493.71,
+            530.81,
+            505.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "identiﬁed with GWW transition point. A Hilbert space description of Plancherel growth",
+          "bbox": [
+            64.51,
+            508.15,
+            530.79,
+            520.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "was also discussed in [1]. In this paper, we extend the analysis to q analog of Plancherel",
+          "bbox": [
+            64.51,
+            522.6,
+            530.78,
+            534.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "growth.",
+          "bbox": [
+            64.51,
+            537.05,
+            103.22,
+            549.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "There are diﬀerent ways to consider q-deformation of the Plancherel growth. The one that",
+          "bbox": [
+            82.07,
+            551.49,
+            530.8,
+            563.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "follows from the deformation of the Markov-Krein correspondence was considered by Strahov",
+          "bbox": [
+            64.51,
+            565.94,
+            530.81,
+            577.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[9]. In this construction, the probability associated to a Young diagram is proportional to",
+          "bbox": [
+            64.51,
+            580.38,
+            530.87,
+            592.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the product of ordinary dimension and q dimension of the diagram. Strahov [9] showed that",
+          "bbox": [
+            64.51,
+            594.83,
+            530.81,
+            606.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the deformed inviscid Burger’s equation (generalisation of automodel equation) has a ﬁxed",
+          "bbox": [
+            64.51,
+            609.28,
+            530.84,
+            621.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "point and the ﬁxed point is the q-deformed limit shape of Young diagrams. However, the",
+          "bbox": [
+            64.51,
+            623.72,
+            530.79,
+            635.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "explicit form of the limit shape was not given. There exists another class of q-deformed",
+          "bbox": [
+            64.51,
+            638.17,
+            530.76,
+            650.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Plancherel probability which appears in diﬀerent contexts in topological string theory. In",
+          "bbox": [
+            64.51,
+            652.61,
+            530.82,
+            664.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "this case, the q-probability of a Young diagram is proportional to the square of q-dimension",
+          "bbox": [
+            64.51,
+            667.06,
+            530.76,
+            679.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the diagram. One can write a partition function for such a growth process. The partition",
+          "bbox": [
+            64.51,
+            681.5,
+            530.84,
+            693.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "function is similar to that of topological string theory partition function on certain Calabi-",
+          "bbox": [
+            64.51,
+            695.95,
+            530.86,
+            707.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Yau threefolds [10–13] and Gromov-Witten invariants of P1 [2, 14]. The q-Plancherel measure",
+          "bbox": [
+            64.51,
+            706.06,
+            530.75,
+            722.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            294.71,
+            739.37,
+            300.57,
+            751.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 32,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 2: A typical Young diagrams written in the Russian convention."
+      ],
+      "labels": [
+        {
+          "text": "The square bracket in the above expression represents the q-analogue of a positive integer",
+          "bbox": [
+            64.51,
+            113.72,
+            530.79,
+            125.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "deﬁned as",
+          "bbox": [
+            64.51,
+            128.16,
+            115.3,
+            140.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[x] = 1 −qx",
+          "bbox": [
+            267.51,
+            140.79,
+            327.26,
+            154.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.9)",
+          "bbox": [
+            506.7,
+            142.61,
+            530.78,
+            154.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            64.51,
+            163.53,
+            83.38,
+            175.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[x]! = [x][x −1] · · · [2][1].",
+          "bbox": [
+            235.22,
+            177.82,
+            360.05,
+            189.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(2.10)",
+          "bbox": [
+            500.85,
+            177.98,
+            530.78,
+            189.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The probability measure associated to a Young diagram λk growing according to (2.6) is",
+          "bbox": [
+            64.51,
+            198.9,
+            530.81,
+            212.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "given by",
+          "bbox": [
+            64.51,
+            213.35,
+            107.44,
+            225.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "qb(λk)",
+          "bbox": [
+            345.81,
+            225.76,
+            371.15,
+            238.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Pq(λk) = (1 −q)k dim λk",
+          "bbox": [
+            201.67,
+            230.13,
+            326.39,
+            247.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u∈λk[h(u)].",
+          "bbox": [
+            339.59,
+            235.07,
+            393.6,
+            258.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.11)",
+          "bbox": [
+            500.85,
+            235.07,
+            530.78,
+            247.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Q",
+          "bbox": [
+            328.3,
+            242.9,
+            339.58,
+            254.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[x]",
+          "bbox": [
+            473.14,
+            264.73,
+            482.61,
+            272.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "This is the q-deformed Plancherel measure considered in [9, 18]. Using limq→1",
+          "bbox": [
+            64.51,
+            267.31,
+            466.75,
+            280.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1−q = x, we",
+          "bbox": [
+            470.44,
+            267.31,
+            530.76,
+            283.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "see that",
+          "bbox": [
+            64.51,
+            281.76,
+            104.9,
+            293.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "q→1 Pq(λk) = P(λk).",
+          "bbox": [
+            247.61,
+            296.05,
+            349.66,
+            315.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            247.87,
+            296.2,
+            264.13,
+            308.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(2.12)",
+          "bbox": [
+            500.85,
+            296.2,
+            530.78,
+            308.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Thus, in the limit q →1, the q-deformed measure reduces to the Plancherel measure.",
+          "bbox": [
+            64.51,
+            321.74,
+            500.89,
+            333.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Strahov in [9] gave a diﬀerential model for the q-deformed Plancherel growth process",
+          "bbox": [
+            82.07,
+            336.34,
+            530.77,
+            348.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(2.6). He introduced a function vk(u) which describes the proﬁle of a rotated Young diagram",
+          "bbox": [
+            64.51,
+            350.79,
+            530.81,
+            363.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "as shown in ﬁg.(2). As the number of boxes becomes very large, Strahov deﬁned a rescaled",
+          "bbox": [
+            64.51,
+            365.23,
+            530.81,
+            377.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            372.94,
+            419.29,
+            378.42,
+            428.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            8.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            221.47,
+            435.99,
+            227.6,
+            444.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            8.96
+          ]
+        },
+        {
+          "text": "Figure 2: A typical Young diagrams written in the Russian convention.",
+          "bbox": [
+            142.12,
+            525.33,
+            453.21,
+            535.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "function",
+          "bbox": [
+            64.51,
+            564.06,
+            106.46,
+            576.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            316.93,
+            565.86,
+            326.89,
+            577.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ˆvk(u) = v(u",
+          "bbox": [
+            256.14,
+            576.2,
+            316.93,
+            597.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "k)",
+          "bbox": [
+            326.9,
+            576.2,
+            337.94,
+            588.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            310.56,
+            583.78,
+            320.52,
+            595.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(2.13)",
+          "bbox": [
+            500.85,
+            584.29,
+            530.78,
+            596.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            320.52,
+            594.12,
+            326.61,
+            606.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "such that the area under the curve is ﬁnite.",
+          "bbox": [
+            64.51,
+            611.18,
+            299.14,
+            623.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The boundary of Young diagram becomes",
+          "bbox": [
+            308.76,
+            611.18,
+            530.81,
+            623.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "smooth under scaling. He also introduced a q-deformed R function associated with ˆvk, given",
+          "bbox": [
+            64.51,
+            625.63,
+            530.77,
+            638.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "by",
+          "bbox": [
+            64.51,
+            640.08,
+            76.87,
+            652.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            295.65,
+            652.47,
+            301.97,
+            664.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            403.11,
+            652.47,
+            409.42,
+            664.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Rˆv(x; q) = 1 −q",
+          "bbox": [
+            185.85,
+            652.49,
+            271.52,
+            673.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dσ(u)",
+          "bbox": [
+            366.03,
+            652.64,
+            394.96,
+            664.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            343.93,
+            653.06,
+            350.58,
+            665.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−ln q−1",
+          "bbox": [
+            301.96,
+            658.81,
+            341.44,
+            672.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1 −qxexp",
+          "bbox": [
+            243.23,
+            660.73,
+            293.66,
+            680.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.14)",
+          "bbox": [
+            500.85,
+            660.73,
+            530.78,
+            672.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1 −qx−u",
+          "bbox": [
+            359.08,
+            668.49,
+            401.42,
+            680.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "where σ(u) = 1",
+          "bbox": [
+            64.51,
+            687.81,
+            146.49,
+            701.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2(ˆv(u) −|u|) is deﬁned as the charge of a diagram [5]. It was shown that",
+          "bbox": [
+            142.26,
+            689.25,
+            530.81,
+            704.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the dynamical equation governing the growth of Young diagrams equipped with q-deformed",
+          "bbox": [
+            64.51,
+            703.85,
+            530.76,
+            715.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            294.71,
+            739.37,
+            300.57,
+            751.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 38,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: The deformed contour of integration for (3.21) has a logarithmic branch cut extending from wa to −∞. There are ﬁrst order poles at the points s = w, 1"
+      ],
+      "labels": [
+        {
+          "text": "Figure 3: The deformed contour of integration for (3.21) has a logarithmic branch cut extending from wa",
+          "bbox": [
+            64.51,
+            368.24,
+            530.27,
+            379.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to −∞. There are ﬁrst order poles at the points s = w, 1",
+          "bbox": [
+            64.51,
+            378.61,
+            313.51,
+            390.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            309.16,
+            385.97,
+            313.89,
+            392.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "From the asymptotic behaviour of the resolvent, one can ﬁnd that the support of ˜u(w) is",
+          "bbox": [
+            64.51,
+            426.04,
+            530.76,
+            438.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "given by",
+          "bbox": [
+            64.51,
+            440.49,
+            107.44,
+            452.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "wa = 1 −e−λ(1 + λξ)2",
+          "bbox": [
+            173.46,
+            452.36,
+            287.81,
+            475.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "wb = 1 −e−λ(1 −λξ)2",
+          "bbox": [
+            306.46,
+            452.36,
+            420.12,
+            475.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            289.5,
+            461.77,
+            292.76,
+            473.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.23)",
+          "bbox": [
+            500.85,
+            461.77,
+            530.78,
+            473.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            242.62,
+            469.97,
+            249.45,
+            481.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            374.84,
+            469.97,
+            381.66,
+            481.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For w inside the support, the discontinuity of H(w) gives",
+          "bbox": [
+            64.51,
+            485.76,
+            358.27,
+            497.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "rwb −w",
+          "bbox": [
+            333.99,
+            509.75,
+            383.05,
+            524.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            271.58,
+            510.59,
+            277.43,
+            522.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π(1 −λw) tan−1",
+          "bbox": [
+            248.42,
+            516.75,
+            331.5,
+            538.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "˜u(w) =",
+          "bbox": [
+            207.03,
+            518.68,
+            243.92,
+            530.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            385.0,
+            518.68,
+            388.25,
+            530.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.24)",
+          "bbox": [
+            500.85,
+            518.68,
+            530.78,
+            530.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "w −wa",
+          "bbox": [
+            347.14,
+            526.72,
+            383.3,
+            539.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "In terms of our original variables h(x),",
+          "bbox": [
+            64.51,
+            550.28,
+            262.4,
+            562.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(1 −λw) ˜u(w)",
+          "bbox": [
+            248.06,
+            575.02,
+            319.58,
+            587.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "˜u(h)",
+          "bbox": [
+            196.51,
+            575.17,
+            219.02,
+            587.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            228.98,
+            575.17,
+            238.09,
+            587.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π cos−1 h1 + λ2ξ2 −e−λ(h−1)",
+          "bbox": [
+            249.24,
+            587.97,
+            391.42,
+            620.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            249.85,
+            592.46,
+            255.71,
+            604.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            393.12,
+            595.87,
+            398.76,
+            607.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            228.98,
+            600.55,
+            238.09,
+            612.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.25)",
+          "bbox": [
+            500.85,
+            600.55,
+            530.78,
+            612.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2λξ",
+          "bbox": [
+            334.44,
+            608.75,
+            352.23,
+            620.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "with support between a and b given by",
+          "bbox": [
+            64.51,
+            630.82,
+            264.3,
+            642.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a = 1 −2",
+          "bbox": [
+            158.17,
+            652.29,
+            208.07,
+            672.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b = 1 −2",
+          "bbox": [
+            320.26,
+            652.29,
+            368.99,
+            672.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ log (1 −λξ) .",
+          "bbox": [
+            362.64,
+            660.23,
+            437.1,
+            680.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ log (1 + λξ) ,",
+          "bbox": [
+            201.73,
+            660.38,
+            275.99,
+            680.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            289.69,
+            660.38,
+            308.56,
+            672.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.26)",
+          "bbox": [
+            500.85,
+            660.38,
+            530.78,
+            672.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Since a ≥0, the solution (3.25) is valid for",
+          "bbox": [
+            64.51,
+            688.84,
+            282.52,
+            700.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ξ ≤1",
+          "bbox": [
+            256.14,
+            711.13,
+            285.31,
+            731.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ(eλ/2 −1).",
+          "bbox": [
+            278.96,
+            714.13,
+            339.14,
+            739.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.27)",
+          "bbox": [
+            500.85,
+            719.22,
+            530.78,
+            731.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            291.79,
+            739.37,
+            303.5,
+            751.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 49,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: The limit shape for a q-deformed (λ = 0.8) Plancherel growth process (green curve) and its q →1 (λ →0) limit (orange curve) for comparison."
+      ],
+      "labels": [
+        {
+          "text": "3.2. q-deformed automodel class",
+          "bbox": [
+            64.51,
+            113.72,
+            229.29,
+            125.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ(eλ/2 −1), the density (3.25) corresponds to q-automodel diagrams which",
+          "bbox": [
+            148.04,
+            126.66,
+            530.79,
+            146.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "For 0 < ξ ≤1",
+          "bbox": [
+            82.07,
+            129.56,
+            152.63,
+            143.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "satisfy the following dynamical equation",
+          "bbox": [
+            64.51,
+            145.6,
+            270.83,
+            157.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(1 −λ2ξ2)eλ(h−1) −1",
+          "bbox": [
+            239.41,
+            166.7,
+            344.59,
+            183.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            234.43,
+            170.1,
+            239.42,
+            182.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0003",
+          "bbox": [
+            344.58,
+            170.1,
+            349.57,
+            182.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∂ξ˜u(h, ξ, λ) +",
+          "bbox": [
+            162.59,
+            180.04,
+            230.59,
+            192.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "∂h˜u(h, ξ, λ) = 0.",
+          "bbox": [
+            350.76,
+            180.04,
+            432.68,
+            192.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.28)",
+          "bbox": [
+            500.85,
+            180.04,
+            530.78,
+            191.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λξ",
+          "bbox": [
+            285.74,
+            188.24,
+            297.68,
+            200.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This is a q-analogue of the automodel equation. One can translate this equation in terms of",
+          "bbox": [
+            64.51,
+            211.82,
+            530.83,
+            223.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "variables v and u through an appropriate change of variables deﬁned in [1]. In λ →0 limit",
+          "bbox": [
+            64.51,
+            226.11,
+            530.77,
+            238.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.28) reduces to the automodel equation",
+          "bbox": [
+            64.51,
+            240.71,
+            275.98,
+            252.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∂ξ˜u(h, ξ) + h −1",
+          "bbox": [
+            220.26,
+            264.8,
+            307.23,
+            285.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "∂h˜u(h, ξ) = 0",
+          "bbox": [
+            308.42,
+            273.04,
+            375.02,
+            285.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.29)",
+          "bbox": [
+            500.87,
+            273.04,
+            530.79,
+            284.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ξ",
+          "bbox": [
+            290.78,
+            281.24,
+            295.9,
+            293.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "considered by Kerov [5] and also derived by [1] in the language of Young diagram density.",
+          "bbox": [
+            64.51,
+            305.48,
+            530.84,
+            317.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ(eλ/2 −1), the dominant Young diagram",
+          "bbox": [
+            245.17,
+            315.43,
+            457.95,
+            335.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "For the limiting value of ξ i.e. ξ = 1",
+          "bbox": [
+            64.51,
+            318.34,
+            249.76,
+            331.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u00141 −e−λ(h−1) + (eλ/2 −1)2",
+          "bbox": [
+            265.35,
+            342.82,
+            400.61,
+            359.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            402.31,
+            347.14,
+            408.62,
+            359.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "˜u(h) = 1",
+          "bbox": [
+            186.66,
+            347.32,
+            232.58,
+            367.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π cos−1",
+          "bbox": [
+            226.11,
+            353.48,
+            262.86,
+            375.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.30)",
+          "bbox": [
+            500.85,
+            355.41,
+            530.78,
+            367.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2(eλ/2 −1)",
+          "bbox": [
+            309.61,
+            360.0,
+            364.37,
+            375.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "corresponds to the q-limit shape. It gives the limit shape for Plancherel growth process in the",
+          "bbox": [
+            64.51,
+            388.02,
+            530.78,
+            399.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "limit λ →0. We plot the limit shape for both the Plancherel growth and it’s q-deformation",
+          "bbox": [
+            64.51,
+            402.31,
+            530.78,
+            414.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in ﬁg 4.",
+          "bbox": [
+            64.51,
+            416.91,
+            103.55,
+            428.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            292.96,
+            442.81,
+            295.46,
+            447.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-2-0"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            289.86,
+            449.4,
+            292.64,
+            454.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            289.86,
+            476.06,
+            292.64,
+            481.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            289.86,
+            502.72,
+            292.64,
+            508.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            289.86,
+            529.38,
+            292.64,
+            534.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            384.44,
+            555.65,
+            387.22,
+            560.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-2-0"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "-4",
+          "bbox": [
+            208.34,
+            560.74,
+            214.32,
+            566.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "-2",
+          "bbox": [
+            249.75,
+            560.74,
+            255.73,
+            566.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            292.76,
+            560.74,
+            295.54,
+            566.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            334.18,
+            560.74,
+            336.96,
+            566.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            375.59,
+            560.74,
+            378.37,
+            566.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "Figure 4: The limit shape for a q-deformed (λ = 0.8) Plancherel growth process (green curve) and its q →1",
+          "bbox": [
+            64.51,
+            581.32,
+            530.76,
+            591.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(λ →0) limit (orange curve) for comparison.",
+          "bbox": [
+            64.51,
+            593.28,
+            259.53,
+            603.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3.3. The unitary matrix model from the droplet picture",
+          "bbox": [
+            64.51,
+            645.32,
+            346.24,
+            657.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In order to give a Hilbert space description of the q-deformed growth process we need to",
+          "bbox": [
+            82.07,
+            662.75,
+            530.77,
+            674.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ﬁnd a UMM whose large N phase can capture the growth of Young diagrams. For ordinary",
+          "bbox": [
+            64.51,
+            677.2,
+            530.84,
+            689.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Plancherel growth it was shown in [1] that using the Frobenius formula one can write the",
+          "bbox": [
+            64.51,
+            691.64,
+            530.81,
+            703.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "partition function as GWW model. In case of q-deformed Plancherel growth (3.3), it is tricky",
+          "bbox": [
+            64.51,
+            706.09,
+            530.79,
+            718.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to use the Frobenius formula for q-deformed dimension. So, we take a diﬀerent route. We",
+          "bbox": [
+            64.51,
+            720.54,
+            530.78,
+            732.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            291.78,
+            739.37,
+            303.5,
+            751.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 61,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5: The limit shape for a q-deformed (λ = 0.97) Plancherel growth process (green curve) and its q →1 (λ →0) limit (orange curve) for comparison."
+      ],
+      "labels": [
+        {
+          "text": "˜u(h) given by (4.10) describes the automodel class of [5] corrected up to ﬁrst order in λ. It",
+          "bbox": [
+            64.51,
+            113.72,
+            530.76,
+            125.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is easy to check from equations (3.25) and (4.10) that the order λ correction to automodel",
+          "bbox": [
+            64.51,
+            128.16,
+            530.79,
+            140.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "density in both the cases is same apart from a factor of half. The reason behind this is the",
+          "bbox": [
+            64.51,
+            142.61,
+            530.8,
+            154.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "appearance of dimλk in (2.11).",
+          "bbox": [
+            64.51,
+            157.06,
+            221.5,
+            170.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The limit shape corresponds to the upper limit of ξ given in (4.11). We plot the limit",
+          "bbox": [
+            82.07,
+            171.5,
+            530.79,
+            183.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "shape in a rotated coordinate system (see [1] for coordinate transformation) in ﬁg 5. It is",
+          "bbox": [
+            64.51,
+            185.95,
+            530.85,
+            197.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "clear that the symmetric property of the distribution [1] is lost under q deformation.",
+          "bbox": [
+            64.51,
+            200.39,
+            497.68,
+            212.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            281.27,
+            227.95,
+            283.77,
+            232.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-2-0"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "2.5",
+          "bbox": [
+            274.17,
+            245.57,
+            281.12,
+            251.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "2.0",
+          "bbox": [
+            274.17,
+            263.62,
+            281.12,
+            269.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "1.5",
+          "bbox": [
+            274.17,
+            281.68,
+            281.12,
+            287.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            274.17,
+            299.74,
+            281.12,
+            305.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "0.5",
+          "bbox": [
+            274.17,
+            317.8,
+            281.12,
+            323.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            384.44,
+            335.46,
+            387.22,
+            340.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-2-0"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "-2",
+          "bbox": [
+            208.34,
+            340.55,
+            214.32,
+            346.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "-1",
+          "bbox": [
+            243.91,
+            340.55,
+            249.88,
+            346.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            316.64,
+            340.55,
+            319.42,
+            346.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            352.2,
+            340.55,
+            354.98,
+            346.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.0
+          ]
+        },
+        {
+          "text": "Figure 5: The limit shape for a q-deformed (λ = 0.97) Plancherel growth process (green curve) and its q →1",
+          "bbox": [
+            64.51,
+            361.27,
+            530.76,
+            371.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(λ →0) limit (orange curve) for comparison.",
+          "bbox": [
+            64.51,
+            373.23,
+            259.53,
+            383.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Thus, we see that both the measures (2.11 and 2.16) qualitatively give the similar asymp-",
+          "bbox": [
+            82.07,
+            415.63,
+            530.83,
+            427.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "totic behaviour up to order λ. However, we emphasise that (3.25) is exact in λ.",
+          "bbox": [
+            64.51,
+            430.08,
+            471.81,
+            442.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5. The Hilbert space",
+          "bbox": [
+            64.51,
+            462.46,
+            187.78,
+            474.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Following [1, 15] we give a Hilbert space description of the q-deformed growth process.",
+          "bbox": [
+            82.07,
+            485.87,
+            530.77,
+            497.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Using the connection between unitary matrix model and free Fermi droplet description, we",
+          "bbox": [
+            64.51,
+            500.32,
+            530.8,
+            512.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "map the Young diagrams in automodel class to diﬀerent shapes of two dimensional phase",
+          "bbox": [
+            64.51,
+            514.76,
+            530.82,
+            526.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "space droplets. Quantising these droplets, we further set up a correspondence between auto-",
+          "bbox": [
+            64.51,
+            529.21,
+            530.78,
+            541.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "model diagrams and coherent states in the Hilbert space. Thus, growth of Young diagrams",
+          "bbox": [
+            64.51,
+            543.65,
+            530.82,
+            555.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "are mapped to evolution of coherent states in the Hilbert space. The basic construction of",
+          "bbox": [
+            64.51,
+            558.1,
+            530.8,
+            570.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the Hilbert space is similar to the one considered in [1]. We brieﬂy review the construction",
+          "bbox": [
+            64.51,
+            572.54,
+            530.79,
+            584.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in Appendix D.",
+          "bbox": [
+            64.51,
+            586.99,
+            147.91,
+            598.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The Hilbert space H is a direct product of H+ and H−where H± are the Hilbert spaces",
+          "bbox": [
+            82.07,
+            601.28,
+            530.77,
+            615.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "associated with the + and −sectors deﬁned in section 3.3 namely the upper and the lower",
+          "bbox": [
+            64.51,
+            615.73,
+            530.78,
+            627.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "fermi surfaces. These two sectors are isomorphic. A generic state in H+ is given by",
+          "bbox": [
+            64.51,
+            630.17,
+            491.6,
+            644.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            272.95,
+            655.69,
+            288.23,
+            667.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(a†",
+          "bbox": [
+            288.57,
+            656.53,
+            303.03,
+            670.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n)kn|s",
+          "bbox": [
+            299.27,
+            656.63,
+            328.29,
+            672.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "|⃗k",
+          "bbox": [
+            241.41,
+            658.3,
+            250.81,
+            670.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            260.18,
+            658.46,
+            269.29,
+            670.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(5.1)",
+          "bbox": [
+            506.7,
+            658.46,
+            530.78,
+            670.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "n≥1",
+          "bbox": [
+            272.61,
+            675.36,
+            288.57,
+            683.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where a†",
+          "bbox": [
+            64.51,
+            698.19,
+            108.35,
+            711.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ns are creation operators in H+ and |s",
+          "bbox": [
+            104.59,
+            699.36,
+            302.06,
+            713.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is the ground state annihilated by ans. |⃗k",
+          "bbox": [
+            311.72,
+            699.36,
+            524.71,
+            712.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "satisﬁes the completeness relation (D.22). Therefore, (1/√z⃗k)|⃗k",
+          "bbox": [
+            64.51,
+            709.46,
+            392.23,
+            731.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is the normalised excited",
+          "bbox": [
+            402.51,
+            716.38,
+            530.77,
+            728.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "17",
+          "bbox": [
+            291.79,
+            739.37,
+            303.5,
+            751.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

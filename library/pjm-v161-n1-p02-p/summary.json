@@ -2,139 +2,313 @@
  "_schema": "library-summary/v1",
  "doc_id": "pjm-v161-n1-p02-p",
  "source_sha256": "a93e922eab1ee67c",
- "brief": "Paciﬁc Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS — 24 sections: JOAN S. BIRMAN AND WILLIAM W. MENA; Introduction. This manuscript is t",
- "extended": "**Paciﬁc Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS**\n\n*JOAN BIRMAN AND WILLIAM W. M ENASCO*\n\n93 pp, 24 sections.\n\n**Outline.** 26 JOAN S. BIRMAN AND WILLIAM W. MENASCO; 1 Introduction. This manuscript is the third i; 28 JOAN S. BIRMAN AND WILLIAM W. MENASCO; 3 It will also be convenient to make the assum; 30 JOAN S. BIRMAN AND WILLIAM W. MENASCO; 2 Admissible words. In this section we begin t; 3 Digons. In this section we will introduce ad; 4 The non-standard foliation of the digons. We; 5 Moving Af into T. We have dealt with the min; L The fact that μ2$(Φo) is in <9B/ shows that ; L Thus, going to Figure 5.4(c) we conclude tha; 6 The Classification Theorem. All of the piece; 6.2 To see this, the first thing to notice is ; 6.4 In Figure 6.11 we have illustrated the sam; 23 Thus Hφ Π F u Ω includes bridges of name 24; 6.4 It is not difficult to see that region whi; 7 The algorithm and applications. Our task in ; 7.3 Applications, In what follows S* denotes a\n\n**Extracted claims (proposals, not verified).**\n- Corollary 4.9: there cannot be more than three singularities of type\n- Corollary 7.3: is true for every braid index.\n- Lemma: s 4.4 and 4.5 imply that the only surgeries which are possible\n- Lemma 4.6: the leaf 12 bounds a degenerately foliated region T on\n- Lemma 5.5: , and the name 23 cannot occur by Lemma 5.6, so pq can\n- Lemma 5.3: we know we may find a fiber of FT which satisfies the",
+ "brief": "Studying links via closed braids. III. Classifying links which are closed 3-braids — 59 sections: Front matter; STUDYING LINKS VIA CLOSED BRAIDS I; it",
+ "extended": "**Studying links via closed braids. III. Classifying links which are closed 3-braids**\n\n*JOAN BIRMAN AND WILLIAM W. MENASCO*\n\n93 pp, 59 sections.\n\n**Outline.** Front matter; STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFY; it; (resp. b^ (page 32); (resp. b^ (page 33); (resp. b^ (page 34); (resp. b^ (page 35); (resp. b^ (page 36); (resp. b^ (page 37); (resp. b^ (page 38); (resp. b^ (page 39); (resp. b^ (page 40); (resp. b^ (page 41); (resp. b^ (page 42); (resp. b^ (page 43); (resp. b^ (page 44); (resp. b^ (page 45); (resp. b^ (page 46)",
  "tokens": {
-  "brief": 49,
-  "extended": 369
+  "brief": 37,
+  "extended": 134
  },
  "sections": [
   {
-   "id": "sec-000-26-joan-s-birman-and-william-w-menasco",
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
-   "pages": "2-2"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-1-introduction-this-manuscript-is-the-third-in-a",
-   "title": "Introduction. This manuscript is the third in a series of six papers",
-   "pages": "2-5"
+   "id": "sec-000-studying-links-via-closed-braids-iii-classifying",
+   "title": "STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+   "pages": "2-22"
   },
   {
-   "id": "sec-002-28-joan-s-birman-and-william-w-menasco",
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
-   "pages": "5-6"
+   "id": "sec-001-it",
+   "title": "it",
+   "pages": "22-32"
   },
   {
-   "id": "sec-003-3-it-will-also-be-convenient-to-make-the-assumpt",
-   "title": "It will also be convenient to make the assumption that 3? is prime",
-   "pages": "6-7"
+   "id": "sec-002-resp-b-page-32",
+   "title": "(resp. b^ (page 32)",
+   "pages": "32-32"
   },
   {
-   "id": "sec-004-30-joan-s-birman-and-william-w-menasco",
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
-   "pages": "7-12"
+   "id": "sec-003-resp-b-page-33",
+   "title": "(resp. b^ (page 33)",
+   "pages": "33-33"
   },
   {
-   "id": "sec-005-2-admissible-words-in-this-section-we-begin-the",
-   "title": "Admissible words. In this section we begin the new work needed",
-   "pages": "12-15"
+   "id": "sec-004-resp-b-page-34",
+   "title": "(resp. b^ (page 34)",
+   "pages": "34-34"
   },
   {
-   "id": "sec-006-3-digons-in-this-section-we-will-introduce-addit",
-   "title": "Digons. In this section we will introduce additional structure",
-   "pages": "15-28"
+   "id": "sec-005-resp-b-page-35",
+   "title": "(resp. b^ (page 35)",
+   "pages": "35-35"
   },
   {
-   "id": "sec-007-4-the-non-standard-foliation-of-the-digons-we-ha",
-   "title": "The non-standard foliation of the digons. We have shown that A'",
-   "pages": "28-40"
+   "id": "sec-006-resp-b-page-36",
+   "title": "(resp. b^ (page 36)",
+   "pages": "36-36"
   },
   {
-   "id": "sec-008-5-moving-af-into-t-we-have-dealt-with-the-minimi",
-   "title": "Moving Af into T. We have dealt with the minimization of",
-   "pages": "40-45"
+   "id": "sec-007-resp-b-page-37",
+   "title": "(resp. b^ (page 37)",
+   "pages": "37-37"
   },
   {
-   "id": "sec-009-l-the-fact-that-μ2φo-is-in-9b-shows-that-if-it-c",
-   "title": "The fact that μ2$(Φo) is in <9B/ shows that if it crosses L it",
-   "pages": "45-46"
+   "id": "sec-008-resp-b-page-38",
+   "title": "(resp. b^ (page 38)",
+   "pages": "38-38"
   },
   {
-   "id": "sec-010-l-thus-going-to-figure-54c-we-conclude-that-the",
-   "title": "Thus, going to Figure 5.4(c) we conclude that the only possibility",
-   "pages": "46-53"
+   "id": "sec-009-resp-b-page-39",
+   "title": "(resp. b^ (page 39)",
+   "pages": "39-39"
   },
   {
-   "id": "sec-011-6-the-classification-theorem-all-of-the-pieces-a",
-   "title": "The Classification Theorem. All of the pieces are in place, and",
-   "pages": "53-58"
+   "id": "sec-010-resp-b-page-40",
+   "title": "(resp. b^ (page 40)",
+   "pages": "40-40"
   },
   {
-   "id": "sec-012-62-to-see-this-the-first-thing-to-notice-is-that",
-   "title": "To see this, the first thing to notice is that since the singularity is",
-   "pages": "58-73"
+   "id": "sec-011-resp-b-page-41",
+   "title": "(resp. b^ (page 41)",
+   "pages": "41-41"
   },
   {
-   "id": "sec-013-64-in-figure-611-we-have-illustrated-the-same-si",
-   "title": "In Figure 6.11 we have illustrated the same situation, but omit-",
-   "pages": "73-79"
+   "id": "sec-012-resp-b-page-42",
+   "title": "(resp. b^ (page 42)",
+   "pages": "42-42"
   },
   {
-   "id": "sec-014-23-thus-hφ-π-f-u-ω-includes-bridges-of-name-24-a",
-   "title": "Thus Hφ Π F u Ω includes bridges of name 24 and 23. There is",
+   "id": "sec-013-resp-b-page-43",
+   "title": "(resp. b^ (page 43)",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-014-resp-b-page-44",
+   "title": "(resp. b^ (page 44)",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-015-resp-b-page-45",
+   "title": "(resp. b^ (page 45)",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-016-resp-b-page-46",
+   "title": "(resp. b^ (page 46)",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-017-resp-b-page-47",
+   "title": "(resp. b^ (page 47)",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-018-resp-b-page-48",
+   "title": "(resp. b^ (page 48)",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-019-resp-b-page-49",
+   "title": "(resp. b^ (page 49)",
+   "pages": "49-49"
+  },
+  {
+   "id": "sec-020-resp-b-page-50",
+   "title": "(resp. b^ (page 50)",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-021-resp-b-page-51",
+   "title": "(resp. b^ (page 51)",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-022-resp-b-page-52",
+   "title": "(resp. b^ (page 52)",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-023-resp-b-page-53",
+   "title": "(resp. b^ (page 53)",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-024-resp-b-page-54",
+   "title": "(resp. b^ (page 54)",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-025-resp-b-page-55",
+   "title": "(resp. b^ (page 55)",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-026-resp-b-page-56",
+   "title": "(resp. b^ (page 56)",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-027-resp-b-page-57",
+   "title": "(resp. b^ (page 57)",
+   "pages": "57-57"
+  },
+  {
+   "id": "sec-028-resp-b-page-58",
+   "title": "(resp. b^ (page 58)",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-029-resp-b-page-59",
+   "title": "(resp. b^ (page 59)",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-030-resp-b-page-60",
+   "title": "(resp. b^ (page 60)",
+   "pages": "60-60"
+  },
+  {
+   "id": "sec-031-resp-b-page-61",
+   "title": "(resp. b^ (page 61)",
+   "pages": "61-61"
+  },
+  {
+   "id": "sec-032-resp-b-page-62",
+   "title": "(resp. b^ (page 62)",
+   "pages": "62-62"
+  },
+  {
+   "id": "sec-033-resp-b-page-63",
+   "title": "(resp. b^ (page 63)",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-034-resp-b-page-64",
+   "title": "(resp. b^ (page 64)",
+   "pages": "64-64"
+  },
+  {
+   "id": "sec-035-resp-b-page-65",
+   "title": "(resp. b^ (page 65)",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-036-resp-b-page-66",
+   "title": "(resp. b^ (page 66)",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-037-resp-b-page-67",
+   "title": "(resp. b^ (page 67)",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-038-resp-b-page-68",
+   "title": "(resp. b^ (page 68)",
+   "pages": "68-68"
+  },
+  {
+   "id": "sec-039-resp-b-page-69",
+   "title": "(resp. b^ (page 69)",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-040-resp-b-page-70",
+   "title": "(resp. b^ (page 70)",
+   "pages": "70-70"
+  },
+  {
+   "id": "sec-041-resp-b-page-71",
+   "title": "(resp. b^ (page 71)",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-042-resp-b-page-72",
+   "title": "(resp. b^ (page 72)",
+   "pages": "72-72"
+  },
+  {
+   "id": "sec-043-resp-b-page-73",
+   "title": "(resp. b^ (page 73)",
+   "pages": "73-73"
+  },
+  {
+   "id": "sec-044-resp-b-page-74",
+   "title": "(resp. b^ (page 74)",
+   "pages": "74-74"
+  },
+  {
+   "id": "sec-045-resp-b-page-75",
+   "title": "(resp. b^ (page 75)",
+   "pages": "75-75"
+  },
+  {
+   "id": "sec-046-resp-b-page-76",
+   "title": "(resp. b^ (page 76)",
+   "pages": "76-76"
+  },
+  {
+   "id": "sec-047-resp-b-page-77",
+   "title": "(resp. b^ (page 77)",
+   "pages": "77-77"
+  },
+  {
+   "id": "sec-048-resp-b-page-78",
+   "title": "(resp. b^ (page 78)",
+   "pages": "78-78"
+  },
+  {
+   "id": "sec-049-resp-b-page-79",
+   "title": "(resp. b^ (page 79)",
    "pages": "79-79"
   },
   {
-   "id": "sec-015-64-it-is-not-difficult-to-see-that-region-which",
-   "title": "It is not difficult to see that region which is foliated by the pair",
-   "pages": "79-80"
+   "id": "sec-050-resp-b-page-80",
+   "title": "(resp. b^ (page 80)",
+   "pages": "80-80"
   },
   {
-   "id": "sec-016-7-the-algorithm-and-applications-our-task-in-thi",
-   "title": "The algorithm and applications. Our task in this section is to",
-   "pages": "80-84"
+   "id": "sec-051-resp-b-page-81",
+   "title": "(resp. b^ (page 81)",
+   "pages": "81-81"
   },
   {
-   "id": "sec-017-73-applications-in-what-follows-s-denotes-a-link",
-   "title": "Applications, In what follows S* denotes a link of braid index",
-   "pages": "84-85"
+   "id": "sec-052-resp-b-page-82",
+   "title": "(resp. b^ (page 82)",
+   "pages": "82-82"
   },
   {
-   "id": "sec-018-3-seifert-circles-then-3-3-only-if-the-algebraic",
-   "title": "Seifert circles. Then 3 = 3' only if the algebraic crossing numbers",
-   "pages": "85-87"
+   "id": "sec-053-σΐ",
+   "title": "σΐ",
+   "pages": "82-82"
   },
   {
-   "id": "sec-019-8-hints-of-additional-pathology-it-was-shown-in",
-   "title": "Hints of additional pathology. It was shown in the introduction",
-   "pages": "87-89"
+   "id": "sec-054-2-i-f-p-4-σισ2",
+   "title": "i f p > 4 , (σισ2)",
+   "pages": "82-92"
   },
   {
-   "id": "sec-020-references",
-   "title": "References",
-   "pages": "89-92"
+   "id": "sec-055-pacific-journal-of-mathematics",
+   "title": "PACIFIC JOURNAL OF MATHEMATICS",
+   "pages": "92-92"
   },
   {
-   "id": "sec-021-v-s-varadarajan",
-   "title": "S. VARADARAJAN",
+   "id": "sec-056-editors",
+   "title": "EDITORS",
+   "pages": "92-92"
+  },
+  {
+   "id": "sec-057-supporting-institutions",
+   "title": "SUPPORTING INSTITUTIONS",
    "pages": "92-93"
-  },
-  {
-   "id": "sec-022-1-tangential-and-normal-euler-numbers-complex-po",
-   "title": "Tangential and normal Euler numbers, complex points, and",
-   "pages": "93-93"
-  },
-  {
-   "id": "sec-023-25-studying-links-via-closed-braids-iii-classify",
-   "title": "Studying links via closed braids. III. Classifying links which are",
-   "pages": "93-93"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

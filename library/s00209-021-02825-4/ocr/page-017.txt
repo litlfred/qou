@@ -1,0 +1,61 @@
+A representation theoretic explanation... 1375
+
+immediate once Grace’s theorem has been proven, and yet will quickly yield stronger results
+regarding linear operators in the next section.
+
+In the usual proof of the classical univariate Grace’s theorem, reference to linear factors of
+f € C"[x] is necessary. This makes generalization to Cc [v1,..., Xm] difficult, as multivariate
+polynomials do not necessarily have any linear factors. In our new proof, we are able avoid
+reference to linear terms by using particular features of the D map. This means that our proof
+method works for any A.
+
+Theorem 5.1 Fix € N”" and p,q € V(A). Also, denote C = H4URy and := H_-UR-,
+where the closures are considered to be in CP!. If p is C"-stable and q is C'"-stable, then
+D*(p@q) #0.
+
+Proof We prove the theorem by induction on degree. For 4 = 0, the result is obvious. For
+|A| = 1, we can assume WLOG that 4; > 1 by permuting the variables. Define 5; :=
+(1, 0,0,...,0) ENq.
+
+Since C and C are projectively convex, Corollary 4.7 implies (a0,, + bdy,)p is C’"-
+stable for all (a : b) € C and (cd,, + ddy,)q is C™-stable for all (c: dé C. To obtain
+a contradiction, we assume D*(p @ q) = 0. For a € Hy UR, © C (equivalently, —w €
+H-UR_ CC), this gives:
+
+D1 (aay, + 8y,)P ® (@Ax, — By,)q) = 0? D?! (Ay, p ® Ox, q) — D? (ay, p ® Ay.q)
+—aD*(p ®q) = a? D*™ (ax, p ® dx,q) — D? (By, p ® 99,9)
+
+By induction and the stability properties discussed above, we have D* (dx, p@ Ix, q) £0,
+Dy, p ® yg) #0, and D*~*! ((wAy, + dy, ) p ® (@x, — dy,)q) # O. This implies:
+
+D1 (ay, p ® By.)
+
+2 had A—S1 ve ¢ 2
+D> (x, p ® xq) — D*! (dy, p ® dy, q) £0
+° (xP @ du4) (1 P@ Avid) FO OF TG w® Omg)
+
+€ C\{0}
+
+However, we can pick a € Hy UR, such that @? is any value of C\{0} we want, including
+
+D1 (ay, p@dy : oe .
+that of D1 Oy PBA This contradiction gives the result. oO
+DS" (Ix, PBIx, V)
+
+5.1 Other regions
+
+We now generalize the above theorem to other regions via SL2(C) action and topological con-
+siderations. Theorem 5.7 can then be considered our most general form of Grace’s theorem.
+First though, we define two new notions in order to simplify the rest of this section.
+Definition 5.2 Fix m € No and any sets S), Sz C (CP!). We call ($1, Sz) a Grace pair if:
+for all A € Ng and p,q € V(A) such that p is S;-stable and q is S2-stable, we have that
+D*(p® q) # 0. That is, if Grace’s theorem holds for S; and S$».
+
+Definition 5.3 We say that a Grace pair is disjoint if it is of the form (Cy x --- x Cn, By x
++++ x Bm) and Cy and Bx are disjoint for all k € [m].
+
+This yields the following restatement of the above theorem.
+
+Corollary 5.4 For any m € No, (Hy UR,)", (H_ U R_)") is a Grace pair.
+
+D Springer

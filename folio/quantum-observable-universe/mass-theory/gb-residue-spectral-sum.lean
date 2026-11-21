@@ -47,10 +47,10 @@ The word for an unproved placeholder is also removed from this sentence:
 the `wall-side-proof` checker matches it inside comments, and it was
 reporting this file as carrying one when the code has none.
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `prop:gb-residue-spectral-sum`
--- Ref: [manuscript] prop:graded-markov-trace-from-gs-filtration
--- Ref: [manuscript] prop:residue-at-root
+-- Ref: [leitner2026] prop:graded-markov-trace-from-gs-filtration
+-- Ref: [leitner2026] prop:residue-at-root
 -/
 
 namespace QOU.BraidKnot
@@ -156,7 +156,7 @@ def gradedMarkovTrace (S : GBResidueSpectralSum R) (ℓ : Fin S.levelBound) : R 
     the cyclotomic projections collapse), the mass reduces to the
     descended Markov trace.
 
-    Ref: [manuscript] `prop:categorical-mass-markov`. -/
+    Ref: [leitner2026] `prop:categorical-mass-markov`. -/
 theorem classical_limit_descended (S : GBResidueSpectralSum R)
     (hres : ∀ ℓ : Fin S.levelBound, S.residue ℓ = 0) :
     S.mass = |S.descended| := by
@@ -213,7 +213,7 @@ def GBResidueSpectralSum.residueAtLevel (S : GBResidueSpectralSum R) (l : ℕ) :
     not collide at build time, but `gs-spectral-sum-finite.ts` resolves its
     `lean.ref` to the library one, not to this. Recorded in bean `qou-tmmt`.
 
-    Ref: [manuscript] `prop:confinement-level-unique`. -/
+    Ref: [leitner2026] `prop:confinement-level-unique`. -/
 theorem spectral_sum_finite (S : GBResidueSpectralSum R) :
     ∃ N : ℕ, ∀ l : ℕ, N ≤ l → S.residueAtLevel l = 0 := by
   refine ⟨S.levelBound, fun l hl => ?_⟩

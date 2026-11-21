@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.967
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 Factorization homology will have a universal property with respect to monoidal and operadic structures on $\mfld(\cB)$ and $\mfld(\cB)_{/X}$, which we present below in Constructions \ref{B-monoidals} and \ref{B-operadics}.
 

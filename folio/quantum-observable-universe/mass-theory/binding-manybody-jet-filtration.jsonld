@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:binding-manybody-eq-jet-filtration",
   "kind": "conjecture",
   "title": "Binding many-body series equals the jet-order filtration: $B(K)=\\sum_n m_e\\,a_D^{(n)}$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/lem-bond-order-eq-jet-degree",
+    "papers/quantum-observable-universe/blocks/conj-bond-order-eq-jet-degree",
     "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
     "papers/quantum-observable-universe/blocks/prop-mi-sw-abelianisation",
     "papers/quantum-observable-universe/blocks/prop-magic-A-binding-formula"

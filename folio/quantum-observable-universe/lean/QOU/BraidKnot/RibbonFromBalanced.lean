@@ -14,7 +14,7 @@ The scope note this file carried is preserved there and still holds: `ofSymmetri
 describable member rather than an excluded one, which is why the fix is "add the twist" and not
 "forbid symmetric".
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.MathlibExt.Ribbon
 

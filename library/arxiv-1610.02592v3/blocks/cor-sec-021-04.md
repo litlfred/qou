@@ -1,1 +1,0 @@
-Forevery nthereisa N >0suchthateveryﬁnitesubgroup

@@ -4,13 +4,14 @@ doc_title: "Gauge Theories Labelled by Three-Manifolds"
 section_id: sec-002-21-building-blocks
 section_title: "Building blocks"
 section_number: 2.1
-pages: 8-11
+pages: 9-11
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.946
-latex_coverage_ratio: 0.641
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 0.89
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 The fundamental building block used in building our 3-manifolds $M$ is an ideal hyperbolic tetrahedron (Figure [\[fig:tet\]](#fig:tet){reference-type="ref" reference="fig:tet"}). Geometrically, an ideal tetrahedron $\Delta$ has faces that are geodesic surfaces and vertices that lie right on the boundary of hyperbolic 3-space ${\mathbb H}^3$. As shown in Figure [\[fig:tet\]](#fig:tet){reference-type="ref" reference="fig:tet"}, hyperbolic 3-space can be viewed as the interior of a 3-ball, with the Riemann sphere as its boundary.
 

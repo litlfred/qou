@@ -1,0 +1,69 @@
+by auto
+ultimately
+show ?thesis
+using assms
+using conjugate-cross-ratio[of v w inversion v ul
+unfolding poincare-between-def
+by (metis conjugate-id-iff conjugate-involution inversion-def inversion-sym o-apply)
+qed
+
+7.1.2 Some elementary properties of h-betwenness
+
+lemma poincare-between-nonstrict [simp]:
+shows poincare-between u u v and poincare-between u vv
+by (simp-all add: poincare-between-def)
+
+lemma poincare-between-sandwich:
+assumes u € unit-disc and v € unit-disc
+assumes poincare-between uv u
+shows u = v
+proof (rule ccontr)
+assume 7— thesis
+thus False
+using assms
+using inversion-noteg-unit-disc[of v u]
+using cross-ratio-1[{of v u inversion v]
+unfolding poincare-between-def Let-def
+by auto
+qed
+
+lemma poincare-between-rev:
+assumes u € unit-disc and v € unit-disc and w € unit-disc
+shows poincare-between u v w <—> poincare-between wv u
+using assms
+using inversion-noteg-unit-disc|of v w]
+using inversion-noteq-unit-disc|of v ul
+using cross-ratio-commute-13[of uv w inversion v]
+using cross-ratio-not-inf [of w inversion v v ul
+using cross-ratio-not-zero|of w v u inversion v]
+using inf-or-of-complez|of cross-ratio w v u (inversion v)]
+unfolding poincare-between-def
+by (auto simp add: Let-def Im-complex-div-eq-0 Re-divide divide-less-0-iff)
+
+7.1.3. H-betwenness and h-collinearity
+
+Three points can be in an h-between relation only when they are h-collinear.
+
+lemma poincare-between-poincare-collinear [simp]:
+assumes in-disc: u € unit-disc v € unit-disc w € unit-disc
+assumes betw: poincare-between uv w
+shows poincare-collinear {u, v, w}
+proof (cases u =v V v= w)
+case True
+thus ?thesis
+using assms
+by auto
+next
+case False
+hence distinct: distinct [u, v, w, inversion v|
+using in-disc inversion-notegq-unit-disc[of v v| inversion-noteg-unit-disc|of v u] inversion-noteg-unit-disclof v w]
+using betw poincare-between-sandwich|of w v|
+by (auto simp add: poincare-between-def Let-def)
+
+then obtain H where »: {u, v, w, inversion v} C circline-set H
+using assms
+unfolding poincare-between-def
+using four-points-on-circline-iff-cross-ratio-reallof u v w inversion v]
+by auto
+
+78

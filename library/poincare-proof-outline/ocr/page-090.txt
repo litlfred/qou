@@ -1,0 +1,68 @@
+using <is-real uy «u' 4 0»
+using complex-eq-if-Re-eq
+by simp
+
+let ?u = cmod u’ and ?v = cmod v' and ?uv = cmod (u’ — v’)
+have disc: ?u? < 1 ?v? < 1
+using wunit-disc-cmod-square-lt-1[OF assms(1)]
+using unit-disc-cmod-square-lt-1[OF assms(2)]
+by auto
+have poincare-distance (of-complex u') 0;, + poincare-distance 0p, (of-complez v') =
+arcosh (((1 + ?u?) * (1 4+ ?u?) + 4 * ?u* 2u) / ((1 — ?u?) * (1 — ?v7))) (is - = arcosh ?r1)
+using poincare-distance-formula-zero-sum|[OF assms(1—2)]
+by (simp add: Let-def)
+moreover
+have poincare-distance (of-complex u') (of-complex v’) =
+arcosh (((1 — ?u?) * (1 — ?u?) + 2 ?uv?) / ((1 — ?u?) * (1 — ?v?))) (is - = arcosh ?r2)
+using disc
+using poincare-distance-formula|OF assms(1—2)]
+by (subst add-divide-distrib) simp
+moreover
+have arcosh ?r1 = arcosh ?r2 <> ?Q u' v’
+proof
+assume arcosh ?r1 = arcosh ?r2
+hence ?r1 = ?r2
+proof (subst (asm) arcosh-eq-iff)
+show ?r1 > 1
+proof—
+have (1 — ?u”) « (1 — ?v”) < (1 + ?u?) * (1 + 20?) + 4 * Pu x Pu
+by (simp add: field-simps)
+thus ?thesis
+using disc
+by simp
+qed
+next
+show ?r2 > 1
+using disc
+by simp
+qed
+hence ({ + ?u?) * (1 + ?u*) + 4 * ?u* ?u = (1 — ?u) * (1 — P07) + 2 * Pur?
+using disc
+by auto
+hence (cmod (u’ — v’))? = (cmod u’ + emod v’)?
+by (simp add: field-simps power2-eq-square)
+hence +: Re u’ * Re v’ + |Re u'| * sqrt ((Imv’)? + (Re v’)?) = 0
+using <is-real u’>
+unfolding cmod-power2 cmod-def
+by (simp add: field-simps) (simp add: power2-eq-square field-simps)
+hence sqrt ((Im v’)? + (Re v')?) = |Re v'|
+using (Re u’ 4 0) «v' 4 0>
+by (smt complex-neq-0 mult.commute mult-cancel-right mult-minus-left real-sqrt-gt-0-iff)
+hence Im v' = 0
+by (smt Im-eq-0 norm-complez-def )
+moreover
+hence Re u’ * Re v' = — |Re u'| « |Re v'|
+using *
+by simp
+hence Re u’ * Rev’ < 0
+using (Re u’ 4 0) «v' 4 0>
+by (simp add: <is-real v'» complex-eq-if-Re-eq)
+ultimately
+show ?Q u' v'
+by simp
+next
+assume ?Q u’ v’
+hence is-real v’ Re u’ * Re v' < 0
+by auto
+
+90

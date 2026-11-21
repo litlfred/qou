@@ -1,6 +1,6 @@
 ---
 doc_id: 1172-5
-doc_title: "OPTIMISTIC CALCULATIONS ABOUT $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{"
+doc_title: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries"
 section_id: sec-001-3-an-optimistic-limit
 section_title: "AN OPTIMISTIC LIMIT"
 section_number: 3
@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
 toc_source: inferred
+doc_brief: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries — I calculate optimistically asymptotic"
 ---
 Suppose that we are given a function $S(N)$ of $N$ by the following summation.
 (3.1)
@@ -64,7 +65,6 @@ $z_{i^{r.:}} \prod_{1j=}z_{j}\prod_{a}kr_{i\mathrm{j}}=1\alpha(1-X_{a})\zeta a\i
 $(i=1,2, \ldots, k)$ .
 Let
 $(\zeta_{1}, \zeta_{2}, \ldots, \zeta_{k})$ be a solution to (3.5).
-72
 Deﬁnition 3.1 (optimistic limit). We put
 (3.6)
 $V(\zeta_{1}, \zeta_{2}, \ldots, \zeta_{k}):=\tilde{V}(\zeta_{1}, \zeta_{\sim}’),$

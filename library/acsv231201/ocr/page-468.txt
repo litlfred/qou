@@ -1,0 +1,47 @@
+450 Integration on manifolds
+
+w|p € TPM we can write
+
+m
+
+lp = » cx(p) dbylp for all p € U,
+
+k=1
+
+which defines coefficient maps c, : U > R. The mapping w is a 1-form (i.e.,
+is smooth) if and only if the coefficient maps constructed in this way are all
+smooth as (U, ¢) ranges over the charts of M.
+
+A.2.3 Differential k-forms
+
+The concept of a differential form will allow us to integrate on manifolds, how-
+ever 1-forms will only allow us to integrate on one-dimensional manifolds (i.e.,
+curves). To integrate on higher-dimensional surfaces, we need to generalize 1-
+forms to higher-dimensional objects. The necessary algebra can be developed
+for any vector space V, although we use it only in the case when V = T?M is
+the cotangent space of a manifold.
+
+Let V be a d-dimensional real vector space. A k-form on V is a multi-linear
+map a : V* — R which is antisymmetric: swapping any two arguments of
+a negates the value of the map. Note that linearity and antisymmetry imply
+that the only k-form when k > d is the zero map. The vector space of k-forms
+over V is denoted A;,(V), and the direct sum A(V) = Be, A;(V) is called
+the exterior algebra of V. To give A(V) a ring structure, we define the wedge
+product of k 1-forms a,...,a% € A!(V) to be the k-form a1 A-+-Aax: Vi oR
+determined by
+
+(1 A+ Aap (Y1,...5¥4) = det(ai(v;)) for all v € V‘.
+
+If aj,...,@q are 1-forms and J € {1,...,d}’ then we write a7 = aj, A-+- A Qj,.
+When a,...,@q form a basis for A'(V) = V then the k-forms a7, where J =
+(ij,...,i¢) with i; < in < +++ < ix, form a basis for A‘(V). Thus, the vector
+space of k-forms has dimension (2) and A defines a bilinear associative product
+on A(V) which is anticommutative: if a is an a-form and £ is a b-form then
+aAB=(-1)B Aa.
+
+Example A.16. The space of d-forms has dimension one, and is thus generated
+by the determinant. 4
+
+Example A.17. Let x and y be the usual coordinates on M = R? and V = T9M
+be the cotangent space of R? at the origin. Since the differentials dx and dy span
+V, any 1-form on V can be written a dx + b dy for a,b € R. The wedge product

@@ -20,7 +20,7 @@ structural; the magnitude `s = b/(2a)` is the compute/experimental input.
 This file states the energy with `b = 2·a·s` to stay division-free.
 
 ## References
-- [manuscript] Ch. 12, Proposition: bent angle from the quadratic well
+- [leitner2026] Ch. 12, Proposition: bent angle from the quadratic well
 -/
 
 namespace QOU.Molecular

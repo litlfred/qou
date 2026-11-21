@@ -3,13 +3,14 @@
  "doc_id": "arxiv-math-0505170v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0846b74f9c7c55cb6348ae4029e0098646a6ad6d09e92126e25213c46e7d7803",
   "file": "math0505170.pdf"
  },
  "provenance": {
-  "title": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS AMNON YEKUTIELI",
-  "authors": null,
+  "title": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS",
+  "authors": "AMNON YEKUTIELI",
   "arxiv": {
    "id": "math/0505170",
    "version": "2",
@@ -20,197 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 14,
-  "by_kind": {
-   "theorem": 4,
-   "corollary": 3,
-   "lemma": 5,
-   "remark": 2
-  },
-  "formalization_candidates": 12
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "0.1",
-   "name": null,
-   "statement": "Let G be a unipotent algebraic group over K, let X be a K-scheme,",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "0.2",
-   "name": null,
-   "statement": "Let G be a unipotent group over K. Suppose Z is a set with",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "0.1",
-   "name": null,
-   "statement": "was discovered in the course of research on defor mation quantization",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "2.7",
-   "name": null,
-   "statement": "). This approach was inspired by work of Bott [B o] on simplicial",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "1.1",
-   "name": null,
-   "statement": "Let G, G\u2032 be two unipotent groups, with Lie algebras g, g\u2032. Let X, X\u2032",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "1.5",
-   "name": null,
-   "statement": "Both operations wG and wsymG are simplicial. Namely, given \u03b1 \u2208",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "1.7",
-   "name": null,
-   "statement": "Both operations wG and wsymG are functorial in the data",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "1.8",
-   "name": null,
-   "statement": "Assume G is abelian. Then for any (f0, . . . , f q) \u2208 HomX (\u2206 q",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "1.9",
-   "name": null,
-   "statement": "For any f = ( f0, . . . , f q) \u2208 HomX (\u2206 q",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.11",
-   "name": null,
-   "statement": "Let G be a unipotent algebraic group over K, let X be a K-scheme,",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1.12",
-   "name": null,
-   "statement": "Z. Reichstein observed that our averaging process provides a new",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1.13",
-   "name": null,
-   "statement": "Theorem 1.11 has a rather obvious parallel in di\ufb00erential ge ometry.",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-8",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2.2",
-   "name": null,
-   "statement": "Assume Scenario 2.1. Suppose U \u2282 X is an open set and",
-   "section_file": "sections/sec-001-2-simplicial-sections.md",
-   "section_title": "Simplicial Sections",
-   "pages": "8-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "2.7",
-   "name": null,
-   "statement": "Assume Scenario 2.1. Let U = {U(i)}m",
-   "section_file": "sections/sec-001-2-simplicial-sections.md",
-   "section_title": "Simplicial Sections",
-   "pages": "8-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

@@ -7,8 +7,7 @@ $(\mu, \nu) \mapsto (\nu, \mu)$ and is involutive on the ladder data.*
 
 ## Established results and open questions
 
-The following supporting facts are verified (witness
-`computations/substrate/whipple-rotation-involution-probe.witness.json`):
+The following supporting facts are verified:
 
 - the interpolating ladder is bar-even, $[d]_{q^{-1}} = [d]_q$ (exact);
 - the Whipple argument exchange $\cosh\eta \leftrightarrow \coth\eta$ is an
@@ -31,8 +30,7 @@ $$
   recurrences forces
   $C(\nu,\mu) = \sqrt{2/\pi}\;e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac{1}{2})$,
   which matches the direct $60$-digit compute to $\sim 10^{-40}$ across a
-  grid of generic non-integer, non-half-integer $(\nu,\mu)$ points (witness
-  `computations/substrate/whipple-gamma-constant-gridverify.witness.json`);
+  grid of generic non-integer, non-half-integer $(\nu,\mu)$ points;
 - the order $\mu = \tfrac{1}{2}$ and the half-integer degree are forced by the
   Hoefsmit mixing structure
   ([prop:hoefsmit-toroidal-ladder-locus](../braids-and-knots/hoefsmit-toroidal-ladder-locus.md));
@@ -41,51 +39,48 @@ $$
   (the meson is $d = 2$) the same $\Gamma$-constant identity is exact to
   $\sim 10^{-50}$ — not only at the generic grid points, which deliberately
   avoided the $\mu = \tfrac{1}{2}$ order — and the order-ladder factor reproduces
-  the mixing numerator $d^2 - 1$ at each $d$ (witness
-  `computations/substrate/whipple-physical-windings-probe.witness.json`). This
+  the mixing numerator $d^2 - 1$ at each $d$. This
   is numerical evidence for the modeling layer, not a proof.
 
 **Open** is the identification itself: that the channel rotation of the
 Ismail–Masson pair \cite{ismail-masson1994} — the map carrying the bar-even
 recurrence to the bar-odd one — descends to the toroidal family *as* the
 Whipple exchange, i.e. that the two winding oscillations of a bound vortex
-pair are swapped by the substrate bar involution. The Lean sibling
-axiomatises exactly this as a primary conjecture class
-(`WhippleRotationIntertwining`): the rotation swaps the two winding
-gradings and is involutive on ladder data. Both fields are
-parameter-quantified in the shape of the claim; no instance is provided
-(the conjecture is open).
+pair are swapped by the substrate bar involution. This is stated as
+a primary conjecture: the rotation swaps the two winding
+gradings and is involutive on ladder data. No proof is given; the
+conjecture is open.
 
-Two consequences are *derived from* the class (provable modulo it, no
-instance):
+Two consequences are *derived from* the conjecture (conditional on it):
 
-- `nuGrade_square` — the along-loop winding is restored after a double
+- the along-loop winding is restored after a double
   rotation, so the winding pair $(\mu, \nu)$ is fixed by $\mathrm{rot}^2$
   (the categorical shadow of the exact $\cosh\eta \leftrightarrow \coth\eta$
   involution);
-- `gradingPair_intertwines_swap` — the winding-grading map
+- the winding-grading map
   $x \mapsto (\mu(x), \nu(x))$ intertwines the channel rotation with the
   coordinate swap: $(\mu(\mathrm{rot}\,x), \nu(\mathrm{rot}\,x)) =
   \mathrm{swap}(\mu(x), \nu(x))$. This is the exact discrete shadow of the
   Whipple degree–order exchange $(\mu, \nu) \mapsto (\nu, \mu)$, and a
-  genuine consequence of the two swap-component fields (not a restatement).
+  genuine consequence of the two swap components of the conjecture (not a
+  restatement).
 
 The archimedean *amplitude* of that exchange is fixed independently of the
 open identification: the grid-verified constant
 $C(\nu,\mu) = \sqrt{2/\pi}\,e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac{1}{2})$ above is
 the symbolic-exact shadow the intertwining must carry.
 
-The grading-swap field is moreover *not primitive*: `channelIndexed_swaps_windings`
-**derives** it from the even↔odd channel flip that
+The grading-swap component is moreover *not primitive*: it is
+**derived** from the even$\leftrightarrow$odd channel flip that
 [prop on the channel rotation](binding-qbeta-complex-volume.md)
-(`rotation_step`) proves. A `ChannelIndexedLadder` carries the two
+ proves. A channel-indexed ladder carries the two
 recurrence-channel indices, the rotation that flips them, and a single shared
 winding function $\mathrm{windOf}$; the swap
 $\mathrm{windOf}(\mathrm{evenIdx}(\mathrm{rot}\,x)) =
 \mathrm{windOf}(\mathrm{oddIdx}\,x)$ then follows from the flip, not from an
-assumption. This does not close the conjecture (no instance is produced): it
+assumption. This does not close the conjecture: it
 moves the open content off the swap and onto (i) identifying the abstract
-channel flip with `rotation_step`'s $\mathrm{oddStep} \leftrightarrow
+channel flip with the channel-rotation step's $\mathrm{oddStep} \leftrightarrow
 \mathrm{evenStep}$ carry, and (ii) the residual involutivity — the order-2
 Whipple $\cosh\eta \leftrightarrow \coth\eta$ exchange, a *different* map from
-the order-4 ζ₄ recurrence rotation, hence genuinely open.
+the order-4 $\zeta_4$ recurrence rotation, hence genuinely open.

@@ -64,7 +64,7 @@ Everything here is pure algebra over a generic noncommutative `Ring R`
 no `Real.*`, no archimedean construct — the substrate→archimedean wall is not
 crossed.
 
-Ref: [manuscript] rem:lattice-qcd-from-qou, conj:pachner-pentagon-borromean,
+Ref: [leitner2026] rem:lattice-qcd-from-qou, conj:pachner-pentagon-borromean,
      def:q-flat-connection, rem:two-observer-parallelogram
 -/
 

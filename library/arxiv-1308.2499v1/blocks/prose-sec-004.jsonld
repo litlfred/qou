@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1308.2499v1/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "B Equivalence of fractional seminorms",
-  "pageStart": 27,
-  "pageEnd": 32,
-  "text": "../sections/sec-004-b-equivalence-of-fractional-seminorms.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1308.2499v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1308.2499v1",
+  "title": "Regularity of stationary points",
+  "pageStart": 19,
+  "pageEnd": 26,
+  "text": "../sections/sec-004-4-regularity-of-stationary-points.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1308.2499v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1308.2499v1/manifest.jsonld",
   "provenance": "ingested"
 }

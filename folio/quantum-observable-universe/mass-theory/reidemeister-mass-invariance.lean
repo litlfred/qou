@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 4
+-- Ref: [leitner2026] Ch. 4
 -- The topological mass formula is a knot invariant (R-I, R-II, R-III).
 -- The binding energy is an embedding invariant (R-II, R-III but not R-I).
 -- Shell transitions are R-I moves on the embedding.
@@ -83,7 +83,7 @@ theorem writhe_R1_changes (K : KnotDiagram) (sign : Int) (h : sign = 1 ∨ sign 
 /-- Bare mass depends only on the knot type (hyperbolic volume).
     Since knot type is invariant under R-I, R-II, R-III,
     bare mass is a knot invariant. -/
--- Ref: [manuscript] Ch. 4, prop:reidemeister-mass-invariance (bare mass = knot invariant via hyperbolic volume); cf. [jones1987] knot-invariance of the Markov trace
+-- Ref: [leitner2026] Ch. 4, prop:reidemeister-mass-invariance (bare mass = knot invariant via hyperbolic volume); cf. [jones1987] knot-invariance of the Markov trace
 axiom bareMass : KnotDiagram → R_q
 
 /-- **R-III invariance is not a conjecture — it holds for every function.**
@@ -95,9 +95,9 @@ theorem invariant_under_R3 {γ : Type*} (f : KnotDiagram → γ) (K : KnotDiagra
     f (applyR3 K) = f K := rfl
 
 /-- Bare mass is a knot invariant. -/
--- Ref: [manuscript] Ch. 4 (bare mass invariant under R-I)
+-- Ref: [leitner2026] Ch. 4 (bare mass invariant under R-I)
 axiom bareMass_R1_invariant : ∀ K sign h, bareMass (applyR1 K sign h) = bareMass K
--- Ref: [manuscript] Ch. 4 (bare mass invariant under R-II)
+-- Ref: [leitner2026] Ch. 4 (bare mass invariant under R-II)
 axiom bareMass_R2_invariant : ∀ K, bareMass (applyR2 K) = bareMass K
 
 /-- Bare mass is invariant under R-III — a corollary of `invariant_under_R3`,
@@ -107,11 +107,11 @@ theorem bareMass_R3_invariant : ∀ K, bareMass (applyR3 K) = bareMass K :=
 
 /-- Binding energy depends on the embedding (writhe-sensitive).
     It is a regular isotopy invariant but not a knot invariant. -/
--- Ref: [manuscript] Ch. 4, prop:reidemeister-mass-invariance (binding energy = embedding/writhe invariant)
+-- Ref: [leitner2026] Ch. 4, prop:reidemeister-mass-invariance (binding energy = embedding/writhe invariant)
 axiom bindingEnergy : KnotDiagram → R_q
 
 /-- Binding energy is invariant under R-II and R-III. -/
--- Ref: [manuscript] Ch. 4 (binding energy invariant under R-II)
+-- Ref: [leitner2026] Ch. 4 (binding energy invariant under R-II)
 axiom bindingEnergy_R2_invariant : ∀ K, bindingEnergy (applyR2 K) = bindingEnergy K
 
 /-- Binding energy is invariant under R-III — a corollary of
@@ -121,7 +121,7 @@ theorem bindingEnergy_R3_invariant :
   invariant_under_R3 bindingEnergy
 
 /-- Binding energy changes under R-I (shell transition). -/
--- Ref: [manuscript] Ch. 4 (binding energy changes under R-I / shell transition)
+-- Ref: [leitner2026] Ch. 4 (binding energy changes under R-I / shell transition)
 axiom bindingEnergy_R1_changes : ∀ K sign h,
     bindingEnergy (applyR1 K sign h) ≠ bindingEnergy K
 

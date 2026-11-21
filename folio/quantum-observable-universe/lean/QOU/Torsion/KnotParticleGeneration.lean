@@ -43,7 +43,7 @@ standard torus $\mathbb{T}^2 \subset S^3$, together with two
 color-tube fibration.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-particle-generation.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/knot-particle-generation.ts
 theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] :
     ctx.n_linking_ops = 2 ∧
     ∀ (K : ctx.Link) (m n : ℕ),

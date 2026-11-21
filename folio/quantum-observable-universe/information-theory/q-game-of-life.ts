@@ -31,4 +31,10 @@ export default proposition({
     "shi2002",
     "toffoli1980",
   ],
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      body: "This block once named the regime q > 1 via the golden-ratio threshold q_⋆ = 1/φ²; both were artifacts of the excised convention C.",
+    },
+  ],
 });

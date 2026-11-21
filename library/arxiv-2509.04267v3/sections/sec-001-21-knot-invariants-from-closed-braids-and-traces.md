@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 1.0
+doc_brief: "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology — Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants."
 ---
 There are two main constructions of quantum knot invariants from YBOs: one is through braid group representations and their trace maps that are invariant under Markov moves, and the other is by fixing a height function on the plane of projection and incorporate maps corresponding to maxima/minima of knot diagrams. Although these two approaches are closely related, we examine these approaches separately to take advantages of computations of known invariants and their deformations. In this subsection we review the first approach of trace, and in the next subsection we review the second maxima/minima approach.
 

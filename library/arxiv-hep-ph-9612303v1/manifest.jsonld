@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9612303v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9612303v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-9612303v1",
+  "title": "The q-deformed quark model : quantum isospin and q-hadrons",
   "contains": [
     "library/arxiv-hep-ph-9612303v1/sections/sec-front-matter",
     "library/arxiv-hep-ph-9612303v1/sections/sec-000",
@@ -18,7 +18,7 @@
     "library/arxiv-hep-ph-9612303v1/sections/sec-003"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -28,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-9612303v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9612303v1.pdf",
     "source_sha256": "5311d7faf2b3e0050d507e2ad6db2c66d116588c675275ea679a4f56134444cc",
     "pages": 9,

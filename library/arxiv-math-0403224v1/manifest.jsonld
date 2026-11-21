@@ -5,24 +5,22 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0403224v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0403224v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0403224v1",
+  "title": "Difference equation of the colored Jones polynomial for torus knot",
   "contains": [
-    "library/arxiv-math-0403224v1/sections/sec-000",
-    "library/arxiv-math-0403224v1/sections/sec-001",
-    "library/arxiv-math-0403224v1/sections/sec-002",
-    "library/arxiv-math-0403224v1/sections/sec-003",
-    "library/arxiv-math-0403224v1/sections/sec-004",
-    "library/arxiv-math-0403224v1/sections/sec-005",
-    "library/arxiv-math-0403224v1/sections/sec-006",
-    "library/arxiv-math-0403224v1/sections/sec-007",
-    "library/arxiv-math-0403224v1/sections/sec-008"
+    "library/arxiv-math-0403224v1/sections/page-001",
+    "library/arxiv-math-0403224v1/sections/page-002",
+    "library/arxiv-math-0403224v1/sections/page-003",
+    "library/arxiv-math-0403224v1/sections/page-004",
+    "library/arxiv-math-0403224v1/sections/page-005",
+    "library/arxiv-math-0403224v1/sections/page-006",
+    "library/arxiv-math-0403224v1/sections/page-007"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -37,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0403224v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0403224v1.pdf",
     "source_sha256": "c25ccba77da375adc5ecdc95a1f245148dc0071fc677c2c904c0d702dd4fbb84",
     "pages": 7,

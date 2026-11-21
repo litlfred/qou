@@ -1,0 +1,68 @@
+using arg-0-iff by blast
+show ?P 0), (of-complex x)
+proof safe
+fix yz
+assume y € unit-disc z € unit-disc
+then obtain y’ z’ where yz: y = of-complex y’ z = of-complex z'
+using inf-or-of-complez|of y| inf-or-of-complez|of z]
+by auto
+assume betw: poincare-between 0), (of-complex x) y poincare-between On (of-compler x) z
+hence y 4 0n z 4 On
+using <x # 0» <of-complex x € unit-disc» <y € unit-disc)
+using poincare-between-sandwich|of 0; of-complex |
+using of-complez-zero-iff [of x]
+by force+
+
+hence Arg y’ = 0 cmod y’ > cmod x Arg z' = 0 cmod z' > cmod «
+using poincare-between-Ouvlof of-complex x y| poincare-between-Ouv| of of-complex x 2]
+using <of-complex x € unit-discy «x # 0» (Arg x = 0» <y € unit-disc» «z € unit-disc> betw yz
+by (simp-all add: Let-def)
+hence *: is-real y’ is-real z’ Re y' > 0 Re z' > 0
+using arg-0-iff[of y'| arg-0-iff[of z'] x (y # On> (2 # On»? yz
+by auto
+assume poincare-distance 0; z = poincare-distance 0; y 0 < poincare-distance On y
+thus y = z
+using * yz <y € unit-discy «z € unit-disc»
+using unique-z-axis-poincare-distance-positive|of poincare-distance On y]
+by (auto simp add: cmod-eq-Re unit-disc-to-complez-inj)
+qed
+next
+show u € unit-disc v € unit-disc u A v
+by fact+
+next
+fix Muv
+assume *: unit-disc-fix M u € unit-disc v € unit-disc u # v
+assume *: ?P (moebius-pt M u) (moebius-pt M v)
+show ?P uv
+proof safe
+fix dyz
+assume ¥**: 0 < poincare-distance u y
+y € unit-disc poincare-between uv y
+z € unit-disc poincare-between uv z
+poincare-distance u z = poincare-distance u y
+let ?Mu = moebius-pt Mu and ?Mv = moebius-pt Mv and ?My = moebius-pt M y and ?Mz = moebius-pt M z
+have ?Mu € unit-disc ?Mv € unit-disc ?My € unit-disc ?Mz € unit-disc
+using <u € unit-disc) «v € unit-discy «y € unit-disc> «z € unit-disc»
+using (unit-disc-fir My
+by auto
+hence ?My = ?Mz
+using * ***
+using **[rule-format, of poincare-distance ?Mu ?My ?My ?Mz]
+by simp
+thus y = z
+using bij-moebius-pt[of M]
+unfolding bij-def inj-on-def
+by blast
+qed
+qed
+thus ?thesis
+using assms
+by auto
+qed
+
+end
+
+theory Poincare-Lines-Axis-Intersections
+imports Poincare-Between
+
+begin

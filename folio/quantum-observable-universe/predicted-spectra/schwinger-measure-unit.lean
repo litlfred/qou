@@ -30,7 +30,7 @@ element that can vanish: the proper time is invertible (archimedeanly
 `Field` + `s ≠ 0` / `lam ≠ 0` side conditions encoded. The archimedean
 specialisation stays in the separate `SchwingerMeasureShape` file.
 
--- Ref: [manuscript] docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md
 -/
 
 namespace QOU.Archimedean.SchwingerMeasureUnit

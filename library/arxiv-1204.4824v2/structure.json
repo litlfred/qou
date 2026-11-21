@@ -6,10 +6,18 @@
   "sha256": "bf01cbaa5a8712c82f1f20fb5c85ce796468cf5e67b2968e1fca5ab18bb77d3d",
   "bytes": 2982423,
   "pages": 87,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 33,
+    "reason": "14 of 226 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +28,28 @@
   },
   "doi": null,
   "title": "Spectral networks",
-  "authors_raw": "Davide Gaiotto, 1 Gregory W. Moore 2 and Andrew Neitzke 3",
-  "abstract": "We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules. Spec- tral networks arise naturally in four-dimensionalN = 2 theories coupled to surface defects, particularly the theories of class S. In these theories spectral networks provide a useful tool for the computation of BPS degeneracies: the network directly determines the degen- eracies of solitons living on the surface defect, which in turn determine the degeneracies for particles living in the 4d bulk. Spectral networks also lead to a new map between \ufb02at GL(K, C) connections on a two-dimensional surface C and \ufb02at abelian connections on an appropriate branched cover \u03a3 of C. This construction produces natural coordinate sys- tems on moduli spaces of \ufb02at GL(K, C) connections on C, which we conjecture are cluster coordinate systems. arXiv:1204.4824v2 [hep-th] 6 Oct 2013",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20131008002801Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "medialab",
-   "Title": ""
-  },
-  "title_prev": "Prepared for submission to JHEP Spectral networks",
+  "authors_raw": "Davide Gaiotto,1 Gregory W. Moore2 and Andrew Neitzke3",
   "title_lines": [
    "Spectral networks"
-  ]
+  ],
+  "abstract": "We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules. Spec- tral networks arise naturally in four-dimensional N = 2 theories coupled to surface defects, particularly the theories of class S. In these theories spectral networks provide a useful tool for the computation of BPS degeneracies: the network directly determines the degen- eracies of solitons living on the surface defect, which in turn determine the degeneracies for particles living in the 4d bulk. Spectral networks also lead to a new map between ﬂat GL(K, C) connections on a two-dimensional surface C and ﬂat abelian connections on an appropriate branched cover Σ of C. This construction produces natural coordinate sys- tems on moduli spaces of ﬂat GL(K, C) connections on C, which we conjecture are cluster coordinate systems. arXiv:1204.4824v2 [hep-th] 6 Oct 2013",
+  "docinfo": {
+   "Producer": "medialab",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20131008002801Z"
+  },
+  "title_raw": "Spectral networks",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Spectral networks",
+   "outline": "1 Introduction and summary",
+   "text": "Spectral networks",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,438 +57,2178 @@
    "title": "Introduction and summary",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "A brief review of theories of class S",
    "page": 11,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Geometric description of BPS states",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "4d BPS states",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Solitons",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Framed 2d-4d BPS states",
    "page": 15,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Enhanced degeneracies",
    "page": 16,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "A problem of signs",
    "page": 17,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Basics of framed 2d-4d indices",
    "page": 19,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Generating functions of framed 2d-4d indices",
    "page": 19,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Formal products and composition",
    "page": 20,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "The spectral network W",
    "page": 20,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Computing F(,)",
    "page": 21,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "The spectral network W at fixed",
    "page": 23,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Walls as trajectories",
    "page": 23,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Joints and wall-crossing for",
    "page": 23,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "The mass filtration; W[] and [] for small",
    "page": 25,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "W[] and [] for general",
    "page": 27,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "W near full defects",
    "page": 29,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Homotopy invariance",
    "page": 30,
    "source": "outline",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "K=2 theories and ideal triangulations",
    "page": 32,
    "source": "outline",
-   "number": "5.7"
+   "number": "5.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 1,
    "title": "Varying",
    "page": 34,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Endpoints crossing S-walls",
    "page": 34,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "K-walls and the degenerate spectral networks Wc",
    "page": 34,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "The jump of F(, ) at a K-wall",
    "page": 36,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 2,
    "title": "4d BPS degeneracies",
    "page": 38,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "Wall-crossing formula",
    "page": 38,
    "source": "outline",
-   "number": "6.5"
+   "number": "6.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "Proof of the K-wall formula",
    "page": 40,
    "source": "outline",
-   "number": "6.6"
+   "number": "6.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 1,
    "title": "Examples of K-walls",
    "page": 42,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Saddle connections",
    "page": 42,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Closed loops",
    "page": 43,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "Three-string webs",
    "page": 45,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "The setting sun",
    "page": 46,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 1,
    "title": "Some BPS spectra",
    "page": 48,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "The pentagon theory revisited",
    "page": 48,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "The pure SU(3) theory at strong coupling",
    "page": 51,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "The theory of 9 free hypermultiplets",
    "page": 52,
    "source": "outline",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 1,
    "title": "General spectral networks and path lifting",
    "page": 54,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "General spectral networks",
    "page": 55,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "Canonical examples: the W",
    "page": 56,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "Soliton content",
    "page": 56,
    "source": "outline",
-   "number": "9.3"
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "Path lifting",
    "page": 59,
    "source": "outline",
-   "number": "9.4"
+   "number": "9.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 1,
    "title": "Coordinates for moduli of flat connections",
    "page": 61,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 2,
    "title": "Nonabelianization",
    "page": 62,
    "source": "outline",
-   "number": "10.1"
+   "number": "10.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 2,
    "title": "Singularities and flags",
    "page": 64,
    "source": "outline",
-   "number": "10.2"
+   "number": "10.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "The nonabelianization map",
    "page": 65,
    "source": "outline",
-   "number": "10.3"
+   "number": "10.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 2,
    "title": "Holomorphic symplectic structures",
    "page": 66,
    "source": "outline",
-   "number": "10.4"
+   "number": "10.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Dimension counts",
    "page": 67,
    "source": "outline",
-   "number": "10.5"
+   "number": "10.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 2,
    "title": "Equivalence of spectral networks",
    "page": 68,
    "source": "outline",
-   "number": "10.6"
+   "number": "10.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "66"
   },
   {
    "level": 2,
    "title": "A picture of the set of all spectral networks",
    "page": 70,
    "source": "outline",
-   "number": "10.7"
+   "number": "10.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 2,
    "title": "Coordinate systems and a cluster conjecture",
    "page": 71,
    "source": "outline",
-   "number": "10.8"
+   "number": "10.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "WKB asymptotics",
    "page": 72,
    "source": "outline",
-   "number": "10.9"
+   "number": "10.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 1,
    "title": "A Joint rules for two-way streets",
    "page": 74,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 2,
    "title": "A.1 Rules for soliton degeneracies",
    "page": 74,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 2,
    "title": "A.2 Joint rules for soliton sets",
    "page": 76,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "74"
   },
   {
    "level": 1,
    "title": "B A categorical approach",
    "page": 78,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "76"
   },
   {
    "level": 2,
    "title": "B.1 The ring of a category",
    "page": 78,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "76"
   },
   {
    "level": 2,
    "title": "B.2 Categories of paths",
    "page": 79,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 2,
    "title": "B.3 The winding ideal",
    "page": 79,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 2,
    "title": "B.4 Formal parallel transport for the path groupoid",
    "page": 80,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "78"
   },
   {
    "level": 2,
    "title": "B.5 Cocycles",
    "page": 80,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "78"
   },
   {
    "level": 1,
    "title": "C Convention convention",
    "page": 82,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "80"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A spectral network, drawn on the stereographic projection of C = S2, with a single puncture at inﬁnity. All of the walls eventually asymptote to this puncture. The walls are labeled by pairs ij, where i, j are sheets of a 3-fold covering Σ →C. The branch points of the covering are shown as orange cr",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Some possible topologies for ﬁnite webs of BPS strings. An orange cross with label (ij) denotes an (ij)-branch point. Wherever a string with label ij appears, it could equally well have been represented by a string with label ji and the opposite orientation",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Some possible topologies for ﬁnite open webs of BPS strings, representing BPS solitons on the surface defect Sz. Each ﬁnite open web includes one string that ends on the point z ∈C",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Two surface defects connected by an interface",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Two tangent directions at z determined by a ﬁnite web N: ˜z1 points “into” the ﬁnite web while ˜z2 points “away.”",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Two open ﬁnite BPS webs N on the same patch of C, drawn displaced from one another for clarity. These two webs carry the same charge [NΣ] but have diﬀerent lifts [N˜Σ]. Informally, one can say that the lifts of these two webs “diﬀer by one unit of winding.”",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Three surface defects connected by two interfaces. (This picture lives in the threedimensional space where the ﬁeld theory S[g, C, D] is deﬁned; we have factored out the time direction.)",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "A path ℘crossing an S-wall is locally divided into two pieces ℘±. We deform ℘± slightly to paths ℘′",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The local picture around a joint where exactly two S-walls meet. We also show two",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The local picture around a generic collision between three S-walls",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "A collision between S-walls, at which a new S-wall is born",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "A collision between S-walls, at which an S-wall dies",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "A ﬁnite open web N(z) consisting of a single short ij-trajectory, with one end on the (ij)-branch point b and one end on z. This ﬁnite open web represents a light BPS soliton on the surface defect Sz",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Sample Wϑ[Λ] in the theory S[A2, CP1, D] where the Dn are 3 full defects (blue dots at z = −1, 0, 1). We choose ϑ = π/4, φ2 =",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "A portion of a sample Wϑ, exhibiting an intersection between three S-walls, marked by a yellow dot",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "S-walls falling into a full defect, shown in the covering coordinate w = log z. There is a single ij wall and a single jk wall. We have i < j < k in the ordering described in the text",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "A pair of paths that are homotopic but diﬀer by a unit of winding",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "The constraint of twisted homotopy invariance says",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "Two paths which diﬀer by homotopy across a branch point",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "The explicit sums of paths which occur in (5.24). In the equations shown in the ﬁgure, we represent the formal variable Xa by an explicit picture of a smooth path on Σ, whose canonical",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "A portion of a spectral network Wϑ with K = 2, and one face in the corresponding ideal triangulation T(Wϑ) up to isotopy (green dashed lines). Each wall of Wϑ begins on a branch point (orange cross) and asymptotes to a defect (blue dot); these defects are also the vertices of T(Wϑ). Each branch poin",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "The behavior of ij-trajectories approaching a branch point of type (ij)",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "The simplest way in which Wϑ can jump at a K-wall. As ϑ →ϑc, two S-walls merge into a single two-way street running between two branch points. The two-way street supports two distinct charges ¯a, ¯b",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "A path ℘crossing a pair of nearly coincident S-walls, which coalesce into a two-way street at ϑ = ϑc",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "A joint where two-way streets meet. Each two-way street is shown slightly “resolved”, as explained at the end of §6.2. The resolution here is the “American resolution,” as appropriate since we are considering the limit ϑ →ϑ−",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "A more complicated way in which S-walls can collide head-on. At ϑ < ϑc, the Swall supporting charge a winds once clockwise around the cylinder and then disappears toward the bottom, while the S-wall supporting charge b winds many times counterclockwise around the cylinder and eventually disappears t",
+   "page": 44,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "28",
+   "title": "Another picture of the S-walls on the cylinder for ϑ near the critical phase ϑc. Here we do not truncate the walls, and we distinguish diﬀerent walls by giving them diﬀerent colors",
+   "page": 45,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "29",
+   "title": "A new way in which S-walls can collide, which appears only in theories with K > 2. The picture shows a patch of C containing three branch points. Wϑ involves both “primary” Swalls born from the branch points (supporting charges a, b, c) and “secondary” S-walls born from intersections between primary",
+   "page": 46,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "44"
+  },
+  {
+   "kind": "figure",
+   "number": "30",
+   "title": "The “setting sun”: a picture which could occur as part of a degenerate spectral network at some ϑ = ϑc. We show the two-way streets slightly resolved, with the “American resolution”, which would occur in the limit ϑ →ϑ−",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "45"
+  },
+  {
+   "kind": "figure",
+   "number": "31",
+   "title": "Three ﬁnite webs, belonging to a 1-parameter family of ﬁnite webs parameterized by an interval: as we move along the interval, the “bubble” in the middle of the web expands from zero size (left) to a ﬁnite maximum size (right)",
+   "page": 48,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "figure",
+   "number": "32",
+   "title": "The network Wϑ when u = 0, at the phases ϑ = πn/10, with 1 ≤n ≤10; the ﬁrst row begins with n = 1 and the second with n = 6. We indicate the labelings of the S-walls in the n = 1 ﬁgure: all walls in each indicated group carry the same label (e.g. there are three walls carrying the label 13 exiting t",
+   "page": 49,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "33",
+   "title": "The two saddle connections which appear at the critical phases, when u = 0. They could equally well have been represented by segments with the opposite orientation and the labels ij transposed",
+   "page": 49,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "34",
+   "title": "The network Wϑ when u = 4 and Λ = 1, at the phases ϑ = πn/200, with (reading from left to right and top to bottom) n = 1, 23, 45, 68, 82, 90, 97, 103, 110, 118, 132, 155, 177, 199",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "35",
+   "title": "The two saddle connections and one more complicated ﬁnite web which appear at the critical phases, when u = 4 and Λ = 1. Each segment could equally well be replaced by one with the opposite orientation and the labels ij transposed",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "36",
+   "title": "Left: the spectral network Wϑ in a neighborhood of a pair of nearby branch points of types (ij) and (jk); right: the limit where the branch points coalesce to form a branch point of type (ijk). This situation occurs in the pure SU(3) theory as u2 →0",
+   "page": 52,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "37",
+   "title": "The evolution of Wϑ from ϑ = π",
+   "page": 53,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "38",
+   "title": "The cutoﬀspectral networks Wϑ[Λ] where Λeiϑ runs over the 9 values 1",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "figure",
+   "number": "39",
+   "title": "The American (left) and British (right) resolutions of a street",
+   "page": 57,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "55"
+  },
+  {
+   "kind": "figure",
+   "number": "40",
+   "title": "A spectral network in the vicinity of a branch point",
+   "page": 57,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "55"
+  },
+  {
+   "kind": "figure",
+   "number": "41",
+   "title": "The rule for constructing outgoing solitons from a six-way junction, with the British resolution. We show six allowed types of junction, one in each “Weyl chamber” around the joint",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "56"
+  },
+  {
+   "kind": "figure",
+   "number": "42",
+   "title": "Some examples of diagrams representing outgoing solitons",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "56"
+  },
+  {
+   "kind": "figure",
+   "number": "43",
+   "title": "Crossing at a defect: an equivalence which relates two non-isotopic spectral networks",
+   "page": 69,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "67"
+  },
+  {
+   "kind": "figure",
+   "number": "44",
+   "title": "Bubble: an equivalence which relates two non-isotopic spectral networks",
+   "page": 70,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "68"
+  },
+  {
+   "kind": "figure",
+   "number": "45",
+   "title": "Branch point traversal: an equivalence which relates two non-isotopic spectral networks",
+   "page": 70,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "68"
+  },
+  {
+   "kind": "figure",
+   "number": "46",
+   "title": "The British resolution of a joint with two-way streets. Incoming soliton degeneracies are described by generating functions νn, n = 1, . . . , 6. Outgoing soliton degeneracies are described by generating functions τn, n = 1, . . . , 6",
+   "page": 75,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "73"
+  },
+  {
+   "kind": "figure",
+   "number": "47",
+   "title": "Three two-way streets around a branch point",
+   "page": 76,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "74"
+  },
+  {
+   "kind": "figure",
+   "number": "48",
+   "title": "The further resolution of the joint of Figure 46, replacing each two-way street by inﬁnitely many parallel one-way ones. (For clarity we only indicate ﬁve one-way streets in each direction.) Note that there is a vertical “highway divider” separating the kj and jk walls, and similarly for the other t",
+   "page": 77,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "75"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "i",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "2",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "9",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "10",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "12",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "13",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "14",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "15",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "17",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "18",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "19",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "21",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "23",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "25",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "27",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "28",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "30",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "32",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "34",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "36",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "38",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "40",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "41",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "43",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "44",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "46",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "49",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "50",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "52",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "53",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "54",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "57",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "59",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "60",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "62",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "63",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "64",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "65",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "66",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "68",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "69",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "70",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "72",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "74",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "76",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "77",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "78",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "80",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 3491,
+   "n_words": 583,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction-and-summary",
    "number": "1",
@@ -479,8 +2236,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 11,
-   "n_chars": 21344,
-   "n_words": 3778
+   "n_chars": 21408,
+   "n_words": 3820,
+   "label_start": "2",
+   "label_end": "9"
   },
   {
    "id": "sec-001-2-a-brief-review-of-theories-of-class-s",
@@ -489,8 +2248,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2579,
-   "n_words": 493
+   "n_chars": 2649,
+   "n_words": 533,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-002-3-geometric-description-of-bps-states",
@@ -499,8 +2260,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 35,
+   "n_words": 5,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
    "id": "sec-003-31-4d-bps-states",
@@ -509,8 +2272,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 5127,
-   "n_words": 934
+   "n_chars": 5159,
+   "n_words": 955,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
    "id": "sec-004-32-solitons",
@@ -519,8 +2284,10 @@
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 3027,
-   "n_words": 578
+   "n_chars": 3038,
+   "n_words": 581,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
    "id": "sec-005-33-framed-2d-4d-bps-states",
@@ -529,8 +2296,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3297,
-   "n_words": 616
+   "n_chars": 3326,
+   "n_words": 625,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
    "id": "sec-006-34-enhanced-degeneracies",
@@ -539,8 +2308,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1902,
-   "n_words": 360
+   "n_chars": 1931,
+   "n_words": 369,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
    "id": "sec-007-35-a-problem-of-signs",
@@ -549,8 +2320,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 5581,
-   "n_words": 1062
+   "n_chars": 5585,
+   "n_words": 1051,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
    "id": "sec-008-4-basics-of-framed-2d-4d-indices",
@@ -559,8 +2332,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 309,
-   "n_words": 57
+   "n_chars": 338,
+   "n_words": 60,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
    "id": "sec-009-41-generating-functions-of-framed-2d-4d-indices",
@@ -569,8 +2344,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 780,
-   "n_words": 148
+   "n_chars": 820,
+   "n_words": 149,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
    "id": "sec-010-42-formal-products-and-composition",
@@ -579,8 +2356,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 1775,
-   "n_words": 338
+   "n_chars": 1805,
+   "n_words": 340,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
    "id": "sec-011-43-the-spectral-network-w",
@@ -589,411 +2368,633 @@
    "level": 2,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 5855,
-   "n_words": 1100
+   "n_chars": 5435,
+   "n_words": 1035,
+   "label_start": "18",
+   "label_end": "21"
   },
   {
-   "id": "sec-012-51-walls-as-trajectories",
+   "id": "sec-012-5-the-spectral-network-w-at-fixed",
+   "number": "5",
+   "title": "The spectral network W at fixed",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 429,
+   "n_words": 82,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-013-51-walls-as-trajectories",
    "number": "5.1",
    "title": "Walls as trajectories",
    "level": 2,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 660,
-   "n_words": 115
+   "n_chars": 692,
+   "n_words": 128,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-013-52-joints-and-wall-crossing-for",
+   "id": "sec-014-52-joints-and-wall-crossing-for",
    "number": "5.2",
    "title": "Joints and wall-crossing for",
    "level": 2,
    "page_start": 23,
-   "page_end": 30,
-   "n_chars": 15011,
-   "n_words": 2759
+   "page_end": 25,
+   "n_chars": 4517,
+   "n_words": 847,
+   "label_start": "21",
+   "label_end": "23"
   },
   {
-   "id": "sec-014-56-homotopy-invariance",
+   "id": "sec-015-53-the-mass-filtration-w-and-for-small",
+   "number": "5.3",
+   "title": "The mass filtration; W[] and [] for small",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3817,
+   "n_words": 738,
+   "label_start": "23",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-016-54-w-and-for-general",
+   "number": "5.4",
+   "title": "W[] and [] for general",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 4101,
+   "n_words": 775,
+   "label_start": "25",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-017-55-w-near-full-defects",
+   "number": "5.5",
+   "title": "W near full defects",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2605,
+   "n_words": 483,
+   "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-018-56-homotopy-invariance",
    "number": "5.6",
    "title": "Homotopy invariance",
    "level": 2,
    "page_start": 30,
-   "page_end": 34,
-   "n_chars": 6548,
-   "n_words": 1210
+   "page_end": 32,
+   "n_chars": 4679,
+   "n_words": 858,
+   "label_start": "28",
+   "label_end": "30"
   },
   {
-   "id": "sec-015-6-varying",
+   "id": "sec-019-57-k2-theories-and-ideal-triangulations",
+   "number": "5.7",
+   "title": "K=2 theories and ideal triangulations",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 1845,
+   "n_words": 337,
+   "label_start": "30",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-020-6-varying",
    "number": "6",
    "title": "Varying",
    "level": 1,
    "page_start": 34,
    "page_end": 34,
-   "n_chars": 844,
-   "n_words": 173
+   "n_chars": 852,
+   "n_words": 173,
+   "label_start": "32",
+   "label_end": "32"
   },
   {
-   "id": "sec-016-61-endpoints-crossing-s-walls",
+   "id": "sec-021-61-endpoints-crossing-s-walls",
    "number": "6.1",
    "title": "Endpoints crossing S-walls",
    "level": 2,
    "page_start": 34,
    "page_end": 34,
-   "n_chars": 721,
-   "n_words": 140
+   "n_chars": 753,
+   "n_words": 148,
+   "label_start": "32",
+   "label_end": "32"
   },
   {
-   "id": "sec-017-62-k-walls-and-the-degenerate-spectral-networks",
+   "id": "sec-022-62-k-walls-and-the-degenerate-spectral-networks",
    "number": "6.2",
    "title": "K-walls and the degenerate spectral networks Wc",
    "level": 2,
    "page_start": 34,
-   "page_end": 38,
-   "n_chars": 8540,
-   "n_words": 1588
+   "page_end": 36,
+   "n_chars": 4567,
+   "n_words": 856,
+   "label_start": "32",
+   "label_end": "34"
   },
   {
-   "id": "sec-018-64-4d-bps-degeneracies",
+   "id": "sec-023-63-the-jump-of-f-at-a-k-wall",
+   "number": "6.3",
+   "title": "The jump of F(, ) at a K-wall",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 4024,
+   "n_words": 766,
+   "label_start": "34",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-024-64-4d-bps-degeneracies",
    "number": "6.4",
    "title": "4d BPS degeneracies",
    "level": 2,
    "page_start": 38,
    "page_end": 38,
-   "n_chars": 914,
-   "n_words": 157
+   "n_chars": 936,
+   "n_words": 162,
+   "label_start": "36",
+   "label_end": "36"
   },
   {
-   "id": "sec-019-65-wall-crossing-formula",
+   "id": "sec-025-65-wall-crossing-formula",
    "number": "6.5",
    "title": "Wall-crossing formula",
    "level": 2,
    "page_start": 38,
    "page_end": 40,
-   "n_chars": 4764,
-   "n_words": 882
+   "n_chars": 4799,
+   "n_words": 897,
+   "label_start": "36",
+   "label_end": "38"
   },
   {
-   "id": "sec-020-66-proof-of-the-k-wall-formula",
+   "id": "sec-026-66-proof-of-the-k-wall-formula",
    "number": "6.6",
    "title": "Proof of the K-wall formula",
    "level": 2,
    "page_start": 40,
    "page_end": 42,
-   "n_chars": 5145,
-   "n_words": 989
+   "n_chars": 5208,
+   "n_words": 1029,
+   "label_start": "38",
+   "label_end": "40"
   },
   {
-   "id": "sec-021-7-examples-of-k-walls",
+   "id": "sec-027-7-examples-of-k-walls",
    "number": "7",
    "title": "Examples of K-walls",
    "level": 1,
    "page_start": 42,
    "page_end": 42,
-   "n_chars": 78,
-   "n_words": 13
+   "n_chars": 98,
+   "n_words": 16,
+   "label_start": "40",
+   "label_end": "40"
   },
   {
-   "id": "sec-022-71-saddle-connections",
+   "id": "sec-028-71-saddle-connections",
    "number": "7.1",
    "title": "Saddle connections",
    "level": 2,
    "page_start": 42,
    "page_end": 43,
-   "n_chars": 1351,
-   "n_words": 252
+   "n_chars": 1381,
+   "n_words": 265,
+   "label_start": "40",
+   "label_end": "41"
   },
   {
-   "id": "sec-023-72-closed-loops",
+   "id": "sec-029-72-closed-loops",
    "number": "7.2",
    "title": "Closed loops",
    "level": 2,
    "page_start": 43,
    "page_end": 45,
-   "n_chars": 4333,
-   "n_words": 776
+   "n_chars": 4375,
+   "n_words": 807,
+   "label_start": "41",
+   "label_end": "43"
   },
   {
-   "id": "sec-024-73-three-string-webs",
+   "id": "sec-030-73-three-string-webs",
    "number": "7.3",
    "title": "Three-string webs",
    "level": 2,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 2285,
-   "n_words": 426
+   "n_chars": 2334,
+   "n_words": 459,
+   "label_start": "43",
+   "label_end": "44"
   },
   {
-   "id": "sec-025-74-the-setting-sun",
+   "id": "sec-031-74-the-setting-sun",
    "number": "7.4",
    "title": "The setting sun",
    "level": 2,
    "page_start": 46,
    "page_end": 48,
-   "n_chars": 3261,
-   "n_words": 600
+   "n_chars": 3294,
+   "n_words": 620,
+   "label_start": "44",
+   "label_end": "46"
   },
   {
-   "id": "sec-026-8-some-bps-spectra",
+   "id": "sec-032-8-some-bps-spectra",
    "number": "8",
    "title": "Some BPS spectra",
    "level": 1,
    "page_start": 48,
    "page_end": 48,
-   "n_chars": 574,
-   "n_words": 100
+   "n_chars": 594,
+   "n_words": 106,
+   "label_start": "46",
+   "label_end": "46"
   },
   {
-   "id": "sec-027-81-the-pentagon-theory-revisited",
+   "id": "sec-033-81-the-pentagon-theory-revisited",
    "number": "8.1",
    "title": "The pentagon theory revisited",
    "level": 2,
    "page_start": 48,
-   "page_end": 52,
-   "n_chars": 9030,
-   "n_words": 1738
+   "page_end": 51,
+   "n_chars": 5981,
+   "n_words": 1176,
+   "label_start": "46",
+   "label_end": "49"
   },
   {
-   "id": "sec-028-83-the-theory-of-9-free-hypermultiplets",
+   "id": "sec-034-82-the-pure-su3-theory-at-strong-coupling",
+   "number": "8.2",
+   "title": "The pure SU(3) theory at strong coupling",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 3121,
+   "n_words": 612,
+   "label_start": "49",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-035-83-the-theory-of-9-free-hypermultiplets",
    "number": "8.3",
    "title": "The theory of 9 free hypermultiplets",
    "level": 2,
    "page_start": 52,
    "page_end": 54,
-   "n_chars": 3281,
-   "n_words": 602
+   "n_chars": 3347,
+   "n_words": 637,
+   "label_start": "50",
+   "label_end": "52"
   },
   {
-   "id": "sec-029-9-general-spectral-networks-and-path-lifting",
+   "id": "sec-036-9-general-spectral-networks-and-path-lifting",
    "number": "9",
    "title": "General spectral networks and path lifting",
    "level": 1,
    "page_start": 54,
-   "page_end": 56,
-   "n_chars": 4425,
-   "n_words": 788
+   "page_end": 55,
+   "n_chars": 1099,
+   "n_words": 194,
+   "label_start": "52",
+   "label_end": "53"
   },
   {
-   "id": "sec-030-92-canonical-examples-the-w",
+   "id": "sec-037-91-general-spectral-networks",
+   "number": "9.1",
+   "title": "General spectral networks",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 3379,
+   "n_words": 614,
+   "label_start": "53",
+   "label_end": "54"
+  },
+  {
+   "id": "sec-038-92-canonical-examples-the-w",
    "number": "9.2",
    "title": "Canonical examples: the W",
    "level": 2,
    "page_start": 56,
    "page_end": 56,
-   "n_chars": 1396,
-   "n_words": 249
+   "n_chars": 1432,
+   "n_words": 262,
+   "label_start": "54",
+   "label_end": "54"
   },
   {
-   "id": "sec-031-93-soliton-content",
+   "id": "sec-039-93-soliton-content",
    "number": "9.3",
    "title": "Soliton content",
    "level": 2,
    "page_start": 56,
    "page_end": 59,
-   "n_chars": 6774,
-   "n_words": 1207
+   "n_chars": 6818,
+   "n_words": 1237,
+   "label_start": "54",
+   "label_end": "57"
   },
   {
-   "id": "sec-032-94-path-lifting",
+   "id": "sec-040-94-path-lifting",
    "number": "9.4",
    "title": "Path lifting",
    "level": 2,
    "page_start": 59,
    "page_end": 61,
-   "n_chars": 5659,
-   "n_words": 1050
+   "n_chars": 4462,
+   "n_words": 858,
+   "label_start": "57",
+   "label_end": "59"
   },
   {
-   "id": "sec-033-101-nonabelianization",
+   "id": "sec-041-10-coordinates-for-moduli-of-flat-connections",
+   "number": "10",
+   "title": "Coordinates for moduli of flat connections",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 2564,
+   "n_words": 433,
+   "label_start": "59",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-042-101-nonabelianization",
    "number": "10.1",
    "title": "Nonabelianization",
    "level": 2,
-   "page_start": 61,
-   "page_end": 65,
-   "n_chars": 8741,
-   "n_words": 1603
+   "page_start": 62,
+   "page_end": 64,
+   "n_chars": 5418,
+   "n_words": 1054,
+   "label_start": "60",
+   "label_end": "62"
   },
   {
-   "id": "sec-034-103-the-nonabelianization-map",
+   "id": "sec-043-102-singularities-and-flags",
+   "number": "10.2",
+   "title": "Singularities and flags",
+   "level": 2,
+   "page_start": 64,
+   "page_end": 65,
+   "n_chars": 2059,
+   "n_words": 391,
+   "label_start": "62",
+   "label_end": "63"
+  },
+  {
+   "id": "sec-044-103-the-nonabelianization-map",
    "number": "10.3",
    "title": "The nonabelianization map",
    "level": 2,
    "page_start": 65,
    "page_end": 66,
-   "n_chars": 4731,
-   "n_words": 834
+   "n_chars": 4779,
+   "n_words": 859,
+   "label_start": "63",
+   "label_end": "64"
   },
   {
-   "id": "sec-035-104-holomorphic-symplectic-structures",
+   "id": "sec-045-104-holomorphic-symplectic-structures",
    "number": "10.4",
    "title": "Holomorphic symplectic structures",
    "level": 2,
    "page_start": 66,
    "page_end": 67,
-   "n_chars": 1881,
-   "n_words": 323
+   "n_chars": 1934,
+   "n_words": 345,
+   "label_start": "64",
+   "label_end": "65"
   },
   {
-   "id": "sec-036-105-dimension-counts",
+   "id": "sec-046-105-dimension-counts",
    "number": "10.5",
    "title": "Dimension counts",
    "level": 2,
    "page_start": 67,
    "page_end": 68,
-   "n_chars": 3378,
-   "n_words": 580
+   "n_chars": 3441,
+   "n_words": 628,
+   "label_start": "65",
+   "label_end": "66"
   },
   {
-   "id": "sec-037-106-equivalence-of-spectral-networks",
+   "id": "sec-047-106-equivalence-of-spectral-networks",
    "number": "10.6",
    "title": "Equivalence of spectral networks",
    "level": 2,
    "page_start": 68,
    "page_end": 70,
-   "n_chars": 3853,
-   "n_words": 694
+   "n_chars": 3902,
+   "n_words": 714,
+   "label_start": "66",
+   "label_end": "68"
   },
   {
-   "id": "sec-038-107-a-picture-of-the-set-of-all-spectral-network",
+   "id": "sec-048-107-a-picture-of-the-set-of-all-spectral-network",
    "number": "10.7",
    "title": "A picture of the set of all spectral networks",
    "level": 2,
    "page_start": 70,
    "page_end": 71,
-   "n_chars": 976,
-   "n_words": 160
+   "n_chars": 1024,
+   "n_words": 171,
+   "label_start": "68",
+   "label_end": "69"
   },
   {
-   "id": "sec-039-108-coordinate-systems-and-a-cluster-conjecture",
+   "id": "sec-049-108-coordinate-systems-and-a-cluster-conjecture",
    "number": "10.8",
    "title": "Coordinate systems and a cluster conjecture",
    "level": 2,
    "page_start": 71,
    "page_end": 72,
-   "n_chars": 3737,
-   "n_words": 653
+   "n_chars": 3806,
+   "n_words": 684,
+   "label_start": "69",
+   "label_end": "70"
   },
   {
-   "id": "sec-040-109-wkb-asymptotics",
+   "id": "sec-050-109-wkb-asymptotics",
    "number": "10.9",
    "title": "WKB asymptotics",
    "level": 2,
    "page_start": 72,
    "page_end": 74,
-   "n_chars": 6478,
-   "n_words": 1168
+   "n_chars": 6531,
+   "n_words": 1207,
+   "label_start": "70",
+   "label_end": "72"
   },
   {
-   "id": "sec-041-a-joint-rules-for-two-way-streets",
+   "id": "sec-051-a-joint-rules-for-two-way-streets",
    "number": null,
    "title": "A Joint rules for two-way streets",
    "level": 1,
    "page_start": 74,
    "page_end": 74,
-   "n_chars": 499,
-   "n_words": 92
+   "n_chars": 533,
+   "n_words": 99,
+   "label_start": "72",
+   "label_end": "72"
   },
   {
-   "id": "sec-042-a1-rules-for-soliton-degeneracies",
+   "id": "sec-052-a1-rules-for-soliton-degeneracies",
    "number": null,
    "title": "A.1 Rules for soliton degeneracies",
    "level": 2,
    "page_start": 74,
    "page_end": 76,
-   "n_chars": 3289,
-   "n_words": 593
+   "n_chars": 3386,
+   "n_words": 663,
+   "label_start": "72",
+   "label_end": "74"
   },
   {
-   "id": "sec-043-a2-joint-rules-for-soliton-sets",
+   "id": "sec-053-a2-joint-rules-for-soliton-sets",
    "number": null,
    "title": "A.2 Joint rules for soliton sets",
    "level": 2,
    "page_start": 76,
    "page_end": 78,
-   "n_chars": 3787,
-   "n_words": 658
+   "n_chars": 3826,
+   "n_words": 673,
+   "label_start": "74",
+   "label_end": "76"
   },
   {
-   "id": "sec-044-b-a-categorical-approach",
+   "id": "sec-054-b-a-categorical-approach",
    "number": null,
    "title": "B A categorical approach",
    "level": 1,
    "page_start": 78,
    "page_end": 78,
-   "n_chars": 565,
-   "n_words": 96
+   "n_chars": 591,
+   "n_words": 102,
+   "label_start": "76",
+   "label_end": "76"
   },
   {
-   "id": "sec-045-b1-the-ring-of-a-category",
+   "id": "sec-055-b1-the-ring-of-a-category",
    "number": null,
    "title": "B.1 The ring of a category",
    "level": 2,
    "page_start": 78,
    "page_end": 79,
-   "n_chars": 748,
-   "n_words": 143
+   "n_chars": 783,
+   "n_words": 160,
+   "label_start": "76",
+   "label_end": "77"
   },
   {
-   "id": "sec-046-b2-categories-of-paths",
+   "id": "sec-056-b2-categories-of-paths",
    "number": null,
    "title": "B.2 Categories of paths",
    "level": 2,
    "page_start": 79,
    "page_end": 79,
-   "n_chars": 1398,
-   "n_words": 253
+   "n_chars": 1435,
+   "n_words": 273,
+   "label_start": "77",
+   "label_end": "77"
   },
   {
-   "id": "sec-047-b3-the-winding-ideal",
+   "id": "sec-057-b3-the-winding-ideal",
    "number": null,
    "title": "B.3 The winding ideal",
    "level": 2,
    "page_start": 79,
    "page_end": 80,
-   "n_chars": 1035,
-   "n_words": 189
+   "n_chars": 1066,
+   "n_words": 205,
+   "label_start": "77",
+   "label_end": "78"
   },
   {
-   "id": "sec-048-b4-formal-parallel-transport-for-the-path-groupo",
+   "id": "sec-058-b4-formal-parallel-transport-for-the-path-groupo",
    "number": null,
    "title": "B.4 Formal parallel transport for the path groupoid",
    "level": 2,
    "page_start": 80,
    "page_end": 80,
-   "n_chars": 1770,
-   "n_words": 295
+   "n_chars": 1830,
+   "n_words": 314,
+   "label_start": "78",
+   "label_end": "78"
   },
   {
-   "id": "sec-049-b5-cocycles",
+   "id": "sec-059-b5-cocycles",
    "number": null,
    "title": "B.5 Cocycles",
    "level": 2,
    "page_start": 80,
    "page_end": 82,
-   "n_chars": 3987,
-   "n_words": 705
+   "n_chars": 4014,
+   "n_words": 724,
+   "label_start": "78",
+   "label_end": "80"
   },
   {
-   "id": "sec-050-c-convention-convention",
+   "id": "sec-060-c-convention-convention",
    "number": null,
    "title": "C Convention convention",
    "level": 1,
    "page_start": 82,
    "page_end": 87,
-   "n_chars": 12821,
-   "n_words": 2116
+   "n_chars": 12886,
+   "n_words": 2161,
+   "label_start": "80",
+   "label_end": "85"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 62,
-  "sections": 51,
-  "chars_total": 200844,
+  "toc_inferred_entries": 0,
+  "figure_entries": 48,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 62,
+  "chars_total": 206367,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "swn-paper.tex",
    "tex_sections": 53,
-   "overlaid": 39,
+   "overlaid": 49,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1001,18 +3002,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction-and-summary",
      "title": "Introduction and summary",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-a-brief-review-of-theories-of-class-s",
      "title": "A brief review of theories of class S",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1020,13 +3026,13 @@
      "id": "sec-002-3-geometric-description-of-bps-states",
      "title": "Geometric description of BPS states",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-31-4d-bps-states",
      "title": "4d BPS states",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1034,7 +3040,7 @@
      "id": "sec-004-32-solitons",
      "title": "Solitons",
      "prose_ratio": 0.954,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1042,7 +3048,7 @@
      "id": "sec-005-33-framed-2d-4d-bps-states",
      "title": "Framed 2d-4d BPS states",
      "prose_ratio": 0.809,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1050,7 +3056,7 @@
      "id": "sec-006-34-enhanced-degeneracies",
      "title": "Enhanced degeneracies",
      "prose_ratio": 0.924,
-     "coverage_ratio": 0.673,
+     "coverage_ratio": 0.667,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1058,14 +3064,14 @@
      "id": "sec-007-35-a-problem-of-signs",
      "title": "A problem of signs",
      "prose_ratio": 0.972,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-4-basics-of-framed-2d-4d-indices",
      "title": "Basics of framed 2d-4d indices",
-     "prose_ratio": 0.962,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -1074,14 +3080,14 @@
      "id": "sec-009-41-generating-functions-of-framed-2d-4d-indices",
      "title": "Generating functions of framed 2d-4d indices",
      "prose_ratio": 0.936,
-     "coverage_ratio": 0.977,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-010-42-formal-products-and-composition",
      "title": "Formal products and composition",
-     "prose_ratio": 0.98,
+     "prose_ratio": 0.99,
      "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
@@ -1089,288 +3095,368 @@
     {
      "id": "sec-011-43-the-spectral-network-w",
      "title": "The spectral network W",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-51-walls-as-trajectories",
+     "id": "sec-012-5-the-spectral-network-w-at-fixed",
+     "title": "The spectral network W at fixed",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-51-walls-as-trajectories",
      "title": "Walls as trajectories",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.92,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-52-joints-and-wall-crossing-for",
+     "id": "sec-014-52-joints-and-wall-crossing-for",
      "title": "Joints and wall-crossing for",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.98,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-014-56-homotopy-invariance",
-     "title": "Homotopy invariance",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.989,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-015-6-varying",
-     "title": "Varying",
-     "prose_ratio": 0.625,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-016-61-endpoints-crossing-s-walls",
-     "title": "Endpoints crossing S-walls",
-     "prose_ratio": 0.9,
-     "coverage_ratio": 0.973,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-017-62-k-walls-and-the-degenerate-spectral-networks",
-     "title": "K-walls and the degenerate spectral networks Wc",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.924,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-018-64-4d-bps-degeneracies",
-     "title": "4d BPS degeneracies",
-     "prose_ratio": 0.521,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-019-65-wall-crossing-formula",
-     "title": "Wall-crossing formula",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.753,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-020-66-proof-of-the-k-wall-formula",
-     "title": "Proof of the K-wall formula",
-     "prose_ratio": 0.921,
-     "coverage_ratio": 0.938,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-021-7-examples-of-k-walls",
-     "title": "Examples of K-walls",
-     "prose_ratio": 0.8,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-022-71-saddle-connections",
-     "title": "Saddle connections",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.827,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-023-72-closed-loops",
-     "title": "Closed loops",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.973,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-024-73-three-string-webs",
-     "title": "Three-string webs",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.964,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-025-74-the-setting-sun",
-     "title": "The setting sun",
-     "prose_ratio": 0.984,
      "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-8-some-bps-spectra",
+     "id": "sec-015-53-the-mass-filtration-w-and-for-small",
+     "title": "The mass filtration; W[] and [] for small",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-54-w-and-for-general",
+     "title": "W[] and [] for general",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-55-w-near-full-defects",
+     "title": "W near full defects",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-56-homotopy-invariance",
+     "title": "Homotopy invariance",
+     "prose_ratio": 0.851,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-57-k2-theories-and-ideal-triangulations",
+     "title": "K=2 theories and ideal triangulations",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.769,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-6-varying",
+     "title": "Varying",
+     "prose_ratio": 0.636,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-61-endpoints-crossing-s-walls",
+     "title": "Endpoints crossing S-walls",
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-62-k-walls-and-the-degenerate-spectral-networks",
+     "title": "K-walls and the degenerate spectral networks Wc",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-63-the-jump-of-f-at-a-k-wall",
+     "title": "The jump of F(, ) at a K-wall",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-64-4d-bps-degeneracies",
+     "title": "4d BPS degeneracies",
+     "prose_ratio": 0.521,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-65-wall-crossing-formula",
+     "title": "Wall-crossing formula",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.76,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-66-proof-of-the-k-wall-formula",
+     "title": "Proof of the K-wall formula",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-7-examples-of-k-walls",
+     "title": "Examples of K-walls",
+     "prose_ratio": 0.8,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-71-saddle-connections",
+     "title": "Saddle connections",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.848,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-72-closed-loops",
+     "title": "Closed loops",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-73-three-string-webs",
+     "title": "Three-string webs",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-74-the-setting-sun",
+     "title": "The setting sun",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-8-some-bps-spectra",
      "title": "Some BPS spectra",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.976,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-027-81-the-pentagon-theory-revisited",
+     "id": "sec-033-81-the-pentagon-theory-revisited",
      "title": "The pentagon theory revisited",
-     "prose_ratio": 0.948,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-028-83-the-theory-of-9-free-hypermultiplets",
+     "id": "sec-034-82-the-pure-su3-theory-at-strong-coupling",
+     "title": "The pure SU(3) theory at strong coupling",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-83-the-theory-of-9-free-hypermultiplets",
      "title": "The theory of 9 free hypermultiplets",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.866,
+     "coverage_ratio": 0.876,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-029-9-general-spectral-networks-and-path-lifting",
+     "id": "sec-036-9-general-spectral-networks-and-path-lifting",
      "title": "General spectral networks and path lifting",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-030-92-canonical-examples-the-w",
+     "id": "sec-037-91-general-spectral-networks",
+     "title": "General spectral networks",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-92-canonical-examples-the-w",
      "title": "Canonical examples: the W",
      "prose_ratio": 0.922,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-031-93-soliton-content",
+     "id": "sec-039-93-soliton-content",
      "title": "Soliton content",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.956,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-032-94-path-lifting",
+     "id": "sec-040-94-path-lifting",
      "title": "Path lifting",
-     "prose_ratio": 0.817,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-033-101-nonabelianization",
+     "id": "sec-041-10-coordinates-for-moduli-of-flat-connections",
+     "title": "Coordinates for moduli of flat connections",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-042-101-nonabelianization",
      "title": "Nonabelianization",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.825,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-034-103-the-nonabelianization-map",
+     "id": "sec-043-102-singularities-and-flags",
+     "title": "Singularities and flags",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-044-103-the-nonabelianization-map",
      "title": "The nonabelianization map",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-035-104-holomorphic-symplectic-structures",
+     "id": "sec-045-104-holomorphic-symplectic-structures",
      "title": "Holomorphic symplectic structures",
      "prose_ratio": 0.877,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-036-105-dimension-counts",
+     "id": "sec-046-105-dimension-counts",
      "title": "Dimension counts",
      "prose_ratio": 0.931,
-     "coverage_ratio": 0.896,
+     "coverage_ratio": 0.919,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-037-106-equivalence-of-spectral-networks",
+     "id": "sec-047-106-equivalence-of-spectral-networks",
      "title": "Equivalence of spectral networks",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.908,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-038-107-a-picture-of-the-set-of-all-spectral-network",
+     "id": "sec-048-107-a-picture-of-the-set-of-all-spectral-network",
      "title": "A picture of the set of all spectral networks",
      "prose_ratio": 0.94,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-039-108-coordinate-systems-and-a-cluster-conjecture",
+     "id": "sec-049-108-coordinate-systems-and-a-cluster-conjecture",
      "title": "Coordinate systems and a cluster conjecture",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.935,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-040-109-wkb-asymptotics",
+     "id": "sec-050-109-wkb-asymptotics",
      "title": "WKB asymptotics",
      "prose_ratio": 0.953,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-041-a-joint-rules-for-two-way-streets",
+     "id": "sec-051-a-joint-rules-for-two-way-streets",
      "title": "A Joint rules for two-way streets",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-042-a1-rules-for-soliton-degeneracies",
+     "id": "sec-052-a1-rules-for-soliton-degeneracies",
      "title": "A.1 Rules for soliton degeneracies",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-043-a2-joint-rules-for-soliton-sets",
+     "id": "sec-053-a2-joint-rules-for-soliton-sets",
      "title": "A.2 Joint rules for soliton sets",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-044-b-a-categorical-approach",
+     "id": "sec-054-b-a-categorical-approach",
      "title": "B A categorical approach",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-045-b1-the-ring-of-a-category",
+     "id": "sec-055-b1-the-ring-of-a-category",
      "title": "B.1 The ring of a category",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-046-b2-categories-of-paths",
+     "id": "sec-056-b2-categories-of-paths",
      "title": "B.2 Categories of paths",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-047-b3-the-winding-ideal",
+     "id": "sec-057-b3-the-winding-ideal",
      "title": "B.3 The winding ideal",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-048-b4-formal-parallel-transport-for-the-path-groupo",
+     "id": "sec-058-b4-formal-parallel-transport-for-the-path-groupo",
      "title": "B.4 Formal parallel transport for the path groupoid",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-049-b5-cocycles",
+     "id": "sec-059-b5-cocycles",
      "title": "B.5 Cocycles",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-050-c-convention-convention",
+     "id": "sec-060-c-convention-convention",
      "title": "C Convention convention",
      "result": "no matching \\section"
     }

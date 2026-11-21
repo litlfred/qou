@@ -1,0 +1,6016 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1001.2180v2",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 200,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. A random Young diagram λ = (101, 51, 28, 8, 7, 3, 1, 1) of size 200 under the 1/2-Plancherel measure."
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            72.0,
+            67.61,
+            75.97,
+            75.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "VALENTIN FÉRAY AND PIERRE-LOÏC MÉLIOT",
+          "bbox": [
+            207.6,
+            67.61,
+            390.06,
+            75.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "the inﬁnite symmetric group ([Tho64, KV81, KOO98, KOV04]); our computations are quite independent",
+          "bbox": [
+            72.0,
+            89.08,
+            525.49,
+            100.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of these results, and they allow to tackle with the same formalism the second-order asymptotics.",
+          "bbox": [
+            72.0,
+            101.08,
+            492.95,
+            112.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A natural question arising after this result on q-Plancherel measure is the following: can our method be",
+          "bbox": [
+            84.0,
+            121.36,
+            525.42,
+            132.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "adapted to measures for which typical diagrams have rows of intermediate scaling Θ(nα) with 1/2 < α < 1:",
+          "bbox": [
+            72.0,
+            133.01,
+            525.61,
+            144.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "intermediate between the balanced case (α = 1/2) and the q-Plancherel case (α = 1)? The answer is yes",
+          "bbox": [
+            72.0,
+            145.24,
+            525.55,
+            156.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and, as examples, we look at measures associated to Schur-Weyl duality. In these cases, the method gives",
+          "bbox": [
+            72.0,
+            157.24,
+            525.66,
+            168.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "results on the global shape of the diagram, but not the precise behavior of the ﬁrst rows and columns.",
+          "bbox": [
+            72.0,
+            169.12,
+            525.58,
+            180.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Indeed, as for balanced diagrams, the asymptotic behavior of the lengths of the ﬁrst rows and columns is",
+          "bbox": [
+            72.0,
+            181.12,
+            525.52,
+            192.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "not a direct consequence of the existence of the limit shape. For instance, in the case of the Plancherel",
+          "bbox": [
+            72.0,
+            193.12,
+            525.57,
+            204.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "measure, a consequent amount of extra work is needed: see [BDJ99, BDJ00, Oko00, BOO00, Joh01].",
+          "bbox": [
+            72.0,
+            205.0,
+            511.69,
+            216.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1.2. Results.",
+          "bbox": [
+            72.0,
+            231.28,
+            132.78,
+            242.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1.2.1. First rows of a random Young diagram under the q-Plancherel measure. Let us suppose q < 1.",
+          "bbox": [
+            72.0,
+            249.28,
+            525.61,
+            260.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In this paper, we prove a law of large numbers and a central limit theorem for the vector containing",
+          "bbox": [
+            72.0,
+            261.28,
+            525.66,
+            272.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the lengths of the ﬁrst k rows of a random diagram under the q-Plancherel measure Mn,q. Note that",
+          "bbox": [
+            72.0,
+            273.16,
+            525.52,
+            284.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 1 implies that the ﬁrst k rows contain asymptotically (1 −qk) × n boxes, therefore describing",
+          "bbox": [
+            72.0,
+            285.29,
+            525.64,
+            303.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the length of theses rows gives a good description of the diagram. As Mn,q−1(λ′) = Mn,q(λ) (this follows",
+          "bbox": [
+            72.0,
+            297.03,
+            525.69,
+            309.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY5",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "from Deﬁnition 1), in the case q > 1, our result gives the asymptotic behavior of the columns, which are,",
+          "bbox": [
+            72.0,
+            309.4,
+            525.73,
+            320.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in this case, the relevant quantities.",
+          "bbox": [
+            72.0,
+            321.4,
+            227.16,
+            332.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 1 (First order asymptotics). Suppose q < 1. If λ = (λ1 ≥λ2 ≥· · · ) denotes a Young diagram",
+          "bbox": [
+            72.0,
+            339.04,
+            525.37,
+            358.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFBX1000",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of size n under the q-Plancherel measure ( cf. ﬁgure 1), then",
+          "bbox": [
+            72.0,
+            351.04,
+            335.25,
+            362.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∀i ≥1, λi",
+          "bbox": [
+            228.36,
+            366.69,
+            274.74,
+            390.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n −→Mn,q (1 −q) qi−1;",
+          "bbox": [
+            267.72,
+            371.43,
+            369.24,
+            397.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where the arrow →Mn,q means convergence in probability.",
+          "bbox": [
+            72.0,
+            392.15,
+            321.8,
+            409.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. A random Young diagram λ = (101, 51, 28, 8, 7, 3, 1, 1) of size 200 under the",
+          "bbox": [
+            107.88,
+            502.48,
+            489.57,
+            514.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFCC1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1/2-Plancherel measure.",
+          "bbox": [
+            107.88,
+            515.44,
+            213.11,
+            526.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 2 (Second order asymptotics). Under the same hypothesis, if Yn,q,i is the rescaled deviation",
+          "bbox": [
+            72.0,
+            545.8,
+            519.7,
+            558.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFBX1000",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012λi",
+          "bbox": [
+            261.36,
+            555.61,
+            278.46,
+            592.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            342.0,
+            555.61,
+            349.33,
+            592.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            243.72,
+            561.59,
+            252.02,
+            578.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n −(1 −q) qi−1",
+          "bbox": [
+            271.44,
+            567.39,
+            341.53,
+            593.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            252.0,
+            569.37,
+            257.98,
+            579.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            351.0,
+            569.37,
+            353.76,
+            579.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "then we have convergence of the ﬁnite-dimensional laws of the random process (Yn,q,i)i≥1 towards those",
+          "bbox": [
+            72.0,
+            591.56,
+            525.51,
+            602.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of a gaussian process (Yq,i)i≥1 with:",
+          "bbox": [
+            72.0,
+            603.44,
+            227.82,
+            614.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q,i] = (1 −q) qi−1 −(1 −q)2 q2(i−1)",
+          "bbox": [
+            179.76,
+            616.55,
+            331.07,
+            637.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "cov(Yq,i, Yq,j) = −(1 −q)2 qi+j−2.",
+          "bbox": [
+            356.4,
+            616.77,
+            502.44,
+            637.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "E[Y 2",
+          "bbox": [
+            165.12,
+            619.01,
+            185.89,
+            630.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "Type3 (73 0 R)"
+          ],
+          "sizes": [
+            0.12,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "E[Yq,i] = 0",
+          "bbox": [
+            95.04,
+            620.85,
+            140.34,
+            631.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "Type3 (73 0 R)"
+          ],
+          "sizes": [
+            0.12,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ";",
+          "bbox": [
+            150.48,
+            620.85,
+            153.24,
+            630.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ";",
+          "bbox": [
+            341.76,
+            620.85,
+            344.52,
+            630.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In particular, two diﬀerent coordinates Yq,i and Yq,j are negatively correlated.",
+          "bbox": [
+            72.0,
+            645.76,
+            428.06,
+            658.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "For the readers not",
+          "bbox": [
+            437.05,
+            645.76,
+            525.65,
+            656.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "accustomed to the topology of convergence in law, let us give a more concrete version of Theorem 2.",
+          "bbox": [
+            72.0,
+            657.76,
+            525.49,
+            668.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Given ε > 0 and for any positive real numbers x1, . . . , xr, Theorem 2 ensures that, for n big enough:",
+          "bbox": [
+            72.0,
+            669.76,
+            510.12,
+            681.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "≤ε,",
+          "bbox": [
+            481.56,
+            678.25,
+            505.56,
+            738.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z x1",
+          "bbox": [
+            364.2,
+            682.09,
+            382.11,
+            718.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Z xr",
+          "bbox": [
+            399.84,
+            682.09,
+            417.7,
+            718.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            268.08,
+            687.47,
+            276.38,
+            704.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            103.32,
+            687.61,
+            107.46,
+            724.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0003",
+          "bbox": [
+            282.36,
+            687.61,
+            286.5,
+            724.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            327.36,
+            688.65,
+            332.34,
+            698.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tXQ−1X",
+          "bbox": [
+            434.16,
+            689.74,
+            463.58,
+            696.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "∀i ∈[[1, r]] , |λi −(1 −q) qi−1 n| ≤xi",
+          "bbox": [
+            107.52,
+            691.29,
+            265.86,
+            713.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e−",
+          "bbox": [
+            422.28,
+            693.39,
+            432.94,
+            705.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            288.72,
+            695.15,
+            296.46,
+            712.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            386.52,
+            695.15,
+            398.16,
+            712.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            276.36,
+            695.37,
+            282.34,
+            705.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "dX",
+          "bbox": [
+            467.28,
+            695.37,
+            480.69,
+            705.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            299.88,
+            695.41,
+            309.84,
+            732.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            447.36,
+            697.42,
+            450.75,
+            702.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "(2π)r det Q",
+          "bbox": [
+            309.84,
+            700.77,
+            359.71,
+            713.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            95.28,
+            702.84,
+            101.64,
+            702.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Type3 (73 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "−x1",
+          "bbox": [
+            369.72,
+            706.59,
+            383.91,
+            714.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "−xr",
+          "bbox": [
+            405.36,
+            706.59,
+            419.5,
+            714.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 63,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Limit shape of a rescaled random diagram under the Schur-Weyl measure of parameters c > 0 and α < 1/2."
+      ],
+      "labels": [
+        {
+          "text": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
+          "bbox": [
+            205.44,
+            67.61,
+            392.25,
+            75.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            521.52,
+            67.61,
+            525.49,
+            75.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where Q is the symmetric matrix with coeﬃcients Qij = δij (1 −q) qi−1 −(1 −q)2 qi+j−2. This matrix is",
+          "bbox": [
+            72.0,
+            86.39,
+            525.58,
+            107.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "positive deﬁnite because of the Hadamard rule (in each column, the diagonal coeﬃcient is positive and",
+          "bbox": [
+            72.0,
+            101.08,
+            525.59,
+            112.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "strictly bigger than the sum of the absolute values of the other coordinates).",
+          "bbox": [
+            72.0,
+            112.96,
+            405.97,
+            124.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1.2.2. Other measures. As mentioned in paragraph 1.1, our method is quite general. We can establish",
+          "bbox": [
+            72.0,
+            144.64,
+            525.6,
+            155.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "limit shape theorems with diﬀerent rescalings. As an example, in paragraph 6, we introduce some natural",
+          "bbox": [
+            72.0,
+            156.64,
+            525.59,
+            167.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "probability measures on Young diagrams. We obtain the following result:",
+          "bbox": [
+            72.0,
+            168.52,
+            391.69,
+            179.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 3. Let (λn)n be the sequence of random Young diagrams described in paragraph 6.1.",
+          "bbox": [
+            72.0,
+            188.09,
+            503.58,
+            199.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "SFBX1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We",
+          "bbox": [
+            511.8,
+            188.36,
+            525.63,
+            198.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "assume N ∼c · nα with α < 1/2.",
+          "bbox": [
+            72.0,
+            196.76,
+            215.46,
+            217.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Then, for each ε, η > 0, there exists an integer n0 such that, for each n ≥n0, the border of the diagram",
+          "bbox": [
+            84.0,
+            212.15,
+            525.38,
+            229.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "λn is, after rescaling and with probability greater than 1 −ε, contained in the hatched area:",
+          "bbox": [
+            72.0,
+            224.03,
+            468.44,
+            241.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "×nα",
+          "bbox": [
+            151.32,
+            255.06,
+            167.89,
+            264.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "c−1η",
+          "bbox": [
+            235.88,
+            302.61,
+            253.69,
+            313.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "c−1",
+          "bbox": [
+            141.66,
+            311.84,
+            154.79,
+            322.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "cη",
+          "bbox": [
+            342.85,
+            346.33,
+            350.81,
+            354.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "×n1−α",
+          "bbox": [
+            444.28,
+            382.34,
+            470.2,
+            393.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            328.12,
+            392.41,
+            331.78,
+            400.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 2. Limit shape of a rescaled random diagram under the Schur-Weyl measure of",
+          "bbox": [
+            107.88,
+            413.92,
+            489.75,
+            426.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SFCC1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "parameters c > 0 and α < 1/2.",
+          "bbox": [
+            107.88,
+            427.0,
+            242.29,
+            438.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Unfortunately, one can not use this to give the precise behavior of the ﬁrst row of the diagram. The",
+          "bbox": [
+            84.0,
+            462.16,
+            525.58,
+            473.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "only result we have is the following (which is a consequence of Proposition 23):",
+          "bbox": [
+            72.0,
+            474.16,
+            416.89,
+            485.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 4. Let λn be the sequence of random diagrams described in paragraph 6.1. Let us assume",
+          "bbox": [
+            72.0,
+            493.73,
+            525.65,
+            505.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFBX1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that N ∼c nα with α < 1/2. For any ε > 0, one has λ1 = o(n1−α+ε) in probability.",
+          "bbox": [
+            72.0,
+            502.28,
+            434.59,
+            522.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1.2.3. Longest increasing subsequence. It is well-known that the length of the ﬁrst row of a Young diagram",
+          "bbox": [
+            72.0,
+            543.28,
+            525.74,
+            554.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of size n under Plancherel measure has the same distribution as the length of the longest increasing",
+          "bbox": [
+            72.0,
+            555.16,
+            525.64,
+            566.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "subsequence of a random permutation of size n (under the uniform distribution). Indeed, the shape of",
+          "bbox": [
+            72.0,
+            567.16,
+            525.59,
+            578.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the tableaux obtained by the Robinson-Schensted bijection deﬁnes a map",
+          "bbox": [
+            72.0,
+            579.16,
+            392.39,
+            590.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Sn −→{λ ⊢n},",
+          "bbox": [
+            263.04,
+            595.61,
+            334.56,
+            616.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which sends the length of the longest increasing subsequence on the length of the ﬁrst row of λ. The",
+          "bbox": [
+            72.0,
+            614.08,
+            525.58,
+            625.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "image of the uniform distribution on Sn is the Plancherel measure on Young diagrams of size n, and this",
+          "bbox": [
+            72.0,
+            625.13,
+            525.44,
+            638.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "EUFM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "explains the aforementioned result.",
+          "bbox": [
+            72.0,
+            637.96,
+            224.62,
+            649.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Our results on the q-Plancherel measure can also be interpreted in the context of longest increasing",
+          "bbox": [
+            84.0,
+            661.0,
+            525.65,
+            672.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "subsequences. Indeed, E. Strahov [Str08] has noticed that the q-Plancherel measure is the image by the",
+          "bbox": [
+            72.0,
+            673.0,
+            525.43,
+            684.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "map above of the probability measure deﬁned by",
+          "bbox": [
+            72.0,
+            684.88,
+            285.42,
+            695.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P[σ] = Z · qimaj(σ),",
+          "bbox": [
+            269.4,
+            701.93,
+            350.16,
+            720.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "Type3 (73 0 R)"
+          ],
+          "sizes": [
+            0.12,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∀σ,",
+          "bbox": [
+            247.32,
+            703.67,
+            264.36,
+            720.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 61,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Generic degrees, q-Plancherel measures and q-transition probabilities on di- agrams of size n ≤4."
+      ],
+      "labels": [
+        {
+          "text": "6",
+          "bbox": [
+            72.0,
+            67.61,
+            75.97,
+            75.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "VALENTIN FÉRAY AND PIERRE-LOÏC MÉLIOT",
+          "bbox": [
+            207.6,
+            67.61,
+            390.06,
+            75.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "D = 1 ; M1,q = 1",
+          "bbox": [
+            282.83,
+            104.87,
+            348.75,
+            113.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "q",
+          "bbox": [
+            217.54,
+            127.42,
+            220.94,
+            133.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            313.91,
+            127.93,
+            317.57,
+            133.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "q+1",
+          "bbox": [
+            212.98,
+            133.93,
+            225.87,
+            140.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "q+1",
+          "bbox": [
+            309.35,
+            134.41,
+            322.25,
+            140.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "D = q",
+          "bbox": [
+            148.65,
+            153.42,
+            170.91,
+            161.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "D = 1 ; M2,q = 1/(q + 1)",
+          "bbox": [
+            347.44,
+            161.81,
+            442.78,
+            170.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "M2,q = q/(q + 1)",
+          "bbox": [
+            138.29,
+            164.64,
+            201.22,
+            173.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "q2+q",
+          "bbox": [
+            281.92,
+            176.83,
+            298.41,
+            184.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q+1",
+          "bbox": [
+            241.32,
+            178.59,
+            254.22,
+            184.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "q2",
+          "bbox": [
+            147.59,
+            183.92,
+            154.57,
+            191.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q2+q+1",
+          "bbox": [
+            277.24,
+            184.87,
+            303.33,
+            191.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q2+q+1",
+          "bbox": [
+            234.72,
+            185.33,
+            260.81,
+            192.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            373.44,
+            187.33,
+            377.09,
+            193.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "q2+q+1",
+          "bbox": [
+            138.35,
+            191.96,
+            164.44,
+            198.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q2+q+1",
+          "bbox": [
+            362.28,
+            193.59,
+            388.37,
+            200.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "D = 1",
+          "bbox": [
+            412.15,
+            213.67,
+            434.86,
+            221.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "M3,q = 1/(q3 + 2q2 + 2q + 1)",
+          "bbox": [
+            400.25,
+            221.77,
+            509.02,
+            233.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "D = q2 + q",
+          "bbox": [
+            279.6,
+            230.63,
+            320.46,
+            241.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "D = q3",
+          "bbox": [
+            166.33,
+            240.16,
+            192.54,
+            249.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "M3,q = (2q)/(q2 + q + 1)",
+          "bbox": [
+            269.63,
+            241.61,
+            361.97,
+            253.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "q3",
+          "bbox": [
+            109.32,
+            249.12,
+            116.31,
+            256.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            410.29,
+            249.7,
+            413.94,
+            255.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "M3,q = q3/(q3 + 2q2 + 2q + 1)",
+          "bbox": [
+            140.38,
+            250.11,
+            253.11,
+            261.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "q3+q2+q+1",
+          "bbox": [
+            392.65,
+            255.95,
+            431.82,
+            262.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q3+q2+q+1",
+          "bbox": [
+            93.6,
+            257.15,
+            132.77,
+            263.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q3+q",
+          "bbox": [
+            290.43,
+            257.62,
+            306.91,
+            265.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q4+2q3+2q2+2q+1",
+          "bbox": [
+            267.15,
+            265.66,
+            330.32,
+            272.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q3+q2+q",
+          "bbox": [
+            337.68,
+            268.96,
+            367.37,
+            276.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q3+q2+q+1",
+          "bbox": [
+            333.12,
+            277.0,
+            372.3,
+            283.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "q4+q3+q2",
+          "bbox": [
+            202.54,
+            277.46,
+            235.8,
+            285.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "D = 1",
+          "bbox": [
+            437.66,
+            284.53,
+            460.37,
+            292.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "q4+2q3+2q2+2q+1",
+          "bbox": [
+            187.78,
+            285.5,
+            250.95,
+            292.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "M4,q = 1/(q6 + 3q5 + 5q4",
+          "bbox": [
+            426.93,
+            292.63,
+            521.55,
+            304.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "+6q3 + 5q2 + 3q + 1)",
+          "bbox": [
+            441.0,
+            302.67,
+            519.29,
+            313.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "D = q4 + q2",
+          "bbox": [
+            287.48,
+            304.33,
+            332.3,
+            315.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "q2+q+1",
+          "bbox": [
+            172.36,
+            311.48,
+            198.45,
+            319.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "M4,q = (2q2)/(q4 + 3q3 + 4q2 + 3q + 1)",
+          "bbox": [
+            273.82,
+            315.31,
+            420.15,
+            327.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "q3+q2+q+1",
+          "bbox": [
+            165.88,
+            319.52,
+            205.05,
+            326.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "D = q6",
+          "bbox": [
+            91.21,
+            333.7,
+            117.43,
+            343.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "q2+q+1",
+          "bbox": [
+            257.4,
+            339.82,
+            283.49,
+            347.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "M4,q = q6/(q6 + 3q5 + 5q4",
+          "bbox": [
+            79.19,
+            343.66,
+            177.64,
+            355.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "q4+2q3+2q2+2q+1",
+          "bbox": [
+            238.8,
+            347.86,
+            301.97,
+            354.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "+6q3 + 5q2 + 3q + 1)",
+          "bbox": [
+            98.01,
+            353.7,
+            176.3,
+            364.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "D = q3 + q2 + q",
+          "bbox": [
+            331.31,
+            372.36,
+            390.65,
+            383.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "M4,q = (3q)/(q4 + 2q3 + 2q2 + 2q + 1)",
+          "bbox": [
+            321.21,
+            383.34,
+            463.34,
+            395.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "D = q5 + q4 + q3",
+          "bbox": [
+            170.53,
+            386.54,
+            233.82,
+            397.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "M4,q = (3q3)/(q4 + 2q3 + 2q2 + 2q + 1)",
+          "bbox": [
+            159.01,
+            397.51,
+            305.34,
+            409.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 3. Generic degrees, q-Plancherel measures and q-transition probabilities on di-",
+          "bbox": [
+            107.88,
+            432.64,
+            489.68,
+            444.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFCC1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "agrams of size n ≤4.",
+          "bbox": [
+            107.88,
+            445.72,
+            199.57,
+            463.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition - Proposition 1. The q-Plancherel process is the markovian partition-valued process (λn)n∈N",
+          "bbox": [
+            72.0,
+            475.01,
+            525.0,
+            485.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFBX1000",
+            "SFTI1000",
+            "Type3 (203 0 R)"
+          ],
+          "sizes": [
+            0.12,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁned by:",
+          "bbox": [
+            72.0,
+            487.28,
+            118.02,
+            497.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            238.32,
+            495.85,
+            246.34,
+            532.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Q",
+          "bbox": [
+            290.52,
+            496.26,
+            298.03,
+            503.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "@∈λ{h(@)}q",
+          "bbox": [
+            297.96,
+            500.03,
+            339.88,
+            510.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR7",
+            "CMSY5",
+            "CMSY7",
+            "stmary5",
+            "stmary7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "qb(Λ)−b(λ)",
+          "bbox": [
+            246.24,
+            503.91,
+            286.79,
+            515.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "if λ ր Λ in the Young graph,",
+          "bbox": [
+            352.08,
+            505.19,
+            479.4,
+            522.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Q",
+          "bbox": [
+            290.28,
+            505.5,
+            297.79,
+            512.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "@∈Λ{h(@)}q",
+          "bbox": [
+            297.84,
+            509.39,
+            340.0,
+            519.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMSY7",
+            "stmary5",
+            "stmary7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "λ0 = ∅",
+          "bbox": [
+            117.0,
+            512.39,
+            145.5,
+            529.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ";",
+          "bbox": [
+            165.84,
+            512.61,
+            168.6,
+            522.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "pq(λ, Λ) =",
+          "bbox": [
+            190.68,
+            512.61,
+            235.5,
+            523.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "otherwise.",
+          "bbox": [
+            352.08,
+            521.6,
+            395.4,
+            531.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            246.24,
+            521.61,
+            251.22,
+            531.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Its marginal distribution of the n-th partition of the q-Plancherel process is called the q-Plancherel mea-",
+          "bbox": [
+            72.0,
+            537.92,
+            525.57,
+            547.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sure. This probability measure Mn,q on the set Yn of Young diagrams of size n can be alternatively deﬁned",
+          "bbox": [
+            72.0,
+            547.91,
+            525.53,
+            561.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFTI1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by:",
+          "bbox": [
+            72.0,
+            561.92,
+            84.41,
+            571.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∀λ ⊢n, Mn,q({λ}) = Mn,q(λ) = Dλ(q) dim λ",
+          "bbox": [
+            197.16,
+            572.25,
+            396.41,
+            596.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            397.68,
+            579.09,
+            400.44,
+            589.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{n!}q",
+          "bbox": [
+            358.2,
+            585.71,
+            380.69,
+            602.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where dim λ is the dimension of the irreducible representation of Sn indexed by λ, and Dλ(q) is its generic",
+          "bbox": [
+            72.0,
+            597.17,
+            525.52,
+            610.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "EUFM10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "degree as deﬁned in [GP00, Chapter 8]:",
+          "bbox": [
+            72.0,
+            610.12,
+            243.18,
+            621.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{n!}q",
+          "bbox": [
+            316.2,
+            626.15,
+            338.69,
+            643.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Dλ(q) = qb(λ)",
+          "bbox": [
+            235.92,
+            631.25,
+            294.35,
+            643.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Q",
+          "bbox": [
+            297.84,
+            632.77,
+            307.24,
+            669.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            358.92,
+            633.09,
+            361.68,
+            643.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "@∈λ{h(@)}q",
+          "bbox": [
+            307.2,
+            637.44,
+            356.93,
+            656.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "stmary10",
+            "stmary7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The equivalence between the two deﬁnitions (as marginal distribution of a markovian process or via a",
+          "bbox": [
+            72.0,
+            656.56,
+            525.54,
+            667.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "direct formula for the probability to pick each diagram) is explained in [Str08, Section 3].",
+          "bbox": [
+            72.0,
+            668.56,
+            462.13,
+            679.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the next two paragraphs, we explain why this q-analog is natural in the context of Hecke algebras",
+          "bbox": [
+            84.0,
+            680.44,
+            525.8,
+            691.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and general linear groups in ﬁnite characteristic.",
+          "bbox": [
+            72.0,
+            692.44,
+            283.55,
+            703.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 71,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. Modiﬁed Frobenius coordinates of a Young diagram drawn in Russian style. For instance, a∗"
+      ],
+      "labels": [
+        {
+          "text": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
+          "bbox": [
+            205.44,
+            67.61,
+            392.25,
+            75.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            521.52,
+            67.61,
+            525.49,
+            75.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 4. Modiﬁed Frobenius coordinates of a Young diagram drawn in Russian style.",
+          "bbox": [
+            107.88,
+            271.12,
+            489.72,
+            283.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFCC1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For instance, a∗",
+          "bbox": [
+            107.88,
+            283.71,
+            176.64,
+            295.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 is here equal to 31/2, and −b∗",
+          "bbox": [
+            172.56,
+            283.71,
+            312.12,
+            302.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 = −23/2.",
+          "bbox": [
+            308.04,
+            284.08,
+            356.53,
+            302.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We denote by O the algebra generated by the functions (pk)k≥1; it is the algebra of polynomial functions",
+          "bbox": [
+            84.0,
+            313.55,
+            525.44,
+            326.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "on Young diagrams introduced by S. Kerov and G. Olshanski in [KO94], but we use here the notations",
+          "bbox": [
+            72.0,
+            326.44,
+            525.54,
+            337.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of [IO02]. It can be shown that the pk are algebraically independent over",
+          "bbox": [
+            72.0,
+            338.32,
+            395.09,
+            350.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C, and as a consequence, the",
+          "bbox": [
+            398.52,
+            338.32,
+            525.43,
+            349.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000",
+            "Type3 (73 0 R)"
+          ],
+          "sizes": [
+            0.12,
+            9.96
+          ]
+        },
+        {
+          "text": "pρ = pρ1pρ2 · · · pρr (where ρ runs over all partitions) form a linear basis of O. The algebra of observables",
+          "bbox": [
+            72.0,
+            349.43,
+            525.68,
+            370.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "SFRM1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of diagrams has therefore a canonical gradation given by:",
+          "bbox": [
+            72.0,
+            362.32,
+            321.84,
+            373.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deg pρ = |ρ| = ρ1 + ρ2 + · · · + ρr.",
+          "bbox": [
+            227.04,
+            379.79,
+            370.44,
+            397.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3.2. Normalized characters. Another graded algebraic basis may be considered: the normalized cha-",
+          "bbox": [
+            72.0,
+            418.84,
+            525.67,
+            429.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "racters (Σk)k≥1. If ρ and λ are two partitions of respective sizes k and n, we deﬁne the following function",
+          "bbox": [
+            72.0,
+            430.84,
+            525.46,
+            442.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "on Y :",
+          "bbox": [
+            72.0,
+            441.83,
+            98.65,
+            453.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            257.64,
+            446.05,
+            265.66,
+            482.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n↓k χλ(σρ 1n−k)",
+          "bbox": [
+            265.68,
+            452.37,
+            331.35,
+            467.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "if k ≤n",
+          "bbox": [
+            341.28,
+            454.84,
+            375.22,
+            473.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Σρ(λ) =",
+          "bbox": [
+            218.4,
+            462.81,
+            254.94,
+            473.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "if k > n,",
+          "bbox": [
+            341.28,
+            469.12,
+            378.0,
+            480.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            265.68,
+            470.25,
+            270.66,
+            480.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where n↓k = n(n −1) · · · (n −k + 1) is the k-th falling factorial of n, the notation χλ stands for the",
+          "bbox": [
+            72.0,
+            482.44,
+            525.45,
+            504.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "normalized character of the symmetric group, the partition ρ′ = ρ 1n−k is the partition ρ completed with",
+          "bbox": [
+            72.0,
+            494.44,
+            525.48,
+            509.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "parts of size 1, and σρ′ is any permutation in Sn with cycle decomposition of type ρ′.",
+          "bbox": [
+            72.0,
+            508.97,
+            446.41,
+            522.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY5",
+            "CMSY7",
+            "EUFM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the case where λ has only one part (character values on cycles), by using the Frobenius formula",
+          "bbox": [
+            84.0,
+            531.16,
+            525.65,
+            542.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ςλ(ρ) = ⟨sλ | pρ⟩(cf. [Mac95, §1.7], and in particular the corollary 1.7.7), it can be shown that Σk is",
+          "bbox": [
+            72.0,
+            542.93,
+            525.57,
+            562.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a polynomial in the (pl)l≤k. To compute these polynomials, one can use the following Proposition (see",
+          "bbox": [
+            72.0,
+            555.04,
+            525.58,
+            566.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[IO02, Propositions 3.3 and 3.4, 4.4 and 4.5]):",
+          "bbox": [
+            72.0,
+            567.04,
+            271.58,
+            578.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 7. If k ≥1, the observable Σk can be expressed in terms of power sums via the following",
+          "bbox": [
+            72.0,
+            586.01,
+            525.31,
+            603.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFBX1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "formula",
+          "bbox": [
+            72.0,
+            598.28,
+            105.42,
+            608.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            186.72,
+            606.13,
+            195.57,
+            642.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            449.28,
+            606.13,
+            458.13,
+            642.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            323.76,
+            606.49,
+            332.48,
+            643.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            440.52,
+            606.49,
+            449.24,
+            643.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            186.72,
+            615.13,
+            195.57,
+            651.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            449.28,
+            615.13,
+            458.13,
+            651.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            335.64,
+            615.87,
+            343.58,
+            622.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            219.24,
+            616.01,
+            223.47,
+            622.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            215.04,
+            617.05,
+            227.76,
+            653.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            332.52,
+            617.05,
+            346.91,
+            653.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "pj tj",
+          "bbox": [
+            349.68,
+            618.17,
+            367.49,
+            630.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            186.72,
+            619.53,
+            209.82,
+            669.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −(1 −kt)−j)",
+          "bbox": [
+            371.28,
+            624.27,
+            440.55,
+            643.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Σk = [tk+1]",
+          "bbox": [
+            135.0,
+            624.41,
+            185.04,
+            637.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            323.76,
+            624.49,
+            332.48,
+            661.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            440.52,
+            624.49,
+            449.24,
+            661.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2)",
+          "bbox": [
+            72.0,
+            625.12,
+            84.76,
+            636.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −(j −1/2)t) · exp",
+          "bbox": [
+            228.36,
+            626.03,
+            322.09,
+            643.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            449.28,
+            626.25,
+            462.6,
+            669.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            204.6,
+            633.09,
+            209.78,
+            643.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j",
+          "bbox": [
+            356.76,
+            633.09,
+            360.85,
+            643.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            214.56,
+            640.25,
+            228.25,
+            647.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            332.76,
+            640.25,
+            346.45,
+            647.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "As a consequence, the top homogeneous component of Σk is pk, and (Σk)k≥1 is an algebraic basis of the",
+          "bbox": [
+            72.0,
+            654.8,
+            525.53,
+            666.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "algebra O.",
+          "bbox": [
+            72.0,
+            664.79,
+            116.94,
+            676.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Examples 1. Σ1 = p1, Σ2 = p2, Σ3 = p3 −3",
+          "bbox": [
+            72.0,
+            683.21,
+            264.85,
+            703.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2p11 + 5",
+          "bbox": [
+            260.88,
+            683.21,
+            296.77,
+            697.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4p1, Σ4 = p4 −4p21 + 11",
+          "bbox": [
+            292.8,
+            683.21,
+            400.45,
+            703.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 p2.",
+          "bbox": [
+            394.56,
+            683.8,
+            414.01,
+            698.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "rotation": 0,
+      "drawings": 12,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. Graphical representation of the test function fi."
+      ],
+      "labels": [
+        {
+          "text": "22",
+          "bbox": [
+            72.0,
+            67.61,
+            79.93,
+            75.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "VALENTIN FÉRAY AND PIERRE-LOÏC MÉLIOT",
+          "bbox": [
+            207.6,
+            67.61,
+            390.06,
+            75.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "of Proposition 20 to the case of arbitrary central characters Σµ, and a Möbius inversion formula that",
+          "bbox": [
+            72.0,
+            89.08,
+            525.5,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "allows to simplify the expression of the covariances; we refer to a future paper of the second author",
+          "bbox": [
+            72.0,
+            101.08,
+            525.62,
+            112.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "([Mél10]) for details on these computations.",
+          "bbox": [
+            72.0,
+            112.96,
+            262.67,
+            124.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5.3. Fluctuations of rows. As before, we denote by Xλ the probability measure on [−1, 1] associated",
+          "bbox": [
+            72.0,
+            146.2,
+            525.72,
+            164.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFBX1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to a Young diagram λ, and by X∞;q the limit probability measure of the Xλ under the q-Plancherel",
+          "bbox": [
+            72.0,
+            158.2,
+            525.71,
+            170.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "measures. If f ∈C 1([−1, 1]) is a continuously diﬀerentiable function on [−1; 1], we deﬁne the rescaled",
+          "bbox": [
+            72.0,
+            169.19,
+            525.7,
+            188.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "deviation of f under q-Plancherel measure. It is the random variable Dn,q(f) obtained by composition",
+          "bbox": [
+            72.0,
+            182.08,
+            525.6,
+            193.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of q-Plancherel measure by the function:",
+          "bbox": [
+            72.0,
+            193.96,
+            248.25,
+            205.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "λ 7→√",
+          "bbox": [
+            235.32,
+            203.63,
+            264.86,
+            228.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n (Xλ(f) −X∞;q(f)) ,",
+          "bbox": [
+            264.84,
+            211.31,
+            362.28,
+            228.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R 1",
+          "bbox": [
+            222.72,
+            222.01,
+            233.41,
+            258.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where µ(f) is a short notation for",
+          "bbox": [
+            72.0,
+            228.64,
+            219.42,
+            239.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1 fdµ.",
+          "bbox": [
+            227.52,
+            228.64,
+            259.81,
+            243.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In this context, the convergence in law of rescaled power sums can be reformulated as a convergence",
+          "bbox": [
+            84.0,
+            249.64,
+            525.79,
+            260.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            159.96,
+            255.01,
+            164.52,
+            291.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            201.0,
+            255.01,
+            205.56,
+            291.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Dn,q(xl)",
+          "bbox": [
+            164.52,
+            261.41,
+            201.03,
+            273.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in law of the vector",
+          "bbox": [
+            72.0,
+            261.64,
+            156.78,
+            272.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1≤l≤k towards a gaussian vector (Zq;l) with covariance matrix:",
+          "bbox": [
+            205.56,
+            261.64,
+            477.98,
+            276.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k(Zq;l, Zq;m) = X∞;q((l + 1)(m + 1) xlxm) −(l + 1)(m + 1) X∞;q(xl) X∞;q(xm);",
+          "bbox": [
+            125.4,
+            280.49,
+            472.08,
+            299.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            217.44,
+            291.61,
+            222.0,
+            328.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(xl+1)′ (xm+1)′\u0001",
+          "bbox": [
+            222.0,
+            291.61,
+            291.48,
+            328.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            328.2,
+            291.61,
+            332.76,
+            328.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(xl+1)′\u0001",
+          "bbox": [
+            332.76,
+            291.61,
+            366.72,
+            328.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            394.56,
+            291.61,
+            399.12,
+            328.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(xm+1)′\u0001",
+          "bbox": [
+            399.12,
+            291.61,
+            437.52,
+            328.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−X∞;q",
+          "bbox": [
+            293.76,
+            299.15,
+            325.85,
+            316.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= X∞;q",
+          "bbox": [
+            182.4,
+            299.37,
+            215.09,
+            310.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X∞;q",
+          "bbox": [
+            370.08,
+            299.37,
+            392.21,
+            310.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            439.2,
+            299.37,
+            441.96,
+            309.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Recall that with respect to the C 1-topology,",
+          "bbox": [
+            72.0,
+            314.99,
+            271.22,
+            326.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "SFRM1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R[X] is dense in the space of continuously diﬀerentiable",
+          "bbox": [
+            275.52,
+            315.88,
+            525.53,
+            326.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000",
+            "Type3 (73 0 R)"
+          ],
+          "sizes": [
+            0.12,
+            9.96
+          ]
+        },
+        {
+          "text": "functions C 1([−1, 1]). By using this density together with the bilinearity of Dn,q and covariance, we",
+          "bbox": [
+            72.0,
+            326.87,
+            525.58,
+            345.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "conclude that for any functions f1, f2, . . . , fr ∈C 1([−1, 1]), the vector of rescaled deviations Dn,q(fi)",
+          "bbox": [
+            72.0,
+            338.87,
+            525.51,
+            359.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "converges towards a gaussian vector (Zq;fi)i∈[[1,r]] with covariance matrix:",
+          "bbox": [
+            72.0,
+            351.76,
+            391.58,
+            364.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k(Zq;fi, Zq;fj) = X∞;q ((xfi)′ (xfj)′) −X∞;q ((xfi)′) X∞;q ((xfj)′) .",
+          "bbox": [
+            153.6,
+            365.61,
+            444.0,
+            386.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof of Theorem 2. If i ≥1, we denote by fi a class C 1 and non-negative function such that fi(x) = 1 on",
+          "bbox": [
+            72.0,
+            383.8,
+            525.61,
+            405.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000",
+            "SFTI1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a vicinity Vi of qi−1 (1 −q) and fi(x) = 0 outside a vicinity Wi ⊃Vi, cf. ﬁgure 5. We shall also suppose",
+          "bbox": [
+            72.0,
+            396.93,
+            525.57,
+            419.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that the Wi are disjoint open sets; in particular, X∞;q(fi) = qi−1(1 −q). Since f ′",
+          "bbox": [
+            72.0,
+            411.03,
+            444.01,
+            429.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i(qi−1(1 −q)) = 0,",
+          "bbox": [
+            440.64,
+            411.03,
+            525.61,
+            429.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(xfi)′(qi−1(1 −q)) = fi(qi−1(1 −q)) = 1, and as a consequence,",
+          "bbox": [
+            72.0,
+            423.03,
+            349.54,
+            441.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X∞;q((x fi(x))′2) −X∞;q((x fi(x))′)2 = qi−1(1 −q) −q2(i−1)(1 −q)2.",
+          "bbox": [
+            148.8,
+            437.73,
+            448.68,
+            458.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "qi−1(1 −q)",
+          "bbox": [
+            334.57,
+            507.64,
+            376.38,
+            518.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Wi",
+          "bbox": [
+            349.93,
+            545.59,
+            360.63,
+            554.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 5. Graphical representation of the test function fi.",
+          "bbox": [
+            168.48,
+            558.04,
+            429.13,
+            570.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFCC1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Moreover, fi fj = 0 for all i̸ = j, and the same holds for fi f ′",
+          "bbox": [
+            84.0,
+            588.03,
+            347.53,
+            606.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j, f ′",
+          "bbox": [
+            344.16,
+            588.03,
+            362.65,
+            601.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i fj or f ′",
+          "bbox": [
+            359.28,
+            588.03,
+            397.45,
+            602.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i f ′",
+          "bbox": [
+            394.08,
+            588.03,
+            407.89,
+            602.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j. Therefore, the covariance",
+          "bbox": [
+            404.52,
+            588.4,
+            525.82,
+            601.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "matrix of the corresponding limit gaussian vector (Zq;fi)i≥1 is:",
+          "bbox": [
+            72.0,
+            600.88,
+            345.13,
+            613.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X∞;q ((x fi(x))′ (x fj(x))′) −X∞;q ((x fi(x))′) X∞;q ((x fj(x))′) = −X∞;q ((x fi(x))′) X∞;q ((x fj(x))′) ;",
+          "bbox": [
+            75.24,
+            614.13,
+            522.36,
+            635.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= −(1 −q)2 qi+j−2.",
+          "bbox": [
+            351.84,
+            630.93,
+            436.8,
+            652.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Finally, for n large enough and outside a set of arbitrary small probability, a∗",
+          "bbox": [
+            72.0,
+            650.55,
+            408.0,
+            662.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i (λ)/n is in Vi, a∗",
+          "bbox": [
+            403.92,
+            650.55,
+            481.8,
+            664.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i−1(λ)/n is",
+          "bbox": [
+            477.72,
+            650.92,
+            525.57,
+            663.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in Vi−1 and a∗",
+          "bbox": [
+            72.0,
+            662.43,
+            134.4,
+            675.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i+1(λ)/n is in Vi+1. Thus, with a probability close to 1, the support of Xλ and the support",
+          "bbox": [
+            130.32,
+            662.92,
+            525.61,
+            675.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of fi̸ = 0 intersect only at a∗",
+          "bbox": [
+            72.0,
+            674.43,
+            196.68,
+            694.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i (λ)/n, and Xλ(fi) = a∗",
+          "bbox": [
+            192.6,
+            674.43,
+            299.28,
+            688.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i (λ)/n. As a consequence,",
+          "bbox": [
+            295.2,
+            674.8,
+            410.26,
+            688.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012a∗",
+          "bbox": [
+            195.48,
+            684.61,
+            213.36,
+            721.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            288.84,
+            684.61,
+            296.17,
+            721.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            177.96,
+            690.47,
+            186.26,
+            707.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= √",
+          "bbox": [
+            298.92,
+            690.47,
+            317.78,
+            715.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i (λ)",
+          "bbox": [
+            209.28,
+            691.65,
+            227.31,
+            704.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−qi−1(1 −q)",
+          "bbox": [
+            230.88,
+            696.39,
+            288.87,
+            715.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n (Xλ(fi) −X∞;q(fi)) ,",
+          "bbox": [
+            317.76,
+            698.15,
+            419.64,
+            715.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            186.24,
+            698.37,
+            192.22,
+            708.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            212.76,
+            705.21,
+            218.74,
+            715.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

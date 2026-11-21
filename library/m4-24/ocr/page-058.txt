@@ -1,0 +1,51 @@
+430 T. Ohtsuki (Editor)
+
+We can again follow Gauss and associate the following similar Gauss integral
+I(K) to a C® embedding K : S' — R%. Here, we consider the configuration
+space C = $!x]0, 2n[, and the map
+v:C—> 8?
+—____
+that maps (z1,7) to the oriented direction of K(z1)K(z,e"”), and we set
+
+I(K) = [vw
+
+This Gauss integral is NOT an isotopy invariant, and it can be seen as an
+exercise that it takes any real value on any given isotopy class of knots.
+
+However, we can follow Guadagnini, Martellini and Mintchev and associate
+configuration space integrals to our embedding AK and to any Jacobi diagram
+on the circle [ without small loop like -«>. A configuration of such a diagram
+is an embedding c of the set U UT of its vertices into R? whose restriction
+to the set U of univalent vertices factors through the knot embedding K so
+that the factorization induces the cyclic order of U. Denote the set of these
+configurations by C(K;T). C(K;T) is an open submanifold of (S!)¥ x (R3)".
+Denote the set of dashed edges of [ by F, and fix an orientation for these edges.
+Then we can define the map W : C(K;T)— (s2)” whose projection to the S$?
+factor indexed by an edge from a vertex v; to a vertex v2 is the direction of
+—
+
+c(v1)c(v2). This map W is again a map between two orientable manifolds that
+have the same dimension, namely the number of dashed half-edges of I, and
+we can write the configuration space integral:
+
+D= *(AEw),
+1(K;T) =focn’ (APw)
+
+For example, if 6 denotes the Jacobi diagram ©, then I(K;0) = I(i). Bott
+and Taubes have proved that this integral is convergent [65]. Thus, this integral
+is well-defined up to sign. In fact, an orientation of the trivalent vertices of T
+provides I(K;I) with a well-defined sign! such that the product I(K;T)[l] €
+A(S";R) does not depend on the vertex orientation of T.
+
+Since S$? is equipped with its standard orientation, it is enough to orient O(K;T) c
+(S")” x (R*)* in order to define this sign. This will be done by providing the set of the
+natural coordinates of (S')” x (R*)” with some order up to an even permutation. This set is
+in one-to-one correspondence with the set of dashed half-edges of I’, and the vertex-orientation
+of the trivalent vertices provides a natural preferred such one-to-one correspondence up to some
+(even!) cyclic permutations of three half-edges meeting at a trivalent vertex. Fix an order on
+E, then the set of half-edges becomes ordered by (origin of the first edge, endpoint of the first
+edge, origin of the second edge, ..., endpoint of the last edge), and this order orients C(L;T).
+As an exercise, check that the sign of J(K;I)[P] does depend neither on our choices nor on
+the vertex orientation of TI.
+
+Geometry & Topology Monographs, Volume 4 (2002)

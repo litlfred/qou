@@ -1,0 +1,47 @@
+11.2 Proof of Theorem 11.1 349
+so-called positive and negative time-like cones
+
+c= {wert x, > gts tail
+
+c_={eer! pap <aypdee tal},
+
+The following proposition and definition define the first version of the cones
+of hyperbolicity that will ultimately lead to the family of cones in Theorem 11.1.
+
+and
+
+4
+
+Proposition 11.15. Let A be a homogeneous polynomial, fix x with A(a) = 0,
+and let A = hom(A, x) denote the leading homogeneous part of A at x. If A
+is hyperbolic in the direction u then A is also hyperbolic in the direction u.
+Consequently, if C is any cone of hyperbolicity for A then there is some cone
+of hyperbolicity for A that contains C.
+
+Proof If P is a polynomial of degree k then we can recover its leading homo-
+geneous part hom(P) by
+
+hom(P)(y) = lim aXP(A'y).
+
+This limit is uniform as y varies over compact sets, since monomials of degree
+k are invariant under the scaling on the right-hand side, while monomials of
+degree k + j scale by A~/, uniformly over compact sets. Thus, in our situation
+
+Aly + tu) = lim MA(ae + Ay + tu))
+
+uniformly as f varies over compact sub-intervals of R. If A is hyperbolic in
+direction uw then, for any fixed A, all the zeros of this polynomial in ¢ are real.
+Hurwitz’s Theorem on the continuity of zeros [Con78b, Corollary 2.6] says
+that a (uniform on bounded intervals) limit of polynomials having all real zeros
+will either have all real zeros or vanish identically. The limit A(y + tu) has
+degree k > 1; it does not vanish identically, so if A is hyperbolic in the direction
+u then A has only real roots and is also hyperbolic. ia)
+
+Definition 11.16 (family of cones in the homogeneous case). Let A be a ho-
+mogeneous polynomial and let C be a cone of hyperbolicity for A. If A(a) = 0
+then we define K““(a) to be the cone of hyperbolicity of hom(A, a) containing
+C, whose existence we have just proved. If A(a) # 0 then we define K*-° (a)
+to be all of R’.
+
+Remark 11.17. When « # 0 the cone K*"“(z) depends only on the direction
+X= 2/(|2I.

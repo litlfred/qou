@@ -1,0 +1,1 @@
+Let A be a noetherian AS-Gorenstein Hopf algebra (with bijective antipode S). Let d be the injective dimension of A. (a) A is rigid Gorenstein with Nakayama automorphism ξS2. (b) The rigid dualising complex of A is ξS2A1[d]. (c) R l A = 1kξS2 = 1kξ.

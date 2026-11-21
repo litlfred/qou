@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 9912004v2.pdf
 source_sha256: 7033719ec7a8a0bc
 toc_source: inferred
+doc_brief: "arXiv:hep-lat/9912004v2 9 Mar 2000 — 11 sections: Front matter; Chiral Random Matrix Theory; Introduction"
 ---
 arXiv:hep-lat/9912004v2  9 Mar 2000
 Microscopic Universality and the Chiral Phase Transition in two Flavor QCD

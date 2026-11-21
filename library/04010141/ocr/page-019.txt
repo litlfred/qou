@@ -1,0 +1,47 @@
+Cellular algebras and diagram algebras 159
+
+We complete this section with a result which is instrumental in ap-
+plying our results on T¢(q) to the representation theory of H2(q).
+
+Theorem 4.18 ((18], (5.11)). Let 6 € R satisfy 6? = —q"-?.
+Then there is a unique surjective homomorphism gg : T2(q) —>
+TLB,,(q,Q) such that gg(fi) = ¢; fori = 1,2,...,n—1, and gg(r) = bv.
+If a, w satisfy a1 = GB, then the following diagram commutes,
+
+Haq) —2> Tig > Tq)
+
+(4.19) [ne [ren |
+HB,(q,Q) —*> TLB,(q,Q) —*> TLBn(q,Q)
+
+where nau(Ti) = n@(Ti) for 1 <i <n, and nayu(X1) = une(X1) =
+UTo, and yQ,,(Ti) = ti (see immediately following 4.16) and yaQ,,(V) =
+ByQ(V) = po.
+
+The proof of Theorem (4.18) involves proving the relation cjv? =
+—q-eycg...Cn—1 in TLBn(q, Q) (cf. the sentence following 4.16),
+and analysing the diagram 4.17.
+
+§5. Lifting representations from finite to infinite dimensional
+algebras
+
+5.1. Commutative diagrams and lifting representations
+
+Let A and B be R-algebras and » : A — B be an R-algebra homo-
+morphism. If p: B — Endr(M) is a representation of B (where M isa
+free R-module) one may lift p to a representation ~*p of A by composing
+with ~. This is called the inflation of p via w We shall discuss in this
+section the lifting of representations in the diagram 4.19. Note that by
+4.14(v), if R is an algebraically closed field of characteristic not dividing
+n, then every finite dimensional irreducible representation of TI2(q) is
+the lift via @q of an irreducible represetation of T:2(q), for some a € R*™.
+
+It follows that the inflations to He(q) of irreducible representations
+of T*(q) are precisely those irreducible representations of H(q) which
+factor through TIA(q). Our next result describes the lifting of cell mod-
+ules from TLB,(q,Q) to T,2(q).
+
+Theorem 5.1 (([18], Corollary (6.15)). Suppose R is any commu-
+tative ring and suppose that q,Q are elements of RX. Let 8 € R™ satisfy
+B? = —q"~? and let gg : T2(q) - TLB,(q,Q) be the surjection defined
+in 4.18. For t € Z such that |t| <n and t = n (mod 2), define e, := a
+fort #0, ande =1 ft =0.

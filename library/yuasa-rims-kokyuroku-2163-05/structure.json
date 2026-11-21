@@ -1,128 +1,39 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "yuasa-rims-kokyuroku-2163-05",
  "source": {
   "file": "yuasa-rims-kokyuroku-2163-05.pdf",
   "sha256": "fa2a585b45c2185dc336fe7024a1cf892350dc2a57a85c0c12529528ba2361fe",
   "bytes": 10053675,
+  "mtime": "2026-11-15T11:07:55Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 11,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:27Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "ecac89bcd01e362ec32b82107b6f9546d7b28a178135c2bf7506fe96714afcf4"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
-  "title": "Twist formulas for one-row colored A\u00bb webs and sl; tails of (2, 2m)-torus links",
-  "authors_raw": "Wataru Yuasa",
-  "title_lines": [
-   "Twist formulas for one-row colored A\u00bb webs and sl; tails of",
-   "(2, 2m)-torus links"
-  ],
-  "abstract": null,
+  "title": "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links",
   "docinfo": {
    "Title": "2020002-Wataru Yuasa.pdf",
    "Author": "tamura",
    "Producer": "Microsoft: Print To PDF",
    "CreationDate": "D:20200604170805+09'00'"
   },
-  "title_raw": "Twist formulas for one-row colored A\u00bb webs and sl; tails of (2, 2m)-torus links",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
    "metadata": "2020002-Wataru Yuasa.pdf",
-   "text": "Twist formulas for one-row colored A\u00bb webs and sl; tails of (2, 2m)-torus links",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Twist formulas for one-row colored A» webs and sl; tails of (2, 2m)-torus links"
  },
- "toc": [],
- "toc_source": "undetermined",
- "toc_undetermined_reason": "5 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "yuasa-rims-kokyuroku-2163-05",
+ "toc_source": "none",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
- "figures": [],
- "pages": [
-  {
-   "physical": 1,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 2,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 3,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 4,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 5,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 6,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 7,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 8,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 9,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 10,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 11,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  }
- ],
  "sections": [
   {
    "id": "page-001",
@@ -132,9 +43,7 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 2800,
-   "n_words": 464,
-   "label_start": null,
-   "label_end": null
+   "n_words": 464
   },
   {
    "id": "page-002",
@@ -144,9 +53,7 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 2128,
-   "n_words": 404,
-   "label_start": null,
-   "label_end": null
+   "n_words": 404
   },
   {
    "id": "page-003",
@@ -156,9 +63,7 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 1273,
-   "n_words": 245,
-   "label_start": null,
-   "label_end": null
+   "n_words": 245
   },
   {
    "id": "page-004",
@@ -168,9 +73,7 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 979,
-   "n_words": 215,
-   "label_start": null,
-   "label_end": null
+   "n_words": 215
   },
   {
    "id": "page-005",
@@ -180,9 +83,7 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 628,
-   "n_words": 134,
-   "label_start": null,
-   "label_end": null
+   "n_words": 134
   },
   {
    "id": "page-006",
@@ -192,9 +93,7 @@
    "page_start": 6,
    "page_end": 6,
    "n_chars": 1595,
-   "n_words": 294,
-   "label_start": null,
-   "label_end": null
+   "n_words": 294
   },
   {
    "id": "page-007",
@@ -204,9 +103,7 @@
    "page_start": 7,
    "page_end": 7,
    "n_chars": 642,
-   "n_words": 117,
-   "label_start": null,
-   "label_end": null
+   "n_words": 117
   },
   {
    "id": "page-008",
@@ -216,9 +113,7 @@
    "page_start": 8,
    "page_end": 8,
    "n_chars": 1490,
-   "n_words": 305,
-   "label_start": null,
-   "label_end": null
+   "n_words": 305
   },
   {
    "id": "page-009",
@@ -228,9 +123,7 @@
    "page_start": 9,
    "page_end": 9,
    "n_chars": 1542,
-   "n_words": 296,
-   "label_start": null,
-   "label_end": null
+   "n_words": 296
   },
   {
    "id": "page-010",
@@ -240,9 +133,7 @@
    "page_start": 10,
    "page_end": 10,
    "n_chars": 2328,
-   "n_words": 365,
-   "label_start": null,
-   "label_end": null
+   "n_words": 365
   },
   {
    "id": "page-011",
@@ -252,26 +143,8 @@
    "page_start": 11,
    "page_end": 11,
    "n_chars": 1760,
-   "n_words": 271,
-   "label_start": null,
-   "label_end": null
+   "n_words": 271
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 0,
-  "toc_inferred_entries": 5,
-  "toc_inferred_mean_confidence": 0.0,
-  "toc_inferred_empty_share": 0.0,
-  "toc_inferred_method": "regex",
-  "figure_entries": 0,
-  "figure_sequence_gaps": [],
-  "page_label_conflicts": {
-   "count": 0,
-   "items": []
-  },
-  "sections": 11,
-  "chars_total": 17165
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

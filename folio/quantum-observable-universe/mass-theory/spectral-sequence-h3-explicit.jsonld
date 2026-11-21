@@ -2,16 +2,17 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-spectral-sequence-h3-explicit",
+  "@id": "papers/quantum-observable-universe/blocks/conj-spectral-sequence-h3-explicit",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:spectral-sequence-h3-explicit",
-  "kind": "proposition",
+  "label": "conj:spectral-sequence-h3-explicit",
+  "kind": "conjecture",
   "title": "Explicit $d_1, d_2$ on $H_3(q)$ over $\\mathbb{R}[q, q^{-1}]$",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-e-infinity-page-identifications"
@@ -22,7 +23,7 @@
     "hecke-h3",
     "computation"
   ],
-  "leanRef": "qou:QOU.BraidKnot.spectral_sequence_h3_explicit",
+  "leanRef": "qou:QOU.BraidKnot.SpectralSequenceH3Explicit",
   "text": "spectral-sequence-h3-explicit.md",
   "provenance": "authored"
 }

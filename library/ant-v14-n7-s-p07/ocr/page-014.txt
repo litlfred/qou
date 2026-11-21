@@ -1,0 +1,54 @@
+1908 Jordan S. Ellenberg, Wanlin Li and Mark Shusterman
+
+Ifk,,..., k, are mutually coprime, then Uj=1 Me; has no repeated values. So the only possible multiple
+eigenvalue of Frobenius on J(C)[¢] is 1, and this eigenvalue appears multiple times only if r > 3. This
+completes the proof. oO
+
+Proof of Corollary 1.8. Consider curves over Fy with defining equations of the form y! = f(x) where
+f € Fy[x] is monic, squarefree of degree n and n is a multiple of ¢. This gives € — 1 cyclic Dirichlet
+characters of conductor f and order . Such a curve Cy admits a Z/€Z cover of PE, branched at the
+vanishing loci of f.
+
+Let d be the order of the image of g in (Z/€Z)* and let ki, kz,..., k, be the degrees of the factors of f.
+By Theorem 1.7, if d{k; for any i € {1,2,...,r}, then the point s = 5 is not a zero of Zc thus not a zero
+for the Dirichlet L-functions corresponding to the curve. Thus, a count on this family of polynomials
+would give a lower bound on the set of desired Dirichlet characters.
+
+By [Bolker and Gleason 1980, Theorem 2], the number of elements in S,, with no cycle length divisible
+
+by d is
+Ty(n) = | [UG - 40)
+
+j=l
+where 64(j) = 0 if d{j and 1 if d | j. So the number of monic, squarefree polynomials of degree n over
+F, where none of its factor has degree divisible by d is > (Ty(n)/n!)(q" — q’'). Since Ty(n) > T(n)
+
+for any d > 2, we have
+Tan) | (n= I!!)? , Cc
+nto n! — nl/2
+
+where !! stands for double factorial and C is a nonzero constant. As X = q", we get the desired result. 0
+
+Acknowledgments
+
+The authors are grateful to Chantal David, Zeev Rudnick, Alexandra Florea, and Emmanuel Kowalski
+for helpful comments and suggestions. Ellenberg was partially supported by NSF grant DMS-1700885
+and by a fellowship from the Simons Foundation. We thank the referees for the valuable feedback and
+comments.
+
+References
+
+[Andrade and Baluyot 2020] J. Andrade and S. Baluyot, “Small zeros of Dirichlet L-functions of quadratic characters of prime
+modulus”, Res. Number Theory 6:2 (2020), 1-20. MR
+
+[Andrade and Keating 2013] J. C. Andrade and J. P. Keating, “Mean value theorems for L-functions over prime polynomials for
+the rational function field”, Acta Arith. 161:4 (2013), 371-385. MR Zbl
+
+[Andrade et al. 2016] J. C. Andrade, S. Bae, and H. Jung, “Average values of L-series for real characters in function fields”, Res.
+Math. Sci. 3 (2016), art. id. 38. MR Zbl
+
+[Baluyot and Pratt 2018] S. Baluyot and K. Pratt, “Dirichlet L-functions of quadratic characters of prime conductor at the central
+point”, preprint, 2018. arXiv
+
+[Bolker and Gleason 1980] E. D. Bolker and A. M. Gleason, “Counting permutations”, J. Combin. Theory Ser. A 29:2 (1980),
+236-242. MR Zbl

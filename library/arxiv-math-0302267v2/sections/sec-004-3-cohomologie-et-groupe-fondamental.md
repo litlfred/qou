@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "arXiv:math/0302267v2 [math.NT] 27 Feb 2003"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-004-3-cohomologie-et-groupe-fondamental
 section_title: "Cohomologie et groupe fondamental"
 section_number: 3
@@ -8,6 +8,7 @@ pages: 28-43
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
 toc_source: inferred
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 3.1. Soit X un espace topologique s´epar´e et connexe. On note bPa l’ensemble des classes
 d’homotopie de chemins de a `a b, et δγ la composition des chemins cPb × bPa →cPa. Noter

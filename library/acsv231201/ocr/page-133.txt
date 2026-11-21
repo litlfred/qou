@@ -1,0 +1,51 @@
+5.1 Overview 115
+
+below) is coupled with a big-O bound (Lemma 5.8 below), allowing us to
+integrate term by term and obtain the following result. Recall that if r ¢ N¢ we
+write |r| =r) +--+ +7y.
+
+Theorem 5.1 (standard phase). Let A(x) = Di) peya dpa” be a real analytic
+function defined on a neighborhood N of the origin in R“. If
+
+Ia) = f. A(aje"S™ da (5.2)
+N
+
+then there is an asymptotic series expansion
+
+I(a) » » ApBp AOI ,
+
+nz0 |rl=n
+where
+0 if any rj is odd
+Br =) an py mp)! |
+el | ae r= 2m
+
+jel
+
+After establishing Theorem 5.1 in Section 5.2, we use a change of variables
+and contour deformation to study the case of nondegenerate phase whose real
+part has a strict minimum at the origin. Our next result is proven in Section 5.3;
+note that we change our variables from a to z to reflect the fact that our proof
+works over the complex numbers.
+
+Theorem 5.2 (Re{¢} has a strict minimum). Let A and ¢ be complex-valued
+analytic functions on a compact neighborhood N of the origin in R4. Suppose
+that the real part of ¢ is nonnegative on N and vanishes only at the origin,
+and that the Hessian matrix H of ¢ at the origin is nonsingular. Then I(A) =
+h Fe A(z)e~**) has an asymptotic expansion
+
+TA) » cea lt (5.3)
+0
+with leading coefficient
+(Qn)?
+co = A(O) , (5.4)
+° VdetH
+
+where VdetH is the product of the principal square roots of the eigenvalues
+of H.
+
+Exercise 5.2. Show that the expansion in (5.3) can be written as
+
+A(0) 1y-€
+Ta) x “SV ea’, 5.5
+* Gaim 2, “ °°)

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07906v2
-doc_title: "March 2026 A universal sum over topologies in 3d gravity"
+doc_title: "A universal sum over topologies in 3d gravity"
 section_id: sec-002-kinematic-constraints
 section_title: "Kinematic constraints"
 section_number: null
 pages: 11-13
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
-doc_brief: "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
-latex_coverage_ratio: 0.9
+latex_coverage_ratio: 0.942
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 First, we state the constraints that we will impose on each member of the ensemble---that is, not just on average. For each $i$, we demand the spin $J_i$ to be an integer, as is appropriate for a bosonic CFT$_2$. Note that although this is a natural property to demand, it was not imposed in the original ensemble of \cite{Chandra:2022bqq}. In our case, spin quantization will follow as a special case of the stronger constraint of crossing symmetry and modular invariance that we impose in section \ref{sec:crossing}. 
 

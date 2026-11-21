@@ -790,7 +790,7 @@
           "in_degree": 1,
           "cone_size": 2,
           "depth": 2,
-          "pagerank": 9.5e-05,
+          "pagerank": 0.000095,
           "edge_span_max": 179,
           "edge_span_mean": 179,
           "worst_target": ""
@@ -1197,7 +1197,7 @@
         "reviewed_at": "2026-07-07T14:26:56.838252Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "folio/quantum-observable-universe/mass-theory/phi-q-categorical-truncation.lean:1 \u2014 Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/phi-q-categorical-truncation.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1234,6 +1234,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad",
+          "lean": "f629f76c2228",
+          "lean_statement": "4ab0fe1ead15"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:32.014Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "phi-q-categorical-truncation.lean:63 field `vanishing : ∀ j, j > k_star → mass_at_depth j = 0` carries the claim; k_star (:57) unconstrained; :79-85 is sum splitting; Φ_q equality (.md:4) and α_k unencoded",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "a62c637327c5",
+          "ts": "eb05adb086c8",
+          "lean": "4ce3ab8f612e",
+          "lean_statement": "4ab0fe1ead15"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:31.743Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Conjecture block: statement-to-Lean equivalence is not applicable; the Lean carrier is a conjecture class, not a proof."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2320,7 +2355,7 @@
         },
         "reviewed_at": "2026-08-21T21:59:54.650Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "The two closing sentences state the depth's characterisation and the invariance \u2014 both new relative to the display."
+        "evidence": "The two closing sentences state the depth's characterisation and the invariance — both new relative to the display."
       }
     ],
     "trap-performed-warmth": [
@@ -2423,7 +2458,7 @@
         "reviewed_at": "2026-08-21T21:59:54.942Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Two short sentences.",
-        "notes": "RIGOR (reported, epistemic mismatch between statement and proof). This block states the truncation identity and the invariance UNCONDITIONALLY, with no caveat of any kind. Its own sibling prf: block, in contrast, is scrupulous: Step 3 says the partition-depth grading of the centre is 'not stated there and ASSUMED here' and cites docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md; Step 4 says the cor:quantum-dilogarithm identity it starts from is 'unstratified'; and a section headed 'Remaining gap' says the uniform bound needed for the real-valued evaluation 'is the open part', conjectural under conj:brane-tower-z-habiro. The .ts records lean validation 'not_checked'. Per AGENTS.md's 'conditional-proved != premise-established', a reader of the .md alone learns none of this. Proposed: add the one-line conditional banner naming the assumed word-depth-to-partition-depth bridge, the way the corpus's \u00a73b-cond blocks do \u2014 the proof already contains the wording. SECOND ITEM, a real gap in the algebra rather than the framing: the coefficients alpha_k appear in this display and in Step 3 of the proof but are never defined, and Step 4's telescope Sum_k alpha_k [Phi^{[<=k]} - Phi^{[<=k-1]}] = Phi^{[<=k_star]} is valid ONLY if alpha_k = 1 for every k (and Phi^{[<=-1]} := 0). Either fix alpha_k = 1 and drop them, or state what they are and why the telescope survives them."
+        "notes": "RIGOR (reported, epistemic mismatch between statement and proof). This block states the truncation identity and the invariance UNCONDITIONALLY, with no caveat of any kind. Its own sibling prf: block, in contrast, is scrupulous: Step 3 says the partition-depth grading of the centre is 'not stated there and ASSUMED here' and cites docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md; Step 4 says the cor:quantum-dilogarithm identity it starts from is 'unstratified'; and a section headed 'Remaining gap' says the uniform bound needed for the real-valued evaluation 'is the open part', conjectural under conj:brane-tower-z-habiro. The .ts records lean validation 'not_checked'. Per AGENTS.md's 'conditional-proved != premise-established', a reader of the .md alone learns none of this. Proposed: add the one-line conditional banner naming the assumed word-depth-to-partition-depth bridge, the way the corpus's §3b-cond blocks do — the proof already contains the wording. SECOND ITEM, a real gap in the algebra rather than the framing: the coefficients alpha_k appear in this display and in Step 3 of the proof but are never defined, and Step 4's telescope Sum_k alpha_k [Phi^{[<=k]} - Phi^{[<=k-1]}] = Phi^{[<=k_star]} is valid ONLY if alpha_k = 1 for every k (and Phi^{[<=-1]} := 0). Either fix alpha_k = 1 and drop them, or state what they are and why the telescope survives them."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2447,6 +2482,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:59:54.942Z",
+  "updated_at": "2026-11-16T07:13:31.743Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

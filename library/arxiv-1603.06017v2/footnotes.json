@@ -1,0 +1,936 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1603.06017v2",
+ "status": "determined",
+ "body_size": 9.2,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Users enter logical predicates in a terminal when they use Walnut. We ﬁnd that entering latex-like commands in the terminal, e.g., \\forall, does not improve the readability.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "as opposed to ∧and ∀of mathematical logic"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "msd and lsd are short for most-signiﬁcant-digit-ﬁrst and least-signiﬁcant-digit-ﬁrst, respectively.However, it should not be taken literally in this deﬁnition, as one could deﬁne msd number systems (in the sense deﬁned here), with no direct correspondence to the notion of most-signiﬁcant-digit-ﬁrst representation.",
+   "marks": [
+    {
+     "page": 4,
+     "context": " number system and the latter is called an lsd number system"
+    },
+    {
+     "page": 4,
+     "context": "The equality relation =S⊂R"
+    },
+    {
+     "page": 4,
+     "context": "The less than relation is deﬁned as <S⊂R"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "3",
+   "text": "The automaton accepting +msd_ﬁb has 16 states, which is too big to be represented here.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "e.g., [001001]msd_2 = 0·25+0·24+1·2"
+    },
+    {
+     "page": 6,
+     "context": "msd_ﬁb. For example, here is the automaton accepting Rmsd_ﬁb"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "4",
+   "text": "Presburger arithmetic in its formal deﬁnition recognizes only a minimal subset of constants and operators: 0,1,+,=,<,∀, but it is not difﬁcult to show that all the other objects and operators we mentioned, e.g., multiplication by constants, does not add to the power of Presburger arithmetic and can be derived from that minimal set of objects. See Section 3.2 for more details. One thing to note here is that subtraction a −b exists only when there exists a non-negative number c for which b +c = a.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "less than or equal, greater than or equal)"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "5",
+   "text": "Names for variables, words, and automata in Walnut start with a letter and can contain alphanumerics and underscores. So to distinguish number system annotations in a predicate we use the preﬁx ?.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "The following are examples of annotated predicates"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "6",
+   "text": "Brackets [] only appear in indexing expressions. See Sections 3 and 3.6 for more details.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "the predicate to the nearest closing parenthesis or bracket"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "7",
+   "text": "we prefer this notation to those familiar from mathematical logic, because we want to liken our notation to those of programming languages, as Walnut is ultimately a programming language.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "of operators allowed in predicates can be found in Table 3.1"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "8",
+   "text": "This is an automaton with multiple initial states.One can show that for every nondeterministic automaton with multiple initial states, there is an equivalent automaton with only one initial state.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "st search. In the case of msd the nondeterministic automaton"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "9",
+   "text": "Unlike the reverse operator, operands for logical operators are predicates. The reader however understands the very thin and superﬁcial distinction between automata and predicates in this article.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "The operand of the reverse operator is an automaton"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p016-2",
+   "page": 16,
+   "mark": "10",
+   "text": "This automaton does not need to be deﬁned explicitly by the user, because we assumed for all number systems S in Walnut a =S b if and only if a = b.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "t the three automata (a,b,c) : ?S a = b +c, (a,b) : ?S a = b"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "11",
+   "text": "In speciﬁc terms, this calculation constructs an automaton accepting (i,n)’s for which W [i..i +n −1] is a palindrome.",
+   "marks": [
+    {
+     "page": 27,
+     "context": "palindromes in the Thue-Morse word"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p029-2",
+   "page": 29,
+   "mark": "13",
+   "text": "The set of powers of 2 is not expressible in Presburger arithmetic. However the extended Presburger arithmetic that involves automatic words is powerful enough to express this set (why?)",
+   "marks": [
+    {
+     "page": 29,
+     "context": "def commands"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-031"
+  },
+  {
+   "id": "fn-p032-1",
+   "page": 32,
+   "mark": "14",
+   "text": "If an automaton does not follow these criteria we can always come up with an isomorphic one that does.",
+   "marks": [
+    {
+     "page": 32,
+     "context": ", and that q0 = 0"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p032-2",
+   "page": 32,
+   "mark": "15",
+   "text": "File names in Walnut start with letters and can contain alphanumerics and underscore.",
+   "marks": [
+    {
+     "page": 32,
+     "context": "Min a text ﬁle, ﬁrst create a text ﬁle M.txt"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p033-1",
+   "page": 33,
+   "mark": "16",
+   "text": "Lexicographic ordering on symbols is assumed to be ··· < −2 < −1 < 0 < 1 < 2 < ···.",
+   "marks": [
+    {
+     "page": 33,
+     "context": "before w2in lexicographic order"
+    }
+   ],
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-036"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "12",
+   "text": "M_xi _v[p][q] denotes the entry at pth row and qth column.",
+   "block": "library/arxiv-1603.06017v2/blocks/prose-sec-031"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "the length |w|, is deﬁned and equals l. We let Σ"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "Σ"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "1×Σ"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "2×···×Σ"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": ", where the S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "The addition relation +S ⊂R"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "Sis deﬁned such that (x,"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "Sis deﬁned such that (x, y,"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "Sis deﬁned such that (x, y,z) ∈+S if and only if"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "Sis deﬁned such that (x, y,z) ∈+S if and only if x,"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "Sis deﬁned such that (x, y,z) ∈+S if and only if x, y,"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "Sis deﬁned such that (x,"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "Sis deﬁned such that (x, y) ∈=Sif and only if"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "Sis deﬁned such that (x, y) ∈=Sif and only if xand"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "Sfor which (x,"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "Sfor which (x, y) ∈<S if and only if"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "Sfor which (x, y) ∈<S if and only if x and"
+  },
+  {
+   "page": 5,
+   "mark": "5",
+   "context": "e.g., [001001]msd_2 = 0·2"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "e.g., [001001]msd_2 = 0·25+0·2"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "e.g., [001001]msd_2 = 0·25+0·24+1·23+0·2"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "e.g., [001001]msd_2 = 0·25+0·24+1·23+0·22+0·2"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "e.g., [001001]msd_2 = 0·25+0·24+1·23+0·22+0·21+1·2"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "for which reading x, such that π"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "= a[π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "= a[π1[x]]S1,[π"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "= a[π1[x]]S1,[π2[x]]S2,...,[π"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "words t = (w"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "words t = (w1,w"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "words t = (w1,w2,...,w"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "2,...,wn) is accepted by Mif and only if the substitutions x"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": ",wn) is accepted by Mif and only if the substitutions xi= [w"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "1:= ?msd_2"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "2:= ?msd_ﬁb"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "1we understand that"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "1we understand that a,"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "1we understand that a,b,"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "2it is clear what to expect from automaton (a,"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "2it is clear what to expect from automaton (a,b,"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "1. In Figure 2.8, we see the automaton (a,"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "1. In Figure 2.8, we see the automaton (a,b) :"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(y"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(y1 ⊗y"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "(y1 ⊗y2 ⊗···⊗y"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(y1 ⊗y2 ⊗···⊗ym)<(x"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(y1 ⊗y2 ⊗···⊗ym)<(x1 ⊗x"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(y1 ⊗y2 ⊗···⊗ym)<(x1 ⊗x2 ⊗···⊗x"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "where the x"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "where the xiand y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•An expression e"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•An expression e1 <e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•An expression e1 <e2 where e"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•An expression e1 <e2 where e1 and e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•An expression e"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•An expression e1 <e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•An expression e1 <e2 where e"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•An expression e1 <e2 where e1 and e"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "1,...,"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "jthen S"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "1,...,"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "p} where"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "p} where p ≤m +nbe the union of {x"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "p} where p ≤m +nbe the union of {x1,...,"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "p} where p ≤m +nbe the union of {x1,...,x"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "1,...,"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "iare appearing in lexicographic order. Depending on whether"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "k= x"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "k= xior"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "kdenote S"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "k= x"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "k= xior"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "1,...,"
+  },
+  {
+   "page": 12,
+   "mark": "w",
+   "context": "1,...,"
+  },
+  {
+   "page": 12,
+   "mark": "w",
+   "context": "n) such that"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "n) such that w"
+  },
+  {
+   "page": 12,
+   "mark": "w",
+   "context": "Siand"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "jwhere |w"
+  },
+  {
+   "page": 12,
+   "mark": "w",
+   "context": "j| are all equal and"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "j| are all equal and w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "j. Let"
+  },
+  {
+   "page": 12,
+   "mark": "w",
+   "context": "1,...,"
+  },
+  {
+   "page": 12,
+   "mark": "w",
+   "context": "p) such that"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "k= w"
+  },
+  {
+   "page": 12,
+   "mark": "w",
+   "context": "k= wior"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "jdepending on whether"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "k= x"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "k= xior"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "0) to (q,"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "0) to (q,q′) ∈F ′′ in M × M′ reading"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "0to"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "0to q′ in M′ reading"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "5.Pis satisﬁed by substituting x"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "5.Pis satisﬁed by substituting xi= [w"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "jfor all"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "In our example Maccepts (0"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "In our example Maccepts (0n1,0"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "1,0n−110) for all n ≥1, and as it is clear E(M,2) accepts (0"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "ofsamelengthwords.IfP′issatisﬁedwithsubstitutionsx"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "ofsamelengthwords.IfP′issatisﬁedwithsubstitutionsx j=[w"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k,i−1,wk,i+1,...,wk,m) such that for allj̸= iwe have wk,j= 0"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k,m) such that for allj̸= iwe have wk,j= 0kw jor wk,j= w j 0"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "Proof.Substitutions x"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "Proof.Substitutions x j= [w"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "itutions x j= [w j ]Sj for j̸= isatisfying predicate P′:= Ex"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "y = [0"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "y = [0kw]S for all k ≥0 or y = [w0"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "ksuch that w"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ksuch that wk,"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "ksuch that wk,iis either 0"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ksuch that wk,iis either 0kw"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ksuch that wk,iis either 0kwior w"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "ksuch that wk,iis either 0kwior wi0"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "ksuch that wk,iis either 0kwior wi0kdepending on whether S"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": " 0kwior wi0kdepending on whether Sj is msd or lsd and v = [w"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "kwior wi0kdepending on whether Sj is msd or lsd and v = [wk,"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "depending on whether Sj is msd or lsd and v = [wk,i]Siand |w"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "pending on whether Sj is msd or lsd and v = [wk,i]Siand |wk,"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": " on whether Sj is msd or lsd and v = [wk,i]Siand |wk,i| = |w"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": ",i+1,...,wk,m) is accepted by Mwhere for alljwe have wk,j= 0"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "accepted by Mwhere for alljwe have wk,j= 0kw jor wk,j= w j 0"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "intersected with the automaton accepting RS1 ×···×RSmwhere S"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "pting RS1 ×···×RSmwhere Siis the number system assigned to x"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(y,x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(y,x1,x"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(y,x1,x2,...,x"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(y,x1,x2,...,xn) : ?S y <(x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(y,x1,x2,...,xn) : ?S y <(x1 ⊗1 x"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(y,x1,x2,...,xn) : ?S y <(x1 ⊗1 x2 ⊗2 ···⊗n−1 x"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "1)&(x"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "2)&···&(x"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "n)&(e"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "n)&(e j1)&(e"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "n)&(e j1)&(e j2)&...&(e"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "j= e"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "j= e j , otherwise"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "j= e j , otherwise e"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "j= e j , otherwise e jis a predicate, and"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "n : there exists k ≥0 such that n = 2"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "n : there exists k ≥0 such that n = 2kor n = 2"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "n : there exists k ≥0 such that n = 2kor n = 2k+1+2"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "= qsuch that α"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "= qsuch that αi= vand α"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "ΣS2,...,α"
+  }
+ ]
+}

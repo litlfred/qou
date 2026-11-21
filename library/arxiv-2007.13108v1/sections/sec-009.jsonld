@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Proof of Fact 3",
-  "pageStart": 14,
-  "pageEnd": 15,
+  "title": "Proof of Proposition 13: The stochastic coupling",
+  "pageStart": 11,
+  "pageEnd": 14,
   "contains": [
-    "library/arxiv-2007.13108v1/blocks/prose-sec-009"
+    "library/arxiv-2007.13108v1/blocks/prose-sec-009",
+    "library/arxiv-2007.13108v1/blocks/lem-sec-009-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2007.13108v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2007.13108v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2007.13108v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2007.13108v1/manifest.jsonld",
   "provenance": "ingested"
 }

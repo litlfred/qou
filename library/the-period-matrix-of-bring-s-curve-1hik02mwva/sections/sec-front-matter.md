@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: the-period-matrix-of-bring-s-curve-1hik02mwva.pdf
 source_sha256: 56f8ce317a00b0f3
 toc_source: inferred
+doc_brief: "The period matrix of Bring’s curve — 11 sections: Front matter; Hι(B; This means that under an integral"
 ---
 PACIFIC JOURNAL OF MATHEMATICS
 Vol.  154, No. 1, 1992
@@ -261,7 +262,6 @@ in
 1
 1
 1
-0
 0
 0
 0

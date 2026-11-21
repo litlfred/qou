@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0908.3425v1
-doc_title: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
+doc_title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector"
 section_id: sec-008-green-functions-chiral-ward-identities-and-gener
 section_title: "Green functions, chiral Ward identities, and generating functional"
 section_number: null
 pages: 9-15
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
-doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.994
+latex_coverage_ratio: 0.996
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsubsection_gfcwigf label="subsubsection_gfcwigf"} For conserved currents, the spatial integrals of the charge densities are time independent, i.e., in a quantized theory the corresponding charge operators commute with the Hamilton operator. These operators are generators of infinitesimal transformations on the Hilbert space of the theory. The mass eigenstates should organize themselves in degenerate multiplets with dimensionalities corresponding to irreducible representations of the Lie group in question. For the moment, we assume that the dynamical system described by the Hamiltonian does not lead to a spontaneous symmetry breakdown. We will come back to this point later. Which irreducible representations ultimately appear, and what the actual energy eigenvalues are, is determined by the dynamics of the Hamiltonian. For example, SU(2) isospin symmetry of the strong interactions reflects itself in degenerate SU(2) multiplets such as the nucleon doublet, the pion triplet, and so on. Ultimately, the actual masses of the nucleon and the pion should follow from QCD.
 

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-003-42-chiral-loops
 section_title: "Chiral loops"
 section_number: 4.2
@@ -8,6 +8,7 @@ pages: 11-13
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 ChPT is a quantum ﬁeld theory, perfectly deﬁned through equation (3.19). As
 such, we must take into account quantum loops with Goldstone-boson propagators
@@ -28,8 +29,6 @@ using the O(p2) equations of motion obeyed by U. Moreover, a 3 × 3 matrix relat
 to reduce the number of independent terms.
 For the two-ﬂavour case, not all of these terms are
 independent (Gasser and Leutwyler 1984, 1985).
-12
-A Pich
 Each loop adds two powers of momenta; this power suppression of loop diagrams is at
 the basis of low-energy expansions, such as ChPT. The leading D = 2 contributions
 are obtained with L = 0 and d = 2, i.e. only tree-level graphs with L2 insertions. At
@@ -105,8 +104,6 @@ Analyticity then allows us to reconstruct the
 ♯
 A rather comprehensive analysis of diﬀerent regularization schemes in ChPT has been given by
 Espriu and Matias (1994).
-Chiral Perturbation Theory
-13
 full amplitude, through a dispersive integral, up to a subtraction polynomial.
 ChPT generates (perturbatively) the correct dispersion integrals and organizes the
 subtraction polynomials in a derivative expansion.

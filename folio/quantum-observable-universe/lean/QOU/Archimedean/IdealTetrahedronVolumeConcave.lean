@@ -57,7 +57,7 @@
   -- Ref: [milnor1982] https://doi.org/10.1090/S0273-0979-1982-14958-8
   --      (Lobachevsky function Λ and the ideal-simplex volume Λ(α)+Λ(β)+Λ(γ))
   -- Ref: [thurston1978] Ch. 7 (ideal-simplex volume, Lobachevsky function)
-  -- Ref: [manuscript] beans qou-idvt (T3-plumbing), qou-krvm (iv)
+  -- Ref: [leitner2026] beans qou-idvt (T3-plumbing), qou-krvm (iv)
 -/
 
 import Mathlib.Tactic

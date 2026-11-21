@@ -1,1 +1,1 @@
-(Cob(3) S2) Consider the symmetric monoidal category Cob(3). It
+(Cob(3)S2) Consider the symmetric monoidal category Cob(3). It has a subcategory whose objects are disjoint unions of S2. Call this category Cob(3)S2 and note that it inherits the symmetric monoidal structure.

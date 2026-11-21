@@ -23,7 +23,7 @@ This sibling axiomatises the generator-pair residues `R_H` and
 `R_YB` and the diagonal vanishing of the cocycle on equal
 generators after the Hecke relation is imposed.
 
--- Ref: [manuscript] def:hecke-curvature-2-cocycle
+-- Ref: [leitner2026] def:hecke-curvature-2-cocycle
 -- Ref: [kassel1995] Kassel, "Quantum Groups," GTM 155, Springer (1995)
 -/
 

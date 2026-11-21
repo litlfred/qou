@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1006.1099v3/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The cubic term",
+  "pageStart": 59,
+  "pageEnd": 62,
+  "contains": [
+    "library/arxiv-1006.1099v3/blocks/prose-sec-034",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-034-01",
+    "library/arxiv-1006.1099v3/blocks/rem-sec-034-02",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-034-03",
+    "library/arxiv-1006.1099v3/blocks/cor-sec-034-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1 @@
+Finite-volume corrections in QEDTL on T4 The setup considered in this section, QEDTL on the four-torus T4 of dimensions L3 × T, is the one used in all previous studies which include QED corrections to hadronic observables in lattice QCD (7,8,10–13,35,38,45).

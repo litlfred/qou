@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Derived scheme of approximation with constant residue",
+  "pageStart": 35,
+  "pageEnd": 38,
+  "contains": [
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-013",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/def-sec-013-01",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-013-02",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-013-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "provenance": "ingested"
+}

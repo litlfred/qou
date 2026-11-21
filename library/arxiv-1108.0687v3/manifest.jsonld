@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.0687v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.0687v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1108.0687v3",
+  "title": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
   "contains": [
+    "library/arxiv-1108.0687v3/sections/sec-front-matter",
     "library/arxiv-1108.0687v3/sections/sec-000",
     "library/arxiv-1108.0687v3/sections/sec-001",
     "library/arxiv-1108.0687v3/sections/sec-002",
@@ -21,10 +22,13 @@
     "library/arxiv-1108.0687v3/sections/sec-007",
     "library/arxiv-1108.0687v3/sections/sec-008",
     "library/arxiv-1108.0687v3/sections/sec-009",
-    "library/arxiv-1108.0687v3/sections/sec-010"
+    "library/arxiv-1108.0687v3/sections/sec-010",
+    "library/arxiv-1108.0687v3/sections/sec-011",
+    "library/arxiv-1108.0687v3/sections/sec-012",
+    "library/arxiv-1108.0687v3/sections/sec-013"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -34,7 +38,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1108.0687v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1108.0687v3.pdf",
     "source_sha256": "66ba88e13a429a0a3d01f1a7a2b0a8c5fdfd52b816427d94d0b95d09b6791499",
     "pages": 23,
@@ -45,8 +51,8 @@
       "stamp_date": "28 Jul 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

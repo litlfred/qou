@@ -1,29 +1,52 @@
 470 A. Ram
+
 Remark. Some possible choices for the partition of unity in the proof of the above
-the property that at q -- 1 it reduces to the partition of unity given by the Young
-orthogonal minimal idempotents of Sf. [GyJ constructs a partition of unity in
-H, with the property that at q =- 1 it is the partition of unity in CS, given by Young
+theorem can be given explicitly. [Wz1] constructs a partition of unity in H, with
+the property that at q = 1 it reduces to the partition of unity given by the Young
+orthogonal minimal idempotents of S,. [Gy] constructs a partition of unity in
+H, with the property that at q = 1 it is the partition of unity in CS, given by Young
 symmetrizers. Either of these is sufficient for our purposes. The only advantage of
 the [Gy] approach is that it is immediate from the definition of the minimal
-4 The Frobenius formula for the characters of H ,
+idempotents that they are the same as the Young symmetrizers at q = 1.
+
+4 The Frobenius formula for the characters of H,
+
 The crucial step in this development is to evaluate the left hand side of the
 expression in Theorem 3.8 by another means.
-(4.1) Theorem. For 1 ≤ r ≤f the trace of the operator DTyr on V@r is given by
-tr(DT,) = Z qe()(q - 1)()xi, Xiz . . . Xir 
-where the sum is over all sequences I = (ii, i2,. . ., ir) such that 1 ≤ii ≤. . . ≤ir:
-e(I) denotes the number ofi; = ij+ 1 in I and l(I) denotes the number ofi; < ij+1 in I.
+
+(4.1) Theorem. For 1 <r <f the trace of the operator DT,, on V®" is given by
+tr(DT,,) = YP g — VIO xi, xn. Xi,»
+I
+
+where the sum is over all sequences I = (i,,i2,...,i,) such that 1 Si, S...Si,,
+e(I) denotes the number of i; = ij4 in I and I(I) denotes the number of i; < ij in I.
 Proof. The proof is by induction on r.
-Case 1 ir-1 > ir:
-Dwgr-1 . . . 91 lw = q1/2 D(w"viVir-1)gr-2 .. . 91 lv. Di, :
-Since gr-2 . . . g1 acts only on the letters in w"vi, and Vir-1 + Vir, DwT,lw = 0.
-Case 2 ir-1 < ir:
-DwT,lw = (q - 1)DwTr-1 Iw + q1/2 w"Vi,Vir-1 Tr-1 Iw
-= (q - 1)xir(Dw' Tr-1)lw + 0 .
-Case 3 ir-1 = ir:
-DwT,Iw = qDwTyr-1 /w = qxi(Dw' Tyr-1)lw, 
+
+Let w = 0;,0;,...0;,, W = 0;,0;,...0;,_, and Ww” = 0;,0;,... Ui,_,.
+Case 1 i,-, >i,:
+
+Dwg,-1---9ilw = q'!? Dw" 0,0; )Gr—2 oa “Grlv,...v, :
+
+Since g,_....g, acts only on the letters in wv, and v;,_, + 0;,, DwT,,|y = 0.
+Case 2 i,-4 <i,:
+
+DwT,,| = (q — 1)DwT,
+
+rd
+
+lw + q*?w"v,0;,_,T-lw
+= (q — 1)xi,(Dw'T,,_.)lw + 0.
+Case 3 i,-; =i,:
+DwT,, lw = QDWT,,_ .lw = 9Xi,(Dw'T,,_ ,)lw' +
 So, by induction,
-tr(DT,)=  DwTy,/w
-[wl = r
-DVit Vi2 . . . Vi, Tyrlvit Viz .. . Vi.
-1≤i,i2,...,i≤n
-i≤iz≤...≤ir
+tr(DT,,)= Y DwT,,\w
+
+w
+Iwl=r
+
+S YX Dvj,¥;,--- 0;,T,,lo,,0,,.. .»,
+
+1 Sis,in,...,i,50
+
+= Y gt Fim tng — 1)# Fi <tr x, x x, o
+i; Sbhs...54

@@ -1,7 +1,7 @@
 /-
   # Direction-sanity gate for the Q_β c_k precision ladder
 
-  Sibling .lean for the `prop:q-beta-direction-sanity-gate` block.
+  Sibling .lean for the `rem:q-beta-direction-sanity-gate` block.
   The §4(d) formalize-first invariant: any candidate Habiro element
   F(q) must have |F(q_0)| in the same order of magnitude as the
   target observable's substrate ratio.
@@ -51,7 +51,7 @@ universe u
     proton-pinned q_0; the precision-ladder product
     `∏_k(1 + c_k u^k)` collectively contributes only ~0.18% of the
     bare `Q_A · cos` value. -/
--- Ref: [manuscript] prop:q-beta-direction-sanity-gate
+-- Ref: [leitner2026] rem:q-beta-direction-sanity-gate
 noncomputable def qBetaTargetMagnitudeAtQ0 : ℝ := 0.99824
 
 /-- **The 10× order-of-magnitude direction-sanity threshold.**
@@ -60,7 +60,7 @@ noncomputable def qBetaTargetMagnitudeAtQ0 : ℝ := 0.99824
     errors (like PR #1850's z < 1 vs target > 1) without false-
     positives on the small numerical deviations covered by the
     §4(a) radius-of-convergence and §4(c) q=1 shadow gates. -/
--- Ref: [manuscript] prop:q-beta-direction-sanity-gate
+-- Ref: [leitner2026] rem:q-beta-direction-sanity-gate
 noncomputable def directionSanityThreshold : ℝ := 10
 
 /-- **Direction-sanity gate class (§3b-cond, PARAMETRIC).**
@@ -72,7 +72,7 @@ noncomputable def directionSanityThreshold : ℝ := 10
 
     Axiomatises the structural prediction that the candidate's
     magnitude at q_0 is within the 10× threshold of the target. -/
--- Ref: [manuscript] prop:q-beta-direction-sanity-gate
+-- Ref: [leitner2026] rem:q-beta-direction-sanity-gate
 -- Ref: [pr1850] https://github.com/litlfred/qou/pull/1850
 class DirectionSanityGateClass (m_candidate : ℝ) : Prop where
   /-- Structural identity: the candidate's magnitude at q_0 matches
@@ -83,7 +83,7 @@ class DirectionSanityGateClass (m_candidate : ℝ) : Prop where
 
 /-- **The gate theorem (forward direction): under the class, the
     candidate's magnitude matches the target within threshold.** -/
--- Ref: [manuscript] prop:q-beta-direction-sanity-gate
+-- Ref: [leitner2026] rem:q-beta-direction-sanity-gate
 theorem qbeta_direction_sanity_magnitude_match
     (m_candidate : ℝ) [hC : DirectionSanityGateClass m_candidate] :
     |m_candidate - qBetaTargetMagnitudeAtQ0|
@@ -96,7 +96,7 @@ theorem qbeta_direction_sanity_magnitude_match
     target exceeds the threshold, then the gate class cannot be
     instantiated for that magnitude — the candidate is structurally
     REFUTED. -/
--- Ref: [manuscript] prop:q-beta-direction-sanity-gate
+-- Ref: [leitner2026] rem:q-beta-direction-sanity-gate
 theorem direction_sanity_gate_reject
     (m_candidate : ℝ)
     (h_mismatch :
@@ -108,7 +108,7 @@ theorem direction_sanity_gate_reject
 
 /-- **Threshold positivity**: 10 > 0. Used downstream when reasoning
     about the threshold's role as a tolerance. -/
--- Ref: [manuscript] prop:q-beta-direction-sanity-gate
+-- Ref: [leitner2026] rem:q-beta-direction-sanity-gate
 theorem direction_sanity_threshold_positive :
     directionSanityThreshold > 0 := by
   unfold directionSanityThreshold

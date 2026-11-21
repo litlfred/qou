@@ -2,180 +2,109 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-9909027v1",
  "source_sha256": "e6cd544cdc141d3b",
- "brief": "Planar Algebras, I V. F. R. Jones ∗ Department of Mathematics University of California — We introduce a notion of planar algebra, the simplest exampl e of which is a vector space of tensors, closed",
- "extended": "**Planar Algebras, I V. F. R. Jones ∗ Department of Mathematics University of California**\n\n*Berkeley, California 94720–3840*\n\n122 pp, 32 sections.\n\n**Abstract.** We introduce a notion of planar algebra, the simplest exampl e of which is a vector space of tensors, closed under planar contr actions. A planar algebra with suitable positivity properties produ ces a ﬁnite index subfactor of a II 1 factor, and vice versa. 0. Introduction At ﬁrst glance there is nothing planar about a subfactor. A fa ctor M is a unital ∗-algebra of bounded linear operators on a Hilbert space, wit h trivial centre and closed in the topology of pointwise convergence. The factor M is of type II 1 if it admits a (normalized) trace, a linear function tr: M → C with tr(ab) = tr(ba) and tr(1) = 1. In [J1] we deﬁned the notion of index [M : N] for II 1 factors N ⊂ M. The most surprising result of [J1] was that [ M : N] is “quantized” — to be precise, if [ M : N] < 4 there is an integer n ≥ 3 with [ M : N] = 4 cos 2 π/n.\n\n**Outline.** V F. R. Jones ∗; Abstract; 0 Introduction; 0 (which we will call P0 and P1,1 later on). L; 1 Multiplication, which is the following tangl; 2 Annular tangles: ones with only one internal; 1 The Formalism; 2 Examples; L Choose a diagram for L and add a parallel do; 2 (w∗ is w written backwards) satisﬁes alt( w1; 2 (n+−n−)+ 1; 4 (n∂; 2 (#(black regions) − #(boxes)) + 1; 2.11 Binunitaries; 1 (for some element S); 2 (1 − e1). Since; 3 General Structure Theory; 3.1 Algebra structure, Markov trace\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.5.2: Any tangle in the knot-theoretic sense with alternating in\n- Theorem 2.7.6: The set H is a subgroup of F (∆ \\{e}) equal to the normal\n- Theorem 2.11.3: If P is a general planar algebra and u is bi-invertible, let\n- Theorem 2.11.8: Let P be a spherical ﬁnite-dimensional C ∗-planar algebra\n- Theorem 2.11.15: If u is a Q × Q generalized Hadamard matrix thought\n- Theorem 3.1.3: As an algebra, Pk is isomorphic to the algebra whose basis",
+ "brief": "Planar Algebras, I — We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions.",
+ "extended": "**Planar Algebras, I**\n\n*Berkeley, California 94720–3840*\n\n122 pp, 18 sections.\n\n**Abstract.** We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions. A planar algebra with suitable positivity properties produces a ﬁnite index subfactor of a II1 factor, and vice versa. 0. Introduction At ﬁrst glance there is nothing planar about a subfactor. A factor M is a unital ∗-algebra of bounded linear operators on a Hilbert space, with trivial centre and closed in the topology of pointwise convergence. The factor M is of type II1 if it admits a (normalized) trace, a linear function tr: M →C with tr(ab) = tr(ba) and tr(1) = 1. In [J1] we deﬁned the notion of index [M : N] for II1 factors N ⊂M. The most surprising result of [J1] was that [M : N] is “quantized” — to be precise, if [M : N] < 4 there is an integer n ≥3 with [M : N] = 4 cos2 π/n.\n\n**Outline.** Front matter; 0 Introduction; 1 The Formalism; Positivity; 2 Examples; 2.11 Binunitaries; 3 General Structure Theory; 3.1 Algebra structure, Markov trace; 3.2 Duality; 3.3 Reduction and cabling; 3.4 Tensor product; 3.5 Free product; 3.6 Fusion algebra; 4 Planar algebras and subfactors; 4.1 Some facts about subfactors; 4.2 Subfactors give planar algebras; 4.3 Planar algebras give subfactors; References",
  "tokens": {
-  "brief": 49,
-  "extended": 504
+  "brief": 38,
+  "extended": 335
  },
  "sections": [
   {
-   "id": "sec-000-v-f-r-jones",
-   "title": "F. R. Jones ∗",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-abstract",
-   "title": "Abstract",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-0-introduction",
+   "id": "sec-000-0-introduction",
    "title": "Introduction",
-   "pages": "1-4"
+   "pages": "1-13"
   },
   {
-   "id": "sec-003-0-which-we-will-call-p0-and-p11-later-on-linear",
-   "title": "(which we will call P0 and P1,1 later on). Linear maps between tensor",
-   "pages": "4-6"
-  },
-  {
-   "id": "sec-004-1-multiplication-which-is-the-following-tangle-i",
-   "title": "Multiplication, which is the following tangle (illustra ted for k =5)",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-005-2-annular-tangles-ones-with-only-one-internal-di",
-   "title": "Annular tangles: ones with only one internal disc, e.g.,",
-   "pages": "6-13"
-  },
-  {
-   "id": "sec-006-1-the-formalism",
+   "id": "sec-001-1-the-formalism",
    "title": "The Formalism",
-   "pages": "13-27"
+   "pages": "13-25"
   },
   {
-   "id": "sec-007-2-examples",
+   "id": "sec-002-positivity",
+   "title": "Positivity",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-003-2-examples",
    "title": "Examples",
-   "pages": "27-35"
+   "pages": "27-54"
   },
   {
-   "id": "sec-008-l-choose-a-diagram-for-l-and-add-a-parallel-doub",
-   "title": "Choose a diagram for L and add a parallel double L′ of L to the left of L",
-   "pages": "35-44"
-  },
-  {
-   "id": "sec-009-2-w-is-w-written-backwards-satisﬁes-alt-w1w",
-   "title": "(w∗ is w written backwards) satisﬁes alt( w1w∗",
-   "pages": "44-47"
-  },
-  {
-   "id": "sec-010-2-nn-1",
-   "title": "(n+−n−)+ 1",
-   "pages": "47-47"
-  },
-  {
-   "id": "sec-011-4-n",
-   "title": "(n∂",
-   "pages": "47-47"
-  },
-  {
-   "id": "sec-012-2-black-regions-boxes-1",
-   "title": "(#(black regions) − #(boxes)) + 1",
-   "pages": "47-54"
-  },
-  {
-   "id": "sec-013-211-binunitaries",
+   "id": "sec-004-211-binunitaries",
    "title": "Binunitaries",
-   "pages": "54-63"
+   "pages": "54-67"
   },
   {
-   "id": "sec-014-1-for-some-element-s",
-   "title": "(for some element S)",
-   "pages": "63-66"
-  },
-  {
-   "id": "sec-015-2-1-e1-since",
-   "title": "(1 − e1). Since",
-   "pages": "66-67"
-  },
-  {
-   "id": "sec-016-3-general-structure-theory",
+   "id": "sec-005-3-general-structure-theory",
    "title": "General Structure Theory",
    "pages": "67-67"
   },
   {
-   "id": "sec-017-31-algebra-structure-markov-trace",
+   "id": "sec-006-31-algebra-structure-markov-trace",
    "title": "Algebra structure, Markov trace",
    "pages": "67-74"
   },
   {
-   "id": "sec-018-32-duality",
+   "id": "sec-007-32-duality",
    "title": "Duality",
    "pages": "74-77"
   },
   {
-   "id": "sec-019-33-reduction-and-cabling",
+   "id": "sec-008-33-reduction-and-cabling",
    "title": "Reduction and cabling",
    "pages": "77-79"
   },
   {
-   "id": "sec-020-34-tensor-product",
+   "id": "sec-009-34-tensor-product",
    "title": "Tensor product",
    "pages": "79-80"
   },
   {
-   "id": "sec-021-35-free-product",
+   "id": "sec-010-35-free-product",
    "title": "Free product",
    "pages": "80-81"
   },
   {
-   "id": "sec-022-36-fusion-algebra",
+   "id": "sec-011-36-fusion-algebra",
    "title": "Fusion algebra",
    "pages": "81-81"
   },
   {
-   "id": "sec-023-4-planar-algebras-and-subfactors",
+   "id": "sec-012-4-planar-algebras-and-subfactors",
    "title": "Planar algebras and subfactors",
    "pages": "81-81"
   },
   {
-   "id": "sec-024-41-some-facts-about-subfactors",
+   "id": "sec-013-41-some-facts-about-subfactors",
    "title": "Some facts about subfactors",
-   "pages": "81-82"
+   "pages": "81-92"
   },
   {
-   "id": "sec-025-416-recall-that-the-subfactor-is-called-extremal",
-   "title": "Recall that the subfactor is called extremal if the normalized traces on",
-   "pages": "82-82"
-  },
-  {
-   "id": "sec-026-417-by-standard-convex-averaging-procedures-on-l",
-   "title": "By standard convex averaging procedures on L2(Mk), given a ﬁnite",
-   "pages": "82-92"
-  },
-  {
-   "id": "sec-027-42-subfactors-give-planar-algebras",
+   "id": "sec-014-42-subfactors-give-planar-algebras",
    "title": "Subfactors give planar algebras",
-   "pages": "92-114"
+   "pages": "92-115"
   },
   {
-   "id": "sec-028-4110-to-see-this-observe-that-the-conditional-ex",
-   "title": "To see this observe that the conditional expectatio n EpN : pM p → pN",
-   "pages": "114-115"
-  },
-  {
-   "id": "sec-029-43-planar-algebras-give-subfactors",
+   "id": "sec-015-43-planar-algebras-give-subfactors",
    "title": "Planar algebras give subfactors",
    "pages": "115-118"
   },
   {
-   "id": "sec-030-references",
+   "id": "sec-016-references",
    "title": "References",
-   "pages": "118-119"
-  },
-  {
-   "id": "sec-031-2-subfactors-world-scientiﬁc",
-   "title": "Subfactors, World Scientiﬁc,",
-   "pages": "119-122"
+   "pages": "118-122"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

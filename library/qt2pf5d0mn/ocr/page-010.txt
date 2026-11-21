@@ -1,0 +1,24 @@
+Chapter 1
+
+Introduction
+
+The notion of a topological quantum field theory (TQFT) was invented by E. Witten
+based on path integrals in physics [1]. M. Atiyah gave a mathematical formulation of
+TQFTs [2]. Since then there has been a vast study of TQFTs both from the physics
+side and mathematics side. Roughly speaking, a (d + 1)-TQFT associates to every d-
+manifold a Hilbert space and to every (d + 1)-manifold a vector in the Hilbert space
+corresponding to the boundary of the (d+1)-manifold. These assignments should satisfy
+certain compatible properties as specified by the axioms. Each (d+ 1)-TQFT produces a
+scalar invariant, called the partition function, for smooth closed (d+ 1)-manifolds. This
+is particularly useful in topology as it may have the power to detect smooth structures
+on a given manifold.
+
+The study of TQFTs is closely related to higher category theories [3][4]. In general,
+an n-TQFT is to be described by the data of an n-category. On one hand, strict n-
+categories are well-defined for any n [5] [6], but this is not enough for the purpose of
+constructing TQFTs since many important higher categories are not strict and can not
+be strictified either [7]. On the other hand, weak n-categories are only rigorously defined
+
+for small n (like n = 1,2,3,4), and it is still controversial what should be the right notion
+
+1

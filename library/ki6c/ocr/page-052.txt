@@ -1,0 +1,50 @@
+5.4 Verifying the assumption of the Poisson summation formula
+
+In this section, we verify the assumption of the Poisson summation formula in Lemma 5.2,
+which is used in the proof of Theorem 1.1 for the 63 knot in Section 5.1. As we mentioned
+in Remark 2.5, we verify the assumption for V(t, s, u) instead of V(t, s, u), since V(t, 5, u)
+converges uniformly to V(t, s,u) on A’ in the form mentioned in Remark 2.5.
+
+By computer calculation, we can see that the maximal value of ReV — ¢ is about
+0.02. Therefore, in the proof of Lemma 5.2, it is sufficient to decrease, say, Re V(t, 5, u+
+5-1) — 276 by 0.02, by moving 6 (though we do not use this value in the proof of the
+lemma).
+
+Lemma 5.2. V(t, 5,u) —¢ satisfies the assumption of Proposition 2.3.
+Proof. We show that 0A’ is null-homotopic in each of (15)—(20).
+
+As for (15) and (16), similarly as the proof of Lemma 3.4, it is sufficient to show that
+
+Ow
+
+—(2n—e') < Re (ave +6V-1, s, u)) < Ine (89)
+
+for some e’ > 0. The middle term is calculated as
+OO. x 1
+Re (53V +6V-l, s, w)) = 2Arg(1— 2) — Arg (1- ) —2n(t- 5)
+where x = e2"V—(H+5V-D)_ Since 0.18 < t < 0.3,
+1
+—2n(5 —t) < Arg(l—2) < 0.
+Further, since 0.3 < s —t < 0.47,
+x 1
+0 < Arg(1—“) < 2n(=-s+1).
+y 2
+Therefore,
+~2n(1—s) < Re (20+ ov, $ uw) < 2n(+—t).
+06 _ 2
+
+Since s > 0.54 and t > 0.18,
+
+—27-0.46 < Re (200 +6V-1, 8 u)) < 2r- 0.32,
+
+35 > 5; ;
+and hence, (89) is satisfied.
+As for (17) and (18), similarly as above, it is sufficient to show that
+, 0 7 ,
+
+—(27—<«') < Re (530 s+é6V-1, u)) < In-e (90)
+
+for some e’ > 0. The middle term is calculated as
+ay — x y 1
+
+Re (53Vt s+é6V-1, uw) = —2Arg (1 —y) + Arg (1 - y + Arg (1- >) + 2n(s— 3)

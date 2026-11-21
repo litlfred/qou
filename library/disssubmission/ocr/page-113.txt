@@ -1,0 +1,45 @@
+5.2. Variations of Hodge structures 105
+
+morphism for a general curve as in theorem 5.2.
+W(Es)
+G Go
+
+W* (Eo) G(d2)
+Ag
+
+More specifically, in lemma 5.28 we construct over some smooth complex
+quasi-projective curve S a principally polarized abelian scheme Xs; —> S
+with a relative theta divisor @s C Xs such that the following properties are
+satisfied.
+
+(1) For some point so € S(C) the fibre X;, is the Jacobian variety of
+a general curve of genus g = 4, but for all other points s 4 so the
+theta divisor ©, C X; is smooth.
+
+(2) The relative addition morphism f : Ys = Os x s Os —> Xs restricts
+to a smooth proper morphism
+
+fus: f-'(Us) —+ Us
+over some Zariski-open dense subset Us C Xz that surjects onto S.
+
+We remark that the statement in (2) is nothing but the relative version of
+the Bertini-type lemma 5.3. The proof of lemma 5.10 carries over verbatim
+to this relative setting, so over the Zariski-open dense subset Us C Xs we
+obtain two variations of Hodge structures
+
+V4 and Vs_
+
+which on the fibre over each point s € S(C) restrict to the variations V+
+from lemma 5.10. If for each such point we denote by G(s) the monodromy
+group of the local system
+
+Vsslu, onthe fibre U,; C Xz,
+
+then a general result about degenerating monodromy representations, to be
+recalled in lemma 5.27 below, says that for general s € S(C) we have an
+embedding
+
+G(s0) G(s).
+So we will be finished if we can show that the monodromy group G(so) for
+the Jacobian variety X;, = JC of a general curve C of genus g = 4 contains
+the group 2%¢ as a subgroup. To achieve this we show in proposition 5.24

@@ -1,0 +1,45 @@
+11.4 Examples and consequences 369
+
+as r —> oo, uniformly as # varies over compact subsets of the interior of N.  «
+
+Stringing together several facts we have accumulated concerning amoebas,
+tangent cones, and hyperbolicity leads to a useful one-sided bound. Given a
+Laurent polynomial Q and a component B of the complement of amoeba(Q),
+we know from Proposition 11.26 that any z = exp(a# + iy) € OBN V has a
+cone of hyperbolicity K containing tanz,(B). From the remarks following Defi-
+nition 11.12, we know that K is convex and is a component of the complement
+of the zero set of A = hom(Q o exp, 2) in R’. The homogeneous polynomial
+A vanishes on the boundary of the cone K. Dualizing, we see that the alge-
+braic dual A* to A vanishes on the boundary of the dual cone N(z). It follows
+that N(z) is a subset of the largest subset L of the halfspace dual to wu that is
+bounded by the algebraic dual A* to A. From this, it follows that for any r ¢ L
+the set local(r) is empty, whence by Theorem 11.4 the exponential rate B(?)
+is strictly less than B"(*#) = —? - a. This proves an ACSV analogue of the
+Paley—Wiener Theorem for Fourier transforms, which asserts that the general-
+ized Fourier transform of a homogeneous function vanishes outside the dual
+cone.
+
+Theorem 11.42 (Paley—Wiener Theorem for ACSV). Let B be a component of
+the complement of amoeba(Q), let Q vanish at z = exp(x + ty), and let u be
+any element of tanz(B). Then B(?) < —# - x for any # outside the closed dual
+cone normal,(B) = (— tan,,(B))*. In particular, when tan,(B) is bounded by
+the algebraic tangent cone then normal,.(B) is bounded by the algebraic dual
+cone. ia]
+
+When the point « is the origin, as it is in many probabilistic examples, The-
+orem 11.42 implies that the Laurent coefficients a, decay exponentially as
+rT — co with # bounded outside the algebraic dual cone at the origin.
+
+Example 11.43 (cube groves). Let
+
+1
+L+xye-(x+y+74+xy t+ x7 + yz)/3
+
+F(x,y,2) =
+
+be the cube grove creation generating function, let z = 0, and let B be the
+component of amoeba(Q)° containing the negative orthant. Then
+
+A = hom(Q o exp) = 2xy + 2xz + 2yz
+
+is twice the second elementary symmetric function. This quadratic form is rep-

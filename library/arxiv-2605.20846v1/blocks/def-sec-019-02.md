@@ -1,0 +1,1 @@
+2.2. (Quasi-Category) A quasi-category is a simplicial set C such that every map of simplicial sets f0 : Λn i →C can be extended to an n-simplex f : ∆n →C for 0 < i < n. We also call it an ∞-category.

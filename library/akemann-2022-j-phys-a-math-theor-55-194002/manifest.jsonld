@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,10 +29,11 @@
     "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-014",
     "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-015",
     "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-016",
-    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-017"
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-017",
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-018"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "akemann-2022-j-phys-a-math-theor-55-194002",
     "title_source": "corroborated",
@@ -43,8 +44,8 @@
     "pages": 35,
     "arxiv": null,
     "doi": "10.1088/1751-8121/ac5f16",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

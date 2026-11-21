@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2512.02998v1
-doc_title: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY"
+doc_title: "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\'obius energy"
 section_id: sec-007-3-pseudo-gradient-flow-for-the-distance-function
 section_title: "Pseudo-gradient flow for the distance function"
 section_number: 3
 pages: 9-12
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
-doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.96
+latex_coverage_ratio: 0.947
+doc_brief: "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\'obius energy — We present sufficient criteria for the equivalence of tame knots at low regularity."
 ---
 \label{sec:pseudo}
 The globally defined vector field $V$ constructed in Proposition \ref{prop:vf}

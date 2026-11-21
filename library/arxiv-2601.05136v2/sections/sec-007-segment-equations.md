@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.05136v2
-doc_title: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant"
+doc_title: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant"
 section_id: sec-007-segment-equations
 section_title: "Segment equations"
 section_number: null
 pages: 8-9
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
-doc_brief: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.902
-latex_coverage_ratio: 0.778
+latex_prose_ratio: 0.889
+latex_coverage_ratio: 0.981
+doc_brief: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N."
 ---
 []{#sec:Segment equations label="sec:Segment equations"}
 
@@ -75,5 +76,3 @@ shadow-colored decorated representations $(\rho, u)$ with meridian eigenvalue $m
 ::: proof
 *Proof.* Suppose we have a solution of the segment equations with meridian eigenvalue $m$. Then by definition there is a well-defined assignment of parameters $a_{i}$ to the segments of $D$ that give a non-pinched of $D$ in the sense of [@McphailSnyder2022hyperbolicstructureslinkcomplements]. Call the set of such colorings $Y$. A point of $Y$ gives a solution of the segment equations (by forgetting the $a_{i}$) so there is a bijection between set (a) and $Y$. [@McphailSnyder2024octahedralcoordinateswirtingerpresentation Theorem 2.11 and Theorem 1] establish a bijection between $Y$ and the set (b). ◻
 :::
-
-# State integrals for the quantized Chern-Simons invariant {#sec:State integrals big}

@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0005038v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0005038v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0005038v1",
+  "title": "Braid groups are linear",
   "contains": [
     "library/arxiv-math-0005038v1/sections/sec-front-matter",
     "library/arxiv-math-0005038v1/sections/sec-000",
@@ -21,10 +21,12 @@
     "library/arxiv-math-0005038v1/sections/sec-006",
     "library/arxiv-math-0005038v1/sections/sec-007",
     "library/arxiv-math-0005038v1/sections/sec-008",
-    "library/arxiv-math-0005038v1/sections/sec-009"
+    "library/arxiv-math-0005038v1/sections/sec-009",
+    "library/arxiv-math-0005038v1/sections/sec-010",
+    "library/arxiv-math-0005038v1/sections/sec-011"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -34,7 +36,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0005038v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0005038v1.pdf",
     "source_sha256": "db0b9b7a8534f16157041fbe8f6a4351064ed97839efb9ef6856774d89eb5072",
     "pages": 13,

@@ -4,13 +4,14 @@ doc_title: "Generalized volume conjecture and the A-polynomials: the Neumann-Zag
 section_id: sec-000-quantum-dilogarithm-function
 section_title: "Quantum Dilogarithm Function"
 section_number: null
-pages: 2-12
+pages: 3-12
 source_pdf: 0604094v1.pdf
 source_sha256: f0c4c36ab0acf537
-doc_brief: "Generalized volume conjecture and the A-polynomials: the Neumann-Zagier potential function as a classical limit of quantum invariant — We study quantum invariant Zγ(M) for cusped hyperbolic"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.92
-latex_coverage_ratio: 0.923
+latex_prose_ratio: 0.917
+latex_coverage_ratio: 0.956
+doc_brief: "Generalized volume conjecture and the A-polynomials: the Neumann-Zagier potential function as a classical limit of quantum invariant — 9 sections: Front matter; Quantum Dilogarithm Function; Examples"
 ---
 \label{sec:dilog}
 We define a function  $\Phi_\gamma(\varphi)$ by an integral form

@@ -34,7 +34,7 @@ typeclass resolution supplied the open input for every `R` and `q` and the file 
 sorry-free by vacuity rather than by conditionality. It is now a `def`; see its
 docstring.
 
--- Ref: [manuscript] particle-interactions/crystal-graph-realization
+-- Ref: [leitner2026] particle-interactions/crystal-graph-realization
 -- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032
 -- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
 -/
@@ -118,7 +118,7 @@ namespace GSOrderMatch
 /-- Unconditional downstream restatement: under the order-match, the
     confinement filtration is exactly the KLR `ℤ`-grading filtration —
     the content `conj:confinement-grading-correspondence` needs. -/
--- Ref: [manuscript] particle-interactions/confinement-grading-correspondence
+-- Ref: [leitner2026] particle-interactions/confinement-grading-correspondence
 theorem confinement_eq_crystalDeg
     {R : Type u} [CommRing R] {q : R} [M : GSOrderMatch R q]
     (T : M.NormalForm) :
@@ -155,7 +155,7 @@ def canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
   NormalForm := PUnit
   confinementLevel _ := 0
   crystalDeg _ := 0
-  -- Ref: [manuscript] conj:crystal-graph-realization (§3b-cond; order-match (★) realises the
+  -- Ref: [leitner2026] conj:crystal-graph-realization (§3b-cond; order-match (★) realises the
   --      KLR grading; discharged here by both degrees being `0`, not by a `sorry`
   --      and not by the conjecture)
   order_match _ := rfl

@@ -1,0 +1,1 @@
+— Fix a Riemannian metric on P. Let ^ be the set of all subsets T of S with S [Lg > i. For y e P8, <fe/m^ 8GT ^V =^diamj/(T) and a[y) == sup rf(^). g e PGL(2) TA^ ^r^ is a> o such that a[y)>_ a for all y e Mg^«

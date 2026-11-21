@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "s00526-018-1443-6",
  "source_sha256": "34f3cd94e3b2d9d7",
- "brief": "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt 1 · Nicole Vorderobermeier 1 © The Author(s) 2018 — We prove that smooth critical",
- "extended": "**Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt 1 · Nicole Vorderobermeier 1 © The Author(s) 2018**\n\n28 pp, 12 sections.\n\n**Abstract.** We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016) this implies that critical points of the Möbius energy with merely bounded energy are not only C∞ but also analytic. Our proof is based on Cauchy’s method of majorants and a decomposition of the gradient which has already proved useful in the proof of the regularity results in Blatt and Reiter (Manuscr Math 140(1–2):29–50, 2013) and Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016). To the best of the authors knowledge, this is the ﬁrst analyticity result in the context of non-local differential equations. Mathematics Subject Classiﬁcation 35B65 · 57M25\n\n**Outline.** Front matter; On the analyticity of critical points of the M; Abstract; 1 Introduction; Exposé of the present work; 2.1 Fractional Sobolev spaces; 2 Preliminaries; 2.2 Properties of analytic functions; 4 Estimate of the main term Q; 6 Form of the remaining parts; Acknowledgements; References",
+ "brief": "On the analyticity of critical points of the Möbius energy — We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic.",
+ "extended": "**On the analyticity of critical points of the Möbius energy**\n\n28 pp, 16 sections.\n\n**Abstract.** We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016) this implies that critical points of the Möbius energy with merely bounded energy are not only C∞but also analytic. Our proof is based on Cauchy’s method of majorants and a decomposition of the gradient which has already proved useful in the proof of the regularity results in Blatt and Reiter (Manuscr Math 140(1–2):29–50, 2013) and Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016). To the best of the authors knowledge, this is the ﬁrst analyticity result in the context of non-local differential equations. Mathematics Subject Classiﬁcation 35B65 · 57M25\n\n**Outline.** Front matter; On the analyticity of critical points of the M; Abstract; 1 Introduction; Exposé of the present work; 2 Preliminaries; 2.1 Fractional Sobolev spaces; 2.2 Properties of analytic functions; 2.3 Faà di Bruno's formula; 3 Decomposition of the first variation of math; 4 Estimate of the main term Q; 5 Form of PT Qγ and the bilinear Hilbert trans; 6 Form of the remaining parts; 7 Proof of the main theorem by Cauchy's method; Acknowledgements; References",
  "tokens": {
-  "brief": 49,
-  "extended": 317
+  "brief": 40,
+  "extended": 333
  },
  "sections": [
   {
@@ -22,50 +22,70 @@
   {
    "id": "sec-001-abstract",
    "title": "Abstract",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-002-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-003-exposé-of-the-present-work",
    "title": "Exposé of the present work",
-   "pages": "3-3"
+   "pages": "3-4"
   },
   {
-   "id": "sec-004-21-fractional-sobolev-spaces",
-   "title": "Fractional Sobolev spaces",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-005-2-preliminaries",
+   "id": "sec-004-2-preliminaries",
    "title": "Preliminaries",
-   "pages": "3-5"
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-21-fractional-sobolev-spaces",
+   "title": "Fractional Sobolev spaces",
+   "pages": "4-5"
   },
   {
    "id": "sec-006-22-properties-of-analytic-functions",
    "title": "Properties of analytic functions",
-   "pages": "5-8"
+   "pages": "5-6"
   },
   {
-   "id": "sec-007-4-estimate-of-the-main-term-q",
+   "id": "sec-007-23-faà-di-brunos-formula",
+   "title": "Faà di Bruno's formula",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-3-decomposition-of-the-first-variation-of-mathca",
+   "title": "Decomposition of the first variation of mathcalE",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-009-4-estimate-of-the-main-term-q",
    "title": "Estimate of the main term Q",
-   "pages": "8-16"
+   "pages": "8-10"
   },
   {
-   "id": "sec-008-6-form-of-the-remaining-parts",
+   "id": "sec-010-5-form-of-pt-qγ-and-the-bilinear-hilbert-transfo",
+   "title": "Form of PT Qγ and the bilinear Hilbert transform",
+   "pages": "10-16"
+  },
+  {
+   "id": "sec-011-6-form-of-the-remaining-parts",
    "title": "Form of the remaining parts",
-   "pages": "16-27"
+   "pages": "16-20"
   },
   {
-   "id": "sec-009-acknowledgements",
+   "id": "sec-012-7-proof-of-the-main-theorem-by-cauchys-method-of",
+   "title": "Proof of the main theorem by Cauchy's method of majorants",
+   "pages": "20-27"
+  },
+  {
+   "id": "sec-013-acknowledgements",
    "title": "Acknowledgements",
    "pages": "27-27"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-014-references",
    "title": "References",
    "pages": "27-28"
   }

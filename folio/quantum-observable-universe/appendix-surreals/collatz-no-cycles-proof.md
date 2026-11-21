@@ -23,7 +23,15 @@ $$
 $$
 
 **When $A = 1$** — i.e. $[3]_q^{k_{\mathrm{odd}}} = [2]_q^{k}$ — the
-condition forces $B = 0$. But $[2]_q$ and $[3]_q$ are **coprime** in
+condition forces $B = 0$. If $k_{\mathrm{odd}} \geq 1$, some $b_i$ is
+nonzero, so $B$ is a nonempty sum of products of rational functions in $q$
+with positive coefficients. Then $B > 0$ at every real $q > 0$, and $B \neq 0$
+in $\mathbb{Q}(q)$ (evaluate at $q = 1$). So $B = 0$ fails and there is no
+balanced cycle with an odd step, whether $q$ is formal or a real number
+$q > 0$. This argument does not need $A \neq 1$.
+
+Formally the $A = 1$ case never arises when $k_{\mathrm{odd}} \geq 1$:
+$[2]_q$ and $[3]_q$ are **coprime** in
 $\mathbb{Z}[q]$: the Skein divisibility identity
 
 $$
@@ -32,14 +40,18 @@ $$
 
 gives $\gcd([2]_q, [3]_q) = 1$ by Bézout, so $[3]_q$ is a unit modulo
 $[2]_q$ while $[2]_q^k \equiv 0 \pmod{[2]_q}$ for $k \geq 1$ — hence
-$A = 1$ is **impossible for $k_{\mathrm{odd}} \geq 1$**. The only
+$A = 1$ is **impossible in $\mathbb{Z}[q]$ for $k_{\mathrm{odd}} \geq 1$**.
+At a real value of $q$ it can occur: at the plastic number $\rho$, the real
+root of $q^3 = q + 1$, one has $1 + \rho + \rho^2 = \rho^5$ and
+$1 + \rho = \rho^3$, so $[3]_\rho^{\,3} = \rho^{15} = [2]_\rho^{\,5}$.
+The positivity of $B$ above still excludes the cycle there. The only
 $A = 1$ orbit is the all-even chain ($k_{\mathrm{odd}} = 0$),
 $P \mapsto P/[2]_q^k = P$, forcing $P = 0$. So the coprimality identity
 excludes every periodic orbit whose holonomy is *balanced* ($A = 1$),
-other than the degenerate fixed point. $\square$
+other than the degenerate fixed point, formally and at every real $q > 0$. $\square$
 
 **Scope.** This settles only the $A = 1$ sub-case. The generic cycle has
-$A \neq 1$ — indeed coprimality *guarantees* $A \neq 1$ for
+$A \neq 1$ — indeed coprimality *guarantees* $A \neq 1$ in $\mathbb{Z}[q]$ for
 $k_{\mathrm{odd}} \geq 1$ — and the cycle condition then has a unique
 candidate solution
 
@@ -80,4 +92,4 @@ affine ($A \neq 1$) cycle problem.
    $q$-analog of classical nontrivial-cycle exclusion.
 2. **No divergent orbits**: the contact condition
    $\langle v_{[2]} \rangle \geq 2$
-   ([contact boundary](#prop:collatz-contact-boundary)).
+   ([contact boundary](#conj:collatz-contact-boundary)).

@@ -1,1 +1,1 @@
-— Fix a Riemannian metric on P. Let ^ be the set of all subsets T
+— Set ^ = yi,2 ^ and w^ == y, 3 ^,^ = i, ..., N - 2. TA^z ^=^002^, ^ ==^2(1 —ai) Wi + ^2, ^= ^ ^> 2, ^^ Z^l == 003 Wi + 02(03 — i) W^ ^2 == a2 03(001 - i) ^ + (003 a^ - 003 + i) w^ ^3 = «2 003(1 — aj Wi + 003(1 — a^) ^2+^3, if N — 3 > i, w^ == w^ k >, 3. ^ MONODROMY OF HYPERGEOMETRIC FUNCTIONS 7i

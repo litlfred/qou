@@ -1,0 +1,206 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "s10052-020-08615-2",
+ "source_sha256": "23becb0b1a2e7f1b",
+ "brief": "Sum rule for the Compton amplitude and implications for the proton–neutron mass difference — The Cottingham formula expresses the leading contribution of the electromagnetic interaction to the",
+ "extended": "**Sum rule for the Compton amplitude and implications for the proton–neutron mass difference**\n\n*J. Gasser1, H. Leutwyler1, A. Rusetsky2,a*\n\n26 pp, 37 sections.\n\n**Abstract.** The Cottingham formula expresses the leading contribution of the electromagnetic interaction to the proton- neutron mass difference as an integral over the forward Compton amplitude. Since quarks and gluons reggeize, the dispersive representation of this amplitude requires a sub- traction. We assume that the asymptotic behaviour is dom- inated by Reggeon exchange. This leads to a sum rule that expresses the subtraction function in terms of measurable quantities. The evaluation of this sum rule leads to m p−n QED = 0.58 ± 0.16 MeV.\n\n**Outline.** Front matter; Sum rule for the Compton amplitude and implica; Abstract; 1 Introduction; 2 Lorentz invariance, kinematic zeros; 3 Dispersion relations; 4 Reggeon dominance; 5 Sum rule for the subtraction function; 6 Wick rotation; 7 Decomposition of the mass shift; 8 Operator product expansion; 9 Leading Wilson coefficients; 10 Difference between proton and neutron; 11 Perturbation theory; 12 Moments of the structure functions; 13 Prediction for the constant C; 14 Renormalization; 15 Subleading divergence",
+ "tokens": {
+  "brief": 48,
+  "extended": 309
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-sum-rule-for-the-compton-amplitude-and-implicati",
+   "title": "Sum rule for the Compton amplitude and implications for the proton–neutron mass difference",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-003-2-lorentz-invariance-kinematic-zeros",
+   "title": "Lorentz invariance, kinematic zeros",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-3-dispersion-relations",
+   "title": "Dispersion relations",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-4-reggeon-dominance",
+   "title": "Reggeon dominance",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-5-sum-rule-for-the-subtraction-function",
+   "title": "Sum rule for the subtraction function",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-007-6-wick-rotation",
+   "title": "Wick rotation",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-008-7-decomposition-of-the-mass-shift",
+   "title": "Decomposition of the mass shift",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-009-8-operator-product-expansion",
+   "title": "Operator product expansion",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-010-9-leading-wilson-coefficients",
+   "title": "Leading Wilson coefficients",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-011-10-difference-between-proton-and-neutron",
+   "title": "Difference between proton and neutron",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-012-11-perturbation-theory",
+   "title": "Perturbation theory",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-013-12-moments-of-the-structure-functions",
+   "title": "Moments of the structure functions",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-014-13-prediction-for-the-constant-c",
+   "title": "Prediction for the constant C",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-015-14-renormalization",
+   "title": "Renormalization",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-016-15-subleading-divergence",
+   "title": "Subleading divergence",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-017-16-input-used-for-the-structure-functions",
+   "title": "Input used for the structure functions",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-018-18-subtraction-function-at-low-q-2",
+   "title": "Subtraction function at low Q ^2",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-019-19-intermediate-values-of-q-2",
+   "title": "Intermediate values of Q ^2",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-020-20-vector-meson-dominance",
+   "title": "Vector meson dominance",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-021-21-asymptotics",
+   "title": "Asymptotics",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-022-22-numerical-evaluation-of-the-mass-difference",
+   "title": "Numerical evaluation of the mass difference",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-023-221-form-factors-m-el",
+   "title": "Form factors, m_(el)",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-024-222-contribution-from-the-subtraction-function",
+   "title": "Contribution from the subtraction function",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-025-223-contributions-from-the-dispersion-integrals",
+   "title": "Contributions from the dispersion integrals",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-026-23-comparison-with-lattice-calculations",
+   "title": "Comparison with Lattice calculations",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-027-24-comparison-with-other-evaluations-of-the-cott",
+   "title": "Comparison with other evaluations of the Cottingham formula",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-028-241-contributions-from-the-elastic-part",
+   "title": "Contributions from the elastic part",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-029-242-contributions-from-the-subtraction-function",
+   "title": "Contributions from the subtraction function",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-030-25-summary-and-conclusions",
+   "title": "Summary and conclusions",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-031-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-032-appendix-a-form-of-the-wilson-coefficient-for-sp",
+   "title": "Appendix A: Form of the Wilson coefficient for spin 2",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-033-appendix-b-operator-product-expansion-for-free-q",
+   "title": "Appendix B: Operator product expansion for free quarks",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-034-appendix-c-derivation-of-the-sum-rule",
+   "title": "Appendix C: Derivation of the sum rule",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-035-references",
+   "title": "References",
+   "pages": "25-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

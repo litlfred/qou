@@ -1,0 +1,42 @@
+Section 2.1 Ribbon Fusion Categories
+
+category C*".
+Due to Theorem we can always assume monoidal categories are strict.
+
+Example 2.1.4 = 1. Vect : The objects are finite dimensional vector spaces over C and
+morphisms are linear maps between vector spaces. The tensor product functor ® is
+
+the usual tensor product, and the unit 1 is C.
+2. Given a finite group G, one can form three monoidal categories.
+
+e Vectg : The objects are G-graded vector spaces over C and morphisms are G-
+graded linear maps.If V = ® V,,W = @ W,, thenV QW = O(V @W),,
+geG geG gEG
+where (V@W),= @® Vy, ®W,,. The unit 1 = @ 1,, where 1, = 5y,-C.
+
+9=9192 geG
+
+e G: The objects are members of G. For g,h € G, Hom(g,h) = {I,} ifg =h,
+and —) otherwise. The tensor product and unit are the multiplication and unit
+
+in G, respectively.
+
+e Rep(G) : Objects are left modules (representations) of G and morphisms are
+
+G-module morphisms.
+
+3. Rep(H) : the category of representations of a bi-algebra H. The previous example
+
+Rep(G) is a special case corresponding to H = C[G], the group algebra.
+
+4. Autg(C) : The objects are monoidal equivalences of a monoidal category C, and
+the morphisms are natural isomorphisms. The tensor product is the composition of
+
+equivalences and the unit is Ide.
+
+In the next few subsections, we are going to introduce some extra structures on a
+monoidal category. In the following, let C be always a monoidal category. Whether
+
+or not assuming C is strict depends on personal flavors. If one assumes C is strict,
+
+11

@@ -1,1 +1,1 @@
-— If ˆf ∈xC[[x]] is a generic q-Gevrey series, then
+— (1) The functions Ed q and Ed q can be analytically continued on the sector {| arg x| < 2π} of the Riemann surface of the logarithm. (2) The functions E[λ] q and E[λ] q are analytic on C∗\(−(1−p)λqZ), the point −(1 −p)λqn being a simple pole for any integer n ∈Z.

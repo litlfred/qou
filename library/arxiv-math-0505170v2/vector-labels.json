@@ -1,0 +1,514 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-0505170v2",
+  "pages": [
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 102,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Simplicial sections, q = 1. We start with sections over two open sets U(0) and U(1) in the left diagram; and we pass to a simplicial section σ(0,1) on the right. As can be seen, σ(0,1) inter- polates between σ(0) and σ(1)."
+      ],
+      "labels": [
+        {
+          "text": "Z",
+          "bbox": [
+            176.78,
+            42.06,
+            183.02,
+            162.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (158 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "\u001b",
+          "bbox": [
+            391.22,
+            73.98,
+            396.02,
+            193.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (151 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "(0;1)",
+          "bbox": [
+            396.02,
+            75.66,
+            411.26,
+            195.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (155 0 R)",
+            "Type3 (163 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "AN AVERAGING PROCESS",
+          "bbox": [
+            253.8,
+            96.88,
+            358.27,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            477.36,
+            96.88,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "\u001b",
+          "bbox": [
+            213.74,
+            115.62,
+            218.54,
+            235.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (151 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "(0)",
+          "bbox": [
+            218.54,
+            117.3,
+            227.9,
+            237.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (155 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "\u0019",
+          "bbox": [
+            151.94,
+            134.46,
+            157.22,
+            254.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (158 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "\u0019",
+          "bbox": [
+            317.18,
+            134.46,
+            322.46,
+            254.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (158 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "\u001b",
+          "bbox": [
+            179.66,
+            136.02,
+            184.46,
+            256.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (151 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            184.46,
+            137.7,
+            193.82,
+            257.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (155 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            432.38,
+            139.62,
+            435.98,
+            259.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (155 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            423.62,
+            143.46,
+            432.5,
+            263.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (165 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            440.06,
+            143.46,
+            447.26,
+            263.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (169 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "U",
+          "bbox": [
+            449.3,
+            143.46,
+            455.54,
+            263.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (158 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "(0;1)",
+          "bbox": [
+            455.54,
+            144.9,
+            470.78,
+            264.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (155 0 R)",
+            "Type3 (163 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            432.38,
+            145.26,
+            438.38,
+            265.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (167 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "U",
+          "bbox": [
+            171.62,
+            167.58,
+            177.38,
+            287.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (151 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            177.38,
+            169.26,
+            186.74,
+            289.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (155 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "U",
+          "bbox": [
+            223.46,
+            169.26,
+            229.22,
+            289.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (151 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "(0)",
+          "bbox": [
+            229.22,
+            170.94,
+            238.58,
+            290.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (155 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "U",
+          "bbox": [
+            357.62,
+            183.78,
+            363.38,
+            303.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (151 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "(0;1)",
+          "bbox": [
+            363.38,
+            185.46,
+            378.62,
+            305.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (155 0 R)",
+            "Type3 (163 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            176.06,
+            196.86,
+            183.62,
+            316.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (158 0 R)"
+          ],
+          "sizes": [
+            0.12
+          ]
+        },
+        {
+          "text": "Figure 1. Simplicial sections, q = 1. We start with sections over",
+          "bbox": [
+            162.48,
+            345.07,
+            449.58,
+            355.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "two open sets U(0) and U(1) in the left diagram; and we pass to a",
+          "bbox": [
+            162.48,
+            357.45,
+            449.48,
+            369.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "simplicial section σ(0,1) on the right. As can be seen, σ(0,1) inter-",
+          "bbox": [
+            162.48,
+            369.33,
+            449.48,
+            381.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "polates between σ(0) and σ(1).",
+          "bbox": [
+            162.48,
+            381.33,
+            293.29,
+            393.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Department of Mathematics, Ben Gurion University, Be’er Sheva 84105, Israel",
+          "bbox": [
+            138.6,
+            410.96,
+            464.29,
+            418.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "E-mail address: amyekut@math.bgu.ac.il",
+          "bbox": [
+            138.6,
+            421.0,
+            293.03,
+            429.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMTI8",
+            "CMTT8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        }
+      ]
+    }
+  ]
+}

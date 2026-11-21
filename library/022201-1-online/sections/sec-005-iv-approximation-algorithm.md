@@ -1,6 +1,6 @@
 ---
 doc_id: 022201-1-online
-doc_title: "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth"
+doc_title: "Efficient algorithms for approximating quantum partition functions"
 section_id: sec-005-iv-approximation-algorithm
 section_title: "APPROXIMATION ALGORITHM"
 section_number: IV
@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: 022201_1_online.pdf
 source_sha256: 50331bf18a2bd4d5
 toc_source: inferred
+doc_brief: "Efficient algorithms for approximating quantum partition functions — 13 sections: Front matter; AFFILIATIONS; ABSTRACT"
 ---
 We now establish our approximation algorithm. First, we show that the truncated cluster expansion provides a good approximation to
 log(ZG(β)). Netoˇcný and Redig3 provided a sufficient condition for the convergence of the quantum cluster expansion based on the formalism
@@ -38,8 +39,6 @@ J. Math. Phys. 62, 022201 (2021); doi: 10.1063/5.0013689
  30 August 2026 09:11:26
 Journal of
 Mathematical Physics
-ARTICLE
-scitation.org/journal/jmp
 Lemma 7. The weight wγ of a polymer γ can be computed in time exp(O(∥γ∥)).
 We prove Lemma 11 in Appendix B.
 Lemma 8. Fix Δ ∈Z+, and let G = (V, E) be a graph of maximum degree at most Δ. The truncated cluster expansion Tm(ZG(β)) can be

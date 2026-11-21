@@ -9,14 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The Gauge of a Graded Functor",
-  "pageStart": 83,
-  "pageEnd": 84,
+  "title": "Contravariant DG Functors",
+  "pageStart": 74,
+  "pageEnd": 79,
   "contains": [
     "library/arxiv-1610.09640v4/blocks/prose-sec-034",
-    "library/arxiv-1610.09640v4/blocks/thm-sec-034-01"
+    "library/arxiv-1610.09640v4/blocks/prop-sec-034-01",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-034-02",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-034-03",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-034-04",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-034-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"
 }

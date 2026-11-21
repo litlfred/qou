@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
 toc_source: inferred
+doc_brief: "Knot-quiver correspondence for double twist knots — 9 sections: Front matter; INTRODUCTION; Reverse engineering of Melvin-Mort"
 ---
 Knot-quiver correspondence for double twist knots
 Vivek Kumar Singh
@@ -24,3 +25,6 @@ Siddharth Dwivedi
 Department of Physics, School of Physical Sciences, Central University of Rajasthan, Ajmer, India
 (Received 18 March 2023; accepted 10 October 2023; published 30 November 2023)
 We obtain a quiver representation for a family of knots called double twist knots Kðp; −mÞ. Mainly, we
+exploit the reverse engineering of Melvin-Morton-Rozansky formalism to deduce the pattern of the matrix
+for these quivers.
+DOI: 10.1103/PhysRevD.108.106023

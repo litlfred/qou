@@ -7,11 +7,11 @@
   "bytes": 267380,
   "pages": 26,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +26,21 @@
   "title_lines": [
    "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES"
   ],
-  "abstract": "We study an exact asymptotic behavior of the Witten\u2013Reshet ikhin\u2013Turaev SU(2) in- variant for the Brieskorn homology spheres \u03a3( p1, p 2, p 3) by use of properties of the modular form following a method proposed by R. Lawrence and D. Zagier. Key observation is that the invariant coincides with a limiting value of the Eichler integral of th e modular form with weight 3/ 2. We show that the Casson invariant is related to the number of the Eichler integrals which do not van- ish in a limit \u03c4 \u2192 N \u2208 Z. Correspondingly there is a one-to-one correspondence bet ween the non-vanishing Eichler integrals and the irreducible representation of the fundamental group, and the Chern\u2013Simons invariant is given from the Eichler integral i n this limit. It is also shown that the Ohtsuki invariant follows from a nearly modular property of the Eichler integral, and we give an explicit form in terms of the L-function. 1. I NTRODUCTION The quantum invariant for the 3-manifold M was introduced as a path integral on M by Wit- ten [43]; as the SU (2) invariant we have Zk(M) = \u222b exp ( 2 \u03c0 i k CS(A) ) DA (1.1) where k \u2208 Z, and CS(A) is the Chern\u2013Simons functional de\ufb01ned by CS(A) = 1 8 \u03c02 \u222b M Tr ( A \u2227 dA + 2 3 A \u2227 A \u2227 A ) (1.2) Since this work, studies of the quantum invariants of the 3-manifolds have been extensively devel- oped, and a construction of the 3-manifold invariant was ref ormulated combinatorially and rigor- ously in Refs. 15, 33 using a surgery description of M and the colored Jones polynomial de\ufb01ned in Ref. 14. By applying a stationary phase approximation, an asymptoti c behavior of the Witten invariant in large k \u2192 \u221e is expected to be [6, 43] (see also Ref. 2) Zk(M) \u223c 1 2 e\u2212 3 4 \u03c0i\u2211 \u03b1 \u221a T\u03b1(M) e\u22122\u03c0iI\u03b1/4 e2\u03c0i(k+2) CS(A) (1.3) Here the sum runs over a \ufb02at connection \u03b1, and T\u03b1 and I\u03b1 are the Reidemeister torsion and the spectral \ufb02ow de\ufb01ned modulo 8 respectively. Date: May 2, 2004. Accepted on December 21, 2004. 1",
+  "abstract": "We study an exact asymptotic behavior of the Witten–Reshetikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ(p1, p2, p3) by use of properties of the modular form following a method proposed by R. Lawrence and D. Zagier. Key observation is that the invariant coincides with a limiting value of the Eichler integral of the modular form with weight 3/2. We show that the Casson invariant is related to the number of the Eichler integrals which do not van- ish in a limit τ →N ∈Z. Correspondingly there is a one-to-one correspondence between the non-vanishing Eichler integrals and the irreducible representation of the fundamental group, and the Chern–Simons invariant is given from the Eichler integral in this limit. It is also shown that the Ohtsuki invariant follows from a nearly modular property of the Eichler integral, and we give an explicit form in terms of the L-function.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181023163204-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181023163204-04'00'"
+  },
+  "title_raw": "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES 1. I NTRODUCTION The quantum invariant for the 3-manifold M was introduced as a path integral on M by Witten [43]; as the SU (2) invariant we have exp 2 π i k CS( A ) where k ∈ Z , and CS( A ) is the Chern–Simons functional deﬁned by Tr CS(",
+   "outline": "Introduction",
+   "text": "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,59 +49,359 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The Witten--Reshetikhin--Turaev Invariant for the Brieskorn Homology Spheres",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Modular Forms",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "The Eichler Integral and the Chern--Simons Invariant",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "The Witten--Reshetikhin--Turaev Invariant and the Eichler Integral",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "S-matrix and the Reidemeister Torsion",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "The Ohtsuki Invariant",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Discussions",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Rational surgery description of the Brieskorn homology sphere Σ(p1, p2, p3)",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The number of the integral lattice points in the tetrahedron coincides with γ(p1, p2, p3)",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "23"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -101,42 +409,130 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 17,
-   "n_chars": 28275,
-   "n_words": 6441
+   "page_end": 1,
+   "n_chars": 1019,
+   "n_words": 163,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-000-s-matrix-and-the-reidemeister-torsion",
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4485,
+   "n_words": 802,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-the-witten--reshetikhin--turaev-invariant-for-th",
+   "number": null,
+   "title": "The Witten--Reshetikhin--Turaev Invariant for the Brieskorn Homology Spheres",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 4773,
+   "n_words": 1124,
+   "label_start": "3",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-modular-forms",
+   "number": null,
+   "title": "Modular Forms",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1626,
+   "n_words": 375,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-003-the-eichler-integral-and-the-chern--simons-invar",
+   "number": null,
+   "title": "The Eichler Integral and the Chern--Simons Invariant",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 10256,
+   "n_words": 2192,
+   "label_start": "8",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-004-the-witten--reshetikhin--turaev-invariant-and-th",
+   "number": null,
+   "title": "The Witten--Reshetikhin--Turaev Invariant and the Eichler Integral",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 5363,
+   "n_words": 1270,
+   "label_start": "14",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-005-s-matrix-and-the-reidemeister-torsion",
    "number": null,
    "title": "S-matrix and the Reidemeister Torsion",
    "level": 1,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 3838,
-   "n_words": 898
+   "n_chars": 3253,
+   "n_words": 714,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
-   "id": "sec-001-the-ohtsuki-invariant",
+   "id": "sec-006-the-ohtsuki-invariant",
    "number": null,
    "title": "The Ohtsuki Invariant",
    "level": 1,
    "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5221,
+   "n_words": 1001,
+   "label_start": "20",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-007-discussions",
+   "number": null,
+   "title": "Discussions",
+   "level": 1,
+   "page_start": 23,
    "page_end": 26,
-   "n_chars": 13856,
-   "n_words": 2439
+   "n_chars": 9104,
+   "n_words": 1432,
+   "label_start": "23",
+   "label_end": "26"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 3,
-  "chars_total": 45969,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [
+   "table 1"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 45100,
+  "furniture_lines_stripped": 1,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "brieskorn.tex",
    "tex_sections": 9,
-   "overlaid": 2,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -149,20 +545,67 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-s-matrix-and-the-reidemeister-torsion",
-     "title": "S-matrix and the Reidemeister Torsion",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.978,
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-the-ohtsuki-invariant",
-     "title": "The Ohtsuki Invariant",
-     "prose_ratio": 0.875,
-     "coverage_ratio": 0.593,
+     "id": "sec-001-the-witten--reshetikhin--turaev-invariant-for-th",
+     "title": "The Witten--Reshetikhin--Turaev Invariant for the Brieskorn Homology Spheres",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-modular-forms",
+     "title": "Modular Forms",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-the-eichler-integral-and-the-chern--simons-invar",
+     "title": "The Eichler Integral and the Chern--Simons Invariant",
+     "prose_ratio": 0.841,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-the-witten--reshetikhin--turaev-invariant-and-th",
+     "title": "The Witten--Reshetikhin--Turaev Invariant and the Eichler Integral",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-s-matrix-and-the-reidemeister-torsion",
+     "title": "S-matrix and the Reidemeister Torsion",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-the-ohtsuki-invariant",
+     "title": "The Ohtsuki Invariant",
+     "prose_ratio": 0.825,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-discussions",
+     "title": "Discussions",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.487,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

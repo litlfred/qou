@@ -7,10 +7,11 @@ section_number: 4
 pages: 4-5
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
-doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.964
+latex_prose_ratio: 0.849
+latex_coverage_ratio: 0.976
+doc_brief: "A version of the volume conjecture — We propose a version of the volume conjecture that would relate a certain limit of the colored Jones polynomials of a knot to the volume function deﬁned by a"
 ---
 In [@Gukov:COMMP2005 (5.29)], Gukov proposed the following conjecture.
 

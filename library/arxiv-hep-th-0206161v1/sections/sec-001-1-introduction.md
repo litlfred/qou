@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0206161v1
-doc_title: "arXiv:hep-th/0206161v1 18 Jun 2002"
+doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -8,6 +8,7 @@ pages: 2-7
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
 toc_source: inferred
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 24 sections: Front matter; Jourdain:; Introduction"
 ---
 The dynamics of gauge theories is a long and fascinating subject. The dynamics of
 supersymmetric gauge theories is a subject with shorter history. However, more facts are

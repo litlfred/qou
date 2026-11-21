@@ -1,6 +1,6 @@
 ---
 doc_id: kirbycal
-doc_title: "mathematicae"
+doc_title: "A Calculus for Framed Links in S^3"
 section_id: page-020
 section_title: "Page 20"
 section_number: null
@@ -8,6 +8,7 @@ pages: 20-20
 source_pdf: kirbycal.pdf
 source_sha256: 8dae9487ed32a3bd
 toc_source: undetermined
+doc_brief: "Kirby, A calculus for framed links in S³ (Invent. Math. 45, 35–56, 1978) — the two moves generating equivalence of framed-link surgery presentations of a 3-manifold."
 ---
 54 
 R. Kirby 

@@ -495,6 +495,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568",
+          "lean": "c04356b33807",
+          "lean_statement": "4bab58340191"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:32.496Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "sl2-period-conserved-quantity.lean:61-63 `theorem sl2Invariant_eq_zeroth (a : ℕ → R) (τ : R) (hrec : ∀ n, a (n + 2) = τ * a (n + 1) - a n) (n : ℕ) : sl2Invariant a τ n = sl2Invariant a τ 0` matches the boxed claim (.md:14-18); the fork consequence .md:23-38 (factorial growth ⇒ no depth-2 recurrence) has no Lean counterpart",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2655,6 +2673,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:56:40.332Z",
+  "updated_at": "2026-11-15T21:57:32.496Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

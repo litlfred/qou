@@ -1,0 +1,52 @@
+474 BAO (X.) & BONAHON (F.)
+
+LEMMA 13. — In the euclidean plane R?, let Qi, t € |—<,¢|, be a differentiable
+family of strictly convex polygons with straight sides. Suppose that, at t = 0,
+the derivative of the angle of Q, at each of its vertices is equal to 0, and that
+the derivative of the area of Q, is also equal to 0. Label each edge of Qo by the
+symbol +, 0, or — according to whether the derivative of its length at t = 0 is
+positive, zero or negative. Then, either all edges are labelled by 0, or there are
+at least 4 sign changes in OQo.
+
+Here, “strictly convex” means that the internal angle of Q; at each of its
+vertices is strictly between 0 and a.
+
+Proof. — (Compare [15, Lemma Ms3].) Suppose, in search of a contradic-
+tion, that there are exactly 2 sign changes. We can then index the edges
+of Q: as ef,..., et, eh vey et, ey = e{, going counterclockwise in this order
+around 0Q;, in such a way that e! is labelled by + or 0 if 1 < i < q, and
+by — or 0 ifg+1<i<r. Let vu} be the vertex intersection of e! and e/,,, and
+set vi, = v! for consistency of the notation. Finally, let T! be the unit tangent
+vector of the edge e!, oriented by the counterclockwise orientation of 9Q:, and
+let ¢! be the length of ef. Then, for 1 <i <j <r,
+
+r
+vy —vuf -> OT, = -Yoant- > Th.
+k=i+1 k=j+1
+
+Let af € ]0,7[ be the angle from T} to T/,,, namely the external angle
+of Q; at the vertex v}. Note that 7;_, a? = 27. Replacing ¢ by —t if necessary
+(which exchanges the labels + and —), we can assume without loss of generality
+that Viegtt a? <7. Pick an index p with 1 < p < q such that ye 1a<r
+and pt a? <7.
+
+Composing Q; by an isometry depending differentiably on t, we can arrange
+that the vertex vs, is fixed, and that the tangent vector T; is constant. By
+our hypothesis that the angles of Q; have derivative 0 at t = 0, it follows that
+dT} /dt\,.9 = 0 for every i. As a consequence, if 00 = dj /dtjr=0 denotes the
+derivative of the length ¢ at ¢ = 0, the vector 0? = dv! /dty 0 is equal to
+
+we (ep —p fT? if p+1<ic<r,
+
+O70: AF
+Pig OTS ifl<i<p-l.
+
+We will consider the direction in which the edges e! move. We will say
+that ef weakly moves towards (resp. away from) Qo if either the vector ?_, =
+dui_, /dtje=0 is equal to 0 or if the angle from 0°_, to T? is in the closed interval
+[—7,0] (resp. [0,7]); note that we can consider the vector #9 = 01, + T°
+instead of 0° _, for this property. The edge e! strictly moves towards (resp.
+away from) Qo if #?_, = dv}_,/dt)o is non-zero and the angle from ¢?_,
+to T° is in the open interval ] — 7,0[ (resp. ]0,7[).
+
+TOME 130 ~ 2002 — N° 3

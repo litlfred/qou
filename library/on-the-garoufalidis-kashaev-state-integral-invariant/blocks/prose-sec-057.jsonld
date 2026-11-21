@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-057",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Cancellation in the Integral",
-  "pageStart": 56,
-  "pageEnd": 56,
-  "text": "../sections/sec-057-cancellation-in-the-integral.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
+  "title": "(P2) Analytic Control and Temperedness",
+  "pageStart": 54,
+  "pageEnd": 54,
+  "text": "../sections/sec-057-p2-analytic-control-and-temperedness.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
   "provenance": "ingested"
 }

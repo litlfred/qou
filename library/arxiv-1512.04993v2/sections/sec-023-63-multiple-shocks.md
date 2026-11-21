@@ -7,10 +7,11 @@ section_number: 6.3
 pages: 38-39
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.847
-latex_coverage_ratio: 0.948
+latex_coverage_ratio: 0.977
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 Next, let us comment on states perturbed by multiple precursors as in \eqref{eq:multiple-precursors}. As before, we will consider a compact boundary theory but this time perturbed $n$ spherically symmetric shock waves described by shifts $h_i\sim e^{ -\frac{2\pi}{\beta}(t_* \pm t_i )}$, with a ``$+$'' for $i$ odd and a ``$-$'' for $i$ even. We will also assume that all the shocks are strong, $h_i \gg 1$.  One can easily construct these geometries following the recipe of \cite{Shenker:2013yza}. In \cite{complexityshocks}, it was found that the total complexity of the state, using  CV-duality, is given by
 \be

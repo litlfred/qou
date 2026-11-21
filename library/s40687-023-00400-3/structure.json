@@ -6,33 +6,52 @@
   "sha256": "fd7638a8cf512a9986d02292f111bbbd92ca6c46dddfedef6ece56fc145ca4ee",
   "bytes": 649115,
   "pages": 23,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1007/s40687-023-00400-3",
-  "title": "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: stavros@mpim-bonn.mpg.de; bonn.mpg.de/stavros",
-  "authors_raw": null,
-  "abstract": "TheNeumann–Zagiermatricesofanidealtriangulationareintegermatriceswith symplecticpropertieswhoseentriesencodethenumberoftetrahedrathatwind aroundeachedgeofthetriangulation.Theycanbeusedasinputdataforthe constructionofanumberofquantuminvariantsthatincludetheloopinvariants,the 3D-indexandstate-integrals.WedeﬁneatwistedversionofNeumann–Zagiermatrices, describetheirsymplecticproperties,andshowhowtocomputethemfromthe combinatoricsofanidealtriangulation.Asasampleapplication,weusethemtodeﬁne atwistedversionofthe1-loopinvariant(atopologicalinvariant)whichdeterminesthe 1-loopinvariantofthecycliccoversofahyperbolicknotcomplement,and conjecturallyisequaltotheadjointtwistedAlexanderpolynomial.",
-  "docinfo": {
-   "Author": "Stavros Garoufalidis ",
-   "CreationDate": "D:20230901131032+05'30'",
-   "Creator": "Springer",
-   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
-   "Title": "Twisted Neumann–Zagier matrices"
-  },
+  "title": "Twisted Neumann–Zagier matrices",
+  "authors_raw": "Mathematics, Bonn, Germany",
   "title_lines": [
-   "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37",
    "RESEARCH",
    "Twisted Neumann–Zagier matrices",
-   "StavrosGaroufalidis1,2* andSeokbeomYoon 1",
+   "Stavros Garoufalidis1,2*",
+   "and Seokbeom Yoon1",
    "*Correspondence:",
    "stavros@mpim-bonn.mpg.de;",
-   "bonn.mpg.de/stavros"
+   "bonn.mpg.de/stavros",
+   "2Max Planck Institute for"
   ],
-  "title_prev": "bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration"
+  "abstract": "The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around each edge of the triangulation. They can be used as input data for the construction of a number of quantum invariants that include the loop invariants, the 3D-index and state-integrals. We deﬁne a twisted version of Neumann–Zagier matrices, describe their symplectic properties, and show how to compute them from the combinatorics of an ideal triangulation. As a sample application, we use them to deﬁne a twisted version of the 1-loop invariant (a topological invariant) which determines the 1-loop invariant of the cyclic covers of a hyperbolic knot complement, and conjecturally is equal to the adjoint twisted Alexander polynomial.",
+  "docinfo": {
+   "Title": "Twisted Neumann–Zagier matrices",
+   "Author": "Stavros Garoufalidis ",
+   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
+   "Creator": "Springer",
+   "CreationDate": "D:20230901131032+05'30'"
+  },
+  "title_raw": "RESEARCH Twisted Neumann–Zagier matrices Stavros Garoufalidis1,2* and Seokbeom Yoon1 *Correspondence: stavros@mpim-bonn.mpg.de; bonn.mpg.de/stavros 2Max Planck Institute for",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Twisted Neumann–Zagier matrices",
+   "heading": "Twisted Neumann–Zagier matrices",
+   "outline": "Twisted Neumann–Zagier matrices",
+   "text": "RESEARCH Twisted Neumann–Zagier matrices Stavros Garoufalidis1,2* and Seokbeom Yoon1 *Correspondence: stavros@mpim-bonn.mpg.de; bonn.mpg.de/stavros 2Max Planck Institute for",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: stavros@mpim-bonn.mpg.de; bonn.mpg.de/stavros"
  },
  "toc": [
   {
@@ -40,116 +59,405 @@
    "title": "Twisted Neumann–Zagier matrices",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Motivation",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Torsion and its twisted version",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Neumann–Zagier matrices and their twisted version",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "The 1-loop invariant and its twisted version",
    "page": 7,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Proofs: twisted NZ matrices",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Examples",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "The knot 41",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "The knot 63",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Proofs: twisted 1-loop invariant",
    "page": 16,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Examples, continued",
    "page": 21,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 3,
    "title": "The knot 41",
    "page": 21,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 3,
    "title": "The knot 63",
    "page": 21,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "References",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Since E2 is a contractible space, we can assign an integer α(v) to each vertex v of G such that α(v2) −α(v1) = α([v1, v2]), where [v1, v2] is an oriented edge of G from v1 to v2",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "13"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 51,
+   "n_words": 2,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-twisted-neumannzagier-matrices",
    "number": null,
@@ -157,8 +465,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 285,
-   "n_words": 13
+   "n_chars": 310,
+   "n_words": 38,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-abstract",
@@ -167,8 +477,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 931,
-   "n_words": 15
+   "n_chars": 1064,
+   "n_words": 148,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-1-introduction",
@@ -177,8 +489,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 96,
+   "n_words": 43,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-11-motivation",
@@ -187,8 +501,10 @@
    "level": 3,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5936,
-   "n_words": 700
+   "n_chars": 6545,
+   "n_words": 1354,
+   "label_start": null,
+   "label_end": "3"
   },
   {
    "id": "sec-004-12-torsion-and-its-twisted-version",
@@ -197,8 +513,10 @@
    "level": 3,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2693,
-   "n_words": 368
+   "n_chars": 2729,
+   "n_words": 458,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-005-13-neumannzagier-matrices-and-their-twisted-vers",
@@ -207,8 +525,10 @@
    "level": 3,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 7687,
-   "n_words": 1179
+   "n_chars": 7894,
+   "n_words": 1574,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
    "id": "sec-006-14-the-1-loop-invariant-and-its-twisted-version",
@@ -217,8 +537,10 @@
    "level": 3,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 4228,
-   "n_words": 664
+   "n_chars": 4290,
+   "n_words": 827,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-007-2-proofs-twisted-nz-matrices",
@@ -227,8 +549,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 6366,
-   "n_words": 1184
+   "n_chars": 6248,
+   "n_words": 1388,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
    "id": "sec-008-3-examples",
@@ -237,8 +561,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 237,
-   "n_words": 42
+   "n_chars": 226,
+   "n_words": 43,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
    "id": "sec-009-31-the-knot-41",
@@ -246,47 +572,119 @@
    "title": "The knot 41",
    "level": 3,
    "page_start": 12,
-   "page_end": 16,
-   "n_chars": 5850,
-   "n_words": 1167
+   "page_end": 14,
+   "n_chars": 3302,
+   "n_words": 689,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-010-4-proofs-twisted-1-loop-invariant",
+   "id": "sec-010-32-the-knot-63",
+   "number": "3.2",
+   "title": "The knot 63",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 2665,
+   "n_words": 815,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-011-4-proofs-twisted-1-loop-invariant",
    "number": "4",
    "title": "Proofs: twisted 1-loop invariant",
    "level": 2,
    "page_start": 16,
    "page_end": 21,
-   "n_chars": 8409,
-   "n_words": 1625
+   "n_chars": 8381,
+   "n_words": 1967,
+   "label_start": "16",
+   "label_end": "21"
   },
   {
-   "id": "sec-011-5-examples-continued",
+   "id": "sec-012-5-examples-continued",
    "number": "5",
    "title": "Examples, continued",
    "level": 2,
    "page_start": 21,
-   "page_end": 22,
-   "n_chars": 3468,
-   "n_words": 541
+   "page_end": 21,
+   "n_chars": 147,
+   "n_words": 25,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-013-51-the-knot-41",
+   "number": "5.1",
+   "title": "The knot 41",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1049,
+   "n_words": 254,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-014-52-the-knot-63",
+   "number": "5.2",
+   "title": "The knot 63",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2493,
+   "n_words": 551,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-015-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 3635,
-   "n_words": 229
+   "n_chars": 3873,
+   "n_words": 521,
+   "label_start": "22",
+   "label_end": "23"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 16,
-  "sections": 13,
-  "chars_total": 49725
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [
+   "figure 1",
+   "figure 2"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "Introduction",
+     "Motivation"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 17,
+  "chars_total": 51363,
+  "furniture_lines_stripped": 45
  },
  "duplicate_of": "arxiv-2109.00379v1",
  "duplicate_note": "Same work as library/arxiv-2109.00379v1/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."

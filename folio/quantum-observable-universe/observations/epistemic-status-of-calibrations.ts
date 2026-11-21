@@ -6,7 +6,7 @@ export default remark({
     "Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned",
   interprets: "def:three-calibration-discipline",
   uses: [
-    "prop:three-calibration-inputs",
+    "conj:three-calibration-inputs",
     "def:three-calibration-discipline",
     "prop:self-dual-higgs-real-volume",
     "rem:qstar-decay-sector-q0",
@@ -31,6 +31,10 @@ export default remark({
     status: "verified",
   },
   authorNotes: [
+    {
+      kind: "refined-framing",
+      body: "An earlier version of the muon-anchor paragraph asserted that the neutron-decay observable supplies an independent third determination of q₀ and that the μ–p tension is a three-way test.",
+    },
     {
       kind: "note",
       date: "2026-11-15",

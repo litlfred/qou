@@ -8,7 +8,7 @@
   "pages": 17,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,13 +21,13 @@
    "stamp_date": "7 May 2005"
   },
   "doi": null,
-  "title": "arXiv:math/0408210v3 [math.QA] 7 May 2005",
+  "title": "A simple algebraic proof of the algebraic index theorem",
   "authors_raw": "PoNing Chen and Vasiliy Dolgushev1",
   "title_lines": [
    "A SIMPLE ALGEBRAIC PROOF OF",
    "THE ALGEBRAIC INDEX THEOREM"
   ],
-  "abstract": "In math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet proposed an explicit formula for the trace density map from the quantum algebra of functions on an arbitrary symplectic manifold M to the top degree cohomology of M. They also evaluated this map on the trivial element of K-theory of the algebra of quantum functions. In our paper we evaluate the map on an arbitrary element of K-theory, and show that the result is expressed in terms of the \u02c6A-genus of M, the Deligne-Fedosov class of the quantum algebra, and the Chern character of the principal symbol of the element. For a smooth (real) symplectic manifold (without a boundary), this result implies the Fedosov-Nest-Tsygan algebraic index theorem.",
+  "abstract": "In math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet proposed an explicit formula for the trace density map from the quantum algebra of functions on an arbitrary symplectic manifold M to the top degree cohomology of M. They also evaluated this map on the trivial element of K-theory of the algebra of quantum functions. In our paper we evaluate the map on an arbitrary element of K-theory, and show that the result is expressed in terms of the ˆA-genus of M, the Deligne-Fedosov class of the quantum algebra, and the Chern character of the principal symbol of the element. For a smooth (real) symplectic manifold (without a boundary), this result implies the Fedosov-Nest-Tsygan algebraic index theorem.",
   "docinfo": {
    "Title": "arXiv:math/0408210v3  [math.QA]  7 May 2005",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -45,7 +45,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0408210v3 [math.QA] 7 May 2005"
  },
  "toc": [
   {
@@ -319,8 +320,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1019,
-   "n_words": 155,
+   "n_chars": 1017,
+   "n_words": 154,
    "label_start": "1",
    "label_end": "1"
   },
@@ -331,8 +332,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6089,
-   "n_words": 1013,
+   "n_chars": 6085,
+   "n_words": 1011,
    "label_start": "1",
    "label_end": "3"
   },
@@ -343,7 +344,7 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 244,
+   "n_chars": 254,
    "n_words": 39,
    "label_start": "3",
    "label_end": "3"
@@ -355,7 +356,7 @@
    "level": 2,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 3450,
+   "n_chars": 3478,
    "n_words": 669,
    "label_start": "3",
    "label_end": "5"
@@ -367,8 +368,8 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2021,
-   "n_words": 397,
+   "n_chars": 2043,
+   "n_words": 398,
    "label_start": "5",
    "label_end": "6"
   },
@@ -379,7 +380,7 @@
    "level": 2,
    "page_start": 6,
    "page_end": 11,
-   "n_chars": 9482,
+   "n_chars": 9525,
    "n_words": 1888,
    "label_start": "6",
    "label_end": "11"
@@ -391,8 +392,8 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2761,
-   "n_words": 515,
+   "n_chars": 2802,
+   "n_words": 518,
    "label_start": "11",
    "label_end": "12"
   },
@@ -403,8 +404,8 @@
    "level": 1,
    "page_start": 12,
    "page_end": 15,
-   "n_chars": 7361,
-   "n_words": 1405,
+   "n_chars": 7399,
+   "n_words": 1409,
    "label_start": "12",
    "label_end": "15"
   },
@@ -415,8 +416,8 @@
    "level": 1,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 4870,
-   "n_words": 766,
+   "n_chars": 4881,
+   "n_words": 765,
    "label_start": "15",
    "label_end": "17"
   }
@@ -436,7 +437,8 @@
    "items": []
   },
   "sections": 9,
-  "chars_total": 37297,
+  "chars_total": 37484,
+  "furniture_lines_stripped": 17,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -465,7 +467,7 @@
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -489,7 +491,7 @@
      "id": "sec-004-23-fedosov-deformation-quantization-with-twisted",
      "title": "Fedosov deformation quantization with twisted coefficients.",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -505,7 +507,7 @@
      "id": "sec-006-3-the-local-version-of-the-algebraic-index-theor",
      "title": "The local version of the algebraic index theorem",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.977,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -513,7 +515,7 @@
      "id": "sec-007-4-concluding-remarks",
      "title": "Concluding remarks.",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.618,
+     "coverage_ratio": 0.613,
      "result": "overlaid",
      "converter": "pandoc"
     }

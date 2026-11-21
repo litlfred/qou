@@ -1,0 +1,1 @@
+Mainly through lattice QCD simulations, it has become well established that chiral symmetry breaking by the vacuum state of QCD is a nonperturbative phenomenon that results from the interaction of many microscopic degrees of freedom.

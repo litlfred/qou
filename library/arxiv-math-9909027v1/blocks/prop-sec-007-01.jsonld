@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-9909027v1/blocks/prop-sec-007-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 74,
+  "pageEnd": 77,
+  "text": "prop-sec-007-01.md",
+  "derivedFrom": "library/arxiv-math-9909027v1/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9909027v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.2.2",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-007-32-duality.md (p. 74-77)",
+    "claim_id": "arxiv-math-9909027v1#proposition:3.2.2",
+    "lean_status": "unformalized"
+  }
+}

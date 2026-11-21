@@ -34,7 +34,7 @@ produce a nonzero associator, so it reaches `ℍ` (electroweak `SU(2)`) but not 
 doubling — not a further rotation. (Mathlib has `Quaternion` but no octonions, so
 the `𝕆` rung is stated, not built here.)
 
--- Ref: [manuscript] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
 -/
 
 namespace QOU.BringsSurface.ColourComplexStructure

@@ -8,9 +8,19 @@
   "pages": 58,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 36,
+    "reason": "13 of 308 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 52,
+    "reason": "10 of 172 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -52,14 +62,15 @@
    "page_label": "1"
   },
   {
-   "level": 2,
+   "level": 1,
    "title": "ILL Links and Braids",
    "page": 14,
    "source": "inferred",
    "number": null,
-   "confidence": 0.65,
+   "confidence": 0.9,
    "evidence": [
     "contents",
+    "body",
     "style"
    ],
    "page_label": "6"
@@ -95,14 +106,15 @@
    "page_label": "14"
   },
   {
-   "level": 2,
+   "level": 1,
    "title": "IIA. Diagram Algebras",
    "page": 24,
    "source": "inferred",
    "number": null,
-   "confidence": 0.5,
+   "confidence": 0.75,
    "evidence": [
-    "contents"
+    "contents",
+    "body"
    ],
    "page_label": "16"
   },
@@ -137,26 +149,28 @@
    "page_label": "22"
   },
   {
-   "level": 2,
+   "level": 1,
    "title": "IlI.3. The Quantum Group Uv (.6'[(2))",
    "page": 32,
    "source": "inferred",
    "number": null,
-   "confidence": 0.5,
+   "confidence": 0.75,
    "evidence": [
-    "contents"
+    "contents",
+    "body"
    ],
    "page_label": "24"
   },
   {
-   "level": 2,
+   "level": 1,
    "title": "IlIA. The Quantum Supergroup Uv (g[(111))",
    "page": 36,
    "source": "inferred",
    "number": null,
-   "confidence": 0.5,
+   "confidence": 0.75,
    "evidence": [
-    "contents"
+    "contents",
+    "body"
    ],
    "page_label": "28"
   },
@@ -220,26 +234,28 @@
    "page_label": "41"
   },
   {
-   "level": 2,
+   "level": 1,
    "title": "V.l. Braid Group Invariance",
    "page": 49,
    "source": "inferred",
    "number": null,
-   "confidence": 0.5,
+   "confidence": 0.75,
    "evidence": [
-    "contents"
+    "contents",
+    "body"
    ],
    "page_label": "41"
   },
   {
-   "level": 2,
+   "level": 1,
    "title": "V.2. Markov JVloves",
    "page": 51,
    "source": "inferred",
    "number": null,
-   "confidence": 0.5,
+   "confidence": 0.75,
    "evidence": [
-    "contents"
+    "contents",
+    "body"
    ],
    "page_label": "43"
   }
@@ -426,9 +442,10 @@
    "physical": 14,
    "label": "6",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -518,9 +535,10 @@
    "physical": 24,
    "label": "16",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -592,9 +610,10 @@
    "physical": 32,
    "label": "24",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -628,9 +647,10 @@
    "physical": 36,
    "label": "28",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -767,9 +787,10 @@
    "physical": 51,
    "label": "43",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -855,46 +876,178 @@
    "title": "INTRODUCTION",
    "level": 1,
    "page_start": 9,
-   "page_end": 29,
-   "n_chars": 30423,
-   "n_words": 5486,
+   "page_end": 14,
+   "n_chars": 9382,
+   "n_words": 1542,
    "label_start": "1",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-001-ill-links-and-braids",
+   "number": null,
+   "title": "ILL Links and Braids",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 5077,
+   "n_words": 929,
+   "label_start": "6",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-002-ii-2-representations-of-the-braid-group-and-the",
+   "number": "II",
+   "title": "2. Representations of the Braid Group and the Iwahori-Hecke Algebra",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 22,
+   "n_chars": 6806,
+   "n_words": 1255,
+   "label_start": "9",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-003-ii-3-the-temperley-lieb-algebra",
+   "number": "II",
+   "title": "3. The Temperley-Lieb Algebra",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2651,
+   "n_words": 557,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-004-iia-diagram-algebras",
+   "number": null,
+   "title": "IIA. Diagram Algebras",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 29,
+   "n_chars": 6470,
+   "n_words": 1198,
+   "label_start": "16",
    "label_end": "21"
   },
   {
-   "id": "sec-001-iii-schur-weyl-duality-and-quotients-of-the-heck",
+   "id": "sec-005-iii-schur-weyl-duality-and-quotients-of-the-heck",
    "number": "III",
    "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA",
    "level": 1,
    "page_start": 29,
-   "page_end": 42,
-   "n_chars": 16872,
-   "n_words": 3218,
+   "page_end": 30,
+   "n_chars": 2740,
+   "n_words": 469,
    "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-006-iii-2-representations-of-the-iwahori-hecke-algeb",
+   "number": "III",
+   "title": "2. Representations of the Iwahori-Hecke Algebra",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 2775,
+   "n_words": 485,
+   "label_start": "22",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-007-ili3-the-quantum-group-uv-62",
+   "number": null,
+   "title": "IlI.3. The Quantum Group Uv (.6'[(2))",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 36,
+   "n_chars": 3812,
+   "n_words": 795,
+   "label_start": "24",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-008-ilia-the-quantum-supergroup-uv-g111",
+   "number": null,
+   "title": "IlIA. The Quantum Supergroup Uv (g[(111))",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 42,
+   "n_chars": 7471,
+   "n_words": 1459,
+   "label_start": "28",
    "label_end": "34"
   },
   {
-   "id": "sec-002-iv-a-state-sum-formula-for-the-alexander-polynom",
+   "id": "sec-009-iv-a-state-sum-formula-for-the-alexander-polynom",
    "number": "IV",
    "title": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL",
    "level": 1,
    "page_start": 42,
-   "page_end": 49,
-   "n_chars": 7490,
-   "n_words": 1519,
+   "page_end": 45,
+   "n_chars": 4007,
+   "n_words": 791,
    "label_start": "34",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-010-iv-2-construction-of-the-state-sum",
+   "number": "IV",
+   "title": "2. Construction of the State-sum",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 2902,
+   "n_words": 585,
+   "label_start": "37",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-011-iv-3-an-example",
+   "number": "IV",
+   "title": "3. An Example",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 567,
+   "n_words": 141,
+   "label_start": "40",
    "label_end": "41"
   },
   {
-   "id": "sec-003-v-combinatorial-proof",
+   "id": "sec-012-v-combinatorial-proof",
    "number": "V",
    "title": "COMBINATORIAL PROOF",
    "level": 1,
    "page_start": 49,
-   "page_end": 58,
-   "n_chars": 13786,
-   "n_words": 2405,
+   "page_end": 49,
+   "n_chars": 217,
+   "n_words": 40,
    "label_start": "41",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-013-vl-braid-group-invariance",
+   "number": null,
+   "title": "V.l. Braid Group Invariance",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 51,
+   "n_chars": 3598,
+   "n_words": 672,
+   "label_start": "41",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-014-v2-markov-jvloves",
+   "number": null,
+   "title": "V.2. Markov JVloves",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 58,
+   "n_chars": 9955,
+   "n_words": 1680,
+   "label_start": "43",
    "label_end": "50"
   }
  ],
@@ -903,7 +1056,7 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "toc_inferred_entries": 15,
-  "toc_inferred_mean_confidence": 0.76,
+  "toc_inferred_mean_confidence": 0.86,
   "toc_inferred_empty_share": 0.0,
   "toc_inferred_method": "contents",
   "figure_entries": 5,
@@ -919,15 +1072,8 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 6,
-    "items": [
-     "ILL Links and Braids",
-     "IIA. Diagram Algebras",
-     "IlI.3. The Quantum Group Uv (.6'[(2))",
-     "IlIA. The Quantum Supergroup Uv (g[(111))",
-     "V.l. Braid Group Invariance",
-     "V.2. Markov JVloves"
-    ]
+    "count": 0,
+    "items": []
    },
    "found_not_listed": {
     "count": 2,
@@ -941,7 +1087,11 @@
     "items": []
    }
   },
-  "sections": 5,
-  "chars_total": 73770
+  "sections": 16,
+  "chars_total": 73629,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   36
+  ]
  }
 }

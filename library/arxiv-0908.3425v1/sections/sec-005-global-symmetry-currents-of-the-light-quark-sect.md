@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0908.3425v1
-doc_title: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
+doc_title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector"
 section_id: sec-005-global-symmetry-currents-of-the-light-quark-sect
 section_title: "Global symmetry currents of the light quark sector"
 section_number: null
 pages: 7-8
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
-doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.977
+latex_coverage_ratio: 0.953
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsubsec_agsl label="subsubsec_agsl"} Due to the flavor independence of the covariant derivative, ${\cal L}^0_{\rm QCD}$ is invariant under the infinitesimal global transformations of the left- and right-handed quark fields, $$\begin{aligned}
 \label{2:1:3:u3lu3r}

@@ -1,0 +1,425 @@
+---
+doc_id: huang-2021-chinese-phys-c-45-030002
+doc_title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"
+section_id: page-064
+section_title: "Page 64"
+section_number: null
+pages: 64-64
+source_pdf: Huang_2021_Chinese_Phys._C_45_030002.pdf
+source_sha256: 1dd3329ed87476c8
+toc_source: undetermined
+doc_brief: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures — 343 sections: Page 1; Page 2; Page 3"
+---
+Chinese Physics C Vol. 45, No. 3 (2021) 030002
+Table I. Comparison of input data and adjusted values (continued, Explanation of Table on page 030002-30)
+Item
+Input value
+Adjusted value
+vi
+Dg
+Signf.
+Main inﬂ.
+Lab
+F
+Reference
+31S(β +)31P
+5412
+30
+5398.01
+0.23
+−0.5
+U
+60Wa04
+31P(p,n)31S
+−6212.3
+20.
+−6180.36
+0.23
+1.6
+o
+ChR
+58Go77
+Y
+−6250
+20
+3.5
+B
+ChR
+59Br06
+Y
+∗31K−u
+from three-proton separation energy -4600(200) keV
+HWJ201 ∗∗
+∗31K−u
+Trends from Mass Surface TMS suggest 31K 3720 keV less bound
+GAu
+∗∗
+∗O2−31P
+For original doublet 31P−O1.938, DM=–16382.522(0.096) µu
+GAu
+∗∗
+∗31Cli(2p)29P
+Large error in Ecm due to sequential decay kinematics
+MMC122∗∗
+∗31Cli(2p)29P
+reference also ﬁnds 3p emission at 4870 keV
+92Ba01
+∗∗
+∗31Cli(2p)29P
+Q2p=7620(5), 6245(2), 5679(3), 5223(5) keV
+00Fy01
+∗∗
+∗
+to ground state and levels 3/2+ at 1383.55, 5/2+ at 1953,91, 3/2+ 2422.7 keV
+Ens125
+∗∗
+∗30Ne(n,γ)31Ne
+Symmetrized from 150(+160–100) keV
+14Na10 ∗∗
+∗30Si(n,γ)31Si
+Original error 0.0005 increased for calibration
+GAu
+∗∗
+∗30Si(d,p)31Si
+Estimated systematic error 0.5 added to statistical error 0.23 keV
+AHW
+∗∗
+∗31Cli(p)30S
+Average of 3 branches
+AHW
+∗∗
+∗31Cli(p)30S
+Ep=11654(28), 9493(20), 8347(15), 8092(14) keV
+00Fy01
+∗∗
+32Na−u
+19720
+636
+20010
+40
+0.3
+o
+GA3
+1.5
+91Or01
+19900
+1100
+0.1
+U
+TO4
+1.5
+91Zh24
+20980
+500
+−1.3
+o
+GA5
+1.5
+00Sa21
+20193
+129
+−0.9
+U
+GA7
+1.5
+07Ju03
+32Mg−O2
+9280.9
+3.5
+2
+TT1
+1.0
+13Ch49
+32Mg−u
+−800
+260
+−890
+4
+−0.2
+o
+TO1
+1.5
+86Vi09
+−890
+270
+0.0
+U
+GA1
+1.5
+87Gi05
+−924
+214
+0.1
+U
+GA3
+1.5
+91Or01
+−820
+130
+−0.4
+U
+TO4
+1.5
+91Zh24
+−1142
+113
+2.2
+o
+P40
+1.0
+01Lu20
+−966
+38
+2.0
+U
+P40
+1.0
+06Ga04
+∗
+−983
+22
+4.2
+B
+P40
+1.0
+06Ga04
+32Al−O2
+−1744
+13
+−1745
+8
+−0.1
+o
+TT1
+1.0
+12Ch.A
+−1744.9
+7.7
+2
+TT1
+1.0
+16Kw.A
+32Al−u
+−12160
+220
+−11916
+8
+0.7
+U
+TO1
+1.5
+86Vi09
+−11870
+200
+−0.2
+U
+GA1
+1.5
+87Gi05
+−11877
+104
+−0.2
+U
+GA3
+1.5
+91Or01
+32Si O2−C5 H4
+−67319.35
+0.32
+2
+MS1
+1.0
+09Kw02
+∗
+O2−32S
+17754.2
+1.0
+17758.0650
+0.0014
+1.5
+U
+J1
+2.5
+68Ma45
+C2 H8−32S
+90531.3
+1.4
+90529.0816
+0.0014
+−0.6
+U
+J1
+2.5
+68Ma45
+32S−O2
+−17758.0663
+0.0020 −17758.0650
+0.0014
+0.7
+1
+50
+45 32S
+FS1
+1.0
+05Sh38
+32S−C2 D4
+−84335.9367
+0.0019 −84335.9378
+0.0014
+−0.6
+1
+55
+55 32S
+FS1
+1.0
+05Sh38
+32S−H C F
+−34156.50
+0.57
+−34157.0204
+0.0016
+−0.9
+U
+MS1
+1.0
+09Kw02
+∗
+32Na−39K.821
+49808
+40
+2
+TT1
+1.0
+17Ga20
+32Ar−39K.821
+27434.8
+1.9
+2
+MA8
+1.0
+03Bl17
+C F3−32S O2 H
+25483.43
+0.34
+25484.0423
+0.0030
+1.8
+U
+MS1
+1.0
+09Kw02
+∗
+C F3−32S O2
+33310.02
+0.59
+33309.0741
+0.0030
+−1.6
+U
+MS1
+1.0
+09Kw02
+∗
+26Na−32Na.325 22Na.709
+−8569
+354
+−9245
+13
+−0.8
+U
+P12
+2.5
+75Th08
+32S(3He,8Li)27P
+−31277
+35
+−31371
+9
+−2.7
+B
+MSU
+77Be13
+32S(p,α)29P
+−4171
+20
+−4198.6
+0.4
+−1.4
+U
+Tky
+64Ej05
+32S(3He,6He)29S
+−25520
+50
+−25582
+13
+−1.2
+U
+MSU
+73Be09
+30Si(t,p)32Si
+7307
+1
+7305.57
+0.30
+−1.4
+U
+Str
+80An.A
+32S(d,α)30P
+4892
+10
+4896.13
+0.07
+0.4
+U
+MIT
+64Sp12
+32S(p,t)30S
+−19614
+3
+−19617.12
+0.21
+−1.0
+U
+MSU
+74Ha02
+31Si(n,γ)32Si
+9203.2180
+0.0500
+9200.0
+0.3
+−65.0
+B
+PTc
+97Ro26
+∗
+9203.22
+0.76
+−4.3
+B
+PTc
+01Pa52
+31P(n,γ)32P
+7935.73
+0.16
+7935.65
+0.04
+−0.5
+U
+MMn
+85Ke11
+Z
+7935.65
+0.04
+2
+ILn
+89Mi16
+Z
+7935.60
+0.16
+0.3
+U
+Bdn
+06Fi.A
+030002-63

@@ -386,7 +386,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
             "Predicted 1.4302400e-4 against measured 1.4301377e-4, agreeing to 7.2e-5. delta vanishes to order "
             "h^3, CAL-3's order. What this does NOT do: supply the coupling word — a "
             "non-adjacent nucleon pair still has no single generator to sit on."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 40,

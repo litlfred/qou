@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/quaternioms/blocks/prose-sec-032",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "State-Space Overhead: The Cost of Complex Embedding",
-  "pageStart": 31,
-  "pageEnd": 32,
-  "text": "../sections/sec-032-state-space-overhead-the-cost-of-complex-embeddi.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "title": "Complexity Overhead—Proof-LEVEL Details",
+  "pageStart": 27,
+  "pageEnd": 27,
+  "text": "../sections/sec-032-complexity-overheadproof-level-details.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
   "provenance": "ingested"
 }

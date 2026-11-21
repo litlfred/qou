@@ -1,0 +1,1 @@
+(2) and Theorem 15.2.17(1), the graded A-module I is graded- injective. (2) The A-module A∗is m-torsion, and a direct sum of torsion modules is torsion (see Lemma 16.3.6(5)). (3) This is because K = Soc(A∗), via the canonical monomorphism (16.3.9). (4) Combine items (2) and (3) with Lemma 16.3.8. □ Derived Categories | Amnon Yekutieli |

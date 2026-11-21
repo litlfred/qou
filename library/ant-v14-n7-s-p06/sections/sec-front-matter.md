@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
 toc_source: inferred
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function fields — 15 sections: Front matter; Introduction and statement of resu; Some useful lemmas"
 ---
 msp
 ALGEBRA AND NUMBER THEORY 14:7 (2020)

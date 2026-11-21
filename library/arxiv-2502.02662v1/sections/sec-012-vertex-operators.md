@@ -4,13 +4,14 @@ doc_title: "The String Dual to Two-dimensional Yang-Mills Theory Revisited"
 section_id: sec-012-vertex-operators
 section_title: "Vertex Operators"
 section_number: null
-pages: 15-17
+pages: 16-17
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.677
+latex_coverage_ratio: 1.0
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 In string theory, correlation functions on a genus $g$ world-sheet at instanton degree $d$ scale as $g_s^{2g-2+k}$, where $k$ is the number of insertions on the world-sheet. The genus expansion is canonically written as a sum over all world-sheet topologies weighted by a factor $g_s^{2g-2}$. The remaining factor $g_s^k$ is relegated to the normalization of vertex operators: each one comes with a single factor of the string coupling $g_s$. In Hurwitz theory, the insertion of a conjugacy class $C_{\alpha}$ in the target space corresponds to the insertion of $\ell(\alpha)$ marked points on the worldsheet. Therefore, each such insertion must be weighted by an additional factor $g_s^{\ell(\alpha)}$, and this is indeed what we find. The physical interpretation of this finding is straightforward. By lore, single cycles correspond to single string states, and come with a single factor $g_s$.[^1] Accordingly, multi-cycles correspond to multi-string states and the length of a conjugacy class counts the number of strings in the state defined by this conjugacy class.
 

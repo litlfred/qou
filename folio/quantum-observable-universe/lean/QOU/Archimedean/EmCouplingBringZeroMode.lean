@@ -1,6 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 import QOU.Archimedean.BlochWignerUnitCircle
+import QOU.Archimedean.BlochWignerLobachevsky
 
 
 /-!
@@ -54,9 +55,18 @@ identification of the Bloch-group class on Bring's surface; that
 identification is the remaining open computational sub-problem
 documented in `em-coupling-bring-zero-mode.md`.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
--- Ref: [manuscript] prop:force-carrier-bring-uniqueness
+**Update 2026-11-15 (issue #7942).** `BlochWigner_unit_circle` is now
+*defined* as `Cl_2` (it was an `opaque`).  The old class field asked only for a
+real angle `θ` with `Cl_2 θ = 2/(3π)`, which is true by the intermediate value
+theorem (`exists_Cl_2_eq_bringZeroModeValue`) and identifies no Bloch class.  On
+owner decision the field is restated as an **algebraic** Bloch–Wigner
+combination equal to `2/(3π)`; see the field's docstring for why that is
+expected to be false (period conjecture) and why the torus-knot carriers give
+`D = 0`.  No instance (bean `qou-006b`).
+
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] prop:force-carrier-bring-uniqueness
 -- Ref: [suslin1991] Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000]  AMS CRM Monograph 11 (2000).
 -- Ref: [thurston1978] The geometry and topology of three-manifolds.
@@ -66,19 +76,19 @@ namespace QOU.Archimedean
 
 /-- Carrier for the additive Bring zero-mode contribution as a real
     number; the candidate value at g = 4 is `2/(3π)`. -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 noncomputable def bringZeroModeValue : ℝ := 2 / (3 * Real.pi)
 
 /-- Genus-Hodge form: at genus `g` the candidate additive correction
     is `2g / (4π(g-1))`. At `g = 4` this evaluates to `2/(3π)` —
     proved unconditionally below. -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 noncomputable def hodgeRatio (g : ℝ) : ℝ := 2 * g / (4 * Real.pi * (g - 1))
 
 /-- Unconditional algebraic identity: at `g = 4`,
     `2g/(4π(g-1)) = 2/(3π)`. This is pure arithmetic — no class
     instance required. -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
   unfold hodgeRatio bringZeroModeValue
   have hπ : Real.pi ≠ 0 := Real.pi_ne_zero
@@ -290,26 +300,40 @@ theorem bringZeroMode_fully_tiling_derived :
     See `em-coupling-bring-zero-mode.md` §"open computational
     sub-problem" for the 3-phase roadmap.
 -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [manuscript] PR #952 (PSLQ negative on canonical unit-circle basis)
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] PR #952 (PSLQ negative on canonical unit-circle basis)
 -- Ref: [suslin1991], [bloch2000] (full BlochGroup framework)
 class BringZeroModeBlochClass : Prop where
-  /-- The τ_arch-image of the Bring-surface Bloch class equals
-      the genus-Hodge ratio `2g/(4π(g-1))` at `g = 4`.  We state
-      the equation in the canonical form used downstream.
+  /-- **Restated 2026-11-15 (owner decision, issue #7942).**  There is an
+      algebraic Bloch–Wigner combination `ξ = Σ nᵢ [zᵢ]`, every `zᵢ` an
+      algebraic number in the upper half plane, with
+      `Σ nᵢ · D(zᵢ) = 2/(3π)`.
 
-      **Strengthened (2026-05-30, Phase 2):** the field now
-      requires a real angle witness `θ` such that
-      `BlochWigner_unit_circle θ = bringZeroModeValue = 2/(3π)`.
-      The previous placeholder `∃ z : ℝ, z = bringZeroModeValue`
-      was trivially provable via `⟨bringZeroModeValue, rfl⟩` —
-      that loophole is closed.  Closing the strengthened class
-      (Phase 3) requires identifying the specific angle from
-      the Bring genus-4 force-carrier pair `{T(2,9), T(3,5)}` —
-      research-grade per PR #952. -/
-  -- Ref: [manuscript] prop:archimedean-functor-uniqueness
+      * `D` is `BlochWigner_lob`, which equals Bloch–Wigner on `{Im z > 0}`
+        (Kummer, `BlochWignerLobachevsky.lean`).  Restricting to the upper
+        half plane loses nothing: `D` vanishes on `ℝ` and `D(z̄) = −D(z)`,
+        and the multiplicities are signed.
+      * The Bloch-group cocycle condition `Σ nᵢ zᵢ ∧ (1 − zᵢ) = 0` is **not**
+        imposed, so this is weaker than "`ξ` is in the Bloch group": a
+        refutation of this field refutes the strict claim too.
+      * Unlike the previous field (`∃ θ, Cl₂ θ = 2/(3π)`, true by the
+        intermediate value theorem), this one is not known to hold: the
+        `zᵢ` range over a countable set, so no continuity argument applies.
+
+      **Expected to be false (recorded negative, not proved).**  For
+      algebraic `z`, `D(z)` is a period (Kontsevich–Zagier), so the field
+      would make `1/π` a rational multiple of a period; the period
+      conjecture predicts that `1/π` is not.  The named force carriers
+      cannot supply the value in any case: `T(2,9)` and `T(3,5)` are torus
+      knots, their complements are Seifert fibred with simplicial volume
+      `0`, and by `|vol ρ| ≤ v₃ · ‖M‖` every Bloch class from them has
+      `D = 0`.  No instance exists; per §3b-cond none should be added. -/
+  -- Ref: [leitner2026] prop:archimedean-functor-uniqueness
+  -- Ref: [zagier1986], [suslin1991], [thurston1978]
   bring_zero_mode_realised :
-    ∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue
+    ∃ (s : Finset ℂ) (n : ℂ → ℤ),
+      (∀ z ∈ s, IsAlgebraic ℚ z ∧ 0 < z.im) ∧
+      ∑ z ∈ s, (n z : ℝ) * BlochWigner_lob z = bringZeroModeValue
 
 /-- **Additive Bring zero-mode form for the residual on `1/α_EM`
     (conditional on `BringZeroModeBlochClass`).**
@@ -323,21 +347,24 @@ class BringZeroModeBlochClass : Prop where
     the numerical match at `q₀` (which is empirical and tracked
     separately).
 -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 theorem bring_zero_mode_additive_form
     [hZ : BringZeroModeBlochClass] :
-    ∃ θ : ℝ, BlochWigner_unit_circle θ = hodgeRatio 4 := by
-  obtain ⟨θ, hθ⟩ := hZ.bring_zero_mode_realised
-  refine ⟨θ, ?_⟩
-  rw [hθ, hodgeRatio_at_g4]
+    ∃ (s : Finset ℂ) (n : ℂ → ℤ),
+      (∀ z ∈ s, IsAlgebraic ℚ z ∧ 0 < z.im) ∧
+      ∑ z ∈ s, (n z : ℝ) * BlochWigner_lob z = hodgeRatio 4 := by
+  rw [hodgeRatio_at_g4]
+  exact hZ.bring_zero_mode_realised
 
 
 -- /-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry.
 --     Since `BlochWigner_unit_circle` is an unconstrained axiom, this cannot be mathematically
---     proven from first principles without additional axioms on the range of the Bloch-Wigner function. -/
+--     proven from first principles without additional axioms on the range of the Bloch-Wigner function.
+--     (Superseded 2026-11-15: the function is now `Cl_2`, and the class field is
+--     restated over algebraic Bloch–Wigner combinations; still no instance.) -/
 -- Per AGENTS.md §3b-cond we provide NO global instance.
 -- instance canonical_bloch : BringZeroModeBlochClass where
---   -- Ref: [manuscript] prop:em-coupling-bring-zero-mode — identifying the
+--   -- Ref: [leitner2026] prop:em-coupling-bring-zero-mode — identifying the
 --   --      explicit Bloch class [Z] ∈ B(ℂ) on the genus-4 force-carrier pair
 --   --      {T(2,9), T(3,5)} whose τ_arch-image equals 2/(3π) is research-grade
 --   --      and open (PR #952: PSLQ refutes the canonical unit-circle bases).

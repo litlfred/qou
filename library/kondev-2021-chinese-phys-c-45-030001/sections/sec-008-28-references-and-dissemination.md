@@ -1,6 +1,6 @@
 ---
 doc_id: kondev-2021-chinese-phys-c-45-030001
-doc_title: "The NUBASE2020 evaluation of nuclear physics properties *"
+doc_title: "The NUBASE2020 evaluation of nuclear physics properties"
 section_id: sec-008-28-references-and-dissemination
 section_title: "References and Dissemination"
 section_number: 2.8
@@ -8,7 +8,9 @@ pages: 13-13
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
 toc_source: inferred
+doc_brief: "The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers"
 ---
+References and Dissemination
 The year of the ENSDF archival ﬁle that was consulted
 during the development of NUBASE2020 is given in Table I.
 The entry is left blank when information for a particular nu-
@@ -43,4 +45,3 @@ erties are also made available as an ASCII-formatted ﬁle
 oration [23].
 3
 Policies of NUBASE2020
-3.1

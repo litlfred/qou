@@ -15,7 +15,7 @@
   for a given atomic-link configuration.  The coefficient fields
   are the conjectural content.
 
-  Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion
+  Ref: [leitner2026] Ch 11 §8 / crossing-graded-mass-expansion
   Ref: [thurston1978] http://library.msri.org/books/gt3m/
 -/
 
@@ -57,7 +57,7 @@ class CrossingGradedMassExpansion (K : Type*) where
         (List.range (crossingCount k + 1)).reverse.foldl
           (fun acc n => acc * (depth k).value + gbCoeff k n) 0
   -- Ref: [thurston1978] http://library.msri.org/books/gt3m/
-  -- Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion
+  -- Ref: [leitner2026] Ch 11 §8 / crossing-graded-mass-expansion
   -- The `expansion` field is the conjectural claim; instances must
   -- verify it per atomic-link configuration via explicit GB reduction
   -- and volume computation (SnapPy).
@@ -107,7 +107,7 @@ private lemma reverse_range_succ_getLast (c : ℕ) :
     foldl, so its value on the reversed range is `gbCoeff k`
     applied to the range's last element, which is `0`.
 
-    Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion -/
+    Ref: [leitner2026] Ch 11 §8 / crossing-graded-mass-expansion -/
 theorem mass_at_zero_depth
     {K : Type*} [CrossingGradedMassExpansion K]
     (k : K) (h : (CrossingGradedMassExpansion.depth k).value = 0) :
@@ -140,5 +140,60 @@ theorem mass_at_zero_depth
       _ 0 nonempty]
   rw [reverse_range_succ_getLast]
   exact CrossingGradedMassExpansion.gbCoeffZero_eq_groebner k
+
+/-! ## Classical-limit (`q → 1`) analysis of the Descartes cubic and `ξ(q)` (`qou-s39m`)
+
+At `q = 1` (`ℏ_q = 1 − 1/q = 0`), the Descartes cubic `27x³ + 18x + 20` factors
+over `ℚ` as `(3x + 2)(9x² − 6x + 10)` with `9x² − 6x + 10 = (3x − 1)² + 9`.
+Thus its roots are `x₀ = −2/3` and `x_{1,2} = 1/3 ∓ i`, whose cross-ratio shape
+parameter is `z₁ = ((1/3 + i) − (−2/3)) / ((1/3 − i) − (−2/3)) = (1 + i)/(1 − i) = i`,
+the regular ideal octahedron shape with Bloch–Wigner volume `D(z₁) = G > 0`.
+
+Consequently:
+* Under the quotient definition `ξ_div(D, ℏ) = D / ℏ²`, `ξ_div · ℏ² = D` for
+  `ℏ ≠ 0`, so a non-zero limiting dilogarithm `D₁ ≠ 0` is incompatible with
+  `ξ_div = 0`.
+* Under the product reading (R2) `ξ_mul(D, ℏ) = D · ℏ²`, `ξ_mul(D₁, 0) = 0` at
+  `ℏ = 0`, which feeds directly into `mass_at_zero_depth` above. -/
+
+/-- **Exact rational factorization of the Descartes cubic at `q = 1` (`qou-s39m`).** -/
+theorem descartes_cubic_at_q_one_factorization (x : ℝ) :
+    27 * x ^ 3 + 18 * x + 20 = (3 * x + 2) * (9 * x ^ 2 - 6 * x + 10) := by
+  ring
+
+/-- **Completed-square decomposition of the quadratic factor at `q = 1` (`qou-s39m`).**
+Shows `9x² − 6x + 10 = (3x − 1)² + 3²`, pinning the conjugate root pair at
+real part `1/3` and imaginary part `±1`. -/
+theorem descartes_quadratic_factor_complete_sq (x : ℝ) :
+    9 * x ^ 2 - 6 * x + 10 = (3 * x - 1) ^ 2 + 9 := by
+  ring
+
+/-- **Real root `x₀ = −2/3` of the Descartes cubic at `q = 1` (`qou-s39m`).** -/
+theorem descartes_cubic_eval_neg_two_thirds :
+    27 * (-2 / 3 : ℝ) ^ 3 + 18 * (-2 / 3 : ℝ) + 20 = 0 := by
+  ring
+
+/-- **Cross-ratio identity `(1 + i) = i · (1 − i)` at `q = 1` in `(Re, Im)` coordinates (`qou-s39m`).**
+For `x₂ − x₀ = (1/3 + 2/3) + i = 1 + i` and `x₁ − x₀ = (1/3 + 2/3) − i = 1 − i`,
+multiplying `1 − i` by `z₁ = 0 + 1·i` produces `1 + i`, certifying `z₁ = i`. -/
+theorem descartes_cross_ratio_eq_I_coords :
+    ((1 : ℝ) / 3 - (-2 / 3 : ℝ) = 0 * 1 - 1 * (-1))
+      ∧ ((1 : ℝ) = 0 * (-1) + 1 * 1) := by
+  constructor <;> ring
+
+/-- **Product reading (R2) vanishes at `ℏ_q = 0` (`qou-s39m`).** -/
+theorem xi_product_at_zero_hbar (D₁ : ℝ) :
+    D₁ * (0 : ℝ) ^ 2 = 0 := by
+  ring
+
+/-- **Cleared-denominator obstruction for the quotient formula (`qou-s39m`).**
+Whenever `ξ · ℏ² = D₁` and `D₁ ≠ 0`, `ξ` cannot vanish (`ξ ≠ 0`). -/
+theorem xi_ne_zero_of_mul_hbar_sq_eq {xi hbar D₁ : ℝ}
+    (hrel : xi * hbar ^ 2 = D₁) (hD : D₁ ≠ 0) :
+    xi ≠ 0 := by
+  intro hxi
+  apply hD
+  rw [← hrel, hxi]
+  ring
 
 end QOU.ParticleInteractions

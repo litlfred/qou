@@ -7,11 +7,12 @@ section_number: 4
 pages: 18-18
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
-duplicate_of: "s40879-023-00706-0"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.861
 latex_coverage_ratio: 0.986
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 []{#sec: quotients by subgroups label="sec: quotients by subgroups"}
 

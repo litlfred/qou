@@ -1,0 +1,1 @@
+If Θ has at most isolated singularities, then there are semisimple perverse sheaves δ± ∈Perv(X,C) such that S2(δΘ) ∼= L+ ⊕δ+ and Λ2(δΘ) ∼= L−⊕δ−, and over the Zariski-open dense subset U ⊂X from lemma 5.10 we have an isomorphism δ±|U ∼= V±ε[g] with a sign twist by ε = (−1)g−1.

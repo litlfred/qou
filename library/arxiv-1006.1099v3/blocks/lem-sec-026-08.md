@@ -1,1 +1,0 @@
-We take the matching paths of the pentagram, Figure 1, and write A for the subcategory of

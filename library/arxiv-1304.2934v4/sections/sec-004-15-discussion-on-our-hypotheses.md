@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.91
 latex_coverage_ratio: 1.0
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 \label{subsec:discussion_hypotheses}
 The following remarks explain the role of each hypothesis of Definition~\ref{def:modphi}. As we shall see later, some assumptions can be removed in some of our results (\emph{e.g.}, the infinite-divisibility of the reference law), but Definition \ref{def:modphi} provides a coherent setting where all the techniques presented in the paper do apply without further verification. 

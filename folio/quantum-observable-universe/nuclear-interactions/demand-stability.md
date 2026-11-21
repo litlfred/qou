@@ -38,3 +38,11 @@ $$
 $$
 
 These are instances of the Hecke relation $\sigma_i^2 = h_{\mathrm{A}} \sigma_i + \mathbf{1}$ applied to typed crossings. They ensure that iterated same-type nucleon pairs do not increase the NF complexity beyond linear growth in the number of nucleons.
+
+## Witness scope and multi-precision grid (`all-nuclides-sdp-admissibility-mp`)
+
+A multiprecision recomputation at 50 dps (+10 guard digits), with decimal-string transport into the linear-program solver, supersedes the legacy float64 sweep:
+
+- **Superseded float64 AME2020 sweep (`3,558` rows):** the native float64 normal-form construction overflowed on $1{,}337 / 3{,}558$ nuclides ($37.6\,\%$) for $A \ge 163$, leaving $0 / 43$ isotopes solvable at the magic proton number $Z = 82$ (e.g., ${}^{208}\mathrm{Pb}$ reaches $\mathrm{nf}_{\mathrm{net}} \approx -1.2483 \times 10^{499}$, ~191 orders beyond IEEE 754 binary64).
+- **Multi-precision synthetic magic-$Z$-dense $(Z, N)$ grid (`4,932` rows):** evaluates $Z \in [0, 92]$, with full $N \in [0, 160]$ scans ($161 / 161$ rows solved) at every magic proton shell $Z \in \{2, 8, 20, 28, 50, 82\}$ and $47$ neutron-number points per non-magic $Z$ (including $93 / 93$ rows solved at every magic neutron shell $N \in \{2, 8, 20, 28, 50, 82, 126\}$), achieving `nf_overflow_count = 0` and `rows_carrying_mpfr_dual = 4,932`.
+- **Population scope:** this witness covers the synthetic magic-$Z$-dense $(Z, N)$ grid up to $Z_{\max} = 92$, $N_{\max} = 160$ rather than the empirical AME2020 nuclide list; proton shell $Z = 126$ lies outside the $Z \le 92$ grid range (`0 / 0` rows), while neutron shell $N = 126$ is covered across all $93$ proton numbers.

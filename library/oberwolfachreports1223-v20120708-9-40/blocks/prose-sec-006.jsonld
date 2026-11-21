@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-006",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "In the classifying space of the double of the 3-colour quandle, th e left and right",
-  "pageStart": 12,
-  "pageEnd": 26,
-  "text": "../sections/sec-006-3-in-the-classifying-space-of-the-double-of-the.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
+  "title": "Free Knots and Parity in Low-Dimensional Topology",
+  "pageStart": 19,
+  "pageEnd": 23,
+  "text": "../sections/sec-006-free-knots-and-parity-in-low-dimensional-topolog.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
   "provenance": "ingested"
 }

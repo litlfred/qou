@@ -1,0 +1,45 @@
+13.8 Conclusion 435
+
+Problem 13.8. Find a way analogous to Theorem 13.8 to conclude minimal-
+ity in some off-diagonal direction for some class of multi-affine polynomials.
+Replace the multi-affine hypothesis in Theorem 13.8 by something weaker so
+that the conclusion still holds.
+
+Naively applying Grébner basis methods typically breaks symmetry, but
+recent research in computer algebra has given effective methods for solving
+polynomial systems with symmetric polynomials, including critical point sys-
+tems [HL16; Fau+23].
+
+Problem 13.9. Incorporate software for symmetric polynomial solving into
+packages for ACSV computations.
+
+Exercise 13.4. In four variables, let G = 1 — e; + 27e4 be the Gillis—-Reznick—
+Zeilberger denominator, let K = 1 — e; + 2e3 + 4e4 be the Kauers—Zeilberger
+denominator, let S = e3(1 — x,1- y,1—-z, 1 — w) be the Szegé denominator,
+and let L = e2(1 — x, 1 — y, 1 — z, 1 — w) be the Lewy—Askey denominator.
+
+(a) Express G, K,S, and L as polynomials P),..., P4 in the elementary sym-
+
+metric functions e;,...,e4.
+(b) Compute a Grobner basis for (P;,..., P4) as polynomials in the variables
+e1,...,@q and describe the variety V, defined by the points (e1,...,ea)
+
+where the P; simultaneously vanish.
+(c) Use this computation to find the elements of V(G, K,S, L).
+
+13.8 Conclusion
+
+This book aims to illustrate effective methods for computing asymptotic ap-
+proximations to the coefficients of multivariate generating functions. Such meth-
+ods have many applications, and have already been used to study problems
+arising in, among other areas, dynamical systems, bioinformatics, number the-
+ory, statistical physics, algebraic statistics, string theory, information theory,
+and queueing theory. We expect the number of applications to grow steadily.
+While many (most?) applied problems can be tackled by a smooth point anal-
+ysis, there are many interesting problems that involve much more complicated
+local geometry, such as the tiling models discussed in Section 11.4.
+
+From the standpoint of mathematical analysis, many of the tools required
+to extend the basic ACSV results already exist. Problems for which mini-
+mal points control asymptotics usually sidestep complicated topology, and the
+Morse-theoretic intuition behind our results can often be ignored in such cases

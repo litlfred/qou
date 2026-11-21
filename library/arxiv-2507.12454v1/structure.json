@@ -7,10 +7,11 @@
   "bytes": 750417,
   "pages": 23,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,33 @@
    "stamp_date": "16 Jul 2025"
   },
   "doi": null,
-  "title": "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT",
-  "authors_raw": null,
+  "title": "Cohomology rings of character varieties",
+  "authors_raw": "ANTON MELLIT",
   "title_lines": [
-   "COHOMOLOGY RINGS OF CHARACTER VARIETIES",
-   "ANTON MELLIT"
+   "COHOMOLOGY RINGS OF CHARACTER VARIETIES"
   ],
-  "abstract": "In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces, such as the proof of the P = W conjecture and the computation of the zero-dimensional COHA. In the case of punctured sphere I present an explicit description relating the cohomology rings to the Hilbert scheme of C2, refining conjectures of Hausel-Letellier-Rodriguez-Villegas and Chuang-Diaconescu-Donagi-Pantev. I explain how the general case should be related to the symplectic geometry of the Hilbert scheme. 1. Classical motivation One way character varieties naturally arise is as follows. Suppose we have a linear ODE (1.1) \u2202 \u2202t\u20d7 \u03c6(t) =A(t)\u20d7 \u03c6(t) ( t\u2208 C). Here A(t) is an n\u00d7n matrix-valued meromorphic function of one complex variable t, and we are looking for vector-valued solutions\u20d7 \u03c6(t). Let t1,...,t k be the poles ofA(t) (including \u221e if necessary), which we call punctures. Choose a basepoint \u2217, away from the poles of A(t). In a neighborhood of \u2217, we have an n-dimensional vector space of solutions of the ODE (1.1). For any loop \u03b3 based at\u2217 avoiding the punctures, solving the ODE along \u03b3 produces a linear transformation of the space of solutions. Choosing a basis, we obtain the monodromy representation of the fundamental group \u03c1 :\u03c01(\u2217, P1(C)\\{t1,...,t k})\u2192 GLn(C). A different choice of basis produces an equivalent representation. Another way to think about this is that local solutions to the ODE form alocally constant sheaf on P1(C)\\{t1,...,t k}. Locally constant sheaves are also called local systems, and they are in a natural bijection with equivalence classes of monodromy representations. More explicitly, the fundamental group of P1(C)\\{t1,...,t k} is the free group on k\u2212 1 generators. Drawing loops around the punctures as shown on Figure 1, one obtains the Date: July 17, 2025. 1 arXiv:2507.12454v1 [math.AG] 16 Jul 2025",
+  "abstract": "In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces, such as the proof of the P = W conjecture and the computation of the zero-dimensional COHA. In the case of punctured sphere I present an explicit description relating the cohomology rings to the Hilbert scheme of C2, refining conjectures of Hausel-Letellier-Rodriguez-Villegas and Chuang-Diaconescu-Donagi-Pantev. I explain how the general case should be related to the symplectic geometry of the Hilbert scheme. 1. Classical motivation One way character varieties naturally arise is as follows. Suppose we have a linear ODE (1.1) ∂ ∂t⃗φ(t) = A(t)⃗φ(t) (t ∈C). Here A(t) is an n × n matrix-valued meromorphic function of one complex variable t, and we are looking for vector-valued solutions⃗φ(t). Let t1, . . . , tk be the poles of A(t) (including ∞if necessary), which we call punctures. Choose a basepoint ∗, away from the poles of A(t). In a neighborhood of ∗, we have an n-dimensional vector space of solutions of the ODE (1.1). For any loop γ based at ∗avoiding the punctures, solving the ODE along γ produces a linear transformation of the space of solutions. Choosing a basis, we obtain the monodromy representation of the fundamental group ρ : π1(∗, P1(C) \\ {t1, . . . , tk}) →GLn(C). A different choice of basis produces an equivalent representation. Another way to think about this is that local solutions to the ODE form a locally constant sheaf on P1(C) \\ {t1, . . . , tk}. Locally constant sheaves are also called local systems, and they are in a natural bijection with equivalence classes of monodromy representations. More explicitly, the fundamental group of P1(C) \\ {t1, . . . , tk} is the free group on k −1 generators. Drawing loops around the punctures as shown on Figure 1, one obtains the Date: July 17, 2025. 1 arXiv:2507.12454v1 [math.AG] 16 Jul 2025",
   "docinfo": {
+   "Title": "Cohomology rings of character varieties",
    "Author": "Anton Mellit",
-   "Creator": "arXiv GenPDF (tex2pdf:)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Cohomology rings of character varieties"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:)"
+  },
+  "title_raw": "COHOMOLOGY RINGS OF CHARACTER VARIETIES",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Cohomology rings of character varieties",
+   "heading": "COHOMOLOGY RINGS OF CHARACTER VARIETIES 1. Classical motivation One way character varieties naturally arise is as follows. Suppose we have a linear ODE Here A ( t ) is an n × n matrix-valued meromorphic function of one complex variable t , and we are looking for vector-valued solutions ⃗φ ( t ). Let",
+   "outline": "1. Classical motivation",
+   "text": "COHOMOLOGY RINGS OF CHARACTER VARIETIES",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT"
  },
  "toc": [
   {
@@ -40,67 +55,381 @@
    "title": "Classical motivation",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Fricke-Klein example",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Setup",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "What is known?",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "COHAs/Coulomb branches",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Main example",
    "page": 17,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Poisson geometry of Coulomb branches",
    "page": 20,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "References",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Fundamental group of a k-punctured sphere",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Markov’s cubic as the complement of a triangle in the projective plane blown up at six points",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Cohomology of the Markov cubic",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Non-abelian Hodge correspondence",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Comet-shaped quiver with k legs and g loops",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 631,
+   "n_words": 92,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-classical-motivation",
    "number": "1",
@@ -108,8 +437,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 3003,
-   "n_words": 484
+   "n_chars": 3055,
+   "n_words": 536,
+   "label_start": null,
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-fricke-klein-example",
@@ -118,8 +449,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 8,
-   "n_chars": 11247,
-   "n_words": 1995
+   "n_chars": 11411,
+   "n_words": 2159,
+   "label_start": "3",
+   "label_end": "8"
   },
   {
    "id": "sec-002-3-setup",
@@ -128,8 +461,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1792,
-   "n_words": 309
+   "n_chars": 1837,
+   "n_words": 354,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-003-4-what-is-known",
@@ -138,8 +473,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 15,
-   "n_chars": 10619,
-   "n_words": 1788
+   "n_chars": 10748,
+   "n_words": 1917,
+   "label_start": "9",
+   "label_end": "15"
   },
   {
    "id": "sec-004-5-cohascoulomb-branches",
@@ -148,8 +485,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 5107,
-   "n_words": 879
+   "n_chars": 5136,
+   "n_words": 908,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
    "id": "sec-005-6-main-example",
@@ -158,8 +497,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 5498,
-   "n_words": 978
+   "n_chars": 5634,
+   "n_words": 1112,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
    "id": "sec-006-7-poisson-geometry-of-coulomb-branches",
@@ -168,8 +509,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 1347,
-   "n_words": 227
+   "n_chars": 1356,
+   "n_words": 236,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
    "id": "sec-007-acknowledgments",
@@ -179,7 +522,9 @@
    "page_start": 21,
    "page_end": 21,
    "n_chars": 196,
-   "n_words": 27
+   "n_words": 27,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
    "id": "sec-008-references",
@@ -188,16 +533,26 @@
    "level": 1,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 6329,
-   "n_words": 964
+   "n_chars": 6300,
+   "n_words": 935,
+   "label_start": "21",
+   "label_end": "23"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 45138,
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 46304,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
@@ -210,58 +565,63 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-classical-motivation",
      "title": "Classical motivation",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-fricke-klein-example",
      "title": "Fricke-Klein example",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.973,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-setup",
      "title": "Setup",
-     "prose_ratio": 0.972,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-what-is-known",
      "title": "What is known?",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-5-cohascoulomb-branches",
      "title": "COHAs/Coulomb branches",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-6-main-example",
      "title": "Main example",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-7-poisson-geometry-of-coulomb-branches",
      "title": "Poisson geometry of Coulomb branches",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.94,
      "result": "overlaid",
      "converter": "pandoc"
     },

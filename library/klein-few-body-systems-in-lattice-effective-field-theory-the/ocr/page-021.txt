@@ -1,0 +1,54 @@
+2.2 Scattering Theory
+
+Most generally, a scattering state is described by the propagation of the incoming state through the
+interaction represented by the S-matrix,
+
+Pout(E) = S¥;,(E). (2.31)
+
+Alternatively, the S-matrix is given as the overlap of two free state solutions,
+
+(s(t [ola 232
+
+already indicating that one can still use free state solutions as basis states and think about a superposition
+of such states for the scattering solution. As the scattering matrix should be the unit matrix in the case of
+vanishing scattering potential, it is convenient to split the matrix into two terms,
+
+(Vo(Es.6)] S [Po(E.-@)) = (Vo(Es-8) | Yo( Ea. )) ~275( Ey — Es)Tpa (Eu Ep): (2.33)
+
+The first term is related to the amplitude, where the particle passes the interaction region without scattering
+whereas the second term includes all scattering information.
+
+In the case of radially symmetric potentials, one can decompose the problem into solutions according
+to the spherical harmonics. Spherical harmonics are a system of eigenfunctions, which are defined on the
+sphere and which correspond to eigenfunctions of the angular momentum operator,
+
+VY), 0.0) = Ul + DY), @.). (2.34)
+LY O,0) = LY O90), (2.35)
+
+with the orbital angular momentum quantum number / = 0, 1,2,... and the magnetic momentum quantum
+number /, = —/,—/+1,...,/. Such a system generates an infinite basis of eigenfunctions and any solution
+of the Schrédinger equation can be identified with the good quantum numbers /,/,. Details on the
+properties and construction of the spherical harmonics Y;,; are found in App. A. On the one hand, the
+decomposition into partial waves already facilitates the problem as the degrees of freedom are reduced
+to the radial one. On the other hand, it also introduces a reasonable hierarchy of partial waves as the
+lowest-lying partial waves are the most important ones for scattering processes while higher order partial
+waves hardly contribute to the full scattering wave. The reason is that the angular momentum contribution
+to the kinetic part /(/ + 1)/ (2ur?) rises with higher angular momentum and serves as a barrier between
+the incoming particle and the interaction region such that any interaction is more and more suppressed
+with larger /.
+To be specific, the wave function is divided into a radial part and a spherical part by the ansatz
+
+W(7) = » 1p, (cos 4), (2.36)
+1
+
+where the system is chosen such that only the spherical harmonics with m = 0 contribute whereas
+P,(cos 6) are the Legendre polynomials. Furthermore, u, is the solution of the radial part,
+
+1 Wl + 1)
+—5-A, + —- + V(r)| u(r) = Euy(r). (2.37)
+
+2 2ur
+
+The free system with V(r) = 0 has two independent solutions, which consist of the Bessel functions of
+
+15

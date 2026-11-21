@@ -40,9 +40,9 @@ structure QuarkAntiquarkProduction (R : Type*) [CommRing R] where
   cσ₀ : R
   /-- Coefficient of `σ₁`. -/
   cσ₁ : R
-  /-- Coefficient of the positive Hopf link `L₊ = σ₀σ₁`. -/
+  /-- Coefficient of `L₊ = σ₀σ₁` (closure in B₃: unknot). -/
   cLp : R
-  /-- Coefficient of the negative Hopf link `L₋ = σ₁σ₀`. -/
+  /-- Coefficient of `L₋ = σ₁σ₀` (closure in B₃: unknot). -/
   cLm : R
   cγ_def : cγ = 1 + φ₀ * ψ₀ + φ₁ * ψ₁
   cσ₀_def : cσ₀ = φ₀ + ψ₀ + φ₀ * ψ₀ * h
@@ -50,7 +50,7 @@ structure QuarkAntiquarkProduction (R : Type*) [CommRing R] where
   cLp_def : cLp = φ₀ * ψ₁
   cLm_def : cLm = φ₁ * ψ₀
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/quark-antiquark-production-reduction.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/quark-antiquark-production-reduction.ts
 
 namespace QuarkAntiquarkProduction
 

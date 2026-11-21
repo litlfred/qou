@@ -1,0 +1,56 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-q-alg-9702017v2",
+ "source_sha256": "282c911abb2a54e9",
+ "brief": "Idempotents of Hecke algebras of type A — We use a skein-theoretic version of the Hecke algebras of type A to present three-dimensional diagrammatic views of Gyoja’s idempotent el- ements, based",
+ "extended": "**Idempotents of Hecke algebras of type A**\n\n*A.K. Aiston and H.R. Morton ∗*\n\n40 pp, 7 sections.\n\n**Abstract.** We use a skein-theoretic version of the Hecke algebras of type A to present three-dimensional diagrammatic views of Gyoja’s idempotent el- ements, based closely on the corresponding Young diagram λ. In this context we give straightforward calculations for the eigenvalues fλ and mλ of two natural central elements in the Hecke algebras, namely the full curl and the sum of the Murphy operators. We discuss their calculation also in terms of the framing factor associated to the appropriate irreducible representation of the quantum group, SU(N)q.\n\n**Outline.** Front matter; 1 Introduction; 2 The Hecke algebra and Homfly skein theory; 3 Young diagrams; 4 Idempotents; 5 Framing and the Murphy operators; 6 Connections with the quantum group invariant",
+ "tokens": {
+  "brief": 48,
+  "extended": 215
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-the-hecke-algebra-and-homfly-skein-theory",
+   "title": "The Hecke algebra and Homfly skein theory",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-002-3-young-diagrams",
+   "title": "Young diagrams",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-003-4-idempotents",
+   "title": "Idempotents",
+   "pages": "9-14"
+  },
+  {
+   "id": "sec-004-5-framing-and-the-murphy-operators",
+   "title": "Framing and the Murphy operators",
+   "pages": "14-25"
+  },
+  {
+   "id": "sec-005-6-connections-with-the-quantum-group-invariants",
+   "title": "Connections with the quantum group invariants",
+   "pages": "25-40"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

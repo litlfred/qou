@@ -3,12 +3,13 @@
  "doc_id": "arxiv-1710.04865v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "ac8f436173d550e816683457955ed337dd1e59b0ae0dc521b7cbd2be70b1d5fd",
   "file": "1710.04865v2.pdf"
  },
  "provenance": {
-  "title": "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+  "title": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
   "authors": "JEREMY LOVEJOY AND ROBERT OSBURN",
   "arxiv": {
    "id": "1710.04865",
@@ -20,131 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "theorem": 2,
-   "corollary": 3,
-   "lemma": 4
-  },
-  "formalization_candidates": 9
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.1",
-   "name": null,
-   "statement": "For positive integers m and p, we have",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.2",
-   "name": null,
-   "statement": "For positive integers m and p, we have",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1.3",
-   "name": null,
-   "statement": "If \u03b6N is any Nth root of unity, then we have",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1.4",
-   "name": null,
-   "statement": "If \u03b6N is any Nth root of unity, then we have",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1.3",
-   "name": null,
-   "statement": "as a key illustration. Furthermore, we suspect that the generalized Kontsevich-",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.2",
-   "name": null,
-   "statement": "Forl = 4mp\u2212 1 and t = 4mp\u2212 2p\u2212 1, we have",
-   "section_file": "sections/sec-001-2-preliminaries.md",
-   "section_title": "Preliminaries",
-   "pages": "6-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.3",
-   "name": null,
-   "statement": "Letl = 4mp\u2212 1 and t = 4mp\u2212 2p\u2212 1. Then for 1\u2264k\u2264p\u2032 and 1\u2264j\u2264p\u2032\u2212 1",
-   "section_file": "sections/sec-001-2-preliminaries.md",
-   "section_title": "Preliminaries",
-   "pages": "6-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.4",
-   "name": null,
-   "statement": "Forl = 4mp + 1 and t = 4mp\u2212 2p + 1, we have",
-   "section_file": "sections/sec-001-2-preliminaries.md",
-   "section_title": "Preliminaries",
-   "pages": "6-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.5",
-   "name": null,
-   "statement": "Letl = 4mp + 1 and t = 4mp\u2212 2p + 1. Then for 1\u2264k\u2264p\u2032 and 1\u2264j\u2264p\u2032\u2212 1",
-   "section_file": "sections/sec-001-2-preliminaries.md",
-   "section_title": "Preliminaries",
-   "pages": "6-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

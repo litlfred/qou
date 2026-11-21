@@ -5,18 +5,20 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/behavior-of-current-divergences-undersu3su3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/behavior-of-current-divergences-undersu3su3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "behavior-of-current-divergences-undersu3su3",
   "contains": [
-    "library/behavior-of-current-divergences-undersu3su3/sections/sec-000",
-    "library/behavior-of-current-divergences-undersu3su3/sections/sec-001",
-    "library/behavior-of-current-divergences-undersu3su3/sections/sec-002"
+    "library/behavior-of-current-divergences-undersu3su3/sections/page-001",
+    "library/behavior-of-current-divergences-undersu3su3/sections/page-002",
+    "library/behavior-of-current-divergences-undersu3su3/sections/page-003",
+    "library/behavior-of-current-divergences-undersu3su3/sections/page-004",
+    "library/behavior-of-current-divergences-undersu3su3/sections/page-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "behavior-of-current-divergences-undersu3su3",
     "title_source": "slug",

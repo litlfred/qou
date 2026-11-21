@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s10955-022-02992-6/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Multi-Type Hard Spheres in mathbbRd",
+  "pageStart": 30,
+  "pageEnd": 41,
+  "contains": [
+    "library/s10955-022-02992-6/blocks/prose-sec-016",
+    "library/s10955-022-02992-6/blocks/lem-sec-016-01",
+    "library/s10955-022-02992-6/blocks/rem-sec-016-02",
+    "library/s10955-022-02992-6/blocks/thm-sec-016-03",
+    "library/s10955-022-02992-6/blocks/rem-sec-016-04",
+    "library/s10955-022-02992-6/blocks/prop-sec-016-05",
+    "library/s10955-022-02992-6/blocks/thm-sec-016-06",
+    "library/s10955-022-02992-6/blocks/rem-sec-016-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -5,17 +5,17 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-gr-qc-0407052v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-gr-qc-0407052v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-gr-qc-0407052v1",
+  "title": "Black hole entropy in loop quantum gravity",
   "contains": [
     "library/arxiv-gr-qc-0407052v1/sections/sec-front-matter",
     "library/arxiv-gr-qc-0407052v1/sections/sec-000"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -30,7 +30,9 @@
   },
   "meta": {
     "doc_id": "arxiv-gr-qc-0407052v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0407052v1.pdf",
     "source_sha256": "4624ea2fb4d318ad118e333446e66a3af77c744d7192cbffe0742915ad33d4ff",
     "pages": 10,

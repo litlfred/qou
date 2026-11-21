@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.1198v1/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Symmetric functions and bubbles",
+  "pageStart": 27,
+  "pageEnd": 29,
+  "contains": [
+    "library/arxiv-1409.1198v1/blocks/prose-sec-021"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.1198v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.1198v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0273-0979-1985-15304-2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0273-0979-1985-15304-2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -15,7 +15,7 @@
     "library/s0273-0979-1985-15304-2/sections/sec-000"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s0273-0979-1985-15304-2",
     "title_source": "slug",

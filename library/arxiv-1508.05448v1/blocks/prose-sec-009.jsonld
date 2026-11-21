@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1508.05448v1/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
-  "pageStart": 47,
-  "pageEnd": 55,
-  "text": "../sections/sec-009-35-an-additional-application-the-length-of-the-l.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.05448v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.05448v1",
+  "title": "Ledoux's Concentration of Measure on Reversible Markov Chains",
+  "pageStart": 28,
+  "pageEnd": 34,
+  "text": "../sections/sec-009-23-ledouxs-concentration-of-measure-on-reversibl.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
   "provenance": "ingested"
 }

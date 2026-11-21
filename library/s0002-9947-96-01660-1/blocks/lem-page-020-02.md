@@ -1,0 +1,1 @@
+The following diagram is commutative: M e02∈J H(e23, e03, e02) ⊗H(e12, e02, e01) Φ −−−−→ M e13∈J H(e23, e13, e12) ⊗H(e13, e03, e01) α⊗β7→α(1⊗β) y α⊗β7→β(α⊗1) y Hom(e03, e23 ⊗(e12 ⊗e01)) Hom(e03, (e23 ⊗e12) ⊗e01)

@@ -19,7 +19,7 @@ No ordering, no `Real.*`, no archimedean input appears here.
 
 ## References
 
-- [manuscript] Ch. Braids and Knots, §Knot factor / amphicheiral
+- [leitner2026] Ch. Braids and Knots, §Knot factor / amphicheiral
 -/
 
 namespace QOU.BraidKnot
@@ -65,7 +65,7 @@ def altRatio {n : ℕ} (β : HeckeExpansion R n)
 
     The statement replaces `∃ a, a = …`, which held for every `β`,
     `β_mirror` and `altPartition` and so used neither hypothesis. -/
--- Ref: [manuscript] Ch. Braids and Knots, §Knot factor / amphicheiral
+-- Ref: [leitner2026] Ch. Braids and Knots, §Knot factor / amphicheiral
 theorem knot_factor_amphicheiral
     {n : ℕ} (β β_mirror : HeckeExpansion R n)
     (altPartition : List ℕ)

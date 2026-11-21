@@ -33,7 +33,7 @@ $N$ chosen by the target precision.*
 
 ### Correctness conditions
 
-*[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
+*[$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)
 establishes the precision ladder and the convergence rate.*
 
 *The $c_k$ coefficients are **tiered**:*
@@ -50,27 +50,13 @@ establishes the precision ladder and the convergence rate.*
   inclusion/exclusion criterion. Individual $c_k$ **values** are a different question,
   and some of them **are** fits.*
 
-  > **Corrected 2026-08-25 (PR #5765).** This bullet read *"$c_k$ never reported as
-  > 'fitted'"*, which over-reached and inverted the discipline it implements. The
-  > AGENTS.md anti-flip-flop rule is *"Report TIERED (`proved` / `near-match` /
-  > `fitted`), never binary wired/dropped"* — **`fitted` is one of the three tiers**, so
-  > forbidding the label contradicts the rule. And the authoritative
-  > [`ck-dk-canonical-registry.md` §3](../../../docs/coordination/ck-dk-canonical-registry.md)
-  > applies it: **`c_4` is "EMPIRICAL — CODATA fit / artifact (mechanically confirmed
-  > 2026-07-11)"**, `−0.97157`, a CODATA residual that is *"0 by construction"*. The
-  > registry's summary row is equally explicit: *"Only $c_2 = -1$ is canonical … $c_3$ is
-  > a falsified near-match; $c_4$ is a CODATA fit; $c_5+$ are open."*
-  >
-  > As written, this block instructed the reader **never to apply the label the
-  > authoritative registry applies** — an anti-fit-discipline inversion sitting inside the
-  > paper. What the rule actually forbids is collapsing the tiering into a binary
-  > wire/un-wire decision, which is what drove the four-session flip-flop (#1452 ↔ #1479).
-  >
-  > **Also note the whole ladder is convention-C-frame and not yet re-derived under D**
-  > (`qou-cds1`): `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) makes the
-  > C-frame ladder and the mass channel's three-row forcing mutually exclusive, so this is
-  > not a $z$-swap. Treat every $c_k$ conclusion above as **C-conditional** until that
-  > lands.*
+  *Each $c_k$ value carries one of three tiers: proved, near-match or fitted. Only
+  $c_2 = -1$ is structural; $c_3$ is a falsified near-match; $c_4 = -0.97157$ is a
+  CODATA fit, with zero residual by construction; $c_5$ onward are open. The whole
+  ladder is in the convention-C frame and has not been re-derived under D:
+  `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the C-frame ladder and the mass
+  channel's three-row forcing mutually exclusive, so this is not a $z$-swap, and every
+  $c_k$ conclusion above is C-conditional.*
 
 ### Complexity
 

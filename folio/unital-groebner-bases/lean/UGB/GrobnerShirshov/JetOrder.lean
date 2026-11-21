@@ -213,7 +213,7 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
     self-assuming `(hab : degLexNat a b) : degLexNat a b := hab`, which
     named the embedding nowhere and asserted nothing about it.
 
-    Reference: [manuscript] §3/ordering-jet-compatibility. -/
+    Reference: [leitner2026] §3/ordering-jet-compatibility. -/
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem ordering_extends {φ : List ℕ → List ℕ} {a b : List ℕ}
     (hφa : φ a = a) (hφb : φ b = b) (hab : degLexNat a b) :
@@ -235,7 +235,7 @@ theorem wellfounded_at_level (n : ℕ) :
     bounded generator index because `degLexNat` is well-founded
     and the bounded-alphabet restriction is a subrelation. -/
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
--- Ref: [manuscript] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 theorem direct_limit_terminates (n : ℕ) (w : List ℕ)
     (_hw : ∀ g ∈ w, g < n) :
     Acc degLexNat w :=

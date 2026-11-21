@@ -8,8 +8,8 @@ that survives the blow-up. The motivic measure $\mu$ of
 reduction step a value in the Grothendieck ring $\mathcal{M}$, purely
 algebraically, by tracking which classes of varieties appear as
 exceptional fibers. The categorical analogue of crossing the
-$\chi(A) = -6$ topological horizon
-([topological mass formula](#prop:topological-mass-formula)) is
+$\chi_{\mathrm{eu}}(M_0) = -6$ topological horizon
+([topological mass formula](#conj:topological-mass-formula)) is
 exactly the contribution $[E_i^{\circ}] \mathbb{L}^{-d_i}$ of the
 exceptional divisor of that blow-up.
 

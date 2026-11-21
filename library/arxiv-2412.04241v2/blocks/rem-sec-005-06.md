@@ -1,0 +1,1 @@
+The operation τ corresponds geometrically to the orientation reversal of an oriented manifold, i.e., the quantum invariants of an oriented three-manifold with the oppo- site orientation are equal to the operation τ applied to the original invariants.

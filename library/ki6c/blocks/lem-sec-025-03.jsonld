@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ki6c/blocks/lem-sec-025-03",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 59,
+  "pageEnd": 70,
+  "text": "lem-sec-025-03.md",
+  "derivedFrom": "library/ki6c/sections/sec-025",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "C",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-025-curvature-of-the-boundary-of-a-convex-domain-in.md (p. 59-70)",
+    "claim_id": "ki6c#lemma:C",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+Cyclotomic versions of BMW and Brauer algebras have appeared in the literature: (1) For g D 0, they are of course just the BMW respectively Brauer algebra. (2) For g D 1, the definition goes back to [27]. D. Tubbenhauer and P. Vaz

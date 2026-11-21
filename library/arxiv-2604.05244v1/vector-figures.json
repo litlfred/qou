@@ -1,0 +1,1683 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2604.05244v1",
+  "figures": [
+    {
+      "id": "vfig-p004",
+      "file": "figures/vfig-p004.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        72.0,
+        72.0,
+        540.02,
+        300.3
+      ],
+      "assembly": {
+        "drawings": 457,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              72.0,
+              72.0,
+              540.02,
+              300.3
+            ],
+            "drawings": 457,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "20",
+              "Time t (T = 2 / )",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "1.2",
+              "1.4",
+              "1.6",
+              "|ebb(t)|",
+              "tedge",
+              "t0",
+              "u0 = cedge(t0",
+              "tedge)",
+              "(a) time window",
+              "5",
+              "0",
+              "5",
+              "Angular frequency",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "1.2",
+              "Schematic magnitude",
+              "edge",
+              "0",
+              "u0 = cedge(",
+              "0",
+              "edge)",
+              "baseband comb at n",
+              "(b) frequency window",
+              "0",
+              "20",
+              "Time t (T = 2 / )",
+              "3",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "Angular frequency",
+              "edge",
+              "0",
+              "u0 = cedge(",
+              "0",
+              "edge)",
+              "(c) spectrogram view"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              72.0,
+              72.0,
+              540.02,
+              300.3
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "20",
+              "Time t (T = 2 / )",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "1.2",
+              "1.4",
+              "1.6",
+              "|ebb(t)|",
+              "tedge)",
+              "5",
+              "0",
+              "5",
+              "Angular frequency",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "1.2",
+              "Schematic magnitude",
+              "u0 = cedge(",
+              "0",
+              "edge)",
+              "0",
+              "20",
+              "Time t (T = 2 / )",
+              "3",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "Angular frequency",
+              "u0 = cedge(",
+              "0",
+              "edge)"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              105.76,
+              74.38,
+              173.39,
+              272.46
+            ],
+            "parent": "b0",
+            "labels": [
+              "tedge",
+              "(a) time window"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              141.83,
+              74.38,
+              173.39,
+              272.46
+            ],
+            "parent": "b1",
+            "labels": [
+              "t0",
+              "u0 = cedge(t0"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              249.09,
+              74.38,
+              316.71,
+              272.46
+            ],
+            "parent": "b0",
+            "labels": [
+              "baseband comb at n"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              292.79,
+              74.38,
+              316.71,
+              272.46
+            ],
+            "parent": "b3",
+            "labels": [
+              "edge",
+              "0",
+              "(b) frequency window"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              409.13,
+              74.38,
+              476.75,
+              272.46
+            ],
+            "parent": "b0",
+            "labels": [
+              "edge"
+            ]
+          },
+          {
+            "id": "b6",
+            "bbox": [
+              417.58,
+              112.52,
+              418.99,
+              127.24
+            ],
+            "parent": "b5",
+            "labels": [
+              "0"
+            ]
+          },
+          {
+            "id": "b7",
+            "bbox": [
+              409.13,
+              74.38,
+              476.75,
+              122.56
+            ],
+            "parent": "b5",
+            "labels": [
+              "(c) spectrogram view"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 387,
+        "connectors": [
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              272.46,
+              173.39,
+              272.46
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              248.26,
+              173.39,
+              248.26
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              224.06,
+              173.39,
+              224.06
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              199.86,
+              173.39,
+              199.86
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              175.66,
+              173.39,
+              175.66
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              151.46,
+              173.39,
+              151.46
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              127.27,
+              173.39,
+              127.27
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              103.07,
+              173.39,
+              103.07
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              78.87,
+              173.39,
+              78.87
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              100.21,
+              173.39,
+              202.72
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "bbox": [
+              105.76,
+              272.46,
+              173.39,
+              272.46
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              137.29,
+              168.52,
+              174.87,
+              201.5
+            ]
+          },
+          {
+            "from": "b3",
+            "to": "b4",
+            "bbox": [
+              249.09,
+              272.46,
+              316.71,
+              272.46
+            ]
+          },
+          {
+            "from": "b3",
+            "to": "b4",
+            "bbox": [
+              249.09,
+              240.76,
+              316.71,
+              240.76
+            ]
+          },
+          {
+            "from": "b3",
+            "to": "b4",
+            "bbox": [
+              249.09,
+              209.07,
+              316.71,
+              209.07
+            ]
+          },
+          {
+            "from": "b3",
+            "to": "b4",
+            "bbox": [
+              249.09,
+              177.38,
+              316.71,
+              177.38
+            ]
+          },
+          {
+            "from": "b3",
+            "to": "b4",
+            "bbox": [
+              249.09,
+              145.69,
+              316.71,
+              145.69
+            ]
+          },
+          {
+            "from": "b3",
+            "to": "b4",
+            "bbox": [
+              249.09,
+              113.99,
+              316.71,
+              113.99
+            ]
+          },
+          {
+            "from": "b3",
+            "to": "b4",
+            "bbox": [
+              249.09,
+              82.3,
+              316.71,
+              82.3
+            ]
+          },
+          {
+            "from": "b3",
+            "to": "b4",
+            "bbox": [
+              249.09,
+              272.46,
+              316.71,
+              272.46
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              294.61,
+              148.74,
+              330.84,
+              181.66
+            ]
+          },
+          {
+            "from": "b5",
+            "to": "b7",
+            "bbox": [
+              409.13,
+              74.38,
+              409.13,
+              272.46
+            ]
+          },
+          {
+            "from": "b5",
+            "to": "b7",
+            "bbox": [
+              462.94,
+              74.38,
+              462.94,
+              272.46
+            ]
+          },
+          {
+            "from": "b5",
+            "to": "b7",
+            "bbox": [
+              409.13,
+              74.38,
+              409.13,
+              272.46
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b5",
+            "bbox": [
+              453.31,
+              144.83,
+              487.35,
+              159.97
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 33
+      }
+    },
+    {
+      "id": "vfig-p005",
+      "file": "figures/vfig-p005.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 5
+      },
+      "page": 5,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        137.52,
+        72.0,
+        474.49,
+        290.43
+      ],
+      "assembly": {
+        "drawings": 30,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              137.52,
+              72.0,
+              474.49,
+              290.43
+            ],
+            "drawings": 30,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "m=−3",
+              "m=−2",
+              "m=−1",
+              "m=0",
+              "m=+1",
+              "m=+2",
+              "m=+3",
+              "µ",
+              "input sidebands",
+              "Em",
+              "n=−3",
+              "n=−2",
+              "n=−1",
+              "n=0",
+              "n=+1",
+              "n=+2",
+              "n=+3",
+              "output sidebands",
+              "+2Ω",
+              "+Ω",
+              "−Ω",
+              "−2Ω",
+              "Snm = U(E)Jn −m(A)",
+              "k = n −m  (mixing order)",
+              "eiAsinΩt",
+              "Cnp(E) =",
+              "X",
+              "m",
+              "Jn −m(A)Jp −m(A) ¯f(Em)",
+              "incoming",
+              "outgoing"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              137.52,
+              72.0,
+              474.49,
+              290.43
+            ],
+            "parent": null,
+            "labels": [
+              "m=−3",
+              "m=−2",
+              "m=−1",
+              "m=0",
+              "m=+1",
+              "m=+2",
+              "m=+3",
+              "µ",
+              "input sidebands",
+              "Em",
+              "n=−3",
+              "n=−2",
+              "n=−1",
+              "n=0",
+              "n=+1",
+              "n=+2",
+              "n=+3",
+              "output sidebands",
+              "+2Ω",
+              "+Ω",
+              "−Ω",
+              "−2Ω",
+              "k = n −m  (mixing order)",
+              "eiAsinΩt",
+              "incoming",
+              "outgoing"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              268.5,
+              82.44,
+              352.48,
+              96.43
+            ],
+            "parent": "b0",
+            "labels": [
+              "Snm = U(E)Jn −m(A)"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              240.18,
+              267.2,
+              380.8,
+              287.98
+            ],
+            "parent": "b0",
+            "labels": [
+              "Cnp(E) =",
+              "X",
+              "m",
+              "Jn −m(A)Jp −m(A) ¯f(Em)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [],
+        "between": [],
+        "outside": 31
+      }
+    },
+    {
+      "id": "vfig-p014",
+      "file": "figures/vfig-p014.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 14
+      },
+      "page": 14,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        72.0,
+        71.34,
+        540.01,
+        257.12
+      ],
+      "assembly": {
+        "drawings": 195,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              72.0,
+              71.34,
+              540.01,
+              257.12
+            ],
+            "drawings": 193,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "50",
+              "100",
+              "150",
+              "200",
+              "Shifted sideband index = n",
+              "mF",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "N",
+              "= K(disc)",
+              "A",
+              "( , )",
+              "(a) Sideband occupation",
+              "A = 20",
+              "A = 50",
+              "A = 100",
+              "A = 200",
+              "6",
+              "4",
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "8",
+              "Edge variable s = (",
+              "A)/",
+              "A",
+              "0.00",
+              "0.05",
+              "0.10",
+              "0.15",
+              "0.20",
+              "0.25",
+              "0.30",
+              "0.35",
+              "A K(disc)",
+              "A",
+              "( A(s),",
+              "A(s))",
+              "(b) Airy scaling collapse",
+              "A = 20",
+              "A = 50",
+              "A = 100",
+              "A = 200",
+              "KAi(s, s)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              72.0,
+              72.0,
+              540.01,
+              257.12
+            ],
+            "parent": null,
+            "labels": [
+              "50",
+              "100",
+              "150",
+              "200",
+              "Shifted sideband index = n",
+              "mF",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "N",
+              "= K(disc)",
+              "A",
+              "( , )",
+              "(a) Sideband occupation",
+              "6",
+              "4",
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "8",
+              "Edge variable s = (",
+              "A)/",
+              "A",
+              "0.00",
+              "0.05",
+              "0.10",
+              "0.15",
+              "0.20",
+              "0.25",
+              "0.30",
+              "0.35",
+              "A K(disc)",
+              "A",
+              "( A(s),",
+              "A(s))",
+              "(b) Airy scaling collapse"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              251.27,
+              89.66,
+              295.65,
+              126.26
+            ],
+            "parent": "b0",
+            "labels": [
+              "A = 20",
+              "A = 50",
+              "A = 100",
+              "A = 200"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              434.34,
+              89.66,
+              530.21,
+              117.55
+            ],
+            "parent": "b0",
+            "labels": [
+              "A = 20",
+              "A = 50",
+              "A = 100",
+              "A = 200",
+              "KAi(s, s)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 172,
+        "connectors": [
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              403.56,
+              71.34,
+              533.17,
+              222.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              262.88,
+              667.93,
+              274.94,
+              667.93
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              72.0,
+              687.0,
+              259.2,
+              687.0
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 37
+      }
+    },
+    {
+      "id": "vfig-p015",
+      "file": "figures/vfig-p015.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 15
+      },
+      "page": 15,
+      "rotation": 0,
+      "captionLabels": [
+        "4"
+      ],
+      "region": [
+        72.0,
+        72.0,
+        540.0,
+        256.75
+      ],
+      "assembly": {
+        "drawings": 144,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              72.0,
+              72.0,
+              540.0,
+              256.75
+            ],
+            "drawings": 140,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "4",
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "s",
+              "0.10",
+              "0.05",
+              "0.00",
+              "0.05",
+              "0.10",
+              "0.15",
+              "Kernel value",
+              "(a) Two-point kernel at t = 0",
+              "AK(disc)",
+              "A",
+              ", A = 100",
+              "KAi(s, 0)",
+              "2",
+              "0",
+              "2",
+              "4",
+              "t",
+              "3",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "s",
+              "(b)",
+              "AK(disc)",
+              "A",
+              "KAi, A = 100",
+              "0.10",
+              "0.05",
+              "0.00",
+              "0.05",
+              "0.10"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              72.0,
+              72.0,
+              540.0,
+              256.75
+            ],
+            "parent": null,
+            "labels": [
+              "4",
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "s",
+              "0.10",
+              "0.05",
+              "0.00",
+              "0.05",
+              "0.10",
+              "0.15",
+              "Kernel value",
+              "(a) Two-point kernel at t = 0",
+              "2",
+              "0",
+              "2",
+              "4",
+              "t",
+              "3",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "s",
+              "(b)",
+              "AK(disc)",
+              "A",
+              "KAi, A = 100",
+              "0.10",
+              "0.05",
+              "0.00",
+              "0.05",
+              "0.10"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              225.89,
+              91.55,
+              296.57,
+              113.07
+            ],
+            "parent": "b0",
+            "labels": [
+              "AK(disc)",
+              "A",
+              ", A = 100",
+              "KAi(s, 0)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 127,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              297.33,
+              625.94,
+              301.57,
+              625.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              327.6,
+              625.94,
+              332.43,
+              625.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              343.77,
+              677.55,
+              359.3,
+              677.55
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              355.07,
+              678.74,
+              359.3,
+              678.74
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 39
+      }
+    },
+    {
+      "id": "vfig-p020",
+      "file": "figures/vfig-p020.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 20
+      },
+      "page": 20,
+      "rotation": 0,
+      "captionLabels": [
+        "5"
+      ],
+      "region": [
+        72.0,
+        72.0,
+        540.01,
+        268.0
+      ],
+      "assembly": {
+        "drawings": 77,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              72.0,
+              72.0,
+              540.01,
+              268.0
+            ],
+            "drawings": 76,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "10",
+              "0",
+              "10",
+              "20",
+              "30",
+              "= p",
+              "mF",
+              "10",
+              "0",
+              "10",
+              "20",
+              "30",
+              "= n",
+              "mF",
+              "(a) K(disc)",
+              "A",
+              "( ,",
+              "), A = 30",
+              "3",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "(",
+              "0",
+              "n )/",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "|cedge|2/L2",
+              "(b) Detection kernel leakage",
+              "Gate periods N",
+              "N = 1",
+              "N = 2",
+              "N = 4",
+              "N = 8",
+              "0.0",
+              "0.1",
+              "0.2",
+              "0.3",
+              "0.4",
+              "0.5",
+              "0.6"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              72.0,
+              72.0,
+              540.01,
+              268.0
+            ],
+            "parent": null,
+            "labels": [
+              "10",
+              "0",
+              "10",
+              "20",
+              "30",
+              "= p",
+              "mF",
+              "10",
+              "0",
+              "10",
+              "20",
+              "30",
+              "= n",
+              "mF",
+              "(a) K(disc)",
+              "A",
+              "), A = 30",
+              "3",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "(",
+              "0",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "|cedge|2/L2",
+              "(b) Detection kernel leakage",
+              "0.0",
+              "0.1",
+              "0.2",
+              "0.3",
+              "0.4",
+              "0.5",
+              "0.6"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              178.2,
+              80.73,
+              181.91,
+              85.32
+            ],
+            "parent": "b0",
+            "labels": [
+              "( ,"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              437.91,
+              254.04,
+              443.69,
+              260.24
+            ],
+            "parent": "b0",
+            "labels": [
+              "n )/"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              473.6,
+              92.78,
+              531.82,
+              142.52
+            ],
+            "parent": "b0",
+            "labels": [
+              "Gate periods N",
+              "N = 1",
+              "N = 2",
+              "N = 4",
+              "N = 8"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 46,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              243.43,
+              666.52,
+              258.69,
+              666.52
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 41
+      }
+    },
+    {
+      "id": "vfig-p022",
+      "file": "figures/vfig-p022.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 22
+      },
+      "page": 22,
+      "rotation": 0,
+      "captionLabels": [
+        "6"
+      ],
+      "region": [
+        72.0,
+        72.0,
+        540.0,
+        273.6
+      ],
+      "assembly": {
+        "drawings": 55,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              72.0,
+              72.0,
+              540.0,
+              273.6
+            ],
+            "drawings": 54,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "s",
+              "0.0",
+              "0.1",
+              "0.2",
+              "0.3",
+              "0.4",
+              "0.5",
+              "(a)",
+              "Ai2(s)",
+              "KAi(s, s)",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "s",
+              "10",
+              "12",
+              "10",
+              "10",
+              "10",
+              "8",
+              "10",
+              "6",
+              "10",
+              "4",
+              "10",
+              "2",
+              "100",
+              "(b)",
+              "Ai2(s)",
+              "KAi(s, s)",
+              "e",
+              "4",
+              "3s3/2"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              72.0,
+              72.0,
+              540.0,
+              273.6
+            ],
+            "parent": null,
+            "labels": [
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "s",
+              "0.0",
+              "0.1",
+              "0.2",
+              "0.3",
+              "0.4",
+              "0.5",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "s",
+              "10",
+              "12",
+              "10",
+              "10",
+              "10",
+              "8",
+              "10",
+              "6",
+              "10",
+              "4",
+              "10",
+              "2",
+              "100"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              114.12,
+              88.13,
+              289.37,
+              241.34
+            ],
+            "parent": "b0",
+            "labels": [
+              "(a)",
+              "Ai2(s)",
+              "KAi(s, s)"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              350.71,
+              88.13,
+              525.96,
+              241.34
+            ],
+            "parent": "b0",
+            "labels": [
+              "(b)",
+              "Ai2(s)",
+              "KAi(s, s)",
+              "e",
+              "4",
+              "3s3/2"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 33,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              213.68,
+              329.17,
+              217.34,
+              329.17
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 39
+      }
+    },
+    {
+      "id": "vfig-p023",
+      "file": "figures/vfig-p023.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 23
+      },
+      "page": 23,
+      "rotation": 0,
+      "captionLabels": [
+        "7"
+      ],
+      "region": [
+        72.0,
+        72.0,
+        540.01,
+        254.23
+      ],
+      "assembly": {
+        "drawings": 269,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              72.0,
+              72.0,
+              540.01,
+              254.23
+            ],
+            "drawings": 265,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "8",
+              "6",
+              "4",
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "s = (eV/ Ω−A)/",
+              "A",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "SA(s) =",
+              "A · K (disc)",
+              "A",
+              "(νV, νV)",
+              "(a) Plateau deficit collapse (T = 0)",
+              "A = 20",
+              "A = 50",
+              "A = 100",
+              "A = 200",
+              "KAi(s, s)",
+              "10",
+              "8",
+              "6",
+              "4",
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "8",
+              "s",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "K (θ)",
+              "Ai (s, s)",
+              "(b) Thermal crossover: θA = kBT/ Ω",
+              "A",
+              "θA = 0",
+              "θA = 0.3",
+              "θA = 0.6",
+              "θA = 1.0",
+              "θA = 2.0"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              72.0,
+              72.0,
+              540.01,
+              254.23
+            ],
+            "parent": null,
+            "labels": [
+              "8",
+              "6",
+              "4",
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "s = (eV/ Ω−A)/",
+              "A",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "SA(s) =",
+              "A · K (disc)",
+              "A",
+              "(νV, νV)",
+              "(a) Plateau deficit collapse (T = 0)",
+              "10",
+              "8",
+              "6",
+              "4",
+              "2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "8",
+              "s",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "K (θ)",
+              "Ai (s, s)",
+              "(b) Thermal crossover: θA = kBT/ Ω",
+              "A"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              214.4,
+              89.84,
+              297.19,
+              114.54
+            ],
+            "parent": "b0",
+            "labels": [
+              "A = 20",
+              "A = 50",
+              "A = 100",
+              "A = 200",
+              "KAi(s, s)"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              493.32,
+              89.84,
+              530.58,
+              131.04
+            ],
+            "parent": "b0",
+            "labels": [
+              "θA = 0",
+              "θA = 0.3",
+              "θA = 0.6",
+              "θA = 1.0",
+              "θA = 2.0"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 242,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              254.2,
+              588.14,
+              299.37,
+              588.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              316.31,
+              588.14,
+              342.25,
+              588.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              354.49,
+              588.14,
+              362.67,
+              588.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              342.06,
+              652.23,
+              430.96,
+              652.23
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 55
+      }
+    }
+  ]
+}

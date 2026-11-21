@@ -1,0 +1,61 @@
+Cluster Expansions: Necessary... Page 23 of 47 33
+
+Furthermore, we use the convention Ty (2; z) = 1 for all N > 1.
+
+Again, we lift the established recurrent relations on the level of coefficients (given by
+Lemma 3.11) to the level of partial sums and series, deriving a system of integral equations
+for those. The following result is an analogue of Proposition 3.6 and Proposition 3.10 for
+subset polymers.
+
+Proposition 3.12 Under the assumptions of Lemma 3.11, the identities
+
+TD'U ix =T(D52+ Yl cHyTW'uY:z)
+
+Yax:
+YOD'=o
+and for N €N,
+Ty (D'U fx} 2) =Ty(Ds 2+ YO )Ty(D'UY; 2),
+Yax:
+yaD=
+
+hold for any non-negative activity z.
+
+Remark 3.2 Notice that the first identity in Proposition 3.12 is just a sign-flipped version of
+the standard Kirkwood-Salsburg equations for the reduced correlation functions found in
+
+(1).
+Proof Lemma 3.11 yields
+
+;
+Vipuparchy intense @lse(D’ U fr}. Yrs. Ye)
+
+t
+= Wa pyay ty remy @lee(Ds Yas ees Yu)
++ 0 (lox, yinp'=2)) Wour+d 4; Ivj<ny (DU Yi, (Yi) 70).
+
+The proof of the recurrence relation for Ty (-; z) is concluded by exploiting the alternating
+
+sign property of the Ursell functions, summing over k and Y},..., Y,, and exploiting the
+symmetry of gh The recurrence relation for T (-; z) follows by passing to the limit N — oo.
+oO
+
+Proof of Theorem 2.7 To prove the implication (i) = (ii), suppose that condition (i) is sat-
+isfied for some set function a(-). Proceeding as in the proof of Theorem 2.1 again, we prove
+by induction over N that
+
+Ty (D; z) < exp(a(D)), (3.11)
+
+for all finite subsets D C Z4. For N = 1, the inequality reads 1y)p)<1) < exp(a(D)) at and it is
+true because a(D) > 0. Now, suppose it holds true for some N > 1 and all D. Let Dcz
+be finite. If Di is empty, then Ty +1 (D; Z=Hl< exp(a(D)). If D is not empty, let x be any
+element of D and let D’ := D\{x}. Then Proposition 3.12 yields
+
+Ty (D3 2) =Ty(Ds + YO e)T wD! UY; 2).
+Yax,
+YND'=
+By the induction hypothesis and condition (2.18),
+Tyyi(D; 2) <P 4 SO z(retP'") < etP'UUD) = et).
+Yax,
+YND'=2
+
+D Springer

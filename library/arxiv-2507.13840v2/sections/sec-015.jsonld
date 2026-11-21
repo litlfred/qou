@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13840v2/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Matrix product states and matrix product operators algorithms",
+  "pageStart": 15,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-2507.13840v2/blocks/prose-sec-015"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -12,12 +12,12 @@ and the orbital count per shell is n².
 
 ## References
 
-- [manuscript] Ch. 6, §3
+- [leitner2026] Ch. 6, §3
 -/
 
 namespace QOU.BringsSurface
 
--- Ref: [manuscript] Ch. 6, §3
+-- Ref: [leitner2026] Ch. 6, §3
 /-- Shell-writhe correspondence: n = (w-1)/2 maps writhe to principal quantum number.
     Ground state has w = 3 (n = 1), excited states have w = 2n+1. -/
 def shellFromWrithe (w : ℕ) : ℕ := (w - 1) / 2
@@ -32,7 +32,7 @@ theorem hydrogen_shell_writhe :
     (∀ n : ℕ, 0 < n → orbitalCount n = n ^ 2) ∧
     -- (3) Excited states: w = 2n+1
     (∀ n : ℕ, 0 < n → shellFromWrithe (2 * n + 1) = n) := by
-  -- Ref: [manuscript] Ch. 6, §3
+  -- Ref: [leitner2026] Ch. 6, §3
   refine ⟨by decide, fun n _ => rfl, ?_⟩
   intro n hn
   simp [shellFromWrithe]

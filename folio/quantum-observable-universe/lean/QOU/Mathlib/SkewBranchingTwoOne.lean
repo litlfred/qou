@@ -35,7 +35,7 @@ Pure combinatorics; nothing archimedean (§7c); no fit.
 ## References
 
 - [sagan2001] The Symmetric Group, §2 (branching)
-- [manuscript] bean `qou-b21r`
+- [leitner2026] bean `qou-b21r`
 -/
 
 namespace QOU.BraidKnot.YoungTableauStandard

@@ -4,13 +4,14 @@ doc_title: "Exceptional quantum geometry and particle physics II"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 2-12
+pages: 3-5
 source_pdf: 1808.08110v1.pdf
 source_sha256: 4bf98566792d47bd
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.591
-doc_brief: "Exceptional quantum geometry and particle physics II — We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for"
+latex_coverage_ratio: 0.995
+doc_brief: "Exceptional quantum geometry and particle physics II — We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the"
 ---
 It is natural to associate the finite spectrum of fundamental particles to a finite quantum space endowed possibly with some additional structure. This point of view underlies, with some variations, most noncommutative geometric approaches to particle physics (see e.g. [@mdv-ker-mad:1989a], [@mdv-ker-mad:1988b], [@mdv:1991], [@ac-lot:1990], [@cha-ac:1997], [@cha-ac-mar:2007]). Such a finite quantum space is a virtual space associated to its algebra of observables that is a finite-dimensional real algebra which is a quantum analog of a finite-dimensional algebra of real functions.\
 In [@mdv:2016b] an argument based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group and the existence of 3 generations was presented suggesting that the finite quantum space corresponding to the exceptional Jordan algebra $J^8_3={\cal H}_3(\mathbb O)$ of $3\times 3$ hermitian octonionic matrices is relevant for the description of the internal space of the 3 generations of fundamental fermions. The triality underlying the structure of $J^8_3$ corresponds to the 3 generations while the representation of the octonion algebra $\mathbb O$ as a complex 4-dimensional space $\mathbb C\oplus \mathbb C^3$ is associated with the quark-lepton symmetry ($\mathbb C^3$ for the quark and $\mathbb C$ for the corresponding lepton). This part of [@mdv:2016b] will be briefly reviewed in Sections 2 and 3.\

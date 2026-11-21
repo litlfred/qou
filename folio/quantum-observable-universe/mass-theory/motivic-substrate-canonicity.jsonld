@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-motivic-substrate-canonicity",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:motivic-substrate-canonicity",
+  "kind": "remark",
+  "title": "Canonicity, realizations, and scope of the motivic substrate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-motivic-substrate",
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+    "papers/quantum-observable-universe/blocks/def-adelic-substrate",
+    "papers/quantum-observable-universe/blocks/def-arc-space",
+    "papers/quantum-observable-universe/blocks/def-motivic-mass-measure"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-motivic-substrate",
+  "cites": [
+    "references/kontsevich1995",
+    "references/denef-loeser2001"
+  ],
+  "tags": [
+    "motivic",
+    "substrate",
+    "realization-tower",
+    "adelic",
+    "habiro"
+  ],
+  "text": "motivic-substrate-canonicity.md",
+  "provenance": "authored"
+}

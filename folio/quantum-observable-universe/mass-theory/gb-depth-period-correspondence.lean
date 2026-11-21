@@ -112,7 +112,7 @@ nothing distinguished them from an arbitrary element of the type. -/
     depth-2 grouplike — e.g. the figure-8 row's `Li_2^q(ζ_6)`, verified
     numerically in `conj:bring-figure-eight-depth-2-witness` — archimedean-
     realizes to a period in `P_2`. -/
--- Ref: [manuscript] prop:gb-depth-period-correspondence
+-- Ref: [leitner2026] prop:gb-depth-period-correspondence
 def figure_eight_depth_2_under_keystone
     {q : R} [h : GBDepthPeriodCorrespondence q] (g : GroupLikeDepth q 2) :
     GoncharovPeriodFiltration 2 :=
@@ -120,7 +120,7 @@ def figure_eight_depth_2_under_keystone
 
 /-- **Conditional (downstream of the keystone).** Same at depth 3, for the
     Bring trilogarithm row `Li_3^q(ζ_5)`. -/
--- Ref: [manuscript] prop:gb-depth-period-correspondence
+-- Ref: [leitner2026] prop:gb-depth-period-correspondence
 def bring_trilog_zeta5_depth_3_under_keystone
     {q : R} [h : GBDepthPeriodCorrespondence q] (g : GroupLikeDepth q 3) :
     GoncharovPeriodFiltration 3 :=
@@ -136,7 +136,7 @@ opaque Hyperbolic3Manifold : Type
     `vg` is a hypothesis rather than an `opaque` constant for the same reason as
     above: an `opaque` function INTO `GroupLikeDepth q 2` asserts that type is
     inhabited just as a constant does. -/
--- Ref: [manuscript] prop:gb-depth-period-correspondence
+-- Ref: [leitner2026] prop:gb-depth-period-correspondence
 def volume_conjecture_under_keystone
     {q : R} [h : GBDepthPeriodCorrespondence q]
     (vg : Hyperbolic3Manifold → GroupLikeDepth q 2) (M : Hyperbolic3Manifold) :
@@ -151,8 +151,8 @@ omit [CommRing R] in
     for, and it is *derived*: `sharpness` gives a grouplike at depth `n`,
     `inclusion` carries it into `P_n`. Conditional on the class, as it must be —
     which is exactly what the constants were not. -/
--- Ref: [manuscript] prop:gb-depth-period-correspondence, §sharpness
--- Ref: [manuscript] rem:k-theory-period-rosetta (Borel, `K_{2n-1}^ind(F) ⊗ ℚ`)
+-- Ref: [leitner2026] prop:gb-depth-period-correspondence, §sharpness
+-- Ref: [leitner2026] rem:k-theory-period-rosetta (Borel, `K_{2n-1}^ind(F) ⊗ ℚ`)
 theorem depth_period_nonempty
     {q : R} [h : GBDepthPeriodCorrespondence q] {n : ℕ} (hn : n ≥ 1) :
     Nonempty (GoncharovPeriodFiltration n) :=

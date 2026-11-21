@@ -1,0 +1,47 @@
+Example 2.16 The resolvent operator for the Dirichlet Laplacian, p(—1) = (A% +1)7?
+is a bounded map
+p(-1): P(Q) = Wy? (Q).
+
+Definition 2.17 (Spectrum) The spectrum of A is the complement
+o(A) := C\ pA).
+
+Remark 2.18 We are interested in the discrete spectrum ois, which is the set of isolated
+
+eigenvalues of finite multiplicity, that is
+Oais(A) = {A € C| Av € D(A), |v] = 1, Av = Av}.
+If X € oais(A), then its multiplicity is given by dim(ker(A — A)) < oo.
+
+Now that we have defined the resolvent operator, we just need to show that it is
+compact, and then we can apply the spectral theorem for compact, self-adjoint operators.
+
+First, we define what it means to be a compact operator.
+
+Definition 2.19 (Compact operator) A bounded operator A is compact if for a bounded
+
+sequence (Un)nen, (AUn)n contains a converging sub-sequence.
+
+There are alternative criteria for a bounded operator to be compact, for example, we
+
+have
+
+Proposition 2.20 \Let A be bounded operator on a Hilbert space H. Then the following
+are equivalent [64/:
+
+(i) A is compact;
+(ii) A is the norm limit of a sequence of finite rank operators;
+(iii) for any weakly convergent sequence Uy, — u, Aun > u strongly;
+
+(iv) for any finite orthonormal system (e,), Ae, > 0.
+
+Theorem 2.21 (Rellich-Kondrachov embedding theorem) Let Q be a bounded do-
+
+main of a compact Riemann surface S. The the embedding
+w??(Q) c LQ)
+ts compact.
+
+Example 2.22 We have seen that p(—1) is bounded from L?(Q) to Wy7(Q). By the
+Rellich-Kondrachov embedding theorem, Wo? (Q) has a compact embedding into L?(Q),
+
+since Q is compact, as is the surface S for which it is a subset.
+
+31

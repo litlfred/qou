@@ -1,0 +1,64 @@
+A representation theoretic explanation... 1393
+
+Proposition A.3 Let x and y denote the linear maps defined on V(k) via multiplication
+by x and y, respectively. The linear map U := (x @ y—y @x) : V(n) ® Vim) >
+V(n+ 1) @ Vim + 1) is SLo(C)-invariant.
+
+Proof Straightforward computation, e.g., on simple tensors. Oo
+
+We then use this U map to show that Dé is not the zero map when k < m,n.
+
+Lemma A.4 Fork < m <n, consider the map DUS: Vin—k)@V(m—k) > Vin—-1)®
+Vim — 1). We have:
+
+DU‘ =U'D+k(nt+m—k+ ue!
+Proof Follows from the fact that (0.x — x0,)p = p and (dyy — ydy)p = p. ia
+
+CorollaryA.5 For k < m < n, consider the map Dkuk : Va —k) @® Vim —k) >
+V(n—k) ® Vim — k). We have:
+ki(in+m—k-+1)!
+
+DEUK(<t-k @ xm-ky =
+Cn Oo ) = Gm —2k+D!
+
+xt @ xk) #0
+In particular, x"~* @ x'"~* is in the image of D‘ : V(n) ® Vim) > V(n—k) @ Vim—k).
+Proof Apply the previous lemma k times, and use the fact that D(x”~* @ x") =0. 0
+
+We will use this fact about the image of D* to determine the decomposition of V(n)®V(m)
+into irreducible components. We will also need the following fundamental representation
+theory result.
+
+Lemma A.6 (Schur’s Lemma) Let V, V’, W be representations of a group G, and suppose
+V, V’ are irreducible. Then:
+
+(i) Any G-invariant map x : W — V is either surjective or the zero map.
+(ii) Any G-invariant map .: V — W is either injective or the zero map.
+(iii) Any G-invariant map W : V — V' is either an isomorphism or the zero map.
+
+Further, if V, V’ are vector spaces over an algebraically closed field, then wy is unique up to
+scalar.
+
+Applying Schur’s lemma to each of the rth transvectants (discussed at the end of Sect.
+3.2) yields the desired representation decomposition.
+
+Proposition A.7 Let m <n. We have the following decomposition of V(n) @ V(m), as a
+representation of SL2(C), into irreducible components.
+
+Vn) @ Vim) = QFVa+m—2r)
+
+r<m
+
+In particular, V(n) ® V(n) = V(2n) ® V(2n — 2) @--- 8 V(2) VO).
+Proof For each r € No, < m, consider the SL2(C)-invariant rth transvectant map:
+
+Vin) @ Vim) 25 Vin—1r) @ Vn — 1) Vin tm —2r)
+
+ro. ym—r n-+m—2r
+
+By Corollary A.5, this map is not the zero map, as x”~ is in its image.
+Since V(n + m — 2r) is irreducible by Proposition A.1, Schur’s lemma implies this map is
+
+“xX =x
+
+D Springer

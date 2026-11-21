@@ -1,0 +1,42 @@
+Deforming hyperbolic 3—manifolds with boundary 449
+
+xo(bs(t)) = 1 which projects to the endpoint of Df) i in OH. Such an endpoint exists
+because Df) i is a geodesic, and is clearly independent of the choice of f, so bs(t) is
+indeed well-defined. Since developing maps vary smoothly with respect to tf we have
+the following:
+
+Lemma 2.5 For any S € Sgq U Spar the map t + bs(t) is smooth with respect to t.
+
+2.3 Lifting geometric tetrahedra
+
+Let now A be a tetrahedron in JT, and denote by A aliftof A to N’. Let S; be the
+boundary component of the universal covering of N’ that corresponds to v;, where
+V1,---,¥4 are the vertices of A. If AQ@) is the convex hull of bs,(#),...,bs,() in
+M+! , then projecting A(t) to HP and truncating its infinite-volume ends with the
+corresponding S;(t)’s gives back a truncated tetrahedron A*(f) isometric to the geometric
+realization of A parameterized by a(t). It is easily seen that the dihedral angles of A*(t)
+smoothly depend on bs, (t),... ,bs,(¢), so Theorem 2.2 is now reduced to the following:
+
+Proposition 2.6 If «(0) € KerdG,,, then we can choose the D,’s in such a way that
+bs(0) = 0 for all S € Sgq U Spar.
+
+2.4 The tangent vector to /,
+
+Let us consider the double DN’ of N’ obtained by mirroring N’ along its boundary
+(which is now given by some punctured surfaces of negative Euler characteristic). Since
+ON’ is totally geodesic with respect to the hyperbolic structure M,, this structure can be
+doubled to a smooth hyperbolic metric DM, on DN’.
+
+Let Dp;: ™(DN’) > PSL(2,C) be a holonomy representation corresponding to a
+developing map for DM,. It is easily seen that we can assume Dp; to vary smoothly
+with respect to t. We set
+
+. . d
+Dp: ™(DN') = sl(2,C), Dp) = “| 0 (Ded)Dpo(y)') -
+
+As explained in Appendix A, we have Dp € Z! (a (DN’); s((2, C); Dpo). This subsection
+is devoted to the proof of the following:
+
+Proposition 2.7 If a(0) € KerdG,,, then Dp € B'(m(DN’); sl(2, C); Dpo)-
+
+Algebraic & Geometric Topology 6 (2006)

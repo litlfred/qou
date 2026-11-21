@@ -5,12 +5,13 @@ section_id: sec-006-some-open-questions-and-a-survey-of-known-result
 section_title: "Some open questions and a survey of known results about links of braid index 3"
 section_number: null
 pages: 9-14
-source_pdf: 0802.1072v2 (1).pdf
+source_pdf: 0802.1072v2.pdf
 source_sha256: 6f4d93f0b7ba5cd7
-doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.998
-latex_coverage_ratio: 0.998
+latex_coverage_ratio: 0.791
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
 []{#S:known and unknown label="S:known and unknown"} In this section we survey the literature and discuss some unknown properties of knots and links of braid index 3. Our choices are guided by what we know best, and by our wish to illustrate ways in which Theorems 1,2 and 3 have been and might be useful.
 

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1204.4824v2/blocks/prose-sec-023",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Closed loops",
-  "pageStart": 43,
-  "pageEnd": 45,
-  "text": "../sections/sec-023-72-closed-loops.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.4824v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.4824v2",
+  "title": "The jump of F(, ) at a K-wall",
+  "pageStart": 36,
+  "pageEnd": 38,
+  "text": "../sections/sec-023-63-the-jump-of-f-at-a-k-wall.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
   "provenance": "ingested"
 }

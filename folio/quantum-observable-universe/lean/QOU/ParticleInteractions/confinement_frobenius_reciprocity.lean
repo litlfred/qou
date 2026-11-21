@@ -86,7 +86,13 @@ class ConfinementFrobeniusReciprocityContext where
   /-- Active ⇔ positive shadow price. -/
   active_iff_pos_shadow : ∀ i : Fin d, i ∈ A_star ↔ 0 < u_star i
   /-- Strong duality.
-      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
+      (Still an assumption, but not for the reason once given here: finite LP strong
+      duality IS proved in-repo, unconditionally, as
+      `QOU.Optimization.lp_strong_duality_uncond` (via Farkas from
+      `QOU.Mathlib.isClosed_coneSpan`). It cannot discharge this field because the
+      carrier records the objective values as free reals with no feasibility or
+      optimality data; discharging it needs the carrier to carry `(A, a, c, x)` with
+      `PrimalOptimal`. Bean `qou-9h4t`.) -/
   strong_duality : primal_obj = dual_obj
 
 /-- **Confinement Frobenius reciprocity** ([`prop:confinement-frobenius-reciprocity`]).
@@ -101,7 +107,7 @@ together with the LP supporting facts: (i) nontrivial primal optimum,
 (ii) positive net dual `y₀* > 0`, (iii) nonempty active set, (iv) active ⇔
 positive shadow price, (v) strong duality `primal_obj = dual_obj`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality + complementary slackness / KKT)
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md
 theorem confinement_frobenius_reciprocity
     [ctx : ConfinementFrobeniusReciprocityContext] :
     (∀ O : ctx.Observable,

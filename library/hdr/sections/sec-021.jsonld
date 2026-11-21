@@ -9,17 +9,20 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
-  "pageStart": 45,
-  "pageEnd": 48,
+  "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
+  "pageStart": 41,
+  "pageEnd": 44,
   "contains": [
     "library/hdr/blocks/prose-sec-021",
-    "library/hdr/blocks/thm-sec-021-01",
-    "library/hdr/blocks/remark-sec-021-02",
-    "library/hdr/blocks/conj-sec-021-03",
-    "library/hdr/blocks/remark-sec-021-04"
+    "library/hdr/blocks/rem-sec-021-01",
+    "library/hdr/blocks/prop-sec-021-02",
+    "library/hdr/blocks/prop-sec-021-03",
+    "library/hdr/blocks/rem-sec-021-04",
+    "library/hdr/blocks/ex-sec-021-05",
+    "library/hdr/blocks/prop-sec-021-06",
+    "library/hdr/blocks/rem-sec-021-07"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
   "provenance": "ingested"
 }

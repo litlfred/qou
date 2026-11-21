@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.862
 latex_coverage_ratio: 0.98
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 []{#subsec:cumulants label="subsec:cumulants"} The notion of cumulants (or semi-invariants) was introduced to describe the convolution of measures in the classical probability theory. For more details about cumulants in the classical and non-commutative probability theory we refer to overview articles [@Hald-EarlyHistoryCumulants; @MattnerWhat-are-cumulants; @Lehner2002cumulantsI].
 

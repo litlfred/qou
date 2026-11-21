@@ -1,0 +1,61 @@
+526 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+while the measure obtained from jz by conditioning X; to be 1 is the measure
+on 2I")\{4 with generating polynomial
+
+lim Qu 2; +++ 2n) _ IigulZ1,+++52n) ePaaa.
+
+200 Iul21v- 2) ear, 58 Oigu(l,.--, 1)
+
+Note that these conditional probability measures are well defined provided
+that the denominators appearing in the above expressions are non-zero.
+
+(iv) External fields (as pointed out in II.A], this name is borrowed from the
+Ising model). If pp € Bn has generating polynomial g,,(z1,...,2n) € Pn and
+aj, 1 <i <n, are non-negative real numbers, then the measure obtained
+from js by imposing the external field (a;,...,@,) is the measure in $,,
+with generating polynomial
+
+Qu (121, «++, An2n) Pa,
+Gu(@1,---54n)
+which is well defined provided that g,,(a1,...,an) 4 0.
+
+(v) Symmetrization. Denote the symmetric group on n elements by G,,. For
+ao € G, and S C [n] let o(S) = {o(s) : s € S}. Given pp € Pn define a
+measure (js) € Py by setting o(j)(S) = w(o(S)), S C [n]. The (full or
+complete) symmetrization of ju is the measure
+
+1
+Hs = > a(t) € Bn.
+
+cEGn
+
+Note that the generating polynomial of ju, is
+
+1 1 7
+Iu, (2) = nl > Jo(u) (2) = a > > g(s)2°
+
+o€Gn o€Gy SC[n]
+
+(2) n
+
+where Vscin} agsz° = g,(z) and ex, 0 < k <n, is the k-th elementary
+symmetric function (see [72] §3.4] for a proof of the last identity).
+
+(vi) Partial symmetrization. Let w € Pn, O< AO< 1,1 <i<j <n, and
+T = (ij) € Gy be the transposition that permutes i and j. The partial
+symmetrization of j. with respect to 7 and @ is the measure
+
+(3) wr? = On + (1 8)r(H) E Bn
+whose generating polynomial is obviously g,,-.6 = 9g, + (1 —®)gr(u) © Pn-
+
+Remark 2.1. All these “closure” operations are in fact well defined for arbitrary
+complex measures on 2") if one drops the normalization factors appearing in the
+denominators of the above expressions (these were used just to make sure that the
+resulting measures are again probability measures). In §4] we will actually use the
+partial symmetrization procedure for complex measures on 2!"),
+
+The corresponding “closure” operations for generating polynomials — i.e., prod-
+ucts, projections, conditioning, external fields, symmetrization, partial symmetriza-
+tion and truncations (cf. Definition in 42.5)— are defined simply by considering
+the resulting polynomials for each of the operations discussed above for measures.

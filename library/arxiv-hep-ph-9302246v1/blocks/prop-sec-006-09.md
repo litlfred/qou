@@ -1,0 +1,1 @@
+The result we obtain for the full width of the $a_1$ axial-vector from the results in the column Prediction 1 is $\Gamma_{\rm full}\,=$ 261 MeV, to be compared with the experimental value quoted at the beginning of this Section (350 MeV $<$ $\left(\Gamma_{\rm full} \right)_{\rm exp}$ $<$ 450 MeV).

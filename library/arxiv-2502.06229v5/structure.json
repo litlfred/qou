@@ -8,7 +8,7 @@
   "pages": 35,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T18:29:17Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -27,7 +27,7 @@
    "OF QUANTUM GROUPS AND OF VERTEX OPERATOR ALGEBRAS",
    "VIA QUANTUM GAUGE GROUPS"
   ],
-  "abstract": "This paper establishes connections between a problem posed by Doplicher and Roberts in the 1990s regarding construction of quantum gauge groups associated to the category of localized endomorphisms of conformal nets, and a problem by Huang con- cerning a direct proof of the Finkelberg equivalence theorem. We also unify the treatment of high dimensional algebraic QFT with the low dimensional case, resuming the study of Mack-Schomerus quantum symmetries, for which we previously proved a simplifying Hopf algebra property and studied the unitary structure of our global quantum gauge groups AW (g, q) of the WZW model. This program leads us to a solution of Huang\u2019s problem in the setting of vertex operator algebras. Building upon our previous results, our approach utilizes a quantum gauge group framework to implement a unitary weak quasi-Hopf algebra structure on the Zhu algebra via a Drinfeld twist and Wenzl\u2019s de- quantization continuous curve derived from the unitary coboundary weak Hopf algebra AW (g, q) previously associated to the quantum group fusion category. Our construction is of an analytic nature, and was originally inspired by Drinfeld-Kohno theorem for Drinfeld category. Using this framework, in our previous work we established an independent rigid braided tensor structure on the module category of the affine vertex operator algebra Vgk at positive integer level, providing a braided tensor equivalence with the modular fusion category of the corresponding quantum group at root of unity for all Lie types. In this paper, for the Lie types A, B, C, D, and G2 we completely identify our structure with the Huang-Lepowsky braided tensor structure. The last step of the complete identifica- tion relies on the generating property of the braid group representation in the centralizer algebras of the tensor powers of the fundamental representation of the quantum group, which is currently known for these stated Lie types. This reduction builds on uniqueness results of braid",
+  "abstract": "This paper establishes connections between a problem posed by Doplicher and Roberts in the 1990s regarding construction of quantum gauge groups associated to the category of localized endomorphisms of conformal nets, and a problem by Huang con- cerning a direct proof of the Finkelberg equivalence theorem. We also unify the treatment of high dimensional algebraic QFT with the low dimensional case, resuming the study of Mack-Schomerus quantum symmetries, for which we previously proved a simplifying Hopf algebra property and studied the unitary structure of our global quantum gauge groups AW (g, q) of the WZW model. This program leads us to a solution of Huang’s problem in the setting of vertex operator algebras. Building upon our previous results, our approach utilizes a quantum gauge group framework to implement a unitary weak quasi-Hopf algebra structure on the Zhu algebra via a Drinfeld twist and Wenzl’s de- quantization continuous curve derived from the unitary coboundary weak Hopf algebra AW (g, q) previously associated to the quantum group fusion category. Our construction is of an analytic nature, and was originally inspired by Drinfeld-Kohno theorem for Drinfeld category. Using this framework, in our previous work we established an independent rigid braided tensor structure on the module category of the affine vertex operator algebra Vgk at positive integer level, providing a braided tensor equivalence with the modular fusion category of the corresponding quantum group at root of unity for all Lie types. In this paper, for the Lie types A, B, C, D, and G2 we completely identify our structure with the Huang-Lepowsky braided tensor structure. The last step of the complete identifica- tion relies on the generating property of the braid group representation in the centralizer algebras of the tensor powers of the fundamental representation of the quantum group, which is currently known for these stated Lie types. This reduction builds on uniqueness results of braid",
   "docinfo": {
    "Title": "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups",
    "Author": "Claudia Pinzari",
@@ -55,151 +55,530 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Historical Background: Conformal Field Theories and Quantum Groups",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Huang's Problem",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Inspiration from Algebraic Quantum Field Theory",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Quantum symmetries and primary field reconstruction in low-dimensional AQFT",
    "page": 5,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Our Approach to the two Problems: Quantum Gauge Groups and Drinfeld Twists",
    "page": 6,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Main theorem",
    "page": 8,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Unitary coboundary weak Hopf algebras AW(g, q)",
    "page": 10,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "The main result",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "The general plan of our proof",
    "page": 14,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Outline of the construction of a weak quasi-tensor structure on the Zhu algebra A(Vgk) via Wenzl quantisation isomorphism and Drinfeld twist method.",
    "page": 16,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Main tools to prove (a): How to make Rep(A(Vgk)) into a braided tensor category with Huang-Lepowsky structure.",
    "page": 17,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "A central method in the quantum group and VOA setting: the fundamental generating representation V for all Lie types, following H.Wenzl.",
    "page": 19,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Main tools to prove (b), (c): Analogies and differences between Drinfeld-Kohno Theorem and Theorem 29.4 in CGP",
    "page": 20,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Differences between the original Drinfeld-Kohno theorem and our analogue Theorem 29.4 in the treatment of the associativity morphisms, to prove (d).",
    "page": 21,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Main tools to prove (d): cohomological reduction of a braided tensor structure of a category with a generating object V to braid group duality of V",
    "page": 23,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "The role of braid group duality for the generating object in determining the full braided tensor structure for the proof of (d).",
    "page": 24,
    "source": "outline",
-   "number": "11"
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "More remarks from the viewpoint of Doplicher-Roberts reconstruction in AQFT on the relevance of duality for the fundamental representation in the construction of quantum gauge group",
    "page": 26,
    "source": "outline",
-   "number": "12"
+   "number": "12",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "Outlook",
    "page": 27,
    "source": "outline",
-   "number": "13"
+   "number": "13",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Appendix A. Historical remarks on rigidity in affine Lie algebra and vertex operator algebra categories",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "References",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   }
  ],
  "toc_source": "outline",
  "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -209,7 +588,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 2255,
-   "n_words": 346
+   "n_words": 346,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-1-introduction",
@@ -219,7 +600,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-11-historical-background-conformal-field-theorie",
@@ -229,7 +612,9 @@
    "page_start": 1,
    "page_end": 4,
    "n_chars": 9218,
-   "n_words": 1430
+   "n_words": 1430,
+   "label_start": null,
+   "label_end": "4"
   },
   {
    "id": "sec-002-13-inspiration-from-algebraic-quantum-field-theo",
@@ -239,7 +624,9 @@
    "page_start": 4,
    "page_end": 5,
    "n_chars": 4346,
-   "n_words": 709
+   "n_words": 709,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-003-14-quantum-symmetries-and-primary-field-reconstr",
@@ -249,7 +636,9 @@
    "page_start": 5,
    "page_end": 6,
    "n_chars": 3310,
-   "n_words": 463
+   "n_words": 463,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-004-15-our-approach-to-the-two-problems-quantum-gaug",
@@ -259,7 +648,9 @@
    "page_start": 6,
    "page_end": 8,
    "n_chars": 6806,
-   "n_words": 1053
+   "n_words": 1053,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
    "id": "sec-005-16-main-theorem",
@@ -269,7 +660,9 @@
    "page_start": 8,
    "page_end": 10,
    "n_chars": 4207,
-   "n_words": 684
+   "n_words": 684,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
    "id": "sec-006-2-unitary-coboundary-weak-hopf-algebras-awg-q",
@@ -279,7 +672,9 @@
    "page_start": 10,
    "page_end": 12,
    "n_chars": 7995,
-   "n_words": 1360
+   "n_words": 1360,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
    "id": "sec-007-3-the-main-result",
@@ -289,7 +684,9 @@
    "page_start": 12,
    "page_end": 14,
    "n_chars": 4034,
-   "n_words": 665
+   "n_words": 665,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
    "id": "sec-008-4-the-general-plan-of-our-proof",
@@ -298,8 +695,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 5681,
-   "n_words": 931
+   "n_chars": 5678,
+   "n_words": 930,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
    "id": "sec-009-5-outline-of-the-construction-of-a-weak-quasi-te",
@@ -308,8 +707,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 5292,
-   "n_words": 873
+   "n_chars": 5360,
+   "n_words": 884,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
    "id": "sec-010-6-main-tools-to-prove-a-how-to-make-repavgk-into",
@@ -319,7 +720,9 @@
    "page_start": 17,
    "page_end": 19,
    "n_chars": 4537,
-   "n_words": 764
+   "n_words": 764,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
    "id": "sec-011-7-a-central-method-in-the-quantum-group-and-voa",
@@ -329,7 +732,9 @@
    "page_start": 19,
    "page_end": 20,
    "n_chars": 5260,
-   "n_words": 843
+   "n_words": 843,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
    "id": "sec-012-8-main-tools-to-prove-b-c-analogies-and-differen",
@@ -339,7 +744,9 @@
    "page_start": 20,
    "page_end": 21,
    "n_chars": 3542,
-   "n_words": 568
+   "n_words": 568,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
    "id": "sec-013-9-differences-between-the-original-drinfeld-kohn",
@@ -348,8 +755,10 @@
    "level": 1,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 3942,
-   "n_words": 613
+   "n_chars": 3938,
+   "n_words": 612,
+   "label_start": "21",
+   "label_end": "23"
   },
   {
    "id": "sec-014-10-main-tools-to-prove-d-cohomological-reduction",
@@ -358,8 +767,10 @@
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 4060,
-   "n_words": 637
+   "n_chars": 4118,
+   "n_words": 646,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
    "id": "sec-015-11-the-role-of-braid-group-duality-for-the-gener",
@@ -368,8 +779,10 @@
    "level": 1,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 6231,
-   "n_words": 1078
+   "n_chars": 6292,
+   "n_words": 1089,
+   "label_start": "24",
+   "label_end": "26"
   },
   {
    "id": "sec-016-12-more-remarks-from-the-viewpoint-of-doplicher",
@@ -379,7 +792,9 @@
    "page_start": 26,
    "page_end": 27,
    "n_chars": 3809,
-   "n_words": 631
+   "n_words": 631,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
    "id": "sec-017-13-outlook",
@@ -388,8 +803,10 @@
    "level": 1,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 4464,
-   "n_words": 710
+   "n_chars": 4461,
+   "n_words": 709,
+   "label_start": "27",
+   "label_end": "29"
   },
   {
    "id": "sec-018-appendix-a-historical-remarks-on-rigidity-in-aff",
@@ -398,8 +815,10 @@
    "level": 1,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 7879,
-   "n_words": 1290
+   "n_chars": 7948,
+   "n_words": 1301,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
    "id": "sec-019-references",
@@ -409,7 +828,9 @@
    "page_start": 31,
    "page_end": 35,
    "n_chars": 14760,
-   "n_words": 2191
+   "n_words": 2191,
+   "label_start": "31",
+   "label_end": "35"
   }
  ],
  "diagnostics": {
@@ -417,7 +838,14 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 21,
-  "chars_total": 111628
+  "chars_total": 111874,
+  "furniture_lines_stripped": 0
  }
 }

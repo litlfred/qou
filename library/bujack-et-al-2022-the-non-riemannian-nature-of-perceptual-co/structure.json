@@ -8,7 +8,7 @@
   "pages": 10,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -122,7 +122,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Diminishing returns imply that large color di\ufb00erences appear less than the sum of their parts. This image is a purely \ufb01gurative illustration of how this phenomenon could potentially occur, even though this speci\ufb01c geometry is not suggested in this paper. If an isoluminant plane through color space (",
+   "title": "Diminishing returns imply that large color diﬀerences appear less than the sum of their parts. This image is a purely ﬁgurative illustration of how this phenomenon could potentially occur, even though this speciﬁc geometry is not suggested in this paper. If an isoluminant plane through color space (",
    "page": 2,
    "confidence": 0.9,
    "evidence": [
@@ -148,7 +148,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Thurstonian distance perception (58) of a triad modeled with (solid) and without (dashed) additivity with an example scaling function f(\u0394\u03c8) =",
+   "title": "Thurstonian distance perception (58) of a triad modeled with (solid) and without (dashed) additivity with an example scaling function f(Δψ) =",
    "page": 3,
    "confidence": 0.9,
    "evidence": [
@@ -161,7 +161,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Two triads with the same di\ufb00erence in di\ufb00erences \u0394d = 12.5 in",
+   "title": "Two triads with the same diﬀerence in diﬀerences Δd = 12.5 in",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -174,7 +174,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Degree of consensus is the absolute value of selecting a given test minus 50%. The negative slope of the lines indicates that participants\u2019 responses tend toward chance with increasing average di\ufb00erence in the triad, despite the di\ufb00erence of di\ufb00erences remaining constant. A 95% CI around each line i",
+   "title": "Degree of consensus is the absolute value of selecting a given test minus 50%. The negative slope of the lines indicates that participants’ responses tend toward chance with increasing average diﬀerence in the triad, despite the diﬀerence of diﬀerences remaining constant. A 95% CI around each line i",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -187,7 +187,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "Coe\ufb03cients of the regression line Coe\ufb03cient",
+   "title": "Coeﬃcients of the regression line Coeﬃcient",
    "page": 5,
    "confidence": 0.8,
    "evidence": [
@@ -212,7 +212,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Optimal perceptual function g from Eq. 17 mapping L\u2217values to perceived grayness, \u03c8. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
+   "title": "Optimal perceptual function g from Eq. 17 mapping L∗values to perceived grayness, ψ. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -225,7 +225,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Optimal di\ufb00erence scaling function f from Eq. 17 using the spline with four control points. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
+   "title": "Optimal diﬀerence scaling function f from Eq. 17 using the spline with four control points. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -238,7 +238,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Optimal di\ufb00erence scaling functions using the hypothesized functions. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
+   "title": "Optimal diﬀerence scaling functions using the hypothesized functions. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -264,7 +264,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Representation of the triads used for simulations and experimental study. Each point represents \ufb01ve distinct experimental triads, each with a",
+   "title": "Representation of the triads used for simulations and experimental study. Each point represents ﬁve distinct experimental triads, each with a",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -384,22 +384,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 6683,
-   "n_words": 1046,
+   "page_end": 3,
+   "n_chars": 15027,
+   "n_words": 2367,
    "label_start": "1",
-   "label_end": "2"
+   "label_end": "3"
   },
   {
    "id": "sec-000-experiment",
    "number": null,
    "title": "Experiment",
    "level": 1,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 4,
-   "n_chars": 11764,
-   "n_words": 1888,
-   "label_start": "2",
+   "n_chars": 3197,
+   "n_words": 542,
+   "label_start": "3",
    "label_end": "4"
   },
   {
@@ -409,8 +409,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 7384,
-   "n_words": 1213,
+   "n_chars": 7327,
+   "n_words": 1208,
    "label_start": "4",
    "label_end": "5"
   },
@@ -421,8 +421,8 @@
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 5928,
-   "n_words": 993,
+   "n_chars": 5842,
+   "n_words": 982,
    "label_start": "5",
    "label_end": "6"
   },
@@ -432,22 +432,22 @@
    "title": "Limitations and Mitigations",
    "level": 1,
    "page_start": 6,
-   "page_end": 7,
-   "n_chars": 3467,
-   "n_words": 566,
+   "page_end": 8,
+   "n_chars": 6574,
+   "n_words": 1094,
    "label_start": "6",
-   "label_end": "7"
+   "label_end": "8"
   },
   {
    "id": "sec-004-discussion",
    "number": null,
    "title": "Discussion",
    "level": 1,
-   "page_start": 7,
+   "page_start": 8,
    "page_end": 8,
-   "n_chars": 5310,
-   "n_words": 850,
-   "label_start": "7",
+   "n_chars": 2120,
+   "n_words": 318,
+   "label_start": "8",
    "label_end": "8"
   },
   {
@@ -457,8 +457,8 @@
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 17340,
-   "n_words": 2560,
+   "n_chars": 17139,
+   "n_words": 2539,
    "label_start": "8",
    "label_end": "10"
   }
@@ -478,6 +478,7 @@
    "items": []
   },
   "sections": 7,
-  "chars_total": 57876
+  "chars_total": 57226,
+  "furniture_lines_stripped": 50
  }
 }

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-recursive-atom-knot-atlas-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:recursive-atom-knot-atlas-interpretation",
+  "kind": "remark",
+  "title": "Provenance of the recursive atom-knot atlas entries",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-recursive-atom-knot-atlas",
+    "papers/quantum-observable-universe/blocks/def-confined-particle"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-recursive-atom-knot-atlas",
+  "tags": [
+    "atlas",
+    "build-pipeline",
+    "appendix"
+  ],
+  "text": "recursive-atom-knot-atlas-interpretation.md",
+  "provenance": "authored"
+}

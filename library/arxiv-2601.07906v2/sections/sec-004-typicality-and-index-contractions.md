@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07906v2
-doc_title: "March 2026 A universal sum over topologies in 3d gravity"
+doc_title: "A universal sum over topologies in 3d gravity"
 section_id: sec-004-typicality-and-index-contractions
 section_title: "Typicality and index contractions"
 section_number: null
 pages: 16-21
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
-doc_brief: "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.912
+latex_coverage_ratio: 0.981
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{sec:typicality}
 In the previous subsection, we have stated the requirements of crossing symmetry and modular invariance on the moments of CFT data, which were clearly based on the same requirements as in the regular CFT bootstrap. Now we will state an additional assumption on the ensemble, to which we refer as \emph{typicality}, which has its origin in the theory of quantum chaos.

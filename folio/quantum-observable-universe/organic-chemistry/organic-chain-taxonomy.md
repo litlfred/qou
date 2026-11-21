@@ -17,4 +17,4 @@ Raising the bond order by one unit consumes one free linking site on each adjace
 Whether the backbone closes into a ring shifts the hydrogen count by a fixed offset. The total degree of unsaturation is $d = \sum_i (k_i - 1)$.
 
 **Aromatic rings.**
-A closed ring with $d = N/2$ is aromatic. The secondary Hopf ring formed by extra trefoils is closed. We conjecture that Hückel's $4n + 2$ rule corresponds to a sub-Hopf link closure condition.
+A closed ring with $d = N/2$ is aromatic. The secondary Hopf ring formed by extra trefoils is closed. The conjecture is that Hückel's $4n + 2$ rule corresponds to a sub-Hopf link closure condition.

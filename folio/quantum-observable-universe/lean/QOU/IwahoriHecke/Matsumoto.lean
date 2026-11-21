@@ -36,7 +36,7 @@ Coxeter system: `Bₙ`, `Dₙ`, `E₆₇₈`, `F₄`, `H₃`, `H₄`, every `I�
 -- Ref: [matsumoto1964] DOI 10.1090/S0002-9904-1964-11211-9
 -- Ref: [tits1969] Le problème des mots dans les groupes de Coxeter
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, Thm 3.3.1
--- Ref: [manuscript] beans qou-06h7, qou-1u90
+-- Ref: [leitner2026] beans qou-06h7, qou-1u90
 -/
 
 namespace QOU.IwahoriHecke.Matsumoto

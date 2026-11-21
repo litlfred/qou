@@ -41,6 +41,25 @@ except ImportError:
     # provider (no computations/ on sys.path).
     from qou_substrate.constants import q_int  # type: ignore[import-not-found]
 
+# `q_int` is EXACT mpmath at both definition sites as of 2026-09-19
+# (bean `qou-oiz3`); this import stays anchor-aware because the
+# `ideal`/muon branch of q_parameter redefines it over the muon anchor.
+#
+# That alone is NOT enough. mpmath rounds every result to the CONTEXT's
+# `mp.prec`, not to the operands', so an accumulator seeded as
+# `mp.mpf("1.0")` under a bare-import ambient `mp.dps` of 15 throws away
+# the exact factors one multiplication at a time. Every primitive below
+# therefore runs inside an explicit precision context with a floor, and
+# rounds its return to that floor rather than to the ambient.
+_DPS_FLOOR = 50
+
+
+def _wdps():
+    """Working precision for the q-combinatorics primitives: the
+    caller's, but never below the 50 dps the `_MP` constant family
+    carries. Guard digits are added by the callers."""
+    return max(mp.mp.dps, _DPS_FLOOR)
+
 
 def q_hook_product(partition):
     """q-hook product H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q, evaluated numerically
@@ -57,21 +76,27 @@ def q_hook_product(partition):
         return mp.mpf("1.0")
     width = lam[0]
     conj = [sum(1 for p in lam if p > j) for j in range(width)]
-    H = mp.mpf("1.0")
-    for i, li in enumerate(lam):
-        for j in range(li):
-            arm = li - j - 1
-            leg = conj[j] - i - 1
-            H *= q_int(arm + leg + 1)
-    return H
+    d = _wdps()
+    with mp.workdps(d + 10):
+        H = mp.mpf("1.0")
+        for i, li in enumerate(lam):
+            for j in range(li):
+                arm = li - j - 1
+                leg = conj[j] - i - 1
+                H *= q_int(arm + leg + 1)
+    with mp.workdps(d):
+        return +H
 
 
 def q_factorial(n):
     """[n]_q! = [1]_q · [2]_q · ... · [n]_q (symbolic in q)."""
-    f = mp.mpf("1.0")
-    for i in range(1, n + 1):
-        f *= q_int(i)
-    return f
+    d = _wdps()
+    with mp.workdps(d + 10):
+        f = mp.mpf("1.0")
+        for i in range(1, n + 1):
+            f *= q_int(i)
+    with mp.workdps(d):
+        return +f
 
 
 def partitions_of(n):
@@ -130,7 +155,11 @@ def q_dimension(partition):
     n = sum(partition)
     if n == 0:
         return mp.mpf("1.0")
-    return q_factorial(n) / q_hook_product(partition)
+    d = _wdps()
+    with mp.workdps(d + 10):
+        val = q_factorial(n) / q_hook_product(partition)
+    with mp.workdps(d):
+        return +val
 
 
 def wedderburn_weight(partition):
@@ -138,7 +167,11 @@ def wedderburn_weight(partition):
     n = sum(partition)
     if n == 0:
         return mp.mpf("1.0")
-    return q_dimension(partition)**2 / q_factorial(n)
+    d = _wdps()
+    with mp.workdps(d + 10):
+        val = q_dimension(partition)**2 / q_factorial(n)
+    with mp.workdps(d):
+        return +val
 
 
 # partition_jet_depth (EXPLORATORY, in _deprecated/hecke_core_legacy.py)

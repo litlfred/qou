@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2302.08363v2
-doc_title: "Prepared for submission to JHEP On the structure of trans-series in quantum field theory"
+doc_title: "On the structure of trans-series in quantum field theory"
 section_id: sec-005-the-free-energy-of-integrable-models
 section_title: "The free energy of integrable models"
 section_number: null
 pages: 11-14
 source_pdf: 2302.08363v2.pdf
 source_sha256: c2244e03b17048fb
-doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
-latex_coverage_ratio: 0.823
+latex_coverage_ratio: 0.995
+doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
 ---
 Two-dimensional, integrable, asymptotically free quantum field theories are an interesting family of toy 
 models where one can obtain an explicit but highly non-trivial trans-series 

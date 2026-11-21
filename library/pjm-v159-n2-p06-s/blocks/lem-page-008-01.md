@@ -1,0 +1,1 @@
+Suppose that the {X* a: i e 3(a)} are, for each a, in- dependent elements of the dual of SM^. Then, for any b and c, {Y*a b c: (a, b, c) e A, i e 3(a)} are independent. Proof Suppose Σi,a*i,aYUb,c = °

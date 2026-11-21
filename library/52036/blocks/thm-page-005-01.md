@@ -1,0 +1,1 @@
+For each relatively prime pair of inte- gers p and q greater than 1, there is a (p,q)-torus knot Tq C S® that is critical for the Mébius en- ergy E. The knot Tpq is a principal orbit of the S1-action Gp defined above.

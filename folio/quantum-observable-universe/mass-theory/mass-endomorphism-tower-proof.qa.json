@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad399d2d6b46",
+          "ts": "d125492a6c70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.455Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: ref is sibling-only (no library decl). The md (md:1-16) states an evaluation formula for 𝔪(ϱ) with the pair sum over all 0≤i<j≤n-2. The Lean instead (a) takes that formula as a definition (`massPoly`, lean:81-85), so the claimed value is a definition, and (b) proves a different proposition, positivity (lean:140-143), which the md never states. (c) The pair sum runs only over adjacent pairs `∑ i : Fin (n - 1)` with V(i)·V(i+1) (lean:67-69, 85), not over all i<j. (d) It indexes V by Fin n where the md has n-1 generators. Positivity rests on the extra hypothesis `li2q_nonpos_on_neg : ∀ x, 0 ≤ x → li2q (-x) ≤ 0` (lean:103), stated for every x ≥ 0. The series in md:16, Σ z^n/(n[n]_q), has finite radius (about q), so the md's own Li₂^q cannot satisfy it globally. S↔P: there is no derivation of the \"mass =\" formula; the prf is model narrative. Problems: (1) \"their combined weight is z², not 2z²\" (prf:72) is asserted, though each of σ_iσ_{i+1} and σ_{i+1}σ_i has tr_M = z². (2) \"triples and higher generator subsets are not independent at level n\" (prf:61-62) is false as algebra: σ_0σ_1σ_2 is a reduced-word basis element of H_4 (the NF basis is linearly independent). (3) The statement carries an empirical claim, md:20: \"The Faddeev Φ_q form was empirically incompatible with isospin symmetry at q_0 and created massive mirror-nucleus pathologies\". The q-dilog subproof (prf:23-43) is correct.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 95,
           "depth": 25,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1372,7 +1388,7 @@
         },
         "reviewed_at": "2026-08-21T21:40:10.577Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Full read. Both denials are substantive: 'their combined weight is z^2, not 2z^2' (the point of the adjacent-pair argument) and 'subsumed \u2014 not into level-n singletons and pairs, but into the level-(n+1) jet contribution' (a real distinction between two absorption mechanisms)."
+        "evidence": "Full read. Both denials are substantive: 'their combined weight is z^2, not 2z^2' (the point of the adjacent-pair argument) and 'subsumed — not into level-n singletons and pairs, but into the level-(n+1) jet contribution' (a real distinction between two absorption mechanisms)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1544,7 +1560,7 @@
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "major",
         "evidence": "A whole paragraph narrates the document's own revision history in scholarly prose: 'Earlier versions of this proof identified the integral with the compact quantum dilogarithm Phi_q(V) = prod (1 - q^{-k}V)^{-1}, whose logarithm uses asymmetric q-integers ... so Li_2^q is the correct identification.' The mathematical content (symmetric [n]_q vs asymmetric (q^n - 1), and why the Hecke setting forces the symmetric form) is worth keeping; the 'earlier versions of this proof' framing is not.",
-        "notes": "Proposed (structural \u2014 the paragraph is 4 sentences): keep the mathematics as a scope remark ('The compact quantum dilogarithm log Phi_q is a q-deformation of the same classical dilogarithm but uses the asymmetric q-integers (q^n - 1); the Hecke setting requires the symmetric [n]_q, hence Li_2^q.') and migrate the 'earlier versions' provenance to authorNotes in the .ts. Same defect and same fix as markov-trace-product-proof.md."
+        "notes": "Proposed (structural — the paragraph is 4 sentences): keep the mathematics as a scope remark ('The compact quantum dilogarithm log Phi_q is a q-deformation of the same classical dilogarithm but uses the asymmetric q-integers (q^n - 1); the Hecke setting requires the symmetric [n]_q, hence Li_2^q.') and migrate the 'earlier versions' provenance to authorNotes in the .ts. Same defect and same fix as markov-trace-product-proof.md."
       }
     ],
     "trap-thesis-restatement": [
@@ -1705,6 +1721,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:40:11.159Z",
+  "updated_at": "2026-11-15T21:57:27.455Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

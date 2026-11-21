@@ -18,8 +18,8 @@
   the only thing this file needs to know about them is `err ≤ model`, which is
   what makes the lower bound non-vacuous.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevFullSum.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevLogAsymptotic.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevFullSum.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevLogAsymptotic.lean
 -/
 import QOU.Knot.KashaevFullSum
 import QOU.Knot.KashaevLogAsymptotic

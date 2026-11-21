@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,7 +39,7 @@
     "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-024"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
     "title_source": "corroborated",

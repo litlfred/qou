@@ -8,28 +8,28 @@
   "pages": 52,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/ant.2020.14.1801",
-  "title": "Motivic Gauss\u2013Bonnet formulas",
+  "title": "Motivic Gauss–Bonnet formulas",
   "authors_raw": "Marc Levine and Arpon Raksit",
   "title_lines": [
-   "Motivic Gauss\u2013Bonnet formulas"
+   "Motivic Gauss–Bonnet formulas"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "pypdf"
   },
-  "title_raw": "Motivic Gauss\u2013Bonnet formulas",
+  "title_raw": "Motivic Gauss–Bonnet formulas",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
    "heading": "msp",
-   "text": "Motivic Gauss\u2013Bonnet formulas",
+   "text": "Motivic Gauss–Bonnet formulas",
    "corroborated_by": [],
    "browser_print": false
   }
@@ -52,7 +52,7 @@
   },
   {
    "level": 2,
-   "title": "X+ \u2208SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic \u03c7(X/k) \u2208EndSH(k)(1k), de\ufb01ned as the composition",
+   "title": "X+ ∈SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition",
    "page": 1,
    "source": "inferred",
    "number": "T",
@@ -108,7 +108,7 @@
   },
   {
    "level": 1,
-   "title": "Motivic Gauss\u2013Bonnet",
+   "title": "Motivic Gauss–Bonnet",
    "page": 26,
    "source": "inferred",
    "number": "5",
@@ -670,8 +670,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 818,
-   "n_words": 114,
+   "n_chars": 815,
+   "n_words": 113,
    "label_start": "1801",
    "label_end": "1801"
   },
@@ -682,7 +682,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 870,
+   "n_chars": 878,
    "n_words": 135,
    "label_start": "1801",
    "label_end": "1801"
@@ -690,7 +690,7 @@
   {
    "id": "sec-001-t-x-shk-is-dualizable-in-particular-we-can-assoc",
    "number": "T",
-   "title": "X+ \u2208SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic \u03c7(X/k) \u2208EndSH(k)(1k), de\ufb01ned as the composition",
+   "title": "X+ ∈SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition",
    "level": 2,
    "page_start": 1,
    "page_end": 4,
@@ -729,22 +729,22 @@
    "title": "Projective pushforward in twisted cohomology",
    "level": 1,
    "page_start": 21,
-   "page_end": 25,
-   "n_chars": 6197,
-   "n_words": 1148,
+   "page_end": 26,
+   "n_chars": 8036,
+   "n_words": 1486,
    "label_start": "1821",
-   "label_end": "1825"
+   "label_end": "1826"
   },
   {
    "id": "sec-005-5-motivic-gaussbonnet",
    "number": "5",
-   "title": "Motivic Gauss\u2013Bonnet",
+   "title": "Motivic Gauss–Bonnet",
    "level": 1,
-   "page_start": 25,
+   "page_start": 26,
    "page_end": 27,
-   "n_chars": 3837,
-   "n_words": 682,
-   "label_start": "1825",
+   "n_chars": 2004,
+   "n_words": 344,
+   "label_start": "1826",
    "label_end": "1827"
   },
   {
@@ -823,6 +823,7 @@
    "items": []
   },
   "sections": 12,
-  "chars_total": 110807
+  "chars_total": 110818,
+  "furniture_lines_stripped": 1
  }
 }

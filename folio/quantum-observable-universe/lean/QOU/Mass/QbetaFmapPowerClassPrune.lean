@@ -50,7 +50,7 @@ the dep was recompiled from current source before the check). The hand-audit
 was confirmed correct: the only earlier obstacle was the stale dep olean, not
 the proofs.
 
--- Ref: [manuscript] docs/scope/2026-07-06-qbeta-fmap-power-class-pincer-scope.md §4.2–4.3
+-- Ref: [leitner2026] docs/scope/2026-07-06-qbeta-fmap-power-class-pincer-scope.md §4.2–4.3
 -/
 import Mathlib.Tactic
 import QOU.Mass.ComplexVolumeZeta4Partner

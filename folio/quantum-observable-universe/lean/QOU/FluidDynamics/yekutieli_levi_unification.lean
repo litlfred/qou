@@ -2,131 +2,80 @@ import Mathlib.Algebra.Module.Basic
 import Mathlib.Algebra.NoZeroSMulDivisors.Basic
 
 /-!
-# QOU.FluidDynamics.yekutieli_levi_unification — obstruction ⟺ Levi non-degeneracy
+# QOU.FluidDynamics.yekutieli_levi_unification — obstruction ⟺ local cohomology
 
-The categorical face of the **Levi dichotomy** (`conj:levi-degeneracy`), assembled
-from the Yekutieli obstruction tower
-([`ns-obstruction-tower`](../../../quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md),
-steps (c)–(e)) and part of the q-NS classical-gap program
-([`docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md`](../../../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md)).
+**Re-scoped 2026-11-15 (owner decision, PR #7747, bean `qou-fm7s`).** This module
+used to state the "Yekutieli–Levi unification" `κ_n|_Σ ≠ 0 ⟺ Levi form
+non-degenerate at p`, with branch (A) "non-degenerate ⇒ obstruction survives ⇒
+NS-singular" and branch (B) "sheet ⇒ obstruction vanishes ⇒ NS-regular". Both
+rested on step (d) of `prop:ns-obstruction-tower`,
+`H¹_{𝔪_p}(A) ≠ 0 ⟺ λ∥(p) > 0 ∧ λ⊥(p) > 0`, which is **withdrawn**:
 
-**Scope discipline (owner directive 2026-07-24).** Every statement is *given a
-QOU*: `κ_n|_Σ`, `leviNonDegenerate`, and the local cohomology are the QOU's own
-categorical data. This is a statement *about QOUs*, not about the classical `ℝ³`
-Navier–Stokes problem.
+* with `Θ = f·ξ♭` (owner decision Q1, `prop:core-levi-form`) the Levi datum of
+  the vorticity plane field in dimension 3 is the single scalar `ξ·curl ξ`, so the
+  two eigenvalues `λ∥, λ⊥` are undefined;
+* branch (A) of `conj:levi-degeneracy` is refuted under that reading by the
+  Beltrami solution `u = e^{−νt}(sin z, cos z, 0)` on `T³`
+  (`beltrami_refutes_branchA`).
 
-## The unification
+Removed: the fields `leviNonDegenerate` and `localCohom_iff_levi` (step (d)), and
+the theorems `ns_obstruction_iff_levi`, `levi_nondegenerate_of_obstruction`
+(branch A) and `ns_regular_of_sheet` (branch B). No Lean declaration in the
+corpus consumed them. What remains is steps (c)/(e) only, and the conclusion is
+the local-cohomology statement, not a Levi or regularity statement.
 
-`ns-obstruction-tower` establishes, at a collision point `p ∈ Σ` of an
-anti-parallel vortex pair:
-
-* **(e)** the leading NS obstruction on the collision locus is
-  `κ_n|_Σ = lk(ϱ₁, ϱ₂) · e(ξ)|_Σ` (plus a subleading jet correction `δ_n`);
-* **(c)** the local cohomology `H¹_{𝔪_p}(A) = V_{1/2} ⊕ V_{1/2}` is nonzero iff
-  both filament cores still carry nontrivial local sections — i.e. have **not**
-  dissolved into a sheet — and the Euler residue `e(ξ)|_Σ` is nonzero exactly on
-  that support;
-* **(d)** `H¹_{𝔪_p}(A) ≠ 0 ⟺ λ∥(p) > 0 ∧ λ⊥(p) > 0` (Levi non-degeneracy).
-
-Chaining these, with nontrivial linking, gives the clean equivalence
-
-`κ_n|_Σ ≠ 0  ⟺  Levi form non-degenerate at p`.
-
-This is exactly the **branch structure** of `conj:levi-degeneracy`:
-
-* **branch A** — non-degenerate core ⇒ obstruction survives ⇒ (categorically)
-  NS-singular (`ns_obstruction_iff_levi` + `levi_nondegenerate_of_obstruction`);
-* **branch B** — Levi degenerates / core flattens to a sheet ⇒ obstruction
-  vanishes ⇒ (categorically) NS-regular (`ns_regular_of_sheet`).
-
-## Honest scope (anti-laundering)
-
-This is a **categorical** equivalence between the obstruction class and the Levi
-geometry. It does **not** decide which branch the *actual* growth rate `C_L(κ)`
-falls into (that is the open computation, `conj:levi-degeneracy`, and — via
-Bridge B — the Clay content). What it does: replace the opaque
-`obstruction_is_regularity_criterion` hypothesis of
-`CategoricalClassicalNSBridge` (`q_ns_classical_bridge.lean`) with the *derived*
-Yekutieli/local-cohomology mechanism, modulo the two named geometric inputs
-(local-cohomology ⟺ Levi; Euler-residue ⟺ local-cohomology) which are the
-content of `ns-obstruction-tower` (c)/(d).
+**Further scope note.** By `thm:ns-singularity-descartes` item 3, `Σ` is
+one-dimensional, so `H²(Σ, ·) = 0` and every class `e(ξ)|_Σ` vanishes. The class
+below is therefore an abstract carrier of the (c)/(e) bookkeeping; no instance is
+supplied, and none is claimed for the Descartes universe.
 
 ## Base ring (§7c)
 
-Generic: the obstruction class lives in an abelian group `M` (`H²(Σ, 𝓑)`), the
-linking number is an integer, and non-vanishing of `n • x` needs only that `M`
-is torsion-free (`[NoZeroSMulDivisors ℤ M]`) — the **leading-order** / generic
-situation. The Kummer *divisibility/torsion* refinement (which `χ(A) = -6`
-survives) is handled separately by `prop:ns-kummer-specialisation`. No `ℝ`.
+Generic: the obstruction class lives in an abelian group `M`, the linking number
+is an integer, and non-vanishing of `n • x` needs only that `M` is torsion-free
+(`[NoZeroSMulDivisors ℤ M]`). No `ℝ`.
 
 ## References
-- [manuscript] fluid-dynamics/ns-obstruction-tower (`prop:ns-obstruction-tower`),
+- [leitner2026] fluid-dynamics/ns-obstruction-tower (`prop:ns-obstruction-tower`),
   core-levi-form (`prop:core-levi-form`), levi-degeneracy-conjecture
-  (`conj:levi-degeneracy`), ns-kummer-specialisation
+  (`conj:levi-degeneracy`), ns-singularity-descartes
 -/
 
 namespace QOU.FluidDynamics
 
-/-- Local-cohomology / Levi / Euler-residue data at a collision point `p ∈ Σ`,
-    from `ns-obstruction-tower` steps (c)–(e).
+/-- Local-cohomology / Euler-residue data at a collision point `p ∈ Σ`, from
+    `ns-obstruction-tower` steps (c) and (e). Step (d), the Levi equivalence, is
+    withdrawn (see the module docstring).
 
-    `M` is the coefficient group `H²(Σ, 𝓑)` (torsion-free at leading order);
-    `linking : ℤ` is `lk(ϱ₁, ϱ₂)`; the leading obstruction is the integer
-    multiple `kappaLeading = linking • eulerResidue`. The two `Prop` fields are
-    the geometric equivalences the manuscript proves (c)/(d): they carry the
-    real content, so the class is non-degenerate. -/
+    `M` is the coefficient group (torsion-free); `linking : ℤ` is
+    `lk(ϱ₁, ϱ₂)`; the leading obstruction is `kappaLeading = linking • eulerResidue`. -/
 class NSObstructionLeviData (M : Type*) [AddCommGroup M]
     [NoZeroSMulDivisors ℤ M] where
-  /-- The Euler residue `e(ξ)|_Σ ∈ H²(Σ, 𝓑)`. -/
+  /-- The Euler residue `e(ξ)|_Σ`. -/
   eulerResidue : M
   /-- The linking number `lk(ϱ₁, ϱ₂)` of the anti-parallel pair. -/
   linking : ℤ
-  /-- The leading NS obstruction `κ_n|_Σ = lk · e(ξ)|_Σ`. -/
+  /-- The leading obstruction `κ_n|_Σ = lk · e(ξ)|_Σ`. -/
   kappaLeading : M
   /-- **Step (e):** the leading obstruction is the linking multiple of the
       Euler residue. -/
   kappa_def : kappaLeading = linking • eulerResidue
-  /-- "`H¹_{𝔪_p}(A) ≠ 0`": the local cohomology at `p` is nonzero (both cores
-      carry local sections; no sheet). -/
+  /-- "`H¹_{𝔪_p}(A) ≠ 0`": the local cohomology at `p` is nonzero. -/
   localCohomNonzero : Prop
-  /-- "`λ∥(p) > 0 ∧ λ⊥(p) > 0`": the Levi form is non-degenerate at `p`. -/
-  leviNonDegenerate : Prop
-  /-- **Step (d):** local cohomology nonvanishing ⟺ Levi non-degeneracy. -/
-  localCohom_iff_levi : localCohomNonzero ↔ leviNonDegenerate
   /-- **Steps (c)/(e):** the Euler residue is nonzero ⟺ the local cohomology at
       `p` is nonzero. -/
   eulerResidue_iff_localCohom : eulerResidue ≠ 0 ↔ localCohomNonzero
 
 variable {M : Type*} [AddCommGroup M] [NoZeroSMulDivisors ℤ M]
 
-/-- **The Yekutieli–Levi unification.** With nontrivial linking, the leading NS
-    obstruction on `Σ` is nonzero **iff** the Levi form is non-degenerate at `p`
-    — the categorical face of the Levi dichotomy. Derived from `kappa_def`,
-    `smul_ne_zero_iff`, and the two geometric equivalences (c)/(d). -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, core-levi-form
-theorem ns_obstruction_iff_levi [ctx : NSObstructionLeviData M]
+/-- With nontrivial linking, the leading obstruction is nonzero **iff** the local
+    cohomology at `p` is nonzero. Derived from `kappa_def`, `smul_ne_zero_iff` and
+    step (c)/(e). Says nothing about the Levi form or about regularity. -/
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower
+theorem ns_obstruction_iff_localCohom [ctx : NSObstructionLeviData M]
     (hlk : ctx.linking ≠ 0) :
-    ctx.kappaLeading ≠ 0 ↔ ctx.leviNonDegenerate := by
-  rw [ctx.kappa_def, smul_ne_zero_iff, ctx.eulerResidue_iff_localCohom,
-    ctx.localCohom_iff_levi]
+    ctx.kappaLeading ≠ 0 ↔ ctx.localCohomNonzero := by
+  rw [ctx.kappa_def, smul_ne_zero_iff, ctx.eulerResidue_iff_localCohom]
   exact and_iff_right hlk
-
-/-- **Branch A (blow-up side).** A surviving obstruction forces the Levi form to
-    be non-degenerate at `p` (discrete cores, no sheet). -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch A)
-theorem levi_nondegenerate_of_obstruction [ctx : NSObstructionLeviData M]
-    (hlk : ctx.linking ≠ 0) (hobs : ctx.kappaLeading ≠ 0) :
-    ctx.leviNonDegenerate :=
-  (ns_obstruction_iff_levi hlk).mp hobs
-
-/-- **Branch B (regular side).** If the Levi form degenerates (the core flattens
-    into a sheet), the leading NS obstruction on `Σ` vanishes — categorically
-    NS-regular. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch B)
-theorem ns_regular_of_sheet [ctx : NSObstructionLeviData M]
-    (hlk : ctx.linking ≠ 0) (hsheet : ¬ ctx.leviNonDegenerate) :
-    ctx.kappaLeading = 0 := by
-  by_contra h
-  exact hsheet ((ns_obstruction_iff_levi hlk).mp h)
 
 end QOU.FluidDynamics

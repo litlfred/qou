@@ -5,34 +5,27 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fd58d8e182edda805fed0946606c5ab82f81",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fd58d8e182edda805fed0946606c5ab82f81/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "fd58d8e182edda805fed0946606c5ab82f81",
+  "title": "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS",
   "contains": [
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-000",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-001",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-002",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-003",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-004",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-005",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-006",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-007",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-008",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-009",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-010",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-011",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-012",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-013",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-014",
-    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-015"
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-001",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-002",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-003",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-004",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-005",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-006",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-007"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "fd58d8e182edda805fed0946606c5ab82f81",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "fd58d8e182edda805fed0946606c5ab82f81.pdf",
     "source_sha256": "292cb048e70979359ab588ed7644044860fbfdf46d2047624b0ba44559a03881",
     "pages": 7,

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s-p07/sections/page-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 3",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "contains": [
+    "library/ant-v14-n7-s-p07/blocks/prose-page-003",
+    "library/ant-v14-n7-s-p07/blocks/cor-page-003-01",
+    "library/ant-v14-n7-s-p07/blocks/cor-page-003-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p07/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p07/manifest.jsonld",
+  "provenance": "ingested"
+}

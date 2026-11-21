@@ -11,8 +11,7 @@ equality, and $\hbar_q$ enters it as a weight: it is the Reeb coefficient of the
 categorical Dirac operator, which is exactly what
 [the Reeb coefficient identity](#prop:reeb-coefficient-is-hbar-q) establishes.
 
-**The total.** After one Planck step, [the discrete Planck step](#rem:discrete-planck-step)
-records the displacement as
+**The total.** After one Planck step, the displacement is
 
 $$
   \ell_P(q) \;=\; \hbar_q \cdot t_P \;=\; \bigl(1-q^{-1}\bigr)\cdot\frac{q}{q-1} \;=\; 1 .

@@ -10,7 +10,7 @@ export default conjecture({
   },
   uses: [
     "def:brings-coordinate-ring",
-    "prop:homological-shell-condensation",
+    "conj:homological-shell-condensation",
   ],
   cites: [
     "klein1888",

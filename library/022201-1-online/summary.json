@@ -2,59 +2,83 @@
  "_schema": "library-summary/v1",
  "doc_id": "022201-1-online",
  "source_sha256": "50331bf18a2bd4d5",
- "brief": "Online Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann ; Tyler Helmuth — 8 sections: Abstract; INTRODUCTION; THE AB",
- "extended": "**Online Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann ; Tyler Helmuth**\n\n*J. Math. Phys. 62, 022201 (2021)*\n\n8 pp, 8 sections.\n\n**Outline.** Abstract; I INTRODUCTION; II THE ABSTRACT CLUSTER EXPANSION; III THE QUANTUM CLUSTER EXPANSION; IV APPROXIMATION ALGORITHM; V CONCLUSION & OUTLOOK; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Fix Δ∈ Z+. There is a fully polynomial-time approximation scheme for the partition function Z G(β) for all graphs G of\n- Corollary 3: The partition function Z G(β) admits the following cluster expansion:\n- Lemma 2: The partition function Z G(β) admits the following abstract polymer model representation:\n- Lemma 4: Fix Δ∈ Z+. Let G = (V, E) be a graph of maximum degree at most Δ, and let β be a complex number such that ∣β∣≤ 1\n- Lemma 5: Fix Δ∈ Z+, and let G = (V, E) be a graph of maximum degree at most Δ. The clusters of size at most m can be listed in time\n- Lemma 6: The Ursell function φ(H) can be computed in time exp(O(∣V(H)∣)).",
+ "brief": "Efficient algorithms for approximating quantum partition functions — 13 sections: Front matter; AFFILIATIONS; ABSTRACT",
+ "extended": "**Efficient algorithms for approximating quantum partition functions**\n\n*J. Math. Phys. 62, 022201 (2021)*\n\n8 pp, 13 sections.\n\n**Outline.** Front matter; AFFILIATIONS; ABSTRACT; I INTRODUCTION; II THE ABSTRACT CLUSTER EXPANSION; III THE QUANTUM CLUSTER EXPANSION; IV APPROXIMATION ALGORITHM; V CONCLUSION & OUTLOOK; ACKNOWLEDGMENTS; Appendix A PROOF OF LEMMA 2; Appendix B PROOF OF LEMMA 4 AND LEMMA 7; DATA AVAILABILITY; REFERENCES",
  "tokens": {
-  "brief": 50,
-  "extended": 276
+  "brief": 29,
+  "extended": 108
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-affiliations",
+   "title": "AFFILIATIONS",
    "pages": "2-2"
   },
   {
-   "id": "sec-001-i-introduction",
+   "id": "sec-001-abstract",
+   "title": "ABSTRACT",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-i-introduction",
    "title": "INTRODUCTION",
    "pages": "2-3"
   },
   {
-   "id": "sec-002-ii-the-abstract-cluster-expansion",
+   "id": "sec-003-ii-the-abstract-cluster-expansion",
    "title": "THE ABSTRACT CLUSTER EXPANSION",
    "pages": "3-3"
   },
   {
-   "id": "sec-003-iii-the-quantum-cluster-expansion",
+   "id": "sec-004-iii-the-quantum-cluster-expansion",
    "title": "THE QUANTUM CLUSTER EXPANSION",
    "pages": "3-4"
   },
   {
-   "id": "sec-004-iv-approximation-algorithm",
+   "id": "sec-005-iv-approximation-algorithm",
    "title": "APPROXIMATION ALGORITHM",
    "pages": "4-5"
   },
   {
-   "id": "sec-005-v-conclusion-outlook",
+   "id": "sec-006-v-conclusion-outlook",
    "title": "CONCLUSION & OUTLOOK",
    "pages": "5-5"
   },
   {
-   "id": "sec-006-acknowledgments",
-   "title": "Acknowledgments",
-   "pages": "5-8"
+   "id": "sec-007-acknowledgments",
+   "title": "ACKNOWLEDGMENTS",
+   "pages": "5-5"
   },
   {
-   "id": "sec-007-references",
-   "title": "References",
+   "id": "sec-008-appendix-a-proof-of-lemma-2",
+   "title": "PROOF OF LEMMA 2",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-009-appendix-b-proof-of-lemma-4-and-lemma-7",
+   "title": "PROOF OF LEMMA 4 AND LEMMA 7",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-010-data-availability",
+   "title": "DATA AVAILABILITY",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "REFERENCES",
    "pages": "8-8"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

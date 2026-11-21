@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-017",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "WKB analysis",
-  "pageStart": 71,
-  "pageEnd": 79,
-  "text": "../sections/sec-017-a3-wkb-analysis.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.2182v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.2182v1",
+  "title": "Refined $A$-polynomials and the refined ``volume'' $S_0 (u,t)$",
+  "pageStart": 38,
+  "pageEnd": 39,
+  "text": "../sections/sec-017-33-refined-a-polynomials-and-the-refined-volume.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
   "provenance": "ingested"
 }

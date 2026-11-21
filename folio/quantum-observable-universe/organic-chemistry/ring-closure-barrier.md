@@ -12,7 +12,7 @@ $$
 $$
   \mathfrak{E}_{\mathrm{cross}}(\mathcal{R}_N)
    \propto 
-  \Delta_{T(2,N)}(q)
+  \tilde\Delta_{T(2,N)}(q)
   \quad (\text{for even } N).
 $$
 
@@ -28,7 +28,7 @@ The energy cost of ring-opening is:
 $$
   \Delta E_{\mathrm{open}}
   = 
-  (N - 1) - \Delta_{T(2,N)}(q)
+  (N - 1) - \tilde\Delta_{T(2,N)}(q)
   + 
   E_{\mathrm{activation}}.
 $$

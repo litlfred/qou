@@ -131,7 +131,7 @@ Z_MARKOV = Q0_PROTON**3 / (Q0_PROTON**2 + 1)
 # Falls back to Plancherel w_λ = d_q²/[n]_q! for comparison audits.
 
 def jones_wenzl_weight(shape: tuple[int, ...],
-                        q=Q0_PROTON, z=Z_MARKOV):
+                        q=None, z=None):
     """Ocneanu/Markov weight w_lam(q, z) for the H_n(q) Markov trace.
 
         w_lam = prod_{(i,j) in lam} [ q^{2i}(q^2 - 1 - q z) + q^{2j+1} z ]
@@ -176,8 +176,19 @@ def jones_wenzl_weight(shape: tuple[int, ...],
     n = sum(shape)
     if n == 0:
         return mpf(1)
-    qm = q if isinstance(q, mpf) else mpf(q)
-    zm = z if isinstance(z, mpf) else mpf(z)
+    # Default to the mpf proton pin, and derive z in mpf from that same q.
+    # The defaults used to be the float64 `Q0_PROTON` / `Z_MARKOV`, so the
+    # returned mpf carried only a double's worth of q, and the normalisation
+    # sum_lam d_lam w_lam = 1 held only to ~1e-16 (bean qou-bsec).
+    if q is None:
+        from qou_substrate.constants import Q_MP as _q_mp
+        qm = _q_mp
+    else:
+        qm = q if isinstance(q, mpf) else mpf(q)
+    if z is None:
+        zm = qm ** 3 / (qm ** 2 + 1)
+    else:
+        zm = z if isinstance(z, mpf) else mpf(z)
     cells: list[tuple[int, int]] = []
     for i, r in enumerate(shape):
         for j in range(r):
@@ -199,7 +210,7 @@ def jones_wenzl_weight(shape: tuple[int, ...],
     return numer / denom
 
 
-def ocneanu_weights_3A(A: int, *, q: float = Q0_PROTON, z: float = Z_MARKOV):
+def ocneanu_weights_3A(A: int, *, q=None, z=None):
     """Return list of (λ, ω_λ) for all λ ⊢ 3A; Jones–Wenzl normalized."""
     return [(shape, jones_wenzl_weight(shape, q=q, z=z))
              for shape in partitions_of(3 * A)]
@@ -484,9 +495,75 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     three bond constants are untouched. **Absolute** traces moved, by `3.785×`
     (`2H`), `7.868×` (`3H`), `6.891×` (`3He`), `14.325×` (`4He`), and
     `binding_canonical`'s difference route moved with them by the same factor.
-    Pass `intra_order="grouped"` to reproduce any pre-2026-09-05 absolute
-    number. Probe:
+    Pass `intra_order="grouped"` to reproduce the absolute numbers as they
+    stood IMMEDIATELY BEFORE 2026-09-05. Probe:
     `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`.
+
+    🛑 **NOT "any pre-2026-09-05 absolute number" — that is what this line said
+    until 2026-09-13, and it is measurably too strong** (bean `qou-5c64`).
+    Grouped reproduces the state just before the ruling; it does NOT reproduce
+    arbitrary earlier states, because at least one further change sits further
+    back. Measured on the deuteron at a fixed q, against
+    `binding-canonical.witness.json` as committed on **2026-06-15** (recovered
+    at full 50 dps from its own `commitSha 0fa83306db2a`):
+
+        intra-ordering, grouped/borromean   free 3.784816689   atom 3.784816689
+        residual,       grouped/2026-06-15  free 1.15067303    atom 1.481039152
+
+    The ordering factor reproduces the `3.785 (2H)` recorded three lines up to
+    ten digits, which is what makes the residual trustworthy rather than a
+    measurement artefact.
+
+    **The residual decomposes exactly, and the pieces are worth having here.**
+    Over D / T / ³He / ⁴He, the free residual factorises per nucleon and the
+    bond residual per bond type — both to well below the data's own floor
+    (1e-50 and 5.6e-12 respectively, the latter being June's ordering-invariance
+    floor, not a model failure):
+
+        per nucleon   proton 1.075521518      neutron 1.069874485
+        per bond      p-p 1.227044031   p-n 1.287106862   n-n 1.390572916
+
+    **The p-p bond IS the Markov parameter `z`.** Isolated as
+    `r(³He)/r(D)` with `r = tr_M(W_atom)/tr_M(W_free)`, it is
+    `0.61268805054558909984` today — `z_D = q³/(q²+1)` to **3.2e-51** — and
+    `0.49932034618370936279` in June — `z_C = 1/(√q + 1/√q)` to 2.4e-8, the
+    residue being the q₀ anchor. So its residual is `z_D/z_C`, i.e. the
+    **convention C→D excision, carried by `z` itself.**
+
+    🛑 **Do not read "the C→D `y_lambda_at` swap is a no-op" as "C→D does not
+    affect this."** Both are true and they are different statements: the two
+    `y_lambda_at` implementations do agree at `n = 6`, and the convention still
+    arrives through `z`, which never goes through that function. An earlier
+    version of this note listed C→D among the causes *ruled out* on the strength
+    of the `y_lambda_at` test alone; that was an absence-of-evidence error and
+    is retracted (bean `qou-5c64`).
+
+    **And the OTHER TWO bonds' `d` are unchanged too, so the whole bond side is
+    pure C→D.** Backing `d = bond - z` out against each side's OWN `z`:
+
+        p-p   d_now  0                      d_June  1.2e-8      (i.e. 0)
+        p-n   d_now -0.10445825933572413    d_June -0.10445817736543710
+        n-n   d_now -0.20906032198987946    d_June -0.20906030963839083   (= -h)
+
+    all three agree to the ~1e-7 anchor floor, and `(z_D + d)/(z_C + d)` with `d`
+    held fixed predicts every measured bond residual to 2e-7. The p-n `d` is
+    `-h(1/2 - δ/4)` with `δ = flavor_split_leading(q) = 0.0013757112` today and
+    `0.0013772796` implied by the June witness — a 0.11 % gap, which is the
+    anchor, not a change.
+
+    🛑 **So the δ de-wire of 2026-06-29 (`9928f3f4a79`) does NOT move this
+    witness**, and an earlier version of this note claimed it did, with
+    "δ = -2.16772 as of 2026-06-15". That number came from subtracting `z_D`
+    from June's bond when June was on `z_C`; it is an artefact of mixing the two
+    conventions and is retracted (bean `qou-5c64`). The `2.9e-16` confirmation
+    quoted alongside it was real but was of the *today* side only — a check on
+    one side of a comparison, reported as confirming the comparison.
+
+    Genuinely ruled out, each by direct substitution at fixed q: the q₀ anchor
+    (3.9e-8), the `pn_convention` *flag* (a no-op on the free trace by
+    construction, 2e-4 on the atom trace), the `m_pp/m_pn/m_nn` multiplicities
+    (unchanged), and the δ de-wire (above). **Still open: only the two
+    per-nucleon free factors**, proton `1.075521518` and neutron `1.069874485`.
 
     ⚠ NAME IS A MISNOMER — this does NOT return a braid word (2026-08-25, PR #5765).
     A rename was considered and rejected: 685 call sites across 382 files. So the
@@ -529,6 +606,22 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     See docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md and
     content/.../braids-and-knots/markov-disambiguation.md.
 
+    ⚠ THE PARAGRAPH ABOVE DESCRIBES THE GROUPED WORD AND IS STALE FOR THE LIVE
+    ONE (measured 2026-09-07, bean `qou-m6gp`). The 2026-09-05 alternating core
+    `(σ₀σ₁⁻¹)³` is NOT monotone, so the monotone ⇒ #T(2,k) ⇒ Vol = 0 argument no
+    longer applies. Re-measured with SnapPy 3.3.2 on the live word: every
+    per-nucleon 3-strand branch closure is a HYPERBOLIC 2-component link —
+    proton branches L9n10 (9.9665), L11a252 (16.1911), L7a6 (4.7495), L9a21
+    (11.9429); neutron branches L11a252, L9a21 ×2, L11n202 (8.1957); all
+    geometric solutions, census-identified. What survives unchanged is the
+    connected-sum structure: each interface is a single letter, so every atom
+    branch closure is the connected sum of its A nucleon pieces (800/800
+    branches over ²H/³H/³He/⁴He decompose into exactly A summands), hence
+    Vol(atom) − Vol(free) ≡ 0 by additivity of simplicial volume while the
+    absolute branch volumes are 12.9–64.8 rather than 0. The "no single link
+    behind the object" conclusion above is untouched. Producer:
+    computations/probes/binding_volume_difference_probe.py.
+
     Matches the chain-walk convention of
     hecke_core.atom_per_generator_volumes (lines 3029–3079):
     for each nucleon k, apply intra g₀, intra g₁, then (if
@@ -555,6 +648,37 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     byte-identical to the historical word — all existing callers omitting `q`
     are unaffected. Used by `tr_m_atom_zn(q=…)` and the N-grid simulators
     (multiple q at once).
+
+    **D1 — what this models, and what it is refuted by** (owner ruling on
+    `docs/coordination/2026-09-05-owner-gated-bean-triage.md`, 2026-09-13).
+
+    This is the **NUCLEUS**: a linear chain, `A-1` interfaces, `12A-1` letters,
+    no electrons. Its sibling `pyhecke.gram.build_atom_nf` is the **ATOM**: all
+    pairs, `11A + C(A,2) + Z` letters, including `Z` electron crossings.
+    **They model different objects and disagree silently.** Neither is selected
+    as correct, because both topologies are refuted:
+
+    * the chain here is excluded by
+      `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` -- the chain
+      bond sum is arrangement-invariant only when `L_pp = L_pn = L_nn`, and a
+      nucleus has no arrangement;
+    * the all-pairs complete graph is excluded structurally by
+      `QOU.Mass.CoordinationSaturation` -- `B/A = eps*(A-1)/2` is unbounded, so
+      it has no plateau, while saturation is observed.
+
+    Bean `t7qv` RESULT 4 measures all-pairs as roughly halving the A-scaling
+    error (2H/3He +40.0% against this chain's +73.5%) -- but **RESULT 5 refutes a
+    one-parameter falloff outright** (`f = +2.030` from A-scaling against
+    `f = -0.697` from the mirror; one of them is negative). So all-pairs is the
+    better of two refuted topologies, and quoting RESULT 4 without RESULT 5
+    sells a preference between refuted options as a result.
+
+    **Consumers.** This chain feeds `binding_canonical` (imported at
+    `binding_canonical.py:91`, called at `:174` and `:579`). The all-pairs
+    sibling is the one that reaches the paper, via
+    `all_nuclides_sdp_admissibility.py` -> `nuclear-interactions/demand-stability`.
+
+    The topology question stays open under bean `qou-brng`.
     """
     from pyhecke.atom import reject_float64_q
     reject_float64_q(q, allow_float64=allow_float64, where="atom_braid_word_3A")
@@ -885,27 +1009,16 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
 
 def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                              include_inter: bool = True,
-                             weight_scheme: str = "normalized_plancherel",
-                             # NOT changed to "jones_wenzl", and the attempt
-                             # is recorded here so nobody repeats it. That
-                             # scheme's weights DO NOT SUM TO 1 — measured
-                             # Sigma_lambda omega_lambda = -0.8230 at A=1,
-                             # +0.0547 at A=2, -0.0009 at A=3 — against the
-                             # "normalized to Sigma = 1 for the Markov identity
-                             # tr_M(1) = 1" three lines below. It appears to fix
-                             # the Phi_q pole (max|V_hat| 1.08837 -> 0.06979,
-                             # binding_3A_tower 1e7 -> 0.331) only because the
-                             # near-cancelling weights drive every V_hat toward
-                             # zero, not because the volumes become right.
-                             #
-                             # So the Phi_q-pole problem documented on bean
-                             # qou-2tuv is REAL and still OPEN: normalized_
-                             # plancherel puts V_hat at 1.08837 against a cap of
-                             # 1.087779, and docs/audits/2026-05-11-plancherel-
-                             # usage-audit.md marked this scheme DEPRECATED in
-                             # May. Both schemes are wrong for the tower; that
-                             # is the finding, and picking between them is not
-                             # the fix.
+                             weight_scheme: str = "jones_wenzl",  # convention D, owner 2026-11-18
+                             # Switched to "jones_wenzl" (convention D) on owner
+                             # instruction 2026-11-18. The earlier finding that this
+                             # scheme's weights "do not sum to 1" was right for the old
+                             # weight formula (replaced 2026-08-23, qou-bsec) and for
+                             # the w*chi/d collapse below, which this change also fixes.
+                             # With both fixed, V_hat_i = z*a_i + b_i, the Markov trace
+                             # of the generator's word, which can exceed the Phi_q pole
+                             # cap (1.087779). That is the qou-2tuv pole problem and it
+                             # is still open.
                              verbose: bool = False):
     """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
 
@@ -1009,8 +1122,9 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
         for i in range(n_gens):
             w_i_steps = word_by_gen[i]
             if not w_i_steps:
-                # Empty word at gen i → trace = dim → contrib = w_lam
-                V_hat[i] += w_lam
+                # Empty word at gen i → trace = dim → contrib = w_lam (or
+                # d_lam * w_lam under jones_wenzl, see the collapse below)
+                V_hat[i] += w_lam * dim if weight_scheme == "jones_wenzl" else w_lam
                 continue
             if i >= len(sigmas):
                 # Shouldn't happen (len(sigmas) = n_strands - 1)
@@ -1022,7 +1136,13 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                 _s = np.trace(sigmas[i])
             _t = _a * _s + _b * dim
             tr = _t if _H3A_MPF else float(_t)
-            V_hat[i] += w_lam * tr / dim
+            # jones_wenzl weights are normalised by sum_lam d_lam w_lam = 1, so
+            # the Markov trace is sum_lam w_lam * chi_lam, NOT w_lam * chi_lam / d_lam.
+            # The old /dim here is what made that scheme "not sum to 1".
+            if weight_scheme == "jones_wenzl":
+                V_hat[i] += w_lam * tr
+            else:
+                V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
         out.append({"full": V, "gen_word": list(word_by_gen[i])})
@@ -1198,7 +1318,7 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
 
 def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                        E_0: float = E_0_CALIBRATION_MEV,
-                       weight_scheme: str = "normalized_plancherel",
+                       weight_scheme: str = "jones_wenzl",  # convention D, owner 2026-11-18
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
                        cross_mode: str = "full",

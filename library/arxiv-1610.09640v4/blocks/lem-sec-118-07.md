@@ -1,0 +1,1 @@
+Let R ∈D(Aen), and consider the triangulated functor D := RHomA(−, R) : D(A ⊗Bop)op →D(B ⊗Aop). For every M ∈D(A ⊗Bop) the diagram Bop hmD M,Bop / Op(hmD D(M),B) ) EndD(A)(M) D  EndD(Aop)(D(M))op of ring homomorphisms is commutative.

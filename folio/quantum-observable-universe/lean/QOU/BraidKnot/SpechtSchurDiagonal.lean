@@ -146,4 +146,10 @@ theorem finrank_homG_specht (μ ν : YoungDiagram) (h : Specht.nOf μ = Specht.n
     exact finrank_bot k
       (SpechtSubmodule (k := k) μ →ₗ[k] SpechtSubmodule (k := k) ν)
 
+/-- Cross-shape Schur pairing dimension vanishes for distinct partitions `μ ≠ ν` of the same size. -/
+theorem finrank_homG_specht_of_ne {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
+    (hne : μ ≠ ν) :
+    finrank k (homG (spechtRep (k := k) μ) (spechtRepOn (k := k) h)) = 0 := by
+  rw [finrank_homG_specht (k := k) μ ν h, if_neg hne]
+
 end QOU.BraidKnot.SpechtSchurDiagonal

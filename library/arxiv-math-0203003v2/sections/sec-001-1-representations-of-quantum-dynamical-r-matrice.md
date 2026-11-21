@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.966
+doc_brief: "arXiv:math/0203003v2 [math.QA] 24 Apr 2002 — 8 sections: Front matter; Introduction; Representations of Quantum Dynamic"
 ---
 Let $\mathfrak{a}$ be a finite dimensional abelian Lie algebra over , $V$ be a finite dimensional semisimple $\mathfrak{a}$-module, and $\gamma \in \text{$\mathbb{C}$}^*$. The quantum dynamical Yang-Baxter equation with spectral parameter and step $\gamma$ is $$\begin{aligned}
 \notag

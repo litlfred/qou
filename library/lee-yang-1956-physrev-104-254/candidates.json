@@ -1,0 +1,104 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "lee-yang-1956-physrev-104-254",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "843105e97ca1fe26cd4b3a2075c81794cfad0cfca712ee02e5fec1d9bf07ae2c",
+  "file": "lee-yang-1956-physrev-104-254.pdf"
+ },
+ "provenance": {
+  "title": "Question of Parity Conservation in Weak Interactions",
+  "authors": "T. D. LEE, Columbia",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "proposition": 3
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "PRESENT EXPERIMENTAL LIMIT ON PARITY NONCONSERVATION ECENT experimental data indicate closely iden- tical masses' and lifetimes' of the W(=E,s+)\u2014 and ~ ~ ~ ~ ~ ~ ~ the r+(=E s+) mesons.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-001.md (p. 1-1)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-001.md (p. 1-1)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-001-01",
+   "block_iri": "library/lee-yang-1956-physrev-104-254/blocks/prop-page-001-01",
+   "claim_id": "lee-yang-1956-physrev-104-254#prop-page-001-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The experimental result therefore requires 5 &10 ', or $'&10 '.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-001.md (p. 1-1)",
+   "external_refs": [],
+   "quantitative_values": [
+    "5 &10"
+   ],
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-001.md (p. 1-1)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-001-02",
+   "block_iri": "library/lee-yang-1956-physrev-104-254/blocks/prop-page-001-02",
+   "claim_id": "lee-yang-1956-physrev-104-254#prop-page-001-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Thus it may seem to oGer another possible experimental test of parity conservation.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-002.md (p. 2-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-002.md (p. 2-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-002-01",
+   "block_iri": "library/lee-yang-1956-physrev-104-254/blocks/prop-page-002-01",
+   "claim_id": "lee-yang-1956-physrev-104-254#prop-page-002-01"
+  }
+ ]
+}

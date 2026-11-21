@@ -111,6 +111,29 @@ def bw_perpendicular():
             "final_grades": sorted(int(g) for g in tref.profile())}
 
 
+def bw_four_term():
+    """Scope note + arm (2026-11-20). The rows above take one photon = one generator. Under
+    def:photon (gamma = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1; owner ruling 2026-11-18,
+    confirmed 2026-11-20, bean qou-99qc) a generator is a TERM of a photon. The promote/split
+    rule survives for the s-terms; for the photon itself it fails, because one photon is not
+    grade-homogeneous. Exact, via probes/photon_chiral/h3_photon.py."""
+    sys.path.insert(0, str(HERE / "probes" / "photon_chiral"))
+    import h3_photon as P
+    f0, f1, f01, p0, p1, p01 = sp.symbols("phi0 phi1 phi01 psi0 psi1 psi01")
+    print("\n" + "=" * 74)
+    print("FOUR-TERM CHIRAL PHOTON (def:photon, ruling 2026-11-18/20)")
+    print("=" * 74)
+    one_photon = P.grades(P.gamma(0, 0, f01))
+    full = P.mul(P.gamma(f0, f1, f01), P.gamma(p0, p1, p01))
+    pair = P.mul(P.GAMMA_PLUS, P.GAMMA_MINUS)
+    e_coef = sp.factor(full.get((0, 1, 0), 0))
+    print(f"  one vertex photon gamma(0,0,phi01) occupies grades {one_photon} (V = s0 s1 - h s0)")
+    print(f"  gamma(phi) gamma(psi) occupies grades {P.grades(full)}; e- coefficient {e_coef}")
+    print(f"  eigenvalue pair gamma(0,0,qh) gamma(0,0,-q^-1 h) = V^3: grades {P.grades(pair)}, no e- term")
+    return {"one_photon_grades": one_photon, "pair_grades": P.grades(full),
+            "e_minus_coefficient": str(e_coef), "eigenvalue_pair_grades": P.grades(pair)}
+
+
 def compare():
     print("\n" + "=" * 74)
     print("THE SELECTION RULE IS THE LENGTH FUNCTION")
@@ -128,7 +151,8 @@ def compare():
     print()
     print("  So the polarisation selection rule and the creation/binding")
     print("  asymmetry measured on 2H are ONE structural fact, not two.")
-    return {"parallel": par, "perpendicular": perp}
+    four = bw_four_term()
+    return {"parallel": par, "perpendicular": perp, "four_term": four}
 
 
 if __name__ == "__main__":

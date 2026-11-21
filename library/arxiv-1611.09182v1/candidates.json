@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1611.09182v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6b40549b96d40ac7045dc59e5086ba8375fb5da7a96375c55a8fc50372d4d4ed",
   "file": "1611.09182v1.pdf"
  },
  "provenance": {
-  "title": null,
-  "authors": null,
+  "title": "Standard model physics from an algebra?",
+  "authors": "C. Furey",
   "arxiv": {
    "id": "1611.09182",
    "version": "1",
@@ -20,9 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "That is, our Dirac spinor, \u03a8D = \u03a8L + \u03a8R was found to be an irreducible representation of Cl(2)\u2297CCl(2), and our generation of quarks and leptons of Chapter 6 was found to be an irreducible representation of Cl(6) \u2297C Cl(2).",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-058-8-group-representation-structure-of-some-grand-u.md (p. 67-67)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-058-8-group-representation-structure-of-some-grand-u.md",
+   "section_title": "Group representation structure of some grand unified theories",
+   "pages": "67-67",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-058-8-group-representation-structure-of-some-grand-u.md (p. 67-67)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-058-01",
+   "block_iri": "library/arxiv-1611.09182v1/blocks/prop-sec-058-01",
+   "claim_id": "arxiv-1611.09182v1#prop-sec-058-01"
+  }
+ ]
 }

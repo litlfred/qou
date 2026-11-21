@@ -1,0 +1,5272 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2410.20973v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "1",
+   "text": "Therelationbetweenthevariablesisℏ= −2πi/τ.",
+   "marks": [
+    {
+     "page": 3,
+     "context": ", B) = (1, 2) and (2, 3), respectively.Indeed,we ﬁnd that (z"
+    },
+    {
+     "page": 3,
+     "context": " = (1, 2) and (2, 3), respectively.Indeed,we ﬁnd that (z1, m"
+    },
+    {
+     "page": 4,
+     "context": "seriesΦ4"
+    },
+    {
+     "page": 4,
+     "context": "replacing"
+    }
+   ],
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "SeeRemark1.5orEquation(23)foradeﬁnition.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Sϑ1,ϑ"
+    },
+    {
+     "page": 6,
+     "context": "ϑ∈(ϑ1,ϑ"
+    },
+    {
+     "page": 6,
+     "context": "Therefore,factorisingSϑ1,ϑ"
+    },
+    {
+     "page": 7,
+     "context": "m,ℓ(τ)forRe(τ) < 0."
+    },
+    {
+     "page": 7,
+     "context": "+ (2πi)"
+    },
+    {
+     "page": 7,
+     "context": "2ℏ(2πi)"
+    }
+   ],
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "3",
+   "text": "Infactwehavemoregenerally,V (z, m) = Λ(z, m + Bk) −Bk(k + 1)/2 ∈Cfork= ⌊Re(z)⌋.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "2,"
+    },
+    {
+     "page": 9,
+     "context": "andp = (z+, m+) ∈Σwehave"
+    }
+   ],
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "4",
+   "text": "Thatmeanswechoosearepresentativewith|Re(V (z + k))| ≤1/2.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "pendentofk),therepresentativeofVwiththesmallestabsolutevalue"
+    }
+   ],
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "5",
+   "text": "Herewerestricttom = 0, . . . , A −1tohaveaﬁnitenumberofconditionsforeachpointx.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "Considertheset"
+    }
+   ],
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "6",
+   "text": "Ifthetangentisequalto±ieiϑ,thenweconsiderthedirectionofhigherderivatives.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "•for0<k<k0,thetangent"
+    }
+   ],
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "7",
+   "text": "Toreallyprovethis,oneneedstomakeafullmatrixequationbytakinganotherchoiceofninEqua- tion (75), which has exactly the same Stokes automorphisms as discussed in the Section 1.3.",
+   "marks": [
+    {
+     "page": 26,
+     "context": "4+q+2q2+2q3+3q4+2q5+4q6+2q"
+    },
+    {
+     "page": 26,
+     "context": "g0(q)=1 −q −2q2−2q3−2q4+ q6+ 5q"
+    },
+    {
+     "page": 26,
+     "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q5 + 43q6 + 95q"
+    },
+    {
+     "page": 27,
+     "context": "Thenweﬁnd"
+    }
+   ],
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "8",
+   "text": "By non trivial we mean with non zero Stokes constants.Indeed the line at ϑ = 1.27018 is not an eﬀective Stokes line.",
+   "marks": [
+    {
+     "page": 28,
+     "context": "Takingtherelativediﬀerencebetweenvolumes,theﬁrstnontrivial"
+    }
+   ],
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-013"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "3",
+   "text": "1. A steepest descent algorithm",
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "3",
+   "text": "2. Proof of Theorem 1.4",
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-3",
+   "page": 1,
+   "mark": "4",
+   "text": "1. The 41 knot",
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-4",
+   "page": 1,
+   "mark": "4",
+   "text": "2. The case of (A, B) = (4, 1)",
+   "block": "library/arxiv-2410.20973v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "associatedwiththehyperbolicknots4"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "associatedwiththehyperbolicknots41and5"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "ThevolumeofahyperbolicknotK⊂S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "\u0010Vol(S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "\u0011ℏ"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "(1 + A"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "V (z, m)=BLi"
+  },
+  {
+   "page": 2,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "\u0010log(x"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "2πilog(1 −x"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "2πilog(1 −x0) −Alog(x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "and(z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "and(z2, m"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "Wewilldenotethecollection(A, B, p"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "V−V"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "V−V0byS(V"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "V−V0byS(V0)⊆C.Theseform"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "patternsothatC\\S(V"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "k!Li"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k!Li2−k(e(z))ℏ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "−(2πi)"
+  },
+  {
+   "page": 3,
+   "mark": "8",
+   "context": "where µ"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "8= 1 is an eighth root of unity and B"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "8= 1 is an eighth root of unity and Bkdenotes the"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "+ (2πi)"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "+ (2πi)2"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "+ (2πi)2m"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "+ (2πi)2m0"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2ℏ(2πi)"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "2ℏ(2πi)2"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "ak,ℓw"
+  },
+  {
+   "page": 4,
+   "mark": "w",
+   "context": "ℏ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ℏw"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "−V (z"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "−V (z0, m"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "ak,ℓw"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "z"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "−(2πi)"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "−(2πi)2"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "−(2πi)2m"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "−(2πi)2m0(z"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2ℏ(2πi)"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "2ℏ(2πi)2(z"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "−V (z"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "−V (z0, m"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "δ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "GiventhatB"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "GiventhatBk Li"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "GiventhatBk Li2−k(x) = O((k!)"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "coeﬃcient of ℏ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "coeﬃcient of ℏkgrows like A k! C"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "seriesΦ"
+  },
+  {
+   "page": 4,
+   "mark": "5",
+   "context": "seriesΦ41andΦ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "seriesΦ41andΦ5"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "where(x; q)"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "where(x; q)k=Q"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "j=0(1−q"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "j=0(1−qj"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "replacing1Ψ(z, ℏ)byΦ(zτ; τ):for(A, B) ∈Z"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "8"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "8e"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "8eq−B/24"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "τ"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "τ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "(−1)kq−ℓkI"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "(−1)kq−ℓkIm+k,ℓ(τ)=Im,ℓ+1(τ)=(−1)AqA+mI"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Figure1.DomainofD"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(2πi)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "τ"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "a"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "anℏ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n!ζ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "where|a"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "where|an| ≤CA"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Sϑ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ϑ∈(ϑ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Therefore,factorisingSϑ"
+  },
+  {
+   "page": 6,
+   "mark": "8",
+   "context": "µ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "µ8eq−1/24q"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "raysonthecountablesetofraysτ∈S(V"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "Φ−(z; τ)=Φ(−z + 1 + τ; −τ)−1=(q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "Φ−(z; τ)=Φ(−z + 1 + τ; −τ)−1=(qe(−z);"
+  },
+  {
+   "page": 7,
+   "mark": "8",
+   "context": "Thefunctionµ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Thefunctionµ8eq−1/24q"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "8"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "8e"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "8eq−B/24"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "−τ"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "−τ"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "+ (2πi)2"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "+ (2πi)2m"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "+ (2πi)2m0"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "2ℏ(2πi)2"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "C"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Cp"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(bΦ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "(bΦj(ℏ))ℓ,p"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "(bΦj(ℏ))ℓ,p0=Φ(A,B,p"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "forϑ∈arg(C\\(∪p"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "forϑ∈arg(C\\(∪p0S(V"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "forϑ∈arg(C\\(∪p0S(V0)))toamatrixwedenote"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "q]-integral combinations of state integrals.Therefore, for ϑ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ntegral combinations of state integrals.Therefore, for ϑ1, ϑ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "arg(C\\(∪p"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "arg(C\\(∪p0S(V"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "bIj,ϑ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "bIj,ϑ2(τ)=bIj,ϑ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "bIj,ϑ2(τ)=bIj,ϑ1(τ)Sϑ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "bIj,ϑ2(τ)=bIj,ϑ1(τ)Sϑ1,ϑ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Sϑ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Sϑ1,ϑ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "2.Themethodisextremelyeﬀectivewhenϑisnear"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "V (z+, m+)=BLi"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Λ(z−, m−)=−B Li"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Fix acriticalpointp"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Fix acriticalpointp0= (z"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Fix acriticalpointp0= (z0, m"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Fix acriticalpointp0= (z0, m0)satisfyingV′(p"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Re((V (p) −V"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Deﬁnition2.1.Ifp∈ΣsuchthatV (p)∈V"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "letΓp,ϑdenotetheconnectedcomponentofV"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "pointp"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "pointp0,letC"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "pointp0,letCp"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "pointp0,letCp0,ϑdenotetheconnectedcomponentofV"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Cp0,ϑdenotetheconnectedcomponentofV0 −ieiϑR≥0 + Zcontainingp"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Lemma2.2.Supposethateiϑ∈C\\S(V"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Lemma2.2.Supposethateiϑ∈C\\S(V0)andp∈ΣsuchthatV (p)∈V"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "24=−Li"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "−Li"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "andtherefore,forsmallenough|z|thereisaconstantC"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "< C"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Therefore,thereexistsconstantsC"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Therefore,thereexistsconstantsC1, C"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "< BC"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "2||z| < C"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2||z| < C1|z log(−iz)| + C"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "|Λ(z + k, m)| < C"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "|Λ(z + k, m)| < C1|z log(iz)| + C"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Giveneiϑ/∈S(V"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "V"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "ﬁxedα∈(0, 1)thereexistsconstantsC"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "ﬁxedα∈(0, 1)thereexistsconstantsC3, C"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "|z −k|α≤C"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "<C"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "\u0010C"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "arboundworksforIm(z−(p))≤0replacingAbyA −B.Therefore,foranyδ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "|V′(p) −Az+(p)| < |z+(p)|δ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "|V′(p) −(A −B)z−(p)| < |z−(p)|δ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "|Im(V (p) −V (p"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "2z+(p)(z+(p) + 1) −mz+(p))| ≤C"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "forsomeconstantC"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "forsomeconstantC6>0.GiventhatIm(V (p) −V (p"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "Thereforefor|z+(p)|>M,thereisaconstantC"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Thereforefor|z+(p)|>M,thereisaconstantC7independentofδ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "< δ"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "< δ1C"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "Corollary2.3.If eiϑ∈C\\S(V"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "Corollary2.3.If eiϑ∈C\\S(V0), then the set C"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "Corollary2.3.If eiϑ∈C\\S(V0), then the set Cp"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "relative to a region D∞,θ.The ﬁrst relative homology group H"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "ontainsliftsofthestateintegralcontoursJℓ,τtoΣandthethimblesC"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "ntainsliftsofthestateintegralcontoursJℓ,τtoΣandthethimblesCp"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "ǫ,MinFigure"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "ǫ,Minthe"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2.2.2.Behaviour at inﬁnity.The dilogarithm Li"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2z+(p)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "z−(p)"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "L,θand"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "L,θandz−(p)=−eiθ/2"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 13,
+   "mark": "6",
+   "context": "2)inFigure"
+  },
+  {
+   "page": 13,
+   "mark": "7",
+   "context": "2)inFigure6andFigure"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "or ǫ, M, L > 0, and θ∈(0, 2π), the relative homology group H"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "L,θ) ⊕H"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "L,θ) ⊕H"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "L,θ) ∼= H"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "L,θ) ∼= {0} for every"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "rphictoadisjointunionofdiscsandDL,θ,±areconnected;thereforeH"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "bym=0, . . . , A −1andℓ=−M, . . . , M.Thus,wededucethatH"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "ǫ,Monthe"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "ǫ,Monthem-sheetinthe"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": ". . . →H"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": ". . . →Hn(DL,θ) →H"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": ". . . →Hn(DL,θ) →Hn(Xǫ,M) →H"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "forLlargeenough.FromProposition2.5,wededucethatH"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "andm ∈{0, . . . , A −1}deﬁneabasisforH"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Jℓ,m,τ]∈H"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "H1(Xǫ,M , DL,θ)∼= H"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "H1(Xǫ,M , D∞,θ)∼= H"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Jℓ,m,τ]canbeidentiﬁedwiththeclassofpoints[pℓ,m] ∈H"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "2.3.1.TheclassofthethimbleC"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "2.3.1.TheclassofthethimbleCp"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "classofthethimbleCp0,ϑ.WecannowdescribetheclassofthethimbleC"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "lassofthethimbleCp0,ϑ.WecannowdescribetheclassofthethimbleCp"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Lemma2.7.Ifeiϑ/∈S(V"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "2),thenthereexistsanM"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "∈H"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "C"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Cp"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "Proof.By Corollary 2.3, the thimble C"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Proof.By Corollary 2.3, the thimble Cp"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "Inaddition,fromCorollary2.3,thereexistsǫ, M> 0suchthatC"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Inaddition,fromCorollary2.3,thereexistsǫ, M> 0suchthatCp"
+  },
+  {
+   "page": 15,
+   "mark": "6",
+   "context": "2).TheproofbypicturesisgiveninFigures"
+  },
+  {
+   "page": 15,
+   "mark": "7",
+   "context": "2).TheproofbypicturesisgiveninFigures6and"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "ℓ,m,τisdepictedintealandthethimbleC"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "ℓ,m,τisdepictedintealandthethimbleCp"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Corollary2.8.Ifeiϑ/∈S(V"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "2),thethimble[C"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "2),thethimble[Cp"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "nt a combination of both.For a point p ∈Σ such that V (p) ∈V"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "we can deﬁne an elementof the homology H"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "eiϑ/∈S(V"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "eiϑ/∈S(V0).ForV (p) = V"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "Deﬁnition2.9.ForV (p)=V"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "connectedcomponentofpintheset{r∈Σ|V (r)∈V"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "Σ | V (r) ∈V"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "elementsofthehomologyH"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "[γe,θ]=[γ"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "[γe,θ]=[γp+,θ]−[γ"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "Corollary2.11.Ifeiϑ∈C\\S(V"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "2),"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "2),p∈ΣissuchthatV (p)∈V"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "ieiϑR>0 + Z,ande ⊆ΣisasegmentwithV (e) ⊆V"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "seethat[γ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "seethat[γe"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "Corollary2.12.Ifeiϑ∈C\\S(V"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "uch that for any p ∈Σǫ\\Wǫ,Mor e ⊆Σǫ\\Wǫ,Mwith V (p), V (e) ⊂V"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "weﬁndthat[γp,θ] = [γe,θ] = 0 ∈H"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "thatforx ∈Σǫ\\Wǫ,MwithRe(z±(x))̸ = 0andV (x) ∈V"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "of the tangenttoΓp,θ(orΓ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "of the tangenttoΓp,θ(orΓp"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "toΓp,θ(orΓpe,θ)alwayshas the samesignas Im(z±(p))(or Im(z±(p"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "eiϑ∈C\\S(V"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "givenbythesaddlepointapproximationatacriticalpointp"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "3.1.Asteepestdescentalgorithm.Fixacriticalpointp"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "icalvalueV"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "icalvalueV0∈Candϑ∈arg(C\\S(V"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "contourC"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "contourCp"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "Z:={p ∈W| Re(e−iϑ(V"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "e−iϑ(V−V"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "e−iϑ(V"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "NoticethatPisaﬁniteset.Toeachpointp∈P\\ {p"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "whichrepresentsaclass inH"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "e ∈π"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "Wedenotetheboundaryofeby(p"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "Wedenotetheboundaryofeby(pe, r"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "eache∈Eweassociateacycleγe,θ,whichrepresentsaclassinH"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "Lemma3.1.Letp=(z, m)∈Σandeiϑ∈C \\ S(V"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "algorithm,inplace ofstep(I),weconsiderthe criticalpointp"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "inplace ofstep(I),weconsiderthe criticalpointp0andthe lift V"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "V"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "V0= V (p"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "V0= V (p0) ∈C/Z,andthethimbleC"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "V0= V (p0) ∈C/Z,andthethimbleCp"
+  },
+  {
+   "page": 18,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "hencetheintegralinEquation(61)isequaltoq"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "associatedcycles−γ(z,m±k),θweightedbyconstantsa"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "•for0<k<k"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "•for k≥k"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "a"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "akΦ((w −ℓ"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "a"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "akΦ((w −ℓ"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "k≥k"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "ℓ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ℓ0= ℓ+ (1 −sign(A −B))/2andℓ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Ip"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Ip0,V"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Ip0,V0,ϑ(τ)givenasaZ-linearcombinationofq"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "Lemma 3.3.The function I"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Lemma 3.3.The function Ip"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Lemma 3.3.The function Ip0,V"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "ion Ip0,V0,ϑ(τ) is locally constant as ϑ varies in arg(C\\S(V"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Proof.Forϑ ∈arg(C\\S(V"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "2)containedin"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "willgenericallyproducethesameI"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "willgenericallyproducethesameIp"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "willgenericallyproducethesameIp0,V"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "associatedtothemistrivialandthisdoesnotaﬀectthefunctionI"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "associatedtothemistrivialandthisdoesnotaﬀectthefunctionIp"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "associatedtothemistrivialandthisdoesnotaﬀectthefunctionIp0,V"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "ore,as[γp,ϑ]isconstantforallϑinourcompactset,itdoesnotaﬀectI"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "re,as[γp,ϑ]isconstantforallϑinourcompactset,itdoesnotaﬀectIp"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "as[γp,ϑ]isconstantforallϑinourcompactset,itdoesnotaﬀectIp0,V"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "IfIdenotesaconnectedcomponentofC\\S(V"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "2),thenwedenoteI"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "2),thenwedenoteIp"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "2),thenwedenoteIp0,V"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "functionI"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "functionIp"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "functionIp0,V"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "ThemainideaistocomputetheasymptoticsofthefunctionI"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "ThemainideaistocomputetheasymptoticsofthefunctionIp"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "ThemainideaistocomputetheasymptoticsofthefunctionIp0,V"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "Theorem3.4.If[a, b] ⊆arg(C\\S(V"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "|e(−V"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "|e(−V0τ)I"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "|e(−V0τ)Ip"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "|e(−V0τ)Ip0,V"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "thestateintegralsofI"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "thestateintegralsofIp"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "thestateintegralsofIp0,V"
+  },
+  {
+   "page": 20,
+   "mark": "w",
+   "context": "2"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "Therefore,thetailsinI"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "Therefore,thetailsinIp"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "Therefore,thetailsinIp0,V"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "seethat I"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "seethat Ip"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "seethat Ip0,V"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "symptoticsdeterminedby the stationary phase approximationatp"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "criticalpointsforthevolumeVareatp"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "criticalpointsforthevolumeVareatp1=(−5/6, 0)andp"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "valuesarerespectivelyatV"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "valuesarerespectivelyatV1=−0.0514175 . . .iandV"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "Toperformthecomputation,weplotthesetC"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "Toperformthecomputation,weplotthesetCp"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "forIm(z)> 0wehaveV (z)= BLi"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "haveV (z) = −BLi"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "4.1.1.Thecriticalpointp"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "4.1.1.Thecriticalpointp2=(−1/6, 0).Thecriticalpointp"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "enoughtodetermineitforthewholeregion.WeplotthesetC"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "enoughtodetermineitforthewholeregion.WeplotthesetCp"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "estdescentcontour is equivalentto the state integralcontourJ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "tdescentcontour is equivalentto the state integralcontourJ0,"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "Ip2,V2,Y=I"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "Ip2,V2,Y=I0,"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "4.1.2.StateintegralsdecompositioninI.Letϑ∈I.WeplotthesetC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "4.1.2.StateintegralsdecompositioninI.Letϑ∈I.WeplotthesetCp"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "fromI"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "fromI0,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(n, m, ℓ) = (0, 0, 0) and −q"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(n, m, ℓ) = (0, 0, 0) and −q2I"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Ip1,V1,I=I"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Ip1,V1,I=I0,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Ip1,V1,I=I0,0 −q"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Ip1,V1,I=I0,0 −q2I"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Ip1,V1,I=I0,0 −q2I2,−1=I"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Ip1,V1,I=I0,0 −q2I2,−1=I0,"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Ip1,V1,I=I0,0 −q2I2,−1=I0,0 + I"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Ip1,V1,I=I0,0 −q2I2,−1=I0,0 + I1,"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "4.1.4.StateintegralsdecompositioninII.Letϑ∈IIthenC"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "4.1.4.StateintegralsdecompositioninII.Letϑ∈IIthenCp"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "from−I"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "from−I0,"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "(n, m, ℓ)=(0, 0, 0)andI"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Ip1,V1,II=−I"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Ip1,V1,II=−I0,"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Ip1,V1,II=−I0,0 + I"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Ip1,V1,II=−I0,0 + I0,−1=−I"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Ip1,V1,II=−I0,0 + I0,−1=−I0,"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Ip1,V1,II=−I0,0 + I0,−1=−I0,0 −I−1,"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "4.1.6.StateintegralsdecompositioninIII.Letϑ∈IIIthenC"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "4.1.6.StateintegralsdecompositioninIII.Letϑ∈IIIthenCp"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "of−I"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "of−I0,"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "(n, m, ℓ)=(0, 0, 0),I"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "(−2, −1),whichhas(n, m, ℓ) =(0, 0, −1),and−q"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(−2, −1),whichhas(n, m, ℓ) =(0, 0, −1),and−q4I"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "curvesasseeninFigure17.Wehaveacontributionof4q"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "curvesasseeninFigure17.Wehaveacontributionof4q2I"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "atesfrommultipliedbyitsownconstant.Wehaveacontributionof−4qI"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "esfrommultipliedbyitsownconstant.Wehaveacontributionof−4qI0,"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Ip1,V1,III=−I"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Ip1,V1,III=−I0,"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Ip1,V1,III=−I0,0 + I"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip1,V1,III=−I0,0 + I0,−1 + 4q"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Ip1,V1,III=−I0,0 + I0,−1 + 4q2I"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Ip1,V1,III=−I0,0 + I0,−1 + 4q2I1,−1 −4qI"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Ip1,V1,III=−I0,0 + I0,−1 + 4q2I1,−1 −4qI0,"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "Ip1,V1,III=−I0,0 + I0,−1 + 4q2I1,−1 −4qI0,0 −q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip1,V1,III=−I0,0 + I0,−1 + 4q2I1,−1 −4qI0,0 −q4I"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Ip1,V1,III=−I0,0 + I0,−1 + 4q2I1,−1 −4qI0,0 −q4I2,−2=−I"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Ip1,V1,III=−I0,0 + I0,−1 + 4q2I1,−1 −4qI0,0 −q4I2,−2=−I0,"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "V1,III=−I0,0 + I0,−1 + 4q2I1,−1 −4qI0,0 −q4I2,−2=−I0,0 −I−1,"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "=−I0,0 + I0,−1 + 4q2I1,−1 −4qI0,0 −q4I2,−2=−I0,0 −I−1,0 −9qI"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "I0,0 + I0,−1 + 4q2I1,−1 −4qI0,0 −q4I2,−2=−I0,0 −I−1,0 −9qI0,"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "seconditerationofthealgorithmtoI"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "seconditerationofthealgorithmtoIp"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "seconditerationofthealgorithmtoIp1,V"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "(−1)k"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "(−1)k q"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "(q; q)"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "(−1)k"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "(−1)k q"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "m −2E"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "(q; q)"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "E"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "1 −q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "4+q+2"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "4+q+2q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "4+q+2q2+2"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "4+q+2q2+2q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "4+q+2q2+2q3+3"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "4+q+2q2+2q3+3q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "4+q+2q2+2q3+3q4+2"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "4+q+2q2+2q3+3q4+2q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "4+q+2q2+2q3+3q4+2q5+4"
+  },
+  {
+   "page": 26,
+   "mark": "6",
+   "context": "4+q+2q2+2q3+3q4+2q5+4q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "4+q+2q2+2q3+3q4+2q5+4q6+2"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "4+q+2q2+2q3+3q4+2q5+4q6+2q7+4"
+  },
+  {
+   "page": 26,
+   "mark": "8",
+   "context": "4+q+2q2+2q3+3q4+2q5+4q6+2q7+4q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "4+q+2q2+2q3+3q4+2q5+4q6+2q7+4q8+3"
+  },
+  {
+   "page": 26,
+   "mark": "9",
+   "context": "4+q+2q2+2q3+3q4+2q5+4q6+2q7+4q8+3q"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "g"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "g0(q)=1 −q −2q"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "g0(q)=1 −q −2q2−2q"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "g0(q)=1 −q −2q2−2q3−2q"
+  },
+  {
+   "page": 26,
+   "mark": "6",
+   "context": "g0(q)=1 −q −2q2−2q3−2q4+ q"
+  },
+  {
+   "page": 26,
+   "mark": "8",
+   "context": "g0(q)=1 −q −2q2−2q3−2q4+ q6+ 5q7+ 7q"
+  },
+  {
+   "page": 26,
+   "mark": "9",
+   "context": "g0(q)=1 −q −2q2−2q3−2q4+ q6+ 5q7+ 7q8+ 11q"
+  },
+  {
+   "page": 26,
+   "mark": "10",
+   "context": "g0(q)=1 −q −2q2−2q3−2q4+ q6+ 5q7+ 7q8+ 11q9+ 13q"
+  },
+  {
+   "page": 26,
+   "mark": "11",
+   "context": "g0(q)=1 −q −2q2−2q3−2q4+ q6+ 5q7+ 7q8+ 11q9+ 13q10+ 16q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7q −14"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "2(1 −7q −14q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7q −14q2 −8"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "2(1 −7q −14q2 −8q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7q −14q2 −8q3 −2"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "2(1 −7q −14q2 −8q3 −2q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q5 + 43"
+  },
+  {
+   "page": 26,
+   "mark": "6",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q5 + 43q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q5 + 43q6 + 95"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q5 + 43q6 + 95q7 + 109"
+  },
+  {
+   "page": 26,
+   "mark": "8",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q5 + 43q6 + 95q7 + 109q"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q5 + 43q6 + 95q7 + 109q8 + 137"
+  },
+  {
+   "page": 26,
+   "mark": "9",
+   "context": "2(1 −7q −14q2 −8q3 −2q4 + 30q5 + 43q6 + 95q7 + 109q8 + 137q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Φ(zτ, τ)"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "ieq−1/12q"
+  },
+  {
+   "page": 27,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "=τ−1g"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "=τ−1gm(q)G−n(eq) −g−n(eq)G"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "\u0000g"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "\u0000g"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "−G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "−g"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "−G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "g"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "−g"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "−1 + 8q + 9q"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "−1 + 8q + 9q2−18q"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "−1 + 8q + 9q2−18q3−46q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "3 −15q −24q"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "3 −15q −24q2+ 15q"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "3 −15q −24q2+ 15q3+ 69q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "−9q −3q"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "−9q −3q2+ 39q"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "−9q −3q2+ 39q3+ 69q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "−1 + 19q + 17q"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "−1 + 19q + 17q2−53q"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "−1 + 19q + 17q2−53q3−126q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "−3 −9q −75q"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "−3 −9q −75q2−642q"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "−3 −9q −75q2−642q3−5580q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "1 −8q −9q"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "1 −8q −9q2+ 18q"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "1 −8q −9q2+ 18q3+ 46q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "1 + 8q + 73q"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "1 + 8q + 73q2+ 638q"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "1 + 8q + 73q2+ 638q3+ 5571q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "9q + 75q"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "9q + 75q2+ 642q"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "9q + 75q2+ 642q3+ 5580q"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Stokesrayscontainthe singulartiesat the pointsV"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "Stokesrayscontainthe singulartiesat the pointsV2 −V"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "Stokesrayscontainthe singulartiesat the pointsV2 −V4,V"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Stokesrayscontainthe singulartiesat the pointsV2 −V4,V3 −V"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "tokesrayscontainthe singulartiesat the pointsV2 −V4,V3 −V1,V"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "srayscontainthe singulartiesat the pointsV2 −V4,V3 −V1,V3 −V"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "V"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "V1 −V"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "ϑ=1.60935,respectively.ThedashedStokeslinecorrespondsto−V"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "Toperformthecomputation,weplotthesetC"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Toperformthecomputation,weplotthesetCp"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": ".StateintegralsdecompositioninI.Let ϑ ∈I.We plot the curvesC"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "StateintegralsdecompositioninI.Let ϑ ∈I.We plot the curvesCp"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ip1,V1,I=I"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ip1,V1,I=I0,"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "=I−2,"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ip3,V3,I=I−1,"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "=I−3,"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": ".WeplotthesetC"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": ".WeplotthesetCp"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "saddle,weplotthesetC"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "saddle,weplotthesetCp"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "uationofthesetC"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "uationofthesetCp"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "uationofthesetCp1,ϑ, C"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "uationofthesetCp1,ϑ, Cp"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "uationofthesetCp1,ϑ, Cp2,ϑ, C"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "uationofthesetCp1,ϑ, Cp2,ϑ, Cp"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "uationofthesetCp1,ϑ, Cp2,ϑ, Cp3,ϑandC"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "uationofthesetCp1,ϑ, Cp2,ϑ, Cp3,ϑandCp"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "Figure21.ThisﬁguredepictsinorangethesetC"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "Figure21.ThisﬁguredepictsinorangethesetCp"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "We can decompose the thimble C"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "We can decompose the thimble Cp"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "ofI−3,"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "of−I−2,"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "Ip4,V4,I⋆= I−3,"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "Ip4,V4,I⋆= I−3,0 −I−2,"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "Ip4,V4,I⋆= I−3,0 −I−2,0= I−3,"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "Figure22.ThisﬁguredepictsinorangethesetC"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "Figure22.ThisﬁguredepictsinorangethesetCp"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetC"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetCp"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "st equality follows from Equation (14).Notice that the set C"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "t equality follows from Equation (14).Notice that the set Cp"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "wice,thusthereisnocontributioncomingfromthestateintegralI−3,"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "Figure23.ThisﬁguredepictsinorangethesetC"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "Figure23.ThisﬁguredepictsinorangethesetCp"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetC"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetCp"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "stateintegraldecompositionweshouldseethecontributionfromI−2,"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": ".2.4.StateintegralsdecompositioninII.Letϑ∈II.WeplotthecurveC"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "2.4.StateintegralsdecompositioninII.Letϑ∈II.WeplotthecurveCp"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "ofI−3,"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "Ip4,V4,II=I−3,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Ip4,V4,II=I−3,0= I−3,"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "Ip4,V4,II=I−3,0= I−3,1 + I−2,"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "Figure24.ThisﬁguredepictsinorangethesetC"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "Figure24.ThisﬁguredepictsinorangethesetCp"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetC"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetCp"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "Figure25.ThisﬁguredepictsinorangethesetC"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Figure25.ThisﬁguredepictsinorangethesetCp"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "magentacurvesrepresentthetailsattheintersectionofthesetC"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "magentacurvesrepresentthetailsattheintersectionofthesetCp"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "Figure26.ThisﬁguredepictsinorangethesetC"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Figure26.ThisﬁguredepictsinorangethesetCp"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetC"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetCp"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "teintegralsdecomposition inIII.Let ϑ ∈III.We plot the curveC"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "eintegralsdecomposition inIII.Let ϑ ∈III.We plot the curveCp"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "fromI"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "fromI0,"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "wegetthecontributionofI−1,"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "Ip1,V1,III=I"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "Ip1,V1,III=I0,"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "Ip1,V1,III=I0,0 −I−1,"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "Figure27.ThisﬁguredepictsinorangethesetC"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "Figure27.ThisﬁguredepictsinorangethesetCp"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetC"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "magentacurverepresentsthetailattheintersectionofthesetCp"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "4.2.8.StateintegralsdecompositioninIV.Letϑ∈IV.WeplotthesetC"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "4.2.8.StateintegralsdecompositioninIV.Letϑ∈IV.WeplotthesetCp"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "Figure28.ThisﬁguredepictsinorangethesetC"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "Figure28.ThisﬁguredepictsinorangethesetCp"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "magentacurvesrepresentthetailsattheintersectionofthesetC"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "magentacurvesrepresentthetailsattheintersectionofthesetCp"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "ofI−3,"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "re time for the violet line.Then we ﬁnd a contribution of −q"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "me for the violet line.Then we ﬁnd a contribution of −q2I−5,"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "Ip4,V4,IV=I−3,"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Ip4,V4,IV=I−3,0 −q"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Ip4,V4,IV=I−3,0 −q2I−5,"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "Ip4,V4,IV=I−3,0 −q2I−5,1= I−3,"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "Ip4,V4,IV=I−3,0 −q2I−5,1= I−3,0 −qI−1,"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "compositionofthesetC"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "compositionofthesetCp"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "\u0001=\u0000I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "\u0001=\u0000Ip"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "\u0001=\u0000Ip1,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ip1,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "LetΘ(q)bethematrixwhosecolumnsaregivenbythecoeﬃcientsofǫ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "LetΘ(q)bethematrixwhosecolumnsaregivenbythecoeﬃcientsofǫ0, ǫ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(q)bethematrixwhosecolumnsaregivenbythecoeﬃcientsofǫ0, ǫ1, ǫ"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "ethematrixwhosecolumnsaregivenbythecoeﬃcientsofǫ0, ǫ1, ǫ2, ǫ"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "θ(−exp(ǫ); q"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "−q"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "−q5/8exp(ǫ/4)θ(−q exp(ǫ); q"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "4ǫ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "4ǫ2E"
+  },
+  {
+   "page": 34,
+   "mark": "12",
+   "context": "q"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "q12/8exp(ǫ/2)θ(−q"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "q12/8exp(ǫ/2)θ(−q2exp(ǫ); q"
+  },
+  {
+   "page": 34,
+   "mark": "21",
+   "context": "−q"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "−q21/8exp(3ǫ/4)θ(−q"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "−q21/8exp(3ǫ/4)θ(−q3exp(ǫ); q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "whereθ(x; q) = (qx; q)∞(x−1; q)∞(q; q)∞andE"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "k=1"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "1−q"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q3"
+  },
+  {
+   "page": 35,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q6"
+  },
+  {
+   "page": 35,
+   "mark": "9",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q9"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "4 t"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "2 t"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q3"
+  },
+  {
+   "page": 35,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q6"
+  },
+  {
+   "page": 35,
+   "mark": "9",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q9"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "4 +4"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "4 +4"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "4 +4k+2t"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "2 +4"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "2 +4k+3t"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q4"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q3"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q3k(4"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "q3k(4k+1)/2t"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q3k(4k+1)/2t4"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q3"
+  },
+  {
+   "page": 35,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q6"
+  },
+  {
+   "page": 35,
+   "mark": "9",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q9"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "4 +8"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "4 +8"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "4 +8k+4t"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "2 +8"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "2 +8k+6t"
+  },
+  {
+   "page": 35,
+   "mark": "8",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q8"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q3"
+  },
+  {
+   "page": 35,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q6"
+  },
+  {
+   "page": 35,
+   "mark": "9",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q9"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "4 +12"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "4 +12"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "4 +12k+6t"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "2 +12"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "2 +12k+9t"
+  },
+  {
+   "page": 35,
+   "mark": "12",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q12"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "−q"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "−q2−q"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "−q2−q3−q"
+  },
+  {
+   "page": 35,
+   "mark": "5",
+   "context": "−q2−q3−q4−q"
+  },
+  {
+   "page": 35,
+   "mark": "12",
+   "context": "−q2−q3−q4−q5−q"
+  },
+  {
+   "page": 35,
+   "mark": "12",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "−q−5−2q−4−2q−3−2q−2−q−1+ q"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "1 + 2q + 2q"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "1 + 2q + 2q2+ q"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "1 + 2q + 2q2+ q3+ q"
+  },
+  {
+   "page": 35,
+   "mark": "10",
+   "context": "1 + 2q + 2q2+ q3+ q4+ q"
+  },
+  {
+   "page": 35,
+   "mark": "11",
+   "context": "1 + 2q + 2q2+ q3+ q4+ q10+ q"
+  },
+  {
+   "page": 35,
+   "mark": "10",
+   "context": "−q"
+  },
+  {
+   "page": 35,
+   "mark": "11",
+   "context": "−q10−q"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "q−6+ q−5+ q−4−q"
+  },
+  {
+   "page": 35,
+   "mark": "9",
+   "context": "−q−1−1 −q −q"
+  },
+  {
+   "page": 35,
+   "mark": "9",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "q",
+   "context": "G(q−3/8;"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q−2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q2"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "E2(q−1)=−E"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "τ"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "τ"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "\u0000I"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "\u0000Ip"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "\u0000Ip1,V"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Ip"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Ip2,V"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "Ip"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "Ip3,V"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "I"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "Ip"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "Ip4,V"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "τ"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "τ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1 −q −2q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "−q −q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1 + q + q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1 −q −q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "−1 + q + q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "+ O(q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "q + q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1 −q −2q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2q + q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1 −q −2q"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(−x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(−x0)A−(1 −x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(−x0)A−(1 −x0)B=P(x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(−x0)A−(1 −x0)B=P(x0)=0=P′(x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(−x0)A−(1 −x0)B=P(x0)=0=P′(x0)=(−x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "+ (1 −x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "1 −x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(A"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(A0 −B"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(A"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(A0 −B"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "Figure30.DomainofL"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "0(A"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "0(A0 −B"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "(A"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "(A0 −B"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "CorollaryA.2.Thematrix"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "CorollaryA.2.ThematrixbΦ"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "0),j(ℏ)isequaltotheconstanttermofΦ(A,B,p0),0(ℏ)multipliedbyx"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "P(x"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "P(x0) = 0is theroot correspondingto p"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "t correspondingto p0.Therefore,the constantterm ofthe matrix"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "correspondingto p0.Therefore,the constantterm ofthe matrixbΦ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": " gives a particular branch of the multivalued function z7→Li"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "icular branch of the multivalued function z7→Li2(e(z))/(2πi)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "foreachθandifθ∈(0, π)andIm(z)>0thenLθ(z)=Li"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "foreachθandifθ∈(0, π)andIm(z)>0thenLθ(z)=Li2(e(z))/(2πi)"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "d"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "dz"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "dzk+2Lθ(z)=(2πi)"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "(2πi)"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "τ"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "2πilog(e(z);"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "(2πi)"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "τ"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "ThefunctionsLi"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "x"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "(1 −x)"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "(ℓ+ 1 + i)"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "Therefore, using the fact that Li"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "Therefore, using the fact that Lik(x) = −(−1)"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "Therefore, using the fact that Lik(x) = −(−1)kLi"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "| Li"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "| Li2−K(e(z −η/τ))| < (K −1)!ε"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "| Li2−K(e(z −η/τ))| < (K −1)!ε1−KC"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "<C"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "<C2 ε"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "Figure31.DomainofD"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "\u0011\f\f\f < C ε"
+  },
+  {
+   "page": 39,
+   "mark": "k",
+   "context": "(2πi)"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 39,
+   "mark": "k",
+   "context": "τ"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Li2(e(z))/(2πi)"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 39,
+   "mark": "k",
+   "context": "(2πi)"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 39,
+   "mark": "k",
+   "context": "τ"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "=iq"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "=iq1/6eq−1/6e(z"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "Φ(zτ; τ)=Φ(−τ−zτ; τ)−1iq"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "Li2(e(z))/(2πi)"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "k(eq"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "Φ(z; τ)=(e"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "Φ(z; τ)=(eq−1"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "Φ(z; τ)=(eq−1e(z/τ);"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "Φ(z; τ)=(eq−1e(z/τ); e"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "(2πi)"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "τ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "=Li"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "w2−k=−δk,"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "(−ℓ)"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "=Li"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "w2−k=−(2πi)"
+  },
+  {
+   "page": 41,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "(−ℓ)"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "whereforzwithRe((ε"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "τ)<−ε"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "τ|.ThenbyTaylor’stheoremthereexistsaconstantC"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "\u0011k−1≤C"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "< C"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "w"
+  },
+  {
+   "page": 42,
+   "mark": "k",
+   "context": "(2πi)"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 42,
+   "mark": "k",
+   "context": "τ"
+  },
+  {
+   "page": 42,
+   "mark": "k",
+   "context": "(2πi)"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "Li"
+  },
+  {
+   "page": 42,
+   "mark": "k",
+   "context": "τ"
+  }
+ ]
+}

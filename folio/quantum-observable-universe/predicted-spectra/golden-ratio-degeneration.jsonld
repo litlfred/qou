@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:golden-ratio-degeneration",
+  "kind": "remark",
+  "title": "The golden ratio as the boundary of stable chiral structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve",
+  "tags": [
+    "golden-ratio",
+    "degeneration",
+    "chiral",
+    "elliptic-curve",
+    "substrate-parameter"
+  ],
+  "text": "golden-ratio-degeneration.md",
+  "provenance": "authored"
+}

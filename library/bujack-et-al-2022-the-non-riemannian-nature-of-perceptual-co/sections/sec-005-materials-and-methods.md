@@ -8,6 +8,7 @@ pages: 8-10
 source_pdf: bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf
 source_sha256: 2bc66a26d3901a29
 toc_source: inferred
+doc_brief: "The non-Riemannian nature of perceptual color space — 7 sections: Front matter; Experiment; Analysis"
 ---
 In this section, we describe our experimental design in full detail. Participants
 were asked to judge two differences using a triad arrangement of stimuli, as
@@ -51,9 +52,6 @@ diﬀerent L∗value for the standard. The values for the tests are calculated
 using the x and y values.
 **J. C. Roberts, J. Jackson, IEEE Conference on Visualization, October 1–6, 2017, Phoenix,
 AZ.
-8 of 10
-https://doi.org/10.1073/pnas.2119753119
-pnas.org
 Downloaded from https://www.pnas.org by 136.47.145.179 on May 11, 2026 from IP address 136.47.145.179.
 Participants. Only MTurk users located in the United States were recruited.
 Participants were instructed that they could not participate in the study if they
@@ -214,13 +212,6 @@ brightness. J. Opt. Soc. Am. 57, 1304–1316 (1967).
 56. L. L. Thurstone, Psychophysical analysis. Am. J. Psychol. 38, 368–389 (1927).
 57. L. T. Maloney, J. N. Yang, Maximum likelihood difference scaling. J. Vis. 3, 573–585 (2003).
 58. L. L. Thurstone, A law of comparative judgment. Psychol. Rev. 34, 273 (1927).
-PNAS
-2022
-Vol. 119
-No. 18
-e2119753119
-https://doi.org/10.1073/pnas.2119753119
-9 of 10
 Downloaded from https://www.pnas.org by 136.47.145.179 on May 11, 2026 from IP address 136.47.145.179.
 59. S. J. Messick, The perception of attitude relationships: A multidimensional scaling approach to the
 structuring of social attitudes. ETS Res. Bull. Ser 1954, i–231 (1954).
@@ -264,7 +255,4 @@ differences. GitHub. https://github.com/lanl/color/blob/main/Gray Experiment/dat
 data release.csv. Deposited 28 January 2022.
 79. M. R. Luo, G. Cui, B. Rigg, The development of the CIE 2000 colour-difference formula: Ciede2000.
 Color Res. Appl. 26, 340–350 (2001).
-10 of 10
-https://doi.org/10.1073/pnas.2119753119
-pnas.org
 Downloaded from https://www.pnas.org by 136.47.145.179 on May 11, 2026 from IP address 136.47.145.179.

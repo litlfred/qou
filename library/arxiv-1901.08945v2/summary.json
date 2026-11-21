@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1901.08945v2",
  "source_sha256": "df222d76e597057f",
- "brief": "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of",
- "extended": "**DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES**\n\n*AND OF F AMILIES OF BRAUER–SEVERI VARIETIES*\n\n28 pp, 7 sections.\n\n**Abstract.** It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of the group. W e establish the corresponding decompo sition of the unbounded derived category of complexes of sheaves with qua si-coherent co- homology. This generalizes earlier work by Lieblich for ger bes over schemes whereas our gerbes may live over arbitrary algebraic stacks . By combining this decomposition with the semi-orthogonal d ecomposition for a projectivized vector bundle, we deduce a semi-orthogo nal decomposition of the derived category of a family of Brauer–Severi varieti es whose components can be described in terms of twisted sheaves on the base. This reproves and generalizes a result of Bernardara.\n\n**Outline.** 1 Introduction; 2 Torsion pairs and decompositions of derived ; 3 Gerbes; 4 Twisted sheaves; 5 The derived category of a gerbe; 6 Semi-orthogonal decompositions for Brauer–Se; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A (see Theorem 5.4). Let S be an algebraic stack and π : X → S a\n- Theorem: B (see Theorem 2.7 and Theorem 2.22). Let B be a weak Serre subcat-\n- Theorem: C (see Theorem 6.2 and Corollary 6.5). Let S be an algebraic stack\n- Theorem: A, the main ingredient in our proof of Theorem C is a classical result by\n- Theorem 2.7: Let B be a weak Serre subcategory of an abelian category A. Let T\n- Theorem 2.7: for unbounded derived categories. In order to to this, we need so me",
+ "brief": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group",
+ "extended": "**Decompositions of derived categories of gerbes and families of Brauer–Severi varieties**\n\n*AND OF FAMILIES OF BRAUER–SEVERI VARIETIES*\n\n28 pp, 8 sections.\n\n**Abstract.** It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes according to the char- acters of the group. We establish the corresponding decomposition of the unbounded derived category of complexes of sheaves with quasi-coherent co- homology. This generalizes earlier work by Lieblich for gerbes over schemes whereas our gerbes may live over arbitrary algebraic stacks. By combining this decomposition with the semi-orthogonal decomposition for a projectivized vector bundle, we deduce a semi-orthogonal decomposition of the derived category of a family of Brauer–Severi varieties whose components can be described in terms of twisted sheaves on the base. This reproves and generalizes a result of Bernardara.\n\n**Outline.** Front matter; 1 Introduction; 2 Torsion pairs and decompositions of derived ; 3 Gerbes; 4 Twisted sheaves; 5 The derived category of a gerbe; 6 Semi-orthogonal decompositions for Brauer–Se; References",
  "tokens": {
-  "brief": 49,
-  "extended": 409
+  "brief": 48,
+  "extended": 287
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -49,8 +54,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

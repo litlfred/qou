@@ -1,0 +1,323 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-17T05:44:45.811889+00:00",
+  "commitSha": "d6514ea43f63e91231d2a50345c2763a44581d30",
+  "assertions": [
+    {
+      "name": "stage5_ring_cross_check",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "carbon-ring-stage5.witness.json phi_all6 ring +2 front"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "nstrand-connected-stage6",
+  "scriptFile": "nstrand_connected_probe.py",
+  "scriptHash": "deb255af16dc",
+  "scriptCommitSha": "d6514ea43f63e91231d2a50345c2763a44581d30",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_twist_reading3/nstrand_connected_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_twist_reading3/nstrand_connected_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q_at() (proton pin), only for the reported value at t = q0",
+  "description": "PROBE stage 6 (bean qou-a1hh): exact Jones connected parts of n-strand chains (bond-additivity, the hypothesis of connected_eq_zero_of_bonds), rings (closing band in front) and iterated-commutator Brunnian loops. Pre-registered.",
+  "chains": {
+    "n=3,e=2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=3,e=-2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=4,e=2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=4,e=-2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=5,e=2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=5,e=-2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=6,e=2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=6,e=-2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=7,e=2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=7,e=-2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=8,e=2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    },
+    "n=8,e=-2": {
+      "bond_additive_exact": true,
+      "phi_ge3_zero_by_lean": true
+    }
+  },
+  "rings": {
+    "n=3,e=2": {
+      "letters": 10,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 3,
+      "leading_coeff": "-3/8",
+      "phi_full_at_t_q0": "-0.00044384631779925716056"
+    },
+    "n=3,e=-2": {
+      "letters": 10,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 3,
+      "leading_coeff": "3/8",
+      "phi_full_at_t_q0": "0.00032443073950030894155"
+    },
+    "n=4,e=2": {
+      "letters": 14,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 4,
+      "leading_coeff": "3/16",
+      "phi_full_at_t_q0": "0.000021864281961590858545"
+    },
+    "n=4,e=-2": {
+      "letters": 14,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 4,
+      "leading_coeff": "3/16",
+      "phi_full_at_t_q0": "0.000014403845127083619582"
+    },
+    "n=5,e=2": {
+      "letters": 18,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 5,
+      "leading_coeff": "-3/32",
+      "phi_full_at_t_q0": "-1.0773180179733286233e-6"
+    },
+    "n=5,e=-2": {
+      "letters": 18,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 5,
+      "leading_coeff": "3/32",
+      "phi_full_at_t_q0": "6.393969425889290537e-7"
+    },
+    "n=6,e=2": {
+      "letters": 22,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 6,
+      "leading_coeff": "3/64",
+      "phi_full_at_t_q0": "5.3082014986744999119e-8"
+    },
+    "n=6,e=-2": {
+      "letters": 22,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 6,
+      "leading_coeff": "3/64",
+      "phi_full_at_t_q0": "2.8383098946238068765e-8"
+    },
+    "n=7,e=2": {
+      "letters": 26,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 7,
+      "leading_coeff": "-3/128",
+      "phi_full_at_t_q0": "-2.6154783815718431712e-9"
+    },
+    "n=7,e=-2": {
+      "letters": 26,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 7,
+      "leading_coeff": "3/128",
+      "phi_full_at_t_q0": "1.2599373205302122749e-9"
+    },
+    "n=8,e=2": {
+      "letters": 30,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 8,
+      "leading_coeff": "3/256",
+      "phi_full_at_t_q0": "1.2887089848200946753e-10"
+    },
+    "n=8,e=-2": {
+      "letters": 30,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 8,
+      "leading_coeff": "3/256",
+      "phi_full_at_t_q0": "5.5929130011459704742e-11"
+    }
+  },
+  "brunnian": {
+    "n=3": {
+      "letters": 12,
+      "proper_sublinks_unlinked": true,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 4,
+      "leading_coeff": "-3/4",
+      "phi_full_at_t_q0": "-0.000089140900781628398849",
+      "jones_A": {
+        "-12": -1,
+        "-8": 3,
+        "-4": -2,
+        "0": 4,
+        "4": -2,
+        "8": 3,
+        "12": -1
+      }
+    },
+    "n=4": {
+      "letters": 36,
+      "proper_sublinks_unlinked": true,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 6,
+      "leading_coeff": "3/2",
+      "phi_full_at_t_q0": "1.953208806110122063e-6",
+      "jones_A": {
+        "-22": -1,
+        "-18": 4,
+        "-14": -6,
+        "-10": 5,
+        "-6": -5,
+        "-2": -1,
+        "2": -1,
+        "6": -5,
+        "10": 5,
+        "14": -6,
+        "18": 4,
+        "22": -1
+      }
+    },
+    "n=5": {
+      "letters": 88,
+      "proper_sublinks_unlinked": true,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 8,
+      "leading_coeff": "-3",
+      "phi_full_at_t_q0": "-4.3518430675516680344e-8",
+      "jones_A": {
+        "-52": 1,
+        "-48": -14,
+        "-44": 90,
+        "-40": -360,
+        "-36": 1016,
+        "-32": -2159,
+        "-28": 3564,
+        "-24": -4578,
+        "-20": 4364,
+        "-16": -2418,
+        "-12": -1015,
+        "-8": 4939,
+        "-4": -8016,
+        "0": 9188,
+        "4": -8016,
+        "8": 4939,
+        "12": -1015,
+        "16": -2418,
+        "20": 4364,
+        "24": -4578,
+        "28": 3564,
+        "32": -2159,
+        "36": 1016,
+        "40": -360,
+        "44": 90,
+        "48": -14,
+        "52": 1
+      }
+    },
+    "n=6": {
+      "letters": 196,
+      "proper_sublinks_unlinked": true,
+      "phi_full_exactly_zero": false,
+      "log_t_order": 10,
+      "leading_coeff": "6",
+      "phi_full_at_t_q0": "9.6931969596728396062e-10",
+      "jones_A": {
+        "-110": -1,
+        "-106": 22,
+        "-102": -221,
+        "-98": 1219,
+        "-94": -2440,
+        "-90": -20951,
+        "-86": 257424,
+        "-82": -1638761,
+        "-78": 7674809,
+        "-74": -29019899,
+        "-70": 92385281,
+        "-66": -253483190,
+        "-62": 608051363,
+        "-58": -1286270104,
+        "-54": 2409764644,
+        "-50": -3997544868,
+        "-46": 5836395408,
+        "-42": -7376981806,
+        "-38": 7752029541,
+        "-34": -5997914343,
+        "-30": 1473583628,
+        "-26": 5663248013,
+        "-22": -14166576746,
+        "-18": 21830633446,
+        "-14": -26106870305,
+        "-10": 25032355160,
+        "-6": -18091170364,
+        "-2": 6601114025,
+        "2": 6601114025,
+        "6": -18091170364,
+        "10": 25032355160,
+        "14": -26106870305,
+        "18": 21830633446,
+        "22": -14166576746,
+        "26": 5663248013,
+        "30": 1473583628,
+        "34": -5997914343,
+        "38": 7752029541,
+        "42": -7376981806,
+        "46": 5836395408,
+        "50": -3997544868,
+        "54": 2409764644,
+        "58": -1286270104,
+        "62": 608051363,
+        "66": -253483190,
+        "70": 92385281,
+        "74": -29019899,
+        "78": 7674809,
+        "82": -1638761,
+        "86": 257424,
+        "90": -20951,
+        "94": -2440,
+        "98": 1219,
+        "102": -221,
+        "106": 22,
+        "110": -1
+      }
+    }
+  }
+}

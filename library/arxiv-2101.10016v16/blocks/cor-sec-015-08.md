@@ -1,0 +1,1 @@
+Let C and C ′ be rigid tensor C ∗ -categories with intrinsic dimensions d and d ′ respectively, and let (F, F, G) : C → C ′ be a unitary weak tensor ∗-functor. If C is amenable (e.g. C is a fusion category) then d(ρ) = d ′ (F(ρ)) for all ρ. In particular, when C ′ = Hilb then d(ρ) = dim(F(ρ)) and therefore F is already tensor.

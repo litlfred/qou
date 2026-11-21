@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "cjdoubletwistfinal",
+  "figures": [
+    {
+      "id": "vfig-p002",
+      "file": "figures/vfig-p002.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 2
+      },
+      "page": 2,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        192.47,
+        116.05,
+        405.07,
+        257.78
+      ],
+      "assembly": {
+        "drawings": 36,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              192.47,
+              116.05,
+              405.07,
+              257.78
+            ],
+            "drawings": 35,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "2m",
+              "2p"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              192.47,
+              116.05,
+              405.07,
+              257.78
+            ],
+            "parent": null,
+            "labels": [
+              "2m",
+              "2p"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              310.45,
+              445.29,
+              359.91,
+              445.29
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 75
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+using assms
+by simp
+moreover
+have sz * y> 1
+using assms
+by (smt mult-le-cancel-left1)
+ultimately
+have **: « * y + sqrt ((2* — 1) *(y?— 1))>1
+by linarith
+hence 1: 0 < (x * y + sqrt ((x? — 1) * (y? — 1)))? - 1
+by simp
+
+have 2: x * sqrt (y? — 1) + y * sqrt (a? — 1) > 0
+using assms
+by simp
+
+have (xr*sqrt(y? — 1)+y*sqrt(x? —1))? = (sqrt((axy+sqrt((2?—1)*(y?—1)))? — 1))?
+using assms
+proof (subst real-sqrt-pow2)
+show 0 < (x * y + sqrt ((x” — 1) * (y? — 1)))? — 1
+by fact
+next
+have (a * sqrt (y? — 1))? = 2? * (y? — 1)
+by (simp add: <y > 1» power-mult-distrib)
+moreover
+have (y * sqrt (a? — 1))? = y? * (a? — 1)
+using assms by (simp add: power-mult-distrib)
+ultimately show (a * sqrt (y? — 1) + y * sqrt (a? — 1))? = (a * y + sqrt ((x? — 1) * (y? — 1)))? - 1
+using assms
+unfolding power2-sum
+apply (simp add: real-sqrt-mult power-mult-distrib)
+apply (simp add: field-simps)
+done
+qed
+hence sqrt ((x * y + sqrt ((2* — 1) * (y? — 1)))? — 1) = 2 * sqrt (y° — 1) + y * sqrt (x? — 1)
+using power2-eq-iff-nonneg|OF 2 real-sqrt-ge-zero[OF 1]]
+by simp
+thus ?thesis
+using assms **
+apply (simp add: arcosh-real-def )
+apply (subst In-mult-pos[symmetric])
+apply (smt one-le-power real-sqrt-ge-zero)
+apply (smt (verit) one-le-power real-sqrt-ge-zero)
+by (smt (verit) distrib-right mult.commute real-sqrt-mult)
+qed
+
+lemma arcosh-double:
+fixes x :: real
+assumes z > 1
+shows 2 * arcosh x = arcosh (2«x? — 1)
+by (smt arcosh-add arcosh-mono assms one-power2 power2-eq-square real-sqrt-abs)
+
+end
+
+3 Tarski axioms
+
+In this section we introduce axioms of Tarski [7] trough a series of locales.
+
+theory Tarski
+imports Main
+begin
+
+The first locale assumes all Tarski axioms except for the Euclid’s axiom and the continuity axiom and corresponds
+to absolute geometry.
+
+locale TarskiAbsolute =

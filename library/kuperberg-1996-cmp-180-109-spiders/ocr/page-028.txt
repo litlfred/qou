@@ -1,0 +1,41 @@
+136 G Kuperberg
+
+bijection A: B(s;) — B(sz) that has the following effect on non-elliptic webs. If a
+web w connects p to q by a bare strand, h(w) is the same web with the orientation
+of the strand reversed:
+
+eae
+
+If there is an H-web attached at p and q, h(w) is w with the H-web removed:
+
++
++ + - +
+) :
++ + + +
+
+If there is no H-web, then A(w) is w with an H-web attached:
+
++ +
++ + + +
+»)
+_ + + _
+It is easy to check that A(w) is non-elliptic if w is, and that A has an inverse. In
+fact, the inverse is also an A-map. 0
+
+In the notation of the above proof, we also say that w and h(w) differ by an
+H-move.
+
+Lemma 6.4. If « is a minimal cut path of w € B(ST) separating S from T, it
+divides w into two parts w; € B(Sc) and wz € B(c*T) with non-convex clasps c
+and c*.
+
+Proof. If ¢ were convex in w), w; would have a cut path «’ whose weight is lower
+than that of c, the same as the weight of «. But «’ is also a cut path in w and has
+the same endpoints as «, contradicting the hypothesis that « is minimal:
+
+wt.
+
+ri
+
+Lemma 6.5. If « and B are cut paths from p to q of a basis web w and « is
+minimal, then the weight of « is less than or equal to (and not incomparable to)

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.0853v3/sections/sec-112",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A homotopy",
+  "pageStart": 164,
+  "pageEnd": 176,
+  "contains": [
+    "library/arxiv-0903.0853v3/blocks/prose-sec-112"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "provenance": "ingested"
+}

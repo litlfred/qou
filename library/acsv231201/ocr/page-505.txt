@@ -1,0 +1,46 @@
+C.2 Residue forms and the residue integral theorem 487
+
+as desired. In the general case, the sign (-1)*~! comes from the position of dz,
+in the wedge product. ia)
+
+Exercise C.1. Let w = 1/Q(x,y) dxdy, where Q(x,y) = 1 — x- xy + y’. Find
+a formula for Res(w) on V = Vg in terms of dx only, and another in terms of
+dy only. Prove that the restrictions of these forms to V are equal.
+
+Theorem C.9 (residue integral theorem). Suppose V = Vg = {z € c!:
+Q(z) = 0} is defined globally by a function Q that is analytic on a neighbor-
+hood of V and has nonvanishing gradient on V, and let w be a holomorphic
+d-form on M with smooth simple poles on V. If a and B are d-cycles in M
+whose projections to H4(C4) are equal then
+
+fo- [o=2mi f Res(w) .
+@ B INT[o, BV]
+
+Proof Vanishing of [a — 8] in Ha(C“) by definition implies the existence of a
+(d + 1)-chain H on Cé with boundary a — £. Perturbing slightly if necessary,
+we can assume without loss of generality that H intersects V transversely.
+Letting N denote the intersection of H with a small neighborhood of V and
+© =H -N, the vanishing of holomorphic integrals of d-forms over boundaries
+(Theorem A.27) implies that the integral of the holomorphic d-form w over OO
+
+Jo fen Jue
+
+The Collar Lemma (Lemma C.1) implies that NV is homotopic to a product
+ox B,, where o = H NV. Thus ON is homotopic to 6(a x B,), which is equal
+to a x OB, because a is a cycle, giving
+
+Louw? Lo *)
+
+Using functoriality of the residue, we may change coordinates so that V is the
+complex hyperplane defined by z; = 0. Thus we need only prove our claim
+in the case where Q(z) = z,. Writing w = (P/z,)dz A (dz, A--+ A dzg), the
+
+iterated integral is
+P
+{ie PO te) dea nerd.
+olJaB. 41
+
+By standard univariate complex analysis, the inner integral at a point (z2,..., Za)
+is the residue with respect to t of the meromorphic function P(t, z2,...,Za)/t at
+
+vanishes. In other words,

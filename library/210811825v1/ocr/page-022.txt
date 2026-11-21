@@ -1,0 +1,53 @@
+=
+
+Theorem 1.16 (Cheeger’s inequality, [17]) For QC S as above, we have
+
+§7(Q)
+O d(9) = A.
+
+We will also be interested in creating upper bounds on eigenvalues. In his classic trea-
+
+tise on acoustics [69], Rayleigh gave a variational characterization of the first eigenvalue
+for the Dirichlet problem. This involves taking the gradient of a function. We stated
+earlier that the eigenfunctions of the Laplacian on a compact Riemann surface S form an
+orthonormal basis of L?($). Recall that L?(9) is the space of square integrable functions
+on S, that is, a function f on S is in L?(S) if
+
+[ | f[2dS' < oo.
+JS
+
+where dS is the Riemannian measure on S. L?(S) is special among the L?(9) spaces
+
+because its inner product
+oe = [ faas
+Js
+
+makes it a Hilbert space. The inner product induces the norm
+
+fll? = (Ff, fae.
+
+Note that the L? norm gives no indication about how smooth a function is. When
+we apply the Laplacian, we may therefore uncover huge (or indeed, undefined) second
+derivatives, even if the L? norm of a function is small. The Laplacian is unbounded on
+L?(S) and operations such as taking the gradient of f € L?(S)) simply do not make sense.
+Therefore, we need to formulate a different space of functions before we can introduce
+Rayleigh’s principle. Rather than considering the whole space of square integrable func-
+tions, we will work with those functions in L?(S') for which we can define a reasonable
+
+notion of differentiability. First consider the multi-index
+a= (a1,..., Qa), a; EN
+of order
+d
+ja] = > Qi,
+i=1
+and for w(a) : R¢ > C sufficiently smooth, define
+
+a) Ol (a
+DOW) = Fm oa
+
+For convenience, we define D'y(x) to be the gradient Vu(x) and D?y(x) to be the
+Hessian matrix for ~(x), the trace of which is equal to Ay(x). We are now ready to
+
+define our notion of differentiability.
+
+12

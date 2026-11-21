@@ -1,0 +1,53 @@
+Chapter 3 Nuclear Lattice Effective Field Theory
+
+and it was derived in [85, 86].
+
+As the computational power arises, three-body finite-volume effects are now an actual field of research.
+Certainly, this is far more difficult than the two-body problem as the most general three-body bound state
+is in between a 2+1 state, where a very deeply bound dimer exists and a shallow 1+1+1 bound state,
+which is restricted to the unitary limit case. Finite-volume formulas and discussions can be found in
+[87-92]. The explicit formula will be given in the respective chapter.
+
+3.4 Scattering on the lattice
+
+3.4.1. Liischer’s effective range expansion in the finite volume
+
+Similar to the finite volume effects of bound states, we can have a look on finite volume calculations of
+the phase shift and the effective range expansion. In [93, 94], a finite volume effective range expansion
+was derived,
+
+1 Lq\?
+goors(=—si, n=(¥). (3.16)
+
+and is related to Eq. (2.44) in the infinite volume. Here, g = |@| is the relative momentum linked to the
+measured finite-volume eigenenergy via E, = ¢ [2 and S (7) is the three-dimensional £-function,
+
+@(A2— #2
+S (yn) = lim » o(a'=7) — And}. (3.17)
+oo 72
+a 7
+It is approximated for small 7 by
+1 1 2 3
+S(n)=--—+Sqt+S\n +Son+S37 +... , (3.18)
+1)
+with
+So= lim. y oe) a AnA], (3.19)
+it
+1 :
+lan at ded. (3.20)
+40 (a
+The first coefficients were summarized in [32] and denote
+So = -8.913631, S, = 16532288, S$, = 8.401924, 5S = 6.945808, G21)
+
+S4= 6.426119, S;=6.202149, S_=6.098184, S$, = 6.048263.
+
+3.4.2 Spherical wall and radial projection
+
+Liischer’s effective range expansion is the appropriate method for low energy and zero angular mo-
+mentum. Although nowadays there are extensions to higher partial waves and one could also improve
+the predictability range by including higher terms in the effective range expansion, we choose another
+approach to describe two-particle scattering in a box. By imposing a spherical wall as a boundary
+condition at r ~ Ry in the cubic box, one can almost enforce spherical symmetry on the system and the
+solutions will be standing waves which also cover a large range of momenta. As we have a localized
+
+26

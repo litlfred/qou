@@ -97,7 +97,7 @@ def skein_confined_to_reeb_bundle (D : DivisorSupport)
     confined to the divisor support.
 
     Named as a `Prop` (pattern C); a proof awaits the braid-word
-    generation infrastructure.  Ref: [manuscript] Ch 4. -/
+    generation infrastructure.  Ref: [leitner2026] Ch 4. -/
 def vertex_completeness (D : DivisorSupport) : Prop :=
   ∀ target : D.V → D.V,
     ∃ word : List (VertexAction D),

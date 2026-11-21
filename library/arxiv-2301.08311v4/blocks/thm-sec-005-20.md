@@ -1,1 +1,1 @@
-Fix a finite set P of punctures in D2. Let u = (u1,u 2,...,u n) : D2
+Each disc component of the inside piece of a rigid broken strip (u, D) or a rigid broken disc with point constraint is a elementary disc.

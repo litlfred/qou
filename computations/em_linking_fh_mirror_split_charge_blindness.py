@@ -8,7 +8,7 @@ is a charge-dependent flux, and the shape it must have is the OPPOSITE
 of the one the corpus records.
 
 THE STRUCTURE. Komendarczyk arXiv:0808.1533v1 eq. (43), p. 26, verified
-directly against library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:
+directly against library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md:
 
     E_{3/2}(X) >= (pi/16)^(1/4) * ( sum_{k=1..n} ac(L_k, L)|Flux(X_k)| )
                   * min_{1<=k<=n} |Flux(X_k)|
@@ -169,7 +169,7 @@ def main() -> int:
     )
 
     b.add_data("eq43_source", {
-        "file": "library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216",
+        "file": "library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md:203-216",
         "citation": "Komendarczyk, arXiv:0808.1533v1, eq. (43), p. 26",
         "statement": (
             "E_{3/2}(X) >= (pi/16)^(1/4) * ( sum_{k=1..n} ac(L_k,L)|Flux(X_k)| ) "

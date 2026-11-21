@@ -1,0 +1,63 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "du-1995-algebra-colloq-2-363",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 7.1e-05,
+        "imagesOnPage": 1,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 1,
+          "coverage": 7.1e-05,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 3,
+          "coverage": 7.9e-05,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 3,
+          "coverage": 3.1e-05,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 7,
+          "coverage": 0.000129,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 11,
+          "coverage": 0.000106,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 11,
+          "coverage": 9.9e-05,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 11,
+          "coverage": 9.9e-05,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 11,
+          "coverage": 8e-05,
+          "imagesOnPage": 4
+        }
+      ]
+    }
+  ]
+}

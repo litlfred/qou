@@ -1,0 +1,43 @@
+Chapter 2
+
+Background
+
+2.1 Spectral theory
+
+The Laplace-Beltrami operator A, on a Riemannian manifold M, is given in local coor-
+
+dinates by the formula
+“10 in O
+A=- — ik_O
+y Vaan 9 Bay
+
+i,k=1
+
+where gj, is the metric tensor, g its determinant, and g‘* are the components of the dual
+metric on the cotangent bundle of M.
+
+There exists an orthonormal basis {¢; |i € No} in L?(M) consisting of eigenfunctions
+AG; = ridi (2.1)
+
+such that
+0=X9 <A, S AQ <... (2.2)
+
+form an_ascendihg sequence with oo as the only accumulation point. We understand
+Equation (2.1) in terms of the weak derivative.
+
+The sequence in Equation (2.2) is called the spectrum of A, and the individual d,s are
+referred to as eigenvalues. In this work, M will be either a compact Riemann surface,
+or a subspace of a compact Riemann surface on which we consider a Neumann, Dirichlet
+
+undary problem. Recall the definition of these eigenvalue problems from
+Chapter 1. In particular, note that we take 2 to have compact closure and piecewise
+smooth boundary. The property of compactness, along with the smoothness condition
+where we consider a bounded Q, ensure that the spectrum is discrete.
+
+This result is entirely non-trivial; to see where it comes from, we will consider the
+
+Dirichlet Laplacian Ap on a domain 2 in a Riemann surface (recall
+Peoeicn er The approach we take is via sesquilinear forms, which will be defined
+shortly. The spectral theory of A can also be explained through heat kernel asymptotics,
+
+25

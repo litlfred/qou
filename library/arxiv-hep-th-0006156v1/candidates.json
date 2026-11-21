@@ -3,13 +3,14 @@
  "doc_id": "arxiv-hep-th-0006156v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b799d4ef150291cf7c6aeca96ff9eae2abbba976c49fc668d36e3141653f0217",
   "file": "0006156v1.pdf"
  },
  "provenance": {
-  "title": "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE",
-  "authors": "THEOR Y. I: ALGEBRAIC APPROACH AND DUALITY",
+  "title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
+  "authors": "THEORY. I: ALGEBRAIC APPROACH AND DUALITY",
   "arxiv": {
    "id": "hep-th/0006156",
    "version": "1",
@@ -20,25 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "remark": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "ably, integral (23) can be evaluated explicitly as we ll. Indeed, using",
-   "section_file": "sections/sec-052-63-integral-ramanujan-identity-consider-the-foll.md",
-   "section_title": "Integral Ramanujan identity . Consider the following Fourier inte-",
-   "pages": "16-17",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

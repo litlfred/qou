@@ -1,1 +1,0 @@
-Let AbeaDGring,let Kbeanoetherianring,andsupposethereisacohomo-

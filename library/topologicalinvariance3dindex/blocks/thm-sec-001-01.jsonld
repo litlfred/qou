@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/topologicalinvariance3dindex/blocks/thm-sec-001-01",
@@ -12,10 +12,20 @@
     "doco:Section"
   ],
   "kind": "theorem",
-  "pageStart": 1,
-  "pageEnd": 4,
+  "pageStart": 2,
+  "pageEnd": 3,
   "text": "thm-sec-001-01.md",
   "derivedFrom": "library/topologicalinvariance3dindex/sections/sec-001",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-001-11-the-3d-index-of-dimofte-gaiotto-gukov.md (p. 2-3)",
+    "claim_id": "topologicalinvariance3dindex#theorem:1.1",
+    "lean_status": "unformalized"
+  }
 }

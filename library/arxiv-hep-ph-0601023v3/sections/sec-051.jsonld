@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0601023v3/sections/sec-051",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "APPENDICES",
+  "pageStart": 147,
+  "pageEnd": 147,
+  "contains": [
+    "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-051"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "provenance": "ingested"
+}

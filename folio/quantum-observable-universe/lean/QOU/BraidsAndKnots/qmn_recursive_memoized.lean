@@ -81,7 +81,7 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
 *The
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
 def qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
     (∀ lam ρ : ℕ, ctx.chi lam ρ = ctx.chi_recursion lam ρ) ∧
     (∀ lam ρ : ℕ, haveI := ctx.ringR

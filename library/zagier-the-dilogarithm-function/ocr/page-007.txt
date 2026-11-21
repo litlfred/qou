@@ -1,0 +1,63 @@
+The Dilogarithm Function 9
+
+Together they say that the six functions
+
+z—-1
+
+, Lig(
+
+), -Lin(2); -Lig(1 — 2), —Lip(—-)
+
+z—-1
+are equal modulo elementary functions, Then there is the duplication formula
+Lig(z?) = 2 (Lig(z) + Lig(—z))
+
+and more generally the “distribution property”
+
+Lig (x) =n > Lig(z) (n = 1, 2, 3,...).
+2° =r
+Next, there is the two-variable, five-term relation
+
+1- 1-
+Lig(x) + Lio(y) + Lig ( * ) + Lig (1 —2y) + Lig ( y )
+l-«xy 1l- «xy
+
+fia l-a l-y
+=| log(2) log(1 — x) — log(y) log(1 — y) + log (; = =) log (; — +)
+which (in this or one of the many equivalent forms obtained by applying
+the symmetry properties given above) was discovered and rediscovered by
+Spence (1809), Abel (1827), Hill (1828), Kummer (1840), Schaeffer (1846),
+and doubtless others. (Despite appearances, this relation is symmetric in the
+five arguments: if these are numbered cyclically as z, with n € Z/5Z, then
+
+1-Z, = (224 - 1) (2nta - 1) = %n—22n+2-) There is also the six-term relation
+
+1 11
+=4+-4-=1 => Lir(
+
++ Lig(y) + Lie(z)
+GY &
+
+[bio(-Z) + Lie(—=) + Lia(-=*)
+
+x)
+1
+2
+
+discovered by Kummer (1840) and Newman (1892). Finally, there is the
+
+strange many-variable equation
+
+Lip(z) = Lip (<) +C(f), 1
+
+Lm(f) en a)
+
+F(a)=1
+
+where f(x) is any polynomial without constant term and C(f) a (complicated)
+constant depending on f. For f quadratic, this reduces to the five-term rela-
+tion, while for f of degree n it involves n? + 1 values of the dilogarithm.
+
+All of the functional equations of Lig are easily proved by differentiation,
+while the special values given in the previous section are obtained by combin-
+ing suitable functional equations. See [4].

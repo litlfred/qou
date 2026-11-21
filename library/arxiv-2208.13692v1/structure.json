@@ -6,10 +6,12 @@
   "sha256": "567eff9fb44ef3e59cc9ebed6de32806be91a756cffb152a0448e747346580d5",
   "bytes": 873491,
   "pages": 38,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,19 +21,27 @@
    "stamp_date": "29 Aug 2022"
   },
   "doi": null,
-  "title": "BRING\u2019S CURVE: OLD AND NEW",
+  "title": "BRING’S CURVE: OLD AND NEW",
   "authors_raw": "H. W. BRADEN AND LINDEN DISNEY-HOGG",
-  "abstract": "Bring\u2019s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Sz\u00a8 ego kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20220830004341Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  },
   "title_lines": [
-   "BRING\u2019S CURVE: OLD AND NEW"
-  ]
+   "BRING’S CURVE: OLD AND NEW"
+  ],
+  "abstract": "Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Sz¨ego kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20220830004341Z"
+  },
+  "title_raw": "BRING’S CURVE: OLD AND NEW",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "BRING’S CURVE: OLD AND NEW 1. Introduction Bring’s curve, a genus-4 Riemann surface ﬁrst introduced by Erland Bring in 1786 in relation to solutions of the quintic equation, is the unique genus-4 curve with automorphism group S 5 , the largest possible group for curves of this genus. This automorphi",
+   "outline": "1. Introduction",
+   "text": "BRING’S CURVE: OLD AND NEW",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -39,151 +49,560 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Defining Equations and Elementary Properties",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Basic Properties",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Period Matrix",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Automorphism Group",
    "page": 10,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Geometric Points",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Weierstrass Points",
    "page": 13,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Vertices and Face-Centres",
    "page": 17,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Quotients by Subgroups",
    "page": 18,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Genera of Quotients",
    "page": 18,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Relations between Quotients",
    "page": 20,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quotients by a 4- and 2,2-cycle",
    "page": 21,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quotients by a 3-cycle",
    "page": 24,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quotients by a transposition",
    "page": 25,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Summarising",
    "page": 27,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Theta Characteristics",
    "page": 30,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abel-Jacobi and the Riemann Constant Vector",
    "page": 31,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Tritangent Planes and Odd Characteristics",
    "page": 31,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Even Characteristics",
    "page": 32,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 34,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Geometric realisations",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Hyperbolic tilings",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Quotient structure of Bring’s curve",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Subgroup structre of S5 corresponding to the quotients of Bring’s curve",
+   "page": 28,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Quotient structure including marked points",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 753,
+   "n_words": 113,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -191,8 +610,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4252,
-   "n_words": 669
+   "n_chars": 4253,
+   "n_words": 670,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-defining-equations-and-elementary-properties",
@@ -200,19 +621,23 @@
    "title": "Defining Equations and Elementary Properties",
    "level": 1,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 3,
+   "n_chars": 3337,
+   "n_words": 624,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-basic-properties",
    "number": "2.1",
    "title": "Basic Properties",
    "level": 2,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 8,
-   "n_chars": 15486,
-   "n_words": 3104
+   "n_chars": 12362,
+   "n_words": 2703,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-22-the-period-matrix",
@@ -221,8 +646,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 4119,
-   "n_words": 887
+   "n_chars": 4208,
+   "n_words": 979,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-23-the-automorphism-group",
@@ -231,8 +658,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 7820,
-   "n_words": 1524
+   "n_chars": 7882,
+   "n_words": 1589,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-3-geometric-points",
@@ -241,8 +670,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2924,
-   "n_words": 516
+   "n_chars": 2935,
+   "n_words": 527,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-31-weierstrass-points",
@@ -251,8 +682,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 17,
-   "n_chars": 9266,
-   "n_words": 1648
+   "n_chars": 9311,
+   "n_words": 1695,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-32-vertices-and-face-centres",
@@ -261,8 +694,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2302,
-   "n_words": 515
+   "n_chars": 2306,
+   "n_words": 519,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-4-quotients-by-subgroups",
@@ -271,8 +706,10 @@
    "level": 1,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 1001,
-   "n_words": 164
+   "n_chars": 1002,
+   "n_words": 165,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-41-genera-of-quotients",
@@ -281,8 +718,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 3072,
-   "n_words": 615
+   "n_chars": 3101,
+   "n_words": 644,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-42-relations-between-quotients",
@@ -291,8 +730,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2398,
-   "n_words": 409
+   "n_chars": 2431,
+   "n_words": 442,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-43-quotients-by-a-4--and-22-cycle",
@@ -301,8 +742,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 24,
-   "n_chars": 8286,
-   "n_words": 1607
+   "n_chars": 8378,
+   "n_words": 1699,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-44-quotients-by-a-3-cycle",
@@ -311,8 +754,10 @@
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 3734,
-   "n_words": 702
+   "n_chars": 3782,
+   "n_words": 750,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-013-45-quotients-by-a-transposition",
@@ -321,8 +766,10 @@
    "level": 2,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 4928,
-   "n_words": 998
+   "n_chars": 4979,
+   "n_words": 1049,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-014-46-summarising",
@@ -331,8 +778,10 @@
    "level": 2,
    "page_start": 27,
    "page_end": 30,
-   "n_chars": 6692,
-   "n_words": 1212
+   "n_chars": 6736,
+   "n_words": 1261,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-015-5-theta-characteristics",
@@ -341,8 +790,10 @@
    "level": 1,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 1527,
-   "n_words": 259
+   "n_chars": 1530,
+   "n_words": 262,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-016-51-abel-jacobi-and-the-riemann-constant-vector",
@@ -351,8 +802,10 @@
    "level": 2,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 982,
-   "n_words": 187
+   "n_chars": 981,
+   "n_words": 186,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-017-52-tritangent-planes-and-odd-characteristics",
@@ -361,8 +814,10 @@
    "level": 2,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 2589,
-   "n_words": 461
+   "n_chars": 2602,
+   "n_words": 474,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-018-53-even-characteristics",
@@ -371,8 +826,10 @@
    "level": 2,
    "page_start": 32,
    "page_end": 34,
-   "n_chars": 6547,
-   "n_words": 1192
+   "n_chars": 6575,
+   "n_words": 1221,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-019-6-conclusion",
@@ -381,8 +838,10 @@
    "level": 1,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 3439,
-   "n_words": 556
+   "n_chars": 3438,
+   "n_words": 555,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-020-references",
@@ -391,21 +850,31 @@
    "level": 1,
    "page_start": 35,
    "page_end": 38,
-   "n_chars": 10354,
-   "n_words": 1535
+   "n_chars": 10282,
+   "n_words": 1471,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 21,
-  "sections": 21,
-  "chars_total": 101718,
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 22,
+  "chars_total": 103164,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "arxivpaper.tex",
    "tex_sections": 20,
-   "overlaid": 19,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -413,24 +882,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-defining-equations-and-elementary-properties",
      "title": "Defining Equations and Elementary Properties",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-21-basic-properties",
      "title": "Basic Properties",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.782,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -438,7 +914,7 @@
      "id": "sec-003-22-the-period-matrix",
      "title": "The Period Matrix",
      "prose_ratio": 0.953,
-     "coverage_ratio": 0.97,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -446,7 +922,7 @@
      "id": "sec-004-23-the-automorphism-group",
      "title": "The Automorphism Group",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -454,7 +930,7 @@
      "id": "sec-005-3-geometric-points",
      "title": "Geometric Points",
      "prose_ratio": 0.867,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -470,7 +946,7 @@
      "id": "sec-007-32-vertices-and-face-centres",
      "title": "Vertices and Face-Centres",
      "prose_ratio": 0.902,
-     "coverage_ratio": 0.889,
+     "coverage_ratio": 0.911,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -486,7 +962,7 @@
      "id": "sec-009-41-genera-of-quotients",
      "title": "Genera of Quotients",
      "prose_ratio": 0.934,
-     "coverage_ratio": 0.938,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -494,7 +970,7 @@
      "id": "sec-010-42-relations-between-quotients",
      "title": "Relations between Quotients",
      "prose_ratio": 0.884,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -502,7 +978,7 @@
      "id": "sec-011-43-quotients-by-a-4--and-22-cycle",
      "title": "Quotients by a 4- and 2,2-cycle",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -510,7 +986,7 @@
      "id": "sec-012-44-quotients-by-a-3-cycle",
      "title": "Quotients by a 3-cycle",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.971,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -518,7 +994,7 @@
      "id": "sec-013-45-quotients-by-a-transposition",
      "title": "Quotients by a transposition",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -526,7 +1002,7 @@
      "id": "sec-014-46-summarising",
      "title": "Summarising",
      "prose_ratio": 0.902,
-     "coverage_ratio": 0.952,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -558,15 +1034,15 @@
      "id": "sec-018-53-even-characteristics",
      "title": "Even Characteristics",
      "prose_ratio": 0.87,
-     "coverage_ratio": 0.992,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-019-6-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.847,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -579,5 +1055,5 @@
   }
  },
  "duplicate_of": "s40879-023-00706-0",
- "duplicate_note": "Same work as library/s40879-023-00706-0/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/s40879-023-00706-0/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
 }

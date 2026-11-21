@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1811.05376v4/blocks/thm-sec-014-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 36,
+  "pageEnd": 40,
+  "text": "thm-sec-014-02.md",
+  "derivedFrom": "library/arxiv-1811.05376v4/sections/sec-014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1811.05376v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "15",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [0, 1] in sections/sec-014-a2-borel-laplace-resummation.md",
+    "claim_id": "arxiv-1811.05376v4#theorem:15",
+    "lean_status": "unformalized"
+  }
+}

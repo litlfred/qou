@@ -1,0 +1,45 @@
+h[x_, L_] = (Sin[L x]/(L x))74
+
+g{\[Xi]_, L_] = FourierTransform[h[t, L], t, \[Xi]]/Sart[2 Pi]
+Zer[x_] = 0;
+
+gd[x_, L_] =D[g[x, L], x] /. {Sign’—>Zer}
+
+multbound [L_]:=(h[x_]=h[x,L];
+
+~v-e8[\[Xi]_J=e[\ [Xi] ,L]5
+
+wu ved [x_]=gd[x,L];
+
+uv RightSide——2NIntegrate [gd[x]/Sinh [x/2],{x,0,4L}]+
+
+__~-Sum[Sum[ les [[ i]] g[k*les [[i]]]/(2Sinh[k*les [[i]]/2]) ,{i,1,Length[les]}],{k,1,10}];
+uuu (RightSide—h[I /2])/h[Sqrt [116469/28089 —1/4]])
+
+DiscretePlot [multbound[L] ,{L,0.4,1.0,0.01}]
+
+°
+boii 1 1 1 ion 1 L 1 vii if fe tenes aoe?
+
+0.5 0.6 0.7 0.8 0.9 1.0
+
+Figure F.1: Output of the function “multbound” for different values of L
+
+Ld)
+
+We also include the code used to produce Figure | 3.19. Here we construct a test
+function to satisfy the hypothesis of Corollary 3.17, and plot its nodal line as a function
+of t. We superimpose thi nodal line against a plot of the boundary of the
+annulus considered in Section 3.4.1 to show that the test function is positive inside the
+desired region.
+
+(+ Eigenvalue +)
+
+\[Lambda] = 5.;
+
+(* Length of core geodesic *)
+ell = 2. ArcCosh[1/2 Csc[\[Pi]/8]];
+
+(x Hypergeometric functions with eigenvalue \[Lambda]. For efuncl, \
+
+141

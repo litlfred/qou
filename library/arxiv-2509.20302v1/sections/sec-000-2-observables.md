@@ -8,5 +8,6 @@ pages: 1-1
 source_pdf: 2509.20302v1.pdf
 source_sha256: 59837f5b511c9e07
 toc_source: inferred
+doc_brief: "Universality in the resurgence of generalized Tracy-Widom distributions — We analyze determinants associated with Bessel kernels and generic symbol functions, which govern a class of ob- servables"
 ---
 

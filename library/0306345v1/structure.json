@@ -8,9 +8,27 @@
   "pages": 20,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 10,
+    "reason": "12 of 204 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 11,
+    "reason": "19 of 243 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 13,
+    "reason": "11 of 198 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 14,
+    "reason": "10 of 220 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -21,7 +39,7 @@
    "Skein-theoretical derivation",
    "of some formulas of Habiro"
   ],
-  "abstract": "We use skein theory to compute the coe\ufb03cients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the quantum group Uqsl2. As an application, we give a formula for the colored Jones polynomial of twist knots, generalizing formulas of Habiro and Le for the trefoil and the \ufb01gure eight knot.",
+  "abstract": "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the quantum group Uqsl2. As an application, we give a formula for the colored Jones polynomial of twist knots, generalizing formulas of Habiro and Le for the trefoil and the ﬁgure eight knot.",
   "docinfo": {
    "Title": "agt-3-17.dvi",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -58,7 +76,7 @@
   },
   {
    "level": 1,
-   "title": "Habiro\u2019s formula for \u03c9",
+   "title": "Habiro’s formula for ω",
    "page": 3,
    "source": "inferred",
    "number": "1",
@@ -86,7 +104,7 @@
   },
   {
    "level": 1,
-   "title": "Graphical calculus and a formula for \u03c9p",
+   "title": "Graphical calculus and a formula for ωp",
    "page": 9,
    "source": "inferred",
    "number": "3",
@@ -100,7 +118,7 @@
   },
   {
    "level": 1,
-   "title": "Another formula for the coe\ufb03cients of \u03c9p",
+   "title": "Another formula for the coeﬃcients of ωp",
    "page": 12,
    "source": "inferred",
    "number": "4",
@@ -147,7 +165,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The Kau\ufb00man bracket relations. (Recall a = A2.)",
+   "title": "The Kauﬀman bracket relations. (Recall a = A2.)",
    "page": 3,
    "confidence": 0.7,
    "evidence": [
@@ -172,7 +190,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The twist knot Kp. (Here p \u2208Z.) For p = 1, Kp is a left-handed trefoil, and for p = \u22121, Kp is the \ufb01gure eight knot",
+   "title": "The twist knot Kp. (Here p ∈Z.) For p = 1, Kp is a left-handed trefoil, and for p = −1, Kp is the ﬁgure eight knot",
    "page": 17,
    "confidence": 0.9,
    "evidence": [
@@ -357,21 +375,21 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1609,
-   "n_words": 267,
+   "page_end": 3,
+   "n_chars": 3689,
+   "n_words": 627,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-1-habiros-formula-for-\u03c9",
+   "id": "sec-001-1-habiros-formula-for-ω",
    "number": "1",
-   "title": "Habiro\u2019s formula for \u03c9",
+   "title": "Habiro’s formula for ω",
    "level": 1,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 5,
-   "n_chars": 5369,
-   "n_words": 1029,
+   "n_chars": 3363,
+   "n_words": 680,
    "label_start": null,
    "label_end": null
   },
@@ -382,32 +400,32 @@
    "level": 1,
    "page_start": 5,
    "page_end": 9,
-   "n_chars": 5235,
-   "n_words": 1007,
+   "n_chars": 5270,
+   "n_words": 1011,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-3-graphical-calculus-and-a-formula-for-\u03c9p",
+   "id": "sec-003-3-graphical-calculus-and-a-formula-for-ωp",
    "number": "3",
-   "title": "Graphical calculus and a formula for \u03c9p",
+   "title": "Graphical calculus and a formula for ωp",
    "level": 1,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 4349,
-   "n_words": 932,
+   "n_chars": 4125,
+   "n_words": 829,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-004-4-another-formula-for-the-coe\ufb03cients-of-\u03c9p",
+   "id": "sec-004-4-another-formula-for-the-coeﬃcients-of-ωp",
    "number": "4",
-   "title": "Another formula for the coe\ufb03cients of \u03c9p",
+   "title": "Another formula for the coeﬃcients of ωp",
    "level": 1,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 5215,
-   "n_words": 1112,
+   "n_chars": 4918,
+   "n_words": 998,
    "label_start": null,
    "label_end": null
   },
@@ -418,8 +436,8 @@
    "level": 1,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 3093,
-   "n_words": 611,
+   "n_chars": 3137,
+   "n_words": 618,
    "label_start": null,
    "label_end": null
   },
@@ -451,8 +469,9 @@
    "items": []
   },
   "sections": 8,
-  "chars_total": 27451
+  "chars_total": 27083,
+  "furniture_lines_stripped": 0
  },
  "duplicate_of": "agt-v3-n1-p17-p",
- "duplicate_note": "Same work as library/agt-v3-n1-p17-p/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/agt-v3-n1-p17-p/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
 }

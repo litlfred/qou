@@ -6,10 +6,18 @@
   "sha256": "e4554f9084ba49358ac816861a8c2409ea3715666a5fbcccfe659ab8c0009ada",
   "bytes": 231113,
   "pages": 19,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 15,
+    "reason": "11 of 450 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,19 +27,29 @@
    "stamp_date": "11 Nov 2003"
   },
   "doi": null,
-  "title": "Stein\u2019s Method and Plancherel Measure of the Symmetric Group",
-  "authors_raw": "Running head: Stein\u2019s Method and Plancherel Measure",
-  "abstract": "We initiate a Stein\u2019s method approach to the study of the Plancherel measure of the symmetric group. A new proof of Ker ov\u2019s central limit theorem for character ratios of random representatio ns of the symmet- ric group on transpositions is obtained; the proof gives an e rror term. The construction of an exchangeable pair needed for applying St ein\u2019s method arises from the theory of harmonic functions on Bratelli dia grams. We also \ufb01nd the spectrum of the Markov chain on partitions underlyin g the construc- tion of the exchangeable pair. This yields an intriguing met hod for studying the asymptotic decomposition of tensor powers of some repre sentations of the symmetric group. To appear in Trans. AMS. Submitted 5/28/03, Minor Revisions : 7/7/03, 11/8/03",
+  "title": "Stein's method and Plancherel measure of the symmetric group",
+  "authors_raw": "By Jason Fulman",
+  "title_lines": [
+   "Stein’s Method and Plancherel Measure of the Symmetric Group",
+   "Running head: Stein’s Method and Plancherel Measure"
+  ],
+  "abstract": "We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group. A new proof of Kerov’s central limit theorem for character ratios of random representations of the symmet- ric group on transpositions is obtained; the proof gives an error term. The construction of an exchangeable pair needed for applying Stein’s method arises from the theory of harmonic functions on Bratelli diagrams. We also ﬁnd the spectrum of the Markov chain on partitions underlying the construc- tion of the exchangeable pair. This yields an intriguing method for studying the asymptotic decomposition of tensor powers of some representations of the symmetric group. To appear in Trans. AMS. Submitted 5/28/03, Minor Revisions: 7/7/03, 11/8/03",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220303102546-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20220303102546-05'00'"
   },
-  "title_lines": [
-   "Stein\u2019s Method and Plancherel Measure of the Symmetric Group"
-  ]
+  "title_raw": "Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure By Jason Fulman University of Pittsburgh Department of Mathematics 301 Thackeray Hall Pittsburgh, PA 15260 Email: fulman@math.pitt.edu Abstract : We initiate a Stein’s method approach to",
+   "outline": "1. Introduction",
+   "text": "Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure"
  },
  "toc": [
   {
@@ -39,53 +57,223 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Harmonic functions and exchangeable pairs",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Irreducible characters of the symmetric group",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Stein's method and Kerov's central limit theorem",
    "page": 10,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Asymptotic multiplicities in tensor products of representations",
    "page": 14,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 18,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1224,
+   "n_words": 177,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -93,8 +281,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 8591,
-   "n_words": 1609
+   "n_chars": 8504,
+   "n_words": 1508,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-harmonic-functions-and-exchangeable-pairs",
@@ -103,8 +293,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 7395,
-   "n_words": 1444
+   "n_chars": 7318,
+   "n_words": 1367,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-irreducible-characters-of-the-symmetric-group",
@@ -112,52 +304,80 @@
    "title": "Irreducible characters of the symmetric group",
    "level": 1,
    "page_start": 8,
-   "page_end": 14,
-   "n_chars": 12119,
-   "n_words": 2606
+   "page_end": 10,
+   "n_chars": 3440,
+   "n_words": 676,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-5-asymptotic-multiplicities-in-tensor-products-o",
+   "id": "sec-003-4-steins-method-and-kerovs-central-limit-theorem",
+   "number": "4",
+   "title": "Stein's method and Kerov's central limit theorem",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 8364,
+   "n_words": 1693,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-asymptotic-multiplicities-in-tensor-products-o",
    "number": "5",
    "title": "Asymptotic multiplicities in tensor products of representations",
    "level": 1,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 7377,
-   "n_words": 1496
+   "n_chars": 7150,
+   "n_words": 1366,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-6-acknowledgements",
+   "id": "sec-005-6-acknowledgements",
    "number": "6",
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 87,
-   "n_words": 12
+   "n_chars": 86,
+   "n_words": 11,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 4245,
-   "n_words": 632
+   "n_chars": 4213,
+   "n_words": 600,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 6,
-  "chars_total": 39814,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 40299,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 6,
-   "overlaid": 5,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -165,17 +385,22 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-harmonic-functions-and-exchangeable-pairs",
      "title": "Harmonic functions and exchangeable pairs",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.989,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -183,21 +408,29 @@
     {
      "id": "sec-002-3-irreducible-characters-of-the-symmetric-group",
      "title": "Irreducible characters of the symmetric group",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-5-asymptotic-multiplicities-in-tensor-products-o",
+     "id": "sec-003-4-steins-method-and-kerovs-central-limit-theorem",
+     "title": "Stein's method and Kerov's central limit theorem",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-asymptotic-multiplicities-in-tensor-products-o",
      "title": "Asymptotic multiplicities in tensor products of representations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-6-acknowledgements",
+     "id": "sec-005-6-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -205,7 +438,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-references",
+     "id": "sec-006-references",
      "title": "References",
      "result": "no matching \\section"
     }

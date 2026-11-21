@@ -6,6 +6,7 @@ import QOU.BraidKnot.KeystoneBalancedRibbon
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms
+import Mathlib.CategoryTheory.Limits.Shapes.Kernels
 import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.CategoryTheory.Linear.Basic
 import Mathlib.Algebra.BigOperators.Fin
@@ -363,10 +364,23 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
   /-- Every block's quantum dimension is a **unit**: each can be normalised
       against.  `IsUnit` for the same reason as `frobWeight_isUnit`. -/
   dimQ_isUnit : ∀ b, IsUnit (dimQ b)
-  /-- `A` admits a differential calculus: the module of Kähler
-      differentials `Ω¹(A)` exists in `C`.  Represented abstractly as a
-      type (the carrier of `Ω¹(A)`). -/
-  differentialForms : Type*
+  /-- **`A` admits a universal first-order calculus.**  `Ω¹(A)` is a
+      kernel of the multiplication `μ : A ⊗ A ⟶ A` in `C`: an object with a
+      morphism `ι : Ω¹(A) ⟶ A ⊗ A` such that `ι ≫ μ = 0`.
+
+      This is the noncommutative universal calculus, not Mathlib's
+      `KaehlerDifferential` (which needs a commutative algebra and is the
+      quotient `I/I²` of this kernel).  In `ModuleCat R`, for an algebra
+      `A`, it is realised by `QOU.MathlibExt.UniversalDifferentials.Ω1`.
+
+      Carried as a fork plus its universal property rather than as a
+      `HasKernels C` instance: the paper needs this one kernel, not every
+      kernel in `C`.  It replaces a bare `differentialForms : Type*`, which
+      any type satisfied. -/
+  differentialForms : CategoryTheory.Limits.KernelFork frobHopf.mul
+  /-- The fork `differentialForms` is a limit: `Ω¹(A)` *is* the kernel of
+      `μ`, not merely some object mapping into `A ⊗ A` and killed by `μ`. -/
+  differentialForms_isLimit : CategoryTheory.Limits.IsLimit differentialForms
 
 /-- **Quantum Observable Universe** over a commutative ring `R`.
 

@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1305.7175v4",
  "source_sha256": "5a09955f4fb6a57e",
- "brief": "NONLINEAR TRACES — W e combine the theory of traces in homotopical algebra with s heaf theory in de- rived algebraic geometry to deduce general ﬁxed point and ch aracter formulas.",
- "extended": "**NONLINEAR TRACES**\n\n*DA VID BEN-ZVI AND DA VID NADLER*\n\n37 pp, 18 sections.\n\n**Abstract.** W e combine the theory of traces in homotopical algebra with s heaf theory in de- rived algebraic geometry to deduce general ﬁxed point and ch aracter formulas. The formalism of dimension (or Hochschild homology) of a dualizable objec t in the context of higher algebra provides a unifying framework for classical notions such as Euler characteristics, Chern char- acters, and characters of group representations. Moreover , the simple functoriality properties of dimensions clarify celebrated identities and extend the m to new contexts. W e observe that it is advantageous to calculate dimensions, traces and their functoriality directly in the nonlinear geometric setting of corresponde nce categories, where they are directly identiﬁed with (derived versions of) loop spaces, ﬁxed point loci and loop maps, respectively.\n\n**Outline.** 1 Introduction; 1.1 Summary; 1.2 Inspirations and motivations; 1.3 Acknowledgements; 2 Overview; 3 Traces in category theory; 3.1 Preliminaries; 3.2 Dualizability; 3.4 Functoriality of dimension; 3.5 Functoriality of traces; 4 Traces in Geometry; 4.1 Categories of correspondences; 4.3 Geometric functoriality of dimension; 4.4 Geometric functoriality of trace; 5 Traces for sheaves; 5.1 Dimensions and traces of sheaf categories:; 5.2 Integration formulas for traces: 2-categor; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.4: LetS =Q! orS =D denote either the theory of ind-coherent sheaves or\n- Theorem 2.21: Fix a sheaf theory S :Corrk→dgCatk.\n- Theorem 3.14: There is a canonical S1-action on the dimension dim(A) of any dual-\n- Theorem 5.7: [GR2, Theorem III.3.5.4.3, III.3.6.3] There is a uniquely deﬁned right-lax\n- Theorem 5.7: produces in general a right-lax symmetric monoidal functor – in other words,\n- Theorem 5.10: LetS =Q! orS =D denote either ind-coherent sheaves or D-modules. Let",
+ "brief": "NONLINEAR TRACES — We combine the theory of traces in homotopical algebra with sheaf theory in de- rived algebraic geometry to deduce general ﬁxed point and character formulas.",
+ "extended": "**NONLINEAR TRACES**\n\n*DAVID BEN-ZVI AND DAVID NADLER*\n\n37 pp, 25 sections.\n\n**Abstract.** We combine the theory of traces in homotopical algebra with sheaf theory in de- rived algebraic geometry to deduce general ﬁxed point and character formulas. The formalism of dimension (or Hochschild homology) of a dualizable object in the context of higher algebra provides a unifying framework for classical notions such as Euler characteristics, Chern char- acters, and characters of group representations. Moreover, the simple functoriality properties of dimensions clarify celebrated identities and extend them to new contexts. We observe that it is advantageous to calculate dimensions, traces and their functoriality directly in the nonlinear geometric setting of correspondence categories, where they are directly identiﬁed with (derived versions of) loop spaces, ﬁxed point loci and loop maps, respectively.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Summary; 1.2 Inspirations and motivations; 1.3 Acknowledgements; 2 Overview; 2.1 Traces in category theory; 2.2 Traces in geometry; 2.3 Trace formulas via sheaf theories; 3 Traces in category theory; 3.1 Preliminaries; 3.2 Dualizability; 3.3 Traces and dimensions; 3.4 Functoriality of dimension; 3.5 Functoriality of traces; 4 Traces in Geometry; 4.1 Categories of correspondences; 4.2 Traces of correspondences",
  "tokens": {
   "brief": 44,
-  "extended": 489
+  "extended": 342
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-11-summary",
    "title": "Summary",
-   "pages": "1-6"
+   "pages": "2-6"
   },
   {
    "id": "sec-002-12-inspirations-and-motivations",
@@ -32,70 +37,100 @@
   {
    "id": "sec-004-2-overview",
    "title": "Overview",
-   "pages": "7-16"
+   "pages": "7-7"
   },
   {
-   "id": "sec-005-3-traces-in-category-theory",
+   "id": "sec-005-21-traces-in-category-theory",
+   "title": "Traces in category theory",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-006-22-traces-in-geometry",
+   "title": "Traces in geometry",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-007-23-trace-formulas-via-sheaf-theories",
+   "title": "Trace formulas via sheaf theories",
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-008-3-traces-in-category-theory",
    "title": "Traces in category theory",
    "pages": "16-16"
   },
   {
-   "id": "sec-006-31-preliminaries",
+   "id": "sec-009-31-preliminaries",
    "title": "Preliminaries",
    "pages": "16-17"
   },
   {
-   "id": "sec-007-32-dualizability",
+   "id": "sec-010-32-dualizability",
    "title": "Dualizability",
-   "pages": "17-23"
+   "pages": "17-19"
   },
   {
-   "id": "sec-008-34-functoriality-of-dimension",
+   "id": "sec-011-33-traces-and-dimensions",
+   "title": "Traces and dimensions",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-012-34-functoriality-of-dimension",
    "title": "Functoriality of dimension",
-   "pages": "23-23"
+   "pages": "21-23"
   },
   {
-   "id": "sec-009-35-functoriality-of-traces",
+   "id": "sec-013-35-functoriality-of-traces",
    "title": "Functoriality of traces",
    "pages": "23-24"
   },
   {
-   "id": "sec-010-4-traces-in-geometry",
+   "id": "sec-014-4-traces-in-geometry",
    "title": "Traces in Geometry",
    "pages": "24-24"
   },
   {
-   "id": "sec-011-41-categories-of-correspondences",
+   "id": "sec-015-41-categories-of-correspondences",
    "title": "Categories of correspondences",
-   "pages": "24-27"
+   "pages": "24-25"
   },
   {
-   "id": "sec-012-43-geometric-functoriality-of-dimension",
+   "id": "sec-016-42-traces-of-correspondences",
+   "title": "Traces of correspondences",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-017-43-geometric-functoriality-of-dimension",
    "title": "Geometric functoriality of dimension",
    "pages": "27-29"
   },
   {
-   "id": "sec-013-44-geometric-functoriality-of-trace",
+   "id": "sec-018-44-geometric-functoriality-of-trace",
    "title": "Geometric functoriality of trace",
    "pages": "29-29"
   },
   {
-   "id": "sec-014-5-traces-for-sheaves",
+   "id": "sec-019-5-traces-for-sheaves",
    "title": "Traces for sheaves",
    "pages": "29-30"
   },
   {
-   "id": "sec-015-51-dimensions-and-traces-of-sheaf-categories-1-c",
+   "id": "sec-020-51-dimensions-and-traces-of-sheaf-categories-1-c",
    "title": "Dimensions and traces of sheaf categories: 1-categorical consequences",
    "pages": "30-31"
   },
   {
-   "id": "sec-016-52-integration-formulas-for-traces-2-categorical",
+   "id": "sec-021-52-integration-formulas-for-traces-2-categorical",
    "title": "Integration formulas for traces: 2-categorical consequences",
-   "pages": "31-36"
+   "pages": "31-33"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-022-53-ind-coherent-sheaves-and-d-modules",
+   "title": "Ind-coherent sheaves and D-modules",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-023-references",
    "title": "References",
    "pages": "36-37"
   }
@@ -104,8 +139,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

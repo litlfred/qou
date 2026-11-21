@@ -32,7 +32,7 @@ Ref: [habiro2000] Habiro, "On the quantum sl_2 invariants of knots
      and integral homology spheres" (2000)
 Ref: [jones1987] Jones, "Hecke algebra representations of braid
      groups and link polynomials" (1987)
-Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+Ref: [leitner2026] prop:habiro-precision-ladder-equivalence
 -/
 
 namespace QOU.BraidKnot
@@ -140,7 +140,7 @@ theorem habiro_terminates (h : HabiroExpansion) :
     ℤ-valued evaluation.  Over `ℚ[u]` coefficients the corresponding
     statement is false, which is the distinction the md is drawing. -/
 -- Ref: [habiro2000] Corollary 1.2
--- Ref: [manuscript] witness habiro-expansion-atomic-probe.witness.json
+-- Ref: [leitner2026] witness habiro-expansion-atomic-probe.witness.json
 theorem habiro_integral {R : Type*} [CommRing R]
     (h : HabiroExpansion) (m : Fin (h.M + 1)) (u₀ : ℤ) :
     (h.coeffs m).eval₂ (Int.castRingHom R) (u₀ : R)
@@ -204,7 +204,7 @@ hypothesis; NO instance is provided, and production wires only c_2. -/
 /-- Abstract precision-ladder coefficient `c_k` (as used in the Q_β
     ladder). Opaque so the bridge class is non-vacuous (mirrors #1508's
     opaque `BlochWigner_unit_circle`). -/
--- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+-- Ref: [leitner2026] prop:habiro-precision-ladder-equivalence
 -- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a
 -- claim.  `axiom f : T` and `opaque f : T := <witness>` are equally opaque and
 -- equally uninformative, but only the first is recorded as a global axiom and
@@ -225,7 +225,7 @@ opaque habiroTaylorCoeff : ℕ → ℝ := fun _ => 0
     bridge. Per the discipline note above it is NOT established beyond
     `c_2`; the class is purely conditional (no instance) and production
     wires only the Taylor-exact `c_2 = -1` rung. -/
--- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+-- Ref: [leitner2026] prop:habiro-precision-ladder-equivalence
 -- Ref: PR #1508 (§3b-cond conditional-class pattern)
 class QbetaHabiroTaylorBridgeClass : Prop where
   /-- The precision-ladder `c_k` equals the Habiro Taylor coefficient at
@@ -240,7 +240,7 @@ class QbetaHabiroTaylorBridgeClass : Prop where
     Mirrors `em_alpha_inv_full_form` (#1508): the class field carries
     the conditional content. This LOCKS the equivalence as the open
     derivation target without claiming it is established (only c_2 is). -/
--- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+-- Ref: [leitner2026] prop:habiro-precision-ladder-equivalence
 -- Ref: PR #1508 (§3b-cond conditional-class pattern)
 theorem precision_ladder_is_habiro_taylor
     [h : QbetaHabiroTaylorBridgeClass] (k : ℕ) :

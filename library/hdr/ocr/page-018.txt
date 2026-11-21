@@ -1,0 +1,38 @@
+canonical map 7: O > k to R has kernel J(O) 1 R = Ker@. Since L is the field of fractions of 6(R), we
+may regard L as a subfield of k. Thus, we obtain a commutative diagram
+
+RC 0 ¢
+I (
+L Cc k
+
+If now V is a K A-module, then there exists an OA-lattice V such that K ®o V = V. The k-vector
+space k @o V is a kA-module via (1 @ a)(1 @ v) = 1 @ av (a € A,v € V), which we call the modular
+reduction of V.
+
+From now on, we will assume that either LA is split, or L = k and k is perfect. One consequence
+of this assumption is that we can identify the Grothendieck groups Ro(LA) and Ro(kA). We then have
+the following Theorem 7.4.3]:
+
+Theorem 1.5 The modular reduction induces an additive map dg : Rj (KA) > Rj (LA) such that
+do([KV]) = [kV], where V is an OA-lattice and [kV] is regarded as an element of RJ (LA) via the
+identification of Ro(kA) and Ro(LA).
+
+The map dg is called the decomposition map associated with the specialisation 6: R > L. Note that
+the map dg depends only on @ and not on the choice of the valuation ring O. The matrix Dg of this
+map with respect to the bases of Ro(K A) and Ro(LA) consisting of the classes of the simple modules
+is called the decomposition matrix associated with 0. The rows of Dg are labelled by Irr(A A) and the
+columns of Dg are labelled by Irr(LA).
+
+The following result gives a criterion for dg to be trivial. It is known as “Tits’s deformation theorem”.
+For its proof, the reader may refer, for example, to Theorem 7.4.6].
+
+Theorem 1.6 Assume that KA and LA are split. If LA is semisimple, then K A is also semisimple and
+the decomposition map dg is an isomorphism which preserves isomorphism classes of simple modules. In
+particular, we have a bijection Irr(K A) + Irr(LA).
+
+Finally, if A is symmetric, we can check whether the assumption of Tits’s deformation theorem is
+satisfied using the following semisimplicity criterion involving the Schur elements Theorem 7.4.7].
+
+Theorem 1.7 Assume that KA and LA are split and that A is symmetric with symmetrising form T.
+For any simple K A-module V, let sy € R be the Schur element with respect tor. Then LA is semisimple
+if and only if 0(sy) #0 for all V € Irr(K A).

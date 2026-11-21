@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1105.2919v1/sections/sec-056",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix B.2.3 Dimensional regularization of the football",
+  "pageStart": 71,
+  "pageEnd": 72,
+  "contains": [
+    "library/arxiv-1105.2919v1/blocks/prose-sec-056"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.2919v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.2919v1/manifest.jsonld",
+  "provenance": "ingested"
+}

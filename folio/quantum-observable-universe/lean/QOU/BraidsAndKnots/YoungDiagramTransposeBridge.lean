@@ -37,7 +37,7 @@ pair off along `λ ↔ λ'` with self-conjugate diagrams as fixed points.
 Base ring: `ℤ` (contents are integers); everything else is `ℕ`-combinatorics. Standalone library
 file (no `.ts`/`.md` sibling), verified per-file by `lean`-direct, like its two parents.
 
--- Ref: [manuscript] docs/audits/2026-07-19-deltalambda-kernel-sign-structural-narrowing.md
+-- Ref: [leitner2026] docs/audits/2026-07-19-deltalambda-kernel-sign-structural-narrowing.md
 -/
 
 namespace QOU.BraidsAndKnots.YoungDiagramTransposeBridge

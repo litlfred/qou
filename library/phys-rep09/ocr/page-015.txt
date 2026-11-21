@@ -1,0 +1,61 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 165
+
+and the process can be repeated for any J. The correspondence between trees and expansion terms should be clear from
+the previous graphs. For instance, the last tree is nothing but the integral of A, commuted with A, integrated and commuted
+with A. In that way, by truncating the expansion (61) at m = 2 we have
+
+wer ae .
+
+i.e., the explicit expressions collected in Section 2.2.
+Finally, the relationship between the tree formalism and the recurrence (49)-(50) can be established as follows. From
+(61) we can write
+
+> Yo a(t) H(t) = ar 2 & (Ty) +++ (3) Hates...)
+
+m=1 TET
+
+ky te we
+
+Thus, by comparing (50) and (61) we have
+
+Qn (t) = Yew f ieee = 11 A [seas
+
+TETm—1
+
+so that
+
+SP= Yo YS ay) 0G) Hace...)
+
+Kiyookj HTK;
+ky te +ky=m—1-j
+
+In other words, each term 5? in the recurrence (49) carries on a complete set of binary trees. Although both procedures are
+equivalent, the use of (49) and (50) can be particularly well suited when high orders of the expansion are considered, for
+two reasons: (i) the enormous number of trees involved for large values of m and (ii) in (61) many terms are redundant, and
+a careful graph theoretical analysis is needed to deduce which terms have to be discarded [37].
+
+Recently, an ME-type formalism has been developed in the more abstract setting of dendriform algebras. This generalized
+expansion incorporates the usual one as a limit, but is formulated more in line with (non-commutative) Butcher series. In
+this context, the use of planar rooted trees to represent the expansion and the so-called pre-Lie product, allows one to reduce
+the number of terms at each order in comparison with expression (61) [60].
+
+2.6. Time-symmetry of the expansion
+
+The map g! : Y(t) —> Y(t) corresponding to the linear differential equation (30) with Y (to) = Yo is time symmetric,
+gy ‘og! =Id, since integrating (30) from t = to tot = ty for every ty > fo and back to to leads us to the original initial value
+Y(to) = Yo. Observe that, according to (3), the map gy! can be expressed in terms of the fundamental matrix (or evolution
+operator) U(t, to) as yf (Yo) = U(ty, to) Yo. Then time-symmetry establishes that
+
+U(to, ty) = U- (ty, to)
+or, in terms of the Magnus expansion,
+Qty, to) = —2(to, ty).
+
+To take advantage of this feature, let us write the solution of (30) at the final time t; = tp +s as
+
+Y (ti + >) = exp (2 (ti + >. tiyja- >)) Y (ti - >) ; (63)
+where t1/2 = (to + t)/2. Then
+Y (ti - >) = exp (-2 (ti + , tia >)) Y (ae + >) : (64)
+
+On the other hand, the solution at to can be written as
+
+Y (t2 - >) = exp (2 (ti - >. tat >)) Y (t2 + >) ; (65)

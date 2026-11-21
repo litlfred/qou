@@ -442,7 +442,8 @@ def main() -> int:
     for ok, name, detail in checks:
         wb.add_assertion(name, computed="PASS" if ok else "FAIL",
                          expected="PASS", tolerance="exact", source=detail)
-    wb.save()
+    wb.save(extra={"q0Anchor": "independent", "q0AnchorReason": (
+            "exact integer/rational lattice algebra and a text scan of library sections; q0 is never read")})
 
     n_ok = sum(1 for ok, _, _ in checks if ok)
     print(f"\n  {n_ok}/{len(checks)} checks passed")

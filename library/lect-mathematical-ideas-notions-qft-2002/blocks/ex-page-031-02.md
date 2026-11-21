@@ -1,0 +1,1 @@
+G = SL2(Z). This group contains a subgroup F of index 12, which is free in two generators (check it!). The group F has Euler characteristic —1, since its classifying space Y/F is figure “eight” (i.e, Y is the universal cover of figure “eight” ). Thus, the Euler characteristic of SL2(Z) is —1/12.

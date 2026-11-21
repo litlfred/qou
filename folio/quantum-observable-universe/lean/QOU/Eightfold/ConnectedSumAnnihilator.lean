@@ -46,8 +46,8 @@ is holonomic, with an annihilator of order at most `n₁ · n₂`. That is a
 *construction on operators*, not a map of ideals, and it **raises the order
 multiplicatively** — which is the honest shape of the connected-sum case and the
 reason it is not the cheap prototype I called it.
--- Ref: [manuscript] bean `qou-zhep`
--- Ref: [manuscript] `QOU.Machinery.QuantumTorusAJ` (the `act2` function model)
+-- Ref: [leitner2026] bean `qou-zhep`
+-- Ref: [leitner2026] `QOU.Machinery.QuantumTorusAJ` (the `act2` function model)
 
 -/
 

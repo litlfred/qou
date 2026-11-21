@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-076",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cusped three-manifolds",
+  "pageStart": 429,
+  "pageEnd": 441,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-076",
+    "library/arxiv-1610.02592v3/blocks/figure-img-p431-1",
+    "library/arxiv-1610.02592v3/blocks/figure-img-p438-1",
+    "library/arxiv-1610.02592v3/blocks/figure-img-p438-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

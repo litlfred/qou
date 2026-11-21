@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-ph-0405028v2/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Witten--Reshetikhin--Turaev Invariant and the Eichler Integral",
+  "pageStart": 14,
+  "pageEnd": 17,
+  "text": "../sections/sec-004-the-witten--reshetikhin--turaev-invariant-and-th.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0405028v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0405028v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,36 @@
+Spiders for Rank 2 Lie Algebras 147
+
+provided that the four webs w; are members of the appropriate clasped web spaces.
+The tetrahedron symbol is closely related to the 6j symbol, which expresses the
+change of basis from
+
+® Wer2e13¢14) @ W(cazcarca1 )
+
+C14
+to
+
+® W (€42€12€32 ) ® W(c13€43€23)
+
+23
+
+via the identification of both with W(cj2c13c43c42), where in general cj; = cj. Up
+to normalization, the A, tetrahedron symbol at g = 1 equals the Racah—Wigner 6/
+symbol used in mathematical physics [14]. Using the 4, spider, Masbaum and Vogel
+have found a new proof of the Racah formula for the 67 symbol and its quantum
+generalization [12]. The combinatorial rank 2 spiders could be equally useful for
+understanding the rank 2 generalization of the 6j symbol.
+
+8.3. Practical computation of rank 2 link invariants. If one is interested in
+computing link invariants, Eqs. (2), (3), and (4) can be interpreted as inductive
+tules for evaluating links and knotted graphs without boundary in the web space
+W(@). Mollard [13] and Sinha [19] have independently written computer implemen-
+tations of this algorithm for G2, and there are well-known computer programs to
+compute the Jones, HOMFLY, and Kauffman polynomials using the same basic
+strategy.
+
+Spiders suggest an alternative method for computing the same invariants which
+is more efficient than a direct application of the above rules to closed links and
+graphs. The method consists of assembling a link projection, as a web, from
+indiviual crossings using spider operations, and reducing intermediate webs to linear
+combinations of basis webs. For example, to evaluate the quantum 4, link invariant
+(the Jones polynomial) of a figure eight knot, we can decompose the knot as a

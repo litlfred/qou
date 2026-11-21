@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1001.2180v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "f4225d7b024940aa3f6c183ce1aefeac7b1675c5272732c6c1827a4cd813d52f",
+  "file": "1001.2180v2.pdf"
+ },
+ "provenance": {
+  "title": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
+  "authors": "VALENTIN F\u00c9RAY AND PIERRE-LO\u00cfC M\u00c9LIOT",
+  "arxiv": {
+   "id": "1001.2180",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "27 Oct 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

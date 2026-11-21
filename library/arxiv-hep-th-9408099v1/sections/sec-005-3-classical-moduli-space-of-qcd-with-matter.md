@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-005-3-classical-moduli-space-of-qcd-with-matter
 section_title: "Classical moduli space of QCD with matter"
 section_number: 3
@@ -8,6 +8,7 @@ pages: 11-14
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 We now turn to QCD with an SU(2) gauge group. The gluons are accompanied by
 Dirac fermions and complex scalars φ in the adjoint representation of the gauge group. We

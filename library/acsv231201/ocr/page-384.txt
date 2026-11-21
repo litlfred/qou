@@ -1,0 +1,55 @@
+366 Cone point asymptotics
+
+generalized Fourier transform of S~° is given by
+S*(nyd2
+228-1 p4-2)/2P(5) Ps + 1 — d/2)°
+
+More generally, for any monomial 2™ and any Lorentzian quadratic q, the
+
+S—(r) = e**
+
+Fourier transform of 2” q~ is given by
+
+IM\@/ary™q' (ry 4?
+228-1 d-2)/2T (5) (s + 1 — d/2)°
+
+ins -|m|
+jm
+
+(11.15)
+
+a™G(r) =e
+ia)
+
+There is a catch to the statements in Proposition 11.38: the function 2 q~*
+will fail to be integrable at infinity if the homogeneous degree |m| — 2 is —d or
+more, and the integral defining the Fourier transform blows up at the origin if
+|m|-2s < —d. Proposition 11.38 is thus properly stated in terms of generalized
+functions. These generalized functions are defined as limits of actual functions
+on w+iR?@ as u > Oinacone of hyperbolicity of the quadratic, their integrals
+over noncompact sets are defined by weak limits of compact integrals, and
+their Fourier transforms are defined not by direct integration against e’”® but
+by their integrals against (classical) Fourier transforms of smooth, compactly
+supported functions. When s or s + 1 — d/2 is a non-positive integer, a Fourier
+transform can be constructed that is itself a generalized function (in particular,
+a sort of delta function supported on the hypersurface S = 0). For further
+details of generalized functions, we refer to [GS16] or the summary in [BP 11].
+
+We do not worry about these subtleties here, and use only the following
+result from [BP11, Lemma 6.3]. The proof is not trivial, involving the right
+choice of insertions of compactly supported functions and truncation estimates.
+The statement in [BP11] assumes that Q is the product of quadratic and linear
+factors, but in fact relies only on the conclusion of Theorem 11.33, and thus
+holds whenever conclusion (iii) of Lemma 11.27 holds.
+
+Lemma 11.39. Fix x, € OB, let w be one of finitely many points of localarg,
+and let N denote the negative dual of tany,(B). Assume the last conclusion of
+Lemma 11.27. As r > © through a compact set of non-obstructed directions
+in N, the generalized Fourier transform S—(r) correctly computes the integral
+of exp(—r - #)S~*(ax) over the chain Ow). More generally, the same is true of
+a™q™ and of F 0 exp when F is a Laurent polynomial. a
+
+11.3.2 Main result on coefficient asymptotics
+
+Let Q(z) = Wj-1 Q;(z)*' be a product of powers of Laurent polynomials
+satisfying the conclusions of Theorem 11.33, and let B be a component of

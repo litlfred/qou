@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0203060v10",
  "source_sha256": "2ccb480f4bd4a970",
- "brief": "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in",
- "extended": "**ON FUSION CATEGORIES**\n\n*PA VEL ETINGOF, DMITRI NIKSHYCH, AND VIKTOR OSTRIK*\n\n50 pp, 43 sections.\n\n**Abstract.** Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in characteristic zero. W e show tha t the global dimen- sion of a fusion category is always positive, and that the S-m atrix of any (not necessarily hermitian) modular category is unitary. W e als o show that the cate- gory of module functors between two module categories over a fusion category is semisimple, and that fusion categories and tensor functo rs between them are undeformable (generalized Ocneanu rigidity). In parti cular the number of such categories (functors) realizing a given fusion datum i s ﬁnite. Finally, we develop the theory of Frobenius-Perron dimensions in an arb itrary fusion cat- egory. At the end of the paper we generalize some of these resu lts to positive characteristic.\n\n**Outline.** 1 Introduction; 2 Results on squared norms, global dimensions,; 2.1 Squared norms and global dimensions; 2.2 Results on pivotal, spherical, and modular; 2.4 Multi-fusion categories; 2.5 Results on weak Hopf algebras; 2.7 Ocneanu rigidity; 3.1 Proof of Theorem 2.3; 3 Fusion categories over C; 3.2 Proof of Proposition 2.9; 3.3 Proof of Proposition 2.12 and properties o; 4 Weak Hopf algebras and their integrals; 4.2 Integrals; 4.3 Proof of Theorem 2.6; 4.4 Canonical integrals; 5 Tr(S2) and the global dimension; 5.1 Proof of Theorem 2.24; 5.2 Proof of Theorem 2.15",
+ "brief": "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in",
+ "extended": "**ON FUSION CATEGORIES**\n\n*PAVEL ETINGOF, DMITRI NIKSHYCH, AND VIKTOR OSTRIK*\n\n50 pp, 58 sections.\n\n**Abstract.** Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in characteristic zero. We show that the global dimen- sion of a fusion category is always positive, and that the S-matrix of any (not necessarily hermitian) modular category is unitary. We also show that the cate- gory of module functors between two module categories over a fusion category is semisimple, and that fusion categories and tensor functors between them are undeformable (generalized Ocneanu rigidity). In particular the number of such categories (functors) realizing a given fusion datum is ﬁnite. Finally, we develop the theory of Frobenius-Perron dimensions in an arbitrary fusion cat- egory. At the end of the paper we generalize some of these results to positive characteristic.\n\n**Outline.** Front matter; 1 Introduction; 2 Results on squared norms, global dimensions,; 2.1 Squared norms and global dimensions; 2.2 Results on pivotal, spherical, and modular; 2.3 Module categories, the dual category, the ; 2.4 Multi-fusion categories; 2.5 Results on weak Hopf algebras; 2.6 Vanishing of the Yetter cohomology; 2.7 Ocneanu rigidity; 3.1 Proof of Theorem 2.3; 3 Fusion categories over C; 3.2 Proof of Proposition 2.9; 3.3 Proof of Proposition 2.12 and properties o; 4 Weak Hopf algebras and their integrals; 4.1 Definition of a weak Hopf algebra; 4.2 Integrals; 4.3 Proof of Theorem 2.6",
  "tokens": {
-  "brief": 49,
-  "extended": 393
+  "brief": 48,
+  "extended": 396
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -27,200 +32,270 @@
   {
    "id": "sec-003-22-results-on-pivotal-spherical-and-modular-cate",
    "title": "Results on pivotal, spherical, and modular categories",
-   "pages": "5-7"
+   "pages": "5-6"
   },
   {
-   "id": "sec-004-24-multi-fusion-categories",
+   "id": "sec-004-23-module-categories-the-dual-category-the-drinf",
+   "title": "Module categories, the dual category, the Drinfeld center",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-24-multi-fusion-categories",
    "title": "Multi-fusion categories",
    "pages": "7-7"
   },
   {
-   "id": "sec-005-25-results-on-weak-hopf-algebras",
+   "id": "sec-006-25-results-on-weak-hopf-algebras",
    "title": "Results on weak Hopf algebras",
    "pages": "7-9"
   },
   {
-   "id": "sec-006-27-ocneanu-rigidity",
+   "id": "sec-007-26-vanishing-of-the-yetter-cohomology",
+   "title": "Vanishing of the Yetter cohomology",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-008-27-ocneanu-rigidity",
    "title": "Ocneanu rigidity",
    "pages": "9-10"
   },
   {
-   "id": "sec-007-31-proof-of-theorem-23",
+   "id": "sec-009-31-proof-of-theorem-23",
    "title": "Proof of Theorem 2.3",
    "pages": "10-10"
   },
   {
-   "id": "sec-008-3-fusion-categories-over-c",
+   "id": "sec-010-3-fusion-categories-over-c",
    "title": "Fusion categories over C",
    "pages": "10-12"
   },
   {
-   "id": "sec-009-32-proof-of-proposition-29",
+   "id": "sec-011-32-proof-of-proposition-29",
    "title": "Proof of Proposition 2.9",
    "pages": "12-12"
   },
   {
-   "id": "sec-010-33-proof-of-proposition-212-and-properties-of-mo",
+   "id": "sec-012-33-proof-of-proposition-212-and-properties-of-mo",
    "title": "Proof of Proposition 2.12 and properties of modular categories",
    "pages": "12-13"
   },
   {
-   "id": "sec-011-4-weak-hopf-algebras-and-their-integrals",
+   "id": "sec-013-4-weak-hopf-algebras-and-their-integrals",
    "title": "Weak Hopf algebras and their integrals",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-014-41-definition-of-a-weak-hopf-algebra",
+   "title": "Definition of a weak Hopf algebra",
    "pages": "13-15"
   },
   {
-   "id": "sec-012-42-integrals",
+   "id": "sec-015-42-integrals",
    "title": "Integrals",
    "pages": "15-16"
   },
   {
-   "id": "sec-013-43-proof-of-theorem-26",
+   "id": "sec-016-43-proof-of-theorem-26",
    "title": "Proof of Theorem 2.6",
    "pages": "16-16"
   },
   {
-   "id": "sec-014-44-canonical-integrals",
+   "id": "sec-017-44-canonical-integrals",
    "title": "Canonical integrals",
-   "pages": "16-18"
+   "pages": "16-17"
   },
   {
-   "id": "sec-015-5-trs2-and-the-global-dimension",
+   "id": "sec-018-45-sufficient-conditions-for-semisimplicity",
+   "title": "Sufficient conditions for semisimplicity",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-019-5-trs2-and-the-global-dimension",
    "title": "Tr(S2) and the global dimension",
    "pages": "18-18"
   },
   {
-   "id": "sec-016-51-proof-of-theorem-224",
+   "id": "sec-020-51-proof-of-theorem-224",
    "title": "Proof of Theorem 2.24",
    "pages": "18-19"
   },
   {
-   "id": "sec-017-52-proof-of-theorem-215",
+   "id": "sec-021-52-proof-of-theorem-215",
    "title": "Proof of Theorem 2.15",
    "pages": "19-19"
   },
   {
-   "id": "sec-018-53-proof-of-theorem-216",
+   "id": "sec-022-53-proof-of-theorem-216",
    "title": "Proof of Theorem 2.16",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-023-54-a-refinement-of-theorem-224",
+   "title": "A refinement of Theorem 2.24",
    "pages": "19-20"
   },
   {
-   "id": "sec-019-55-proof-of-proposition-217",
+   "id": "sec-024-55-proof-of-proposition-217",
    "title": "Proof of Proposition 2.17",
    "pages": "20-20"
   },
   {
-   "id": "sec-020-56-proof-of-theorem-218",
+   "id": "sec-025-56-proof-of-theorem-218",
    "title": "Proof of Theorem 2.18",
    "pages": "20-20"
   },
   {
-   "id": "sec-021-57-surjective-and-injective-functors",
+   "id": "sec-026-57-surjective-and-injective-functors",
    "title": "Surjective and injective functors",
    "pages": "20-21"
   },
   {
-   "id": "sec-022-58-the-induction-functor-and-the-class-equation",
+   "id": "sec-027-58-the-induction-functor-and-the-class-equation",
    "title": "The induction functor and the class equation for fusion categories",
    "pages": "21-22"
   },
   {
-   "id": "sec-023-59-graded-categories",
+   "id": "sec-028-59-graded-categories",
    "title": "Graded categories",
    "pages": "22-22"
   },
   {
-   "id": "sec-024-510-deformations-of-weak-hopf-algebras",
+   "id": "sec-029-510-deformations-of-weak-hopf-algebras",
    "title": "Deformations of weak Hopf algebras",
    "pages": "22-22"
   },
   {
-   "id": "sec-025-511-sphericity-of-pivotalization",
+   "id": "sec-030-511-sphericity-of-pivotalization",
    "title": "Sphericity of pivotalization",
    "pages": "22-24"
   },
   {
-   "id": "sec-026-6-the-co-hochschild-complex-of-a-cosemisimple-un",
+   "id": "sec-031-6-the-co-hochschild-complex-of-a-cosemisimple-un",
    "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-032-61-the-definition",
+   "title": "The definition",
    "pages": "24-25"
   },
   {
-   "id": "sec-027-62-the-vanishing-theorem-for-cohomology",
+   "id": "sec-033-62-the-vanishing-theorem-for-cohomology",
    "title": "The vanishing theorem for cohomology",
    "pages": "25-27"
   },
   {
-   "id": "sec-028-7-the-yetter-cohomology-of-a-tensor-category-and",
+   "id": "sec-034-71-the-definition",
+   "title": "The definition",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-035-7-the-yetter-cohomology-of-a-tensor-category-and",
    "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
    "pages": "27-28"
   },
   {
-   "id": "sec-029-72-comparison-of-two-complexes",
+   "id": "sec-036-72-comparison-of-two-complexes",
    "title": "Comparison of two complexes",
    "pages": "28-28"
   },
   {
-   "id": "sec-030-73-proof-of-theorem-227-and-theorem-230",
+   "id": "sec-037-73-proof-of-theorem-227-and-theorem-230",
    "title": "Proof of Theorem 2.27 and Theorem 2.30",
    "pages": "28-29"
   },
   {
-   "id": "sec-031-8-frobenius-perron-dimensions",
+   "id": "sec-038-8-frobenius-perron-dimensions",
    "title": "Frobenius-Perron dimensions",
-   "pages": "29-34"
+   "pages": "29-29"
   },
   {
-   "id": "sec-032-84-pseudo-unitary-categories",
+   "id": "sec-039-81-definition-of-the-frobenius-perron-dimensions",
+   "title": "Definition of the Frobenius-Perron dimensions",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-040-82-frobenius-perron-dimension-of-a-fusion-catego",
+   "title": "Frobenius-Perron dimension of a fusion category",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-041-83-comparison-of-the-global-and-frobenius-perron",
+   "title": "Comparison of the global and Frobenius-Perron dimensions",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-042-84-pseudo-unitary-categories",
    "title": "Pseudo-unitary categories",
-   "pages": "34-39"
+   "pages": "34-35"
   },
   {
-   "id": "sec-033-87-categories-with-integer-frobenius-perron-dime",
+   "id": "sec-043-85-fusion-categories-with-integer-frobenius-perr",
+   "title": "Fusion categories with integer Frobenius-Perron dimension",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-044-86-fusion-categories-of-frobenius-perron-dimensi",
+   "title": "Fusion categories of Frobenius-Perron dimension pn",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-045-87-categories-with-integer-frobenius-perron-dime",
    "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
-   "pages": "39-39"
+   "pages": "37-39"
   },
   {
-   "id": "sec-034-88-group-theoretical-fusion-categories",
+   "id": "sec-046-88-group-theoretical-fusion-categories",
    "title": "Group-theoretical fusion categories",
    "pages": "39-40"
   },
   {
-   "id": "sec-035-89-a-question",
+   "id": "sec-047-89-a-question",
    "title": "A question",
    "pages": "40-41"
   },
   {
-   "id": "sec-036-810-cyclotomicity-of-dimension-functions",
+   "id": "sec-048-810-cyclotomicity-of-dimension-functions",
    "title": "Cyclotomicity of dimension functions",
    "pages": "41-42"
   },
   {
-   "id": "sec-037-811-module-categories-over-products",
+   "id": "sec-049-811-module-categories-over-products",
    "title": "Module categories over products",
    "pages": "42-43"
   },
   {
-   "id": "sec-038-9-fusion-categories-in-positive-characteristic",
+   "id": "sec-050-9-fusion-categories-in-positive-characteristic",
    "title": "Fusion categories in positive characteristic",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-051-91-list-of-modifications",
+   "title": "List of modifications",
    "pages": "43-44"
   },
   {
-   "id": "sec-039-92-lifting-theorems",
+   "id": "sec-052-92-lifting-theorems",
    "title": "Lifting theorems",
-   "pages": "44-47"
+   "pages": "44-45"
   },
   {
-   "id": "sec-040-94-some-applications-of-lifting",
+   "id": "sec-053-93-faithfulness-of-lifting",
+   "title": "Faithfulness of lifting",
+   "pages": "45-47"
+  },
+  {
+   "id": "sec-054-94-some-applications-of-lifting",
    "title": "Some applications of lifting",
    "pages": "47-47"
   },
   {
-   "id": "sec-041-10-appendix-galois-properties-of-s-matrix",
+   "id": "sec-055-10-appendix-galois-properties-of-s-matrix",
    "title": "Appendix: Galois properties of S-matrix",
    "pages": "47-48"
   },
   {
-   "id": "sec-042-references",
+   "id": "sec-056-references",
    "title": "References",
    "pages": "48-50"
   }

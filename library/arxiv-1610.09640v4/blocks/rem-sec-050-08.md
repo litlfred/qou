@@ -1,0 +1,1 @@
+The set (A × S)(M, N) could be big, namely not an element of the initial universe U. This would require the introduction of a larger universe, say V, in which U is an element. And the resulting category AS will be a V-category. This is the same issue we had in the proof of Theorem 6.1.4.

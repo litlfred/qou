@@ -1,0 +1,91 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-058
+section_title: "Page 58"
+pages: 58-58
+pdf_page: 58
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+[14]
+
+[15]
+
+[16]
+
+[17]
+
+[18]
+
+[25]
+
+[26]
+
+[27]
+
+[28]
+
+[29]
+
+[30]
+
+[31]
+
+E.Cremmer, J.L.Gervais, J.F.Roussel, The Quantum Group Structure of 2D gravity and
+Minimal Models (II): The Genus Zero Chiral Bootstrap Comm.Math.Phys. 161, 597 (1994).
+
+E.Cremmer, J.L.Gervais, J.Schnittger, Hidden U;,(sl(2)) x Ug(sl(2)) quantum group sym-
+metry in two dimensional gravity. Comm.Math.Phys. 183, 609 (1997).
+
+U.Carow-Watamura, M.Schlieker, M.Scholl, S.Watamura, A quantum Lorentz Group,
+Int.J.Modern.Phys.A 6,3081-3108 (1991).
+
+V.G.Drinfeld, Quantum Groups, Proceedings of the International Congress of Mathe-
+maticians, Berkeley 1986, A.M.Gleason (ed), pp798-820 American mathematical Society,
+Providence , RI.
+
+V.V.Fock,A.A.Rosly, Poisson structures on moduli space of flat connections on Riemann
+surfaces Preprint ITEP 72-92,(1992).
+
+L.D.Faddeev, N.Reshetikhin, L.Takhtajan, Quantization of Lie groups and Lie algebras
+Leningrad Math. J. 1, 193-226 (1990).
+
+I.M.Gelfand, R.A.Minlos, Z.Ya.Shapiro, Representations of the rotation and Lorentz groups
+and their applications Pergammon Press, 1963.
+
+I.M.Gelfand, M.A.Naimark, Unitary representations of the Lorentz group (in Russian),
+Izvestia Akad. Nauk. SSSR (Ser.Mat.) 11, 411 (1947).
+
+J.L.Gervais, The Quantum Group Structure of 2D gravity and Minimal Models,
+Comm.Math.Phys. 130, 257 (1990).
+
+J.L.Gervais, J.F.Roussel Solving the strongly coupled 2D gravity (II). Fractional spin op-
+erators and topological three point functions, Nucl.Phys. B 246, 140 (1994).
+
+M.Jimbo, H.Konno, S.Odake, J.Shiraishi, Quasi-Hopf twistors for elliptic quantum groups,
+q-alg/9712029
+
+T.Kakehi, Eigenfunction expansion associated with the Casimir operator on the quantum
+group SU,(1,1) Duke Mathematical Journal, 80 No.2, (1995).
+
+T.P.Killingback, Quantization of SL(2,R) Chern-Simons theory, Comm.Math.Phys. 145,
+1-16 (1992).
+
+A.N.Kirillov, N.Yu.Reshetikhin, Representations of the algebra {,(s/(2)), q-orthogonal
+polynomials and invariants of Links Infinite Dimensional Lie algebras and Groups,
+V.G.Kac(ed), pp.285-339, World Scientific, Singapore.
+
+L.Korogodsky, L.Vaksman, Spherical functions on the quantum SU, (1, 1) and a g— analogue
+of Fok-Mehler formula, funk.anal.i Prilozhen 25, 60-62, (1991).
+
+J.Kustermans, A.Van Daele, C* algebraic quantum groups arising from algebraic quantum
+groups To appear in International Journal of Mathematics q-alg/9611023.
+
+G.Mack, V.Schomerus, Quasi Hopf quantum symmetry in quantum theory, Nucl.Phys.
+370, 185 (1992).
+
+S.Majid, Foundations of Quantum Group Theory, Cambridge University Press.

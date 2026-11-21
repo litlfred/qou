@@ -8,6 +8,7 @@ pages: 20-22
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 Maxwell's equations, so familiar to us in Euclidean 3-space  R3 ,  can also be shown 
 to hold on  S3  and  H3 ,  with the appropriate definitions, as follows. 
@@ -54,7 +55,6 @@ With these definitions, Maxwell's equations,
 hold on  S3  and in  H3 ,  just as they do in  R3 . 
  
  
-21
  
  
 The proofs of Maxwell's equations are either self-evident or immediate 
@@ -93,7 +93,4 @@ then leads to the  ∂E/∂t  term in Maxwell's equation above, as we noted in s
 ∙ If the current flow  J  is divergence-free, then  ∂E/∂t  =  0 ,  and hence  ∇ × B  =  J .  
 In that case, we get Ampere's Law (just the curl theorem), which says that the 
 circulation of  B  around a loop equals the flux of  J  through any surface bounded   
-by that loop. 
- 
- 
-22
+by that loop.

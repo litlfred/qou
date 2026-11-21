@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s009731651830061x-main",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s009731651830061x-main/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "1-s20-s009731651830061x-main",
+  "title": "Constant term formulas for refined enumerations of Gog and Magog trapezoids",
   "contains": [
+    "library/1-s20-s009731651830061x-main/sections/sec-front-matter",
     "library/1-s20-s009731651830061x-main/sections/sec-000",
     "library/1-s20-s009731651830061x-main/sections/sec-001",
     "library/1-s20-s009731651830061x-main/sections/sec-002",
@@ -31,13 +32,23 @@
     "library/1-s20-s009731651830061x-main/sections/sec-017",
     "library/1-s20-s009731651830061x-main/sections/sec-018",
     "library/1-s20-s009731651830061x-main/sections/sec-019",
-    "library/1-s20-s009731651830061x-main/sections/sec-020"
+    "library/1-s20-s009731651830061x-main/sections/sec-020",
+    "library/1-s20-s009731651830061x-main/sections/sec-021",
+    "library/1-s20-s009731651830061x-main/sections/sec-022",
+    "library/1-s20-s009731651830061x-main/sections/sec-023",
+    "library/1-s20-s009731651830061x-main/sections/sec-024",
+    "library/1-s20-s009731651830061x-main/sections/sec-025",
+    "library/1-s20-s009731651830061x-main/sections/sec-026",
+    "library/1-s20-s009731651830061x-main/sections/sec-027",
+    "library/1-s20-s009731651830061x-main/sections/sec-028"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1-s20-s009731651830061x-main",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1-s2.0-S009731651830061X-main.pdf",
     "source_sha256": "8d591fe7f1673c5225706070b0b17ade3e51bde21198a6bc1e297def580eb216",
     "pages": 45,

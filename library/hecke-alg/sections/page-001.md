@@ -1,48 +1,23 @@
 ---
 doc_id: hecke-alg
-doc_title: "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney 00. ustralia"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: page-001
 section_title: "Page 1"
-section_number: null
 pages: 1-1
+pdf_page: 1
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 78 sections: Page 1; Page 2; Page 3"
 ---
-Hec
-k
-e
-algebras
-and
-Sc
-h
-ur
-algebras
-of
-the
-symmetric
-group
-Andrew
-Mathas
-Author
-address:
-School
-of
-Ma
-thema
-tics
-F0,
-University
-of
-Sydney,
-Sydney
-NSW
-00.
-A
-ustralia
-E-mail
-addr
-ess
-:
-mathas@maths.usyd.e
-du.au
+Hecke algebras and Schur algebras of the
+
+symmetric group
+
+Andrew Mathas
+Author address:
+
+Scnoot oF MatTuematics FO7, UNIVERSITY OF SYDNEY, SYDNEY NSW
+2006. AUSTRALIA
+E-mail address: mathas@maths .usyd.edu.au

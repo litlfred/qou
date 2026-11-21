@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0606435v2/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Skein polynomial and generalized twisting",
+  "pageStart": 58,
+  "pageEnd": 60,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-036"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "provenance": "ingested"
+}

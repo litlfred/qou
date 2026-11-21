@@ -1,0 +1,24 @@
+---
+doc_id: arxiv-1910.09966v1
+doc_title: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics"
+section_id: sec-020-8-the-k3-surface-and-the-number-of-generations
+section_title: "The K3 Surface and the Number of Generations"
+section_number: 8
+pages: 29-31
+source_pdf: 1910.09966v1.pdf
+source_sha256: 21798500c98ed25a
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 1.0
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
+---
+In Section [\[sub:K3-surfaces-and-octonions\]](#sub:K3-surfaces-and-octonions){reference-type="ref" reference="sub:K3-surfaces-and-octonions"}, we discussed a relation between the K3 surface and octonions by using the intersection form. Here, we use only the $E_{8}$ matrix, i.e., the Cartan matrix of the Lie algebra $E_{8}$. In this section, we will speculate about the other part $$H=\left(\begin{array}{cc}
+0 & -1\\
+-1 & 0
+\end{array}\right)$$ of the intersection form (now with a different orientation). $H$ is the intersection form of the 4-manifold $S^{2}\times S^{2}$. To express it explicitly, there are homology classes $\alpha,\beta\in H_{2}(S^{2}\times S^{2})$ with $\alpha^{2}=\beta^{2}=0$ and $\alpha\cdot\beta=-1$. Therefore, every $S^{2}$ of this manifold has no self-intersections. For the topology of the K3 surface with intersection form ([\[eq:intersection-K3\]](#eq:intersection-K3){reference-type="ref" reference="eq:intersection-K3"}), this form has the desired form, but, as explained above, we will change the smoothness structure. The central idea is the usage of Casson handles $CH$ for the 4-manifolds $S^{2}\times S^{2}\setminus pt$, the one-point complement of $S^{2}\times S^{2}$. Here, the homology classes $\alpha,\beta$ are given (up to homotopy) by $\alpha^{2},\beta^{2}=0\bmod2$ and $\alpha\cdot\beta=-1$; see [@Cas:73]. However, then one has $\alpha^{2}=2n$. Interestingly, the existence of a spin structure is connected to the property that the squares of the homology classes are even. Here, we will consider the simplest realization which has non-zero squares, i.e., we get the form $$\tilde{H}=\left(\begin{array}{cc}
+2 & -1\\
+-1 & 2
+\end{array}\right).\label{eq:modified-H}$$ This form cannot be an intersection form because $\tilde{H}$ has determinant $3$. Therefore, only the $\tilde{H}\bmod2$ reduction has the meaning to be an intersection. However, for the moment, we will consider $\tilde{H}$ and apply the same construction as for the $E_{8}$, i.e., we see $\tilde{H}$ as the Cartan matrix for a Lie algebra. In this case, we get the Lie algebra of $SU(3)$ or the color group. The whole discussion uses some hand-waving arguments, but it is a sign that the $3\left(S^{2}\times S^{2}\right)$ part of the K3 surfaces is connected with the generations. Every part $S^{2}\times S^{2}$ has one color group and realizes the electric charge spectrum $0,\pm\frac{1}{3},\pm\frac{2}{3},\pm1$. Thus, every $S^{2}\times S^{2}$ is the 4-dimensional expression for one generation. This result agrees with the discussion in [@AsselmeyerBrans2015] where we generate fermions from a Casson handle. Let us assume that the number of generations is given by the number of $S^{2}\times S^{2}$ summands. How many generations are possible? Here, we have the surprising result: *if the underlying spacetime is a smooth manifold, then the minimal number of generations must be three!* A spacetime with only one or two generations is not a smooth manifold. Then, the K3 surface is the minimal model.
+
+We will close this paper with another speculation, a global symmetry induced from the K3 surface. Starting point is the intersection form again. From the point of number theory, this form is an even unimodular positive-definite lattices of rank 24, the so-called Niemeier lattice. In 2010, Eguchi--Ooguri--Tachikawa observed that the elliptic genus of the K3 surface decomposes into irreducible characters of the N = 4 superconformal algebra. The corresponding q-series is a mock modular form related to the sporadic group $M_{24}$, the Mathieu group, a simple group of order 244823040. The whole theory is known as Mathieu moonshine or umbral moonshine [@umbral-moonshine]. The interesting point here is the maximal subgroup of $M_{24}$, the split extension of $PGL(3,4)$ by $S_{3}$. The group is the projective group of $3\times3$ matrices with values in the field of four elements. It seems that this maximal subgroup acts in some sense on the K3 surface, and we conjecture that this group acts on the $S^{2}\times S^{2}$ part. If our idea of a relation between the three generations and the $3\left(S^{2}\times S^{2}\right)$ part of the K3 surfaces is true, then we hope to get the mixing matrix for quarks and neutrinos from this action.

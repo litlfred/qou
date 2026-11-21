@@ -43,7 +43,7 @@ one negative entry already separates them.
 That is not a hypothetical.  A probe on this branch adopted the naive reading,
 concluded that `k = 1` (one Hopf link) is infeasible for the proton, and so
 contradicted `categorical-proton-properties.md`, which states that a single
-Hopf link `L_- = σ_1σ_0` is the minimum structure restoring stability.  The
+`L_- = σ_1σ_0` is the minimum structure restoring stability.  The
 corpus was right and the reading was wrong.  `exists_coordPos_not_frobPos` is
 that failure as a theorem.
 
@@ -55,9 +55,9 @@ an order is, a completion is not).  It does **not** supply `G(q)` for `H_3`,
 which is what evaluating stability for a nucleon still requires.  Nothing here
 selects a gluon count or adjudicates any `net` value.
 
--- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/stable-atom.md
--- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
--- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/knots-particles-confinement/stable-atom.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
 -/
 
 namespace QOU.ParticleInteractions

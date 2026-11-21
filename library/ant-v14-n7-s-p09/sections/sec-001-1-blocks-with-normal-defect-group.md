@@ -8,6 +8,7 @@ pages: 3-8
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
 toc_source: inferred
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 7 sections: Front matter; Introduction; Blocks with normal defect group"
 ---
 The aim of this section is to prove that Conjecture B follows from the Alperin–McKay–Navarro conjecture,
 stated below.
@@ -38,55 +39,53 @@ B ∈Bl(G | D) and assume that D ◁G. Write C = CG(D). We will denote by b ∈B
 of B, and we will let θ ∈Irr(b) be the canonical character associated with B, which is unique up to
 G-conjugacy (see [Navarro 1998, Theorem 9.12] and the subsequent discussion). Recall that D ⊆ker θ
 and θ has p-defect zero when viewed as a character of CD/D (that is, θ(1)p = |CD : D|p), the stabilizer
-1956
-Noelia Rizo, A. A. Schaeﬀer Fry and Carolina Vallejo
-of the block b is Gb = Gθ, and the inertial index |Gθ : CD| is not divisible by p. In this situation,
-Irr(b) = {θλ | λ ∈Irr(D)}, where the irreducible characters θλ ∈Irr(CD) are deﬁned for x ∈CD as follows:
-θλ(x) = λ(x p)θ(x p′) if x p ∈D and θλ(x) = 0 otherwise. One can see that
-Gθλ = Gθ ∩Gλ.
-Let c ∈Bl(Gb | D) be the Fong–Reynolds correspondent of b and B as in [Navarro 1998, Theorem 9.14].
-Then the induction map Irr(c) →Irr(B) deﬁnes a height-preserving bijection. By [loc. cit., Theorems 9.21
-and 9.22] c = bGb is the only block of Gb that covers b and
-Irr(B) =
-[
-λ∈Irr(D)
-Irr(G | θλ).
-(1)
-It is not difﬁcult to see that height zero characters of B further lie over characters parametrized by linear
+1956 Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+of the block b is G, = Gg, and the inertial index |Gg : CD| is not divisible by p. In this situation,
+Irr(b) = {6, | A € Irr(D)}, where the irreducible characters 6, € Irr(CD) are defined for x € CD as follows:
+A(X) = A(Xp)O(Xp’) if xp € D and 6, (x) = 0 otherwise. One can see that
+
+Go, = Go NG).
+
+Let c € Bl(G; | D) be the Fong—Reynolds correspondent of b and B as in [Navarro 1998, Theorem 9.14].
+Then the induction map Irr(c) — Irr(B) defines a height-preserving bijection. By [loc. cit., Theorems 9.21
+and 9.22] c = b™ is the only block of G; that covers b and
+
+In(B) = U Inr(G | 6). 60)
+Aelrr(D)
+It is not difficult to see that height zero characters of B further lie over characters parametrized by linear
 characters of D, so that
-Irr0(B) =
-[
-λ∈Irr(D/D′)
-Irr(G | θλ).
-(2)
-In order to explicitly describe the set Irr0(B)σ1 when the defect group of B is normal we will use the
+Inmo(B)= (J) I(G|,). (2)
+el(D/D’)
+
+In order to explicitly describe the set Irro(B)*! when the defect group of B is normal we will use the
+
 following technical lemma.
-Lemma 1.1. Let G be a ﬁnite group and let p be a prime. Suppose that B is a block of G with normal
-defect group D. Let b be a root of B with canonical character θ. Write A = ⟨σ1⟩≤Gal(Q(ξ|G|)/Q). If λ
-is a linear character of D, then let Gθ A
-λ = {g ∈G | (θλ)g = (θλ)a for some a ∈A}. With this deﬁnition
-Gθ A
-λ = Gθλ = Gθ ∩Gλ.
-Proof. Write C = CG(D). Recall that b is a block of CD of defect D and θ ∈Irr(CD) has defect zero
-as a character of CD/D. Note that θ is A-ﬁxed since ba = b for every a ∈A. Let g ∈Gθ A
-λ . We start by
-proving that g ∈Gθ. Since θ is A-ﬁxed, by the deﬁnition of θλ we have (θλ)g = (θλ)a = θλa for some
-a ∈A. Evaluating on D we see that
-θ(1)λa(x) = θλa(x) = θ g
-λ (x) = θ(1)λg(x),
-for every x ∈D. Hence λg = λa. Let x ∈CD be such that x D ∈(CD/D)0, the set of p-regular elements
-of CD/D, and notice that x p ∈D. (Otherwise θ(x) = 0.) Then
-λg(x p)θ g(x p′) = θ g
-λ (x) = θa
-λ(x) = λa(x p)θ(x′
-p) = λg(x p)θ(x′
-p).
-This implies θ g(x p′) = θ(x p′). Since x D = x p′ D, then θ g = θ and g ∈Gθ.
-Next we prove that g ∈Gλ. We know that λg = λa for some a ∈A, and that g ∈Gθ. Since Gθ/CD is
-a p′-group, then λgm = λ for some integer m relatively prime to p. In particular, λam = λ and the order
-of a as an element of Gal(Q(λ)/Q) = Gal(Q(ξo(λ))/Q) divides m, which forces a = 1 and λg = λ, as
-wanted.
-□
+
+Lemma 1.1. Let G be a finite group and let p be a prime. Suppose that B is a block of G with normal
+defect group D. Let b be a root of B with canonical character 0. Write A = (0) < Gal(Q(é\g))/Q). Ifa
+is a linear character of D, then let Gga = {g € G | (0,)8 = (0,)% for some a € A}. With this definition
+
+Goya = Go, = GeNG,.
+
+Proof. Write C = Cg(D). Recall that b is a block of CD of defect D and 6 € Irr(CD) has defect zero
+as a character of CD/D. Note that 6 is A-fixed since b“ = b for every a € A. Let g € Gga. We start by
+proving that g € Gg. Since @ is A-fixed, by the definition of 6, we have (@,)® = (0,)% = 0,4 for some
+aé A. Evaluating on D we see that
+
+O(1)A“ (x) = Oye (x) = OF (x) = O(D)AS(X),
+
+for every x € D. Hence A’ = A“. Let x € CD be such that xD € (CD/D)”, the set of p-regular elements
+of CD/D, and notice that x» € D. (Otherwise 6(x) = 0.) Then
+
+AS (xp)08 (xp) = 65 (x) = Of (x) = M (xp)O(X,) = 18 (xp)O(x,)-
+
+This implies 6% (xp") = 0(xp). Since x D = xD, then 0% = 6 and g € Go.
+
+Next we prove that g € G,. We know that 48 = A“ for some a € A, and that g € Gg. Since Gg/CD is
+a p’-group, then 4%” = A for some integer m relatively prime to p. In particular, 4¢" = A and the order
+of a as an element of Gal(Q(A)/Q) = Gal(Q(&,(,))/Q) divides m, which forces a = | and A’ = A, as
+wanted. oO
 Galois action on the principal block and cyclic Sylow subgroups
 1957
 Lemma 1.2. Let G be a ﬁnite group and let p be a prime. Suppose that B is a block of G with a normal

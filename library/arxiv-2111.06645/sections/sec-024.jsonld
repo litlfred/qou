@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2111.06645/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A.2 Asymptotics at roots of unity",
+  "pageStart": 27,
+  "pageEnd": 28,
+  "contains": [
+    "library/arxiv-2111.06645/blocks/prose-sec-024"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645/manifest.jsonld",
+  "provenance": "ingested"
+}

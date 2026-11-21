@@ -1,0 +1,52 @@
+HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE 467
+
+vertices of I, and the set V of vertices of Py is naturally identified to the set
+of components of S? —T’. Recall that, because I’ is 3-connected, its embedding
+in S? is unique up to homeomorphism of S? (see for instance [9, §32]), so that
+these two sets F and V only depend on I’. For every P € Pp with associated
+projective polyhedron P?°i, the sets of faces and vertices of PP) are now
+naturally identified to F and V.
+
+We endow Pr with the topology induced by the embedding ® : Pp > (RP?)Y
+that associates to P € Pr the vertices of its associated projective poly-
+hedron PPT,
+
+The group PO(3, 1) has a natural action on Pr. Consider the quotient space
+Pr = Pr/PO(3, 1).
+
+LEMMA 8. — The space Py is Hausdorff.
+
+Proof. — We need to show that, whenever two sequences P,, € Pr and gn €
+PO(3, 1) are such that P, converges to some P € Pr and g,P, converges to
+some Q € Pr, there is a g € PO(3, 1) such that gP = Q.
+
+Pick four distinct faces fo, fi, fo, fs € F of Pye in such a way that fo is
+adjacent to the faces fi, fo and fs. For each i, consider the hyperbolic plane
+that contains the face of P corresponding to f;, transversely oriented with the
+outward boundary orientation from P, and let X; € R* be its unit normal
+vector, as defined in §1. A consequence of the choice of the faces fo, fi, fo, fs
+is that the intersection of the four projective planes X¢-, X7, Xz, Xz in RP?
+is empty. It follows that the vectors Xo, X1, X2, X3 are linearly independent,
+and form a basis {Xo, X1, X2, X3} for R+.
+
+Similarly, the polyhedron Q € Pr provides a basis {¥0,¥1, Y2, Y3} for R4,
+where Y; € R* is the unit normal vector to the hyperbolic plane which con-
+tains the face of Q corresponding to f;, transversely oriented with the outward
+boundary orientation from Q, and the polyhedron P,, € Pr gives a similar
+basis {Xq, X}, XZ, X3'}.
+
+Since P,, converges to P for the topology of Pr, each vertex of PProj
+converges to the corresponding vertex of PP'°J, and each of its faces conse-
+quently converges to the corresponding face of PP*°J, In particular, each XP
+converges to X; in R*. Similarly, since gn P, converges to Q in Pr, each gnXj"
+converges to Y;. If A, denotes the matrix of g, from R* with the basis
+{Xo, X1, X2,X3} to R* with the basis {Yo, Vi, Y2,Y3}, it follows that A,
+converges to the identity matrix. As a consequence, g, converges to a linear
+isomorphism g of R*, which must be in O(3, 1) since this subgroup is closed
+in the linear group. Therefore, g induces an element of PO(3,1) which,
+by continuity, sends P to Q as required. Oo
+
+To analyze the local topology of Pr and Pp, subdivide the faces of the
+model projective polyhedron pyre into triangles by adding a few edges (and
+
+BULLETIN DE LA SOCIETE MATHEMATIQUE DE FRANCE

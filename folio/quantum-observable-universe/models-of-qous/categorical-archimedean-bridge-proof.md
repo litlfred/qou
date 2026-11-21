@@ -1,4 +1,4 @@
-We show that the image of the categorical differential $d_q$ under the fibre functor $\tau$ equals the archimedean $q$-exterior derivative. 
+The claim is that the image of the categorical differential $d_q$ under the fibre functor $\tau$ equals the archimedean $q$-exterior derivative. 
 
 The functor $\tau$ dictates the following geometric correspondences:
 - The Frobenius form $\int_A$ maps to the contact integral $\int_M \alpha \wedge (d\varTheta)^n$.
@@ -12,7 +12,7 @@ $$
   = \varTheta \wedge (\mathcal{L}_\xi\alpha - d(\iota_\xi\alpha)).
 $$
 
-For horizontal forms ($\iota_\xi\alpha = 0$), this simplifies to $\varTheta \wedge \mathcal{L}_\xi\alpha$. For arbitrary forms, we write $\alpha = \alpha_H + \varTheta \wedge \beta$. Because $\mathcal{L}_\xi\varTheta = 0$, the identity $\pi_V(d\alpha) = \varTheta \wedge \mathcal{L}_\xi\alpha$ holds in all cases. We conclude that
+For horizontal forms ($\iota_\xi\alpha = 0$), this simplifies to $\varTheta \wedge \mathcal{L}_\xi\alpha$. For arbitrary forms, write $\alpha = \alpha_H + \varTheta \wedge \beta$. Because $\mathcal{L}_\xi\varTheta = 0$, the identity $\pi_V(d\alpha) = \varTheta \wedge \mathcal{L}_\xi\alpha$ holds in all cases. Hence
 
 $$
   \tau(d_q) = q^{-1} d + (1 - q^{-1})\varTheta \wedge \mathcal{L}_\xi,

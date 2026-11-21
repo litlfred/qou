@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2507.13840v2/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
-  "pageStart": 36,
-  "pageEnd": 37,
-  "text": "../sections/sec-007-entanglement-of-pseudorandom-density-matrices-an.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
+  "title": "Relation to operator space entanglement entropy",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "text": "../sections/sec-007-5-relation-to-operator-space-entanglement-entrop.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
   "provenance": "ingested"
 }

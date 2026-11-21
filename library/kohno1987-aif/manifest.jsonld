@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -16,12 +16,10 @@
     "library/kohno1987-aif/sections/sec-001",
     "library/kohno1987-aif/sections/sec-002",
     "library/kohno1987-aif/sections/sec-003",
-    "library/kohno1987-aif/sections/sec-004",
-    "library/kohno1987-aif/sections/sec-005",
-    "library/kohno1987-aif/sections/sec-006"
+    "library/kohno1987-aif/sections/sec-004"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "kohno1987-aif",
     "title_source": "pdf-info",

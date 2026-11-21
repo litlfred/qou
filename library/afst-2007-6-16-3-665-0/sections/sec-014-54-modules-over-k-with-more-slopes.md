@@ -8,6 +8,7 @@ pages: 38-39
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
 toc_source: inferred
+doc_brief: "Galois theory of q-difference equations (van der Put–Reversat, Ann. Fac. Sci. Toulouse XVI:3, 2007, 665–718) — Galois-theoretic framework for q-difference equations."
 ---
 We describe here the diﬀerence Galois group for the general case. The
 proof follows straightforward from the case of two slopes. Consider a q-

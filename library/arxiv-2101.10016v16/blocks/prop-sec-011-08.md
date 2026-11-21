@@ -1,1 +1,1 @@
-Let A be an Ω-involutive weak quasi-bialgebra with involution (
+Let A be an Ω-involutive weak quasi-bialgebra with involution ( ∗ , Ω) and F ∈ A ⊗ A a twist. Consider the twisted algebra AF with involution ( ∗ , ΩF ) as in Prop. 11.8. Then the tensor equivalence E defined in Prop. 7.2 restricts to a unitary tensor equivalence between Reph(A) → Reph(AF ) (Rep+(A) → Rep+(AF ) in the unitary case).

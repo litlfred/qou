@@ -1,0 +1,1 @@
+Let n ∈N, and consider a complex P ∈D(X) such that for each geometric point s of S, the restriction Ps is a simple perverse sheaf with det(ω(Ps))⊗n = 1. Then there are reductive algebraic groups G1,...,Gm and a stratiﬁcation into locally closed subsets S = m G i=0 Si such that G(Ps) = Gi for all geometric points s in Si.

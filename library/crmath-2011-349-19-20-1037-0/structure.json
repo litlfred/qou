@@ -6,94 +6,182 @@
   "sha256": "fd5bd0558dfe892ff754e9644533d840342740970953c355d70ae60f7afa6a30",
   "bytes": 138844,
   "pages": 3,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 1,
+    "reason": "14 of 455 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1016/j.crma.2011.09.002",
   "title": "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
   "authors_raw": "C. R. Acad. Sci. Paris, Ser. I",
-  "abstract": "Van der Put and Reversat described the form of a pure q-difference module with non integral slopes. We deduce from this explicit matricial descriptions of the isoformal analytic classes and of the Galois group of pureq-difference modules with non integral slopes. © 2011 Académie des sciences. Publié par Elsevier Masson SAS. Tous droits réservés. Notations Le corps des séries de Laurent convergentes sera notéK = C({z}) = C{z}[z−1] et ˆK désignera le corps des séries formelles C((z)) = C[[z]][z−1].S o i tq ∈ C∗ tel que|q| >1, on déﬁnit l’opérateurσ, automorphisme deK (ou ˆK)p a rσ( f (z)) = f (qz). Un module aux q-différences sera un couple M = (K n,Φ A) où ΦA est un automorphisme σ-linéaire de K n déﬁni par ΦA(X) = A−1σ(X), A ∈ GLn(K). Un morphisme de modules auxq-différences de (K n,Φ A) dans (K p,Φ B) est une matrice F ∈ M p,n(K) telle que σ(F)A = BF .",
-  "docinfo": {
-   "Author": "Virginie Bugeaud",
-   "CreationDate": "D:20111007145547+03'00'",
-   "Creator": "Elsevier",
-   "Producer": "Acrobat Distiller 9.3.3 (Windows)",
-   "Title": "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières"
-  },
-  "title_prev": "C. R. Acad. Sci. Paris, Ser. I www.sciencedirect.com Équations différentielles Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
   "title_lines": [
    "C. R. Acad. Sci. Paris, Ser. I",
    "www.sciencedirect.com",
    "Équations différentielles",
    "Classification analytique et théorie de Galois locales des modules",
    "aux q-différences à pentes non entières"
-  ]
+  ],
+  "abstract": "Van der Put and Reversat described the form of a pure q-difference module with non integral slopes. We deduce from this explicit matricial descriptions of the isoformal analytic classes and of the Galois group of pure q-difference modules with non integral slopes. © 2011 Académie des sciences. Publié par Elsevier Masson SAS. Tous droits réservés. Notations Le corps des séries de Laurent convergentes sera noté K = C({z}) = C{z}[z~'] et RK désignera le corps des séries formelles C((z)) = C[[z]][z~!]. Soit q € C* tel que |g| > 1, on définit l’opérateur o, automorphisme de K (ou R) par o(f(z)) = f (qz). Un module aux q-différences sera un couple M = (K\", ®,) ot! ®4 est un automorphisme o-linéaire de K\" défini par @4(X) = A~'a(X), A € GL,(K). Un morphisme de modules aux q-différences de (K\", ®,) dans (K?, g) est une matrice F €Mpn(K) telle que o(F)A = BF.",
+  "docinfo": {
+   "Title": "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
+   "Author": "Virginie Bugeaud",
+   "Producer": "Acrobat Distiller 9.3.3 (Windows)",
+   "Creator": "Elsevier",
+   "CreationDate": "D:20111007145547+03'00'"
+  },
+  "title_raw": "C. R. Acad. Sci. Paris, Ser. | 349 (2011) 1037-1039",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
+   "heading": "C. R. Acad. Sci. Paris, Ser. I Classiﬁcation analytique et théorie de Galois locales des modules aux q -différences à pentes non entières",
+   "outline": "Classiﬁcation analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
+   "text": "C. R. Acad. Sci. Paris, Ser. | 349 (2011) 1037-1039",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Classiﬁcation analytique et théorie de Galois locales des modules  aux q-différences à pentes non entières",
+   "title": "Classiﬁcation analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1037"
   },
   {
    "level": 2,
    "title": "Notations",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1037"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1037"
   },
   {
    "level": 2,
    "title": "Classiﬁcation analytique isoformelle à deux pentes",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1038"
   },
   {
    "level": 2,
    "title": "Opérateurs de Stokes",
    "page": 2,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1038"
   },
   {
    "level": 2,
    "title": "Groupe de Galois formel",
    "page": 3,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1039"
   },
   {
    "level": 2,
    "title": "Références",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1039"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1037",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1038",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1039",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-classiﬁcation-analytique-et-théorie-de-galois-lo",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Classiﬁcation analytique et théorie de Galois locales des modules  aux q-différences à pentes non entières",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1199,
-   "n_words": 181
+   "n_chars": 194,
+   "n_words": 27,
+   "label_start": "1037",
+   "label_end": "1037"
+  },
+  {
+   "id": "sec-000-classiﬁcation-analytique-et-théorie-de-galois-lo",
+   "number": null,
+   "title": "Classiﬁcation analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1212,
+   "n_words": 182,
+   "label_start": "1037",
+   "label_end": "1037"
   },
   {
    "id": "sec-001-notations",
@@ -102,8 +190,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 507,
-   "n_words": 101
+   "n_chars": 504,
+   "n_words": 97,
+   "label_start": "1037",
+   "label_end": "1037"
   },
   {
    "id": "sec-002-1-introduction",
@@ -112,8 +202,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2189,
-   "n_words": 375
+   "n_chars": 1618,
+   "n_words": 285,
+   "label_start": "1037",
+   "label_end": "1038"
   },
   {
    "id": "sec-003-2-classiﬁcation-analytique-isoformelle-à-deux-pe",
@@ -122,8 +214,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 2374,
-   "n_words": 435
+   "n_chars": 2866,
+   "n_words": 501,
+   "label_start": "1038",
+   "label_end": "1038"
   },
   {
    "id": "sec-004-3-opérateurs-de-stokes",
@@ -132,8 +226,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1994,
-   "n_words": 393
+   "n_chars": 1949,
+   "n_words": 352,
+   "label_start": "1038",
+   "label_end": "1039"
   },
   {
    "id": "sec-005-4-groupe-de-galois-formel",
@@ -142,8 +238,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 2239,
-   "n_words": 506
+   "n_chars": 2158,
+   "n_words": 425,
+   "label_start": "1039",
+   "label_end": "1039"
   },
   {
    "id": "sec-006-références",
@@ -152,15 +250,25 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1502,
-   "n_words": 203
+   "n_chars": 1507,
+   "n_words": 208,
+   "label_start": "1039",
+   "label_end": "1039"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 12004
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 12008,
+  "furniture_lines_stripped": 2
  }
 }

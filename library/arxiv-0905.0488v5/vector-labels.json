@@ -1,0 +1,4845 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0905.0488v5",
+  "pages": [
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 23,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Diagram of bijections in the proof of Theorem 0.10.1."
+      ],
+      "labels": [
+        {
+          "text": "TWISTED DEFORMATION QUANTIZATION",
+          "bbox": [
+            213.08,
+            97.7,
+            382.2,
+            104.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            473.0,
+            97.7,
+            476.97,
+            104.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "tw.quant",
+          "bbox": [
+            281.67,
+            124.11,
+            312.47,
+            131.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "/ TwOb",
+          "bbox": [
+            334.84,
+            125.94,
+            364.68,
+            138.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "XYCMAT-Medium"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            177.47,
+            127.71,
+            182.03,
+            137.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            253.36,
+            127.71,
+            257.92,
+            137.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            364.67,
+            127.71,
+            369.23,
+            137.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            437.35,
+            127.71,
+            441.91,
+            137.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "PoisDef(R, OX)",
+          "bbox": [
+            182.03,
+            128.48,
+            253.36,
+            139.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMSans10-Bold"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "AssDef(R, OX)",
+          "bbox": [
+            369.24,
+            128.48,
+            437.35,
+            139.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMSans10-Bold"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "TwOb",
+          "bbox": [
+            150.62,
+            128.63,
+            177.47,
+            138.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "dec \u000f",
+          "bbox": [
+            189.8,
+            149.22,
+            204.27,
+            166.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular",
+            "XYCMAT-Medium"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dec",
+          "bbox": [
+            392.86,
+            151.75,
+            404.35,
+            158.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            160.0,
+            167.47,
+            164.56,
+            177.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            264.38,
+            167.47,
+            268.94,
+            177.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            347.21,
+            167.47,
+            351.77,
+            177.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            448.36,
+            167.47,
+            452.93,
+            177.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C(U, PoisDef(R, OX))",
+          "bbox": [
+            164.57,
+            168.25,
+            264.38,
+            179.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMSans10-Bold"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C(U, AssDef(R, OX))",
+          "bbox": [
+            351.77,
+            168.25,
+            448.37,
+            179.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMSans10-Bold"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Desc",
+          "bbox": [
+            139.61,
+            168.39,
+            160.02,
+            178.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Desc",
+          "bbox": [
+            326.81,
+            168.39,
+            347.22,
+            178.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "geo",
+          "bbox": [
+            189.8,
+            190.1,
+            201.28,
+            197.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "geo",
+          "bbox": [
+            392.86,
+            190.1,
+            404.34,
+            197.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "C(U, Dnor",
+          "bbox": [
+            370.89,
+            207.2,
+            414.94,
+            218.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            162.44,
+            207.57,
+            167.0,
+            217.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            181.86,
+            207.57,
+            186.42,
+            217.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001\u0001",
+          "bbox": [
+            257.37,
+            207.57,
+            266.5,
+            217.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            346.91,
+            207.57,
+            351.47,
+            217.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            366.33,
+            207.57,
+            370.89,
+            217.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001\u0001",
+          "bbox": [
+            444.1,
+            207.57,
+            453.22,
+            217.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C(U, Tpoly,X), R",
+          "bbox": [
+            186.43,
+            208.34,
+            257.3,
+            220.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "poly,X), R",
+          "bbox": [
+            403.19,
+            208.47,
+            444.02,
+            220.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Desc",
+          "bbox": [
+            142.04,
+            208.49,
+            162.46,
+            218.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Del",
+          "bbox": [
+            167.01,
+            208.49,
+            181.82,
+            218.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Desc",
+          "bbox": [
+            326.51,
+            208.49,
+            346.92,
+            218.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Del",
+          "bbox": [
+            351.47,
+            208.49,
+            366.29,
+            218.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "mix",
+          "bbox": [
+            188.29,
+            229.09,
+            204.27,
+            246.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular",
+            "XYCMAT-Medium"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mix",
+          "bbox": [
+            392.86,
+            231.62,
+            405.85,
+            238.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Ψs / Desc",
+          "bbox": [
+            292.01,
+            242.9,
+            330.63,
+            258.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Bold",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "XYCMAT-Medium"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            146.15,
+            247.66,
+            150.71,
+            257.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            165.57,
+            247.66,
+            170.13,
+            257.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001\u0001",
+          "bbox": [
+            273.66,
+            247.66,
+            282.79,
+            257.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            330.62,
+            247.66,
+            335.18,
+            257.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            350.04,
+            247.66,
+            354.6,
+            257.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001\u0001",
+          "bbox": [
+            460.39,
+            247.66,
+            469.51,
+            257.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C(U, MixU(Tpoly,X)), R",
+          "bbox": [
+            170.14,
+            248.44,
+            273.59,
+            259.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Bold",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C(U, MixU(Dpoly,X)), R",
+          "bbox": [
+            354.61,
+            248.44,
+            460.31,
+            259.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Bold",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Desc",
+          "bbox": [
+            125.75,
+            248.58,
+            146.17,
+            258.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Del",
+          "bbox": [
+            150.72,
+            248.58,
+            165.53,
+            258.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Del",
+          "bbox": [
+            335.18,
+            248.58,
+            350.0,
+            258.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. Diagram of bijections in the proof of Theorem 0.10.1.",
+          "bbox": [
+            155.19,
+            276.86,
+            440.17,
+            289.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "LMRomanCaps10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Question 0.10.2. Let X be a Calabi-Yau surface, with symplectic Poisson bracket",
+          "bbox": [
+            118.31,
+            307.02,
+            477.09,
+            317.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{−, −}. Consider the Poisson K[[ℏ]]-deformation A of OX that we get from Ex-",
+          "bbox": [
+            118.31,
+            316.8,
+            476.99,
+            330.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ample 0.1.1, and the twisted Poisson deformation A generated by A. Let B :=",
+          "bbox": [
+            118.31,
+            330.8,
+            476.97,
+            340.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Bold",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tw.quant(A), which is a twisted associative K[[ℏ]]-deformation of OX, well-deﬁned",
+          "bbox": [
+            118.31,
+            340.71,
+            477.0,
+            353.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Bold",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "up to twisted gauge equivalence. Is B really twisted?",
+          "bbox": [
+            118.31,
+            354.71,
+            349.53,
+            364.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This question is repeated (with a few more details) at the end of Section 11,",
+          "bbox": [
+            130.26,
+            373.13,
+            477.12,
+            383.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "along with a some other questions.",
+          "bbox": [
+            118.31,
+            385.08,
+            269.94,
+            395.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0.11. Discussion of Related Work. We ﬁnish the introduction with a discussion",
+          "bbox": [
+            118.31,
+            404.21,
+            477.07,
+            414.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of several related papers. This is not an easy task, since these papers were written by",
+          "bbox": [
+            118.31,
+            416.16,
+            477.17,
+            426.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "people working in several mathematical branches – diﬀerential geometry, complex",
+          "bbox": [
+            118.31,
+            428.12,
+            477.12,
+            438.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "analytic geometry, algebraic geometry and mathematical physics – and the style of",
+          "bbox": [
+            118.31,
+            440.07,
+            477.11,
+            450.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "writing varies accordingly.",
+          "bbox": [
+            118.31,
+            452.03,
+            232.24,
+            461.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The impetus for our work was trying to understand the ideas proposed by Kont-",
+          "bbox": [
+            130.26,
+            463.98,
+            477.11,
+            473.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sevich in [Ko2]. In that paper Kontsevich considered a smooth algebraic variety X",
+          "bbox": [
+            118.31,
+            475.92,
+            476.19,
+            485.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "over a ﬁeld of characteristic 0. He claimed that any formal Poisson deformation",
+          "bbox": [
+            118.31,
+            487.89,
+            477.05,
+            497.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of OX can be quantized to a stack of algebroids. However there was only a hint",
+          "bbox": [
+            118.31,
+            499.7,
+            477.1,
+            511.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of a proof in [Ko2], and there was no statement regarding classiﬁcation. We found",
+          "bbox": [
+            118.31,
+            511.8,
+            477.12,
+            521.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "this new idea of Kontsevich extremely interesting, and wanted to prove it, and to",
+          "bbox": [
+            118.31,
+            523.76,
+            477.13,
+            533.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "expand it to a precise classiﬁcation statement (generalizing the aﬃne case). We",
+          "bbox": [
+            118.31,
+            535.71,
+            477.14,
+            545.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "had several conversations with Kontsevich, in which he oﬀered some valuable sug-",
+          "bbox": [
+            118.31,
+            547.67,
+            477.14,
+            557.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gestions, that eventually led us to the concept of twisted Poisson deformation (see",
+          "bbox": [
+            118.31,
+            559.62,
+            477.15,
+            569.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Subsection 0.3). The precise statement about twisted deformation quantization of",
+          "bbox": [
+            118.31,
+            571.58,
+            477.13,
+            581.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "an algebraic variety appears for the ﬁrst time in this paper (this is Theorem 0.10.1);",
+          "bbox": [
+            118.31,
+            583.53,
+            477.13,
+            593.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and ours is the only paper that gives a complete proof of this result.",
+          "bbox": [
+            118.31,
+            595.49,
+            416.9,
+            605.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "As we already mentioned, Kashiwara [Ka] was the ﬁrst to consider stacky quan-",
+          "bbox": [
+            130.26,
+            607.44,
+            477.11,
+            617.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tizations. The situation in [Ka] was this: X is a complex contact manifold, so there",
+          "bbox": [
+            118.31,
+            619.39,
+            477.04,
+            629.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is an open covering X = S Ui, where each Ui is isomorphic to an open submanifold",
+          "bbox": [
+            118.31,
+            623.87,
+            477.04,
+            648.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of a projective cotangent bundle. Thus on Ui there is a sheaf Ei of microdiﬀerential",
+          "bbox": [
+            118.31,
+            643.17,
+            477.0,
+            654.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "operators. Kashiwara proved that even if the Ei cannot be glued into a sheaf of",
+          "bbox": [
+            118.31,
+            655.12,
+            477.03,
+            666.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "rings, they can always be glued into a twisted sheaf (i.e. a stack of algebroids) E.",
+          "bbox": [
+            118.31,
+            667.08,
+            472.33,
+            677.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The paper [KS2] by Kashiwara and P. Schapira discusses a variant of the stack",
+          "bbox": [
+            130.26,
+            679.17,
+            477.13,
+            689.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of microdiﬀerential operators, that is called a DQ algebroid. The description of a",
+          "bbox": [
+            118.31,
+            691.13,
+            477.01,
+            701.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "DQ algebroid A as a twisted object is explained in Remark 4.13. There is some",
+          "bbox": [
+            118.31,
+            702.94,
+            477.09,
+            713.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "overlap regarding technical points between our paper and [KS2] (see Remark 3.8,",
+          "bbox": [
+            118.31,
+            715.04,
+            477.13,
+            725.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and the Introduction of [Ye9]).",
+          "bbox": [
+            118.31,
+            726.99,
+            258.99,
+            736.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The main thrust of [KS2] is the study of the",
+          "bbox": [
+            268.42,
+            726.99,
+            477.11,
+            736.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Hochschild homology sheaf associated to a symplectic DQ algebroid A, and related",
+          "bbox": [
+            118.31,
+            738.81,
+            476.99,
+            748.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 26,
+      "rotation": 0,
+      "drawings": 151,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Illustration of a combinatorial descent datum (ω, g, a) in the cosimplicial crossed groupoid G = {Gp}p∈N."
+      ],
+      "labels": [
+        {
+          "text": "26",
+          "bbox": [
+            118.31,
+            97.7,
+            126.25,
+            104.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "AMNON YEKUTIELI",
+          "bbox": [
+            258.36,
+            97.7,
+            336.9,
+            104.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 2. Illustration of a combinatorial descent datum (ω, g, a)",
+          "bbox": [
+            154.18,
+            311.05,
+            441.1,
+            323.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRomanCaps10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the cosimplicial crossed groupoid G = {Gp}p∈N.",
+          "bbox": [
+            154.18,
+            323.91,
+            374.27,
+            335.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 5.2. Let G = {Gp}p∈N be a cosimplicial crossed groupoid. A combina-",
+          "bbox": [
+            118.31,
+            354.29,
+            476.97,
+            367.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Italic",
+            "LMRoman10-Regular",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "torial descent datum in G is a triple (ω, g, a) of elements of the following sorts:",
+          "bbox": [
+            118.31,
+            367.53,
+            461.01,
+            377.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(0) ω ∈Ob(G0).",
+          "bbox": [
+            135.25,
+            380.45,
+            207.8,
+            391.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1) g ∈G1",
+          "bbox": [
+            135.25,
+            392.4,
+            182.05,
+            403.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(ω(0), ω(1)), where ω(0), ω(1) ∈Ob(G1) are the objects corresponding",
+          "bbox": [
+            178.08,
+            392.4,
+            477.05,
+            405.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to the vertices (0) and (1) in ∆1.",
+          "bbox": [
+            152.96,
+            405.05,
+            298.24,
+            417.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2) a ∈G2",
+          "bbox": [
+            135.25,
+            417.76,
+            182.2,
+            429.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(ω(0)), where ω(0) ∈Ob(G2) is the object corresponding to the vertex",
+          "bbox": [
+            178.23,
+            417.76,
+            477.06,
+            430.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0) of ∆2.",
+          "bbox": [
+            152.96,
+            430.41,
+            197.14,
+            442.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The conditions are as follows:",
+          "bbox": [
+            130.27,
+            446.63,
+            259.48,
+            456.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(i) (Failure of 1-cocycle)",
+          "bbox": [
+            137.46,
+            460.82,
+            244.75,
+            470.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "g−1",
+          "bbox": [
+            238.6,
+            475.5,
+            253.9,
+            487.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0,2) ◦g(1,2) ◦g(0,1) = D(a)",
+          "bbox": [
+            243.35,
+            477.39,
+            356.68,
+            490.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the group G2",
+          "bbox": [
+            152.96,
+            494.96,
+            226.76,
+            506.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Here ω(i) ∈Ob(G2) and g(i,j) ∈G2",
+          "bbox": [
+            264.07,
+            494.96,
+            431.92,
+            507.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(ω(0)).",
+          "bbox": [
+            222.8,
+            496.23,
+            254.68,
+            508.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(ω(i), ω(j))",
+          "bbox": [
+            427.95,
+            496.23,
+            476.97,
+            508.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "correspond to the faces (i) and (i, j) respectively of ∆2.",
+          "bbox": [
+            152.96,
+            507.6,
+            397.11,
+            519.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(ii) (Twisted 2-cocycle)",
+          "bbox": [
+            134.69,
+            521.6,
+            237.45,
+            531.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a−1",
+          "bbox": [
+            199.31,
+            536.28,
+            214.77,
+            548.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0,1,3) ◦a(0,2,3) ◦a(0,1,2) = Ad(g−1",
+          "bbox": [
+            204.57,
+            536.28,
+            349.23,
+            551.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0,1))(a(1,2,3))",
+          "bbox": [
+            338.68,
+            538.29,
+            395.97,
+            551.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the group G3",
+          "bbox": [
+            152.96,
+            555.73,
+            226.16,
+            566.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Here ω(i) ∈Ob(G3), g(i,j) ∈G3",
+          "bbox": [
+            262.88,
+            555.73,
+            411.09,
+            568.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(ω(0)).",
+          "bbox": [
+            222.2,
+            557.0,
+            254.08,
+            568.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(ω(i), ω(j)) and",
+          "bbox": [
+            407.12,
+            557.0,
+            476.97,
+            568.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a(i,j,k) ∈G3",
+          "bbox": [
+            152.96,
+            568.38,
+            204.15,
+            581.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(ω(i)) correspond to the faces (i), (i, j) and (i, j, k) respectively",
+          "bbox": [
+            200.18,
+            569.65,
+            477.01,
+            581.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of ∆3.",
+          "bbox": [
+            152.96,
+            581.03,
+            181.09,
+            593.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We denote by Desc(G) the set of all descent data in G.",
+          "bbox": [
+            130.27,
+            597.24,
+            370.68,
+            607.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "See Figure 2 for an illustration.",
+          "bbox": [
+            130.27,
+            615.35,
+            267.32,
+            625.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 5.3. Let (ω, g, a) and (ω′, g′, a′) be combinatorial descent data in the",
+          "bbox": [
+            118.31,
+            632.06,
+            477.05,
+            643.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "cosimplicial crossed groupoid G. A gauge transformation (ω, g, a) →(ω′, g′, a′) is a",
+          "bbox": [
+            118.31,
+            644.01,
+            476.97,
+            655.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pair (f, b) of elements of the following sorts:",
+          "bbox": [
+            118.31,
+            657.34,
+            310.09,
+            667.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1(ω, ω′).",
+          "bbox": [
+            178.92,
+            670.16,
+            214.25,
+            683.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0) f ∈G0",
+          "bbox": [
+            135.25,
+            670.26,
+            182.89,
+            681.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1) b ∈G1",
+          "bbox": [
+            135.25,
+            682.21,
+            181.21,
+            693.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(ω(0)), where ω(0) ∈Ob(G1) is the object corresponding to the vertex",
+          "bbox": [
+            177.24,
+            682.21,
+            477.07,
+            695.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0) in ∆1.",
+          "bbox": [
+            152.96,
+            694.86,
+            197.42,
+            706.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "These two conditions must hold:",
+          "bbox": [
+            130.27,
+            711.08,
+            271.9,
+            721.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(i)",
+          "bbox": [
+            137.46,
+            725.27,
+            147.98,
+            735.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "g′ = f(1) ◦g ◦D(b) ◦f −1",
+          "bbox": [
+            244.45,
+            733.69,
+            350.33,
+            749.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0)",
+          "bbox": [
+            339.06,
+            743.52,
+            349.25,
+            750.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 27,
+      "rotation": 0,
+      "drawings": 187,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Illustration of a gauge transformation (f, b) : (ω, g, a) →(ω′, g′, a′) between descent data."
+      ],
+      "labels": [
+        {
+          "text": "TWISTED DEFORMATION QUANTIZATION",
+          "bbox": [
+            213.08,
+            97.7,
+            382.2,
+            104.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "27",
+          "bbox": [
+            469.03,
+            97.7,
+            476.96,
+            104.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure",
+          "bbox": [
+            154.18,
+            314.87,
+            188.34,
+            324.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRomanCaps10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3. Illustration",
+          "bbox": [
+            197.58,
+            314.87,
+            259.8,
+            327.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "LMRomanCaps10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(f, b)",
+          "bbox": [
+            405.01,
+            317.05,
+            426.86,
+            327.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of",
+          "bbox": [
+            268.35,
+            317.06,
+            276.38,
+            327.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            284.91,
+            317.06,
+            289.89,
+            327.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gauge",
+          "bbox": [
+            298.44,
+            317.06,
+            323.36,
+            327.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "transformation",
+          "bbox": [
+            331.91,
+            317.06,
+            396.52,
+            327.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            438.33,
+            317.06,
+            441.1,
+            327.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(ω, g, a) →(ω′, g′, a′) between descent data.",
+          "bbox": [
+            154.18,
+            327.64,
+            344.33,
+            338.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(ω′",
+          "bbox": [
+            205.12,
+            359.47,
+            222.32,
+            372.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0), ω′",
+          "bbox": [
+            219.67,
+            359.47,
+            243.65,
+            373.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the set G1",
+          "bbox": [
+            152.96,
+            359.57,
+            209.09,
+            370.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1)).",
+          "bbox": [
+            240.99,
+            360.85,
+            258.34,
+            373.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(ii)",
+          "bbox": [
+            134.69,
+            374.27,
+            147.98,
+            384.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a′ = Ad(f(0))",
+          "bbox": [
+            189.27,
+            386.33,
+            246.67,
+            401.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            246.67,
+            386.54,
+            252.62,
+            396.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            400.05,
+            386.54,
+            406.0,
+            396.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "b−1",
+          "bbox": [
+            252.62,
+            388.41,
+            267.09,
+            400.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0,2) ◦a ◦Ad(g−1",
+          "bbox": [
+            256.9,
+            388.41,
+            329.92,
+            403.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0,1))(b(1,2)) ◦b(0,1)",
+          "bbox": [
+            319.37,
+            390.3,
+            399.55,
+            403.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(ω′",
+          "bbox": [
+            217.83,
+            407.96,
+            235.02,
+            421.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the group G2",
+          "bbox": [
+            152.96,
+            408.06,
+            221.8,
+            419.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0)).",
+          "bbox": [
+            232.37,
+            409.35,
+            249.71,
+            421.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "This is illustrated in Figure 3.",
+          "bbox": [
+            130.26,
+            428.84,
+            261.59,
+            438.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The gauge transformations form an equivalence relation on the set Desc(G); see",
+          "bbox": [
+            130.26,
+            440.78,
+            476.98,
+            450.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[Ye8, Proposition 1.6]. We call this relation gauge equivalence.",
+          "bbox": [
+            118.31,
+            452.75,
+            389.59,
+            462.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let Φ : G →H be a morphism of cosimplicial crossed groupoids, i.e. a morphism",
+          "bbox": [
+            130.26,
+            464.56,
+            477.09,
+            474.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in ∆(CrGrpd). Given a descent datum (ω, g, a) ∈Desc(G), the triple Φ(ω, g, a) :=",
+          "bbox": [
+            118.31,
+            476.52,
+            476.97,
+            486.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Regular",
+            "LMSans10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(Φ(ω), Φ(g), Φ(a)) is a descent datum in H.",
+          "bbox": [
+            118.31,
+            488.6,
+            318.46,
+            498.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The resulting function Desc(Φ) :",
+          "bbox": [
+            327.85,
+            488.61,
+            476.98,
+            498.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Desc(G) →Desc(H) respects the gauge equivalence relations.",
+          "bbox": [
+            118.31,
+            500.43,
+            386.41,
+            510.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 5.4. For a cosimplicial crossed groupoid G we write",
+          "bbox": [
+            118.31,
+            519.19,
+            398.84,
+            529.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Desc(G)",
+          "bbox": [
+            304.28,
+            535.01,
+            340.26,
+            544.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Desc(G) :=",
+          "bbox": [
+            228.64,
+            541.75,
+            277.91,
+            551.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gauge equivalence.",
+          "bbox": [
+            285.18,
+            541.75,
+            366.64,
+            558.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For a morphism Φ : G →H of cosimplicial crossed groupoids, we denote by",
+          "bbox": [
+            118.31,
+            563.67,
+            447.75,
+            573.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Desc(Φ) : Desc(G) →Desc(H)",
+          "bbox": [
+            231.46,
+            581.04,
+            363.82,
+            591.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the induced function.",
+          "bbox": [
+            118.31,
+            598.55,
+            211.08,
+            608.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 5.5. A morphism Φ : G →H of cosimplicial crossed groupoids is",
+          "bbox": [
+            118.31,
+            617.04,
+            477.05,
+            627.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "called a weak equivalence if in every simplicial dimension p the morphism of crossed",
+          "bbox": [
+            118.31,
+            629.13,
+            477.02,
+            639.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "groupoids Φp : Gp →Hp is a weak equivalence (Deﬁnition 1.10).",
+          "bbox": [
+            118.31,
+            637.34,
+            399.58,
+            651.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The next result is proved in the companion paper [Ye8]. An alternative proof",
+          "bbox": [
+            130.26,
+            659.73,
+            477.13,
+            669.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(of a more general statement) can be found in M. Prasma’s paper [Pr].",
+          "bbox": [
+            118.31,
+            671.68,
+            427.87,
+            681.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 5.6 (Combinatorial Equivalence, [Ye8, Theorem 0.1]). Let Φ : G →H",
+          "bbox": [
+            118.31,
+            690.18,
+            476.15,
+            700.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "be a weak equivalence between cosimplicial crossed groupoids. Then the function",
+          "bbox": [
+            118.31,
+            702.27,
+            465.88,
+            712.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Desc(Φ) : Desc(G) →Desc(H)",
+          "bbox": [
+            231.46,
+            719.5,
+            363.82,
+            729.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from Deﬁnition 5.4 is bijective.",
+          "bbox": [
+            118.31,
+            737.01,
+            254.3,
+            746.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 29,
+      "rotation": 0,
+      "drawings": 70,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. Geometric descent datum on an open covering {Uk}k∈K of a topological space."
+      ],
+      "labels": [
+        {
+          "text": "TWISTED DEFORMATION QUANTIZATION",
+          "bbox": [
+            213.08,
+            97.7,
+            382.2,
+            104.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "29",
+          "bbox": [
+            469.03,
+            97.7,
+            476.96,
+            104.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure",
+          "bbox": [
+            154.18,
+            336.41,
+            188.34,
+            346.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRomanCaps10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4. Geometric",
+          "bbox": [
+            197.0,
+            336.41,
+            255.62,
+            348.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "LMRomanCaps10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "descent",
+          "bbox": [
+            263.6,
+            338.6,
+            295.51,
+            348.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "datum",
+          "bbox": [
+            303.49,
+            338.6,
+            331.72,
+            348.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on",
+          "bbox": [
+            339.7,
+            338.6,
+            350.22,
+            348.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "an",
+          "bbox": [
+            358.2,
+            338.6,
+            368.72,
+            348.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "open",
+          "bbox": [
+            376.7,
+            338.6,
+            397.46,
+            348.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "covering",
+          "bbox": [
+            405.44,
+            338.6,
+            441.2,
+            348.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{Uk}k∈K of a topological space.",
+          "bbox": [
+            154.18,
+            350.41,
+            293.02,
+            362.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "as automorphisms of Ak0|Uk0,k1,k2 in P1(Uk0,k1,k2), and",
+          "bbox": [
+            118.31,
+            383.53,
+            357.81,
+            397.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular",
+            "LMSans10-Bold"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a−1",
+          "bbox": [
+            188.68,
+            401.46,
+            204.14,
+            413.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0,k1,k3 · ak0,k2,k3 · ak0,k1,k2 = IG(g−1",
+          "bbox": [
+            193.94,
+            401.46,
+            351.55,
+            417.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0,k1)(ak1,k2,k3)",
+          "bbox": [
+            341.0,
+            403.48,
+            406.6,
+            416.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.6)",
+          "bbox": [
+            118.31,
+            403.49,
+            138.79,
+            413.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            181.57,
+            422.49,
+            186.14,
+            432.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            261.69,
+            422.49,
+            266.25,
+            432.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Uk0,...,k3, IG(Ak0)",
+          "bbox": [
+            186.14,
+            423.27,
+            261.69,
+            434.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the group Γ",
+          "bbox": [
+            118.31,
+            423.41,
+            181.57,
+            433.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ". See Figure 4 for an illustration.",
+          "bbox": [
+            266.25,
+            423.41,
+            410.5,
+            433.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Given another descent datum d′ =",
+          "bbox": [
+            130.26,
+            431.9,
+            282.37,
+            446.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "{A′",
+          "bbox": [
+            289.87,
+            434.98,
+            305.1,
+            446.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0}, {g′",
+          "bbox": [
+            302.8,
+            434.98,
+            333.22,
+            449.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0,k1}, {a′",
+          "bbox": [
+            330.57,
+            434.98,
+            371.63,
+            449.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            285.3,
+            435.44,
+            289.86,
+            445.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            403.92,
+            435.44,
+            408.48,
+            445.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k0,k1,k2}",
+          "bbox": [
+            369.33,
+            436.22,
+            403.92,
+            449.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ", a gauge trans-",
+          "bbox": [
+            408.48,
+            436.36,
+            476.99,
+            446.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "formation f : d →d′ is actually a collection",
+          "bbox": [
+            118.31,
+            445.41,
+            310.07,
+            459.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            271.09,
+            466.99,
+            275.65,
+            476.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            336.9,
+            466.99,
+            341.46,
+            476.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{fk0}, {bk0,k1}",
+          "bbox": [
+            275.66,
+            467.77,
+            336.89,
+            479.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "f =",
+          "bbox": [
+            251.05,
+            467.9,
+            268.32,
+            477.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            341.46,
+            467.9,
+            344.23,
+            477.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(6.7)",
+          "bbox": [
+            118.31,
+            467.91,
+            138.79,
+            477.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A′",
+          "bbox": [
+            233.09,
+            484.59,
+            243.35,
+            495.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Ak0",
+          "bbox": [
+            187.07,
+            485.83,
+            202.65,
+            497.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            213.39,
+            485.83,
+            223.35,
+            495.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∈",
+          "bbox": [
+            470.32,
+            485.83,
+            476.97,
+            495.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where fk0",
+          "bbox": [
+            118.31,
+            485.96,
+            163.81,
+            497.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is an isomorphism in P1(Uk0),",
+          "bbox": [
+            257.18,
+            485.96,
+            405.08,
+            497.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular",
+            "LMSans10-Bold"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and bk0,k1",
+          "bbox": [
+            413.64,
+            485.96,
+            459.58,
+            497.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            174.55,
+            485.97,
+            177.32,
+            495.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k0",
+          "bbox": [
+            241.05,
+            491.12,
+            248.68,
+            498.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "Γ(Uk0,k1, IG(Ak0)). Conditions (i-ii) of Deﬁnition 5.3 say that",
+          "bbox": [
+            118.31,
+            498.12,
+            387.98,
+            509.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0,k1 = fk1 ◦gk0,k1 ◦ig(bk0,k1) ◦f −1",
+          "bbox": [
+            223.19,
+            514.93,
+            376.33,
+            530.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "g′",
+          "bbox": [
+            218.44,
+            515.07,
+            225.84,
+            526.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.8)",
+          "bbox": [
+            118.31,
+            516.95,
+            138.79,
+            526.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k0",
+          "bbox": [
+            365.07,
+            522.28,
+            372.69,
+            529.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "as isomorphisms A′",
+          "bbox": [
+            118.31,
+            534.15,
+            202.97,
+            545.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0|Uk0,k1 →A′",
+          "bbox": [
+            200.68,
+            534.15,
+            261.85,
+            549.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k1|Uk0,k1, and",
+          "bbox": [
+            259.56,
+            535.39,
+            317.13,
+            548.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b−1",
+          "bbox": [
+            249.35,
+            553.32,
+            263.82,
+            565.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0,k2 · ak0,k1,k2 · IG(g−1",
+          "bbox": [
+            253.62,
+            553.32,
+            352.59,
+            569.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a′",
+          "bbox": [
+            163.97,
+            553.47,
+            171.53,
+            565.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            244.78,
+            554.43,
+            249.35,
+            564.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            426.74,
+            554.43,
+            431.3,
+            564.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k0,k1)(bk1,k2) · bk0,k1",
+          "bbox": [
+            342.04,
+            555.21,
+            425.75,
+            568.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0,k1,k2 = IG(fk0)",
+          "bbox": [
+            169.23,
+            555.34,
+            244.78,
+            568.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.9)",
+          "bbox": [
+            118.31,
+            555.35,
+            138.79,
+            565.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the group IG(A′",
+          "bbox": [
+            118.31,
+            572.9,
+            200.88,
+            584.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k0|Uk0,k1,k2).",
+          "bbox": [
+            198.59,
+            574.14,
+            250.61,
+            587.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 6.10. The similarity between our notion of geometric descent data and",
+          "bbox": [
+            118.31,
+            593.31,
+            477.09,
+            603.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the usual notion of descent data for gerbes (cf. [Gi, Section IV.3.5] or [Br, Section",
+          "bbox": [
+            118.31,
+            605.26,
+            477.14,
+            615.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5]) is no coincidence. Indeed, as shown in Example 4.7, gerbes are an instance of",
+          "bbox": [
+            118.31,
+            617.22,
+            477.15,
+            627.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "twisted objects. Likewise for gauge transformations between descent data.",
+          "bbox": [
+            118.31,
+            629.17,
+            441.99,
+            639.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In [Ko2], geometric descent data, for P = Assoc(R, X), is called a combinatorial",
+          "bbox": [
+            130.27,
+            641.12,
+            476.97,
+            651.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Italic",
+            "LMRoman10-Regular",
+            "LMSans10-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "description of algebroids. Note that in the paper [BGNT1] the authors refer to a",
+          "bbox": [
+            118.31,
+            653.08,
+            477.06,
+            663.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "geometric descent datum as a “stack”.",
+          "bbox": [
+            118.31,
+            665.04,
+            284.06,
+            675.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 6.11. Let G be a gerbe on X, and let U = {Uk}k∈K be an open covering",
+          "bbox": [
+            118.31,
+            683.92,
+            477.01,
+            695.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Bold",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            376.0,
+            695.1,
+            380.57,
+            705.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            440.76,
+            695.1,
+            445.32,
+            705.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of X. A trivialization datum of G on U is a collection s =",
+          "bbox": [
+            118.31,
+            695.88,
+            373.15,
+            705.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{ik0}, {sk0,k1}",
+          "bbox": [
+            380.57,
+            695.88,
+            440.76,
+            707.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ", where",
+          "bbox": [
+            445.33,
+            696.02,
+            476.99,
+            705.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ik0 ∈Ob(G(Uk0)) and sk0,k1 ∈G(Uk0,k1)(ik0, ik1).",
+          "bbox": [
+            118.31,
+            707.83,
+            332.81,
+            720.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Bold",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Consider a twisted object (G, A, cp) of the stack of crossed groupoids P, and a",
+          "bbox": [
+            130.27,
+            726.85,
+            476.97,
+            736.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Regular",
+            "LMSans10-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            225.93,
+            738.03,
+            230.49,
+            747.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            290.68,
+            738.03,
+            295.24,
+            747.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{ik0}, {sk0,k1}",
+          "bbox": [
+            230.49,
+            738.81,
+            290.68,
+            750.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of the gauge gerbe G on the open covering",
+          "bbox": [
+            297.83,
+            738.81,
+            477.02,
+            748.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "trivialization datum s =",
+          "bbox": [
+            118.31,
+            738.94,
+            223.16,
+            748.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

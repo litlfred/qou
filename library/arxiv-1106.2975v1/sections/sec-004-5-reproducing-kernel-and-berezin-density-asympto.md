@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.963
+doc_brief: "The Polyanalytic Ginibre Ensembles — For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z."
 ---
 In this section, we will calculate the limit of the blow-up berezin transform $\hat{\berd}^{\langle z\rangle}_{m,n,q}$ at a boundary point $z$, that is, $|z|=1$. There is no loss of generality to take $z=1$. Our strategy is to investigate the blow-up of the reproducing kernel of the space of analytic polynomials $\mathrm{Pol}_{m,n,1}$ (with $q=1$) first, and then use this information together with poly-Bargmann transform to lift the the asymptotics to the context of the general polyanalytic spaces $\mathrm{Pol}_{m,n,q}$.
 

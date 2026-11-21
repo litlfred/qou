@@ -1,0 +1,310 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0511710v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "1",
+   "text": "◦γ′",
+   "marks": [
+    {
+     "page": 20,
+     "context": "1,H(s, t, u) = F"
+    }
+   ],
+   "block": "library/arxiv-math-0511710v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p021-2",
+   "page": 21,
+   "mark": "2",
+   "text": "]",
+   "marks": [
+    {
+     "page": 20,
+     "context": "2,H(s, t, u) = F"
+    }
+   ],
+   "block": "library/arxiv-math-0511710v2/blocks/prose-sec-003"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p021-3",
+   "page": 21,
+   "mark": "2",
+   "text": "]",
+   "block": "library/arxiv-math-0511710v2/blocks/prose-sec-003"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2) = (g"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "2) = (g1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1)(g"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "1)(g2"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1) ◦(g"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "1) ◦(g2"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2) = (g"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2) = (g1◦g"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "1and"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1andf"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "1andf2:"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1andf2: g"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "2toget"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2togetf"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2togetf1◦f"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "2togetf1◦f2:"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2togetf1◦f2: g"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "2togetf1◦f2: g1"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2togetf1◦f2: g1g"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "1"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "f"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "f"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1) ◦(f"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "1) ◦(f2"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2) = (f"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2) = (f1◦f"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "a convex subset of R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "atopologyfromitsinclusioninR"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "dt"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "dtg(t) = f(t)"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ti: E|Ui→U"
+  },
+  {
+   "page": 20,
+   "mark": "t",
+   "context": "1,H(s, t, u) = F1(s, u)for"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Ai∈Ω"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "ij+ gij"
+  },
+  {
+   "page": 23,
+   "mark": "g",
+   "context": "ij+ gijd"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Ai∈Ω"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "Bi∈Ω"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "FAi+ dt(B"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "whereFAi= dA"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "whereFAi= dAi + A"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "whereFAi= dAi + Ai ∧A"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "whereFAi= dAi + Ai ∧Aiisthecurvature2-formofA"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Ω"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "ij+ gij"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "ij+ gijd"
+  },
+  {
+   "page": 27,
+   "mark": "h",
+   "context": "ijk+ (d"
+  },
+  {
+   "page": 27,
+   "mark": "h",
+   "context": "ijk+ (dhijk)"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "ijk+ dα(A"
+  },
+  {
+   "page": 27,
+   "mark": "h",
+   "context": "ijk+ dα(Ai)(hijk)"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "FAi+dt(B"
+  },
+  {
+   "page": 29,
+   "mark": "8",
+   "context": "[29]P.AschieriandB.Jurˇco,Gerbes,M5-braneanomaliesandE"
+  }
+ ]
+}

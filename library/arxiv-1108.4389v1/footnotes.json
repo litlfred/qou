@@ -1,0 +1,2803 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1108.4389v1",
+ "status": "determined",
+ "pages_unread": [
+  40
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "1",
+   "text": "Theequivalencebetweenﬂatconnectionsandhyperbolicgeometryresultsfromthefactthattheisometry group of hyperbolic three-space is (P)SL(2, C), cf. [6, 7, 8, 9]. Almost all ﬂat connections can be realized as (possibly degenerate) hyperbolic metrics; for further remarks on this in the context of ideal triangulations, see [10, 11], and Section 4 of [12].",
+   "marks": [
+    {
+     "page": 8,
+     "context": "connectionswithhyperbolicmetrics"
+    },
+    {
+     "page": 8,
+     "context": "S"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "2",
+   "text": "Wenotethattopologically,onemightengineer(resolved)cuspboundariesthatlookidenticaltogeodesic boundaries. In particular, networks of annular cusps can assume the topology of nontrivial punctured Riemann surfaces [13]. Formally, the phase spaces P∂M associated to the two types of boundary would then be equivalent. However, the natural coordinate systems — and in particular the polarizations — for phase spaces on cusp and geodesic boundaries are very diﬀerent. In turn, the 3d gauge theories associated to 3-manifolds with the two diﬀerent types of boundary will be quite diﬀerent.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "withthetopologyofeithertoriT"
+    },
+    {
+     "page": 9,
+     "context": "spacesofvacua."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "1",
+   "text": "0",
+   "marks": [
+    {
+     "page": 11,
+     "context": "1"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "2",
+   "text": "+ Z3.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "actingwithanaﬃnesymplectictransformationSp(2, Z) ⋉(iπZ)"
+    },
+    {
+     "page": 12,
+     "context": "imeetingthisedgemustequalexactly"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "3",
+   "text": "Infact,thesearecoordinatesonalgebraicallyopenpatchesofPCthathavethetopologyofcomplextori, cf. [15, 16].",
+   "marks": [
+    {
+     "page": 13,
+     "context": "ofCthetotalcomplexiﬁeddihedralanglearoundit."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "4",
+   "text": "WethankR.Kashaevforﬁrstmakingusawareofthisconnection.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "[17,18],deﬁnedrigorouslyin[15]inthecomplexcase."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "5",
+   "text": "Anysolid3-ballwhoseboundaryisann–puncturedsphere(n≥4),withunipotentholonomyateach puncture, can be obtained via a similar gluing.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "dra,withrespectiveshapeparametersZ(′)(′′),W(′)(′′),Y(′)(′′)."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "6",
+   "text": "ForaknotcomplementinS3,M=S3\\K,thereisactuallyacanonicalchoiceofcycles.Themeridianis an inﬁnitesimally small loop linking the knot K once, while the longitude intersects the meridian once and is nullhomologous in M (in particular, it has zero linking number with the knot). Presently, however, we will allow ourselves the freedom of choosing any basis of cycles whatsoever.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "tudecyclesinthecaseofknotcomplements."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p017-2",
+   "page": 17,
+   "mark": "7",
+   "text": "As discussed in [12], the shift by iπin v+iπ= log ℓcharacterizes the correct lift from PSL(2, C) structures (most naturally computed by triangulation data) to SL(2, C).",
+   "marks": [
+    {
+     "page": 17,
+     "context": "totakelogarithms"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "8",
+   "text": "AgainwenotethattheinvarianceofLagrangianscomeswithafewsubtlecaveats,asdiscussedin[10,11] and reviewed in Sections 4–5 of [12]. For suﬃciently generic triangulations, these caveats can be safely ignored.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "varianceofphasespacesandLagrangiansunderthe2–3movewasveriﬁed"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "9",
+   "text": "Wesuggesttheveriﬁcationofthisstatementasanexerciseforthereader.",
+   "marks": [
+    {
+     "page": 20,
+     "context": "ubstitutingx →x′−1,p →p′−1(1 −x′)inthedeﬁningequationsforLM."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "10",
+   "text": "OnecanaddaYang-Millskinetictermatintermediatestagesinthecalculation.ButforStohavethe correct properties, one must ﬂow to the IR at the end, and then gYM →∞and this term is removed.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "groundgaugeﬁeldAdynamical."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "11",
+   "text": "NoticethatthecouplingofthebackgroundgaugeﬁeldtoT2isunaﬀectedbychargeconjugationC.",
+   "marks": [
+    {
+     "page": 26,
+     "context": "thesameintheIR,i.e.theyareN=2mirrorduals."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "12",
+   "text": "By“twistedmass”inthreedimensions,wemeanamasstermarisingasabackgroundvalueforthereal scalar ﬁeld in a vector multiplet. Sometimes this is also called a “real mass.”",
+   "marks": [
+    {
+     "page": 28,
+     "context": "Now,ifoneturnsonoppositetwistedmass"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "13",
+   "text": "Inthelaststepofthederivationof(4.14),weshiftedthedynamicalgaugemultipletV→V+1",
+   "marks": [
+    {
+     "page": 35,
+     "context": "forwardcalculationproduces"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p035-2",
+   "page": 35,
+   "mark": "2",
+   "text": "VX1, thereby adding to the ‘X1’ ﬂavor current a half-integral multiplet of the gauge current. This non-integral shift is not necessary, but can be made sense of because the multiplet VX1 = θ¯θmX1 is nondynamical. In the form (4.14) of the Lagrangian, the identiﬁcation of 1",
+   "marks": [
+    {
+     "page": 34,
+     "context": "X1, X"
+    },
+    {
+     "page": 34,
+     "context": "X1, X2, Cand momenta P1, P"
+    },
+    {
+     "page": 34,
+     "context": "L˜Π[VX1, VX"
+    },
+    {
+     "page": 34,
+     "context": "L˜Π[VX1, VX2, VC] = L{Πi}[VX1, VX"
+    },
+    {
+     "page": 34,
+     "context": "L˜Π[VX1, VX2, VC] = L{Πi}[VX1, VX2, VC−VX1−VX"
+    },
+    {
+     "page": 34,
+     "context": "d4θ(ΣC−ΣX1−ΣX"
+    },
+    {
+     "page": 34,
+     "context": "d4θ(ΣC−ΣX1−ΣX2) (VC−VX1−VX"
+    },
+    {
+     "page": 34,
+     "context": "VX"
+    },
+    {
+     "page": 34,
+     "context": "VX2,andVY= VC−VX1−VX"
+    },
+    {
+     "page": 35,
+     "context": "LM,Πeq[VX1, VX"
+    },
+    {
+     "page": 35,
+     "context": "WeVX"
+    },
+    {
+     "page": 35,
+     "context": "Ye−VX1−VX"
+    },
+    {
+     "page": 35,
+     "context": "d"
+    },
+    {
+     "page": 35,
+     "context": "ThisisthepromisedXYZmodel,withslightlyredeﬁnedU(1)"
+    },
+    {
+     "page": 35,
+     "context": "SQED,withappropriatecouplingtotheU(1)"
+    },
+    {
+     "page": 35,
+     "context": "Therefore,weobtainLM,Πeq[VX1, VX"
+    },
+    {
+     "page": 35,
+     "context": "redeﬁning the U(1)"
+    },
+    {
+     "page": 35,
+     "context": "LM,Πeq[VX1, VX"
+    },
+    {
+     "page": 35,
+     "context": "Chern-Simonscoupling,andslightlyredeﬁnedU(1)"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "14",
+   "text": "Strictlyspeaking,weshouldonlyconsidertriangulationsthathaveeasyedges,asdiscussedinSection4.1. It is very plausible — although not mathematically proven — that to connect two “easy” triangulations, one can always ﬁnd a chain of 2 −3 moves that only pass through other easy triangulations.",
+   "marks": [
+    {
+     "page": 36,
+     "context": "arerelatedbyasequenceof2 −3moves."
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p042-1",
+   "page": 42,
+   "mark": "16",
+   "text": "Asdiscussed(e.g.)in[2,16],this4dmodulispaceactuallyhasthestructureofahyperkahlermanifold. The space M(param) (TM) is then embedded into MSUSY(T[C]) as a brane of type (A, B, A). SUSY",
+   "marks": [
+    {
+     "page": 42,
+     "context": "modulispace"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p046-1",
+   "page": 46,
+   "mark": "17",
+   "text": "Throughoutthissection,weworkinunitssuchthatthe“average”radiusoftheellipsoidisρ=1. Otherwise, it would appear on the right-hand side of (6.4), and would multiply mOX in (6.5).",
+   "marks": [
+    {
+     "page": 46,
+     "context": "H∂M,as"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p047-1",
+   "page": 47,
+   "mark": "18",
+   "text": "Hereandinthefollowing,wewillignoreoverallnumericalconstantsinfrontofthepartitionfunction.",
+   "marks": [
+    {
+     "page": 47,
+     "context": "2RZ,andﬁndapartitionfunction"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p049-1",
+   "page": 49,
+   "mark": "2",
+   "text": ")",
+   "marks": [
+    {
+     "page": 48,
+     "context": "b( ˜m) = e−iπ ˜m"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-024"
+  },
+  {
+   "id": "fn-p052-1",
+   "page": 52,
+   "mark": "19",
+   "text": "Forexample,inthecontextofknotcomplements,theseoperatorsareoftendenotedasˆm=eˆuand ˆℓ= −eˆv.",
+   "marks": [
+    {
+     "page": 52,
+     "context": "iswrittenintermsofquantumholonomyoperators"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p052-2",
+   "page": 52,
+   "mark": "20",
+   "text": "WesimplyabbreviateZS3",
+   "marks": [
+    {
+     "page": 52,
+     "context": "equation"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p052-3",
+   "page": 52,
+   "mark": "b",
+   "text": "(T∆,ΠZ,˜mZ)asZ( ˜mZ).",
+   "marks": [
+    {
+     "page": 51,
+     "context": "forsomeoperators"
+    }
+   ],
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-025"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p035-3",
+   "page": 35,
+   "mark": "2",
+   "text": "VX1withanaxialﬂavormultipletbecomesimmediate.",
+   "block": "library/arxiv-1108.4389v1/blocks/prose-sec-015"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "TudorDimofte"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "TudorDimofte1andDavideGaiotto"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "TudorDimofte1andDavideGaiotto1andSergeiGukov"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "TudorDimofte1andDavideGaiotto1andSergeiGukov2,"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "AZ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "ModulispaceonR"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "ModulispaceonR2× S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "RelationtomodulispacesonR"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "RelationtomodulispacesonR2× S"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": ".Indeed,onecandeﬁnelargefamiliesof6 −ddimensionaltheoriesT[M"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "partitionfunctionoftheΩ-deformedtheory,theS"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "ofa6dtheoryonathree-manifoldM"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "ofa6dtheoryonathree-manifoldM3willgiveanN=2ﬁeldtheoryT[M"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "onacircle.Ifweconsidera6dSCFTonS"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "onacircle.Ifweconsidera6dSCFTonS1× M"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "tubesareallcylinderswithS"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "theory(b)onR"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "i=1∆i,weconstruct"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "itieslikethesuperconformalindexofTMorthepartitionfunctiononS"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "SUSYmodulionR"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "SUSYmodulionR2× S"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "twistedsuperpotential"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "partitionfunctiononS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "•ThepartitionfunctionofT[M, g]onanellipsoidS"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "regionwitha2-torusC=T"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "knotcomplementsinS"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "∂H"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "ofhyperbolic3-spaceH"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "∂H"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "tetrahedroninH"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "on∂H"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "(z, z′, z′′) ∈(C∗\\{1})"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "≃(C∗\\{1})"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "ℏdZ∧dZ′or,equivalently,"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "11)∈Sp(2, Z).Theidentity(ST)"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "(1"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "parameterZ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "{Z"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "i, Z"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "i=1L∆i⊂P{∂∆i}cutoutbyNpolynomialequations"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i=1L∆i⊂P{∂∆i}cutoutbyNpolynomialequationsz"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "= 2(Λ"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "whereexp(±Λ"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "whereexp(±Λp)aretheholonomyeigenvaluesatp.TheelementsΛ"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "arithmicholonomyeigenvaluearoundeachoftheﬁvepuncturespofCisΛ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "In equatorial coordinates (X"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "In equatorial coordinates (Xi, P"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "p1 +p"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "p2 +p"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "i=1P∂∆i.Therefore,wecanalwayschoose"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "boundaryT"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "mentofaknotin S"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "spacePT"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "thefundamentalgroupπ1(T"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "agonalizable,andPT"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "PT"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "where the Weyl group Z"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "PT"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "ThenthesymplecticstructureofPT"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "ThenthesymplecticstructureofPT 2becomesωT"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "ioftetrahedrain"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "acuspboundaryT"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "andlongitudeoftheﬁgure-eightknotcomplementonaboundaryT"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "C"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "C"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "thatP∂M= PT"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(C"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "ez=eZ, z=eZ′, w=eW,andw′=eW ′;rewritestheequationsintermsofm"
+  },
+  {
+   "page": 18,
+   "mark": "v",
+   "context": "ℓ=−e"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "ℓ=−ev,andoneofthegluingmonomialsc"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "LM= {ℓ−(m"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "LM= {ℓ−(m4−m"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "S4= (ST)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "provethattherelationsS"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "provethattherelationsS2=Cand(ST)"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "(whereJ=diag(j"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "(whereJ=diag(j1, ..., jN)withj"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "(whereJ=diag(j1, ..., jN)withji∈{0, 1},andwehavegaugedeveryA"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "ag(j1, ..., jN)withji∈{0, 1},andwehavegaugedeveryAiforwhichj"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "0U−1"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "iinadditiontothegaugeﬁeldA"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "iinadditiontothegaugeﬁeldAi,canalsobedualizedto"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "0U−1"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "3.2AZ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ItiseasytoseethatF"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "asastatementabouta3dN=2theoryT"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "N= 2SandFoperations,i.e.itsatisﬁesSF◦T"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "N= 2SandFoperations,i.e.itsatisﬁesSF◦T2= T"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "thesameintheIR,i.e.theyareN=2mirrorduals.11ThetheoryS◦T"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "SQEDwithN"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "SQEDwithNf=1.ThetheoryF◦T"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "SQEDwithNf=1.ThetheoryF◦T2,orratherCF◦T"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "SQED(S ◦T"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "XYZ(CF◦T"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "chiralmultipletsinT"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "pletsinT2canberotatedindependently,andthetheoryreallyhasU(1)"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "symmetry.Similarly,theXYZmodelhasaU(1)"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "2"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "2q"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "ThuswedeﬁneanN= 2theoryT"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "2.WewanttoshowthatST◦T"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "coincideswithT"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "coincideswithT1.Thisiscertainlycompatiblewith(ST)"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "2coupledto"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "bythetermσ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "V=e"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "+ σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "+ σ2|u|2+ σ"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "top≡Vtop−Vaxial,whichcanstillhave"
+  },
+  {
+   "page": 28,
+   "mark": "u",
+   "context": "top=mtop−maxial,weﬁndthat"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "topatlevel"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "ThusweobtainourtheoryT"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "ofT"
+  },
+  {
+   "page": 28,
+   "mark": "f",
+   "context": "In terms of N"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "topVgauge!Thusweendupwith"
+  },
+  {
+   "page": 29,
+   "mark": "u",
+   "context": "topVgauge!Thusweendupwithafundamentalchiral"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "charge1toaU(1)gaugemultipletVgauge,whichhasalevel"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "top.ThisispreciselythedescriptionofST◦T"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "ST◦T"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "ST◦T1≃T"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "ndition B[T ].In this interpretation, our simple 3d theory T"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "try.Ifwestartwitha4ddualityframeinwhichthechiralmultipletofT"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "ortance in the rest of the paper is the basic relation ST ◦T"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "T"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "T1and the mirror symmetry between the XYZ model and N"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "U(1)"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "wherethechargesofthehypermultipletsinthetwotheories,R"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "iand"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "iandbR"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "i"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "ibR"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "AllfourmatricesR,"
+  },
+  {
+   "page": 30,
+   "mark": "f",
+   "context": "ifwetakeN=r=1andk=0,thenTheoryAisN=2SQEDwithN"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "T∆,ΠZ= T"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Recall from Section 3.3 that T"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "T∆,g◦ΠZ= g ◦T"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Z= T ◦T"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "correspondtothethreedualityframes(3.26)ofthetheoryT"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "Wecanalwayswrite˜Π=g◦{Π"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "g∈Sp(2N, Z), where {Π"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "whereweregardtheproductofNcopiesofT"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "choiceofΠ"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "choiceofΠi∈{ΠZ"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "i}duetothethesymmetryST◦T"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "i}duetothethesymmetryST◦T1= T"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "ulation.The basic idea is to choose a polarization˜Π = g ◦{Π"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "ofTM,Πwillcontainexactly"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "2dim P∂MU(1)’s.Insummary,wehavebuilt"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "T∆,ΠZ= T"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "{∆i},{Π"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "T{∆i},{Π"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "T{∆i},{Πi}= ⊗iT∆i,Π"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "operatorsOZ"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "{Π"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "{Πi} →˜Π = g ◦{Π"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "T{∆i},{Π"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "T{∆i},{Πi}→T{∆i},˜Π= g ◦T{∆i},{Π"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "CI→2πi (symp"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "iforanytetrahedron∆i;otherwisetheedgeis“hard.”Thus,CI=Z"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "iforanytetrahedron∆i;otherwisetheedgeis“hard.”Thus,CI=Z1+ Z"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "1+ Z"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "ofeasyedges,wecanalwayschooseΠ"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "1+ Z"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "4,wechoose"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "1,OZ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "1)"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "1)2OZ"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "i} and˜Π, the action of"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "f three free chiral multiplets, coupled to a background U(1)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "model,withappropriatecouplingtotheunbrokenU(1)"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "g more explicit, we can start with a product polarization {Π"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "X1, X2, Cand momenta P"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "transformationgfrom{Π"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "L{Π"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 34,
+   "mark": "†",
+   "context": "φ"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 34,
+   "mark": "†",
+   "context": "ZeVZφZ+ φ"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "W"
+  },
+  {
+   "page": 34,
+   "mark": "†",
+   "context": "WeVW φW+ φ"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "Y"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "forT{∆i},{Π"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "rT{∆i},{Πi},weconstructtheLagrangianforT{∆i},˜Π= g ◦T{∆i},{Π"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "L˜Π[VX"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "L˜Π[VX1, VX2, VC] = L{Π"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "L˜Π[VX1, VX2, VC] = L{Πi}[VX"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "L˜Π[VX1, VX2, VC] = L{Πi}[VX1, VX2, VC−VX"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "d4θ(ΣC−ΣX"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "d4θ(ΣC−ΣX1−ΣX2) (VC−VX"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "VX2,andVY= VC−VX"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "LM,Πeq[VX"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "φ"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "ZeVX"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "ZeVX1φZ+ φ"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "W"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "WeVX2φW+ φ"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "Y"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "Ye−VX"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "polarization{Π"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "Therefore,weobtainLM,Πeq[VX"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "L{∆i},{Π"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "φ"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "R"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "ReVRφR + φ"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "LM,Πeq[VX"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "φ"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "R"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2VX"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "2VX1φR + φ"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2VX"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "coupling,andslightlyredeﬁnedU(1)2symmetry.ThemesonoperatorOX"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "underthecombinationsVX"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "underthecombinationsVX2and−VX"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "underthecombinationsVX2and−VX1−VX"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "giverespectivelyN= 4SQEDwithN"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "ion simply describes the Foperation of Section 3.2.Just as F"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "newtheoryToct,Π×=g×◦Toct,ΠeqwhichhasasubsectorthatlookslikeN"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "Washypermultiplets.Whatresultsis"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "ofToct,Π×asadynamicalU(1)"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "boundary:thecomplementoftheﬁgure-eightknotM= S"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "boundary:thecomplementoftheﬁgure-eightknotM= S3\\4"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "withT∆Z,ΠZ′⊗T∆W ,ΠW ,wecanchangethepolarizationto"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "(U, C"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "(U, C1; v, Γ),whereU= Z′−W,v= Z−Z′asin(2.29),andΓ"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "41,˜Πis"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "group U(1)vector×U(1)topcorrespond to position coordinates"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "2Uand −C"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "5.ModulispaceonR"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "5.ModulispaceonR2× S"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "R2× S"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "UponcompactiﬁcationonR"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "UponcompactiﬁcationonR2×S"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "ofthebackgroundphotononS"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "ﬁeldtheoryTMonR"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "ﬁeldtheoryTMonR2×S"
+  },
+  {
+   "page": 41,
+   "mark": "f",
+   "context": "obtainedbyminimizingthetwistedsuperpotential"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "parameters v"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "evs of non-dynamical ﬁelds) the theory TMhas SUSY vacua on R"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": " of non-dynamical ﬁelds) the theory TMhas SUSY vacua on R2×S"
+  },
+  {
+   "page": 41,
+   "mark": "f",
+   "context": "s question, we introduce the eﬀective twisted superpotential"
+  },
+  {
+   "page": 41,
+   "mark": "f",
+   "context": "byminimizing"
+  },
+  {
+   "page": 42,
+   "mark": "f",
+   "context": "below,"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "ℓi= e"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "ℓi= ev"
+  },
+  {
+   "page": 42,
+   "mark": "u",
+   "context": "mi= e"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "mi= eu"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "TM,ΠonR"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "TM,ΠonR2× S"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "(C=∂M)compactiﬁedonR"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "(C=∂M)compactiﬁedonR3× S"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "showthatthecoordinatesℓ"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "showthatthecoordinatesℓi,m"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "SUSY(TM)=LMbecomes"
+  },
+  {
+   "page": 42,
+   "mark": "f",
+   "context": "with"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "2.On"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "Weﬀ(Z)=Li"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "Weﬀ(Z)=Li2(e−Z) = Li"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "inﬁnitetowerofKaluza-KleinmodesonthecircleS"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "p"
+  },
+  {
+   "page": 43,
+   "mark": "b",
+   "context": "pax−c+ p"
+  },
+  {
+   "page": 43,
+   "mark": "3",
+   "context": "(3.26).(Notethat,justlikeSTitself,σsatisﬁesσ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "WeﬀonR"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "WeﬀonR2× S"
+  },
+  {
+   "page": 43,
+   "mark": "f",
+   "context": "thetwistedsuperpotentials"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "2Z"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "aﬃneshifts.WhilethesewereunimportantfordeﬁningLagrangiansonR"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "the do show up in the theory on R"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "the do show up in the theory on R2×S"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "forthetetrahedrontheoryonR"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "forthetetrahedrontheoryonR2× S"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "2Z"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "description(4.14)ofTM,ΠeqasN"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "description(4.14)ofTM,ΠeqasNf=1SQED,withashiftV→V−VX"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "W(X"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "W(X1, X"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "W(X1, X2; σ) = Li"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "W(X1, X2; σ) = Li2(eσ) + Li"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "W(X1, X2; σ) = Li2(eσ) + Li2(e−σ+X"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "2σ2 + (X"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "thetwistedmassX"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "andsettingP"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "W/∂X"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "W/∂X"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "p1 +p"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "p2 +p"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 45,
+   "mark": "r",
+   "context": "p2,"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "p2,r′′→p"
+  },
+  {
+   "page": 45,
+   "mark": "s",
+   "context": "p2,r′′→p1,"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "p2,r′′→p1,s"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "p2,r′′→p1,s2→p"
+  },
+  {
+   "page": 45,
+   "mark": "s",
+   "context": "p2,r′′→p1,s2→p2,"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "p2,r′′→p1,s2→p2,s"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "p2,r′′→p1,s2→p2,s1→−p"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "andsimplyapplytheaﬃneSp(4, Z)transformationr→x"
+  },
+  {
+   "page": 45,
+   "mark": "p",
+   "context": "x2"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "Weﬀ(X"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Weﬀ(X1, X"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Weﬀ(X1, X2, C) = Li"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "Weﬀ(X1, X2, C) = Li2(e−X"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Weﬀ(X1, X2, C) = Li2(e−X1) + Li"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Weﬀ(X1, X2, C) = Li2(e−X1) + Li2(e−X"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Weﬀ(X1, X2, C) = Li2(e−X1) + Li2(e−X2) + Li"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "Weﬀ(X1, X2, C) = Li2(e−X1) + Li2(e−X2) + Li2(eC−X"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Weﬀ(X1, X2, C) = Li2(e−X1) + Li2(e−X2) + Li2(eC−X1−X"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "eﬀ(X1, X2, C) = Li2(e−X1) + Li2(e−X2) + Li2(eC−X1−X2) + iπ(X"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": ", X2, C) = Li2(e−X1) + Li2(e−X2) + Li2(eC−X1−X2) + iπ(X1 + X"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "half-integralthetaangleforthecombinationΣX"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "half-integralthetaangleforthecombinationΣX1 + ΣX"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "lf-integralthetaangleforthecombinationΣX1 + ΣX2 −ΣC.SettingP"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "W/∂X"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "W/∂X1,P"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "W/∂X"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "−γx"
+  },
+  {
+   "page": 45,
+   "mark": "x",
+   "context": "−γx1"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "−γx1x"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "+x"
+  },
+  {
+   "page": 45,
+   "mark": "x",
+   "context": "+x1"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "+x1x"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "p1 +p"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "p2 +p"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "(x"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "(x"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "These are equivalent to (5.19) as long as x"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "These are equivalent to (5.19) as long as x1̸= 1 and x"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": ".19) as long as x1̸= 1 and x2̸= 1.We recall, however, that x"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "9) as long as x1̸= 1 and x2̸= 1.We recall, however, that x1,"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "6.S"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "the3dN=2theoryTM,Πonasquashedthree-sphere(or“ellipsoid”)S"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "(M)=ZS"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "ℏ= 2πib"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "(M; X"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "(M; X1, X"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "exponentials∼expX"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "Similarly, the S"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "bpartition function of TM,Πdepends on the twisted masses"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "ifwedescribeS"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "b2|z"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "b2|z1|2+ b−2|z"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "z"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "z1, z"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "thenZS"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "see that the ellipsoid partition function ZS"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "b(TM,Π;˜mX"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "b(TM,Π;˜mX1,˜mX"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "2RZ,andﬁnd"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "ZS"
+  },
+  {
+   "page": 47,
+   "mark": "b",
+   "context": "b(chiralmultiplet) = s"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "1 + e"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "1 + e2πbx+2πib"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "2"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2x"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "1 + e"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "1 + e2πb−1"
+  },
+  {
+   "page": 47,
+   "mark": "b",
+   "context": "s"
+  },
+  {
+   "page": 47,
+   "mark": "b",
+   "context": "sb(x)s"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "eiπx"
+  },
+  {
+   "page": 47,
+   "mark": "b",
+   "context": "s"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "e−iπx"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "e−iπk ˜m"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "2,whileatlargenegativeσas"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "ZS"
+  },
+  {
+   "page": 48,
+   "mark": "b",
+   "context": "b(T∆,ΠZ;˜mZ) = e"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "b( ˜m) = e−iπ ˜m2ZS"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "ZS"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "d ˜m e−2πi ˜m ˜m′ZS"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "ZS"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "ZS"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "b(T∆,ΠZ′;˜mZ′) = σ ◦ZS"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "InSection3.3,wederivedST-invarianceofthetetrahedrontheoryT"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "andSQEDwithN"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "andSQEDwithNf=1,andandthenreducingfurthertothetheoriesT"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "SQEDwithNf=1,andandthenreducingfurthertothetheoriesT1andST◦T"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "ZS"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "b( hypermultiplet )=s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "multipletinitcontributesas"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "sb(iQ/2 −x −y)s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "s"
+  },
+  {
+   "page": 49,
+   "mark": "y",
+   "context": "2−y.Henceweshouldreplace"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "sb(iQ/2 −x −y)s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "sb(iQ/2 −x −y)sb(iQ/2 + x −y)e−2iπzxdx = s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "sb(iQ/2 −x −y)sb(iQ/2 + x −y)e−2iπzxdx = sb(y −z)s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "sb(y −z)s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "sb(2y −iQ/2)s"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "sb(2y −iQ/2)sb(iQ/2 −x −y)s"
+  },
+  {
+   "page": 49,
+   "mark": "y",
+   "context": "2,andtake"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "6.17),wereplicatethemassdeformationthatreducesustothetheoryT"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "whichisprecisely(6.14),expressingthemirrorsymmetryσ ◦T"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "whichisprecisely(6.14),expressingthemirrorsymmetryσ ◦T1≃T"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "eiπ(iQ) ˜m"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "2−˜m"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "2−˜m"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "2−˜m"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "dσ e−iπσ"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "2−σ +˜m"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "1)MultiplytogetherpartitionfunctionsZS"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "b(T∆i,Π"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "b(T∆i,Πi;˜mZ"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "b(T∆i,Πi;˜mZi)=e"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "2−˜mZ"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "TheserulesforconstructingZS"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "˜m"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "ZS"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "b(T"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "b(T4"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "6.4RelationtomodulispacesonR"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "6.4RelationtomodulispacesonR2× S"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "renotentirelyunrelated.Indeed,inthesemi-classicallimitℏ=2πib"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "ZS"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "ﬀis the eﬀective twisted superpotential of the theory TMon R"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": " the eﬀective twisted superpotential of the theory TMon R2×S"
+  },
+  {
+   "page": 51,
+   "mark": "f",
+   "context": "ve twisted superpotential of the theory TMon R2×S1.Hence, if"
+  },
+  {
+   "page": 51,
+   "mark": "f",
+   "context": "where"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "Weﬀ(TM)=S"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "Mﬂat(M, SL(2, C)) is a graph of dS"
+  },
+  {
+   "page": 51,
+   "mark": "f",
+   "context": "ofd"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "bdegeneratesintoR"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "bdegeneratesintoR2 × S"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "squashed3-sphereS"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "R2× S"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "bA"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "forsomeoperatorsbA"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "In particular, in the previous section we identiﬁed the S"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "thesemi-classicallimitℏ∼b"
+  },
+  {
+   "page": 53,
+   "mark": "i",
+   "context": "moregenerally,acollectionoflineoperatorsL"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "−1=H−1denotesan’tHooftoperatorofmagneticcharge−1.Similarly,W"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "H"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "ZCS"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "ZCSk= e−iπk ˜m"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "2ˆz"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "m−eiπb"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "m−eiπb2"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "ZCS"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "ZCS"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "H−eiπb"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "H−eiπb2"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "H−eiπb2kW"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "on a d-dimensional manifold M"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "whereγL⊂M"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "whereγL⊂Mdisa1-dimensionalcurveonM"
+  },
+  {
+   "page": 55,
+   "mark": "6",
+   "context": "whereγL⊂Mdisa1-dimensionalcurveonMdandL⊂R"
+  }
+ ]
+}

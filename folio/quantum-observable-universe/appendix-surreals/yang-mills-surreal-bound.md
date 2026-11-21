@@ -1,4 +1,4 @@
-The Yang--Mills mass-gap problem asks for a proof that pure $\mathrm{SU}(N)$ Yang--Mills theory on $\mathbb{R}^4$ has a strictly positive mass gap $\Delta_{\mathrm{YM}} > 0$. In the QOU framework, this is the definitional content of the substrate: the structural invariant $\Delta_q \asymp \varepsilon^3$ is the categorical mass gap. We make this identification explicit.
+The Yang--Mills mass-gap problem asks for a proof that pure $\mathrm{SU}(N)$ Yang--Mills theory on $\mathbb{R}^4$ has a strictly positive mass gap $\Delta_{\mathrm{YM}} > 0$. In the QOU framework, this is the definitional content of the substrate: the structural invariant $\Delta_q \asymp \varepsilon^3$ is the categorical mass gap. This identification is made explicit as follows.
 
 Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)), $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)). The Yang--Mills gauge group in the QOU is realised as the representation category $\mathbf{Rep}(\mathrm{SU}_q(N))$ of the quantum group $\mathrm{SU}_q(N)$ at $q = 1 + \varepsilon$.
 

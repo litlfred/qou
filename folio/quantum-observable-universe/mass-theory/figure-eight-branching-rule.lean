@@ -11,7 +11,7 @@
   Verified to machine precision (< 10⁻¹²) for all 191 partitions at k=3..11.
 
   Ref: [hoefsmit1974] Hoefsmit, PhD thesis, UBC 1974.
-       [manuscript] §5.11, prop:figure-eight-branching-rule
+       [leitner2026] §5.11, prop:figure-eight-branching-rule
 -/
 
 import Mathlib.Data.Real.Basic
@@ -71,7 +71,7 @@ theorem figure_eight_branching_rule (q : ℝ) (hq : q > 1) (k : ℕ)
   -- and the RHS is the claimed decomposition.
   -- The non-trivial part (branching rule + base case χ([2,1]) = -1-h²)
   -- is proved in prop:hoefsmit-seminormal-form via SymPy symbolic verification.
-  -- Ref: [manuscript] §5.11
+  -- Ref: [leitner2026] §5.11
   rfl
 
 /-- The q-correction coefficient b_λ = -f^{λ/[2,1]} is always ≤ 0,
@@ -83,7 +83,7 @@ theorem figure_eight_b_nonpositive (lambda : List ℕ) :
 
 /-- **External axiom (manuscript §5.11): b_λ = 0 iff λ is single
     row or single column** (no [2,1] sub-diagram fits otherwise). -/
--- Ref: [manuscript] §5.11
+-- Ref: [leitner2026] §5.11
 axiom figure_eight_b_zero_iff_row_or_col_axiom :
     ∀ (lambda : List ℕ),
       lambda ≠ [] →

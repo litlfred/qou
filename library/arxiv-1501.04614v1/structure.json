@@ -7,10 +7,11 @@
   "bytes": 167760,
   "pages": 14,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "19 Jan 2015"
   },
   "doi": null,
-  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II",
-  "authors_raw": "EFSTRATIA KALFAGIANNI AND ANH T. TRAN",
+  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES",
+  "authors_raw": "POLYNOMIAL II",
   "title_lines": [
-   "KNOT CABLING AND THE DEGREE OF THE COLORED JONES",
-   "POLYNOMIAL II"
+   "KNOT CABLING AND THE DEGREE OF THE COLORED JONES"
   ],
-  "abstract": "We continue our study of the degree of the colored Jones polyn omial under knot cabling started in [8]. Under certain hypothesis on thi s degree, we determine how the Jones slopes and the linear term behave under cabling. As an application we verify Garoufalidis\u2019 Slope Conjecture and a conjecture of [8] for c ables of a two-parameter family of closed 3-braids called 2-fusion knots.",
+  "abstract": "We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]. Under certain hypothesis on this degree, we determine how the Jones slopes and the linear term behave under cabling. As an application we verify Garoufalidis’ Slope Conjecture and a conjecture of [8] for cables of a two-parameter family of closed 3-braids called 2-fusion knots.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211110205121-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20211110205121-05'00'"
+  },
+  "title_raw": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II 1. Introduction For a knot K ⊂ S 3 , let n ( K ) denote a tubular neighborhood of K and let M K := S 3 \\ n ( K ) denote the exterior of K . Let ⟨ µ, λ ⟩ be the canonical meridian–longitude basis of H 1 ( ∂n ( K )). An element a/b ∈ Q ∪{",
+   "outline": "1. Introduction",
+   "text": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II"
  },
  "toc": [
   {
@@ -41,53 +50,214 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Jones slopes of cable knots",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Two-fusion knots",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "The highest degree and the Jones slope.",
    "page": 9,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Calculating the linear term",
    "page": 10,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??",
    "page": 13,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "References",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 706,
+   "n_words": 108,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -95,8 +265,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5075,
-   "n_words": 1026
+   "n_chars": 4967,
+   "n_words": 918,
+   "label_start": null,
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-jones-slopes-of-cable-knots",
@@ -105,8 +277,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 7943,
-   "n_words": 2007
+   "n_chars": 7575,
+   "n_words": 1647,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
    "id": "sec-002-3-two-fusion-knots",
@@ -115,8 +289,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 2163,
-   "n_words": 598
+   "n_chars": 2052,
+   "n_words": 488,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-003-31-the-highest-degree-and-the-jones-slope",
@@ -125,8 +301,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1310,
-   "n_words": 354
+   "n_chars": 1352,
+   "n_words": 331,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-004-32-calculating-the-linear-term",
@@ -135,8 +313,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 6146,
-   "n_words": 1734
+   "n_chars": 5966,
+   "n_words": 1522,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
    "id": "sec-005-references",
@@ -145,16 +325,26 @@
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1492,
-   "n_words": 230
+   "n_chars": 1480,
+   "n_words": 218,
+   "label_start": "13",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 6,
-  "chars_total": 24129,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 24098,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Conjecture-5.tex",
@@ -167,18 +357,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-jones-slopes-of-cable-knots",
      "title": "Jones slopes of cable knots",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -193,8 +388,8 @@
     {
      "id": "sec-003-31-the-highest-degree-and-the-jones-slope",
      "title": "The highest degree and the Jones slope.",
-     "prose_ratio": 0.931,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -202,7 +397,7 @@
      "id": "sec-004-32-calculating-the-linear-term",
      "title": "Calculating the linear term",
      "prose_ratio": 0.872,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "latex"
     },

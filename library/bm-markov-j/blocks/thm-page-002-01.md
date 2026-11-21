@@ -1,0 +1,1 @@
+Let X),X2 be closed braid represen- tatives of the same oriented link type X in oriented 3-space, with the same braid axis A. Then X2 may be obtained from X, by braid isotopy and a finite number of stabilizations and destabilizations.

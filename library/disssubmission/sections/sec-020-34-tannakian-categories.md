@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-020-34-tannakian-categories
 section_title: "Tannakian categories"
 section_number: 3.4
@@ -8,6 +8,7 @@ pages: 59-62
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 51
 the diagram is commutative because by adjunction there exists only one

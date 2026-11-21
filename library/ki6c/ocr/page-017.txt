@@ -1,0 +1,51 @@
+Smin = 0.00406176..., and from s = 0.5, we obtain Smax = 0.472596... . Therefore, we
+obtain an estimate of s in A’ as
+
+0.001 < s < 0.5.
+
+To be precise (see Remark 3.1), we can rigorously verify the above estimate of the solutions
+of the above equation in a similar way as in Section A.1.
+
+We obtain the estimate of u in A’ from the above formula by the symmetry with
+respect to the exchange of s and wu.
+
+Before calculating t+s+u, we show that the domain (34) is convex, as follows. As
+mentioned in Section 2.2, the function A(t) is a concave function for 0 < t < 0.5, whose
+second derivative is negative. Hence, the function 2A(t) + A(s) + A(w) is concave on
+{(t, 5, u) | 0<tsu< 0.5}, whose Hesse matrix is negative definite. Therefore, the
+domain (34) is convex. Further, we note that its boundary is a smooth closed surface
+in {(t, 8, u) | 0<t,syu< 0.5}, whose Gaussian curvature is positive everywhere (see
+Lemma B.2).
+
+We calculate the maximal value (t+s+t) max of t+s+u. We consider the plane t+s+u = c
+for a constant c. The range of t+s+u is given as the range of c such that this plane and
+the domain (34) has non-empty intersection. Since the domain (34) is a compact convex
+domain whose boundary is a smooth closed surface, the maximal and minimal values are
+given by the planes tangent to this domain. Putting w = t+s+u, the tangent points of
+such planes are given by solutions of the following equations,
+
+2A(w—s—u)+A(s)+A(u) = s,,
+
+22 A(w —s—u)+A(s)+ A(u)) = 0,
+ae A(w—s—u)+A(s)+A(u)) = 0.
+
+These equations are rewritten
+
+2A(w-—s—u)+A(s)+A(u) = &,
+—2A'(w—s—u)+A"(s)
+
+= 0,
+-2M(w—-s—u)+A(u) = 0.
+Since the boundary of the domain (34) is a smooth closed surface whose Gaussian curva-
+ture is positive everywhere (see Lemma B.2), there are exactly two such tangent points,
+and the above system of equations has exactly two solutions, corresponding to the maxi-
+mal and minimal values of t+s++u; we put the maximal value to be Wmax. Since the above
+system of equations is symmetric with respect to the exchange of s and wu, the (unique)
+solution of the form (Wmax,$,U) satisfies that s = u. Hence, we can rewrite the above
+system of equations as
+
+2A(w —2s)+2A(s) = s,, (36)
+
+—2A'(w—2s)+A'(s) = 0.
+
+17

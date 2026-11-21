@@ -1,0 +1,1 @@
+(95), m0 is identiﬁed with the scale m2 0 = 0.71 GeV2 occur- ring in the dipole representation of the nucleon form factors [9] and the parameter c0 is ﬁxed with the experimental value 123 ¯S(0) = −0.2(2.6) GeV−2 given in equation (88), which is based on the determination of the polarizabilities in [70].

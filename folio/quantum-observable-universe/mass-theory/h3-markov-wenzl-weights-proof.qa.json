@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "eab19e7b8d8a",
+          "ts": "cac80441059f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:29.255Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "proof.md:15-53 checked: [2]³−2[2]=[4]; χ^(2,1)(β_Bor)=2−3h⁴−h⁶ (sympy, Burau rep); y_(2,1)=1/(h²+4)=1/[2]²; consistent with z=q²/[2]. Minor wording: proof.md:9 'Equivalently' overstates",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 14,
           "depth": 8,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1372,7 +1388,7 @@
         },
         "reviewed_at": "2026-08-21T16:19:04.607Z",
         "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
-        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) \u2014 every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
+        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) — every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1406,7 +1422,7 @@
         },
         "reviewed_at": "2026-08-21T16:19:04.665Z",
         "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
-        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) \u2014 every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
+        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) — every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
       }
     ],
     "trap-em-dash": [
@@ -1426,7 +1442,7 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "6 stylistic spaced dashes in 232 words (2.59/100w) \u2014 restructure into sentences"
+        "evidence": "6 stylistic spaced dashes in 232 words (2.59/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1441,7 +1457,7 @@
         },
         "reviewed_at": "2026-08-21T16:19:04.706Z",
         "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
-        "evidence": "Three step headings use 'Step n \u2014 gloss' and one body dash is a true parenthetical ('whose premise \u2014 that the relevant fibre functor lands in Rep(SU_q(2)) \u2014 is a separate question'). Structurally licensed, not substituting for sentence structure."
+        "evidence": "Three step headings use 'Step n — gloss' and one body dash is a true parenthetical ('whose premise — that the relevant fibre functor lands in Rep(SU_q(2)) — is a separate question'). Structurally licensed, not substituting for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1475,7 +1491,7 @@
         },
         "reviewed_at": "2026-08-21T16:19:04.745Z",
         "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
-        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) \u2014 every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
+        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) — every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
       }
     ],
     "trap-closing-aphorism": [
@@ -1509,7 +1525,7 @@
         },
         "reviewed_at": "2026-08-21T16:19:04.786Z",
         "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
-        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) \u2014 every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
+        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) — every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
       }
     ],
     "trap-meta-commentary": [
@@ -1577,7 +1593,7 @@
         },
         "reviewed_at": "2026-08-21T16:19:04.874Z",
         "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
-        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) \u2014 every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
+        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) — every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
       }
     ],
     "trap-performed-warmth": [
@@ -1611,7 +1627,7 @@
         },
         "reviewed_at": "2026-08-21T16:19:04.915Z",
         "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
-        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) \u2014 every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
+        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) — every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
       }
     ],
     "trap-superlative": [
@@ -1679,7 +1695,7 @@
         },
         "reviewed_at": "2026-08-21T16:19:05.015Z",
         "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
-        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) \u2014 every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
+        "evidence": "Read in full (65 lines, proof of prop:h3-markov-wenzl-weights). VERIFIED (not traps) — every algebraic step recomputes: [2]_q^3 - 2[2]_q = q^3+q+q^{-1}+q^{-3} = [4]_q exactly; h^2+4 = [2]_q^2 exactly (both 4.043706209 at the proton pin); tr_M = 1 + y_(2,1)(chi^(2,1) - 2) follows from Steps 1-2; and comparing with (4+h^2-3h^4-h^6)/(h^2+4) = 1 - (3h^4+h^6)/(h^2+4) gives y_(2,1) = 1/[2]_q^2, whence y_(3) = ([2]^2-2)/[2]^2 = [4]/[2]^3. The h != 0 side condition is correctly stated. Convention D's z = q^3/(q^2+1) is named; convention C appears only as the named alternative the block declines to rest on."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1702,6 +1718,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:19:05.015Z",
+  "updated_at": "2026-11-15T21:57:29.255Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.848
 latex_coverage_ratio: 0.956
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 Classical solutions in Chern-Simons theory (*i.e.* flat connections on $M$) are labeled by the holonomy eigenvalue $x = e^u$ or, to be more precise, by a point on the algebraic curve $${\cal C }: \quad \left\{(x,y)\in\mathbb{C}^*\times \mathbb{C}^*\Big|
 A(x,y) \; = \; 0 \right\}\,,

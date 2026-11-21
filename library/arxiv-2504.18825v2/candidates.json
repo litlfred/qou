@@ -3,6 +3,7 @@
  "doc_id": "arxiv-2504.18825v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "829f97190cb1c8adcc6c5fcfa347fc73b8fb5100ad16b2b8d8e2653c0a5d78a0",
   "file": "2504.18825v2.pdf"
@@ -20,52 +21,78 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
+  "candidates": 2,
   "by_kind": {
-   "corollary": 1,
    "lemma": 2
   },
-  "formalization_candidates": 3
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": null,
-   "name": null,
-   "statement": "\\ref{c:dualMN2} ensures that the iteration can continue even when the parts of $\\la^{(1)}$ are exhausted. The Murnaghan--Nakayama rule expresses $\\chi^{\\bm{\\la}}_{\\bm{\\mu}}$ in terms of irreducible characters where one part is removed from the lower multipartition $\\bm{\\mu}$. In contrast, Corollary \\ref{c:dualMN2} computes $\\chi^{\\bm{\\la}}_{\\bm{\\mu}}$ using irreducible characters in which at least one part is removed from the upper multipartition $\\bm{\\la}$. For this reason, we refer to equation \\eqref{e:dualMN2} as the dual Murnaghan--Nakayama rule for $\\chi^{\\bm{\\la}}_{\\bm{\\mu}}$.",
-   "section_file": "sections/sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera.md",
-   "section_title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
-   "pages": "20-25",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
    "kind": "lemma",
    "source_kind": "lemma",
-   "number": null,
+   "number": "A",
    "name": null,
-   "statement": "A.1. Let \u03c8\u03bb be the irreducible character of the Hecke algebra in type A indexed",
+   "statement": "1. Let \u03c8\u03bb be the irreducible character of the Hecke algebra in type A indexed by \u03bb. Suppose \u03bb, \u00b5 are two multipartitions of n. Then we have \u03c7\u03bb \u00b5 = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) m Y i=1 \u03c8\u03bb(i) \u2212 \u2192c i(M), (A.1) summed over all m-multimatrices M such that the j-th row sum of M (r) equals \u00b5(r) j and |ci(M)| = |\u03bb(i)|.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md (p. 49-51)",
+   "external_refs": [],
+   "proof_excerpt": "This can be derived by the following calculations. \u03c7\u03bb \u00b5 = \u27e8q\u00b5, s\u03bb\u27e9\u2297 = * qn (q \u2212q\u22121)l(\u00b5) X M uMqM(x; q\u22122), s\u03bb + \u2297 (by (8.8)) 50 NAIHUAN JING AND NING LIU = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) * m Y i=1 q|ci(M)| (q \u2212q\u22121)l(ci(M))qci(M)(x(i); q\u22122), m Y i=1 s\u03bb(i)(x(i)) + \u2297 = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) m",
    "section_file": "sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md",
    "section_title": "Appendix A. An alternative proof of Corollary 6.3",
    "pages": "49-51",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md (p. 49-51)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-01",
+   "block_iri": "library/arxiv-2504.18825v2/blocks/lem-sec-008-01",
+   "claim_id": "arxiv-2504.18825v2#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
    "kind": "lemma",
    "source_kind": "lemma",
-   "number": null,
+   "number": "A",
    "name": null,
-   "statement": "A.2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke",
+   "statement": "2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke algebra in type A states that X \u03bb\u22a2|\u00b5| \u03bb hook \u03c8\u03bb \u00b5 = 2l(\u00b5)\u22121 l(\u00b5) Y i=1 [\u00b5i]\u2212q\u22122. (A.2) Now we are ready to provide an alternative proof of Corollary 6.3.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md (p. 49-51) citing [JL22, Theorem 3.1], [Zha19, Theorem B]",
+   "external_refs": [
+    "[JL22, Theorem 3.1]",
+    "[Zha19, Theorem B]"
+   ],
+   "proof_excerpt": "X \u03bb\u22a2|\u00b5| \u03bb(i) hook 2L(\u03bb)\u03c7\u03bb \u00b5 = X \u03bb\u22a2|\u00b5| \u03bb(i) hook 2L(\u03bb) X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) m Y i=1 \u03c8\u03bb(i) \u2212 \u2192 ci (M) (by (A.1)) = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) X \u03bb\u22a2|\u00b5| \u03bb(i) hook, |\u03bb(i)|=|ci(M)| 2L(\u03bb) m Y i=1 \u03c8\u03bb(i) \u2212 \u2192 ci (M) = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) m Y i=1 21\u2212\u03b4|ci(M)|,0 X \u03c1\u22a2|ci(M)| \u03c1 hook \u03c8\u03c1 \u2212 \u2192 ci (M) ",
    "section_file": "sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md",
    "section_title": "Appendix A. An alternative proof of Corollary 6.3",
    "pages": "49-51",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md (p. 49-51) citing [JL22, Theorem 3.1], [Zha19, Theorem B]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-02",
+   "block_iri": "library/arxiv-2504.18825v2/blocks/lem-sec-008-02",
+   "claim_id": "arxiv-2504.18825v2#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

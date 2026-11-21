@@ -1,0 +1,38 @@
+{
+  "round": 118,
+  "lane": "43c1",
+  "beans": [
+    "qou-veu1",
+    "qou-vfy1",
+    "qou-vn63",
+    "qou-vstf",
+    "qou-vu19"
+  ],
+  "theorems": [
+    "QOU.BraidKnot.SpechtBaseChange.mem_span_of_rat_spechtSubmodule",
+    "QOU.BraidKnot.SpechtBlockDimension.finrank_group_algebra_sub_factorial_eq_zero",
+    "QOU.BraidKnot.SpechtCentralC2Scalar.spechtProduct_centralC2_sub_eq_zero",
+    "QOU.BraidKnot.SpechtCrossDominance.partial_rowLen_sub_eq_zero_of_tableau_noclash",
+    "QOU.BraidKnot.SpechtFinrankWired.specht_finrank_sub_numSYT_wired_eq_zero"
+  ],
+  "scriptPath": "computations/probes/qou_round118_spechtbase_spechtdim_spechtc2_spechtdom_spechtfinrank_43c1_probe.py",
+  "scriptCommitSha": "fb22be2b5457264b1d92d434bc28eb32a8fc4a86",
+  "scriptHash": "a0b365729a1af83ccb3de545f521506272edeb9877895cfb600f90ae64b1af00",
+  "scriptSha256": "a0b365729a1af83ccb3de545f521506272edeb9877895cfb600f90ae64b1af00",
+  "mpmathDps": 80,
+  "metrics": {
+    "baseChangeResidual": "1.686751670916883715895771848203203041234e-80",
+    "s5GroupAlgDim": "120.0",
+    "groupAlgDimDiff": "0.0",
+    "c2Scalar311": "10.0",
+    "c2Residual": "0.0",
+    "dominanceDeficits": [
+      0,
+      0,
+      0
+    ],
+    "wiredFinrank311": "6.0",
+    "wiredFinrankDiff": "0.0",
+    "allChecksPass": true
+  }
+}

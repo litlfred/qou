@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T17:27:18.857581+00:00",
-  "commitSha": "312f7ed9d8c56a4bcf778c2cb04afaa60ec67e87",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:11:04.452093+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "literal_is_z3_at_the_muon_anchor",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 43,
   "computation": "z3-muon-pin-vs-hq-misidentification",
   "scriptFile": "z3_muon_pin_vs_hq_misidentification_probe.py",
-  "scriptHash": "4dfb5be8c6ad",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3e52dd0a4807",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -89,5 +90,7 @@
       "z3_muon_over_proton_rel": "0.0000000316338978895608318445320810344131242207017479188080912051153",
       "note": "3.14e-8 -- the mu-p substrate tension (~11.6 ppb on q) propagated through z_3 and amplified ~2.7x. This is the real content of the 'differ at the 8th decimal' observation: a LAYER STRADDLE, which AGENTS.md calls a defect regardless of size, not a coincidental lookalike."
     }
-  }
+  },
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "comparison by design: evaluates z_3 = q^3/[3]_q and h_q at both the proton pin (Q_50_DIGIT_STR) and the live CODATA-2022 muon pin to identify which anchor a recorded literal was computed at"
 }

@@ -72,13 +72,71 @@ _WITNESSES = ("atomic-tr-m-mpfr-50dps-proton.witness.json",
 _CACHE: dict[str, mp.mpf] = {}
 
 
+#: The canonical intra-nucleon ordering, per the 2026-09-05 owner ruling
+#: (bean `qou-hu1f`). Read from `atom_braid_word_3A`'s own default rather than
+#: written out, so a future ruling that moves the default moves this check with
+#: it — a hardcoded frame name here would be the same defect one level up.
+def _canonical_ordering() -> str:
+    from mass_at_3A_proper import atom_braid_word_3A      # noqa: PLC0415
+    import inspect                                        # noqa: PLC0415
+    return inspect.signature(atom_braid_word_3A).parameters["intra_order"].default
+
+
+def _require_canonical_ordering(name: str, w: dict, d: dict) -> None:
+    """Refuse a witness in the wrong intra-nucleon ordering, or in none.
+
+    WHY THIS EXISTS (bean `qou-y4gi`). Until 2026-09-13 this module validated
+    the PIN and nothing else, and its docstring promised callers it "cannot
+    silently serve the wrong frame". It could, and it did: it served the
+    grouped-era contents of `atomic-tr-m-mpfr-50dps-proton.witness.json`
+    (2026-08-19) for five weeks after the ruling that superseded them, with no
+    complaint, because that file is at the right *pin*. Pin and ordering are
+    two axes that can differ silently; this is the pin guard applied to the
+    second one.
+
+    AN UNDECLARED FRAME RAISES. It does NOT default to canonical, and that is
+    the load-bearing choice: EVERY pre-ruling witness is undeclared, so a
+    permissive default would wave through precisely the population this exists
+    to catch — and would have waved through the exact file that motivated it.
+    The cost is that a stale witness now stops a caller instead of quietly
+    misinforming it, which is the same trade the pin guard already makes and
+    justifies two functions down.
+    """
+    frame = w.get("intra_ordering_frame") or d.get("intra_ordering_frame")
+    want = _canonical_ordering()
+    if frame == want:
+        return
+    if frame is None:
+        raise ValueError(
+            f"{name} declares no `intra_ordering_frame`, so which "
+            f"intra-nucleon word produced it is unknown. Every witness "
+            f"predating the 2026-09-05 ordering ruling (bean qou-hu1f) is "
+            f"undeclared, and this guard deliberately does NOT assume "
+            f"canonical for them — that assumption is what let this module "
+            f"serve grouped-era values for five weeks. Regenerate with "
+            f"`QOU_Q0_ANCHOR=<anchor> python3 "
+            f"computations/atomic_tr_m_mpfr_50dps.py --anchor <anchor>`, "
+            f"which stamps the field from the word builder's own default."
+        )
+    raise ValueError(
+        f"{name} was produced in the {frame!r} intra-nucleon ordering, but "
+        f"{want!r} is canonical (bean qou-hu1f). These are different elements "
+        f"of H_3(q) and their |tr_M| differ by ~82% at the proton, so this is "
+        f"not a tolerance question. Regenerate the witness."
+    )
+
+
 def _rows_for_pin() -> dict[str, dict]:
     from q_parameter import Q_50_DIGIT_STR                  # noqa: PLC0415
     want = mp.mpf(Q_50_DIGIT_STR)
     seen = []
+    # In computations/, the witnesses sit beside this file (_HERE); in the
+    # vendored layout (qou_mass/_internal/), they sit one directory up in
+    # qou_mass/ (_HERE.parent). Search both (bean qou-72f8).
+    search_dirs = (_HERE, _HERE.parent)
     for name in _WITNESSES:
-        p = _HERE / name
-        if not p.exists():
+        p = next((d / name for d in search_dirs if (d / name).exists()), None)
+        if p is None:
             continue
         d = json.loads(p.read_text())
         w = d.get("witness", d)
@@ -86,6 +144,7 @@ def _rows_for_pin() -> dict[str, dict]:
                  or d.get("q_0_50dps") or w.get("q_0_50dps"))
         seen.append((name, str(q_rec)[:26]))
         if q_rec is not None and abs(mp.mpf(str(q_rec)) - want) < mp.mpf("1e-40"):
+            _require_canonical_ordering(name, w, d)
             return {r["atom"]: r
                     for r in (w.get("results") or d.get("results") or [])}
     raise FileNotFoundError(
@@ -121,7 +180,51 @@ def tr_m_neutron() -> mp.mpf:
     return tr_m_nucleon("neutron")
 
 
+def _self_test() -> int:
+    """The ordering guard must FIRE, not merely exist (bean qou-y4gi).
+
+    A guard nobody has watched reject is indistinguishable from a no-op, and
+    this module shipped for five weeks with a docstring promising a protection
+    it did not provide. Three cases: canonical passes, a wrong frame raises, an
+    ABSENT frame raises. The third is the one that matters — it is the state
+    every pre-ruling witness is in.
+    """
+    want = _canonical_ordering()
+    cases = [
+        ("canonical passes", {"intra_ordering_frame": want}, None),
+        ("wrong frame raises", {"intra_ordering_frame": "grouped"}, "grouped"),
+        ("absent frame raises", {}, "declares no"),
+    ]
+    fails = []
+    for label, doc, expect in cases:
+        try:
+            _require_canonical_ordering("<fixture>", doc, {})
+            got = None
+        except ValueError as e:
+            got = str(e)
+        if expect is None:
+            ok = got is None
+        else:
+            ok = got is not None and expect in got
+        print(f"  [{'PASS' if ok else 'FAIL'}] {label}")
+        if not ok:
+            fails.append(label)
+    # And the live witnesses must actually load, or the guard is too strict.
+    try:
+        for a in ("proton", "neutron"):
+            tr_m_nucleon(a)
+        print("  [PASS] the committed witnesses load under the guard")
+    except Exception as e:
+        print(f"  [FAIL] committed witnesses rejected: {str(e)[:120]}")
+        fails.append("live load")
+    print(f"  self-test: {'PASS' if not fails else 'FAIL ' + ', '.join(fails)} "
+          f"(1 must-pass, 2 must-raise, 1 live load)")
+    return 1 if fails else 0
+
+
 if __name__ == "__main__":
     mp.mp.dps = 50
+    if "--self-test" in sys.argv:
+        raise SystemExit(_self_test())
     for a in ("proton", "neutron"):
         print(f"  {a:8} {tr_m_nucleon(a)}")

@@ -1,0 +1,47 @@
+2.6. Perverse multiplier 37
+
+By assumption P is an N-multiplier, hence P,, € N for all m #0. Via the
+twisting axiom (N2) it follows that for most characters y and all n € Z,
+
+H" (x, Py'8)) _ H"(X, (Po)z)-
+
+The right hand side vanishes for |n| > g since rat(P)y is perverse. But for
+the left hand side we have
+
+HXPEEY) = (HX PO
+
+by proposition 2.1 and since H*(X,—) is a tensor functor by the Kiinneth
+theorem. So the above vanishing statement for |n| > g implies that H*(X, Py)
+is concentrated in degree zero.
+
+(b) Put Q = (P® PY)*" for any r € N. Since hypercohomology is a
+tensor functor by the Kiinneth theorem, with H*(X,P,) also H°(X,Q) is
+concentrated in degree zero. Using the hard Lefschetz axiom (D5), one
+then deduces that for all n 4 0 one has H*(X,’H"(Q)) = 0 so that by (N3)
+the subcategory N contains ’H"(Q). Since this holds for arbitrary r € N, it
+follows that P is an N-multiplier. oO
+
+In view of part (a) of the lemma, to prove theorem 1.1 we want to show
+that for a suitable subcategory N every object of P is an N-multiplier. For
+this we will argue by contradiction, using the following
+
+LEMMA 2.12. Suppose that N satisfies the stability axiom (N1) and the
+Euler axiom (N4), that D satisfies all axioms (D1) — (D5) and that P € P is
+not an N-multiplier. Then for some r € N the convolution power
+
+(Px PY)" = (P*PY)x-++% (P* PY)
+admits a direct summand of the form 1[2i](i) with an integer i 4 0.
+
+Proof. If P is not an N-multiplier, we can find integers a,b € N such
+that P** « (PY)*> admits a direct summand Q[i] for some i 4 0 and some
+simple object Q € P which is not in N. By the hard Lefschetz axiom (D5)
+then Q[—i](—i) is a direct summand of P*“« (PY)* as well. It then follows
+that also the dual QV [i](i) is a direct summand of P*’ « (PY)*¢. Altogether
+then the convolution product Q[i] * QY {i](’) = Q* QY [2i](i) will be a direct
+summand of (P* PY)*" for the exponent r= a+b.
+
+It remains to show that 1 is a direct summand of Q + QY. For this note
+that the trace map tr(Q) : 1 —> Q* QY ~ QY «Q@ —+ 1 is non-zero since
+we have 7(Q) 4 0 by axiom (N4). Now tr(Q) factors over "H°(Q * QV),
+indeed Homp(P,?ts0P) = Homp(?t<oP,P) = 0. So tr(Q) exhibits 1 as a
+retract of 7H°(Q* QY) in the abelian category P, and we are done. oO

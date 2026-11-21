@@ -27,7 +27,7 @@ monomial q-chain rule, composition counterexample). Sorry-free, §7c-clean (gene
 `CommRing`; the counterexample is over `ℚ` because it is a decidable numeric fact). No
 QOU-specific content, no fit, nothing wired — pure reusable infra.
 
--- Ref: [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1 infra (i))
+-- Ref: [leitner2026] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1 infra (i))
 -/
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.Ring

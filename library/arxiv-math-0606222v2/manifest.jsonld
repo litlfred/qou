@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606222v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606222v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "arxiv-math-0606222v2",
   "contains": [
+    "library/arxiv-math-0606222v2/sections/sec-front-matter",
     "library/arxiv-math-0606222v2/sections/sec-000",
     "library/arxiv-math-0606222v2/sections/sec-001",
     "library/arxiv-math-0606222v2/sections/sec-002",
@@ -29,10 +30,11 @@
     "library/arxiv-math-0606222v2/sections/sec-015",
     "library/arxiv-math-0606222v2/sections/sec-016",
     "library/arxiv-math-0606222v2/sections/sec-017",
-    "library/arxiv-math-0606222v2/sections/sec-018"
+    "library/arxiv-math-0606222v2/sections/sec-018",
+    "library/arxiv-math-0606222v2/sections/sec-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -58,8 +60,8 @@
       "stamp_date": "8 Nov 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

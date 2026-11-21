@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/0309214v3/blocks/prose-sec-021",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A.1 The case of A2",
-  "pageStart": 37,
-  "pageEnd": 38,
-  "text": "../sections/sec-021-a1-the-case-of-a2.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
+  "title": "The colored Jones function for a simple Lie algebra",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "../sections/sec-021-7-the-colored-jones-function-for-a-simple-lie-al.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0309214v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0309214v3/manifest.jsonld",
   "provenance": "ingested"
 }

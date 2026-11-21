@@ -8,10 +8,10 @@
   "pages": 19,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "math_source": "latex",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +21,30 @@
    "stamp_date": "20 Jul 2022"
   },
   "doi": null,
-  "title": "KPZ limit theorems Jinho Baik\u2217",
-  "authors_raw": "July 21, 2022",
+  "title": "KPZ limit theorems",
+  "authors_raw": "Jinho Baik∗",
   "title_lines": [
-   "KPZ limit theorems",
-   "Jinho Baik\u2217"
+   "KPZ limit theorems"
   ],
-  "abstract": "One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers de\ufb01ne 2d height \ufb01elds. The KPZ universality conjecture posits that an appropriately scaled height function converges to a model-independent universal random \ufb01eld for a large class of mod- els. We survey limit theorems for a few models and discuss changes that arise in di\ufb00erent domains. In particular, we present recent results on periodic domains. We also comment on integrable probability models, integrable di\ufb00erential equations, and universality.",
+  "abstract": "One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds. The KPZ universality conjecture posits that an appropriately scaled height function converges to a model-independent universal random ﬁeld for a large class of mod- els. We survey limit theorems for a few models and discuss changes that arise in diﬀerent domains. In particular, we present recent results on periodic domains. We also comment on integrable probability models, integrable diﬀerential equations, and universality.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.21",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20220721024126Z"
-  }
+  },
+  "title_raw": "KPZ limit theorems",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "KPZ limit theorems",
+   "outline": "1 Introduction",
+   "text": "KPZ limit theorems",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "KPZ limit theorems Jinho Baik∗"
  },
  "toc": [
   {
@@ -40,172 +52,601 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "TASEP, corner growth model, and exponential DLPP",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "TASEP",
    "page": 2,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Corner growth model",
    "page": 3,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Exponential DLPP",
    "page": 3,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Hydrodynamic limit and KPZ limit",
    "page": 4,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "One-point distribution",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Poisson DLPP",
    "page": 5,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Longest increasing subsequence",
    "page": 5,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Exponential DLPP",
    "page": 6,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Integrable method",
    "page": 6,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Multi-point distributions",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Half-infinite space",
    "page": 7,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Ring domain",
    "page": 8,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Formula of multi-point distribution functions",
    "page": 9,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Formula for KPZ fixed point",
    "page": 9,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Periodic case",
    "page": 10,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Transition probabilities",
    "page": 10,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Integrable differential equations",
    "page": 11,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Comments on universality",
    "page": 12,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Thin DLPP",
    "page": 12,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Interacting particle systems",
    "page": 13,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "TASEP, Coulomb gas, and random matrices",
    "page": 13,
    "source": "outline",
-   "number": "9.3"
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Universality in many directions",
    "page": 13,
    "source": "outline",
-   "number": "9.4"
+   "number": "9.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "TASEP",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Corner growth model",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Exponential DLPP",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "An example of Gt",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Simulation of the corner growth model",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "y = ¯h(x, t) for a few values of t",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Poisson DLPP",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Step initial condition on an integer ring",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Hydrodynamic limits of periodic height function when t = O(t)",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The space Σ for KPZ ﬁxed point when m = 3",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The space S for periodic KPZ ﬁxed when m = 3",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Bethe roots when L = 24 and N = 8 for three values of z",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Thin DLPP",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 616,
+   "n_words": 88,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -213,8 +654,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2347,
-   "n_words": 370
+   "n_chars": 2360,
+   "n_words": 371,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-21-tasep",
@@ -223,8 +666,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 1854,
-   "n_words": 282
+   "n_chars": 1852,
+   "n_words": 281,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-2-tasep-corner-growth-model-and-exponential-dlpp",
@@ -232,182 +677,284 @@
    "title": "TASEP, corner growth model, and exponential DLPP",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 4714,
-   "n_words": 898
+   "page_end": 3,
+   "n_chars": 1550,
+   "n_words": 258,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-24-hydrodynamic-limit-and-kpz-limit",
+   "id": "sec-003-22-corner-growth-model",
+   "number": "2.2",
+   "title": "Corner growth model",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 13,
+   "n_words": 4,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-004-23-exponential-dlpp",
+   "number": "2.3",
+   "title": "Exponential DLPP",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3137,
+   "n_words": 633,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-24-hydrodynamic-limit-and-kpz-limit",
    "number": "2.4",
    "title": "Hydrodynamic limit and KPZ limit",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1744,
-   "n_words": 307
+   "n_chars": 1777,
+   "n_words": 312,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-31-poisson-dlpp",
+   "id": "sec-006-31-poisson-dlpp",
    "number": "3.1",
    "title": "Poisson DLPP",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1,
-   "n_words": 1
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-005-3-one-point-distribution",
+   "id": "sec-007-3-one-point-distribution",
    "number": "3",
    "title": "One-point distribution",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 137,
-   "n_words": 22
+   "n_chars": 1595,
+   "n_words": 279,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-33-exponential-dlpp",
-   "number": "3.3",
-   "title": "Exponential DLPP",
-   "level": 2,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 1330,
-   "n_words": 240
-  },
-  {
-   "id": "sec-007-32-longest-increasing-subsequence",
+   "id": "sec-008-32-longest-increasing-subsequence",
    "number": "3.2",
    "title": "Longest increasing subsequence",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2012,
-   "n_words": 350
+   "n_chars": 1508,
+   "n_words": 243,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-008-34-integrable-method",
+   "id": "sec-009-33-exponential-dlpp",
+   "number": "3.3",
+   "title": "Exponential DLPP",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 526,
+   "n_words": 108,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-010-34-integrable-method",
    "number": "3.4",
    "title": "Integrable method",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2714,
-   "n_words": 394
+   "n_chars": 2730,
+   "n_words": 395,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-009-4-multi-point-distributions",
+   "id": "sec-011-4-multi-point-distributions",
    "number": "4",
    "title": "Multi-point distributions",
    "level": 1,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 3917,
-   "n_words": 641
+   "page_end": 7,
+   "n_chars": 1923,
+   "n_words": 299,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-010-6-ring-domain",
+   "id": "sec-012-5-half-infinite-space",
+   "number": "5",
+   "title": "Half-infinite space",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2015,
+   "n_words": 342,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-013-6-ring-domain",
    "number": "6",
    "title": "Ring domain",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 3616,
-   "n_words": 705
+   "n_chars": 3626,
+   "n_words": 706,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-011-7-formula-of-multi-point-distribution-functions",
+   "id": "sec-014-7-formula-of-multi-point-distribution-functions",
    "number": "7",
    "title": "Formula of multi-point distribution functions",
    "level": 1,
    "page_start": 9,
-   "page_end": 10,
-   "n_chars": 1166,
-   "n_words": 259
+   "page_end": 9,
+   "n_chars": 45,
+   "n_words": 5,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-012-72-periodic-case",
+   "id": "sec-015-71-formula-for-kpz-fixed-point",
+   "number": "7.1",
+   "title": "Formula for KPZ fixed point",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1158,
+   "n_words": 257,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-016-72-periodic-case",
    "number": "7.2",
    "title": "Periodic case",
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 532,
-   "n_words": 113
+   "n_chars": 542,
+   "n_words": 114,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-013-73-transition-probabilities",
+   "id": "sec-017-73-transition-probabilities",
    "number": "7.3",
    "title": "Transition probabilities",
    "level": 2,
    "page_start": 10,
-   "page_end": 12,
-   "n_chars": 3586,
-   "n_words": 727
+   "page_end": 11,
+   "n_chars": 2265,
+   "n_words": 475,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-014-91-thin-dlpp",
+   "id": "sec-018-8-integrable-differential-equations",
+   "number": "8",
+   "title": "Integrable differential equations",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1343,
+   "n_words": 253,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-019-91-thin-dlpp",
    "number": "9.1",
    "title": "Thin DLPP",
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1104,
-   "n_words": 154
+   "n_chars": 1102,
+   "n_words": 153,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-015-9-comments-on-universality",
+   "id": "sec-020-9-comments-on-universality",
    "number": "9",
    "title": "Comments on universality",
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1722,
-   "n_words": 336
+   "n_chars": 1743,
+   "n_words": 338,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-016-92-interacting-particle-systems",
+   "id": "sec-021-92-interacting-particle-systems",
    "number": "9.2",
    "title": "Interacting particle systems",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 674,
-   "n_words": 121
+   "n_chars": 699,
+   "n_words": 123,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-017-93-tasep-coulomb-gas-and-random-matrices",
+   "id": "sec-022-93-tasep-coulomb-gas-and-random-matrices",
    "number": "9.3",
    "title": "TASEP, Coulomb gas, and random matrices",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 1801,
-   "n_words": 315
+   "n_chars": 1837,
+   "n_words": 320,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-018-94-universality-in-many-directions",
+   "id": "sec-023-94-universality-in-many-directions",
    "number": "9.4",
    "title": "Universality in many directions",
    "level": 2,
    "page_start": 13,
    "page_end": 19,
-   "n_chars": 15236,
-   "n_words": 2373
+   "n_chars": 15268,
+   "n_words": 2377,
+   "label_start": "13",
+   "label_end": "19"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 24,
-  "sections": 19,
-  "chars_total": 50207,
+  "toc_inferred_entries": 0,
+  "figure_entries": 13,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 25,
+  "chars_total": 51230,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Survey2021v3.tex",
    "tex_sections": 25,
-   "overlaid": 10,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -415,26 +962,45 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.577,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-21-tasep",
      "title": "TASEP",
-     "prose_ratio": 0.224,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.268,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-2-tasep-corner-growth-model-and-exponential-dlpp",
      "title": "TASEP, corner growth model, and exponential DLPP",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.079,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.213,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-003-24-hydrodynamic-limit-and-kpz-limit",
+     "id": "sec-003-22-corner-growth-model",
+     "title": "Corner growth model",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-23-exponential-dlpp",
+     "title": "Exponential DLPP",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.761,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-hydrodynamic-limit-and-kpz-limit",
      "title": "Hydrodynamic limit and KPZ limit",
      "prose_ratio": 0.876,
      "coverage_ratio": 1.0,
@@ -442,102 +1008,123 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-31-poisson-dlpp",
+     "id": "sec-006-31-poisson-dlpp",
      "title": "Poisson DLPP",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-3-one-point-distribution",
+     "id": "sec-007-3-one-point-distribution",
      "title": "One-point distribution",
      "prose_ratio": 0.769,
-     "coverage_ratio": 0.833,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "coverage_ratio": 0.115,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-006-33-exponential-dlpp",
-     "title": "Exponential DLPP",
-     "prose_ratio": 0.264,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-007-32-longest-increasing-subsequence",
+     "id": "sec-008-32-longest-increasing-subsequence",
      "title": "Longest increasing subsequence",
-     "prose_ratio": 0.935,
+     "prose_ratio": 0.734,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-34-integrable-method",
+     "id": "sec-009-33-exponential-dlpp",
+     "title": "Exponential DLPP",
+     "prose_ratio": 0.127,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-34-integrable-method",
      "title": "Integrable method",
-     "prose_ratio": 0.893,
+     "prose_ratio": 0.898,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-4-multi-point-distributions",
+     "id": "sec-011-4-multi-point-distributions",
      "title": "Multi-point distributions",
-     "prose_ratio": 0.576,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-010-6-ring-domain",
-     "title": "Ring domain",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.922,
+     "prose_ratio": 0.919,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-7-formula-of-multi-point-distribution-functions",
+     "id": "sec-012-5-half-infinite-space",
+     "title": "Half-infinite space",
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-6-ring-domain",
+     "title": "Ring domain",
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-7-formula-of-multi-point-distribution-functions",
      "title": "Formula of multi-point distribution functions",
-     "prose_ratio": 0.714,
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-71-formula-for-kpz-fixed-point",
+     "title": "Formula for KPZ fixed point",
+     "prose_ratio": 0.72,
      "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-72-periodic-case",
+     "id": "sec-016-72-periodic-case",
      "title": "Periodic case",
      "prose_ratio": 0.848,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-73-transition-probabilities",
+     "id": "sec-017-73-transition-probabilities",
      "title": "Transition probabilities",
-     "prose_ratio": 0.696,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-91-thin-dlpp",
+     "id": "sec-018-8-integrable-differential-equations",
+     "title": "Integrable differential equations",
+     "prose_ratio": 0.455,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-91-thin-dlpp",
      "title": "Thin DLPP",
      "prose_ratio": 0.084,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-015-9-comments-on-universality",
+     "id": "sec-020-9-comments-on-universality",
      "title": "Comments on universality",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.162,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.16,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-016-92-interacting-particle-systems",
+     "id": "sec-021-92-interacting-particle-systems",
      "title": "Interacting particle systems",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-93-tasep-coulomb-gas-and-random-matrices",
+     "id": "sec-022-93-tasep-coulomb-gas-and-random-matrices",
      "title": "TASEP, Coulomb gas, and random matrices",
      "prose_ratio": 0.859,
      "coverage_ratio": 0.988,
@@ -545,11 +1132,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-94-universality-in-many-directions",
+     "id": "sec-023-94-universality-in-many-directions",
      "title": "Universality in many directions",
      "prose_ratio": 0.971,
      "coverage_ratio": 0.217,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

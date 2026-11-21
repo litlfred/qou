@@ -43,8 +43,8 @@ live in the `RatioForm` section over a field. Each is a one-line
 consequence of the division-free identity above via `div_eq_div_iff`;
 the division-free forms carry no non-vanishing hypotheses at all.
 
-Ref: [manuscript] conj:lepton-tower-h-n-plus-1-branching
-Ref: [manuscript] prop:three-halves-structural-factor
+Ref: [leitner2026] conj:lepton-tower-h-n-plus-1-branching
+Ref: [leitner2026] prop:three-halves-structural-factor
 -/
 
 namespace QOU.BraidKnot.LeptonTowerHnPlus1

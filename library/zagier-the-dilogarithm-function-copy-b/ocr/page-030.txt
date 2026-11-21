@@ -1,0 +1,48 @@
+32 Don Zagier
+
+a polynomial with coefficients in F,. The corresponding analogue £1(2) =
+yer , 2"/n of the 1-logarithm was first proposed (under the name “The 112-
+logarithm”) by M. Kontsevich in a note in the informal Festschrift prepared
+on the occasion of F. Hirzebruch’s retirement as director of the Max Planck
+Institute for Mathematics in Bonn [23]. Kontsevich showed that this function,
+as a function from F, to Fp, satisfies the 4-term functional equation
+
+SS) tye(-) (6)
+
+£iat+y) = £1(y) + A= 4i(5
+
+(the mod p analogue of the “fundamental equation of information theory”
+satisfied by the classical entropy function —2x log x — (1 — x) log(1 — x)), mid-
+way between the 3-term functional equation of log(xy) — log(x) — log(y) = 0
+of the classical logarithm function and the 5-term functional equation of
+the classical dilogarithm, and also that £1 is characterized uniquely by this
+functional equation together with the two one-variable functional equations
+£1(a) = £,(1— 2) and x£1(1/x) = —£4 (a). Kontsevich’s question whether
+the higher polylogarithm analogues £:(a) = >?) ran /n™ satisfied similar
+equations was taken up and answered positively by Ph. Elbaz-Vincent and
+H. Gangl [14]. They called these functions “polyanalogs”, an amalgam of the
+words “analogue,” “polylog,” and “pollyanna” (an American term suggesting
+exaggerated or unwarranted optimism). Presumably the correct term for the
+case m = 2 would then be “dianalog”, which has a pleasing British flavo(u)r.
+
+The main property of the dianalog and its higher-order generalizations,
+generalizing the identities found by Kontsevich for m = 1, is that if we con-
+sider them as functions from F, to F, (rather than as polynomials with co-
+efficients in F,,) they satisfy functional equations which are reminiscent of,
+but of a somewhat different type than, the functional equations of the clas-
+sical polylogarithms. In particular, Elbaz-Vincent and Gangl proved that the
+dianalog function satisfies several functional equations: the easy symmetry
+property £2(”) = x£2(1/zx), the somewhat less obvious three-term relation
+£2(1—a) — £2(a) + x£o(1 — 1/x) = 0, and the “Kummer-Spence analogue”
+
+£ (xy) + y £2(7) — (L+y) £2(a) — (1+ 2) £o(y)
+--0fo()- 211)
+--) (=H) - (sw) =
+
+each of which is the analogue of a classical functional equation of the trilog-
+arithm. There is also a 22-term functional equation based on Cathelineau’s
+differential version of the trilogarithm. Moreover, in each of the functional
+equations for £1 and £2, if one replaces the polynomial factors preceding the
+polyanalogs (for instance, the factors 1—y and y preceding £,(x/(1—y)) and
+£4(—«/y) in (16)) by their pth powers, then the functional equation becomes
+

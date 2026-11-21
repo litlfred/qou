@@ -1,0 +1,47 @@
+23
+to the generators 5),...,8g—1 of Sg, where s; is the elementary transposition (7 i+ 1).
+
+1. The standard basis for Hg consists of the elements H,, where w € Sy. In terms of the
+standard generators,
+
+Hy = Hi Hin (HL.6)
+
+where w = $;,-++5;,, is any reduced expression in Sy. The non-negative integer m is called
+
+m
+
+the length of w and denoted é(w).
+
+2. Multiplication in this basis is
+
+ys, if €(ws;) > €(w)
+Hy lH; = (111.7)
+
+Hus, t(v-u7)Hy, — if &(ws;) < &(w).
+
+3. There is an irreducible module S(A) of Hg corresponding to each integer partition A. These
+are pairwise non-isomorphic, and any finite-dimensional representation decomposes as a di-
+rect sum of thse simple modules. An explicit construction of these modules using Young’s
+
+semi-normal form is given in Chapter IV.
+
+4. Ha is semi-simple. Hence, we have the isomorphisms of algebras
+Ha = | [End S(\) © [] May, (111.8)
+N N
+
+where Mg, is the full matrix algebra of degree d, = dim S(A). In fact, generically, we have
+
+the isomorphism Hg ~ C(v) Sq.
+
+5. The branching rules for Hg are same as for Sq. Specifically, restriction of a simple Hg module
+S(A) to Ha-1 decomposes into a multiplicity-free sum of simple modules S(j), where ju is
+
+obtained from A by removing a corner box.
+
+Corresponding to each indecomposable block in the Wedderburn decomposition (III.8),
+there is a primitive, central idempotent e(A) € Ha, which can be constructed explicitly, as follows.
+This is analogous to the Young symmetrizer in Sq and is originally due to Gyoja ({18]).
+
+Corresponding to the partition A = (Ai,...,Ar), let S, = S$), x ++» x Sy, be the row
+
+stabilizer of the Young diagram. Let 7 denote the transpose partition. Define the elements

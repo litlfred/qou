@@ -7,10 +7,11 @@ section_number: null
 pages: 28-32
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.803
+latex_coverage_ratio: 0.996
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 []{#sec_choosing_affine_offset label="sec_choosing_affine_offset"} In order to apply reflection reductions to arbitrary linear programs, we had to introduce the affine offset $\delta$ to ensure that the lower bounds were nonpositive and the upper bounds were nonnegative. Given $\delta$, the linear transformation that is represented by the $\pm1$ scaling vectors $\lambda$ and $\gamma$ follows automatically from the symmetric equitable partition of the split reformulation. In this section, we argue how to choose $\delta$. In previous work, Hojny [@Hojny2025-si] chooses $\delta$ to be the center of the variable domains such that $\delta_w \coloneqq \frac{\ell_w + u_w}{2}$. One issue is that such a center is not well-defined for variables with infinite lower or upper bounds. Similarly to Hojny, we use the offset $\delta^\mathcal{C}$ defined for all $w\in W$ as $$\delta^\mathcal{C}_w \coloneqq \begin{cases}
         \frac{\ell_w + u_w}2 &\text{if $\ell_w$ and $u_w$ are finite.}\\

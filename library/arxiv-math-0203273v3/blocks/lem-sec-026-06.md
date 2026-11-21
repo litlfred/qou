@@ -1,0 +1,1 @@
+5. Let H be an afﬁne k-group with prounipotent radical U of dimension ≤1. Then there exists a k-homomorphism H →GL(2) with restriction to U an embedding. If g is such a k-homomorphism and p : H →H/U is the projection then every indecomposable representation of H is isomorphic to g∗V ⊗k p∗W for some representation V of GL(2) and W of H/U.

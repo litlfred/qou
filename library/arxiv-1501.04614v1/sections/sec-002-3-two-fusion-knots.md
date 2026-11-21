@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1501.04614v1
-doc_title: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II"
+doc_title: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES"
 section_id: sec-002-3-two-fusion-knots
 section_title: "Two-fusion knots"
 section_number: 3
 pages: 7-9
 source_pdf: 1501.04614v1.pdf
 source_sha256: ebebcae0c1823217
-doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II — We continue our study of the degree of the colored Jones polyn omial under knot cabling started in [8]."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
 latex_coverage_ratio: 1.0
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES — We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]."
 ---
 The family of 2-fusion knots is a two-parameter family  of closed 3-braids denoted
 by

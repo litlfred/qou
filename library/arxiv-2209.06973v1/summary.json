@@ -3,59 +3,69 @@
  "doc_id": "arxiv-2209.06973v1",
  "source_sha256": "cc3393a17c48b9df",
  "brief": "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of",
- "extended": "**On the geometry of two state models for the colored Jones polynomial**\n\n*September 16, 2022*\n\n66 pp, 10 sections.\n\n**Abstract.** Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of states on the part arc-graph of a link projection and the set of states on a corresponding bichromatic digraph, called arc-graph, as deﬁned by Garoufalidis and Loebl [7]. We use this to give a new and essentially elementary proof for the knot state-sum formula in [7]. We will show that the state-sum contributions of states on the part arc-graph de- ﬁned by the universal R-matrix of Uq(sl(2, C)) correspond, under our bijection of sets of states, to the contributions in [7]. This will show that the two state models are in fact not essentially distinct. Our ap- proach will also extend the formula of Garoufalidis and Loebl to links. This requires some additional non-trivial observations concerning the geometry of states on the part arc-graphs.\n\n**Outline.** 1 Introduction; 2 State models; 3 Graphs and colorings for state-sums of the c; 5 The R-matrix state model; 6 Proving the Garoufalidis-Loebl state-sum; 7 Evaluation of the Garoufalidis-Loebl state-s; 8 Working with cyclic ordering; 9 Weaving links; 10 Vertex ordering by braids; 11 Questions and projects\n\n**Extracted claims (proposals, not verified).**\n- Theorem 6.2: (see [7] for 0-framed long knot projections) The framed\n- Theorem 7.1: LetK be a long component projection of an oriented link K\n- Proposition 6.1: For each Z-coloring of a chord graph, respectively the\n- Proposition 6.2: For each Z-coloring of a signed chord graph, respectively\n- Lemma 5.1: Forc,d nonnegative integers we have\n- Lemma 6.1: Let A = (ajk) be an µ×µ skew-symmetric matrix (over Z",
+ "extended": "**On the geometry of two state models for the colored Jones polynomial**\n\n*September 16, 2022*\n\n66 pp, 12 sections.\n\n**Abstract.** Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of states on the part arc-graph of a link projection and the set of states on a corresponding bichromatic digraph, called arc-graph, as deﬁned by Garoufalidis and Loebl [7]. We use this to give a new and essentially elementary proof for the knot state-sum formula in [7]. We will show that the state-sum contributions of states on the part arc-graph de- ﬁned by the universal R-matrix of Uq(sl(2, C)) correspond, under our bijection of sets of states, to the contributions in [7]. This will show that the two state models are in fact not essentially distinct. Our ap- proach will also extend the formula of Garoufalidis and Loebl to links. This requires some additional non-trivial observations concerning the geometry of states on the part arc-graphs.\n\n**Outline.** Front matter; 1 Introduction; 2 State models; 3 Graphs and colorings for state-sums of the c; 4 The flow lemma; 5 The R-matrix state model; 6 Proving the Garoufalidis-Loebl state-sum; 7 Evaluation of the Garoufalidis-Loebl state-s; 8 Working with cyclic ordering; 9 Weaving links; 10 Vertex ordering by braids; 11 Questions and projects",
  "tokens": {
   "brief": 49,
-  "extended": 447
+  "extended": 340
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "1-3"
   },
   {
    "id": "sec-001-2-state-models",
    "title": "State models",
-   "pages": "2-5"
+   "pages": "3-5"
   },
   {
    "id": "sec-002-3-graphs-and-colorings-for-state-sums-of-the-col",
    "title": "Graphs and colorings for state-sums of the colored Jones polynomial",
-   "pages": "5-17"
+   "pages": "5-14"
   },
   {
-   "id": "sec-003-5-the-r-matrix-state-model",
+   "id": "sec-003-4-the-flow-lemma",
+   "title": "The flow lemma",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-004-5-the-r-matrix-state-model",
    "title": "The R-matrix state model",
    "pages": "17-23"
   },
   {
-   "id": "sec-004-6-proving-the-garoufalidis-loebl-state-sum",
+   "id": "sec-005-6-proving-the-garoufalidis-loebl-state-sum",
    "title": "Proving the Garoufalidis-Loebl state-sum",
    "pages": "23-38"
   },
   {
-   "id": "sec-005-7-evaluation-of-the-garoufalidis-loebl-state-sum",
+   "id": "sec-006-7-evaluation-of-the-garoufalidis-loebl-state-sum",
    "title": "Evaluation of the Garoufalidis-Loebl state-sum",
    "pages": "38-47"
   },
   {
-   "id": "sec-006-8-working-with-cyclic-ordering",
+   "id": "sec-007-8-working-with-cyclic-ordering",
    "title": "Working with cyclic ordering",
    "pages": "47-51"
   },
   {
-   "id": "sec-007-9-weaving-links",
+   "id": "sec-008-9-weaving-links",
    "title": "Weaving links",
    "pages": "51-58"
   },
   {
-   "id": "sec-008-10-vertex-ordering-by-braids",
+   "id": "sec-009-10-vertex-ordering-by-braids",
    "title": "Vertex ordering by braids",
    "pages": "58-64"
   },
   {
-   "id": "sec-009-11-questions-and-projects",
+   "id": "sec-010-11-questions-and-projects",
    "title": "Questions and projects",
    "pages": "64-66"
   }
@@ -64,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

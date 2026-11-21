@@ -55,7 +55,7 @@ Archimedean (ℝ): coordinates, `Real.sqrt` via `hemisphere` — §7c.
   -- Ref: [milnor1982] Appendix (Milnor's normalized position: one face on the unit
   --   hemisphere, opposite vertex at `∞`)
   -- Ref: [thurston1978] Ch. 7 ; [ratcliffe] §4.6–4.7
-  -- Ref: [manuscript] beans qou-idvt (T2), qou-473l (T2 vertex-independence)
+  -- Ref: [leitner2026] beans qou-idvt (T2), qou-473l (T2 vertex-independence)
 -/
 
 import QOU.Archimedean.GeodesicFaceH3

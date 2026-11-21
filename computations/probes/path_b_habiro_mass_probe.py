@@ -93,6 +93,7 @@ from codata_constants import M_E_MEV as _M_E_MEV_MP
 from codata_constants import (
     M_P_MEV_VALIDATION as M_P_MEV,
     M_N_MEV_VALIDATION as M_N_MEV,
+    M_H1_MEV_VALIDATION as _M_H1_MEV_MP,
 )
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
@@ -103,7 +104,7 @@ G_CATALAN = mp.catalan
 
 # AME 2020 atomic masses (MeV)
 AME_ATOMIC = {
-    "p": ("p (proton, A=1)", mp.mpf("938.78308711")),  # H-1 atomic
+    "p": ("p (proton, A=1)", _M_H1_MEV_MP),  # H-1 atomic, from the registry (the typed 938.78308711 was 1.4e-5 MeV off)
     "n": ("n (neutron, A=1)", float(M_N_MEV)),
     "D": ("D (deuteron, A=2)", mp.mpf("1876.12393")),
     "T": ("T (tritium, A=3)", mp.mpf("2809.43215")),
@@ -203,7 +204,11 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf,
 
 
 def term4_frobenius_codim_at_q0(A: int) -> mp.mpf:
-    """Term 4 in raw units: Σ_λ 1/dim_q(λ) over partitions of 3A."""
+    """Term 4 in raw units: the FORMAL sum Σ_λ 1/dim_q(λ) over ALL partitions of 3A.
+
+    Not τ(C_dim_q) under convention D (three-row blocks have τ(p_λ) = 0);
+    see paper_six_term_isotope_sweep.term4_frobenius_codim.
+    """
     from hecke_characters import partitions_of, young_hooks, qfac
     n = 3 * A
     nfac_val = mp.mpf(qfac(n, Q0_PROTON))

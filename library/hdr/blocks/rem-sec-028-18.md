@@ -1,0 +1,1 @@
+For d = 1, the Markov trace tr1,l on the algebra H(l, n) ∼= Y(1, l, n) was introduced • by Ocneanu/Jones [Jo2, Jo3] for l = 1, • by Lambropoulou and Geck [La1, GeLa] for l = 2, and • by Lambropoulou [La2] for l ∈Z⩾3 ∪{∞}. For l = 1, trd,1 is the Markov trace trd on the Yokonuma–Hecke algebra Yd,n(q).

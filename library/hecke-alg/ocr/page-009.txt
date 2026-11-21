@@ -1,0 +1,57 @@
+4 1. THE IWAHORI-HECKE ALGEBRA OF THE SYMMETRIC GROUP
+
+associative R-algebra with generators T),7>,...,T,-1 which are subject to the
+relations
+(G-g)(Ht+1=09, for? =1,2,...,n—1,
+TT; = T;Ti, forl<i<j-l<n—-2,
+BTN = Tats, fori =1,2,...,n—2.
+
+Notice that when q = 1 the first relation reduces to T? = 1; thus, by (1.1), #
+is isomorphic to the group ring RG, of the symmetric group in this case. When
+q # 1 this may seem a strange algebra to consider but, in fact, # arises naturally
+in the representation theory of the general linear groups (see Note 4 on page 7).
+
+Our first aim is to produce a basis of #. Suppose that w € G, and let
+(i1,-.. ,%%) be a reduced expression for w. We define
+
+1.10 Tw = Ti, ... Ti:
+
+By Theorem 1.8, T,, is independent of the choice of reduced expression for w. If w
+is the identity element of G, we identify T,, with 1, the identity element of R.
+
+1.11 Theorem The Iwahori-Hecke algebra 4 = Hp q(Gn) is free as an R-
+module with basis {Ty | wv € Gn }. Moreover, the multiplication in # is determined
+by the formulae
+
+rp ad Tes if (ws) > E(w),
+eV aTws + (q—1)Te. otherwise.
+
+for allwé€ Gy, ands ES.
+
+Proof. By Corollary 1.6(ii), if w € Gp, and s € S then (ws) < ((w) if and only
+if w has a reduced expression ending in s; so the multiplication formulae follow
+from the definition of Ty, and the relation T? = (¢—1)T; +4.
+
+By the relations in .# the set {Ty | w€ Gy} certainly spans .#. Thus, it
+remains to show that {7 | w € G, } is linearly independent.
+
+Let q be an indeterminate over Z. Then R becomes a Z[q|-module via the
+homomorphism g : Z[g] — R determined by g(1) = 1 and g(q) = q. The generators
+T;, ® 1 of the R-algebra #! = Ho[q,4(Gn) Ozjq PR satisfy the relations in # so
+there is a surjection a: 4 — #'. Therefore, it is enough to show that #%[4,4(Gn)
+is free as a Z[q|—module with basis { Ty, | w € Gy } because then .# is R-free with
+basis {Ty @1 | w € Gy } and, consequently, a must be an isomorphism.
+
+Suppose then that # = #j4,4(Gn). If {Tu | w € Gp } were not linearly
+independent then there would exist polynomials a,,(¢) € Z[g], not all zero, such
+that >, aw(q)Tw = 0 in .#. Without loss of generality, the greatest common
+divisor of the polynomials { ay,(q) | w € Gn } is 1. Consider Z as a Z[q|-module by
+letting q act as 1. Then # ®zjq Z = ZG, and {T, ©1|w €G, } maps to the
+natural basis {w | w € G, } of ZG, under this isomorphism. Hence, we obtain the
+relation )°>,, dy (1)w = 0 in ZG,; this forces a,,(1) = 0 for all w € G,. Therefore,
+for all w € G, the polynomial a,,(q) belongs to (¢ — 1)Z[q], contradicting our
+assumption that the ay,(¢) have greatest common divisor 1. Hence, {Ty | w € Gy }
+is a basis of #g,g,q(Gn) and the Theorem follows. Oo
+
+Now that we have established that .# is free over R, the argument from the
+second paragraph of the proof generalizes to yield the following result. (In the

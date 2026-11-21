@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume"
+doc_title: "Formulas on hyperbolic volume ∗"
 section_id: sec-007-25-volume-in-the-projective-model
 section_title: "Volume in the projective model"
 section_number: 2.5
 pages: 6-6
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
-latex_coverage_ratio: 0.957
+latex_coverage_ratio: 0.977
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 At the origin of the projective (Kayley-Clein) model we consider a Cartesian system of coordinates. Regarding the factor $k$ we assume that the radius of the sphere is $k$. The considered system is an orthogonal coordinate system both of the embedding Euclidean and the modeled hyperbolic space.
 

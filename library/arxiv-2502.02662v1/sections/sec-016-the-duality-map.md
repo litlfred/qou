@@ -7,10 +7,11 @@ section_number: null
 pages: 20-21
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.984
+latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.992
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 []{#TheDualityMap label="TheDualityMap"} In order to extend this picture to the correlation functions, we need to establish a dictionary between the observables of chiral Yang-Mills theory and those of the deformed extended Hurwitz theory. Given an insertion $U$, we need to identify the unique element $\sum_{s} a_s(U) \hat{\mathsf{A}}_s$ in the algebra of partial permutations which behaves as $$\sum_{\alpha\vdash d} p_{\alpha}(U) g_s^{\ell(\alpha)} \hat{C}_{\alpha}$$ inside genus-$g$, degree-$d$ correlation functions, for all values of the genus and degree. Our strategy is the following. Firstly, we isolate permutations with a given non-trivial structure. That is, we look for permutations $\sigma$ obtained by completing the minimal partial permutation $\bar{s}$ to all possible degrees. For each such permutation $\sigma$, we have the equation $$\sum_{s} g_s^{\ell(s)}  a_s(U) \langle \hat{A}_s \, (\dots) \rangle_{g,d} = g_s^{\ell(\sigma)} p_{\sigma}(U) \langle \hat{C}_{\sigma} \, (\dots) \rangle_{g,d}\, ,
     \label{DictionaryCoeffEqs}$$ where the only partial permutations $s$ relevant to the sum are the partial permutations of the form $\bar{s}\cup 1^k$, with $0\leq k\leq d-\lvert d_{\bar{s}} \rvert$. Thus, we obtain the following equations for the coefficient $a_{\bar{s}\cup 1^k}$ $$\sum_{k=0}^{d-\lvert d_{\bar{s}} \rvert} g_{s}^{\ell(\bar{s})+k} a_{\bar{s}\cup 1^k}(U) \binom{d-\lvert d_{\bar{s}} \rvert}{k} = g_{s}^{\ell(\sigma)}\, p_{\sigma}(U) \, .$$ There is an equation for each degree $d\geq \lvert d_{\bar{s}} \rvert$, and the coefficients $a_s$ thus obey an infinite system of linear equations.

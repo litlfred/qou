@@ -33,7 +33,7 @@ structure ColorTubeFibers (R : Type*) [CommRing R] where
     cubic r = r ^ 3 + (4 * z + 1) * r ^ 2 + (6 * z ^ 2 + 3 * z + 1) * r
       + (4 * z ^ 3 + 3 * z ^ 2 + 2 * z + 1)
 
--- Ref: [manuscript] quantum-observable-universe/brings-surface/color-tube-fibers.ts
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/color-tube-fibers.ts
 
 /-- The shift `𝐫 = X − z` (the map `X = 𝐜 + z` to the color elliptic fiber
     `𝓔_z`) turns the color-tube cubic into the monic cubic

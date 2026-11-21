@@ -43,17 +43,17 @@ theorems may take it as an `[instance]` hypothesis and remain fully
 verified by Lean modulo this single conjectural input.
 
 ## References
-- [manuscript] conj:canonical-knot-id-sdp
-- [manuscript] prop:confinement-sdp
-- [manuscript] prop:joint-tower-sdp-confinement
-- [manuscript] prop:atom-knot-mass-derivation
+- [leitner2026] conj:canonical-knot-id-sdp
+- [leitner2026] prop:confinement-sdp
+- [leitner2026] conj:joint-tower-sdp-confinement
+- [leitner2026] conj:atom-knot-mass-derivation
 -/
 
 namespace QOU.BraidKnot
 
 open QOU.MathlibExt.SDP QOU.HeckeAlgebra
 
--- Ref: [manuscript] conj:canonical-knot-id-sdp
+-- Ref: [leitner2026] conj:canonical-knot-id-sdp
 
 /-- Enumeration of the three light nuclei whose canonical knot
     identification this conjecture addresses. -/
@@ -165,9 +165,9 @@ the previously vacuous `True` Props per Gemini's PR #614 review
 @[reducible] def BraidWord.evenPower (w : BraidWord) : Prop :=
   ∀ g ∈ w.eraseDups, (w.count g + w.count (-g)) % 2 = 0
 
--- Ref: [manuscript] conj:canonical-knot-id-sdp
--- Ref: [manuscript] prop:delta-max-uniform-bound
--- Ref: [manuscript] prop:joint-tower-sdp-confinement
+-- Ref: [leitner2026] conj:canonical-knot-id-sdp
+-- Ref: [leitner2026] prop:delta-max-uniform-bound
+-- Ref: [leitner2026] conj:joint-tower-sdp-confinement
 class CanonicalKnotIdSDP (n : LightNucleus) where
   /-- Name of the canonical knot / link (e.g. "6_2", "8_11", "L6a4"). -/
   canonicalKnotId : String
@@ -296,9 +296,9 @@ they reference `bindingKWord` directly and assert PSD-feasibility
 + minimal-length + Markov-trace match.  This is a substantive
 sharpening over the previous opaque `bindingKUniqueness : Prop`. -/
 
--- Ref: [manuscript] conj:canonical-knot-id-sdp § "Structural decomposition"
--- Ref: [manuscript] binding-k-enumerator.witness.json (issue #604 deliverable 3)
--- Ref: [manuscript] joint-tower-sdp-h6-h9.witness.json (historical Hopf identification)
+-- Ref: [leitner2026] conj:canonical-knot-id-sdp § "Structural decomposition"
+-- Ref: [leitner2026] binding-k-enumerator.witness.json (issue #604 deliverable 3)
+-- Ref: [leitner2026] joint-tower-sdp-h6-h9.witness.json (historical Hopf identification)
 instance instCanonicalKnotIdSDP_deuterium : CanonicalKnotIdSDP .deuterium where
   canonicalKnotId := "6_2"
   bindingLinkName := "L_H (Hopf, σ_3² in B_6)"
@@ -314,8 +314,8 @@ instance instCanonicalKnotIdSDP_deuterium : CanonicalKnotIdSDP .deuterium where
   bindingKEvenPower := by decide
   bindingKLengthBounded := by decide
 
--- Ref: [manuscript] conj:canonical-knot-id-sdp § "Structural decomposition"
--- Ref: [manuscript] binding-k-enumerator.witness.json (issue #604 deliverable 3)
+-- Ref: [leitner2026] conj:canonical-knot-id-sdp § "Structural decomposition"
+-- Ref: [leitner2026] binding-k-enumerator.witness.json (issue #604 deliverable 3)
 -- L=3 enumeration RUN (witness binding-k-enumerator): the 8_11-class
 -- 3-component link is NOT min-length-selected at L=3; bindingKWord [3,3]
 -- is the L=3-confirmed min-length winner (σ_3² Hopf).
@@ -329,8 +329,8 @@ instance instCanonicalKnotIdSDP_tritium : CanonicalKnotIdSDP .tritium where
   bindingKEvenPower := by decide
   bindingKLengthBounded := by decide
 
--- Ref: [manuscript] conj:canonical-knot-id-sdp § "Structural decomposition"
--- Ref: [manuscript] binding-k-enumerator.witness.json (issue #604 deliverable 3)
+-- Ref: [leitner2026] conj:canonical-knot-id-sdp § "Structural decomposition"
+-- Ref: [leitner2026] binding-k-enumerator.witness.json (issue #604 deliverable 3)
 -- L=3 enumeration RUN (witness binding-k-enumerator): the L_{6a4}
 -- 3-component link is NOT min-length-selected at L=3; bindingKWord [3,3]
 -- is the L=3-confirmed min-length winner (σ_3² Hopf).
@@ -403,7 +403,7 @@ theorem bindingKWord_nonempty (n : LightNucleus) [h : CanonicalKnotIdSDP n] :
     This is a *numerical* certificate; the categorical uniqueness
     theorem below upgrades it to a structural claim by adding a
     strict-complementarity hypothesis. -/
--- Ref: [manuscript] PR #608, witness `r5-full-canonical-knot-solver.witness.json`
+-- Ref: [leitner2026] PR #608, witness `r5-full-canonical-knot-solver.witness.json`
 class R5FullWitness (n : LightNucleus) where
   /-- α-gap from the SDP search (PSD-feasible iff `alpha_gap = 0`). -/
   alpha_gap : ℝ
@@ -491,8 +491,8 @@ structure StrictComplementarity (n : LightNucleus)
     * `tritium` — R5-full pipeline deferred (Hoefsmit at H_5
       pending).
 -/
--- Ref: [manuscript] conj:canonical-knot-id-sdp
--- Ref: [manuscript] PR #608 r5_full_canonical_knot_solver.py
+-- Ref: [leitner2026] conj:canonical-knot-id-sdp
+-- Ref: [leitner2026] PR #608 r5_full_canonical_knot_solver.py
 -- `def` (not `theorem`): the conclusion `CanonicalKnotIdSDP …` is a class
 -- (data/Type), not a Prop, so this constructs an instance rather than proving
 -- a proposition.
@@ -519,7 +519,7 @@ def helium3_canonical_uniqueness_via_strict_complementarity
   -- specialised to PSD-cone-constrained programs, deferred).
   --
   -- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
-  -- Ref: [manuscript] PR #608 r5-full-canonical-knot-solver.witness.json
+  -- Ref: [leitner2026] PR #608 r5-full-canonical-knot-solver.witness.json
   obtain ⟨_min_block_eig, _min_dual_y_on_active, _max_inactive_dual,
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
@@ -545,8 +545,8 @@ def helium3_canonical_uniqueness_via_strict_complementarity
     the search's score function and (per the conjecture) recover
     `6_2` as the unique minimizer.  This is sub-deliverable 3 of
     Issue #604 specialised to `deuterium`. -/
--- Ref: [manuscript] thm:knot-mass-formula-unified
--- Ref: [manuscript] PR #608 followup #1
+-- Ref: [leitner2026] thm:knot-mass-formula-unified
+-- Ref: [leitner2026] PR #608 followup #1
 def deuterium_canonical_uniqueness_pending_multiterm_cost
     [w : R5FullWitness LightNucleus.deuterium]
     (sc : StrictComplementarity LightNucleus.deuterium)
@@ -559,7 +559,7 @@ def deuterium_canonical_uniqueness_pending_multiterm_cost
   -- #1) — without that, the L=8 winner is σ_2 σ_1^6 σ_2^{-1} and
   -- 6_2 would not satisfy current SDP constraints.  Existence under
   -- the certificates is closed; canonical-match is deferred.
-  -- Ref: [manuscript] PR #608 followup #1
+  -- Ref: [leitner2026] PR #608 followup #1
   obtain ⟨_min_block_eig, _min_dual_y_on_active, _max_inactive_dual,
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
@@ -580,7 +580,7 @@ def deuterium_canonical_uniqueness_pending_multiterm_cost
     Rust (`tools/hecke-engine`).  Once a Python port lands, the
     same `helium3_canonical_uniqueness_via_strict_complementarity`
     structural argument applies. -/
--- Ref: [manuscript] PR #608 deferred-Hoefsmit-H5
+-- Ref: [leitner2026] PR #608 deferred-Hoefsmit-H5
 def tritium_canonical_uniqueness_pending_hoefsmit_h5
     [w : R5FullWitness LightNucleus.tritium]
     (sc : StrictComplementarity LightNucleus.tritium)
@@ -593,7 +593,7 @@ def tritium_canonical_uniqueness_pending_hoefsmit_h5
   -- canonical-match (8_11-class link) and uniqueness claims remain
   -- deferred for the same Mathlib SDP-infra reasons noted on the
   -- helium3 theorem above.
-  -- Ref: [manuscript] PR #608 deferred-Hoefsmit-H5
+  -- Ref: [leitner2026] PR #608 deferred-Hoefsmit-H5
   obtain ⟨_min_block_eig, _min_dual_y_on_active, _max_inactive_dual,
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
@@ -629,8 +629,8 @@ def tritium_canonical_uniqueness_pending_hoefsmit_h5
 
     The genuine uniqueness statement lives in
     `helium3_canonical_uniqueness_via_strict_complementarity` above.
-    -- Ref: [manuscript] §3b-cond conditional-class pattern
-    -- Ref: [manuscript] PR #608 witness winner.rho_star -/
+    -- Ref: [leitner2026] §3b-cond conditional-class pattern
+    -- Ref: [leitner2026] PR #608 witness winner.rho_star -/
 
 /-! ### Witness-conditioned existence (kernel-verified, no `sorry`)
 

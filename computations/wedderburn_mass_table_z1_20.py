@@ -96,6 +96,8 @@ from qou_substrate.constants import Q as Q_PROTON  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
+from codata_constants import M_C12_ATOMIC_MEV_VALIDATION, M_HE4_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 mp.dps = 50
 
@@ -113,11 +115,11 @@ CODATA_M_N = "939.56542052"
 # atom, Z, N, Phi1, Phi2, Phi3, M_obs (AME2020 as recorded), published M_pred
 ROWS = [
     ("H",  1,  1,  0, "-0.007015",  "-0.0",     "1.04342",    "938.78313",   "938.910"),
-    ("He", 2,  2,  2, "-5.558902",  "0.04347",  "-0.626052",  "3728.4013",   "3734.624"),
+    ("He", 2,  2,  2, "-5.558902",  "0.04347",  "-0.626052",  _ame_nstr(M_HE4_ATOMIC_MEV_VALIDATION, 30),   "3734.624"),
     ("Li", 3,  3,  4, "-9.838642",  "0.130411", "-1.878156",  "6535.367",    "6534.188"),
     ("Be", 4,  4,  5, "-18.272718", "0.217351", "-2.921576",  "8394.7937",   "8378.704"),
     ("B",  5,  5,  6, "-22.803608", "0.326027", "-4.17368",   "10255.103",   "10237.301"),
-    ("C",  6,  6,  6, "-24.310734", "0.391232", "-4.382364",  "11177.9292",  "11168.874"),
+    ("C",  6,  6,  6, "-24.310734", "0.391232", "-4.382364",  _ame_nstr(M_C12_ATOMIC_MEV_VALIDATION, 30),  "11168.874"),
     ("N",  7,  7,  7, "-27.961737", "0.53251",  "-5.843152",  "13043.7816",  "13029.983"),
     ("O",  8,  8,  8, "-31.574308", "0.695523", "-7.512624",  "14899.1693",  "14890.701"),
     ("F",  9,  9, 10, "-34.397752", "0.97808",  "-11.268936", "17696.901",   "17690.792"),

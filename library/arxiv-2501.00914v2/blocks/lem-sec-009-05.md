@@ -1,1 +1,1 @@
-says thatV p,q does not embed inS 3, but sinceS 3\ν(J) certainly does, we see that
+further says that the monodromy hJ is veering. We have thus shown that φJ 0 and ΣJ 0 satisfy the hypotheses of Theorem 2.4, and the same is true of φK 0 and ΣK 0 .

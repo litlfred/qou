@@ -1,0 +1,34 @@
+Canonical triangulations 1273
+
+We have labeled the dihedral angles of the tetrahedra of A; by numbers (“angles”) x;,
+yi, Zi, following the same conventions as in Figure 4. Note that our choices of dihedral
+angles force the tetrahedra D; and D’ to be isometric; this does not impede the goal of
+finding a geometric triangulation. In the sequel, we will not distinguish between D; and
+Di.
+
+\. hairpin
+\ turn
+
+Figure 19: A cusp view of the folding that occurs at a clasp
+
+When the pleated surface S; is folded to form a clasp, the zigzag line in which it
+intersects the cusp also becomes folded, creating a “hairpin turn.” Because this folding
+procedure joins the punctures of S; in pairs, as in Figure 17, the boundary triangles
+on those punctures are also joined together. The resulting cusp triangulation in the
+neighborhood of S; can be seen in Figure 19. At the other end of the product region,
+the clasp of S, appears on the cusp in the same way.
+
+Once we have folded the clasp surfaces as prescribed, the truncated vertices of the
+tetrahedra combine to form either a single torus that traverses the product region four
+times (in case K is a knot), or two tori, each of which traverses the product region twice
+(in case K is a two-component link). In either case, the local combinatorics are the
+same, and the affine equations that the dihedral angles of the tetrahedra must satisfy are
+derived in the same way.
+
+To find the hyperbolic structure on S?\K, we will study the space P of angle structures
+for the triangulation, ie the space of positive dihedral angles that line up correctly around
+each edge. We need to complete three steps:
+
+(1) Parameterize P and check that it is nonempty, as in Section 5.
+
+Geometry & Topology 10 (2006)

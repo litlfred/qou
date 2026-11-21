@@ -1,0 +1,49 @@
+144 J.J. Graham and G.I. Lehrer
+
+a € A, we have ¢(z,y) = ¢r(y,z) and ¢:(a.2,y) = dx(z,a*.y). An
+immediate consequence is that the radical Rad(t) = Rad¢@: = {x €
+W(t) | ¢(x,y) =0 for all y € W(t)} of ¢; is an A-submodule of W(t).
+Write L(t) := W(t)/Rad(t); clearly L(t) is zero if and only if the form
+$e =0.
+
+The next statement summarises the representation theory of A when
+R is a field.
+
+Proposition 2.4 ([15]). Maintain the above notation, and in ad-
+dition assume that R is a field. Let T° be the set of t € T such that
+L(t) 4 0 (or equivalently ¢ #0). Then (i) The modules L(t) (t € T°)
+are absolutely irreducible and form a complete set of representatives of
+the distinct isomorphism classes of irreducible A-modules.
+
+(ii) For s € T,t € T° let dst be the multiplicity of L(t) in W(s).
+Then the decomposition matric D = (dst) is upper unitriangular. In
+particular Hom(W(t1),W(t2)) =0 unless t; > to.
+
+(iii) For 51,82 € T°, let cs,,5, be the multiplicity if the irreducible
+module L(s2) in the projective cover P(s,) of W(s1). If C is the (Car-
+tan) matriz (cs,,s,) then C = D*D, where D* denotes the transpose of
+D.
+
+(iv) The cell module W(t) is irreducible if and only if, for allt’ €
+T,t' 4 t, Hom(W(t’), W(t)) = 0. Equivalently, the form 4 is non-
+degenerate on W(t).
+
+(v) The following assertions are equivalent. The algebra A is
+semisimple. Each cell module is absolutely irreducible. The forms ¢
+are all non-degenerate. There are no non-trivial homomorphisms be-
+tween distinct cell modules.
+
+We shall now see how these concepts apply to the Temperley-Lieb
+algebras of type A and B. Let R be a commutative ring with 1; write
+R* for the group of invertible elements of R and let q,Q € R*. For
+any invertible element x € R, write 6, = —(x +271). Our notation
+for parameters, which may appear arbitrary, is chosen with a view to
+the links with Hecke algebras described below. The usual Temperley-
+Lieb algebra T'L,,(q) may be described in terms of planar diagrams (see
+[20], [10] or [15]) in a way which is well known. The Temperley-Lieb
+algebra TLB,,(q, Q) of type B,, has a corresponding description in terms
+of “marked diagrams” (cf. [42], [36], [37]). When the base ring is an
+algebraically closed field, TLBn(q,Q) is sometimes known as the “blob
+algebra” (see [6]). The algebra TL,,(q) is realised as the subalgebra of
+TLB,(q,Q) which is spanned by unmarked diagrams. We describe now
+TLB,(q, Q) as acellular algebra, using the language of [16] for diagrams.

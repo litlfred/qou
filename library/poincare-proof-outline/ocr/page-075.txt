@@ -1,0 +1,65 @@
+poincare-distance u w = poincare-distance u' w' —>
+(A M. unit-disc-fic-f MA Mu=u' A Mv=0'A Mw=vw’) (is ?P uv)
+proof (rule wlog-positive-x-azis[;where P=?P])
+show v € unit-disc u € unit-disc
+by fact+
+next
+show u #v
+using False
+by simp
+next
+fix x
+assume 2: is-real tr 0 < Rex Rex < 1
+
+hence of-compler « # On
+using of-complez-zero-iff [of 2]
+by (auto simp add: complex.expand)
+
+show ?P 0), (of-complex x)
+proof safe
+fix wu’ vw’
+assume in-disc: w € unit-disc u’ € unit-disc v' € unit-disc w' € unit-disc
+assume poincare-distance 0}, (of-complex x) = poincare-distance u' v’
+then obtain M’ where M’: unit-disc-fix M' moebius-pt M’ u' = 0n moebius-pt M' v’ = (of-complex x)
+using poincare-distance-eq-ex-moebius|of u' v' 0), of-complex x] in-disc x
+by (auto simp add: cmod-eq-Re)
+let ?w = moebius-pt M’ w’
+have ?w € unit-disc
+using <unit-disc-fir M'> «w' € unit-disc»
+by simp
+
+assume w # 0n w ¥ of-complex &
+hence dist-gt-0: poincare-distance 0;, w > 0 poincare-distance (of-complex x) w > 0
+using poincare-distance-eq-0-iff|of On w] in-disc poincare-distance-ge0 [of On w)
+using poincare-distance-eq-0-iff [of of-complex x w| in-disc poincare-distance-ge0|of of-complex x w]
+using x
+by (simp-all add: cmod-eq-Re)
+
+assume poincare-distance (of-complex x) w = poincare-distance v' w’
+poincare-distance 0, w = poincare-distance u' w’
+hence poincare-distance 0, ?w = poincare-distance 0, w
+poincare-distance (of-complex x) ?w = poincare-distance (of-complex x) w
+using M'(1) M'(2)[symmetric] M'(3)|[symmetric] in-disc
+using unit-disc-fir-preserve-poincare-distance|of M' u’ w’|
+using unit-disc-fir-preserve-poincare-distance|of M' v' w']
+by simp-all
+hence ?w € poincare-circle 0, (poincare-distance 0; w) M poincare-circle (of-complex x) (poincare-distance
+(of-complex x) w)
+w € poincare-circle 0, (poincare-distance 0, w)  poincare-circle (of-complex x) (poincare-distance (of-complex
+x) w)
+using <?w € unit-discy (w € unit-discy
+unfolding poincare-circle-def
+by simp-all
+hence ?w = w V ?w = conjugate w
+using intersect-poincare-circles-x-axis|of 0 x poincare-distance 0, w poincare-distance (of-complex x) w ?w w] x
+using <of-compler x # 0;,) dist-gt-0
+using poincare-distance-eq-0-iff
+by auto
+thus 4M. unit-disc-fir-f M \ M 0; = u' A M (of-complex z) = v' A Mw = w'
+proof
+assume moebius-pt M' w! = w
+thus ?thesis
+using M’
+using mocbius-pt-invert[of M’ u’ 0;)
+using moebius-pt-invert|of M' v' of-complez x]
+using mocbius-pt-invert[of M’ w’ wl

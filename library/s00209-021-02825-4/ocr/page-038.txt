@@ -1,0 +1,56 @@
+1396 J. Leake
+
+B The Grace-Walsh-Szeg6 coincidence theorem
+
+A classical result in the representation theory of SL2(C) is the fact that V(n) = Sym" (V(1)).
+Here, Sym"(V (1)) denotes the set of symmetric tensors in V(1)®", or alternatively, the set of
+symmetric elements in V(1”). That is, there is some SL2(C)-invariant injection from V (n) to
+V(1)®", and by our conceptual thesis this map should transfer stability information. In fact,
+this idea is formalized in the Grace—Walsh—Szeg6 coincidence theorem, and the injective
+map is known as the polarization map.
+
+B.1 Polarization and projection
+
+For polynomials of degree m <n, the degree-n polarization map is defined on monomials
+as follows and is extended linearly.
+
+mt :C"[x] > CO Ex, wees Xn]
+1 k
+k
+es | YT]
+o€S, j=l
+
+This definition can be extended to homogeneous polynomials in V(n) by composing with
+Hig; ! and Hmg (jn). The map nm} has a left inverse my, called the projection map, which
+
+we define as follows.
+Mi}: CO Lx, Xn] > C"Ex]
+
+SF (HL, x2, 66 Xn) (XX. x)
+
+Thatis, ni} ° n} is the identity map. Similarly, this definition can be extended to homogeneous
+polynomials by composing with Hmg@n, and Hmg,,.
+
+It is well-known that I} is an injective linear map onto the subspace of symmetric multi-
+affine polynomials. This fact then extends to homogeneous polynomials, where the terms
+symmetric and multi-affine each refer to pairs of homogeneous variables. Further, one can
+define multivariate polarization and projection maps via composition: n} = nf, Or-+0 mi},
+and my = 1! 0-0 Ty. Injectivity then automatically extends to mm, and my ° nt is
+the identity map.
+
+These two maps arise naturally in the theory of polynomials in general, and play an
+important role in the theory of stability, via the Grace-Walsh—-Szeg6 coincidence theorem
+as well as in the proof of the Borcea—Brandén characterization of linear operators. The next
+result shows they also have represention theoretic importance.
+
+Proposition B.1. Fix € N¢!, and view V(A) = V(A1)& - “RV (Am) and V(1*) = V(1)®"'B
+--»» & Vd)" as representations of (SL2(C))". The maps nt} : V(A) > V(I*) and
+ny : V(14) > V(A) are (SL2(C))"-invariant.
+
+Proof Note that by proving the result for Ti} and M1} with m = 1, the general result follows
+since nu! and ny are compositions of such maps. To prove it for m = 1, note that the set of
+symmetric elements in V(1)®" = V(1”) is invariant under the diagonal action of SL2(C).
+Further, since V(n) is irreducible of dimension n + 1 and V(1)®” has a single irreducible
+component of dimension n + 1, Schur’s lemma implies the result. Oo
+
+D Springer

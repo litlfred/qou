@@ -1,0 +1,37 @@
+Section 4.4 Invariance under Pachner Moves
+
+one representative for each isomorphism class of simple objects. For the rest of the section,
+a summation variable concerning simple objects in the category is always assumed to run
+through an arbitrary complete set of representatives, unless otherwise stated. Recall that
+an extended coloring is a map F= (g, f,t), which assigns a group element to each 1-
+simplex, an isomorphism class of simple objects to each 2-, and 3-simplex, such that these
+assignments satisfy some restrictions, see Definition Then to define the partition
+function, a representative is arbitrarily chosen for each 2- and 3-simplex with an extended
+coloring. The partition function is a sum over all extended colorings, see Equation [3.3]
+In light of the observations above, we can rephrase the definition of the partition function
+as follows.
+
+We let each 1-simplex run through the set of all elements in G, and let each 2-, 3-
+simplex run through an arbitrary complete set of representatives (i.e., each 2-, 3-simplex
+has its own complete set). Then an extended coloring can be viewed as a choice of value
+for 1-, 2-, and 3-simplices, so that the resulting configuration satisfies the restriction in
+Definition 3-1-6] If a configuration is not an extended coloring, we set its contribution to
+zero. As before, we denote the color of a simplex by the simplex itself. Then Equation
+
+3.3}can be rewritten as Equation where we have omitted the dependence of Z )(g)
+
+B.
+I] da
+D2/|G))IT"! ge7z2 A
+Zp(M;:T)= >> lel" J 2 (a) (4.25)
+(DIT TT de fe
+TLE? reps | o6T!
+
+By Equation [4.25] to prove Zp(M;T) = Zp(M;T"), it suffices to show that Equa-
+tions [4.27] and hold, corresponding to the typical pachner move 3-3, 2-4, 1-5,
+
+respectively, where all simplices which do not present among the summation are assumed
+
+to have a fixed coloring on them.
+
+76

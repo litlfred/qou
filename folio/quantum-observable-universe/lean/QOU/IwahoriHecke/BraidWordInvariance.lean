@@ -56,7 +56,7 @@ it is built here.
 
 -- Ref: [matsumoto1964] DOI 10.1090/S0002-9904-1964-11211-9 (the group half)
 -- Ref: [humphreys1990] §7.1, §7.4 (word products and the `T_w` basis)
--- Ref: [manuscript] bean qou-k4oq
+-- Ref: [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.BraidWord

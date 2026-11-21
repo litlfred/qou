@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9806163v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9806163v1",
+  "title": "Weights of Markov traces on Hecke algebras",
   "contains": [
     "library/arxiv-math-9806163v1/sections/sec-front-matter",
     "library/arxiv-math-9806163v1/sections/sec-000",
@@ -18,10 +18,14 @@
     "library/arxiv-math-9806163v1/sections/sec-003",
     "library/arxiv-math-9806163v1/sections/sec-004",
     "library/arxiv-math-9806163v1/sections/sec-005",
-    "library/arxiv-math-9806163v1/sections/sec-006"
+    "library/arxiv-math-9806163v1/sections/sec-006",
+    "library/arxiv-math-9806163v1/sections/sec-007",
+    "library/arxiv-math-9806163v1/sections/sec-008",
+    "library/arxiv-math-9806163v1/sections/sec-009",
+    "library/arxiv-math-9806163v1/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -31,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9806163v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9806163v1.pdf",
     "source_sha256": "dba44975f29cb017beca484167ac9721da1751533cd1f20335c253b3c84727db",
     "pages": 23,

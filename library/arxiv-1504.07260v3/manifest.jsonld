@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1504.07260v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1504.07260v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1504.07260v3",
+  "title": "Fricke S-duality in CHL models",
   "contains": [
+    "library/arxiv-1504.07260v3/sections/sec-front-matter",
     "library/arxiv-1504.07260v3/sections/sec-000",
     "library/arxiv-1504.07260v3/sections/sec-001",
     "library/arxiv-1504.07260v3/sections/sec-002",
@@ -40,10 +41,12 @@
     "library/arxiv-1504.07260v3/sections/sec-026",
     "library/arxiv-1504.07260v3/sections/sec-027",
     "library/arxiv-1504.07260v3/sections/sec-028",
-    "library/arxiv-1504.07260v3/sections/sec-029"
+    "library/arxiv-1504.07260v3/sections/sec-029",
+    "library/arxiv-1504.07260v3/sections/sec-030",
+    "library/arxiv-1504.07260v3/sections/sec-031"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -53,7 +56,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1504.07260v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1504.07260v3.pdf",
     "source_sha256": "707cb014400a3f051998942233f468bfff970cb8c213a8b1eaf35753fe127330",
     "pages": 56,

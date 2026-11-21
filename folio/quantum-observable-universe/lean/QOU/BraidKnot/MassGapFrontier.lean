@@ -89,7 +89,7 @@ open QOU.Torsion QOU.AlgebraicSubstrate
     categorical source of `q`: the filtration asserts that every
     non-vacuum excitation carries at least the *mean* spectral weight
     of one crossing. -/
--- Ref: [manuscript] braids-and-knots/hecke-algebra-from-braiding.md
+-- Ref: [leitner2026] braids-and-knots/hecke-algebra-from-braiding.md
 theorem crossingEnergy_eq_eigenvalue_mean (q : ℝ) :
     minCrossingEnergy q = (q + (-q⁻¹)) / 2 := by
   unfold minCrossingEnergy
@@ -99,7 +99,7 @@ theorem crossingEnergy_eq_eigenvalue_mean (q : ℝ) :
     between the symmetric and antisymmetric channel eigenvalues is
     `q − (−q⁻¹) = q + q⁻¹ = [2]_q` — the quantum integer that
     normalises the Markov trace (`tr_M = V/[2]_q^{c−1}`). -/
--- Ref: [manuscript] braids-and-knots/hecke-algebra-from-braiding.md
+-- Ref: [leitner2026] braids-and-knots/hecke-algebra-from-braiding.md
 theorem crossing_eigenvalue_separation (q : ℝ) :
     q - (-q⁻¹) = q + q⁻¹ := by
   ring
@@ -121,7 +121,7 @@ class FiltrationBase (q : ℝ) (tms : ℕ → CategoricalTransferMatrix) : Prop 
 
     This is where the research content of S1c now lives: the
     conditional-expectation positivity argument supplies this field. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1c(i)
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1c(i)
 class TowerTransport (q : ℝ) (tms : ℕ → CategoricalTransferMatrix) : Prop where
   transport : ∀ n,
     (∀ k, (tms n).eigenvalues k ≠ 0 →
@@ -134,7 +134,7 @@ class TowerTransport (q : ℝ) (tms : ℕ → CategoricalTransferMatrix) : Prop 
     universally-quantified physical hypothesis is replaced by two
     strictly smaller named hypotheses, matching the shape of the
     workplan's preferred strategy (i). -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1c
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1c
 theorem crossingFiltration_of_base_and_transport
     {q : ℝ} (tms : ℕ → CategoricalTransferMatrix)
     [hb : FiltrationBase q tms] [ht : TowerTransport q tms] :
@@ -172,7 +172,7 @@ structure AxiomatizedYMWithGap where
     caveat every obstruction statement remains QOU-framework-
     conditional until an instance exists.  This class pins the exact
     field signature such a construction must satisfy. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §3
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §3
 -- Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
 class YMUniversality where
   /-- The structure map: axiomatized gapped YM ⟶ obstruction context. -/
@@ -185,7 +185,7 @@ class YMUniversality where
     *every* axiomatized gapped YM theory.  Proved sorry-free against
     the interface; its physical force is exactly conditional on the
     (open) universality instance. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §3
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §3
 theorem universality_transfers_obstruction [u : YMUniversality]
     (ym : AxiomatizedYMWithGap) {p : ℕ} (hp : Nat.Prime p) (hp3 : 3 < p) :
     ¬ (u.toContext ym).kappa_vanishes p := by

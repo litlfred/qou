@@ -8,6 +8,7 @@ pages: 21-22
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 Recall the statement:
 Theorem C: The image of the Biot–Savart operator is a proper subspace of the image of
@@ -26,8 +27,6 @@ within the subspace FK%HK%CG, which is precisely the image of curl.
 895
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 Alternatively, the formula ¹3A(V)5BS(V), which appeared as item ~4! on our list of
 Standard Information in Sec. III A, also tells us that the image of BS lies within the image of curl.
 Now it follows from Theorems B and B8 together that

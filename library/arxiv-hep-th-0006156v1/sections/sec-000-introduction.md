@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0006156v1
-doc_title: "arXiv:hep-th/0006156v1 20 Jun 2000"
+doc_title: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.975
+doc_brief: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well"
 ---
 The Liouville equation[@liouville] $$\label{liouville}
 \phi_{tt} -\phi_{xx}-4e^{-2\phi}=0$$ has plenty of important applications in Mathematics and Physics. In particular, it describes the surfaces of constant negative curvature and plays the indispensable role in uniformization theory of Riemannian surfaces [@poinc] (for some recent approach see [@takhtajan; @takhtajan1; @takhtajan2]).

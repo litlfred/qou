@@ -2,21 +2,91 @@
  "_schema": "library-summary/v1",
  "doc_id": "0406276v1",
  "source_sha256": "8fdf4b5950e8b5f5",
- "brief": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 2 sections: Front matter; References",
- "extended": "**The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE**\n\n*Dennis DeTurck and Herman Gluck*\n\n40 pp, 2 sections.\n\n**Outline.** Front matter; References",
+ "brief": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background.",
+ "extended": "**The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE**\n\n*Dennis DeTurck and Herman Gluck*\n\n40 pp, 16 sections.\n\n**Outline.** Front matter; 1 Linking integrals in S3 and H3 .; 2 Historical background.; 3 Organization of this report.; 4 Magnetic fields on S3 and H3 .; 5 Proof scheme for Theorem 2, formula (1).; 6 Proof scheme for Theorem 2, formula (2).; 7 Proof scheme for Theorem 2, formula (3).; 8 Maxwell's equations on S3 and H3 .; 9 Proof scheme for Theorem 1.; 10 Link, twist and writhe on S3 and H3 .; 11 Proof scheme for Theorem 5.; 12 Helicity of vector fields on S3 and H3 .; 13 Upper bounds for helicity in R3 , S3 and H3; 14 Spectral geometry of the curl operator in R; REFERENCES",
  "tokens": {
-  "brief": 26,
-  "extended": 41
+  "brief": 38,
+  "extended": 177
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-38"
+   "pages": "1-2"
   },
   {
-   "id": "sec-000-references",
-   "title": "References",
+   "id": "sec-000-1-linking-integrals-in-s3-and-h3",
+   "title": "Linking integrals in S3 and H3 .",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-historical-background",
+   "title": "Historical background.",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-3-organization-of-this-report",
+   "title": "Organization of this report.",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-4-magnetic-fields-on-s3-and-h3",
+   "title": "Magnetic fields on S3 and H3 .",
+   "pages": "7-12"
+  },
+  {
+   "id": "sec-004-5-proof-scheme-for-theorem-2-formula-1",
+   "title": "Proof scheme for Theorem 2, formula (1).",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-005-6-proof-scheme-for-theorem-2-formula-2",
+   "title": "Proof scheme for Theorem 2, formula (2).",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-006-7-proof-scheme-for-theorem-2-formula-3",
+   "title": "Proof scheme for Theorem 2, formula (3).",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-007-8-maxwells-equations-on-s3-and-h3",
+   "title": "Maxwell's equations on S3 and H3 .",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-008-9-proof-scheme-for-theorem-1",
+   "title": "Proof scheme for Theorem 1.",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-009-10-link-twist-and-writhe-on-s3-and-h3",
+   "title": "Link, twist and writhe on S3 and H3 .",
+   "pages": "24-28"
+  },
+  {
+   "id": "sec-010-11-proof-scheme-for-theorem-5",
+   "title": "Proof scheme for Theorem 5.",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-011-12-helicity-of-vector-fields-on-s3-and-h3",
+   "title": "Helicity of vector fields on S3 and H3 .",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-012-13-upper-bounds-for-helicity-in-r3-s3-and-h3",
+   "title": "Upper bounds for helicity in R3 , S3 and H3 .",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-013-14-spectral-geometry-of-the-curl-operator-in-r3",
+   "title": "Spectral geometry of the curl operator in R3 , S3 and H3 .",
+   "pages": "34-38"
+  },
+  {
+   "id": "sec-014-references",
+   "title": "REFERENCES",
    "pages": "38-40"
   }
  ],

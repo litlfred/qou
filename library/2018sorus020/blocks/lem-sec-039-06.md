@@ -1,0 +1,1 @@
+Let A : On v →On v a morphism such that det A̸ = 0. Working in the completion ˆOv if necessary, we deﬁne A≥0 = A, A≥i+1 = d dtA≥i restricted to H0(A≥i(0)) ⊗k[[t]] followed by the projection k[[t]]n−Pi k=0 rk →H1(A≥i(0)) ⊗k[[t]], and ri = dim ker A≥i(0). Then det(A) = t P ric, with c ∈k∗.

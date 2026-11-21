@@ -1,6 +1,6 @@
 ---
 doc_id: ojm27-03-04
-doc_title: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s)"
+doc_title: "Hyperbolic 3-manifolds with totally geodesic boundary"
 section_id: sec-001-1-preliminaries
 section_title: "Preliminaries"
 section_number: 1
@@ -8,6 +8,7 @@ pages: 3-11
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
 toc_source: inferred
+doc_brief: "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553)."
 ---
 We start with describing a main constituent element of hyperbolic 3-
 manifolds with boundaries, called a hyperbolic truncated tetrahedron with one ideal

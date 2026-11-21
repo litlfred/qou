@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/1104248094/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Coassociativity:",
-  "pageStart": 5,
-  "pageEnd": 5,
-  "text": "../sections/sec-002-3-coassociativity.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
+  "title": "Definitions of Hochschild and Cyclic Homology",
+  "pageStart": 4,
+  "pageEnd": 8,
+  "text": "../sections/sec-002-2-definitions-of-hochschild-and-cyclic-homology.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
   "provenance": "ingested"
 }

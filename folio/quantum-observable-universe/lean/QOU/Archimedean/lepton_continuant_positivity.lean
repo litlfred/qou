@@ -37,7 +37,7 @@ to the only readout the framework actually derives.  That is what makes the
 exclusion scope-(b) — resting on a proved invariant — rather than a failed
 search.
 
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md
 -/
 
 namespace QOU.Archimedean

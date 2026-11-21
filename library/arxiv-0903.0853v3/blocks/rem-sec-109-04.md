@@ -1,0 +1,1 @@
+7.4. — Applying the corollary to M∨⊗N implies that the map f 7→Ψ ◦f ◦Φ−1 −f has kernel Hom(M, N) (which is obvious) and that its cokernel is in one-to-one correspondance with Ext1(M, N), which is similar to the conclusion of theorem A.4.1. However, in this way, we do not get the identiﬁcation of the operations on extensions: this would be possible using [12, §6.3].

@@ -61,6 +61,7 @@ export default chapter({
       blocks: [
         "q-gl-conjecture-intro",
         "q-langlands-dual",
+        "q-oper",
         "q-gl-conjecture",
         "q-gl-obstruction-calc",
         "q-gl-obstruction-calc-proof",
@@ -76,7 +77,6 @@ export default chapter({
       label: "sec:q-opers",
       blocks: [
         "q-opers-intro",
-        "q-oper",
         "q-oper-hecke",
         "q-oper-hecke-proof",
       ],
@@ -138,6 +138,7 @@ export default chapter({
         // swap makes it a backward ref, no new cascade.
         "unitary-stability",
         "geometric-rh-exposition",
+        "adelic-critical-line-persistence",
       ],
     }),
     section({

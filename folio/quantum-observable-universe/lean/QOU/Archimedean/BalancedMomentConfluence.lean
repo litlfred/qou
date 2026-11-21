@@ -76,7 +76,7 @@ Base ring (§7c): the fibre algebra is generic `{K : Type*} [Field K]`
 `h²`-expansion class are wall-side `ℝ` (continuity, `Real.sqrt`,
 `Real.exp`/`Real.log`).
 
--- Ref: [manuscript] predicted-spectra, conj:schwinger-measure-computational-time;
+-- Ref: [leitner2026] predicted-spectra, conj:schwinger-measure-computational-time;
 --      computations/probes/qborel_confluence_pos_probe.py (C1, C2, C4);
 --      docs/audits/2026-07-25-qborel-confluence-pos-attack.md §1-§2;
 --      docs/audits/2026-07-25-balanced-moment-confluence-lean.md.

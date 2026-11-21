@@ -69,7 +69,7 @@ quantitative content is the single field `moment_eq_normalizer`,
 `N(n) = ∫₀^∞ sⁿ e^{−s} ς ds/s = ς·(n−1)!` at `n = m + 1` (index shifted to
 keep ℕ-subtraction out). An unproved primary conjecture is honestly
 represented by this content-bearing class with no instance. -/
--- Ref: [manuscript] docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md §5
+-- Ref: [leitner2026] docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md §5
 class BorelProperTimeIdentification {K : Type*} [CommRing K] [CharZero K]
     (ς : K) (N : ℕ → K) : Prop where
   /-- The normalizer is the `ς`-unit proper-time moment: `N (m+1) = ς · m!`. -/

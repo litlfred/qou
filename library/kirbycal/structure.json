@@ -8,14 +8,14 @@
   "pages": 22,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "mathematicae",
+  "title": "A Calculus for Framed Links in S^3",
   "authors_raw": "Robion Kirby*",
   "title_lines": [
    "Inventiones math. 45, 35- 56 (1978)",
@@ -41,13 +41,14 @@
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "mathematicae"
  },
  "toc": [],
  "toc_source": "undetermined",
- "toc_undetermined_reason": "29% of the 7 sections it would cut hold under 50 characters (more than 25%) \u2014 headings without bodies, not chapters",
+ "toc_undetermined_reason": "29% of the 7 sections it would cut hold under 50 characters (more than 25%) — headings without bodies, not chapters",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (29% of the 7 sections it would cut hold under 50 characters (more than 25%) \u2014 headings without bodies, not chapters): one section per page.",
+ "structure_note": "No outline, and no inferred contents could be trusted (29% of the 7 sections it would cut hold under 50 characters (more than 25%) — headings without bodies, not chapters): one section per page.",
  "figures": [
   {
    "kind": "figure",
@@ -292,8 +293,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 2946,
-   "n_words": 609,
+   "n_chars": 2942,
+   "n_words": 608,
    "label_start": "37",
    "label_end": "37"
   },
@@ -424,8 +425,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 1370,
-   "n_words": 295,
+   "n_chars": 1360,
+   "n_words": 293,
    "label_start": "48",
    "label_end": "48"
   },
@@ -436,8 +437,8 @@
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 1761,
-   "n_words": 350,
+   "n_chars": 1735,
+   "n_words": 344,
    "label_start": "49",
    "label_end": "49"
   },
@@ -460,8 +461,8 @@
    "level": 1,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 270,
-   "n_words": 63,
+   "n_chars": 259,
+   "n_words": 61,
    "label_start": "51",
    "label_end": "51"
   },
@@ -552,6 +553,7 @@
    "items": []
   },
   "sections": 22,
-  "chars_total": 34679
+  "chars_total": 34628,
+  "furniture_lines_stripped": 8
  }
 }

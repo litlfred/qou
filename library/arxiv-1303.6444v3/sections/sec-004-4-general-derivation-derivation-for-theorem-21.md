@@ -7,10 +7,11 @@ section_number: 4
 pages: 5-7
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
-doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.988
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.985
+doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
 ---
 []{#sec: general label="sec: general"} We wish to obtain bounds on virial coefficients using those which come from cluster coefficients, in order to gain an estimate of the lower bound for the radius of convergence of the virial expansion. The derivation loosely follows the method used by Ruelle in [@R69] and that of Lebowitz and Penrose in [@LPen64]. The starting point is the cluster expansion bound, which is given in the form: $$|nb_n| \leq a \frac{n^{n-1}}{n!}b^n \label{generalcluster}$$ Where $a$ and $b$ are positive functions of temperature defined by the particular bound we use.
 

@@ -1,0 +1,43 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5d0be0307385",
+          "ts": "6ad1f5aadf67",
+          "lean": "390643eca5b8",
+          "lean_statement": "cda3fe87316b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.982Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "Lean (stratum_eq_zero_of_gt, tower_stable, tower_total, kstar_eq_of_max_in_supp, phiTrunc_succ_ne, no_stable_phi_tower) is over an abstract depth function. The link tau(E_k x) = sum y_lambda chi_lambda(x) and item 4's KL facts (a <= binom(n,2), equality only at (n)) are cited, not formalised; the proof says so, the statement does not."
+      },
+      {
+        "field_hash": {
+          "md": "35ddcb40ecfb",
+          "ts": "6ad1f5aadf67",
+          "lean": "390643eca5b8",
+          "lean_statement": "cda3fe87316b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-17",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-18T04:05:50.293Z",
+        "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
+        "evidence": "Abstract-depth Lean already flagged (items 1-3 hold for any depth); item 4 now flags the cited KL cell facts."
+      }
+    ]
+  },
+  "updated_at": "2026-11-18T04:05:50.293Z"
+}

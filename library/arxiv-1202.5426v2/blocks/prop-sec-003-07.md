@@ -1,0 +1,1 @@
+3. For p ∈(1, ∞), q ∈[1, ∞], s, t ≥0 with 0 < s + t < 1 there is a θ > 0 such that we have for any f ∈Lp,q(R), Λ > 2, and r > 0 ∥|D|s f∥(p,q),Br ≲ sup ϕ∈C∞ 0 (BΛ2r), ∥|D|tϕ∥(p′,q′)≤1 Z f|D|s+tϕ + r−sΛ−θ ∥f∥(p,q);BΛr + r−sΛ−θ ∞ X l=1 2−θl∥f∥(p,q),Al Λ,r.

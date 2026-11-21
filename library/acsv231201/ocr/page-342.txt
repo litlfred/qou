@@ -1,0 +1,33 @@
+324 Multiple point asymptotics
+
+transverse multiple point, and the local intersection lattice for both the divisors
+and their tangent planes is a Boolean lattice of rank 2. 4
+
+It is important to work over the correct field when analyzing multiple points.
+
+Figure 10.14 A homogeneous polynomial whose zero set is five lines.
+
+Example 10.51. Let f(x,y) = 2y° + y*x— 10y3x? — Sy?x3 + 8yx4 + 35°. This
+homogeneous polynomial has a zero set consisting of five distinct lines through
+the origin whose slopes are the five roots (all real) of the quintic 2° + 14 -—
+103° — 52? + 8t + 3. This quintic does not factor over the rationals, so one must
+work over the splitting field of f to obtain the necessary factorization. This
+can be handled in many computer algebra systems, but is more complicated
+than factoring directly over the rationals. See also Proposition 10.53 below for
+useful criteria to determine multiple and arrangement points. 4
+
+Effective computation of multiple points
+
+The foregoing discussion being of a theoretical nature, we pause to consider
+how the classification of multiple points might be computed. When given a
+polynomial Q, one imagines being able to “look at its zero set” to see by in-
+spection whether it is locally the union of smooth sheets, but this is difficult
+when the dimension is high, the polynomial has many terms, or the procedure
+is automated. What, then, is an effective way to determine whether any of the
+singular points of Q is in fact a multiple point?
+
+In many combinatorial applications, Q factors into polynomials with non-
+zero gradients at the origin, and Proposition 10.48 can be directly applied. The
+difficulty comes when an irreducible polynomial factor Q; of Q has vanishing
+gradient: it is possible that the gradient of Q; vanishes at p because p is not
+a multiple point, but it could also happen because Q; is irreducible in C[z]

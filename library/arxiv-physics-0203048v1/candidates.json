@@ -3,12 +3,13 @@
  "doc_id": "arxiv-physics-0203048v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "47204f32280e91a36b4822807acf6d0bd7ccac42b400750746366c3e4782951b",
   "file": "0203048v1.pdf"
  },
  "provenance": {
-  "title": "Towards a third-order topological invariant for magnetic \ufb01elds",
+  "title": "Towards a third-order topological invariant for magnetic fields",
   "authors": "Gunnar Hornig and Christoph Mayer",
   "arxiv": {
    "id": "physics/0203048",
@@ -20,25 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "theorem": 1
-  },
-  "formalization_candidates": 1
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "Let B1, B2 and B3 be three magnetic \ufb01elds with potentials Ai satisfying",
-   "section_file": "sections/sec-002-3-a-third-order-invariant-from-the-chern-simons.md",
-   "section_title": "A third-order invariant from the Chern-Simons three-for m",
-   "pages": "4-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

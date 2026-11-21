@@ -2,192 +2,52 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1712.08953v1",
  "source_sha256": "005e0b1ad63c173e",
- "brief": "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the",
- "extended": "**REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY**\n\n*JONATHAN BRUNDAN*\n\n57 pp, 36 sections.\n\n**Abstract.** The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the same way that the Temperley-Lieb category underpins the Jon es polynomial. In this article, we develop its representation theory using a h ighest weight theory ap- proach. This allows us to determine the Grothendieck ring of its additive Karoubi envelope for all possible choices of parameters, including the (already well-known) semisimple case, and all non-semisimple situations. Then w e construct a graded lift of OS(z, t ) by realizing it as a 2-representation of a Kac-Moody 2-cate gory. W e also discuss the degenerate analog of OS(z, t ), which is the oriented Brauer category OB(δ).\n\n**Outline.** 1 Introduction; 1.1 We begin by recalling brieﬂy the deﬁnition; 2 J. BRUNDAN; 1.2 Let us state some foundational results abo; 1.3 The next theorem gives bases for morphism ; 4 J. BRUNDAN; 1.4 Let Hr be the Iwahori-Hecke algebra of the; 0 There is a homomorphism; 1.5 We are interested here instead in the deca; 6 J. BRUNDAN; 1.7 For the remainder of the introduction , we; 8 J. BRUNDAN; 1.8 Suppose either that q is not a root of uni; 1.9 There is a parallel story in the degenerat; 10 J. BRUNDAN; 12 J. BRUNDAN; 1.10 The remainder of the article is organized; 2 Generators and relations",
+ "brief": "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an oriented link, in the same",
+ "extended": "**REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY**\n\n*JONATHAN BRUNDAN*\n\n57 pp, 8 sections.\n\n**Abstract.** The oriented skein category OS(z, t) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an oriented link, in the same way that the Temperley-Lieb category underpins the Jones polynomial. In this article, we develop its representation theory using a highest weight theory ap- proach. This allows us to determine the Grothendieck ring of its additive Karoubi envelope for all possible choices of parameters, including the (already well-known) semisimple case, and all non-semisimple situations. Then we construct a graded lift of OS(z, t) by realizing it as a 2-representation of a Kac-Moody 2-category. We also discuss the degenerate analog of OS(z, t), which is the oriented Brauer category OB(δ).\n\n**Outline.** Front matter; 1 Introduction; 2 Generators and relations; 4 The affine oriented skein category; 5 Shortest word theory; 6 Branching rules and characters; 7 Categorical action; 8 Modifications in the degenerate case",
  "tokens": {
-  "brief": 48,
-  "extended": 361
+  "brief": 49,
+  "extended": 266
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-11-we-begin-by-recalling-brieﬂy-the-deﬁnition-of",
-   "title": "We begin by recalling brieﬂy the deﬁnition of the category FOT of framed oriented",
-   "pages": "1-2"
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-12"
   },
   {
-   "id": "sec-002-2-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-12-let-us-state-some-foundational-results-about",
-   "title": "Let us state some foundational results about OS (z,t ). The ﬁrst one gives an",
-   "pages": "2-3"
-  },
-  {
-   "id": "sec-004-13-the-next-theorem-gives-bases-for-morphism-spa",
-   "title": "The next theorem gives bases for morphism spaces. Again, this is du e to Turaev",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-005-4-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-006-14-let-hr-be-the-iwahori-hecke-algebra-of-the-sy",
-   "title": "Let Hr be the Iwahori-Hecke algebra of the symmetric group Sr with quadratic",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-007-0-there-is-a-homomorphism",
-   "title": "There is a homomorphism",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-008-15-we-are-interested-here-instead-in-the-decateg",
-   "title": "We are interested here instead in the decategoriﬁcation of OS (z,t ). There are",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-009-6-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-010-17-for-the-remainder-of-the-introduction-we-assu",
-   "title": "For the remainder of the introduction , we assume that k is a ﬁeld and z =q−q−1",
-   "pages": "6-8"
-  },
-  {
-   "id": "sec-011-8-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-012-18-suppose-either-that-q-is-not-a-root-of-unity",
-   "title": "Suppose either that q is not a root of unity and e = 0, or q2 is a primitive eth",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-013-19-there-is-a-parallel-story-in-the-degenerate-c",
-   "title": "There is a parallel story in the degenerate case z = 0. In this case, relation (S)",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-014-10-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "10-12"
-  },
-  {
-   "id": "sec-015-12-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-016-110-the-remainder-of-the-article-is-organized-as",
-   "title": "The remainder of the article is organized as follows. Sections 2 and 3 a re",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-017-2-generators-and-relations",
+   "id": "sec-001-2-generators-and-relations",
    "title": "Generators and relations",
-   "pages": "12-14"
+   "pages": "12-21"
   },
   {
-   "id": "sec-018-14-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-019-c-the-relations-i-and-s-follow-from-1-relations",
-   "title": "The relations (i) and (S) follow from (1). Relations (ii), (iii), (iv), (vi) and (vii)",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-020-16-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-021-3-connection-to-repuqgln",
-   "title": "Connection to RepUq(gln)",
-   "pages": "16-18"
-  },
-  {
-   "id": "sec-022-18-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "18-20"
-  },
-  {
-   "id": "sec-023-20-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "20-21"
-  },
-  {
-   "id": "sec-024-c-due-to-the-relation-d-in-oszt-the-morphism-hom",
-   "title": "Due to the relation (D) in OS(z,t ), the morphism ∈ HomˆOS(z,t)(∅, ∅ ) maps to",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-025-4-the-affine-oriented-skein-category",
+   "id": "sec-002-4-the-affine-oriented-skein-category",
    "title": "The affine oriented skein category",
-   "pages": "21-22"
+   "pages": "21-25"
   },
   {
-   "id": "sec-026-22-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "22-24"
-  },
-  {
-   "id": "sec-027-24-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "24-25"
-  },
-  {
-   "id": "sec-028-5-shortest-word-theory",
+   "id": "sec-003-5-shortest-word-theory",
    "title": "Shortest word theory",
-   "pages": "25-26"
+   "pages": "25-36"
   },
   {
-   "id": "sec-029-26-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "26-28"
-  },
-  {
-   "id": "sec-030-28-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "28-30"
-  },
-  {
-   "id": "sec-031-30-j-brundan",
-   "title": "J. BRUNDAN",
-   "pages": "30-36"
-  },
-  {
-   "id": "sec-032-6-branching-rules-and-characters",
+   "id": "sec-004-6-branching-rules-and-characters",
    "title": "Branching rules and characters",
    "pages": "36-46"
   },
   {
-   "id": "sec-033-7-categorical-action",
+   "id": "sec-005-7-categorical-action",
    "title": "Categorical action",
    "pages": "46-54"
   },
   {
-   "id": "sec-034-8-modifications-in-the-degenerate-case",
+   "id": "sec-006-8-modifications-in-the-degenerate-case",
    "title": "Modifications in the degenerate case",
-   "pages": "54-56"
-  },
-  {
-   "id": "sec-035-references",
-   "title": "References",
-   "pages": "56-57"
+   "pages": "54-57"
   }
  ],
  "provenance": {

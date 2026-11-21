@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/pjm-v161-n1-p02-p/sections/sec-054",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "i f p > 4 , (σισ2)",
+  "pageStart": 82,
+  "pageEnd": 92,
+  "contains": [
+    "library/pjm-v161-n1-p02-p/blocks/prose-sec-054",
+    "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-01",
+    "library/pjm-v161-n1-p02-p/blocks/rem-sec-054-02",
+    "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-03",
+    "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-04",
+    "library/pjm-v161-n1-p02-p/blocks/rem-sec-054-05",
+    "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-06",
+    "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-07",
+    "library/pjm-v161-n1-p02-p/blocks/rem-sec-054-08",
+    "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-09",
+    "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "provenance": "ingested"
+}

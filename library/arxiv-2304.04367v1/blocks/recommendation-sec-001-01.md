@@ -1,1 +1,0 @@
-Fundamentally, the angular modulations, both in polar and azimuthal directions, originate from the total helicity of the Λγ = 0, ±2 two-photon system, which must be transferred to the orbital angular momentum of the e+e−pair [2, 4].

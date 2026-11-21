@@ -1,4 +1,4 @@
-The $q$-weighted method ([derivation chain](#rem:qvalue-derivation-chain)) predicts $\beta^-$ decay $Q$-values from $q$ alone, with no fitted parameters. Every figure in the first three paragraphs below was obtained under the excised Markov convention C, $z = q^{1/2}/(q+1)$, by the deprecated float64 producer `fsh-guts/deprecated/computations/qvalue-representation-theory.py`. They are recorded here as the convention-C output of that method. Under the canonical convention D, $z = q^3/(q^2+1)$, they are not reproduced; the convention-D values are in the [interpretation table](#rem:spectral-decomposition-qvalue-interpretation).
+The $q$-weighted method predicts $\beta^-$ decay $Q$-values from $q$ alone, with no fitted parameters. Every figure in the first three paragraphs below was obtained under the excised Markov convention C, $z = q^{1/2}/(q+1)$, by a float64 implementation. They are recorded here as the convention-C output of that method. Under the canonical convention D, $z = q^3/(q^2+1)$, they are not reproduced; the convention-D values are in the [interpretation table](#rem:spectral-decomposition-qvalue-interpretation).
 
 **Predicted vs observed $Q$-values (convention C, $q$-weighted method).**
 
@@ -12,7 +12,7 @@ For ${}^{90}\mathrm{Sr}$ the convention-C bare prediction $\mathcal{Q}_{\mathrm{
 
 **Convention-D status.**
 
-The convention-D table recomputes the corollary's bare term and combined formula. It does not recompute the $q$-weighted stage, which weights the unbinding and rebinding channels by $q$ and $q^{-1}$; that stage has not been re-derived under convention D. Across six decays the convention-D bare term misses by $8$–$98\%$ and the combined formula by $1$–$100\%$. No convention-D replacement for the Pauli branch has been derived. The convention-D values come from the producer `computations/spectral_decomposition_qvalue_d.py` and its witness `computations/spectral-decomposition-qvalue-d.witness.json`.
+The convention-D table recomputes the corollary's bare term and combined formula. It does not recompute the $q$-weighted stage, which weights the unbinding and rebinding channels by $q$ and $q^{-1}$; that stage has not been re-derived under convention D. Across six decays the convention-D bare term misses by $8$–$98\%$ and the combined formula by $1$–$100\%$. No convention-D replacement for the Pauli branch has been derived.
 
 **Method.**
 

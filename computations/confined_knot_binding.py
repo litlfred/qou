@@ -36,6 +36,16 @@ from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
 z = q**3 / (q**2 + 1)
 
+# OWNER RULING 2026-11-20 (PR #8590): this V-hat deliberately keeps the
+# pre-convention-D W_sym/W_std/W_alt (q-Plancherel) mixture. The 11-18 ruling
+# moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+# the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+# (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
 # Wedderburn weights (exact symbolic form)
 q2 = q**2
 denom_w = q2**2 + 4*q2 + 1
@@ -281,6 +291,7 @@ w.set_content_block("prop:confined-knot-binding")
 w.add_parameter("q", q)
 w.add_parameter("h", h)
 w.add_parameter("z", z)
+w.add_parameter("vhat_weights", VHAT_WEIGHTS_LABEL)
 w.add_parameter("W_sym", W_SYM)
 w.add_parameter("W_std", W_STD)
 w.add_parameter("W_alt", W_ALT)

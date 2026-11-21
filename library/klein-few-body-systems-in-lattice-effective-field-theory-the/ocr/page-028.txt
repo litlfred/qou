@@ -1,0 +1,57 @@
+Chapter 3 Nuclear Lattice Effective Field Theory
+
+b is a smearing parameter and n is chosen such that the smearing starts contributing at O(q?"), which
+is the truncation order of the effective theory. A similar smearing takes place in QCD where it is used
+to reduce fluctuations and to improve the signal of correlation functions [2]. Furthermore, it is used in
+continuum effective field theory to render ultraviolet divergences finite [22, 53, 74]. The smearing of
+the contact interaction via local regulators increases the description of some partial waves, but it may
+decrease the prediciton in other channels. The reason is that the antisymmetry argument for the reduction
+of possible interaction terms does not hold anymore and as such one must use the local regularization
+carefully [75]. E.g., the contact interaction in Eq. (2.17) does not act on P waves due to the antisymmetry
+of P waves but a smeared contact interaction according to Eq. (3.1) contributes to the P waves. Hence,
+the smearing operators should be implemented such that it only projects on S waves.
+
+Beside the contact interaction, we have also long-range interactions at leading order. Before the modern
+formulation of an effective field theory, one already assumed the one-pion exchange as a central part of
+the theory going back to Yukawa [76]. Obviously, a cutoff is necessary due to the singular structure at the
+origin which was difficult to explain before the full understanding of effective field theories. An early
+work on the one-pion exchange, the cutoff dependence and deuteron observables can be found in [77].
+We consider the one-pion-exchange potential in its continuum form,
+
+22 2s 2
+Ja %1°992'd, 5
+
+7 (@q)=- Ft. (3.4)
+‘OPEP ae P+ we 1°T
+
+For example, projected on the 's 9 channel in position space, the potential reads
+
+2 2
+
+'s _ Mr GA exp(-M,r) 4a.
+Vor = Teg | 3) e)
+
+Here, r = |?| is the radial distance between the two particles. Obviously, such a potential is divergent
+at the origin making a regulator necessary. Moreover, the short-range physics should be completely
+described by short-range terms and their respective low-energy coupling constants constructed according
+to the rules of EFT. A standard smearing in momentum space would produce oscillations in the potential
+for very large momenta. These oscillations can be avoided by more complicated momentum space
+smearing functions [78] or by using position space regulators. Such a regulator is
+
+2\."
+Jiong—range(") = ! _ exe{-5]| > (3.6)
+
+where R is a coordinate-cutoff parameter reflecting the distinction between short- and long-range physics.
+The exponent n should be chosen such that the singularity vanishes and the fits are robust. In Fig. 3.1 we
+show a continuum-regularized potential for R = 0.8,..., 1.2 fm and n = 6 in the "Sy channel. Such a
+scheme regularizes the OPEP to zero in the origin, and hence, the whole interaction is described by the
+short-range potential terms. On the lattice we firstly have an inherent natural hard regulator in momentum
+space by the lattice spacing as A = /a which is chosen as a = 1.97 fm, a = 1.32 fm and a = 0.98 fm in
+this subsection. Secondly, the discretization scheme itself may serve as a regulator as the momentum can
+be discretized in different schemes. We show the OPEP for for three different schemes. The first scheme
+uses a very basic discretization using trigonometric functions in momentum space. In the second scheme
+we improve it by using a superposition of trigonometric functions whereby in the last scheme we use the
+exact momentum on the lattice. For example, the lattice momentum component v(p,) in the numerator
+is discretized as v(p;) = sin(p)), v(p)) = 4/3 sin(p;) — 1/6 sin(2p;), and v(p;) = mod(p; + 2, 2m) — 2,
+
+22

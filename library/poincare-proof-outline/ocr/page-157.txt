@@ -1,0 +1,69 @@
+moreover
+have cor (Re ?x) = ?x
+using complex-of-real-Re <is-real 2x» by blast
+hence z = of-complex (cor (Re ?x))
+using <x € unit-disc)
+by (metis inf-notin-unit-disc of-complex-to-complex)
+moreover
+have cor (Re ?y) = ?y
+using complex-of-real-Re <is-real ?y» by blast
+hence y = of-complex (cor (Re ?y))
+using <y € unit-disc)
+by (metis inf-notin-unit-disc of-complex-to-complex)
+moreover
+have cor (Re ?B) = ?B
+using complez-of-real-Re ‘is-real (to-complex B)» by blast
+hence B = of-complex (cor (Re ?B))
+using «B € unit-discy
+by (metis inf-notin-unit-disc of-complex-to-complex)
+ultimately
+show poincare-between « B y
+using <is-real (to-complex B)) «x € unit-disc» «y € unit-disc» «B € unit-disc»
+using poincare-between-z-axis-uvwlof Re (to-compler x) Re (to-complez B) Re (to-complex y)]
+by (smt Re-complez-of-real arg-0-iff poincare-between-nonstrict(1) rcis-cmod-Arg rcis-zero-arg unit-disc
+qed
+qed
+qed
+qed
+thus ?thesis
+using False «p XO» «w YO» * «YO € unit-discy (XO € unit-discy
+by auto
+qed
+qed
+qed
+
+~cmod-lt-1)
+
+11.8 Limiting parallels axiom
+Auxiliary definitions
+
+definition poincare-on-line where
+poincare-on-line p a b <—+ poincare-collinear {p, a, b}
+
+definition poincare-on-ray where
+poincare-on-ray p a b +—> poincare-between a p b V poincare-between a b p
+
+definition poincare-in-angle where
+poincare-in-angle pa bc+<—+
+bAaNbACA PF DbHA (A TE unit-disc. poincare-between azc\«#aA\ «cA poincare-on-ray p b zx)
+
+definition poincare-ray-meets-line where
+poincare-ray-meets-line a b c d <—+ (4 a € unit-disc. poincare-on-ray x a b A poincare-on-line x c d)
+
+All points on ray are collinear
+
+lemma poincare-on-ray-poincare-collinear:
+assumes p € unit-disc and a € unit-disc and b € unit-disc and poincare-on-ray p a b
+shows poincare-collinear {p, a, b}
+using assms poincare-between-poincare-collinear
+unfolding poincare-on-ray-def
+by (metis insert-commute)
+
+H-isometries preserve all defined auxiliary relations
+
+lemma unit-disc-fiz-preserves-poincare-on-line [simp]:
+assumes unit-disc-fix M and p € unit-disc a € unit-disc b € unit-disc
+shows poincare-on-line (moebius-pt M p) (moebius-pt M a) (moebius-pt M b) — poincare-on-line p a b
+using assms
+unfolding poincare-on-line-def
+by auto

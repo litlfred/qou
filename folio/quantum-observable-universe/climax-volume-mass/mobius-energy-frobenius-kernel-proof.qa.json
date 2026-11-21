@@ -612,7 +612,7 @@
           "in_degree": 0,
           "cone_size": 7,
           "depth": 3,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -916,6 +916,22 @@
         "notes": "Logical transitions in the derivation of '**Proof.**' are sound; no non-sequiturs detected.",
         "evidence": "folio/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel-proof.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ac3666d73a05",
+          "ts": "50fbd5420a7d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:12.614Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] The proof restates the displayed limit; nothing computes tr(Δ(γ(s)) ⊗ Δ(γ(t))) or shows a Killing-form pairing produces an inverse distance squared. Circular."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1532,6 +1548,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:12.614Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

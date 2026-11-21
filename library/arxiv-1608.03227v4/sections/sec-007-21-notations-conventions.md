@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1608.03227v4
-doc_title: "January 30, 2018"
+doc_title: "Knot homology and sheaves on the Hilbert scheme of points on the plane"
 section_id: sec-007-21-notations-conventions
 section_title: "Notations, conventions"
 section_number: 2.1
 pages: 8-8
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
-doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.979
+latex_coverage_ratio: 1.0
+doc_brief: "Knot homology and sheaves on the Hilbert scheme of points on the plane — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on the"
 ---
 ### 
 

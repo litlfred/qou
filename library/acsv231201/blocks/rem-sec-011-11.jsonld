@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/acsv231201/blocks/rem-sec-011-11",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 58,
+  "pageEnd": 69,
+  "text": "rem-sec-011-11.md",
+  "derivedFrom": "library/acsv231201/sections/sec-011",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-011-d-finite-generating-functions-and-diagonals.md (p. 58-69)",
+    "claim_id": "acsv231201#rem-sec-011-11"
+  }
+}

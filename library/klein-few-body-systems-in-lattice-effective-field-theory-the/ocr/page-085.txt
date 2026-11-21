@@ -1,0 +1,41 @@
+CHAPTER 7
+
+Conclusions and Perspectives
+
+Some limitations and challenges of nuclear lattice effective field theory have been studied in this thesis.
+For a better understanding and a link to continuum nuclear effective theory, we have done a detailed
+investigation into the connection between lattice spacing artifacts, cutoff effects and physical observables
+of the effective theory for few-body systems in nuclear physics. This analysis helps to bridge the gap
+between the lattice community and the continuum nuclear effective theory community and as such
+enhances the acceptance of this rather new approach for challenging calculation in the analysis of nuclear
+structure on the one hand and nuclear scattering on the other hand.
+
+After a thorough introduction into continuum and lattice nuclear effective field theory as well as
+scattering theory in the infinite and finite volume we had a look at the two-nucleon problem at leading
+order in Chap. 4. We calculated the binding energy and S wave effective range expansion parameters
+for different lattice spacings in the range of a ~ 2 fm, A ~ 314 MeV toa ~ 0.5 fm, A ~ 1240 MeV.
+The lattice volume was chosen such that the finite volume extrapolation formulas for bound states as
+well as effective range could be used. The latter value of A ~ 1240 MeV is beyond the cutoff of nuclear
+effective field theory and as such it is a good test for the decoupling of the lattice cutoff and the soft
+regulator acting over and above on all nucleon-nucleon potentials. Firstly, we did the calculation in
+the framework of pionless theory whereas in the second part we included pions as well. The contact
+interaction was smeared to increase the stability and predictability of S wave scattering properties. The
+one-pion exchange potential has been regularized using a position space regularization scheme to avoid
+unphysical effects caused by the short-range singularity of the potential. It was shown that one can
+successfully decouple the physical meaning of the lattice spacing by introducing a smooth cutoff in all
+potential terms. Hence, the physics of the two-nucleon system became independent of the lattice spacing
+a, or the hard cutoff A, respectively, and only depended on the soft regulator, which was fitted to physical
+properties.
+
+The main project of this thesis was given in Chap. 5 where we did an analysis of the 2N, 3N and
+4N system to reproduce the well-known Tjon band. Therefore we put the complete next-to-next-to-
+leading order nuclear effective theory framework on the lattice. The parameters of the 2N sector
+were fitted to Nijmegen phase shift data for S and P waves as well as the deuteron binding energy
+Ex = —2.224575(9) MeV. The remaining 3N parameter was fitted to the triton binding energy F3,, =
+—8.4820(1) MeV. We used exact methods in the 2N and 3N sector, albeit we had to rely on Monte Carlo
+methods in the 4N sector. We repeated the procedure for three distinct lattice spacings a = 1.97 fm,
+a = 1.64 fm and a = 1.32 fm. In the 2N sector, we have found a general improvement for large momenta
+by decreasing the lattice spacing while the physics is lattice spacing independent for low momenta. Some
+deterioration particularly for the 's 0 description and the finest lattice spacing could be traced back to the
+
+79

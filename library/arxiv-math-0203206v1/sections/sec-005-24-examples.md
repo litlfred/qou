@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.696
 latex_coverage_ratio: 0.989
+doc_brief: "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein"
 ---
 The examples discussed below are treated in depth in [@ES]. The translation into the framework of aqgis straightforward and is recommended as an exercise.
 

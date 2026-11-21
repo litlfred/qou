@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-013",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Acknowledgments",
-  "pageStart": 33,
+  "title": "Conclusion",
+  "pageStart": 32,
   "pageEnd": 33,
-  "text": "../sections/sec-013-acknowledgments.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
+  "text": "../sections/sec-013-7-conclusion.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
   "provenance": "ingested"
 }

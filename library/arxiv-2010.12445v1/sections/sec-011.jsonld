@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2010.12445v1/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Comparing vector bundles",
+  "pageStart": 23,
+  "pageEnd": 25,
+  "contains": [
+    "library/arxiv-2010.12445v1/blocks/prose-sec-011",
+    "library/arxiv-2010.12445v1/blocks/prop-sec-011-01",
+    "library/arxiv-2010.12445v1/blocks/conj-sec-011-02",
+    "library/arxiv-2010.12445v1/blocks/rem-sec-011-03",
+    "library/arxiv-2010.12445v1/blocks/prop-sec-011-04",
+    "library/arxiv-2010.12445v1/blocks/conj-sec-011-05",
+    "library/arxiv-2010.12445v1/blocks/prop-sec-011-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2010.12445v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2010.12445v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Finite dimensional representations of the quantum analog of the enveloping algebra of a complex simple Lie algebra",
+  "contains": [
+    "library/rosso-1988-cmp-117-581/sections/sec-front-matter",
+    "library/rosso-1988-cmp-117-581/sections/sec-000",
+    "library/rosso-1988-cmp-117-581/sections/sec-001",
+    "library/rosso-1988-cmp-117-581/sections/sec-002",
+    "library/rosso-1988-cmp-117-581/sections/sec-003",
+    "library/rosso-1988-cmp-117-581/sections/sec-004",
+    "library/rosso-1988-cmp-117-581/sections/sec-005",
+    "library/rosso-1988-cmp-117-581/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "rosso-1988-cmp-117-581",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Finite dimensional representations of the quantum analog of the enveloping algebra of a complex simple Lie algebra",
+      "basis": "Printed title on page 1 (M. Rosso, Commun. Math. Phys. 117, 581-593, 1988); the extracted title carried the journal header. Full paper; supersedes the first-page-only entry rosso-1988-cmp-117-581-firstpage",
+      "extracted_title": "Commun. Math. Phys. 117, 581^593 (1988) © Springer- Verlag 1988 Finite Dimensional Representations of the Quantum Analog of the Enveloping Algebra of a Complex Simple Lie Algebra",
+      "corrected_on": "2026-11-15",
+      "extracted": "Finite dimensional representations of the quantum analog of the enveloping algebra of a complex simple Lie algebra"
+    },
+    "source_file": "rosso-1988-cmp-117-581.pdf",
+    "source_sha256": "fa26b92fbe64acce475470376e1e8c54019b5296b846d77f8580c28a163fc793",
+    "pages": 14,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

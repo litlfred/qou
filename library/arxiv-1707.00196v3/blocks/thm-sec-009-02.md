@@ -1,1 +1,1 @@
-Let R ∈R0(V ) with Thoma parameters (α, β). Then we have
+Let R, S ∈R0(V ). The following are equivalent: i) R ∼S, ii) ρR∗= ρS∗, iii) ρR ≈u ρS.

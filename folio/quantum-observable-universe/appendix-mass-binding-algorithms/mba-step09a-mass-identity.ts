@@ -4,6 +4,10 @@ export default algorithm({
   authorNotes: [
     {
       kind: "note",
+      body: "An earlier version of the q₀ pin carried a fitted Habiro 4-loop dressing; it was dropped 2026-07-04.",
+    },
+    {
+      kind: "note",
       date: "2026-08-08",
       body:
         "Working-channel pointers pulled out of the published prose for the " +

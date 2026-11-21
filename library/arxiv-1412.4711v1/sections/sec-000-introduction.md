@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1412.4711v1
-doc_title: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT"
+doc_title: "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-3
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
-doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.915
+latex_coverage_ratio: 0.973
+doc_brief: "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
 ---
 Representation varieties of finitely presented  groups into Lie groups has been studied since a long time.  A recent by Sikora paper with many references
 is  \cite{Sikora}.  In this paper we concentrate on the representations of 3-manifold groups in $\PGL(3,\bC)$ or $\SL(3,\bC)$.

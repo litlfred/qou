@@ -4,13 +4,14 @@ doc_title: "Connections on Non-Abelian Gerbes and their Holonomy"
 section_id: sec-005-24-transport-functors
 section_title: "Transport Functors"
 section_number: 2.4
-pages: 10-11
+pages: 10-12
 source_pdf: 0808.1923v3.pdf
 source_sha256: 3c53f7c0fd9acf89
-doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transp ort of connections on gerbes."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.604
-latex_coverage_ratio: 0.977
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 0.993
+doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes."
 ---
 \label{sec3_5}
 \label{sec:smoothnessconditions}

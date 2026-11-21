@@ -74,7 +74,7 @@ Python witness / audit, downstream of the substrate→archimedean wall.
 
 ## References
 
-- [manuscript] `conj:qdifference-kernel-prolongation-symbol`; the super-DM /
+- [leitner2026] `conj:qdifference-kernel-prolongation-symbol`; the super-DM /
   Berezinian scaffold `QOU.Brings.SuperDMBerezinian` (`qCubicGradedSplit`, PR #4140,
   off-main); `QOU.QBeta.OddDecayWeightParity`;
   `QOU.QBeta.BerezinianSelfAdjointCrossTerm`;
@@ -181,7 +181,7 @@ fit. -/
     `B_geom` (that derivation IS the open keystone).  Discharging this by *choosing*
     `B_geom` to hit `κ_phys` would be the forbidden fit and is explicitly not done. -/
 -- Ref: [donagi-markman1994] https://arxiv.org/abs/alg-geom/9408004 §1
--- Ref: [manuscript] conj:qdifference-kernel-prolongation-symbol;
+-- Ref: [leitner2026] conj:qdifference-kernel-prolongation-symbol;
 --      QOU.Brings.SuperDMBerezinian (qCubicGradedSplit); qou-jqof;
 --      docs/audits/2026-08-01-a3-magnitude-super-berezinian-cross-sector.md
 class A3CrossTermMagnitudeClosed {R : Type*} [Field R]

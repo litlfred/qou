@@ -3,13 +3,14 @@
  "doc_id": "arxiv-math-ph-0405028v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "90a0e4ba456988d608c908778e7474b47792557e4efaba699484ac7ea9cca35a",
   "file": "0405028v2.pdf"
  },
  "provenance": {
-  "title": "ON THE QUANTUM INV ARIANT FOR THE BRIESKORN HOMOLOGY SPHERES KAZUHIRO HIKAMI",
-  "authors": null,
+  "title": "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES",
+  "authors": "KAZUHIRO HIKAMI",
   "arxiv": {
    "id": "math-ph/0405028",
    "version": "2",
@@ -20,39 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "corollary": 1,
-   "theorem": 1
-  },
-  "formalization_candidates": 2
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "13",
-   "name": null,
-   "statement": "We have an asymptotic behavior of the Witten invariant (1.1) for the Brieskorn",
-   "section_file": "sections/sec-000-s-matrix-and-the-reidemeister-torsion.md",
-   "section_title": "S-matrix and the Reidemeister Torsion",
-   "pages": "17-20",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "15",
-   "name": null,
-   "statement": "Let the function \u039b n(p1, p2, p3) be de\ufb01ned by",
-   "section_file": "sections/sec-001-the-ohtsuki-invariant.md",
-   "section_title": "The Ohtsuki Invariant",
-   "pages": "20-26",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

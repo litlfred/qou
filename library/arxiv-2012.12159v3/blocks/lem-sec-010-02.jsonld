@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2012.12159v3/blocks/lem-sec-010-02",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "lem-sec-010-02.md",
+  "derivedFrom": "library/arxiv-2012.12159v3/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2012.12159v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.3",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-010-3-a-projective-outlook-on-the-funk-metric.md (p. 8-11)",
+    "claim_id": "arxiv-2012.12159v3#lemma:3.3",
+    "lean_status": "unformalized"
+  }
+}

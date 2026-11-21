@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Classifying multiple points",
-  "pageStart": 340,
-  "pageEnd": 345,
+  "title": "Finitely minimal points and the surgery method",
+  "pageStart": 271,
+  "pageEnd": 275,
   "contains": [
-    "library/acsv231201/blocks/prose-sec-047"
+    "library/acsv231201/blocks/prose-sec-047",
+    "library/acsv231201/blocks/thm-sec-047-01",
+    "library/acsv231201/blocks/lem-sec-047-02",
+    "library/acsv231201/blocks/rem-sec-047-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "provenance": "ingested"
 }

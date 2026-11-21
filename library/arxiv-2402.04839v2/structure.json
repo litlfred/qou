@@ -6,10 +6,12 @@
   "sha256": "daf09811c350a2ad4453a89faaca2af5f0e84788e822fb79c4d3be3e3d9e9fba",
   "bytes": 882689,
   "pages": 28,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,18 +21,34 @@
    "stamp_date": "8 Jun 2026"
   },
   "doi": null,
-  "title": "On a volume invariant of 3\u2013manifolds",
+  "title": "On a volume invariant of 3-manifolds",
   "authors_raw": "Marc Kegel, Arunima Ray, Jonathan Spreer, Em Thompson and Stephan Tillmann",
-  "abstract": null,
-  "docinfo": {
-   "Author": "Marc Kegel; Arunima Ray; Jonathan Spreer; Em Thompson; Stephan Tillmann",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "On a volume invariant of 3-manifolds"
-  },
   "title_lines": [
-   "On a volume invariant of 3\u2013manifolds"
-  ]
+   "On a volume invariant of 3–manifolds"
+  ],
+  "abstract": "This paper investigates a real-valued topological invariant of 3–manifolds called topological volume. For a given 3–manifold M , the topological volume volt(M) is defined as the smallest volume of the complement of a (possibly empty) hyperbolic link in M . Various refinements of this invariant are given, asymptotically tight upper and lower bounds are determined, and all non-hyperbolic closed 3–manifolds with topological volume of at most 3.07 are classified. Moreover, it is shown that for all but finitely many cases, the volume minimiser in a lens space is obtained by Dehn filling one of the cusps of the complement of the Whitehead link or its sister manifold.",
+  "docinfo": {
+   "Title": "On a volume invariant of 3-manifolds",
+   "Author": "Marc Kegel; Arunima Ray; Jonathan Spreer; Em Thompson; Stephan Tillmann",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "On a volume invariant of 3–manifolds",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "On a volume invariant of 3-manifolds",
+   "heading": "On a volume invariant of 3–manifolds Introduction",
+   "outline": "Introduction",
+   "text": "On a volume invariant of 3–manifolds",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On a volume invariant of 3–manifolds"
  },
  "toc": [
   {
@@ -38,158 +56,605 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Properties, examples and questions",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Definition of topological volume and its spectrum",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Refinements of topological volume",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "A finiteness result",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Covers and branched covers",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Constructions of unbounded topological volume",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Bounds on topological volume",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Upper bounds from surgery descriptions or triangulations",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Lower bounds",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "The minimal topological volume manifolds",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "A census",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Parenthood",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Homology classes of minimisers",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Connected sums",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Examples obtained from the Whitehead link and its sister",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Volume functions on Dehn surgery space",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "The topological volume of all but finitely many lens spaces",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Determining the minimiser",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Using tetrahedron shapes to prove equivalence of volumes",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Equivalence of volumes: m006 and m007",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Equivalence of volumes: m015, m016 and m017",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Left: The standard surgery diagram of a Seifert fibered space with genus g and N exceptional fibres. The surgery link is a connected sum of g copies of the Borromean rings and N copies of the Hopf link. Right: A hyperbolic link that contains the standard surgery diagram of a Seifert fibered space as",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The complete list of non-hyperbolic manifolds of volume less than 3.07 ordered by their volumes. Here the column Manifold contains the Regina name [BBP] as used by Dunfield [Dun20], where S2 T, A, and D describe the case that the base surface is the 2-sphere, the 2-torus, the annulus, and the 2-disk",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "The parenthood diagram of the low volume 1-cusped manifolds",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The surgery on the red unknot yields L(10, 3). We can use SnapPy to verify that the complement of the blue knot is isometric to m003 and thus represents the minimiser of L(10, 3)",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "All other hyperbolic knots in non-hyperbolic manifolds that have volume less than 3.07. None of these knots is a minimiser since a knot of smaller volume is already presented in Table 1",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The manifold m010 seen as a knot in L(2, 1)#L(3, 1) minimises the volume",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Homologies of the minimisers compared with the homologies of the knots from Table 3",
+   "page": 17,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The Whitehead link L5a1 (left) and its sister link L13n5885 (right). The unknotted blue component is the first cusp (which we fill)",
+   "page": 18,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A surgery diagram of m034",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 892,
+   "n_words": 138,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -197,8 +662,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 9075,
-   "n_words": 1351
+   "n_chars": 8887,
+   "n_words": 1423,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-properties-examples-and-questions",
@@ -207,8 +674,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 223,
-   "n_words": 35
+   "n_chars": 249,
+   "n_words": 38,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-002-definition-of-topological-volume-and-its-spectru",
@@ -217,8 +686,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 3998,
-   "n_words": 582
+   "n_chars": 4077,
+   "n_words": 676,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-003-refinements-of-topological-volume",
@@ -227,8 +698,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1205,
-   "n_words": 189
+   "n_chars": 1247,
+   "n_words": 230,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-004-a-finiteness-result",
@@ -237,8 +710,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1425,
-   "n_words": 212
+   "n_chars": 1454,
+   "n_words": 249,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-005-covers-and-branched-covers",
@@ -247,8 +722,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 3417,
-   "n_words": 500
+   "n_chars": 3468,
+   "n_words": 616,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-006-constructions-of-unbounded-topological-volume",
@@ -257,8 +734,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2638,
-   "n_words": 384
+   "n_chars": 2672,
+   "n_words": 432,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-007-bounds-on-topological-volume",
@@ -267,8 +746,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 243,
-   "n_words": 37
+   "n_chars": 261,
+   "n_words": 40,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-008-upper-bounds-from-surgery-descriptions-or-triang",
@@ -277,8 +758,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 9046,
-   "n_words": 1462
+   "n_chars": 9181,
+   "n_words": 1708,
+   "label_start": "8",
+   "label_end": "11"
   },
   {
    "id": "sec-009-lower-bounds",
@@ -287,8 +770,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 2154,
-   "n_words": 322
+   "n_chars": 2158,
+   "n_words": 396,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
    "id": "sec-010-the-minimal-topological-volume-manifolds",
@@ -297,8 +782,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 229,
-   "n_words": 32
+   "n_chars": 270,
+   "n_words": 37,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
    "id": "sec-011-a-census",
@@ -307,8 +794,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 15,
-   "n_chars": 8636,
-   "n_words": 994
+   "n_chars": 9013,
+   "n_words": 1454,
+   "label_start": "12",
+   "label_end": "15"
   },
   {
    "id": "sec-012-parenthood",
@@ -317,8 +806,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 1668,
-   "n_words": 222
+   "n_chars": 1727,
+   "n_words": 307,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
    "id": "sec-013-homology-classes-of-minimisers",
@@ -327,8 +818,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 2854,
-   "n_words": 397
+   "n_chars": 2959,
+   "n_words": 532,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
    "id": "sec-014-connected-sums",
@@ -337,8 +830,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1507,
-   "n_words": 224
+   "n_chars": 1573,
+   "n_words": 311,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
    "id": "sec-015-examples-obtained-from-the-whitehead-link-and-it",
@@ -347,8 +842,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1715,
-   "n_words": 267
+   "n_chars": 1763,
+   "n_words": 314,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
    "id": "sec-016-volume-functions-on-dehn-surgery-space",
@@ -357,8 +854,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1464,
-   "n_words": 245
+   "n_chars": 1506,
+   "n_words": 292,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
    "id": "sec-017-the-topological-volume-of-all-but-finitely-many",
@@ -367,8 +866,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 6433,
-   "n_words": 1001
+   "n_chars": 6412,
+   "n_words": 1166,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
    "id": "sec-018-determining-the-minimiser",
@@ -377,8 +878,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 26,
-   "n_chars": 13507,
-   "n_words": 2044
+   "n_chars": 13424,
+   "n_words": 2240,
+   "label_start": "21",
+   "label_end": "26"
   },
   {
    "id": "sec-019-using-tetrahedron-shapes-to-prove-equivalence-of",
@@ -387,8 +890,10 @@
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 544,
-   "n_words": 81
+   "n_chars": 579,
+   "n_words": 87,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
    "id": "sec-020-equivalence-of-volumes-m006-and-m007",
@@ -397,8 +902,10 @@
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 1815,
-   "n_words": 322
+   "n_chars": 1880,
+   "n_words": 360,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
    "id": "sec-021-equivalence-of-volumes-m015-m016-and-m017",
@@ -407,16 +914,26 @@
    "level": 2,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 1626,
-   "n_words": 292
+   "n_chars": 1690,
+   "n_words": 319,
+   "label_start": "27",
+   "label_end": "28"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 22,
-  "sections": 22,
-  "chars_total": 75422,
+  "toc_inferred_entries": 0,
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 23,
+  "chars_total": 77342,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "volt.tex",
@@ -429,10 +946,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -447,24 +969,24 @@
     {
      "id": "sec-002-definition-of-topological-volume-and-its-spectru",
      "title": "Definition of topological volume and its spectrum",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.857,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-refinements-of-topological-volume",
      "title": "Refinements of topological volume",
-     "prose_ratio": 0.895,
-     "coverage_ratio": 0.831,
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.933,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-a-finiteness-result",
      "title": "A finiteness result",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.851,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -472,7 +994,7 @@
      "id": "sec-005-covers-and-branched-covers",
      "title": "Covers and branched covers",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.819,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -480,7 +1002,7 @@
      "id": "sec-006-constructions-of-unbounded-topological-volume",
      "title": "Constructions of unbounded topological volume",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.887,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -496,7 +1018,7 @@
      "id": "sec-008-upper-bounds-from-surgery-descriptions-or-triang",
      "title": "Upper bounds from surgery descriptions or triangulations",
      "prose_ratio": 0.918,
-     "coverage_ratio": 0.806,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -504,7 +1026,7 @@
      "id": "sec-009-lower-bounds",
      "title": "Lower bounds",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.795,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -512,7 +1034,7 @@
      "id": "sec-010-the-minimal-topological-volume-manifolds",
      "title": "The minimal topological volume manifolds",
      "prose_ratio": 0.955,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -520,7 +1042,7 @@
      "id": "sec-011-a-census",
      "title": "A census",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.917,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -528,7 +1050,7 @@
      "id": "sec-012-parenthood",
      "title": "Parenthood",
      "prose_ratio": 0.918,
-     "coverage_ratio": 0.88,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -536,7 +1058,7 @@
      "id": "sec-013-homology-classes-of-minimisers",
      "title": "Homology classes of minimisers",
      "prose_ratio": 0.929,
-     "coverage_ratio": 0.871,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -544,7 +1066,7 @@
      "id": "sec-014-connected-sums",
      "title": "Connected sums",
      "prose_ratio": 0.927,
-     "coverage_ratio": 0.719,
+     "coverage_ratio": 0.788,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -552,15 +1074,15 @@
      "id": "sec-015-examples-obtained-from-the-whitehead-link-and-it",
      "title": "Examples obtained from the Whitehead link and its sister",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.868,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-016-volume-functions-on-dehn-surgery-space",
      "title": "Volume functions on Dehn surgery space",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.882,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -568,7 +1090,7 @@
      "id": "sec-017-the-topological-volume-of-all-but-finitely-many",
      "title": "The topological volume of all but finitely many lens spaces",
      "prose_ratio": 0.94,
-     "coverage_ratio": 0.865,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -576,8 +1098,8 @@
      "id": "sec-018-determining-the-minimiser",
      "title": "Determining the minimiser",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.402,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.438,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-019-using-tetrahedron-shapes-to-prove-equivalence-of",

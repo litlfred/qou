@@ -1,1 +1,1 @@
-A.8. There is a quantity δ(R) > 0 so that limR→∞δ(R) = 0 and so that
+7. If R > 2d then a+ R(ω) · a− R(ω) = 0 for all ω ∈Ω.

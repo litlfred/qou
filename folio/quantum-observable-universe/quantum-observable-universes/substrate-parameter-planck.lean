@@ -32,7 +32,7 @@ structure SubstrateParameterPlanck where
     value (it holds for any instance built without overriding the field).
     This is the definitional content of `\hbar_q = 1 - q^{-1}` in the
     narrative. -/
--- Ref: [manuscript] Chapter 8, §1
+-- Ref: [leitner2026] Chapter 8, §1
 theorem hbar_q_ne_zero (p : SubstrateParameterPlanck)
     (hdef : p.hbar_q = 1 - p.q⁻¹) (hq1 : p.q ≠ 1) :
     p.hbar_q ≠ 0 := by

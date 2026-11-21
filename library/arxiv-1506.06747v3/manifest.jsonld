@@ -1,0 +1,79 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1506.06747v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cottingham formula and nucleon polarizabilities",
+  "contains": [
+    "library/arxiv-1506.06747v3/sections/sec-front-matter",
+    "library/arxiv-1506.06747v3/sections/sec-000",
+    "library/arxiv-1506.06747v3/sections/sec-001",
+    "library/arxiv-1506.06747v3/sections/sec-002",
+    "library/arxiv-1506.06747v3/sections/sec-003",
+    "library/arxiv-1506.06747v3/sections/sec-004",
+    "library/arxiv-1506.06747v3/sections/sec-005",
+    "library/arxiv-1506.06747v3/sections/sec-006",
+    "library/arxiv-1506.06747v3/sections/sec-007",
+    "library/arxiv-1506.06747v3/sections/sec-008",
+    "library/arxiv-1506.06747v3/sections/sec-009",
+    "library/arxiv-1506.06747v3/sections/sec-010",
+    "library/arxiv-1506.06747v3/sections/sec-011",
+    "library/arxiv-1506.06747v3/sections/sec-012",
+    "library/arxiv-1506.06747v3/sections/sec-013",
+    "library/arxiv-1506.06747v3/sections/sec-014",
+    "library/arxiv-1506.06747v3/sections/sec-015",
+    "library/arxiv-1506.06747v3/sections/sec-016",
+    "library/arxiv-1506.06747v3/sections/sec-017",
+    "library/arxiv-1506.06747v3/sections/sec-018",
+    "library/arxiv-1506.06747v3/sections/sec-019",
+    "library/arxiv-1506.06747v3/sections/sec-020",
+    "library/arxiv-1506.06747v3/sections/sec-021",
+    "library/arxiv-1506.06747v3/sections/sec-022",
+    "library/arxiv-1506.06747v3/sections/sec-023",
+    "library/arxiv-1506.06747v3/sections/sec-024",
+    "library/arxiv-1506.06747v3/sections/sec-025",
+    "library/arxiv-1506.06747v3/sections/sec-026",
+    "library/arxiv-1506.06747v3/sections/sec-027",
+    "library/arxiv-1506.06747v3/sections/sec-028",
+    "library/arxiv-1506.06747v3/sections/sec-029",
+    "library/arxiv-1506.06747v3/sections/sec-030",
+    "library/arxiv-1506.06747v3/sections/sec-031",
+    "library/arxiv-1506.06747v3/sections/sec-032",
+    "library/arxiv-1506.06747v3/sections/sec-033",
+    "library/arxiv-1506.06747v3/sections/sec-034",
+    "library/arxiv-1506.06747v3/sections/sec-035",
+    "library/arxiv-1506.06747v3/sections/sec-036",
+    "library/arxiv-1506.06747v3/sections/sec-037",
+    "library/arxiv-1506.06747v3/sections/sec-038",
+    "library/arxiv-1506.06747v3/sections/sec-039",
+    "library/arxiv-1506.06747v3/sections/sec-040",
+    "library/arxiv-1506.06747v3/sections/sec-041"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1506.06747v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1506.06747v3.pdf",
+    "source_sha256": "c44709743db788651e71c20874e22bad2212a8e54a07fac158140540e12cca41",
+    "pages": 30,
+    "arxiv": {
+      "id": "1506.06747",
+      "version": "3",
+      "primary_class": "hep-ph",
+      "stamp_date": "30 Mar 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

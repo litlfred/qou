@@ -1,6 +1,5 @@
 {
   "ideal_muon": [
-    "alpha_high_precision",
     "atomic_tr_m_mpfr_50dps",
     "cross_check_trM_1ppb",
     "frakV_askey_wilson_recurrence_tie_probe",
@@ -313,6 +312,8 @@
     "ew_couplings_substrate_derivation_probe",
     "explicit_central_idempotent_probe",
     "extend_even_a_mirror_pair_test",
+    "fbor_normalisation_barsymmetry_probe",
+    "fbor_q3_is_qschur_plancherel_weight_probe",
     "figure_eight_kashaev_volume",
     "fingerprint_screen_zero_parameter_probe",
     "fitted_ideal_low_isotope_calibration",
@@ -627,6 +628,7 @@
     "per_knot_density_per_block_wiring",
     "per_knot_mass_table_demonstration",
     "per_observable_100x_status",
+    "phase2b_dim_v21_bridge_derivation",
     "phase_b_lr_branching_constraint_probe",
     "phase_transition_sdp_derivation",
     "phi_q_regularization_probe",
@@ -945,6 +947,7 @@
     "deuteron_qborel_kernel_level_probe",
     "deuteron_qborel_slope_derivation_probe",
     "eps_series_radius_at_q0_probe",
+    "electroweak_bring_schwinger_bridge_probe",
     "lp_partition_index_mismatch_probe",
     "magnus_omega2_markov_stabilisation_probe",
     "magnus_omega2_weight_family_robustness_probe",

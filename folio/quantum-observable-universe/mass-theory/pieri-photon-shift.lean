@@ -1,13 +1,23 @@
-import Mathlib.Data.Real.Basic
 import Mathlib.Data.Finset.Basic
+import QOU.Photon
 
 
 /-!
 # QOU.Photon.Pieri — Pieri rule shift for degree-one Hecke elements
 
-A degree-one element `γ = 1 + Σ_i φ_i σ_i ∈ H_n(q)`, when multiplied
-against a state `β_m` supported on the partition `λ`, has support
-contained in `{λ} ∪ {λ ± □}` (single-box addition or removal).
+The photon is `def:photon`, `QOU.Photon.photon`:
+`γ(φ) = 𝟙 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` (owner ruling, bean `qou-99qc`,
+2026-11-18, confirmed 2026-11-20; the fourth term is the chiral vertex).
+Multiplied against a state `β_m` supported on the partition `λ`, its support
+is contained in `{λ} ∪ {λ ± □}` (single-box addition or removal). The
+degree-one element `1 + Σ_i φ_i σ_i` of the earlier statement is the named
+specialisation `φ₀₁ = 0` on one strand pair (photon-usage audit 2026-11-17, C10).
+
+Step 1 of the narrative proof, for the four-term photon, is
+`commute_photon_of_commute` below: anything commuting with `σ₀` and `σ₁`
+(e.g. a central idempotent `e_λ`) commutes with the whole photon, including
+its vertex term `σ₀σ₁⁻¹`. The `λ ± □` part (a photon reaching one further
+strand) stays axiomatised in `IsPieriShift`.
 
 Mathlib does not yet carry partition-indexed Hecke-algebra Specht
 modules, so we package the Pieri rule as a typeclass `IsPieriShift`
@@ -23,7 +33,7 @@ LaTeX label: `prop:pieri-photon-shift`
 - [fulton1997] Young Tableaux (Cambridge University Press, 1997),
   Chapter 2.
 - [kassel1995] Quantum Groups (Springer GTM 155, 1995), Chapter XI.
-- [manuscript] braids-and-knots / pieri-photon-shift
+- [leitner2026] braids-and-knots / pieri-photon-shift
 -/
 
 namespace QOU.Photon
@@ -61,7 +71,7 @@ class IsPieriShift (P : PieriInterface) where
     Re-export of the `IsPieriShift` field. Intended use: callers
     quantify over `[IsPieriShift P]` and obtain the support
     containment for free. -/
--- Ref: [manuscript] prop:pieri-photon-shift
+-- Ref: [leitner2026] prop:pieri-photon-shift
 -- Ref: [fulton1997] Young Tableaux, Ch. 2
 -- Ref: [kassel1995] Quantum Groups, Ch. XI
 theorem pieri_one_box_shift
@@ -70,9 +80,25 @@ theorem pieri_one_box_shift
   S.support_subset lam
 
 /-- The source partition `λ` is always reachable (identity term in `γ`). -/
--- Ref: [manuscript] prop:pieri-photon-shift
+-- Ref: [leitner2026] prop:pieri-photon-shift
 theorem pieri_self_in_shift (P : PieriInterface) (lam : P.spectrum) :
     lam ∈ P.oneBoxShift lam :=
   P.shift_self lam
+
+/-- **Step 1 for the four-term photon.** If `e` commutes with `σ₀` and with the
+    unit `σ₁`, it commutes with every photon `γ(φ)`, the vertex term `σ₀σ₁⁻¹`
+    included. With `e = e_λ` central this is the level-`n` containment
+    `γ · (e_λ β) = e_λ (γ · β)`. Generic ring, no ordering (§7c). -/
+-- Ref: [leitner2026] prop:pieri-photon-shift; def:photon
+theorem commute_photon_of_commute {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
+    {e σ₀ : A} {σ₁ : Aˣ} (h0 : Commute e σ₀) (h1 : Commute e (σ₁ : A)) (c : Colour R) :
+    Commute e (photon σ₀ σ₁ c) := by
+  have hinv : Commute e (↑σ₁⁻¹ : A) := h1.units_inv_right
+  have hv : Commute e (vertex σ₀ σ₁) := h0.mul_right hinv
+  have hs : ∀ (r : R) {x : A}, Commute e x → Commute e (r • x) := fun r x hx => by
+    rw [Algebra.smul_def]
+    exact (Algebra.commute_algebraMap_right r e).mul_right hx
+  unfold photon
+  exact (((Commute.one_right e).add_right (hs _ h0)).add_right (hs _ h1)).add_right (hs _ hv)
 
 end QOU.Photon

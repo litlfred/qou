@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Computation of the twisted cohomology",
-  "pageStart": 50,
+  "title": "Tangent space, diﬀerential forms and twisted cohomology",
+  "pageStart": 48,
   "pageEnd": 50,
   "contains": [
-    "library/2018sorus020/blocks/prose-sec-028"
+    "library/2018sorus020/blocks/prose-sec-028",
+    "library/2018sorus020/blocks/thm-sec-028-01",
+    "library/2018sorus020/blocks/prop-sec-028-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

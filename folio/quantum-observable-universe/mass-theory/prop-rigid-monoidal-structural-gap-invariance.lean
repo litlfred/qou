@@ -31,10 +31,10 @@ the class hypothesis.
 
 ## References
 
-- [manuscript] prop:rigid-monoidal-structural-gap-invariance
-- [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary"
-- [manuscript] conj:magic-shell-stabilization
-- [manuscript] conj:brane-tower-z-habiro
+- [leitner2026] prop:rigid-monoidal-structural-gap-invariance
+- [leitner2026] prop:spin-involution-lp-dual-invariance §"Corollary"
+- [leitner2026] conj:magic-shell-stabilization
+- [leitner2026] conj:brane-tower-z-habiro
 - [jones1985] V. Jones, "A polynomial invariant for knots via
   von Neumann algebras", BAMS 12.1 (1985)
 - [wenzl1988] H. Wenzl, "Hecke algebras of type A_n and subfactors",
@@ -44,7 +44,7 @@ the class hypothesis.
 
 namespace QOU.BraidKnot
 
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance
 
 /-- **Abstract operator-volume convention** for evaluating a braid
     operator's contribution to the binding-energy formula.
@@ -62,7 +62,7 @@ structure OperatorVolumeConvention (α : Type*) where
       contribution) — convention-DEPENDENT. -/
   regularizer : α → ℝ
 
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Why convention-independent"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Why convention-independent"
 
 /-- **Convention-equivalence:** two conventions agree on the
     Markov trace exactly (categorical) but may differ on the
@@ -71,7 +71,7 @@ def OperatorVolumeConvention.agree_on_trace {α : Type*}
     (c₁ c₂ : OperatorVolumeConvention α) : Prop :=
   ∀ β : α, c₁.markov_trace β = c₂.markov_trace β
 
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Statement"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Statement"
 
 /-- **RigidMonoidalStructuralGapInvariance** — the conjectural class.
 
@@ -88,7 +88,7 @@ def OperatorVolumeConvention.agree_on_trace {α : Type*}
     encoding the fact that different brane-tower regularizations
     differ on the convention-dependent tower part but agree on the
     categorical τ part. -/
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Statement"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Statement"
 class RigidMonoidalStructuralGapInvariance (α : Type*) where
   /-- The unique categorical Markov trace (Jones-Wenzl uniqueness). -/
   categorical_trace : α → ℝ
@@ -103,12 +103,12 @@ class RigidMonoidalStructuralGapInvariance (α : Type*) where
 
 variable {α : Type*}
 
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 1"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 1"
 
 /-- **(1) Convention-independence of the categorical trace.**  Any
     two operator-volume conventions agree on the Markov trace of
     any braid `β` — this is the categorical-uniqueness content. -/
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 1"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 1"
 theorem trace_convention_independence
     [R : RigidMonoidalStructuralGapInvariance α]
     (c₁ c₂ : OperatorVolumeConvention α) (β : α) :
@@ -116,10 +116,10 @@ theorem trace_convention_independence
   rw [R.convention_factorisation c₁ β]
   rw [R.convention_factorisation c₂ β]
 
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Why convention-independent"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Why convention-independent"
 
 /-- **(2) Convention-equivalence is reflexive and symmetric.** -/
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Why convention-independent"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Why convention-independent"
 theorem convention_equivalence_refl
     [R : RigidMonoidalStructuralGapInvariance α]
     (c : OperatorVolumeConvention α) :
@@ -149,7 +149,7 @@ theorem convention_equivalence_trans
     categorical trace.  The body is a one-line rewrite via
     `trace_convention_independence`, which itself follows from
     `R.convention_factorisation`. -/
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 2"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 2"
 theorem structural_gap_convention_independent
     [R : RigidMonoidalStructuralGapInvariance α]
     (c₁ c₂ : OperatorVolumeConvention α)
@@ -166,7 +166,7 @@ theorem structural_gap_convention_independent
 -- theorems become unconditional Lean theorems.
 -- ────────────────────────────────────────────────────────────────────────────
 
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Status"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Status"
 
 /-! ### Mathlib LP-duality integration sketch
 
@@ -232,7 +232,7 @@ class RigidMonoidalStructuralGapInvarianceAxiom (α : Type*) : Prop where
   /-- The missing input for the convention factorization. -/
   convention_factorisation : ∀ (c : OperatorVolumeConvention α) (β : α), c.markov_trace β = 0
 
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Skeleton"
+-- Ref: [leitner2026] prop:rigid-monoidal-structural-gap-invariance §"Skeleton"
 -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
 -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
 instance canonical (α : Type*) [ctx : RigidMonoidalStructuralGapInvarianceAxiom α] :

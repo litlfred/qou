@@ -14,7 +14,7 @@ This is a pure error-propagation identity over `ℝ` — no q-deformation, no
 calibration input, no fit. It quantifies why per-knot mass accuracy gates
 binding accuracy.
 
--- Ref: [manuscript] prop:binding-error-amplification
+-- Ref: [leitner2026] prop:binding-error-amplification
 -/
 
 namespace QOU.MassTheory.BindingErrorAmplification

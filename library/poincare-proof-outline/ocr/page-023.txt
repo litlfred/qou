@@ -1,0 +1,66 @@
+have cnj ?d = ?cd
+by (simp add: mult.commute)
+
+let ?d1 = (vl / v2) * (enj ul / cnj u2) — 1
+let ?d2 = ul / u2 — v1 / v2
+
+have «*: ?d = ?d1 * ?d2
+using (— ?den # 0» «u2 # 0) «v2 F 0»
+by(simp add: field-simps)
+
+hence ?d # 0
+using <— ?den £ 0» «u2 # 0) «v2 F 0» *
+by auto (simp add: field-simps)+
+
+have is-real ?d1
+proof —
+have cnj ?d1 = ?d1
+using (— ?den 4 0» (u2 # 0» (v2 # 0» *
+by (simp add: field-simps)
+thus ?thesis
+using eq-cnj-iff-real
+by blast
+qed
+
+show ?thesis
+proof (cases ul « cnj u2 # 0)
+
+case True
+let ?nom = ul * cnj u2
+let ?H' = mk-poincare-line-cmat 0 (i « ?nom)
+
+have circline-eq-cmat ?H ?H'
+proof—
+
+let ?k = (ul « cnj u2) / ?d
+
+have is-real ?k
+proof—
+have is-real ((ul * cnj u2) / ?d2)
+proof—
+let ?rhs = (u2 * cnj u2) / (1 — (v1 *u2)/(ul*v2))
+
+have 1: (ul « cnj u2) / ?d2 = ?rhs
+using <4 ?den # 0) (u2 4 0» (v2 # 0» * ul * cnj u2 # Or
+by (simp add: field-simps)
+moreover
+have cnj ?rhs = ?rhs
+proof—
+have cnj (1 — vl « u2 / (ul * v2)) = 1 — vl * u2 / (ul * v2)
+using (7 ?den £ 0» ‘u2 # 0» (v2 # Oy * <ul * cnj u2 # Or
+by (simp add: field-simps)
+moreover
+have cnj (u2 * cnj u2) = u2 * cnj u2
+by simp
+ultimately
+show ?thesis
+by simp
+qed
+
+ultimately
+show ?thesis
+using eq-cnj-iff-real
+by fastforce
+qed
+
+thus ?thesis

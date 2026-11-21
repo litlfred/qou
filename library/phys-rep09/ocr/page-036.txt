@@ -1,0 +1,69 @@
+186 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+we have
+2
+oF aG
+F,G}= —Jji—.,
+{F, G} » ax Ox,
+ij=1
+and in particular
+{xi, Xj} = Jij-
+
+Here J is the basic symplectic matrix appearing in Eq. (20) (with n = 1). With these definitions, the set of (sufficiently
+smooth) functions on phase space acquires the structure of a Lie algebra and we can associate with any such function F(x)
+a Lie operator
+
+21
+
+=)> oF, 8 (166)
+
+is
+= Ox; OX;
+
+which acts on the same set of functions as LrG = {F, G}. It is then a simple exercise to show that the set of all Lie operators
+is also a Lie algebra under the usual commutator [Lr, L¢] = LpL¢ — Lol and furthermore
+
+[Lr, Le] = Lyr,c}-
+
+Given the Hamiltonian function H(q, p, t) : R27! x R — R, where q, p € R', the equations of motion are
+
+qd = V>H, p’ = —VqH, (167)
+or, equivalently, in terms of x,
+x =JV,xH.
+It is then elementary to show that the Lie operator L_y is nothing but the Lie derivative Lr (152) associated with the function
+f=] V,H.
+Therefore, the operational equation (160) becomes
+So: = OL =
+ae! HE-Hyy,t)s Y= Xo (168)
+
+and the previous treatment also holds in this setting. As a result, the Magnus expansion reads
+}, = exp(Lw), (169)
+
+where W = )°;°, W; and the first two terms are
+c
+Wi (Xo) = -| H (Xo, s)ds (170)
+0
+
+it Sy
+W(X) = ->/ as, [ ds2{H (Xo, 51), H(Xo, S2)}-
+0 0
+
+3.5. Magnus expansion and the Chen-Fliess series
+
+Suppose that f in Eq. (159) has the form f(t, x) = an uj(t)f;(x), ie., we are dealing with the nonlinear differential
+equation
+
+XO) = Do ui(t) f(D), x(0) = p, (171)
+i=1
+
+where u;(t) are integrable functions of time. Systems of the form (171) appear, for instance, in nonlinear control theory. In
+that context, the functions u; are the controls and f; are related to the non-varying geometry of the system. Observe that this
+problem constitutes the natural (nonlinear) generalization of the case studied in Section 2.11.
+
+One of the most basic procedures for obtaining x(T) for a given T is by applying simple Picard iteration. For an analytic
+output function g : R" —> R, from (153) it is clear that
+
+4 m
+GF XO) = Couns) = Vue), gO) =g@), (172)
+
+i=1

@@ -1,711 +1,89 @@
 ---
 doc_id: hecke-alg
-doc_title: "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney 00. ustralia"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: page-076
 section_title: "Page 76"
-section_number: null
 pages: 76-76
+pdf_page: 76
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 78 sections: Page 1; Page 2; Page 3"
 ---
-Bibliograph
-y
-[]
-H.
-Andersen,
-P.
-Polo,
-and
-K.
-Wen,
-R
-epr
-esentations
-of
-quantum
-algebr
-as,
-In
-v
-en
-t.
-Math.,
-0
-(		),
-{	.
-[]
-S.
-Ariki,
-On
-the
-de
-c
-omp
-osition
-numb
-ers
-of
-the
-He
-cke
-algebr
-a
-of
-G(m;
-;
-n),
-J.
-Math.
-Ky
-oto
-Univ.,
-
-(		).
-[]
-A.
-Beilinson,
-G.
-Lusztig,
-and
-R.
-Ma
-cPherson,
-A
-ge
-ometric
-setting
-for
-the
-quantum
-deformation
-of
-GLn.,
-Duk
-e
-Matj.
-J.,
-
-(		0),
-{.
-[]
-J.
-Br
-und
-an,
-Mo
-dular
-br
-anching
-rules
-for
-quantum
-GL
-n
-and
-the
-He
-cke
-algebr
-a
-of
-typ
-e
-A,
-Pro
-c.
-Lond.
-Math.
-So
-c.
-(),
-to
-app
-ear.
-[]
-,
-Quantum
-line
-ar
-gr
-oups,
-CUP
-,
-in
-preparatio
-n.
-[]
-R.
-W.
-Car
-ter,
-Finite
-Gr
-oups
-of
-Lie
-T
-yp
-e,
-John
-Wiley
-,
-New
-Y
-ork,
-	.
-[]
-,
-R
-epr
-esentation
-the
-ory
-of
-the
-0{He
-cke
-algebr
-a,
-J.
-Algebra,
-0
-(	),
-	{0.
-[]
-E.
-Cline,
-B.
-P
-arshall,
-and
-L.
-Scott,
-Finite
-dimensional
-algebr
-as
-and
-highest
-weight
-c
-ate
-gories,
-Math.
-Ann.,
-	
-(	),
-{		.
-[	]
-A.
-Co
-x,
-The
-blo
-cks
-of
-the
-q
-{Schur
-algebr
-a,
-J.
-Algebra,
-(to
-app
-ear).
-[0]
-C.
-W.
-Cur
-tis
-and
-I.
-Reiner,
-R
-epr
-esentation
-the
-ory
-of
-nite
-gr
-oups
-and
-asso
-ciative
-algebr
-as,
-In
-terscience,
-	.
-[]
-,
-Metho
-ds
-of
-R
-epr
-esentation
-The
-ory,
-V
-ols.
-I
-and
-I
-I,
-John
-Wiley
-,
-New
-Y
-ork,
-	.
-[]
-R.
-Dipper
-and
-S.
-Donkin,
-Quantum
-GL
-n
-,
-Pro
-c.
-London
-Math.
-So
-c.
-(),
-
-(		),
-{.
-[]
-R.
-Dipper
-and
-G.
-James,
-R
-epr
-esentations
-of
-He
-cke
-algebr
-as
-of
-gener
-al
-line
-ar
-gr
-oups,
-Pro
-c.
-London
-Math.
-So
-c.
-(),
-
-(	),
-0{.
-[]
-,
-Blo
-cks
-and
-idemp
-otents
-of
-He
-cke
-algebr
-as
-of
-gener
-al
-line
-ar
-gr
-oups,
-Pro
-c.
-London
-Math.
-So
-c.
-(),
-
-(	),
-{.
-[]
-,
-The
-q
-{Schur
-algebr
-a,
-Pro
-c.
-London
-Math.
-So
-c.
-(),
-	
-(		),
-{0.
-[]
-,
-q
-{T
-ensor
-sp
-ac
-e
-and
-q
-{Weyl
-mo
-dules,
-T
-rans.
-AMS,
-
-(		),
-{.
-[]
-R.
-Dipper,
-G.
-James,
-and
-A.
-Ma
-thas,
-Cyclotomic
-q
-{Schur
-algebr
-as,
-Math.
-Zeit.,
-to
-app
-ear.
-[]
-S.
-Donkin,
-The
-q
-{Schur
-algebr
-a,
-LMS
-Lecture
-Notes,
-CUP
-,
-		.
-[	]
-J.
-Du,
-A
-note
-on
-quantize
-d
-Weyl
-r
-e
-cipr
-o
-city
-at
-r
-o
-ots
-of
-unity,
-Alg.
-Collo
-q.,
-
-(		),
-{.
-[0]
-J.
-Du
-and
-H.
-R
-ui,
-Base
-d
-algebr
-as
-and
-standar
-d
-b
-ases
-for
-quasi{her
-e
-ditary
-algebr
-as,
-T
-rans.
-AMS.,
-(to
-app
-ear).
-[]
-J.
-Du
-and
-L.
-Scott,
-The
-q
-{Schur
-
-algebr
-a,
-T
-rans.
-AMS,
-(to
-app
-ear).
-[]
-M.
-J.
-D
-yer,
-R
-ee
-ctions
-in
-Coxter
-gr
-oups,
-PhD
-thesis,
-Univ
-ersit
-y
-of
-Sydney
-,
-	.
-[]
-M.
-J.
-D
-yer,
-R
-ee
-ction
-sub
-gr
-oups
-of
-Coxeter
-systems,
-J.
-Algebra,
-
-(		0),
-{.
-[]
-M.
-Geck
-and
-G.
-Pfeiffer,
-On
-the
-irr
-e
-ducible
-char
-acters
-of
-He
-cke
-algebr
-as,
-Adv
-ances,
-0
-(		),
-	{	.
-[]
-J.
-J.
-Graham,
-Mo
-dular
-r
-epr
-esentations
-of
-He
-cke
-algebr
-as
-and
-r
-elate
-d
-algebr
-as,
-PhD
-thesis,
-Univ
-ersit
-y
-of
-Sydney
-,
-		.
-[]
-J.
-J.
-Graham
-and
-G.
-I.
-Lehrer,
-Cel
-lular
-algebr
-as,
-In
-v
-en
-t.
-Math.,
-
-(		),
-{.
-[]
-J.
-A.
-Green,
-Polynomial
-r
-epr
-esentations
-of
-GL
-n
-,
-SLN,
-0,
-Springer{V
-erla
-g,
-New
-Y
-ork,
-	0.
-[]
-,
-Combinatorics
-and
-the
-Schur
-algebr
-a,
-J.
-Pure
-Appl.
-Algebra,
-
-(		),
-	{0.
-[	]
-R.
-Green,
-q
-{Schur
-algebr
-as
-and
-quantize
-d
-enveloping
-algebr
-as,
-PhD
-thesis,
-Univ
-ersit
-y
-of
-W
-arwic
-k,
-		.
-[0]
-I.
-Gr
-ojno
-wski,
-R
-epr
-esentations
-of
-ane
-He
-cke
-algebr
-as
-(and
-ane
-quantum
-GL
-n
-)
-at
-r
-o
-ots
-of
-unity,
-Math.
-Researc
-h
-Notes,
-(		),
-{.
-[]
-A.
-Gyoja
-and
-K.
-Uno,
-On
-the
-semisimplicity
-of
-He
-cke
-algebr
-as,
-J.
-Math.
-So
-c.
-Japan,
-
-(		),
-{	.
-
+Bibliography
+
+[1] H. ANDERSEN, P. Poo, anp K. WEN, Representations of quantum algebras, Invent. Math.,
+104 (1991), 1-59.
+
+[2] S. ARIKkI, On the decomposition numbers of the Hecke algebra of G(m,1,n), J. Math. Kyoto
+Univ., 36 (1996).
+
+[3] A. Beminson, G. Lusztig, aND R. MACPHERSON, A geometric setting for the quantum
+deformation of GLn., Duke Matj. J., 61 (1990), 655-677.
+
+[4] J. BRUNDAN, Modular branching rules for quantum GLIm and the Hecke algebra of type A,
+Proc. Lond. Math. Soc. (3), to appear.
+
+] . Quantum linear groups, CUP, in preparation.
+
+[6] R. W. Carter, Finite Groups of Lie Type, John Wiley, New York, 1985.
+
+[7] . Representation theory of the 0-Hecke algebra, J. Algebra, 104 (1986), 89-103.
+
+[8] E. Cine, B. ParsHaLL, AND L. Scott, Finite dimensional algebras and highest weight
+categories, Math. Ann., 259 (1982), 153-199.
+
+[9] A. Cox, The blacks of the q-Schur algebra, J. Algebra, (to appear).
+
+[10] C. W. Curtis and I. REINER, Representation theory of finite groups and associative algebras,
+Interscience, 1962.
+
+. Methods of Representation Theory, Vols. I and II, John Wiley, New York, 1987.
+
+[12] R. Dipper anp 8. DonKIN, Quantum GL, Proc. London Math. Soc. (3), 63 (1991), 165-211.
+
+[13] R. Diprer AND G. JAMES, Representations of Hecke algebras of general linear groups, Proc.
+London Math. Soe. (3), 52 (1986), 20-52.
+
+[5
+
+[14] . Blocks and idempotents of Hecke algebras of general linear groups, Proc. London
+Math. Soc. (3), 54 (1987), 57-82.
+
+[15] , The q—Schur algebra, Proc. London Math. Soc. (3), 59 (1989), 23-50.
+
+[16] .q-Tensor space and q-Weyl modules, Trans. AMS, 327 (1991), 251-282.
+
+[17] R. Dipper, G. James, aND A. Matuas, Cyclotomic q-Schur algebras, Math. Zeit., to appear.
+
+[18] S. Donkin, The g-Schur algebra, LMS Lecture Notes, CUP, 1998.
+
+[19] J. Du, A note on quantized Weyl reciprocity at reots of unity, Alg. Colloq., 2 (1995), 363-372.
+
+[20] J. Du anp H. Rut, Based algebras and standard bases for quasi-hereditary algebras, Trans.
+
+AMS., (to appear).
+] J. Du anp L. Scott, The q-Schur? algebra, Trans. AMS, (to appear).
+| M. J. Dyer, Reflections in Coxter groups, PhD thesis, University of Sydney, 1987.
+[23] M. J. Dyer, Reflection subgroups of Coreter systems, J. Algebra, 135 (1990), 57-73.
+] M. GEcK AND G. PFEIFFER, On the irreducible characters of Hecke algebras, Advances, 102
+(1993), 79-94.
+[25] J. J. Granam, Modular representations of Hecke algebras and related algebras, PhD thesis,
+University of Sydney, 1995.
+[26] J. J. GRanam anpd G.I. LEurer, Cellular algebras, Invent. Math., 123 (1996), 1-34.
+[27] J. A. GREEN, Polynomial representations of GLn, SLN, 830, Springer-Verlag, New York,
+1980.
+
+, Combinatorics and the Schur algebra, J. Pure Appl. Algebra, 88 (1993), 89-106.
+
+[29] R. GREEN, q-Schur algebras and quantized enveloping algebras, PhD thesis, University of
+Warwick, 1995.
+
+[30] I. GRoiNowskK1, Representations of affine Hecke algebras (and affine quantum GL, ) at roots
+of unity, Math. Research Notes, (1994), 215-217.
+
+[31] A. Gyosa anD K. UNo, On the semisimplicity of Hecke algebras, J. Math. Soc. Japan, 41
+(1989), 75-79.
+
+71

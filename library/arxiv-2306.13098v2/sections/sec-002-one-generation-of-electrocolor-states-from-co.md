@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2306.13098v2
-doc_title: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions"
+doc_title: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions"
 section_id: sec-002-one-generation-of-electrocolor-states-from-co
 section_title: "One generation of electrocolor states from CO"
 section_number: null
 pages: 5-6
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
-doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.993
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.974
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
 ---
 []{#Furey label="Furey"}
 

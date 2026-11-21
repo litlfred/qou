@@ -1,1 +1,1 @@
-For any path c to the Lagrangian torus in the fiber over p, i.e. c : [0, 1]→Tp, we
+we finish the proof of our corollary. □ We define a cylindrical version of the Lagrangian Tγ when the path γ is chosen to be cylindrical. The construction depends on choosing a path on C that lies on the real line away from a compact set.

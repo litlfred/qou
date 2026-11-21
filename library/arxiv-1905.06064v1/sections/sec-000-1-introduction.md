@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.982
+doc_brief: "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS — We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991."
 ---
 For $\alpha p \geq 4$, $p \geq 2$, the O'hara knot energies\footnote{In this paper we divert from the usual notation of the literature by writing $\frac{p}{2}$ instead of $p$ for the simple reason that the case $p=2$ (in the knot literature: $p=1$) corresponds to the Hilbert-space case of an $L^2$-energy.} $\mathcal{O}^{\alpha,p}$ named after their inventor J.~O'hara \cite{OH91,OH92} are defined for closed Lipschitz curves $\sol: \R/\Z \to \R^3$ from the circle $\R/\Z$ into the three-dimensional space $\R^3$ by
 \begin{equation}\label{eq:oharaenergiesnew}

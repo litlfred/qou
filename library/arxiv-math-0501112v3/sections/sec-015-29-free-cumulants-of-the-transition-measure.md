@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.961
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 Cauchy transform of a compactly supported probability measure is given at the neighborhood of infinity by a power series $$G_{\mu}(z)=\frac{1}{z}+\sum_{n\geq 2} M_n z^{-n-1},$$ where $M_n=\int_R x^n d\mu$ are the moments of the measure $\mu$. It follows that on some neighborhood of infinity $G_{\mu}$ has a right inverse $K_{\mu}$ with respect to the composition of power series given by $$K_{\mu}(z)=\frac{1}{z}+\sum_{n\geq 1} R_n z^{n-1}$$ convergent on some neighborhood of $0$. The coefficients $R_i=R_i(\mu)$ are called free cumulants of measure $\mu$. Free cumulants appeared implicitly in Voiculescu's $R$--transform [@VoiculescuAddition] and their combinatorial meaning was given by Speicher [@Speicher1997].
 

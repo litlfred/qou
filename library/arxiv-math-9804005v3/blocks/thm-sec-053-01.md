@@ -1,1 +1,1 @@
-Let F be a noetherian connected ﬁltration on A and let ˜A :=
+Let F be a noetherian connected ﬁltration on A and let ˜A := ReesFA.

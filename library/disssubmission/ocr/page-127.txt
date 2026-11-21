@@ -1,0 +1,49 @@
+5.6. Negligible constituents 119
+
+any such curve has genus g¢ = 2¢+ 1 = 9. Hence the adjunction formula for
+the genus of a smooth curve on a smooth projective surface [55, prop. V.1.5]
+gives the intersection number
+
+degy(A*) = 2g¢—2~degy (Kyle) = 16-16 = 0,
+indeed for the canonical class Ky we have
+dege(Ky|c) = degy(AUKy) = degy(2-[0]*/3) = 16
+
+by the formula i;() = [0]3/3 from above and by lemma 5.5. We then also
+obtain the intersection number degy(B?) = degy (A?) — degy (a7) = —8/3,
+and to see that the vector e is a minimal vector all that remains to be done
+is to divide the bilinear form by two. Oo
+
+It seems a tempting idea to prove theorem 5.1 by looking directly at the
+monodromy operation on the fundamental classes of the Prym-embedded
+curves from above, but we have not seen how to do this. In what follows we
+give a different proof which does not use the Prym construction, and from
+this point of view the theorem can be seen as an independent result about
+the monodromy operation on the 27 Prym-embedded curves.
+
+5.6. Negligible constituents
+
+We now justify our earlier statement that for a general ppav the local
+systems underlying the variations of Hodge structures V. and V_ from
+lemma 5.10 are irreducible. In fact we will obtain stronger results since we
+will work with perverse sheaves on the whole ppav rather than with local
+systems on a Zariski-open dense subset. This shift in perspective reveals a
+close connection with the Tannakian formalism of convolution as developed
+in chapters 2 and 3, which is of interest in its own right.
+
+Recall that for any complex abelian variety X, the convolution product
+on the derived category D?(X,C) of bounded complexes of C-sheaves with
+constructible cohomology sheaves in the sense of [10] is defined by
+
+KxL = Ra,(KBL) € DP(X,C) for K,L€D»(x,C),
+where a: X x X —> X denotes the group law. One of the main results of
+chapter 2 was that the full abelian subcategory Perv(X,C) c D?(X,C) of
+perverse sheaves is almost stable under the convolution product: Let us say
+that a perverse sheaf is negligible if all its perverse subquotients have Euler
+
+characteristic zero; then theorem 2.13 shows that for all P,Q € Perv(X,C)
+and all n 4 0 the perverse cohomology sheaves
+
+PH" (X,P*Q) € Perv(X,C)
+
+are negligible. At the other end of the scale, we will say that a perverse
+sheaf is clean if it does not have any negligible subquotients.

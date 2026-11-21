@@ -29,7 +29,7 @@ As $q \to 1$, $Q_q \to 0$ and the gauge term simplifies into Biot--Savart self-i
 **Stability.**
 The second variation $\delta^2\mathcal{E}_q$ resolves via the [weight-space decomposition](#def:weight-decomposition):
 
-- **Longitudinal** (Cartan): Stable, carrying eigenvalues $[k]_q^2 \hbar_q / L_q^2$ ([discrete spectrum](#prop:discrete-vortex-spectrum)).
+- **Longitudinal** (Cartan): Stable, carrying eigenvalues $[k]_q^2 \hbar_q / L_q^2$.
 - **Ladder** ($E_\pm$): Protected by an energetic barrier $\Delta E = \hbar_q([j\!+\!1]_q[j\!+\!2]_q - [j]_q[j\!+\!1]_q)/(2I_q) > 0$ strictly when $q > 1$.
 - **Gauge**: Trivially zero (quotiented out by symmetry).
 

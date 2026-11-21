@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1103.4815v3/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A Equivariant Anafunctors and Group Actions",
+  "pageStart": 57,
+  "pageEnd": 59,
+  "contains": [
+    "library/arxiv-1103.4815v3/blocks/prose-sec-018"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.4815v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.4815v3/manifest.jsonld",
+  "provenance": "ingested"
+}

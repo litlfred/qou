@@ -1,0 +1,81 @@
+apply (rule-tac s=Re ?x’' in ex!)
+
+using <x’ € unit-disc»
+
+apply (subst (asm) <a’ = of-complex (cor (Re ?x"))>, simp)
+
+using «yp x
+
+by (subst (asm) (2) <x’ = of-complex (cor (Re ?x'))>, simp)
+qed
+
+hence ?Phi # {}
+by auto
+
+then obtain x where y (of-complex (cor x)) Re ?y < x
+(of-complex (cor x)) € unit-disc
+
+using ‘Re ?y < Sup ?Phi»
+using less-cSupE|of Re ?y ?Phi]
+by auto
+
+moreover
+
+have Re ?y < Re (to-complex (of-complex (cor x)))
+using ‘Re ?y < x)
+by simp
+
+ultimately
+
+show False
+using ylessy
+using «w y> <y € unit-dise»
+by (metis less-not-sym)
+
+qed
+qed
+
+thus ?thesis
+
+using ‘V z € unit-disc. p « —> Re (to-complez x) < Sup ?Phi»
+
+apply (rule-tac «=(of-complex (cor (Sup ?Phi))) in bel, simp)
+
+using (J yeunit-disc. w y» «p ?X» «?X € unit-disey
+
+using (V yCunit-disc. W y —> is-real (to-complex y) A 0 < Re (to-complex y)>
+
+by (smt complez-of-real-Re inf-notin-unit-disc norm-of-real of-complex-to-complex to-complex-of-complex
+unit-disc-iff-cmod-lt-1 rx(2))
+qed
+
+then obtain B where B € unit-disc is-real (to-complex B)
+VxEunit-disc. V yeunit-disc. p x \ w y —> Re (to-compler x) < Re (to-complex B) \
+Re (to-complez B) < Re (to-complex y)
+by blast
+
+show J 6b € unit-disc. point-between-sets p b w
+proof (rule-tac z=B in bez!)
+show B € unit-disc
+by fact
+next
+show point-between-sets p Bw
+proof ((rule ballI)+, rule imp!)
+fix vy
+let ?z = to-complex x and ?y = to-complex y and ?B = to-complex B
+assume z € unit-disc y € unit-disc p « A Wy
+
+hence Re ?x < Re ?B \ Re ?B < Re ?y
+using ‘V reunit-disc. V yeunit-disc. p x \ ~ y —> Re (to-compler x) < Re ?B A
+Re (to-compler B) < Re (to-complex y)>
+by auto
+moreover
+have is-real ?x Re ?x > 0
+using ynoneg
+using <x € unit-disc) (p x A wW y>
+by auto
+moreover
+have is-real ?y Re ?y > 0
+using wpos
+using <y € unit-disc) (p x A wy»
+by auto

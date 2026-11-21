@@ -1,0 +1,1 @@
+Let (M, g) be as above, and assume ∂M̸ = ∅. Assume there exists a function w ∈C∞(M) that is positive on the interior of M and non-negative on M, satisfying (−∆+ λ)w ≤0 in M. Then there is no Dirichlet eigenvalue in [0, λ) in M.

@@ -1,0 +1,486 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1504.07260v3",
+  "figures": [
+    {
+      "id": "vfig-p004",
+      "file": "figures/vfig-p004.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        99.21,
+        84.19,
+        496.07,
+        381.84
+      ],
+      "assembly": {
+        "drawings": 20,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              99.21,
+              84.19,
+              496.07,
+              381.84
+            ],
+            "drawings": 19,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "TIIA $ −",
+              "1",
+              "NTIIA",
+              "S-duality",
+              "Fricke",
+              "T-duality",
+              "Fricke",
+              "IIA",
+              ".K3 ⇥S1",
+              "ZN",
+              "⇥˜S1",
+              "Het",
+              ".T 4 ⇥S1",
+              "ZN",
+              "⇥˜S1",
+              "Case 1 (self-dual)",
+              "Shet $ TIIA",
+              "Shet $ −",
+              "1",
+              "NShet"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              99.21,
+              84.19,
+              496.07,
+              381.84
+            ],
+            "parent": null,
+            "labels": [
+              "TIIA $ −",
+              "1",
+              "NTIIA",
+              "S-duality",
+              "Fricke",
+              "T-duality",
+              "Fricke",
+              "Case 1 (self-dual)",
+              "Shet $ TIIA",
+              "Shet $ −",
+              "1",
+              "NShet"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              119.37,
+              205.5,
+              237.18,
+              253.56
+            ],
+            "parent": "b0",
+            "labels": [
+              "Het",
+              ".T 4 ⇥S1",
+              "ZN",
+              "⇥˜S1"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              364.3,
+              202.79,
+              482.9,
+              250.84
+            ],
+            "parent": "b0",
+            "labels": [
+              "IIA",
+              ".K3 ⇥S1",
+              "ZN",
+              "⇥˜S1"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 7,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              324.25,
+              555.32,
+              353.75,
+              555.32
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 26
+      }
+    },
+    {
+      "id": "vfig-p006",
+      "file": "figures/vfig-p006.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 6
+      },
+      "page": 6,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        99.21,
+        84.19,
+        496.07,
+        381.84
+      ],
+      "assembly": {
+        "drawings": 24,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              99.21,
+              84.19,
+              496.07,
+              381.84
+            ],
+            "drawings": 24,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "TIIA $ −",
+              "1",
+              "NTIIA",
+              "S-duality",
+              "Fricke",
+              "T-duality",
+              "Fricke",
+              "Case 2 (non-self-dual)",
+              "Het",
+              ".T 4 ⇥S1",
+              "ZN",
+              "⇥˜S1",
+              "Het",
+              ".T 4 ⇥S01",
+              "ZN",
+              "⇥˜S01",
+              "IIA",
+              ".K3 ⇥S1",
+              "ZN",
+              "⇥˜S1",
+              "IIA",
+              ".K3 ⇥S01",
+              "ZN",
+              "⇥˜S01",
+              "Shet $ TIIA",
+              "S0",
+              "het $ T 0",
+              "IIA",
+              "Shet $ −",
+              "1",
+              "NShet"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              99.21,
+              84.19,
+              496.07,
+              381.84
+            ],
+            "parent": null,
+            "labels": [
+              "TIIA $ −",
+              "1",
+              "NTIIA",
+              "S-duality",
+              "Fricke",
+              "T-duality",
+              "Fricke",
+              "Case 2 (non-self-dual)",
+              "Shet $ TIIA",
+              "S0",
+              "het $ T 0",
+              "IIA",
+              "Shet $ −",
+              "1",
+              "NShet"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              113.55,
+              140.0,
+              231.37,
+              188.06
+            ],
+            "parent": "b0",
+            "labels": [
+              "Het",
+              ".T 4 ⇥S1",
+              "ZN",
+              "⇥˜S1"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              358.49,
+              137.29,
+              477.08,
+              185.35
+            ],
+            "parent": "b0",
+            "labels": [
+              "IIA",
+              ".K3 ⇥S1",
+              "ZN",
+              "⇥˜S1"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              357.72,
+              297.35,
+              482.12,
+              342.31
+            ],
+            "parent": "b0",
+            "labels": [
+              "IIA",
+              ".K3 ⇥S01",
+              "ZN",
+              "⇥˜S01"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              110.84,
+              297.74,
+              232.15,
+              344.24
+            ],
+            "parent": "b0",
+            "labels": [
+              "Het",
+              ".T 4 ⇥S01",
+              "ZN",
+              "⇥˜S01"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 9,
+        "connectors": [],
+        "between": [],
+        "outside": 20
+      }
+    },
+    {
+      "id": "vfig-p007",
+      "file": "figures/vfig-p007.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 7
+      },
+      "page": 7,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        99.21,
+        84.19,
+        496.07,
+        381.84
+      ],
+      "assembly": {
+        "drawings": 24,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              99.21,
+              84.19,
+              496.07,
+              381.84
+            ],
+            "drawings": 24,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "TIIA $ −",
+              "1",
+              "NTIIA",
+              "S-duality",
+              "Fricke",
+              "T-duality",
+              "Fricke",
+              "Case 3 (non-self-dual)",
+              "IIA",
+              ".T 4 ⇥S01",
+              "Z0",
+              "N",
+              "⇥˜S01",
+              "IIA",
+              ".T 4 ⇥S01",
+              "ZN",
+              "⇥˜S01",
+              "IIA",
+              ".K3 ⇥S1",
+              "ZN",
+              "⇥˜S1",
+              "Het",
+              ".T 4 ⇥S1",
+              "ZN",
+              "⇥˜S1",
+              "Shet $ TIIA",
+              "S0",
+              "het $ T 0",
+              "IIA",
+              "Shet $ −",
+              "1",
+              "NShet"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              99.21,
+              84.19,
+              496.07,
+              381.84
+            ],
+            "parent": null,
+            "labels": [
+              "TIIA $ −",
+              "1",
+              "NTIIA",
+              "S-duality",
+              "Fricke",
+              "T-duality",
+              "Fricke",
+              "Case 3 (non-self-dual)",
+              "Shet $ TIIA",
+              "S0",
+              "het $ T 0",
+              "IIA",
+              "Shet $ −",
+              "1",
+              "NShet"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              113.55,
+              140.0,
+              231.37,
+              188.06
+            ],
+            "parent": "b0",
+            "labels": [
+              "Het",
+              ".T 4 ⇥S1",
+              "ZN",
+              "⇥˜S1"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              358.49,
+              137.29,
+              477.08,
+              185.35
+            ],
+            "parent": "b0",
+            "labels": [
+              "IIA",
+              ".K3 ⇥S1",
+              "ZN",
+              "⇥˜S1"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              357.72,
+              297.35,
+              482.12,
+              342.31
+            ],
+            "parent": "b0",
+            "labels": [
+              "IIA",
+              ".T 4 ⇥S01",
+              "ZN",
+              "⇥˜S01"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              108.9,
+              297.74,
+              232.15,
+              344.24
+            ],
+            "parent": "b0",
+            "labels": [
+              "IIA",
+              ".T 4 ⇥S01",
+              "Z0",
+              "N",
+              "⇥˜S01"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 9,
+        "connectors": [],
+        "between": [],
+        "outside": 27
+      }
+    }
+  ]
+}

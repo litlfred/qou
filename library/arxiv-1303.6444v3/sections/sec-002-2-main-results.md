@@ -7,10 +7,11 @@ section_number: 2
 pages: 2-4
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
-doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.971
+doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
 ---
 The main results of this paper rely on the particle model of the classical gas. The main parameters in the model are: the inverse temperature $\beta = \frac{1}{kT}$, where $k$ is Boltzmann's constant and $T$ is the temperature; the fugacity $z$; the pressure $P$; and the density $\rho$.
 

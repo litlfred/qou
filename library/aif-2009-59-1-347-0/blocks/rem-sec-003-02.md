@@ -1,0 +1,1 @@
+— A straightforward veriﬁcation shows that the inﬁnite product (q(1 −q)x; q)∞represents a germ of analytic function at 0 and that it veriﬁes the equation y(px) = (1 + (p −1)(−qx)) y(x), or equivalently dpy(x) = −qy(x). ANNALES DE L’INSTITUT FOURIER

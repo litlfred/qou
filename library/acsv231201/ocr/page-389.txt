@@ -1,0 +1,37 @@
+11.4 Examples and consequences 371
+
+Example 11.45 (Aztec Diamond). Let Q(x, y, z) = 1-(xtx7! tyty! )e/24+22.
+The Laurent expansion of
+2/2
+
+(1 - yO, y, 2)
+
+in the domain of convergence containing the point (1, 1,0) enumerates infor-
+mation about the Aztec Diamond, a combinatorial structure we do not describe
+here. The singular variety Vg is smooth except at +(1, 1,1), where it is rep-
+resented by a Lorentzian quadratic. The homogenization g of g = Qo exp
+at the origin is the circular cone 2z” — (x? + y*) and the cone of hyperbol-
+icity containing the negative z-axis, which is the one of interest, is the cone
+
+B_ = {(x, yz): z< — ¥(x? + y?)/2}. Its dual is given by
+
+B= {tn SO:P4t9< sr .
+
+F(x, y,2) =
+
+The other factor 1 — yz is smooth at +(1, 1, 1) and is in fact already linear
+when put in logarithmic coordinates: if (x,y,z) = exp(u,v,w) then yz = 1
+becomes v + w = 0. The cones of hyperbolicity are the two halfspaces H_ =
+{v+w < 0} and H, = {v+w > 0}, the former containing the negative z-axis. The
+amoeba of a product is the intersection of the amoebas of the factors, hence the
+component corresponding to the chosen Laurent expansion is By = BLN HL.
+Dualizing, Bj is equal to the convex hull of B* UH. Projectively, B* is the
+cone over the circle {?? + §? < 1/2} while H* is the single point (0, 1). The
+convex hull of the union is the teardrop shape shown in Figure 11.4. We thus
+have the following consequence of Theorem 11.42.
+
+Figure 11.4 The teardrop-shaped region in Example 11.45.
+
+Corollary 11.46. Outside of the teardrop shaped region given by the convex
+hull of B® U {(0, 1)}), the Aztec Diamond placement probabilities decay ex-
+ponentially. More specifically, the north-going placement probabilities decay

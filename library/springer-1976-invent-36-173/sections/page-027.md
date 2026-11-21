@@ -1,0 +1,74 @@
+---
+doc_id: springer-1976-invent-36-173
+doc_title: "springer-1976-invent-36-173"
+section_id: page-027
+section_title: "Page 27"
+pages: 27-27
+pdf_page: 27
+source_pdf: springer-1976-invent-36-173.pdf
+source_sha256: dc3217946960a8e0
+text_source: ocr
+granularity: page
+doc_brief: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 35 sections: Page 1; Page 2; Page 3"
+---
+Trigonometric Sums 199
+
+of W, the right-hand side equals
+
+X xovz") x0v2).
+
+xew
+The assertion of 6.10 is now a consequence of the linear independence of the group
+characters yeW™.
+
+If ceC(A) let n(A,c) denote the number of irreducible components of BY
+of highest dimension e(A) which are fixed by c. The following corollary is an
+immediate consequence of 6.10. The meaning of 2” is the same as above.
+
+6.11. Corollary. £"|C(A)|-! ¥ n(A,c)? =|WI.
+
+ceC(A)
+
+6.12. Remarks. (a) 6.10 and 6.11 are, of course, true if G is any reductive group
+and p is good. [24, Th. 3.2] then implies similar results for the unipotents of G.
+
+(b) It can be shown by an elementary argument that 6.11 is true as soon as
+the number of nilpotent G-orbits in g is finite. A similar result holds for the uni-
+potents G.
+
+(c) Another proof of the analogue for unipotents of 6.11, along the lines of
+[30], was given by M. Cross (unpublished) and by R. Steinberg [31].
+
+6.13. We shall now deduce from 6.10 a characteristic 0 result. Let Gp be a group
+scheme over Z such that for each field k the scheme G, obtained by base extension
+is a split semisimple algebraic group over k. We shall use a Dedekind ring R
+contained in a finite extension of Q, with properties to be stated presently. We
+put S=Spec R and G=G, x S. The fibre of G in seS is a split semisimple group G,
+over a finite field if s is a closed point or over an algebraic number field, if s is the
+generic point ¢. We denote by g, the Lie algebra of G,. The required properties
+of R are as follows: there is a finite set ./ of sections § — Lie (G) such that the
+values A,(A €./) in the generic point represent the nilpotent orbits of g., moreover
+all irreducible components of the centralizer Z,,(A,) and those of the varieties
+BS: are defined over the field k(£) (Ae).
+
+It follows from [4, p. 247] that there is a nonempty open set UCS such that
+for all seU the A, (A&A) represent the nilpotent orbits of g,. If Ae, let Z,(A)
+be its centralizer in G, this is an S-groupscheme. Its fibre in se S is the centralizer
+Z,,(AJ). There is a subgroup scheme Z,(A)° whose fiber is s is the identity compo-
+nent of Z, (A,) [18, exp. VIB, Th. 3.10]. By a theorem of Raynaud [16, p. 82],
+there exists a quotient C(A)=Zg(A)/Zg(A)°, it is a finite group scheme over S.
+Its fiber in the generic point € is, by our choice of S, a trivial finite group scheme
+over k(é). Hence we may assume, by shrinking U, that the restriction of C(A) to
+U is a trivial group scheme, i.e. a product C(A)x U, where C(A) is a constant
+group scheme over S. We identify for each seU the quotient Z,,(A,)/Z¢,(A,)°
+with C(A).
+
+For each Ae. there is a projective S-scheme &§ such that its fiber se S is the
+variety B4:. Fix A and let C,,..., C, be the irreducible components of #4. By
+[12, Prop. 15.5.9] we may assume (after shrinking) that the number of components
+of B%: is also t, for seU. We may also assume that dim (C;), =dim C; and that the
+(C)), are the components of @§: (se U). Now let ceC(A) and let i, j be such that
+c(C,)e=(C;)<. Then c(C;),=(C;), on an open subset of S.
+
+It follows that the action of the centralizers Z, (A,) on the irreducible compo-
+nents of the @%: is “constant” on a non-empty open subset of S.

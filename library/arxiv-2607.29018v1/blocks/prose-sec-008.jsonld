@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2607.29018v1/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Normal Cayley graphs on $S_n$ with strictly second largest eigenvalue at most $1$",
+  "pageStart": 17,
+  "pageEnd": 19,
+  "text": "../sections/sec-008-52-normal-cayley-graphs-on-s-n-with-strictly-sec.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.29018v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.29018v1/manifest.jsonld",
+  "provenance": "ingested"
+}

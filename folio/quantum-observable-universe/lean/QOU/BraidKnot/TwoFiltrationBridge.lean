@@ -68,7 +68,7 @@ class TwoFiltrationBridge where
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/mass-theory/two-filtration-bridge.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/two-filtration-bridge.ts
 
 -- **No instance is provided — the honest open state** (AGENTS.md §3b-tax).
 -- Previously: `axiom twoFiltrationBridge_conjecture` plus a global instance discharging `TwoFiltrationBridge` with it.
@@ -77,7 +77,7 @@ class TwoFiltrationBridge where
 
 /-! ### What `gbDepth` actually grades — bean `wpdb`
 
-`prf:phi-q-categorical-truncation` Step 3 and two sibling blocks use
+`rem:phi-q-categorical-truncation-argument` Step 3 and two sibling blocks use
 `Z^(k)(A) = span{eλ : gbDepth λ = k}` as the centre's depth grading, citing
 `prop:curvature-rank-gb-stratification` — which stratifies by the curvature
 rank of **words** and mentions no partition. That bridge is stated nowhere
@@ -182,7 +182,7 @@ theorem gbDepth_p111 : gbDepth p111 = 3 := by
 All three `H₃` blocks have GB-depth `3`, so `Z(H₃) = Z^(3)` and every other
 stratum is zero.
 
-The downstream consequence is the point. `prop:phi-q-categorical-truncation`
+The downstream consequence is the point. `conj:phi-q-categorical-truncation`
 sets `k⋆(T_w) := max {gbDepth λ : λ ∈ supp(T_w)}` and states that the
 truncation depth is *"structurally locked to the NF support of `T_w`"*. At
 `n = 3` that maximum is `3` for **every** `T_w` with nonempty support — it is

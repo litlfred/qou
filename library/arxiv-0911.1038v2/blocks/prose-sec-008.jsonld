@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0911.1038v2/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "General idea of the proof",
-  "pageStart": 7,
-  "pageEnd": 12,
-  "text": "../sections/sec-008-19-general-idea-of-the-proof.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0911.1038v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0911.1038v2",
+  "title": "The main result: proof of some conjectures of Lassalle",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-008-18-the-main-result-proof-of-some-conjectures-of.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.1038v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.1038v2/manifest.jsonld",
   "provenance": "ingested"
 }

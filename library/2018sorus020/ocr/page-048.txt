@@ -1,0 +1,41 @@
+hypothesis of Theorem|2.0.A Futhermore, assume that the Alexander polynomial of
+M has simple roots. Then
+
+-—x(Y) < > —NyX (Ly) — My
+
+where my is defined as in Theorem|2.0.2,
+
+The two first sections of this chapter are devoted to the definition of the adjoint
+torsion as a differential form on the augmented character variety, and we detail
+several computations of this form. In the third section we give a proof of Theorem
+2.0.1, and some interpretation of those results in terms of torsion in the Kahler
+differential’s module and of Alexander invariants. In the fourth section we begin
+with an explicit topological computation of the torsion form of the trefoil knot,
+which has inspired the general proof of Theorem 2.0.2] that follows, and we conclude
+
+by checking our results on a series of examples.
+
+2.1 The twisted complex with adjoint action
+
+In this section we study the complex of twisted cohomology of M in the adjoint
+
+representation.
+
+2.1.1 Tangent space, differential forms and twisted cohomo-
+logy
+
+The results of this section can be found in [Mar15]. It’s a well-known result
+that the tangent space of the character variety at an irreducible character is
+isomorphic to the first group of twisted cohomology with the adjoint action. Saito’s
+Theorem allows us to prove it in the skein context. This results can serve as a
+motivation to study the adjoint-twisted complex, which appears to be related with
+
+the geometry of the character variety.
+
+Definition 2.1.1. Let p: I — SLo(k) be a representation. The action by conjuga-
+tion of the group SL2(k) on its Lie algebra induces an action of P on slo(k), called
+the adjoint action. We define the complex C*(M, Ad op) of twisted cohomology for
+
+this action with coefficients in sl2(k).
+
+47

@@ -15,7 +15,7 @@ LaTeX label: `ex:projective-line-su2`
 
 ## References
 
-- [manuscript] §1 Example: Projective line for SU(2)
+- [leitner2026] §1 Example: Projective line for SU(2)
 -/
 
 namespace QOU.Examples
@@ -23,7 +23,7 @@ namespace QOU.Examples
 /-- **SU(2) projective line data**: ℙ(V) = SU(2)/U(1) ≅ ℙ¹(ℂ) ≅ S².
 
     LaTeX: `\label{ex:projective-line-su2}` -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure SU2ProjectiveLineData where
   /-- Real dimension of G/T = SU(2)/U(1). -/
   realDim : ℕ
@@ -43,7 +43,7 @@ structure SU2ProjectiveLineData where
   coord_ring_one_gen : coord_ring_generators = 1
 
 /-- The projective line data for SU(2)/U(1). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2ProjectiveLine : SU2ProjectiveLineData where
   realDim := 2
   real_dim_eq := rfl

@@ -1,0 +1,57 @@
+1382 J. Leake
+
+(iii) > (i). Proposition 6.5 above. o
+
+As mentioned above, the previous proposition gives a slightly stronger result in the (symbol
+stability = operator stability) direction. Using it, we revisit the additive and multiplicative
+convolutions with a more algebraic/symbolic mentality.
+
+Example 6.6 By Definition 3.6, the Symb map gives a bijection between certain spaces of
+linear operators and polynomials. So, we can uniquely define a linear operator by giving
+its symbol. Using this idea, we specify T ¢ Hom(V(n, n), V(n)) by defining its symbol in
+V(n, n,n) with variables (z, w), (t, 5), (x, y) as follows:
+
+Symb(T) := Hmg,y yn) [(x —(z+ 1))"] = (xws — (zs + tw)y)”
+
+Now, let us consider the additive convolution at as an element of Hom(V (n,n), V(n)) in the
+following way. Since V (n,n) = V(n)XIV (n), we define at onelements pXg € V(n) XV (n)
+via * (p &q) := p *', q and extend linearly. We then compute Symb(+', ) as follows:
+
+Symb(«!,) =»! [(cy —xw)" Xl (ty — xs)" = (xws — (zs + tw)y)”
+
+That is, +", is the operator that has our desired symbol. Fixing any a, b, c,d € R such that
+a < bandc < d, we define the sets Cy := H4\(a, b), C2 := H4\(c, d), By := H_ Ula, b],
+By := H_ U[e,d]), and S := Hy\[a +c, b + d]. Proposition 6.5 then implies p #1 q has
+all its roots in [a+ c, b+ d] whenever p, g € V(n) have all their roots in (a, b) and (c, d),
+respectively. For real-rooted p, q of degree n, this implies:
+
+minroot(p) + minroot(qg) < minroot(p * q) < maxroot(p x gq) < maxroot(p) + maxroot(q)
+
+Notice that we actually get a bit more. For (C, x C2)-stable r := yj pj&qj ¢ V(n)\RV(n) =
+V(n, n), we have that *'| [r] is S-stable. That is, *"| has stability properties as an operator in
+Hom(V (n, 7), V(n)), not just as a convolution between two polynomials in V(n).
+
+Example 6.7 As in the previous example, we can consider the multiplicative convolution
++ as an element of Hom(V(n, 7), V(n)) by defining *..(p &q) := p *% q on elements
+
+p&q € V(n) & V(n) = V(n,n) and extending linearly. We then compute its symbol in
+V(n, n,n) with variables (z, w), (t, 5), (x, y) as follows:
+
+Symb(*",) = *% [(zy — xw)" B (ty — xs)"] = (ws — zty)" = Hmg (n,n) [(x — 2t)"]
+
+Fixing any a, b, c,d € Ry such that 0 < a < band0 <c < d, we define the sets C), C2,
+B,, and B» as in the previous example. We then define S := R\lac, bd]. Proposition 6.5 then
+implies p *'. q has all its real roots in [ac, bd] whenever p,q € Vig(n) have all their roots
+in (a, b) and (c, d), respectively. (Notice that we could not apply the proposition if H4 C S
+or H— C S.) Since Example 6.4 implies p *% q is positive-rooted (and hence, real-rooted)
+whenever p and q are, this implies:
+
+minroot(p) - minroot(q) < minroot(p *'. q) < maxroot(p *% q) < maxroot(p) - maxroot(q)
+
+As in the previous example, we also obtain stability properties for + as an operator in
+Hom(V (n, 1), V(n)), and not just as a polynomial convolution.
+
+Using similar techniques, we can also circumvent the issue that arises from the fact that
+0, only preserves weak stability.
+
+D Springer

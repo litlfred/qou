@@ -1,1 +1,0 @@
-The unreduced moduli space

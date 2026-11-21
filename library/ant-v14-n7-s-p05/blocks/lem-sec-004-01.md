@@ -1,0 +1,1 @@
+Let s : Y →X be a section of a smooth morphism p : X →Y and let η : id →s∗s∗, ϵ : s∗s∗→id be unit and counit of adjunction. Then the composition idSH(Y) −→ ∼ p! ◦s! = p! ◦s∗ s∗→s∗◦s∗ ϵ→idSH(Y) is the identity. Here the morphism s∗: p! →s∗is the one constructed in Remark 2.9.

@@ -36,7 +36,11 @@ sys.path.insert(0, str(HERE / "substrate"))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
-from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
+from derived_chi_catalogue_matrix_m import (  # noqa: E402
+    ISOSPIN_DEGENERACY_NOTE,
+    _word_for_braid_word_3a,
+)
+from chi_via_rust_lossless import PN_SPLIT_NOTE  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
@@ -94,6 +98,13 @@ def main() -> int:
         ),
         "producer": "rust-chi-q-via-gp-lossless",
         "convention": "sign-only-crossings",
+        "pn_split_carried": False,
+        "pn_split_note": PN_SPLIT_NOTE,
+        "isospinDegeneracyNote": ISOSPIN_DEGENERACY_NOTE,
+        # Hand-rolled payload: the q0_anchor_manifest entry cannot reach it
+        # (only WitnessBuilder.build() reads the manifest), so declare the pin.
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
         "q_0_50dps": str(q),
         "dps": 50,
         "n_strands": n,

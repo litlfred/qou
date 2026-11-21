@@ -8,6 +8,7 @@ pages: 37-38
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 [A1]
 Adams, C., Limit volumes of hyperbolic 3-orbifold. Preprint.
@@ -74,8 +75,6 @@ Meyerhoff, R., A lower bound for the volume of hyperbolic 3-orbifolds. Duke Math
 [NR1]
 Neumann, W.D. and Reid, A.W., Amalgamations and the invariant trace ﬁeld. Math. Proc.
 Camb. Philos. Soc. 109 (1991), 509–515
-310
-Walter D. Neumann and Alan W. Reid
 [NR2]
 Neumann, W.D. and Reid, A.W., Notes on Adams’ small volume orbifolds. These Pro-
 ceedings.

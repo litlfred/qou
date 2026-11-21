@@ -1,4 +1,4 @@
-When two vortex filaments approach, the divisor $\{\psi = 0\}$ undergoes surgery. The quantum pressure $Q_q$ acts to regularise the classical reconnection singularity. Let $D = \sum_i n_i\varrho_i$ denote the effective divisor framing the vortex configuration, where $\varrho_i$ represent the filament components and $n_i \in \frac{1}{2}\mathbb{Z}$ identify their intensity levels. Reconnection constitutes a **birational transformation** on the divisor:
+When two vortex filaments approach, the divisor $\{\psi = 0\}$ undergoes surgery. In smooth inviscid (Euler) flow, vortex lines are transported by the flow and their link type is fixed, so a change of topology is incompatible with smoothness there. Viscous reconnection carries no such obstruction: there exist smooth solutions of the three-dimensional Navier--Stokes equations in which vortex lines and vortex tubes of arbitrary knot and link type are created and destroyed in arbitrarily short time \cite{enciso2017}. Reconnection by itself is therefore compatible with smooth classical viscous flow, and the role assigned here to the quantum pressure $Q_q$ is to organise the surgery. Let $D = \sum_i n_i\varrho_i$ denote the effective divisor framing the vortex configuration, where $\varrho_i$ represent the filament components and $n_i \in \frac{1}{2}\mathbb{Z}$ identify their intensity levels. Reconnection constitutes a **birational transformation** on the divisor:
 
 $$
   D =  \cdots + \varrho_i + \varrho_j + \cdots
@@ -9,7 +9,7 @@ $$
 where $\varrho_i'$ and $\varrho_j'$ designate the reconnected filaments. The surgery preserves three quantities:
 
 - **Total circulation**: $\Gamma_i^{(q)} + \Gamma_j^{(q)} = \Gamma_{i'}^{(q)} + \Gamma_{j'}^{(q)}$ (enforcing conservation of the $\mathrm{SU}_q(2)$ Casimir).
-- **Categorical helicity**: $\mathcal{H}_q[D] = \mathcal{H}_q[D']$ ([helicity conservation](#prop:helicity-conservation)), although writhe and twist are free to redistribute.
+- **Categorical helicity**: $\mathcal{H}_q[D] = \mathcal{H}_q[D']$ ([helicity conservation](#prop:helicity-conservation)), although writhe and twist are free to redistribute. The redistribution is forced whenever the exchange acts as a crossing change between distinct filaments $a \neq b$ of a pure braid. A crossing change of sign $\epsilon = \pm 1$ moves $\mathrm{lk}(\varrho_a, \varrho_b)$ by exactly $-\epsilon$ and the mutual helicity $\sum_{a \neq b} \mathrm{lk}\,\Gamma_a\Gamma_b$ by exactly $-2\epsilon\,\Gamma_a\Gamma_b$, while the Reidemeister II and III moves leave both unchanged. Conservation of the total therefore requires an equal and opposite change in the writhe-plus-twist term, which is the transfer from linking to coiling observed in reconnecting vortex links \cite{scheeler2014}.
 - **Total homology class**: $[D] = [D']$ evaluated in $H_1(\mathcal{S})$.
 
 **Three types of divisor surgery.**

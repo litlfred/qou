@@ -1,0 +1,70 @@
+{
+  "description": "qou-hlxp: what the letter maps do to the convention-D Markov trace.",
+  "results": {
+    "2": {
+      "neg": {
+        "z_pullback": "-1/(q*(q**2 + 1))",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": false
+      },
+      "flip": {
+        "z_pullback": "q**3/(q**2 + 1)",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": true
+      },
+      "swap": {
+        "z_pullback": "-1/(q*(q**2 + 1))",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": false
+      }
+    },
+    "3": {
+      "neg": {
+        "z_pullback": "-1/(q*(q**2 + 1))",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": false
+      },
+      "flip": {
+        "z_pullback": "q**3/(q**2 + 1)",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": true
+      },
+      "swap": {
+        "z_pullback": "-1/(q*(q**2 + 1))",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": false
+      }
+    },
+    "4": {
+      "neg": {
+        "z_pullback": "-1/(q*(q**2 + 1))",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": false
+      },
+      "flip": {
+        "z_pullback": "q**3/(q**2 + 1)",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": true
+      },
+      "swap": {
+        "z_pullback": "-1/(q*(q**2 + 1))",
+        "pullback_is_markov_trace": true,
+        "pullback_equals_convention_D": false
+      }
+    }
+  },
+  "checks": {
+    "flip_pullback_is_D": true,
+    "neg_pullback_not_D": true,
+    "swap_pullback_not_D": true,
+    "neg_z_is_zD_at_minus_q_inv": true,
+    "all_pullbacks_markov": true,
+    "D_kills_antisymmetriser_n3": true,
+    "D_keeps_symmetriser_n3": true,
+    "pullback_kills_symmetriser_n3": true,
+    "pullback_keeps_antisymmetriser_n3": true
+  },
+  "exact": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact symbolic computation over Q(q) in sympy; q stays a symbol and no q0 pin is ever read"
+}

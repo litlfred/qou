@@ -97,6 +97,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_core import h as H_BAKED_F64  # noqa: E402 — template classifier only
 from q_parameter import Q_50_DIGIT_STR as Q_RUNTIME_STR  # noqa: E402 — drift measurement only
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -105,10 +106,10 @@ from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-inde
 set_compute_dps()
 
 B_AME = {
-    "D": mp.mpf("2.22456607"),
+    "D": AME_B_DEUTERON_MEV_VALIDATION,
     "T": AME_B_TRITIUM_MEV_VALIDATION,
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 # Second route to the same four binding energies. `codata_constants`

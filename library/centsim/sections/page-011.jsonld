@@ -13,9 +13,11 @@
   "pageStart": 11,
   "pageEnd": 11,
   "contains": [
-    "library/centsim/blocks/prose-page-011"
+    "library/centsim/blocks/prose-page-011",
+    "library/centsim/blocks/prop-page-011-01",
+    "library/centsim/blocks/lem-page-011-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/centsim",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/centsim",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/centsim/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/centsim/manifest.jsonld",
   "provenance": "ingested"
 }

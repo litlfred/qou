@@ -74,6 +74,7 @@ from __future__ import annotations
 # working from the `probes/` cluster subdirectory. The bridge
 # module also puts every other cluster subdir on sys.path so
 # cross-cluster bare-name imports resolve. Idempotent.
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
@@ -148,7 +149,7 @@ def F_Bor(q):
 #     = h σ_0 σ_1 σ_0 + σ_1 σ_0 − h² σ_0 σ_1 − h σ_1
 #     = h·e⁻ + L_− − h²·L_+ − h·σ_1
 #
-# where e⁻ ↔ σ_0σ_1σ_0 (trefoil), L_+ ↔ σ_0σ_1, L_− ↔ σ_1σ_0.
+# where e⁻ ↔ σ_0σ_1σ_0 (closure: Hopf link), L_+ ↔ σ_0σ_1, L_− ↔ σ_1σ_0.
 # Net at q_0:  N(𝓜_+) = h·tr(e⁻) + tr(L_−) − h²·tr(L_+) − h·tr(σ_1)
 # but the paper's "net" is a *sum of NF coefficients* in the
 # Gröbner-Shirshov basis (not the Markov trace).  We expose BOTH
@@ -194,9 +195,9 @@ def markov_trace_basis(q):
       tr_M(σ_0σ_1σ_0) = tr_M(σ_1·σ_0²) = tr_M(σ_1·(h·σ_0+1))
                       = h·tr_M(σ_1σ_0) + tr_M(σ_1)
                       = h·z² + z.
-    (Distinct from the H_2 trace of σ_0³ = (h²+1)z + h: both close to
-    the trefoil knot, but the Markov trace differs by the strand
-    normalization. The meson NF lives in H_3(q), so we use the H_3
+    (Distinct from the H_2 trace of σ_0³ = (h²+1)z + h: σ_0³ closes to
+    the trefoil and σ_0σ_1σ_0 to the Hopf link, and the Markov traces
+    differ. The meson NF lives in H_3(q), so we use the H_3
     trace.)
     """
     # Convention D (canonical, 2026-08-15 owner ruling). The tr_M identities
@@ -209,7 +210,7 @@ def markov_trace_basis(q):
     tr_sig = z
     tr_Lplus = z ** 2          # Hopf link L_+
     tr_Lminus = z ** 2         # Hopf link L_− (same up to sign convention)
-    tr_e_minus = h * z ** 2 + z   # trefoil in H_3(q)
+    tr_e_minus = h * z ** 2 + z   # e⁻ = σ_0σ_1σ_0 in H_3(q)
     return tr_sig, tr_Lplus, tr_Lminus, tr_e_minus, z, h
 
 
@@ -234,7 +235,7 @@ def E0_from_substrate(q, m_e):
     """
     h = q - 1 / q
     return {
-        "E0_A_me_over_q_qminus1": m_e / (q * (q - 1)),
+        "E0_A_me_over_q_qminus1": _qbeta_e0.order_zero_scaled(m_e, q),
         "E0_B_me_over_h_sq": m_e / h ** 2,
         "E0_C_me_FBor": m_e * F_Bor(q),
         "E0_D_me_qfact_qminus1": m_e * qfact_three(q) * (q - 1),

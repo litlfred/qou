@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1002.0168v2",
  "source_sha256": "c95d5d193d57b097",
- "brief": "Non-cyclotomic fusion categories Scott Morrison Noah Snyder — Etingof, Nikshych and Ostrik ask in [ 7,§2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld.",
- "extended": "**Non-cyclotomic fusion categories Scott Morrison Noah Snyder**\n\n*URLs: http://tqft.net/ and http://math.columbia.edu/~nsnyder*\n\n22 pp, 8 sections.\n\n**Abstract.** Etingof, Nikshych and Ostrik ask in [ 7,§2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld. We show that this is not the case: in particular one of the fusion categories coming from the Haagerup subfactor [1] and one coming from the newly constructed extended Haagerup subfactor [ 2] can not be completely deﬁned over a cyclotomic ﬁeld. On the other hand, we show that the Drinfel’d center of the even part of the Haagerup subfactor is completely deﬁned over a cyclotomic ﬁeld. We identify the minimal ﬁeld of deﬁnition for each of these fusion categories, compute the Galois groups, and identify their Galois conjugates.\n\n**Outline.** 1 Introduction; 2 Background; 2.2 Subfactors and category theory; 2.3 Shaded planar algebras; 2.4 Principal graphs; 2.5 The lopsided normalization; 4 Rational forms and twisted moments; 6 Galois conjugates",
+ "brief": "Non-cyclotomic fusion categories Introduction — Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld.",
+ "extended": "**Non-cyclotomic fusion categories Introduction**\n\n*Scott Morrison*\n\n22 pp, 12 sections.\n\n**Abstract.** Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld. We show that this is not the case: in particular one of the fusion categories coming from the Haagerup subfactor [1] and one coming from the newly constructed extended Haagerup subfactor [2] can not be completely deﬁned over a cyclotomic ﬁeld. On the other hand, we show that the Drinfel’d center of the even part of the Haagerup subfactor is completely deﬁned over a cyclotomic ﬁeld. We identify the minimal ﬁeld of deﬁnition for each of these fusion categories, compute the Galois groups, and identify their Galois conjugates.\n\n**Outline.** Front matter; 1 Introduction; 2 Background; 2.1 Fusion categories and fields of definition; 2.2 Subfactors and category theory; 2.3 Shaded planar algebras; 2.4 Principal graphs; 2.5 The lopsided normalization; 3 The shaded planar algebras H0 and H1; 4 Rational forms and twisted moments; 5 The Drinfel'd center; 6 Galois conjugates",
  "tokens": {
-  "brief": 44,
-  "extended": 257
+  "brief": 41,
+  "extended": 274
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,35 +22,50 @@
   {
    "id": "sec-001-2-background",
    "title": "Background",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-fusion-categories-and-fields-of-definition",
+   "title": "Fusion categories and fields of definition",
    "pages": "3-5"
   },
   {
-   "id": "sec-002-22-subfactors-and-category-theory",
+   "id": "sec-003-22-subfactors-and-category-theory",
    "title": "Subfactors and category theory",
    "pages": "5-6"
   },
   {
-   "id": "sec-003-23-shaded-planar-algebras",
+   "id": "sec-004-23-shaded-planar-algebras",
    "title": "Shaded planar algebras",
    "pages": "6-9"
   },
   {
-   "id": "sec-004-24-principal-graphs",
+   "id": "sec-005-24-principal-graphs",
    "title": "Principal graphs",
    "pages": "9-9"
   },
   {
-   "id": "sec-005-25-the-lopsided-normalization",
+   "id": "sec-006-25-the-lopsided-normalization",
    "title": "The lopsided normalization",
-   "pages": "9-14"
+   "pages": "9-10"
   },
   {
-   "id": "sec-006-4-rational-forms-and-twisted-moments",
+   "id": "sec-007-3-the-shaded-planar-algebras-h0-and-h1",
+   "title": "The shaded planar algebras H0 and H1",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-008-4-rational-forms-and-twisted-moments",
    "title": "Rational forms and twisted moments",
-   "pages": "14-20"
+   "pages": "14-17"
   },
   {
-   "id": "sec-007-6-galois-conjugates",
+   "id": "sec-009-5-the-drinfeld-center",
+   "title": "The Drinfel'd center",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-010-6-galois-conjugates",
    "title": "Galois conjugates",
    "pages": "20-22"
   }

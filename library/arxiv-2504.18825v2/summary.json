@@ -3,31 +3,31 @@
  "doc_id": "arxiv-2504.18825v2",
  "source_sha256": "829f97190cb1c8ad",
  "brief": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s",
- "extended": "**Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications**\n\n*NAIHUAN JING AND NING LIU*\n\n56 pp, 12 sections.\n\n**Abstract.** We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s standard elements. Combined with Shoji’s determinacy result, our formula provides a direct combinatorial route to the full irreducible character table of Hm,n(q, u). Our construction is based on our recent multi- parameter Murnaghan–Nakayama rule for Macdonald polynomials and specializes uni- formly to several previously known formulas, including those for the complex reflection group of type G(m, 1, n) and the Iwahori–Hecke algebras of types A and B. In a dual framework, using the vertex operator realization of Schur functions, we also derive a com- plementary iterative formula for irreducible characters on upper multipartitions, which may be viewed as a dual Murnaghan–Nakayama rule.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Murnaghan–Nakayama rule for the cyclotomic H; 4 Special cases of the Murnaghan–Nakayama rule; 5 A dual Murnaghan–Nakayama rule via vertex op; 6 Application I: Regev-type formula; 7 Application II: Lübeck–Prasad–Adin–Roichman-; 8 Multiple bitrace for the irreducible charact; Appendix A. An alternative proof of Corollary ; Appendix B. SageMath implementation of the Mur; References\n\n**Extracted claims (proposals, not verified).**\n- Corollary: \\ref{c:dualMN2} ensures that the iteration can continue even when the parts of $\\la^{(1)}$ are exhausted.\n- Lemma: A.1. Let ψλ be the irreducible character of the Hecke algebra in type A indexed\n- Lemma: A.2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke",
+ "extended": "**Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications**\n\n*NAIHUAN JING AND NING LIU*\n\n56 pp, 12 sections.\n\n**Abstract.** We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s standard elements. Combined with Shoji’s determinacy result, our formula provides a direct combinatorial route to the full irreducible character table of Hm,n(q, u). Our construction is based on our recent multi- parameter Murnaghan–Nakayama rule for Macdonald polynomials and specializes uni- formly to several previously known formulas, including those for the complex reflection group of type G(m, 1, n) and the Iwahori–Hecke algebras of types A and B. In a dual framework, using the vertex operator realization of Schur functions, we also derive a com- plementary iterative formula for irreducible characters on upper multipartitions, which may be viewed as a dual Murnaghan–Nakayama rule.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Murnaghan–Nakayama rule for the cyclotomic H; 4 Special cases of the Murnaghan–Nakayama rule; 5 A dual Murnaghan–Nakayama rule via vertex op; 6 Application I: Regev-type formula; 7 Application II: Lübeck–Prasad–Adin–Roichman-; 8 Multiple bitrace for the irreducible charact; Appendix A. An alternative proof of Corollary ; Appendix B. SageMath implementation of the Mur; References",
  "tokens": {
   "brief": 49,
-  "extended": 437
+  "extended": 351
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-7"
+   "pages": "2-7"
   },
   {
    "id": "sec-001-2-preliminaries",
    "title": "Preliminaries",
-   "pages": "7-11"
+   "pages": "7-12"
   },
   {
    "id": "sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck",
    "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
-   "pages": "11-18"
+   "pages": "12-18"
   },
   {
    "id": "sec-003-4-special-cases-of-the-murnaghannakayama-rule",
@@ -74,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

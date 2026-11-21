@@ -1,0 +1,62 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-045
+section_title: "Page 45"
+pages: 45-45
+pdf_page: 45
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+f Lemma 10:
+The explicit expressions for M8° on the boundaries of V4 are:
+
+B
+
+~ —1)?8 _. (A+ ® A-Z
+AK (np) =P DG Yo (SUF) (G2). orn
+2 Ge), k=—B B+k}),\B-k/,
+¥(4, 8) A+24B—k\ (A-#+B+k
+ARC (m, p) = “(Are \ea ) ert)
+PoR) ), ye B-k 1 Bt+k 1
+- rag i Sy (A-B+C—k\) (AF B4CHh
+ABC(m,p) =¥(4, ye Sa we ( 2 ) ( 2 ) . (art).
+2 Coc) h=-C C-k q C+k q
+
+(144)
+
+The equations (141) are satisfied on ar‘, or4,.
+
+Proof: In order to show that A¥%© are given by the expressions (144) we have to integrate
+
+the linear equations (136). This is trivial, because we know that these systems admit a unique
+solution and it is then sufficient to show that the right handside of (144) satisfy these linear
+equations, which is easy to show. We will first show that the equations (141) are satisfied on
+or.
+From the expression of A%° on 8©4, we see that if 2B is an odd integer then A3° has just
+Fourier modes in Z +4. As a result the integration Sin ARC (m, p)P(m, p)dp = 0, and Plancherel
+formula is trivially satisfied. The only non trivial check is therefore for 2B even. From the
+explicit expression of A3° (m, p) we obtain that
+
+one ), [ AC (an, p)P(m, p)dp =
+
+mva("S8) (58) ree (58) (5-8), 9) (8)
+
+We have to consider two cases, the first one is when A is an integer, the constraint Y(A, 4 B)y=1
+imposes that we put m = 2s, the Plancherel formula (142), is then equivalent to the following
+identity:
+
+vi(*5) Ce een (BE) - (B).Ga
+~ (3). (a),- on 1) (~ 1). (145)
+
+The second case is when A = | + 3 with I € Z, the constraint Y(A, =) = 1 imposes that we
+put m = 2s+1 with 0 < s <1, the Plancherel formula (142), is then equivalent to the following
+identity:
+
+SC 5) Gorm C508) ($8) 5049 (Bat) nee
+
+We will now show that these identities on g-binomials hold, and will only give an explicit proof
+of the first identity, the second case uses the same method of proof. We will show the two

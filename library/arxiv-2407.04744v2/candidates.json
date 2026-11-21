@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2407.04744v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "fc6fda3138296fb1f0c693652d26ced7fd279b09f4742b9b1a8ef6459b5c63a2",
   "file": "2407.04744v2.pdf"
  },
  "provenance": {
-  "title": "Magnetic structure of A\u2264 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods G. Chambers-Wall 1,\u2217 A. Gnech 2,3,\u2020 G. B. King 1,\u2021 S",
-  "authors": "Pastore1,4,\u00a7 M. Piarulli 1,4,\u00b6 R. Schiavilla 2,3,\u2217\u2217 and R. B. Wiringa 5\u2020\u2020",
+  "title": "Magnetic structure of A \u2264 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+  "authors": "Pastore1,4,\u00a7 M. Piarulli1,4,\u00b6 R. Schiavilla2,3,\u2217\u2217and R. B. Wiringa5\u2020\u2020",
   "arxiv": {
    "id": "2407.04744",
    "version": "2",
@@ -20,9 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "In Ref. [@King:2020wmp], a similar behavior was observed for axial transition densities in a study of Gamow-Teller $\\beta$-decay matrix elements.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-012-scaled-two-body-magnetic-densities.md (p. 11-12)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-012-scaled-two-body-magnetic-densities.md",
+   "section_title": "Scaled two-body magnetic densities",
+   "pages": "11-12",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-012-scaled-two-body-magnetic-densities.md (p. 11-12)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-012-01",
+   "block_iri": "library/arxiv-2407.04744v2/blocks/prop-sec-012-01",
+   "claim_id": "arxiv-2407.04744v2#prop-sec-012-01"
+  }
+ ]
 }

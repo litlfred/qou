@@ -1,0 +1,1 @@
+— For λ, µ ∈C∗\ (1 −p)qZ we have: E[λ] q −E[µ] q = K(λ, µ, x) ep( q x) , where: K(λ, µ, x) = C θp(−λ µ)θp( 1−p x )θp( (1−p)λµ x ) θp( (1−p)λ x )θp( (1−p)µ x ) , where C is a constant depending only on q.

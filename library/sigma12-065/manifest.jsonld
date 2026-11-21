@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sigma12-065",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sigma12-065/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,10 +21,18 @@
     "library/sigma12-065/sections/sec-006",
     "library/sigma12-065/sections/sec-007",
     "library/sigma12-065/sections/sec-008",
-    "library/sigma12-065/sections/sec-009"
+    "library/sigma12-065/sections/sec-009",
+    "library/sigma12-065/sections/sec-010",
+    "library/sigma12-065/sections/sec-011",
+    "library/sigma12-065/sections/sec-012",
+    "library/sigma12-065/sections/sec-013",
+    "library/sigma12-065/sections/sec-014",
+    "library/sigma12-065/sections/sec-015",
+    "library/sigma12-065/sections/sec-016",
+    "library/sigma12-065/sections/sec-017"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "sigma12-065",
     "title_source": "slug",

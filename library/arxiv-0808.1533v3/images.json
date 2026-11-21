@@ -1,0 +1,36 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "arxiv-0808.1533v3",
+  "images": [
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.116223,
+        "imagesOnPage": 2,
+        "page": 11
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p011-2",
+      "file": "images/img-p011-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.043802,
+        "imagesOnPage": 2,
+        "page": 11
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    }
+  ]
+}

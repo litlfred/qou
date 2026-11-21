@@ -101,7 +101,8 @@ hbar_q = 1 - 1 / q
 h = q - 1 / q
 dnet = h * (h - 2) / 2                       # the cheat sheet's free-neutron Delta(net)
 
-E0_lept = m_e / (q * (q - 1))                # step 9, leptonic
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0_lept = _qbeta_e0.order_zero_scaled(m_e, q)                # step 9, leptonic
 E0_tower = E0_lept / (1 - hbar_q**2)         # production, tower-summed (ruled 2026-09-05)
 E0_had = QB_CODATA / abs(dnet)               # step 9, hadronic -- Q_beta inverted
 

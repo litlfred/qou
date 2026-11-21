@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/download-3/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Boundary Operator at the Fundamental Class. Recalls that we had defined",
-  "pageStart": 20,
-  "pageEnd": 20,
-  "text": "../sections/sec-009-41-boundary-operator-at-the-fundamental-class-re.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
+  "title": "x[F,a2]...[F,an]e-",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-009-11-xfa2fane.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
   "provenance": "ingested"
 }

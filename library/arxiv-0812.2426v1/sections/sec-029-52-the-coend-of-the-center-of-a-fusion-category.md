@@ -9,8 +9,9 @@ source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.918
+latex_prose_ratio: 0.904
+latex_coverage_ratio: 0.538
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 []{#sect-fusioncoend label="sect-fusioncoend"} Let us describe the structure of the coend $(C,r)$ of $Z\mbox{-}\,\mathcal{C}\cong \mathcal{Z}(\mathcal{C})$, where $\mathcal{C}$ is a spherical fusion category. Recall that $C$ is an object of $\mathcal{C}$ and $r\colon Z(C) \to C$ is an action of $Z$ on $C$. From Theorem [\[thm-coend\]](#thm-coend){reference-type="ref" reference="thm-coend"}, we get: $$C=\bigoplus_{j \in I} \leftidx{^\vee}{\!Z(V_j)}{} \otimes V_j= \bigoplus_{i,j \in I} \leftidx{^\vee}{\!V}{}_i \otimes \leftidx{^\vee}{\!V}{}_j \otimes \leftidx{^{\vee\vee}}{\!V}{}_i
 \otimes V_j.$$ Note that an immediate consequence of this is: $\dim \mathcal{Z}(\mathcal{C}) =(\dim \mathcal{C})^2$.

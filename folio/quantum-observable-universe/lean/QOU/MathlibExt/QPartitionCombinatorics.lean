@@ -138,7 +138,7 @@ theorem qFactorial_succ (q : R) (n : ℕ) :
 
     **Proof**: For `q > 1`, we have `0 < q`, and since `q⁻¹ · q = 1`
     with `q⁻¹ > 0`, we get `q⁻¹ < 1 < q`, hence `q − q⁻¹ > 0`. -/
--- Ref: [manuscript] def:q-bracket
+-- Ref: [leitner2026] def:q-bracket
 theorem q_sub_q_inv_pos_at_q_gt_one {q : ℝ} (hq : 1 < q) :
     0 < q - q⁻¹ := by
   have hq_pos : 0 < q := lt_trans zero_lt_one hq
@@ -825,7 +825,7 @@ theorem hookLength_addBoxRow_of_ne_corner
     lam ⊢ 2 is y_lam = q^{c(lam)} / [2]_q. This is the bridge between the
     content-sum formula and the explicitly-proved H₂ weights. -/
 -- Ref: [wenzl1988] Theorem 5 specialised to n=2
--- Ref: [manuscript] prop:q-schur-y-lambda-closed-form (H₂ case)
+-- Ref: [leitner2026] prop:q-schur-y-lambda-closed-form (H₂ case)
 theorem qSchur_H2_content_bridge (q : ℝ) (hq : 1 < q) :
     contentSum [2] = 1 ∧ contentSum [1, 1] = -1 := by
   exact ⟨contentSum_two, contentSum_one_one⟩

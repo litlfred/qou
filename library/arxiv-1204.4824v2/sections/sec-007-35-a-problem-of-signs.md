@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1204.4824v2
-doc_title: "Prepared for submission to JHEP Spectral networks"
+doc_title: "Spectral networks"
 section_id: sec-007-35-a-problem-of-signs
 section_title: "A problem of signs"
 section_number: 3.5
 pages: 17-19
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.968
+latex_coverage_ratio: 0.972
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 \label{sec:tricky-sign}
 

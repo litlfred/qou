@@ -157,7 +157,7 @@ closing `8₁₁` would be an overstatement.
 
 Archimedean (ℝ, ℂ).
 
--- Ref: [manuscript] prop:qbeta-c8-c10-silver-rationals
+-- Ref: [leitner2026] prop:qbeta-c8-c10-silver-rationals
 -- Ref: [ohtsuki2016] doi:10.4171/QT/83
 -/
 

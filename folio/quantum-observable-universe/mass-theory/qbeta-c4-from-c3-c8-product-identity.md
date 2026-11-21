@@ -8,4 +8,4 @@ $$
 
 The Pell-Lucas linear recursion does not close the gap between $c_4$ and $c_5, c_6, c_7$. This proposition closes the gap via a multiplicative product law. The identities $c_3 \cdot c_4 = c_8$ and $c_3 \cdot c_6 = c_9$ hold algebraically. Applying the $J_{\mathrm{Hopf}}$ Markov-trace twist $c_3 = -2$ to $c_4$ yields $c_8$. If this follows from a categorical theorem, then $c_4$ is forced by $c_3$ and $c_8$.
 
-The identities are stated as Laurent polynomials in $b$ and verified at the silver-ratio rational anchor in $\mathbb{Q}$. The Lean proofs use `norm_num` pure rational arithmetic. Until the upstream $c_8$ categorical proof lands, $c_4$ holds empirical tier.
+The identities are stated as Laurent polynomials in $b$ and verified at the silver-ratio rational anchor in $\mathbb{Q}$. The verification is pure rational arithmetic. Until the upstream $c_8$ categorical proof lands, $c_4$ holds empirical tier.

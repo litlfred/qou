@@ -214,6 +214,10 @@ accept `workdps` at module scope). Sweep re-run: 440 fields moved, max rel
 8.78e-49; baseline arm reproduced the committed witness with 0 moved. The
 GENERAL trap stands: any module-scope `set_compute_dps(N)` in a LIBRARY
 module is this bug — grep for it before trusting a caller's declared dps.
+Second live instance, measured 2026-11-15: `chi_free_via_lr` calls
+`set_compute_dps()` (-> 70) at module scope and is imported lazily inside
+`tr_m_atom_zn`, so `binding_canonical` printed its 50-digit traces at 70 via
+`nstr(x, mp.mp.dps)`. **Serialize at the value's own width, never at ambient dps.**
 The `qou-mass/_internal/` mirror still carries the old line until a
 `sync-qou-mass-vendor.py --apply` (12 modules already drifted on main).
 
@@ -268,6 +272,81 @@ tridiagonal** and a **52x52 Hermitian** momentum block, both fine under
 For a symmetric tridiagonal go further: Sturm-sequence bisection counts
 eigenvalues below `lam` in O(n) per evaluation and reaches any single eigenvalue
 to full working precision, which is what makes n ~ 2000 cheap.
+
+## TRAP — an IMPORT cone is not an EXPOSURE count; instrument the call
+
+Measured 2026-09-19 (`qou-oiz3`, PR #7443). The float64 `q_int` has an import cone of
+**1290 files / 919 committed witnesses**, and that number is correct for its question and
+useless for planning a refresh. Instrumenting `q_int` with a call counter and running 100
+in-cone producers: **56 of 57 that completed call it exactly SIX times, all at import time
+inside `pyhecke/constants.py`** (`_bare_alpha_em`/`_bare_alpha_inv` at `:112-113`,
+`FIG8_F_COUL` at `:257`). One called it 67,934 times — and that one is the only witness in
+the whole exercise that moved besides the 15-call case.
+
+So the before/after mover rate was **1 of 18 = 5.6 %**, against a plan sized off 919. The
+predicate that actually identifies the exposed set is *"calls the primitive at RUNTIME"*,
+which a counter decides in one run per producer and no grep can.
+
+**State it as a floor.** 43 of the 100 were untraced (45 s timeout, and `atexit` does not
+fire on a kill) — and the heavy producers are exactly the likely runtime users.
+
+## TRAP — mpmath rounds to the CONTEXT's precision, not the operands'
+
+The sibling of the cached-mpf trap and it bites the FIX rather than the bug. Making an
+input exact does nothing if the accumulator is seeded under a low ambient `mp.dps`:
+`H = mp.mpf("1.0")` at the bare-import default of **15** throws the exact factors away one
+multiplication at a time. Worse, it can REGRESS — 15 dps is fewer digits than the float64
+route being replaced (~15.95). Every primitive that accumulates (`q_hook_product`,
+`q_factorial`, `q_dimension`, `wedderburn_weight`) needs an explicit `mp.workdps(floor+10)`
+around the body and a `+x` round to the floor on return.
+
+And **memoise the anchor**: `q_at` is an uncached `findroot`, so routing a hook loop
+through it is O(n²) Newton solves. Key the cache on the dps and build inside the precision
+context. Measured side-effect of getting this right: `aoperator_a5_crosscheck`
+**102.3 s → 8.0 s**.
+
+## TRAP — a sweep that cleans "stray" root witnesses by PATTERN deletes TRACKED ones
+
+`for f in listdir(ROOT): if f.endswith(".witness.json"): remove(f)` — a reasonable-looking
+cleanup for producers that write CWD-relative — silently deleted
+`strong-na-stokes-kernel.witness.json`, which is **tracked on `main` and written by no
+producer in the tree**. Caught by a sibling reading `git status`, not by me. Delete only
+what `git ls-files --others --exclude-standard` reports.
+
+## TRAP — `git checkout -- computations/` ate a source edit AGAIN (2026-09-19)
+
+Already recorded below; hit again the same way, on `computations/substrate/q_parameter.py`,
+while reverting an anchor witness after a verification run. The revert-by-name rule is not
+enough on its own — **name the single file**, never the directory, even when the thing you
+are reverting really is under `computations/`.
+
+## BASELINE — mover rate depends on CONSTANT vs RUNTIME, and the two are opposite
+
+Both measured 2026-09-19, same harness, before arm baselined from a revision:
+
+| arc | what changed | mover rate |
+|---|---|---|
+| `qou-oiz3` | a FUNCTION (`q_int`) most producers only touch at import | **1 / 18 = 5.6 %** |
+| `qou-5eg1` | a CONSTANT family (`_MP`, `_DPS_DEFAULT` 50 → 70) | **8 / 9 = 88.9 %** |
+
+The mechanism is the whole finding: every consumer of a truncated **constant** inherits the
+truncation; only a runtime **caller** inherits a function's. Do not carry one arc's rate
+into the other. Arc B's moves all sit at **1e-50 … 1e-52** — digits 51+.
+
+## STABLE — `_DPS_DEFAULT` is 70; `Q_50_DIGIT_STR` is pinned at 50
+
+`qou_substrate/constants.py`, since 2026-09-19. It was a survivor of the old serialization
+floor (`precision.py:80-82` records the 2026-05-31 move to 60/70 and did not carry it), so
+the whole `_MP` family ran 20 digits below what `COMPUTE_DPS` entitles a caller to assume.
+`Q_50_DIGIT_STR` is deliberately NOT on `_DPS_DEFAULT` — its name is its specification, and
+leaving it at 50 is what holds the blast radius at **116** committed witnesses rather than
+**525**. That second 50-dps channel (`mpf(Q_50_DIGIT_STR)`, e.g.
+`pyhecke.constants.alpha_em_inv_mp`) is **still open**.
+
+Not an anchor change, and verify it the same way if you touch it:
+`q_pinning_50_digit.py` passes the dps EXPLICITLY (`q_at(mp.dps)` at `:108`), so the
+anchor-defining witness is a function of `COMPUTE_DPS`, never of `_DPS_DEFAULT` —
+re-running it across the bump leaves `q0Value` byte-identical.
 
 ## STABLE — long-compute logging discipline
 
@@ -586,6 +665,22 @@ TRAPs.
     in 4 fields, all four wall-clock, two inside an assertion's sentence.
   * **`git checkout -- computations/` is what the gate PRINTS and it eats source
     edits.** Revert the 11 contended audit witnesses BY NAME.
+- 2026-09-19 (`qou-oiz3` + `qou-5eg1`, PR #7443): landed both arcs, owner-authorised
+  ("measure first AND land now" on both). Five TRAPs above are new. Gates: family run
+  **twice** — once on the branch, once with all five changed files materialised at
+  `origin/main` in the same tree — **identical 11-red list, 529-line logs differing in 5
+  lines**, four of them explained (my file count, +21 long literals from my refreshed
+  witnesses, tree-dirtiness) and one **not mine at all** (`numpy-importing files`
+  1246 → 623, because a sibling removed two stale agent worktrees between the runs — a
+  reminder that the tree a gate measures includes `.claude/worktrees/`). Raw-float64
+  ratchet NEW 0 / REGRESSED 0 both arms. Three operational notes: **the exposure
+  instrumentation is worth more than the sample** (a call counter decided in one run what
+  a 919-witness cone could not); **refresh only witnesses whose BEFORE arm reproduces the
+  committed value** — five of eight Arc-B movers carry unrelated upstream drift a refresh
+  would sweep into the PR, and `fr-pullback-cosh-h` did not move under my change at all
+  yet differs from its committed witness in 73 fields; and **a relative move of 1.000 can
+  be nothing** — `hecke-log-decomposition-probe` "doubled" from 1.811e-71 to 3.622e-71,
+  which is a residue at the arithmetic floor.
 - 2026-09-14 (`qou-6b9y`, PR #7372): extracted the XXZ n-string band the sibling
   probe could not, `E_n(k) = -2(q^n + q^-n - 2 cos k)/[n]_q`. Gates: family run in
   full via `precision-gates.sh --changed` — **EXIT 1, 10 blocking reds, ALL
@@ -697,3 +792,20 @@ TRAPs.
   * **Two agents "contradicting" each other can both be right about different FILES**:
     "the chi-cache gives 0.152" (proton witness) vs "0.575" (`-muon` witness, built 2026-08-30,
     before the ordering ruling). Resolve by naming the file, then measure.
+- 2026-11-15 (q0Anchor refill slice, branch `claude/precision-anchor-refill-c-2026-11-15`). Two TRAPs:
+  * **A manifest `physical_proton` entry is INERT for a producer whose payload records two pins.**
+    `build()` stamps payload-first; a payload carrying both a proton and a muon `q` resolves
+    `ambiguous`, and only muon/proton are stamped, so the witness stays unstamped. Check with
+    `resolve_q0_anchor_payload_first(w, script, require_declared=True)` before choosing the manifest;
+    for a two-pin payload stamp `ambiguous` + reason via `save(extra=...)`.
+  * **`git checkout -- computations/` after `precision-gates.sh` also reverts UNCOMMITTED producer
+    edits.** Commit producer changes before running the gate family, then revert.
+- 2026-11-15 (q0Anchor refill slice, branch `claude/precision-anchor-refill-a-2026-11-15`):
+  9/21 stamped by re-run. TRAPs: (1) a CORPUS-MEASURING audit (raw-float64 backlog,
+  intra-ordering fingerprint) cannot be "stamped, re-run, numbers unchanged" -- its
+  counts track the tree; fix the producer, hold the witness. (2) 3 rev_* producers
+  already carried q0Anchor in source; their witnesses were simply never re-run. (3) a
+  stale CONSUMER shows up as added rows (`rev-edge-relaxation-window` reads the
+  k<=12 exact-maximiser witness; committed copy saw k<=10). Run the upstream with its
+  committed env (`REV_EXACT_KMAX=12`) first. (4) parallel agents share
+  `<scratch>/maturin.log`/`cargo.log`; name logs per agent.

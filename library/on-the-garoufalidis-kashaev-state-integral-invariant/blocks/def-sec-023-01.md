@@ -1,1 +1,1 @@
-[7] The quantum dilogarithm over A = ˆB×B for B = F× is the
+[7] The quantum dilogarithm over A = ˆB × B for B = F × is the function φ : ˆB × (B \ {−1}) →T, φ(α, x) := α(1 + x) We refer to φ as a tempered distribution on A, undefined at x = −1, but this is inconsequential since {−1} is a measure-zero subset of B.

@@ -1,0 +1,47 @@
+138 Chapter 6 — The generic rank of Brill-Noether sheaves
+
+The Kostka numbers arise in the representation theory of the symmetric
+group: Young’s rule [88, th. 2.11.2] says that for partitions @ = (d,...,dn)
+of degree d = deg(@) we have
+
+(x) Inds}. Gq Q) = SP) Kpa Op
+pra
+
+where the left hand side denotes the representation induced from the trivial
+representation 1 of the subgroup Gg, x --- x Gg, < Gg. Since Kaa = 1, it
+follows that the dimensions of the Specht modules satisfy
+
+(xx) dim(oq) = aon El — ¥ Kga-dim(og).
+Boa
+
+This being said, let us take a look at the recursion formula in theorem 6.1 in
+some explicit examples.
+
+EXAMPLE 6.2. Let & be a partition of degree d. Ford < g the first sum
+in theorem 6.1 is empty so that rg, = 0. More interestingly, in degree d = g
+the recursion of the theorem says
+
+Ta = ata —1- L Kea rp
+
+B>a
+
+which together with (xx) implies
+
+, = Jdim(oa) if # (8),
+“lo if a = (g).
+
+We remark that this can also be checked directly as follows. For d < g
+the subvariety Wz is a proper closed subset of X, and by construction it
+contains the support of ’6q. Similarly, in degree d = g the Abel-Jacobi
+morphism hg : Cg — X is birational, and in this case our claim follows from
+the observation that the perverse sheaf Ya € Perv(Ca,C) from section 6.1
+has generic rank dim(o,) and contains the constant perverse sheaf if and
+only if & = (g) is a singleton partition. However, for partitions of higher
+degree the situation becomes increasingly complicated.
+
+EXAMPLE 6.3. For g = 4 theorem 6.1 predicts that rg = rs; = 0 and
+more interestingly that
+
+4,2 = [str — 1 (3) - @) =5,
+
+= 2-[st—1-(0)-G) + bat —N-) G) - 42 = SL.

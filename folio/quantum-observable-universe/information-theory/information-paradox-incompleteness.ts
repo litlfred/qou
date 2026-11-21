@@ -15,5 +15,5 @@ export default remark({
     "aeon-boundary",
   ],
   uses: ["rem:incompleteness-horizon"],
-  cites: ["hawking1975", "bekenstein1973", "goedel1931"],
+  cites: ["arxiv-1301.4504v4", "arxiv-hep-th-9506138v1", "hawking1975", "bekenstein1973", "goedel1931"],
 });

@@ -35,7 +35,7 @@ open QOU.Archimedean
 /-- **Atomic confinement move.** A single generator of the
     confinement category — unfolding, folding, or dressing. The
     full morphism `P → Q` is a list (chain) of these. -/
--- Ref: [manuscript] braids-and-knots/confinement-category
+-- Ref: [leitner2026] braids-and-knots/confinement-category
 inductive AtomicConfMove : ConfinedParticle → ConfinedParticle → Type where
   /-- Unfold `P` to a finer representation `P'`
       (`P.level = P'.level + 1`). -/
@@ -53,7 +53,7 @@ inductive AtomicConfMove : ConfinedParticle → ConfinedParticle → Type where
     `P = X₀ → X₁ → ⋯ → X_n = Q`. The empty chain is the identity;
     composition is list concatenation (defined transparently below
     so the category laws are proved, not axiomatised). -/
--- Ref: [manuscript] braids-and-knots/confinement-category
+-- Ref: [leitner2026] braids-and-knots/confinement-category
 inductive ConfMorphism : ConfinedParticle → ConfinedParticle → Type where
   /-- Empty chain — identity morphism on `P`. -/
   | nil : (P : ConfinedParticle) → ConfMorphism P P
@@ -126,7 +126,7 @@ end ConfMorphism
     particles with chain-of-atomic-moves morphisms. The composition
     operator is transparent (list concatenation), so the category
     laws are proved theorems — no axioms required. -/
--- Ref: [manuscript] braids-and-knots/confinement-category
+-- Ref: [leitner2026] braids-and-knots/confinement-category
 -- Ref: [maclane1971] Mac Lane, "Categories for the Working Mathematician," Springer GTM 5, 1971
 instance : CategoryTheory.Category ConfinedParticle where
   Hom := ConfMorphism

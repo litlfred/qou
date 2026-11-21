@@ -1,0 +1,1 @@
+If u is a Q × Q generalized Hadamard matrix thought of as a biunitary for the spin model P σ, then the minimal projections of the abelian C∗-algebra P u 2 are in bijection with the connected components of the graph Γu. Moreover the (normalized) trace of such a projection is n/Q2 where n is the size of the connected component, which is necessarily a multiple of Q.

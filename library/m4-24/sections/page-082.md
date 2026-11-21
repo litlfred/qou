@@ -1,0 +1,40 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-082
+section_title: "Page 82"
+section_number: null
+pages: 82-82
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+454 T. Ohtsuki (Editor)
+
+singular points. Regarding the quotient W,(M) = RIK/C;,41 as an invariant of
+M, we call it the kth Vassiliev-Goussarov skein module of M. The completion
+of the space of knots with respect to the Vassiliev-Goussarov filtration, RK,
+is a Hopf algebra (for M = S?). Functions dual to Vassiliev-Goussarov skein
+modules are called finite type or Vassiliev invariants of knots; see [336].
+
+Problem 4.17 Calculate W,(M) for each 3-manifold M.
+
+Remark When M = S°, and coefficients are from Q then the graded space
+Cy./Cr41 can be described by chord diagrams of degree k; see Chapter 2.
+
+Problem 4.18 Define a skein module of 3-manifolds, and calculate it.
+
+Remark The quantum Hilbert space (or the space of conformal blocks) of
+(S?, 4 points) is known to be finite dimensional. This is a reason why a quan-
+tum invariant of links satisfies a skein relation; it is a linear relation of tan-
+gles bounded by (S?, 4 points) whose invariants are linearly dependent in the
+quantum Hilbert space. The quantum Hilbert space of a closed surface, say, a
+torus, is also known to be finite dimensional. Hence, a quantum invariant of 3-
+manifolds satisfies a “skein relation”; it should be a linear relation of 3-manifolds
+bounded by a surface. A skein module of 3-manifolds might be defined to be
+a module spanned by closed oriented 3-manifolds subject to a suitably cho-
+sen “skein relation” among 3-manifolds. It is a problem to define such a skein
+module which can be calculated.
+
+Geometry & Topology Monographs, Volume 4 (2002)

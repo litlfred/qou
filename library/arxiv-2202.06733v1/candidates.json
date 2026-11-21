@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2202.06733v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "e670632090447f148576cb99c1da40a2cdacb7fb4985e1b80e1359c9360d6406",
   "file": "2202.06733v1.pdf"
  },
  "provenance": {
-  "title": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE",
-  "authors": "Some recent results forSU(3) and Octonions within the",
+  "title": "Received <day> <Month>, <year>",
+  "authors": "Revised <day> <Month>, <year>;",
   "arxiv": {
    "id": "2202.06733",
    "version": "1",
@@ -20,25 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "remark": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "ably,andde\ufb01nitelyexcitingasregardstheSTAapproach,whenexpressedintermsofSTAoperations,these7statesare",
-   "section_file": "sections/sec-009-5-octonions-the-sta-and-particle-physics.md",
-   "section_title": "Octonions, the STA and particle physics",
-   "pages": "12-18",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

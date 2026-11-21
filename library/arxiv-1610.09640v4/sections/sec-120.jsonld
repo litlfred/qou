@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-120",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Interlude: Graded Rings of Laurent Type",
+  "pageStart": 425,
+  "pageEnd": 429,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-120",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-120-01",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-120-02",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-120-03",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-120-04",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-120-05",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-120-06",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-120-07",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-120-08",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-120-09",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-120-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

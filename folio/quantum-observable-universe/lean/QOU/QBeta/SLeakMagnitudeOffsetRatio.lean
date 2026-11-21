@@ -43,7 +43,7 @@ magnitude stays OPEN (SP2 / `qou-4kr1`).
 
 Archimedean by necessity (ordering + absolute value), so `ℝ` per §7c.
 
--- Ref: [manuscript] docs/audits/2026-08-01-bring-embedding-magnitude.md
+-- Ref: [leitner2026] docs/audits/2026-08-01-bring-embedding-magnitude.md
 -/
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic

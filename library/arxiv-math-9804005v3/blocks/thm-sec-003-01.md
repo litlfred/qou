@@ -1,1 +1,1 @@
-Let A be a noetherian connected graded k-algebra. Suppose t ∈ A
+Let A be a noetherian connected graded k-algebra. Suppose t ∈ A is a nonzero homogeneous normal element of positive degree. Then A has a graded Auslander balanced dualizing complex if and only if so does A/(t). As noted on [Zh] p. 399, the proof of [SZ] Lemma 6.1(ii) has a gap, and an alternative proof of the result (under extra hypotheses) is given in [Zh] Theorem

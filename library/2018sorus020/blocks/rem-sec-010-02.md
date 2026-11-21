@@ -1,0 +1,1 @@
+The generalization of Remark 1.2.2 is that the homology (resp. cohomology) H∗(Γ, A) of the group Γ is the twisted homology (resp. cohomology) H∗(BΓ, A) of the space BΓ. A classical fact, that is a consequence of this remark, is the following theorem, see for instance [Bro82].

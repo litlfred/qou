@@ -6,154 +6,405 @@
   "sha256": "c5a749ef6be194fd9d8efaea085e4bab3aa771134912a6352dd9eb793926dc5d",
   "bytes": 334986,
   "pages": 16,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 1,
+    "reason": "15 of 384 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 6,
+    "reason": "20 of 590 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/ant.2020.14.1895",
   "title": "Nonvanishing of hyperelliptic zeta functions over finite fields",
-  "authors_raw": "Jordan S. Ellenberg , Wanlin Li and Mark Shusterman",
+  "authors_raw": "Jordan S. Ellenberg, Wanlin Li and Mark Shusterman",
+  "title_lines": [
+   "Nonvanishing of hyperelliptic zeta functions",
+   "over finite fields"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "pypdf"
   },
-  "title_prev": "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds",
-  "title_lines": [
-   "Nonvanishing of hyperelliptic zeta functions",
-   "over finite fields"
-  ]
+  "title_raw": "Nonvanishing of hyperelliptic zeta functions over finite fields",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "msp",
+   "text": "Nonvanishing of hyperelliptic zeta functions over finite fields",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 60% of them starting on page(s) 1, 14 of 16 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 60% of them starting on page(s) 1, 14 of 16 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
+   "physical": 1,
+   "label": "1895",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "For the similar Theorem 1.7, the 𝓁 is again the order of the Dirichlet",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
+   "physical": 2,
+   "label": "1896",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Main theorem and proof",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
+   "physical": 3,
+   "label": "1897",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Application to nonvanishing of L-functions",
-   "page": 10,
-   "source": "inferred",
-   "number": "3"
+   "physical": 4,
+   "label": "1898",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "By the",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
+   "physical": 5,
+   "label": "1899",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 14,
-   "source": "inferred",
-   "number": null
+   "physical": 6,
+   "label": "1900",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "References",
-   "page": 14,
-   "source": "inferred",
-   "number": null
+   "physical": 7,
+   "label": "1901",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1902",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1903",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1904",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1905",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1906",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1907",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1908",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1909",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 7418,
-   "n_words": 1382
+   "page_end": 1,
+   "n_chars": 2044,
+   "n_words": 380,
+   "label_start": "1895",
+   "label_end": "1895"
   },
   {
-   "id": "sec-001-2-for-the-similar-theorem-17-the-𝓁-is-again-the",
-   "number": "2",
-   "title": "For the similar Theorem 1.7, the 𝓁 is again the order of the Dirichlet",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2768,
+   "n_words": 522,
+   "label_start": "1896",
+   "label_end": "1896"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3107,
+   "n_words": 602,
+   "label_start": "1897",
+   "label_end": "1897"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 22,
-   "n_words": 3
+   "n_chars": 2494,
+   "n_words": 462,
+   "label_start": "1898",
+   "label_end": "1898"
   },
   {
-   "id": "sec-002-2-main-theorem-and-proof",
-   "number": "2",
-   "title": "Main theorem and proof",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
-   "page_start": 4,
-   "page_end": 10,
-   "n_chars": 18232,
-   "n_words": 3427
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2988,
+   "n_words": 566,
+   "label_start": "1899",
+   "label_end": "1899"
   },
   {
-   "id": "sec-003-3-application-to-nonvanishing-of-l-functions",
-   "number": "3",
-   "title": "Application to nonvanishing of L-functions",
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 3050,
+   "n_words": 595,
+   "label_start": "1900",
+   "label_end": "1900"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2535,
+   "n_words": 536,
+   "label_start": "1901",
+   "label_end": "1901"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2390,
+   "n_words": 454,
+   "label_start": "1902",
+   "label_end": "1902"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2323,
+   "n_words": 431,
+   "label_start": "1903",
+   "label_end": "1903"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
-   "page_end": 12,
-   "n_chars": 4267,
-   "n_words": 779
+   "page_end": 10,
+   "n_chars": 3074,
+   "n_words": 619,
+   "label_start": "1904",
+   "label_end": "1904"
   },
   {
-   "id": "sec-004-2-by-the",
-   "number": "2",
-   "title": "By the",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2539,
+   "n_words": 504,
+   "label_start": "1905",
+   "label_end": "1905"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
    "level": 1,
    "page_start": 12,
-   "page_end": 14,
-   "n_chars": 6410,
-   "n_words": 1218
+   "page_end": 12,
+   "n_chars": 3408,
+   "n_words": 657,
+   "label_start": "1906",
+   "label_end": "1906"
   },
   {
-   "id": "sec-005-acknowledgments",
+   "id": "page-013",
    "number": null,
-   "title": "Acknowledgments",
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 3260,
+   "n_words": 655,
+   "label_start": "1907",
+   "label_end": "1907"
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 303,
-   "n_words": 45
+   "n_chars": 2685,
+   "n_words": 501,
+   "label_start": "1908",
+   "label_end": "1908"
   },
   {
-   "id": "sec-006-references",
+   "id": "page-015",
    "number": null,
-   "title": "References",
+   "title": "Page 15",
    "level": 1,
-   "page_start": 14,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 3083,
+   "n_words": 454,
+   "label_start": "1909",
+   "label_end": "1909"
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
    "page_end": 16,
-   "n_chars": 3919,
-   "n_words": 587
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 1,
   "likely_scanned": false,
-  "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 40571
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.73,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 41772,
+  "furniture_lines_stripped": 1
  }
 }

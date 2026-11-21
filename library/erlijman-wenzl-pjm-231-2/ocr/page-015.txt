@@ -1,0 +1,44 @@
+SUBFACTORS FROM BRAIDED C* TENSOR CATEGORIES 373
+
+any sufficiently large n, we have
+
+k > *
+pak Wn—14ill? len ll?
+[A: B/ =][—— =.
+[lUn-+ill [lBn+ell
+
+i=l
+
+The claim now follows from the fact that v,, = (dim X) Onsks by (a) and (b). Finally
+observe that (dim X)* [tn 411]? = [tn |? implies 7, -4, (da)? = ede (dy) for
+all n sufficiently large. As An 1 Am = whenever |n—m| <k, we obtain Statement
+(d). Oo
+
+3B. Multisided construction. The subfactors constructed in the last section will
+sometimes be denoted as one-sided subfactors. We will now generalize the con-
+struction in [Erlijman 2001] to the setting of braided C*-tensor categories, which
+we call multisided subfactors in analogy to the notation in [Erlijman 2001]. We
+will fix a positive integer s. For the s-sided construction, we will have to define
+an embedding of algebras A®s C Ans such that we will obtain a subfactor if we
+consider the inductive limit over n.
+
+We shall need special braids y, € Bsn, which can be defined inductively by
+yi = 1, and by Figure 3.
+
+s(n+l1)
+
+Ynti =
+
+n+1 n+l n+l n
+
+Figure 3. Inductive property of intertwining braids.
+
+Alternatively, the braid y, can be described as follows: arrange the points labeled
+by the numbers | up to ns in a rectangular pattern with height n and width s. Now
+we can numerate the points either by first going down the columns, or by first going
+to the right in each row. This defines a permutation 2 mapping the i-th point in
+the column-first count to the i-th point in the row-first count. The braid y, is now
+defined by this permutation where the i-th lower point is connected with the z (i)-
+th upper point and where we assume all crossings to be positive (i.e., the strand
+going from southwest to northeast crosses over the one going from southeast to
+northwest). A picture for this braid can be found in [Erlijman 2003, p. 83].

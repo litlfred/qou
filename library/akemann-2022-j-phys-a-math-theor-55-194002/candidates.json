@@ -1,0 +1,171 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "akemann-2022-j-phys-a-math-theor-55-194002",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "3753499c4b23f18946ced7e3f79366f0e62f9d9d106abea5eb58386cbaa368fc",
+  "file": "Akemann_2022_J._Phys._A__Math._Theor._55_194002.pdf"
+ },
+ "provenance": {
+  "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.1088/1751-8121/ac5f16"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "proposition": 6
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 6
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 6
+  },
+  "by_evidence_location": {
+   "elsewhere": 1,
+   "in-paper": 5
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Without going into detail of the vast literature on the application to QCD, and on comparing to lattice data from first principle lattice QCD simulations, cf [17, 18], let us focus on random matrix questions.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [17, 18] in sections/sec-001-1-introduction.md",
+   "external_refs": [
+    "[17, 18]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "3-5",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: elsewhere \u2014 Cites external source [17, 18] in sections/sec-001-1-introduction.md). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-001-01",
+   "claim_id": "akemann-2022-j-phys-a-math-theor-55-194002#prop-sec-001-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Section 6 contains the comparison to data from lattice QCD, and in section 7 we present our conclusions.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-1-introduction.md (p. 3-5)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "3-5",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-1-introduction.md (p. 3-5)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-02",
+   "block_iri": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-001-02",
+   "claim_id": "akemann-2022-j-phys-a-math-theor-55-194002#prop-sec-001-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "To get a statistical quantification of this effect, we have performed another Monte Carlo simulation of the random matrix ensemble with \u03bd \u223cn for increasing \u03bd, and cal- culated their spacings, differences to the bulk and empirical densities to observe this effect (see figure 7).",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-011-53-asymptotics-to-the-airy-statistics.md (p. 27-30)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-011-53-asymptotics-to-the-airy-statistics.md",
+   "section_title": "Asymptotics to the Airy statistics",
+   "pages": "27-30",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-011-53-asymptotics-to-the-airy-statistics.md (p. 27-30)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-011-01",
+   "block_iri": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-011-01",
+   "claim_id": "akemann-2022-j-phys-a-math-theor-55-194002#prop-sec-011-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "For that reason we consider empirical data from lattice QCD Dirac operators.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-012-6-comparison-to-data-from-lattice-qcd.md (p. 30-32)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-012-6-comparison-to-data-from-lattice-qcd.md",
+   "section_title": "Comparison to data from lattice QCD",
+   "pages": "30-32",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-012-6-comparison-to-data-from-lattice-qcd.md (p. 30-32)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-012-01",
+   "block_iri": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-012-01",
+   "claim_id": "akemann-2022-j-phys-a-math-theor-55-194002#prop-sec-012-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Therefore, we can conclude that the level spacing distribution is not at all a good measure in lattice QCD to discern hard edge from bulk statistics.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-012-6-comparison-to-data-from-lattice-qcd.md (p. 30-32)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-012-6-comparison-to-data-from-lattice-qcd.md",
+   "section_title": "Comparison to data from lattice QCD",
+   "pages": "30-32",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-012-6-comparison-to-data-from-lattice-qcd.md (p. 30-32)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-012-02",
+   "block_iri": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-012-02",
+   "claim_id": "akemann-2022-j-phys-a-math-theor-55-194002#prop-sec-012-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "One example is the micro- scopic Bessel-density close to the origin, that is relevant when chiral symmetry is important, e.g. in comparison to data from lattice QCD.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-013-7-conclusion.md (p. 32-33)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-013-7-conclusion.md",
+   "section_title": "Conclusion",
+   "pages": "32-33",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-013-7-conclusion.md (p. 32-33)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-013-01",
+   "block_iri": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prop-sec-013-01",
+   "claim_id": "akemann-2022-j-phys-a-math-theor-55-194002#prop-sec-013-01"
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 ---
 doc_id: 1172-4
-doc_title: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$ Dilogarithm Function 東京大学大学院裡掌野研究科物裡学專攻"
+doc_title: "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function"
 section_id: sec-002-51-momentum-space
 section_title: "Momentum Space"
 section_number: 5.1
@@ -8,13 +8,14 @@ pages: 9-13
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
 toc_source: inferred
+doc_brief: "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm."
 ---
+Momentum Space
 We consider a matrix representation of the $R$-matrix given above. Kashaev constructed a
 ﬁnite-dimensional representation for the R-operator (4.11) by taking
 $q$ as the N-th root
 of unity [17], though in this section we rather consider the R-operator on the inﬁnite
 dimensional space.
-52
 We consider the Hilbert space of the quantum canonical operators
 $\hat{p}$ and
 $\hat{q}(4.7)$ . We
@@ -61,7 +62,6 @@ $\langle p_{1},p_{2},p_{3},p4|R_{12},34|p_{1},p2’ p\prime l’,\prime 3p_{4}\r
 $=\delta(p_{1}-p_{4}+p_{3^{-}}p’1)\delta(p_{2}^{;}-p3^{-}p2+p_{4})’/$
 $\cross H(p_{2}-\prime p3’ p_{1}-p_{4}’,p_{1^{-}}p4,p’2^{-}p3)l$ ,
 (5.3a)
-53
 $\langle p_{1}, p_{2}, p_{3,p_{4}1}(R12,34)-1|p_{1}’,p^{\prime ll}2’ p3, p_{4}\rangle$
 $=\delta(p_{2^{-}}’p2+p_{3^{-}}p4)\delta(p1^{-}p_{1}’-p_{3}’+p_{4})$
 ’
@@ -104,7 +104,6 @@ $\langle p_{1},p_{2}|S_{1,2}|p’1’ p_{2}\rangle$
 ;
 $\sim\delta(p_{1}+p_{2p’}-1)\cdot\exp\frac{1}{2\mathrm{i}\gamma}(-\frac{\pi^{2}}{6}+Li_{2}(\mathrm{e}^{p_{2}^{J}}-p_{2})+p1(p2^{-}p_{2})\prime \mathrm{I}\cdot$
 (5.9a)
-54
 In the same manner we ﬁnd
 $\langle p_{1},p_{2}|s-1|1,2p_{1},p’2\rangle/$
 $\sim\delta(p_{1}-p_{1}’-p_{2}^{l})\cdot\exp\frac{1}{2\mathrm{i}\gamma}(\frac{\pi^{2}}{6}-Li_{2}(\mathrm{e}-p^{l}2)p_{2}-p_{1}(/p_{2}’p2^{-})\mathrm{I}\cdot$
@@ -132,7 +131,6 @@ form,
 $H(a, b, c, d)$
 $\sim\exp\frac{1}{2\mathrm{i}\gamma}(Li_{2}(\mathrm{e}^{b-c})+Li_{2}(\mathrm{e}^{c-d})-Li2(\mathrm{e}-d)a-Li_{2}(\mathrm{e}b-a)-a(a-b+c-d))$ .
 (5.12)
-55
 At last we ﬁnd that the
 $R$-matrix has an asymptotic form,
 $\langle p_{1},p2,p3,p_{4}|R_{12,34}|p_{1},p_{2},p3’ p4\rangle/l’/$
@@ -152,4 +150,3 @@ $R$-matrix (5.3a) has 4 tetrahedra because 4 dilogarithm
 function terms have appeared.
 6
 Knot Invariant
-6.1

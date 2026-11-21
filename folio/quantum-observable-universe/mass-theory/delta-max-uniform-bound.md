@@ -129,9 +129,7 @@ is bounded by $\approx 1.30 \times 10^{-6}$ in categorical
 units, i.e. **sub-ppm binding precision** when calibrated by
 $E_0 \approx m_e \cdot 8G \approx 3.744$ MeV.
 
-Until 2026-10-10 this section used the excised convention-C trace
-$z = 1/(q^{1/2} + q^{-1/2}) \approx 0.49932$, giving $1.109$ and
-$1.07 \times 10^{-6}$.
+For comparison, under the alternative Convention-C parameter $z_C = 1/(q^{1/2} + q^{-1/2}) \approx 0.49932$, the corresponding quantities evaluate to $1.109$ and $1.07 \times 10^{-6}$.
 
 ## Corollary for the binding energy
 
@@ -150,9 +148,7 @@ $$
 For light atoms ($A \le 16$) at $q_0$, canonical evaluation
 shows $N = 3$ is sufficient for sub-ppm precision on binding
 energies; the bound is saturated within a factor of 2 on the
-deuteron, tritium, and ${}^3\mathrm{He}$
-(cf. the formal derivation with
-`JET_TARGET_PPM`).
+deuteron, tritium, and ${}^3\mathrm{He}$.
 
 ## Remaining open items
 

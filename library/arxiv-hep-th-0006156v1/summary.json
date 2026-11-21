@@ -3,301 +3,171 @@
  "doc_id": "arxiv-hep-th-0006156v1",
  "source_sha256": "b799d4ef150291cf",
  "brief": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well",
- "extended": "**Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality**\n\n*THEORY. I: ALGEBRAIC APPROACH AND DUALITY*\n\n20 pp, 58 sections.\n\n**Abstract.** The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with unitary evolution operator. The theo ry is self- dual: there are two exponential ﬁelds related by Hermitean c onjugation, satisfying two discrete quantum Liouville equations, and l iving in mu- tually commuting subalgebras of the quantum algebra of obse rvables.\n\n**Outline.** 2 L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKO; Introduction; 1 Recollecting the facts; 1.1 Liouville formula and M¨ obius-invariance.; 2 ( α ′′; 4 (φx −φt)2 + 1; 2 (φxx −φtx) +e−2φ.(3); 1.2 Magri bracket. The canonical Poisson brack; 4 L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKO; 1.3 V olterra model. The ﬁrst such attempt [16; 2 (m+n)(δm+2,n −δm−2,n ),(5′); 1.4 Bi-hamiltonity. Historically, the Magri br; 1.5 Quantization. Going quantum, bracket ↓ oug; 1.6 Proof. We just honestly start from n = 1:; 1 QbN =b2b3...b N,; 6 L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKO; 1.7 It has to do with braids. Let us compile a; 1.8 Lattice Virasoro algebra. Now we look for ",
+ "extended": "**Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality**\n\n*THEORY. I: ALGEBRAIC APPROACH AND DUALITY*\n\n20 pp, 32 sections.\n\n**Abstract.** The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with unitary evolution operator. The theory is self- dual: there are two exponential ﬁelds related by Hermitean conjugation, satisfying two discrete quantum Liouville equations, and living in mu- tually commuting subalgebras of the quantum algebra of observables.\n\n**Outline.** Front matter; Introduction; 1 Recollecting the facts; 1.1 Liouville formula and M\"obius-invariance; 1.2 Magri bracket; 1.3 Volterra model; 1.4 Bi-hamiltonity; 1.5 Quantization; 1.6 Proof; 1.7 It has to do with braids; 1.8 Lattice Virasoro algebra; 2 Difference-difference Liouville equation; 2.1 Liouville formula; 2.2 Discrete Liouville equation; 2.3 Poisson bracket; 3 Formal quantization; 3.1 Algebra of observables; 3.2 Quantum lattice Liouville equation",
  "tokens": {
   "brief": 48,
-  "extended": 315
+  "extended": 262
  },
  "sections": [
   {
-   "id": "sec-000-2-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-introduction",
+   "id": "sec-000-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-1-recollecting-the-facts",
+   "id": "sec-001-1-recollecting-the-facts",
    "title": "Recollecting the facts",
    "pages": "2-2"
   },
   {
-   "id": "sec-003-11-liouville-formula-and-m-obius-invarianceliouv",
-   "title": "Liouville formula and M¨ obius-invariance.Liouville formula makes",
+   "id": "sec-002-11-liouville-formula-and-mobius-invariance",
+   "title": "Liouville formula and M\"obius-invariance",
    "pages": "2-3"
   },
   {
-   "id": "sec-004-2-α",
-   "title": "( α ′′",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-005-4-φx-φt2-1",
-   "title": "(φx −φt)2 + 1",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-006-2-φxx-φtx-e2φ3",
-   "title": "(φxx −φtx) +e−2φ.(3)",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-007-12-magri-bracket-the-canonical-poisson-bracket",
-   "title": "Magri bracket. The canonical Poisson bracket",
+   "id": "sec-003-12-magri-bracket",
+   "title": "Magri bracket",
    "pages": "3-4"
   },
   {
-   "id": "sec-008-4-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "id": "sec-004-13-volterra-model",
+   "title": "Volterra model",
    "pages": "4-4"
   },
   {
-   "id": "sec-009-13-v-olterra-model-the-ﬁrst-such-attempt-16-prod",
-   "title": "V olterra model. The ﬁrst such attempt [16] produced a viable lattice",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-010-2-mnδm2n-δm2n-5",
-   "title": "(m+n)(δm+2,n −δm−2,n ),(5′)",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-011-14-bi-hamiltonity-historically-the-magri-bracket",
-   "title": "Bi-hamiltonity. Historically, the Magri bracket brought about the",
+   "id": "sec-005-14-bi-hamiltonity",
+   "title": "Bi-hamiltonity",
    "pages": "4-5"
   },
   {
-   "id": "sec-012-15-quantization-going-quantum-bracket-ought-to-b",
-   "title": "Quantization. Going quantum, bracket ↓ ought to become Weyl-style",
+   "id": "sec-006-15-quantization",
+   "title": "Quantization",
    "pages": "5-5"
   },
   {
-   "id": "sec-013-16-proof-we-just-honestly-start-from-n-1",
-   "title": "Proof. We just honestly start from n = 1:",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-014-1-qbn-b2b3b-n",
-   "title": "QbN =b2b3...b N,",
+   "id": "sec-007-16-proof",
+   "title": "Proof",
    "pages": "5-6"
   },
   {
-   "id": "sec-015-6-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "id": "sec-008-17-it-has-to-do-with-braids",
+   "title": "It has to do with braids",
    "pages": "6-6"
   },
   {
-   "id": "sec-016-17-it-has-to-do-with-braids-let-us-compile-a-lis",
-   "title": "It has to do with braids. Let us compile a list of what we know",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-017-18-lattice-virasoro-algebra-now-we-look-for-a-ge",
-   "title": "Lattice Virasoro algebra. Now we look for a generalization of this",
+   "id": "sec-009-18-lattice-virasoro-algebra",
+   "title": "Lattice Virasoro algebra",
    "pages": "6-7"
   },
   {
-   "id": "sec-018-2-difference-difference-liouville-equation",
+   "id": "sec-010-2-difference-difference-liouville-equation",
    "title": "Difference-difference Liouville equation",
    "pages": "7-7"
   },
   {
-   "id": "sec-019-21-liouville-formula-for-aesthetical-reason-alon",
-   "title": "Liouville formula. For aesthetical reason alone, its diﬀerence approx-",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-020-2-jk1-α-1",
-   "title": "(j−k+1) −α 1",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-021-2-jk1",
-   "title": "(j−k−1)",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-022-2-jk1-β-1",
-   "title": "(j+k+1) −β 1",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-023-2-jk1",
-   "title": "(j+k−1)",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-024-2-jk1-β-1",
-   "title": "(j−k+1) −β 1",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-025-2-jk1-β-1",
-   "title": "(j−k−1) −β 1",
+   "id": "sec-011-21-liouville-formula",
+   "title": "Liouville formula",
    "pages": "7-8"
   },
   {
-   "id": "sec-026-8-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "id": "sec-012-22-discrete-liouville-equation",
+   "title": "Discrete Liouville equation",
    "pages": "8-8"
   },
   {
-   "id": "sec-027-22-discrete-liouville-equation-it-not-only-ideol",
-   "title": "Discrete Liouville equation. It not only ideologically justiﬁes the",
+   "id": "sec-013-23-poisson-bracket",
+   "title": "Poisson bracket",
    "pages": "8-8"
   },
   {
-   "id": "sec-028-2-jk",
-   "title": "(j−k)",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-029-23-poisson-bracket-two-rows-of-χs-make-perfect-c",
-   "title": "Poisson bracket. Two rows of χ’s make perfect Cauchy data",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-030-3-formal-quantization",
+   "id": "sec-014-3-formal-quantization",
    "title": "Formal quantization",
    "pages": "8-8"
   },
   {
-   "id": "sec-031-31-algebra-of-observables-in-a-virtual-replay-of",
-   "title": "Algebra of observables. In a virtual replay of subsection 1.5, we in-",
+   "id": "sec-015-31-algebra-of-observables",
+   "title": "Algebra of observables",
    "pages": "8-9"
   },
   {
-   "id": "sec-032-32-quantum-lattice-liouville-equation-we-can-onl",
-   "title": "Quantum lattice Liouville equation. We can only aﬀord a Heisen-",
+   "id": "sec-016-32-quantum-lattice-liouville-equation",
+   "title": "Quantum lattice Liouville equation",
    "pages": "9-9"
   },
   {
-   "id": "sec-033-33-shift-and-evolution-operators-if-we-guessed-t",
-   "title": "Shift and evolution operators. If we guessed the equation right,",
+   "id": "sec-017-33-shift-and-evolution-operators",
+   "title": "Shift and evolution operators",
    "pages": "9-10"
   },
   {
-   "id": "sec-034-10-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-035-34-odd-n-or-no-condition-9-in-these-cases-it-all",
-   "title": "Odd N or no condition (9). In these cases it all fails, and subsec-",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-036-35-chiral-evolution-operator-we-deﬁne-it-as",
-   "title": "Chiral evolution operator. We deﬁne it as",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-037-2-h-p-of-the-original",
-   "title": "(H −P ) of the original",
+   "id": "sec-018-35-chiral-evolution-operator",
+   "title": "Chiral evolution operator",
    "pages": "10-11"
   },
   {
-   "id": "sec-038-36-proof-of-eqn-11-first-we-recall-the-two-ident",
-   "title": "Proof of eqn (11). First, we recall the two identities satisﬁed by",
-   "pages": "11-11"
-  },
-  {
-   "id": "sec-039-4-dualization",
+   "id": "sec-019-4-dualization",
    "title": "Dualization",
    "pages": "11-11"
   },
   {
-   "id": "sec-040-41-involution-the-formal-quantization-of-section",
-   "title": "Involution. The formal quantization of section 3 can be put in the",
+   "id": "sec-020-41-involution",
+   "title": "Involution",
    "pages": "11-12"
   },
   {
-   "id": "sec-041-12-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "id": "sec-021-43-unitarity",
+   "title": "Unitarity",
    "pages": "12-12"
   },
   {
-   "id": "sec-042-42-change-of-function-ǫ-so-τ-1-also-since-c-does",
-   "title": "Change of function ǫ. So, |τ | = 1, also, since c does not distinguish",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-043-43-unitarity-replace-ǫ-byf-in-every-factor-of-ev",
-   "title": "Unitarity. Replace ǫ byf in every factor of every shift-evolution op-",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-044-44-dual-liouville-equation-let-us-permute-the-fa",
-   "title": "Dual Liouville equation. Let us permute the factors in the l.h.s of",
+   "id": "sec-022-44-dual-liouville-equation",
+   "title": "Dual Liouville equation",
    "pages": "12-13"
   },
   {
-   "id": "sec-045-45-baxter-equation-it-reads",
-   "title": "Baxter equation. It reads",
+   "id": "sec-023-45-baxter-equation",
+   "title": "Baxter equation",
    "pages": "13-14"
   },
   {
-   "id": "sec-046-14-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-047-5-conclusions-and-comments",
+   "id": "sec-024-5-conclusions-and-comments",
    "title": "Conclusions and comments",
    "pages": "14-14"
   },
   {
-   "id": "sec-048-6-appendix-the-non-compact-quantum-dilogarithm",
+   "id": "sec-025-6-appendix-the-non-compact-quantum-dilogarithm",
    "title": "Appendix: the non-compact quantum dilogarithm",
    "pages": "14-15"
   },
   {
-   "id": "sec-049-61-f-unctional-relations-function-15-satisﬁes-th",
-   "title": "F unctional relations. Function (15) satisﬁes the ‘inversion’ relation",
+   "id": "sec-026-61-functional-relations",
+   "title": "Functional relations",
    "pages": "15-15"
   },
   {
-   "id": "sec-050-62-analytic-properties-we-can-perform-the-integr",
-   "title": "Analytic properties. We can perform the integration in (15) by the",
+   "id": "sec-027-62-analytic-properties",
+   "title": "Analytic properties",
    "pages": "15-16"
   },
   {
-   "id": "sec-051-16-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-052-63-integral-ramanujan-identity-consider-the-foll",
-   "title": "Integral Ramanujan identity . Consider the following Fourier inte-",
+   "id": "sec-028-63-integral-ramanujan-identity",
+   "title": "Integral Ramanujan identity",
    "pages": "16-17"
   },
   {
-   "id": "sec-053-64-f-ourier-transformation-of-the-qdl-certain-sp",
-   "title": "F ourier transformation of the QDL. Certain specializations of",
+   "id": "sec-029-64-fourier-transformation-of-the-qdl",
+   "title": "Fourier transformation of the QDL",
    "pages": "17-17"
   },
   {
-   "id": "sec-054-65-proof-of-the-pentagon-identity-using-formula",
-   "title": "Proof of the Pentagon identity . Using formula (32) and commuta-",
-   "pages": "17-18"
-  },
-  {
-   "id": "sec-055-18-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-056-references",
-   "title": "References",
-   "pages": "18-20"
-  },
-  {
-   "id": "sec-057-20-ld-f-addeev-rm-kashaev-and-ayu-volkov",
-   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
-   "pages": "20-20"
+   "id": "sec-030-65-proof-of-the-pentagon-identity",
+   "title": "Proof of the Pentagon identity",
+   "pages": "17-20"
   }
  ],
  "provenance": {

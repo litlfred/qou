@@ -11,7 +11,7 @@ Given a QOU (𝒞, A, ω), the Frobenius trace on the direct limit algebra
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 -/
 
@@ -52,7 +52,7 @@ structure FrobeniusTraceSystem (T : AlgebraTower R) where
     This follows from the QOU axiom Hom(𝟙, Ad(A)) = 0 together with
     Schur's lemma in the rigid monoidal category 𝒞: the adjoint
     representation has no invariant vectors, forcing End_𝒞(A₀) ≅ R. -/
--- Ref: [manuscript] §1, Axiom (QOU3)
+-- Ref: [leitner2026] §1, Axiom (QOU3)
 structure VanishingCondition (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T) where
   /-- At level 0, any R-linear functional is proportional to the trace. -/
@@ -61,7 +61,7 @@ structure VanishingCondition (T : AlgebraTower R)
 
 /-- **Existence**: The Frobenius trace defines a G_q-invariant functional
     on the direct limit algebra. -/
--- Ref: [manuscript] §3, Proposition: Vacuum state (existence)
+-- Ref: [leitner2026] §3, Proposition: Vacuum state (existence)
 theorem frobenius_trace_invariant
     (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T) :
@@ -71,7 +71,7 @@ theorem frobenius_trace_invariant
 
 /-- **Uniqueness**: Any tower-compatible R-linear functional equals the
     Frobenius trace (up to normalisation). -/
--- Ref: [manuscript] §3, Proposition: Vacuum state (uniqueness)
+-- Ref: [leitner2026] §3, Proposition: Vacuum state (uniqueness)
 theorem invariant_functional_unique
     (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T)

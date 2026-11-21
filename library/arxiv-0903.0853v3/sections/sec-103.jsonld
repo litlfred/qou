@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.0853v3/sections/sec-103",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The complex of solutions",
+  "pageStart": 155,
+  "pageEnd": 155,
+  "contains": [
+    "library/arxiv-0903.0853v3/blocks/prose-sec-103",
+    "library/arxiv-0903.0853v3/blocks/cor-sec-103-01",
+    "library/arxiv-0903.0853v3/blocks/cor-sec-103-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "provenance": "ingested"
+}

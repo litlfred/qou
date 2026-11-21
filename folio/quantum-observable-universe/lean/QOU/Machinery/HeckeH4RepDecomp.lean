@@ -46,7 +46,7 @@ Base ring (§7c): generic `[Field K]` — inherited from `wedderburnHom₄`, whi
 needs inverses for `-q⁻¹`. No ordering and no archimedean construct.
 
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01239526
--- Ref: [manuscript] bean `qou-x64l`, step 4.
+-- Ref: [leitner2026] bean `qou-x64l`, step 4.
 -/
 
 namespace QOU.Machinery.H4

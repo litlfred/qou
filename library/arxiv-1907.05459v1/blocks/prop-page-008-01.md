@@ -1,0 +1,1 @@
+Conclusions We have reviewed the development of the Cottingham Formula [1], discussed its renormal- ization [2] and the need for introducing a model of the subtraction function so that a numerical prediction can be made.

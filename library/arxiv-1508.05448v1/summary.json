@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1508.05448v1",
  "source_sha256": "57d2c717d8ec74d0",
- "brief": "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract",
- "extended": "**Concentration of Measure Techniques and Applications**\n\n*Meg Walters*\n\n134 pp, 23 sections.\n\n**Outline.** Biographical Sketch; Acknowledgments; Abstract; Contributors and Funding Sources; List of Figures; 1 Introduction; 2.4 The Euler-Maclaurin Formula; 3.1 Background for First Result; 3.3 Main Result; 3.5 An Additional Application: The Length of t; 3.6 Remarks; 4.1 Mixed Matrix Moments; 4.2 The Expected Overlap Functions; 4.3 Formulas for the Overlap Functions; 4.7 Summary and Outlook; 5 Mallows Random Permutations; 5.2 The Mallows Measure; 5.3 Fisher-Yates Algorithm",
+ "brief": "Concentration of Measure Techniques and Applications — 36 sections: Front matter; Biographical Sketch; Acknowledgments",
+ "extended": "**Concentration of Measure Techniques and Applications**\n\n*Meg Walters*\n\n134 pp, 36 sections.\n\n**Outline.** Front matter; Biographical Sketch; Acknowledgments; Abstract; Contributors and Funding Sources; List of Figures; 1 Introduction; 2 Concentration of Measure Results and other N; 2.1 Talagrand's Gaussian Concentration of Meas; 2.2 Talagrand's Isoperimetric Inequality; 2.3 Ledoux's Concentration of Measure on Rever; 2.4 The Euler-Maclaurin Formula; 3 Random Operator Compressions; 3.1 Background for First Result; 3.2 Kac's Walk on SO(n); 3.3 Main Result; 3.4 Kac's Model Coupled to a Thermostat; 3.5 An Additional Application: The Length of t",
  "tokens": {
-  "brief": 28,
-  "extended": 144
+  "brief": 29,
+  "extended": 162
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-biographical-sketch",
    "title": "Biographical Sketch",
@@ -37,90 +42,150 @@
   {
    "id": "sec-005-1-introduction",
    "title": "Introduction",
-   "pages": "10-34"
+   "pages": "10-14"
   },
   {
-   "id": "sec-006-24-the-euler-maclaurin-formula",
+   "id": "sec-006-2-concentration-of-measure-results-and-other-nec",
+   "title": "Concentration of Measure Results and other Necessary Background",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-007-21-talagrands-gaussian-concentration-of-measure",
+   "title": "Talagrand's Gaussian Concentration of Measure Inequality",
+   "pages": "14-19"
+  },
+  {
+   "id": "sec-008-22-talagrands-isoperimetric-inequality",
+   "title": "Talagrand's Isoperimetric Inequality",
+   "pages": "19-28"
+  },
+  {
+   "id": "sec-009-23-ledouxs-concentration-of-measure-on-reversibl",
+   "title": "Ledoux's Concentration of Measure on Reversible Markov Chains",
+   "pages": "28-34"
+  },
+  {
+   "id": "sec-010-24-the-euler-maclaurin-formula",
    "title": "The Euler-Maclaurin Formula",
    "pages": "34-36"
   },
   {
-   "id": "sec-007-31-background-for-first-result",
+   "id": "sec-011-3-random-operator-compressions",
+   "title": "Random Operator Compressions",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-012-31-background-for-first-result",
    "title": "Background for First Result",
-   "pages": "36-41"
+   "pages": "36-37"
   },
   {
-   "id": "sec-008-33-main-result",
+   "id": "sec-013-32-kacs-walk-on-son",
+   "title": "Kac's Walk on SO(n)",
+   "pages": "37-41"
+  },
+  {
+   "id": "sec-014-33-main-result",
    "title": "Main Result",
-   "pages": "41-47"
+   "pages": "41-44"
   },
   {
-   "id": "sec-009-35-an-additional-application-the-length-of-the-l",
+   "id": "sec-015-34-kacs-model-coupled-to-a-thermostat",
+   "title": "Kac's Model Coupled to a Thermostat",
+   "pages": "44-47"
+  },
+  {
+   "id": "sec-016-35-an-additional-application-the-length-of-the-l",
    "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
    "pages": "47-55"
   },
   {
-   "id": "sec-010-36-remarks",
+   "id": "sec-017-36-remarks",
    "title": "Remarks",
-   "pages": "55-59"
+   "pages": "55-57"
   },
   {
-   "id": "sec-011-41-mixed-matrix-moments",
+   "id": "sec-018-4-mixed-matrix-moments-and-eigenvector-overlap-f",
+   "title": "Mixed Matrix Moments and Eigenvector Overlap Functions of the Ginibre Ensemble",
+   "pages": "57-60"
+  },
+  {
+   "id": "sec-019-41-mixed-matrix-moments",
    "title": "Mixed Matrix Moments",
-   "pages": "59-65"
+   "pages": "60-65"
   },
   {
-   "id": "sec-012-42-the-expected-overlap-functions",
+   "id": "sec-020-42-the-expected-overlap-functions",
    "title": "The Expected Overlap Functions",
    "pages": "65-67"
   },
   {
-   "id": "sec-013-43-formulas-for-the-overlap-functions",
+   "id": "sec-021-43-formulas-for-the-overlap-functions",
    "title": "Formulas for the Overlap Functions",
-   "pages": "67-93"
+   "pages": "67-74"
   },
   {
-   "id": "sec-014-47-summary-and-outlook",
+   "id": "sec-022-44-moments-and-constraints-on-the-overlap-functi",
+   "title": "Moments and Constraints on the Overlap Functions",
+   "pages": "74-83"
+  },
+  {
+   "id": "sec-023-45-proposal-to-rigorously-approach-chalker-and-m",
+   "title": "Proposal to Rigorously Approach Chalker and Mehlig's Result",
+   "pages": "83-89"
+  },
+  {
+   "id": "sec-024-46-invariance-of-the-perturbation-series-pnr",
+   "title": "Invariance of the Perturbation Series PN(r)",
+   "pages": "89-93"
+  },
+  {
+   "id": "sec-025-47-summary-and-outlook",
    "title": "Summary and Outlook",
    "pages": "93-96"
   },
   {
-   "id": "sec-015-5-mallows-random-permutations",
+   "id": "sec-026-5-mallows-random-permutations",
    "title": "Mallows Random Permutations",
+   "pages": "96-96"
+  },
+  {
+   "id": "sec-027-51-a-q-stirlings-formula",
+   "title": "A q-Stirling's Formula",
    "pages": "96-104"
   },
   {
-   "id": "sec-016-52-the-mallows-measure",
+   "id": "sec-028-52-the-mallows-measure",
    "title": "The Mallows Measure",
    "pages": "104-105"
   },
   {
-   "id": "sec-017-53-fisher-yates-algorithm",
+   "id": "sec-029-53-fisher-yates-algorithm",
    "title": "Fisher-Yates Algorithm",
    "pages": "105-110"
   },
   {
-   "id": "sec-018-54-length-of-the-longest-increasing-subsequence",
+   "id": "sec-030-54-length-of-the-longest-increasing-subsequence",
    "title": "Length of the Longest Increasing Subsequence",
    "pages": "110-112"
   },
   {
-   "id": "sec-019-55-patience-sorting",
+   "id": "sec-031-55-patience-sorting",
    "title": "Patience Sorting",
    "pages": "112-115"
   },
   {
-   "id": "sec-020-56-four-square-problem",
+   "id": "sec-032-56-four-square-problem",
    "title": "Four Square Problem",
    "pages": "115-122"
   },
   {
-   "id": "sec-021-57-conclusion-and-outlook",
+   "id": "sec-033-57-conclusion-and-outlook",
    "title": "Conclusion and Outlook",
    "pages": "122-127"
   },
   {
-   "id": "sec-022-bibliography",
+   "id": "sec-034-bibliography",
    "title": "Bibliography",
    "pages": "127-134"
   }

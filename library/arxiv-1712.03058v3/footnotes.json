@@ -1,0 +1,400 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1712.03058v3",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "j",
+   "text": ", j= 1, . . . , J};perturbationdensityhn(θ|ϕ; σ);perturbationscaleσ1:M",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "0",
+   "text": "90",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-2",
+   "page": 16,
+   "mark": "0",
+   "text": "95",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-3",
+   "page": 16,
+   "mark": "1",
+   "text": "00",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-4",
+   "page": 16,
+   "mark": "1",
+   "text": "05",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-5",
+   "page": 16,
+   "mark": "1",
+   "text": "10",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-6",
+   "page": 16,
+   "mark": "1",
+   "text": "15",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-7",
+   "page": 16,
+   "mark": "0",
+   "text": "40",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-8",
+   "page": 16,
+   "mark": "0",
+   "text": "45",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-9",
+   "page": 16,
+   "mark": "0",
+   "text": "50",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-10",
+   "page": 16,
+   "mark": "0",
+   "text": "55",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p016-11",
+   "page": 16,
+   "mark": "0",
+   "text": "60 β γ (a) Proﬁle log-likelihood for β (b) Proﬁle log-likelihood for γ",
+   "block": "library/arxiv-1712.03058v3/blocks/prose-sec-014"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "TheresaStocks"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "1:Nattimes"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "1:Nattimest"
+  },
+  {
+   "page": 6,
+   "mark": "y",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "1:Ncanbeeither"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "1:N; θ)"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "1:N; θ)d"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "n;"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n; x"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n|x"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "n|xn; θ)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n|xn; θ)fXn|Y1:n−1(x"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "1:n−1; θ)"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "1:n−1; θ)d"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1:n−1; θ)dx"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "1:n−1; θ)"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "1:n−1; θ)d"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1:n−1; θ)dx"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "1:n; θ) = fXn|Yn,Y1:n−1(x"
+  },
+  {
+   "page": 9,
+   "mark": "y",
+   "context": "n,"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n|x"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "n|xn; θ)"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n|xn; θ)fXn|Y1:n−1(x"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n|x"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "n|xn; θ)"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n|xn; θ)fXn|Y1:n−1(x"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "1:n−1; θ)"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "1:n−1; θ)d"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "1:n−1; θ)dx"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "n,j}fromthepredictiondistributionattime"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n,j}fromthepredictiondistributionattimet"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "n,jisapproximatelydrawnfrom"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n,jisapproximatelydrawnfromfXn|Y1:n−1(x"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "{θ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "∼h0(·|θ"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "0,j)for"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "n,j∼h"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "n−1,j, σ"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "n−1,j, σm)for"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "n,j)for"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "w"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "n,j)for"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Drawk1:JwithP(kj= i) = w"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "u=1"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "u=1w"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "n,kjfor"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Setθ"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "N,jfor"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "w"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "H(tn),"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "tributionwithmeanµandvarianceµ + ψµ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "σ2, σ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "andwhereτ/σ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "andwhereτ/σ2denotestheshapeandσ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "rameterwithcorrespondingmeanτandvarianceτσ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "rameterwithcorrespondingmeanτandvarianceτσ2.Theparameterσ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "X"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "w"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "H(tn),"
+  }
+ ]
+}

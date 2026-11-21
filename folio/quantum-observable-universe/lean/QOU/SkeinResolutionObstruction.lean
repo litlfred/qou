@@ -4,7 +4,7 @@ import QOU.AlgebraicSubstrate.qou_obstruction_reduction
 # QOU.SkeinResolutionObstruction
 
 **Canonical declaration** for content block at
-[`quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts`](quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts).
+[`quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts`](quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts).
 
 Formalises the manuscript **definition** of the Skein resolution obstruction
 `κ_c^comp(L,q)` — the image of the universal obstruction class
@@ -69,6 +69,6 @@ theorem kummer_vanishes_of_chi_zero (h : octx.chi_A = 0) (n : ℕ) :
 
 end SkeinResolutionObstruction
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts
+-- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts
 
 end QOU

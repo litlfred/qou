@@ -1243,6 +1243,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d3b7257d7c56",
+          "ts": "8e1363ffe88d",
+          "lean": "a45bd6f94d5e",
+          "lean_statement": "c7af641d4c14"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:12.785Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Lean builds the record from a caller-supplied `dualValue`, so existence is ⟨rfl⟩. `energy : Option R := none` is never tied to \\ | u_λ\\ | ; no absolute value, no generic locus, no [k]_q! appears. The md says E = \\ | u_λ\\ | ∈ \\ | R\\ | ; Lean says nothing about E. Inline proof: calls u_λ \"the shadow price\" and leans on LP duality, but `def:knot-operator-energy`'s 2026-09-05 note says the subtrahend is the weight minimum, not an LP dual (the net-constraint dual is identically 0). Symbols drift: u_λ in md, y_λ in Lean."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2498,6 +2516,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-06T09:42:56.026Z",
+  "updated_at": "2026-11-15T22:00:12.785Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

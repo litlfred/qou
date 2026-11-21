@@ -1,0 +1,59 @@
+B. gq-harmonic oscillators and the Schwinger-Jordan trick
+
+To account for the deformation, we consider a pair of q-harmonic oscillators, comprising annihilation operators
+a; = a,b, creation operators at = a‘,bt and number operators Na; = Na,No, to construct representations of
+U,(su(2)). There are defined as follows,
+
+FNa
+
+[ai, aj] = [a;, a4] =0, with i 4 j, [aise] 4 =q?, [Nass 4] =5a!, [Ng,,aj]=—d;j0;, (16)
+
+where [A, B]gn = AB —q"BA. Let us point out that the operator ala; is not the number operator N,, but rather is
+equal to [N,,]. From (i6), we have also that
+
+qn i/2q = = Patqh (2 (hea; _ gq Paqhei!?, ala; _ [Nai]: ajat _ [Nos + lj. (17)
+
+The harmonic oscillator a;, al, Nj, acts on the Fock space F; = {3>,,, G,,|ni)} with vacuum |0).
+
+a;|0) =0, ailni) = V/fnillni —1), with ns >1, and al |n;) = V/Ini + ln +1). (18)
+
+The generators of Ua(su(2)) can be realized in terms of the pair of g-harmonic oscillators (a,b), their adjoint and
+
+their number operator [42]
+
+1 1 1
+Jz =5(Na- No), Ie = aibh, J-=bla, C= [5(Na + No) (Na + No) + 1 (19)
+Using this representation together with (16), we can recover the commutation relations (1). We can also use the Fock
+space F ~ F,@Fy = {Yo Cngn,|Na, Md), Cnan, © R} of this pair of q-harmonic oscillators to generate the representations
+of U,(su(2)) by setting
+
+. ot 1
+j= 5(ta + 0), m= 3 (a — no). (20)
+
+The states |jm) are then homogenous polynomials in the operators a;, a
+
+(at)*™ (ot)
+bin) = aig al” (21)
+
+ie
+
+II. TENSOR OPERATORS FOR U/,(su(2))
+
+We now introduce the concept of tensor operators. The general definition of tensor operators for a general quasitri-
+angular Hopf algebra has been given in [34]. We use their formalism in the specific case of U4,(su(2)). These objects
+are the building blocks of our construction of observables for LQG defined with U,(su(2)) as gauge group. We show
+in section [IV] that the use of tensor operators allows us to build any observables associated to an intertwiner (of a
+quantum or a classical group) in a straightforward manner.
+
+A. Definition and Wigner-Eckart theorem
+
+Definition II.1. Tensor operators |
+Let V and W be two representations of Uy (su(2)), not necessarily irreducible, and L(W) the set of linear maps on W.
+A tensor operator t is defined as the intertwinning linear map
+
+t:V > L(W)
+
+a — t(x) (22)
+
+If we take V = V! the irreducible representation of rank j spanned by vectors |j,m), then we note t(|j,m)) = té,.
+t= (t2, Jim “jj is called a tensor operator of rank j.

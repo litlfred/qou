@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/du-1995-algebra-colloq-2-363/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A note on quantized Weyl reciprocity at roots of unity",
+  "contains": [
+    "library/du-1995-algebra-colloq-2-363/sections/page-001",
+    "library/du-1995-algebra-colloq-2-363/sections/page-002",
+    "library/du-1995-algebra-colloq-2-363/sections/page-003",
+    "library/du-1995-algebra-colloq-2-363/sections/page-004",
+    "library/du-1995-algebra-colloq-2-363/sections/page-005",
+    "library/du-1995-algebra-colloq-2-363/sections/page-006",
+    "library/du-1995-algebra-colloq-2-363/sections/page-007",
+    "library/du-1995-algebra-colloq-2-363/sections/page-008",
+    "library/du-1995-algebra-colloq-2-363/sections/page-009",
+    "library/du-1995-algebra-colloq-2-363/sections/page-010",
+    "library/du-1995-algebra-colloq-2-363/sections/page-011",
+    "library/du-1995-algebra-colloq-2-363/sections/page-012",
+    "library/du-1995-algebra-colloq-2-363/sections/page-013"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "du-1995-algebra-colloq-2-363",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "A note on quantized Weyl reciprocity at roots of unity",
+      "basis": "Printed title on page 1 (J. Du, Algebra Colloquium 2 (1995) 363-372); the extracted title was cut at a line break",
+      "extracted_title": "A NOTE ON QUANTIZED WEYL",
+      "corrected_on": "2026-11-15",
+      "extracted": "A note on quantized Weyl reciprocity at roots of unity"
+    },
+    "source_file": "du-1995-algebra-colloq-2-363.pdf",
+    "source_sha256": "d19081c4f214b7036b2e84420e01590c67aee007256385c9b30b93130544c361",
+    "pages": 13,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,71 @@
+proof (cases A = 0)
+case True
+thus ?thesis
+using *
+using 2-axis-intersection-equation[OF *(1—2), of 0]
+using intersects-z-axis-mk-circline|of cor A B|
+by auto
+next
+case False
+show ?thesis
+proof
+assume J x € unit-disc. x € circline-set H 1 circline-set x-axis
+then obtain x where *+: of-complex x € unit-disc of-complex x € circline-set H 1 circline-set x-axis
+by (metis inf-or-of-complex inf-notin-unit-disc)
+hence is-real ©
+unfolding circline-set-x-azxis
+using of-complez-inj
+
+by auto
+
+hence eq: A * (Rez)? + 2* Re Bx Rex+A=0
+using **
+using 2-azis-intersection-equation[OF *(1—2), of Re ]
+by simp
+
+hence (2 * Re B)? —4*AxA>0O
+using discriminant-iff[of A - 2 * Re B A|
+using discrim-def[of A 2 « Re B A] False
+by auto
+hence (Re B)? > (Re A)?
+by (simp add: power2-eq-square)
+moreover
+have (Re B)? #4 (Re A)?
+proof (rule ccontr)
+assume 7— ?thesis
+hence Re B = Re AV Re B=— Re A
+using power2-eq-iff by blast
+hence A * (Rex)? + Ax 2x Rex+A=O0VAx (Rex)? —Ax2*Rex+A=0
+using eq
+by auto
+hence A * ((Re xz)? + 2* Rex + 1)=0V Ax ((Rea)? — 2% Rexr+1)=0
+by (simp add: field-simps)
+hence (Rez)? + 2* Rea+1=0V (Rez)? —-2*Rexr+1=0
+using <A # 0>
+by simp
+hence (Re x + 1)? = 0 V (Rex — 1)? =0
+by (simp add: power2-sum power2-diff field-simps)
+hence Rex = —1 V Rex=1
+by auto
+thus False
+using <is-real x) <of-complex x € unit-discy
+by (auto simp add: cmod-eq-Re)
+qed
+ultimately
+show intersects-1-axis H
+using intersects-z-axis-mk-circline
+using *
+by auto
+next
+assume intersects-x-axis H
+hence (Re B)? > (Re A)?
+using * False
+using intersects-z-axis-mk-circline
+by simp
+hence discr: (2 * Re B)?? — 4% A*A>0O
+by (simp add: power2-eq-square)
+then obtain «1 +2 where
+eqs: Ax cl? + 2% ReBxal+A=O0A*%22°?4+ 2% REBx224+A=O021 £22
+using discriminant-pos-ex[OF (A # 0», of 2 * Re B A|
+
+99

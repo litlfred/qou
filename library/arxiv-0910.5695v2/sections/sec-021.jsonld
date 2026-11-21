@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0910.5695v2/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The nontrivial block in Rep(S0; F)",
+  "pageStart": 37,
+  "pageEnd": 39,
+  "contains": [
+    "library/arxiv-0910.5695v2/blocks/prose-sec-021",
+    "library/arxiv-0910.5695v2/blocks/prop-sec-021-01",
+    "library/arxiv-0910.5695v2/blocks/lem-sec-021-02",
+    "library/arxiv-0910.5695v2/blocks/lem-sec-021-03",
+    "library/arxiv-0910.5695v2/blocks/thm-sec-021-04",
+    "library/arxiv-0910.5695v2/blocks/rem-sec-021-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0910.5695v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0910.5695v2/manifest.jsonld",
+  "provenance": "ingested"
+}

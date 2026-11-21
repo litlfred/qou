@@ -8,6 +8,7 @@ pages: 29-38
 source_pdf: ant-v14-n7-s-p03.pdf
 source_sha256: e32fde16c3ce0940
 toc_source: inferred
+doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive — periods” admitting an explicit description by generators and relations."
 ---
 Tout au long de la section, on ﬁxe un corps K muni d’une valuation de hauteur 1 et on note b
 K son

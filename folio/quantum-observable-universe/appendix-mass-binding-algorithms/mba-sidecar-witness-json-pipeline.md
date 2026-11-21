@@ -51,7 +51,7 @@ that do not yet conform.*
 
 *If the compute is LP / SDP / operator-selection, the witness
 **must** additionally carry the fields specified in
-[`alg:lp-sdp-dual-emission`](#alg:lp-sdp-dual-emission).*
+[LP/SDP dual-emission contract (first-class infra)](#alg:lp-sdp-dual-emission).*
 
 ### Wedderburn-respecting witnesses
 
@@ -78,10 +78,10 @@ and reviewers can check the isotypic structure.*
 ### Correctness conditions
 
 1. *The Wedderburn decomposition
-   ([`prop:wedderburn-trace-identity`](#prop:wedderburn-trace-identity))
+   ([Markov-trace normalization for $H_n(q)$](#prop:wedderburn-trace-identity))
    defines the partition structure that `add_data` records.*
 2. *The LP/SDP dual contract
-   ([`prop:operator-selection-lp`](#prop:operator-selection-lp))
+   ([Knot operator selection as linear program with LP duality](#prop:operator-selection-lp))
    defines the dual-emission fields used by Step 10.*
 
 ### Canonical entry point

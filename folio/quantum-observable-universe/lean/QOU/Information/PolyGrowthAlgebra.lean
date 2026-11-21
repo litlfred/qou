@@ -113,4 +113,15 @@ theorem not_superPolynomial_of_polyGrowth {f : ℕ → ℕ} (h : PolyGrowth f) :
 theorem not_polyGrowth_of_superPolynomial {f : ℕ → ℕ} (h : SuperPolynomial f) :
     ¬ PolyGrowth f := fun hg => not_superPolynomial_of_polyGrowth hg h
 
+/-- **Every monomial `n ↦ n^d` has polynomial growth (`bean qou-151z`).** -/
+theorem polyGrowth_pow (d : ℕ) : PolyGrowth (fun n => n ^ d) := by
+  refine ⟨1, d, fun n => ?_⟩
+  rw [one_mul]
+  exact Nat.pow_le_pow_left (Nat.le_succ n) d
+
+/-- **Every polynomially-bounded function is not super-polynomial (`bean qou-151z`).** -/
+theorem not_superPolynomial_of_polyBounded {f : ℕ → ℕ} (h : PolyBounded f) :
+    ¬ SuperPolynomial f :=
+  not_superPolynomial_of_polyGrowth (of_polyBounded h)
+
 end QOU.Information

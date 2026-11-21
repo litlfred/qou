@@ -20,7 +20,7 @@ namespace QOU.Archimedean
     χ(A) = -6 together with its geometric invariants.
 
     LaTeX: `\label{thm:descartes}`
-    Ref: [manuscript] Chapter 6, §Descartes theorem -/
+    Ref: [leitner2026] Chapter 6, §Descartes theorem -/
 structure DescartesUniverse where
   /-- Euler characteristic χ(A) = tr(id_A). -/
   eulerChar : ℤ
@@ -34,7 +34,7 @@ structure DescartesUniverse where
   autOrder : ℕ
 
 /-- Any Descartes universe has genus 4. -/
--- Ref: [manuscript] Chapter 6, §Descartes theorem
+-- Ref: [leitner2026] Chapter 6, §Descartes theorem
 theorem DescartesUniverse.genus_eq_four (D : DescartesUniverse) :
     D.genus = 4 := by
   have := D.gauss_bonnet
@@ -44,7 +44,7 @@ theorem DescartesUniverse.genus_eq_four (D : DescartesUniverse) :
 /-- **Bring's surface** as a Descartes universe: genus 4, |Aut| = 120 = |S₅|.
     This is the terminal object in C_{-6}.
 
-    Ref: [manuscript] Chapter 6, §Descartes theorem -/
+    Ref: [leitner2026] Chapter 6, §Descartes theorem -/
 def bringsSurface : DescartesUniverse where
   eulerChar := -6
   euler_eq := rfl
@@ -58,11 +58,11 @@ def bringsSurface : DescartesUniverse where
     The Hurwitz bound gives |Aut| ≤ 84(g-1) = 252 for g = 4.
     Bring's surface achieves |Aut| = 120, which is the maximum
     that actually occurs for genus 4. -/
--- Ref: [manuscript] Chapter 6, §Descartes theorem
+-- Ref: [leitner2026] Chapter 6, §Descartes theorem
 theorem brings_aut_order : bringsSurface.autOrder = 120 := rfl
 
 /-- The Hurwitz bound for Bring's surface: 120 ≤ 84 × (4 - 1). -/
--- Ref: [manuscript] Chapter 6, §Descartes theorem
+-- Ref: [leitner2026] Chapter 6, §Descartes theorem
 theorem brings_hurwitz_bound : (120 : ℤ) ≤ 84 * (4 - 1) := by norm_num
 
 /-- **Terminality criterion**: Bring's surface is terminal in C_{-6} because
@@ -74,7 +74,7 @@ theorem brings_hurwitz_bound : (120 : ℤ) ≤ 84 * (4 - 1) := by norm_num
 
     We encode uniqueness as: any two Descartes universes with the same
     Euler characteristic have the same genus. -/
--- Ref: [manuscript] Chapter 6, §Descartes theorem
+-- Ref: [leitner2026] Chapter 6, §Descartes theorem
 theorem descartes_terminal_genus (D₁ D₂ : DescartesUniverse) :
     D₁.genus = D₂.genus := by
   have h1 := D₁.genus_eq_four
@@ -82,11 +82,11 @@ theorem descartes_terminal_genus (D₁ D₂ : DescartesUniverse) :
   linarith
 
 /-- Bring's surface has genus 4. -/
--- Ref: [manuscript] Chapter 6, §Descartes theorem
+-- Ref: [leitner2026] Chapter 6, §Descartes theorem
 theorem brings_genus : bringsSurface.genus = 4 := rfl
 
 /-- Bring's surface has Euler characteristic -6. -/
--- Ref: [manuscript] Chapter 6, §Descartes theorem
+-- Ref: [leitner2026] Chapter 6, §Descartes theorem
 theorem brings_euler : bringsSurface.eulerChar = -6 := rfl
 
 end QOU.Archimedean

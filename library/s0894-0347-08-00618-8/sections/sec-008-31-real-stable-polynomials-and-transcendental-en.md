@@ -8,6 +8,7 @@ pages: 13-15
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence"
 ---
 it was proved that a multi-aﬃne polynomial f ∈R[z1, . . . , zn] is stable (in the sense
 534

@@ -1,0 +1,1 @@
+— Let a ∈C∗and consider the function La,q deﬁned for x ∈C∗\ [a; q] as above, i.e. : La,q(x) = ℓp x a  = −x a θ′ p(−x a) θp(−x a). Then, up to an additive constant, La,q is the only solution of the q-diﬀerence equation y(qx)−y(x) = 1, which is analytic on C∗\aqZ and has only simple poles at aqZ. TOME 59 (2009), FASCICULE 1 Lucia DI VIZIO & Changgui ZHANG

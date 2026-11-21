@@ -1226,6 +1226,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a",
+          "lean": "dea0a5463627"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:06.914Z",
+        "reviewed_sha": "5d7f0ff2443bce339f18629dcc1e386fd754720f",
+        "severity": "major",
+        "evidence": "Lean: `ctx.claim_i/ii/iii` projected from a context class (self-assuming). Statement item 2 asks the Hopf comultiplication of Dist(G) to satisfy the *Frobenius* relation (Id⊗m)(Δ⊗Id) = Δ∘m. That fails for any Hopf algebra with a nonzero primitive x: put a = 1, b = x; LHS = 1⊗x, RHS = Δx = x⊗1 + 1⊗x. \"Strong multiplicativity\" (Δ an algebra map) is a different identity. Proof: one-paragraph citation of \"the Main Theorem of Fresse\" with no bibliographic key, and it numbers three items (1)(2)(3) against a statement with two; item (3)'s \"p-adic filtration\" text uses an undefined macro `\\pp`",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2463,6 +2481,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:26:11.971Z",
+  "updated_at": "2026-11-15T21:55:06.914Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

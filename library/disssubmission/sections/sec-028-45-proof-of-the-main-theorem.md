@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-028-45-proof-of-the-main-theorem
 section_title: "Proof of the main theorem"
 section_number: 4.5
@@ -8,6 +8,7 @@ pages: 93-96
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 85
 of a smooth non-hyperelliptic curve. As in lemma 4.11 the singular loci of

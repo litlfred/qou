@@ -8,7 +8,7 @@
   "pages": 47,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,25 +21,25 @@
    "stamp_date": "20 Jul 2020"
   },
   "doi": null,
-  "title": "Non-perturbative approaches to the quantum Seiberg\u2013Witten curve",
-  "authors_raw": "Alba Grassia, Jie Gub and Marcos Mari\u00f1ob",
+  "title": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
+  "authors_raw": "Alba Grassia, Jie Gub and Marcos Mariñob",
   "title_lines": [
    "Non-perturbative approaches to the quantum",
-   "Seiberg\u2013Witten curve"
+   "Seiberg–Witten curve"
   ],
-  "abstract": "We study various non-perturbative approaches to the quantization of the Seiberg\u2013 Witten curve of N = 2, SU(2) super Yang\u2013Mills theory, which is closely related to the modi\ufb01ed Mathieu operator. The \ufb01rst approach is based on the quantum WKB periods and their resurgent properties. We show that these properties are encoded in the TBA equations of Gaiotto\u2013Moore\u2013 Neitzke determined by the BPS spectrum of the theory, and we relate the Borel-resummed quantum periods to instanton calculus. In addition, we use the TS/ST correspondence to obtain a closed formula for the Fredholm determinant of the modi\ufb01ed Mathieu operator. Finally, by using blowup equations, we explain the connection between this operator and the \u03c4 function of Painlev\u00b4e III. arXiv:1908.07065v3 [hep-th] 20 Jul 2020",
+  "abstract": "We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve of N = 2, SU(2) super Yang–Mills theory, which is closely related to the modiﬁed Mathieu operator. The ﬁrst approach is based on the quantum WKB periods and their resurgent properties. We show that these properties are encoded in the TBA equations of Gaiotto–Moore– Neitzke determined by the BPS spectrum of the theory, and we relate the Borel-resummed quantum periods to instanton calculus. In addition, we use the TS/ST correspondence to obtain a closed formula for the Fredholm determinant of the modiﬁed Mathieu operator. Finally, by using blowup equations, we explain the connection between this operator and the τ function of Painlev´e III. arXiv:1908.07065v3 [hep-th] 20 Jul 2020",
   "docinfo": {
    "Producer": "medialab",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20200721010638Z"
   },
-  "title_raw": "Non-perturbative approaches to the quantum Seiberg\u2013Witten curve",
+  "title_raw": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
-   "heading": "Non-perturbative approaches to the quantum Seiberg\u2013Witten curve",
+   "heading": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
    "outline": "1 Introduction",
-   "text": "Non-perturbative approaches to the quantum Seiberg\u2013Witten curve",
+   "text": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
    "corroborated_by": [
     "text"
    ],
@@ -79,7 +79,7 @@
   },
   {
    "level": 2,
-   "title": "Review of the TBA equations of Gaiotto\u2013Moore\u2013Neitzke",
+   "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
    "page": 9,
    "source": "outline",
    "number": "3.1",
@@ -199,7 +199,7 @@
   },
   {
    "level": 1,
-   "title": "On the modified Mathieu operator and Painlev\u00e9 III3",
+   "title": "On the modified Mathieu operator and Painlevé III3",
    "page": 36,
    "source": "outline",
    "number": "6",
@@ -244,7 +244,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Poles of the Borel\u2013Pad\u00b4e transforms, which would accumulate to branch cuts for the Borel transform of the quantum periods \u03a0A(E, \u210f) (a) and \u03a0B(E, \u210f) (b) at u = 0 and \u039b = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charge",
+   "title": "Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transform of the quantum periods ΠA(E, ℏ) (a) and ΠB(E, ℏ) (b) at u = 0 and Λ = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charge",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -257,7 +257,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Poles of the Borel\u2013Pad\u00b4e transforms, which would accumulate to branch cuts for the Borel transforms of the quantum periods \u03a0A(u, \u210f) (a) and \u03a0B(u, \u210f) (b) at u = 4 and \u039b = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charg",
+   "title": "Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transforms of the quantum periods ΠA(u, ℏ) (a) and ΠB(u, ℏ) (b) at u = 4 and Λ = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charg",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -282,7 +282,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "Discontinuity across the ray arg(\u210f) = 0 for \u03a0B(u = 0, \u210f= 1) computed by lateral Borel resummation and by using (3.42) with increasing number of terms in the asymptotic series",
+   "title": "Discontinuity across the ray arg(ℏ) = 0 for ΠB(u = 0, ℏ= 1) computed by lateral Borel resummation and by using (3.42) with increasing number of terms in the asymptotic series",
    "page": 14,
    "confidence": 0.8,
    "evidence": [
@@ -294,7 +294,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "Discontinuity of \u03a0A(u = 1 + 4i, \u210f= 1) across the rays associated to BPS states \u03b3 = (0, \u22121), (1, 1), computed by lateral Borel resummation and by using (3.65),(3.66) with up to 193 terms in the asymptotic series. Only stabilised digits are listed",
+   "title": "Discontinuity of ΠA(u = 1 + 4i, ℏ= 1) across the rays associated to BPS states γ = (0, −1), (1, 1), computed by lateral Borel resummation and by using (3.65),(3.66) with up to 193 terms in the asymptotic series. Only stabilised digits are listed",
    "page": 17,
    "confidence": 0.8,
    "evidence": [
@@ -306,7 +306,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Poles of the Borel\u2013Pad\u00b4e transforms, which would accumulate to branch cuts for the Borel transform of the quantum periods \u03a0A(E, \u210f) (a) and \u03a0B(E, \u210f) (b) at u = 1 + 4i and \u039b = 1",
+   "title": "Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transform of the quantum periods ΠA(E, ℏ) (a) and ΠB(E, ℏ) (b) at u = 1 + 4i and Λ = 1",
    "page": 18,
    "confidence": 0.9,
    "evidence": [
@@ -319,7 +319,7 @@
   {
    "kind": "table",
    "number": "4",
-   "title": "Discontinuity of \u03a0B(u = 1 + 4i, \u210f= 1) across the rays associated to BPS states \u03b3 = (1, 1), (1, 0), computed by lateral Borel resummation and by using (3.67),(3.68) with up to 193 terms in the asymptotic series. Only stabilised digits are listed",
+   "title": "Discontinuity of ΠB(u = 1 + 4i, ℏ= 1) across the rays associated to BPS states γ = (1, 1), (1, 0), computed by lateral Borel resummation and by using (3.67),(3.68) with up to 193 terms in the asymptotic series. Only stabilised digits are listed",
    "page": 18,
    "confidence": 0.6,
    "evidence": [
@@ -330,7 +330,7 @@
   {
    "kind": "table",
    "number": "5",
-   "title": "Quantum dyon period at u = 0. \u210f= 1",
+   "title": "Quantum dyon period at u = 0. ℏ= 1",
    "page": 20,
    "confidence": 0.8,
    "evidence": [
@@ -365,7 +365,7 @@
   {
    "kind": "table",
    "number": "8",
-   "title": "Borel sum of quantum A period at u = 4 and \u210f= 1. Underlined are stabilised digits",
+   "title": "Borel sum of quantum A period at u = 4 and ℏ= 1. Underlined are stabilised digits",
    "page": 26,
    "confidence": 0.8,
    "evidence": [
@@ -377,7 +377,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Poles of the Borel\u2013Pad\u00b4e transform of the \u201creduced\u201d series \u03a0red",
+   "title": "Poles of the Borel–Pad´e transform of the “reduced” series Πred",
    "page": 27,
    "confidence": 0.9,
    "evidence": [
@@ -390,7 +390,7 @@
   {
    "kind": "table",
    "number": "9",
-   "title": "Comparison between the Borel sum of the \u201creduced\u201d quantum B period \u03a0red",
+   "title": "Comparison between the Borel sum of the “reduced” quantum B period Πred",
    "page": 28,
    "confidence": 0.8,
    "evidence": [
@@ -402,7 +402,7 @@
   {
    "kind": "table",
    "number": "10",
-   "title": "Numerical veri\ufb01cation of the characteristic exponent formula (4.50) at u = 0 and \u210f= 1/4, with increasing number of terms for the lateral Borel resummations on the r.h.s.. All the stabilised digits (underlined) are in agreement",
+   "title": "Numerical veriﬁcation of the characteristic exponent formula (4.50) at u = 0 and ℏ= 1/4, with increasing number of terms for the lateral Borel resummations on the r.h.s.. All the stabilised digits (underlined) are in agreement",
    "page": 28,
    "confidence": 0.8,
    "evidence": [
@@ -414,7 +414,7 @@
   {
    "kind": "table",
    "number": "11",
-   "title": "The second spectral trace Z2 as computed from (5.9) for \u210f= 3\u03c0 and \u039b = 1. The",
+   "title": "The second spectral trace Z2 as computed from (5.9) for ℏ= 3π and Λ = 1. The",
    "page": 33,
    "confidence": 0.8,
    "evidence": [
@@ -741,10 +741,11 @@
    "physical": 30,
    "label": "29",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 1.0,
    "evidence": [
     "printed",
-    "pdf-labels"
+    "pdf-labels",
+    "contents"
    ]
   },
   {
@@ -931,8 +932,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1218,
-   "n_words": 174,
+   "n_chars": 1216,
+   "n_words": 173,
    "label_start": "0",
    "label_end": "1"
   },
@@ -942,22 +943,22 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 3844,
-   "n_words": 602,
+   "page_end": 4,
+   "n_chars": 6112,
+   "n_words": 974,
    "label_start": "1",
-   "label_end": "2"
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-the-all-orders-wkb-method",
    "number": "2",
    "title": "The all-orders WKB method",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 8,
-   "n_chars": 11193,
-   "n_words": 2118,
-   "label_start": "2",
+   "n_chars": 9032,
+   "n_words": 1758,
+   "label_start": "3",
    "label_end": "7"
   },
   {
@@ -967,20 +968,20 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 183,
-   "n_words": 34,
+   "n_chars": 214,
+   "n_words": 38,
    "label_start": "7",
    "label_end": "8"
   },
   {
    "id": "sec-003-31-review-of-the-tba-equations-of-gaiottomoorene",
    "number": "3.1",
-   "title": "Review of the TBA equations of Gaiotto\u2013Moore\u2013Neitzke",
+   "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2977,
-   "n_words": 588,
+   "n_chars": 3026,
+   "n_words": 594,
    "label_start": "8",
    "label_end": "9"
   },
@@ -991,8 +992,8 @@
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2287,
-   "n_words": 407,
+   "n_chars": 2334,
+   "n_words": 414,
    "label_start": "9",
    "label_end": "10"
   },
@@ -1003,8 +1004,8 @@
    "level": 3,
    "page_start": 11,
    "page_end": 15,
-   "n_chars": 6491,
-   "n_words": 1228,
+   "n_chars": 6485,
+   "n_words": 1227,
    "label_start": "10",
    "label_end": "14"
   },
@@ -1015,8 +1016,8 @@
    "level": 3,
    "page_start": 15,
    "page_end": 18,
-   "n_chars": 5892,
-   "n_words": 1137,
+   "n_chars": 5909,
+   "n_words": 1139,
    "label_start": "14",
    "label_end": "17"
   },
@@ -1027,8 +1028,8 @@
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 5429,
-   "n_words": 1037,
+   "n_chars": 5483,
+   "n_words": 1045,
    "label_start": "17",
    "label_end": "19"
   },
@@ -1039,8 +1040,8 @@
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 497,
-   "n_words": 93,
+   "n_chars": 533,
+   "n_words": 97,
    "label_start": "19",
    "label_end": "20"
   },
@@ -1051,8 +1052,8 @@
    "level": 2,
    "page_start": 21,
    "page_end": 25,
-   "n_chars": 8308,
-   "n_words": 1754,
+   "n_chars": 8333,
+   "n_words": 1757,
    "label_start": "20",
    "label_end": "24"
   },
@@ -1063,8 +1064,8 @@
    "level": 2,
    "page_start": 25,
    "page_end": 29,
-   "n_chars": 7885,
-   "n_words": 1423,
+   "n_chars": 7915,
+   "n_words": 1426,
    "label_start": "24",
    "label_end": "28"
   },
@@ -1075,8 +1076,8 @@
    "level": 1,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 2195,
-   "n_words": 380,
+   "n_chars": 2247,
+   "n_words": 386,
    "label_start": "28",
    "label_end": "29"
   },
@@ -1087,8 +1088,8 @@
    "level": 2,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 2961,
-   "n_words": 582,
+   "n_chars": 2993,
+   "n_words": 587,
    "label_start": "29",
    "label_end": "30"
   },
@@ -1098,34 +1099,70 @@
    "title": "Tests of our formula",
    "level": 2,
    "page_start": 31,
-   "page_end": 36,
-   "n_chars": 8986,
-   "n_words": 1760,
+   "page_end": 33,
+   "n_chars": 4265,
+   "n_words": 848,
    "label_start": "30",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-014-53-comparison-to-zamolodchikovs-tba-equation",
+   "number": "5.3",
+   "title": "Comparison to Zamolodchikov's TBA equation",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 4696,
+   "n_words": 910,
+   "label_start": "32",
    "label_end": "35"
   },
   {
-   "id": "sec-014-6-on-the-modified-mathieu-operator-and-painlev\u00e9",
+   "id": "sec-015-6-on-the-modified-mathieu-operator-and-painlevé",
    "number": "6",
-   "title": "On the modified Mathieu operator and Painlev\u00e9 III3",
+   "title": "On the modified Mathieu operator and Painlevé III3",
    "level": 1,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 2631,
-   "n_words": 489,
+   "n_chars": 2680,
+   "n_words": 496,
    "label_start": "35",
    "label_end": "36"
   },
   {
-   "id": "sec-015-7-conclusions",
+   "id": "sec-016-7-conclusions",
    "number": "7",
    "title": "Conclusions",
    "level": 1,
    "page_start": 37,
-   "page_end": 47,
-   "n_chars": 28953,
-   "n_words": 4747,
+   "page_end": 38,
+   "n_chars": 6126,
+   "n_words": 983,
    "label_start": "36",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-017-a-the-four-dimensional-sun-spectral-determinant",
+   "number": null,
+   "title": "A The four dimensional SU(N) spectral determinant",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 40,
+   "n_chars": 3420,
+   "n_words": 732,
+   "label_start": "37",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-018-b-zamolodchikovs-tba-equation-for-the-modified-m",
+   "number": null,
+   "title": "B Zamolodchikov's TBA equation for the modified Mathieu equation",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 47,
+   "n_chars": 19353,
+   "n_words": 3024,
+   "label_start": "39",
    "label_end": "46"
   }
  ],
@@ -1142,16 +1179,15 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 2,
+    "count": 1,
     "items": [
-     "Introduction",
-     "A closed formula and its derivation"
+     "Introduction"
     ]
    },
    "found_not_listed": {
     "count": 1,
     "items": [
-     "6 On the modi\ufb01ed Mathieu operator and Painlev\u00b4e III3"
+     "6 On the modiﬁed Mathieu operator and Painlev´e III3"
     ]
    },
    "page_mismatch": {
@@ -1159,13 +1195,14 @@
     "items": []
    }
   },
-  "sections": 17,
-  "chars_total": 101930,
+  "sections": 20,
+  "chars_total": 102372,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "GGM_19_rev3.tex",
    "tex_sections": 18,
-   "overlaid": 15,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1180,8 +1217,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.721,
-     "coverage_ratio": 0.924,
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1189,7 +1226,7 @@
      "id": "sec-001-2-the-all-orders-wkb-method",
      "title": "The all-orders WKB method",
      "prose_ratio": 0.943,
-     "coverage_ratio": 0.812,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1197,13 +1234,13 @@
      "id": "sec-002-3-quantum-periods-from-tba-equations",
      "title": "Quantum periods from TBA equations",
      "prose_ratio": 0.933,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.933,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-31-review-of-the-tba-equations-of-gaiottomoorene",
-     "title": "Review of the TBA equations of Gaiotto\u2013Moore\u2013Neitzke",
+     "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
      "prose_ratio": 0.985,
      "coverage_ratio": 1.0,
      "result": "overlaid",
@@ -1237,7 +1274,7 @@
      "id": "sec-007-33-solving-the-tba-equations-in-the-strong-coupl",
      "title": "Solving the TBA equations in the strong coupling region",
      "prose_ratio": 0.947,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1245,7 +1282,7 @@
      "id": "sec-008-4-quantum-periods-from-instanton-calculus",
      "title": "Quantum periods from instanton calculus",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.929,
+     "coverage_ratio": 0.897,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1277,32 +1314,51 @@
      "id": "sec-012-51-a-closed-formula-and-its-derivation",
      "title": "A closed formula and its derivation",
      "prose_ratio": 0.931,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-013-52-tests-of-our-formula",
      "title": "Tests of our formula",
-     "prose_ratio": 0.912,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-6-on-the-modified-mathieu-operator-and-painlev\u00e9",
-     "title": "On the modified Mathieu operator and Painlev\u00e9 III3",
+     "id": "sec-014-53-comparison-to-zamolodchikovs-tba-equation",
+     "title": "Comparison to Zamolodchikov's TBA equation",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-6-on-the-modified-mathieu-operator-and-painlevé",
+     "title": "On the modified Mathieu operator and Painlevé III3",
      "prose_ratio": 0.914,
      "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-7-conclusions",
+     "id": "sec-016-7-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.423,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-a-the-four-dimensional-sun-spectral-determinant",
+     "title": "A The four dimensional SU(N) spectral determinant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-b-zamolodchikovs-tba-equation-for-the-modified-m",
+     "title": "B Zamolodchikov's TBA equation for the modified Mathieu equation",
+     "result": "no matching \\section"
     }
    ]
   }

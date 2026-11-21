@@ -49,11 +49,15 @@ monomials form a `k`-basis of `QuotAlg`. It is a definition here, so that
 `composition_lemma`'s comment becomes something a theorem can conclude and a
 consumer can require. Proving it *is* the diamond lemma, and it additionally
 needs the framework's standing axioms. Those were five when this file was
-written; they are now **two** — `reduction_well_founded` and `local_confluence`.
-`confluence` and `normal_form_unique` were proved from them (Newman's lemma),
-and `normal_form_exists` turned out to be **false** and was replaced by a
-theorem carrying the unit-leading-coefficient hypothesis it had dropped
-(beans qou-ch3j, qou-lzoo). Nothing here discharges the remaining two.
+written; they are now **none**. `reduction_well_founded` was proved on
+2026-11-20 (`Basic.lean`, bean qou-2q7r); `local_confluence` was found false as
+stated (structural common reduct) and replaced the same day by a theorem up to
+`CoeffEq` over a commutative ring, from the Diamond Lemma proved in
+`DiamondLemma.lean` (bean qou-lc7q); `confluence` and `normal_form_unique` are
+restated up to `CoeffEq` from it; and `normal_form_exists` turned out to be
+**false** and was replaced by a theorem carrying the unit-leading-coefficient
+hypothesis it had
+dropped (beans qou-ch3j, qou-lzoo). Nothing here discharges the remaining one.
 -/
 
 namespace UGB.GrobnerShirshov
@@ -269,11 +273,9 @@ and closes with the Remark that decides its relevance here:
 > Composition-Diamond lemma for free associative algebras.
 
 **The one-object case is precisely this development's setting.** So Theorem 4.4
-is the statement UGB's two remaining standing axioms
-(`reduction_well_founded`, `local_confluence`) collectively stand in for —
-five when this was written, before Newman's lemma discharged `confluence` and
-`normal_form_unique` and the false `normal_form_exists` was replaced by a
-theorem. Its clause (iii) is
+is the statement that `Diamond.reductionUnique` (`DiamondLemma.lean`, proved
+2026-11-20 over a commutative ring) now supplies; five axioms stood in for it
+when this was written. Its clause (iii) is
 `NormalFormBasis` above — the paper's `Irr(S)` is `{u | u ≠ a·s̄·b}`, which is
 `NormalFormMonomial`'s "no rule's leading monomial is an infix", the same
 condition.

@@ -19,7 +19,7 @@ LaTeX label: `def:spatial-realization-functor`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1-quantum-observable-universe/spatial-realization-functor
+- [leitner2026] §1-quantum-observable-universe/spatial-realization-functor
 -/
 
 open CategoryTheory MonoidalCategory
@@ -38,7 +38,7 @@ universe u v
     manifold `M = τ(Spec(A))`.
 
     LaTeX: `\label{def:spatial-realization-functor}` -/
--- Ref: [kock2004], [manuscript] §1
+-- Ref: [kock2004], [leitner2026] §1
 structure SpatialRealizationFunctor (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The Frobenius–Hopf object `A` in `C`. -/

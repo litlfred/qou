@@ -1,0 +1,39 @@
+10. The calculus of vector convolutions in S°.
+
+We turn now to the calculus of vector convolutions in S*. Our specific goal is to
+prove Theorem 3, formula (1).
+
+Let V bea smooth vector field defined on S*. For any kernel function (a) ,
+we define
+
+ACV, O)y) = Ss3 Lyxt V(X) O(x y) dx
+
+BV, o)(y) = Js3 Lyct V(X) X Vy O(% y) dx
+
+AV, Oy) = Js3 Ly V(x) © Vy O(% y) dx
+
+GV, oy) = Vy g(V. oy) = Vy Fs3 Lyct V(x) © Vy o(x.y) dx.
+
+We now continue as in R® : the curl and divergence of the vector fields A(V, @)
+and B(V, ¢) are given by
+
+LEMMA 3.
+V XA(V,) = —BC(V, >) — 2 AWV, 9)
+V e ACV, >) = g(V, >)
+V XB(V, >) = ACV, 6) — G(V, >)
+V ¢ BV, >) = — 22(V, 9).
+
+We have displayed these formulas so that the terms which already appeared in the
+corresponding formulas in R’, given in Lemma 1, are to the left, while those
+which are new in S° are to the far right.
+
+Proof. We give the arguments for the first and last of these formulas, each of
+which looks like the corresponding formula in R* with an extra term added, and
+leave the other two formulas to the reader.
+
+We begin with the first formula,
+Vy XACV, Oy) = Vy X Js3 Lyet V(x) o(, y) dx
+= Js Vy X{Lyct V(x) o(%, y)} dx
+= J (Vy XLyct VX) (x y) — Lyct VOX) XVy (% y) dx.
+
+27

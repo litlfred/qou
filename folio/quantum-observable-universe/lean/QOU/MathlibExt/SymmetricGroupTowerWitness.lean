@@ -76,7 +76,7 @@ identity. A Hecke trace with `z ≠ 0` does not have that shape.
 Generic `[CommRing R]`; no ordering, no `ℝ`, no archimedean content. The three
 statements needing `1 ≠ 0` carry `[Nontrivial R]`.
 
--- Ref: [manuscript] bean qou-fq1i / qou-301d; Kassel–Turaev, *Braid Groups*, ch. 4.
+-- Ref: [leitner2026] bean qou-fq1i / qou-301d; Kassel–Turaev, *Braid Groups*, ch. 4.
 -/
 
 namespace QOU.MathlibExt.SymmetricGroupTowerWitness

@@ -1,0 +1,1 @@
+1-e ciency of T implies restrictions on the topology of M: it follows that M is irreducible and atoroidal. Note that here by atoroidal, we mean that any embedded torus is either compressible or boundary parallel. It follows by Thurston's Hyperbolization Theorem in dimension 3 that M is hyperbolic or small Seifert- bred.

@@ -1,0 +1,46 @@
+4.3. Local monodromy 75
+
+of all prime numbers other than p, including our fixed prime /. In what
+follows we will always assume that the nearby cycles Y(5) are tame in the
+sense that P acts trivially on them (in the application in proposition 4.12
+we only work in characteristic p = 0 anyway). The perverse sheaf ‘¥(5)
+is then equipped with a natural action of quotient Z;(1) of the tame inertia
+group, and we denote by T : ¥(6) —> (6) the endomorphism induced by
+a topological generator 277i of Z;(1). In the abelian category Perv(Y,, A) we
+have as in [85, lemma 1.1] a Jordan decomposition
+
+(5) = ¥1(5)@¥%41(5) with %1(5) = QB a(S),
+aAl
+where for each a € A the perverse subsheaf Yq(6) is stable under the action
+of T and killed by a power of T — a@- id. We are particularly interested in
+the case of the perverse intersection cohomology sheaf 6 = dy,.
+
+REMARK 4.7. Suppose that the nearby cycles ‘V(dy,) are tame. If
+the morphism f : Y — S is proper and if the geometric generic fibre Yj
+is smooth, then after replacing f by its base change under some finite
+branched covering of S we can assume that
+
+A? (¥,, P21 (dy,)) = 0.
+
+Proof. Let S' — S be the normalization of S in a finite extension of
+the residue field of 7 with generic point 7’ ++ 7, and denote by S — S the
+normalization in the residue field of 7. For the base changes Y’ = Y xs S’
+and Y = Y xsS we then have a commutative diagram
+
+Y, ——~> yy <— _
+
+| | |
+
+—> y= Y,
+
+Y, n!
+
+Ys; ——> Y <—— Yq
+where the vertical identifications on the left hand side come from the fact
+that we are working over a strictly Henselian base. In particular, as an
+object of Perv(Y¥,, A) = Perv(Y;, A) the nearby cycles '¥ (dy, ) do not change
+if we replace our original family Y — S by the base change Y’ — S’, though
+of course the local monodromy operation and hence in the tame case the
+
+Jordan decomposition is modified under this replacement. This being said,
+our claim can be checked as follows.

@@ -8,7 +8,9 @@ pages: 31-33
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+The SL2 action : stabilizers of vertices, ﬁxed points and
 translation length
 There is a natural isometric and transitive action of GL(V ) on T, induced by the
 action of GL(V ) on V .
@@ -101,4 +103,3 @@ common ﬁxed point s, and take s′ a ﬁxed point of gk+1 as near as possible
 of s. So one of the gi’s, i = 1...k, do not ﬁx any other point of [ss′] than
 s ; applying the same argument as above gives that gk+1 ﬁxes s too, and
 concludes the proof.
-1.3.4

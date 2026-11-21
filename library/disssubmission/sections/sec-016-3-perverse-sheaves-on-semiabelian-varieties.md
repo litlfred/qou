@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-016-3-perverse-sheaves-on-semiabelian-varieties
 section_title: "Perverse sheaves on semiabelian varieties"
 section_number: 3
@@ -8,6 +8,7 @@ pages: 49-50
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 The Tannaka groups in corollary 2.14 provide a new tool for the study
 of smooth projective varieties with non-trivial Albanese morphism. Their

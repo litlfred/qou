@@ -1223,7 +1223,23 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "52211bd20b2c",
+          "ts": "ec4243186932"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:05.003Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-11-15T21:56:05.003Z"
 }

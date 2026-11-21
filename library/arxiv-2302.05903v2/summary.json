@@ -3,12 +3,17 @@
  "doc_id": "arxiv-2302.05903v2",
  "source_sha256": "9a17abd36cc8a317",
  "brief": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities",
- "extended": "**On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials**\n\n*A. Mironovb,c,d 1, A. Morozova,c,d 2*\n\n15 pp, 13 sections.\n\n**Abstract.** We elaborate on the recent suggestion to consider averaging of Cauchy identities for the Schur functions over power sum variables. This procedure has apparent parallels with the Borel transform, only it changes the number of combinatorial factors like dR in the sums over Young diagrams instead of just factorials in ordinary sums over numbers. It provides a universal view on a number of previously known, but seemingly random identities.\n\n**Outline.** Introduction; Basic example of averaging method; Simple generalizations; Derivation of various sum formulas by the aver; Extension to skew functions; A collection of sum formulas; The Gaussian measure; Calculating various sums; Strong integrability in Gaussian Hermitian mat; Strong superintegrability in the p-Gaussian mo; Relation of sum formulas to Ramanujan sums; Hurwitz tau-functions; Conclusion",
+ "extended": "**On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials**\n\n*A. Mironovb,c,d 1, A. Morozova,c,d 2*\n\n15 pp, 15 sections.\n\n**Abstract.** We elaborate on the recent suggestion to consider averaging of Cauchy identities for the Schur functions over power sum variables. This procedure has apparent parallels with the Borel transform, only it changes the number of combinatorial factors like dR in the sums over Young diagrams instead of just factorials in ordinary sums over numbers. It provides a universal view on a number of previously known, but seemingly random identities.\n\n**Outline.** Front matter; Introduction; Basic example of averaging method; Simple generalizations; Derivation of various sum formulas by the aver; Extension to skew functions; A collection of sum formulas; The Gaussian measure; Calculating various sums; Strong superintegrability and W-operators; Strong integrability in Gaussian Hermitian mat; Strong superintegrability in the p-Gaussian mo; Relation of sum formulas to Ramanujan sums; Hurwitz tau-functions; Conclusion",
  "tokens": {
   "brief": 49,
-  "extended": 262
+  "extended": 276
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -50,27 +55,32 @@
    "pages": "7-8"
   },
   {
-   "id": "sec-008-strong-integrability-in-gaussian-hermitian-matri",
+   "id": "sec-008-strong-superintegrability-and-w-operators",
+   "title": "Strong superintegrability and W-operators",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-strong-integrability-in-gaussian-hermitian-matri",
    "title": "Strong integrability in Gaussian Hermitian matrix model",
    "pages": "8-9"
   },
   {
-   "id": "sec-009-strong-superintegrability-in-the-p-gaussian-mode",
+   "id": "sec-010-strong-superintegrability-in-the-p-gaussian-mode",
    "title": "Strong superintegrability in the p-Gaussian model",
    "pages": "9-11"
   },
   {
-   "id": "sec-010-relation-of-sum-formulas-to-ramanujan-sums",
+   "id": "sec-011-relation-of-sum-formulas-to-ramanujan-sums",
    "title": "Relation of sum formulas to Ramanujan sums",
    "pages": "11-12"
   },
   {
-   "id": "sec-011-hurwitz-tau-functions",
+   "id": "sec-012-hurwitz-tau-functions",
    "title": "Hurwitz tau-functions",
    "pages": "12-13"
   },
   {
-   "id": "sec-012-conclusion",
+   "id": "sec-013-conclusion",
    "title": "Conclusion",
    "pages": "13-15"
   }

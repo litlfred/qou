@@ -1,0 +1,48 @@
+1.4. Negligible perverse sheaves 15
+
+One easily checks that Supp(M,,) C Xn, so M,,[—n] is a direct summand
+of Rf«Cy, [d] by base change. To control the Hodge structure on twists of
+the cohomology of this direct image, let 7 : Y + Y be a composition of
+blow-ups in smooth centers that gives rise to an embedded resolution of
+singularities ¥,, = 1~'(Yn) + Yn, see [56] or [11, th. 10.7]. Then Cy[d]
+occurs as a direct summand of the complex Rz,C;[d] by the decomposition
+theorem, so the restriction Cy, [d] is a direct summand of Rz,.Cj, [d]. It then
+follows that M,,|—n] is a direct summand of Rf,R7.Cy,[d], and we get an
+embedding
+
+H(X,(Mn)y.g) 4 HO" (En af" (Ly SL).
+
+But the Hodge types (p,q) on the right hand side satisfy p,q < dim(Y,) = dy
+as one may check from the Hodge theory of compact Kahler manifolds with
+coefficients in unitary local systems. Oo
+
+The above result contains the generic vanishing theorem of Green and
+Lazarsfeld [47, second part of th. 1] as the special case g = 0. Indeed, for
+any p < dim(f(Y)) the number n = d — pis larger than the dimension of the
+generic fibre of the Albanese morphism, hence dy, < d so that H?(Y, Y) =0
+for most % by theorem 1.5. If Y is algebraic, the theorem also holds more
+generally for H?(Y,Q%(E ®c Z)) with a unitary local system E on Y.
+
+In general the bounds in the above theorem are strict: If d = 4 and if Y
+is the blow-up of X along a smooth algebraic curve C C X of genus > 2,
+then one has w(Y) = d; = 3 but H?(Y,Q)(£)) 40 for all non-trivial line
+bundles # as explained in [47, top of p. 402].
+
+1.4. Negligible perverse sheaves
+
+A crucial ingredient for the proof of our vanishing theorem to be given
+in section 2.7 will be a classification of all perverse sheaves on X of Euler
+characteristic zero. To obtain this classification we use an index formula for
+Y-modules, extending the arguments of [37, cor. 1.4] which have shown
+that on a complex abelian variety X every perverse sheaf P € Perv(X,C)
+has Euler characteristic ¥(P) > 0. As we mentioned earlier, this is the only
+part of our proof of theorem 1.1 which so far only works over C.
+
+PROPOSITION 1.6. Let P € Perv(X,C) be a simple perverse sheaf.
+
+(a) One has x%(P) = 0 iff there exists an abelian subvariety A X of
+positive dimension with quotient morphism q : X — B = X/A such
+mar P © Leeq'(Q)|aim(A)
+for some Q € Perv(B,C) and some character 9 € TI(X).
+
+(b) One has x(P) = 1 iff P is a skyscraper sheaf on X of rank one.

@@ -73,6 +73,40 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "af8290503821",
+          "ts": "aa6c6e200366"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:09:33.342Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "minor",
+        "evidence": "borromean_trace_standard computes chi_(2,1)((s1 s2^-1)^3) and matches the md formula (I checked the value 2 at q = 1). The det = 1 claim for even length and the unit-circle criterion are not encoded."
+      },
+      {
+        "field_hash": {
+          "md": "af8290503821",
+          "ts": "aa6c6e200366",
+          "lean": "8c390332b6fc",
+          "lean_statement": "04a9ca32cb5c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:12:29.013Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "minor",
+        "evidence": "Re-read 2026-11-17. borromean_trace_standard proves the displayed chi_(2,1) formula (value 2 at q = 1 checked). Not formalised: det rho_(2,1)(beta) = 1 for even length (each letter has det q(-q^{-1}) = -1) and the unit-circle criterion |chi| <= 2. Both are elementary and the headline formula is proved, so warn rather than fail."
       }
     ],
     "proof-statement-integrity": [
@@ -2480,6 +2514,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:24:42.564Z",
+  "updated_at": "2026-11-17T18:12:29.013Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

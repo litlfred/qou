@@ -51,9 +51,9 @@ Self-contained: restates the two source objects (`tauBorromean`, the A=4 measure
 value) as local `def`s and cites them by PR number rather than importing sibling
 oleans (matches #4389 style).
 
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorParitySignLaw.lean (#4389; A=3 proved, A=4 measured)
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/BorromeanThreeBodyCluster.lean (#4360; A=3 closed form)
--- Ref: [manuscript] computations/deltalambda/a4-h12-brunnian-deficit-measure.witness.json (#4378; A=4 measured order + Brunnian strand-forgetting verification)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorParitySignLaw.lean (#4389; A=3 proved, A=4 measured)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/BorromeanThreeBodyCluster.lean (#4360; A=3 closed form)
+-- Ref: [leitner2026] computations/deltalambda/a4-h12-brunnian-deficit-measure.witness.json (#4378; A=4 measured order + Brunnian strand-forgetting verification)
 -/
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Module.LinearMap.Defs

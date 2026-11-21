@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 We implemented KRR algorithms using real, vector and
 quaternion cubic kernels to perform a one-step-ahead predic-
@@ -41,8 +42,6 @@ alently, a six-dimensional quaternion signal. Therefore, by
 considering two delayed samples as regressors, the input and
 output pairs were respectively elements of H12 and H6.
 5Recall that for θ ≈0, sin(θ) ≈θ and cos(1.5π + θ) ≈θ.
-TOBAR AND MANDIC: QUATERNION REPRODUCING KERNEL HILBERT SPACES
-5745
 Fig. 4.
 Raw angle measurements and considered features. [Top] Original
 discontinuous angle recording and [Bottom] the corresponding continuous

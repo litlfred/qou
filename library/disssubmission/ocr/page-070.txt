@@ -1,0 +1,56 @@
+62 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+In particular, example (a) shows that without further assumptions the
+Tannaka groups do not always define a constructible stratification of S. In
+general we only have the following semicontinuity property.
+
+LEMMA 3.18. Let n € S be any scheme-theoretic point, s € {n} a point
+in its closure, and consider geometric points 7 and § above these. Then we
+have an embedding
+
+G(dy,) => G(dy, ).
+
+Proof. The statement is only concerned with the geometric fibres of the
+families Y —> S and X —-> S, so we can replace these families by their base
+change under any quasi-finite morphism S’ —> S whose image contains the
+points s and 77 as indicated in the following diagram.
+
+Z|
+~
+a
+
+Y
+
+,
+
+a 3s a an
+ul
+
+In particular, replacing S by the reduced closed subscheme S’ = {7} yea we
+
+can assume S is irreducible with generic point 7. By normalization we can
+
+also achieve that S is a normal variety. Furthermore, passing to an open
+neighborhood of the point s we can assume that
+
+S = Spec(A)
+is affine. Let p<A be the prime ideal corresponding to the point s. Without
+
+loss of generality s A 1, so we can find a non-zero element f € p \ {0} in
+our prime ideal. Then the vanishing locus
+
+V(f) = Spec(A/(f)) + S = Spec(A)
+is a proper closed subscheme of codimension one and contains s. Now take
+any irreducible component D > V(f);eq of the underlying reduced closed
+subscheme such that the point s lies on the Weyl! divisor D, and let 7}p be
+
+a geometric generic point of this irreducible divisor. By induction on the
+dimension dim(S) we have an embedding
+
+G(5y,) + G(5y,, ).
+
+hence it will be enough to prove our claim when s = 1p is the generic point
+of an irreducible Weyl divisor D on S.
+
+This being said, recall from the above that we can assume S to be normal
+and hence regular in codimension one. In this case the one-dimensional

@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2508.03145v1",
  "source_sha256": "2bf03452cb503e96",
- "brief": "Θ-Categories and Tannakian duality — We introduce a notion ofΘ-categories, which is a refinement of the notion of symmetric monoidal∞-categories.",
- "extended": "**Θ-Categories and Tannakian duality**\n\n*Joost NUITEN, Bertrand TOEN*\n\n33 pp, 7 sections.\n\n**Abstract.** We introduce a notion ofΘ-categories, which is a refinement of the notion of symmetric monoidal∞-categories. We use this notion to prove a Tannakian duality statement, relatingΘ-categories with fpqc- stacks by means of a certain stack of fiber functors in the context of Θ-categories. This provides, over a base ring of arbitrary characteris- tic, a strong link betweenTannakian Θ-categories and the schematic homotopy types of [Toe06].\n\n**Outline.** -Categories; -Categories; -Categories of modules; Tannaka duality; -Categories of quasi-coherent and ind-perfect ; The Tannakian duality theorem; Positive tor-dimension descent\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.9: LetT Θ be a neutralized TannakianΘ-category overk. Then\n- Theorem 2.9: This will be investigated elsewhere.\n- Proposition 1.12: Let T Θ be a Θ-category. The∞-functor sending a Θ-\n- Proposition 1.12: can be usefully combined with the following recognition\n- Proposition 1.13: is obvious whenx is a dualizable object, because we have\n- Proposition: A.1. Assume thatB∈ CAlg(T ) is of positive tor-dimension",
+ "brief": "Θ -Categories and Tannakian duality — We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories.",
+ "extended": "**Θ -Categories and Tannakian duality**\n\n*Joost NUITEN, Bertrand TOEN*\n\n33 pp, 9 sections.\n\n**Abstract.** We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories. We use this notion to prove a Tannakian duality statement, relating Θ-categories with fpqc- stacks by means of a certain stack of fiber functors in the context of Θ-categories. This provides, over a base ring of arbitrary characteris- tic, a strong link between Tannakian Θ-categories and the schematic homotopy types of [Toe06].\n\n**Outline.** Front matter; -Categories; -Categories; -Categories of modules; Tannaka duality; -Categories of quasi-coherent and ind-perfect ; Tannakian -categories and Tannakian gerbes; The Tannakian duality theorem; Positive tor-dimension descent",
  "tokens": {
-  "brief": 36,
-  "extended": 300
+  "brief": 37,
+  "extended": 198
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
+  {
    "id": "sec-000--categories",
    "title": "-Categories",
-   "pages": "2-5"
+   "pages": "3-6"
   },
   {
    "id": "sec-001--categories",
    "title": "-Categories",
-   "pages": "5-11"
+   "pages": "6-11"
   },
   {
    "id": "sec-002--categories-of-modules",
@@ -32,15 +37,20 @@
   {
    "id": "sec-004--categories-of-quasi-coherent-and-ind-perfect-sh",
    "title": "-Categories of quasi-coherent and ind-perfect sheaves",
-   "pages": "15-23"
+   "pages": "15-21"
   },
   {
-   "id": "sec-005-the-tannakian-duality-theorem",
+   "id": "sec-005-tannakian--categories-and-tannakian-gerbes",
+   "title": "Tannakian -categories and Tannakian gerbes",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-006-the-tannakian-duality-theorem",
    "title": "The Tannakian duality theorem",
    "pages": "23-29"
   },
   {
-   "id": "sec-006-positive-tor-dimension-descent",
+   "id": "sec-007-positive-tor-dimension-descent",
    "title": "Positive tor-dimension descent",
    "pages": "29-33"
   }
@@ -49,8 +59,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

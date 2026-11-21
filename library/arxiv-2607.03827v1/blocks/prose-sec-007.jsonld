@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2607.03827v1/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Gram determinants and Jucys Murphy elements",
-  "pageStart": 29,
-  "pageEnd": 31,
-  "text": "../sections/sec-007-63-gram-determinants-and-jucys-murphy-elements.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.03827v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.03827v1",
+  "title": "Extended affine Hecke algebra of type A",
+  "pageStart": 26,
+  "pageEnd": 29,
+  "text": "../sections/sec-007-62-extended-affine-hecke-algebra-of-type-a.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.03827v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.03827v1/manifest.jsonld",
   "provenance": "ingested"
 }

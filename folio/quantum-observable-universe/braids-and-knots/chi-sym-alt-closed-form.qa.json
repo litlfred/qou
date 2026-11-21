@@ -1224,7 +1224,27 @@
         "reviewed_at": "2026-08-26T18:03:35.498Z",
         "reviewed_sha": "a16d826b818e26d22de4550f31f317c9c31e0acd"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "116063b5daa5",
+          "ts": "99c77c5c79f1",
+          "lean": "ed97b9303c9f",
+          "lean_statement": "1401214e7b5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:33.415Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "chi-sym-alt-closed-form.lean:322 chiPairProductC_eq matches the closed form (-1)^#blind (1+H_A^2/4)^n_ud prod_P f(d), but chiPairPerFactor (line ~44) hard-codes the per-letter values (-1, -1, -(1+H_A^2/4)) instead of deriving them from the two 1-dim Hecke characters, and the atomic-word specialisation (n_ud = 2A, one pn letter) is only existential (n_ud_atom_braid: exists w, nUd w = 2(Z+N)+1 via List.replicate)."
+      }
     ]
   },
-  "updated_at": "2026-08-26T18:20:10.625Z"
+  "updated_at": "2026-11-15T21:27:33.415Z"
 }

@@ -1,0 +1,1 @@
+Let K be a ffpf knot with monodromy h : Σ →Σ, and let (φ, Γ) be the Nielsen– Thurston form of h. Then for each pseudo-Anosov component S of Σ \ Γ that is fixed setwise by φ, the restriction of φ to S is freely isotopic to a pseudo-Anosov map with no fixed points.

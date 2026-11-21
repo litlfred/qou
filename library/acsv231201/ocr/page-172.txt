@@ -1,0 +1,53 @@
+154 Laurent series, amoebas, and convex geometry
+
+that every point on the boundary of a Laurent series domain of convergence
+has the same coordinatewise modulus as a singularity of f.
+
+Proposition 6.33. [fw ¢€ OD then T(w) NV # ©. Conversely, if p € D
+and w € V, and T(z)NV = @ for all z in the open line segment between
+(pil, +-s[pal) and (\wi|,.-s)val), then w € AD.
+
+Proof (First statement) For simplicity we first prove the result for power se-
+ries expansions, then note how the argument changes for the general Laurent
+series case. Towards a contradiction, suppose that w € dD and T(w)NV = @.
+The Cauchy integral expression
+
+d
+dp = (4) fiz" dz (6.8)
+2ni T(y)
+
+holds for all y € D and is unchanged if we move y through points where
+Ty) AV = @. In particular, if T(w) MV = @ then for some ¢ > 0 we
+have T(y) MV = @ whenever |y, — w;| < 2e for all k = 1,...,d and (6.8)
+holds with y = w + €1. A maximum modulus bound then gives a, < Clw; +
+el" ++» |wy+el-” for some C > 0 and all r € N“. Our proof of Proposition 6.8
+above showed that D is the interior of
+
+{2 € C4: sup lap: |zI" is nie
+rend
+
+and a, < Clw; + |" ---|wa + €|" implies the supremum is finite for all z
+
+in a neighborhood of w, contradicting that w € OD. In the general Laurent
+
+series case, we need to take the sign of the coordinates of r into account. In
+
+particular, we want to prove that
+
+sup ar|-[2I" = sup sup lagorl  [217°"
+
+reZa oe{+1}4 rend
+is finite for all z in some neighborhood of w, where as above we use the
+notation o © r = (o1r,..., ara). For fixed a € {+1} we apply a maximum
+modulus bound to (6.8) with y = w + eo to get
+
+Agor < Clwy + oEl 7" ++ |wa + gel
+for some C > 0 and all r € N%, and thus
+oir Cala
+Zz zZ,
+agorlzi7" < c( Et! {Fal 9)
+Iwi + oe lwa + oael
+
+For z ina sufficiently small neighborhood of w in C4, each term on the right-
+hand side of (6.9) is less than 1 if it has a positive power, and greater than | if it
+has a negative power, so the supremum over all r € N“ is finite. This holds for

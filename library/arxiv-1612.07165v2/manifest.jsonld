@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1612.07165v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Unification and Local Baryon Number",
+  "contains": [
+    "library/arxiv-1612.07165v2/sections/page-001",
+    "library/arxiv-1612.07165v2/sections/page-002",
+    "library/arxiv-1612.07165v2/sections/page-003",
+    "library/arxiv-1612.07165v2/sections/page-004",
+    "library/arxiv-1612.07165v2/sections/page-005",
+    "library/arxiv-1612.07165v2/sections/page-006",
+    "library/arxiv-1612.07165v2/sections/page-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1612.07165v2",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Unification and Local Baryon Number",
+      "basis": "Printed title on page 1; the extracted title used the fi ligature",
+      "extracted_title": "Uniﬁcation and Local Baryon Number",
+      "corrected_on": "2026-11-15",
+      "extracted": "Unification and Local Baryon Number"
+    },
+    "source_file": "1612.07165v2.pdf",
+    "source_sha256": "100bb01cd9fdc19d25db0a8c0b0a142e4d12467441a9c1e1cc3853b49af5ee75",
+    "pages": 7,
+    "arxiv": {
+      "id": "1612.07165",
+      "version": "2",
+      "primary_class": "hep-ph",
+      "stamp_date": "20 Feb 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

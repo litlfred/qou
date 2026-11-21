@@ -38,7 +38,7 @@ Verified `lean`-direct against pinned Mathlib (exit 0). Imports only
 needed for the assembly — it enters only in the step-2 justification of the
 periodicity input.
 
-Ref: [manuscript] docs/audits/2026-07-18-endowment-scope-meromorphic-wall.md §2
+Ref: [leitner2026] docs/audits/2026-07-18-endowment-scope-meromorphic-wall.md §2
 -/
 
 open Complex Module

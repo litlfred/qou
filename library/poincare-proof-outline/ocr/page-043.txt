@@ -1,0 +1,76 @@
+hence ?Mil € ?I'
+?Mi2 © PI’
+
+using wnit-circle-fiz-iff|of M] assms
+unfolding ideal-points-def circline-intersection-def circline-set-def
+by (metis mem-Collect-eq moebius-circline)+
+
+moreover
+
+have ?Mil 4 ?Mi2
+using bij-moebius-pt[of M] *
+using moebius-pt-invert by blast
+
+moreover
+
+have is-poincare-line (moebius-circline M H)
+using assms unit-circle-fiz-preserve-is-poincare-line
+by simp
+
+ultimately
+
+have ?1'= {?Mil, ?Mi2}
+using two-ideal-points|of mocbius-circline M H|
+using card-eq-2-doubleton|of 71’ ?Mil ?Mi2]
+by simp
+
+thus ?thesis
+using *(2)
+by auto
+
+qed
+
+lemma ideal-points-poincare-line-moebius [simp]:
+assumes unit-disc-fix M wu € unit-disc v € unit-disc u # v
+assumes ideal-points (poincare-line uv) = {i1, i2}
+shows ideal-points (poincare-line (moebius-pt M u) (moebius-pt M v)) = {moebius-pt M il, moebius-pt M i2}
+using assms
+by auto
+
+Conjugation also maps ideal points to ideal points
+
+lemma ideal-points-conjugate [simp]:
+assumes is-poincare-line H
+shows ideal-points (conjugate-circline H) = conjugate ‘ (ideal-points H) (is ?I'= ?M ‘ ?1)
+proof—
+obtain if i2 where «: if 4 i2 ?J = {i1, i2}
+using assms
+by (rule obtain-ideal-points)
+let ?Mil = ?M il and ?Mi2 = ?M i2
+have ?Mil € ?M ‘ (circline-set H)
+?Mi2 € ?M ‘ (circline-set H)
+?Mil € ?M ‘ (circline-set unit-circle)
+?Mi2 € ?M ‘ (circline-set unit-circle)
+using *
+unfolding ideal-points-def circline-intersection-def circline-set-def
+by blast+
+hence ?Mil € ?I’
+?Mi2 € 21’
+unfolding ideal-points-def circline-intersection-def circline-set-def
+using circline-set-conjugate-circline circline-set-def conjugate-unit-circle-set
+by blast+
+moreover
+have ?Mil 4 ?Mi2
+using <i1 4 i2>
+by (auto simp add: conjugate-inj)
+moreover
+have is-poincare-line (conjugate-circline H)
+using assms
+by simp
+ultimately
+have ?1'= {?Mil, ?Mi2}
+using two-ideal-points|of conjugate-circline H]
+using card-eq-2-doubleton|of 71’ ?Mil ?Mi2]
+by simp
+thus ?thesis
+using *(2)

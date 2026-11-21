@@ -1,0 +1,55 @@
+and consider the following domain in (82), which we put to be A in this section,
+A = {(t,s,u) € A | 2A(t) +A(s —t) — 2A(s) + A(s —u) +2 A(u) —¢ > OF.
+
+We note that this domain is symmetric with respect to the exchange of t and u. The aim
+of this section is to show the following lemma.
+
+Lemma C.1. A is a compact convex domain in the interior of A, and the boundary of
+A is a smooth closed surface whose Gaussian curvature is positive everywhere.
+
+We show a proof of the lemma later in this section. Before showing it, we show some
+lemmas.
+
+Lemma C.2. The boundary of A is included in the complement of A in A. That is, A
+is included in the interior of A.
+
+Proof. We consider the defining inequality of A,
+2 A(t) + A(s — t) —2A(s)+ A(s—u)+2A(u)—¢ > 0. (97)
+
+It is sufficient to show that any boundary point of A does not satisfy this inequality. The
+boundary of A consists of five faces: {t = 0}, {t = s}, {s =1}, {u=0} and {u=s}.
+When t = 0, the left-hand side of (97) is rewritten
+
+1
+—A(s) + A(s —u) + 2A(u)—9¢ < 4A(5) —<¢ = —0.25994... < 0.
+
+Hence, the face {t = 0} is included in the complement of A.
+When t = s, the left-hand side of (97) is rewritten
+
+1
+A(t-—u)+2A(u)—¢ < 3A(q) —>s = —0.421473... < 0.
+
+Hence, the face {t = s} is included in the complement of A.
+
+When s = 1, the left-hand side of (97) is rewritten
+1
+6
+Hence, the face {s = 1} is included in the complement of A.
+
+Further, it is shown that the other faces are included in the complement of A from the
+
+above results by the symmetry with respect to the exchange of t and wu.
+Therefore, we obtain the lemma. Oo
+
+A(t) + A(u)—¢ < 2A(=)—s = —0.583006... < 0.
+
+Lemma C.3. Let (t,s,u) € A. Then, s > 0.5.
+
+Proof. We suppose that s was less than or equal to 0.5 (and show a contradiction). The
+function of the defining inequality of A splits into the following two summands,
+
+2 A(t) + A(s — t) — 2A(s) + A(s — u) +2 A(u) —¢
+
+= (2A(t) + A(s — t) — A(s) — 21) + (2A(u) + A(s — u) — A(s) — 5 (98)
+
+62

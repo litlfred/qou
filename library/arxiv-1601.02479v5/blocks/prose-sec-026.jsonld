@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-026",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of Theorem C and construction of the BPS Lie algebra",
-  "pageStart": 56,
-  "pageEnd": 60,
-  "text": "../sections/sec-026-63-proof-of-theorem-c-and-construction-of-the-bp.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1601.02479v5",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1601.02479v5",
+  "title": "Symmetric monoidal structures, revisited",
+  "pageStart": 50,
+  "pageEnd": 53,
+  "text": "../sections/sec-026-61-symmetric-monoidal-structures-revisited.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1601.02479v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1601.02479v5/manifest.jsonld",
   "provenance": "ingested"
 }

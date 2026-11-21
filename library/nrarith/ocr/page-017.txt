@@ -1,0 +1,30 @@
+Arithmetic of Hyperbolic Manifolds 289
+
+Figure 4
+
+Figure 5
+
+for the double cover T? of P, we can define (p,q) Dehn filling the end of M to mean
+the process of cutting off the end and replacing it by Q in a way that induces (p,q) Dehn
+filling by a solid torus in the double cover of the end.
+
+Proof of (i) and “if” of (v) of Theorem 5.1. Let W denote the complement of the
+Whitehead link pictured in Fig. 5. We can obtain C(p,2q) by performing (p,q) Dehn
+filling of W at one component of the Whitehead link (with respect to the standard
+meridian/longitude pair) and then taking the p-fold cover of the resulting manifold or
+orbifold (it is an orbifold if gcd(p,q) # 1). To obtain C(p,s) this way for s odd, one
+can give an interpretation of (p,q) Dehn filling for g half-integral, but instead we shall
+use a suitable quotient of W.
+
+W double covers the orbifold W’ pictured in Fig. 6, with one toral end and one end
+whose cross section is a sphere with four order 2 orbifold points. (p,s) Dehn filling
+the toral end of W’ lifts to (p,s/2) Dehn filling of one end of W. In fact, the result
+W'(p,s) of this (p,s) Dehn filling is simply the quotient of C(p, s) by the subgroup
+Go = (a, 3) of G(p, s). If we quotient W’ by the symmetry 7 we obtain the orbifold
+W’" pictured in Fig. 7. Its underlying space is S* with two balls removed, i.e., S? x I.
+We have re-drawn W” in Fig. 8 ina more symmetric fashion; it has an order 2 rotational
+symmetry about its vertical axis and reflection symmetries across appropriate vertical
+planes.
+
+Let W”(p,s) be the corresponding quotient of W’(p,s) (so W’(p,s) results by
+(p, 8) Dehn filling one end of W’ —the end is filled by the orbifold of Fig. 4). By drawing

@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Formulas for the Overlap Functions",
-  "pageStart": 67,
-  "pageEnd": 93,
+  "title": "Kac's Walk on SO(n)",
+  "pageStart": 37,
+  "pageEnd": 41,
   "contains": [
-    "library/arxiv-1508.05448v1/blocks/prose-sec-013"
+    "library/arxiv-1508.05448v1/blocks/prose-sec-013",
+    "library/arxiv-1508.05448v1/blocks/thm-sec-013-01",
+    "library/arxiv-1508.05448v1/blocks/thm-sec-013-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.05448v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.05448v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
   "provenance": "ingested"
 }

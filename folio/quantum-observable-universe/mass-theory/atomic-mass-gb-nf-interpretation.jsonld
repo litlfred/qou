@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-atomic-mass-gb-nf-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:atomic-mass-gb-nf-interpretation",
+  "kind": "remark",
+  "title": "Three equivalent forms, the density factor $\\rho_K$, and Class-A discipline status",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atomic-mass-gb-nf",
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov",
+    "papers/quantum-observable-universe/blocks/prop-rho-k-graded-expansion",
+    "papers/quantum-observable-universe/blocks/prop-alpha-shift-torus-knot",
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-shift-multiplicative-chain",
+    "papers/quantum-observable-universe/blocks/conj-binding-scale-catalan",
+    "papers/quantum-observable-universe/blocks/sec-atomic-braid-mass-foundations",
+    "papers/quantum-observable-universe/blocks/prop-per-nucleon-shift-additive-linearity",
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula",
+    "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-atomic-mass-gb-nf",
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987"
+  ],
+  "tags": [
+    "mass",
+    "atomic-mass",
+    "markov-trace",
+    "categorical-density",
+    "three-calibration-discipline"
+  ],
+  "text": "atomic-mass-gb-nf-interpretation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,1 @@
+— (i) // {B^}, {A^} are increasing sequences of von Neumann subalgebras in the finite von Neumann algebra M, such that A^ c B^, n^l, and if B=UB^, A=UA^, r^n X(B,A)^limsup?i(B^A^). (ii) If in addition E^^E^=E^ n ^ 1, ^n ^ (B, A) = lim ^ (B^, AJ, decreasingly.

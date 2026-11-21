@@ -1,0 +1,51 @@
+100 Chapter 5 — A family of surfaces
+
+This brings us back to the étale double covering Y —+ Y* defined by
+the intersection of two general translates of the theta divisor on a complex
+ppav X of dimension g = 3. Here the curve Y has genus 7 by corollary 5.6,
+hence the Prym variety P = Prym(Y /Y*) is a complex ppav of dimension 3
+as well. The following result has been obtained in [84] and [66].
+
+THEOREM 5.7. For a general complex ppav X of dimension g = 3 the
+following properties are satisfied.
+
+(a) For general x € X(C) the Prym variety P of the cover Y, —> Y;*
+is isomorphic to the ppav X.
+
+(b) Every étale double covering of smooth curves with Prym variety
+isomorphic to X arises as above for some point x € X(C), and the
+coverings for two points x,,xX2 are isomorphic iff x; = +x.
+
+In other words, the above construction identifies the fibre of the Prym
+morphism 7 : Z, —+ ®; over a general ppav X € /4(C) with an open
+dense subset of the Kummer variety
+
+Ky = X/(+idx).
+Fixing a general point x € X(C), we now again use the notation Y = Y,
+etc. The definition of the Prym variety P as a component of the kernel of
+the norm epimorphism N : JY —» JY* shows that the Jacobian variety JY is
+
+isogenous to P x JY*, which together with the identification in part (a) of
+the above theorem implies
+
+H'(Y,Q) = H'(X,Q)@H'(¥*,Q).
+Hence in this case we have V_ = 0, and V+ = H!(¥+,Q) is a pure Hodge
+structure of weight one and rank eight.
+
+The case g =4. Here Y —+ Y* is an étale double covering of smooth
+projective surfaces that will occupy us for the rest of this chapter. We claim
+that V_ has Hodge numbers h?° = h°:? = 11 and hs! = 30 whereas V,. is
+of pure Hodge type (1, 1) and rank six. Indeed, bearing in mind the natural
+identifications
+
+H(Y*,Q) = HY,Q)* = W(X, Q)eVy
+this is a direct consequence of the numerical data in the following table.
+
+LEMMA 5.8. For a complex ppav X of dimension g = 4 we have the
+following Hodge numbers.
+
+120 _ h.2 hil hi _ 01!
+Y 17 52 4
+yt 6 22 0
+
+X 6 16 4

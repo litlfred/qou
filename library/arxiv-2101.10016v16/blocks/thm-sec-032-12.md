@@ -1,1 +1,1 @@
-(a). Then on the space of Vλ⊗V the braiding of Rep(A(Vgk
+Let A(Vgk ) be endowed with the unitary coboundary wqh structure as in

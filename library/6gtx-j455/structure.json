@@ -6,7 +6,9 @@
   "sha256": "3b0864e1373097cdd6485340173d2dc068d23b9cecd98967b73f5d668cbf43dd",
   "bytes": 739635,
   "pages": 6,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,17 +16,33 @@
   "arxiv": null,
   "doi": "10.1103/6gtx-j455",
   "title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
-  "authors_raw": "Ruolin Liu , 1,2,3,* Jerome Quintin , 4,5,6,2,3,† and Niayesh Afshordi 1,2,3,‡",
-  "abstract": null,
-  "docinfo": {
-   "CreationDate": "D:20260318000000",
-   "Creator": "Published by the American Physical Society",
-   "Producer": "Acrobat Distiller 10.1.16 (Windows)",
-   "Title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity"
-  },
+  "authors_raw": "Ruolin Liu ,1,2,3,* Jerome Quintin ,4,5,6,2,3,† and Niayesh Afshordi",
   "title_lines": [
    "Ultraviolet Completion of the Big Bang in Quadratic Gravity"
-  ]
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+   "Producer": "Acrobat Distiller 10.1.16 (Windows)",
+   "Creator": "Published by the American Physical Society",
+   "CreationDate": "D:20260318000000"
+  },
+  "title_raw": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+   "heading": "PHYSICAL REVIEW LETTERS 136, 111501 (2026) Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+   "outline": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+   "text": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -32,31 +50,141 @@
    "title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Data availability",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "References",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The renormalization group (RG) flow of quadratic gravity with N ¼ 10 matter-field content. The two red dashed lines show the separatrices of the RG flow, while the light blue shaded region is tachyon-free [50]. The orange trajectory shows a candidate cosmological evolution: starting from a potential",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Plot of the scalar spectral index ns vs the tensor-to-",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Constraints on the QQG parameters λtH and N from the",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-ultraviolet-completion-of-the-big-bang-in-quadra",
@@ -65,8 +193,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 19495,
-   "n_words": 3252
+   "n_chars": 19277,
+   "n_words": 3145,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
    "id": "sec-001-acknowledgments",
@@ -75,8 +205,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1322,
-   "n_words": 206
+   "n_chars": 1294,
+   "n_words": 200,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-002-data-availability",
@@ -85,15 +217,25 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 8761,
-   "n_words": 1553
+   "n_chars": 8606,
+   "n_words": 1472,
+   "label_start": "5",
+   "label_end": "6"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 3,
-  "chars_total": 29578
+  "chars_total": 29177,
+  "furniture_lines_stripped": 5
  }
 }

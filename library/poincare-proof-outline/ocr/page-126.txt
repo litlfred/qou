@@ -1,0 +1,68 @@
+by (rule-tac c=id in exI, simp add: unit-disc-fix-f-def, rule-tac x=id-moebius in exl, simp)
+setup-lifting type-definition-p-isometry
+Action of an h-isometry on an h-point
+
+lift-definition p-isometry-pt :: p-isometry = p-point = p-point is X f p. f p
+using unit-disc-fir-f-unit-disc
+by auto
+
+Action of an h-isometry on an h-line
+
+lift-definition p-isometry-line :: p-isometry = p-line = p-line is X f l. unit-disc-fix-f-circline f |
+proof—
+fix f H
+assume unit-disc-fit-f f is-poincare-line H
+then obtain M where unit-disc-fix M and *: f = moebius-pt M V f = moebius-pt M o conjugate
+unfolding unit-disc-fix-f-def
+by auto
+show is-poincare-line (unit-disc-fix-f-circline f H)
+using *
+proof
+assume f = moebius-pt M
+thus ?thesis
+using <unit-disc-fiz M) ‘is-poincare-line H»
+using unit-disc-fix-f-circline-direct|of M f H]
+by auto
+next
+assume f = moebius-pt M o conjugate
+thus ?thesis
+using <unit-disc-fiz M) ‘is-poincare-line H»
+using unit-disc-fiz-f-circline-indirect|of M f H]
+by auto
+qed
+qed
+
+An example lemma about h-isometries.
+H-isometries preserve h-collinearity
+
+lemma p-collinear-p-isometry-pt [simp]:
+shows p-collinear (p-isometry-pt M ‘ A) > p-collinear A
+proof—
+have *: V M A. ((Aa. moebius-pt M (conjugate x)) ‘ A = moebius-pt M ‘ (conjugate ‘ A))
+by auto
+show ?thesis
+by transfer (auto simp add: unit-disc-fix-f-def *)
+qed
+
+10.5 H-distance and h-congruence
+
+lift-definition p-dist :: p-point => p-point = real is poincare-distance
+done
+
+definition p-congruent :: p-point = p-point => p-point > p-point = bool where
+[simp]: p-congruent u vu! v' <—+ p-dist uv = p-dist u’ v’
+
+lemma
+assumes p-dist uv = p-dist u’ v’
+assumes p-dist v w = p-dist v' w’
+assumes p-dist u w = p-dist u’ w’
+shows i f. p-isometry-pt fu = u' \ p-isometry-pt fv = v' A p-isometry-pt fw = w'
+using assms
+apply transfer
+using unit-disc-fir-f-congruent-triangles
+by auto
+
+We prove that unit disc equipped with Poincaré distance is a metric space, i.e. an instantiation of metric-space
+locale.
+
+126

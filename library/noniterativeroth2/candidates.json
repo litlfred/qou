@@ -3,6 +3,7 @@
  "doc_id": "noniterativeroth2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "83bbcdf45da069e5275d2e268fb5915d0adc361a35c167dac98bb919a2fbe4d6",
   "file": "noniterativeroth2.pdf"
@@ -20,7 +21,20 @@
    "theorem": 1,
    "lemma": 1
   },
-  "formalization_candidates": 2
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "elsewhere": 2
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
@@ -28,26 +42,54 @@
    "source_kind": "theorem",
    "number": "1.1",
    "name": null,
-   "statement": "We have that r3(N) = o(N).",
-   "section_file": "sections/sec-001-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
+   "statement": "We have that r3(N) = o(N). Roughly, we achieve this by showing that r3(N)/N is asymptotically decreasing. We will do this by starting with a set S \u2286[N], |S| = r3(N), such that S has no three term progressions, and then convolving it with a measure on a carefully chosen three term arithmetic progression {0, x, 2x}. The set T where this convolution is positive will have very few three term arithmetic progressions; and, by making use of a quantitative version of a theorem of Varnavides [7], we will show that r3(M)/M is much larger than r3(N)/N, for M = (log N)1/8\u2212o(1). This will clearly imply that r3(N) = o(N). Alas, the upper bound that our met",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [7] in sections/page-001.md",
+   "external_refs": [
+    "[7]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [7] in sections/page-001.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-001-01",
+   "block_iri": "library/noniterativeroth2/blocks/thm-page-001-01",
+   "claim_id": "noniterativeroth2#theorem:1.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
    "kind": "lemma",
    "source_kind": "lemma",
    "number": "3.1",
    "name": null,
-   "statement": "[2] For any 1 6 M 6 N , and for any set T 0 \u0012 [N], we have",
-   "section_file": "sections/sec-004-4-ernie-croot-and-olof-sisask.md",
-   "section_title": "ERNIE CROOT AND OLOF SISASK",
+   "statement": "[2] For any 1 \u2a7dM \u2a7dN, and for any set T \u2032 \u2286[N], we have \u039b(T \u2032) \u226b|T \u2032|/N \u2212r3(M)/M M 2 .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [2] in sections/page-004.md",
+   "external_refs": [
+    "[2]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
    "pages": "4-4",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [2] in sections/page-004.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-page-004-01",
+   "block_iri": "library/noniterativeroth2/blocks/lem-page-004-01",
+   "claim_id": "noniterativeroth2#lemma:3.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

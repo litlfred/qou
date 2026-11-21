@@ -2,180 +2,420 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1906.12122v2",
  "source_sha256": "955e3eda48672e28",
- "brief": "Nuclear effective field theory: status and perspectives — 34 sections: Contents; Two-body scattering amplitude; Power counting",
- "extended": "**Nuclear effective field theory: status and perspectives**\n\n76 pp, 34 sections.\n\n**Outline.** Contents; 1 Two-body scattering amplitude; 2 Power counting; 3 Regularization and renormalization; 4 Renormalization group; 6 Spin-isospin projection and parametrizations; 8 External currents; 1 Extension to three particles; 3 More neutron-deuteron scattering; 4 Proton-deuteron scattering and helion; 5 Infrared regulators; 6 Four nucleons; 7 Beyond four nucleons; 8 External currents and reactions; 1 Form Factors; 2 E1 transition and photodisintegration; 3 Correlations; 4 Neutron capture",
+ "brief": "Nuclear eﬀective ﬁeld theory: status and perspectives — 82 sections: Nuclear effective field theory: st; Contents; I Introduction",
+ "extended": "**Nuclear eﬀective ﬁeld theory: status and perspectives**\n\n*H.-W. Hammer∗*\n\n76 pp, 82 sections.\n\n**Outline.** Nuclear effective field theory: status and per; Contents; I Introduction; A Nuclei from the perspective of QCD; B The way of EFT; C Nuclear EFTs; II Pionless EFT; B Weakly bound S-wave systems; 1 Two-body scattering amplitude; 2 Power counting; 3 Regularization and renormalization; a Schemes and power counting; b Subleading resummation; 4 Renormalization group; a Running coupling; b Wilsonian renormalization group; 5 Dibaryon fields; 6 Spin-isospin projection and parametrizations",
  "tokens": {
-  "brief": 31,
-  "extended": 146
+  "brief": 32,
+  "extended": 148
  },
  "sections": [
   {
-   "id": "sec-000-contents",
-   "title": "Contents",
-   "pages": "1-9"
+   "id": "sec-000-nuclear-effective-field-theory-status-and-perspe",
+   "title": "Nuclear effective field theory: status and perspectives",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-1-two-body-scattering-amplitude",
+   "id": "sec-001-contents",
+   "title": "Contents",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-i-introduction",
+   "title": "I Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-a-nuclei-from-the-perspective-of-qcd",
+   "title": "A Nuclei from the perspective of QCD",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-b-the-way-of-eft",
+   "title": "B The way of EFT",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-005-c-nuclear-efts",
+   "title": "C Nuclear EFTs",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-006-ii-pionless-eft",
+   "title": "II Pionless EFT",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-007-b-weakly-bound-s-wave-systems",
+   "title": "B Weakly bound S-wave systems",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-008-1-two-body-scattering-amplitude",
    "title": "Two-body scattering amplitude",
    "pages": "9-9"
   },
   {
-   "id": "sec-002-2-power-counting",
+   "id": "sec-009-2-power-counting",
    "title": "Power counting",
    "pages": "9-11"
   },
   {
-   "id": "sec-003-3-regularization-and-renormalization",
+   "id": "sec-010-3-regularization-and-renormalization",
    "title": "Regularization and renormalization",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-011-a-schemes-and-power-counting",
+   "title": "a Schemes and power counting",
    "pages": "11-12"
   },
   {
-   "id": "sec-004-4-renormalization-group",
+   "id": "sec-012-b-subleading-resummation",
+   "title": "b Subleading resummation",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-013-4-renormalization-group",
    "title": "Renormalization group",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-014-a-running-coupling",
+   "title": "a Running coupling",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-015-b-wilsonian-renormalization-group",
+   "title": "b Wilsonian renormalization group",
    "pages": "12-13"
   },
   {
-   "id": "sec-005-6-spin-isospin-projection-and-parametrizations",
-   "title": "Spin-isospin projection and parametrizations",
-   "pages": "13-15"
+   "id": "sec-016-5-dibaryon-fields",
+   "title": "Dibaryon fields",
+   "pages": "13-13"
   },
   {
-   "id": "sec-006-8-external-currents",
+   "id": "sec-017-6-spin-isospin-projection-and-parametrizations",
+   "title": "Spin-isospin projection and parametrizations",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-018-7-coulomb-effects-and-other-isospin-breaking",
+   "title": "Coulomb effects and other isospin breaking",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-019-8-external-currents",
    "title": "External currents",
    "pages": "15-17"
   },
   {
-   "id": "sec-007-1-extension-to-three-particles",
+   "id": "sec-020-c-light-nuclei-bound-and-scattered",
+   "title": "C Light nuclei: bound and scattered",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-021-1-extension-to-three-particles",
    "title": "Extension to three particles",
-   "pages": "17-19"
+   "pages": "17-17"
   },
   {
-   "id": "sec-008-3-more-neutron-deuteron-scattering",
+   "id": "sec-022-2-the-triton-as-a-near-efimov-state",
+   "title": "The triton as a near-Efimov state",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-023-a-the-three-body-force",
+   "title": "a The three-body force",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-024-b-the-phillips-line",
+   "title": "b The Phillips line",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-025-3-more-neutron-deuteron-scattering",
    "title": "More neutron-deuteron scattering",
-   "pages": "19-21"
+   "pages": "19-19"
   },
   {
-   "id": "sec-009-4-proton-deuteron-scattering-and-helion",
+   "id": "sec-026-a-range-corrections-partial-resummation-and-two",
+   "title": "a Range corrections, partial resummation, and two-body parametrizations",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-027-b-higher-partial-waves",
+   "title": "b Higher partial waves",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-028-c-ordering-of-three-body-forces",
+   "title": "c Ordering of three-body forces",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-029-4-proton-deuteron-scattering-and-helion",
    "title": "Proton-deuteron scattering and helion",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-030-a-nonperturbative-coulomb-effects",
+   "title": "a Nonperturbative Coulomb effects",
    "pages": "21-22"
   },
   {
-   "id": "sec-010-5-infrared-regulators",
+   "id": "sec-031-c-dineutron-constraints",
+   "title": "c Dineutron constraints",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-032-5-infrared-regulators",
    "title": "Infrared regulators",
    "pages": "22-22"
   },
   {
-   "id": "sec-011-6-four-nucleons",
+   "id": "sec-033-6-four-nucleons",
    "title": "Four nucleons",
    "pages": "22-23"
   },
   {
-   "id": "sec-012-7-beyond-four-nucleons",
+   "id": "sec-034-7-beyond-four-nucleons",
    "title": "Beyond four nucleons",
    "pages": "23-24"
   },
   {
-   "id": "sec-013-8-external-currents-and-reactions",
+   "id": "sec-035-8-external-currents-and-reactions",
    "title": "External currents and reactions",
-   "pages": "24-32"
+   "pages": "24-24"
   },
   {
-   "id": "sec-014-1-form-factors",
+   "id": "sec-036-d-outstanding-issues-and-current-trends",
+   "title": "D Outstanding issues and current trends",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-037-iii-halocluster-eft",
+   "title": "III Halo/Cluster EFT",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-038-b-s-wave-neutron-halos",
+   "title": "B S-wave neutron halos",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-039-c-excited-efimov-states-in-halo-nuclei",
+   "title": "C Excited Efimov states in halo nuclei",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-040-d-ab-initio-methods-and-efimov-states-in-heavier",
+   "title": "D Ab initio methods and Efimov states in heavier nuclei",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-041-e-higher-partial-waves-and-resonances",
+   "title": "E Higher partial waves and resonances",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-042-f-electromagnetic-properties-and-reactions",
+   "title": "F Electromagnetic properties and reactions",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-043-1-form-factors",
    "title": "Form Factors",
    "pages": "32-33"
   },
   {
-   "id": "sec-015-2-e1-transition-and-photodisintegration",
+   "id": "sec-044-2-e1-transition-and-photodisintegration",
    "title": "E1 transition and photodisintegration",
    "pages": "33-35"
   },
   {
-   "id": "sec-016-3-correlations",
+   "id": "sec-045-3-correlations",
    "title": "Correlations",
    "pages": "35-36"
   },
   {
-   "id": "sec-017-4-neutron-capture",
+   "id": "sec-046-4-neutron-capture",
    "title": "Neutron capture",
-   "pages": "36-39"
+   "pages": "36-36"
   },
   {
-   "id": "sec-018-1-degrees-of-freedom-and-symmetries",
+   "id": "sec-047-g-proton-halos",
+   "title": "G Proton halos",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-048-h-cluster-systems",
+   "title": "H Cluster systems",
+   "pages": "37-39"
+  },
+  {
+   "id": "sec-049-b-basic-elements",
+   "title": "B Basic elements",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-050-1-degrees-of-freedom-and-symmetries",
    "title": "Degrees of freedom and symmetries",
    "pages": "39-40"
   },
   {
-   "id": "sec-019-1-power-counting",
-   "title": "Power counting",
-   "pages": "40-40"
-  },
-  {
-   "id": "sec-020-2-chiral-lagrangian",
+   "id": "sec-051-2-chiral-lagrangian",
    "title": "Chiral Lagrangian",
-   "pages": "40-42"
+   "pages": "40-41"
   },
   {
-   "id": "sec-021-2-nuclear-potential",
+   "id": "sec-052-c-chiral-perturbation-theory-and-the-nuclear-pot",
+   "title": "C Chiral Perturbation Theory and the nuclear potential",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-053-1-power-counting",
+   "title": "Power counting",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-054-2-nuclear-potential",
    "title": "Nuclear potential",
-   "pages": "42-48"
+   "pages": "43-43"
   },
   {
-   "id": "sec-022-2-renormalization-of-singular-potentials",
+   "id": "sec-055-a-leading-order",
+   "title": "a Leading order",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-056-c-2n-potential",
+   "title": "c 2N potential",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-057-d-3n-potential",
+   "title": "d 3N potential",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-058-f-isospin-violation",
+   "title": "f Isospin violation",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-059-d-nuclear-amplitudes-and-observables",
+   "title": "D Nuclear amplitudes and observables",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-060-1-weinbergs-prescription",
+   "title": "Weinberg's prescription",
+   "pages": "46-48"
+  },
+  {
+   "id": "sec-061-2-renormalization-of-singular-potentials",
    "title": "Renormalization of singular potentials",
    "pages": "48-49"
   },
   {
-   "id": "sec-023-3-connection-with-pionless-eft",
+   "id": "sec-062-3-connection-with-pionless-eft",
    "title": "Connection with Pionless EFT",
    "pages": "49-50"
   },
   {
-   "id": "sec-024-4-perturbative-pions",
+   "id": "sec-063-4-perturbative-pions",
    "title": "Perturbative pions",
    "pages": "50-50"
   },
   {
-   "id": "sec-025-5-partly-perturbative-pions",
+   "id": "sec-064-5-partly-perturbative-pions",
    "title": "Partly perturbative pions",
    "pages": "50-52"
   },
   {
-   "id": "sec-026-6-other-approaches",
+   "id": "sec-065-6-other-approaches",
    "title": "Other approaches",
-   "pages": "52-56"
+   "pages": "52-53"
   },
   {
-   "id": "sec-027-1-nuclear-physics-at-large-quark-masses",
+   "id": "sec-066-e-pion-and-electroweak-reactions",
+   "title": "E Pion and electroweak reactions",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-067-f-outstanding-issues-and-current-trends",
+   "title": "F Outstanding issues and current trends",
+   "pages": "54-56"
+  },
+  {
+   "id": "sec-068-v-broader-applications",
+   "title": "V Broader applications",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-069-a-connection-with-qcd",
+   "title": "A Connection with QCD",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-070-1-nuclear-physics-at-large-quark-masses",
    "title": "Nuclear physics at large quark masses",
    "pages": "56-57"
   },
   {
-   "id": "sec-028-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
+   "id": "sec-071-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
    "title": "Fine-tuning in Chiral EFT and infrared limit cycle",
-   "pages": "57-59"
+   "pages": "57-57"
   },
   {
-   "id": "sec-029-1-parity-violation",
+   "id": "sec-072-b-antinucleon-systems",
+   "title": "B Antinucleon systems",
+   "pages": "57-58"
+  },
+  {
+   "id": "sec-073-d-hadronic-molecules",
+   "title": "D Hadronic molecules",
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-074-e-fundamental-symmetries",
+   "title": "E Fundamental symmetries",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-075-1-parity-violation",
    "title": "Parity violation",
    "pages": "59-60"
   },
   {
-   "id": "sec-030-2-time-reversal-violation",
+   "id": "sec-076-2-time-reversal-violation",
    "title": "Time-reversal violation",
    "pages": "60-60"
   },
   {
-   "id": "sec-031-3-other-symmetries",
+   "id": "sec-077-3-other-symmetries",
    "title": "Other symmetries",
-   "pages": "60-62"
+   "pages": "60-61"
   },
   {
-   "id": "sec-032-acknowledgments",
+   "id": "sec-078-f-dark-matter-detection",
+   "title": "F Dark-matter detection",
+   "pages": "61-61"
+  },
+  {
+   "id": "sec-079-g-bosons-with-large-scattering-length",
+   "title": "G Bosons with large scattering length",
+   "pages": "61-62"
+  },
+  {
+   "id": "sec-080-acknowledgments",
    "title": "Acknowledgments",
    "pages": "62-62"
   },
   {
-   "id": "sec-033-references",
+   "id": "sec-081-references",
    "title": "References",
    "pages": "62-76"
   }

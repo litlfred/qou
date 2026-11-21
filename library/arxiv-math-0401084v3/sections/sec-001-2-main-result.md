@@ -7,10 +7,11 @@ section_number: 2
 pages: 2-4
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.987
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.955
+doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine"
 ---
 To state our main result we recall some of the results in [@Neumann/Zagier:TOPOL85; @Yoshida:INVEM85].
 

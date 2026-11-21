@@ -1,0 +1,49 @@
+(3 ya ) is conjugated to ( a" °) hence p € k[t+t71]. Since diagonalizable matrices
+form a dense subset of SL2(k), we conclude that f € *IX'+X??)/(x1.1x22_1), that is
+f € [Ty]. Reciprocally, it is clear that the trace function is an invariant, hence the
+algebra of invariant is isomorphic to k[Tr].
+
+In other words, any representation p : Z— SL2(k) is equivalent to 1++ (} 0.) for
+A € k*, such that \+A7! = Tr(p(1)). In particular {p;}1ex« and po are identified in
+
+X(Z), which is isomorphic to k.
+
+It should be clear from this example that the computation of the algebra of invariants
+is in general somewhat difficult, on the other hand it provides a motivation to pay
+attention on a particular kind of functions, namely trace functions, which will play
+
+a key role in the next paragraph, and in the rest of this thesis.
+
+Notation. When I is the fundamental group of a manifold M, its character variety
+will be denoted by X(M) instead of X (TL).
+
+1.1.3. Traces and skein algebra
+
+Definition 1.1.6. For any 7 € I’, we define the trace function t, : R(T) + k by
+t,(p) = Tr(p(7)). Those functions are invariant under the action of SL2, thus they
+
+define functions on the quotient X (I), that we still denote by t,.
+The following lemma is straightforward, but crucial :
+Lemma 1.1.7. For any y,6 €T, the identity tyts = ty5 + tys-1 holds on R(T).
+
+Proof. For any A € SL2(k), the Cayley-Hamilton theorem gives A? — Tr A- A+Id =
+0. After right-multiplying by A7'B and taking the trace, one obtains Tr(AB) —
+Tr(A) Tr(B) + Tr(A7!) Tr(B) = 0, and the result follows. Oo
+
+Theorem 1.1.8 ({Pro87]). The algebra given by B[P| = k[Y,,y € T\/(Ye—-2, Yy¥5—
+(P)].
+
+The proof of this theorem is rather abstract, one can see |[PSOO! |Marl5] for ins-
+
+tance. On the other hand, it is enlightening to convince oneself that those algebras
+
+Y55 — Y,5-1,7,6 € 1) is isomorphic to the algebra of invariants kX
+
+define the same points as an algebraic set, that is conjugacy-class of semi-simple
+representations are fully determined by their traces. But the algebras can hold more
+information than the algebraic sets they define, for instance if they contain nilpotent
+elements. Despite we will not give a proof of this theorem, we shall state and prove
+
+the following proposition :
+
+18

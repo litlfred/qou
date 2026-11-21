@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1804.03926v3",
  "source_sha256": "8ad8e2d5a8881a5b",
- "brief": "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach indimension",
- "extended": "**Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one**\n\n*Adrien Saumard*\n\n34 pp, 8 sections.\n\n**Abstract.** We investigate links between the so-called Stein’s density approach indimension one and some functional and concentration inequalities. We show that measures having a ﬁnite ﬁrst moment and a density with connected support satisfy a weighted Poincar´ einequality with the weight being the Stein kernel, that indeed exists and is unique in this case. Furthe rmore, we prove weighted log-Sobolev and asymmetric Brascamp-Lieb type inequalities related to Stein kernels. We also show that existence of a uniformly bounded Stein kernel is suﬃcient to ensure a positive Cheeger isoperimetric constant. Then we derive new concentration inequalit ies. In particular, we prove generalized Mills’ type inequalities when a Stein kernel is uniformly boun ded and sub-gamma concentration for Lipschitz functions of a variable with a sub-linear Stein kernel.\n\n**Outline.** 1 Introduction; 2 On covariance identities and the Stein kerne; 3 Some weighted functional inequalities; 3.2 Links with Muckenhoupt-type criteria; 3.3 Asymmetric Brascamp-Lieb-type inequalities; 3.4 Isoperimetric constant; 4 Concentration inequalities; 5 Tail bounds",
+ "brief": "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach in dimension",
+ "extended": "**Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one**\n\n*Adrien Saumard*\n\n34 pp, 10 sections.\n\n**Abstract.** We investigate links between the so-called Stein’s density approach in dimension one and some functional and concentration inequalities. We show that measures having a ﬁnite ﬁrst moment and a density with connected support satisfy a weighted Poincar´e inequality with the weight being the Stein kernel, that indeed exists and is unique in this case. Furthermore, we prove weighted log-Sobolev and asymmetric Brascamp-Lieb type inequalities related to Stein kernels. We also show that existence of a uniformly bounded Stein kernel is suﬃcient to ensure a positive Cheeger isoperimetric constant. Then we derive new concentration inequalities. In particular, we prove generalized Mills’ type inequalities when a Stein kernel is uniformly bounded and sub-gamma concentration for Lipschitz functions of a variable with a sub-linear Stein kernel.\n\n**Outline.** Front matter; 1 Introduction; 2 On covariance identities and the Stein kerne; 3 Some weighted functional inequalities; 3.1 Weighted Poincaré-type inequality; 3.2 Links with Muckenhoupt-type criteria; 3.3 Asymmetric Brascamp-Lieb-type inequalities; 3.4 Isoperimetric constant; 4 Concentration inequalities; 5 Tail bounds",
  "tokens": {
   "brief": 49,
-  "extended": 324
+  "extended": 337
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -22,30 +27,35 @@
   {
    "id": "sec-002-3-some-weighted-functional-inequalities",
    "title": "Some weighted functional inequalities",
-   "pages": "8-14"
+   "pages": "8-9"
   },
   {
-   "id": "sec-003-32-links-with-muckenhoupt-type-criteria",
+   "id": "sec-003-31-weighted-poincaré-type-inequality",
+   "title": "Weighted Poincaré-type inequality",
+   "pages": "9-14"
+  },
+  {
+   "id": "sec-004-32-links-with-muckenhoupt-type-criteria",
    "title": "Links with Muckenhoupt-type criteria",
    "pages": "14-18"
   },
   {
-   "id": "sec-004-33-asymmetric-brascamp-lieb-type-inequalities",
+   "id": "sec-005-33-asymmetric-brascamp-lieb-type-inequalities",
    "title": "Asymmetric Brascamp-Lieb-type inequalities",
    "pages": "18-20"
   },
   {
-   "id": "sec-005-34-isoperimetric-constant",
+   "id": "sec-006-34-isoperimetric-constant",
    "title": "Isoperimetric constant",
    "pages": "20-21"
   },
   {
-   "id": "sec-006-4-concentration-inequalities",
+   "id": "sec-007-4-concentration-inequalities",
    "title": "Concentration inequalities",
    "pages": "21-28"
   },
   {
-   "id": "sec-007-5-tail-bounds",
+   "id": "sec-008-5-tail-bounds",
    "title": "Tail bounds",
    "pages": "28-34"
   }

@@ -6,39 +6,43 @@
   "sha256": "cd345d3df9358efc2e69758c1b5fcb5045ff1486472d3843a0b681996cbf18e7",
   "bytes": 6455804,
   "pages": 88,
-  "text_source": "embedded",
+  "text_source": "ocr",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "runContext": {
+   "sha256": "2846c0992b6bb4f6285d42dc822db3938627b24ada3ffd8ddcd43fe4bc833400"
+  }
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1016/j.physrep.2008.11.001",
-  "title": "Physics Reports The Magnus expansion and some of its applications",
+  "title": "The Magnus expansion and some of its applications",
   "authors_raw": "The Magnus expansion and some of its applications",
   "title_lines": [
    "Physics Reports"
   ],
-  "abstract": null,
+  "abstract": "Article history: Accepted 13 November 2008 Available online 25 November 2008 editor: D.L. Mills Approximate resolution of linear systems of differential equations with varying coefficients is a recurrent problem, shared by a number of scientific and engineering areas, ranging from Quantum Mechanics to Control Theory. When formulated in operator or matrix form, the Magnus expansion furnishes an elegant setting to build up approximate exponential PACS: 03.65 02.30.Hq 02.60.Cb 02.20.Rt representations of the solution of the system. It provides a power series expansion for the corresponding exponent and is sometimes referred to as Time-Dependent Exponential Perturbation Theory. Every Magnus approximant corresponds in Perturbation Theory to a partial re-summation of infinite terms with the important additional property of preserving, at any order, certain symmetries of the exact solution. The goal of this review is threefold. First, to collect a number of developments scattered through half a century of scientific literature on Magnus expansion. They concern the methods for the generation of terms in the expansion, estimates of the radius of convergence of the series, generalizations and related non-perturbative expansions. Second, to provide a bridge with its implementation as generator of especial purpose numerical integration methods, a field of intense activity during the last decade. Third, to illustrate with examples the kind of results one can expect from Magnus expansion, in comparison with those from both perturbative schemes and standard numerical integrators. We buttress this issue with a revision of the wide range of physical applications found by Magnus expansion in the literature. © 2008 Elsevier B.V. All rights reserved.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.3",
    "Creator": "Elsevier",
    "CreationDate": "D:20090113103546+05'30'"
   },
-  "title_raw": "Physics Reports",
+  "title_raw": "PHYSICS REPORTS",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
    "heading": "Physics Reports The Magnus expansion and some of its applications",
    "outline": "The Magnus expansion and some of its applications",
-   "text": "Physics Reports",
+   "text": "PHYSICS REPORTS",
    "corroborated_by": [
     "outline",
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "Physics Reports The Magnus expansion and some of its applications"
  },
  "toc": [
   {
@@ -163,7 +167,7 @@
   },
   {
    "level": 4,
-   "title": "On the existence of  \u03a9 (t)",
+   "title": "On the existence of Ω (t)",
    "page": 16,
    "source": "outline",
    "number": null,
@@ -563,7 +567,7 @@
   },
   {
    "level": 4,
-   "title": "Scaling and squaring with Pad\u00e9 approximation",
+   "title": "Scaling and squaring with Padé approximation",
    "page": 61,
    "source": "outline",
    "number": null,
@@ -683,7 +687,7 @@
   },
   {
    "level": 3,
-   "title": "Case study: Numerical treatment of the Schr\u00f6dinger equation",
+   "title": "Case study: Numerical treatment of the Schrödinger equation",
    "page": 72,
    "source": "outline",
    "number": null,
@@ -693,7 +697,7 @@
   },
   {
    "level": 4,
-   "title": "Time-dependent Schr\u00f6dinger equation",
+   "title": "Time-dependent Schrödinger equation",
    "page": 72,
    "source": "outline",
    "number": null,
@@ -703,7 +707,7 @@
   },
   {
    "level": 4,
-   "title": "Time-independent Schr\u00f6dinger equation",
+   "title": "Time-independent Schrödinger equation",
    "page": 75,
    "source": "outline",
    "number": null,
@@ -864,278 +868,7 @@
  ],
  "toc_source": "outline",
  "toc_undetermined_reason": null,
- "figures": [
-  {
-   "kind": "figure",
-   "number": "1",
-   "title": "Persistency of Magnus\u2019 original paper: number of citations per year",
-   "page": 6,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "156"
-  },
-  {
-   "kind": "figure",
-   "number": "2",
-   "title": "Persistency of Magnus\u2019 original paper: cumulative number of citations",
-   "page": 6,
-   "confidence": 0.7,
-   "evidence": [
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "156"
-  },
-  {
-   "kind": "figure",
-   "number": "3",
-   "title": "Rectangular step: Transition probabilities as a function of \u03be, with \u03b3 = 1.5. The solid line corresponds to the exact result (196). Broken lines stand for approximations obtained via ME, and lines with symbols correspond to perturbation theory, according to the legend. Computations up to fourth order",
-   "page": 41,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "191"
-  },
-  {
-   "kind": "figure",
-   "number": "4",
-   "title": "Rectangular step: Transition probabilities as a function of \u03be, with \u03b3 = 2. Lines are coded as in Fig. 3. Computations up to fourth order, in the Interaction Picture",
-   "page": 41,
-   "confidence": 0.7,
-   "evidence": [
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "191"
-  },
-  {
-   "kind": "figure",
-   "number": "5",
-   "title": "Rectangular step: Transition probabilities as a function of \u03b3 , with \u03be = 1. Lines are coded as in Fig. 3. Computations up to fourth order, in the Interaction Picture",
-   "page": 42,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "192"
-  },
-  {
-   "kind": "figure",
-   "number": "6",
-   "title": "Rosen\u2013Zener model: Transition probabilities (204) as a function of \u03be, with \u03b3 = 1.5. The solid line stands for the exact result. Broken lines stand for approximations obtained via ME, and triangles correspond to perturbation theory, according to the legend. Computations up to second order, in the Int",
-   "page": 43,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "193"
-  },
-  {
-   "kind": "figure",
-   "number": "7",
-   "title": "Rosen\u2013Zener model: Transition probabilities as a function of \u03b3 , with \u03be = 0.3. Lines are coded as in Fig. 6. Computations up to second order, in the Interaction Picture",
-   "page": 43,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "193"
-  },
-  {
-   "kind": "figure",
-   "number": "8",
-   "title": "Rosen\u2013Zener model: Transition probability as a function of \u03be, with \u03b3 = 1. The solid line stands for the exact result in (204). The remaining lines stand for first order computations with ME (circles) and perturbation theory (triangles). Open symbols are for the Adiabatic Picture and solid symbols fo",
-   "page": 45,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "195"
-  },
-  {
-   "kind": "figure",
-   "number": "9",
-   "title": "Rectangular step: Transition probability as a function of \u03be, with \u03b3 = 1.5. The solid line corresponds to the exact result (196). Broken lines stand for Fer and Wilcox approximations up to third order. Computations up to third order, in the Interaction Picture",
-   "page": 46,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "196"
-  },
-  {
-   "kind": "figure",
-   "number": "10",
-   "title": "Rectangular step: Transition probability as a function of \u03be, with \u03b3 = 2. Lines are coded as in Fig. 9. Computations up to third order, in the Interaction Picture",
-   "page": 46,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "196"
-  },
-  {
-   "kind": "figure",
-   "number": "11",
-   "title": "Rectangular step: Transition probability as a function of \u03b3 , with \u03be = 1. Lines are coded as in Fig. 9. Computations up to third order, in the Interaction Picture",
-   "page": 47,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "197"
-  },
-  {
-   "kind": "figure",
-   "number": "12",
-   "title": "Rectangular step: Transition probability in the two level system as a function of \u03be, for \u03b3 = 1.3: Exact result (204) (solid line), second iterate of Voslamber method (dashed line), second order ME (dotted line) and first Voslamber iterate (or order in ME) (dash-dotted line). Computations are done in",
-   "page": 47,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "197"
-  },
-  {
-   "kind": "figure",
-   "number": "13",
-   "title": "Rectangular step: Transition probability in the two level system as a function of \u03b3 , for \u03be = 1. Lines are coded as in Fig. 12. Computations are done in the Interaction Picture",
-   "page": 48,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "198"
-  },
-  {
-   "kind": "figure",
-   "number": "14",
-   "title": "Rosen\u2013Zener model: Transition probabilities as a function of \u03b3 , with \u03be = 0.3 and \u03be = 1. The curves are coded as follows. Solid line represents the exact result; E1: solid lines with squares; RK4: solid lines with triangles; M2: dashed lines; M4: dashed-broken lines (indistinguishable from exact res",
-   "page": 59,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "209"
-  },
-  {
-   "kind": "figure",
-   "number": "15",
-   "title": "Rosen\u2013Zener model: Transition probabilities as a function of \u03be, with \u03b3 = 2 and \u03b3 = 5. Lines are coded as in Fig. 14",
-   "page": 59,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "209"
-  },
-  {
-   "kind": "figure",
-   "number": "16",
-   "title": "Rosen\u2013Zener model: Error in the transition probabilities versus the number of evaluations of the Hamiltonian HI(s) for \u03be = 0.3 and \u03b3 = 10 (left",
-   "page": 60,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "210"
-  },
-  {
-   "kind": "figure",
-   "number": "17",
-   "title": "Rosen\u2013Zener model: Same as Fig. 16 where we compare the performance of the 6th-order Magnus, symmetric-Fer, Cayley and RK6",
-   "page": 61,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "211"
-  },
-  {
-   "kind": "figure",
-   "number": "18",
-   "title": "Efficiency diagram corresponding to the optimized 4-th (circles) and 6-th (squares) order Lie-group solvers based on Magnus (solid lines) and Cayley (broken lines), and the standard Runge\u2013Kutta methods (dashed lines)",
-   "page": 65,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "215"
-  },
-  {
-   "kind": "figure",
-   "number": "19",
-   "title": "Error as a function of time (in logarithmic scale) obtained with different 6-th order integrators for h = 1/20: (a) problem (283); (b) problem (284)",
-   "page": 66,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "216"
-  },
-  {
-   "kind": "algorithm",
-   "number": "1",
-   "title": "Standard split",
-   "page": 71,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "in-sequence"
-   ],
-   "page_label": "221"
-  },
-  {
-   "kind": "figure",
-   "number": "20",
-   "title": "Average error versus number of force evaluations in the numerical integration of (308) using second and fourth order symplectic integrators for general separable systems (S2 corresponds to the second order leapfrog method with coefficients (309) and SU54 to the fourth order method with",
-   "page": 72,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "222"
-  }
- ],
+ "figures": [],
  "pages": [
   {
    "physical": 1,
@@ -1149,916 +882,783 @@
   {
    "physical": 2,
    "label": "152",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 3,
    "label": "153",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 4,
    "label": "154",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 5,
    "label": "155",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 6,
    "label": "156",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 7,
    "label": "157",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 8,
    "label": "158",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 9,
    "label": "159",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 10,
    "label": "160",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 11,
    "label": "161",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 12,
    "label": "162",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 13,
    "label": "163",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 14,
    "label": "164",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 15,
    "label": "165",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 16,
    "label": "166",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 17,
    "label": "167",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 18,
    "label": "168",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 19,
    "label": "169",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 20,
    "label": "170",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 21,
    "label": "171",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 22,
    "label": "172",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 23,
    "label": "173",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 24,
    "label": "174",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 25,
    "label": "175",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 26,
    "label": "176",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 27,
    "label": "177",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 28,
    "label": "178",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 29,
    "label": "179",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 30,
    "label": "180",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 31,
    "label": "181",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 32,
    "label": "182",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 33,
    "label": "183",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 34,
    "label": "184",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 35,
    "label": "185",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 36,
    "label": "186",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 37,
    "label": "187",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 38,
    "label": "188",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 39,
    "label": "189",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 40,
    "label": "190",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 41,
    "label": "191",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 42,
    "label": "192",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 43,
    "label": "193",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 44,
    "label": "194",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 45,
    "label": "195",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 46,
    "label": "196",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 47,
    "label": "197",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 48,
    "label": "198",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 49,
    "label": "199",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 50,
    "label": "200",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 51,
    "label": "201",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 52,
    "label": "202",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 53,
    "label": "203",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 54,
    "label": "204",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 55,
    "label": "205",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 56,
    "label": "206",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 57,
    "label": "207",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 58,
    "label": "208",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 59,
    "label": "209",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 60,
    "label": "210",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 61,
    "label": "211",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 62,
    "label": "212",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 63,
    "label": "213",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 64,
    "label": "214",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 65,
    "label": "215",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 66,
    "label": "216",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 67,
    "label": "217",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 68,
    "label": "218",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 69,
    "label": "219",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 70,
    "label": "220",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 71,
    "label": "221",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 72,
    "label": "222",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 73,
    "label": "223",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 74,
    "label": "224",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 75,
    "label": "225",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 76,
    "label": "226",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 77,
    "label": "227",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 78,
    "label": "228",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 79,
    "label": "229",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 80,
    "label": "230",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 81,
    "label": "231",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 82,
    "label": "232",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 83,
    "label": "233",
-   "source": "printed",
-   "confidence": 1.0,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "pdf-labels",
-    "contents"
+    "pdf-labels"
    ]
   },
   {
    "physical": 84,
    "label": "234",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 85,
    "label": "235",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 86,
    "label": "236",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 87,
    "label": "237",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   },
   {
    "physical": 88,
    "label": "238",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "pdf-labels",
+   "confidence": 0.7,
    "evidence": [
-    "printed",
     "pdf-labels"
    ]
   }
@@ -2071,8 +1671,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 142,
-   "n_words": 15,
+   "n_chars": 162,
+   "n_words": 17,
    "label_start": "151",
    "label_end": "151"
   },
@@ -2083,8 +1683,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 17195,
-   "n_words": 907,
+   "n_chars": 6056,
+   "n_words": 877,
    "label_start": "151",
    "label_end": "153"
   },
@@ -2107,8 +1707,8 @@
    "level": 3,
    "page_start": 3,
    "page_end": 6,
-   "n_chars": 16888,
-   "n_words": 2832,
+   "n_chars": 17168,
+   "n_words": 2879,
    "label_start": "153",
    "label_end": "156"
   },
@@ -2119,8 +1719,8 @@
    "level": 3,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 7775,
-   "n_words": 1534,
+   "n_chars": 7681,
+   "n_words": 1409,
    "label_start": "156",
    "label_end": "159"
   },
@@ -2130,362 +1730,458 @@
    "title": "The Magnus expansion (ME)",
    "level": 2,
    "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1113,
+   "n_words": 209,
+   "label_start": "159",
+   "label_end": "159"
+  },
+  {
+   "id": "sec-005-a-proof-of-magnus-theorem",
+   "number": null,
+   "title": "A proof of Magnus' Theorem",
+   "level": 3,
+   "page_start": 9,
    "page_end": 11,
-   "n_chars": 5570,
-   "n_words": 1081,
+   "n_chars": 4332,
+   "n_words": 817,
    "label_start": "159",
    "label_end": "161"
   },
   {
-   "id": "sec-005-formulae-for-the-first-terms-in-magnus-expansion",
+   "id": "sec-006-formulae-for-the-first-terms-in-magnus-expansion",
    "number": null,
    "title": "Formulae for the first terms in Magnus expansion",
    "level": 3,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1585,
-   "n_words": 341,
+   "n_chars": 1554,
+   "n_words": 317,
    "label_start": "161",
    "label_end": "162"
   },
   {
-   "id": "sec-006-magnus-expansion-generator",
+   "id": "sec-007-magnus-expansion-generator",
    "number": null,
    "title": "Magnus expansion generator",
    "level": 3,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1452,
-   "n_words": 300,
+   "n_chars": 1313,
+   "n_words": 253,
    "label_start": "162",
    "label_end": "162"
   },
   {
-   "id": "sec-007-magnus-expansion-and-time-dependent-perturbation",
+   "id": "sec-008-magnus-expansion-and-time-dependent-perturbation",
    "number": null,
    "title": "Magnus expansion and time-dependent perturbation theory",
    "level": 3,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 1999,
-   "n_words": 450,
+   "n_chars": 1809,
+   "n_words": 355,
    "label_start": "162",
    "label_end": "164"
   },
   {
-   "id": "sec-008-graph-theoretical-analysis-of-magnus-expansion",
+   "id": "sec-009-graph-theoretical-analysis-of-magnus-expansion",
    "number": null,
    "title": "Graph theoretical analysis of Magnus expansion",
    "level": 3,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 4349,
-   "n_words": 842,
+   "n_chars": 4130,
+   "n_words": 767,
    "label_start": "164",
    "label_end": "165"
   },
   {
-   "id": "sec-009-time-symmetry-of-the-expansion",
+   "id": "sec-010-time-symmetry-of-the-expansion",
    "number": null,
    "title": "Time-symmetry of the expansion",
    "level": 3,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1526,
-   "n_words": 351,
+   "n_chars": 1446,
+   "n_words": 304,
    "label_start": "165",
    "label_end": "166"
   },
   {
-   "id": "sec-010-convergence-of-the-magnus-expansion",
+   "id": "sec-011-convergence-of-the-magnus-expansion",
    "number": null,
    "title": "Convergence of the Magnus expansion",
    "level": 3,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 682,
-   "n_words": 114,
+   "n_chars": 757,
+   "n_words": 125,
    "label_start": "166",
    "label_end": "166"
   },
   {
-   "id": "sec-011-convergence-of-the-magnus-series",
+   "id": "sec-012-on-the-existence-of-ω-t",
+   "number": null,
+   "title": "On the existence of Ω (t)",
+   "level": 4,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 4106,
+   "n_words": 758,
+   "label_start": "166",
+   "label_end": "167"
+  },
+  {
+   "id": "sec-013-convergence-of-the-magnus-series",
    "number": null,
    "title": "Convergence of the Magnus series",
    "level": 4,
-   "page_start": 16,
+   "page_start": 17,
    "page_end": 18,
-   "n_chars": 6931,
-   "n_words": 1331,
-   "label_start": "166",
+   "n_chars": 2701,
+   "n_words": 508,
+   "label_start": "167",
    "label_end": "168"
   },
   {
-   "id": "sec-012-an-improved-radius-of-convergence",
+   "id": "sec-014-an-improved-radius-of-convergence",
    "number": null,
    "title": "An improved radius of convergence",
    "level": 4,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 6439,
-   "n_words": 1319,
+   "n_chars": 6435,
+   "n_words": 1284,
    "label_start": "168",
    "label_end": "169"
   },
   {
-   "id": "sec-013-further-discussion",
+   "id": "sec-015-further-discussion",
    "number": null,
    "title": "Further discussion",
    "level": 4,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 5493,
-   "n_words": 1097,
+   "n_chars": 5427,
+   "n_words": 1043,
    "label_start": "169",
    "label_end": "171"
   },
   {
-   "id": "sec-014-magnus-expansion-and-the-bch-formula",
+   "id": "sec-016-magnus-expansion-and-the-bch-formula",
    "number": null,
    "title": "Magnus expansion and the BCH formula",
    "level": 3,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 2379,
-   "n_words": 439,
+   "n_chars": 2377,
+   "n_words": 424,
    "label_start": "171",
    "label_end": "172"
   },
   {
-   "id": "sec-015-preliminary-linear-transformations",
+   "id": "sec-017-preliminary-linear-transformations",
    "number": null,
    "title": "Preliminary linear transformations",
    "level": 3,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 4556,
-   "n_words": 823,
+   "n_chars": 4494,
+   "n_words": 797,
    "label_start": "172",
    "label_end": "173"
   },
   {
-   "id": "sec-016-exponential-product-representations",
+   "id": "sec-018-exponential-product-representations",
    "number": null,
    "title": "Exponential product representations",
    "level": 3,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 1799,
+   "n_chars": 1801,
    "n_words": 293,
    "label_start": "173",
    "label_end": "173"
   },
   {
-   "id": "sec-017-fer-method",
+   "id": "sec-019-fer-method",
    "number": null,
    "title": "Fer method",
    "level": 4,
    "page_start": 23,
    "page_end": 25,
-   "n_chars": 4098,
-   "n_words": 816,
+   "n_chars": 4030,
+   "n_words": 772,
    "label_start": "173",
    "label_end": "175"
   },
   {
-   "id": "sec-018-wilcox-method",
+   "id": "sec-020-wilcox-method",
    "number": null,
    "title": "Wilcox method",
    "level": 4,
    "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1485,
+   "n_words": 261,
+   "label_start": "175",
+   "label_end": "175"
+  },
+  {
+   "id": "sec-021-wei--norman-factorization",
+   "number": null,
+   "title": "Wei--Norman factorization",
+   "level": 4,
+   "page_start": 25,
    "page_end": 26,
-   "n_chars": 4013,
-   "n_words": 697,
+   "n_chars": 2480,
+   "n_words": 414,
    "label_start": "175",
    "label_end": "176"
   },
   {
-   "id": "sec-019-the-continuous-bch-formula",
+   "id": "sec-022-the-continuous-bch-formula",
    "number": null,
    "title": "The continuous BCH formula",
    "level": 3,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 2066,
-   "n_words": 463,
+   "n_chars": 1827,
+   "n_words": 332,
    "label_start": "176",
    "label_end": "176"
   },
   {
-   "id": "sec-020-generalizations-of-the-magnus-expansion",
+   "id": "sec-023-generalizations-of-the-magnus-expansion",
    "number": null,
    "title": "Generalizations of the Magnus expansion",
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 1790,
-   "n_words": 277,
+   "n_chars": 1789,
+   "n_words": 276,
    "label_start": "176",
    "label_end": "177"
   },
   {
-   "id": "sec-021-voslamber-iterative-method",
+   "id": "sec-024-voslamber-iterative-method",
    "number": null,
    "title": "Voslamber iterative method",
    "level": 3,
    "page_start": 27,
-   "page_end": 30,
-   "n_chars": 11065,
-   "n_words": 2049,
+   "page_end": 29,
+   "n_chars": 4438,
+   "n_words": 839,
    "label_start": "177",
+   "label_end": "179"
+  },
+  {
+   "id": "sec-025-floquet--magnus-expansion",
+   "number": null,
+   "title": "Floquet--Magnus expansion",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 6288,
+   "n_words": 1091,
+   "label_start": "179",
    "label_end": "180"
   },
   {
-   "id": "sec-022-magnus-expansions-for-nonlinear-matrix-equations",
+   "id": "sec-026-magnus-expansions-for-nonlinear-matrix-equations",
    "number": null,
    "title": "Magnus expansions for nonlinear matrix equations",
    "level": 3,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 6587,
-   "n_words": 1177,
+   "n_chars": 6484,
+   "n_words": 1156,
    "label_start": "180",
    "label_end": "182"
   },
   {
-   "id": "sec-023-treatment-of-general-nonlinear-equations",
+   "id": "sec-027-treatment-of-general-nonlinear-equations",
    "number": null,
    "title": "Treatment of general nonlinear equations",
    "level": 3,
    "page_start": 32,
    "page_end": 35,
-   "n_chars": 7809,
-   "n_words": 1468,
+   "n_chars": 7721,
+   "n_words": 1462,
    "label_start": "182",
    "label_end": "185"
   },
   {
-   "id": "sec-024-treatment-of-hamiltonian-systems",
+   "id": "sec-028-treatment-of-hamiltonian-systems",
    "number": null,
    "title": "Treatment of Hamiltonian systems",
    "level": 4,
    "page_start": 35,
-   "page_end": 38,
-   "n_chars": 8272,
-   "n_words": 1575,
+   "page_end": 36,
+   "n_chars": 2527,
+   "n_words": 469,
    "label_start": "185",
+   "label_end": "186"
+  },
+  {
+   "id": "sec-029-magnus-expansion-and-the-chen--fliess-series",
+   "number": null,
+   "title": "Magnus expansion and the Chen--Fliess series",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 5455,
+   "n_words": 1002,
+   "label_start": "186",
    "label_end": "188"
   },
   {
-   "id": "sec-025-illustrative-examples",
+   "id": "sec-030-illustrative-examples",
    "number": null,
    "title": "Illustrative examples",
    "level": 2,
    "page_start": 38,
    "page_end": 38,
-   "n_chars": 1265,
+   "n_chars": 1266,
    "n_words": 191,
    "label_start": "188",
    "label_end": "188"
   },
   {
-   "id": "sec-026-me-in-the-interaction-picture",
+   "id": "sec-031-me-in-the-interaction-picture",
    "number": null,
    "title": "ME in the Interaction Picture",
    "level": 3,
    "page_start": 38,
    "page_end": 38,
-   "n_chars": 754,
-   "n_words": 116,
+   "n_chars": 753,
+   "n_words": 115,
    "label_start": "188",
    "label_end": "188"
   },
   {
-   "id": "sec-027-linearly-forced-harmonic-oscillator",
+   "id": "sec-032-linearly-forced-harmonic-oscillator",
    "number": null,
    "title": "Linearly forced harmonic oscillator",
    "level": 4,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 2290,
-   "n_words": 416,
+   "n_chars": 2236,
+   "n_words": 401,
    "label_start": "188",
    "label_end": "189"
   },
   {
-   "id": "sec-028-two-level-quantum-systems",
+   "id": "sec-033-two-level-quantum-systems",
    "number": null,
    "title": "Two-level quantum systems",
    "level": 4,
    "page_start": 39,
    "page_end": 43,
-   "n_chars": 8280,
-   "n_words": 1573,
+   "n_chars": 8951,
+   "n_words": 1728,
    "label_start": "189",
    "label_end": "193"
   },
   {
-   "id": "sec-029-me-in-the-adiabatic-picture",
+   "id": "sec-034-me-in-the-adiabatic-picture",
    "number": null,
    "title": "ME in the Adiabatic Picture",
    "level": 3,
    "page_start": 43,
    "page_end": 44,
-   "n_chars": 515,
+   "n_chars": 516,
    "n_words": 84,
    "label_start": "193",
    "label_end": "194"
   },
   {
-   "id": "sec-030-linearly-forced-harmonic-oscillator",
+   "id": "sec-035-linearly-forced-harmonic-oscillator",
    "number": null,
    "title": "Linearly forced harmonic oscillator",
    "level": 4,
    "page_start": 44,
+   "page_end": 44,
+   "n_chars": 180,
+   "n_words": 28,
+   "label_start": "194",
+   "label_end": "194"
+  },
+  {
+   "id": "sec-036-rosen--zener-model",
+   "number": null,
+   "title": "Rosen--Zener model",
+   "level": 4,
+   "page_start": 44,
    "page_end": 45,
-   "n_chars": 3057,
-   "n_words": 566,
+   "n_chars": 2986,
+   "n_words": 561,
    "label_start": "194",
    "label_end": "195"
   },
   {
-   "id": "sec-031-fer-and-wilcox-infinite-product-expansions",
+   "id": "sec-037-fer-and-wilcox-infinite-product-expansions",
    "number": null,
    "title": "Fer and Wilcox infinite-product expansions",
    "level": 3,
    "page_start": 45,
    "page_end": 45,
-   "n_chars": 681,
-   "n_words": 119,
+   "n_chars": 124,
+   "n_words": 19,
    "label_start": "195",
    "label_end": "195"
   },
   {
-   "id": "sec-032-two-level-quantum-system-rectangular-step",
+   "id": "sec-038-linearly-forced-harmonic-oscillator",
+   "number": null,
+   "title": "Linearly forced harmonic oscillator",
+   "level": 4,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 505,
+   "n_words": 94,
+   "label_start": "195",
+   "label_end": "195"
+  },
+  {
+   "id": "sec-039-two-level-quantum-system-rectangular-step",
    "number": null,
    "title": "Two-level quantum system: Rectangular step",
    "level": 4,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 2383,
-   "n_words": 415,
+   "n_chars": 2531,
+   "n_words": 441,
    "label_start": "195",
    "label_end": "196"
   },
   {
-   "id": "sec-033-voslamber-iterative-method",
+   "id": "sec-040-voslamber-iterative-method",
    "number": null,
    "title": "Voslamber iterative method",
    "level": 3,
    "page_start": 46,
-   "page_end": 48,
-   "n_chars": 4224,
-   "n_words": 776,
+   "page_end": 47,
+   "n_chars": 2741,
+   "n_words": 481,
    "label_start": "196",
+   "label_end": "197"
+  },
+  {
+   "id": "sec-041-linear-periodic-systems-floquet--magnus-formalis",
+   "number": null,
+   "title": "Linear periodic systems: Floquet--Magnus formalism",
+   "level": 3,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 1776,
+   "n_words": 359,
+   "label_start": "197",
    "label_end": "198"
   },
   {
-   "id": "sec-034-numerical-integration-methods-based-on-the-magnu",
+   "id": "sec-042-numerical-integration-methods-based-on-the-magnu",
    "number": null,
    "title": "Numerical integration methods based on the Magnus expansion",
    "level": 2,
@@ -2497,151 +2193,175 @@
    "label_end": "198"
   },
   {
-   "id": "sec-035-introduction",
+   "id": "sec-043-introduction",
    "number": null,
    "title": "Introduction",
    "level": 3,
    "page_start": 48,
-   "page_end": 52,
-   "n_chars": 11911,
-   "n_words": 2258,
+   "page_end": 50,
+   "n_chars": 6228,
+   "n_words": 990,
    "label_start": "198",
+   "label_end": "200"
+  },
+  {
+   "id": "sec-044-runge--kutta-methods",
+   "number": null,
+   "title": "Runge--Kutta methods",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 5303,
+   "n_words": 1007,
+   "label_start": "200",
    "label_end": "202"
   },
   {
-   "id": "sec-036-preservation-of-qualitative-properties",
+   "id": "sec-045-preservation-of-qualitative-properties",
    "number": null,
    "title": "Preservation of qualitative properties",
    "level": 3,
    "page_start": 52,
    "page_end": 53,
-   "n_chars": 5610,
-   "n_words": 856,
+   "n_chars": 5615,
+   "n_words": 847,
    "label_start": "202",
    "label_end": "203"
   },
   {
-   "id": "sec-037-magnus-integrators-for-linear-systems",
+   "id": "sec-046-magnus-integrators-for-linear-systems",
    "number": null,
    "title": "Magnus integrators for linear systems",
    "level": 3,
    "page_start": 53,
    "page_end": 56,
-   "n_chars": 11522,
-   "n_words": 2282,
+   "n_chars": 11299,
+   "n_words": 2136,
    "label_start": "203",
    "label_end": "206"
   },
   {
-   "id": "sec-038-from-magnus-to-fer-and-cayley-methods",
+   "id": "sec-047-from-magnus-to-fer-and-cayley-methods",
    "number": null,
    "title": "From Magnus to Fer and Cayley methods",
    "level": 4,
    "page_start": 56,
    "page_end": 56,
-   "n_chars": 993,
-   "n_words": 183,
+   "n_chars": 961,
+   "n_words": 173,
    "label_start": "206",
    "label_end": "206"
   },
   {
-   "id": "sec-039-fer-based-methods",
+   "id": "sec-048-fer-based-methods",
    "number": null,
    "title": "Fer based methods",
    "level": 4,
    "page_start": 56,
    "page_end": 57,
-   "n_chars": 1762,
-   "n_words": 342,
+   "n_chars": 1739,
+   "n_words": 340,
    "label_start": "206",
    "label_end": "207"
   },
   {
-   "id": "sec-040-cayley-transform-methods",
+   "id": "sec-049-cayley-transform-methods",
    "number": null,
    "title": "Cayley-transform methods",
    "level": 4,
    "page_start": 57,
-   "page_end": 60,
-   "n_chars": 9889,
-   "n_words": 1715,
+   "page_end": 58,
+   "n_chars": 1353,
+   "n_words": 248,
    "label_start": "207",
+   "label_end": "208"
+  },
+  {
+   "id": "sec-050-numerical-illustration-the-rosen--zener-model-re",
+   "number": null,
+   "title": "Numerical illustration: The Rosen--Zener model revisited",
+   "level": 3,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 8794,
+   "n_words": 1504,
+   "label_start": "208",
    "label_end": "210"
   },
   {
-   "id": "sec-041-computing-the-exponential-of-a-matrix",
+   "id": "sec-051-computing-the-exponential-of-a-matrix",
    "number": null,
    "title": "Computing the exponential of a matrix",
    "level": 3,
    "page_start": 60,
    "page_end": 61,
-   "n_chars": 3476,
-   "n_words": 561,
+   "n_chars": 3622,
+   "n_words": 587,
    "label_start": "210",
    "label_end": "211"
   },
   {
-   "id": "sec-042-scaling-and-squaring-with-pad\u00e9-approximation",
+   "id": "sec-052-scaling-and-squaring-with-padé-approximation",
    "number": null,
-   "title": "Scaling and squaring with Pad\u00e9 approximation",
+   "title": "Scaling and squaring with Padé approximation",
    "level": 4,
    "page_start": 61,
    "page_end": 62,
-   "n_chars": 3603,
-   "n_words": 657,
+   "n_chars": 3588,
+   "n_words": 640,
    "label_start": "211",
    "label_end": "212"
   },
   {
-   "id": "sec-043-chebyshev-approximation",
+   "id": "sec-053-chebyshev-approximation",
    "number": null,
    "title": "Chebyshev approximation",
    "level": 4,
    "page_start": 62,
    "page_end": 63,
-   "n_chars": 2124,
-   "n_words": 356,
+   "n_chars": 2133,
+   "n_words": 362,
    "label_start": "212",
    "label_end": "213"
   },
   {
-   "id": "sec-044-krylov-space-methods",
+   "id": "sec-054-krylov-space-methods",
    "number": null,
    "title": "Krylov space methods",
    "level": 4,
    "page_start": 63,
    "page_end": 63,
-   "n_chars": 1666,
-   "n_words": 294,
+   "n_chars": 1656,
+   "n_words": 275,
    "label_start": "213",
    "label_end": "213"
   },
   {
-   "id": "sec-045-splitting-methods",
+   "id": "sec-055-splitting-methods",
    "number": null,
    "title": "Splitting methods",
    "level": 4,
    "page_start": 63,
    "page_end": 64,
-   "n_chars": 6171,
-   "n_words": 1075,
+   "n_chars": 6102,
+   "n_words": 1025,
    "label_start": "213",
    "label_end": "214"
   },
   {
-   "id": "sec-046-additional-numerical-examples",
+   "id": "sec-056-additional-numerical-examples",
    "number": null,
    "title": "Additional numerical examples",
    "level": 3,
    "page_start": 64,
    "page_end": 66,
-   "n_chars": 4698,
-   "n_words": 790,
+   "n_chars": 4929,
+   "n_words": 819,
    "label_start": "214",
    "label_end": "216"
   },
   {
-   "id": "sec-047-modified-magnus-integrators",
+   "id": "sec-057-modified-magnus-integrators",
    "number": null,
    "title": "Modified Magnus integrators",
    "level": 3,
@@ -2653,31 +2373,31 @@
    "label_end": "216"
   },
   {
-   "id": "sec-048-variations-on-the-basic-algorithm",
+   "id": "sec-058-variations-on-the-basic-algorithm",
    "number": null,
    "title": "Variations on the basic algorithm",
    "level": 4,
    "page_start": 66,
    "page_end": 67,
-   "n_chars": 5335,
-   "n_words": 891,
+   "n_chars": 5340,
+   "n_words": 889,
    "label_start": "216",
    "label_end": "217"
   },
   {
-   "id": "sec-049-commutator-free-magnus-integrators",
+   "id": "sec-059-commutator-free-magnus-integrators",
    "number": null,
    "title": "Commutator-free Magnus integrators",
    "level": 4,
    "page_start": 67,
    "page_end": 70,
-   "n_chars": 9180,
-   "n_words": 1681,
+   "n_chars": 8882,
+   "n_words": 1567,
    "label_start": "217",
    "label_end": "220"
   },
   {
-   "id": "sec-050-magnus-integrators-for-nonlinear-differential-eq",
+   "id": "sec-060-magnus-integrators-for-nonlinear-differential-eq",
    "number": null,
    "title": "Magnus integrators for nonlinear differential equations",
    "level": 3,
@@ -2689,45 +2409,45 @@
    "label_end": "220"
   },
   {
-   "id": "sec-051-nonlinear-matrix-equations-in-lie-groups",
+   "id": "sec-061-nonlinear-matrix-equations-in-lie-groups",
    "number": null,
    "title": "Nonlinear matrix equations in Lie groups",
    "level": 4,
    "page_start": 70,
    "page_end": 70,
-   "n_chars": 1808,
-   "n_words": 299,
+   "n_chars": 1792,
+   "n_words": 288,
    "label_start": "220",
    "label_end": "220"
   },
   {
-   "id": "sec-052-the-general-nonlinear-problem",
+   "id": "sec-062-the-general-nonlinear-problem",
    "number": null,
    "title": "The general nonlinear problem",
    "level": 4,
    "page_start": 70,
    "page_end": 71,
-   "n_chars": 4701,
-   "n_words": 906,
+   "n_chars": 4507,
+   "n_words": 803,
    "label_start": "220",
    "label_end": "221"
   },
   {
-   "id": "sec-053-some-applications-of-the-numerical-integrators-b",
+   "id": "sec-063-some-applications-of-the-numerical-integrators-b",
    "number": null,
    "title": "Some applications of the numerical integrators based on ME",
    "level": 2,
    "page_start": 71,
    "page_end": 72,
-   "n_chars": 1421,
-   "n_words": 219,
+   "n_chars": 1484,
+   "n_words": 227,
    "label_start": "221",
    "label_end": "222"
   },
   {
-   "id": "sec-054-case-study-numerical-treatment-of-the-schr\u00f6dinge",
+   "id": "sec-064-case-study-numerical-treatment-of-the-schrödinge",
    "number": null,
-   "title": "Case study: Numerical treatment of the Schr\u00f6dinger equation",
+   "title": "Case study: Numerical treatment of the Schrödinger equation",
    "level": 3,
    "page_start": 72,
    "page_end": 72,
@@ -2737,127 +2457,139 @@
    "label_end": "222"
   },
   {
-   "id": "sec-055-time-dependent-schr\u00f6dinger-equation",
+   "id": "sec-065-time-dependent-schrödinger-equation",
    "number": null,
-   "title": "Time-dependent Schr\u00f6dinger equation",
+   "title": "Time-dependent Schrödinger equation",
    "level": 4,
    "page_start": 72,
    "page_end": 75,
-   "n_chars": 10187,
-   "n_words": 1799,
+   "n_chars": 10059,
+   "n_words": 1763,
    "label_start": "222",
    "label_end": "225"
   },
   {
-   "id": "sec-056-time-independent-schr\u00f6dinger-equation",
+   "id": "sec-066-time-independent-schrödinger-equation",
    "number": null,
-   "title": "Time-independent Schr\u00f6dinger equation",
+   "title": "Time-independent Schrödinger equation",
    "level": 4,
    "page_start": 75,
+   "page_end": 75,
+   "n_chars": 2816,
+   "n_words": 489,
+   "label_start": "225",
+   "label_end": "225"
+  },
+  {
+   "id": "sec-067-sturm--liouville-problems",
+   "number": null,
+   "title": "Sturm--Liouville problems",
+   "level": 3,
+   "page_start": 75,
    "page_end": 76,
-   "n_chars": 6491,
-   "n_words": 1096,
+   "n_chars": 3584,
+   "n_words": 571,
    "label_start": "225",
    "label_end": "226"
   },
   {
-   "id": "sec-057-the-differential-riccati-equation",
+   "id": "sec-068-the-differential-riccati-equation",
    "number": null,
    "title": "The differential Riccati equation",
    "level": 3,
    "page_start": 76,
    "page_end": 78,
-   "n_chars": 4373,
-   "n_words": 805,
+   "n_chars": 4307,
+   "n_words": 761,
    "label_start": "226",
    "label_end": "228"
   },
   {
-   "id": "sec-058-stochastic-differential-equations",
+   "id": "sec-069-stochastic-differential-equations",
    "number": null,
    "title": "Stochastic differential equations",
    "level": 3,
    "page_start": 78,
    "page_end": 80,
-   "n_chars": 7125,
-   "n_words": 1276,
+   "n_chars": 7021,
+   "n_words": 1214,
    "label_start": "228",
    "label_end": "230"
   },
   {
-   "id": "sec-059-physical-applications",
+   "id": "sec-070-physical-applications",
    "number": null,
    "title": "Physical applications",
    "level": 2,
    "page_start": 80,
    "page_end": 80,
-   "n_chars": 1184,
-   "n_words": 199,
+   "n_chars": 1183,
+   "n_words": 198,
    "label_start": "230",
    "label_end": "230"
   },
   {
-   "id": "sec-060-nuclear-atomic-and-molecular-physics",
+   "id": "sec-071-nuclear-atomic-and-molecular-physics",
    "number": null,
    "title": "Nuclear, atomic and molecular physics",
    "level": 3,
    "page_start": 80,
    "page_end": 80,
-   "n_chars": 3699,
-   "n_words": 579,
+   "n_chars": 3708,
+   "n_words": 580,
    "label_start": "230",
    "label_end": "230"
   },
   {
-   "id": "sec-061-nuclear-magnetic-resonance-average-hamiltonian-t",
+   "id": "sec-072-nuclear-magnetic-resonance-average-hamiltonian-t",
    "number": null,
    "title": "Nuclear magnetic resonance: Average Hamiltonian theory",
    "level": 3,
    "page_start": 80,
    "page_end": 81,
    "n_chars": 3100,
-   "n_words": 501,
+   "n_words": 498,
    "label_start": "230",
    "label_end": "231"
   },
   {
-   "id": "sec-062-quantum-field-theory-and-high-energy-physics",
+   "id": "sec-073-quantum-field-theory-and-high-energy-physics",
    "number": null,
    "title": "Quantum field theory and high energy physics",
    "level": 3,
    "page_start": 81,
    "page_end": 82,
-   "n_chars": 6355,
-   "n_words": 978,
+   "n_chars": 6369,
+   "n_words": 982,
    "label_start": "231",
    "label_end": "232"
   },
   {
-   "id": "sec-063-electromagnetism",
+   "id": "sec-074-electromagnetism",
    "number": null,
    "title": "Electromagnetism",
    "level": 3,
    "page_start": 82,
    "page_end": 82,
-   "n_chars": 2095,
-   "n_words": 348,
+   "n_chars": 2084,
+   "n_words": 335,
    "label_start": "232",
    "label_end": "232"
   },
   {
-   "id": "sec-064-optics",
+   "id": "sec-075-optics",
    "number": null,
    "title": "Optics",
    "level": 3,
    "page_start": 82,
    "page_end": 83,
-   "n_chars": 3680,
-   "n_words": 596,
+   "n_chars": 3692,
+   "n_words": 599,
    "label_start": "232",
    "label_end": "233"
   },
   {
-   "id": "sec-065-general-relativity",
+   "id": "sec-076-general-relativity",
    "number": null,
    "title": "General Relativity",
    "level": 3,
@@ -2869,62 +2601,62 @@
    "label_end": "233"
   },
   {
-   "id": "sec-066-search-of-periodic-orbits",
+   "id": "sec-077-search-of-periodic-orbits",
    "number": null,
    "title": "Search of periodic orbits",
    "level": 3,
    "page_start": 83,
    "page_end": 83,
-   "n_chars": 703,
-   "n_words": 106,
+   "n_chars": 705,
+   "n_words": 107,
    "label_start": "233",
    "label_end": "233"
   },
   {
-   "id": "sec-067-geometric-control-of-mechanical-systems",
+   "id": "sec-078-geometric-control-of-mechanical-systems",
    "number": null,
    "title": "Geometric control of mechanical systems",
    "level": 3,
    "page_start": 83,
    "page_end": 84,
-   "n_chars": 3081,
-   "n_words": 518,
+   "n_chars": 3082,
+   "n_words": 516,
    "label_start": "233",
    "label_end": "234"
   },
   {
-   "id": "sec-068-conclusions",
+   "id": "sec-079-conclusions",
    "number": null,
    "title": "Conclusions",
    "level": 2,
    "page_start": 84,
    "page_end": 84,
-   "n_chars": 1469,
-   "n_words": 227,
+   "n_chars": 1473,
+   "n_words": 226,
    "label_start": "234",
    "label_end": "234"
   },
   {
-   "id": "sec-069-acknowledgments",
+   "id": "sec-080-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 84,
    "page_end": 85,
-   "n_chars": 1254,
+   "n_chars": 1255,
    "n_words": 205,
    "label_start": "234",
    "label_end": "235"
   },
   {
-   "id": "sec-070-references",
+   "id": "sec-081-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 85,
    "page_end": 88,
-   "n_chars": 32389,
-   "n_words": 4645,
+   "n_chars": 32491,
+   "n_words": 4646,
    "label_start": "235",
    "label_end": "238"
   }
@@ -2934,40 +2666,14 @@
   "likely_scanned": false,
   "toc_entries": 82,
   "toc_inferred_entries": 0,
-  "figure_entries": 21,
+  "figure_entries": 0,
   "figure_sequence_gaps": [],
   "page_label_conflicts": {
    "count": 0,
    "items": []
   },
-  "toc_alignment": {
-   "listed_not_found": {
-    "count": 0,
-    "items": []
-   },
-   "found_not_listed": {
-    "count": 12,
-    "items": [
-     "1.1 Motivation, overview and history",
-     "1.2 Mathematical preliminaries and notations",
-     "2 The Magnus expansion (ME)",
-     "2.1 A proof of Magnus\u2019 Theorem",
-     "2.2 Formulae for the first terms in Magnus expansion",
-     "2.3 Magnus expansion generator",
-     "2.4 Magnus expansion and time-dependent perturbation theory",
-     "2.5 Graph theoretical analysis of Magnus expansion",
-     "2.6 Time-symmetry of the expansion",
-     "2.7 Convergence of the Magnus expansion",
-     "7.8 Geometric control of mechanical systems",
-     "8 Conclusions"
-    ]
-   },
-   "page_mismatch": {
-    "count": 0,
-    "items": []
-   }
-  },
-  "sections": 72,
-  "chars_total": 330295
+  "sections": 83,
+  "chars_total": 317538,
+  "furniture_lines_stripped": 0
  }
 }

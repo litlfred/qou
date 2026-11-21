@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1608.02961v3/blocks/conj-sec-010-01",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "pageStart": 22,
+  "pageEnd": 33,
+  "text": "conj-sec-010-01.md",
+  "derivedFrom": "library/arxiv-1608.02961v3/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.02961v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "conjecture",
+    "claim_domain": "math",
+    "evidence_kind": "conjectural",
+    "evidence_location": "none",
+    "evidence_locator": "Open conjecture stated in sections/sec-010-5-the-quantum-modularity-conjecture.md",
+    "claim_id": "arxiv-1608.02961v3#conj-sec-010-01"
+  }
+}

@@ -7,10 +7,11 @@
   "bytes": 239244,
   "pages": 17,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +22,28 @@
   },
   "doi": null,
   "title": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators",
-  "authors_raw": "Pushpa(1), P. S. Bisht (1), Tianjun Li (2) and O. P. S. Negi (1.2)\u2217",
+  "authors_raw": "Pushpa(1), P. S. Bisht(1), Tianjun Li(2) and O. P. S. Negi(1.2)∗",
   "title_lines": [
    "Quaternion-Octonion Unitary Symmetries and Analogous",
    "Casimir Operators"
   ],
-  "abstract": "An attempt has been made to investigate the global SU (2) and SU (3) unitary \ufb02avor symmetries systematically in terms of quaternion and octonion respect ively. It is shown that these symmetries are suitably handled with quaternions and octonions in orde r to obtain their generators, commu- tation rules and symmetry properties. Accordingly, Casimi r operators for SU (2) and SU (3) \ufb02avor symmetries are also constructed for the proper testing of th ese symmetries in terms of quaternions and octonions.",
+  "abstract": "An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of quaternion and octonion respectively. It is shown that these symmetries are suitably handled with quaternions and octonions in order to obtain their generators, commu- tation rules and symmetry properties. Accordingly, Casimir operators for SU(2) and SU(3) ﬂavor symmetries are also constructed for the proper testing of these symmetries in terms of quaternions and octonions.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180502063419-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20180502063419-04'00'"
+  },
+  "title_raw": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators",
+   "outline": "1 Introduction",
+   "text": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,74 +52,273 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Quaternion Gauge Theory and Isospin",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Quaternions and Dirac spinors",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Flavor SU(3)f and Octonions",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Generators and Casimir Invariants",
    "page": 9,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Casimir Operator for Quaternion SU(2) group",
    "page": 11,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Split Octonions",
    "page": 12,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Split Octonions and SU(3)f Symmetry",
    "page": 13,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Casimir Operators for split Octonion SU(3) group",
    "page": 15,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 16,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1323,
+   "n_words": 192,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -116,8 +326,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 4088,
-   "n_words": 672
+   "n_chars": 4057,
+   "n_words": 629,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-quaternion-gauge-theory-and-isospin",
@@ -126,8 +338,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 6,
-   "n_chars": 5369,
-   "n_words": 1119
+   "n_chars": 5301,
+   "n_words": 1106,
+   "label_start": "2",
+   "label_end": "6"
   },
   {
    "id": "sec-002-3-quaternions-and-dirac-spinors",
@@ -135,52 +349,116 @@
    "title": "Quaternions and Dirac spinors",
    "level": 1,
    "page_start": 6,
-   "page_end": 9,
-   "n_chars": 5895,
-   "n_words": 1253
+   "page_end": 7,
+   "n_chars": 2980,
+   "n_words": 598,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-003-5-generators-and-casimir-invariants",
+   "id": "sec-003-4-flavor-su3f-and-octonions",
+   "number": "4",
+   "title": "Flavor SU(3)f and Octonions",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2899,
+   "n_words": 621,
+   "label_start": "7",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-5-generators-and-casimir-invariants",
    "number": "5",
    "title": "Generators and Casimir Invariants",
    "level": 1,
    "page_start": 9,
-   "page_end": 12,
-   "n_chars": 6764,
-   "n_words": 1271
+   "page_end": 11,
+   "n_chars": 3510,
+   "n_words": 639,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-004-7-split-octonions",
+   "id": "sec-005-6-casimir-operator-for-quaternion-su2-group",
+   "number": "6",
+   "title": "Casimir Operator for Quaternion SU(2) group",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3287,
+   "n_words": 642,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-006-7-split-octonions",
    "number": "7",
    "title": "Split Octonions",
    "level": 1,
    "page_start": 12,
-   "page_end": 16,
-   "n_chars": 6585,
-   "n_words": 1374
+   "page_end": 13,
+   "n_chars": 2426,
+   "n_words": 514,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-005-10-conclusion",
+   "id": "sec-007-8-split-octonions-and-su3f-symmetry",
+   "number": "8",
+   "title": "Split Octonions and SU(3)f Symmetry",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 2517,
+   "n_words": 567,
+   "label_start": "13",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-008-9-casimir-operators-for-split-octonion-su3-group",
+   "number": "9",
+   "title": "Casimir Operators for split Octonion SU(3) group",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1668,
+   "n_words": 317,
+   "label_start": "15",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-009-10-conclusion",
    "number": "10",
    "title": "Conclusion",
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 5801,
-   "n_words": 942
+   "n_chars": 5732,
+   "n_words": 867,
+   "label_start": "16",
+   "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 6,
-  "chars_total": 34502,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 35700,
+  "furniture_lines_stripped": 17,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 10,
-   "overlaid": 5,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -188,51 +466,88 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-quaternion-gauge-theory-and-isospin",
      "title": "Quaternion Gauge Theory and Isospin",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-quaternions-and-dirac-spinors",
      "title": "Quaternions and Dirac spinors",
-     "prose_ratio": 0.607,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-5-generators-and-casimir-invariants",
+     "id": "sec-003-4-flavor-su3f-and-octonions",
+     "title": "Flavor SU(3)f and Octonions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-generators-and-casimir-invariants",
      "title": "Generators and Casimir Invariants",
-     "prose_ratio": 0.704,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-casimir-operator-for-quaternion-su2-group",
+     "title": "Casimir Operator for Quaternion SU(2) group",
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-7-split-octonions",
+     "id": "sec-006-7-split-octonions",
      "title": "Split Octonions",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.927,
+     "coverage_ratio": 0.911,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-10-conclusion",
+     "id": "sec-007-8-split-octonions-and-su3f-symmetry",
+     "title": "Split Octonions and SU(3)f Symmetry",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-9-casimir-operators-for-split-octonion-su3-group",
+     "title": "Casimir Operators for split Octonion SU(3) group",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-10-conclusion",
      "title": "Conclusion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.453,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.455,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

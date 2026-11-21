@@ -1,0 +1,48 @@
+A.4 Complex manifolds and differential forms in C" 457
+
+For any smooth map u from C” = R?" to C, define
+
+ou 1 ou _ , ou ou 1 ou, Ou
+Oz; 2\dx; — dy; ~
+dz:=dx+idy
+d d
+ou = ou
+Ou = Dag tl Ou := a,
+
+and du := du + Ou. The function w is said to be a holomorphic function if
+du = 0. Holomorphicity of u, under this definition, is equivalent to the van-
+ishing of each du/0z;, which in turn is equivalent to the Cauchy-Riemann
+equations holding in each variable. Since the Cauchy—Riemann equations hold
+precisely when u is complex analytic, holomorphicity is invariant under com-
+plex analytic coordinate changes. In fact, the decomposition du = Ou + Ou
+is well defined when u is any smooth complex-valued function on a complex
+manifold: such a manifold is defined by an atlas of chart maps whose transi-
+tions are complex analytic and thus preserve holomorphicity. It also follows
+that for a holomorphic function u, the above formal definition of the derivation
+0/0z; in terms of the tangent vectors 0/dx; and 0/dy; agrees with the limit
+definition
+of u(z + tej) — u(z)
+
+az,” = lim —?.?
+
+where e; is the elementary basis vector with a 1 in position j and 0 elsewhere.
+
+Exercise A.13. Use the definition of d/dz above to compute (d/dz)u(z) when
+u(z) = u(x, y) = (x+ iy? and verify that it is equal to the definition via calculus
+over the complex numbers.
+
+The computational apparatus representing complex numbers as real two-
+vectors allows us to prove an important fact about complex manifolds.
+
+Proposition A.25. Every complex manifold is orientable.
+
+Proof By definition, overlapping chart maps are related by a complex ana-
+lytic coordinate change f. It therefore suffices to prove that a bi-holomorphic
+map f : U Cc C” > C” always has a positive Jacobian determinant when
+viewed as a map on R””. On the complex tangent space, f, is complex linear
+represented by an m x m complex Jacobian matrix Jc = J(f), so that
+
+[> val = >) (Jv) je;.
+j=l
+
+j=l

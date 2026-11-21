@@ -16,7 +16,7 @@ LaTeX label: `prop:substrate-radial-coordinate`
 
 ## References
 
-- [manuscript] §1-quantum-observable-universe/substrate-radial-coordinate
+- [leitner2026] §1-quantum-observable-universe/substrate-radial-coordinate
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -28,7 +28,7 @@ namespace QOU
 
 /-- **Substrate radial coordinate**: the relationship between
     the substrate parameter q and the affine coordinate Z. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure SubstrateRadialCoordinate where
   /-- The substrate parameter q > 1. -/
   q : ℝ
@@ -50,7 +50,7 @@ structure SubstrateRadialCoordinate where
     `hbar_q` is a structure field carrying the default value `1 - q⁻¹`;
     `hdef` records that the constant takes this canonical value, which is
     the definitional content `ℏ_q = 1 - q⁻¹` from the narrative. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem hbar_q_pos (src : SubstrateRadialCoordinate)
     (hdef : src.hbar_q = 1 - src.q⁻¹) :
     0 < src.hbar_q := by
@@ -59,7 +59,7 @@ theorem hbar_q_pos (src : SubstrateRadialCoordinate)
   linarith
 
 /-- In the deep-quantum limit (q → ∞), ℏ_q → 1. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem deep_quantum_limit_hbar (q : ℝ) (hq : 100 < q) :
     |1 - (1 - q⁻¹)| < 0.01 := by
   have hqpos : 0 < q := by linarith
@@ -69,7 +69,7 @@ theorem deep_quantum_limit_hbar (q : ℝ) (hq : 100 < q) :
   linarith
 
 /-- In the classical limit (q → 1), ℏ_q → 0. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem classical_limit_hbar (q : ℝ) (hq : q = 1) :
     1 - q⁻¹ = 0 := by
   simp [hq]

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/s10955-022-02992-6/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Kirkwood–Salsburg Equations: Proof of Theorem 2.1",
-  "pageStart": 17,
-  "pageEnd": 19,
-  "text": "../sections/sec-009-32-kirkwoodsalsburg-equations-proof-of-theorem-2.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
+  "title": "Forest Partition Schemes: Alternating Sign Property",
+  "pageStart": 14,
+  "pageEnd": 17,
+  "text": "../sections/sec-009-31-forest-partition-schemes-alternating-sign-pro.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
   "provenance": "ingested"
 }

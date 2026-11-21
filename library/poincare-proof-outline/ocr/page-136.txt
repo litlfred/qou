@@ -1,0 +1,69 @@
+next
+show x € unit-disc v € unit-disc  £ v
+using assms
+by auto
+next
+fix Marv
+let ?Mzx = moebius-pt M x and ?Mv = moebius-pt M v
+assume 1: unit-disc-fix M x € unit-disc v € unit-disc « £ v
+assume 2: ?P ?Mx ?Mv
+show ?P xv
+proof safe
+fix yzu
+let ?My = moebius-pt M y and ?Mz = moebius-pt M z and ?Mu = moebius-pt M u
+assume distinct [z, y, z, u, v} > poincare-collinear {z, y, z} y € unit-disc z € unit-disc u € unit-disc
+poincare-between x u z poincare-between y v z
+hence 5 Ma. Ma € unit-disc \ poincare-between ?Mu Ma ?My A poincare-between ?Mx Ma ?Mv
+using 1 2[rule-format, of ?My ?Mz ?Mu]
+by simp
+then obtain Ma where Ma: Ma € unit-disc poincare-between ?Mu Ma ?My \ poincare-between ?Mx Ma ?Mv
+by blast
+let ?a = moebius-pt (—M) Ma
+let ?Ma = moebius-pt M ?a
+have ?Ma = Ma
+by (metis moebius-pt-invert uminus-moebius-def )
+hence ?Ma € unit-disc poincare-between ?Mu ?Ma ?My A poincare-between ?Mx ?Ma ?Mv
+using Ma
+by auto
+thus da. a € unit-disc \ poincare-between ua y A poincare-between x av
+using unit-disc-fiz-moebius-inu|OF <unit-disc-fix M»] «unit-disc-fix M> (Ma © unit-disc»
+using <u € unit-disc) «v € unit-discy «x € unit-disc) <y € unit-discy
+by (rule-tac x=?a in exl, simp del: moebius-pt-comp-inv-right)
+qed
+qed
+thus ?thesis
+using assms
+by auto
+qed
+
+Pasch axiom, only degenerative cases.
+
+lemma Pasch-deg:
+assumes « € unit-disc and y € unit-disc and z € unit-disc and u € unit-disc and v € unit-disc
+assumes ~— distinct [z, y, z, u, v| V poincare-collinear {x, y, z}
+assumes poincare-between xz u z and poincare-between y v z
+shows J a. a € unit-disc \ poincare-between u ay A poincare-between © av
+proof(cases poincare-collinear {x, y, z})
+case True
+hence poincare-between x y z V poincare-between y x z V poincare-between y zx
+using assms(1, 2, 3) poincare-collinear3-between poincare-between-rev by blast
+show ?thesis
+proof (cases poincare-between x y z)
+case True
+have poincare-between x y v
+using True assms poincare-between-transitivity
+by (meson poincare-between-rev)
+thus ?thesis
+using assms(2)
+by (rule-tac z=y in exl, simp)
+next
+case False
+hence poincare-between y £ z V poincare-between y z &
+using <poincare-between x y z V poincare-between y x z V poincare-between y z x»
+by simp
+show ?thesis
+proof (cases poincare-between y x z)
+case True
+hence poincare-between u x y
+
+136

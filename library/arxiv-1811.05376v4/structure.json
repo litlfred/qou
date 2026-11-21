@@ -6,10 +6,12 @@
   "sha256": "a486709d0a78d19cd46ec104c801b2f58f346fcab6265408a65684440770f30c",
   "bytes": 992689,
   "pages": 40,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +22,28 @@
   },
   "doi": null,
   "title": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres",
-  "authors_raw": "J\u00f8rgen Ellegaard Andersen and William Elb\u00e6k Misteg\u00e5rd",
-  "abstract": "For a Seifert \ufb01bered homology sphereX we show that the q-series invariant \u02c6Z0(X;q) introduced by Gukov-Pei-Putrov-Vafa, is a resummation of the Ohtsuki seriesZ0(X). We show that for every evenk \u2208 N there exists a full asymptotic expansion of \u02c6Z0(X;q) for q tending to e2\u03c0i/k, and in particular that the limit \u02c6Z0(X;e2\u03c0i/k) exists and is equal to the WRT quantum invariant\u03c4k(X). We show that the poles of the Borel transform ofZ0(X) coincide with the classical complex Chern-Simons values, which we further show classi\ufb01es the corresponding components of the moduli space of \ufb02atSL(2, C)-connections.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20201026005539Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  },
+  "authors_raw": "Fibered Homology Spheres",
   "title_lines": [
-   "Resurgence Analysis of Quantum Invariants of Seifert",
-   "Fibered Homology Spheres"
-  ]
+   "Resurgence Analysis of Quantum Invariants of Seifert"
+  ],
+  "abstract": "For a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q) introduced by Gukov-Pei-Putrov-Vafa, is a resummation of the Ohtsuki series Z0(X). We show that for every even k ∈N there exists a full asymptotic expansion of ˆZ0(X; q) for q tending to e2πi/k, and in particular that the limit ˆZ0(X; e2πi/k) exists and is equal to the WRT quantum invariant τk(X). We show that the poles of the Borel transform of Z0(X) coincide with the classical complex Chern-Simons values, which we further show classiﬁes the corresponding components of the moduli space of ﬂat SL(2, C)-connections.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20201026005539Z"
+  },
+  "title_raw": "Resurgence Analysis of Quantum Invariants of Seifert",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres",
+   "outline": "1 Complex Chern-Simons theory on X",
+   "text": "Resurgence Analysis of Quantum Invariants of Seifert",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,109 +51,622 @@
    "title": "Complex Chern-Simons theory on X",
    "page": 5,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "The moduli space and complex Chern-Simons values",
    "page": 6,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "The Borel transform and Complex Cherns-Simons",
    "page": 15,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Resummation of the WRT invariant",
    "page": 17,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Resurgence of the generating function",
    "page": 18,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "A resurgence formula for the GPPV invariant",
    "page": 19,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Proof of Theorem 3",
    "page": 20,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "The asymptotic expansion of the GPPV invariant",
    "page": 26,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Proof of Theorem 4",
    "page": 27,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 3,
    "title": "The decomposition of the GPPV invariant",
    "page": 27,
    "source": "outline",
-   "number": "4.1.1"
+   "number": "4.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 3,
    "title": "Asymptotic expansions of q-series with periodic coefficients",
    "page": 31,
    "source": "outline",
-   "number": "4.1.2"
+   "number": "4.1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 3,
    "title": "The asymptotic expansion of the GPPV invariant",
    "page": 33,
    "source": "outline",
-   "number": "4.1.3"
+   "number": "4.1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "Appendix A Resurgence and resummation",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "A.1 Resurgent functions and the Borel transform",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "A.2 Borel-Laplace resummation",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The integration contour Γ = Γ+ + Γ−",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Surgery link for X. assume that p2, ..., pn are odd. The homeomorphism type of X is unaltered under a transformation",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Plumbing graph for X in the case n = 3",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The contour ∆m. through the unique saddle point of a degree two polynomial p(z) = −αz2 + βz, then we have the",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The contours Υ and ∆0",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Analytic extension of τk(M)",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Set L = L+ ∪L−",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 9748,
+   "n_words": 1788,
+   "label_start": "1",
+   "label_end": "5"
+  },
   {
    "id": "sec-000-1-complex-chern-simons-theory-on-x",
    "number": "1",
@@ -150,8 +674,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2659,
-   "n_words": 504
+   "n_chars": 2721,
+   "n_words": 576,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-001-11-the-moduli-space-and-complex-chern-simons-val",
@@ -160,8 +686,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 15,
-   "n_chars": 19791,
-   "n_words": 3683
+   "n_chars": 20138,
+   "n_words": 4340,
+   "label_start": "6",
+   "label_end": "15"
   },
   {
    "id": "sec-002-2-the-borel-transform-and-complex-cherns-simons",
@@ -170,8 +698,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 3924,
-   "n_words": 777
+   "n_chars": 3948,
+   "n_words": 839,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
    "id": "sec-003-21-resummation-of-the-wrt-invariant",
@@ -180,8 +710,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1384,
-   "n_words": 259
+   "n_chars": 1393,
+   "n_words": 279,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
    "id": "sec-004-22-resurgence-of-the-generating-function",
@@ -190,8 +722,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3072,
-   "n_words": 536
+   "n_chars": 3126,
+   "n_words": 593,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
    "id": "sec-005-3-a-resurgence-formula-for-the-gppv-invariant",
@@ -200,8 +734,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2761,
-   "n_words": 503
+   "n_chars": 2811,
+   "n_words": 555,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
    "id": "sec-006-31-proof-of-theorem-3",
@@ -210,8 +746,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 26,
-   "n_chars": 10655,
-   "n_words": 2026
+   "n_chars": 10661,
+   "n_words": 2248,
+   "label_start": "20",
+   "label_end": "26"
   },
   {
    "id": "sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant",
@@ -220,8 +758,10 @@
    "level": 1,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 1818,
-   "n_words": 348
+   "n_chars": 1830,
+   "n_words": 359,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
    "id": "sec-008-41-proof-of-theorem-4",
@@ -230,8 +770,10 @@
    "level": 2,
    "page_start": 27,
    "page_end": 27,
-   "n_chars": 669,
-   "n_words": 111
+   "n_chars": 699,
+   "n_words": 126,
+   "label_start": "27",
+   "label_end": "27"
   },
   {
    "id": "sec-009-411-the-decomposition-of-the-gppv-invariant",
@@ -240,8 +782,10 @@
    "level": 3,
    "page_start": 27,
    "page_end": 31,
-   "n_chars": 5759,
-   "n_words": 1109
+   "n_chars": 5740,
+   "n_words": 1217,
+   "label_start": "27",
+   "label_end": "31"
   },
   {
    "id": "sec-010-412-asymptotic-expansions-of-q-series-with-perio",
@@ -250,8 +794,10 @@
    "level": 3,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 2817,
-   "n_words": 507
+   "n_chars": 2865,
+   "n_words": 581,
+   "label_start": "31",
+   "label_end": "33"
   },
   {
    "id": "sec-011-413-the-asymptotic-expansion-of-the-gppv-invaria",
@@ -260,8 +806,10 @@
    "level": 3,
    "page_start": 33,
    "page_end": 36,
-   "n_chars": 5319,
-   "n_words": 975
+   "n_chars": 5354,
+   "n_words": 1087,
+   "label_start": "33",
+   "label_end": "36"
   },
   {
    "id": "sec-012-appendix-a-resurgence-and-resummation",
@@ -270,8 +818,10 @@
    "level": 1,
    "page_start": 36,
    "page_end": 36,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 26,
+   "n_words": 3,
+   "label_start": "36",
+   "label_end": "36"
   },
   {
    "id": "sec-013-a1-resurgent-functions-and-the-borel-transform",
@@ -280,8 +830,10 @@
    "level": 2,
    "page_start": 36,
    "page_end": 36,
-   "n_chars": 1030,
-   "n_words": 174
+   "n_chars": 1088,
+   "n_words": 194,
+   "label_start": "36",
+   "label_end": "36"
   },
   {
    "id": "sec-014-a2-borel-laplace-resummation",
@@ -290,16 +842,26 @@
    "level": 2,
    "page_start": 36,
    "page_end": 40,
-   "n_chars": 11966,
-   "n_words": 1687
+   "n_chars": 11928,
+   "n_words": 1781,
+   "label_start": "36",
+   "label_end": "40"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 15,
-  "chars_total": 73624,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 84076,
+  "furniture_lines_stripped": 78,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "RQI20.tex",
@@ -312,16 +874,21 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-complex-chern-simons-theory-on-x",
      "title": "Complex Chern-Simons theory on X",
-     "prose_ratio": 0.33,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.339,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-the-moduli-space-and-complex-chern-simons-val",
      "title": "The moduli space and complex Chern-Simons values",
      "prose_ratio": 0.965,
-     "coverage_ratio": 0.818,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -329,7 +896,7 @@
      "id": "sec-002-2-the-borel-transform-and-complex-cherns-simons",
      "title": "The Borel transform and Complex Cherns-Simons",
      "prose_ratio": 0.93,
-     "coverage_ratio": 0.845,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -337,21 +904,21 @@
      "id": "sec-003-21-resummation-of-the-wrt-invariant",
      "title": "Resummation of the WRT invariant",
      "prose_ratio": 0.883,
-     "coverage_ratio": 0.895,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-22-resurgence-of-the-generating-function",
      "title": "Resurgence of the generating function",
-     "prose_ratio": 0.251,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.249,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-3-a-resurgence-formula-for-the-gppv-invariant",
      "title": "A resurgence formula for the GPPV invariant",
      "prose_ratio": 0.3,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-006-31-proof-of-theorem-3",
@@ -362,7 +929,7 @@
      "id": "sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant",
      "title": "The asymptotic expansion of the GPPV invariant",
      "prose_ratio": 0.154,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-008-41-proof-of-theorem-4",
@@ -373,21 +940,21 @@
      "id": "sec-009-411-the-decomposition-of-the-gppv-invariant",
      "title": "The decomposition of the GPPV invariant",
      "prose_ratio": 0.914,
-     "coverage_ratio": 0.809,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-010-412-asymptotic-expansions-of-q-series-with-perio",
      "title": "Asymptotic expansions of q-series with periodic coefficients",
-     "prose_ratio": 0.464,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.449,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-413-the-asymptotic-expansion-of-the-gppv-invaria",
      "title": "The asymptotic expansion of the GPPV invariant",
-     "prose_ratio": 0.273,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.27,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-012-appendix-a-resurgence-and-resummation",
@@ -398,7 +965,7 @@
      "id": "sec-013-a1-resurgent-functions-and-the-borel-transform",
      "title": "A.1 Resurgent functions and the Borel transform",
      "prose_ratio": 0.942,
-     "coverage_ratio": 0.96,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -406,8 +973,8 @@
      "id": "sec-014-a2-borel-laplace-resummation",
      "title": "A.2 Borel-Laplace resummation",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.282,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.302,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

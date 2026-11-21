@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-intro-hoefsmit-convergence-atomic",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:intro-hoefsmit-convergence-atomic",
+  "kind": "prose",
+  "text": "intro-hoefsmit-convergence-atomic.md",
+  "provenance": "authored"
+}

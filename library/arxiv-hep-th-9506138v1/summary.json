@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-th-9506138v1",
  "source_sha256": "bb85afba0530402c",
- "brief": "Black Hole Complementarity vs. Locality — 8 sections: Introduction; The Nice-Slice Argument; The Nice Slice and String Field Th",
- "extended": "**Black Hole Complementarity vs. Locality**\n\n*David A. Lowe, a Joseph Polchinski, b Leonard Susskind, c*\n\n28 pp, 8 sections.\n\n**Outline.** 1 Introduction; 2 The Nice-Slice Argument; 3 The Nice Slice and String Field Theory; 4 Discussion and Conclusions; 4.1 Comparing Commutators; 4.2 The Structure of the Nice Slice Theory; 1 (x+; References",
+ "brief": "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument",
+ "extended": "**Black Hole Complementarity vs. Locality**\n\n*Lárus Thorlacius,b and John Uglumc*\n\n28 pp, 18 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 The Nice-Slice Argument; 3 The Nice Slice and String Field Theory; 4 Discussion and Conclusions; 4.1 Comparing Commutators; 4.2 The Structure of the Nice Slice Theory; Appendix A The Commutator of Open Bosonic Stri; A.1 Calculation of the Commutator; A.2 Correspondence with Low Energy Minkowski F; A.3 The Tachyon Commutator on a Nice Slice; Appendix B The Magnitude of the Commutator; B.1 A Four Point Amplitude Involving Commutato; B.2 The Behavior of the Commutator of Nice Sli; B.3 Extension to Closed Bosonic Strings and Su; B.4 A Limiting Case; References; D A. Lowe, The Planckian Conspiracy: String Th",
  "tokens": {
-  "brief": 31,
-  "extended": 85
+  "brief": 26,
+  "extended": 189
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-4"
+   "pages": "2-5"
   },
   {
    "id": "sec-001-2-the-nice-slice-argument",
    "title": "The Nice-Slice Argument",
-   "pages": "4-8"
+   "pages": "5-8"
   },
   {
    "id": "sec-002-3-the-nice-slice-and-string-field-theory",
@@ -37,16 +42,61 @@
   {
    "id": "sec-005-42-the-structure-of-the-nice-slice-theory",
    "title": "The Structure of the Nice Slice Theory",
-   "pages": "15-26"
+   "pages": "15-16"
   },
   {
-   "id": "sec-006-1-x",
-   "title": "(x+",
-   "pages": "26-28"
+   "id": "sec-006-appendix-a-the-commutator-of-open-bosonic-string",
+   "title": "The Commutator of Open Bosonic String Fields",
+   "pages": "16-16"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-007-a1-calculation-of-the-commutator",
+   "title": "Calculation of the Commutator",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-008-a2-correspondence-with-low-energy-minkowski-fiel",
+   "title": "Correspondence with Low Energy Minkowski Field Theory",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-009-a3-the-tachyon-commutator-on-a-nice-slice",
+   "title": "The Tachyon Commutator on a Nice Slice",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-010-appendix-b-the-magnitude-of-the-commutator",
+   "title": "The Magnitude of the Commutator",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-011-b1-a-four-point-amplitude-involving-commutators",
+   "title": "A Four Point Amplitude Involving Commutators",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-012-b2-the-behavior-of-the-commutator-of-nice-slice",
+   "title": "The Behavior of the Commutator of Nice Slice Fields",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-013-b3-extension-to-closed-bosonic-strings-and-super",
+   "title": "Extension to Closed Bosonic Strings and Superstrings",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-014-b4-a-limiting-case",
+   "title": "A Limiting Case",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-015-references",
    "title": "References",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-016-d-a-lowe-the-planckian-conspiracy-string-theory",
+   "title": "A. Lowe, The Planckian Conspiracy: String Theory and the Black Hole Information",
    "pages": "28-28"
   }
  ],

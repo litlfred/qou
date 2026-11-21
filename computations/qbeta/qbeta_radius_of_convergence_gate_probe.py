@@ -2,7 +2,7 @@
 """qbeta_radius_of_convergence_gate_probe.py — verify the §4(a) radius-of-
 convergence formalize-first gate for the Q_β c_k precision ladder.
 
-Sibling probe to `prop:q-beta-radius-of-convergence-gate`. Codifies the
+Sibling probe to `conj:q-beta-radius-of-convergence-gate`. Codifies the
 §4(a) formalize-first invariant from
 `docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md` +
 `docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md`:
@@ -119,7 +119,7 @@ def main() -> int:
     )
     builder.set_description(
         "Verifies the §4(a) radius-of-convergence gate from "
-        "prop:q-beta-radius-of-convergence-gate. Reproduces PR #1727 "
+        "conj:q-beta-radius-of-convergence-gate. Reproduces PR #1727 "
         "anchor (u_substrate cross-anchor 210 ppb), the asymptotic "
         "ratio-test simple-pole signature on canonical SDP c_k, and "
         "demonstrates the gate's REJECT/ACCEPT behaviour on two probe "
@@ -127,7 +127,7 @@ def main() -> int:
         "pole at 2·u_substrate). The operational form of the §3b-cond "
         "RadiusOfConvergenceGateClass Lean conditional class."
     )
-    builder.set_content_block("prop:q-beta-radius-of-convergence-gate")
+    builder.set_content_block("conj:q-beta-radius-of-convergence-gate")
 
     print("=" * 78)
     print(" Radius-of-convergence §4(a) gate — sympy + mpmath verification")
@@ -375,7 +375,7 @@ def main() -> int:
         expected=1,
         tolerance=0,
         source=("§4(a) radius-of-convergence gate from "
-                "prop:q-beta-radius-of-convergence-gate: verifies "
+                "conj:q-beta-radius-of-convergence-gate: verifies "
                 "(1) PR #1727 cross-anchor u_substrate stability (210 ppb, "
                 "well under 1 ppm fibre-level tolerance); "
                 "(2) canonical SDP c_k satisfies the simple-pole signature "

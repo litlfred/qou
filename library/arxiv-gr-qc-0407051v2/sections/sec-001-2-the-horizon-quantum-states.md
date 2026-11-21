@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-gr-qc-0407051v2
-doc_title: "arXiv:gr-qc/0407051v2 23 Aug 2004"
+doc_title: "Black hole entropy from quantum geometry"
 section_id: sec-001-2-the-horizon-quantum-states
 section_title: "The horizon quantum states"
 section_number: 2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.994
+doc_brief: "Black hole entropy from quantum geometry — Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account"
 ---
 Our departure point is the quantum Isolated Horizon theory introduced in [@abk]. A classical (weakly) isolated horizon is a null, non-expanding world-surface of a space-like 2-sphere $S$, equipped with a null vector field of a constant self-acceleration. This idea gave rise to a new quasi-local theory of black-hole in equilibrium interesting also from purely classical point of view [@IH]. The local degrees of freedom of space-time geometry out of the horizon are not restricted. An additional assumption satisfied by the isolated horizon geometry considered in [@abk] is the spherical symmetry (see [@alrev] for a discussion of the general case). The classical phase space introduced in the Ashtekar-Baez-Corichi-Krasnov framework consists of all the gravitational fields which can exist in a neighborhood of an isolated horizon. The location and area $a$ of the horizon are fixed. In the corresponding $3+1$ Hamiltonian framework the horizon is represented by a 2-sphere $S$, whereas the remaining part of space under consideration (bulk) is the exterior region, a 3-manifold $\Sigma$ bounded by $S$. The only kinematic degrees of freedom of the horizon $S$ are given by a U(1) connection defined on a spin bundle over $S$. The gravitational field data is defined on $\Sigma$. The bulk and the horizon data are subject to a consistency condition ensuring that the world-surface of $S$ is indeed an isolated horizon. In the quantum theory of this system, the bulk gravitational field is described by Quantum Geometry. The quantum consistency condition between the bulk and the horizon implies that the quantum degrees of freedom of the horizon should be described by a union of the Chern-Simons theories on arbitrarily punctured $S$.
 

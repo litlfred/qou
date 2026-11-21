@@ -1,0 +1,55 @@
+Chapter 3 Nuclear Lattice Effective Field Theory
+
+Nr. | 1 2 3 4 5
+71 | 0] v2] v3
+#,[1[ 6 [12 [8] 6
+
+a
+
+Table 3.3: Radial projection and binning for the first radii. The second line gives the value of the radii and the third
+line gives the counting of points with the respective radius.
+
+the ordering. While in the standard approach, one first calculates the spectrum and then assigns each
+solution to a partial wave, one could also first project the system onto the respective (coupled) partial
+wave and then solve the system. As the projection onto the partial waves only keeps the radial part of the
+wave function, the system is much smaller than before, and the phase shift is directly fitted to the radial
+wave function. In the following we give details in the case of uncoupled as well as coupled channels.
+
+The change from a three-dimensional basis to a radial one is made by binning all points with the same
+radius R and total angular momentum as well as orbital angular momentum and spin according to the
+partial wave. The respective projection operator reads
+
+Reiiols)= >. CHE..¥u.(R)|R)®Is.). (3.30)
+IR|=R,s,1,
+
+whereas che y, are the usual Clebsch-Gordan coefficients. While the radial norm in the continuum
+would be just proportional to r’, one has to count the number of points for every possible radius and
+construct the norm according to the number of points. The first number of points per radius are shown in
+Tab. 3.3. The norm respecting the number of points per radius as well as the quantum number due to the
+
+partial waves reads 7
+Nj (R) = (Rj iol S/R idols). (3.31)
+
+The projection operator and the norm correction are applied to all operators O (R) resulting in,
+
+_ _. -! 7 -)
+
+OR = [NEE BD] (R iio SO(R)R bibs) [Ni ®] (3.22)
+After applying the projection operator to all operators, the eigensystem is solved efficiently. The
+eigenvalue corresponds to the energy of the system, and the eigenfunction is identified with a superposition
+of Bessel functions outside of the interaction region for the specific partial wave of interest. Instead of
+using Eqs. (2.40) and (3.24), we rewrite the respective function in terms of the Hankel functions hy,
+which are a linear combination of the former ones, and the constants A and B,
+
+Ww, (r) « Ah; (pr) + Bh, (pr). (3.33)
+
+The explicit form of the Hankel functions are moved to App. A. These functions are identified as incoming
+and outgoing wave functions linked to the S-matrix in Eq. (2.32). Then the phase shift is calculated from
+
+B= S,A = exp (2i6)) A. (3.34)
+The procedure is shown schematically in Figs. 3.2 and 3.3. Firstly, a spherical wall is imposed at
+
+Ry, which generates standing waves. Secondly, all nodes with the same radius are binned together. The
+interaction region is close to the origin in region I, while we calculate the phase shift from the wave
+
+28

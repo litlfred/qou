@@ -1,0 +1,1 @@
+In the situation of Proposition 7.1.11, let F : K′ →E be a triangulated functor into some triangulated category E. Assume that for every s ∈ S′, the morphism F(s) is an isomorphism in E. Then there is a unique triangulated functor FS′ : K′ S′ →E that extends F; Namely FS′ ◦Q′ = F as functors K′ →E.

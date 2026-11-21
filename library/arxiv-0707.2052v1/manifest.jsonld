@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2052v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2052v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0707.2052v1",
+  "title": "The Mukai pairing, I: a categorical approach",
   "contains": [
     "library/arxiv-0707.2052v1/sections/sec-front-matter",
     "library/arxiv-0707.2052v1/sections/sec-000",
@@ -38,10 +38,14 @@
     "library/arxiv-0707.2052v1/sections/sec-023",
     "library/arxiv-0707.2052v1/sections/sec-024",
     "library/arxiv-0707.2052v1/sections/sec-025",
-    "library/arxiv-0707.2052v1/sections/sec-026"
+    "library/arxiv-0707.2052v1/sections/sec-026",
+    "library/arxiv-0707.2052v1/sections/sec-027",
+    "library/arxiv-0707.2052v1/sections/sec-028",
+    "library/arxiv-0707.2052v1/sections/sec-029",
+    "library/arxiv-0707.2052v1/sections/sec-030"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -56,7 +60,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0707.2052v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0707.2052v1.pdf",
     "source_sha256": "0a1d1cca848706bef76372a2fed96571fae1dd49b6e75e41ec98d86115ff5ed9",
     "pages": 39,
@@ -67,8 +73,8 @@
       "stamp_date": "13 Jul 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

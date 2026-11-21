@@ -40,7 +40,7 @@ integers, or the split; the `5₂`/`4₁` numbers enter only through
 ## References
 
 - [garoufalidis-gu-marino2023] https://doi.org/10.1007/s00220-023-04753-2 (the S± Stokes constants)
-- [manuscript] docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md §3 (Route C / D4);
+- [leitner2026] docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md §3 (Route C / D4);
   QOU/QBeta/ChiralityGradedCount.lean (the pair-side machinery this consumes).
 -/
 

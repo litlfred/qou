@@ -1,1 +1,1 @@
-The equation on the left hand side of (34.2) or (34.3) is called gauge
+The equation on the left hand side of (34.2) or (34.3) is called gauge condition, see [170]. The equation of the right hand side of (34.2) or (34.3) also has an interesting interpretation, see Remark 34.6. It implies the following important grading relations, ϕ(v, n) : Hi[k] → Hj[k − n], k ∈ Z≥0, n ∈ Z. (34.4) It follows in particular that ϕ(v, 0) restricts to a G-intertwiner Tϕ : Vh ⊗ Hi[0] → Hj[0].

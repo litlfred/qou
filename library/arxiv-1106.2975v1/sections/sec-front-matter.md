@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1106.2975v1.pdf
 source_sha256: 7e966c7392b70ae0
 toc_source: outline
+doc_brief: "The Polyanalytic Ginibre Ensembles — For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z."
 ---
 The Polyanalytic Ginibre Ensembles
 Antti Haimi and Håkan Hedenmalm
@@ -61,4 +62,3 @@ Key words and phrases. Bargmann-Fock space, polyanalytic function, determinantal
 The second author is supported by the Göran Gustafsson Foundation (KVA) and Vetenskapsrådet
 (VR).
 arXiv:1106.2975v1  [math.PR]  15 Jun 2011
-2

@@ -1,1 +1,1 @@
-Let Wi be irreducible V -modules, i = 1, 2, 3. The initial term Y0 of a
+Let Wi be irreducible V -modules, i = 1, 2, 3. The initial term Y0 of a primary field Yr associated to an intertwining operator Y of type W3 W1 W2  can equivalently be associated to Huang-Lepowsky P(z)-intertwining map F of the same type corresponding to Y as in Prop. 37.4 (for any fixed nonzero z ∈ C and any fixed branch of the complex logarithm) as follows, Y0 = z ∆W1+∆W2−∆W3P W3

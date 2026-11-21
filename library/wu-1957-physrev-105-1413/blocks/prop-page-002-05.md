@@ -1,0 +1,1 @@
+To check whether the beta asymmetry could be caused by such a magnetic field distortion, we allowed a drop of CoC12 solution to dry on a thin plastic disk and cemented the disk to the bottom of the same housing.

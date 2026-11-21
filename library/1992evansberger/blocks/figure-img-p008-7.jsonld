@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/1992evansberger/blocks/figure-img-p008-7",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p008-7.png",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "narrative": {
+    "text": null,
+    "state": "not-authored"
+  },
+  "derivedFrom": "library/1992evansberger/sections/page-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1992evansberger/manifest.jsonld",
+  "provenance": "ingested"
+}

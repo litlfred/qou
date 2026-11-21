@@ -49,7 +49,7 @@ and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. Routes 1–4 in
 `qou-0yqu` are dead and Route 5 is a restatement, not a solution; the route that
 worked was the complex five-term identity (Routes 51–70).
 
--- Ref: [manuscript] bean qou-0yqu Route 5; docs/coordination/1ppq-qbeta.md
+-- Ref: [leitner2026] bean qou-0yqu Route 5; docs/coordination/1ppq-qbeta.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
@@ -492,5 +492,132 @@ theorem sum_re_cLiTwoExt_eq_integral {y₁ y₂ y₃ : ℂ}
   rw [Set.uIcc_of_le (by norm_num : (0 : ℝ) ≤ 1)] at hz
   rw [← add_div, ← add_div,
     sum_re_log_one_sub_eq_log_recipCubic e1 e2 e3 hz.1 hz.2]
+
+/-! ### Closed-form disc `−23` resolvent & Masbaum cyclotomic-asymmetry odd data (`qou-dq2q`)
+
+Companion to `computations/qbeta/five_two_disc_neg23_cyclotomic_asymmetry_probe.py`
+and `computations/qbeta/five-two-disc-neg23-cyclotomic-asymmetry.witness.json`
+(beans `qou-dq2q`, `qou-ynff`, `qou-5gh6`, `qou-7lim`, `qou-ized` under `qou-avtq`).
+
+1. **Bézout inverse of `P'(ξ₀) = 3ξ₀² − 4ξ₀ + 3` and quadratic resolvent `ℚ(√−23)`:**
+   In `ℤ[x]`, `(3x² − 4x + 3)(10x² − 17x + 18) = 23 + (30x − 31)(x³ − 2x² + 3x − 1)`,
+   and `(-3x² + 4x - 8)(3x² - 4x + 3)² + 23 = (-27x³ + 54x² - 81x + 49)(x³ - 2x² + 3x - 1)`.
+   Along the Vieta locus `ξ₀ + ξ₁ + ξ₂ = 2`, `ξ₀ξ₁ + ξ₀ξ₂ + ξ₁ξ₂ = 3`, the conjugate-saddle
+   difference satisfies `(ξ₁ − ξ₂)² = −3ξ₀² + 4ξ₀ − 8`, so `((ξ₁ − ξ₂)·P'(ξ₀))² = −23`.
+
+2. **Closed-form bar-odd (`σ₁ − σ₂`) resolvent basis projection:**
+   For any `K_{5₂}`-element `α = a + bξ + cξ²`, multiplying its conjugate-saddle difference
+   `(a + bξ₁ + cξ₁²) − (a + bξ₂ + cξ₂²)` by `10ξ₀² − 17ξ₀ + 18 = 23 / P'(ξ₀)` gives
+     `((18b + 26c) − (17b + 22c)ξ₀ + (10b + 17c)ξ₀²) · (ξ₁ − ξ₂)`.
+   At 1-loop (`b₁ = 209/2116`, `c₁ = −121/1058`), a factor of `23` cancels in the numerator,
+   yielding `Δ_odd(P₁) / √−23 = (11 / (4 · 23²)) · (−10 + 7ξ₀ − 8ξ₀²)`.
+
+3. **Closed-form `n = 1` Masbaum cyclotomic-coefficient bar-asymmetry ratio:**
+   For `C_{5₂,1}(q) = −(q² + q⁴)`, the common factor `q + q⁻¹` cancels between
+   `O₁(q) = −(q⁴ − q⁻⁴ + q² − q⁻²)/2` and `E₁(q) = −(q⁴ + q⁻⁴ + q² + q⁻²)/2`, giving
+   `O₁(q) / E₁(q) = (q³ − q⁻³) / (q³ + q⁻³) = tanh(3 ln q)`. -/
+
+/-- Exact ring isomorphism substitution between the Riley/SnapPy cubic
+`x³ − 2x² + 3x − 1` and the Landen/canonical cubic `z³ − z² + 1`:
+setting `x = 1 − z²` gives `x³ − 2x² + 3x − 1 = −(z³ + z² − 1)(z³ − z² + 1)`. -/
+theorem fiveTwo_cubic_x_of_z_factorization {R : Type*} [CommRing R] (z : R) :
+    (1 - z ^ 2) ^ 3 - 2 * (1 - z ^ 2) ^ 2 + 3 * (1 - z ^ 2) - 1
+      = -(z ^ 3 + z ^ 2 - 1) * (z ^ 3 - z ^ 2 + 1) := by
+  ring
+
+/-- Exact Bézout identity in `ℤ[x]` inverting `P'(x) = 3x² − 4x + 3` modulo
+`x³ − 2x² + 3x − 1`: `(3x² − 4x + 3)(10x² − 17x + 18) = 23 + (30x − 31)(x³ − 2x² + 3x − 1)`. -/
+theorem fiveTwo_deriv_bezout_identity {R : Type*} [CommRing R] (x : R) :
+    (3 * x ^ 2 - 4 * x + 3) * (10 * x ^ 2 - 17 * x + 18)
+      = 23 + (30 * x - 31) * (x ^ 3 - 2 * x ^ 2 + 3 * x - 1) := by
+  ring
+
+/-- Exact polynomial identity equating `(-3x² + 4x - 8) · P'(x)²` to `−23` modulo
+`x³ − 2x² + 3x − 1`. -/
+theorem fiveTwo_resolvent_sq_poly_identity {R : Type*} [CommRing R] (x : R) :
+    (-3 * x ^ 2 + 4 * x - 8) * (3 * x ^ 2 - 4 * x + 3) ^ 2 + 23
+      = (-27 * x ^ 3 + 54 * x ^ 2 - 81 * x + 49) * (x ^ 3 - 2 * x ^ 2 + 3 * x - 1) := by
+  ring
+
+/-- Along the Vieta locus `ξ₀ + ξ₁ + ξ₂ = 2` and `ξ₀ξ₁ + ξ₀ξ₂ + ξ₁ξ₂ = 3`, the square of
+the conjugate-saddle difference `(ξ₁ − ξ₂)²` is the quadratic polynomial `−3ξ₀² + 4ξ₀ − 8`
+in the real root `ξ₀`. -/
+theorem fiveTwo_saddle_diff_sq {R : Type*} [CommRing R] {ξ₀ ξ₁ ξ₂ : R}
+    (e1 : ξ₀ + ξ₁ + ξ₂ = 2) (e2 : ξ₀ * ξ₁ + ξ₀ * ξ₂ + ξ₁ * ξ₂ = 3) :
+    (ξ₁ - ξ₂) ^ 2 = -3 * ξ₀ ^ 2 + 4 * ξ₀ - 8 := by
+  linear_combination (ξ₁ + ξ₂ + 3 * ξ₀ + 2) * e1 - 4 * e2
+
+/-- Combining `fiveTwo_saddle_diff_sq` and `fiveTwo_resolvent_sq_poly_identity`: for any root
+`ξ₀` of `x³ − 2x² + 3x − 1 = 0`, the element `(ξ₁ − ξ₂)(3ξ₀² − 4ξ₀ + 3)` is a square root
+of `−23`, placing `ξ₁ − ξ₂` in `K_{5₂} · ℚ(√−23)`. -/
+theorem fiveTwo_saddle_diff_mul_deriv_sq_eq_neg_23 {R : Type*} [CommRing R] {ξ₀ ξ₁ ξ₂ : R}
+    (e1 : ξ₀ + ξ₁ + ξ₂ = 2) (e2 : ξ₀ * ξ₁ + ξ₀ * ξ₂ + ξ₁ * ξ₂ = 3)
+    (hroot : ξ₀ ^ 3 - 2 * ξ₀ ^ 2 + 3 * ξ₀ - 1 = 0) :
+    ((ξ₁ - ξ₂) * (3 * ξ₀ ^ 2 - 4 * ξ₀ + 3)) ^ 2 = -23 := by
+  have hdiff := fiveTwo_saddle_diff_sq e1 e2
+  have hpoly := fiveTwo_resolvent_sq_poly_identity ξ₀
+  rw [hroot, mul_zero] at hpoly
+  calc
+    ((ξ₁ - ξ₂) * (3 * ξ₀ ^ 2 - 4 * ξ₀ + 3)) ^ 2
+        = (ξ₁ - ξ₂) ^ 2 * (3 * ξ₀ ^ 2 - 4 * ξ₀ + 3) ^ 2 := by ring
+    _ = (-3 * ξ₀ ^ 2 + 4 * ξ₀ - 8) * (3 * ξ₀ ^ 2 - 4 * ξ₀ + 3) ^ 2 := by rw [hdiff]
+    _ = -23 := by linear_combination hpoly
+
+/-- Closed-form bar-odd (`σ₁ − σ₂`) projection in the `{1, ξ₀, ξ₀²}` basis of `K_{5₂}`:
+for any `α = a + bξ + cξ²`, multiplying `(σ₁(α) − σ₂(α))` by `10ξ₀² − 17ξ₀ + 18`
+(= `23 / P'(ξ₀)`) yields `((18b + 26c) − (17b + 22c)ξ₀ + (10b + 17c)ξ₀²) · (ξ₁ − ξ₂)`. -/
+theorem fiveTwo_barOdd_resolvent_basis {R : Type*} [CommRing R] {ξ₀ ξ₁ ξ₂ : R}
+    (e1 : ξ₀ + ξ₁ + ξ₂ = 2) (hroot : ξ₀ ^ 3 - 2 * ξ₀ ^ 2 + 3 * ξ₀ - 1 = 0)
+    (a b c : R) :
+    ((a + b * ξ₁ + c * ξ₁ ^ 2) - (a + b * ξ₂ + c * ξ₂ ^ 2)) * (10 * ξ₀ ^ 2 - 17 * ξ₀ + 18)
+      = ((18 * b + 26 * c) - (17 * b + 22 * c) * ξ₀ + (10 * b + 17 * c) * ξ₀ ^ 2)
+          * (ξ₁ - ξ₂) := by
+  linear_combination
+    c * (ξ₁ - ξ₂) * (10 * ξ₀ ^ 2 - 17 * ξ₀ + 18) * e1
+      + (-10 * c * (ξ₁ - ξ₂)) * hroot
+
+/-- Closed-form 1-loop (`k = 1`) GSWZ bar-odd coefficients in `K_{5₂} · ℚ(√−23)`:
+for `b₁ = 209/2116` and `c₁ = −121/1058`, a factor of `23` cancels in all three basis
+coefficients, leaving `(11 / (4 · 23²)) · (−10 + 7ξ₀ − 8ξ₀²)`. -/
+theorem fiveTwo_oneLoop_barOdd_factorization (ξ₀ : ℚ) :
+    let b₁ : ℚ := 209 / 2116
+    let c₁ : ℚ := -121 / 1058
+    (18 * b₁ + 26 * c₁) / 23 = -55 / 1058 ∧
+    -(17 * b₁ + 22 * c₁) / 23 = 77 / 2116 ∧
+    (10 * b₁ + 17 * c₁) / 23 = -22 / 529 ∧
+    (-55 / 1058 + (77 / 2116) * ξ₀ - (22 / 529) * ξ₀ ^ 2 : ℚ)
+      = (11 / (4 * 23 ^ 2 : ℚ)) * (-10 + 7 * ξ₀ - 8 * ξ₀ ^ 2) := by
+  refine ⟨by norm_num, by norm_num, by norm_num, ?_⟩
+  ring
+
+/-- Exact closed-form identity for the `n = 1` Masbaum cyclotomic-coefficient bar-asymmetry
+ratio `ρ₁(q) = O₁(q) / E₁(q)` of `5₂`: because
+`q⁴ + q² − q⁻² − q⁻⁴ = (q + q⁻¹)(q³ − q⁻³)` and
+`q⁴ + q² + q⁻² + q⁻⁴ = (q + q⁻¹)(q³ + q⁻³)`,
+the factor `q + q⁻¹` cancels identically, giving `ρ₁(q) = (q³ − q⁻³) / (q³ + q⁻³)`. -/
+theorem masbaum_c52_one_barOdd_ratio {F : Type*} [Field F] (q : F)
+    (hq : q ≠ 0) (hden : -((q ^ 4 + (q⁻¹) ^ 4) + (q ^ 2 + (q⁻¹) ^ 2)) ≠ 0)
+    (h3 : q ^ 3 + (q⁻¹) ^ 3 ≠ 0) :
+    (-((q ^ 4 - (q⁻¹) ^ 4) + (q ^ 2 - (q⁻¹) ^ 2))) /
+      (-((q ^ 4 + (q⁻¹) ^ 4) + (q ^ 2 + (q⁻¹) ^ 2)))
+      = (q ^ 3 - (q⁻¹) ^ 3) / (q ^ 3 + (q⁻¹) ^ 3) := by
+  rw [div_eq_div_iff hden h3]
+  field_simp
+  ring
+
+/-- Discriminant squareclass disjointness between the `5₂` quadratic resolvent `ℚ(√−23)` and
+the retired Alexander-layer field `ℚ(√−7)`: `(-23) · (-7) = 161` lies strictly between
+`12² = 144` and `13² = 169`, so no integer square equals `161`. -/
+theorem disc_neg23_neg7_not_int_sq (n : ℤ) : n ^ 2 ≠ (-23 : ℤ) * (-7 : ℤ) := by
+  intro h
+  have h1 : (-23 : ℤ) * (-7 : ℤ) = 161 := by norm_num
+  rw [h1] at h
+  have hle : n ≤ 12 ∨ 13 ≤ n := by omega
+  rcases hle with hle | hge
+  · have hlt : n ≤ -13 ∨ -12 ≤ n := by omega
+    rcases hlt with hlt | hmid
+    · nlinarith
+    · nlinarith
+  · nlinarith
 
 end QOU.QBeta.FiveTwo

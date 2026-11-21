@@ -7,10 +7,11 @@ section_number: 3.3
 pages: 10-12
 source_pdf: 2108.03616v2.pdf
 source_sha256: 63696ad045602440
-doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.906
+latex_coverage_ratio: 0.921
+doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance measures associated with linear spaces."
 ---
 \label{sec:self-dual}
 We next show that both $\Le_W$ and $\kd_W$ are self-dual.

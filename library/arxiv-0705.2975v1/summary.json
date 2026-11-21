@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0705.2975v1",
  "source_sha256": "683d6bd44cea6704",
- "brief": "On the Definitions of Difference Galois Groups — We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and sh ow",
- "extended": "**On the Definitions of Difference Galois Groups**\n\n*Zoé Chatzidakis∗, Charlotte Hardouin, Michael F. Singer †*\n\n31 pp, 8 sections.\n\n**Abstract.** We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and sh ow, that these groups are isomorphic over suitable ﬁelds. In addition, we study pr operties of Picard-Vessiot extensions over ﬁelds with not necessarily algebraically c losed subﬁelds of constants.\n\n**Outline.** Introduction; A Ring-Theoretic Point of View; A Tannakian Point of View; Comparison of the Galois groups; A Model-Theoretic Point of View; The Galois group; More on Picard-Vessiot rings; Concluding remarks",
+ "brief": "On the Deﬁnitions of Diﬀerence Galois Groups — We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and show, that",
+ "extended": "**On the Deﬁnitions of Diﬀerence Galois Groups**\n\n*Zoé Chatzidakis∗, Charlotte Hardouin, Michael F. Singer†*\n\n31 pp, 10 sections.\n\n**Abstract.** We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and show, that these groups are isomorphic over suitable ﬁelds. In addition, we study properties of Picard-Vessiot extensions over ﬁelds with not necessarily algebraically closed subﬁelds of constants.\n\n**Outline.** Front matter; Introduction; A Ring-Theoretic Point of View; A Tannakian Point of View; Comparison of the Galois groups; A Model-Theoretic Point of View; Preliminary model-theoretic definitions and re; The Galois group; More on Picard-Vessiot rings; Concluding remarks",
  "tokens": {
-  "brief": 48,
-  "extended": 176
+  "brief": 49,
+  "extended": 191
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -32,20 +37,25 @@
   {
    "id": "sec-004-a-model-theoretic-point-of-view",
    "title": "A Model-Theoretic Point of View",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-005-preliminary-model-theoretic-definitions-and-resu",
+   "title": "Preliminary model-theoretic definitions and results",
    "pages": "15-18"
   },
   {
-   "id": "sec-005-the-galois-group",
+   "id": "sec-006-the-galois-group",
    "title": "The Galois group",
    "pages": "18-20"
   },
   {
-   "id": "sec-006-more-on-picard-vessiot-rings",
+   "id": "sec-007-more-on-picard-vessiot-rings",
    "title": "More on Picard-Vessiot rings",
    "pages": "20-25"
   },
   {
-   "id": "sec-007-concluding-remarks",
+   "id": "sec-008-concluding-remarks",
    "title": "Concluding remarks",
    "pages": "25-31"
   }

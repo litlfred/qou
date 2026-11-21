@@ -24,7 +24,7 @@ It is characterised by the universal property: it is the smallest
 LaTeX label: `prop:categorical-coordinate-ring`
 
 ## References
-- [manuscript] §sec:braiding-conventions, §rem:affine-chart-origin-of-i-and-q
+- [leitner2026] §sec:braiding-conventions, §rem:affine-chart-origin-of-i-and-q
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 §IV (quantum plane)
 -/
 
@@ -70,7 +70,7 @@ Mathlib unfolding. -/
 
 /-- The defining identity `i^2 = -1` of the categorical coordinate `i`.
     Follows from `AdjoinRoot.eval_root`. -/
--- Ref: [manuscript] §sec:braiding-conventions
+-- Ref: [leitner2026] §sec:braiding-conventions
 theorem i_coord_sq_eq_neg_one : (i_coord R)^2 = -1 := by
   -- `AdjoinRoot.root` is a root of the defining polynomial `X^2 + 1`,
   -- so `root^2 + 1 = 0`, hence `root^2 = -1`.
@@ -82,7 +82,7 @@ theorem i_coord_sq_eq_neg_one : (i_coord R)^2 = -1 := by
 
 /-- The categorical coordinate `q` is a unit in `R[i, q^±¹]`.
     Witnessed explicitly by `q^{-1}` = image of `T (-1)`. -/
--- Ref: [manuscript] §sec:braiding-conventions
+-- Ref: [leitner2026] §sec:braiding-conventions
 theorem q_coord_isUnit : IsUnit (q_coord R) := by
   unfold q_coord
   -- The image of a unit under a ring homomorphism is a unit.

@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p066-25",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p066-25.png",
+  "pageStart": 66,
+  "pageEnd": 66,
+  "narrative": {
+    "text": null,
+    "state": "not-authored"
+  },
+  "derivedFrom": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-027",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested"
+}

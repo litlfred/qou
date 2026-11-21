@@ -1,0 +1,88 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 187
+
+where, for simplicity, we have denoted by E; the Lie derivative L¢,. This can be particularized to the case g = xj, the ith
+component function.
+By rewriting (172) as an equivalent integral equation and iterating we get
+
+tom
+8(x(0)) = e+ | Yo ui, (4) (Eng) xe
+
+ij=1
+
+tm tm
+= g(p)+ | Yo ui, (4) («ems | ¥ webs 8,e006) 4) dt,
+0
+
+ij=1 0 ig=1
+
+tm tm
+= g(p) + | uit) (cers | Yo ua (2) (EnEng)@)
+0 0
+
+ij=1 in=1
+
++ il “Yowscorttasierotey) tn) dt, (173)
+0
+
+iz=1
+
+and so on. Notice that, in this expression, the time dependence of the solution is separated from the non-varying geometry of
+the system, which is contained in the vector fields E; and need to be computed only once, at the beginning of the calculation.
+Next, we reverse the names of the integration variables and indices used (e.g., rename i, to become i3 and vice versa), so
+that
+
+m t m om t pty
+g(x(t)) = gp) + > ( i u(t) ,8)@)+ 0 >> ( i | tn) 2b) (Ei, E,8)()
+0 0 0
+
+= ip=1iy=1
+
+m om om
+
+t pts pty
++yoyyr(/ i] i] (a) (add) (E818) += (174)
+
+ig=1 Q=1 i) =1
+
+Observe that the indices in the Lie derivatives and in the integrals are in the opposite order. This procedure can be further
+iterated, thus yielding the formal infinite series
+
+t pts ts pty
+g(x(t)) = g(x(0)) + > > il il os | | Ui, (ts) © Ui, (tr)dty «= dtsEi, «=~ Fi,g(x(0)), (175)
+0 0 0 0
+
+S21 iyevis
+
+where each ij € L = {1,..., m}. An expression of the form (175) is referred to as the Chen-Fliess series, and it can be proved
+that, under certain circumstances, it actually converges uniformly to the solution of (172) [90]. This series originates in K.T.
+Chen’s work [117] on geometric invariants and iterated integrals of paths in R". Later, Fliess [118] applied the theory to the
+analysis of control systems.
+
+One of the great advantages of the Chen-Fliess series is that it can be manipulated with purely algebraic and combinatorial
+tools, instead of working directly with nested integrals. To emphasize this aspect, observe that each term in the series can
+be identified by a sequence of indices or word w = iyi2 - - - is in the alphabet L through the following two maps:
+
+My: Ww = itis ++is > (¢ > (Evg)(P) = (Ej, Ei, «++ £i,8)(P)) .
+
+t ts b
+My: w = ijig- ++ is HO (« be | wit) [ ff Uj, (t)dty +d) .
+0 ) )
+
+In fact, the nested integral appearing in the map M2 can be expressed in a simple way, as we did for the linear case in (114)
+
+t ts b
+Qi, a= wit) [ ff uj, (ty)dty «+» dt,_1dty. (176)
+0 0 0
+
+With this notation, the series of linear differential operators appearing at the right-hand side of (175) can be written in the
+compact form [91]
+
+Ye ow Ew, (177)
+wel*
+where L* denotes the set of words on the alphabet L = {1, 2, ..., m}, the function q,, is given by (176) for each word w € L*
+
+and
+Ey =Fi,---E,, ifw=i,---is € L*.
+
+It was proved by Chen that the series (177) is an exponential Lie series [117], i-e., it can be rewritten as the exponential of a
+series of vector fields obtained as nested commutators of Ey, ..., Em. Such an expression is referred to in nonlinear control

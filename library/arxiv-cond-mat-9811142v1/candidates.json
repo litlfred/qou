@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-cond-mat-9811142v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "8666ebc040336b1483daf0079e215a56de1ff314f5cdee51c52da543366ec96d",
+  "file": "9811142v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:cond-mat/9811142v1 [cond-mat.mes-hall] 10 Nov 1998",
+  "authors": "P.J. Forrester\u2020, T. Nagao\u2217and G. Honner\u2020",
+  "arxiv": {
+   "id": "cond-mat/9811142",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "10 Nov 1998"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

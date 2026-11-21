@@ -8,7 +8,7 @@
   "pages": 9,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T16:28:27Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,25 +20,25 @@
    "stamp_date": "1 Apr 2004"
   },
   "doi": null,
-  "title": "YANG\u2013BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS",
-  "authors_raw": "GW\u00c9NA\u00cbL MASSUYEAU AND FLORIN F. NICHITA",
+  "title": "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS",
+  "authors_raw": "GWÉNAËL MASSUYEAU AND FLORIN F. NICHITA",
   "title_lines": [
-   "YANG\u2013BAXTER OPERATORS ARISING FROM ALGEBRA",
+   "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA",
    "STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS"
   ],
-  "abstract": "In this paper, we consider the problem of constructing knot invariants from Yang\u2013Baxter operators associated to algebra structures. We \ufb01rst compute the enhancements of these operators. Then, we conclude that Turaev\u2019s procedure to derive knot invariants from these enhanced operators, as modi\ufb01ed by Murakami, invariably produces the Alexander polynomial of knots.",
+  "abstract": "In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators associated to algebra structures. We ﬁrst compute the enhancements of these operators. Then, we conclude that Turaev’s procedure to derive knot invariants from these enhanced operators, as modiﬁed by Murakami, invariably produces the Alexander polynomial of knots.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20190429225732-04'00'"
   },
-  "title_raw": "YANG\u2013BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS",
+  "title_raw": "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "YANG\u2013BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS 1. Introduction The Yang\u2013Baxter equation and its solutions, the Yang\u2013Baxter operators, \ufb01rst appeared in theoretical physics and statistical mechanics. Later, this equation has emerged in other \ufb01elds of mathem",
+   "heading": "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS 1. Introduction The Yang–Baxter equation and its solutions, the Yang–Baxter operators, ﬁrst appeared in theoretical physics and statistical mechanics. Later, this equation has emerged in other ﬁelds of mathem",
    "outline": "1. Introduction",
-   "text": "YANG\u2013BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS",
+   "text": "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS",
    "corroborated_by": [],
    "browser_print": false
   }
@@ -49,67 +49,178 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Yang--Baxter operators arising from algebra structures",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Invariants of oriented links derived from Yang--Baxter operators",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Enhanced Yang--Baxter operators",
    "page": 3,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Redundant Yang--Baxter operators",
    "page": 4,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Invariants of oriented links derived from algebra structures",
    "page": 6,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Enhancements of Rx,y",
    "page": 6,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Connection with the Alexander polynomial",
    "page": 8,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "References",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   }
  ],
  "toc_source": "outline",
  "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -119,7 +230,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 550,
-   "n_words": 75
+   "n_words": 75,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-000-1-introduction",
@@ -127,59 +240,95 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 6220,
-   "n_words": 1129
+   "page_end": 2,
+   "n_chars": 3654,
+   "n_words": 603,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-001-3-invariants-of-oriented-links-derived-from-yang",
+   "id": "sec-001-2-yang--baxter-operators-arising-from-algebra-st",
+   "number": "2",
+   "title": "Yang--Baxter operators arising from algebra structures",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2508,
+   "n_words": 519,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-3-invariants-of-oriented-links-derived-from-yang",
    "number": "3",
    "title": "Invariants of oriented links derived from Yang--Baxter operators",
    "level": 1,
    "page_start": 3,
-   "page_end": 6,
-   "n_chars": 7033,
-   "n_words": 1444
+   "page_end": 4,
+   "n_chars": 2434,
+   "n_words": 477,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-4-invariants-of-oriented-links-derived-from-alge",
+   "id": "sec-003-32-redundant-yang--baxter-operators",
+   "number": "3.2",
+   "title": "Redundant Yang--Baxter operators",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4550,
+   "n_words": 960,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-004-4-invariants-of-oriented-links-derived-from-alge",
    "number": "4",
    "title": "Invariants of oriented links derived from algebra structures",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
    "n_chars": 296,
-   "n_words": 63
+   "n_words": 63,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-41-enhancements-of-rxy",
+   "id": "sec-005-41-enhancements-of-rxy",
    "number": "4.1",
    "title": "Enhancements of Rx,y",
    "level": 2,
    "page_start": 6,
    "page_end": 8,
    "n_chars": 3153,
-   "n_words": 752
+   "n_words": 752,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-004-42-connection-with-the-alexander-polynomial",
+   "id": "sec-006-42-connection-with-the-alexander-polynomial",
    "number": "4.2",
    "title": "Connection with the Alexander polynomial",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
    "n_chars": 2605,
-   "n_words": 480
+   "n_words": 480,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-005-references",
+   "id": "sec-007-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
    "n_chars": 1854,
-   "n_words": 277
+   "n_words": 277,
+   "label_start": "9",
+   "label_end": "9"
   }
  ],
  "diagnostics": {
@@ -187,7 +336,14 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "toc_inferred_entries": 0,
-  "sections": 7,
-  "chars_total": 21711
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 21604,
+  "furniture_lines_stripped": 0
  }
 }

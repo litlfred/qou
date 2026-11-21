@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-026",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "String equations and generic concept of reduction",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-026-48-string-equations-and-generic-concept-of-reduc.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9303139v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9303139v2",
+  "title": "String equations and general concept of reduction",
+  "pageStart": 104,
+  "pageEnd": 110,
+  "text": "../sections/sec-026-48-string-equations-and-general-concept-of-reduc.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9303139v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9303139v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,67 @@
+unfolding circline-set-def
+by simp (transfer, transfer, simp add: vec-cnj-def)
+hence poincare-line On (of-complex 1) = poincare-line (of-complex (—1)) (of-complex 1)
+by (metis is-poincare-line-poincare-line is-poincare-line-trough-zero-trough-infty not-zero-on-unit-circle of-complex-inj
+of-complex-one one-negq-neg-one one-on-unit-circle poincare-line-0-real-is-z-axis poincare-line-circline-set(2) reciprocal-involution
+reciprocal-one reciprocal-zero unique-circline-O1inf')
+thus ?thesis
+using poincare-line-0-real-is-z-axis|of of-complex 1]
+by auto
+qed
+
+4.2.5 Transformations of constructed lines
+
+Unit dics preserving Mobius transformations preserve the h-line construction
+
+lemma unit-disc-fit-preserve-poincare-line |simp|:
+assumes unit-disc-fix M u € unit-disc v € unit-disc u # v
+shows poincare-line (moebius-pt M u) (moebius-pt M v) = moebius-circline M (poincare-line u v)
+proof (rule unique-poincare-line[symmetric])
+show moebius-pt M u 4 moebius-pt Mv
+using <u 4 v)
+by auto
+next
+show moebius-pt M u € circline-set (moebius-circline M (poincare-line u v))
+moebius-pt M v € circline-set (moebius-circline M (poincare-line u v))
+unfolding circline-set-def
+using mocbius-circline[of M poincare-line uv] «u # v>
+by auto
+next
+from assms(1) have unit-circle-fix M
+by simp
+thus is-poincare-line (moebius-circline M (poincare-line u v))
+using wnit-circle-fiz-preserve-is-poincare-line assms
+by auto
+next
+show moebius-pt M u € unit-disc moebius-pt M v € unit-disc
+using assms(2—3) unit-disc-fiz-iff|OF assms(1)]
+by auto
+qed
+
+Conjugate preserve the h-line construction
+
+lemma conjugate-preserve-poincare-line [simp]:
+assumes u € unit-disc v € unit-disc u # v
+shows poincare-line (conjugate u) (conjugate v) = conjugate-circline (poincare-line wu v)
+proof—
+have conjugate u # conjugate v
+using <u 4 v)
+by (auto simp add: conjugate-inj)
+moreover
+have conjugate u € unit-disc conjugate v € unit-disc
+using assms
+by auto
+moreover
+have conjugate u € circline-set (conjugate-circline (poincare-line u v))
+conjugate v € circline-set (conjugate-circline (poincare-line u v))
+using <u 4 v)
+by simp-all
+moreover
+have is-poincare-line (conjugate-circline (poincare-line u v))
+using is-poincare-line-poincare-line|OF <u # v>]
+by simp
+ultimately
+show ?thesis
+using unique-poincare-line|of conjugate u conjugate v conjugate-circline (poincare-line u v)|
+by simp
+qed

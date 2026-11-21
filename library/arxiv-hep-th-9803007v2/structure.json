@@ -8,7 +8,7 @@
   "pages": 4,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,7 +21,7 @@
   },
   "doi": null,
   "title": "arXiv:hep-th/9803007v2 17 Jun 1998",
-  "authors_raw": "Shinsuke M. Nishigaki1,\u2217, Poul H. Damgaard2,\u2020, and Tilo Wettig3,\u2021",
+  "authors_raw": "Shinsuke M. Nishigaki1,∗, Poul H. Damgaard2,†, and Tilo Wettig3,‡",
   "title_lines": [
    "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory"
   ],
@@ -65,7 +65,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Microscopic spectral density (solid line, normalized as \u03c1s(\u03b6 \u2192\u221e)=1/\u03c0) and smallest eigenvalue distribution (dotted line) for the quenched chiral unitary ensemble",
+   "title": "Microscopic spectral density (solid line, normalized as ρs(ζ →∞)=1/π) and smallest eigenvalue distribution (dotted line) for the quenched chiral unitary ensemble",
    "page": 1,
    "confidence": 0.9,
    "evidence": [
@@ -155,6 +155,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 13980
+  "chars_total": 13980,
+  "furniture_lines_stripped": 0
  }
 }

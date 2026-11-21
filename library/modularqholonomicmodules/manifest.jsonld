@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "modularqholonomicmodules",
   "contains": [
+    "library/modularqholonomicmodules/sections/sec-front-matter",
     "library/modularqholonomicmodules/sections/sec-000",
     "library/modularqholonomicmodules/sections/sec-001",
     "library/modularqholonomicmodules/sections/sec-002",
@@ -40,10 +41,13 @@
     "library/modularqholonomicmodules/sections/sec-026",
     "library/modularqholonomicmodules/sections/sec-027",
     "library/modularqholonomicmodules/sections/sec-028",
-    "library/modularqholonomicmodules/sections/sec-029"
+    "library/modularqholonomicmodules/sections/sec-029",
+    "library/modularqholonomicmodules/sections/sec-030",
+    "library/modularqholonomicmodules/sections/sec-031",
+    "library/modularqholonomicmodules/sections/sec-032"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "modularqholonomicmodules",
     "title_source": "slug",

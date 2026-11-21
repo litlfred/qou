@@ -1,0 +1,23 @@
+2.3 Algebraic generating functions 39
+
+Figure 2.2 A generalized Dyck path of length nine with E = {(1,2), (1, -1)}.
+
+function for generalized Dyck paths with steps from E is given by
+
+F(x) = —22__
+2 aa) — CHEWY”
+where a(x) = Yizs=-1 x", the algebraic function (x) is the unique root of
+
+Q(x, y) in y that vanishes at the origin, and C(x) = Yizs,=p X"-
+
+Proof Under these hypotheses, Q is a quadratic polynomial in y with lead-
+ing coefficient C(x) stated in the proposition. If &(x) and p(x) are the roots of
+Q(x, y) in y then the product &p equals a(x)/C(x) where a(x) is stated in the
+proposition. The formula in Corollary 2.18 thus simplifies to
+
+&(x)/ala)
+
+FOY= TTewecyacoly’
+
+We end this section with three of the most famous examples of lattice path
+classes.

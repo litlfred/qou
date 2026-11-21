@@ -8,9 +8,15 @@
   "pages": 47,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 37,
+    "reason": "11 of 496 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -22,12 +28,12 @@
   },
   "doi": null,
   "title": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
-  "authors_raw": "JULIUS BORCEA, PETTER BR\u00c4ND\u00c9N, AND THOMAS M. LIGGETT",
+  "authors_raw": "JULIUS BORCEA, PETTER BRÄNDÉN, AND THOMAS M. LIGGETT",
   "title_lines": [
    "NEGATIVE DEPENDENCE AND",
    "THE GEOMETRY OF POLYNOMIALS"
   ],
-  "abstract": "We introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polynomials that amount to the stability of the latter. This class covers important models such as de- terminantal measures (e.g. product measures, uniform random spanning tree measures) and distributions for symmetric exclusion processes. We show that strongly Rayleigh measures enjoy all virtues of negative dependence and we also prove a series of conjectures due to Liggett, Pemantle, and Wagner, re- spectively. Moreover, we extend Lyons\u2019 recent results on determinantal mea- sures and we construct counterexamples to several conjectures of Pemantle and Wagner on negative dependence and ultra log-concave rank sequences.",
+  "abstract": "We introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polynomials that amount to the stability of the latter. This class covers important models such as de- terminantal measures (e.g. product measures, uniform random spanning tree measures) and distributions for symmetric exclusion processes. We show that strongly Rayleigh measures enjoy all virtues of negative dependence and we also prove a series of conjectures due to Liggett, Pemantle, and Wagner, re- spectively. Moreover, we extend Lyons’ recent results on determinantal mea- sures and we construct counterexamples to several conjectures of Pemantle and Wagner on negative dependence and ultra log-concave rank sequences.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -37,7 +43,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS Contents Introduction A Plethora of Negative Dependence Properties and Conjectures Negative Dependence Concepts Strongly Rayleigh Measures Symmetric Homogenization Measures on countably in\ufb01nite sets Towards a Theory of Negative Dependence: Problems",
+   "heading": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS Contents Introduction A Plethora of Negative Dependence Properties and Conjectures Negative Dependence Concepts Strongly Rayleigh Measures Symmetric Homogenization Measures on countably inﬁnite sets Towards a Theory of Negative Dependence: Problems",
    "outline": "1. Introduction",
    "text": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
    "corroborated_by": [],
@@ -187,7 +193,7 @@
   },
   {
    "level": 2,
-   "title": "Symmetric Homogenization via G\u00e5rding Hyperbolic Polynomials",
+   "title": "Symmetric Homogenization via Gårding Hyperbolic Polynomials",
    "page": 21,
    "source": "outline",
    "number": "4.1",
@@ -656,22 +662,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 915,
-   "n_words": 130,
+   "page_end": 2,
+   "n_chars": 2453,
+   "n_words": 335,
    "label_start": null,
-   "label_end": null
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 11163,
-   "n_words": 1706,
-   "label_start": null,
+   "n_chars": 7065,
+   "n_words": 1110,
+   "label_start": "2",
    "label_end": "4"
   },
   {
@@ -681,8 +687,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 373,
-   "n_words": 61,
+   "n_chars": 2930,
+   "n_words": 451,
    "label_start": "4",
    "label_end": "4"
   },
@@ -831,9 +837,9 @@
    "label_end": "21"
   },
   {
-   "id": "sec-014-41-symmetric-homogenization-via-g\u00e5rding-hyperbol",
+   "id": "sec-014-41-symmetric-homogenization-via-gårding-hyperbol",
    "number": "4.1",
-   "title": "Symmetric Homogenization via G\u00e5rding Hyperbolic Polynomials",
+   "title": "Symmetric Homogenization via Gårding Hyperbolic Polynomials",
    "level": 2,
    "page_start": 21,
    "page_end": 24,
@@ -873,8 +879,8 @@
    "level": 2,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 4026,
-   "n_words": 749,
+   "n_chars": 4023,
+   "n_words": 748,
    "label_start": "29",
    "label_end": "31"
   },
@@ -885,8 +891,8 @@
    "level": 1,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 7986,
-   "n_words": 1458,
+   "n_chars": 5806,
+   "n_words": 1067,
    "label_start": "31",
    "label_end": "33"
   },
@@ -897,8 +903,8 @@
    "level": 1,
    "page_start": 33,
    "page_end": 41,
-   "n_chars": 16891,
-   "n_words": 3526,
+   "n_chars": 18994,
+   "n_words": 3849,
    "label_start": "33",
    "label_end": "41"
   },
@@ -940,10 +946,8 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 1,
-    "items": [
-     "A Plethora of Negative Dependence Properties and Conjectures"
-    ]
+    "count": 0,
+    "items": []
    },
    "found_not_listed": {
     "count": 0,
@@ -955,12 +959,17 @@
    }
   },
   "sections": 23,
-  "chars_total": 127172,
+  "chars_total": 127089,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   4,
+   33
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 23,
-   "overlaid": 20,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -975,8 +984,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.946,
+     "prose_ratio": 0.839,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -984,9 +993,8 @@
      "id": "sec-001-2-a-plethora-of-negative-dependence-properties-a",
      "title": "A Plethora of Negative Dependence Properties and Conjectures",
      "prose_ratio": 0.969,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
+     "coverage_ratio": 0.206,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-21-negative-dependence-concepts",
@@ -1032,7 +1040,7 @@
      "id": "sec-007-3-negative-dependence-in-mathematics-and-physics",
      "title": "Negative Dependence in Mathematics and Physics",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-008-31-real-stable-polynomials-and-transcendental-en",
@@ -1083,8 +1091,8 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-41-symmetric-homogenization-via-g\u00e5rding-hyperbol",
-     "title": "Symmetric Homogenization via G\u00e5rding Hyperbolic Polynomials",
+     "id": "sec-014-41-symmetric-homogenization-via-gårding-hyperbol",
+     "title": "Symmetric Homogenization via Gårding Hyperbolic Polynomials",
      "prose_ratio": 0.949,
      "coverage_ratio": 0.955,
      "result": "overlaid",
@@ -1117,8 +1125,8 @@
     {
      "id": "sec-018-5-preservation-of-negative-dependence-by-symmetr",
      "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.819,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1126,7 +1134,7 @@
      "id": "sec-019-6-almost-exchangeable-measures",
      "title": "Almost Exchangeable Measures",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.948,
+     "coverage_ratio": 0.813,
      "result": "overlaid",
      "converter": "latex"
     },

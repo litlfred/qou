@@ -26,7 +26,7 @@ The key algebraic identity at $q = 1 + \sqrt 2$:
 This file provides the kernel-verified proof.
 -/
 
--- Ref: [manuscript] prop:neutron-qvalue-symbolic
+-- Ref: [leitner2026] prop:neutron-qvalue-symbolic
 -- Ref: [wenzl1988] doi:10.1007/BF01404457 (Hecke Markov trace)
 -- Ref: [hoefsmit1974] (Hoefsmit seminormal forms)
 

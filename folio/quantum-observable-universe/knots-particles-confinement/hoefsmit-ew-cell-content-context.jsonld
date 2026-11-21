@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hoefsmit-ew-cell-content-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hoefsmit-ew-cell-content-context",
+  "kind": "remark",
+  "title": "Electroweak naming, minimality, interface-knot refinement, and further structure of the Hoefsmit electroweak cell content",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content",
+    "papers/quantum-observable-universe/blocks/conj-electroweak-higgs-torus-link-triplet",
+    "papers/quantum-observable-universe/blocks/conj-categorical-higgs-mechanism",
+    "papers/quantum-observable-universe/blocks/prop-weak-spectral-completeness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content",
+  "cites": [
+    "references/morita1982"
+  ],
+  "tags": [
+    "hoefsmit",
+    "electroweak",
+    "torus-link",
+    "plancherel"
+  ],
+  "text": "hoefsmit-ew-cell-content-context.md",
+  "provenance": "authored"
+}

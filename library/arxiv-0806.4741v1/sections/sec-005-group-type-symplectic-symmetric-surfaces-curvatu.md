@@ -10,7 +10,8 @@ source_sha256: 5e7ad85a99fb3552
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.989
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 A symplectic symmetric space $(M,\omega,s)$ is said to be {\sl of group type} if there exists in its
 automorphism group $G$ a Lie subgroup $\SS$ that acts on $M$ in a simply transitive manner i.e.

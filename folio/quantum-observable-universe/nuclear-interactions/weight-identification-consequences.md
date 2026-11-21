@@ -1,5 +1,5 @@
 **Remark.**
-*The categorical weight identification unifies several threads in this paper. We record three consequences.*
+*The categorical weight identification unifies several threads in this paper. Three consequences follow.*
 
 1. **Computability of the spectral coordinate $w_1$.** The evaluation in spectral coordinates refers to the first Lagrange resolvent $w_1$ on Bring's surface. The weight identification canonically equates every such evaluation with the evaluation of the affine coordinate $x$ on the hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$. The $\mathcal{X}_5$ formulation is computationally and formally simpler.
 

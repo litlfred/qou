@@ -19,7 +19,7 @@ LaTeX label: `ex:reeb-su2`
 ## References
 
 - [witten1988] https://doi.org/10.1007/BF01223371
-- [manuscript] §1 Example: Reeb derivation for SU(2)
+- [leitner2026] §1 Example: Reeb derivation for SU(2)
 -/
 
 namespace QOU.Examples
@@ -47,7 +47,7 @@ structure SU2ReebData where
   horiz_count : numHorizontal1Forms = 2
 
 /-- The Reeb data for SU(2). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2Reeb : SU2ReebData where
   generatorIndex := 3
   gen_is_three := rfl

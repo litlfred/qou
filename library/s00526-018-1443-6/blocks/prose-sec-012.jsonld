@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/s00526-018-1443-6/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of the main theorem by Cauchy's method of majorants",
+  "pageStart": 20,
+  "pageEnd": 27,
+  "text": "../sections/sec-012-7-proof-of-the-main-theorem-by-cauchys-method-of.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00526-018-1443-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00526-018-1443-6/manifest.jsonld",
+  "provenance": "ingested"
+}

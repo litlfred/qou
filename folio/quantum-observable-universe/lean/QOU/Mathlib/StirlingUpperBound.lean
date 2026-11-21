@@ -17,7 +17,7 @@
 
   Archimedean (ℝ): genuinely archimedean — `Real.exp`, `Real.sqrt`, ordering.
 
-  -- Ref: [manuscript] bean el8w tranche 5 — Watson uniqueness brick 1
+  -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 1
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Stirling

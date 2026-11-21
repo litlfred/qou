@@ -1,0 +1,66 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1608.02961v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "ef3805c23133b8f2721db68af09236f70c5f384e2f81e6735930396cca3634b8",
+  "file": "1608.02961v3.pdf"
+ },
+ "provenance": {
+  "title": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents",
+  "authors": "Chern-Simons Theory",
+  "arxiv": {
+   "id": "1608.02961",
+   "version": "3",
+   "primary_class": "hep-th",
+   "stamp_date": "15 Oct 2016"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "conjecture": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "conjectural": 1
+  },
+  "by_evidence_location": {
+   "none": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "13 Heuristically, one may think of the Volume Conjecture as studying a limit of colored Jones polynomials as q \u21921, and the QMC as studying limits where q approaches all the rational points on the unit circle. In order to embed the QMC in SL(2, C) Chern-Simons theory, one can consider singular limits very similar to (4.3).14 Namely, it was argued in [35] that when \ufb01xing the integer level k and sending s \u2192\u2212ik in complex Chern-Simons theory, or equivalently (k + is, k \u2212is) \u2192 13The number-theoretic properties of the asymptotic expansion in the Volume Conjecture were explored from a physical perspective in [49], leading to the notion of an Arithme",
+   "claim_domain": "math",
+   "evidence_kind": "conjectural",
+   "evidence_location": "none",
+   "evidence_locator": "Open conjecture stated in sections/sec-010-5-the-quantum-modularity-conjecture.md",
+   "external_refs": [
+    "[35]",
+    "[49]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-010-5-the-quantum-modularity-conjecture.md",
+   "section_title": "The Quantum Modularity Conjecture",
+   "pages": "22-33",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "conj-sec-010-01",
+   "block_iri": "library/arxiv-1608.02961v3/blocks/conj-sec-010-01",
+   "claim_id": "arxiv-1608.02961v3#conj-sec-010-01"
+  }
+ ]
+}

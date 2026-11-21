@@ -70,7 +70,7 @@ class P1NonlinearUniquenessContext where
     (a), (b) surface the upstream analytic inputs; (c) uniqueness is
     *derived* from the Gronwall distance bound: `dist(0) = 0` forces
     `dist(t) ≤ 0 · G(t) = 0`, and non-negativity gives equality. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts
 theorem p1_nonlinear_uniqueness [ctx : P1NonlinearUniquenessContext] :
     (∀ t : ℝ, ctx.B_norm t ≤ ctx.C_q * ctx.v_norm t * ctx.dv_norm t) ∧
     (∀ t : ℝ, 0 ≤ t → ctx.Ω t ≤ ctx.Ω 0 * Real.exp (ctx.Λ_q * t)) ∧

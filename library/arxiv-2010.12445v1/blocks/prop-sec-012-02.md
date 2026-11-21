@@ -1,0 +1,1 @@
+Let X be a quasi-compact ﬁbered category. If X →Spec H0(OX ) has open image then FibX ,{OX} coincides with this image. Conversely if FibX ,{OX} is an algebraic stack, X →Spec R is a ﬁnitely presented algebraic stack and H0(OX ) is a Noetherian Jacobson ring then X →Spec H0(OX ) has open image.

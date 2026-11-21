@@ -15,7 +15,7 @@ Stage S2 of bean `qou-zoyv`. For a finite leg set `L` and `a ∈ 𝔤𝔩₂`:
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section

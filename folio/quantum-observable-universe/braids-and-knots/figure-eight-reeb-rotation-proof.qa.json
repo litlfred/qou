@@ -249,6 +249,53 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "727b59d9885c",
+          "ts": "7638a08d534e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:34.823Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "The proof establishes |tr M| < 2, hence unit modulus, only for phi^-1 < q < phi (Step 4). The statement (figure-eight-reeb-rotation.md) claims unit-modulus eigenvalues with no range on q. For q > phi, tr M > 2 and the eigenvalues are real and not of unit modulus."
+      },
+      {
+        "field_hash": {
+          "md": "727b59d9885c",
+          "ts": "7638a08d534e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:57:01.166Z",
+        "reviewed_sha": "f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d",
+        "severity": "minor",
+        "evidence": "Re-review after 13f8f3506. The missing q-range is fixed: Steps 1-5 prove unit modulus on φ⁻¹<q<φ (trace factorisation checked with sympy, exact 0 difference). Two gaps remain: the statement's exterior claim (real eigenvalues, not unit, outside the interval) follows from the Step 4 factorisation but is never stated in the proof; and the statement's interpretive sentences ('the q-Reeb flow rotates between the two lepton channels V_(2) and V_(1,1)') are neither defined nor proved and belong in a remark."
+      },
+      {
+        "field_hash": {
+          "md": "3348413dca1e",
+          "ts": "7638a08d534e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T23:30:06.990Z",
+        "reviewed_sha": "c87aa9c757e841db81341bde59da76b34fd2ece6",
+        "evidence": "Re-review after #8075. Step 5 now argues the exterior case: outside (φ⁻¹, φ) both golden factors share a sign, so t>2 and the roots are real, distinct, positive with product 1. Interior case as before (factorisation checked with sympy). Proof now matches the statement in full."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -843,7 +890,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md:102 \u2014 This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\\theta = 2\\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\\theta \\approx 117.09^{\\circ}$. The eigenvalue degenerates to $\\lambda = 1$ ($\\theta = 0$) exactly at the golden endpoints $q \\in \\{\\varphi^{-1}, \\varphi\\}$, where $\\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\\theta = \\pi$ is never attained on the real axis since $\\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. $\\square$"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md:102 — This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\\theta = 2\\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\\theta \\approx 117.09^{\\circ}$. The eigenvalue degenerates to $\\lambda = 1$ ($\\theta = 0$) exactly at the golden endpoints $q \\in \\{\\varphi^{-1}, \\varphi\\}$, where $\\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\\theta = \\pi$ is never attained on the real axis since $\\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. $\\square$"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -1169,7 +1216,7 @@
           "in_degree": 0,
           "cone_size": 24,
           "depth": 14,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -1713,6 +1760,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T23:30:06.990Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

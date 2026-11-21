@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9805023v1
-doc_title: "arXiv:math/9805023v1 [math.CA] 6 May 1998"
+doc_title: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
 toc_source: inferred
+doc_brief: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment problem."
 ---
 arXiv:math/9805023v1  [math.CA]  6 May 1998
 q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL

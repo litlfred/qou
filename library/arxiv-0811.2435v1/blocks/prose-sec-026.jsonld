@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0811.2435v1/blocks/prose-sec-026",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Orientation data from a splitting of bifunctors",
-  "pageStart": 83,
-  "pageEnd": 84,
-  "text": "../sections/sec-026-orientation-data-from-a-splitting-of-bifunctors.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0811.2435v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0811.2435v1",
+  "title": "Equivalence relation on motivic functions",
+  "pageStart": 73,
+  "pageEnd": 75,
+  "text": "../sections/sec-026-equivalence-relation-on-motivic-functions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
   "provenance": "ingested"
 }

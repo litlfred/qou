@@ -42,8 +42,8 @@ numbers become available.
 
 ## References
 
-- [manuscript] `computations/rho-k-h3a-co-casimir.witness.json` (50 dps, `allPassed: true`)
-- [manuscript] `docs/audits/2026-05-18-delta-lambda-gating-context.md` (Option B; the six failed ansätze)
+- [leitner2026] `computations/rho-k-h3a-co-casimir.witness.json` (50 dps, `allPassed: true`)
+- [leitner2026] `docs/audits/2026-05-18-delta-lambda-gating-context.md` (Option B; the six failed ansätze)
 -/
 
 namespace QOU.BraidKnot.DeltaLambdaRefutation
@@ -52,12 +52,12 @@ namespace QOU.BraidKnot.DeltaLambdaRefutation
 12-figure truncation of `/data/co_casimir_prediction/sum_contributions_signed`
 (50 dps value `0.17312047167782761…`; the witness was regenerated 2026-10-05 at the
 proton pin, and this figure was updated 2026-11-15 from the stale `0.144959224127`).
--- Ref: [manuscript] computations/rho-k-h3a-co-casimir.witness.json -/
+-- Ref: [leitner2026] computations/rho-k-h3a-co-casimir.witness.json -/
 def coCasimirSum : ℚ := 173120471677 / 1000000000000
 
 /-- Empirical `−B_D/m_e` (in `m_e` units), the deuteron binding-density target.
 12-figure truncation of `/data/target_signed` (50 dps value `−4.35336749125644…`).
--- Ref: [manuscript] computations/rho-k-h3a-co-casimir.witness.json -/
+-- Ref: [leitner2026] computations/rho-k-h3a-co-casimir.witness.json -/
 def targetSigned : ℚ := -4353367491256 / 1000000000000
 
 /-- Closure gap `|prediction − target|`, witness `/data/.../closure_gap_LHS_minus_RHS`

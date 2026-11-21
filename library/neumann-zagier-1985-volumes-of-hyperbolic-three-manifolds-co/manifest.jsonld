@@ -5,18 +5,41 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "PII: 0040-9383(85)90004-7",
   "contains": [
-    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/sec-front-matter",
-    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/sec-000",
-    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/sec-001"
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-001",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-002",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-003",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-004",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-005",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-006",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-007",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-008",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-009",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-010",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-011",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-012",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-013",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-014",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-015",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-016",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-017",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-018",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-019",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-020",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-021",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-022",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-023",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-024",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-025",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-026"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co",
     "title_source": "pdf-info",

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1712.04887v3/blocks/prose-sec-022",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Nahm's conjecture and the asymptotics of Nahm sums at roots of unity",
+  "pageStart": 33,
+  "pageEnd": 37,
+  "text": "../sections/sec-022-7-nahms-conjecture-and-the-asymptotics-of-nahm-s.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.04887v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.04887v3/manifest.jsonld",
+  "provenance": "ingested"
+}

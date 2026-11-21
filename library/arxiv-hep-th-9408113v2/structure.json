@@ -8,9 +8,15 @@
   "pages": 96,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 73,
+    "reason": "13 of 461 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": {
@@ -20,12 +26,12 @@
    "stamp_date": "25 Aug 1994"
   },
   "doi": null,
-  "title": "arXiv:hep-th/9408113v2 25 Aug 1994",
+  "title": "Dilogarithm identities",
   "authors_raw": "ANATOL N. KIRILLOV",
   "title_lines": [
    "DILOGARITHM IDENTITIES"
   ],
-  "abstract": "We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view. We prove that a lot of dilogarithm identities (hypothetically all!) can be obtained by using the \ufb01ve-term relation only. Among those the Coxeter, Lewin, Loxton and Browkin ones are contained. Accessibility of Lewin\u2019s one variable and Ray\u2019s multivariable (here for n \u22642 only) functional equations is given. For odd levels the c sl2 case of Kuniba-Nakanishi\u2019s dilogarithm conjecture is proven and additional results about remainder term are obtained. The connections between dilogarithm identities and Rogers-Ramanujan-Andrews-Gordon type partition identities via their asymp- totic behavior are discussed. Some new results about the string functions for level k vacuum representation of the a\ufb03ne Lie algebra c sln are obtained. Connection between dilogarithm identities and algebraic K- theory (torsion in K3(R)) is discussed. Relations between crystal basis, branching functions bk\u039b0 \u03bb (q) and Kostka-Foulkes polynomials (Lusztig\u2019s q-analog of weight multiplicity) are considered. The Melzer and Milne conjectures are proven. In some special cases we are proving that the branching functions bk\u039b0 \u03bb (q) are equal to an appropriate limit of Kostka polynomials (the so-called Thermodynamic Bethe Ansatz limit). Connection between \u201d\ufb01nite-dimensional part of crystal base\u201d and Robinson-Schensted-Knuth cor- respondence is considered. 0. Introduction. In this paper we consider mainly the properties of dilogarithm related to the so-called accessibility problem, representation theory of Virasoro and Kac-Moody algebras, and Conformal Field Theory (CFT). The remarkable and mysterious dilogarithm [Za2], [Za3] will be the main hero of our paper, but we start with de\ufb01nition and list some applications of more general and may be even more amazing functions: polylogarithm and hyperlogarithm. De\ufb01nition 1 (G. Leibnitz, 1696; L. Euler, 1768). The polylogarithm f",
+  "abstract": "We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view. We prove that a lot of dilogarithm identities (hypothetically all!) can be obtained by using the ﬁve-term relation only. Among those the Coxeter, Lewin, Loxton and Browkin ones are contained. Accessibility of Lewin’s one variable and Ray’s multivariable (here for n ≤2 only) functional equations is given. For odd levels the c sl2 case of Kuniba-Nakanishi’s dilogarithm conjecture is proven and additional results about remainder term are obtained. The connections between dilogarithm identities and Rogers-Ramanujan-Andrews-Gordon type partition identities via their asymp- totic behavior are discussed. Some new results about the string functions for level k vacuum representation of the aﬃne Lie algebra c sln are obtained. Connection between dilogarithm identities and algebraic K- theory (torsion in K3(R)) is discussed. Relations between crystal basis, branching functions bkΛ0 λ (q) and Kostka-Foulkes polynomials (Lusztig’s q-analog of weight multiplicity) are considered. The Melzer and Milne conjectures are proven. In some special cases we are proving that the branching functions bkΛ0 λ (q) are equal to an appropriate limit of Kostka polynomials (the so-called Thermodynamic Bethe Ansatz limit). Connection between ”ﬁnite-dimensional part of crystal base” and Robinson-Schensted-Knuth cor- respondence is considered. 0. Introduction. In this paper we consider mainly the properties of dilogarithm related to the so-called accessibility problem, representation theory of Virasoro and Kac-Moody algebras, and Conformal Field Theory (CFT). The remarkable and mysterious dilogarithm [Za2], [Za3] will be the main hero of our paper, but we start with deﬁnition and list some applications of more general and may be even more amazing functions: polylogarithm and hyperlogarithm. Deﬁnition 1 (G. Leibnitz, 1696; L. Euler, 1768). The polylogarithm f",
   "docinfo": {
    "Title": "arXiv:hep-th/9408113v2  25 Aug 1994",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -37,13 +43,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:hep-th/9408113v2 25 Aug 1994",
-   "heading": "DILOGARITHM IDENTITIES We study the dilogarithm identities from algebraic, analytic, asymptotic, K -theoretic, combinatorial n \u2264 2 only) functional equations is given. For odd levels the c sl 2 case of Kuniba-Nakanishi\u2019s dilogarithm totic behavior are discussed. Some new results about the string fun",
+   "heading": "DILOGARITHM IDENTITIES We study the dilogarithm identities from algebraic, analytic, asymptotic, K -theoretic, combinatorial n ≤ 2 only) functional equations is given. For odd levels the c sl 2 case of Kuniba-Nakanishi’s dilogarithm totic behavior are discussed. Some new results about the string fun",
    "text": "DILOGARITHM IDENTITIES",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/9408113v2 25 Aug 1994"
  },
  "toc": [
   {
@@ -118,7 +125,7 @@
   },
   {
    "level": 2,
-   "title": "Kuniba-Nakanishi\u2019s dilogarithm conjecture.",
+   "title": "Kuniba-Nakanishi’s dilogarithm conjecture.",
    "page": 26,
    "source": "inferred",
    "number": "1.4",
@@ -160,7 +167,7 @@
   },
   {
    "level": 2,
-   "title": "Dilogarithm and characters of the a\ufb03ne Kac-Moody algebras.",
+   "title": "Dilogarithm and characters of the aﬃne Kac-Moody algebras.",
    "page": 53,
    "source": "inferred",
    "number": "2.2",
@@ -1111,8 +1118,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1092,
-   "n_words": 202,
+   "n_chars": 1090,
+   "n_words": 201,
    "label_start": null,
    "label_end": null
   },
@@ -1123,8 +1130,8 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1737,
-   "n_words": 269,
+   "n_chars": 1735,
+   "n_words": 268,
    "label_start": null,
    "label_end": "3"
   },
@@ -1135,8 +1142,8 @@
    "level": 2,
    "page_start": 3,
    "page_end": 10,
-   "n_chars": 15679,
-   "n_words": 2783,
+   "n_chars": 15695,
+   "n_words": 2784,
    "label_start": "3",
    "label_end": "10"
   },
@@ -1147,8 +1154,8 @@
    "level": 2,
    "page_start": 10,
    "page_end": 23,
-   "n_chars": 19646,
-   "n_words": 5107,
+   "n_chars": 19637,
+   "n_words": 5104,
    "label_start": "10",
    "label_end": "23"
   },
@@ -1167,12 +1174,12 @@
   {
    "id": "sec-005-14-kuniba-nakanishis-dilogarithm-conjecture",
    "number": "1.4",
-   "title": "Kuniba-Nakanishi\u2019s dilogarithm conjecture.",
+   "title": "Kuniba-Nakanishi’s dilogarithm conjecture.",
    "level": 2,
    "page_start": 26,
    "page_end": 31,
-   "n_chars": 6361,
-   "n_words": 1480,
+   "n_chars": 6358,
+   "n_words": 1479,
    "label_start": "26",
    "label_end": "31"
   },
@@ -1183,8 +1190,8 @@
    "level": 2,
    "page_start": 31,
    "page_end": 34,
-   "n_chars": 4708,
-   "n_words": 1091,
+   "n_chars": 4737,
+   "n_words": 1096,
    "label_start": "31",
    "label_end": "34"
   },
@@ -1195,15 +1202,15 @@
    "level": 2,
    "page_start": 34,
    "page_end": 53,
-   "n_chars": 28671,
-   "n_words": 5864,
+   "n_chars": 28659,
+   "n_words": 5858,
    "label_start": "34",
    "label_end": "53"
   },
   {
-   "id": "sec-008-22-dilogarithm-and-characters-of-the-a\ufb03ne-kac-mo",
+   "id": "sec-008-22-dilogarithm-and-characters-of-the-aﬃne-kac-mo",
    "number": "2.2",
-   "title": "Dilogarithm and characters of the a\ufb03ne Kac-Moody algebras.",
+   "title": "Dilogarithm and characters of the aﬃne Kac-Moody algebras.",
    "level": 2,
    "page_start": 53,
    "page_end": 60,
@@ -1219,8 +1226,8 @@
    "level": 2,
    "page_start": 60,
    "page_end": 79,
-   "n_chars": 31329,
-   "n_words": 6492,
+   "n_chars": 31270,
+   "n_words": 6429,
    "label_start": "60",
    "label_end": "79"
   },
@@ -1231,8 +1238,8 @@
    "level": 2,
    "page_start": 79,
    "page_end": 89,
-   "n_chars": 14208,
-   "n_words": 2815,
+   "n_chars": 14229,
+   "n_words": 2816,
    "label_start": "79",
    "label_end": "89"
   },
@@ -1243,8 +1250,8 @@
    "level": 2,
    "page_start": 89,
    "page_end": 95,
-   "n_chars": 17939,
-   "n_words": 2635,
+   "n_chars": 17951,
+   "n_words": 2636,
    "label_start": "89",
    "label_end": "95"
   },
@@ -1276,6 +1283,7 @@
    "items": []
   },
   "sections": 14,
-  "chars_total": 160253
+  "chars_total": 160244,
+  "furniture_lines_stripped": 16
  }
 }

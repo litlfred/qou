@@ -1,0 +1,9121 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1701.06567v2",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "1",
+   "text": "Roughlyspeaking,theeﬀective4dtheoryisaninﬁniteKK-liketoweron4dgaugetheories.Howeverone needs to appropriately sum it up. The decategoriﬁed counterpart of such summation was studied in [22].",
+   "marks": [
+    {
+     "page": 3,
+     "context": "LinksinS2× S"
+    },
+    {
+     "page": 4,
+     "context": "4dSWgaugetheory"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "The choice of such ﬂat connections should not be confused with the choice of ﬂat connections in CS theory on M3. As will be explained later in detail they are related by S-transform.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "inM-theory)onM3× D"
+    },
+    {
+     "page": 4,
+     "context": "M3 × D"
+    },
+    {
+     "page": 4,
+     "context": "BPSHilbertspaceoftheeﬀective3dN= 2theoryT[M3]onD"
+    },
+    {
+     "page": 4,
+     "context": "oneﬁrstcompactiﬁesonD"
+    },
+    {
+     "page": 4,
+     "context": "R × D"
+    },
+    {
+     "page": 4,
+     "context": "onD"
+    },
+    {
+     "page": 4,
+     "context": "itsradialquantizationandstudyitsHilbertspaceonS"
+    },
+    {
+     "page": 4,
+     "context": "complexityastheBPSHilbertspaceonD"
+    },
+    {
+     "page": 5,
+     "context": "specifyaboundaryconditionat∂D"
+    },
+    {
+     "page": 5,
+     "context": "The set of boundary conditions that one can put at ∂D"
+    },
+    {
+     "page": 5,
+     "context": "understoodasfollows.LetusrepresentD"
+    },
+    {
+     "page": 5,
+     "context": "Ristheoriginaltimedirection)aregivenbyﬂatconnections"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "πi q→e k a,b ∈ Tor H1(M3,Z)/Z2",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Figure1:ThespaceofBPSstatesin3dN= 2theoryonR × D"
+    },
+    {
+     "page": 7,
+     "context": "e"
+    },
+    {
+     "page": 7,
+     "context": "2.2D"
+    },
+    {
+     "page": 7,
+     "context": "S"
+    },
+    {
+     "page": 7,
+     "context": "e"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "3",
+   "text": "It is in fact (Tor H1(M3, Z))∗/Z2that is canonically identiﬁed with components of abelian ﬂat connections. However, as the distinction between Tor H1(M3, Z) and its dual is only important in section 2.2, we will use the same set of labels {a, b, . . .} for elements in both groups.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "T[S"
+    },
+    {
+     "page": 7,
+     "context": "U(1) ⊂SU(2)),"
+    },
+    {
+     "page": 7,
+     "context": "ﬂat(M"
+    },
+    {
+     "page": 7,
+     "context": "S"
+    },
+    {
+     "page": 7,
+     "context": "2k)b1(M"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-3",
+   "page": 7,
+   "mark": "4",
+   "text": "Arelatedconjecturewasmadein[28].HoweveritdidnotincludetheS-transform,whichiscrucialfor restoring integrality and categoriﬁcation.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "Thefollowingconjecturewasproposedin[27]."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "7",
+   "text": "Recall that Tor H1(M3, Z), as a ﬁnitely generated abelian group, can be decomposed into Tor H1(M3, Z) =",
+   "marks": [
+    {
+     "page": 8,
+     "context": "thatTor H1(M3, Z)hasnoZ2factors."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "i",
+   "text": "Zpi.WeaskforafairlyweakconditionthatZ2doesn’tappearinthisdecomposition.Inotherwords,M3 Q is a Z2-homology sphere. Equivalently, there is a unique Spin structure on M3, so that there is no ambiguity in specifying Nahm-pole boundary condition for N = 4 SU(2) SYM on M3 × R+ [18]. The general case, in principle, could also be worked out. We leave it as an exercise to an interested reader.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "q"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p008-3",
+   "page": 8,
+   "mark": "8",
+   "text": "The presence of 1/2 factors that produce 2−coverall factor in (2.7) can be interpreted as presence of factors ∼= C[x] with degqx = 0 in Ha[M3]. The q-graded Euler charecteristic of C[x] is naively divergent: 1+1+1+. . ., but its zeta-regularization gives 1/2.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "whichcategoriﬁestheq-seriesbZa(q).Namely"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "9",
+   "text": "A“folktheorem”statesthatanycontinuousdeformationofthemetriconM3resultsinaQ-exactterm of the supergravity background. However, there may be dependence on discrete data such as the Atiyah 2-framing [29].",
+   "marks": [
+    {
+     "page": 10,
+     "context": "T[M3; G] do not depend"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "10",
+   "text": "Nottobeconfusedwiththeextra“HOMFLYgrading”e.g.ontheright-handsideof(2.68).",
+   "marks": [
+    {
+     "page": 10,
+     "context": "willgiverisetothethirdgrading"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "11",
+   "text": "NotethatinthecaseofNM5-braneswrappingM3,theM2-branesproducestateschargedunderthe magnetic U(1)N/SN (not necessarily U(N)) symmetry, as explained in [15].",
+   "marks": [
+    {
+     "page": 11,
+     "context": "magneticchargeb∈Tor H1(M3, Z)/Z2."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "12",
+   "text": "Suchfactorcanappearevenwithoutsingularity,whenthereisonlyg= 1adjointchiralwithR-charge0. It cancels the contribution of the vector multiplet, leaving",
+   "marks": [
+    {
+     "page": 12,
+     "context": "ofthe2−cfactorin(2.7)."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p012-2",
+   "page": 12,
+   "mark": "2",
+   "text": "πiz f(z, q) = 1 dz 2[z0 coeﬃcient of f(z, q)], (2.19)",
+   "marks": [
+    {
+     "page": 11,
+     "context": "(ea, −ea)sothat[ea]=a∈Tor H1(M3, Z)/Z"
+    },
+    {
+     "page": 12,
+     "context": "mputed as an supersymmetric partition function of T[M3] on D"
+    },
+    {
+     "page": 12,
+     "context": "thediskD"
+    },
+    {
+     "page": 12,
+     "context": "bZa(q) = ZT[M3](D"
+    },
+    {
+     "page": 12,
+     "context": "boundary conditions, then the integral computing the D"
+    },
+    {
+     "page": 12,
+     "context": "(1 −z"
+    },
+    {
+     "page": 12,
+     "context": "(1 −z"
+    },
+    {
+     "page": 12,
+     "context": "(1 −z"
+    },
+    {
+     "page": 12,
+     "context": "relation betweenbZa(q) = ZT[M3](D"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "13",
+   "text": "ExchangingthecircleﬁberofD2withS1in(2.16)hastheeﬀectofreplacingthegroupGwithits GNO/Langlands dual LG.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "actionrotatingthedisc(seeFigure2)."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p014-2",
+   "page": 14,
+   "mark": "14",
+   "text": "ForLG=SU(N)(orU(N))theprincipalembeddingissuchthatfundamentalrepresentationofSU(N) restricts to an irreducible N-dimensional representation of SU(2).",
+   "marks": [
+    {
+     "page": 14,
+     "context": "generatorsofsu(2)underaprincipalembeddingsu(2) →Lg,"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "15",
+   "text": "Onacloserlook,though,thereisasigniﬁcantdiﬀerencebetweensolutionswithabelianandnon-abelian ﬂat connections at y = +∞. When the ﬂat connection is irreducible, the y-component of the adjoint-valued Higgs ﬁeld φy vanishes and remains zero for all values of y, while it is not the case when the ﬂat connection at y = +∞is reducible.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "ively,deﬁnesHa[M3]forconnectedcomponentsofallﬂatconnections."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "16",
+   "text": "AframedgaugedtransformationactstriviallyatachosenpointonM3.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "transformations"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p018-2",
+   "page": 18,
+   "mark": "17",
+   "text": "AcloselyrelatedU(1)-equivariantratherthanG-equivariantregularizationofcomplexChern-Simons partition function was used [54] for 3-manifolds of the form M3 = S1 × Σ. As expected, this equivariant localization does help to see contributions of both abelian and non-abelian ﬂat connections in the same partition function.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "work."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p018-3",
+   "page": 18,
+   "mark": "18",
+   "text": "Ifweunderstandtheboundaryconditionasacouplingofthe3dtheorytoa2dtheorylivingonthe boundary, then the inﬁnite number of possibilities can be seen, for example, from the fact that we can always introduce a 2d theory decoupled from the bulk.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "nﬁnitelymanypossibleboundaryconditionsthatcouldbeconsidered."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "19",
+   "text": "Forreasonssimilartotheonesdescribedattheendoftheprevioussection,ingeneralanegativepower of 2 can appear as an overall factor. We omit it in some generic formulas to avoid clutter and instead focus attention on the conceptual structure. As mentioned earlier and as we shall see in examples, the eﬀect of such fractions on categoriﬁcation can typically be traced to the existence of bosonic modes with zero q-grading.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "indexhasthedesiredintegralityproperty"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "20",
+   "text": "Forageneric3-manifoldM3,theanalyticcontinuationoftheseriesbZa(q)∈Z[[q]]convergentin|q|<1 may not exist outside |q| = 1, at least in the standard way. However, one possible way to deﬁne it for general M3 is bZa(q−1) ≡ bZa(q) , (2.34) M3→M3 where M 3 denotes M3 with the reversed orientation. Note that therefore I(q), unlike bZa(q), is insensetive to the orientation.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "wherebZa(1/q)isanapropriateextension"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "21",
+   "text": "Forexample,whenN= 2andH1(M3, Z) = Z2wehave: (H1(M3, Z))NiSN ∼= Z[x1, x2]S2/{x2 h Z",
+   "marks": [
+    {
+     "page": 22,
+     "context": "asabasiselementofthesymmetricpartofthegroupring"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p022-2",
+   "page": 22,
+   "mark": "1",
+   "text": "= 1, x2",
+   "marks": [
+    {
+     "page": 21,
+     "context": "2k)N(b"
+    },
+    {
+     "page": 21,
+     "context": "|StabSN (a)| · |Tor H"
+    },
+    {
+     "page": 22,
+     "context": "|H"
+    },
+    {
+     "page": 22,
+     "context": "(2k|H"
+    },
+    {
+     "page": 22,
+     "context": "Z[[q"
+    },
+    {
+     "page": 22,
+     "context": "Z[[q1/|H"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p022-3",
+   "page": 22,
+   "mark": "2",
+   "text": "= 1} (2.53) and Sa,(0,0) ∝1 Sa,(1,0) ∝x1 + x2 (2.54) Sa,(1,1) ∝x1x2 where xi = eπia.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "σ∈SNe"
+    },
+    {
+     "page": 22,
+     "context": "e"
+    },
+    {
+     "page": 22,
+     "context": "e"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "22",
+   "text": "NormalizationsofZU(N)k,aswellastheﬁrstfewtermsinF top,aresubjecttoambiguity,andwewon’t attempt to ﬁx them here.",
+   "marks": [
+    {
+     "page": 23,
+     "context": "nbetweenCSandopentopologicalstringscanbeformulatedasfollows:"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p023-2",
+   "page": 23,
+   "mark": "23",
+   "text": "Note,thatanyelementofthisringhastheformasintheright-handsideof(2.66)since(2.55)arebasis elements.",
+   "marks": [
+    {
+     "page": 23,
+     "context": "thering"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "24",
+   "text": "Note,inrelatingHOMFLY-PThomologytosl(N)knothomologyonesetsa = qN,sothatlog(a) ∼N.",
+   "marks": [
+    {
+     "page": 25,
+     "context": "thelimit"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "25",
+   "text": "ThereducedHOMFLY-PThomologycategoriﬁesnormalizedHOMFLY-PTpolynomial;itisﬁnite- dimensional for λ = □and links with one component (i.e. for knots). The unreduced version, on the other hand, categoriﬁes unnormalized HOMFLY-PT polynomial and is inﬁnite-dimensional for any color λ. The former has no obvious analogue for 3-manifolds.",
+   "marks": [
+    {
+     "page": 26,
+     "context": "homology"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "26",
+   "text": "Although the terminology “reduced” and “unreduced” here is very similar to the one used in knot homology, there is no direct connection.",
+   "marks": [
+    {
+     "page": 28,
+     "context": "e terminology of [27] this is an unreducedhomological block."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p028-2",
+   "page": 28,
+   "mark": "27",
+   "text": "Note that this isnot an ordinary analytic continuation.The latter actually does not exists because |q| = 1 is a natural boundary.",
+   "marks": [
+    {
+     "page": 28,
+     "context": "prescriptionforextendingthequantumdilogarithmoutside|q| < 1,"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p028-3",
+   "page": 28,
+   "mark": "28",
+   "text": "Note that there is an ambiguous overall constant in (3.7).We ﬁx it in (3.9) by requiring that the unreﬁned quantities are related by the ordinary analytic continuation. Namely, N−1 bZ0(1/q, 1/t) · (t−1q−1; q−1)N",
+   "marks": [
+    {
+     "page": 28,
+     "context": "wehave,forG = U(N),"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p031-1",
+   "page": 31,
+   "mark": "29",
+   "text": "Wehavechosentheroundmetricandtheveilbein e1 = dθ, e2 = sin θdϕ, e3 = dx3. (3.22)",
+   "marks": [
+    {
+     "page": 31,
+     "context": "withtheothercomponentsofthebackgroundmultipletsettozero."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-1",
+   "page": 32,
+   "mark": "30",
+   "text": "Inorderforthebackgroundtobesupersymmetric,onealsoneedstoturnonaconstantσfortheback- ground gauge multiplet, which won’t aﬀect the analysis in this section.",
+   "marks": [
+    {
+     "page": 32,
+     "context": "achievedbyturningon−2β + 1unitsofU(1)βﬂuxalongS2=CP1."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p033-1",
+   "page": 33,
+   "mark": "p",
+   "text": "/SN",
+   "marks": [
+    {
+     "page": 33,
+     "context": "whereΘZN;"
+    },
+    {
+     "page": 33,
+     "context": "ΘZN;"
+    },
+    {
+     "page": 33,
+     "context": "i/2"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "31",
+   "text": "ThefullindexIU(N)(q, t)ofT[L(p, 1)]vanishesintheunreﬁnedlimitt →1, IU(N)(q, t) ∼(1 −t−1)NIU(N)(q), (3.38) due to the contribution of Cartan components of the adjoint chiral multiplet with R-charge 2, which saturate the unitarity bound. The rescaling in (3.40) removes their contribution and makes the limit ﬁnite. Another method of regularization is to take the same limit but in the form t = qϵ, ϵ →0, which correponds to taking R-charge to be 2 −ϵ, and then just remove an appropriate power of ϵ: ϵ→0 IU(N)(q, t) · ϵ−N = (log q)NIU(N)(q). I′ U(N)(q) = lim (3.39) This is the approach that was used in [31]. Then the (log q)N ∝k−N factor agrees with the factorization if we include the overall factor k−N/2 in (2.42) into the deﬁnition of Za(q).",
+   "marks": [
+    {
+     "page": 34,
+     "context": "where"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "32",
+   "text": "Inthisequation,ListhedeterminantlinebundleandFqisanobjectinthederivedcategoryofcoherent sheaves on MH with dependence on q. In general, as explain in [54, 69], the twisted partition function of T[L(k, 1)] on S1 × Σ gives the “equivariant Verlinde formula,” which in turn can be written as a K-theory index over MH(Σ). This fact, combined with the projection map MH →M, is the starting point for the proof of the equivariant Verlinde formula [70,71].",
+   "marks": [
+    {
+     "page": 35,
+     "context": "overMH(CP1; G),theHitchinmodulistackoverCP1,"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p035-2",
+   "page": 35,
+   "mark": "33",
+   "text": "HereStTMdenotesthetotalsymmetricpowerofthetangentcomplexofM.",
+   "marks": [
+    {
+     "page": 35,
+     "context": "hemodulistackofGC-bundlesoverCP1,theaboveindexcanbewrittenas"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "34",
+   "text": "Asimilarreductionwasconsideredin[19]forreﬁnedChern-Simonstheoryasawaytocircumventcertain technicalities.",
+   "marks": [
+    {
+     "page": 36,
+     "context": "considermoregeneral"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p038-1",
+   "page": 38,
+   "mark": "35",
+   "text": "Noticethatafterremovinga(1 −t)factorfromItop(q, t),weareleftwith(1 −t3)/(1 −t) = 1 + t + t2.",
+   "marks": [
+    {
+     "page": 38,
+     "context": "Forβ= 1,"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p044-1",
+   "page": 44,
+   "mark": "36",
+   "text": "Ournotationsslightlydiﬀerfromthosein[19]: khere = kAS + 2, βhere = βAS −1, (3.100) there = tAS/q.",
+   "marks": [
+    {
+     "page": 44,
+     "context": "ournotations"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p044-2",
+   "page": 44,
+   "mark": "37",
+   "text": "Asusual,q-numbersaredeﬁnedas [n]q ≡qn/2 −q−n/2 q1/2 −q−1/2 . (3.106)",
+   "marks": [
+    {
+     "page": 44,
+     "context": "andtheSU(2)Macdonaldpolynomialsaregivenby"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p045-1",
+   "page": 45,
+   "mark": "38",
+   "text": "Notice,thatthisS-transformmatrixisdiﬀerentfromtheS-matrixinreﬁnedChern-Simonstheory!",
+   "marks": [
+    {
+     "page": 45,
+     "context": "tiona.Asbefore,theS-transformisgivenby"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p046-1",
+   "page": 46,
+   "mark": "39",
+   "text": "ThisisbecauseΦiandeΦiarecombinedintoanN=4twistedhypermultiplet[73]andtransformunder the SU(2) × SU(2) in the same way as a vector multiplet. As a consequence, U(1)β only acts on Φi, not eΦi.",
+   "marks": [
+    {
+     "page": 46,
+     "context": "0and1respectively."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p047-1",
+   "page": 47,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 46,
+     "context": "qn"
+    },
+    {
+     "page": 46,
+     "context": "qn2/pz"
+    },
+    {
+     "page": 46,
+     "context": "e"
+    },
+    {
+     "page": 46,
+     "context": "(q)arethesameashomologicalblocks(3.60)obtainedastheD"
+    },
+    {
+     "page": 46,
+     "context": "(z"
+    },
+    {
+     "page": 46,
+     "context": "qn"
+    },
+    {
+     "page": 46,
+     "context": "qn2/pz"
+    },
+    {
+     "page": 46,
+     "context": "(z"
+    },
+    {
+     "page": 47,
+     "context": "Consider the partition function of T[M3] on D"
+    },
+    {
+     "page": 47,
+     "context": "TheD"
+    },
+    {
+     "page": 47,
+     "context": "bZa(q, t, u) ≡ZT[M3](D"
+    },
+    {
+     "page": 47,
+     "context": "n∈pZ+aqn"
+    },
+    {
+     "page": 47,
+     "context": "n∈pZ+aqn2/p z"
+    },
+    {
+     "page": 47,
+     "context": "n∈Z2k(qn/2 −q−n/2)"
+    },
+    {
+     "page": 47,
+     "context": "n∈Z2k(qn/2 −q−n/2)2−2gq−pn"
+    },
+    {
+     "page": 47,
+     "context": "(S1n)"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p047-2",
+   "page": 47,
+   "mark": "40",
+   "text": "Weomitsimpleoverallfactorsbelow.",
+   "marks": [
+    {
+     "page": 47,
+     "context": "WRTinvariantofM3canbecomputedasfollowsintermsofSandTmatrices"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p050-1",
+   "page": 50,
+   "mark": "2",
+   "text": "−pβ2",
+   "marks": [
+    {
+     "page": 49,
+     "context": "z"
+    },
+    {
+     "page": 49,
+     "context": "jzj"
+    },
+    {
+     "page": 49,
+     "context": "jzj"
+    },
+    {
+     "page": 49,
+     "context": "jzj"
+    },
+    {
+     "page": 49,
+     "context": "jzj2¼q"
+    },
+    {
+     "page": 49,
+     "context": "jzj"
+    },
+    {
+     "page": 49,
+     "context": "(i.e.whetherweencirclethepolesatz"
+    },
+    {
+     "page": 50,
+     "context": "2I(−2)(q) = 4 + q"
+    },
+    {
+     "page": 50,
+     "context": "q"
+    },
+    {
+     "page": 50,
+     "context": "(q+1)"
+    },
+    {
+     "page": 50,
+     "context": "(q+1)2(q"
+    },
+    {
+     "page": 50,
+     "context": "q"
+    },
+    {
+     "page": 50,
+     "context": "q3+ 5q"
+    },
+    {
+     "page": 50,
+     "context": "q"
+    },
+    {
+     "page": 50,
+     "context": "(S1n)"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-024"
+  },
+  {
+   "id": "fn-p050-2",
+   "page": 50,
+   "mark": "4",
+   "text": "−pnβ",
+   "marks": [
+    {
+     "page": 50,
+     "context": "q"
+    },
+    {
+     "page": 50,
+     "context": "q6+ 4q"
+    },
+    {
+     "page": 50,
+     "context": "q"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-024"
+  },
+  {
+   "id": "fn-p050-3",
+   "page": 50,
+   "mark": "41",
+   "text": "Itisimportanttokeepinmindthatthetermsinthisdecompositionarenotmerelycontributionsofthe corresponding connected components of abelian ﬂat connections to the path integral, but rather contain contri- butions of irreducible ﬂat connections as well [22]. In other words, even though the sum in the decomposition runs only over abelian ﬂat connections, all ﬂat connections are accounted properly, reducible and irreducible; no one is left behind.",
+   "marks": [
+    {
+     "page": 50,
+     "context": "componentsofabelianﬂatconnections."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-024"
+  },
+  {
+   "id": "fn-p052-1",
+   "page": 52,
+   "mark": "42",
+   "text": "Thereisalsoamovewhichrelatesaconnectedgraphtoadisconectedone.Forthesakeofbrevitywe don’t discuss the case of disconnected plumbing graphs here.",
+   "marks": [
+    {
+     "page": 52,
+     "context": "Γ′canbeconnectedbyasequenceof3dKirbymoves,asshowninFigure6"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p055-1",
+   "page": 55,
+   "mark": "43",
+   "text": "Theotheroptionsleadtoa3d“space-timeﬁllingdefect,”deformingthetheorytoanewoneT[M3, K].",
+   "marks": [
+    {
+     "page": 55,
+     "context": "e focus on those which give rise to line operators in T[M3]."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p057-1",
+   "page": 57,
+   "mark": "44",
+   "text": "In general,Gis diﬀerent from G.For a quiver theory,it may be given by a product ×iGiover the vertices.",
+   "marks": [
+    {
+     "page": 57,
+     "context": "WilsonoperatorsWλ,labeledbyarepresentationλoftheUVgaugegroup"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p059-1",
+   "page": 59,
+   "mark": "45",
+   "text": "Sofar,wehaveignoredthediﬀerencebetweenGandtheLanglandsdualgroupG∨becausethequantities considered so far are not sensitive to the global structure of the group. However, the spectrum of Wilson loops is sensitive to this diﬀerence, and (4.15) is stated for the adjoint form G = Gad. If G has a center, one needs to add the representations of G where the center acts non-trivially. Reader interested in this subject may consult [69] where this issue was extensively discussed in a similar brane system.",
+   "marks": [
+    {
+     "page": 59,
+     "context": "labeledbyelementsin"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p059-2",
+   "page": 59,
+   "mark": "46",
+   "text": "i.e.Wλ= ΓK,RwhentorsionhomologyclassofR-cableofKisgivenbyλ ∈ΛM3",
+   "marks": [
+    {
+     "page": 59,
+     "context": " line operators Wλ,λ ∈ΛM3, can be engineered using M2-branes"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p060-1",
+   "page": 60,
+   "mark": "3",
+   "text": "d/3d correspondence",
+   "marks": [
+    {
+     "page": 59,
+     "context": "ΛM3= Tor H1(M"
+    },
+    {
+     "page": 59,
+     "context": "bZa(q, t; ΓK,R) ≡ZT[M"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p060-2",
+   "page": 60,
+   "mark": "47",
+   "text": "Thisaspectisasurprisingexceptiontotherulethatknothomologyiseasierthan3-manifoldhomology.",
+   "marks": [
+    {
+     "page": 60,
+     "context": "inthestudyofknots."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p061-1",
+   "page": 61,
+   "mark": "48",
+   "text": "Note,in the unreﬁned / decategoriﬁed setting,Kλis simply the unknot colored by Rλ= λ.Although this is no longer the case in homological world, there is still a close relation between “cabling” and “color” [80,81].",
+   "marks": [
+    {
+     "page": 61,
+     "context": "identiﬁcation"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p061-2",
+   "page": 61,
+   "mark": "49",
+   "text": "TheConjecture6.10in[82]containsatypointhedescriptionoftheidealIrel.Namely, aipi(x) = θipi(x) = 0 (4.23) should be replaced by aipn−i+1(x) = θipn−i+1(x) = 0. (4.24)",
+   "marks": [
+    {
+     "page": 61,
+     "context": "proposal"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p062-1",
+   "page": 62,
+   "mark": "50",
+   "text": "Inthisnormalization,wehave ⟨W0⟩= 1, (4.27) enabling us to directly extract the information about the space Hi,j;ℓ . λ",
+   "marks": [
+    {
+     "page": 62,
+     "context": "acteristicofHλ,"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p062-2",
+   "page": 62,
+   "mark": "51",
+   "text": "Thisdecompositiondoesn’trespecttheringstructureaseachsubspaceisnotclosedundermultiplication. \u0000 2n",
+   "marks": [
+    {
+     "page": 62,
+     "context": "of[82]admitsasimilardecompositionintosubspacesofpurex-degree"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p062-3",
+   "page": 62,
+   "mark": "52",
+   "text": "Basically,thereare \u0001 \u0000",
+   "marks": [
+    {
+     "page": 62,
+     "context": "Itiseasytocheckthat"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p062-4",
+   "page": 62,
+   "mark": "2",
+   "text": "n \u0001 non-vanishing degree (n −l) monomials, and they are subject to inde- n−l n−l−1 pendent relations, obtained by multiplying P",
+   "marks": [
+    {
+     "page": 61,
+     "context": "Ha[S"
+    },
+    {
+     "page": 61,
+     "context": "⊗Ha[S"
+    },
+    {
+     "page": 61,
+     "context": "where the ﬁrst factor on the right-hand side is the S"
+    },
+    {
+     "page": 61,
+     "context": "sweshallseebelow,alreadyinthisrelativelysimplecaseofM3=S1× S"
+    },
+    {
+     "page": 61,
+     "context": "S1× S"
+    },
+    {
+     "page": 61,
+     "context": "byRλ)isequalto|λ|.RegardingM3=S1× S"
+    },
+    {
+     "page": 62,
+     "context": "bZ0(q, t; W"
+    },
+    {
+     "page": 62,
+     "context": "canbecomputedusing(4.17),withT[S1× S"
+    },
+    {
+     "page": 62,
+     "context": "(q"
+    },
+    {
+     "page": 62,
+     "context": "r hand, as a vector space, the homological invariant H•(S1×S"
+    },
+    {
+     "page": 62,
+     "context": "Rozansky(L"
+    },
+    {
+     "page": 62,
+     "context": "x"
+    },
+    {
+     "page": 62,
+     "context": "dim Vl · q"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p062-5",
+   "page": 62,
+   "mark": "i",
+   "text": "xiwithdegree(n −l −1)monomials.",
+   "marks": [
+    {
+     "page": 62,
+     "context": "(−1)jq"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p063-1",
+   "page": 63,
+   "mark": "53",
+   "text": "Noticethatwehaveaddedoddrepresentationsaccordingtodescriptioninfootnote45.",
+   "marks": [
+    {
+     "page": 63,
+     "context": "basicWilsonloopsinT[M3]aregivenbyWλwithλ=0, . . . , p."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p068-1",
+   "page": 68,
+   "mark": "54",
+   "text": "Everythingbelowinprinciplecanbegeneralizedtosu(N)andu(N).",
+   "marks": [
+    {
+     "page": 68,
+     "context": "of a plumbed 3-manidfold M3(Γ),"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p068-2",
+   "page": 68,
+   "mark": "55",
+   "text": "WeusethenormalizationinwhichthecoloredJonespolynomialofunlinkwithLcomponentswith canonical framing is given by qnv/2 −q−nv/2 L Y J[Unlink]n1,...,nL = q1/2 −q−1/2 . (A.1) v=1",
+   "marks": [
+    {
+     "page": 68,
+     "context": "(seee.g.[87])"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p068-3",
+   "page": 68,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 67,
+     "context": "areplacementχλ(z)→Mλ(z"
+    },
+    {
+     "page": 67,
+     "context": "Mλ(z"
+    },
+    {
+     "page": 67,
+     "context": "Mλ(z"
+    },
+    {
+     "page": 68,
+     "context": "av(n"
+    },
+    {
+     "page": 68,
+     "context": "qnv1nv"
+    },
+    {
+     "page": 68,
+     "context": "qnv1nv2/2−q−nv1nv"
+    },
+    {
+     "page": 68,
+     "context": "where q = e"
+    },
+    {
+     "page": 68,
+     "context": "ZSU(2)k[S"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p068-4",
+   "page": 68,
+   "mark": "56",
+   "text": "Inthisappendix,weuseqtodenoteak-th(k∈Z+)rootofunitye and reserve q to denote the k corresponding continuous variable which will appear in analytic continuation.",
+   "marks": [
+    {
+     "page": 68,
+     "context": "where q = e2πi/k."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p069-1",
+   "page": 69,
+   "mark": "3",
+   "text": "σ−P v av",
+   "marks": [
+    {
+     "page": 68,
+     "context": "k·τ[M"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p071-1",
+   "page": 71,
+   "mark": "58",
+   "text": "Inprinciple,thisconditioncanberelaxed.ItisonlynecessarythatMisnegativeonacertainsubspace of ZL.",
+   "marks": [
+    {
+     "page": 71,
+     "context": "letusassumethatthequadraticformM: ZL× ZL→Zisnegativedeﬁnite,"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p073-1",
+   "page": 73,
+   "mark": "59",
+   "text": "usingKnotTheorypackageforMathematica",
+   "marks": [
+    {
+     "page": 73,
+     "context": "weﬁnd"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p074-1",
+   "page": 74,
+   "mark": "60",
+   "text": "moreprecisely,thelinearcombinationofcablingsupton-th,givenby(B.1)",
+   "marks": [
+    {
+     "page": 74,
+     "context": "particular,then-thcabling"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p074-2",
+   "page": 74,
+   "mark": "61",
+   "text": "Tostreamlinethepresentation,wewillignorenormalizationfactors,Weylgroupactions,etc.",
+   "marks": [
+    {
+     "page": 74,
+     "context": "ForgeneralM3,thestorywillbemoreinteresting."
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p075-1",
+   "page": 75,
+   "mark": "62",
+   "text": "Toobtainhomologicalinvariants,onejustneedstodecompactifythetimeS1circle,andVBwillbecome the category CB that the 3d theory T[M3] associates to S1. Then the homological invariants are identiﬁed with Hom(B1, B2) between two boundary conditions B1, B2 in CB.",
+   "marks": [
+    {
+     "page": 75,
+     "context": "Thenwehave"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-035"
+  },
+  {
+   "id": "fn-p076-1",
+   "page": 76,
+   "mark": "63",
+   "text": "ThisdefectcanbeviewedastheS-dualofaWilsonlooplabeledbyareduciblerepresentation,butitwill be interesting to ﬁnd an alternative way to characterize this defect.",
+   "marks": [
+    {
+     "page": 76,
+     "context": "rtionofaexoticdefect,givenbyalinearcombinationofvortexloops,"
+    }
+   ],
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-035"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p007-4",
+   "page": 7,
+   "mark": "5",
+   "text": "TheconstantpositiveintegercdependsonlyonM3andinacertainsensemeasuresits“complexity”.In many simple examples c = 0, and the reader is welcome to ignore 2−c factor which arises from some technical subtleties. Its physical origin will be explained later in the paper.",
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-5",
+   "page": 7,
+   "mark": "6",
+   "text": "Laterinthetextwewillsometimesuseslightlyredeﬁnedquantities,bZa(q)→q∆bZa(q),where∆isa common, a independent rational number.",
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p028-4",
+   "page": 28,
+   "mark": "t",
+   "text": "→1=bZ0(1/q, 1/t) · (1/t; q)−N Y (1 −q−j)N−j.",
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p028-5",
+   "page": 28,
+   "mark": "t",
+   "text": "→1=bZ0(1/q) = (3.8) ∞ ∞ j=1",
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p068-5",
+   "page": 68,
+   "mark": "57",
+   "text": "Normalizedsuchthat τ[S3] = 1. (A.4)",
+   "block": "library/arxiv-1701.06567v2/blocks/prose-sec-033"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "SergeiGukov"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "SergeiGukov1,DuPei"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "SergeiGukov1,DuPei1,"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "SergeiGukov1,DuPei1,2,PavelPutrov"
+  },
+  {
+   "page": 1,
+   "mark": "4",
+   "context": "SergeiGukov1,DuPei1,2,PavelPutrov3,CumrunVafa"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "uestion involves a 6d ﬁvebrane theory on M3times a 2-disk, D"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "of3dN= 2theoryT[M3]:D"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "of3dN= 2theoryT[M3]:D2× S"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "of3dN= 2theoryT[M3]:D2× S1half-index,S"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "of3dN= 2theoryT[M3]:D2× S1half-index,S2× S"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "2theoryT[M3]:D2× S1half-index,S2× S1superconformalindex,andS"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "oryT[M3]:D2× S1half-index,S2× S1superconformalindex,andS2× S"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "D2× S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "M3= S"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "Homologicalblocks"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "HomologicalblocksbZ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "LinksinS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "nvariantsofknotsandlinks(realizedbyWilsonlinesinCStheory)inS"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "specifyaboundaryconditionat∂D2= S"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "The set of boundary conditions that one can put at ∂D2∼= S"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "likeS"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "likeS1× R.AftercompactiﬁcationofthestackofﬁvebranesonS"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "thetimeonS"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "2.2D2× S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "S2× S"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "e2πikℓk(a,a)Sab"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "e2πikℓk(a,a)SabbZ"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "2k)"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "2k)b"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "Sab=e"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "Inotherwords,weclaimtheexistenceofnew3-manifoldinvariants"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "Inotherwords,weclaimtheexistenceofnew3-manifoldinvariantsbZ"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "mathematical deﬁnition of the invariants"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "mathematical deﬁnition of the invariantsbZ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "e2πikℓk(a,a)Sab"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "e2πikℓk(a,a)SabbZ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "≡e"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "inthesum(2.6)isacertainresummationoftheperturbative(in"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "HD"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "whichcategoriﬁestheq-series"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "whichcategoriﬁestheq-seriesbZ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "qi(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "oftheircloserelationtohomologicalinvariants,weusuallyreferto"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "theircloserelationtohomologicalinvariants,weusuallyrefertobZ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "logicalblocks.ThevectorspaceHD"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "ofKhovanov-Rozanskyknothomology.Fromthispointofview,e"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "isreminiscentoftheSpin"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "ground along D"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q,tinwhichD"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q,tinwhichD2∼= R"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "numberofequivalentways:astheOmega-backgroundalongTN∼= R"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "“cigar”)D"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "R-symmetry of the SCFT T[M3].When M3is Σ×S"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "hancedtotheSU(2)N × SU(2)RR-symmetryofthe3dN= 4theoryT[Σ × S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "ductiononM3,thesystem(2.13)givesatheoryT[M3; G]inspace-timeD"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "at∂D"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "at∂D2=S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Ha[M3]=HT[M3](D"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "gradingicountsthechargeundertheU(1)qrotationofD"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "OnecanunderstandHa[M3]=HT[M3](D"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "(ea, −ea)sothat[ea]=a∈Tor H"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "(ea, −ea)sothat[ea]=a∈Tor H1(M"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "circleS"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "Bydeﬁnition,eachhomologicalblock"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "Bydeﬁnition,eachhomologicalblockbZ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "d as an supersymmetric partition function of T[M3] on D2×q S"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "thediskD2byarg qwhenwegoaroundtheS"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "bZa(q) = ZT[M"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "bZa(q) = ZT[M3](D2×q S"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "boundary conditions, then the integral computing the D2×qS"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "(1 −z2)"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "(1 −z2)g−1(1 −z−2)"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "(1 −z2)"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "(1 −z2)g−1(1 −z−2)"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "(1 −z2)"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "(1 −z2)g−1(1 −z−2)"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "relation between"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "relation betweenbZ"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "relation betweenbZa(q) = ZT[M"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "relation betweenbZa(q) = ZT[M3](D2×q S"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "D2×qS"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Z(D"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Z(D2×q S"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Themulti-variablez=(z"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "Themulti-variablez=(z1, . . . , z"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "variablez=(z1, . . . , zr)typicallycomesfromgaugefactors,and"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "onal.Also, as in Chern-Simons theory, the critical points of"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "ℏ"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "Figure3:Criticalpointsof"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "spacesof6d(2,0)theoryonM3× D"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "LetusrepresentD"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "M3 × D"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "P"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "i=1"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "i=1e"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "µ"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "µt"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "wheree"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "µisthevierbeinforsomechoiceofmetriconM"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "µisthevierbeinforsomechoiceofmetriconM3,"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "µisthevierbeinforsomechoiceofmetriconM3,t"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "correspondingtothegeneratingvariableqintheindex"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "correspondingtothegeneratingvariableqintheindexbZ"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "correspondingtothegeneratingvariableqintheindexbZa(q)=TrH"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "correspondingtothegeneratingvariableqintheindexbZa(q)=TrHa[M"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "dingtothegeneratingvariableqintheindexbZa(q)=TrHa[M3](−1)RqL"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "32π"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "3joinedby"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "convenienttoﬁrstreduce6d(0, 2)theoryonΣtimesthecircleﬁberofD"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "sequenceofsurgeryoperationsona3-sphereS"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Pn(q, t)=F(x; q, t)|x=q"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "Put diﬀerently, if"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "t) is the operator that generates recursion relation among P"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "suchthatbxP"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "suchthatbxPn(q, t) = q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "suchthatbxPn(q, t) = qnP"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "suchthatbxPn(q, t) = qnPn(q, t)andbyP"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "suchthatbxPn(q, t) = qnPn(q, t)andbyPn(q, t) = P"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "p(x;"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "p(x;"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "Although the new invariants"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "Although the new invariantsbZ"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "lthough the new invariantsbZa(q) and their categoriﬁcation H"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "ough the new invariantsbZa(q) and their categoriﬁcation Ha[M"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "titionfunctiononS"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "titionfunctiononS2× S"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "I(q)≡TrHS"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "I(q)≡TrHS2(−1)FqR/2+J"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "I(q)≡TrHS2(−1)FqR/2+J3=ZT[M3](S"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "I(q)≡TrHS2(−1)FqR/2+J3=ZT[M3](S2×q S"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "where HS"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "symmetryandJ3istheCartangeneratoroftheSO(3)isometryofS"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "qi(−1)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "HS"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "AnotheradvantageofHS"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "AnotheradvantageofHS2comparedtoHD"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "isthatthepartitionfunctionZT[M3](S"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "isthatthepartitionfunctionZT[M3](S2×qS"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "Conjecture2.2For"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "Conjecture2.2ForbZ"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "|Wa|bZa(q)"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "|Wa|bZa(q)bZ"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "where"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "wherebZ"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "wherebZa(1/q)isanapropriateextension20of"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "wherebZa(1/q)isanapropriateextension20ofbZ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "gradinginhomologicalinvariantsHD"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "gradinginhomologicalinvariantsHD2andHS"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "qitℓ(−1)"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "qitℓ(−1)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 20,
+   "mark": "b",
+   "context": "|Wa|bZa(q; t)"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "|Wa|bZa(q; t)bZ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "tegoriﬁcationbyconstructionisthetopologicallytwistedindexonS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "riﬁcationbyconstructionisthetopologicallytwistedindexonS2× S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "connectionequaltothespinconnectiononS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "obtainedbycompactifyingT[M3]onS"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "edbycompactifyingT[M3]onS1,thisisthefamiliarA-twistalongtheS"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "qitℓ(−1)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "background parameter corresponding to rotating S"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 20,
+   "mark": "b",
+   "context": "|Wa|bZa(q; t)"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "|Wa|bZa(q; t)bZ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "superconformalS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "superconformalS2× S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "theD"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "theD2× S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "theD2× S1halvesandanti-A-twistalongtheotherD"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "theD2× S1halvesandanti-A-twistalongtheotherD2× S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "whereasthebackgroundforthetopologicallytwistedS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "whereasthebackgroundforthetopologicallytwistedS2× S"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1ℓk(a"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1ℓk(ai,a"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "2k)N(b1(M"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1ℓk(a"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1ℓk(ai,a"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "i=1ℓk(ai,ai)SabbZ"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "σ∈SN"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1ℓk(a"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "|StabSN (a)| · |Tor H1(M"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "ﬂat(M"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "|Wa|bZa(q, t)"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "|Wa|bZa(q, t)bZ"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "|Wa|bZa(q, t)"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "|Wa|bZa(q, t)bZ"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "W"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "3-fold,theset(2.46)whichlabelsthenewinvariants"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "3-fold,theset(2.46)whichlabelsthenewinvariantsbZ"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "46)whichlabelsthenewinvariantsbZa(q)andtheircategoriﬁcationH"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "whichlabelsthenewinvariantsbZa(q)andtheircategoriﬁcationHa[M"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1ℓk(a"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1ℓk(ai, a"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "arounda.Correspondingly,"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "arounda.Correspondingly,bZ"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "n"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "m"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "N"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "bZ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(H1(M3, Z))N"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "|H1(M"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "e2πiℓk(a"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "e2πiℓk(ai,c"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(H1(M3, Z))N"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "(2k|H1(M"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "(2k|H1(M3)|)N/2|StabSN (a)|Z"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(H1(M3, Z))N"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "Sab"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 23,
+   "mark": "g",
+   "context": "g2"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1ℓk(a"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "i=1ℓk(ai,c"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "c∈(H1(M3,Z))"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1ℓk(a"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "i=1ℓk(ai,c"
+  },
+  {
+   "page": 23,
+   "mark": "g",
+   "context": "N"
+  },
+  {
+   "page": 23,
+   "mark": "c",
+   "context": "Ng;"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 23,
+   "mark": "g",
+   "context": "g2"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "Ng;h N"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "c∈(H1(M3,Z))"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "(H1(M3, Z))N"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "Sab"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "thering23in(2.58).Theintegernumbersn"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "ﬂat(M"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ﬂat(M3, GC)ofGCﬂatconnectionson"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "ﬂat(M3, GC)ofGCﬂatconnectionsona3-manifoldM"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "boundaryconditionon∂(D"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "boundaryconditionon∂(D2×qS"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "boundaryconditionon∂(D2×qS1) = T"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "igar,thegeometryoftheﬁvebraneworld-volumelookslikeR × M3 × T"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ﬁrst reduce on T"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ofT"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "Namely, the familiar setup for homology of a knot K⊂S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "R × T∗S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "R ×S"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "R ×S3×D"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "M5′:R × LK× D"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "R ×LK×D"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "spaceofO(−1) ⊕O(−1)bundleoverCP"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "log(a) = Vol(CP"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "C"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "arawayfromeachother.Keepingonlyonevertexinsight,weendupwithC"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "thereisnowindingaroundCP"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "U(1)q × U(1)RsymmetryactingonD"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "q−2+ q"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "q−2+ q2t"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "q−4+ t"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "q−4+ t2+ q"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "q−4+ t2+ q4t"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "q−2+ t + q"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "q−2+ t + q2t"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "plementS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "andS"
+  },
+  {
+   "page": 26,
+   "mark": "6",
+   "context": "thatLKisaspecialLagrangiansubmanifoldinR"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "thatLKisaspecialLagrangiansubmanifoldinR6∼=C"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "AnothersimpleexampleisK=unknotandλ=S"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "AnothersimpleexampleisK=unknotandλ=Sr(orλ=Λ"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "PS"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "1 −q2"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "Theseexpressionscanbefoundasx"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "(orcolumns)weendupwiththeS"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "(orcolumns)weendupwiththeS1× D"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "multiplets.Thishastobecomparedwithgl(n)homologyofM3= S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "3.1M3= S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "ForM3=S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "ForM3=S3andG=U(N),the3dN=2theoryT[S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Asaresult,thesuperconformalindexofthetheoryT[S"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "(t−iq"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "(t"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "(tiq"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "(1 −zq"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "SinceH"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "SinceH1(S"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "SinceH1(S3)=0,thereisonlyonehomologicalblock"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "SinceH1(S3)=0,thereisonlyonehomologicalblockbZ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "S3)=0,thereisonlyonehomologicalblockbZ0(q, t),realizedastheS"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "=0,thereisonlyonehomologicalblockbZ0(q, t),realizedastheS1×D"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "(t"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "(tiq"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "WRTinvariantofS"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "(1 −q"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "∞bZ"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "ISU(2)(q, t) =(t−2"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "ISU(2)(q, t) =(t−2q−1;"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(t"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(t2q"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "bZ0(q) = (1 −q"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(t"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(t2q"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "(t−iq"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "I(q, t) = |W"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "I(q, t) = |W0|bZ"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "I(q, t) = |W0|bZ0(q, t)"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "I(q, t) = |W0|bZ0(q, t)bZ"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "AsT[S"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "S3, U(N)]isdualtoasystemoffreechirals,itsspaceofBPSstatesonS"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "givesthehomologicalinvariantassociatedwithM3= S"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "H(S"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "1 −t−fq"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "qitℓ(−1)"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "1 −t"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "2+ j"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "j3generatesaU(1)subgroupoftheSU(2)isometryoftheS"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "1 + z"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "1 + z1−rt−fq"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "qiz"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "1 −z"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "1 −zrt"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "thesubstitutionofvariablesz"
+  },
+  {
+   "page": 30,
+   "mark": "f",
+   "context": "thesubstitutionofvariableszr→t"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "1 + z"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "1 + z1−rq"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "1 −t−fq"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "1 −z"
+  },
+  {
+   "page": 30,
+   "mark": "f",
+   "context": "1 −t"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "D2×qS"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "S1× S"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "1 −q"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "= (q"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "1 + q"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "whichstartswiththespaceofBPSstatesofT[M3]onS"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "theoryT[S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "U(1)].TheﬁrststepistoexplicitlyidentifythespaceofBPSstatesHS"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "Allfoursuperchargesofa3dN=2theorycanbepreservedonS"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "achievedbyturningon−2β + 1unitsofU(1)βﬂuxalongS"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "achievedbyturningon−2β + 1unitsofU(1)βﬂuxalongS2=CP"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "φ ∈H"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "φ ∈H0(CP"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "ψ+∈H"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "ψ+∈H0(CP"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "We now move to the case of M3= L(p, 1)∼= S"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "t−|m"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "t−|mi−m"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "t−|mi−mj|/2q−R|m"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "t−|mi−mj|/2q−R|mi−m"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "(zi)pm"
+  },
+  {
+   "page": 32,
+   "mark": "t",
+   "context": "zi"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": "zit−1"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "zit−1q|m"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "zit−1q|mi−m"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": "zit−1q|mi−mj|/2+1−R/2;"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "(t−1q"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "1 −q|m"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "1 −q|mi−m"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "1 −q|mi−mj|/2"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "1 −q|mi−mj|/2 z"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "zjtq|m"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "zjtq|mi−m"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": "zjtq|mi−mj|/2+R/2;"
+  },
+  {
+   "page": 33,
+   "mark": "z",
+   "context": "2πiz"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "2πizz"
+  },
+  {
+   "page": 33,
+   "mark": "t",
+   "context": "2πizz2pm"
+  },
+  {
+   "page": 33,
+   "mark": "q",
+   "context": "2πizz2pm t−2|m| q−2|m| (1 −z±2"
+  },
+  {
+   "page": 33,
+   "mark": "q",
+   "context": "×(1/t;"
+  },
+  {
+   "page": 33,
+   "mark": "q",
+   "context": "×(1/t; q)∞(z±2"
+  },
+  {
+   "page": 33,
+   "mark": "q",
+   "context": "×(1/t; q)∞(z±2q|m|/t;"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "f(z±2) ≡f(z"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "bZa(q, t) = ZT[M"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "bZa(q, t) = ZT[M3](D"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "bZa(q, t) = ZT[M3](D2×q S"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "i=1"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "i=1n"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "zn"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "|Wa|bZa(q, t)"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "|Wa|bZa(q, t)bZ"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "Comparedtothecasep=1(M3=S"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "IU(N)(q) =IU(N)(q, t) ·(tq;"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "andZ"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "bSab"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "bSab bZ"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "bSab bZb(q)isasin(2.42),thecontributionsofﬂatconnection"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "|Wa|bZa(q)"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "|Wa|bZa(q)bZ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "followsfrom(3.37)andS"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "z2(p+2)"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "z2(p+2)mq−m(1 −z"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "z2(p+2)mq−m(1 −z2q"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "z2(p+2)mq−m(1 −z2qm)(1 −z−2q"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(z"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "(z2tq"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "(xq"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(t"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(t2q"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(t2q2;q)−3≡(t"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "(t2q2;q)−3≡(t2/q;"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(t2q2;q)−3≡(t2/q; q)"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "(t2q2;q)−3≡(t2/q; q)3,"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "1 −t"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "1 −t"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "P−t(G)=1 −t"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "−→1 −t"
+  },
+  {
+   "page": 35,
+   "mark": "5",
+   "context": "−→1 −t3−t"
+  },
+  {
+   "page": 35,
+   "mark": "8",
+   "context": "−→1 −t3−t5+ t"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "overMH(CP"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "overMH(CP1; G),theHitchinmodulistackoverCP"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "Itop(q, t) = Indt(MH, Fq ⊗L"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "omplicated derived stack, but using the projection map MH(CP"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "ed derived stack, but using the projection map MH(CP1) →M(CP"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "tothemodulistackofGC-bundlesoverCP"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "Itop(q, t) = Ind(M, StTM ⊗Fq ⊗L"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "canbefurtherdecomposedintoasummationoverdiﬀerentstrataofM(CP"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "themodulispace—withGCasthestabilizer).AsbothL"
+  },
+  {
+   "page": 35,
+   "mark": "t",
+   "context": "tw-BPS= H•(M, S"
+  },
+  {
+   "page": 35,
+   "mark": "q",
+   "context": "tw-BPS= H•(M, StTM⊗F"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "tw-BPS= H•(M, StTM⊗Fq⊗L"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "G(Λ"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "G(Λj"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "G(Λjg[j]) = (Λ"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "G(Λjg[j]) = (Λj"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "G(Λjg[j]) = (Λjg)G= H"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "H"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "2πiz(1 −z±2)(1 −tz±2)(1 −t) = (1 −t"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "ForG = SU(N)thesecorrespondtoTrΨ"
+  },
+  {
+   "page": 36,
+   "mark": "5",
+   "context": "ForG = SU(N)thesecorrespondtoTrΨ3,TrΨ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "ForG = SU(N)thesecorrespondtoTrΨ3,TrΨ5,...,TrΨ"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 36,
+   "mark": "b",
+   "context": "|Wa|bZa(q, t)"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "|Wa|bZa(q, t)bZ"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "Itiseasytoseehowthisworksforp = 1(M3= S"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "=(t"
+  },
+  {
+   "page": 36,
+   "mark": "q",
+   "context": "=(t2"
+  },
+  {
+   "page": 36,
+   "mark": "q",
+   "context": "=(t2q−1;"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "= (t"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "bZ0(q, t) ·bZ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(t"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(t2q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(t"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(t"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(t2q"
+  },
+  {
+   "page": 36,
+   "mark": "b",
+   "context": "In the case p > 1,again,the problem of deﬁning"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "In the case p > 1,again,the problem of deﬁningbZ"
+  },
+  {
+   "page": 37,
+   "mark": "q",
+   "context": "t→qβ I(q, t)(qt;"
+  },
+  {
+   "page": 37,
+   "mark": "q",
+   "context": "t→qβ Itop(q, t) (qt;"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 37,
+   "mark": "q",
+   "context": "a(q) ≡(qt;"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "a(q) ≡(qt; q)∞bZ"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "qn2/pz"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2πiz(z"
+  },
+  {
+   "page": 37,
+   "mark": "q",
+   "context": "2πiz(z2;"
+  },
+  {
+   "page": 37,
+   "mark": "q",
+   "context": "2πiz(z2; q)β+1(z−2;"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "a(q)"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "a(q)"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "I(β)(q) = 2"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "(q)"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "(q)"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "(q)"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "(q) · 2"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "(q)"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "(q)"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "0(q) = 1,"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "1(q) = −q"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "1(q) = −q1/5,"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "0(q) = 1 + q + q"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "0(q) = 1 + q + q2,"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "1(q) = −q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "1(q) = −q1/5(1 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "1(q) = −q1/5(1 + 2q + q"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "1(q) = −q1/5(1 + 2q + q2),"
+  },
+  {
+   "page": 38,
+   "mark": "9",
+   "context": "2(q) = q"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "(q) = 1,"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "(q) = 0,"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "q+ 13 + 8"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "q+ 13 + 8 q + 3"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q+ 13 + 8 q + 3 q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "top(q) = 1 + q + q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = 1 + q + 2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "0(q) = 1 + q + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = 1 + q + 2q2 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "0(q) = 1 + q + 2q2 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = 1 + q + 2q2 + 2q3 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "0(q) = 1 + q + 2q2 + 2q3 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "0(q) = 1 + q + 2q2 + 2q3 + 2q4 + q"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "0(q) = 1 + q + 2q2 + 2q3 + 2q4 + q5 + q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "1(q) = −q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "1(q) = −q1/5(1 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "1(q) = −q1/5(1 + 2q + 3"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "1(q) = −q1/5(1 + 2q + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "1(q) = −q1/5(1 + 2q + 3q2 + 3"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "1(q) = −q1/5(1 + 2q + 3q2 + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "1(q) = −q1/5(1 + 2q + 3q2 + 3q3 + 3"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "1(q) = −q1/5(1 + 2q + 3q2 + 3q3 + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "1(q) = −q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "1(q) = −q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "1(q) = −q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2q5 + q"
+  },
+  {
+   "page": 38,
+   "mark": "9",
+   "context": "2(q) = q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2(q) = q9/5(1 + q + 2"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "2(q) = q9/5(1 + q + 2q + q"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "(q) = −q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "(q) = −q2/(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "(q) = −q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "(q) = −q6/5/(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "(q) = −q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "(q) = −q4/5/(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "q+ 76 + 65"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "q+ 76 + 65q + 55"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q+ 76 + 65q + 55q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "q+ 76 + 65q + 55q2 + 35"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "q+ 76 + 65q + 55q2 + 35q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "q+ 76 + 65q + 55q2 + 35q3 + 21"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "q+ 76 + 65q + 55q2 + 35q3 + 21q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "q+ 76 + 65q + 55q2 + 35q3 + 21q4 + 8"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "q+ 76 + 65q + 55q2 + 35q3 + 21q4 + 8q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "q+ 76 + 65q + 55q2 + 35q3 + 21q4 + 8q5 + 3"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "q+ 76 + 65q + 55q2 + 35q3 + 21q4 + 8q5 + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "top(q) = 1 + q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "top(q) = 1 + q2 + q"
+  },
+  {
+   "page": 38,
+   "mark": "12",
+   "context": "0(q) = q"
+  },
+  {
+   "page": 38,
+   "mark": "11",
+   "context": "0(q) = q12 + q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = q12 + q11 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "10",
+   "context": "0(q) = q12 + q11 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = q12 + q11 + 2q10 + 3"
+  },
+  {
+   "page": 38,
+   "mark": "9",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4"
+  },
+  {
+   "page": 38,
+   "mark": "8",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q8 + 4"
+  },
+  {
+   "page": 38,
+   "mark": "7",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "0(q) = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": ") = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": " = q12 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2 + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q3 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": " + q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q3 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "12",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "11",
+   "context": "q12+ 2q"
+  },
+  {
+   "page": 38,
+   "mark": "10",
+   "context": "q12+ 2q11+ 3q"
+  },
+  {
+   "page": 38,
+   "mark": "9",
+   "context": "q12+ 2q11+ 3q10+ 4q"
+  },
+  {
+   "page": 38,
+   "mark": "8",
+   "context": "q12+ 2q11+ 3q10+ 4q9+ 6q"
+  },
+  {
+   "page": 38,
+   "mark": "7",
+   "context": "q12+ 2q11+ 3q10+ 4q9+ 6q8+ 7q"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "q12+ 2q11+ 3q10+ 4q9+ 6q8+ 7q7+ 8q"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "q12+ 2q11+ 3q10+ 4q9+ 6q8+ 7q7+ 8q6+ 7q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "q12+ 2q11+ 3q10+ 4q9+ 6q8+ 7q7+ 8q6+ 7q5+ 6q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "q12+ 2q11+ 3q10+ 4q9+ 6q8+ 7q7+ 8q6+ 7q5+ 6q4+ 5q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q12+ 2q11+ 3q10+ 4q9+ 6q8+ 7q7+ 8q6+ 7q5+ 6q4+ 5q3+ 3q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "1(q) = −q"
+  },
+  {
+   "page": 38,
+   "mark": "9",
+   "context": "2(q) = q"
+  },
+  {
+   "page": 38,
+   "mark": "10",
+   "context": "2(q) = q9/5(q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2(q) = q9/5(q10 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "8",
+   "context": "2(q) = q9/5(q10 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "7",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q6 + 3"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q6 + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q6 + 3q5 + 3"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q6 + 3q5 + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q6 + 3q5 + 3q4 + 2"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q6 + 3q5 + 3q4 + 2q"
+  },
+  {
+   "page": 38,
+   "mark": "q",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q6 + 3q5 + 3q4 + 2q3 + 3"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "2(q) = q9/5(q10 + 2q8 + 2q7 + 2q6 + 3q5 + 3q4 + 2q3 + 3q"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 38,
+   "mark": "7",
+   "context": "(q) = (q"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "(q) = (q7+ q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "(q) = (q7+ q5+ q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "(q) = (q7+ q5+ q4+ q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "(q) = (q7+ q5+ q4+ q3+ q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "(1 −q3)(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "q4+ q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q4+ q3+ q"
+  },
+  {
+   "page": 38,
+   "mark": "11",
+   "context": "(q) = q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "(1 −q3)(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q3+ q"
+  },
+  {
+   "page": 38,
+   "mark": "14",
+   "context": "(q) = q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "(1 −q3)(1 −q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "top(q) = 1 + q"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "top(q) = 1 + q3 + q"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "(−qt; q)∞bZ"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "a(q) + (1 + qβ"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "(−qt; q)∞bZ"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "Also,the complexity of the blocks"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "and"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "Inthissecitionweshowhowtoobtainexpressionfor"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "InthissecitionweshowhowtoobtainexpressionforbZ"
+  },
+  {
+   "page": 39,
+   "mark": "m",
+   "context": "eF(m)(q) ·t"
+  },
+  {
+   "page": 39,
+   "mark": "q",
+   "context": "eF(m)(q) ·tm(1/t;"
+  },
+  {
+   "page": 39,
+   "mark": "m",
+   "context": "eF(m)(q) ·tm(1/t; q)"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "The coeﬃcient of the cyclotomic expansion,"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "cipletheycanbeabsorbedintothedeﬁnitionofcyclotomiccoeﬃcients"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "Iftheminimaldegreeofqin"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "(q) ·t"
+  },
+  {
+   "page": 40,
+   "mark": "q",
+   "context": "(q) ·tm(1/t;"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "(q) ·tm(1/t; q)"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "Pn(t)q"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "hand,sinceP"
+  },
+  {
+   "page": 40,
+   "mark": "b",
+   "context": "hand,sincePm(t)containonlypositivepowersoft,onecanproduce"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "(1/q) ·t"
+  },
+  {
+   "page": 40,
+   "mark": "q",
+   "context": "(1/q) ·tm(1/t;"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "(1/q) ·tm(1/t; q)"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 40,
+   "mark": "b",
+   "context": "(1/q)arerelatedto"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "(1/q)≡(q−1t; q−1)∞bZ"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "as"
+  },
+  {
+   "page": 40,
+   "mark": "b",
+   "context": "Forexample,inthecasep = 5,usingexpressionsfor"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "−t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "−t3+ t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "t4−3t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "t4−3t3+ 5t"
+  },
+  {
+   "page": 40,
+   "mark": "5",
+   "context": "−t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "−t5+ 6t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "−t5+ 6t4−11t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "−t5+ 6t4−11t3+ 11t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 40,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "2bZ"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "t"
+  },
+  {
+   "page": 40,
+   "mark": "5",
+   "context": "t6−6t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "t6−6t5+ 17t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "t6−6t5+ 17t4−28t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "t6−6t5+ 17t4−28t3+ 26t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "bZ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "t4−3t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "t4−3t3+ 3t"
+  },
+  {
+   "page": 40,
+   "mark": "5",
+   "context": "−t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "−t5+ 4t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "−t5+ 4t4−9t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "−t5+ 4t4−9t3+ 10t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 40,
+   "mark": "5",
+   "context": "−4t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "−4t5+ 15t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "−4t5+ 15t4−24t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "−4t5+ 15t4−24t3+ 21t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "bZ"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "bZ2(1/q, t) =q"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "−t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "−t3+ 2t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "2t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "2t4−5t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "2t4−5t3+ 5t"
+  },
+  {
+   "page": 40,
+   "mark": "5",
+   "context": "−2t"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "−2t5+ 7t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "−2t5+ 7t4−13t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "−2t5+ 7t4−13t3+ 14t"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "bZ0(q, t)= 1 + q + (2 −t + t"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "bZ0(q, t)= 1 + q + (2 −t + t2)q"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "bZ0(q, t)= 1 + q + (2 −t + t2)q2+ (3 −2t + 2t"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "bZ0(q, t)= 1 + q + (2 −t + t2)q2+ (3 −2t + 2t2)q"
+  },
+  {
+   "page": 41,
+   "mark": "4",
+   "context": "bZ0(q, t)= 1 + q + (2 −t + t2)q2+ (3 −2t + 2t2)q3+ O(q"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "−1 + (−2 + t)q + (−3 + 2t −2t"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "−1 + (−2 + t)q + (−3 + 2t −2t2)q"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "−1 + (−2 + t)q + (−3 + 2t −2t2)q2+ (−5 + 4t −3t"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "−1 + (−2 + t)q + (−3 + 2t −2t2)q2+ (−5 + 4t −3t2+ t"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "−1 + (−2 + t)q + (−3 + 2t −2t2)q2+ (−5 + 4t −3t2+ t3)q"
+  },
+  {
+   "page": 41,
+   "mark": "4",
+   "context": "−1 + (−2 + t)q + (−3 + 2t −2t2)q2+ (−5 + 4t −3t2+ t3)q3+ O(q"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "bZ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "bZ1(q, t)= q"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "(1 −t)q + (1 −2t + t"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "(1 −t)q + (1 −2t + t2)q"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "(1 −t)q + (1 −2t + t2)q2+ O(q"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "bZ"
+  },
+  {
+   "page": 41,
+   "mark": "4",
+   "context": "bZ2(q, t)= q"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "4",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "5",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 41,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 41,
+   "mark": "6",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "I(q, t)=bZ"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "I(q, t)=bZ0(q, t) · 2"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "I(q, t)=bZ0(q, t) · 2bZ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "I(q, t)=bZ0(q, t) · 2bZ0(1/q, 1/t) +bZ"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "I(q, t)=bZ0(q, t) · 2bZ0(1/q, 1/t) +bZ1(q, t)"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "I(q, t)=bZ0(q, t) · 2bZ0(1/q, 1/t) +bZ1(q, t)bZ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "q, t)=bZ0(q, t) · 2bZ0(1/q, 1/t) +bZ1(q, t)bZ1(1/q, 1/t) +bZ"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "Z0(q, t) · 2bZ0(1/q, 1/t) +bZ1(q, t)bZ1(1/q, 1/t) +bZ2(q, t)"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "(q, t) · 2bZ0(1/q, 1/t) +bZ1(q, t)bZ1(1/q, 1/t) +bZ2(q, t)bZ"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "Itop(q, t)=1 −t"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "Itop(q, t)=bZ"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "Itop(q, t)=bZ0(q, t) · 2"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "Itop(q, t)=bZ0(q, t) · 2bZ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "Itop(q, t)=bZ0(q, t) · 2bZ0(1/q, t) +bZ"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "Itop(q, t)=bZ0(q, t) · 2bZ0(1/q, t) +bZ1(q, t)"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "Itop(q, t)=bZ0(q, t) · 2bZ0(1/q, t) +bZ1(q, t)bZ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "top(q, t)=bZ0(q, t) · 2bZ0(1/q, t) +bZ1(q, t)bZ1(1/q, t) +bZ"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "t)=bZ0(q, t) · 2bZ0(1/q, t) +bZ1(q, t)bZ1(1/q, t) +bZ2(q, t)"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "=bZ0(q, t) · 2bZ0(1/q, t) +bZ1(q, t)bZ1(1/q, t) +bZ2(q, t)bZ"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "±bZ"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "±(−qt; q)∞bZ"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "sothatitisnaturallytoconjecturethat±bZ"
+  },
+  {
+   "page": 42,
+   "mark": "b",
+   "context": "achievesthat(contrarytowhathappendfor"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "achievesthat(contrarytowhathappendforbZ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "(1 −t"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "(1 −t2"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "(1 −t2m"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "(1 + t + . . . + t"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "(1 + t + . . . + t2"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "(1 + t + . . . + t2m"
+  },
+  {
+   "page": 42,
+   "mark": "t",
+   "context": "+playstheroleof"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "whereH•(T)isfermionic(generatedbyelementsinH"
+  },
+  {
+   "page": 43,
+   "mark": "b",
+   "context": "1.Positivityofhomologicalblocks"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "1.PositivityofhomologicalblocksbZ"
+  },
+  {
+   "page": 43,
+   "mark": "3",
+   "context": "T[S"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "(1 −t"
+  },
+  {
+   "page": 43,
+   "mark": "m",
+   "context": "(1 −t2"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "(1 −t2m"
+  },
+  {
+   "page": 43,
+   "mark": "b",
+   "context": "3.Positivityof“β-reduced”homologicalblocks"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "top,theirpositivitydirectlyfollowsfrom"
+  },
+  {
+   "page": 43,
+   "mark": "t",
+   "context": "top,theirpositivitydirectlyfollowsfrom2bysetting"
+  },
+  {
+   "page": 43,
+   "mark": "b",
+   "context": "positivity for"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "Chern-Simonstheory[19]onT"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "Snm≡⟨Rn|S|Rm⟩= dRn(t)MRm(tq"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "(q−(m+1)/2t−1/2−q(m+1)/2t"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "(2k + 4β)"
+  },
+  {
+   "page": 44,
+   "mark": "j",
+   "context": "x"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "q−(m+n)/2t−1/2−q(m+n)/2t"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "q−(m+1)/2t−1/2−q(m+1)/2t"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "q−(n+m)/2t−1/2−q(n+m)/2t"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "q−(n−m)/2t−1/2−q(n−m)/2t"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "n(S"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "n(S1"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "n(S1n)"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "q−pn"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "2−pβ"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "q−pm"
+  },
+  {
+   "page": 45,
+   "mark": "q",
+   "context": "=(−1)β"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "q−pm"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "(1 −q"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "(1 −qj+m)(1 −q"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "4(2k + 4β)"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "e2πi(k+2β)"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "e2πi(k+2β) a"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "q−pm"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "p· e"
+  },
+  {
+   "page": 45,
+   "mark": "p",
+   "context": "4"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "(2k + 4β)"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "(1 −q"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "(1 −qjz"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "(1 −qjz2)(1 −q"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Sab=e"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": ":Z[q] ⊗Z[z"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "qℓ"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 46,
+   "mark": "f",
+   "context": "2πiz"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "(2k + 4β)"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "(q)arethesameashomologicalblocks(3.60)obtainedastheD2×qS"
+  },
+  {
+   "page": 46,
+   "mark": "b",
+   "context": "where"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 46,
+   "mark": "b",
+   "context": "position(2.6)oftheWRTinvariantintohomologicalblocks"
+  },
+  {
+   "page": 46,
+   "mark": "a",
+   "context": "position(2.6)oftheWRTinvariantintohomologicalblocksbZ"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "+2gadjointchirals(Φ"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "+2gadjointchirals(Φi,"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "+2gadjointchirals(Φi,eΦ"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "+2gadjointchirals(Φi,eΦi)"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "i=1withR-charge"
+  },
+  {
+   "page": 46,
+   "mark": "f",
+   "context": "rges is consistent with the cubic superpotential coupling Tr"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "SU(2) × SU(2)R-symmetry,withrespecttowhichtheﬁeldsΦ"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "SU(2) × SU(2)R-symmetry,withrespecttowhichtheﬁeldsΦi,"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "SU(2) × SU(2)R-symmetry,withrespecttowhichtheﬁeldsΦi,eΦ"
+  },
+  {
+   "page": 47,
+   "mark": "i",
+   "context": "eΦ"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "Consider the partition function of T[M3] on D2×S"
+  },
+  {
+   "page": 47,
+   "mark": "b",
+   "context": "whichgeneralizetheboundaryconditionsforT[L(p, 1)]thatproduce"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "ichgeneralizetheboundaryconditionsforT[L(p, 1)]thatproducebZ"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "•Neumannforgadjointchirals"
+  },
+  {
+   "page": 47,
+   "mark": "i",
+   "context": "•NeumannforgadjointchiralseΦ"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "TheD2×q S"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "bZa(q, t, u) ≡ZT[M"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "a×qS"
+  },
+  {
+   "page": 47,
+   "mark": "q",
+   "context": "n∈pZ+a"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "n∈pZ+aq"
+  },
+  {
+   "page": 47,
+   "mark": "z",
+   "context": "n∈pZ+aqn2/p"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "n∈pZ+aqn2/p z2"
+  },
+  {
+   "page": 47,
+   "mark": "g",
+   "context": "n∈Z2k(qn/2 −q−n/2)2−2"
+  },
+  {
+   "page": 47,
+   "mark": "q",
+   "context": "n∈Z2k(qn/2 −q−n/2)2−2g"
+  },
+  {
+   "page": 47,
+   "mark": "g",
+   "context": "(S1n)2−2"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "SU(2)k[M"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "SU(2)k[M"
+  },
+  {
+   "page": 48,
+   "mark": "b",
+   "context": "bZ"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "(z −z−1)"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "(z −z−1)2−2"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "qn2/pz"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "(z −z−1)"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "(z −z−1)2−2"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "theunreﬁnedpartitionfunctionofT[M3]onD"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "theunreﬁnedpartitionfunctionofT[M3]onD2× S"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "bZa(q) =bZ"
+  },
+  {
+   "page": 48,
+   "mark": "z",
+   "context": "2πiz"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "2πizz"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "2πizz2pm (1 −z±2"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "2πizz2pm (1 −z±2q"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "2πizz2pm (1 −z±2qm)"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "2πizz2pm (1 −z±2qm) q−2"
+  },
+  {
+   "page": 48,
+   "mark": "t",
+   "context": "2πizz2pm (1 −z±2qm) q−2m(1−g)"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "2πizz2pm (1 −z±2qm) q−2m(1−g) t−2"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "(z±2q"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "(z±2q"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "iq"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "iqm+1;"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "(z±2tuiq"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "iq;"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "(z±2uiq"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "iq"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "iqm;"
+  },
+  {
+   "page": 48,
+   "mark": "u",
+   "context": "iqm; q)∞(t−1"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "i;"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 48,
+   "mark": "b",
+   "context": "|Wa|bZa(q, t, u)"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "|Wa|bZa(q, t, u)bZ"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "checking it directly is that we only have the expression for"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "ecking it directly is that we only have the expression forbZ"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "such that"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "such thatbZ"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 49,
+   "mark": "q",
+   "context": "I(β)(q)≡I(q, t)(qt;"
+  },
+  {
+   "page": 49,
+   "mark": "q",
+   "context": "i;"
+  },
+  {
+   "page": 49,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 49,
+   "mark": "q",
+   "context": "iq;"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "iq; q)∞(tu"
+  },
+  {
+   "page": 49,
+   "mark": "q",
+   "context": "iq; q)∞(tui"
+  },
+  {
+   "page": 49,
+   "mark": "q",
+   "context": "iq; q)∞(tuiq;"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 49,
+   "mark": "b",
+   "context": "a(q)"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "q2+ 1,"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": ","
+  },
+  {
+   "page": 50,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 50,
+   "mark": "11",
+   "context": "q"
+  },
+  {
+   "page": 50,
+   "mark": "24",
+   "context": "q"
+  },
+  {
+   "page": 50,
+   "mark": "6",
+   "context": "2I(−3)(q) = q"
+  },
+  {
+   "page": 50,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 50,
+   "mark": "q",
+   "context": "q6+ 4"
+  },
+  {
+   "page": 50,
+   "mark": "q",
+   "context": "q4+ 8"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "q4+ 8q"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 50,
+   "mark": "q",
+   "context": "q3+ 5"
+  },
+  {
+   "page": 50,
+   "mark": "q",
+   "context": "q2+ 8"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "I(β)(q) = 2"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "(q)"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "(q)"
+  },
+  {
+   "page": 50,
+   "mark": "b",
+   "context": "(q)"
+  },
+  {
+   "page": 50,
+   "mark": "g",
+   "context": "(S1n)2−2"
+  },
+  {
+   "page": 50,
+   "mark": "g",
+   "context": "g"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "SU(2)[M"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "qn2/pz"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 51,
+   "mark": "q",
+   "context": "2πiz(z±2;"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "2πiz(z±2; q)"
+  },
+  {
+   "page": 51,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "qn2/pz"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "functionofT[M3]onD"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "functionofT[M3]onD2× S"
+  },
+  {
+   "page": 51,
+   "mark": "a",
+   "context": "(q) =bZ"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "contains Seifert ﬁbrations over S"
+  },
+  {
+   "page": 51,
+   "mark": "v",
+   "context": "M"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "inS"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "a"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "a"
+  },
+  {
+   "page": 52,
+   "mark": "a",
+   "context": "•2-valentvertex:T"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "•n-valentvertex:T[(spherewithnholes) × S"
+  },
+  {
+   "page": 52,
+   "mark": "b",
+   "context": "3.4.1Homologicalblocks"
+  },
+  {
+   "page": 52,
+   "mark": "a",
+   "context": "3.4.1HomologicalblocksbZ"
+  },
+  {
+   "page": 52,
+   "mark": "b",
+   "context": "bZ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "(zv −1/zv)"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "(zv −1/zv)"
+  },
+  {
+   "page": 53,
+   "mark": "i",
+   "context": "xℓ"
+  },
+  {
+   "page": 53,
+   "mark": "b",
+   "context": "3.Theformula(3.145)deﬁneshomologicalblocks"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "3.Theformula(3.145)deﬁneshomologicalblocksbZ"
+  },
+  {
+   "page": 53,
+   "mark": "b",
+   "context": "Γ.Therefore,"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "Γ.Therefore,bZ"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "herefore,bZa(q)actuallydependsonlyonthehomeomorphismclassofM"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "b× S"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "clearhowtoproperlyrealizeitasapartitionfunctionofT[M3(Γ)]onD"
+  },
+  {
+   "page": 53,
+   "mark": "b",
+   "context": "5.SupposeM<0.Then"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "5.SupposeM<0.ThenbZ"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "|q| < 1.UnlessM"
+  },
+  {
+   "page": 53,
+   "mark": "b",
+   "context": "|q| < 1.UnlessM3isaLensspace,"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "|q| < 1.UnlessM3isaLensspace,bZ"
+  },
+  {
+   "page": 53,
+   "mark": "b",
+   "context": "bZ"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "v"
+  },
+  {
+   "page": 53,
+   "mark": "v",
+   "context": "va"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "bZ0= q−3/2(1 −q −q"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "bZ0= q−3/2(1 −q −q3−q"
+  },
+  {
+   "page": 54,
+   "mark": "8",
+   "context": "bZ0= q−3/2(1 −q −q3−q7+ q"
+  },
+  {
+   "page": 54,
+   "mark": "14",
+   "context": "bZ0= q−3/2(1 −q −q3−q7+ q8+ q"
+  },
+  {
+   "page": 54,
+   "mark": "20",
+   "context": "bZ0= q−3/2(1 −q −q3−q7+ q8+ q14+ q"
+  },
+  {
+   "page": 54,
+   "mark": "29",
+   "context": "bZ0= q−3/2(1 −q −q3−q7+ q8+ q14+ q20+ q"
+  },
+  {
+   "page": 54,
+   "mark": "31",
+   "context": "bZ0= q−3/2(1 −q −q3−q7+ q8+ q14+ q20+ q29−q"
+  },
+  {
+   "page": 54,
+   "mark": "42",
+   "context": "bZ0= q−3/2(1 −q −q3−q7+ q8+ q14+ q20+ q29−q31−q"
+  },
+  {
+   "page": 54,
+   "mark": "6",
+   "context": "1 −q + q"
+  },
+  {
+   "page": 54,
+   "mark": "11",
+   "context": "1 −q + q6−q"
+  },
+  {
+   "page": 54,
+   "mark": "13",
+   "context": "1 −q + q6−q11+ q"
+  },
+  {
+   "page": 54,
+   "mark": "20",
+   "context": "1 −q + q6−q11+ q13−q"
+  },
+  {
+   "page": 54,
+   "mark": "35",
+   "context": "1 −q + q6−q11+ q13−q20+ q"
+  },
+  {
+   "page": 54,
+   "mark": "41",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "−1 + q"
+  },
+  {
+   "page": 54,
+   "mark": "21",
+   "context": "−1 + q3−q"
+  },
+  {
+   "page": 54,
+   "mark": "30",
+   "context": "−1 + q3−q21+ q"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "41",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "q−1/2(2 −2q+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "q−1/2(2 −2q+ 2q2−2q"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "q−1/2(2 −2q+ 2q2−2q4+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "10",
+   "context": "q−1/2(2 −2q+ 2q2−2q4+ 4q5+ 6q"
+  },
+  {
+   "page": 54,
+   "mark": "11",
+   "context": "q−1/2(2 −2q+ 2q2−2q4+ 4q5+ 6q10+ 8q"
+  },
+  {
+   "page": 54,
+   "mark": "13",
+   "context": "q−1/2(2 −2q+ 2q2−2q4+ 4q5+ 6q10+ 8q11−4q"
+  },
+  {
+   "page": 54,
+   "mark": "14",
+   "context": "q−1/2(2 −2q+ 2q2−2q4+ 4q5+ 6q10+ 8q11−4q13+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "15",
+   "context": "q−1/2(2 −2q+ 2q2−2q4+ 4q5+ 6q10+ 8q11−4q13+ 2q14+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "18",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "q5/26(−3 + 2q+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "q5/26(−3 + 2q+ 2q2−4q"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "q5/26(−3 + 2q+ 2q2−4q3−2q"
+  },
+  {
+   "page": 54,
+   "mark": "8",
+   "context": "q5/26(−3 + 2q+ 2q2−4q3−2q7−q"
+  },
+  {
+   "page": 54,
+   "mark": "9",
+   "context": "q5/26(−3 + 2q+ 2q2−4q3−2q7−q8+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "10",
+   "context": "q5/26(−3 + 2q+ 2q2−4q3−2q7−q8+ 2q9−q"
+  },
+  {
+   "page": 54,
+   "mark": "12",
+   "context": "q5/26(−3 + 2q+ 2q2−4q3−2q7−q8+ 2q9−q10+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "13",
+   "context": "q5/26(−3 + 2q+ 2q2−4q3−2q7−q8+ 2q9−q10+ 2q12−4q"
+  },
+  {
+   "page": 54,
+   "mark": "16",
+   "context": "q5/26(−3 + 2q+ 2q2−4q3−2q7−q8+ 2q9−q10+ 2q12−4q13+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "18",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "q7/26(4 + q+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "q7/26(4 + q+ 2q3−2q"
+  },
+  {
+   "page": 54,
+   "mark": "6",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q6−3q"
+  },
+  {
+   "page": 54,
+   "mark": "8",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q6−3q7−2q"
+  },
+  {
+   "page": 54,
+   "mark": "10",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q6−3q7−2q8−2q"
+  },
+  {
+   "page": 54,
+   "mark": "11",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q6−3q7−2q8−2q10−q"
+  },
+  {
+   "page": 54,
+   "mark": "13",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q6−3q7−2q8−2q10−q11−2q"
+  },
+  {
+   "page": 54,
+   "mark": "14",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q6−3q7−2q8−2q10−q11−2q13−4q"
+  },
+  {
+   "page": 54,
+   "mark": "15",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q6−3q7−2q8−2q10−q11−2q13−4q14−2q"
+  },
+  {
+   "page": 54,
+   "mark": "16",
+   "context": "q7/26(4 + q+ 2q3−2q4−2q6−3q7−2q8−2q10−q11−2q13−4q14−2q15−4q"
+  },
+  {
+   "page": 54,
+   "mark": "18",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "q−7/26(−3 −3q"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "q−7/26(−3 −3q2+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "q−7/26(−3 −3q2+ 2q4−2q"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "q−7/26(−3 −3q2+ 2q4−2q5+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "8",
+   "context": "q−7/26(−3 −3q2+ 2q4−2q5+ 4q7+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "9",
+   "context": "q−7/26(−3 −3q2+ 2q4−2q5+ 4q7+ 2q8+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "10",
+   "context": "q−7/26(−3 −3q2+ 2q4−2q5+ 4q7+ 2q8+ 2q9+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "12",
+   "context": "q−7/26(−3 −3q2+ 2q4−2q5+ 4q7+ 2q8+ 2q9+ 2q10+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "13",
+   "context": "q−7/26(−3 −3q2+ 2q4−2q5+ 4q7+ 2q8+ 2q9+ 2q10+ 4q12+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "14",
+   "context": "q−7/26(−3 −3q2+ 2q4−2q5+ 4q7+ 2q8+ 2q9+ 2q10+ 4q12+ 4q13+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "15",
+   "context": "(−3 −3q2+ 2q4−2q5+ 4q7+ 2q8+ 2q9+ 2q10+ 4q12+ 4q13+ 4q14+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "18",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "q−11/26(−1 + 2q−2q"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "q−11/26(−1 + 2q−2q2+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "6",
+   "context": "q−11/26(−1 + 2q−2q2+ 4q3−3q"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "q−11/26(−1 + 2q−2q2+ 4q3−3q6−2q"
+  },
+  {
+   "page": 54,
+   "mark": "8",
+   "context": "q−11/26(−1 + 2q−2q2+ 4q3−3q6−2q7+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "9",
+   "context": "q−11/26(−1 + 2q−2q2+ 4q3−3q6−2q7+ 4q8−2q"
+  },
+  {
+   "page": 54,
+   "mark": "11",
+   "context": "q−11/26(−1 + 2q−2q2+ 4q3−3q6−2q7+ 4q8−2q9+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "13",
+   "context": "q−11/26(−1 + 2q−2q2+ 4q3−3q6−2q7+ 4q8−2q9+ 2q11+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "14",
+   "context": "q−11/26(−1 + 2q−2q2+ 4q3−3q6−2q7+ 4q8−2q9+ 2q11+ 2q13+ q"
+  },
+  {
+   "page": 54,
+   "mark": "16",
+   "context": "−11/26(−1 + 2q−2q2+ 4q3−3q6−2q7+ 4q8−2q9+ 2q11+ 2q13+ q14−2q"
+  },
+  {
+   "page": 54,
+   "mark": "17",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "q−5/26(2 + 2q"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "q−5/26(2 + 2q2−q"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "q−5/26(2 + 2q2−q3−3q"
+  },
+  {
+   "page": 54,
+   "mark": "6",
+   "context": "q−5/26(2 + 2q2−q3−3q5−2q"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "q−5/26(2 + 2q2−q3−3q5−2q6+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "8",
+   "context": "q−5/26(2 + 2q2−q3−3q5−2q6+ 2q7−4q"
+  },
+  {
+   "page": 54,
+   "mark": "10",
+   "context": "q−5/26(2 + 2q2−q3−3q5−2q6+ 2q7−4q8−2q"
+  },
+  {
+   "page": 54,
+   "mark": "11",
+   "context": "q−5/26(2 + 2q2−q3−3q5−2q6+ 2q7−4q8−2q10−2q"
+  },
+  {
+   "page": 54,
+   "mark": "12",
+   "context": "q−5/26(2 + 2q2−q3−3q5−2q6+ 2q7−4q8−2q10−2q11−2q"
+  },
+  {
+   "page": 54,
+   "mark": "13",
+   "context": "q−5/26(2 + 2q2−q3−3q5−2q6+ 2q7−4q8−2q10−2q11−2q12−2q"
+  },
+  {
+   "page": 54,
+   "mark": "15",
+   "context": "q−5/26(2 + 2q2−q3−3q5−2q6+ 2q7−4q8−2q10−2q11−2q12−2q13−5q"
+  },
+  {
+   "page": 54,
+   "mark": "16",
+   "context": "5/26(2 + 2q2−q3−3q5−2q6+ 2q7−4q8−2q10−2q11−2q12−2q13−5q15−2q"
+  },
+  {
+   "page": 54,
+   "mark": "17",
+   "context": "q"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "q−15/26(−1 −2q+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "q−15/26(−1 −2q+ 2q2−q"
+  },
+  {
+   "page": 54,
+   "mark": "6",
+   "context": "q−15/26(−1 −2q+ 2q2−q4+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "q−15/26(−1 −2q+ 2q2−q4+ 2q6−2q"
+  },
+  {
+   "page": 54,
+   "mark": "8",
+   "context": "q−15/26(−1 −2q+ 2q2−q4+ 2q6−2q7+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "10",
+   "context": "q−15/26(−1 −2q+ 2q2−q4+ 2q6−2q7+ 2q8+ 4q"
+  },
+  {
+   "page": 54,
+   "mark": "12",
+   "context": "q−15/26(−1 −2q+ 2q2−q4+ 2q6−2q7+ 2q8+ 4q10+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "13",
+   "context": "q−15/26(−1 −2q+ 2q2−q4+ 2q6−2q7+ 2q8+ 4q10+ 2q12+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "15",
+   "context": "q−15/26(−1 −2q+ 2q2−q4+ 2q6−2q7+ 2q8+ 4q10+ 2q12+ 2q13+ 2q"
+  },
+  {
+   "page": 54,
+   "mark": "17",
+   "context": "q"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "beinganSL(2, Z)-mappingclasstorusofpuncturedT"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "ity”)whichpreservesthesamesupersymmetryasthebackgroundalongD"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "whichpreservesthesamesupersymmetryasthebackgroundalongD2∼= R"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "×D"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "e have chosen the line defect in T[M3] to sit at the tip O∈D"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "space T∗|Oto D"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "spaceofT[M3]onthediskD"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "Ha[M3; K, R] ≡HT[M3](D"
+  },
+  {
+   "page": 56,
+   "mark": "3",
+   "context": "a[M"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "ore,thegradedEulercharacteristicgivesthepartitionfunctiononD"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "thegradedEulercharacteristicgivesthepartitionfunctiononD2× S"
+  },
+  {
+   "page": 57,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 57,
+   "mark": "3",
+   "context": "bZa(q; ΓK,R) ≡ZT[M"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "bZa(q; ΓK,R) ≡ZT[M3](D"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "bZa(q; ΓK,R) ≡ZT[M3](D2× S"
+  },
+  {
+   "page": 57,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "(−1)jq"
+  },
+  {
+   "page": 57,
+   "mark": "3",
+   "context": "a[M"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "eory T[M3] with an extra 1d “impurity” ΓK,Rsupported on O ×S"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 57,
+   "mark": "b",
+   "context": "e2πikℓk(a,a)Sab"
+  },
+  {
+   "page": 57,
+   "mark": "b",
+   "context": "e2πikℓk(a,a)SabbZ"
+  },
+  {
+   "page": 57,
+   "mark": "b",
+   "context": "2k)"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "2k)b"
+  },
+  {
+   "page": 57,
+   "mark": "3",
+   "context": "2k)b1(M"
+  },
+  {
+   "page": 57,
+   "mark": "b",
+   "context": "bZ"
+  },
+  {
+   "page": 58,
+   "mark": "b",
+   "context": "icking a “reference boundary condition” (e.g. the one giving"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "king a “reference boundary condition” (e.g. the one givingbZ"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "theories,whichassociatecategoriestoS"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "ΛM3= Tor H"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "HT[M3](D"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "HT[M3](D2, Wλ; a)∼HT[M3](D"
+  },
+  {
+   "page": 59,
+   "mark": "b",
+   "context": "ofhomologicalblocks"
+  },
+  {
+   "page": 59,
+   "mark": "a",
+   "context": "ofhomologicalblocksbZ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "one can compute the partition function of T[M3] on D"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "one can compute the partition function of T[M3] on D2×S"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "ition function of T[M3] on D2×S1with ΓK,Rinserted along O ×S"
+  },
+  {
+   "page": 59,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "bZa(q, t; ΓK,R) ≡ZT[M3](D"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "bZa(q, t; ΓK,R) ≡ZT[M3](D2× S"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "χλ(z)q"
+  },
+  {
+   "page": 59,
+   "mark": "j",
+   "context": "χλ(z)qitℓ(−1)"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "Similarly,wecanconsidertheS"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "Similarly,wecanconsidertheS2× S"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "insertedatone(orboth)polesofS"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "I(q, t; ΓK,R) ≡ZT[M3](S"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "I(q, t; ΓK,R) ≡ZT[M3](S2× S"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "χλ(zqm/2)q"
+  },
+  {
+   "page": 60,
+   "mark": "j",
+   "context": "χλ(zqm/2)qitℓ(−1)"
+  },
+  {
+   "page": 60,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 60,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 60,
+   "mark": "b",
+   "context": "|Wa|bZa(q, t; ΓK,R)"
+  },
+  {
+   "page": 60,
+   "mark": "a",
+   "context": "|Wa|bZa(q, t; ΓK,R)bZ"
+  },
+  {
+   "page": 61,
+   "mark": "b",
+   "context": "loop.Also, there is only one homological block"
+  },
+  {
+   "page": 61,
+   "mark": "0",
+   "context": "loop.Also, there is only one homological blockbZ"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "Ha[S2× S"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "⊗Ha[S2× S"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "where the ﬁrst factor on the right-hand side is the S2×S"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "Asweshallseebelow,alreadyinthisrelativelysimplecaseofM3=S"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "trivial.SinceWilsonloopsinT[M3]comefromM2-braneswrappingtheS"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "M3thatwindsaroundS"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "byRλ)isequalto|λ|.RegardingM3=S"
+  },
+  {
+   "page": 61,
+   "mark": "n",
+   "context": "Speciﬁcally,λ=□⊗2"
+  },
+  {
+   "page": 61,
+   "mark": "n",
+   "context": "arcombinationofL2n’sthatreplicatesthedecompositionofλinto□⊗2"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 62,
+   "mark": "l",
+   "context": "bZ0(q, t; W2"
+  },
+  {
+   "page": 62,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "canbecomputedusing(4.17),withT[S"
+  },
+  {
+   "page": 62,
+   "mark": "l",
+   "context": "⟨W2l⟩=(qt)"
+  },
+  {
+   "page": 62,
+   "mark": "q",
+   "context": "⟨W2l⟩=(qt)l(1/t;"
+  },
+  {
+   "page": 62,
+   "mark": "l",
+   "context": "⟨W2l⟩=(qt)l(1/t; q)"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "ther hand, as a vector space, the homological invariant H•(S"
+  },
+  {
+   "page": 62,
+   "mark": "n",
+   "context": "Rozansky(L2"
+  },
+  {
+   "page": 62,
+   "mark": "n",
+   "context": "dim Vl · q2"
+  },
+  {
+   "page": 62,
+   "mark": "j",
+   "context": "dim Vl · q2n−2"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "Ifweshifttheoverallq-degreeofH•by−2nunitstoremovetheq"
+  },
+  {
+   "page": 63,
+   "mark": "n",
+   "context": "Ifweshifttheoverallq-degreeofH•by−2nunitstoremovetheq2"
+  },
+  {
+   "page": 63,
+   "mark": "j",
+   "context": "⟨W2l⟩= (qt)"
+  },
+  {
+   "page": 63,
+   "mark": "q",
+   "context": "⟨W2l⟩= (qt)j·(1/t;"
+  },
+  {
+   "page": 63,
+   "mark": "j",
+   "context": "⟨W2l⟩= (qt)j·(1/t; q)"
+  },
+  {
+   "page": 63,
+   "mark": "j",
+   "context": "= q−2"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "(tq"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "Rozansky(S"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "Rozansky(S1× S"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "Rozansky(S1× S2, L"
+  },
+  {
+   "page": 63,
+   "mark": "n",
+   "context": "Rozansky(S1× S2, L2"
+  },
+  {
+   "page": 63,
+   "mark": "n",
+   "context": "Rozansky(S1× S2, L2n){−2"
+  },
+  {
+   "page": 63,
+   "mark": "n",
+   "context": "withλ = □⊗2"
+  },
+  {
+   "page": 63,
+   "mark": "b",
+   "context": "As a side remark, positivity also features in the invariants"
+  },
+  {
+   "page": 63,
+   "mark": "a",
+   "context": " a side remark, positivity also features in the invariantsbZ"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "side remark, positivity also features in the invariantsbZa(M"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "M3= S"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "M3= S2× S"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "2t"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "2t3+ 2t"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "2t"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "2t4+ 4t"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "2t4+ 4t3+ 4t"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "−bZ"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "−bZ0(q, −t; W"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "2t"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "2t5+ 6t"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "2t5+ 6t4+ 10t"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "2t5+ 6t4+ 10t3+ 10t"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "q"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "2t"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "2t6+ 8t"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "2t6+ 8t5+ 16t"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "2t6+ 8t5+ 16t4+ 22t"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "2t6+ 8t5+ 16t4+ 22t3+ 18t"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 63,
+   "mark": "7",
+   "context": "2t"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "2t7+ 8t"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "2t7+ 8t6+ 20t"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "2t7+ 8t6+ 20t5+ 36t"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "2t7+ 8t6+ 20t5+ 36t4+ 44t"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "2t7+ 8t6+ 20t5+ 36t4+ 44t3+ 34t"
+  },
+  {
+   "page": 63,
+   "mark": "7",
+   "context": "q"
+  },
+  {
+   "page": 63,
+   "mark": "8",
+   "context": "q"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "ForM"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "ForM3=L(p, 1),ormoregenerallyM"
+  },
+  {
+   "page": 63,
+   "mark": "g",
+   "context": "ForM3=L(p, 1),ormoregenerallyM3=O(−p)→Σ"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "ForM3=L(p, 1),ormoregenerallyM3=O(−p)→Σg,wehaveΛM3=Z"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "ForM3=L(p, 1),ormoregenerallyM3=O(−p)→Σg,wehaveΛM3=Zp/Z"
+  },
+  {
+   "page": 64,
+   "mark": "z",
+   "context": "2πiz"
+  },
+  {
+   "page": 64,
+   "mark": "z",
+   "context": "2πiz zpm · χλ(qm/2"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 64,
+   "mark": "4",
+   "context": "z"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 64,
+   "mark": "4",
+   "context": "z"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "homologicalblocks.FortheD"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "homologicalblocks.FortheD2× S"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "centerofthedisk,O∈D"
+  },
+  {
+   "page": 64,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "qn2/pz"
+  },
+  {
+   "page": 64,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "Wilsonloopsactinaverysimplewayonthehomologicalblocks"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "WilsonloopsactinaverysimplewayonthehomologicalblocksbZ"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "bZ"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "bZ1= −q"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "bZ"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "withtherestoftheblocksbeingzero.Letusalsoformallyextend"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "withtherestoftheblocksbeingzero.LetusalsoformallyextendbZ"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "2⌋}by"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "2⌋}bybZ"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "2⌋}bybZa= 0anddeﬁne"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "[j]bZ"
+  },
+  {
+   "page": 64,
+   "mark": "j",
+   "context": "[j]bZa(q):=q"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "[j]bZa(q):=qj(2"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "[j]bZa(q):=qj(2a−j)/p"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "[j]bZa(q):=qj(2a−j)/p bZ"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "[λ/2]bZ"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "|W"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "|Wa|bZ"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "|Wa|bZa(q; Wλ)"
+  },
+  {
+   "page": 64,
+   "mark": "a",
+   "context": "|Wa|bZa(q; Wλ)bZ"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "OnecanalsodeducetheactionofWλonZ"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "bSab"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "bSab bZ"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "Thisdiﬀerencebetween"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "ThisdiﬀerencebetweenbZ"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "ThisdiﬀerencebetweenbZaandZ"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "homologicalblocks"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "homologicalblocksbZ"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "homologicalblocksbZa,ratherthanZ"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "(z"
+  },
+  {
+   "page": 65,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "qn2/pz"
+  },
+  {
+   "page": 65,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 65,
+   "mark": "a",
+   "context": "(qt; q)∞bZ"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "(z"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "t3+ 3t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "0",
+   "context": "−(−qt; q)∞bZ"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "−(−qt; q)∞bZ0(q, −t; W"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "t4+ 4t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "t4+ 4t3+ 8t"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "5",
+   "context": "t"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "t5+ 4t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "t5+ 4t4+ 10t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "t5+ 4t4+ 10t3+ 16t"
+  },
+  {
+   "page": 65,
+   "mark": "5",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "6",
+   "context": "t"
+  },
+  {
+   "page": 65,
+   "mark": "5",
+   "context": "t6+ 4t"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "t6+ 4t5+ 11t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "t6+ 4t5+ 11t4+ 23t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "t6+ 4t5+ 11t4+ 23t3+ 31t"
+  },
+  {
+   "page": 65,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "7",
+   "context": "t"
+  },
+  {
+   "page": 65,
+   "mark": "6",
+   "context": "t7+ 4t"
+  },
+  {
+   "page": 65,
+   "mark": "5",
+   "context": "t7+ 4t6+ 12t"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "t7+ 4t6+ 12t5+ 28t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "t7+ 4t6+ 12t5+ 28t4+ 47t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "t7+ 4t6+ 12t5+ 28t4+ 47t3+ 54t"
+  },
+  {
+   "page": 65,
+   "mark": "7",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "8",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "6",
+   "context": "5√q+(t+1)q"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t3+ 6t"
+  },
+  {
+   "page": 65,
+   "mark": "11",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "16",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "1",
+   "context": "(−qt; q)∞bZ"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "(−qt; q)∞bZ1(q, −t; W"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "2t4+ 7t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t4+ 7t3+ 14t"
+  },
+  {
+   "page": 65,
+   "mark": "21",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "5",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "2t5+ 8t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "2t5+ 8t4+ 19t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t5+ 8t4+ 19t3+ 29t"
+  },
+  {
+   "page": 65,
+   "mark": "26",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "6",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "5",
+   "context": "2t6+ 8t"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "2t6+ 8t5+ 22t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "2t6+ 8t5+ 22t4+ 43t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t6+ 8t5+ 22t4+ 43t3+ 55t"
+  },
+  {
+   "page": 65,
+   "mark": "31",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "36",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t3+ 4t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "−(−qt; q)∞bZ"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "−(−qt; q)∞bZ2(q, −t; W"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "−(−qt; q)∞bZ2(q, −t; W2) = q"
+  },
+  {
+   "page": 65,
+   "mark": "9",
+   "context": "−(−qt; q)∞bZ2(q, −t; W2) = q4/5+(t+1)q"
+  },
+  {
+   "page": 65,
+   "mark": "14",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "19",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "2t4+ 5t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t4+ 5t3+ 8t"
+  },
+  {
+   "page": 65,
+   "mark": "24",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "5",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "2t5+ 5t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "2t5+ 5t4+ 11t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t5+ 5t4+ 11t3+ 17t"
+  },
+  {
+   "page": 65,
+   "mark": "29",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "6",
+   "context": "2t"
+  },
+  {
+   "page": 65,
+   "mark": "5",
+   "context": "2t6+ 6t"
+  },
+  {
+   "page": 65,
+   "mark": "4",
+   "context": "2t6+ 6t5+ 14t"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "2t6+ 6t5+ 14t4+ 25t"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "2t6+ 6t5+ 14t4+ 25t3+ 29t"
+  },
+  {
+   "page": 65,
+   "mark": "34",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "36",
+   "context": "q"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "Notethat,whenp=1,wehaveL(p, 1)∼=S"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "becomes the familiar unknot in S"
+  },
+  {
+   "page": 65,
+   "mark": "3",
+   "context": "t in S3, yet with a nontrivial framing equal to 1.Since H1(S"
+  },
+  {
+   "page": 66,
+   "mark": "3",
+   "context": "Ha[S"
+  },
+  {
+   "page": 66,
+   "mark": "3",
+   "context": "⊗Ha[S"
+  },
+  {
+   "page": 66,
+   "mark": "1",
+   "context": "nS"
+  },
+  {
+   "page": 66,
+   "mark": "n",
+   "context": "nS1"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "q−pn"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "2−pβ"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 66,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "qn2/pz"
+  },
+  {
+   "page": 66,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 66,
+   "mark": "q",
+   "context": "2πiz(z±2;"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "2πiz(z±2; q)β+1 Mλ(z"
+  },
+  {
+   "page": 66,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "qn2/pz"
+  },
+  {
+   "page": 66,
+   "mark": "n",
+   "context": "qn2/pz2"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "Mλ(z"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "1,theMacdonaldpolynomialcoincideswiththeSchurpolynomial,M1(z"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "andtheexpressionaboveagreeswiththeD"
+  },
+  {
+   "page": 66,
+   "mark": "1",
+   "context": "andtheexpressionaboveagreeswiththeD2×S"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 68,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 68,
+   "mark": "v",
+   "context": "qn"
+  },
+  {
+   "page": 68,
+   "mark": "v",
+   "context": "qnv/2−q−n"
+  },
+  {
+   "page": 68,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 68,
+   "mark": "v",
+   "context": "qn"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "qnv"
+  },
+  {
+   "page": 68,
+   "mark": "n",
+   "context": "qnv1"
+  },
+  {
+   "page": 68,
+   "mark": "v",
+   "context": "qnv1n"
+  },
+  {
+   "page": 68,
+   "mark": "v",
+   "context": "qnv1nv2/2−q−n"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "qnv1nv2/2−q−nv"
+  },
+  {
+   "page": 68,
+   "mark": "n",
+   "context": "qnv1nv2/2−q−nv1"
+  },
+  {
+   "page": 68,
+   "mark": "v",
+   "context": "qnv1nv2/2−q−nv1n"
+  },
+  {
+   "page": 68,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 68,
+   "mark": "v",
+   "context": "qn"
+  },
+  {
+   "page": 68,
+   "mark": "v",
+   "context": "qnv/2−q−n"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "ZSU(2)k[S2× S"
+  },
+  {
+   "page": 69,
+   "mark": "k",
+   "context": "=(2"
+  },
+  {
+   "page": 69,
+   "mark": "1",
+   "context": "=(2k)"
+  },
+  {
+   "page": 69,
+   "mark": "e",
+   "context": "=(2k)1/2"
+  },
+  {
+   "page": 69,
+   "mark": "2",
+   "context": "q± n"
+  },
+  {
+   "page": 69,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 69,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 69,
+   "mark": "1",
+   "context": "2 (2k)L/2(q"
+  },
+  {
+   "page": 69,
+   "mark": "2",
+   "context": "av(n"
+  },
+  {
+   "page": 69,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "qn"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "qnv/2−q−n"
+  },
+  {
+   "page": 69,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "qn"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "qnv′n"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "qnv′nv′′/2−q−n"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "qnv′nv′′/2−q−nv′n"
+  },
+  {
+   "page": 69,
+   "mark": "n",
+   "context": "(q"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "(qn"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "(qnv′n"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "(qnv′nv′′/2−q−n"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "(qnv′nv′′/2−q−nv′n"
+  },
+  {
+   "page": 69,
+   "mark": "s",
+   "context": "s(v′,v′′)q"
+  },
+  {
+   "page": 69,
+   "mark": "n",
+   "context": "s(v′,v′′)qs(v′,v′′)"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "s(v′,v′′)qs(v′,v′′)n"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "s(v′,v′′)qs(v′,v′′)nv′n"
+  },
+  {
+   "page": 69,
+   "mark": "v",
+   "context": "withadiﬀerentconﬁgurationtimes(−1)deg"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 70,
+   "mark": "v",
+   "context": "qn"
+  },
+  {
+   "page": 70,
+   "mark": "v",
+   "context": "qnv/2−q−n"
+  },
+  {
+   "page": 70,
+   "mark": "1",
+   "context": "Fω(x"
+  },
+  {
+   "page": 70,
+   "mark": "v",
+   "context": "xℓ"
+  },
+  {
+   "page": 70,
+   "mark": "m",
+   "context": "· ω"
+  },
+  {
+   "page": 70,
+   "mark": "v",
+   "context": "xℓ"
+  },
+  {
+   "page": 70,
+   "mark": "m",
+   "context": "Nm,ℓω"
+  },
+  {
+   "page": 70,
+   "mark": "v",
+   "context": "xℓ"
+  },
+  {
+   "page": 70,
+   "mark": "v",
+   "context": "(xv −1/xv)deg"
+  },
+  {
+   "page": 70,
+   "mark": "v",
+   "context": "(xv −1/xv)deg"
+  },
+  {
+   "page": 71,
+   "mark": "q",
+   "context": "1"
+  },
+  {
+   "page": 71,
+   "mark": "b",
+   "context": "bZ"
+  },
+  {
+   "page": 71,
+   "mark": "a",
+   "context": "v"
+  },
+  {
+   "page": 71,
+   "mark": "v",
+   "context": "va"
+  },
+  {
+   "page": 71,
+   "mark": "1",
+   "context": "2 (2k)L/2(q"
+  },
+  {
+   "page": 71,
+   "mark": "1",
+   "context": "Fω(x"
+  },
+  {
+   "page": 71,
+   "mark": "b",
+   "context": "e−2πi(a,M−1"
+  },
+  {
+   "page": 71,
+   "mark": "a",
+   "context": "e−2πi(a,M−1b)e−2πik(a,M−1"
+  },
+  {
+   "page": 71,
+   "mark": "1",
+   "context": "2 (q"
+  },
+  {
+   "page": 71,
+   "mark": "q",
+   "context": "ω"
+  },
+  {
+   "page": 71,
+   "mark": "q",
+   "context": "Now,assumethatthelimitlim"
+  },
+  {
+   "page": 71,
+   "mark": "b",
+   "context": "Now,assumethatthelimitlimq→q"
+  },
+  {
+   "page": 71,
+   "mark": "b",
+   "context": "Now,assumethatthelimitlimq→qbZ"
+  },
+  {
+   "page": 71,
+   "mark": "b",
+   "context": "Now,assumethatthelimitlimq→qbZb(q),where"
+  },
+  {
+   "page": 71,
+   "mark": "b",
+   "context": "Now,assumethatthelimitlimq→qbZb(q),wherebZ"
+  },
+  {
+   "page": 71,
+   "mark": "q",
+   "context": "ω"
+  },
+  {
+   "page": 71,
+   "mark": "q",
+   "context": "1"
+  },
+  {
+   "page": 71,
+   "mark": "1",
+   "context": "2 (q"
+  },
+  {
+   "page": 71,
+   "mark": "b",
+   "context": "e−2πi(a,M−1"
+  },
+  {
+   "page": 71,
+   "mark": "a",
+   "context": "e−2πik(a,M−1"
+  },
+  {
+   "page": 71,
+   "mark": "b",
+   "context": "bZ"
+  },
+  {
+   "page": 72,
+   "mark": "b",
+   "context": "Theformula(A.21)forthehomologicalblocks"
+  },
+  {
+   "page": 72,
+   "mark": "a",
+   "context": "Theformula(A.21)forthehomologicalblocksbZ"
+  },
+  {
+   "page": 72,
+   "mark": "b",
+   "context": "bZ"
+  },
+  {
+   "page": 72,
+   "mark": "2",
+   "context": "(zv −1/zv)"
+  },
+  {
+   "page": 72,
+   "mark": "i",
+   "context": "xℓ"
+  },
+  {
+   "page": 72,
+   "mark": "2",
+   "context": "onD"
+  },
+  {
+   "page": 72,
+   "mark": "1",
+   "context": "onD2× S"
+  },
+  {
+   "page": 72,
+   "mark": "3",
+   "context": "itwiththesimplestchoiceofG=SU(2),M3=S"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "ofthen-cablingK"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "P2(q, t; K) =P1(q, t; K"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "P3(q, t; K) =P1(q, t; K"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "P4(q, t; K) =P1(q, t; K"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "P4(q, t; K) =P1(q, t; K4) −3P1(q, t; K"
+  },
+  {
+   "page": 73,
+   "mark": "5",
+   "context": "P1(q, −t; K) =q"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "P2(q, −t; K) =q"
+  },
+  {
+   "page": 73,
+   "mark": "6",
+   "context": "P2(q, −t; K) =q2+ q"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "P2(q, −t; K) =q2+ q6t"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "P2(q, −t; K) =q2+ q6t2+ q"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "P2(q, −t; K) =q2+ q6t2+ q4t"
+  },
+  {
+   "page": 73,
+   "mark": "5",
+   "context": "P3(q, −t; K) =q"
+  },
+  {
+   "page": 73,
+   "mark": "9",
+   "context": "P3(q, −t; K) =q5/2+ q"
+  },
+  {
+   "page": 73,
+   "mark": "17",
+   "context": "P3(q, −t; K) =q5/2+ q9/2+ q"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "P3(q, −t; K) =q5/2+ q9/2+ q17/2t"
+  },
+  {
+   "page": 73,
+   "mark": "21",
+   "context": "P3(q, −t; K) =q5/2+ q9/2+ q17/2t4+ q"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "P3(q, −t; K) =q5/2+ q9/2+ q17/2t4+ q21/2t"
+  },
+  {
+   "page": 73,
+   "mark": "13",
+   "context": "P3(q, −t; K) =q5/2+ q9/2+ q17/2t4+ q21/2t4+ q"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "P3(q, −t; K) =q5/2+ q9/2+ q17/2t4+ q21/2t4+ q13/2t"
+  },
+  {
+   "page": 73,
+   "mark": "5",
+   "context": "P3(q, −t; K) =q5/2+ q9/2+ q17/2t4+ q21/2t4+ q13/2t2+ q"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "t2−t"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "P"
+  },
+  {
+   "page": 73,
+   "mark": "16",
+   "context": "P4(q, −t; K) =q"
+  },
+  {
+   "page": 73,
+   "mark": "8",
+   "context": "P4(q, −t; K) =q16t"
+  },
+  {
+   "page": 73,
+   "mark": "14",
+   "context": "P4(q, −t; K) =q16t8+ q"
+  },
+  {
+   "page": 73,
+   "mark": "8",
+   "context": "P4(q, −t; K) =q16t8+ q14t"
+  },
+  {
+   "page": 73,
+   "mark": "12",
+   "context": "P4(q, −t; K) =q16t8+ q14t8+ q"
+  },
+  {
+   "page": 73,
+   "mark": "6",
+   "context": "P4(q, −t; K) =q16t8+ q14t8+ q12t"
+  },
+  {
+   "page": 73,
+   "mark": "10",
+   "context": "P4(q, −t; K) =q16t8+ q14t8+ q12t6+ q"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "P4(q, −t; K) =q16t8+ q14t8+ q12t6+ q10t"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "P4(q, −t; K) =q16t8+ q14t8+ q12t6+ q10t4+ q"
+  },
+  {
+   "page": 73,
+   "mark": "5",
+   "context": "−t"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "−t5+ t"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "−t5+ t4+ t"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "1 −t"
+  },
+  {
+   "page": 73,
+   "mark": "6",
+   "context": "+ q"
+  },
+  {
+   "page": 73,
+   "mark": "8",
+   "context": "+ q"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "in3dN= 2theoryT[S"
+  },
+  {
+   "page": 73,
+   "mark": "5",
+   "context": "⟨W1⟩=t−1/4(q"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "⟨W2⟩=q"
+  },
+  {
+   "page": 73,
+   "mark": "6",
+   "context": "⟨W2⟩=q2+q"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "t+q"
+  },
+  {
+   "page": 73,
+   "mark": "5",
+   "context": "⟨W3⟩=q"
+  },
+  {
+   "page": 73,
+   "mark": "9",
+   "context": "⟨W3⟩=q5/2+ q"
+  },
+  {
+   "page": 73,
+   "mark": "17",
+   "context": "⟨W3⟩=q5/2+ q9/2+q"
+  },
+  {
+   "page": 73,
+   "mark": "21",
+   "context": "+q"
+  },
+  {
+   "page": 73,
+   "mark": "5",
+   "context": "−q"
+  },
+  {
+   "page": 73,
+   "mark": "13",
+   "context": "+q"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "6",
+   "context": "t2+ q"
+  },
+  {
+   "page": 73,
+   "mark": "16",
+   "context": "⟨W4⟩=q"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "14",
+   "context": "t4+q"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "12",
+   "context": "t4+q"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "10",
+   "context": "t3+q"
+  },
+  {
+   "page": 73,
+   "mark": "4",
+   "context": "+ q"
+  },
+  {
+   "page": 73,
+   "mark": "8",
+   "context": "+ q"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 73,
+   "mark": "2",
+   "context": "where,asinsection4.2,wemadethereplacementq=q"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "of the Wilson line operator in T[S"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "inM3= S"
+  },
+  {
+   "page": 74,
+   "mark": "3",
+   "context": "ZCS(M"
+  },
+  {
+   "page": 74,
+   "mark": "3",
+   "context": "TV(M"
+  },
+  {
+   "page": 74,
+   "mark": "0",
+   "context": "TV(M3, q) =bZ"
+  },
+  {
+   "page": 74,
+   "mark": "3",
+   "context": "TV(M3, q) =bZ0(M"
+  },
+  {
+   "page": 74,
+   "mark": "b",
+   "context": "TV(M3, q) =bZ0(M3, q)"
+  },
+  {
+   "page": 74,
+   "mark": "0",
+   "context": "TV(M3, q) =bZ0(M3, q)bZ"
+  },
+  {
+   "page": 74,
+   "mark": "3",
+   "context": "TV(M3, q) =bZ0(M3, q)bZ0(M"
+  },
+  {
+   "page": 74,
+   "mark": "3",
+   "context": "TV(M3, q) =bZ0(M3, q)bZ0(M3, q−1) = IT[M"
+  },
+  {
+   "page": 74,
+   "mark": "1",
+   "context": "spaceofboundaryconditionsonS"
+  },
+  {
+   "page": 75,
+   "mark": "2",
+   "context": "VB,oneis|0⟩—theboundaryconditionattheoriginofD"
+  },
+  {
+   "page": 75,
+   "mark": "2",
+   "context": "boundaryconditionat∂D"
+  },
+  {
+   "page": 75,
+   "mark": "1",
+   "context": "ofthetheoryT[M3]onS"
+  },
+  {
+   "page": 75,
+   "mark": "1",
+   "context": "ofthetheoryT[M3]onS1× I× S"
+  },
+  {
+   "page": 75,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 75,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 75,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 75,
+   "mark": "2",
+   "context": "eqℓk(j,"
+  },
+  {
+   "page": 75,
+   "mark": "a",
+   "context": "eqℓk(j,2"
+  },
+  {
+   "page": 75,
+   "mark": "a",
+   "context": "Z"
+  },
+  {
+   "page": 75,
+   "mark": "2",
+   "context": "Za7→eqℓk(j,"
+  },
+  {
+   "page": 75,
+   "mark": "a",
+   "context": "Za7→eqℓk(j,2"
+  },
+  {
+   "page": 75,
+   "mark": "a",
+   "context": "Za7→eqℓk(j,2a−j)Z"
+  },
+  {
+   "page": 75,
+   "mark": "a",
+   "context": "bZ"
+  },
+  {
+   "page": 75,
+   "mark": "j",
+   "context": "bZa7→q"
+  },
+  {
+   "page": 75,
+   "mark": "a",
+   "context": "bZa7→qj(2"
+  },
+  {
+   "page": 75,
+   "mark": "a",
+   "context": "bZa7→qj(2a−j)bZ"
+  },
+  {
+   "page": 76,
+   "mark": "2",
+   "context": "×D"
+  },
+  {
+   "page": 76,
+   "mark": "2",
+   "context": "R × S"
+  },
+  {
+   "page": 78,
+   "mark": "1",
+   "context": "aandK.Sugiyama,Localizationof3dN= 2SupersymmetricTheoriesonS"
+  },
+  {
+   "page": 78,
+   "mark": "2",
+   "context": "K.Sugiyama,Localizationof3dN= 2SupersymmetricTheoriesonS1× D"
+  }
+ ]
+}

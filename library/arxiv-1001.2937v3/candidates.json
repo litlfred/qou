@@ -1,0 +1,129 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1001.2937v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "ab44349bc21634ff8d9fd07f8ab61ddcae333a16af659677f1928a90e7064b21",
+  "file": "1001.2937v3.pdf"
+ },
+ "provenance": {
+  "title": "Microscopic Spectrum of the Wilson Dirac Operator",
+  "authors": "P.H. Damgaard,1 K. Splittorff,2 and J.J.M. Verbaarschot3",
+  "arxiv": {
+   "id": "1001.2937",
+   "version": "3",
+   "primary_class": "hep-th",
+   "stamp_date": "20 Sep 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "proposition": 4
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 4
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Verbaarschot3 1Niels Bohr International Academy, Niels Bohr Institute, Blegdamsvej 17, DK-2100, Copenhagen \u00d8, Denmark 2Niels Bohr Institute, Blegdamsvej 17, DK-2100, Copenhagen \u00d8, Denmark 3Department of Physics and Astronomy, SUNY, Stony Brook, New York 11794, USA (Dated: October 23, 2018) We calculate the leading contribution to the spectral density of the Wilson Dirac operator using chiral perturbation theory where volume and lattice spacing corrections are given by universal scaling functions.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md (p. 1-4)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md",
+   "section_title": "Microscopic Spectrum of the Wilson Dirac Operator",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md (p. 1-4)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-1001.2937v3/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-1001.2937v3#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "In lattice QCD it has become standard to utilize these re- sults to obtain physical observables from simulations at \ufb01nite four-volume V .",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md (p. 1-4)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md",
+   "section_title": "Microscopic Spectrum of the Wilson Dirac Operator",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md (p. 1-4)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-02",
+   "block_iri": "library/arxiv-1001.2937v3/blocks/prop-sec-000-02",
+   "claim_id": "arxiv-1001.2937v3#prop-sec-000-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "We suggest that analyzing just these real eigenmodes of DW may provide a new useful tool in lattice QCD. -4 -2 0 2 4 \u03be 0 0.2 0.4 0.6 0.8 1 \u03c1 \u03bd Wreal(\u03be;a) \u03bd=4 , a=0.2 FIG.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md (p. 1-4)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md",
+   "section_title": "Microscopic Spectrum of the Wilson Dirac Operator",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md (p. 1-4)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-03",
+   "block_iri": "library/arxiv-1001.2937v3/blocks/prop-sec-000-03",
+   "claim_id": "arxiv-1001.2937v3#prop-sec-000-03"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Lattice QCD simulations depend crucially on control of this gap and its variation as a function of the lattice spacing.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md (p. 1-4)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md",
+   "section_title": "Microscopic Spectrum of the Wilson Dirac Operator",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md (p. 1-4)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-04",
+   "block_iri": "library/arxiv-1001.2937v3/blocks/prop-sec-000-04",
+   "claim_id": "arxiv-1001.2937v3#prop-sec-000-04"
+  }
+ ]
+}

@@ -1319,6 +1319,31 @@ Anything else means the audit COULD NOT CHECK that witness — not that the
 witness is wrong, which is the point: an unmappable label is unfalsifiable.
 """
 
+Q0_MANIFEST_ANCHOR_ALIASES: dict[str, str] = {
+    "ideal_muon": "muon",
+    "physical_proton": "proton",
+}
+"""Manifest-vocabulary aliases accepted and normalised at the witness boundary
+(bean `qou-9du2`).
+
+`q0_anchor_manifest.json` partitions producers into ``"ideal_muon"`` and
+``"physical_proton"``, whereas witness ``q0Anchor`` uses ``"muon"`` and
+``"proton"`` (`Q0_ANCHOR_VOCABULARY`). A producer copying its own manifest
+category into ``q0_anchor=`` / ``payload["q0Anchor"]`` / ``save(extra)`` is
+speaking the manifest's vocabulary at the witness boundary; normalising those
+two exact tokens to ``"muon"`` / ``"proton"`` (and populating ``q0Value`` when
+absent) avoids emitting an unmappable ``Q0_ANCHOR_UNRECOGNISED`` witness while
+still warning on arbitrary free-text strings.
+"""
+
+
+def _normalise_q0_anchor_token(anchor: Any) -> Any:
+    """Normalise manifest-vocabulary tokens (`ideal_muon`, `physical_proton`)
+    to their witness-vocabulary equivalents (`muon`, `proton`)."""
+    if isinstance(anchor, str) and anchor in Q0_MANIFEST_ANCHOR_ALIASES:
+        return Q0_MANIFEST_ANCHOR_ALIASES[anchor]
+    return anchor
+
 
 def _warn_unmappable_anchor(anchor: object, script_path: str) -> None:
     """Warn — never raise — when an anchor is outside the vocabulary.
@@ -1691,6 +1716,12 @@ class WitnessBuilder:
         # twice; that is two declarations of the same field and worth saying
         # twice.
         if "q0Anchor" in payload:
+            payload = dict(payload)
+            payload["q0Anchor"] = _normalise_q0_anchor_token(payload["q0Anchor"])
+            if payload["q0Anchor"] in ("muon", "proton") and "q0Value" not in payload:
+                _qv = _q0_value_for_anchor(payload["q0Anchor"])
+                if _qv is not None:
+                    payload["q0Value"] = _qv
             _warn_unmappable_anchor(payload["q0Anchor"], str(script_path))
         for key, value in payload.items():
             if key == "description" and isinstance(value, str):
@@ -1984,6 +2015,10 @@ class WitnessBuilder:
             q0_anchor, _rv = resolve_q0_anchor_payload_first(payload, spath)
             if q0_value is None:
                 q0_value = _rv
+        else:
+            q0_anchor = _normalise_q0_anchor_token(q0_anchor)
+            if q0_value is None and q0_anchor in ("muon", "proton"):
+                q0_value = _q0_value_for_anchor(q0_anchor)
         # A q0Anchor the producer already wrote into the payload WINS over the
         # one resolved from the manifest/env. `build()` has always had this
         # guard (`if "q0Anchor" not in witness`); this path did not, so the two
@@ -1998,7 +2033,13 @@ class WitnessBuilder:
         #
         # An explicit `q0_anchor=` argument still wins over both, since a caller
         # passing it is making the same declaration one call frame out.
-        if "q0Anchor" not in payload:
+        if "q0Anchor" in payload:
+            payload["q0Anchor"] = _normalise_q0_anchor_token(payload["q0Anchor"])
+            if payload["q0Anchor"] in ("muon", "proton") and "q0Value" not in payload:
+                _qv = q0_value or _q0_value_for_anchor(payload["q0Anchor"])
+                if _qv is not None:
+                    payload["q0Value"] = _qv
+        else:
             _warn_unmappable_anchor(q0_anchor, spath)
             payload["q0Anchor"] = q0_anchor
             if q0_value is not None:
@@ -2234,6 +2275,14 @@ class WitnessBuilder:
             # payload`, so a producer that stamps AND passes `extra` warns
             # exactly once here rather than twice.
             if "q0Anchor" in extra:
+                extra = dict(extra)
+                extra["q0Anchor"] = _normalise_q0_anchor_token(extra["q0Anchor"])
+                if (extra["q0Anchor"] in ("muon", "proton")
+                        and "q0Value" not in extra
+                        and "q0Value" not in witness):
+                    _qv = _q0_value_for_anchor(extra["q0Anchor"])
+                    if _qv is not None:
+                        extra["q0Value"] = _qv
                 _warn_unmappable_anchor(extra["q0Anchor"], str(self._script_path))
             witness.update(extra)
 

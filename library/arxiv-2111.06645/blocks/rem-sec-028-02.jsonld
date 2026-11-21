@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2111.06645/blocks/rem-sec-028-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 34,
+  "pageEnd": 37,
+  "text": "rem-sec-028-02.md",
+  "derivedFrom": "library/arxiv-2111.06645/sections/sec-028",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "A",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-028-a6-the-twelve-q-series-for-the--237-pretzel-knot.md (p. 34-37)",
+    "claim_id": "arxiv-2111.06645#remark:A"
+  }
+}

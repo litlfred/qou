@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-013",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A2(M) e 3Z[\u000189",
-  "pageStart": 11,
-  "pageEnd": 12,
-  "text": "../sections/sec-013-2-a2m-e-3z89.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
+  "title": "\"~,~1 (:l')fe m=o",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-013-2-1-lfe-mo.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
   "provenance": "ingested"
 }

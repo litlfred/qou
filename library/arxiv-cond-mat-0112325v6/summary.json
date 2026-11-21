@@ -2,121 +2,41 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-cond-mat-0112325v6",
  "source_sha256": "f09f5047bd12651c",
- "brief": "Knots in Condensed Matters Y. M. Cho ∗ — 22 sections: INTRODUCTION; KNOT IN SKYRME THEOR Y; (∂µω)2 + (1 − cos ω)(∂µ ˆn)2",
- "extended": "**Knots in Condensed Matters Y. M. Cho ∗**\n\n*Center for Theoretical Physics and School of Physics*\n\n9 pp, 22 sections.\n\n**Outline.** I INTRODUCTION; II KNOT IN SKYRME THEOR Y; 2 (∂µω)2 + (1 − cos ω)(∂µ ˆn)2; 2 (∂µω∂ν ˆn − ∂νω∂µ ˆn)2; 8 (1 − cos ω)∂µ; 8 (1 − cos ω) sin ω(∂µ ˆn × ∂ν ˆn)2 = 0,; 4 (1 − cos ω)ˆn × ∂µ ˆn; 8 (1 − cos ω)2(ˆn ·∂µ ˆn × ∂ν ˆn)∂ν ˆn; 2 (∂µ ˆn)2 − α; 4 (∂µ ˆn × ∂ν ˆn)2, (6); III KNOT IN TWO-COMPONENT; 2 (φ†φ)2 − 1; 2 (∂iρ)2 + ρ2; 8 (ρ2 − ρ2; 4 (∂µ ˆn)2,; 2 Nµν, (20); 8 (∂i ˆn)2 + λ; 4 (∂i ˆn)2ρ = λ",
+ "brief": "Knots in Condensed Matters — 6 sections: Front matter; Introduction; Knot in Skyrme theory",
+ "extended": "**Knots in Condensed Matters**\n\n*Y. M. Cho∗*\n\n9 pp, 6 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Knot in Skyrme theory; 3 Knot in Two-component Bose-Einstein Condensa; 4 Knot in Two-gap Superconductors; 5 Discussion",
  "tokens": {
-  "brief": 30,
-  "extended": 131
+  "brief": 22,
+  "extended": 57
  },
  "sections": [
   {
-   "id": "sec-000-i-introduction",
-   "title": "INTRODUCTION",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-ii-knot-in-skyrme-theor-y",
-   "title": "KNOT IN SKYRME THEOR Y",
-   "pages": "1-2"
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
   },
   {
-   "id": "sec-002-2-µω2-1-cos-ωµ-ˆn2",
-   "title": "(∂µω)2 + (1 − cos ω)(∂µ ˆn)2",
-   "pages": "2-2"
+   "id": "sec-001-2-knot-in-skyrme-theory",
+   "title": "Knot in Skyrme theory",
+   "pages": "1-3"
   },
   {
-   "id": "sec-003-2-µων-ˆn-νωµ-ˆn2",
-   "title": "(∂µω∂ν ˆn − ∂νω∂µ ˆn)2",
-   "pages": "2-2"
+   "id": "sec-002-3-knot-in-two-component-bose-einstein-condensate",
+   "title": "Knot in Two-component Bose-Einstein Condensates",
+   "pages": "3-6"
   },
   {
-   "id": "sec-004-8-1-cos-ωµ",
-   "title": "(1 − cos ω)∂µ",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-005-8-1-cos-ω-sin-ωµ-ˆn-ν-ˆn2-0",
-   "title": "(1 − cos ω) sin ω(∂µ ˆn × ∂ν ˆn)2 = 0,",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-006-4-1-cos-ωˆn-µ-ˆn",
-   "title": "(1 − cos ω)ˆn × ∂µ ˆn",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-007-8-1-cos-ω2ˆn-µ-ˆn-ν-ˆnν-ˆn",
-   "title": "(1 − cos ω)2(ˆn ·∂µ ˆn × ∂ν ˆn)∂ν ˆn",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-008-2-µ-ˆn2-α",
-   "title": "(∂µ ˆn)2 − α",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-009-4-µ-ˆn-ν-ˆn2-6",
-   "title": "(∂µ ˆn × ∂ν ˆn)2, (6)",
-   "pages": "2-3"
-  },
-  {
-   "id": "sec-010-iii-knot-in-two-component",
-   "title": "KNOT IN TWO-COMPONENT",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-011-2-φφ2-1",
-   "title": "(φ†φ)2 − 1",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-012-2-iρ2-ρ2",
-   "title": "(∂iρ)2 + ρ2",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-013-8-ρ2-ρ2",
-   "title": "(ρ2 − ρ2",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-014-4-µ-ˆn2",
-   "title": "(∂µ ˆn)2,",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-015-2-nµν-20",
-   "title": "Nµν, (20)",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-016-8-i-ˆn2-λ",
-   "title": "(∂i ˆn)2 + λ",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-017-4-i-ˆn2ρ-λ",
-   "title": "(∂i ˆn)2ρ = λ",
-   "pages": "4-6"
-  },
-  {
-   "id": "sec-018-iv-knot-in-two-gap",
-   "title": "KNOT IN TWO-GAP",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-019-4-f-2",
-   "title": "F 2",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-020-4-µ-ˆn2-g2aµ-aµ2",
-   "title": "(∂µ ˆn)2 + g2(Aµ + ˜Aµ)2",
+   "id": "sec-003-4-knot-in-two-gap-superconductors",
+   "title": "Knot in Two-gap Superconductors",
    "pages": "6-8"
   },
   {
-   "id": "sec-021-v-discussion",
-   "title": "DISCUSSION",
+   "id": "sec-004-5-discussion",
+   "title": "Discussion",
    "pages": "8-9"
   }
  ],

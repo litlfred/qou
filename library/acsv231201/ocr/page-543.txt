@@ -1,0 +1,51 @@
+D.3 Description of the attachments 525
+
+Example D.20. Suppose that V, is a smooth algebraic hypersurface near one
+of its points p.
+
+(1) If X = V then N(X) is the single point p. Formally, the homotopy type is
+that of ({p}, 0).
+
+(2) If X = M then N(X) has the homotopy type of (D\0, q), where D is a small
+disk and q is a point on the boundary of D. This is the reduced homotopy
+type of a circle, cyclic in dimension | and null in every other dimension. *
+
+The following theorem is stated for the case X = V, in [GM88, Theo-
+rem SMT B on page 8] and for the case X = M in [GM88, unnamed theorem
+on page 12]; the equivalent characterizations of the homotopy type are stated
+in [GM88, pages 7, 66-67, 120-122].
+
+Theorem D.21 (attachments are determined by Morse data). Let X be either
+YY, or M with a Whitney stratification as above, and let p be a critical point
+for hina stratum S with critical value c = h(p).
+
+1. The homotopy type of the attachment at p is the product, in the category of
+pairs, of the normal and tangential Morse data as given in Definitions D.19
+and D.17.
+
+2. The tangential data for a stratum of codimension k is always the reduced
+homology of a (d — k)-sphere: rank 1 in dimension (d — k) and vanishing
+otherwise.
+
+3. The normal data has the following characterizations.
+
+(i) When X = V,, the normal data is homotopy equivalent to the pair
+
+(Cone(€-), €-), where Cone(Y) is the topological quotient Yx[0, 1] / Yx
+{1} and € is the lower halflink defined as the level set of N(X) at height
+c— € for sufficiently small ¢ > 0.
+
+(ii) When X = M, the normal data is homotopy equivalent to the pair
+(L*(X), 0L*(X)), where L*(X) is the part of L(X) at height at least c.
+
+(tii) When X = M, the normal data is also homotopy equivalent to the
+pair (L*(X), £°(X)), where L°(X) is the intersection of £L(X) with the
+level set {z € X : h(z) =c}.
+
+ao
+
+Remark. Goresky and MacPherson have this to say [GM88, page 9]: “Theo-
+rem SMT Part B, although very natural and geometrically evident in examples,
+takes 100 pages to prove rigorously in this book.”
+
+Example D.22 (complement of S” in R*). Let X be the complement of the unit

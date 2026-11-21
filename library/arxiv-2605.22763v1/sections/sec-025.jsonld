@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.22763v1/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Log-Concavity of Hilbert Sequences",
+  "pageStart": 51,
+  "pageEnd": 57,
+  "contains": [
+    "library/arxiv-2605.22763v1/blocks/prose-sec-025",
+    "library/arxiv-2605.22763v1/blocks/thm-sec-025-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.22763v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.22763v1/manifest.jsonld",
+  "provenance": "ingested"
+}

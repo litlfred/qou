@@ -1,24 +1,24 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:38:44.127983+00:00",
-  "commitSha": "2e270ede36ffe8698525e1c5b99dd16fdc77e9ed",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T05:53:50.981617+00:00",
+  "commitSha": "22e36a5bfe630f895f7fd55db6fdcd60b85b0680",
   "assertions": [
     {
       "name": "Direct substitution of [2]_q over-predicts T_boil for every material",
-      "computed": 3,
-      "expected": 3,
+      "computed": "3",
+      "expected": "3",
       "passed": true,
-      "tolerance": 0,
+      "tolerance": "0",
       "source": "T_boil_pred = S_q / ([2]_q R) misses high everywhere: H2O 6.45x, HF 5.04x, NH3 4.26x (range 4.26-6.45x, NOT the 6-10x the previous assertion name claimed — see bean qou-3hre)"
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 3,
   "computation": "phase-transition-q-ideal-gas",
   "scriptFile": "phase_transition_q_ideal_gas.py",
-  "scriptHash": "214c6af3fc9f",
-  "scriptCommitSha": "13483c9b488f7fe9c8abbf6fa9b2b376d8d3a035",
+  "scriptHash": "c0e3229c9737",
+  "scriptCommitSha": "8b6a45c868026337776101390f8dbb1f313c1845",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -41,38 +41,40 @@
     ],
     "reproduce": "python3 -u computations/phase_transition_q_ideal_gas.py"
   },
-  "description": "Attempts to derive absolute boiling and freezing temperatures strictly from the q-ideal gas law (q-PV = nRT) without fitted scaling factors. Computes the cohesion energy from the h²-suppressed H-bond network, then sets T_boil = S_q / (n_q R). With the naive choice n_q = [2]_q (the dimension of the Hopf base exploring S²), this over-predicts the temperatures by a factor of 6.4x to 10x. This demonstrates that the true entropy of vaporisation ΔS_vap requires a more sophisticated topological partition function (likely involving the full Reeb flow phase space) rather than just the bare dimension [2]_q. Result is recorded honestly as open.",
+  "description": "Attempts to derive absolute boiling and freezing temperatures strictly from the q-ideal gas law (q-PV = nRT) without fitted scaling factors. Computes the cohesion energy from the h²-suppressed H-bond network, then sets T_boil = S_q / (n_q R). With the naive choice n_q = [2]_q (the dimension of the Hopf base exploring S²), this over-predicts T_boil by a factor of 4.26x to 6.45x (H2O 6.45, HF 5.04, NH3 4.26) and T_melt by 1.38x to 2.56x. This demonstrates that the true entropy of vaporisation ΔS_vap requires a more sophisticated topological partition function (likely involving the full Reeb flow phase space) rather than just the bare dimension [2]_q. Result is recorded honestly as open.",
   "data": {
-    "H2O_T_boil_pred": "2404.9551321782452417070341341456516166636023071182",
-    "H2O_T_boil_obs": "373.15",
-    "H2O_boil_ratio": "6.4450090638570152531342198422769706998890588426054",
-    "H2O_T_melt_pred": "376.47503637849746788082626476567986979056776992339",
-    "H2O_T_melt_obs": "273.15",
-    "H2O_melt_ratio": "1.3782721448965677022911450293453409108203103420223",
-    "HF_T_boil_pred": "1476.9561409572919147439937889046664819727557646976",
-    "HF_T_boil_obs": "293.15",
-    "HF_boil_ratio": "5.0382266449165680189117986999988622956600913003499",
-    "HF_T_melt_pred": "485.24924541563573313821973757149187152929826576963",
-    "HF_T_melt_obs": "189.6",
-    "HF_melt_ratio": "2.5593314631626357233028467171492187316946111063799",
-    "NH3_T_boil_pred": "1022.1059311757542277254895070119019370820309805252",
-    "NH3_T_boil_obs": "239.81",
-    "NH3_boil_ratio": "4.2621489144562538164609044952750174599976272070607",
-    "NH3_T_melt_pred": "335.80965479205941886202463254947490578399225117863",
-    "NH3_T_melt_obs": "195.4",
-    "NH3_melt_ratio": "1.7185755107065476912079049772235153827225806099213",
+    "H2O_T_boil_pred": "2404.95513217824532981792850701749891694077985166916417787380",
+    "H2O_T_boil_obs": "373.150000000000000000000000000000000000000000000000000000000",
+    "H2O_boil_ratio": "6.44500906385701548926149941583143217724984550896198359339087",
+    "H2O_T_melt_pred": "376.475036378497481673828770523171682781621659056748738202101",
+    "H2O_T_melt_obs": "273.150000000000000000000000000000000000000000000000000000000",
+    "H2O_melt_ratio": "1.37827214489656775278721863636526334534732439705930345305547",
+    "HF_T_boil_pred": "1476.95614095729196885557565920096400877341371325334539184641",
+    "HF_T_boil_obs": "293.150000000000000000000000000000000000000000000000000000000",
+    "HF_boil_ratio": "5.03822664491656820349846719836590144558558319376887392749927",
+    "HF_T_melt_pred": "485.249245415635750916407960404403794418186054845719405206714",
+    "HF_T_melt_obs": "189.600000000000000000000000000000000000000000000000000000000",
+    "HF_melt_ratio": "2.55933146316263581706966223841985123638283784201328800214512",
+    "NH3_T_boil_pred": "1022.10593117575426517261961548243703969983143695939477559637",
+    "NH3_T_boil_obs": "239.810000000000000000000000000000000000000000000000000000000",
+    "NH3_boil_ratio": "4.26214891445625397261423466695482690338114105733453473831936",
+    "NH3_T_melt_pred": "335.809654792059431165160199147118378084089818486152721125354",
+    "NH3_T_melt_obs": "195.400000000000000000000000000000000000000000000000000000000",
+    "NH3_melt_ratio": "1.71857551070654775417175127506201831158694891753404667924951",
     "boil_ratios": {
-      "H2O": "6.4450090638570152531342198422769706998890588426054",
-      "HF": "5.0382266449165680189117986999988622956600913003499",
-      "NH3": "4.2621489144562538164609044952750174599976272070607"
+      "H2O": "6.44500906385701548926149941583143217724984550896198359339087",
+      "HF": "5.03822664491656820349846719836590144558558319376887392749927",
+      "NH3": "4.26214891445625397261423466695482690338114105733453473831936"
     },
     "boil_ratio_range": {
-      "min": "4.2621489144562538164609044952750174599976272070607",
-      "max": "6.4450090638570152531342198422769706998890588426054",
-      "claimed_band_in_assertion_name": "6-10x",
+      "min": "4.26214891445625397261423466695482690338114105733453473831936",
+      "max": "6.44500906385701548926149941583143217724984550896198359339087",
+      "previously_claimed_band": "6-10x (wrong when written; see bean qou-3hre)",
       "matches_claimed_band": false
     },
     "tier": "open",
-    "finding": "The bare mapping P_q V_q = [2]_q R T over-predicts T_boil and T_melt by 6-10x. A derived topological factor for ΔS_vap is required. No fit applied. Status remains OPEN."
-  }
+    "finding": "The bare mapping P_q V_q = [2]_q R T over-predicts T_boil by 4.26-6.45x (H2O 6.45, HF 5.04, NH3 4.26) and T_melt by 1.38-2.56x. A derived topological factor for ΔS_vap is required. No fit applied. Status remains OPEN."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357873607281"
 }

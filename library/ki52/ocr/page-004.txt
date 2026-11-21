@@ -1,0 +1,47 @@
+Further, we can numerically observe that the limit of (( 52), (e% SN?/2w)-!—-1) N/(27V—1)
+tends to the above mentioned value of kK.
+N | (Sa)q(eXSN% 0)! = NN/OnV=D
+200 1.0567234007... — V=I- 0.0885918466...
+500 1.0549811019... — /—1- 0.0987904427...
+1000 1.0543713307... — V—1- 0.1021833710...
+
+As the conjecture (2) suggests, w and #;’s of (2) are expected to be invariants of
+for any hyperbolic knot AK. We have computed w and «, for the 52 knot in this paper.
+It is conjectured that 2\/—Iw? of a hyperbolic knot is equal to the twisted Reidemeister
+torsion associated with the action on sl, of the holonomy representation of the hyperbolic
+structure; see Remark 1.4 below. We discuss about it for some knots in [28].
+
+We give a proof of the theorem in Section 5 by justifying the above mentioned approach.
+An outline of the proof is as follows. We rewrite the sum (7) by an integral by the Poisson
+summation formula. When we apply the Poisson summation formula, the right-hand side
+of the Poisson summation formula consists of infinitely many summands, and we show
+that we can ignore them all except for the one at 0 in the sense that they are of sufficiently
+small order at N — oo (Proposition 4.6 and Lemma 5.8). Further, by the saddle point
+method (Proposition 3.5), we calculate the asymptotic expansion of the integral, and
+obtain the presentation of the theorem.
+
+By the method of this paper, the asymptotic behavior of the Kashaev invariant is
+discussed for the hyperbolic knots with up to 7 crossings in [27, 26] and for some hyperbolic
+knots with 8 crossings in [34].
+
+Remark 1.2. The author has written the first version of this paper in August 2011. In
+February 2012, [2] was uploaded in the arXiv, in which Dimofte and Garoufalidis define a
+formal power series from an ideal tetrahedral decomposition of a knot complement, which
+is expected to be equal to the asymptotic expansion of the Kashaev invariant of the knot.
+
+Remark 1.3. The right-hand side of (1) is equal to 27,/—1¢, and it is called the complex
+volume. It is known, see e.g. [45], that the complex volume can be expressed by a critical
+value of the potential function. It is also known, see e.g. [10], that the complex volume
+can be regarded as the SL(2,C) Chern-Simons invariant.
+
+Remark 1.4. The normalization of the above mentioned Reidemeister torsion is the
+cohomological Reidemeister torsion associated with the meridian used in [23]. We note
+that the twisted Reidemeister torsion in [4] is the twisted Reidemeister torsion associated
+with the longitude, and it can be changed to the twisted Reidemeister torsion associated
+with the meridian by [29, Théoréme 4.1] as mentioned in [23].
+
+The paper is organized as follows. In Section 2, we review definitions and basic proper-
+ties of the notation used in this paper. In Section 3, we calculate the asymptotic expansion
+of Gaussian integrals by the saddle point method, and show Proposition 3.5. In Section
+4, we calculate the sum corresponding to the integrals of Section 3 by the Poisson sum-
+mation formula, and show Proposition 4.6. In Section 5, we give a proof of Theorem 1.1

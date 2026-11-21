@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1809.08419v1
-doc_title: "GR ¨OBNER-SHIRSHOV BASES FOR NON-CRYST ALLOGRAPHIC COXETER GROUPS"
+doc_title: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS"
 section_id: sec-003-4-main-results-for-h4
 section_title: "Main results for H4"
 section_number: 4
 pages: 5-13
 source_pdf: 1809.08419v1.pdf
 source_sha256: 7ebca632544a6ea4
-doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.976
+latex_coverage_ratio: 0.987
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard"
 ---
 Let $G$ be the Coxeter group of type $H_4$,
 

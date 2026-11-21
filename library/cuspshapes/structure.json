@@ -6,7 +6,9 @@
   "sha256": "01db19e63193e6aeecec8bb99b44dbef010785c6c67c2f5d82b79662eb49e211",
   "bytes": 891385,
   "pages": 15,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,17 +17,25 @@
   "doi": null,
   "title": "CUSP SHAPE AND TUNNEL NUMBER",
   "authors_raw": "VINH DANG AND JESSICA S. PURCELL",
-  "abstract": "We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨ uller space of the torus. A similar result holds for tunnel number n manifolds. As a consequence, for ﬁxed n, there are inﬁnitely many hyperbolic tunnel number n manifolds with at most one exceptional Dehn ﬁlling. This is in contrast to large volume Berge knots, which are tunnel number one manifolds, but with cusp shapes converging to a single point in Teichm¨ uller space.",
-  "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.18",
-   "CreationDate": "D:20180724164459+10'00'"
-  },
   "title_lines": [
    "CUSP SHAPE AND TUNNEL NUMBER"
-  ]
+  ],
+  "abstract": "We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨uller space of the torus. A similar result holds for tunnel number n manifolds. As a consequence, for ﬁxed n, there are inﬁnitely many hyperbolic tunnel number n manifolds with at most one exceptional Dehn ﬁlling. This is in contrast to large volume Berge knots, which are tunnel number one manifolds, but with cusp shapes converging to a single point in Teichm¨uller space.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.18",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180724164459+10'00'"
+  },
+  "title_raw": "CUSP SHAPE AND TUNNEL NUMBER",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CUSP SHAPE AND TUNNEL NUMBER 1. Introduction This paper is concerned with two invariants for a 3-manifold with torus boundary. The ﬁrst is geometric. If the interior of the 3-manifold admits a hyperbolic structure, then a tubular neighborhood of the torus boundary inherits a Euclidean structure, and",
+   "outline": "1. Introduction",
+   "text": "CUSP SHAPE AND TUNNEL NUMBER",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -33,67 +43,324 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Hyperbolic structures on compression bodies",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Hyperbolic structures",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Spaces of hyperbolic structures",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Pinched handlebodies",
    "page": 8,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Cusp shapes of tunnel number n manifolds",
    "page": 10,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Exceptional fillings",
    "page": 12,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "References",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The (1; 2)-compression body",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Isometric spheres for some powers of ρ(γ1) and ρ(γ−1",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Left: A fundamental region for a maximally pinched structure on C(1; 2). Right: A fundamental region for its convex core",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The augmented minimally twisted 3-chain link La",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The augmented minimally twisted 2-chain link La",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The cusp of a chain component of the minimally twisted 5-chain link is obtained by taking half of that of La",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 547,
+   "n_words": 93,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -101,8 +368,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6799,
-   "n_words": 1163
+   "n_chars": 6790,
+   "n_words": 1154,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-hyperbolic-structures-on-compression-bodies",
@@ -111,8 +380,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 224,
-   "n_words": 35
+   "n_chars": 222,
+   "n_words": 33,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-11-acknowledgements",
@@ -120,66 +391,98 @@
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 3,
-   "page_end": 6,
-   "n_chars": 6993,
-   "n_words": 1291
+   "page_end": 4,
+   "n_chars": 1639,
+   "n_words": 342,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-3-spaces-of-hyperbolic-structures",
+   "id": "sec-003-21-hyperbolic-structures",
+   "number": "2.1",
+   "title": "Hyperbolic structures",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5337,
+   "n_words": 1003,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-004-3-spaces-of-hyperbolic-structures",
    "number": "3",
    "title": "Spaces of hyperbolic structures",
    "level": 1,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 8053,
-   "n_words": 1383
+   "n_chars": 8060,
+   "n_words": 1390,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-004-4-pinched-handlebodies",
+   "id": "sec-005-4-pinched-handlebodies",
    "number": "4",
    "title": "Pinched handlebodies",
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 6413,
-   "n_words": 1161
+   "n_chars": 6412,
+   "n_words": 1160,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
-   "id": "sec-005-5-cusp-shapes-of-tunnel-number-n-manifolds",
+   "id": "sec-006-5-cusp-shapes-of-tunnel-number-n-manifolds",
    "number": "5",
    "title": "Cusp shapes of tunnel number n manifolds",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4276,
-   "n_words": 823
+   "n_chars": 4300,
+   "n_words": 847,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-6-exceptional-fillings",
+   "id": "sec-007-6-exceptional-fillings",
    "number": "6",
    "title": "Exceptional fillings",
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 5776,
-   "n_words": 1030
+   "n_chars": 5772,
+   "n_words": 1026,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 5644,
-   "n_words": 899
+   "n_chars": 5617,
+   "n_words": 872,
+   "label_start": "14",
+   "label_end": "15"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 8,
-  "chars_total": 44178
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 44696,
+  "furniture_lines_stripped": 0
  }
 }

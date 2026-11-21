@@ -9,6 +9,17 @@ import Mathlib.Data.Multiset.Basic
 
 ## Wiring the derived weak-isospin `T₃` into the meson operator-selection
 
+**Reading of the quark data (owner rulings 2026-11-20 and 2026-11-21).** A
+quark is an **unknot strand** of `B₃` carrying one crossing letter; it is not a
+torus knot. The integers `3, 5, 7` attached to quarks below are the **crossing
+counts of their lepton partners** `T(2,3), T(2,5), T(2,7)` — generation labels.
+The sign of `κ` is the quark strand's own crossing orientation (`σ` vs `σ⁻¹`).
+So "winding" below means *generation label*, "signed writhe" means
+*orientation × generation label*, and a meson's "content" is a multiset of
+labels, not of crossings on the quark strands. Every definition and theorem is
+unchanged; only this reading is. The identifiers `genWinding` and
+`signedWrithe` are kept as names.
+
 Serves bean `qou-2udt` (child of the convergence epic `qou-20sx`).  Resolves
 the *selection* half of the honest negative in
 `docs/audits/2026-08-02-meson-fluxtube-junction-reduction.md` (bean
@@ -22,13 +33,14 @@ of the quark content (`MesonFluxTubeReduction.lean`,
 The missing datum that audit named — a weak-isospin `T₃` grading orthogonal
 to `n` — was **derived** in `WeakIsospinT3Grading.lean` (PR #4618, bean
 `qou-tdrd`) as the *sign of the signed writhe*:
-`κ = sign(κ)·|κ| = T₃ · genWinding`, with charm `= σ₁^{+5}` (`T₃ = +½`) and
-strange `= σ₁^{−5}` (`T₃ = −½`) — same generation `n = 5`, opposite `T₃`.
+`κ = sign(κ)·|κ| = T₃ · genWinding`, with charm (positive strand, partner
+`T(2,5)`, `T₃ = +½`) and strange (negative strand, partner `T(2,5)`,
+`T₃ = −½`) — same generation `n = 5`, opposite `T₃`.
 
 This file **refines the meson operator-selection input** from the unsigned
-winding multiset to the **signed writhe** multiset (an antiquark reverses the
-braid orientation, so it contributes `−κ` — a topological fact, not a fitted
-choice), and checks what the refinement fixes.
+label multiset to the **signed** multiset (an antiquark reverses the strand
+orientation, so it contributes `−κ` — a topological fact about the sign, not a
+fitted choice; the magnitude it carries is still the partner's label), and checks what the refinement fixes.
 
 ### What is proved (sorry-free, `lean`-direct)
 
@@ -82,7 +94,7 @@ Refs:
   - content/.../particle-interactions/lepton-meson-torus-knot-dictionary.lean
   - content/.../predicted-spectra/knot-operator-selection.md
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] Ch. "Predicted Spectra" §knot-operator-selection
+  -- Ref: [leitner2026] Ch. "Predicted Spectra" §knot-operator-selection
 -/
 
 namespace QOU.ParticleInteractions.MesonOperatorSelectionT3
@@ -95,15 +107,18 @@ inductive Quark
   | down | strange | bottom   -- down-type
 deriving DecidableEq, Fintype
 
-/-- The *signed* writhe `κ = ±n` of a quark's canonical `T(2,n) = σ₁^{±n}`
-    braid.  Magnitude `|κ| = n` is the generation winding (`u,d = 3`,
-    `s,c = 5`, `b,t = 7`); the sign is the `⋈_K`-inherited orientation
-    (up-type positive, down-type negative).  Mirrors PR #4618. -/
+/-- The signed integer `κ = ±n` attached to a quark.  Magnitude `|κ| = n` is
+    the crossing count of the quark's lepton partner `T(2,n)` — a generation
+    label (`u,d = 3`, `s,c = 5`, `b,t = 7`); the quark itself is an unknot
+    strand.  The sign is the quark strand's crossing orientation,
+    `⋈_K`-inherited (up-type positive, down-type negative).  Mirrors
+    PR #4618. -/
 def signedWrithe : Quark → ℤ
   | .up      => 3   | .charm   => 5   | .top     => 7
   | .down    => -3  | .strange => -5  | .bottom  => -7
 
-/-- Generation winding `n = |κ| ∈ {3,5,7}`. -/
+/-- Generation label `n = |κ| ∈ {3,5,7}` (the lepton partner's crossing
+    count). -/
 def genWinding (q : Quark) : ℕ := (signedWrithe q).natAbs
 
 /-- Weak isospin `T₃ = sign(κ)/2 ∈ {+½,−½}`. -/
@@ -180,8 +195,8 @@ instance : DecidablePred inDictionary := by
 def unsignedContent (m : Meson) : Multiset ℕ :=
   {genWinding (constituents m).1, genWinding (constituents m).2}
 
-/-- **Signed writhe content** `{−κ(antiquark), +κ(quark)}` — the *refined*
-    input.  The antiquark reverses the braid orientation, hence contributes
+/-- **Signed content** `{−κ(antiquark), +κ(quark)}` — the *refined*
+    input.  The antiquark reverses the strand orientation, hence contributes
     `−κ` (topological, not fitted). -/
 def gradedContent (m : Meson) : Multiset ℤ :=
   {- signedWrithe (constituents m).1, signedWrithe (constituents m).2}

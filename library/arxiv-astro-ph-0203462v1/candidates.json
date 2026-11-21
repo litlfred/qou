@@ -1,0 +1,129 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-astro-ph-0203462v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "337c24b051365f0a82ddc7b26c93c78288687e1d7cda1eae85fc872cee3fa7f5",
+  "file": "0203462v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:astro-ph/0203462v1 26 Mar 2002",
+  "authors": "The extreme r-element rich, iron-poor halo giant CS 31082-001",
+  "arxiv": {
+   "id": "astro-ph/0203462",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "26 Mar 2002"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "proposition": 4
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 4
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "During this program, the bright (V = 11.7), very metal-poor halo giant CS 31082-001 , discovered during medium-resolution spectroscopic follow-up of candidate metal-poor stars from the HK survey of Beers and colleagues (Beers, Preston, & Shectman [@beers92]; Beers [@beers99]; Beers et al. [@beers02b]) was found to be strongly enhanced in heavy neutron-capture elements.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 2-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 2-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-astro-ph-0203462v1#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "As a consequence of this new analysis we have revised our measured value of the abundance ratio U/Th in CS 31082-001 , and simultaneously reduced its uncertainty, from derived observational errors on the order of 0.15 dex to 0.11 dex.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 2-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 2-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-02",
+   "block_iri": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-000-02",
+   "claim_id": "arxiv-astro-ph-0203462v1#prop-sec-000-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Lines from 28 neutron-capture elements were observed in CS 31082-001 , mainly concentrated in the blue and UV parts of the spectrum.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-006-41-linelists-and-physical-data.md (p. 7-7)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-006-41-linelists-and-physical-data.md",
+   "section_title": "Linelists and physical data",
+   "pages": "7-7",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-006-41-linelists-and-physical-data.md (p. 7-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-006-01",
+   "block_iri": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-006-01",
+   "claim_id": "arxiv-astro-ph-0203462v1#prop-sec-006-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "In contrast, the only other metal-poor stars (4 halo stars with $-2.15\\leq$\\[Fe/H\\]$\\leq -1.3$ dex) in which it was observed so far (Crawford et al. [@crawford98]) demonstrated a mild \\[Ag/Fe\\] enhancement, in agreement with the mild enhancement of the second r-process peak elements in these stars.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-008-43-the-lighter-elements-38leqzleq48.md (p. 8-10)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-008-43-the-lighter-elements-38leqzleq48.md",
+   "section_title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+   "pages": "8-10",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-008-43-the-lighter-elements-38leqzleq48.md (p. 8-10)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-008-01",
+   "claim_id": "arxiv-astro-ph-0203462v1#prop-sec-008-01"
+  }
+ ]
+}

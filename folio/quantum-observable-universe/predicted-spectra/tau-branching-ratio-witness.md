@@ -63,5 +63,3 @@ The factorized model treats the Markov trace of $T_{3,5}$ as the universal matri
 ## Decay channel normal form structure
 
 Both decay channels $\tau \to e$ and $\tau \to \mu$ reduce to 6 normal form terms in $H_3(q)$. The dominant term in both channels is $L_+ = \sigma_0\sigma_1$. It contributes $\sim 30\%$ of the total weight. The $L_-$ contribution is larger in $\tau \to \mu$ ($15.6\%$) than in $\tau \to e$ ($13.9\%$). The heavier daughter lepton requires more re-crossing energy.
-
-The full witness data is recorded in `tau-leptonic-decay.witness.json`.

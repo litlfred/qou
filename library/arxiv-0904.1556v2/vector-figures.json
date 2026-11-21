@@ -1,0 +1,283 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-0904.1556v2",
+  "figures": [
+    {
+      "id": "vfig-p010",
+      "file": "figures/vfig-p010.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 10
+      },
+      "page": 10,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        203.0,
+        90.74,
+        408.56,
+        392.8
+      ],
+      "assembly": {
+        "drawings": 68,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              203.0,
+              90.74,
+              299.06,
+              221.4
+            ],
+            "drawings": 17,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "π−",
+              "p",
+              "n"
+            ]
+          },
+          {
+            "bbox": [
+              312.5,
+              90.74,
+              408.56,
+              221.4
+            ],
+            "drawings": 17,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "π+",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "bbox": [
+              203.0,
+              262.14,
+              299.06,
+              392.8
+            ],
+            "drawings": 17,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "π0",
+              "p",
+              "p"
+            ]
+          },
+          {
+            "bbox": [
+              312.5,
+              262.14,
+              408.56,
+              392.8
+            ],
+            "drawings": 17,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "π0",
+              "n",
+              "n"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              203.4,
+              91.05,
+              298.8,
+              221.1
+            ],
+            "parent": null,
+            "labels": [
+              "π−",
+              "p",
+              "n"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              312.9,
+              91.05,
+              408.3,
+              221.1
+            ],
+            "parent": null,
+            "labels": [
+              "π+",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              203.4,
+              262.45,
+              298.8,
+              392.5
+            ],
+            "parent": null,
+            "labels": [
+              "π0",
+              "p",
+              "p"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              312.9,
+              262.45,
+              408.3,
+              392.5
+            ],
+            "parent": null,
+            "labels": [
+              "π0",
+              "n",
+              "n"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 28,
+        "connectors": [],
+        "between": [
+          "π−+ p →n",
+          "π+ + n →p"
+        ],
+        "outside": 31
+      }
+    },
+    {
+      "id": "vfig-p012",
+      "file": "figures/vfig-p012.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 12
+      },
+      "page": 12,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        235.3,
+        222.24,
+        376.16,
+        701.2
+      ],
+      "assembly": {
+        "drawings": 42,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              257.7,
+              222.24,
+              353.76,
+              352.9
+            ],
+            "drawings": 17,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "π",
+              "N",
+              "N′"
+            ]
+          },
+          {
+            "bbox": [
+              235.3,
+              551.51,
+              376.16,
+              701.2
+            ],
+            "drawings": 24,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "p",
+              "n",
+              "n",
+              "p",
+              "π−"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              258.1,
+              222.55,
+              353.5,
+              352.6
+            ],
+            "parent": null,
+            "labels": [
+              "π",
+              "N",
+              "N′"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              235.7,
+              551.51,
+              376.01,
+              701.0
+            ],
+            "parent": null,
+            "labels": [
+              "p",
+              "n",
+              "n",
+              "p",
+              "π−"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 16,
+        "connectors": [],
+        "between": [
+          "Figure 2: A nucleon absorbs a pion.",
+          "Here we see a nucleon coming in, absorbing a pion, and leaving.",
+          "diagram depicts a basic interaction between pions and nucleons.",
+          "Feynman diagrams are calculational tools in physics, though to actually use them",
+          "as such, we need quantum ﬁeld theory. Then, instead of just standing for intertwin-",
+          "ing operators between representations of compact groups such as SU(2), they depict",
+          "intertwining operators between representations of the product of this group and the",
+          "Poincar´e group, which describes the symmetries of spacetime. Unfortunately, the",
+          "details are beyond the scope of this paper. By ignoring the Poincar´e group, we are,",
+          "in the language of physics, restricting our attention to ‘internal degrees of freedom’,",
+          "Nonetheless, we can put basic interactions like the one in ﬁgure 2 together to"
+        ],
+        "outside": 13
+      }
+    }
+  ]
+}

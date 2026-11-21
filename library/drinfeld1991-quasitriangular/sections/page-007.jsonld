@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/drinfeld1991-quasitriangular/sections/page-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 7",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/drinfeld1991-quasitriangular/blocks/prose-page-007",
+    "library/drinfeld1991-quasitriangular/blocks/lem-page-007-01",
+    "library/drinfeld1991-quasitriangular/blocks/prop-page-007-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/drinfeld1991-quasitriangular/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/drinfeld1991-quasitriangular/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,43 @@
+118 Multivariate Fourier—Laplace integrals
+
+Remark 5.4. We apply Theorem 5.3 at two points in this book: first with p = 0
+and k = | to derive Theorem 9.12, and second in its more general form to prove
+asymptotics for multiple points in Chapter 10. In the statement of the theorem,
+the first four conditions are geometric conditions ensuring the existence of the
+necessary deformations and analytic extensions, while the last four ensure we
+know how to do computations.
+
+Example 5.5. Let X = 7x S'!, where / is the interval [-1, 1] and S! is the unit
+circle parametrized by 6 € [-z, ] with the endpoints identified, so that X can
+be nicely embedded in C?. We apply Theorem 5.3 in the case p = k = | and
+d = 2, with A(x, y) = 1 and ¢ : X — C defined by
+
+O(t, 0) = KO” + iLot (5.8)
+
+for real numbers K > 0 and L. The phase ¢ is analytic on X, and the 2-chain C
+representing X can be any cell complex with a subcomplex J x N for a compact
+neighborhood N of 6 = 0 in S!. There is a single critical point p = (0,0), at
+which Re ¢ vanishes, so G’ = G = {p}.
+
+Note that the strip J x {0} on which the phase function vanishes extends out
+to the bounding circles of the cylinder X, so we are not in a case where the
+magnitude of the integrand is small away from p, and Theorem 5.2 does not
+apply. The Hessian matrix of ¢ at p is ( 2K iL ) , 80 Theorem 5.3 implies
+
+Ta) = f. eo) dy ~ 2A
+Nx!I a IL
+The choice of sign on the term VP = |L| is arbitrary and depends on properly
+orienting N x J for the application at hand. 4
+
+Exercise 5.5. Let X be the real sphere {(x,y,z)¢ R83: xr +y4+2=NcC
+and let 6(x, y, z) = 22 + ix’.
+
+(a) Identify the sets G and G’.
+(b) Determine H(q) for g € G’.
+(c) Determine co(A) when A(x, y,z) = 1l+x+t+y.
+
+5.2 Standard phase
+
+As in the one-dimensional case, we begin with the simplest phase function
+and a monomial amplitude. We first state a formula for the one-dimensional
+integral with amplitude A(x) = x7” and standard phase in terms of the explicit

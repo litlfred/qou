@@ -1,0 +1,72 @@
+apply (rule-tac c=moebius-pt (—M’) in eal)
+apply (simp add: unit-disc-fix-f-def)
+apply (rule-tac z=—M' in ezl, simp)
+
+done
+next
+let ?M = moebius-pt (—M') © conjugate
+assume mocbius-pt M' w' = conjugate w
+
+hence ?M w= w’
+using mocbius-pt-invert[of M’' w' conjugate w|
+by simp
+moreover
+have ?M 0; = u' ?M (of-complex x) = v'
+using moebius-pt-invert[of M’ u’ 0]
+using mocbius-pt-invert|of M‘ v’ of-complex |
+using M’ ¢is-real x» eq-cnj-iff-real|of 2]
+by simp-all
+moreover
+have unit-disc-fix-f ?M
+using <unit-disc-fix M'y
+unfolding unit-disc-fix-f-def
+by (rule-tac z=—M' in exI, simp)
+ultimately
+show ?thesis
+by blast
+qed
+qed
+next
+fix Muv
+assume 1: unit-disc-fiz M u € unit-disc v € unit-disc
+let ?Mu = moebius-pt Mu and ?Mv = moebius-pt M v
+assume 2: ?P ?Mu ?Mv
+show ?P uv
+proof safe
+fix wu’ v' w’
+let ?Mw = moebius-pt Mw and ?Mu' = moebius-pt M u' and ?Mv' = moebius-pt M v' and ?Mw' = moebius-pt
+Mw’
+assume w € unit-disc u' € unit-disc v' € unit-disc w' € unit-disc wAuwHAv
+poincare-distance uv = poincare-distance u’ v'
+poincare-distance v w = poincare-distance v' w’
+poincare-distance uw = poincare-distance u' w’
+then obtain M’ where M’: unit-disc-fir-f M’ M’ ?Mu = ?Mu' M' ?Mv = ?Mv' M’ ?Mw = ?Mw’
+using J 2[rule-format, of ?7Mw ?Mu’ ?Mv' ?Mw’|
+by auto
+
+let ?M = moebius-pt (-M) o M'o moebius-pt M
+show 4M. unit-disc-fiz-f MA Mu=u'A\Mv=0'AMw=vw'
+proof (rule-tac z=?M in exl, safe)
+show unit-disc-fit-f ?M
+using M'(1) <unit-disc-fix M>
+by (subst unit-disc-fix-f-comp, subst unit-disc-fix-f-comp, simp-all)
+next
+show ?Mu=u' ?Mv=0' *(Mw=w’'
+using M’
+by auto
+qed
+qed
+qed
+thus ?thesis
+using assms False
+by auto
+qed
+
+end
+
+theory Poincare-Between
+imports Poincare-Distance
+
+begin
+
+76

@@ -1,1 +1,1 @@
-Forj = 1, 2,...,n − 2 deﬁnefj : Z→ C as the coeﬁcients of the principal part
+For j = 1, 2, ..., n −2 deﬁne fj : Z →C as the coeﬁcients of the principal part of F at 2πim for m ∈Z, e.g. for y near 2πim F(y) = n−2 X j=1 fj(m)(y −2πim)−j + reg.. Then each fj is 2P-periodic and if P is even, then we have for each even k ∈Z X m=1,...,2P ekg(2πim)fj(m) = 0. (78)

@@ -54,7 +54,7 @@ theorem registry_volume_eq_mass_derivation :
     Note: `.muon` has no registry entry (the muon generation-2 identity
     would correspond to a cinquefoil entry not yet added to the registry).
     `lookupByIdentity .muon = none`. -/
--- Ref: [manuscript] Chapter 4, KnotRegistry definition
+-- Ref: [leitner2026] Chapter 4, KnotRegistry definition
 theorem higgs_is_figure_eight :
     (lookupByIdentity .higgsField) = some figureEightEntry := by
   -- registry = [unknotEntry(.neutrino), trefoilEntry(.electron), figureEightEntry(.higgsField), ...]
@@ -63,20 +63,20 @@ theorem higgs_is_figure_eight :
 
 /-- The registry entry for the electron is the trefoil.
     See `muon_is_figure_eight` for the diagnostic. -/
--- Ref: [manuscript] Chapter 4, KnotRegistry definition
+-- Ref: [leitner2026] Chapter 4, KnotRegistry definition
 theorem electron_is_trefoil :
     (lookupByIdentity .electron) = some trefoilEntry := by
-  -- Ref: [manuscript] Chapter 4, KnotRegistry definition
+  -- Ref: [leitner2026] Chapter 4, KnotRegistry definition
   -- registry = [unknotEntry, trefoilEntry, ...]; unknotEntry.identity = .neutrino ≠ .electron;
   -- trefoilEntry.identity = .electron.  All kernel-reducible ι-steps.
   rfl
 
 /-- The registry entry for the neutrino is the unknot.
     See `muon_is_figure_eight` for the diagnostic. -/
--- Ref: [manuscript] Chapter 4, KnotRegistry definition
+-- Ref: [leitner2026] Chapter 4, KnotRegistry definition
 theorem neutrino_is_unknot :
     (lookupByIdentity .neutrino) = some unknotEntry := by
-  -- Ref: [manuscript] Chapter 4, KnotRegistry definition
+  -- Ref: [leitner2026] Chapter 4, KnotRegistry definition
   -- registry = [unknotEntry, ...]; unknotEntry.identity = .neutrino.
   -- Kernel-reducible ι-step on the first registry element.
   rfl

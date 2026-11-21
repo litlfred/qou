@@ -3,7 +3,7 @@ Beta decay is mediated by the $T_{3,5}$ torus knot with $10$ crossings. The $T_{
 ## The three crossing transfer matrices
 
 Each nucleon pair $(i, j)$ contributes a transfer matrix
-$T(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])$:
+$T(q) \in \mathrm{M}_2(\mathbb{Z}[\tfrac{1}{2}][q^{\pm 1}])$:
 
 $$
   T(c, d) = 
@@ -40,8 +40,11 @@ $$
   \end{pmatrix}
 $$
 
-All three matrices live in $\mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])$ —
-no fractional powers of $q$ appear.  The pp and nn transfer matrices
+No fractional powers of $q$ appear.  $T_{pp}$ and $T_{nn}$ live in
+$\mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])$, but $T_{\mathrm{mix}}$ has the
+entries $\pm\tfrac{1}{2}(q - q^{-1}) \notin \mathbb{Z}[q^{\pm 1}]$, so it
+lives in $\mathrm{M}_2(\mathbb{Z}[\tfrac{1}{2}][q^{\pm 1}])$; the same
+holds for $\Delta_\beta$ below.  The pp and nn transfer matrices
 are unimodular: $\det T_{pp} = \det T_{nn} = -1$ (forced by the
 Hecke eigenvalues $q \cdot (-q^{-1}) = -1$).  The mixed crossing
 $\frac{1}{2}(\sigma + \sigma^{-1})$ is an algebraic average, not a

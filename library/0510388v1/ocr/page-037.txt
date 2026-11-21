@@ -1,0 +1,27 @@
+Now let x and y be any pair of distinct, non-antipodal points in Ss.
+Then the vector v = y — <x,y>x is nonzero and orthogonal to x, and
+lv =<v,v>=1-<x,y >. Therefore the unique, length-minimizing
+geodesic from x to y is given by
+
+G(t) = cost x + sint (v/|v)).
+
+If a is the distance from x to y, so that cosa = <x,y>, then we can
+rewrite this as
+
+G(t) = cost x + sint ((y — cosa x)/sina).
+When t = a, wehave G(a) = y and
+Gia) = —sina x + cosa((y — cosa x)/sina)
+= (cosa y — x)/sina.
+
+Because G is parametrized by arc-length and is length-minimizing, and © is
+the distance in S* from x to y, we deduce that
+
+Vy a(x, y) = Ga) = (cosa y — x)/sina.
+
+The gradient vectors of a(x, y) at x and at y
+
+We note that
+
+Pyy Vy a(x, y) == Vx a(x, y) :
+
+37

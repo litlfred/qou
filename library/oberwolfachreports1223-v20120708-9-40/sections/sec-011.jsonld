@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Unlinking numbers of links and their families",
+  "pageStart": 24,
+  "pageEnd": 27,
+  "contains": [
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-011",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-011-01",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/lem-sec-011-02",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-011-03",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/conj-sec-011-04",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p025-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p025-8",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p025-15",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p025-22",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p025-29",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p025-36",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p025-43",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p026-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p026-3",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p027-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested"
+}

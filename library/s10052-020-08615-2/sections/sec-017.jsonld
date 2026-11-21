@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s10052-020-08615-2/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Input used for the structure functions",
+  "pageStart": 11,
+  "pageEnd": 13,
+  "contains": [
+    "library/s10052-020-08615-2/blocks/prose-sec-017",
+    "library/s10052-020-08615-2/blocks/prop-sec-017-01",
+    "library/s10052-020-08615-2/blocks/prop-sec-017-02",
+    "library/s10052-020-08615-2/blocks/prop-sec-017-03",
+    "library/s10052-020-08615-2/blocks/prop-sec-017-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-020-08615-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-020-08615-2/manifest.jsonld",
+  "provenance": "ingested"
+}

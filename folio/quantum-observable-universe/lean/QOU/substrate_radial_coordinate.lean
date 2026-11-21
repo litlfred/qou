@@ -21,7 +21,7 @@ the complex structure on the affine chart.*
 The Lean encoding records the eigenvalue-equation form of the
 Reeb-flow generator against an abstract `SubstrateRadialContext`.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md
 -/
 
 namespace QOU
@@ -55,7 +55,7 @@ class SubstrateRadialContext where
 /-- **Reeb-rotation eigenvalue equation** ([`prop:substrate-radial-coordinate`]).
 
     For every affine coordinate `Z`, `𝓛_ξ Z = J(ℏ_q · Z)`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md
 theorem substrate_radial_coordinate
     [ctx : SubstrateRadialContext] (Z : ctx.Z_type) :
     ctx.lieXi Z = ctx.J (ctx.smul (quantumPlanck ctx.q) Z) :=

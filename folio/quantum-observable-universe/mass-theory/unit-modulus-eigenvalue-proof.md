@@ -1,54 +1,53 @@
 **Proof.** The Hecke relation $\sigma_i^2 = h\sigma_i + 1$
 (where $h = q - q^{-1}$) gives each generator eigenvalues $q$
-and $-q^{-1}$ on $V_{(2,1)}$, with product
-$q \cdot (-q^{-1}) = -1$. For a product of $n$ generators,
-$\det\bigl(\rho_{(2,1)}(\beta)\bigr) = (-1)^n$. When $n$ is
-even, $\det = 1$, so the eigenvalues satisfy $\lambda_1\lambda_2 = 1$.
-Combined with $|\mathrm{tr}| \le 2$ (which holds for real traces
-of $2 \times 2$ matrices with unit determinant), both eigenvalues
-lie on the unit circle.
+and $-q^{-1}$ on $V_{(2,1)}$, with product $-1$; $\sigma_i^{-1}$ has
+eigenvalues $q^{-1}$ and $-q$, also with product $-1$. For a word of
+$n$ letters, $\det \rho_{(2,1)}(\beta) = (-1)^n$, which is $1$ for even
+$n$. So $\lambda_1 \lambda_2 = 1$, and the characteristic polynomial is
+$\lambda^2 - \chi\,\lambda + 1$. Its roots have modulus $1$ if and only
+if $\chi$ is real with $|\chi| \le 2$. That condition can fail: $\sigma_1^2$
+has eigenvalues $q^2$ and $q^{-2}$.
 
-For the Borromean braid ($n = 6$ generators):
-$\det = 1$ and the Lean-proved closed form
-([`thm:borromean-markov-trace-closed-form`](borromean-markov-trace-closed-form.md))
-together with the Wedderburn decomposition yield
-$\chi_{(2,1)}(\beta_{\mathrm{Bor}}) = -2$. The characteristic
-polynomial is then $\lambda^2 + 2\lambda + 1 = (\lambda + 1)^2 = 0$,
-giving the degenerate eigenvalue $\lambda = -1$.  $\square$
+For the Borromean value, take the explicit model
+$\rho_{(2,1)}(\sigma_1) = \mathrm{diag}(q, -q^{-1})$ and
 
-## Eigenvalue table
+$$
+  \rho_{(2,1)}(\sigma_2) =
+  \begin{pmatrix}
+    -\dfrac{1}{q(q^2+1)} & 1 \\[1ex]
+    \dfrac{q^4 + q^2 + 1}{(q^2+1)^2} & \dfrac{q^3}{q^2+1}
+  \end{pmatrix},
+$$
 
-| Operator | $(3)$ | $V_{(2,1)}$ eigenvalues | $(1^3)$ |
-|----------|-------|-------------------------|---------|
-| $\sigma_i$ | $q$ | $q,\; -q^{-1}$ (real) | $-q^{-1}$ |
-| $L_+ = \sigma_1\sigma_2$ | $q^2$ | $e^{\pm i\theta_L}$, $\lvert\lambda\rvert = 1$ | $q^{-2}$ |
-| $\mathfrak{M}_+$ (meson) | $q^6$ | $e^{\pm i\theta_M}$, $\lvert\lambda\rvert = 1$ | $q^{-6}$ |
-| $\beta_{\mathrm{Bor}}$ (proton) | $1$ | $-1$ (degenerate) | $1$ |
+which satisfies the braid relation, with $\sigma_2^{-1} = \sigma_2 - h$.
+Multiplying out $(\sigma_1\sigma_2^{-1})^3$ and taking the trace gives the
+displayed formula. $\square$
 
-At $q = q_0$: the Hopf link has phase
-$\theta_L \approx 59°$; the meson braid has
-$\theta_M \approx 54°$; the Borromean braid has $\theta = 180°$
-(the unique fixed point on the unit circle where $\lambda = -1$).
+## Values
 
-## The baryon--meson duality
+| Operator | $(3)$ | $\chi_{(2,1)}$ | $V_{(2,1)}$ eigenvalues | $(1^3)$ |
+|----------|-------|-----------------|-------------------------|---------|
+| $\sigma_i$ | $q$ | $h$ | $q,\; -q^{-1}$ (real) | $-q^{-1}$ |
+| $\sigma_i^2$ | $q^2$ | $q^2 + q^{-2}$ | $q^2,\; q^{-2}$ (real) | $q^{-2}$ |
+| $\sigma_1\sigma_2$ | $q^2$ | $-1$ | $e^{\pm 2\pi i/3}$ for every $q$ | $q^{-2}$ |
+| $\beta_{\mathrm{Bor}}$ | $1$ | $\approx 1.994$ at $q_0$ | $\approx e^{\pm 0.0763 i}$ at $q_0$ | $1$ |
 
-The sign of the $(2,1)$ contribution to the Markov trace distinguishes
-the two sectors:
+At $q = q_0$ the Borromean eigenvalues lie on the unit circle close to $+1$,
+at angle $\theta \approx 4.37^\circ$. At $q = 2$ the trace is $-1573/64$ and
+they are real, off the unit circle.
 
-- **Baryons** ($\theta = \pi$, $\cos\pi = -1$): the standard
-  representation contributes **negatively**.  This is the structural
-  origin of the factor $\dim V_{(2,1)} = 2$ appearing as a multiplier
-  in the proton substrate identity — the $(2,1)$ channel is
-  *subtracted* from the symmetric channel.
+Note that unit modulus holds specifically for the three-cycle and Borromean elements above rather than for arbitrary even words, with $\chi_{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - h^4$ and non-degenerate complex-conjugate eigenvalues on $V_{(2,1)}$.
 
-- **Mesons** ($\theta \approx 54°$, $\cos\theta > 0$): the standard
-  representation contributes **positively**.  All-positive-crossing
-  braids force the symmetric eigenvalue $q$ to dominate, but the
-  $(2,1)$ channel *adds* rather than subtracts.
+## Rotation versus growth
 
-The unit-modulus constraint means the $(2,1)$ channel carries
-**phase information** (the angle $\theta$) but no amplitude growth —
-only the $(3)$ and $(1^3)$ channels exhibit geometric growth ($q^n$
-and $q^{-n}$).  Mass ratios between different braids therefore arise
-from the interplay of real geometric growth on the outer channels and
-oscillatory phase rotation on the standard representation.
+On $V_{(2,1)}$ an even word has $\lambda_1\lambda_2 = 1$, so its eigenvalues are
+either a conjugate pair on the unit circle (a rotation by $\theta$ with
+$2\cos\theta = \chi_{(2,1)}$) or a real pair $\lambda, \lambda^{-1}$ (growth).
+Which case occurs depends on the word and on $q$. The outer channels $(3)$ and
+$(1^3)$ are one-dimensional and carry $q^{w}$ and $(-q)^{-w}$-type growth.
+
+The earlier "baryon--meson duality" in this section rested on
+$\theta_{\mathrm{Bor}} = \pi$. Since $\chi_{(2,1)}(\beta_{\mathrm{Bor}}) \approx +1.994$
+at $q_0$, the Borromean $(2,1)$ channel contributes with positive sign there,
+and the claimed origin of the factor $\dim V_{(2,1)} = 2$ in the proton
+substrate identity as a subtracted channel does not hold.

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1309.0865v1/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Soergel Bimodules",
-  "pageStart": 18,
-  "pageEnd": 18,
-  "text": "../sections/sec-014-3-soergel-bimodules.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
+  "title": "The presentation in the Kazhdan-Lusztig generators",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-014-23-the-presentation-in-the-kazhdan-lusztig-gener.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
   "provenance": "ingested"
 }

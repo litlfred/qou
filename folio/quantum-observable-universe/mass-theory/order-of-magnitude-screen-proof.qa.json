@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "92b64b6b9e00",
+          "ts": "0b0c779e25be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.917Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "evidence": "Steps follow; the not_screen_pow_of_le argument is the stated monotonicity bound."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.917Z"
+}

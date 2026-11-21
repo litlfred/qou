@@ -10,7 +10,7 @@
   where #β is the total length of the braid word (n_σ + n_σ⁻¹ + n_ud),
   A = Z + N, and H_A = q - q⁻¹.
 
-  Ref: [manuscript] docs/chi-sym-alt-theorem.md.
+  Ref: [leitner2026] docs/chi-sym-alt-theorem.md.
 -/
 
 import Mathlib.Algebra.Group.Defs
@@ -128,7 +128,7 @@ theorem chi_pair_closed_form (H_A : ℝ) (w : AtomBraidWord) :
       `nUd (atomBraidWord Z N) = 2·(Z+N) + 1`
     with `atomBraidWord` a Lean port of `mass_at_3A_proper.atom_braid_word_3A`.
 
-    Ref: [manuscript] docs/chi-sym-alt-theorem.md § Step 4-5. -/
+    Ref: [leitner2026] docs/chi-sym-alt-theorem.md § Step 4-5. -/
 theorem n_ud_atom_braid (Z N : ℕ) :
     ∃ (w : AtomBraidWord), nUd w = 2 * (Z + N) + 1 := by
   refine ⟨List.replicate (2 * (Z + N) + 1) (FactorType.udHalf, 0), ?_⟩

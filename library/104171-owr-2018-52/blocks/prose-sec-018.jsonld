@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/104171-owr-2018-52/blocks/prose-sec-018",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Symmetrizable quiver varieties. Consider e.g. B2, with Dynkin diagram",
-  "pageStart": 45,
-  "pageEnd": 45,
-  "text": "../sections/sec-018-14-symmetrizable-quiver-varieties-consider-eg-b2.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-owr-2018-52",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-owr-2018-52",
+  "title": "Conformal blocks for Galois covers of algebraic groups",
+  "pageStart": 58,
+  "pageEnd": 66,
+  "text": "../sections/sec-018-conformal-blocks-for-galois-covers-of-algebraic.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
   "provenance": "ingested"
 }

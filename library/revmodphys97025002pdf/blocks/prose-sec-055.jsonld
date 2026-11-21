@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/revmodphys97025002pdf/blocks/prose-sec-055",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "XV. The 2022 CODATA Recommended Values",
-  "pageStart": 41,
-  "pageEnd": 41,
-  "text": "../sections/sec-055-xv-the-2022-codata-recommended-values.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "title": "X. Magnetic-Moment Ratios of Light Atoms and Molecules",
+  "pageStart": 34,
+  "pageEnd": 35,
+  "text": "../sections/sec-055-x-magnetic-moment-ratios-of-light-atoms-and-mole.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
   "provenance": "ingested"
 }

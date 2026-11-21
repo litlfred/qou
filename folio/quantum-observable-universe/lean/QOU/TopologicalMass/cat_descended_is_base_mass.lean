@@ -85,7 +85,7 @@ class CatDescendedInputs : Prop where
     is an accessor exposing it under a readable name — Mathlib's
     `Group.mul_assoc := Group.mul_assoc` idiom. The obligation is real and sits
     with whoever instantiates the class; it is simply not discharged here. -/
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
 theorem descended_trace_is_base_trace [ctx : CatDescendedInputs] :
     trFrob (tauHat alpha) = baseTrace :=
   ctx.trace_compat
@@ -99,7 +99,7 @@ theorem descended_trace_is_base_trace [ctx : CatDescendedInputs] :
     this field "Open input 2", so the accessor is the legitimate idiom and the
     obligation sits with the instantiator. `#print axioms` reports no
     `sorryAx`. -/
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
 theorem base_mass_is_norm_of_base_trace [ctx : CatDescendedInputs] :
     mnorm baseTrace = baseMass :=
   ctx.base_norm

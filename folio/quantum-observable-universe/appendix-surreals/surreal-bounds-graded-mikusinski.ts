@@ -11,7 +11,7 @@ export default remark({
     "rem:rh-surreal-bound",
     "rem:p-vs-np-surreal-bound",
   ],
-  cites: ["zagier1986", "bloch2000"],
+  cites: ["zudilin2001", "zagier1986", "bloch2000"],
   tags: [
     "graded-mikusinski",
     "surreal-bounds",

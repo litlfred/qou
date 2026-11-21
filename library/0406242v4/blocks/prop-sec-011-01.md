@@ -1,0 +1,1 @@
+If for some index i, one of the numbers xi, yi, zi is 0, then two of them are 0 and the third is π. In other words, there are no simple degeneracies, only double degeneracies. Proof If not, consider an afﬁne segment from (wi) to some interior point of P. By

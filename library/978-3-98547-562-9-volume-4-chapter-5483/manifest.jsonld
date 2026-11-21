@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/978-3-98547-562-9-volume-4-chapter-5483",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/978-3-98547-562-9-volume-4-chapter-5483/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Floer cohomology, singularities, and birational geometry",
   "contains": [
+    "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-front-matter",
     "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-000",
     "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-001",
     "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-002",
@@ -18,10 +19,11 @@
     "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-004",
     "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-005",
     "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-006",
-    "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-007"
+    "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-007",
+    "library/978-3-98547-562-9-volume-4-chapter-5483/sections/sec-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "978-3-98547-562-9-volume-4-chapter-5483",
     "title_source": "pdf-info",

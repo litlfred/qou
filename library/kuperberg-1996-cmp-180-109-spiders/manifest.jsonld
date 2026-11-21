@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Spiders for Rank 2 Lie Algebras",
+  "contains": [
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-front-matter",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-000",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-001",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-002",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-003",
+    "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "kuperberg-1996-cmp-180-109-spiders",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "kuperberg-1996-cmp-180-109-spiders.pdf",
+    "source_sha256": "b6c94630554cc15ac98c5801fca01834c93f54a9ef74586ddcc3339cd684b6ea",
+    "pages": 44,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

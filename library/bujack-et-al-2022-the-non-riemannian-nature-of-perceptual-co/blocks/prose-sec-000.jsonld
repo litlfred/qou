@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-000",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
   "title": "Experiment",
-  "pageStart": 2,
+  "pageStart": 3,
   "pageEnd": 4,
   "text": "../sections/sec-000-experiment.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest.jsonld",
   "provenance": "ingested"
 }

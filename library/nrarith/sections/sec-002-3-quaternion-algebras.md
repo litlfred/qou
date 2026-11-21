@@ -8,6 +8,7 @@ pages: 7-9
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 3.1.
 In this section we associate to a Kleinian group Γ a quaternion algebra over the
@@ -28,8 +29,6 @@ Notation. We shall denote QΓ(2) by A(Γ) and call it the invariant quaternion a
 of Γ.
 Lemma 2.6 tells us that the invariant quaternion algebra A(Γ) gives no more infor-
 mation than the invariant trace ﬁeld k(Γ) when Γ has cusps—A(Γ) then equals the
-280
-Walter D. Neumann and Alan W. Reid
 matrix algebra M2(k(Γ)). However, in general A(Γ) is more interesting, for instance
 A(Γ) is a complete commensurability invariant for arithmetic Γ and equals M2(k(Γ))
 in this case if and only if Γ has cusps, as we discuss in the next section.
@@ -75,8 +74,6 @@ multiplicative group O×
 O×
 ν ⊃(1 + Pν) ⊃(1 + P2
 ν) ⊃. . .
-Arithmetic of Hyperbolic Manifolds
-281
 whose quotients after the ﬁrst are Z/p-vector spaces and whose ﬁrst quotient is the
 multiplicative group of the residue class ﬁeld lν of a certain quadratic extension lν of
 kν (the unique unramiﬁed extension of kν ). lν is an extension of degree t ≤2[k:Q] of

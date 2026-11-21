@@ -1,0 +1,71 @@
+let ?den = ?cz * (coshr — 1)/2+1
+have ?cz > 0
+using in-disc z’
+by (simp add: cmod-def)
+hence ?den > 1
+using cosh-gt-1[OF «<r > 0>]
+by auto
+hence ?den 4 0
+by simp
+hence cor ?den # 0
+using of-real-eq-0-iff
+by blast
+ultimately
+have rile = re zle = cnj z2e zle # z2e
+using z’ euclidean «z1 #4 22>
+unfolding poincare-circle-euclidean-def Let-def
+by simp-all metis
+
+hence u’ € circle (cnj z2e) r2e N circle 22e r2e z2e A cnj z2e
+using euclidean u u’
+using poincare-circle-is-euclidean-circle[of 21 r]
+using poincare-circle-is-euclidean-circle[of 22 r]
+using in-disc «r > 0»
+by auto (metis image-iff of-complez-inj)+
+
+hence (cmod (u’ — 22e))? = (emod(u’ — enj z2e))?
+by (simp add: circle-def)
+hence (u’ — 22e) « (cnj u’ — cnj z2e) = (u’ — cnj z2e) * (enj u’ — z2e)
+
+by (metis complex-cnj-cnj complex-cnj-diff complex-norm-square)
+hence (z2e — cnj 22e) * (u’ — enj u') = 0
+by (simp add: field-simps)
+thus ?thesis
+using wu’ (z2e # cnj z2e) eq-cnj-iff-reallof u’|
+by simp
+qed
+
+6.2 Congruent triangles
+
+For every pair of triangles such that its three pairs of sides are pairwise equal there is an h-isometry (a unit disc
+preserving Mobius transform, eventually composed with a conjugation) that maps one triangle onto the other.
+
+lemma unit-disc-fiz-f-congruent-triangles:
+assumes
+in-disc: u € unit-disc v € unit-disc w € unit-disc and
+in-disc’: u' € unit-disc v' € unit-disc w’ € unit-disc and
+d: poincare-distance uv = poincare-distance u’ v!
+poincare-distance v w = poincare-distance v' w’
+poincare-distance uw = poincare-distance u' w’
+shows
+3M. unit-disc-fic-fM \ Mu=u'AMv=v'AMw=w’'
+proof (casesu=vVu=wVv=w)
+case True
+thus ?thesis
+using assms
+using poincare-distance-eq-0-iff [of u' v'|
+using poincare-distance-eq-0-iff [of v' w'|
+using poincare-distance-eq-0-iff [of u’ w']
+using poincare-distance-eq-ex-mocbius|of v wv’ w']
+using poincare-distance-eq-ex-moebius|of u wu’ w’|
+using poincare-distance-eq-ex-moebius|of uv u’ v'|
+by (metis wnit-disc-fix-f-def )
+next
+case False
+
+have V wu! vu’ w’. w € unit-dise A u' € unit-disc A v' € unit-disc A w' € unit-disc \wAuANwAVA
+
+poincare-distance uv = poincare-distance u' v' A
+poincare-distance v w = poincare-distance v' w’ A
+
+74

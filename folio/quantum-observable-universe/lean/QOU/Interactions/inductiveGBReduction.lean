@@ -80,7 +80,7 @@ rather than projecting it from self-assuming `h_*` fields: the
 normal form has at most $\binom{A-1}{\lfloor(A-1)/2\rfloor}$ terms,
 with $O(A^2)$ multiplications and $O(A^3)$ Hecke reduction steps.
 An instance of this proposition is the open complexity claim. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts
 def inductiveGBReduction [ctx : InductiveGBReductionContext] : Prop :=
     ctx.NF_size ctx.A ≤ Nat.choose (ctx.A - 1) ((ctx.A - 1) / 2) ∧
     ctx.n_multiplications ≤ ctx.A ^ 2 ∧

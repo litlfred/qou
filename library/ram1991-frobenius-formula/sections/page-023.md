@@ -1,0 +1,69 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-023
+section_title: "Page 23"
+pages: 23-23
+pdf_page: 23
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+A Frobenius formula for the characters of the Hecke algebras 483
+
+7 Work of King-Wybourne and Vershik-Kerov
+
+After the preparation of the preliminary version of this manuscript other work
+concerning characters of the Hecke algebra has come to our attention. It is clear
+that the Frobenius formula for the characters of the Hecke algebra, our Theorem
+4.14, has also been discovered independently by Vershik-Kerov and King-
+Wypbourne.
+
+The work of King and Wybourne is written up in a letter [KW1] and another
+more complete preprint [KW2]. Their approach to the Frobenius formula is by
+a formula relating the Ocneanu trace on the infinite Hecke algebra H,,, the
+inductive limit of Hy as f goes to infinity, to the irreducible characters. The
+following gives their derivation of the Frobenius formula.
+
+The Ocneanu trace tr is given as follows (see [O, FYHLMO, Jo]).
+
+(7.1) Theorem. ([Jo] Theorem 5.1) To each zeEC there is a linear trace tr on
+Ufa: Hy uniquely defined by
+
+tr(ab) = tr(ba) ,
+tr(lj=1,
+tr(hgs) = ztr(h), forheH,.
+
+Any trace in H, can be given as a linear combination of the irreducible
+characters of H,. In particular for the Ocneanu trace we have
+
+tr(h) = ¥ Wig, 2)x'(h) , (7.2)
+A
+where 7’ is the irreducible character of H, and W,(q, z) is given by
+f
+w-z wqi-* — zqi7}
+W,(w, z) = s. = ayo
+at, 2) Gj =) Giea | — ghd
+
+where w = 1 — q +z. Here h(i, j) = 4; — i + 4; —j + 1 denotes the hook length at
+the position (i,j) in 4. The coefficients W,(q, z) appearing in this decomposition are
+called the weights of the trace. The weights of tr were computed by Ocneanu [O].
+A derivation of these weights is given in [Wz1]. The W,(q, z) can be written as
+Schur functions, see [Mac, §3, Example 3]. In A-ring notation we have
+
+W,(q, 2) = 82 (F=2) ;
+
+This given, King and Wybourne prove the following lemma.
+
+(7.3) Lemma. (([KW2, Lemma 2]) For each T,,, uf,
+
+Val w—-z
+= f-w 4 _, (W774 — g-1)),
+Wh) = 2 aval Ta; 4 !
+
+Proof. Recall that if p=(15.--,He)s> T= TaX---*T,, and that T=
+
+9r—1-+-g1- Thus, from the definition of tr we have that tr(7,,) = z’~) and that
+tr(Z) = 2 2m ete

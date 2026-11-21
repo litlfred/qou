@@ -10,7 +10,8 @@ source_sha256: 9a7757f998b7f680
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.966
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 Let $M$ be a smooth manifold. Consider a differential crossed module ${\mathfrak{G}=(\d\colon \le \to \lg,\tr)}$. In particular the map $(X,e) \in \lg \times \le  \mapsto X \tr e \in \le$ is bilinear.
 

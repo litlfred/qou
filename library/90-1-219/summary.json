@@ -2,32 +2,62 @@
  "_schema": "library-summary/v1",
  "doc_id": "90-1-219",
  "source_sha256": "c2e3f2f8946c6f84",
- "brief": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993 — 4 sections: Front matter; Acknowledgements; Appendix",
- "extended": "**Progress of Theoretical Physics, Vol. 90, No.1, July 1993**\n\n*Quaternions and Non-Commutative Geometry*\n\n18 pp, 4 sections.\n\n**Outline.** Front matter; Acknowledgements; Appendix; References",
+ "brief": "Quaternions and non-commutative geometry — 10 sections: Front matter; Quaternionic formulation of the Di; TST",
+ "extended": "**Quaternions and non-commutative geometry**\n\n*Quaternions and Non-Commutative Geometry*\n\n18 pp, 10 sections.\n\n**Outline.** Front matter; Quaternionic formulation of the Dirac theory; TST-; Bosonic sector; XX8(dX'); § 4. Bosonic sector of Weinberg-Salam theory; 2 Bw=1/4.; Discussion; Acknowledgements; Appendix",
  "tokens": {
-  "brief": 28,
-  "extended": 48
+  "brief": 27,
+  "extended": 77
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-16"
+   "pages": "1-3"
   },
   {
-   "id": "sec-000-acknowledgements",
+   "id": "sec-000-quaternionic-formulation-of-the-dirac-theory",
+   "title": "Quaternionic formulation of the Dirac theory",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-001-tst",
+   "title": "TST-",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-002-bosonic-sector",
+   "title": "Bosonic sector",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-003-xx8dx",
+   "title": "XX8(dX')",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-004-4-bosonic-sector-of-weinberg-salam-theory",
+   "title": "§ 4. Bosonic sector of Weinberg-Salam theory",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-005-2-bw14",
+   "title": "Bw=1/4.",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-006-discussion",
+   "title": "Discussion",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-007-acknowledgements",
    "title": "Acknowledgements",
    "pages": "16-16"
   },
   {
-   "id": "sec-001-appendix",
+   "id": "sec-008-appendix",
    "title": "Appendix",
    "pages": "16-18"
-  },
-  {
-   "id": "sec-002-references",
-   "title": "References",
-   "pages": "18-18"
   }
  ],
  "provenance": {

@@ -8,9 +8,27 @@
   "pages": 122,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 31,
+    "reason": "11 of 183 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 72,
+    "reason": "11 of 206 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 78,
+    "reason": "10 of 348 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 81,
+    "reason": "10 of 266 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": {
@@ -20,33 +38,34 @@
    "stamp_date": "4 Sep 1999"
   },
   "doi": null,
-  "title": "arXiv:math/9909027v1 [math.QA] 4 Sep 1999",
-  "authors_raw": "Berkeley, California 94720\u20133840",
+  "title": "Planar Algebras, I",
+  "authors_raw": "Berkeley, California 94720–3840",
   "title_lines": [
    "Planar Algebras, I",
-   "V. F. R. Jones \u2217",
+   "V. F. R. Jones ∗",
    "Department of Mathematics",
    "University of California"
   ],
-  "abstract": "We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions. A planar algebra with suitable positivity properties produces a \ufb01nite index subfactor of a II1 factor, and vice versa. 0. Introduction At \ufb01rst glance there is nothing planar about a subfactor. A factor M is a unital \u2217-algebra of bounded linear operators on a Hilbert space, with trivial centre and closed in the topology of pointwise convergence. The factor M is of type II1 if it admits a (normalized) trace, a linear function tr: M \u2192C with tr(ab) = tr(ba) and tr(1) = 1. In [J1] we de\ufb01ned the notion of index [M : N] for II1 factors N \u2282M. The most surprising result of [J1] was that [M : N] is \u201cquantized\u201d \u2014 to be precise, if [M : N] < 4 there is an integer n \u22653 with [M : N] = 4 cos2 \u03c0/n. This led to a surge of interest in subfactors and the major theorems of Pimsner, Popa and Ocneanu ([PP],[Po1],[O1]). These results turn around a \u201cstandard invariant\u201d for \ufb01nite index subfactors, also known variously as the \u201ctower of relative commutants\u201d, the \u201cparagroup\u201d, or the \u201c\u03bb-lattice\u201d. In favorable cases the standard invariant allows one to recon- struct the subfactor, and both the paragroup and \u03bb-lattice approaches give \u2217Research supported in part by NSF Grant DMS93\u201322675, the Marsden fund UOA520, and the Swiss National Science Foundation. 1",
+  "abstract": "We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions. A planar algebra with suitable positivity properties produces a ﬁnite index subfactor of a II1 factor, and vice versa. 0. Introduction At ﬁrst glance there is nothing planar about a subfactor. A factor M is a unital ∗-algebra of bounded linear operators on a Hilbert space, with trivial centre and closed in the topology of pointwise convergence. The factor M is of type II1 if it admits a (normalized) trace, a linear function tr: M →C with tr(ab) = tr(ba) and tr(1) = 1. In [J1] we deﬁned the notion of index [M : N] for II1 factors N ⊂M. The most surprising result of [J1] was that [M : N] is “quantized” — to be precise, if [M : N] < 4 there is an integer n ≥3 with [M : N] = 4 cos2 π/n. This led to a surge of interest in subfactors and the major theorems of Pimsner, Popa and Ocneanu ([PP],[Po1],[O1]). These results turn around a “standard invariant” for ﬁnite index subfactors, also known variously as the “tower of relative commutants”, the “paragroup”, or the “λ-lattice”. In favorable cases the standard invariant allows one to recon- struct the subfactor, and both the paragroup and λ-lattice approaches give ∗Research supported in part by NSF Grant DMS93–22675, the Marsden fund UOA520, and the Swiss National Science Foundation. 1",
   "docinfo": {
    "Title": "arXiv:math/9909027v1  [math.QA]  4 Sep 1999",
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20241126161759-05'00'"
   },
-  "title_raw": "Planar Algebras, I V. F. R. Jones \u2217 Department of Mathematics University of California",
+  "title_raw": "Planar Algebras, I V. F. R. Jones ∗ Department of Mathematics University of California",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/9909027v1 [math.QA] 4 Sep 1999",
    "heading": "Planar Algebras, I",
-   "text": "Planar Algebras, I V. F. R. Jones \u2217 Department of Mathematics University of California",
+   "text": "Planar Algebras, I V. F. R. Jones ∗ Department of Mathematics University of California",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/9909027v1 [math.QA] 4 Sep 1999"
  },
  "toc": [
   {
@@ -294,7 +313,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "close to the internal boundary and inserting cancelling pairs of u and u\u22121 on strings connecting internal boundary points, we see that the tangle of Figure 2.10.2 gives the same element of P as the one where the only instances of u and u\u22121 surround the x",
+   "title": "close to the internal boundary and inserting cancelling pairs of u and u−1 on strings connecting internal boundary points, we see that the tangle of Figure 2.10.2 gives the same element of P as the one where the only instances of u and u−1 surround the x",
    "page": 53,
    "confidence": 0.9,
    "evidence": [
@@ -1229,8 +1248,8 @@
    "level": 1,
    "page_start": 27,
    "page_end": 54,
-   "n_chars": 39284,
-   "n_words": 7805,
+   "n_chars": 39358,
+   "n_words": 7799,
    "label_start": null,
    "label_end": null
   },
@@ -1265,8 +1284,8 @@
    "level": 2,
    "page_start": 67,
    "page_end": 74,
-   "n_chars": 11199,
-   "n_words": 2190,
+   "n_chars": 11212,
+   "n_words": 2185,
    "label_start": null,
    "label_end": null
   },
@@ -1289,8 +1308,8 @@
    "level": 2,
    "page_start": 77,
    "page_end": 79,
-   "n_chars": 2794,
-   "n_words": 537,
+   "n_chars": 2795,
+   "n_words": 535,
    "label_start": null,
    "label_end": null
   },
@@ -1313,8 +1332,8 @@
    "level": 2,
    "page_start": 80,
    "page_end": 81,
-   "n_chars": 1067,
-   "n_words": 221,
+   "n_chars": 1073,
+   "n_words": 212,
    "label_start": null,
    "label_end": null
   },
@@ -1349,8 +1368,8 @@
    "level": 2,
    "page_start": 81,
    "page_end": 92,
-   "n_chars": 11998,
-   "n_words": 2585,
+   "n_chars": 11996,
+   "n_words": 2580,
    "label_start": null,
    "label_end": null
   },
@@ -1406,6 +1425,7 @@
    "items": []
   },
   "sections": 18,
-  "chars_total": 176196
+  "chars_total": 176288,
+  "furniture_lines_stripped": 0
  }
 }

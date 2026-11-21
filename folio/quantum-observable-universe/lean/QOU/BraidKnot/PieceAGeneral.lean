@@ -20,7 +20,7 @@ Stage 1 (this commit): definitions + the hook decomposition
 
 All sums over `ℤ` (contents are signed); no `ℝ`, no archimedean input.
 
--- Ref: [manuscript] docs/audits/2026-08-01-keystone-identity-I-piece-A-general-proof.md; bean qou-o5xj
+-- Ref: [leitner2026] docs/audits/2026-08-01-keystone-identity-I-piece-A-general-proof.md; bean qou-o5xj
 -/
 
 namespace QOU.BraidKnot.PieceA

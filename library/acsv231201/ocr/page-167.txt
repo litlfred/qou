@@ -1,0 +1,46 @@
+6.3 Convex cones and exponential bounds 149
+
+problem of minimizing |z|* on D as a polynomial optimization problem over
+a semialgebraic domain. Computing such a minimizer can be done algorithmi-
+cally, although in general it is extremely expensive. See [Las 15] for a detailed
+account of such optimization problems, and computationally feasible relax-
+ations.
+
+Because B is an open convex set in R¢, either B*(#) = —co or the infimum
+in (6.5) is achieved by taking x to a point on the boundary OB. In the rest of this
+section we examine what happens when £*(7) = —co, while the next section
+studies the case when £*(7) is finite.
+
+Proposition 6.24. Let f(z) = P(z)/Q(z) be a ratio of polynomials P and Q.
+If r1,72,... is a sequence of vectors in Z4 going to infinity in the direction
+P € R¢ and the set {-#- w@ : aw € B) is unbounded from below then ay, = 0 for
+all but finitely many n.
+
+Proof If the linear function —# - 2 is unbounded from below on B then, since
+P and Q are polynomials, we can find a sequence of points {a,} in B and a
+polynomial p(x) such that —? - @ < —k and
+
+[f(z)| < p(e) on Relog™'(a,).
+
+Because r,/|r,| = # + o(1) we have |z~"| = |e“? ™| < eHlraltolD) When
+z € Relog™!(a), so the maximum modulus bound (6.4) implies
+
+lanl < p(e*) exp = k(lral + olral))]-
+
+If n is sufficiently large then |r,,|+ 0(|r,,|) is positive and the upper bound on the
+right-hand side goes to zero as k — ov. Since this bound holds for all k € N, it
+follows that a,., is zero for all sufficiently large n. im
+
+Remark 6.25. If f(z) is a ratio of analytic functions with a Laurent series
+converging on D = Relog™'(B) and —# - x is unbounded from below on B
+then the function p giving an upper bound on |f(z)| may no longer be poly-
+nomial, and thus the coefficients a,, may not eventually be zero. However,
+our argument still proves that the coefficients decay faster than any exponen-
+tial function in n. The methods of ACSV we develop are not concerned with
+this super-exponential regime, and if the reader encounters such a situation we
+recommend trying direct application of the multivariate saddle point methods
+described in Chapter 5.
+
+Proposition 6.24 describes the extreme behavior that occurs when {-f - x :
+a € B} is unbounded from below, and it is natural to wonder when such behav-
+ior can occur. Serendipitously, the connection between the Newton polytope

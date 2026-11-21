@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:flavor-split-substrate",
+  "kind": "proposition",
+  "title": "Substrate-pure derivation of the $u$--$d$ flavor split",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-pair-skein-mass-formula"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-flavor-split-substrate"
+  ],
+  "tags": [
+    "flavor-split",
+    "u-d-splitting",
+    "substrate-only",
+    "no-fit",
+    "hecke-substrate-atoms",
+    "categorical-derivation"
+  ],
+  "leanRef": "qou:QOU.HadronicMass.flavor_split_substrate",
+  "text": "flavor-split-substrate.md",
+  "provenance": "authored"
+}

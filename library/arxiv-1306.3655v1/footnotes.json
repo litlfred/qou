@@ -1,0 +1,725 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1306.3655v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "(n) →(n −1, 1) →(n −2, 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(n) →(n −1, 1) →(n −2, 12) →· · · →(2, 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(n) →(n −1, 1) →(n −2, 12) →· · · →(2, 1n−2) →(1"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "(−1)jχ(n−j,"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "(−1)jχ(n−j,1"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "(n) →(n −2, 2) →(n −3, 2, 1) →(n −4, 2, 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(n) →(n −2, 2) →(n −3, 2, 1) →(n −4, 2, 12) →· · · →(3, 2, 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": " →(n −3, 2, 1) →(n −4, 2, 12) →· · · →(3, 2, 1n−5) →(2, 2, 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": " 2, 1) →(n −4, 2, 12) →· · · →(3, 2, 1n−5) →(2, 2, 1n−4) →(1"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "(−1)j+1χ(n−2−j,"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "(−1)j+1χ(n−2−j,2,"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "(−1)j+1χ(n−2−j,2,1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(−1)j+1χ(n−2−j,2,1j)+ (−1)"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(−1)j+1χ(n−2−j,2,1j)+ (−1)nχ(1"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "(n) →(n −3, 3) →(n −4, 3, 1) →(n −5, 3, 1"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "(n) →(n −3, 3) →(n −4, 3, 1) →(n −5, 3, 12) →(n −6, 3, 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "→(n −4, 3, 1) →(n −5, 3, 12) →(n −6, 3, 13) →· · · →(4, 3, 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "→(3, 3, 1"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "→(3, 3, 1n−6) →(2"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "→(3, 3, 1n−6) →(22, 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "→(3, 3, 1n−6) →(22, 1n−4) →(2, 1"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "(−1)j+1χ(n−3−j,"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "(−1)j+1χ(n−3−j,3,"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "(−1)j+1χ(n−3−j,3,1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(−1)j+1χ(n−3−j,3,1j)+ (−1)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "(−1)j+1χ(n−3−j,3,1j)+ (−1)n−1χ(2,"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "(−1)j+1χ(n−3−j,3,1j)+ (−1)n−1χ(2,2,"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(−1)j+1χ(n−3−j,3,1j)+ (−1)n−1χ(2,2,1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(−1)j+1χ(n−3−j,3,1j)+ (−1)n−1χ(2,2,1n−4)+ (−1)"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "(−1)j+1χ(n−3−j,3,1j)+ (−1)n−1χ(2,2,1n−4)+ (−1)nχ(2,"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(−1)j+1χ(n−3−j,3,1j)+ (−1)n−1χ(2,2,1n−4)+ (−1)nχ(2,1"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "(−1)j+1χν∗S"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "1+ 1.Indeed,"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1+ 1.Indeed,k≥ν"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "1−1,so"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1−1,son −k≥k + 2 ≥ν"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "1+ 1 out of the"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "1+ 1 out of the n−kcells are coveringν.Since"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1+ 1 out of the n−kcells are coveringν.Since n−k≥ν"
+  },
+  {
+   "page": 4,
+   "mark": "h",
+   "context": "(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "h",
+   "context": "(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(−1)h(S"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(−1)h(Sj)+1χν∗S"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "(n−k,ν)= (−1)"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "ν= (−1)"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "(−1)"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "(−1)"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "(−1)"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "ν] is the"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ν] is the d ×d charactertable of S"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "he d ×d charactertable of Sk,and [ψρ,n] is a columnof height"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Theorem3.5.Letη⊢n,η= (1"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Theorem3.5.Letη⊢n,η= (1m"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Theorem3.5.Letη⊢n,η= (1m1, 2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Theorem3.5.Letη⊢n,η= (1m1, 2m"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "(i"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(im"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Example3.8.1.InExample2.2.1wesawthatψ∅,n=P"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=0(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "j=0(−1)jχ(n−j,"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=0(−1)jχ(n−j,1"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(−1)jχ(n−j,"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(−1)jχ(n−j,1"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2.Similarly,byExample2.2.2,ψ(1),n=χ(n)+P"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=0(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "j=0(−1)j+1χ(n−2−j,"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "j=0(−1)j+1χ(n−2−j,2,"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=0(−1)j+1χ(n−2−j,2,1"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "j=0(−1)j+1χ(n−2−j,2,1j) + (−1)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "j=0(−1)j+1χ(n−2−j,2,1j) + (−1)nχ(1"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(−1)j+1χ(n−2−j,"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(−1)j+1χ(n−2−j,2,"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(−1)j+1χ(n−2−j,2,1"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(−1)j+1χ(n−2−j,2,1j)(µ) + (−1)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(−1)j+1χ(n−2−j,2,1j)(µ) + (−1)nχ(1"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(−1)jfν∗S"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "s follows from Theorem 3.1, since this corresponds to µ = (1"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "χ(n−i,"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "χ(n−i,1"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(−1)iχ(n−i,"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "(−1)iχ(n−i,1"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "χ(n−i,"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "χ(n−i,1"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "χ(n−i,"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "χ(n−i,1"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "An= {(n), (1"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "An= {(n), (1n)} ∪{(r, 2, 1"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "fλ= (n −4) · 2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Proof.Letλ = (r, 2, 1"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Thus,omittingλ ∈{(n), (1"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "= (n −4) · 2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "\u0012Z"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "\u0012Z"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "\u0012Z"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "x(1 + x)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "\u0012Z"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(1 + x)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(1 + x)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "= (n −4)2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n) be the numberof standard Young tableaux of shape (r, 2, 1"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(n −1)nor(1"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(n −1)nor(1n−1)).Clearly,thenumberofthesetableauxis2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "So we have the recurrence f(n) = 2f(n−1)+2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "thatf(n) = (n −4)2"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "fν∗S"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "fν∗Sj· t"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "In the case νis empty we get p∅,n(t) = (t+1)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p4(t) = (t + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p5(t) = (t + 1)(t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p6(t) = (t + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p6(t) = (t + 1)2(t"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "p7(t) = (t + 1)(t"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "p7(t) = (t + 1)(t4+ 13t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p7(t) = (t + 1)(t4+ 13t3+ 22t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p8(t) = (t + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "p8(t) = (t + 1)2(t"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "p8(t) = (t + 1)2(t4+ 18t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p8(t) = (t + 1)2(t4+ 18t3+ 27t"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "p9(t) = (t + 1)(t"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "p9(t) = (t + 1)(t6+ 26t"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "p9(t) = (t + 1)(t6+ 26t5+ 79t"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "p9(t) = (t + 1)(t6+ 26t5+ 79t4+ 110t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p9(t) = (t + 1)(t6+ 26t5+ 79t4+ 110t3+ 79t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p10(t) = (t + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "p10(t) = (t + 1)2(t"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "p10(t) = (t + 1)2(t6+ 33t"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "p10(t) = (t + 1)2(t6+ 33t5+ 93t"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "p10(t) = (t + 1)2(t6+ 33t5+ 93t4+ 131t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p10(t) = (t + 1)2(t6+ 33t5+ 93t4+ 131t3+ 93t"
+  }
+ ]
+}

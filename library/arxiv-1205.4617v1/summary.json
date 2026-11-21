@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1205.4617v1",
  "source_sha256": "dd00cf2cee521bf5",
- "brief": "Quaternion Octonion Reformulation of Grand Unified Theories — In this paper, Grand Uniﬁed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n",
- "extended": "**Quaternion Octonion Reformulation of Grand Unified Theories**\n\n*Pushpa(1), P. S. Bisht (1,2), Tianjun Li (2) and O. P. S. Negi (1.2)*\n\n14 pp, 3 sections.\n\n**Abstract.** In this paper, Grand Uniﬁed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n basis el- ements with Pauli matrices and Octonions with Gell Mann λ matri- ces. Connection between the unitary groups of GUTs and the no rmed division algebra has been established to re-describe the SU (5) gauge group. We have thus described the SU (5) gauge group and its subgroup SU (3)C × SU (2)L × U (1) by using quaternion and octonion basis ele- ments. As such the connection between U (1) gauge group and complex number, SU (2) gauge group and quaternions and SU (3) and octonions is established.\n\n**Outline.** 1 Introduction; 2 SU(5) Gauge Symmetry; 4 Discussion and Conclusion",
+ "brief": "Quaternion Octonion Reformulation of Grand Uniﬁed Theories — In this paper, Grand Uniﬁed theories are discussed in terms of quater- nions and octonions by using the relation between quaternion basis",
+ "extended": "**Quaternion Octonion Reformulation of Grand Uniﬁed Theories**\n\n*Unified Theories*\n\n14 pp, 5 sections.\n\n**Abstract.** In this paper, Grand Uniﬁed theories are discussed in terms of quater- nions and octonions by using the relation between quaternion basis el- ements with Pauli matrices and Octonions with Gell Mann λ matri- ces. Connection between the unitary groups of GUTs and the normed division algebra has been established to re-describe the SU(5) gauge group. We have thus described the SU(5) gauge group and its subgroup SU(3)C × SU(2)L × U(1) by using quaternion and octonion basis ele- ments. As such the connection between U(1) gauge group and complex number, SU(2) gauge group and quaternions and SU(3) and octonions is established. It is concluded that the division algebra approach to the the theory of uniﬁcation of fundamental interactions as the case of GUTs leads to the consequences towards the new understanding of these theories which incorporate the existence of magnetic monopole and dyon.\n\n**Outline.** Front matter; 1 Introduction; 2 SU(5) Gauge Symmetry; 3 Quaternion-Octonion Reformulation of SU(5) g; 4 Discussion and Conclusion",
  "tokens": {
-  "brief": 48,
-  "extended": 222
+  "brief": 49,
+  "extended": 289
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,10 +22,15 @@
   {
    "id": "sec-001-2-su5-gauge-symmetry",
    "title": "SU(5) Gauge Symmetry",
-   "pages": "3-11"
+   "pages": "3-5"
   },
   {
-   "id": "sec-002-4-discussion-and-conclusion",
+   "id": "sec-002-3-quaternion-octonion-reformulation-of-su5-gauge",
+   "title": "Quaternion-Octonion Reformulation of SU(5) gauge Symmetry",
+   "pages": "5-11"
+  },
+  {
+   "id": "sec-003-4-discussion-and-conclusion",
    "title": "Discussion and Conclusion",
    "pages": "11-14"
   }

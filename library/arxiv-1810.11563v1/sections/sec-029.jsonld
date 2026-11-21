@@ -9,13 +9,17 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Do Typical States have Firewalls?",
-  "pageStart": 64,
-  "pageEnd": 64,
+  "title": "Complexity and Firewalls",
+  "pageStart": 55,
+  "pageEnd": 59,
   "contains": [
-    "library/arxiv-1810.11563v1/blocks/prose-sec-029"
+    "library/arxiv-1810.11563v1/blocks/prose-sec-029",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p056-1",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p056-2",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p058-1",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p059-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1810.11563v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1810.11563v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Categorical aspects",
-  "pageStart": 23,
-  "pageEnd": 24,
+  "title": "Duality",
+  "pageStart": 20,
+  "pageEnd": 23,
   "contains": [
-    "library/modularqholonomicmodules/blocks/prose-sec-011"
+    "library/modularqholonomicmodules/blocks/prose-sec-011",
+    "library/modularqholonomicmodules/blocks/prop-sec-011-01",
+    "library/modularqholonomicmodules/blocks/prop-sec-011-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,63 @@
+25
+
+is. It is then quite likely that we can define the tensor operators in this case, in terms of their matrix elements, which
+would be proportional to the Clebsh-Gordan coefficients. We leave this for further investigations.
+
+Hamiltonian constraint: LQG and spinfoams are supposed to be the two facets of the same theory. This can be
+shown explicitly only in the case A = 0 case, in 3d [16]. Recently, an Hamiltonian constraint was constructed using the
+spinor formalism [54]. It has been designed to encode a recursion relation on the 67 symbol and hence by construction,
+it relates the Ponzano-Regge model to the LQG approach. Now that we have generalized the spinor approach to the
+quantum group case, we can construct a q-deformed version of this Hamiltonian constraint. It would essentially
+encode the recursion relation of the g-deformed 6j symbol. Hence this new q-deformed Hamiltonian constraint would
+relate the Turaev-Viro model and LQG with a cosmological constant. This is work in progress .
+
+Aknowledgements: We would like to thank A. Baratin, V. Bonzom, B. Dittrich, L. Freidel, E. Livine for many
+interesting discussions and comments.
+
+Appendix A: Hyperbolic cosine law
+
+Consider the upper 2d hyperboloid H?, embedded into R*, with curvature —R~? = A, where R is the radius of
+curvature.
+
+Hy = {@€R®, x > 0, ania; = x} — x} — 23 = |)? = R’}. (Al)
+
+On He, consider three points A, B,C and the geodesics joining them: we obtain an hyperbolic triangle. Without loss
+of generality, we can always assume that A sits at the origin of H?, that is as a point of R°, it is given by the vector
+A= (R,0,0). The points B and C are then obtained from A by performing a boost L,, Ly with respective rapidity c
+and b. Explicitly,
+
+B=L.A, C=LA. (A2)
+
+As a consequence, we have (A, A) = |Al? = |Bl? = |G? = R?.
+
+Consider the normalized space-like vectors tiap, tac € TH, the tangent plane of Hy at the point A. They
+are the tangent vectors to the geodesics joining respectively A to B and A to C. By construction, these vectors are
+orthogonal to A.
+
+B- AA BA C- AA C)A
+tap= ss (A, By tac =7S mA CA (A3)
+B-4(A,B)A E—-A(AOA
+
+Since we are dealing with an homogeneous space, we express the lengths ¢; of the geodesic arcs using the dimensionful
+parameter R, such that &. = Re, ¢, = Rb as well as , = Ra.
+
+By definition, we know that the angle between two geodesics which intersect is defined in terms of the angle between
+the tangent vectors. If we focus in particular on the angle a between the arcs AB and AC, we have
+
+cosa = (tia, tac). (A4)
+Using the expression of the tangent vectors, we obtain the hyperbolic cosine law.
+
+£, bp £
+— cosh =$ + cosh 5 cosh <$
+cosa = x x x (A5)
+sinh & sinh £¢
+s RS R
+
+In the flat case, performing the limit R — oo in (A5), we recover the al Khashi rule
+
+= (G +6)
+Cos = (A6)
+
+Appendix B: Useful formulae
+
+These formulae are taken from the book [37].

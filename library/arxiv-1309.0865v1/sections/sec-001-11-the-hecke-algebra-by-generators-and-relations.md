@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.945
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 Let $G$ be a split finite reductive group over a finite field $\mathbb{F}_q$, and let $B \subset G$ be a Borel subgroup.  A fundamental object in representation theory is the Hecke algebra
 \[

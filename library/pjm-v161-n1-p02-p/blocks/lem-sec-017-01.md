@@ -1,0 +1,1 @@
+Suppose that p\ and p'i+ι are in subsets #2 and/or #3 of F Π <9Bj•. Let H^ be any generic fiber. Then {after a modification of H') we may assume that an arc in Ή!ώ Π <9B/ which joins pi to Pi+ι does not cross L.

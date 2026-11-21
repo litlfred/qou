@@ -1,0 +1,49 @@
+nodal lines and nodal domains, that is, the pbints-or-whith the eigenfunction is zero and
+how they partition the domain. This has an obvious link to Dirichlet boundary problems,
+
+and we hope to exploit the connection in Section 3.4.
+
+Definition 1.11 (Nodal domain) Let S be a closed Riemann surface and
+C(S)af: SR.
+
+The nodal set of f is Zj ={f~'(0)}, and each connected component of
+
+S\ {fF 7(0)}
+is a nodal domain of f. L]
+
+Theorem 1.12 (Courant’s nodal domain theorem, [19]) Consider a Neumann
+
+eigenvalue problem on M, OM £0, M compact and connected with eigenvalues
+0=A <ALL <AVK<...
+
+corresponding to the complete orthonormal basis of eigenfunctions {o, ¢1,...} of L?(M).
+The number of nodal domains of dp is <k +1.
+
+Now consider a Dirichlet eigenvalue problem on the same region, with eigenvalues
+O0<A\y<AQ<...
+
+corresponding to the complete orthonormal basis of eigenfunctions {1, 2,...} of L?(M).
+
+Then the number of nodal domains of bd, is < k. Cl
+
+A classic paper on the nodal sets of eigenfunctions is [18], where it is proved that
+for the Laplace operator acting on functions on a Riemannian manifold, the nodal sets
+of eigenfunctions are smooth sub-manifdlds, apart from a closed set of lower dimension.
+Cheng also generalizes Theorem 1.12 to manifolds of higher dimension, and proves that
+
+for a Riemann surface S and V € C'™(S), a solution y of the Schédinger equation
+(A+V)p =0
+
+with nodal set Z, has isolated critical points on Z,, and the meeting points of nodal lines
+form an equiangular system.
+
+A survey of historical results ting to the nodal sets of the Laplacian on surfaces of
+variable curvature is given in min more recent years, there have been some interesting
+results linking the topology_of nodal sets to the spectrum of A; Otal and Rosas proved
+an initial result in 2009 ied
+
+I,
+
+at for a compact, orientable, hyperbolic surface S of genus
+
+ay a(S) > (1.3)

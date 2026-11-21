@@ -31,7 +31,7 @@ namespace QOU
     and (T₁, T₂) a positively-oriented tangent frame.
 
     LaTeX: `\label{def:exceptional-divisor}`
-    Ref: [manuscript] Chapter 6, §Colour-sector coordinates -/
+    Ref: [leitner2026] Chapter 6, §Colour-sector coordinates -/
 structure ExceptionalDivisor where
   /-- The radius of the ℙ¹(ℂ) fibre. -/
   R : ℝ
@@ -50,7 +50,7 @@ structure ExceptionalDivisor where
 
 /-- A point on the exceptional divisor parametrized by spherical
     coordinates (φ, ψ). Returns the i-th coordinate of the fibre point. -/
--- Ref: [manuscript] Chapter 6, §Colour-sector coordinates
+-- Ref: [leitner2026] Chapter 6, §Colour-sector coordinates
 noncomputable def ExceptionalDivisor.fibrePoint
     (E : ExceptionalDivisor) (φ ψ : ℝ) (i : Fin 3) : ℝ :=
   E.centre i + E.R * (Real.sin φ * (Real.cos ψ * E.tangent1 i +
@@ -60,7 +60,7 @@ noncomputable def ExceptionalDivisor.fibrePoint
     parameter range φ ∈ [0, π], ψ ∈ [0, 2π) covers the sphere exactly once.
     This is encoded by the statement that at the poles (φ = 0 and φ = π),
     the point is independent of ψ. -/
--- Ref: [manuscript] Chapter 6, §Colour-sector coordinates
+-- Ref: [leitner2026] Chapter 6, §Colour-sector coordinates
 theorem ExceptionalDivisor.south_pole_independent
     (E : ExceptionalDivisor) (ψ₁ ψ₂ : ℝ) (i : Fin 3) :
     E.fibrePoint 0 ψ₁ i = E.fibrePoint 0 ψ₂ i := by

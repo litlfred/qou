@@ -1,0 +1,67 @@
+show ?thesis
+using calc-x-axis-intersection-fun-mono|[of —b1/al —b2/a2]
+using assms
+by (cases —b1/a1=—b2/a2, auto)
+qed
+
+lemma outward:
+assumes is-poincare-line H1 and is-poincare-line H2
+assumes intersects-z-axis-positive H1 and intersects-x-axis-positive H2
+assumes outward H1 H2
+shows Re (to-complex (calc-1-axis-intersection H1)) > Re (to-complex (calc-x-axis-intersection H2))
+proof—
+have intersects-z-azis H1 intersects-x-axis H2
+using assms
+by auto
+thus ?thesis
+using assms
+proof (transfer, transfer)
+fix Hi H2
+assume hh: hermitean H1 \ H1 ¢ mat-zero hermitean H2 \ H2 4 mat-zero
+obtain Ail B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)
+by (cases H1, cases H2, auto)
+have is-real A1 is-real A2
+using hermitean-elems * hh
+by auto
+assume 1: intersects-x-axis-positive-cmat H1 intersects-x-axis-positive-cmat H2
+assume ntersects-x-axis-cmat H1 intersects-x-axis-cmat H2
+assume 3: is-poincare-line-cmat H1 is-poincare-line-cmat H2
+assume 4: outward-cmat H1 H2
+have Al 4 0 A240
+using * <is-real A1» <is-real A2> 1 complex.expand|[of A1 0] complex.expand[of A2 0]
+by auto
+hence (sgn (Re B2) * sqrt ((Re B2)? — (Re A2)?) — Re B2) / Re A2
+< (sgn (Re B1) * sqrt ((Re B1)? — (Re A1)”) — Re B1) / Re Al
+using calc-x-axis-intersection-mono|of Re B1 Re Al Re B2 Re A2]
+using 1 4 *
+by simp
+moreover
+have (sgn (Re B2) * sqrt ((Re B2)? — (Re A2)*) — Re B2) / Re A2 =
+Re ((cor (sgn (Re B2)) * cor (sqrt ((Re B2)* — (Re A2)*)) — cor (Re B2)) / A2)
+using <is-real A2) (A2 # 0»
+by (simp add: Re-divide-real)
+moreover
+have (sgn (Re B1) * sqrt ((Re B1)? — (Re A1)?) — Re B1) / Re Al =
+Re ((cor (sgn (Re B1)) * cor (sqrt ((Re B1)? — (Re A1)”)) — cor (Re B1)) / Al)
+using <is-real Al) (Al # 0)
+by (simp add: Re-divide-real)
+ultimately
+show Re (to-complez-cvec (calc-x-axis-intersection-cmat-cvec H2))
+< Re (to-complex-cvec (calc-x-axis-intersection-cmat-cvec H1))
+using 23 (Al # 0) (A2 F O> & <is-real Al» <is-real A2>
+by (simp del: is-poincare-line-cmat-def intersects-z-axis-cmat-def)
+qed
+qed
+
+8.8 Ideal points and x-axis intersection
+
+lemma ideal-points-intersects-x-azis:
+assumes is-poincare-line H and ideal-points H = {i1, i2} and H # z-axis
+shows intersects-t-axis H <—> Im (to-complex i1) « Im (to-complez i2) < 0
+using assms
+proof—
+have il # i2
+using assms(1) assms(2) ex-poincare-line-points ideal-points-different(1)
+by blast
+
+112

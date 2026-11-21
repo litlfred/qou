@@ -8,7 +8,9 @@ pages: 25-25
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+The tautological representation
 Let X be an irreducible component of X(M) of irreducible type (in the sense of
 Deﬁnition 1.1.16).
 The component X corresponds to a minimal prime ideal p of B[Γ] such that k[X] =
@@ -26,4 +28,3 @@ X : Γ →SL2(k( ¯X)) the tautological representation. The component ¯X
 is said of irreducible type if it projects on a component of irreducible type of X(M).
 The striking point of the augmented construction is that the restricted tautological
 representation ρ∂: π1(∂M) →π1(M) →SL2(k( ¯X)) is now diagonalizable.
-1.1.8

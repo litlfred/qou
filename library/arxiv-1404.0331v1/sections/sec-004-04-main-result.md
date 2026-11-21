@@ -7,10 +7,11 @@ section_number: 0.4
 pages: 2-3
 source_pdf: 1404.0331v1.pdf
 source_sha256: 53d7ce3afaf405e1
-doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS — The AJ conjecture, formulated by Garoufalidis, relates the A-poly nomial and the colored Jones polynomial of a knot in the 3-sphere."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.991
+latex_coverage_ratio: 0.982
+doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS — The AJ conjecture, formulated by Garoufalidis, relates the A-polynomial and the colored Jones polynomial of a knot in the 3-sphere."
 ---
 For a finitely generated group $G$, let $\chi(G)$ denote the $SL_2(\BC)$-character variety of $G$, see \cite{CS}. For a manifold $Y$ we use $\chi(Y)$ also to denote $\chi(\pi_1(Y))$. Suppose  $G=\BZ^2$.
 Every pair  of generators $\mu, \lambda$ will define an isomorphism

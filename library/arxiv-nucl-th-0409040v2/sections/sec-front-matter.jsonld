@@ -13,9 +13,11 @@
   "pageStart": 1,
   "pageEnd": 6,
   "contains": [
-    "library/arxiv-nucl-th-0409040v2/blocks/prose-sec-front-matter"
+    "library/arxiv-nucl-th-0409040v2/blocks/prose-sec-front-matter",
+    "library/arxiv-nucl-th-0409040v2/blocks/prop-sec-front-matter-01",
+    "library/arxiv-nucl-th-0409040v2/blocks/prop-sec-front-matter-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0409040v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0409040v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0409040v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0409040v2/manifest.jsonld",
   "provenance": "ingested"
 }

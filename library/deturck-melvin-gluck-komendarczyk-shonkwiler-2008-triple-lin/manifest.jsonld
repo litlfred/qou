@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
   "contains": [
+    "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-front-matter",
     "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-000",
     "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-001",
     "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-002",
@@ -22,7 +23,7 @@
     "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/sections/sec-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
     "title_source": "slug",

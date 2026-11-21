@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0103325v4/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Highly nonlinear $SU(3)$-breaking effects in baryon masses",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0103325v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0103325v4/manifest.jsonld",
+  "provenance": "ingested"
+}

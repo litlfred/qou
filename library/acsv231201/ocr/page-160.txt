@@ -1,0 +1,32 @@
+142 Laurent series, amoebas, and convex geometry
+
+Amoebas provide a crucial tool for the study of convergent Laurent expan-
+sions because they live in real space (which is much easier to picture than
+complex space) and, as we will see in Theorem 6.18 below, the connected
+components of amoeba(f)° = R@ \ amoeba(/f) are convex sets corresponding
+to the convergent Laurent expansions of 1/ f(z).
+
+Example 6.11. The amoebas of f(x, y) = 2—x-—y and f(x,y) = (3-2x-y)(3-
+x — 2y) are shown in Figure 6.1; note that the amoeba of a product is the union
+of amoebas. Algorithms for drawing amoebas are discussed in Chapter 8.
+
+Figure 6.1 Left: anoeba(2 — x-—y) with the components of its complement. Right:
+amoeba((3 — 2x — y)(3 — x — 2y)).
+
+Exercise 6.2. Identify the convergent Laurent expansions corresponding to the
+connected components B,, Bz, and B3 of amoeba(2 — x — y) shown on the left
+side of Figure 6.1.
+
+Exercise 6.3. Use the definition of an amoeba to transform the sketch of
+amoeba(2 — x — y) in Figure 6.1 into a sketch of amoeba(2 — x — y’).
+
+In order to study the connected components of amoeba(f)°, we introduce
+some terminology.
+
+Definition 6.12 (Newton polytopes). The convex hull hull1(A) of a subset
+A C R¢ is the smallest convex set in R¢ containing A. The convex hull of A
+equals the convex hull of its extreme points: those points x € A which do
+not lie in the interior of any line segment contained in A. A polytope P is the
+convex hull of any finite set E c R¢ and the vertices of a polytope P are the
+extreme points of hul1(£). If f(z) is a Laurent polynomial then the support
+of the Laurent polynomial f is the (finite) set of exponents of the monomials

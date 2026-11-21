@@ -1,6 +1,6 @@
 *Proof.*  The geometric series $\sum_{k \geq 0} \hbar_q^{2k}$
 converges with sum $(1 - \hbar_q^{2})^{-1}$ because
-$\hbar_q^2 \in (0, 1)$ (indeed $\hbar_q^2 \approx 0.00982$ at
+$\hbar_q^2 \in (0, 1)$ for $q > 1/2$, $q \neq 1$ (indeed $\hbar_q^2 \approx 0.00982$ at
 $q_0 \approx 1.11$).  Absolute convergence follows from the
 comparison
 $\sum_{n \geq 1} \hbar_q^{2n} |\Delta^{(n)}|

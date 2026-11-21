@@ -2,57 +2,72 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1208.3475v2",
  "source_sha256": "d53fc4eefa070ba3",
- "brief": "Poisson - Random Matrix transition in the QCD Dirac spectrum Tamás G. Kovács Institute for Nuclear Research of the Hungarian Academy of Sciences — 9 sections: Introduction; What is the distance scale",
- "extended": "**Poisson - Random Matrix transition in the QCD Dirac spectrum Tamás G. Kovács Institute for Nuclear Research of the Hungarian Academy of Sciences**\n\n*H-4026 Debrecen, Bem tér 18/c, Hungary*\n\n10 pp, 9 sections.\n\n**Outline.** Introduction; 1 What is the distance scale l on which the lo; 2 How far up in the spectrum (λc) are the mode; Conclusions; Acknowledgments; I Hip,; C B. Lang; V G. Bornyakov, E. V. Luschevskaya, S. M. Mo-; C Jung, O. Kaczmarek, F. Karsch and E. Laerman",
+ "brief": "Poisson - Random Matrix transition in the QCD Dirac spectrum — 12 sections: Front matter; Introduction; Simulation details",
+ "extended": "**Poisson - Random Matrix transition in the QCD Dirac spectrum**\n\n*Tamás G. Kovács*\n\n10 pp, 12 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Simulation details; 3 Anderson transition in the Dirac spectrum; 3.1 Analogy with the Anderson transition; 3.2 Second moment of the unfolded level spacin; 3.3 Eigenvector statistics; 4 Continuum limit and renormalization; 4.1 Localization length; 4.2 Renormalization and temperature dependence; 5 Conclusions; Acknowledgments",
  "tokens": {
-  "brief": 49,
+  "brief": 30,
   "extended": 119
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-6"
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-1-what-is-the-distance-scale-l-on-which-the-lowe",
-   "title": "What is the distance scale l on which the lowest",
-   "pages": "6-6"
+   "id": "sec-001-2-simulation-details",
+   "title": "Simulation details",
+   "pages": "2-2"
   },
   {
-   "id": "sec-002-2-how-far-up-in-the-spectrum-λc-are-the-modes",
-   "title": "How far up in the spectrum (λc) are the modes",
-   "pages": "6-8"
+   "id": "sec-002-3-anderson-transition-in-the-dirac-spectrum",
+   "title": "Anderson transition in the Dirac spectrum",
+   "pages": "2-4"
   },
   {
-   "id": "sec-003-conclusions",
+   "id": "sec-003-31-analogy-with-the-anderson-transition",
+   "title": "Analogy with the Anderson transition",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-32-second-moment-of-the-unfolded-level-spacing-d",
+   "title": "Second moment of the unfolded level spacing distribution",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-33-eigenvector-statistics",
+   "title": "Eigenvector statistics",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-006-4-continuum-limit-and-renormalization",
+   "title": "Continuum limit and renormalization",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-41-localization-length",
+   "title": "Localization length",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-42-renormalization-and-temperature-dependence-of",
+   "title": "Renormalization and temperature dependence of $\\lambda_c$",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-009-5-conclusions",
    "title": "Conclusions",
    "pages": "8-9"
   },
   {
-   "id": "sec-004-acknowledgments",
+   "id": "sec-010-acknowledgments",
    "title": "Acknowledgments",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-005-i-hip",
-   "title": "Hip,",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-006-c-b-lang",
-   "title": "B. Lang",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-007-v-g-bornyakov-e-v-luschevskaya-s-m-mo",
-   "title": "G. Bornyakov, E. V. Luschevskaya, S. M. Mo-",
    "pages": "9-10"
-  },
-  {
-   "id": "sec-008-c-jung-o-kaczmarek-f-karsch-and-e-laermann",
-   "title": "Jung, O. Kaczmarek, F. Karsch and E. Laermann",
-   "pages": "10-10"
   }
  ],
  "provenance": {

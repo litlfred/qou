@@ -1,0 +1,502 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1806.09450v1",
+  "pages": [
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 40,
+      "rasterImagesOnPage": 7,
+      "captionCandidates": [
+        "Figure 1."
+      ],
+      "labels": [
+        {
+          "text": "Appendix A. The Fano plane of imaginary octo-",
+          "bbox": [
+            133.77,
+            123.55,
+            477.59,
+            137.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "nions ([B])",
+          "bbox": [
+            133.77,
+            141.49,
+            209.04,
+            155.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "e1 = (0, 0, 1), e2 = (0, 1, 0) ⇒e1 e2 = e4 = (0, 1, 1)",
+          "bbox": [
+            198.17,
+            273.45,
+            413.08,
+            285.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e3 = (1, 0, 0) ⇒e2 e3 = e5 = (1, 1, 0)",
+          "bbox": [
+            227.36,
+            291.38,
+            383.89,
+            302.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e1 e5 = e6 = (1, 1, 1)",
+          "bbox": [
+            262.07,
+            309.44,
+            349.17,
+            320.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e4 e5 = e7 = (1, 0, 1) .",
+          "bbox": [
+            259.86,
+            327.37,
+            351.39,
+            338.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1.",
+          "bbox": [
+            283.03,
+            345.31,
+            328.21,
+            355.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Projective plane in Z3",
+          "bbox": [
+            181.29,
+            358.08,
+            277.59,
+            370.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 with seven points and seven lines.",
+          "bbox": [
+            273.61,
+            360.25,
+            428.86,
+            372.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The multiplication table for the seven octonionic imaginary units can be",
+          "bbox": [
+            148.71,
+            384.16,
+            477.52,
+            394.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "recovered from the following properties:",
+          "bbox": [
+            133.77,
+            396.12,
+            306.95,
+            406.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e2",
+          "bbox": [
+            216.42,
+            416.26,
+            225.04,
+            428.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i = −1 ,",
+          "bbox": [
+            221.06,
+            417.91,
+            255.97,
+            430.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ei ej = −ej ei ;",
+          "bbox": [
+            332.46,
+            417.91,
+            394.83,
+            429.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i = 1, . . . , 7 ;",
+          "bbox": [
+            267.6,
+            418.03,
+            320.84,
+            428.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(A.1)",
+          "bbox": [
+            454.52,
+            418.03,
+            477.48,
+            428.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ei ej = ek ⇒ei+1 ej+1 = ek+1 ,",
+          "bbox": [
+            206.85,
+            439.82,
+            339.59,
+            451.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e2i e2j = e2k",
+          "bbox": [
+            351.22,
+            439.95,
+            403.73,
+            451.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(A.2)",
+          "bbox": [
+            454.51,
+            439.95,
+            477.48,
+            449.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where indices are counted modulo seven; and a single relation of the type",
+          "bbox": [
+            133.77,
+            457.88,
+            453.96,
+            467.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e1 e2 = e4",
+          "bbox": [
+            284.49,
+            479.8,
+            326.26,
+            491.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(A.3)",
+          "bbox": [
+            454.51,
+            479.8,
+            477.48,
+            489.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "producing a quaternionic line. We have displayed on Fig. 1 the points ei as",
+          "bbox": [
+            133.77,
+            501.72,
+            477.48,
+            513.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "non-zero triples of homogeneous coordinates taking values 0 and 1 such that",
+          "bbox": [
+            133.77,
+            513.68,
+            477.51,
+            523.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the product ei ej (in clockwise order) is obtained by adding the coordinates",
+          "bbox": [
+            133.77,
+            525.63,
+            477.51,
+            537.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(a, b, c), a, b, c ∈{0, 1}, modulo two.",
+          "bbox": [
+            133.77,
+            537.46,
+            289.62,
+            547.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "14",
+          "bbox": [
+            300.64,
+            694.85,
+            310.61,
+            704.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

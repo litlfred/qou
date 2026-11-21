@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1206.6004v2/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Special points of the Hulek–Craig representation and desingularisation",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-003-31-special-points-of-the-hulekcraig-representati.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1206.6004v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1206.6004v2",
+  "title": "The Hulek–Craig sextic",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "text": "../sections/sec-003-22-the-hulekcraig-sextic.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1206.6004v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1206.6004v2/manifest.jsonld",
   "provenance": "ingested"
 }

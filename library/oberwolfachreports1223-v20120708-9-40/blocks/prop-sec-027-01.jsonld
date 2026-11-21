@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/prop-sec-027-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "[5]",
+  "pageStart": 58,
+  "pageEnd": 67,
+  "text": "prop-sec-027-01.md",
+  "derivedFrom": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-027",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "External attribution ([5]) [[7]]",
+    "claim_id": "oberwolfachreports1223-v20120708-9-40#proposition:1",
+    "lean_status": "unformalized"
+  }
+}

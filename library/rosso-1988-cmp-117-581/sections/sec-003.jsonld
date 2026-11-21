@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/rosso-1988-cmp-117-581/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Any character of T of this form is the highest weight of a finite dimensional irreducible representation.",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "contains": [
+    "library/rosso-1988-cmp-117-581/blocks/prose-sec-003",
+    "library/rosso-1988-cmp-117-581/blocks/prop-sec-003-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "provenance": "ingested"
+}

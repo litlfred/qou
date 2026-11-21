@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/aif-2000-50-4-1021-0/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Annexe B. Equations et sytèmes",
+  "pageStart": 48,
+  "pageEnd": 48,
+  "contains": [
+    "library/aif-2000-50-4-1021-0/blocks/prose-sec-036"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
+  "provenance": "ingested"
+}

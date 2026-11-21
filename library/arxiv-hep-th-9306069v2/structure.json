@@ -8,7 +8,7 @@
   "pages": 48,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,13 +20,13 @@
    "stamp_date": "28 Jun 1993"
   },
   "doi": null,
-  "title": "arXiv:hep-th/9306069v2 28 Jun 1993",
+  "title": "The stretched horizon and black hole complementarity",
   "authors_raw": "Leonard Susskind",
   "title_lines": [
    "June 1993",
    "The Stretched Horizon and Black Hole Complementarity"
   ],
-  "abstract": "Three postulates asserting the validity of conventional quantum theory, semi-classical general relativity and the statistical basis for thermodynamics are introduced as a foundation for the study of black hole evolution. We explain how these postulates may be implemented in a \u201cstretched horizon\u201d or membrane description of the black hole, appropriate to a distant observer. The technical analysis is illustrated in the simpli\ufb01ed context of 1+1 dimensional dilaton gravity. Our postulates imply that the dissipative properties of the stretched horizon arise from a course graining of microphysical degrees of freedom that the horizon must possess. A principle of black hole complementarity is advocated. The overall viewpoint is similar to that pioneered by \u2019t Hooft but the detailed implementation is di\ufb00erent. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf \u22c6susskind@dormouse.stanford.edu \u2020 larus@dormouse.stanford.edu \u2021 john@dormouse.stanford.edu 1",
+  "abstract": "Three postulates asserting the validity of conventional quantum theory, semi-classical general relativity and the statistical basis for thermodynamics are introduced as a foundation for the study of black hole evolution. We explain how these postulates may be implemented in a “stretched horizon” or membrane description of the black hole, appropriate to a distant observer. The technical analysis is illustrated in the simpliﬁed context of 1+1 dimensional dilaton gravity. Our postulates imply that the dissipative properties of the stretched horizon arise from a course graining of microphysical degrees of freedom that the horizon must possess. A principle of black hole complementarity is advocated. The overall viewpoint is similar to that pioneered by ’t Hooft but the detailed implementation is diﬀerent. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf ⋆susskind@dormouse.stanford.edu † larus@dormouse.stanford.edu ‡ john@dormouse.stanford.edu 1",
   "docinfo": {
    "Title": "arXiv:hep-th/9306069v2  28 Jun 1993",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/9306069v2 28 Jun 1993"
  },
  "toc": [
   {
@@ -105,7 +106,7 @@
   },
   {
    "level": 1,
-   "title": "Brownian motion of the horizon\u22c6",
+   "title": "Brownian motion of the horizon⋆",
    "page": 34,
    "source": "inferred",
    "number": "4",
@@ -151,7 +152,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Foliate the spacetime with a family of space-like Cauchy surfaces, as shown. Some of the Cauchy surfaces will lie partly within the black hole. Consider the surface \u03a3P which contains the point P where the global event horizon intersects the curvature singularity. P partitions \u03a3P into two disjoint su",
+   "title": "Foliate the spacetime with a family of space-like Cauchy surfaces, as shown. Some of the Cauchy surfaces will lie partly within the black hole. Consider the surface ΣP which contains the point P where the global event horizon intersects the curvature singularity. P partitions ΣP into two disjoint su",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -228,7 +229,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Sub-critical \ufb02ux of incident matter",
+   "title": "Sub-critical ﬂux of incident matter",
    "page": 27,
    "confidence": 0.9,
    "evidence": [
@@ -241,7 +242,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Thermal entropy of stretched horizon and radiation \ufb01eld as a function of time",
+   "title": "Thermal entropy of stretched horizon and radiation ﬁeld as a function of time",
    "page": 42,
    "confidence": 0.9,
    "evidence": [
@@ -763,7 +764,7 @@
   {
    "id": "sec-004-4-brownian-motion-of-the-horizon",
    "number": "4",
-   "title": "Brownian motion of the horizon\u22c6",
+   "title": "Brownian motion of the horizon⋆",
    "level": 1,
    "page_start": 34,
    "page_end": 37,
@@ -812,6 +813,7 @@
    "items": []
   },
   "sections": 8,
-  "chars_total": 84870
+  "chars_total": 84870,
+  "furniture_lines_stripped": 0
  }
 }

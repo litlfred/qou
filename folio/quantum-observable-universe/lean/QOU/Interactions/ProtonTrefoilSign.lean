@@ -13,8 +13,12 @@ The sign is determined by p(q) = q⁸ − 3q⁶ − 3q² + 1:
   - For 1 < q < q*: p(q) < 0, hence c_{e⁻} < 0
 
 Since q₀ ≈ 1.110 < 1.804 = q*, the proton has negative e⁻
-coefficient — it demands a trefoil (electron), which is the
+coefficient — it demands an electron (σ₀σ₁σ₀), which is the
 categorical origin of beta decay.
+
+Declaration names here say `trefoil` for the `e⁻ = σ₀σ₁σ₀` coordinate; since the
+owner ruling of 2026-11-21 its closure is read as the Hopf link (the trefoil
+braid `σ₀³ ∈ B₂` is the documented backup). The names are kept pending a rename.
 
 ## References
 

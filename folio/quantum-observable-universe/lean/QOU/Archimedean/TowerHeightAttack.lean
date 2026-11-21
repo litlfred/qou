@@ -15,6 +15,11 @@ contrapositive:
    (`CSEvaluationFaithful`, contrapositive);
 4. which contradicts perpetual obstruction (`κ_n ≠ 0` for all `n`).
 
+Note (2026-11-15, owner decision, PR #7747, bean `qou-lx8f`): the premise of
+step 4 is withdrawn for the Kummer tower of Bring's surface, where `κ_n = 0`
+for `n ∣ χ = -6`. Only the weaker "κ_n ≠ 0 for `n ∤ 6`" is available, and it
+does not by itself contradict closure at finite height.
+
 The prune in `QOU.Archimedean.SurrealGradingPrune` showed the *squeeze* cannot
 supply step 1→4. This file examines the contrapositive itself, which is the
 corpus's other route. Result: **step 1 ⟹ 2 is invalid as stated, and becomes
@@ -312,5 +317,25 @@ theorem linearIndependent_not_algebraicallyIndependent :
   have h3 := hlin 2
   norm_num at h1 h2 h3
   refine ⟨by linarith, by linarith, by linarith⟩
+
+/-- **Three-tower gradewise relation pins each level (`qou-zynz`):**
+In a graded three-manifold relation `c₁ Φ_A(n) + c₂ Φ_B(n) + c₃ Φ_C(n) = 0`,
+level `n` of tower `A` is determined by level `n` of towers `B` and `C`. -/
+theorem gradewise_three_term_determines_level {c₁ c₂ c₃ : ℝ} {ΦA ΦB ΦC : ℕ → ℝ}
+    (hrel : ∀ n, c₁ * ΦA n + c₂ * ΦB n + c₃ * ΦC n = 0) (n : ℕ) :
+    c₁ * ΦA n = -(c₂ * ΦB n + c₃ * ΦC n) := by
+  linarith [hrel n]
+
+/-- **Three-tower gradewise closure propagation (`qou-zynz`):**
+When `c₁ ≠ 0`, vanishing of `Φ_B(n)` and `Φ_C(n)` at grade `n` forces `Φ_A(n) = 0`,
+contrasting with the ungraded `VolumeTowerDecomposition` sum relation. -/
+theorem gradewise_three_term_closure_propagates {c₁ c₂ c₃ : ℝ} (hc₁ : c₁ ≠ 0)
+    {ΦA ΦB ΦC : ℕ → ℝ}
+    (hrel : ∀ n, c₁ * ΦA n + c₂ * ΦB n + c₃ * ΦC n = 0) {n : ℕ}
+    (hB : ΦB n = 0) (hC : ΦC n = 0) :
+    ΦA n = 0 := by
+  have hd := gradewise_three_term_determines_level hrel n
+  rw [hB, hC, mul_zero, mul_zero, add_zero, neg_zero] at hd
+  exact (mul_eq_zero.mp hd).resolve_left hc₁
 
 end QOU.Archimedean.TowerHeight

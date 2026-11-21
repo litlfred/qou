@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1507.03238v3/blocks/prose-sec-020",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Face-degenerate edge sets",
-  "pageStart": 18,
-  "pageEnd": 19,
-  "text": "../sections/sec-020-73-face-degenerate-edge-sets.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1507.03238v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1507.03238v3",
+  "title": "Transitive edge sets and degeneracy types",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "text": "../sections/sec-020-6-transitive-edge-sets-and-degeneracy-types.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1507.03238v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1507.03238v3/manifest.jsonld",
   "provenance": "ingested"
 }

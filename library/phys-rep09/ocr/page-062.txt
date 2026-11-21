@@ -1,0 +1,73 @@
+212 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+Moreover, W2m(A) = exp(A) + O(A2"*1) and w corresponds to the Cayley transform (262), whereas for m = 2, 3 we have
+
+War) = (14 324+ 1122?) (1- 32+ 5)
+“ee 2°" 12 2°" 12
+
+1 1... 1.3 1 1, 1.3
+We(A) (: taht oe + oat ) /( st T5¥ — Tt ) .
+Thus, we can combine the optimized approximations to 2 obtained in Section 5.4 for Magnus based methods with diagonal
+Padé approximants, up to the corresponding order, to obtain time-symmetric integration schemes preserving the algebraic
+structure of the problem without computing the matrix exponential. For instance, the “Magnus-Padé” methods thus
+obtained involve, in addition to one matrix inversion, 3 and 8 matrix-matrix products for order 4 and 6, respectively.
+Observe that since 2!2"! = @(h) then
+
+Wom (2P") = exp(2") + oH),
+
+where k = min{m, n}. With m = n we have a method of order 2n. However, for some problems, this rational approximation
+to the exponential may be not very accurate depending on the eigenvalues of 2!?"!, In this case, one may take m > n, thus
+giving a better approximation to the exponential and a more accurate result by slightly increasing the computational cost
+of the method. Of course, when the norm of the matrix 2!2"! is not so small, this technique can be combined with scaling
+and squaring [142].
+
+Instead of using Padé approximants for the exponential of the scaled matrix B = C/2", Najfeld and Havel [143] propose
+a rational approximation for the matrix function
+
+e+]
+H(B) = Bcoth(B) = B m7 5 (277)
+eh — |
+from which the exponential can be obtained as
+25 __ H@)+B
+H(B) —B
+
+and then iteratively square the result k times to recover the exponential of the original matrix C. From the continued fraction
+expansion of H(B), it is possible to compute the first rational approximations as
+
++ 2B 1+ 3B? + SB
+H2(B) = 7. 1p’ H4(B) = 71 1p2 1 1 pa
+I+ 7B I+ 5B? + 9145
+
+and so on. Observe that the representation (277) can be regarded as a generalized Cayley transform of B and thus it also
+provides approximations in the group O,(n). In [143] the authors report a saving of about 30% in the number of matrix
+multiplications with respect to diagonal Padé approximants when an optimal k and a rational approximation for H(B) is
+used.
+
+5.6.2. Chebyshev approximation
+
+Another valid alternative is to use polynomial approximations to the exponential of C as a whole. Suppose, in particular,
+that C is a matrix of the form C = —itH, with H Hermitian and t > 0, as is the case in Quantum Mechanics. In the
+Chebyshev approach, the evolution operator exp(—itH) is expanded in a truncated series of Chebyshev polynomials, in
+analogy with the approximation of a scalar function [144]. As is well known, given a function F(x) in the interval [—1, 1], the
+Chebyshev polynomial approximations are optimal, in the sense that the maximum error in the approximation is minimal
+compared to almost all possible polynomial approximations [145]. To apply this procedure, one has to previously bound the
+extreme eigenvalues Emin and Emax of H. Then a truncated Chebyshev expansion of exp(—ix) on the interval [TEmin, TEmax]
+is considered:
+
+m
+exp(—ix) © D> cnPu(x),
+n=0
+where
+Pr(X) = Th (
+
+with appropriately chosen coefficients c,. Here T,(x) are the Chebyshev polynomials on the interval [—1, 1] [45], which can
+be determined via the recurrence relation
+
+Trt (X) = 2xTy (xX) — Tr-1(X); T(x) = x; To(x) = 1.
+Finally, one uses the approximation
+
+2x — tEmax — fu)
+TEmax — TEmin
+
+exp(—itH) © ) > caPy(tH). (278)
+n=0

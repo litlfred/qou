@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2105.07724v2",
+ "source_sha256": "bc649dfaa1e76ec4",
+ "brief": "SL2 tilting modules in the mixed case — Using the non-semisimple Temperley–Lieb calculus, we study the additive and monoidal structure of the category of tilting modules for SL2 in the mixed case.",
+ "extended": "**SL2 tilting modules in the mixed case**\n\n*LOUISE SUTTON, DANIEL TUBBENHAUER, PAUL WEDRICH, AND JIERUZHU*\n\n54 pp, 9 sections.\n\n**Abstract.** Using the non-semisimple Temperley–Lieb calculus, we study the additive and monoidal structure of the category of tilting modules for SL2 in the mixed case. This simultane- ously generalizes the semisimple situation, the case of the complex quantum group at a root of unity, and the algebraic group case in positive characteristic. We describe character formulas and give a presentation of the category of tilting modules as an additive category via a quiver with relations. Turning to the monoidal structure, we describe fusion rules and obtain an explicit recursive description of the appropriate analog of Jones–Wenzl projectors.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Additive structure; 4 Monoidal structure; Appendix A. Fusion rules for eves; Appendix B. Applications; Appendix C. Some additional comments and detai; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 249
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "4-11"
+  },
+  {
+   "id": "sec-002-3-additive-structure",
+   "title": "Additive structure",
+   "pages": "11-22"
+  },
+  {
+   "id": "sec-003-4-monoidal-structure",
+   "title": "Monoidal structure",
+   "pages": "22-29"
+  },
+  {
+   "id": "sec-004-appendix-a-fusion-rules-for-eves",
+   "title": "Appendix A. Fusion rules for eves",
+   "pages": "29-37"
+  },
+  {
+   "id": "sec-005-appendix-b-applications",
+   "title": "Appendix B. Applications",
+   "pages": "37-42"
+  },
+  {
+   "id": "sec-006-appendix-c-some-additional-comments-and-details",
+   "title": "Appendix C. Some additional comments and details",
+   "pages": "42-51"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "51-54"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

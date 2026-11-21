@@ -59,7 +59,7 @@ sentence has four content words and this file carries two of them:
 Both are recorded in bean `qou-skgn` as route (3), a strictly harder
 formalisation than either copy in the corpus has.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-generation.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/skein-generation.md
 -/
 
 open Set
@@ -128,7 +128,7 @@ theorem mem_adjoin_of_complexity_eq {R Skein FundamentalKnotIndex : Type*}
     context supplies a terminating resolution, and the conclusion follows from
     it. A context whose `resolve` did not strictly decrease `complexity` would
     not yield this. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-generation.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/skein-generation.md
 theorem skein_generation {R Skein FundamentalKnotIndex : Type*}
     [CommRing R] [Ring Skein] [Algebra R Skein]
     [ctx : SkeinGenerationContext R Skein FundamentalKnotIndex]
@@ -245,7 +245,7 @@ theorem hadron_mem_adjoin_of_complexity_eq {R Skein FundamentalKnotIndex : Type*
     Derived from a hadron-relative terminating resolution, not assumed. The
     `Finset` in `resolve` is the "finite polynomial"; the strict decrease is
     the "terminal". -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-generation.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/skein-generation.md
 theorem skein_generation_hadron {R Skein FundamentalKnotIndex : Type*}
     [CommRing R] [Ring Skein] [Algebra R Skein]
     [ctx : HadronSkeinResolution R Skein FundamentalKnotIndex]

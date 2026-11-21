@@ -73,12 +73,12 @@ of what the file proves (bean `qou-nk5h`).
 
 One thing, and it is **not** the criterion above:
 
-* **The Diamond Lemma.** `heckeCompleted_normalForm_unique` and
+* **Nothing, since 2026-11-20.** `heckeCompleted_normalForm_unique` and
   `heckeCompleted_threading_cost_unique` (§4bx) route through
-  `normal_form_unique`, which rides on the axioms `reduction_well_founded`
-  (`Basic.lean`) and `local_confluence` (`CompositionLemma.lean`, Bergman 1978
-  §3 Thm 1.2). So *unique normal forms at every `n`* holds **given the Diamond
-  Lemma**; the GS-basis criterion itself does not depend on either axiom.
+  `normal_form_unique`, which used to ride on the axiom `local_confluence`.
+  That axiom was false as stated (structural common reduct); it is now a
+  theorem up to `CoeffEq`, from the Diamond Lemma proved in `DiamondLemma.lean`
+  (bean qou-lc7q), and the two results are restated up to `CoeffEq`.
 
 Beans qou-auq3, qou-nk5h.
 -/
@@ -18760,36 +18760,50 @@ They are not wrong; they are unusable, and deliberately so, pending this.
 Against the completed system the hypothesis is now discharged, so the same two
 statements hold outright.
 
-**They are not sorry-free in the same sense the criterion is, and the difference
-is worth stating.** `heckeCompleted_isGrobnerShirshovBasis` depends on
-`[propext, Classical.choice, Quot.sound]` alone. The two below inherit two more
-through `normal_form_unique`, both pre-existing library axioms of the Diamond
-Lemma machinery and neither introduced here:
+**Since 2026-11-20 they depend on `[propext, Classical.choice, Quot.sound]`
+alone**, like the criterion. Until then they inherited two library axioms
+through `normal_form_unique`:
 
-* `UGB.GrobnerShirshov.local_confluence` — Bergman 1978 §3 Thm 1.2, the step
-  from "all S-polynomials resolve" to local confluence, axiomatised because the
-  three-case argument needs `AlgElement` subtraction;
-* `UGB.GrobnerShirshov.reduction_well_founded` — Bergman 1978 §2 Thm 1.1,
-  termination, axiomatised because it needs a multiset support representation
-  and Dershowitz–Manna.
+* ~~`UGB.GrobnerShirshov.local_confluence`~~ — false as stated (it asked for a
+  structurally equal common reduct; `LocalConfluenceSupportRefutation`), and
+  replaced by a theorem up to `CoeffEq` from the Diamond Lemma proved in
+  `DiamondLemma.lean` (bean qou-lc7q);
+* ~~`UGB.GrobnerShirshov.reduction_well_founded`~~ — Bergman 1978 §2 Thm 1.1,
+  termination, proved in `Basic.lean` (bean qou-2q7r).
 
-So what this section establishes is: *given* the Diamond Lemma, the completed
-Hecke system has unique normal forms at every `n`. The GS-basis half of that is
-now proved outright; the Diamond Lemma half is still assumed.
+So the completed Hecke system has unique normal forms at every `n`, up to
+`CoeffEq` (the `support` field of an `AlgElement` is not determined), with no
+assumption.
 -/
 
-/-- **Normal forms in the completed Hecke system are unique** — with no
-hypothesis. -/
+/-- **Every rule of the completed Hecke system has a unit leading
+coefficient** (`±1`). This is the hypothesis `local_confluence` carries since
+2026-11-15. -/
+theorem heckeCompleted_rules_lc_isUnit (hn : 0 < n) (hp : HeckeParams) :
+    ∀ r ∈ (heckeCompletedRewritingSystem n hn hp).rules,
+      IsUnit (r.lc (heckeOrder n)) := by
+  intro r hr
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hr with
+    ⟨i, rfl⟩ | ⟨i, j, hij, rfl⟩ | ⟨i, j, hij, rfl⟩ | ⟨i', i, j, hi, hj, rfl⟩
+  · rw [heckeRelation_lc]; exact isUnit_one
+  · rw [DegenerateYbBs.yangBaxter_lc hij.symm]; exact isUnit_one.neg
+  · rw [farCommRelation_lc i j (by omega)]; exact isUnit_one
+  · rw [bokutShiaoRelation_lc hi hj]; exact isUnit_one
+
+/-- **Normal forms in the completed Hecke system are unique**, up to `CoeffEq`
+(coefficientwise; the `support` field is not determined) — with no hypothesis.
+Restated from `nf₁ = nf₂` on 2026-11-20, bean `qou-lc7q`. -/
 theorem heckeCompleted_normalForm_unique (hn : 0 < n) (hp : HeckeParams)
     (f nf₁ nf₂ : AlgElement (HeckeGen n) ℝ)
     (hred₁ : ReducesToNF (heckeOrder n)
       (heckeCompletedRewritingSystem n hn hp) f nf₁)
     (hred₂ : ReducesToNF (heckeOrder n)
       (heckeCompletedRewritingSystem n hn hp) f nf₂) :
-    nf₁ = nf₂ :=
+    AlgElement.CoeffEq nf₁ nf₂ :=
   normal_form_unique (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
     (heckeCompleted_isGrobnerShirshovBasis hn hp)
-    (noQuasiZerosFree_of_generator ⟨0, hn⟩) f nf₁ nf₂ hred₁ hred₂
+    (noQuasiZerosFree_of_generator ⟨0, hn⟩) (heckeCompleted_rules_lc_isUnit hn hp)
+    f nf₁ nf₂ hred₁ hred₂
 
 /-- **Threading cost is well-defined** — with no hypothesis. -/
 theorem heckeCompleted_threading_cost_unique (hp : HeckeParams) (hadron : List ℤ)
@@ -18800,7 +18814,7 @@ theorem heckeCompleted_threading_cost_unique (hp : HeckeParams) (hadron : List �
     (h₂ : ReducesToNF (heckeOrder (n + 1))
       (heckeCompletedRewritingSystem (n + 1) (Nat.succ_pos n) hp)
       (augmentedBraidElement hp hadron) nf₂) :
-    nf₁ = nf₂ :=
+    AlgElement.CoeffEq nf₁ nf₂ :=
   heckeCompleted_normalForm_unique (Nat.succ_pos n) hp _ nf₁ nf₂ h₁ h₂
 
 end UGB.GrobnerShirshov.Hecke

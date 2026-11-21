@@ -1,0 +1,430 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-0802.1072v2",
+  "figures": [
+    {
+      "id": "vfig-p002",
+      "file": "figures/vfig-p002.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 2
+      },
+      "page": 2,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        112.36,
+        300.6,
+        498.88,
+        406.78
+      ],
+      "assembly": {
+        "drawings": 58,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              319.43,
+              301.8,
+              402.16,
+              405.93
+            ],
+            "drawings": 13,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "A",
+              "u",
+              "w",
+              "v",
+              "-",
+              "crossings",
+              "crossings",
+              "crossings"
+            ]
+          },
+          {
+            "bbox": [
+              415.68,
+              300.6,
+              498.88,
+              405.18
+            ],
+            "drawings": 11,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "-",
+              "crossings",
+              "crossings",
+              "crossings",
+              "u",
+              "w",
+              "v"
+            ]
+          },
+          {
+            "bbox": [
+              112.36,
+              301.4,
+              194.56,
+              405.53
+            ],
+            "drawings": 14,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "A",
+              "+",
+              "crossings",
+              "crossings",
+              "crossings",
+              "u",
+              "w",
+              "v"
+            ]
+          },
+          {
+            "bbox": [
+              207.04,
+              302.2,
+              291.28,
+              406.78
+            ],
+            "drawings": 14,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "+",
+              "crossings",
+              "crossings",
+              "crossings",
+              "u",
+              "w",
+              "v"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              339.9,
+              312.85,
+              388.38,
+              399.25
+            ],
+            "parent": null,
+            "labels": [
+              "A",
+              "-"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              415.68,
+              322.25,
+              441.02,
+              336.17
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "u"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              415.93,
+              369.28,
+              441.28,
+              383.2
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "w"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              465.58,
+              347.87,
+              490.35,
+              362.27
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "v"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              334.34,
+              344.82,
+              359.11,
+              358.26
+            ],
+            "parent": null,
+            "labels": [
+              "v",
+              "crossings"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              319.43,
+              323.01,
+              344.77,
+              336.93
+            ],
+            "parent": null,
+            "labels": [
+              "u",
+              "crossings"
+            ]
+          },
+          {
+            "id": "b6",
+            "bbox": [
+              319.73,
+              368.15,
+              345.07,
+              382.06
+            ],
+            "parent": null,
+            "labels": [
+              "w",
+              "crossings"
+            ]
+          },
+          {
+            "id": "b7",
+            "bbox": [
+              132.3,
+              312.45,
+              180.02,
+              398.85
+            ],
+            "parent": null,
+            "labels": [
+              "A"
+            ]
+          },
+          {
+            "id": "b8",
+            "bbox": [
+              207.14,
+              324.25,
+              232.48,
+              338.17
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "u"
+            ]
+          },
+          {
+            "id": "b9",
+            "bbox": [
+              207.04,
+              370.88,
+              232.39,
+              384.8
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "w"
+            ]
+          },
+          {
+            "id": "b10",
+            "bbox": [
+              259.1,
+              349.87,
+              283.87,
+              364.27
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "v"
+            ]
+          },
+          {
+            "id": "b11",
+            "bbox": [
+              112.36,
+              323.01,
+              137.7,
+              336.93
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "u"
+            ]
+          },
+          {
+            "id": "b12",
+            "bbox": [
+              112.72,
+              368.14,
+              138.06,
+              382.06
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "w"
+            ]
+          },
+          {
+            "id": "b13",
+            "bbox": [
+              126.12,
+              346.02,
+              150.88,
+              359.46
+            ],
+            "parent": null,
+            "labels": [
+              "crossings",
+              "v"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 33,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              324.4,
+              304.34,
+              402.16,
+              405.93
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              421.12,
+              303.59,
+              498.88,
+              405.18
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              435.58,
+              311.18,
+              483.76,
+              397.58
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              352.33,
+              357.8,
+              384.45,
+              375.81
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              116.8,
+              303.94,
+              194.56,
+              405.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              213.52,
+              305.19,
+              291.28,
+              406.78
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              229.1,
+              337.26,
+              254.03,
+              365.66
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              252.44,
+              337.02,
+              266.96,
+              372.78
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              232.62,
+              364.03,
+              252.97,
+              372.78
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              228.35,
+              312.78,
+              276.16,
+              399.18
+            ]
+          },
+          {
+            "from": "b7",
+            "to": "b13",
+            "bbox": [
+              144.73,
+              357.4,
+              176.85,
+              375.41
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 56
+      }
+    }
+  ]
+}

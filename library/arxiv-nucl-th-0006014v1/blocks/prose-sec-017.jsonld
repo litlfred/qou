@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-nucl-th-0006014v1/blocks/prose-sec-017",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Deuteron calculations",
-  "pageStart": 33,
-  "pageEnd": 69,
-  "text": "../sections/sec-017-d-deuteron-calculations.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0006014v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0006014v1",
+  "title": "Potential parameters",
+  "pageStart": 32,
+  "pageEnd": 33,
+  "text": "../sections/sec-017-c-potential-parameters.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0006014v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0006014v1/manifest.jsonld",
   "provenance": "ingested"
 }

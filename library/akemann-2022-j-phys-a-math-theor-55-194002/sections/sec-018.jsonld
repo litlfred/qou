@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "References",
+  "pageStart": 34,
+  "pageEnd": 35,
+  "contains": [
+    "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-018"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "provenance": "ingested"
+}

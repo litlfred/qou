@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 arXiv:hep-th/9408113v2  25 Aug 1994
 DILOGARITHM IDENTITIES

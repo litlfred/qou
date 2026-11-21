@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-043-39-curls-and-divergences
 section_title: "Curls and divergences."
 section_number: 39
@@ -8,6 +8,7 @@ pages: 80-82
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 If  x  is a fixed point on  H3  and  V  is a tangent vector to  H3  at  x ,  then the parallel 
 transport  PyxV  of  V  to the point  y  is defined for all  y ∊ H3 ,  and may be viewed 
@@ -51,7 +52,6 @@ And likewise
 Note that these formulas are the negatives of the ones obtained on  S3  in section 18. 
  
  
-81 
  
  
  
@@ -88,9 +88,4 @@ Proposition 39.2, since
 < y , V >  =  < y , X1 >  =  — y1   and  1  +  < x , y >  =  1  +  y0 . 
  
 And just as before, this single verification of the proposition also serves as its 
-proof. 
- 
- 
- 
- 
-82
+proof.

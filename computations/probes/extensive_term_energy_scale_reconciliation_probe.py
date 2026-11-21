@@ -136,7 +136,8 @@ def main() -> int:
     # module computes the same closed form from the same `q_0`, so the comparison
     # would be tautological in the sense of bean `qou-l81w`. Both are recorded as
     # data below instead, which is what a provenance check should look like.
-    e0_closed = M_E_MEV / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    e0_closed = _qbeta_e0.order_zero_scaled(M_E_MEV, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
 
     # ---- assertion 1: dividing the ROAST's figure by E_0 gives ln 2 ---------
     # INDEPENDENT side: 2.91 is published in an audit written before this probe

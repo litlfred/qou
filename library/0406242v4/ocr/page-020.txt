@@ -1,0 +1,46 @@
+1258 Francois Guéritaud and David Futer
+
+Proof In all other cases, the proof of Proposition 7.2 actually forces Aj, to be flat,
+which triggers a domino effect: all Aj’s are flat, and the volume is 0 — certainly not
+maximal. a
+
+Easy Fact 7.4 If ABC is a Euclidean triangle with positive angles and edge lengths
+a,b,c, then
+
+a=b => A=B <> sinA=sinB
+
+a<b = A<B <= sinA <sinB.
+
+The volume VY is still supposed maximal, and we assume that some tetrahedra A; are
+flat, ie that some hinge parameters w; vanish. Places where a parameter w; vanishes will
+be signalled by a vertical bar: ... LL|RR... By Proposition 7.2, consecutive vertical
+bars are always separated by at least two letters.
+
+The patterns RL|RL and LR|LR can never occur, because increasing the incriminated
+w; to « would automatically increase the volume (note that wj_1 = wi+1 =: A by the
+hinge condition (3)-iii):
+
+Q| L R | oL R
+w; | u A O+e A v
+Xi u+A-—eE E e+A-v
+Vj —u+A+e € -—e+A+yv
+Zi ma —2A m — 2e ma —2A
+This implies
+—0V 1 sin(A — wu) sin(A — v)
+
+XP Be |e-0 4° sin(A + w) sin(A $v)
+where we used 7.4, Proposition 6.1 and Proposition 6.8 (with \ = 0).
+Any vertical bar thus lives next to at least two consecutive identical letters (on at least one
+side). However, the patterns R|LL|R and L|RR|L are also prohibited by Proposition 7.3,
+since the central (nonhinge) tetrahedron would have one vanishing angle (a + c = 0 in
+the notations of Figure 5).
+
+8 A geometrical lemma
+
+Definition 8.1 In the universal cover of the tessellation A of the torus at infinity of
+V, (Figure 4), a fan is a sequence of at least three consecutive layers, such that the first
+and last layers are grey and all layers in between are white. Fans are in bijection with
+the subwords of 2. of the form RL‘R or LR‘L with k > 2 (see the remarks to Figure 4
+in Section 4).
+
+Geometry & Topology 10 (2006)

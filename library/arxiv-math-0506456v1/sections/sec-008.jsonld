@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0506456v1/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The moduli space of flat $\\mbox{\\rm SU}(2)$--connections on $M_{p/q}$",
+  "pageStart": 30,
+  "pageEnd": 35,
+  "contains": [
+    "library/arxiv-math-0506456v1/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0506456v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0506456v1/manifest.jsonld",
+  "provenance": "ingested"
+}

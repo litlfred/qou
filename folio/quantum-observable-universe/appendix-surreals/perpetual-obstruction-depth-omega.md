@@ -1,6 +1,8 @@
 The [motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction)
-asserts that the obstruction $\kappa_n$ is non-trivial at
-*every* finite tower level $n$. Under the surreal lift, this infinite
+asserts that the substrate's motivic Galois character is non-trivial at
+every finite place $p \nmid \chi(A)$, so the obstruction $\kappa_n$ is
+non-trivial at every Kummer level $n \nmid \chi(A)$, an infinite
+(cofinite-density) set of levels; it vanishes at the finitely many $n \mid \chi(A)$. Under the surreal lift, this infinite
 family of non-vanishing statements is the shadow of a single graded
 coefficient.
 

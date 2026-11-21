@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1905.06064v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix B. Computations",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "contains": [
+    "library/arxiv-1905.06064v1/blocks/prose-sec-005",
+    "library/arxiv-1905.06064v1/blocks/lem-sec-005-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1905.06064v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1905.06064v1/manifest.jsonld",
+  "provenance": "ingested"
+}

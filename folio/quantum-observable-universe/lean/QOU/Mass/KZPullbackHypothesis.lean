@@ -25,8 +25,10 @@ point the substrate generator `T.g i` is **conjugate** in the tower to a KZ mono
 
 **What is derived.** `quad_of_kz`: conjugation preserves the quadratic, so every `T.g i` satisfies
 it. `heckeMonodromy_of_kz` then assembles a `HeckeMonodromy` instance from this class plus the
-braid, far-commutation and shadow hypotheses — which are *not* consequences of per-generator
-conjugacy (the measured conjugators differ from lasso to lasso), so they stay explicit.
+braid and far-commutation hypotheses — which are *not* consequences of per-generator conjugacy (the
+measured conjugators differ from lasso to lasso), so they stay explicit — and a shadow map lying
+over `q ↦ 1`. The tower is over a commutative ring `R` with `q : Rˣ`, matching the restated
+`HeckeMonodromy` (issue #7992).
 
 **What is not claimed.** That the substrate connection *is* the pulled-back KZ connection is the
 open hypothesis this class names; no instance is provided, and none should be until the
@@ -35,7 +37,7 @@ not held in `library/`.
 
 -- Ref: [kohno1987] Kohno, Ann. Inst. Fourier 37 (1987) — KZ monodromy factors through `H_n(q)`.
 -- Ref: [drinfeld1985] Drinfeld — quasi-Hopf / R-matrix side of the Kohno–Drinfeld theorem.
--- Ref: [manuscript] computations/probes/colour_cubic_braid_monodromy_probe.py
+-- Ref: [leitner2026] computations/probes/colour_cubic_braid_monodromy_probe.py
 -/
 
 namespace QOU.Mass
@@ -45,19 +47,19 @@ open QOU.MathlibExt.OcneanuTrace
 /-- **Dependent conjecture (Step-2 option C).** Each substrate generator is conjugate, in the
 tower, to a Knizhnik–Zamolodchikov monodromy generator satisfying the Hecke quadratic with the
 level's `q`. The class carries the hypothesis; the quadratic on `T.g i` is derived below. -/
-class KZPullbackGenerators {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A]
-    (T : MarkovTrace K A) (q : K) : Prop where
+class KZPullbackGenerators {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+    (T : MarkovTrace R A) (q : Rˣ) : Prop where
   /-- For every lasso there is a KZ generator `k` with the Hecke quadratic (Kohno–Drinfeld) and a
   unit `u` conjugating it to the substrate generator (the measured half-twist lift). -/
-  conj_kz : ∀ i, ∃ k : A, (k * k = (q - q⁻¹) • k + 1) ∧ ∃ u : Aˣ, T.g i = ↑u * k * ↑u⁻¹
+  conj_kz : ∀ i, ∃ k : A, (k * k = ((q : R) - ↑q⁻¹) • k + 1) ∧ ∃ u : Aˣ, T.g i = ↑u * k * ↑u⁻¹
 
 namespace KZPullbackGenerators
 
-variable {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A]
-variable (T : MarkovTrace K A) (q : K)
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+variable (T : MarkovTrace R A) (q : Rˣ)
 
 /-- Conjugation preserves the Hecke quadratic: `(u k u⁻¹)² = u k² u⁻¹ = h • (u k u⁻¹) + 1`. -/
-theorem quad_of_conj {k : A} {h : K} (hk : k * k = h • k + 1) (u : Aˣ) :
+theorem quad_of_conj {k : A} {h : R} (hk : k * k = h • k + 1) (u : Aˣ) :
     (↑u * k * ↑u⁻¹) * (↑u * k * ↑u⁻¹) = h • (↑u * k * ↑u⁻¹) + 1 := by
   have hu : (↑u⁻¹ : A) * ↑u = 1 := Units.inv_mul u
   have hu' : (↑u : A) * ↑u⁻¹ = 1 := Units.mul_inv u
@@ -71,22 +73,22 @@ theorem quad_of_conj {k : A} {h : K} (hk : k * k = h • k + 1) (u : Aˣ) :
 
 /-- **Derived:** every substrate generator satisfies the Hecke quadratic. -/
 theorem quad_of_kz [KZPullbackGenerators T q] (i : ℕ) :
-    T.g i * T.g i = (q - q⁻¹) • T.g i + 1 := by
+    T.g i * T.g i = ((q : R) - ↑q⁻¹) • T.g i + 1 := by
   obtain ⟨k, hk, u, hu⟩ := KZPullbackGenerators.conj_kz (T := T) (q := q) i
   rw [hu]
   exact quad_of_conj hk u
 
 /-- The Step-2 class assembled from the KZ hypothesis plus the relations that per-generator
-conjugacy does **not** supply (braid, far commutation, classical shadow). -/
+conjugacy does **not** supply (braid, far commutation), and a shadow `ε` lying over `q ↦ 1`. -/
 theorem heckeMonodromy_of_kz [KZPullbackGenerators T q] {B : Type*} [Ring B] (ε : A →+* B)
     (braid : ∀ i, T.g i * T.g (i + 1) * T.g i = T.g (i + 1) * T.g i * T.g (i + 1))
     (far_comm : ∀ i j, i + 2 ≤ j → T.g i * T.g j = T.g j * T.g i)
-    (shadow_involution : ∀ i, ε (T.g i) * ε (T.g i) = 1) :
+    (shadow_at_one : ε (algebraMap R A q) = 1) :
     HeckeMonodromy T q ε :=
   { quad := quad_of_kz T q
     braid := braid
     far_comm := far_comm
-    shadow_involution := shadow_involution }
+    shadow_at_one := shadow_at_one }
 
 end KZPullbackGenerators
 

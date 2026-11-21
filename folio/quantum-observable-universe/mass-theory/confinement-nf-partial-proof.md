@@ -1,8 +1,8 @@
 # Partial formal proof of confinement-NF-structure-forcing
 
 **Proposition (partial proof, conditional on
-[`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)).**
-*The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-nf-structure-forcing)
+[Finite LP strong-duality + complementary-slackness hypothesis class (§3b-cond)](lp-duality-hypothesis-class.md)).**
+*The three claims of [Confinement → NF-structure forcing](#conj:confinement-nf-structure-forcing)
 decompose as follows.*
 
 ## Proof
@@ -12,9 +12,8 @@ The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
 1. *(Wedderburn maximizer in active set, $T_1$.)*
    $\lambda^\star := \arg\max_{\lambda \vdash n} \mathrm{ord}_{q=0}^{(-)} \chi^\lambda(T_\beta) \in A$.
    **Fully proved** by LP complementary slackness applied to the
-   tight primal constraint at the maximizer (Schrijver §7.4) — Lean
-   side now consumes the `HasFiniteLPDuality` class instance rather
-   than carrying a free-standing `sorry`.
+   tight primal constraint at the maximizer (Schrijver §7.4), with finite LP duality taken as the cited
+   classical input.
 
 2. *(Shift decomposition, $T_2$.)*
    $\mathrm{shift}_{\mathrm{NF}}(\beta) = \alpha_{\mathrm{shift}}(I) + \Delta_{\mathrm{struct}}(\beta_1, \beta_2; A) + \Delta_{\mathrm{resid}}$,
@@ -26,7 +25,7 @@ The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
    **Reduced to Sub-lemma 2.1** (Hecke-branching block-decomposition
    of $\rho_\lambda(I)$ — scalar form proved;
    operator-valued form closed conditional on
-   [`conj:crystal-graph-realization`](crystal-graph-realization.md)
+   [Hecke normal forms realise crystal highest-weight vectors](../knots-particles-confinement/crystal-graph-realization.md)
    via the combinatorial $R$-matrix on $B_\mu \otimes B_\nu$ at
    $q \to 0$).
 
@@ -41,8 +40,8 @@ The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
 
 ### Theorem $T_3$ (strong duality)
 
-The QOU operator-selection LP per [`prop:operator-selection-lp`](#prop:operator-selection-lp)
-is a finite-dim convex program over partitions of $n$. We verify:
+The QOU operator-selection LP per [Knot operator selection as linear program with LP duality](#prop:operator-selection-lp)
+is a finite-dim convex program over partitions of $n$. Check:
 
 - **Bounded.** Variables $t_\lambda \ge 0$ for $\lambda \vdash n$,
   bounded above by the normalisation constraint
@@ -83,7 +82,7 @@ Components $\beta_1, \beta_2$ act block-diagonally in this
 decomposition (each on its disjoint strand set); the interface
 $I$ acts on the boundary strands and contributes the
 $\alpha_{\mathrm{shift}}(I)$ term per
-[`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot).
+[Pole order at $q=0$ of the torus-knot character: $\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$](#prop:alpha-shift-torus-knot).
 
 **Sub-lemma 2.1 (now categorically proved).** The pole-order contribution of
 $\rho_\lambda(I)$ in the $(\mu, \nu)$-isotypic block is bounded by

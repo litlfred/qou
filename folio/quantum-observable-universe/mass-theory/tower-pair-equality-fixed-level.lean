@@ -15,10 +15,10 @@ identity `tr_M(σ_i σ_j) = z²` is itself an equality.
 
 Per AGENTS.md §3b, this is a `lemma` (provable, not conjectural).
 
--- Ref: [manuscript] lem:tower-pair-equality-fixed-level
--- Ref: [manuscript] prop:markov-pair-z2
--- Ref: [manuscript] lem:vhat-pair-commutation-trace
--- Ref: [manuscript] thm:markov-trace-factorization
+-- Ref: [leitner2026] lem:tower-pair-equality-fixed-level
+-- Ref: [leitner2026] prop:markov-pair-z2
+-- Ref: [leitner2026] lem:vhat-pair-commutation-trace
+-- Ref: [leitner2026] thm:markov-trace-factorization
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
@@ -55,7 +55,7 @@ def pairContribTotal {R : Type*} [CommRing R]
     one-line proof, replacing the prose "pentagon upper bound"
     framing with the categorical fact that the formula is an
     equality by construction. -/
--- Ref: [manuscript] lem:tower-pair-equality-fixed-level
+-- Ref: [leitner2026] lem:tower-pair-equality-fixed-level
 theorem TowerPairEqualityFixedLevel
     {R : Type*} [CommRing R] (D : JetLevelPairData R) :
     pairContribTotal D = D.zSq * ∑ p ∈ D.PnFinset, D.pairContrib p :=
@@ -65,7 +65,7 @@ open scoped Classical in
 /-- Sanity: the pair-contribution formula is symmetric under
     relabelling of the index set's elements. The underlying
     `Finset.sum` is invariant under bijection. -/
--- Ref: [manuscript] lem:tower-pair-equality-fixed-level §"Proof"
+-- Ref: [leitner2026] lem:tower-pair-equality-fixed-level §"Proof"
 theorem TowerPairEqualitySymmetric
     {R : Type*} [CommRing R] (D : JetLevelPairData R)
     (e : D.Pn ≃ D.Pn) (hbij : ∀ p, D.pairContrib (e p) = D.pairContrib p)

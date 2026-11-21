@@ -19,7 +19,7 @@ Consequently, if the roots are integer multiples of `c` and `c ∉ ℚ`, then `A
 
 Base ring (§7c): generic field `K`, ring `R`. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S1)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S1)
 -/
 
 namespace QOU.KZ.GLnResidues

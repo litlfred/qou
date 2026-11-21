@@ -1,0 +1,1 @@
+- If'k=(4cos2K/n)~\n^3, then H(9^)= -(l/2)lnX.

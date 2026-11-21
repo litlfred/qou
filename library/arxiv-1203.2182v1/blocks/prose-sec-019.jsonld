@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-019",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Matrix forms of A-polynomials",
-  "pageStart": 82,
-  "pageEnd": 92,
-  "text": "../sections/sec-019-c2-matrix-forms-of-a-polynomials.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.2182v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.2182v1",
+  "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the trefoil",
+  "pageStart": 40,
+  "pageEnd": 42,
+  "text": "../sections/sec-019-332-refined-a-polynomial-and-s-0-ut-for-the-tref.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
   "provenance": "ingested"
 }

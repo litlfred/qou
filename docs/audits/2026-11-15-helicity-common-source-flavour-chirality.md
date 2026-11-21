@@ -187,6 +187,13 @@ missing Mathlib olean. That is about the cache, not the source.
 > weak coupling therefore still needs a separate source (scope (a) for V−A), tracked as bean
 > `qou-hlx7`.
 
+> **Restated at the pair level, 2026-11-15 (owner tap in the SM-map thread, option "Restate: chirality is the pair bit").**
+> D-H2 = no still holds for single letters (`flip_ne_swap`). On a γγ pair the two involutions agree: extending the swap
+> `ι : s ↦ −s⁻¹` letterwise to the vertex `V = σᵢσᵢ₊₁⁻¹` gives `ι(V) = (−σᵢ⁻¹)(−σᵢ₊₁) = σᵢ⁻¹σᵢ₊₁ = V̄`, because the two
+> signs cancel. So the V/V̄ orientation bit is the chirality mirror, and flavour must come from elsewhere (the n ≥ 4 lead,
+> bean `qou-wkcd`). Lean: `QOU.QuarkState.Helicity.iota_vertex` and `iota_vertex_pow` in
+> `QOU/QuarkState/ChiralityPairBit.lean` (sorry-free, lean-direct exit 0 with `-DautoImplicit=false`, axioms standard).
+
 ### D-H1: which labelling of L/R is canonical for a letter?
 
 * **(A) By the Hecke parameter.** L is the line whose eigenvalue equals the parameter; this

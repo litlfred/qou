@@ -1,0 +1,58 @@
+Cluster Expansions: Necessary... Page 37 of 47 33
+
+for all non-negative measurable functions h : X — R4. We assume that the activity is of the
+form
+
+Ze, X = [x,x + L¢] for some é€ N,x € R,
+Z(X) =
+0, else
+
+for some sequence (Z¢) <j of non-negative numbers. We assume that rod lengths are bounded
+from below, i.e., there exists 5 > 0 such that
+inf Ly > 6. (4.27)
+teN
+From here on, we will consider the following chopping map: For X = [x, x + Le] € X, let
+C(X) = {E},..., E,} consist of the intersections of X with the intervals [x+(k—l)e, x +ke)
+with k € Z, where ¢ € (0, 5). The space of snippets E, consists of intervals [a, b] and [a, b)
+of length b—a<e.
+
+Theorem 4.7 In the setup of multi-type Tonks gas on R, under the assumption (4.27):
+
+(a) Suppose there exists « > 0 such that
+00
+Voetize <a. (4.28)
+=1
+
+Then the expansion for T (D; z) is absolutely convergent, for all bounded sets D C R.
+(b) Conversely, if T(D; z) is absolutely convergent for all bounded subsets D C R, then
+there exists a > 0 such that (4.28) holds true with “<” instead of “<”.
+
+Remark 4.5 The theorem essentially recovers the necessary and sufficient convergence cri-
+terion from [13] (derived there for the activity expansion of the pressure in the system).
+The sufficient condition in [13] is (4.28) with “<” instead of “<”. Again, while the result
+itself is not novel, its proof demonstrates the potential of our approach to go beyond the
+Fernandez-Procacci criterion—also in continuous setups.
+
+First we prove an auxiliary result, the analogue of Proposition 4.6 for the continuous
+setup, which is not quite as trivial. We introduce the following notion: Define the e-gap-filling
+operation ~ by setting D r= DU{x € R| Ay, z € Dwith y < x < z such thatz—y < e} for
+any D C R. Let Y be some subset of the power set of R, we say that a functioné : Y > R
+does not see gaps of diameter at most ¢ if it is invariant under the e-gap-filling operation, i.e.,
+if €(D) = &(D) forall De J.
+
+Proposition 4.8 Suppose that there exists a non-negative, measurable map a(-) defined on
+finite unions of (bounded) intervals which does not see gaps of diameter at most ¢ and
+satisfies the following system of inequalities: For any (bounded) interval D with C(D) =
+{E\,..., En}, E1,..., En € Es, where the chopping map C is defined as above, there is a
+subinterval E, C D of length at most e, such that
+
+00
+Y a (Eg; D's Yi, ..., Yppet DU Woda DY 4 k(Gy) < eMEsUD aD) _
+Bde si DS Y1,..., z s
+k=1
+(4.29)
+where we set D' := D\Es and I(Es; D'; Yi, ..., Yk) is the indicator from Eq. (2.16). Then
+
+T (D; z) is absolutely convergent for all bounded subsets D C R.
+
+D Springer

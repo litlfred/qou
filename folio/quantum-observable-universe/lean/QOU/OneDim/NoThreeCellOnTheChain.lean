@@ -56,7 +56,7 @@ Base ring §7c: none — pure combinatorics over `Fin n`, no `ℝ`, no ordering 
 
 -- Ref: [yekutieli2015] https://arxiv.org/abs/1007.1250 — Thm 0.4.2 (2-dim Stokes), Thm 8.6.6
 --      (3-dim Stokes: the abelian `∫γ` over a balloon).
--- Ref: [manuscript] docs/audits/2026-09-14-one-dim-sector-and-the-three-cell-gap.md
+-- Ref: [leitner2026] docs/audits/2026-09-14-one-dim-sector-and-the-three-cell-gap.md
 -/
 
 namespace QOU.OneDim

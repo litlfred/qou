@@ -17,7 +17,7 @@ tail. The numerator polynomials are the exact symbolic outputs of
 Generic base ring `[CommRing R]` (formal fibre parameter `q`, no archimedean structure, §7c).
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md §"Stage 5"
+-- Ref: [leitner2026] docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md §"Stage 5"
 -/
 import Mathlib.Tactic
 

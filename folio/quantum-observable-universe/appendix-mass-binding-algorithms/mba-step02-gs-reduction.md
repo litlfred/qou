@@ -33,11 +33,11 @@ representative $\mathrm{NF}(w) \in H_n(q)$.*
 
 *Correctness rests on two upstream definitions.*
 
-1. *[`def:hecke-normal-form`](#def:hecke-normal-form) defines
+1. *[Hecke normal form in $H_n(q)$](#def:hecke-normal-form) defines
    $H_n(q)$ as the quotient of the group algebra $R[B_n]$ by the
    Hecke ideal $\langle \sigma_i^2 - (q-q^{-1})\sigma_i - 1 \rangle$.
    The standard $T_w$ basis is then well-defined.*
-2. *[`def:categorical-action`](#def:categorical-action) ensures
+2. *[Categorical action](#def:categorical-action) ensures
    that the braiding $c_{V,V}$ in $\mathbf{C}$ obeys the Hecke
    relation (the categorical specialisation that makes $\rho_n$
    factor through $H_n(q)$).*

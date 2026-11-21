@@ -79,7 +79,7 @@ self-adjoint) side of that established filter and cannot supply the bar-odd ampl
 
 ## References
 
-- [manuscript] `QOU.QBeta.A3AntiSelfAdjointLift` (`amplitude_nonzero` — the lift forces `E ≠ 0`;
+- [leitner2026] `QOU.QBeta.A3AntiSelfAdjointLift` (`amplitude_nonzero` — the lift forces `E ≠ 0`;
   `amplitude_surjective`/`amplitude_injective` — `E` is the single free/unique DOF);
   `QOU.QBeta.A3OffBlockDerivation` (`magnitudeFactor_le_one` — the self-adjoint branching is a
   reduction `≤ 1`; `offBlockNum_bar_odd`, `branching_graded_selfadjoint` — the branching parity

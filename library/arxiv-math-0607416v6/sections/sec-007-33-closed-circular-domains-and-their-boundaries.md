@@ -7,10 +7,11 @@ section_number: 3.3
 pages: 17-20
 source_pdf: 0607416v6.pdf
 source_sha256: 0705075947ce4a3d
-doc_brief: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.947
-latex_coverage_ratio: 0.966
+latex_prose_ratio: 0.952
+latex_coverage_ratio: 0.948
+doc_brief: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — We characterize all linear operators on ﬁnite or inﬁnite-dimensio- nal polynomial spaces that preserve the property of having"
 ---
 \label{ss33}
 

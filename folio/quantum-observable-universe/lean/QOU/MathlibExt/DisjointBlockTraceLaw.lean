@@ -121,7 +121,7 @@ word at order 4 and the `A = 2` bond factors at orders 4-5. Per AGENTS.md
 rather than adding one, so it strengthens nothing downstream: a law that was
 conditional on a free hypothesis was always unconditional.
 
--- Ref: [manuscript] bean qou-301d; Kassel–Turaev, *Braid Groups*, ch. 4 (Markov
+-- Ref: [leitner2026] bean qou-301d; Kassel–Turaev, *Braid Groups*, ch. 4 (Markov
 -- trace and the Ocneanu conditional expectation); Jones 1987 for the
 -- connected-sum multiplicativity this is the algebraic shadow of.
 -/

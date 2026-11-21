@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.5807v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.5807v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -31,11 +31,10 @@
     "library/arxiv-1204.5807v1/sections/sec-016",
     "library/arxiv-1204.5807v1/sections/sec-017",
     "library/arxiv-1204.5807v1/sections/sec-018",
-    "library/arxiv-1204.5807v1/sections/sec-019",
-    "library/arxiv-1204.5807v1/sections/sec-020"
+    "library/arxiv-1204.5807v1/sections/sec-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -56,8 +55,8 @@
       "stamp_date": "26 Apr 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

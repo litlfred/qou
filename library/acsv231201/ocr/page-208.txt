@@ -1,0 +1,36 @@
+190 Overview of analytic methods for multivariate GFs
+
+the bottom of a torus becomes homotopy equivalent to a circle when a bridge
+(homotopy equivalent to an arc) is added at the first Morse index-1 critical
+point. These diagrams are reproduced here in Figure 7.10 for convenience.
+
+a a
+we J J
+
+a <b ~ WI
+
+Figure 7.10 Two examples of attachments.
+
+We now specialize to the case where X = V, and h = hp for some fixed
+unit vector 7. It is not true that h will always be proper, however we can work
+around this difficulty. If o € ‘V.. is a critical point then the gradient (Vhp)(o)
+projects to zero on the tangent plane T,V. c C“. Roughly speaking, a critical
+point at infinity is a sequence of points z € VV, going off to infinity such
+that the projection of (Vhg)(z) to T,wV. approaches zero as k — oo; the
+associated critical value at infinity is the limit of hp(z™) as k > ov. Critical
+points at infinity are defined formally in Definition 7.42 below. Provided there
+are no critical points at infinity, the classic results of Morse theory hold even
+when the height function is not proper.
+
+Lemma 7.14. Suppose hp has no critical values at infinity in the interval [a, b}.
+If there are no critical values in [a,b] then the inclusion Xzq © Xp is a ho-
+motopy equivalence. If there is a single critical point z with critical value
+hp(z) = c € (a,b), then the pair (Vp, Vea) is homotopy equivalent to a A-cell
+relative to its boundary, where A is the Morse index of the critical point z for
+hp.
+Exercise 7.7. What is in the attachment in the bottom row of Figure 7.10?
+It is convenient to postpone the proof of Lemma 7.14 until the more general
+setting when we no longer require V to be smooth. After establishing addi-
+
+tional results below, Lemma 7.14 follows directly from Lemma 7.25, which
+asserts the homotopy equivalence, and the identification of the attachment in
