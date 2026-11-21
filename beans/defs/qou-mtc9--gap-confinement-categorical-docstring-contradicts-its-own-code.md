@@ -11,7 +11,7 @@ tags:
     - 3b-cond
     - vacuity
 created_at: 2026-08-08T18:45:00Z
-updated_at: 2026-10-04T15:10:58Z
+updated_at: 2026-11-21T13:30:00Z
 parent: qou-5p7n
 ---
 
@@ -109,3 +109,8 @@ defect this bean exists to record. Bean stays open at `in-progress`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
+- **Regressed on main 2ae54ab40.** The option-1 fix of 2026-08-08 is undone: `ConfinementCategoricalContext` again carries `confinement_ident` (labelled "Missing input: confinement categorical ident"), stating the theorem's three-clause conclusion verbatim, and `confinement_categorical` returns `ctx.confinement_ident`. The file's own docstring (2026-09-03 section) records the tripwire firing. So the self-assuming projection is back and `#print axioms` shows no `sorryAx` (per that docstring; not re-run here, no Lean cache in this session).
+- Disclosed, not fixed: caveat authorNote on `mass-theory/confinement-categorical.ts` (commit be175f860). Restoring the honest `sorry` (option 1) changes proof content, so it is asked of the owner. Option 2 (derive from HH^k vanishing + Wedderburn) still needs Mathlib input.
+- Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md): none found in this bean or the files it names.
