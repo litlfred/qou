@@ -113,3 +113,15 @@ y₍₃₎ = 1 − 2/[2]_q². Count words with tr_M = ± tr_M^D(β_Bor) exactly 
 functions of q. Under these weights tr = y₍₃₎q^e + y₍₂,₁₎χ, so a hit needs
 χ = χ(β_Bor) − (q² + q⁻²)(q^e − 1) (or the − analogue). No prediction.
 Also record tr_M^D(β_Bor) in closed form next to the corpus value.
+
+## Addendum 4 (2026-11-21 22:40Z, owner "keep going"; written before the run)
+
+**E5. Same-character fibre and Brunnian characters at length 16.** Same method as
+E3/E4 (`borromean_fibre_len16.py`, a copy of the length-14 script with
+`LENGTHS = (16,)` and conjugators searched to |c| ≤ 7). Predictions: (i) no word with
+tr_M = −tr_M(β_Bor); (ii) every writhe-0 word with χ = χ(β_Bor) is found conjugate to
+β_Bor. (iii) The count of distinct Brunnian characters keeps growing (more than 9).
+Why (ii) is not automatic: at t = −1 the image of β_Bor is [[13, 8], [8, 5]], trace 18,
+and trace alone does not fix SL(2,ℤ) conjugacy in general. A same-χ word with no
+conjugator found is reported as "not found within |c| ≤ 7", with its closure data, and
+then checked separately; it is not called "not conjugate" without a proof.
