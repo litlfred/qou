@@ -8847,3 +8847,16 @@ Other results:
 - No route gives Q_β without choosing c_em (scope a).
 
 **Owner decision (framed in the audit §4).** Which covariance group defines two-term with lepton strands. My recommendation is colour-block. Audit: docs/audits/2026-11-21-beta-routes-two-term-rerun.md.
+
+## 2026-11-21 — task W parts 2–3: can the pair-creation candidates A–D be excluded? (PR #8696)
+
+Owner: *"Keep these as options and explore the implications of each. Can we rule out some of them?"* Pre-registered f816f993c8 / 3e36b55843. Lean `QOU/QBeta/PairCreationExclusions.lean` (sorry-free, generic). Probe `beta_pair_exclusions_probe.py` 12/12 (exact ℚ(q), proton q₀, 70 dps). Doc §3–4.
+- **B (passage σ₀σ₁σ₂) excluded, scope (b):** writhe 3 (not γγ); whole-word reading 3 fails at every q>0 and every scale/conjugate (χ₄ = q³, χ₃₁ = −(q⁶−q⁴+1)/q exact; sign step `passage_readingThree_mixed`). Admitted only with two amendments (R3 on bound states only + weak words exempt from γγ).
+- **C (σ₂) excluded as energy-carrying, scope (b), ONE-TERM trace only:** `crossTerm_lastLetter_eq_zero` (Markov) kills C₁ on span{1,σ₂}, incl. P_L(σ₂) and the one-sided weak vertex. Not blind in the lepton-labelled two-term comparison (C₂ order 4).
+- **A (V₁³) not excluded under premise L.** Not chiral (P_L either side does not fix it); pure process word ⇒ lepton closes alone, unknot (`trackA`), so excluded conditionally under the knot reading — as is every 4-strand candidate. Not unique on 5 strands: V₁³ and V₂³ tie (G∧CC₅∧R3, singlet-cup pair [L5]).
+- **D undecidable by invariant:** 1 + cV̄₀ = γ(hc,−hc,c); writhe 0, alt. char 1; grammar not bar-closed. With mirrors: 7 ties + V₁³ at 4 strands; four length-4 words at 5 strands.
+- **Two-term:** scored covariant all-pairs connected term is 0 for EVERY element on any number of strands (`twoTerm_allPairs_formula`); lepton-labelled (non-covariant) reading non-zero already on β.
+- **Element-level γγ vacuous** (`photon_adjoin_eq`).
+- Chiral ∧ γγ ∧ CC ∧ R3: empty on 4 strands (len ≤ 8); on 5 strands only V₂V₀V₁V₂.
+- Ring-coloured trace (#8706) open, not evaluated.
+- OPEN, owner: chirality required? (recommendation, judgement: yes → characterise V₂V₀V₁V₂); D; R3 scope on transition words. Nothing ruled.
