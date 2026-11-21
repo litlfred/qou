@@ -251,6 +251,10 @@ Grading the σ eigenlines with the −q⁻¹ line odd and putting a Koszul sign 
 
 Written inside H₆(q), H12's per-letter Koszul sign (bᵢ = σ̂ᵢ − 2q⁻²E₃₊ᵢE₃₋ᵢ, mirror ι = reversal with basis flip) is ι-equivariant. But the folded quadratic holds under the twisted trace only for F ∈ {1, b₁}, and the graded letters break the type-B braid relations as operators (exact, q = 3/2 and 2). Scope (a): this construction is not a model of Lusztig's descent. His sign lives on the per-element structures φ_x (§16.4), not per letter. D was not computed. Details: `computations/probes/bridge_b/h13_result.md`.
 
+### 10k. Whole-word KL signs reproduce Lusztig's descent (H14, 2026-11-21)
+
+The KL bases of S₆ (equal parameters) and of its ι-fixed B₃ with L = (1, 2, 2) were computed independently. For all 847 pairs y ≤ x in W, every folded coefficient is ≡ the ambient one mod 2 and no larger in absolute value, as Lusztig §16.6 predicts. The equal-parameter control fails. The two differ at 188 positions, 90 of them negative: the sign lives on whole words, which is why H13's per-crossing sign failed. This gives a strand-level model of reading B (bulk q², wall q). Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h14_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
