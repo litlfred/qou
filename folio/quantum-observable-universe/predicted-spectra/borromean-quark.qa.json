@@ -2250,6 +2250,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. Conjecture on quark structure sits in predicted-spectra with the T(2,n) spectrum table; placement unchanged by the edit."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2290,6 +2307,24 @@
         "notes": "No false claims identified in 'Quarks as Borromean-linked unknots in the exceptional divisor': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Only the skein-consistency paragraph changed; it now states the decomposition as conditional and claims nothing the cited blocks do not supply."
       }
     ],
     "da-vacuous": [
@@ -2311,6 +2346,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'Quarks as Borromean-linked unknots in the exceptional divisor' are non-vacuous as they make concrete conjectures about 'Quarks are not fundamental knots.  A quark is a **neutrino (...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The conjecture names concrete objects (B_3 of three unknots in colour tubes, Hopf binding) and is falsifiable; unchanged."
       }
     ],
     "da-circular": [
@@ -2333,6 +2386,24 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No step of the skein paragraph assumes its conclusion; the decomposition is now an explicit hypothesis."
       }
     ],
     "da-overclaim": [
@@ -2394,6 +2465,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The edit adds no parameter; the open specialisation (a = 1 vs a = q) is now named rather than hidden."
       }
     ],
     "da-non-sequitur": [
@@ -2432,6 +2521,23 @@
         "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
         "severity": "minor",
         "evidence": "Independent QA of #8908 at f60933ebae. The displayed mass decomposition is presented as following from the cited skein resolution. The cited remark leaves the required specialisation (a = 1 vs a = q) open, so the step from module resolution to a mass polynomial is not supplied by the citation. It was not supplied by the previous target prop:terminal-resolution either."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. Resolves the #8908 warn: the paragraph now says the skein reading needs a specialisation in which the Hopf link is not identified with the unknot, that prop:skein-generation does not fix one, and that the displayed decomposition is conditional on that choice. The inference is no longer presented as following from the citation."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2453,6 +2559,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean uses a class-conjecture pattern, matching the conjectural nature of 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Lean carrier QOU.ParticleInteractions.BorromeanQuark is partial by its own authorNote (net-coefficient sub-aspect only); the md edit does not touch that scope. Unchanged."
       }
     ],
     "da-citation-misuse": [
@@ -2491,6 +2615,24 @@
         "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
         "severity": "minor",
         "evidence": "Independent QA of #8908 at f60933ebae. The retargeted paragraph says the hadron reading of skein generation 'writes the mass of a hadronic link as a polynomial in unknot and Hopf-link masses' and displays sum_j P_j(q) m(nu) + sum_k Q_k(q) m(L_H). rem:skein-generation-hadron-reading gives the mass reading as Q(q) m(L_Hopf) + sum_i Vol(K_i)/hbar_q^2 via lem:skein-mass-from-linking, and says the specialisation in which it holds 'is not fixed by the proposition'. prop:skein-generation resolves every link to a multiple of the unknot alone. The cited pair supports the decomposition only conditionally, and in a different form. Conjecture block, so minor."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The #8908 issue is resolved: the citation of rem:skein-generation-hadron-reading now matches the remark, which itself says the specialisation is not fixed. Residual, minor: the remark gives the mass reading as Q(q) m(L_Hopf) + sum Vol(K_i)/hbar_q^2, while this paragraph displays sum_j P_j(q) m(nu) + sum_k Q_k(q) m(L_H). The two agree only after Vol(unknot) = 0 and m(nu) ~ 0, which the paragraph applies one sentence later."
       }
     ],
     "da-definitional-ambiguity": [
@@ -2531,6 +2673,24 @@
         "severity": "minor",
         "evidence": "file:103: This explains why quarks are never observed in isolation... Pulling a quark out... unlinks the remaining two",
         "notes": "While the Borromean unlinking property is mathematically exact, mapping it 1:1 to QCD color confinement and hadronization is a significant interpretative leap that relies on equating topological breakage with particle pair-production thresholds."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Carried over: \"re-confines\" and the extraction/pair-creation sentence in the habitat section remain informal; not touched by this PR."
       }
     ],
     "da-empirical-fragility": [
@@ -2553,6 +2713,24 @@
         "notes": "The algebraic and logical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No numeric comparison changed. The 99 % / 10 MeV QCD sentence is unchanged context."
       }
     ],
     "da-physical-implausibility": [
@@ -2575,6 +2753,24 @@
         "notes": "The physical concepts described in 'Quarks as Borromean-linked unknots in the exceptional divisor' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No change to physical content beyond scoping the skein decomposition."
       }
     ],
     "da-reproducibility": [
@@ -2612,6 +2808,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'borromean-quark.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. No computation or Lean statement changed for this block."
       }
     ],
     "da-referee-verdict": [
@@ -2636,6 +2849,24 @@
         "referee_argument": "The conjectured algebraic or physical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor",
         "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Conjecture remains open; Lean carrier is partial. The PR made the skein paragraph more honest. Observation for the owner: the electron ruling gives the electron a Hopf-link closure, and this block names the gluon as the Hopf link T(2,2); two particles share a closure link type. Not a ruling violation, but a referee would ask."
       }
     ],
     "bib-cite-resolves": [
@@ -2716,6 +2947,23 @@
           "ts": "cfa37e0d3c3e",
           "lean": "be105ada9166"
         }
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. The rewritten paragraph is one sentence longer but reads in order: premise, missing choice, conditional decomposition."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -4267,6 +4515,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. Added prop:skein-generation and rem:skein-generation-hadron-reading to uses[]."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. uses[] lists prop:skein-generation and rem:skein-generation-hadron-reading, the two blocks the paragraph cites."
       }
     ]
   },

@@ -723,26 +723,10 @@
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "01b5959701ad",
-          "ts": "d82c2d761dd1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-23T15:44:54.692Z",
-        "reviewed_sha": "df9e1f3a9502c8acaa534e7504e5c33be9668e4a"
-      },
-      {
-        "field_hash": {
           "md": "beb8f3e66b32",
           "ts": "c1de179e19fc"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
@@ -752,9 +736,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
-        "severity": "major",
-        "evidence": "computations/codata_masses.py:1: computation script contains SUPERSEDED/DEPRECATED marker"
+        "reviewed_tree": "1195d3de78bb4f1c93205ffdc7eb3c08be3a646a"
       }
     ],
     "canonical-dilogarithm-context": [
