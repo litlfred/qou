@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bdc526042ba6",
+          "ts": "3ac0096aba7a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:20:53.468Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21. Steps are sound: Step 1 (cyclic functionals on split semisimple H_n expand in characters; radical of the trace form = sum of blocks with zero weight) is standard; Step 2 computes z/z_- = q^4 exactly under convention D, so the Ocneanu hook-content numerator vanishes exactly on content -2 cells, i.e. on diagrams with >= 3 rows, giving radical = TL ideal (cited Jones 1987 Thm 6.1, Ocneanu formula); Step 3 is the standard M1-M3 induction via H_n = H_{n-1} + H_{n-1} s_{n-1} H_{n-1}, correctly noting no non-degeneracy is used; Step 3b's elimination at n=3 is correct and matches the sorry-free Lean (markovWeights_eq_jones_of_threeRow_eq_zero), including the spurious z = q trivial branch killed by faithfulness. Step 4 is explicitly conditional on the open fibre-categorical premise and says so (no laundering). Remaining minor gap: the general-n closed form y_(n-k,k) = [n-2k+1]_q/[2]_q^n asserted in the statement is supported only by a q-integer recursion plus fixed-n instances and a numerical check to 1.34e-51 at n <= 7; the proof states this honestly but a numerical verification is not a proof step. The Ocneanu-weight witness cited in Step 2 was computed at convention C (noted in the text; formula is convention-independent). No CODATA/AME data used as a premise; convention D consistent with rulings."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1141,7 +1157,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1373,7 +1389,7 @@
         },
         "reviewed_at": "2026-08-21T21:29:40.524Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Full read. Denials present ('the radical is not an obstruction to determining tau, it is a set of blocks tau ignores'; 'The framework does not get to choose z: it is forced by the mass fibre'; 'false rather than unprovable') are all substantive mathematical contrasts \u2014 the forced-vs-free status of z IS the content of Step 3b, and false-vs-unprovable is a real logical distinction.",
+        "evidence": "Full read. Denials present ('the radical is not an obstruction to determining tau, it is a set of blocks tau ignores'; 'The framework does not get to choose z: it is forced by the mass fibre'; 'false rather than unprovable') are all substantive mathematical contrasts — the forced-vs-free status of z IS the content of Step 3b, and false-vs-unprovable is a real logical distinction.",
         "notes": "Register note only: the anthropomorphic 'does not get to choose' is colloquial for a proof block; 'The parameter z is not free: Step 3b forces it' would be flatter. Not a trap fix."
       }
     ],
@@ -1443,7 +1459,7 @@
         "reviewed_at": "2026-08-21T21:29:40.633Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "minor",
-        "evidence": "12 spaced em-dashes in 1585 words (~1/132). Most are true parentheticals in dense math prose ('\u2014 a two-sided ideal, on which tau itself vanishes \u2014', '\u2014 the one place faithfulness is used \u2014'). One is a classic appended afterthought: 'which is why it is untouched by the degeneracy convention D introduces \u2014 and equally why it cannot, by itself, select z.'",
+        "evidence": "12 spaced em-dashes in 1585 words (~1/132). Most are true parentheticals in dense math prose ('— a two-sided ideal, on which tau itself vanishes —', '— the one place faithfulness is used —'). One is a classic appended afterthought: 'which is why it is untouched by the degeneracy convention D introduces — and equally why it cannot, by itself, select z.'",
         "notes": "Proposed: replace that dash with a comma ('..., and equally why it cannot, by itself, select z.'). Other 11 instances keep."
       }
     ],
@@ -1548,7 +1564,7 @@
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "major",
         "evidence": "'This is the statement that matters below: the radical is not an obstruction to determining tau, it is a set of blocks tau ignores.' announces its own importance rather than placing the emphasis. ('Note what this induction does not use' and 'Note also that' are standard mathematical prose and pass.)",
-        "notes": "Proposed (not applied \u2014 proof-block signposting is math-adjacent): 'The radical is therefore not an obstruction to determining tau; it is a set of blocks tau ignores. Step 3 uses this.' Keeps the forward pointer without the value judgement."
+        "notes": "Proposed (not applied — proof-block signposting is math-adjacent): 'The radical is therefore not an obstruction to determining tau; it is a set of blocks tau ignores. Step 3 uses this.' Keeps the forward pointer without the value judgement."
       }
     ],
     "trap-thesis-restatement": [
@@ -1582,7 +1598,7 @@
         },
         "reviewed_at": "2026-08-21T21:29:40.892Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Step 4 combines the prior steps into the selection conclusion \u2014 that is the proof's terminal deduction, not a restatement of an already-established thesis."
+        "evidence": "Step 4 combines the prior steps into the selection conclusion — that is the proof's terminal deduction, not a restatement of an already-established thesis."
       }
     ],
     "trap-performed-warmth": [
@@ -1707,6 +1723,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:29:41.091Z",
+  "updated_at": "2026-11-21T08:20:53.468Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1013,6 +1013,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] Item 2 false (e₊ kills ∧²V, see above). Item 3 treats the eigenvalue gap q + q⁻¹ as an energy with no derivation (the eigenvalues are multipliers, not energies). Item 4's inv(π) count ✓. Lean `sorting_color_energy` is a `def … : Prop` that is derived from the Hecke relation for item 1 only."
+      },
+      {
+        "field_hash": {
+          "md": "7982e7f14d36",
+          "ts": "53cc20e3eef9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:59:59.522Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice only. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: [sidecar review 2026-11-15, issue #8030] Item 2 false (e₊ kills ∧²V, see above). Item 3 treats the eigenvalue gap q + q⁻¹ as an energy with no derivation (the eigenvalues are multipliers, not energies). Item 4's inv(π) count ✓. Lean `sorting_color_energy` is a `def … : Prop` that is derived from the Hecke relation for item 1 only."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1719,6 +1735,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:13.989Z",
+  "updated_at": "2026-11-21T07:59:59.522Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

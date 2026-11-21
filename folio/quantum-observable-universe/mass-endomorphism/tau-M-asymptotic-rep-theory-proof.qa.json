@@ -265,6 +265,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "(S↔P column of prop:tau-M-asymptotic-rep-theory row) Lean (sibling) theorem returns three class fields (`c_0_zero`, `c_1_eq_b`, `p_1_vanish`) — self-assuming; it pins c₁ = b, which the statement's ladder (product over k ≥ 2, c₂ = −1) does not contain; c₂ = −1, the factorisation and the parity are not encoded. Proof: the parity step is false — under the bar involution q↦q⁻¹, ħ_q = (q−1)/q ↦ 1−q = −q·ħ_q, not −ħ_q, so bar-invariance does not give evenness in ħ_q; \"c₂ = −1 proved categorically through the bar-even constraint\" gives no argument; \"c₀ = 0\" refers to a factor not in the product. Statement claims \"proved\" rows (c₂) the proof does not establish; mentions production-neutron wiring"
+      },
+      {
+        "field_hash": {
+          "md": "d196f362f540",
+          "ts": "c86e2f837960"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:04:23.290Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the Lean name in the proof header and four cross-reference sentences were removed; no step of the argument changed, so the false parity step flagged before is still there. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: (S↔P column of prop:tau-M-asymptotic-rep-theory row) Lean (sibling) theorem returns three class fields (`c_0_zero`, `c_1_eq_b`, `p_1_vanish`) — self-assuming; it pins c₁ = b, which the statement's ladder (product over k ≥ 2, c₂ = −1) does not contain; c₂ = −1, the factorisation and the parity are not encoded. Proof: the parity step is false — under the bar involution q↦q⁻¹, ħ_q = (q−1)/q ↦ 1−q = −q·ħ_q, not −ħ_q, so bar-invariance does not give evenness in ħ_q; \"c₂ = −1 proved categorically through the bar-even constraint\" gives no argument; \"c₀ = 0\" refers to a factor not in the product. Statement claims \"proved\" rows (c₂) the proof does not establish; mentions production-neutron wiring"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1868,6 +1884,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:02.874Z",
+  "updated_at": "2026-11-21T08:04:23.290Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

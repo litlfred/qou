@@ -1252,6 +1252,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] Lean takes the three conditions as hypotheses and returns their conjunction; the file says plainly the claim cannot be stated there (no Bring surface, ℙ⁴ or Jacobian in scope) and flags a proposition→conjecture demotion as an author decision. Smoothness of Bring's curve is a classical true fact, but nothing in the block proves it; item 2 (\"the exceptional divisor is already embedded in the colour coordinates\") is not a precise statement"
+      },
+      {
+        "field_hash": {
+          "md": "f98030c7c7a5",
+          "ts": "c44cebb2c8e9",
+          "lean": "27c82fe78b6c",
+          "lean_statement": "b09703d82c0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:39:26.350Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "major",
+        "evidence": "[full review 2026-11-21] The Lean was rewritten since the 2026-11-15 fail and now has real content. Item 1 (smoothness) is genuinely proved and matches the md: bring_transverse_in_P4 shows every nonzero point of the cone p1 = p2 = p3 = 0 has a nonvanishing 3x3 Jacobian minor, using the Vandermonde factorisation (minor = 6(x_j-x_i)(x_k-x_i)(x_k-x_j)) and the lemma that p1 = p2 = 0 with only two distinct coordinate values forces x = 0. I checked that argument by hand; it is right and needs only p1, p2, which is enough for rank 3. Item 2 (intrinsic resolution) is not encoded: BringIntrinsicResolution is the ring identity x_i^2 + x_j^2 - 2((x_i+x_j)/2)^2 = (x_i-x_j)^2/2 together with delta = 0 iff x_i = x_j. It holds for any two numbers, does not mention z, the colour projection, a branch point, or a blow-up, so it does not state 'z - z_c ~ delta^2' or that the exceptional divisor sits in the colour coordinates. The Lean docstring's phrase 'embedding the quadratic ramification directly' overstates it. Claim 3 (zeta*w != w for zeta a nontrivial fifth root and w != 0) is true but trivial, and the md no longer has a third item, so it is surplus. Verdict: item 1 equivalent and proved, item 2 replaced by a contentless identity."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2680,6 +2698,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:11.125Z",
+  "updated_at": "2026-11-21T07:39:26.350Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -266,6 +266,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] library ref: `impl_brane_boundary_structure` and `boundary_active` are class fields, the four properties are opaque `Prop`s (self-assuming). Sibling (hashed, different file): the four properties are structure fields; no theorem asserts them. S↔P: (1) \"the kernel is zero generically\" for a *surjective* map between algebras of different size is false, and \"standard vector-bundle degeneracy bounds give real codimension ≥ 2\" is not an argument (a real degeneracy condition can have codimension 1); (3) τ̂_n = ℓ_n∘𝔡_{n+1} with r∘ℓ = id is an **idempotent**, not an involution (an idempotent involution is the identity); the sibling Lean itself has `tau_idem : τ∘τ = τ`, contradicting the md's \"involution\"; (4) left/right-handed fermions is a physical claim inside the proof"
+      },
+      {
+        "field_hash": {
+          "md": "6e11ee0a20bb",
+          "ts": "aaacdbbcc8aa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:49:51.953Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the phrase 'realizing Descartes chirality' was removed; the physical left/right-handed claim inside the proof remains. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: [sidecar review 2026-11-15, issue #8030] library ref: `impl_brane_boundary_structure` and `boundary_active` are class fields, the four properties are opaque `Prop`s (self-assuming). Sibling (hashed, different file): the four properties are structure fields; no theorem asserts them. S↔P: (1) \"the kernel is zero generically\" for a *surjective* map between algebras of different size is false, and \"standard vector-bundle degeneracy bounds give real codimension ≥ 2\" is not an argument (a real degeneracy condition can have codimension 1); (3) τ̂_n = ℓ_n∘𝔡_{n+1} with r∘ℓ = id is an **idempotent**, not an involution (an idempotent involution is the identity); the sibling Lean itself has `tau_idem : τ∘τ = τ`, contradicting the md's \"involution\"; (4) left/right-handed fermions is a physical claim inside the proof"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1718,6 +1734,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:13.053Z",
+  "updated_at": "2026-11-21T07:49:51.953Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

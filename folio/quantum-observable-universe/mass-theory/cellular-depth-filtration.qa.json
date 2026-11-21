@@ -54,8 +54,25 @@
         "reviewed_at": "2026-11-18T04:05:49.755Z",
         "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
         "evidence": "Item 2 now proved as equality (map_F_eq) and iff (map_F_stable_iff); item 3 count flagged as unformalised in the text. lean-direct -DautoImplicit=false exit 0."
+      },
+      {
+        "field_hash": {
+          "md": "f24fbd849d64",
+          "ts": "2d70fbc3e034",
+          "lean": "7a434cc757af",
+          "lean_statement": "7b00d345e584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:15:56.012Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-18 review: label replaced by title; sentence relating item 4 to a conjecture removed. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Item 2 now proved as equality (map_F_eq) and iff (map_F_stable_iff); item 3 count flagged as unformalised in the text. lean-direct -DautoImplicit=false exit 0."
       }
     ]
   },
-  "updated_at": "2026-11-18T04:05:49.755Z"
+  "updated_at": "2026-11-21T08:15:56.012Z"
 }

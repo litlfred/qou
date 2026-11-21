@@ -28,6 +28,7 @@
   holding only of the empty triangulation.
 
   -- Ref: [thurston1978] Ch. 4
+  -- Ref: [futer-gueritaud-angled] Def 2.4, Prop 2.5 (gluing equations give the hyperbolic metric); Thm 1.2 (complete structure = critical point of volume on angle structures) — held copy
   -- Ref: [neumann-zagier1985] §2
 -/
 import QOU.Archimedean.BlochWignerPositive

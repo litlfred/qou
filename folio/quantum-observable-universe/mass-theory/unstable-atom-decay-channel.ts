@@ -1,6 +1,13 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-21",
+      body: "**Lean scope (disclosure, not a change of claim).** The statement asserts that the decay channel λ*(K, q) exists and is the unique violated constraint. The `lean.ref` theorem `decay_channel` proves less. (1) Existence of λ* is not formalised. (2) Uniqueness is taken from the hypothesis `hsel` (off the boundary variety every minimiser equals `lamStar`), which is the LP-duality input of `prop:mass-coefficient-shadow-price` assumed, not derived. (3) The second conjunct is the intermediate value theorem for an arbitrary continuous `E : ℝ → ℝ`; `IsMinimiser`, `OnBoundary` and `E` are free parameters, not built from the atom. The Lean file's own module docstring lists these gaps. The narrative proof also asserts that the LP relaxation equals the convex hull of the integer solutions, which is false in general, and its scope note concedes that x = 0 is feasible. Found by the blind round-trip audit (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md, block B02; bean qou-ni0g).",
+    },
+  ],
   label: "prop:unstable-atom-decay-channel",
   title: "Unstable atom has a uniquely-determined decay channel",
   lean: { ref: "qou:QOU.BraidKnot.UnstableAtom.decay_channel",
