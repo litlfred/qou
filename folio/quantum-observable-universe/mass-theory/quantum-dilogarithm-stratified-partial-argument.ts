@@ -5,6 +5,7 @@ export default remark({
   interprets: "conj:quantum-dilogarithm-stratified",
   title: "Partial argument for the stratified quantum dilogarithm",
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): ([Frobenius duality of strata](#prf:spectral-sequence-collapse) \"§Frobenius duality of strata\")" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ; see\n[Plancherel weights define a probability distribution: $\\sum_\\lambda w_\\lambda = 1$, $0 \\leq w_\\lambda \\leq 1$](#prop:plancherel-weight-boundedness)" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): it is `QOU.BraidKnot.gbDepth`, the supremum of the hook length over the cells of $\\lambda$" },
     {

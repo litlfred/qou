@@ -8,7 +8,7 @@
 
 - *the [Frobenius Gram matrix](#prop:frobenius-gram-matrix) $G_{ij} = \mathrm{tr}_M(b_i \, b_j)$ and its Moore–Penrose pseudo-inverse $G^{+}$, the inverse of the trace form on the quotient $H_n(q)/\mathrm{rad}$ by its radical; when $G$ is non-degenerate, $G^{+} = G^{-1}$;*
 - *the supply matrix $S$, whose column $o$ is the coefficient vector of $\beta(o)$ in the normal-form basis, $S_{i,o} = [b_i]\,\mathrm{NF}(\beta(o))$;*
-- *the demand vector $n_T$, with $n_T^{i} = \max(0, -c_i)$, the magnitudes of the negative normal-form coefficients of $T$ ([demand profile](#def:demand-profile)).*
+- *the demand vector $n_T$, with $n_T^{i} = \max(0, -c_i)$, the magnitudes of the negative normal-form coefficients of $T$.*
 
 *The selection of knot operators producing $T$ is the linear program*
 

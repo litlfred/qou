@@ -58,7 +58,7 @@ structural content of the research doc's §2, at the one `n` where the corpus ha
 * Nothing about the *value* of a binding term. A non-zero `HH_1` is a place a many-body term
   could live; it is not a many-body term.
 * Nothing about the GB filtration or the spectral sequence — see the GAP note in
-  `mass-theory/spectral-sequence-collapse.lean`, which stands.
+  `mass-endomorphism/spectral-sequence-collapse.lean`, which stands.
 
 Ground ring: generic `[CommRing R]` throughout (§7c); the non-vanishing witness needs a field
 target only for `IsUnit 0 → False`. Bean `qou-onte` §7 item 2.

@@ -10,9 +10,7 @@ admits the GB-depth grading
 $Z(A) = \bigoplus_{k \geq 0} Z^{(k)}(A)$. The Frobenius pairing
 $\langle a, b \rangle = \int_A a \cdot b$ restricts to $Z(A)$ as a
 non-degenerate bilinear form, and the depth strata $Z^{(k)}(A)$ are
-mutually orthogonal under this pairing
-([Frobenius duality of strata](#prf:spectral-sequence-collapse)
-"§Frobenius duality of strata"):
+mutually orthogonal under this pairing:
 
 $$
   \langle Z^{(k)}(A),\, Z^{(\ell)}(A) \rangle \;=\; 0

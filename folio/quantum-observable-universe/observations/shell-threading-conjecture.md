@@ -28,7 +28,7 @@ The smoothing $L_0$ resolves the crossing between the converting quark strand an
 For a nucleus where the converting neutron sits inside a closed sub-link (shell closure), $L_0$ threads through that closed sub-link. The threading link's Alexander polynomial encodes the shell structure:
 
 - **No shell closure.** At generic position, $L_0$ is a simple unknotted strand. Then $\Delta_{L_0}(q) = 1$ and $\lambda_{\mathrm{shell}} = E_{\mathrm{Hopf}}$ (the baseline Hopf junction energy). This yields no shell correction.
-- **At a shell closure.** When $n$ or $p$ is magic, $L_0$ threads through the closed sub-link and acquires a nontrivial Alexander polynomial. The threading link framework ([threading link](#def:threading-link), [molecular Hopf ring](#def:molecular-hopf-ring)) gives $\Delta_{L_0}(q) > 1$. The shell energy exceeds the baseline.
+- **At a shell closure.** When $n$ or $p$ is magic, $L_0$ threads through the closed sub-link and acquires a nontrivial Alexander polynomial. The shell energy exceeds the baseline.
 
 **Example: ${}^{14}\mathrm{C} \to {}^{14}\mathrm{N}$.**
 
@@ -83,9 +83,5 @@ Both factors are determined by $q$ and the nuclear braid topology.
 2. **The crossing matrix.** The $14 \times 14$ crossing matrix of $\mathcal{N}(6, 8)$ has 15 positive ($\mathfrak{p}$-$\mathfrak{p}$), 28 negative ($\mathfrak{n}$-$\mathfrak{n}$), and 48 mixed ($\mathfrak{p}$-$\mathfrak{n}$) crossings. The product $p \times n$ goes from 48 to 49 across the transition, creating one mixed crossing. The smoothing $L_0$ mediates this extra crossing.
 3. **Verification.** The corrected half-life should match the observed 5730 yr to within $\sim 5\%$.
 4. **Universality.** The same two-level construction applied to ${}^{60}\mathrm{Co}$, ${}^{137}\mathrm{Cs}$, and ${}^{210}\mathrm{Bi}$ should reproduce the observed residuals through the shell modulation factor $f(m, k, q)$.
-
-**Connection to molecular chemistry.**
-
-The nuclear threading link $L_0$ is the same mathematical object as the molecular threading link $\mathcal{T}_N = T(2, N)$ that binds atoms in a ring ([molecular Hopf ring](#def:molecular-hopf-ring), [threading link](#def:threading-link)). In benzene, the threading $T(2, 6)$ binds 6 carbons with Alexander weight $\Delta_{T(2,6)}(q) = q^2 + 1 + q^{-2}$. In nuclear physics, the same construction binds nucleon clusters. The Alexander weight determines the shell correction.
 
 Under this conjecture, the shell energy is the crossing energy of a computable knot invariant rather than a free phenomenological parameter.

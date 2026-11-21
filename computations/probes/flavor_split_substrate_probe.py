@@ -3,7 +3,7 @@
 """
 flavor_split_substrate_probe.py — VERIFICATION probe for the claim in
 content block `prop:flavor-split-substrate`
-(folio/quantum-observable-universe/observations/flavor-split-substrate.md).
+(folio/quantum-observable-universe/mass-theory/flavor-split-substrate.md).
 
 THE CLAIM. The proton–neutron mass splitting is a closed form in substrate
 atoms with NO calibration to the u–d mass difference:

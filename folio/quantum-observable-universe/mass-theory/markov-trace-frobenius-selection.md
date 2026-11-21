@@ -52,7 +52,7 @@ $$
 
 Under the row cap this form is **not** non-degenerate on $A = H_n(R,q)$: its radical is the Temperley–Lieb ideal $I_n$, and it is the quotient $\mathrm{TL}_n(q) = A/I_n$ that is Frobenius relative to the induced integral.
 
-The QOU mass identity uses the Frobenius co-Casimir trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)):
+The QOU mass identity uses the Frobenius co-Casimir trace identity: for a self-dual Frobenius algebra $A = H_n(R, q)$ with Markov trace $\tau$ and $\tau(p_\lambda) \neq 0$ for every central idempotent $p_\lambda$, the quantum-co-dimension element $C_{\dim_q} := \sum_{\lambda \in \widehat{A}} \frac{1}{\dim_q(\lambda) \cdot \tau(p_\lambda)} \cdot p_\lambda \in Z(A)$ satisfies
 
 $$
   \tau(C_{\dim_q}) \;=\; \sum_\lambda \frac{1}{\dim_q(\lambda)}.

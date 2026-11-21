@@ -47,7 +47,6 @@ export default chapter({
       label: "sec:bring-algebraic-substructure",
       blocks: [
         "bring-algebraic-substructure-intro",
-        "su2-generators",
         "hyperelliptic-quintic",
         "x5-z5-automorphism",
         "x5-z5-automorphism-proof",
@@ -174,7 +173,6 @@ export default chapter({
       label: "sec:archimedean-condition-statement",
       blocks: [
         "archimedean-condition-intro",
-        "descent-to-zero",
         "archimedean-condition",
         "chi-minus-six-chain",
         "archimedean-calabi-yau",
@@ -268,6 +266,7 @@ export default chapter({
         "descartes-theorem-intro",
         "descartes",
         "descartes-proof",
+        "descent-to-zero",
         "terminal-morphism-brings",
         "universality-general",
         "archimedean-yekutieli",

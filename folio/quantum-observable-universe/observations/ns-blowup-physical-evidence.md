@@ -1,4 +1,4 @@
-The QOU framework predicts that classical Navier--Stokes admits finite-time blow-up where the enstrophy transfinite $\mathcal{Z}_q \asymp \varepsilon^{-4/3}$ outruns the mass-gap infinitesimal $\Delta_q \asymp \varepsilon^3$ ([NS surreal bound](#rem:ns-surreal-bound), [blowup as lifting obstruction](#prop:blowup-yekutieli)). The mathematical infinity is treated not as a breakdown, but as the moment where the classical approximation $q = 1$ reverts to the underlying quantum substrate $q > 1$.
+The QOU framework predicts that classical Navier--Stokes admits finite-time blow-up ([blowup as lifting obstruction](#prop:blowup-yekutieli)). The mathematical infinity is treated not as a breakdown, but as the moment where the classical approximation $q = 1$ reverts to the underlying quantum substrate $q > 1$.
 
 ## Physical meaning of a blow-up
 
@@ -12,8 +12,6 @@ At a finite-time singularity $T^\ast$ of the classical NS flow, the velocity gra
 ### A. Turbulence intermittency
 
 Standard homogeneous-isotropic turbulence exhibits fat-tailed velocity-increment distributions ("intermittency") that Kolmogorov 1941 scaling cannot explain. The framework predicts these fat tails are the statistical residue of near-blow-up events regularised by the underlying substrate. Each intermittent burst is a local excursion into $\varepsilon > 0$ before the cascade is re-absorbed.
-
-Quantitative prediction: Along the Leray self-similar profile ([Leray profile](#prop:leray-profile)), the distribution of velocity increments $\delta u_r$ at separation $r$ satisfies $\ordw(\delta u_r) = -\tfrac{r + 1}{3} \ordw(d)$ in surreal-order notation ([Big-O via $\ordw$](#rem:conway-normal-form)). Classical intermittency exponents are the standard parts of these surreal orders.
 
 ### B. High-energy astrophysical matter creation
 
@@ -42,7 +40,7 @@ The table below pins each qualitative prediction to a concrete observational han
 | CMB non-Gaussianity patches | [CMB $q$-torsion data](#sec:cmb-torsion-data) | Angular cross-correlation with $\chi = -6$ topology; low-$\ell$ quadrupole/octupole anomalies |
 | BEC vortex reconnection signature | [BEC vortex data](#rem:bec-vortex-data) | Transient helicity-conservation violation at reconnection events |
 
-Each row is falsifiable. A null result on the specific observable disconfirms the surreal-squeeze interpretation of the corresponding millennium problem. Finite intermittency exponents inconsistent with any surreal-order scaling disconfirm the NS-blowup reading of [NS surreal bound](#rem:ns-surreal-bound).
+Each row is falsifiable. A null result on the specific observable disconfirms the surreal-squeeze interpretation of the corresponding millennium problem.
 
 ## Physical finiteness of the mathematical blow-up
 

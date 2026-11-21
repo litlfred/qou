@@ -55,11 +55,7 @@ The tower converges in $\sim 20$ terms. This rate is consistent with $t_P = 1/\h
 
 ## Established results
 
-**Step 1 (Categorical $\to$ Markov, proved).** One has $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$. This is [categorical mass as Markov trace](#prop:categorical-mass-markov). The Nakayama automorphism is $S^2 = \mathrm{id}$, so the mass reduces to the Markov trace of the braid word.
-
-**Step 2 (Tower sum $\to$ Vol, archimedean).** Then $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$. This is the [archimedean mass formula](#conj:topological-mass-formula). The descended trace gives $\mathrm{Vol}(K)$, each transient trace gives $\Phi_q(z_i)$, and their sum is $\mathrm{Vol}(K)/\hbar_q^2$.
-
-**Step 3 (Markov trace $\neq$ Vol, the gap).** The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is the Jones polynomial $J(K; q)$—a Laurent polynomial in $q^{1/2}$. The hyperbolic volume $\mathrm{Vol}(K)$ is a transcendental number. They are different knot invariants: $J(\text{trefoil}; q) = -q^{-4} + q^{-3} + q^{-1}$ while $\mathrm{Vol}(\text{trefoil}) = 0$.
+**Markov trace $\neq$ Vol (the gap).** The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is the Jones polynomial $J(K; q)$—a Laurent polynomial in $q^{1/2}$. The hyperbolic volume $\mathrm{Vol}(K)$ is a transcendental number. They are different knot invariants: $J(\text{trefoil}; q) = -q^{-4} + q^{-3} + q^{-1}$ while $\mathrm{Vol}(\text{trefoil}) = 0$.
 
 The bridge between them is the **Volume Conjecture** \cite{kashaev1997, murakami-murakami2001}:
 
@@ -73,7 +69,7 @@ $$
 
 where $J_N$ is the $N$-colored Jones polynomial. This limit involves evaluating at roots of unity ($q = e^{2\pi i/N}$, not generic $q$), the $N$-dimensional representation (not the fundamental), and an asymptotic limit ($N \to \infty$). Each step departs from the Hecke algebra at generic $q$.
 
-The Habiro ring ([Habiro ring](#def:habiro-ring)) partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume ([algebraic quantum volume](#def:algebraic-quantum-volume)) $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. One evaluates directly at the substrate parameter, rather than passing through roots of unity.
+The Habiro ring partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. One evaluates directly at the substrate parameter, rather than passing through roots of unity.
 
 ## Encoding requirements for $\Phi_{\mathrm{mass}}$
 
@@ -89,14 +85,14 @@ $$
   \sum_{i=1}^{N} \Phi_q(z_i)
 $$
 
-*form a Cauchy sequence in the $(q;q)_n$-adic topology on $\widehat{\mathbb{Z}[q]}$ ([Habiro ring](#def:habiro-ring)). Each factor $\Phi_q(z_i)$ has cyclotomic-denominator structure (the $[k]_q$ in $\Phi_q$ are cyclotomic), making successive partial sums agree modulo $((q;q)_n)$ for $n$ growing with $N$. Therefore the limit*
+*form a Cauchy sequence in the $(q;q)_n$-adic topology on $\widehat{\mathbb{Z}[q]}$. Each factor $\Phi_q(z_i)$ has cyclotomic-denominator structure (the $[k]_q$ in $\Phi_q$ are cyclotomic), making successive partial sums agree modulo $((q;q)_n)$ for $n$ growing with $N$. Therefore the limit*
 
 $$
   \Phi_{\mathrm{mass}}^{(\infty)}(\beta)
   \;\in\;\widehat{\mathbb{Z}[q]}
 $$
 
-*exists as an element of the Habiro completion. It is well-defined purely algebraically, without analytic convergence. This limit object is the motive of the mass: it carries the combinatorial data mapping to $\mathrm{Vol}(K)/\hbar_q^2$ only when the archimedean realization [$\rho_\infty$](#def:archimedean-realization-functor) of the [motivic substrate](#def:motivic-substrate) is applied at $q_0 \in \mathbb{R}$. The non-archimedean realizations $\{\rho_p\}$ recover the colored-Jones data via cyclotomic projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$ without any complex-analytic limit.*
+*exists as an element of the Habiro completion. It is well-defined purely algebraically, without analytic convergence. The non-archimedean realizations $\{\rho_p\}$ recover the colored-Jones data via cyclotomic projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$ without any complex-analytic limit.*
 
 The conjecture regarding a "closed-form expression in $H_n(R, q)$" asks a question in the finite-rank Hecke algebra. The $N \to \infty$ tower limit asks a question in the Habiro completion $\widehat{\mathbb{Z}[q]}$. Both are algebraic.
 

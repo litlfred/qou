@@ -1,1 +1,1 @@
-Completing the per-particle mass derivations requires linking the dimensionless baryonic bulk volume to the electroweak gauge sector. This section establishes the terminal-resolution proof and its chirality constant $c_z$, and evaluates the predicted $W$-boson mass $m_W$ and its seven diagnostic comparison tables against the PDG 2024 world average and high-precision collider measurements.
+This section completes the per-particle mass derivations with the terminal-resolution proof and its chirality constant $c_z$.
