@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-21T13:05:38.221830+00:00",
-  "commitSha": "2bbe346b9347264e3e07f49cfd494883be89edd1",
+  "computedAt": "2026-11-21T13:06:30.456699+00:00",
+  "commitSha": "233e9eb61f1251b64072cb848254b4491d57ad0f",
   "assertions": [
     {
       "name": "jimbo_rep_is_H4",
@@ -43,14 +43,22 @@
       "passed": true,
       "tolerance": "exact",
       "source": "largest |a| = |log lambda| on those blocks = 0.410395029642253 (cosh a = 1.08540064039); the scored cell needs a = 1.52389720716 (F = 2.403970026): 3.71324x short. And these words are not the minimal one, so G^CC^R3 + minimality does not admit them. Diagnostic only."
+    },
+    {
+      "name": "all_30_gamma_gamma_words_stay_below_the_needed_phase",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "25 of 30 gamma-gamma words X give X * beta_Bor a real positive eigenvalue (imaginary phase) on an H_4 block; the largest |a| is 0.410395029642 (word V1V0V1V0), against the needed 1.523897207: 3.7132x short. Scope (a): words of length <= 8."
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "qbeta-d-eigenphase-four-strand",
   "scriptFile": "qbeta_d_eigenphase_four_strand_probe.py",
-  "scriptHash": "bb157799fafe",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d001700edf1b",
+  "scriptCommitSha": "233e9eb61f1251b64072cb848254b4491d57ad0f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -132,6 +140,160 @@
     }
   ],
   "a_max": "0.410395029642252770845889946084",
+  "gamma_gamma_scan": [
+    {
+      "X": "V0",
+      "has_imaginary_phase": false,
+      "a_max": "0.0"
+    },
+    {
+      "X": "V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.012147026629492341515"
+    },
+    {
+      "X": "V0V0",
+      "has_imaginary_phase": false,
+      "a_max": "0.0"
+    },
+    {
+      "X": "V0V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.0097062946307482534829"
+    },
+    {
+      "X": "V1V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.0097062946307482534829"
+    },
+    {
+      "X": "V1V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.013114907301509406904"
+    },
+    {
+      "X": "V0V0V0",
+      "has_imaginary_phase": false,
+      "a_max": "0.0"
+    },
+    {
+      "X": "V0V0V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.28750305040905561449"
+    },
+    {
+      "X": "V0V1V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.28750305040905561449"
+    },
+    {
+      "X": "V0V1V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.27971508647721369964"
+    },
+    {
+      "X": "V1V0V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.28750305040905561449"
+    },
+    {
+      "X": "V1V0V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.28540006518275266679"
+    },
+    {
+      "X": "V1V1V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.27971508647721369964"
+    },
+    {
+      "X": "V1V1V1",
+      "has_imaginary_phase": false,
+      "a_max": "0.0"
+    },
+    {
+      "X": "V0V0V0V0",
+      "has_imaginary_phase": false,
+      "a_max": "0.0"
+    },
+    {
+      "X": "V0V0V0V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.023319813620526865641"
+    },
+    {
+      "X": "V0V0V1V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.023319813620526865641"
+    },
+    {
+      "X": "V0V0V1V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.0088763896717317154105"
+    },
+    {
+      "X": "V0V1V0V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.023319813620526865641"
+    },
+    {
+      "X": "V0V1V0V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.41039502964225277085"
+    },
+    {
+      "X": "V0V1V1V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.0088763896717317154105"
+    },
+    {
+      "X": "V0V1V1V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.012187321784975933765"
+    },
+    {
+      "X": "V1V0V0V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.023319813620526865641"
+    },
+    {
+      "X": "V1V0V0V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.02901716528942978434"
+    },
+    {
+      "X": "V1V0V1V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.41039502964225277085"
+    },
+    {
+      "X": "V1V0V1V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.025144720123252796901"
+    },
+    {
+      "X": "V1V1V0V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.0088763896717317154105"
+    },
+    {
+      "X": "V1V1V0V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.025144720123252796901"
+    },
+    {
+      "X": "V1V1V1V0",
+      "has_imaginary_phase": true,
+      "a_max": "0.012187321784975933765"
+    },
+    {
+      "X": "V1V1V1V1",
+      "has_imaginary_phase": true,
+      "a_max": "0.012187321784975933765"
+    }
+  ],
+  "scan_a_max": "0.410395029642252770845889946084",
+  "scan_a_max_word": "V1V0V1V0",
   "a_needed": "1.52389720716359829033765579748",
   "F_required": "2.4039700256262867515",
   "scope": "(a): these three words; no claim about other four-strand words."

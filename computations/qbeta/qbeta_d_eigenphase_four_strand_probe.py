@@ -166,6 +166,51 @@ def main() -> int:
           "short. And these words are not the minimal one, so G^CC^R3 + minimality does not "
           "admit them. Diagnostic only.")
 
+    # ---- all 30 gamma-gamma words X (V0, V1 blocks, length <= 8), W = X * beta_Bor ------
+    # Same family as gg_words(8, mirrors=False) in beta_pair_creation_word_probe.py.
+    # Numeric at q0 (60 dps); classification tolerance 1e-40. Nothing is selected.
+    import itertools
+
+    def numm(M):
+        return mp.matrix([[mp.mpf(str(sp.N(M[i, j].subs(q, Q0), DPS + 10)))
+                           for j in range(M.cols)] for i in range(M.rows)])
+    nV0, nV1, nB = numm(V0), numm(V1), numm(beta)
+    idx1 = [i for i in range(16) if bin(i).count("1") == 1]
+    idx2 = [i for i in range(16) if bin(i).count("1") == 2]
+
+    def sub(M, idx):
+        return mp.matrix([[M[i, j] for j in idx] for i in idx])
+
+    scan = []
+    scan_amax, scan_arg = mp.mpf(0), None
+    for k in range(1, 5):
+        for combo in itertools.product(("V0", "V1"), repeat=k):
+            Xn = mp.eye(16)
+            for c in combo:
+                Xn = Xn * (nV0 if c == "V0" else nV1)
+            Wn = Xn * nB
+            ev = list(mp.eig(sub(Wn, idx1), left=False, right=False)) + \
+                list(mp.eig(sub(Wn, idx2), left=False, right=False))
+            real_pos = [mp.re(e) for e in ev
+                        if abs(mp.im(e)) < mp.mpf(10) ** -40 and mp.re(e) > 0
+                        and abs(mp.re(e) - 1) > mp.mpf(10) ** -40]
+            amax = max((abs(mp.log(r)) for r in real_pos), default=mp.mpf(0))
+            nm = "".join(combo)
+            scan.append({"X": nm, "has_imaginary_phase": bool(real_pos),
+                         "a_max": mp.nstr(amax, 20)})
+            if amax > scan_amax:
+                scan_amax, scan_arg = amax, nm
+    n_imag = sum(1 for r in scan if r["has_imaginary_phase"])
+    print(f"  scan: {n_imag}/{len(scan)} gamma-gamma words have an imaginary phase; "
+          f"max |a| = {mp.nstr(scan_amax, 12)} at {scan_arg}\n")
+    check("all_30_gamma_gamma_words_stay_below_the_needed_phase",
+          len(scan) == 30 and scan_amax < a_need,
+          f"{n_imag} of 30 gamma-gamma words X give X * beta_Bor a real positive "
+          f"eigenvalue (imaginary phase) on an H_4 block; the largest |a| is "
+          f"{mp.nstr(scan_amax, 12)} (word {scan_arg}), against the needed "
+          f"{mp.nstr(a_need, 10)}: {mp.nstr(a_need / scan_amax, 5)}x short. Scope (a): "
+          "words of length <= 8.")
+
     allp = all(ok for _, ok, _ in RESULTS)
     print(f"  {sum(ok for _, ok, _ in RESULTS)}/{len(RESULTS)} checks passed")
     wb = WitnessBuilder("qbeta-d-eigenphase-four-strand", engine="mpmath")
@@ -182,6 +227,9 @@ def main() -> int:
         "q0Value": Q_50_DIGIT_STR,
         "words": rows,
         "a_max": mp.nstr(a_max, 30),
+        "gamma_gamma_scan": scan,
+        "scan_a_max": mp.nstr(scan_amax, 30),
+        "scan_a_max_word": scan_arg,
         "a_needed": mp.nstr(a_need, 30),
         "F_required": mp.nstr(F_req, 20),
         "scope": "(a): these three words; no claim about other four-strand words.",
