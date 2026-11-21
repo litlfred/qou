@@ -481,6 +481,7 @@ import QOU.Mass.LevelSelectionLogarithmic
 -- that CoordinationSaturation's complete-graph exclusion rested on.
 import QOU.Mass.EquidistantCoordinationCap
 import QOU.Mass.StrandLayoutForcesChain
+import QOU.Mass.TransportedPairBond
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
