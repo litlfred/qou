@@ -30,3 +30,13 @@ order 0 at q = 1, so Q_β ≈ E₀·F(1) and F(1) is a counting number. Question
    (i) the nucleon rule (K-weight × plain sector trace / [2]^n) on the K-allowed sector, with
    and without the ν̄ factor; (ii) the Markov value t(Δ); (iii) the plain per-sector trace.
 The comparison column is printed last. None is adopted.
+
+## Addendum 2 (13:41Z, before `both_rules.py` ran; owner: "explore both of the options")
+
+For the nucleon rule (f = q/[2]⁴, K-allowed sector times ν̄) and the Markov rule (f = t(Δ)),
+each in the one-sided and the shared placement, report without choosing:
+(a) whether the rule respects K-weight conservation (sector restricted vs summed);
+(b) the sign of F at q₀, i.e. whether the neutron comes out heavier;
+(c) the q → 1 behaviour of Q_β (finite or ~E₀);
+(d) the exact value with both E₀ forms (order-zero, tower) to show the E₀ spread;
+(e) only then the comparison with CODATA Q_β and m_n − m_p.

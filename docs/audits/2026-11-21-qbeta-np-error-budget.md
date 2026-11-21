@@ -217,3 +217,46 @@ What remains open is a q = 1 counting factor ≥ 2.04 that none of the following
 - the derived links (h, V³, τ);
 - the normalisation family (≤ 1);
 - the interactions on record.
+
+## 11. Both lepton-factor rules, in both placements (owner: "explore both of the options")
+
+This is an exploration only. The ruling of §10 stands, and nothing here is adopted. It was
+pre-registered as addendum 2 before `both_rules.py` ran. Lean: `QOU/QBeta/OneSidedLeptonFactor.lean`
+(lean-direct exit 0, standard axioms only).
+
+| rule | placement | respects K-conservation | sign at q₀ | q → 1 | E₀^full·F (order-zero E₀) |
+|---|---|---|---|---|---|
+| nucleon rule, f = q/[2]⁴ | shared (ruled) | yes | − (neutron lighter) | F′(1) = −3/64 | −0.0221 MeV (−0.0219) |
+| Markov t(Δ) | shared (ruled) | **no**: sums all four sectors | − | F′(1) = −3/8 | −0.2249 MeV (−0.2227) |
+| **nucleon rule, f = q/[2]⁴** | **one-sided** | **yes** (b and ν̄ forced, `kConservation_*`) | **+ (neutron heavier)**, `fOneSided_pos` | order 0, F(1) = 45/128 | **1.28513 MeV** (1.27251) |
+| Markov t(Δ) | one-sided | **no** | + | order 0, F(1) = 3/16 | 0.20818 MeV (0.20614) |
+
+**What can work, and what cannot.**
+- **Shared placement (the current ruling): cannot work under either rule.** Both give the wrong
+  sign and at most 0.22 MeV. A shared factor below 1 only shrinks the scored cell.
+- **Markov rule: inadmissible for a transition factor, scope (b).** The invariant is U_q
+  weight conservation. t(Δ) sums all four electron sectors, including the ones that K-conservation
+  forbids for n → p e⁻ ν̄.
+- **Nucleon rule, one-sided: the only row that passes every structural test.**
+  - It respects K-conservation, which forces the ν̄ strand and the electron sector.
+  - Both K-allowed sectors give the same f.
+  - It uses the same rule already ruled for ε, so it adds no new choice of rule.
+  - It gives the neutron-heavier sign, which the scored cell does not.
+  - Its closed form is exact, F = −(q²+q+1)·S(q)·P(q)/(q⁴(q²+1)⁷), so it has no truncated O(h) tail.
+
+**The open reading (owner decision).**
+- *E₀·F = Q_β:* 1.28513 MeV, +64.3 % against CODATA Q_β.
+- *E₀·F = m_n − m_p* (F is a nucleon-energy difference whose lepton factor only selects the
+  K-allowed sector; the electron rest energy is not in it): −0.63 % against CODATA, and then
+  Q_β = E₀·F − m_e = 0.77413 MeV (−1.05 %). With the order-zero E₀: 0.76151 MeV (−2.66 %).
+- The 2026-11-20 ruling D2 chose the Q_β reading for the *old* cell. Its reason was that the
+  other reading made Q_β negative. That reason does not apply here: Q_β comes out positive.
+- **Selection caution, stated plainly:** I saw these numbers before writing this paragraph. The
+  rule (nucleon rule), the sector (forced by K), and both readings were all on record before the
+  comparison was printed, but which reading to adopt has not been decided, and it must not be
+  decided by which number lands closer.
+
+**Still not derived:**
+- *One-sided placement.* Overruled for now; it would need a ruling.
+- *The reading.* Either reading still needs a ruling.
+- *The tower factor (bean `qou-y3bm`).* It moves the result by 1 %.
