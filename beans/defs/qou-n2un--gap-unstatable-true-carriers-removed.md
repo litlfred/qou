@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-20T20:22:43Z
+updated_at: 2026-11-21T12:00:00Z
 parent: qou-6qbv
 ---
 
@@ -105,3 +105,6 @@ Progress on the Baer-* row: PR #8534 (commit 98fa99ede6) proves `baerStarRing_ma
 
 ## 2026-11-20 (qou-99qc P3, PR #8682): H₃ case of `energy_path_independent` repair
 `QOU/QBeta/NormalFormLengthInvariants.lean`: `eval_quad` / `eval_braid` prove that quadratic and braid rewrites at any position preserve the T_w coefficient vector in H₃(q) (generic CommRing), so E_gs = Σ|c_w|ℓ(w) is a function of the element (`gsEnergy_quad`). General n still open. `beta_decay_energy_negative` intended content measured on the nucleon alone: true in the short typed model (ΔE = −0.209 at q₀), false in the 11-letter model (+0.064), equal (0) on V³. Bean stays open.
+
+## 2026-11-21 (owner request, PR #8699): `beta_decay_energy_negative` row closed by restatement
+The declaration was vacuous: `∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par` with all hypotheses unused, proved by `⟨1, 0, one_pos⟩`. It is removed. In its place, sorry-free in `groebner-shirshov-energy.lean`: `beta_decay_energy_sub_shortModel` (E(p) − E(n) = −|h| for every real h) and `beta_decay_energy_negative_shortModel` (daughter lower for q > 1), both for the short typed-crossing model only. No model-free statement is supported, because #8682 measured the opposite sign in the 11-letter model (scope (a)). The vacuity detector does not see this unbound-existential shape (0 hits before and after); recorded in the ledger by hand. Still open in this bean: the general-n path independence (`energy_path_independent` repair) and the Baer-* Hecke row. Bean stays open.
