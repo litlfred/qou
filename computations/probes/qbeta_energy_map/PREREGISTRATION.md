@@ -341,3 +341,9 @@ To be proved: the step leaves the value of σ² unchanged in both eigen-channels
 q⁻² = −hq⁻¹ + 1), so it changes no trace value ε. Hence no map Φ(ε) can be calibrated by it, and the
 sentence cannot fix c. Expected outcome: |c| stays open between L (energy per unit ln ε) and S (energy
 per factor q). Comparison values are already recorded in §5. No row is chosen.
+
+### Addendum 12a (correction, before merge)
+
+Addendum 12 (1) expected "|c| stays open". That expectation ignored this probe's own Addenda 1–2 and
+audit §8–9, which derive |c| = E₀ by route T. The reduction-step lemma stands but answers a narrower
+question. See audit §22.
