@@ -1,0 +1,291 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T15:44:09.445216+00:00",
+  "commitSha": "1740e55f78d3dcf22387040ed97301d4726e4ad2",
+  "assertions": [
+    {
+      "name": "E1_markov_parameter",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Tr(K⊗K Ř)/[N]² = z_N = q^(2N-1)(q²-1)/(q^(2N)-1) exactly at q = 2, 3 for N = 2, 3 (z_2 = z_D)."
+    },
+    {
+      "name": "E2_ruled_cell_reproduced",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "eps_p = 0.408718179341128, eps_n = 0.331737644739763, eps_flavour = -0.0769805346013642."
+    },
+    {
+      "name": "E3_C1_closed_form_exact",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Tr(K^{⊗3} ρ_N(V³))/[N]³ = 1 − h⁴[N−1][N+1]/[N]² exactly at q = 2, 3, N = 2, 3, 4 (computed from the 27/8/64-dim matrices, not from the Lean formula)."
+    },
+    {
+      "name": "E5_framing_drops",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "sl3 framing c = q^(-1/3) leaves C1 unchanged on V³, V⁶, V⁹ (exponent sum 0; Lean framing_drops)."
+    },
+    {
+      "name": "E3b_C1_V3_at_q0",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "C1(V³) at q0 = 0.99829596360661697696 = closed form 0.99829596360661697696."
+    },
+    {
+      "name": "E4_factorisation_216dim",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "brute-force 216-dim trace: proton 0.408021708688893086 = eps_p·C1, neutron 0.331172351720071719 = eps_n·C1 (both framings). Flavour-blind factor."
+    },
+    {
+      "name": "E6_singlet_line",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "(1³)-isotypic line of (C³)^{⊗3} is 1-dim (1), K-weight 1; V^k acts on it by [1, 1, 1] for k = 3, 6, 9 (exact, at the pin)."
+    },
+    {
+      "name": "E7_report",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "18 member×framing×word cells. F range [0.035464334084, 1.0]; F_required = 2.40397. Cells with F > 1: 0. None selected."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-colour-factor",
+  "scriptFile": "qbeta_colour_factor_probe.py",
+  "scriptHash": "ac5613e8a35e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_colour_factor/qbeta_colour_factor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_colour_factor/qbeta_colour_factor_probe.py"
+  },
+  "description": "Colour tensor factor (Deligne product sl2 x sl3) on the ruled D1 Q_beta cell. Flavour-blind; every member F <= 1. Nothing selected.",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "eps_p": "0.408718179341127616801068888049",
+  "eps_n": "0.331737644739763444368806192237",
+  "eps_flavour": "-0.0769805346013641724322626958124",
+  "F_required": "2.4039700236664628782",
+  "C1_V3_closed_form": "1 - h^4 [2][4]/[3]^2 = 1 - h^4 + h^4/[3]^2",
+  "lean": "QOU/QBeta/ColourFactorDeligne.lean (colourFactorV3_eq, colourFactorV3_lt_one)",
+  "rows": [
+    {
+      "word": "V^3",
+      "member": "C1",
+      "framing": "gl3",
+      "F": "0.9982959636066169769611715",
+      "F_eps_p": "0.4080217086888930861",
+      "F_eps_n": "0.33117235172007171928",
+      "F_eps_flavour": "-0.076849356968821366817",
+      "F_over_F_required": "0.415269722075838"
+    },
+    {
+      "word": "V^3",
+      "member": "C1",
+      "framing": "sl3",
+      "F": "0.9982959636066169769611715",
+      "F_eps_p": "0.4080217086888930861",
+      "F_eps_n": "0.33117235172007171928",
+      "F_eps_flavour": "-0.076849356968821366817",
+      "F_over_F_required": "0.415269722075838"
+    },
+    {
+      "word": "V^3",
+      "member": "C2",
+      "framing": "gl3",
+      "F": "0.0354643340839767605615961",
+      "F_eps_p": "0.014494918058348478423",
+      "F_eps_n": "0.011764854661282566634",
+      "F_eps_flavour": "-0.0027300633970659117889",
+      "F_over_F_required": "0.0147524027899015"
+    },
+    {
+      "word": "V^3",
+      "member": "C2",
+      "framing": "sl3",
+      "F": "0.0354643340839767605615961",
+      "F_eps_p": "0.014494918058348478423",
+      "F_eps_n": "0.011764854661282566634",
+      "F_eps_flavour": "-0.0027300633970659117889",
+      "F_over_F_required": "0.0147524027899015"
+    },
+    {
+      "word": "V^3",
+      "member": "C3",
+      "framing": "gl3",
+      "F": "1.0",
+      "F_eps_p": "0.4087181793411276168",
+      "F_eps_n": "0.33173764473976344437",
+      "F_eps_flavour": "-0.076980534601364172432",
+      "F_over_F_required": "0.415978564688935"
+    },
+    {
+      "word": "V^3",
+      "member": "C3",
+      "framing": "sl3",
+      "F": "1.0",
+      "F_eps_p": "0.4087181793411276168",
+      "F_eps_n": "0.33173764473976344437",
+      "F_eps_flavour": "-0.076980534601364172432",
+      "F_over_F_required": "0.415978564688935"
+    },
+    {
+      "word": "V^6",
+      "member": "C1",
+      "framing": "gl3",
+      "F": "0.9931937620127479842286488",
+      "F_eps_p": "0.40357615630811118821",
+      "F_eps_n": "0.3275641024399804578",
+      "F_eps_flavour": "-0.07601205386813073041",
+      "F_over_F_required": "0.413147315580066"
+    },
+    {
+      "word": "V^6",
+      "member": "C1",
+      "framing": "sl3",
+      "F": "0.9931937620127479842286488",
+      "F_eps_p": "0.40357615630811118821",
+      "F_eps_n": "0.3275641024399804578",
+      "F_eps_flavour": "-0.07601205386813073041",
+      "F_over_F_required": "0.413147315580066"
+    },
+    {
+      "word": "V^6",
+      "member": "C2",
+      "framing": "gl3",
+      "F": "0.0354643340839767605615961",
+      "F_eps_p": "0.014410641893917144537",
+      "F_eps_n": "0.011696451596018328524",
+      "F_eps_flavour": "-0.002714190297898816013",
+      "F_over_F_required": "0.0147524027899015"
+    },
+    {
+      "word": "V^6",
+      "member": "C2",
+      "framing": "sl3",
+      "F": "0.0354643340839767605615961",
+      "F_eps_p": "0.014410641893917144537",
+      "F_eps_n": "0.011696451596018328524",
+      "F_eps_flavour": "-0.002714190297898816013",
+      "F_over_F_required": "0.0147524027899015"
+    },
+    {
+      "word": "V^6",
+      "member": "C3",
+      "framing": "gl3",
+      "F": "1.0",
+      "F_eps_p": "0.40634181540794972205",
+      "F_eps_n": "0.32980886003166022669",
+      "F_eps_flavour": "-0.076532955376289495364",
+      "F_over_F_required": "0.415978564688935"
+    },
+    {
+      "word": "V^6",
+      "member": "C3",
+      "framing": "sl3",
+      "F": "1.0",
+      "F_eps_p": "0.40634181540794972205",
+      "F_eps_n": "0.32980886003166022669",
+      "F_eps_flavour": "-0.076532955376289495364",
+      "F_over_F_required": "0.415978564688935"
+    },
+    {
+      "word": "V^9",
+      "member": "C1",
+      "framing": "gl3",
+      "F": "0.9847230603726737014483106",
+      "F_eps_p": "0.39624917562957374217",
+      "F_eps_n": "0.32161713106408017027",
+      "F_eps_flavour": "-0.074632044565493571903",
+      "F_over_F_required": "0.40962368526992"
+    },
+    {
+      "word": "V^9",
+      "member": "C1",
+      "framing": "sl3",
+      "F": "0.9847230603726737014483106",
+      "F_eps_p": "0.39624917562957374217",
+      "F_eps_n": "0.32161713106408017027",
+      "F_eps_flavour": "-0.074632044565493571903",
+      "F_over_F_required": "0.40962368526992"
+    },
+    {
+      "word": "V^9",
+      "member": "C2",
+      "framing": "gl3",
+      "F": "0.0354643340839767605615961",
+      "F_eps_p": "0.014270726167120795639",
+      "F_eps_n": "0.011582888471069258243",
+      "F_eps_flavour": "-0.0026878376960515373961",
+      "F_over_F_required": "0.0147524027899015"
+    },
+    {
+      "word": "V^9",
+      "member": "C2",
+      "framing": "sl3",
+      "F": "0.0354643340839767605615961",
+      "F_eps_p": "0.014270726167120795639",
+      "F_eps_n": "0.011582888471069258243",
+      "F_eps_flavour": "-0.0026878376960515373961",
+      "F_over_F_required": "0.0147524027899015"
+    },
+    {
+      "word": "V^9",
+      "member": "C3",
+      "framing": "gl3",
+      "F": "1.0",
+      "F_eps_p": "0.40239656363852302326",
+      "F_eps_n": "0.32660668162108689656",
+      "F_eps_flavour": "-0.0757898820174361267",
+      "F_over_F_required": "0.415978564688935"
+    },
+    {
+      "word": "V^9",
+      "member": "C3",
+      "framing": "sl3",
+      "F": "1.0",
+      "F_eps_p": "0.40239656363852302326",
+      "F_eps_n": "0.32660668162108689656",
+      "F_eps_flavour": "-0.0757898820174361267",
+      "F_over_F_required": "0.415978564688935"
+    }
+  ],
+  "caveats": [
+    "The family is the Deligne-product colour factor only; a colour mechanism that does not factor as a tensor product (e.g. a gl_6 = iso+colour Jimbo R) is outside it.",
+    "Q_beta is not assumed linear in eps; F is reported at the eps level."
+  ]
+}

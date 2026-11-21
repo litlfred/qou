@@ -4,6 +4,7 @@
 
 | Label | Title | Chapter |
 |-------|-------|---------|
+| [def:leray-profile](#def:leray-profile) | Discretely self-similar Leray profile | Ch 18 |
 | [def:qz-bicompletion](#def:qz-bicompletion) | $(q, z)$-bicompletion $\widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z}$ | Ch 11 |
 | [def:Q-value-transition](#def:Q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 14 |
 | [def:su2-basis](#def:su2-basis) | $\mathfrak{su}(2)$ basis | Ch 5 |
@@ -353,7 +354,7 @@
 | [prop:q-beta-bar-even-kernel-typeclass](#prop:q-beta-bar-even-kernel-typeclass) | $\mathfrak{Q}_\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt | Ch 27 |
 | [prop:q-beta-bar-even-kernel-invariant](#prop:q-beta-bar-even-kernel-invariant) | $\mathfrak{Q}_\beta$ precision-ladder $\bar{}$-even discriminant — the kernel $R(q,\xi)$ produces a clean integer-$u$ ladder $\prod_k(1+c_k\,u^k)$ if and only if $R$ is even under $t \mapsto -t$ ($t = q-1$); $(1-u^2)$ at N=2 is the prototype | Ch 11 |
 | [prop:q-beta-q-eq-one-shadow-gate](#prop:q-beta-q-eq-one-shadow-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \to -1$ (the structural N=2 anchor) and $c_3 \to J_{\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED | Ch 11 |
-| [prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge) | $\mathfrak{Q}_\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases | Ch 12 |
+| [conj:q-beta-spectral-bridge](#conj:q-beta-spectral-bridge) | $\mathfrak{Q}_\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases | Ch 12 |
 | [prop:tau-M-asymptotic-rep-theory](#prop:tau-M-asymptotic-rep-theory) | $\mathrm{tr}_M^{V_\lambda}(\beta) = \mathrm{Tr}\,\rho_\lambda(\beta) \cdot \cos(\alpha_\lambda - b_\lambda\hbar_q^2/2) \cdot \prod_k(1 + c_k^{(\lambda)} u_\lambda^k)$: canonical $u$-ladder of the Markov-traced character | Ch 9 |
 | [prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction) | $\mathrm{U}(1)$-equivariant reduction of the exceptional divisor | Ch 2 |
 | [prop:vol-through-tau](#prop:vol-through-tau) | $\mathrm{Vol}(K)$ factors strictly through the fibre functor $\tau$ | Ch 11 |
@@ -500,8 +501,8 @@
 | [prop:crystal-isospin-degeneracy](#prop:crystal-isospin-degeneracy) | Crystal-limit isospin degeneracy: $S_{\mathrm{crystal}}$ is invariant under $\sigma_i \leftrightarrow \sigma_i^{-1}$ | Ch 11 |
 | [prop:cusp-shape-bar-parity](#prop:cusp-shape-bar-parity) | Cusp-shape bar-parity: the figure-eight modulus splits as $\mathfrak{V} = \mathrm{Vol} + i\,\mathrm{CS}$ | Ch 5 |
 | [prop:cyclotomic-l-value-decomposition](#prop:cyclotomic-l-value-decomposition) | Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\beta(3) = \pi^3/32$ as a corollary | Ch 22 |
-| [prop:cyclotomic-depth3-dimension-synthesis](#prop:cyclotomic-depth3-dimension-synthesis) | Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \geq 5$ | Ch 11 |
-| [prop:cyclotomic-dimension-synthesis-all-depths](#prop:cyclotomic-dimension-synthesis-all-depths) | Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even | Ch 11 |
+| [conj:cyclotomic-depth3-dimension-synthesis](#conj:cyclotomic-depth3-dimension-synthesis) | Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \geq 5$ | Ch 11 |
+| [conj:cyclotomic-dimension-synthesis-all-depths](#conj:cyclotomic-dimension-synthesis-all-depths) | Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even | Ch 11 |
 | [prop:cyclotomic-strand-doubling](#prop:cyclotomic-strand-doubling) | Cyclotomic doubling identity: $\Phi_8(X) = \Phi_4(X^2)$ | Ch 11 |
 | [prop:full-pole-structure-mass-trace](#prop:full-pole-structure-mass-trace) | Cyclotomic expansion of the cleared mass trace | Ch 11 |
 | [prop:y-lambda-cyclotomic-factorization](#prop:y-lambda-cyclotomic-factorization) | Cyclotomic factorisation of $y_\lambda$ at $H_n(R, q)$ for small $n$ via Wenzl-bridge | Ch 11 |
@@ -522,7 +523,6 @@
 | [prop:reeb-operations-per-planck](#prop:reeb-operations-per-planck) | Discrete iterations per Reeb circuit | Ch 20 |
 | [prop:sdp-regime-switch](#prop:sdp-regime-switch) | Discrete regime switches in SDP cross-channel couplings across isotopes | Ch 15 |
 | [prop:discrete-vortex-spectrum](#prop:discrete-vortex-spectrum) | Discrete vortex mode spectrum | Ch 18 |
-| [prop:leray-profile](#prop:leray-profile) | Discretely self-similar blowup profile: the Leray equations with $\mathrm{SU}_q(2)$ constraints | Ch 18 |
 | [prop:magic-A-binding-formula](#prop:magic-A-binding-formula) | Doubly-magic light-nucleus binding formula: $\mathfrak{B}(^A_Z\mathfrak{X}) = \rho_F \cdot \mathfrak{m}_e \cdot A \cdot 8G$ | Ch 11 |
 | [prop:hadron-q-self-correction](#prop:hadron-q-self-correction) | Effective substrate parameter: hadron self-deformation of $q$ | Ch 14 |
 | [prop:descent-eigenspaces](#prop:descent-eigenspaces) | Eigenspaces of the descent involution | Ch 4 |
@@ -698,7 +698,7 @@
 | [prop:generator-volume-decomposition](#prop:generator-volume-decomposition) | Nuclear energy as a sum of generator volumes via Chebyshev recurrence | Ch 12 |
 | [prop:quantum-dilogarithm-volume](#prop:quantum-dilogarithm-volume) | Nuclear energy from the quantum dilogarithm of the Markov trace | Ch 14 |
 | [prop:nuclear-spin-parity](#prop:nuclear-spin-parity) | Nuclear spin is integral for even $A$ and half-integral for odd $A$ | Ch 14 |
-| [prop:four-term-pair-nucleon](#prop:four-term-pair-nucleon) | Nucleon derivation from 4-term photon pair production | Ch 7 |
+| [conj:four-term-pair-nucleon](#conj:four-term-pair-nucleon) | Nucleon derivation from 4-term photon pair production | Ch 7 |
 | [prop:knot-operator-transition](#prop:knot-operator-transition) | Nucleon-addition operators: Hopf link at $A{=}3$, trefoil at $A{=}4$ | Ch 11 |
 | [prop:nucleon-ordering-factorization](#prop:nucleon-ordering-factorization) | Nucleon-level ordering factorization via jet-descended confinement | Ch 12 |
 | [prop:observation-energy](#prop:observation-energy) | Observation increases quantum energy and deforms the action | Ch 2 |
@@ -795,7 +795,7 @@
 | [prop:sl2-prolongation-recurrence](#prop:sl2-prolongation-recurrence) | Symplectic prolongation (det B = 1) gives a one-parameter recurrence | Ch 11 |
 | [prop:tannaka-krein-reconstruction](#prop:tannaka-krein-reconstruction) | Tannaka--Krein reconstruction of the quantum gauge group | Ch 2 |
 | [prop:q-exponential-taylor](#prop:q-exponential-taylor) | Taylor series of $\exp_q$ (archimedean) | Ch 20 |
-| [prop:terminal-resolution](#prop:terminal-resolution) | Terminal Resolution of Hadronic Mass | Ch 11 |
+| [prop:terminal-resolution](#prop:terminal-resolution) | Nucleon masses under the pair Skein formula | Ch 11 |
 | [conj:collatz-contact-boundary](#conj:collatz-contact-boundary) | The $[2]_q$-contact boundary on the Reeb bundle | Ch 25 |
 | [prop:alpha-em-habiro-bar-involution](#prop:alpha-em-habiro-bar-involution) | The $\alpha_{EM}$ Habiro element $[2]_q(1-h^2\alpha)$ is a bar-involution fixed point, with $H(1)=2$, $H(-1)=-2$ | Ch 5 |
 | [prop:alpha-cluster-activation-gate](#prop:alpha-cluster-activation-gate) | The $\alpha$-cluster activation gate: Milnor indeterminacy, sign-rep obstruction, and $\mathrm{Vol}=0$ annihilation | Ch 11 |
@@ -1184,7 +1184,7 @@
 | [conj:orbital-fourier-decomposition](#conj:orbital-fourier-decomposition) | Quantum numbers from Fourier decomposition of normal-bundle sections | Ch 6 |
 | [conj:borromean-quark](#conj:borromean-quark) | Quarks as Borromean-linked unknots in the exceptional divisor | Ch 15 |
 | [conj:borel-zagier-qou-volumes](#conj:borel-zagier-qou-volumes) | Rational linear independence of QOU hyperbolic volumes (Borel--Zagier) | Ch 14 |
-| [conj:regularity-breakdown](#conj:regularity-breakdown) | Regularity breakdown at $q = 1$: the classical limit as a phase transition | Ch 18 |
+| [conj:regularity-breakdown](#conj:regularity-breakdown) | Regularity breakdown at $q = 1$ and a discretely self-similar blow-up scenario | Ch 18 |
 | [conj:reidemeister-mass-invariance](#conj:reidemeister-mass-invariance) | Reidemeister invariance of mass and binding energy | Ch 11 |
 | [conj:stokes-dt-bps-bridge](#conj:stokes-dt-bps-bridge) | Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies (the closed-sector state-integral bridge, GGM Conjecture 3(d) + GPPV) | Ch 11 |
 | [conj:reverse-limit-q-to-infinity](#conj:reverse-limit-q-to-infinity) | Reverse limit $q \to \infty$ — symmetric counterpart of Kashiwara crystal $q \to 0$ via bar involution (algebraic fragment) | Ch 19 |
@@ -1342,7 +1342,7 @@
 | [ex:nucleon-hecke-element-normal-form](#ex:nucleon-hecke-element-normal-form) | Six-term normal form and net of the nucleon | Ch 7 |
 | [ex:spin-labels-su2](#ex:spin-labels-su2) | Spin decomposition of $\mathrm{Rep}(\mathrm{SU}(2))$ | Ch 2 |
 | [ex:substrate-parameter-su2](#ex:substrate-parameter-su2) | Substrate parameter for $\mathrm{SU}(2)$ | Ch 2 |
-| [ex:terminal-resolution-cz](#ex:terminal-resolution-cz) | Terminal resolution in $\mathbb{C}[z]$ | Ch 15 |
+| [ex:terminal-resolution-cz](#ex:terminal-resolution-cz) | Lepton mass ratios in $\mathbb{C}[z]$ | Ch 15 |
 | [ex:nitrogen-14-threading](#ex:nitrogen-14-threading) | The ${}^{14}\mathrm{N}$ maximal braid shortcut vs ${}^{14}\mathrm{C}$ broken alternation | Ch 15 |
 | [ex:confinement-category-atomic-chain](#ex:confinement-category-atomic-chain) | The atomic chain in $\mathbf{Conf}$ | Ch 7 |
 | [ex:electron-knot-concrete](#ex:electron-knot-concrete) | The electron as the Hopf link on $\Sigma_4$ | Ch 14 |

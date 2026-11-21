@@ -1220,7 +1220,7 @@
         "tbl:cyclotomic-cl3-orbit-sum-general-table-data"
       ]
     },
-    "prf:cyclotomic-depth3-dimension-synthesis": {
+    "rem:cyclotomic-depth3-dimension-synthesis-sketch": {
       "derived": [
         "prop:borel-partial-resolution",
         "tbl:cyclotomic-depth3-dimension-synthesis-table1-data",
@@ -1233,7 +1233,7 @@
         "tbl:cyclotomic-depth3-dimension-synthesis-table2-data"
       ]
     },
-    "prf:cyclotomic-dimension-synthesis-all-depths": {
+    "rem:cyclotomic-dimension-synthesis-all-depths-sketch": {
       "derived": [
         "prop:borel-partial-resolution",
         "prop:depth-2-identification-bloch-suslin"
@@ -1649,7 +1649,7 @@
         "tbl:plancherel-weight-boundedness-table-data"
       ]
     },
-    "prf:q-beta-spectral-bridge": {
+    "rem:q-beta-spectral-bridge-sketch": {
       "derived": [
         "prop:beta-decay-transfer-matrix",
         "tbl:q-beta-spectral-bridge-table-data"
@@ -2823,7 +2823,7 @@
         "prop:phi-q-aj-machinery-identification"
       ]
     },
-    "prop:q-beta-spectral-bridge": {
+    "conj:q-beta-spectral-bridge": {
       "derived": [
         "tbl:q-beta-spectral-bridge-table-data"
       ],

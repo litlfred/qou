@@ -13,13 +13,11 @@
   ],
   "label": "prf:terminal-resolution",
   "kind": "proof",
-  "title": "Proof of Terminal Resolution of Hadronic Mass",
+  "title": "Proof of the pair Skein nucleon identities",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-skein-generation",
-    "papers/quantum-observable-universe/blocks/prf-knot-volumes-verification"
+    "papers/quantum-observable-universe/blocks/lem-pair-skein-mass-formula"
   ],
-  "leanRef": "qou:QOU.HadronicMass.terminal_resolution_hadronic_mass",
+  "leanRef": "qou:QOU.MassTheory.PairSkeinNucleon.terminal_resolution",
   "text": "terminal-resolution-proof.md",
-  "leanSource": "terminal-resolution-proof.lean",
   "provenance": "authored"
 }

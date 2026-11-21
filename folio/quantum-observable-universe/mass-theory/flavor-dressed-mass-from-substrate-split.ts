@@ -57,7 +57,7 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "computations/probe_flavor_dressed_mass_split.py",
+    script: "computations/probe_flavor_dressed_mass_from_substrate_split.py",
     witness: "computations/flavor-dressed-mass-from-substrate-split.witness.json",
     status: "verified",
   },

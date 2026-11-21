@@ -19,7 +19,7 @@ export default remark({
     "def:breit-wheeler-pair-production",
     "rem:knot-basis-color-content",
     "rem:physics-names-knot-operations",
-    "prop:four-term-pair-nucleon",
+    "conj:four-term-pair-nucleon",
     "def:photon",
     "prop:borromean-two-photon-factorisation",
     "prop:gamma-gamma-generates-particles",

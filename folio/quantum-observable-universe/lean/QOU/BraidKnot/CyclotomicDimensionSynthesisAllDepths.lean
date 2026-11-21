@@ -4,7 +4,7 @@ import QOU.Infra.BorelRank
 # Dimension synthesis at all depths: parity-dependent
 
 Compiled formalisation of
-`prop:cyclotomic-dimension-synthesis-all-depths`.
+`conj:cyclotomic-dimension-synthesis-all-depths`.
 Sibling docstub at
 `braids-and-knots/cyclotomic-dimension-synthesis-all-depths.lean`.
 -/
@@ -22,7 +22,7 @@ def predictedDim (n K : ℕ) : ℕ :=
   if n % 2 = 1 then (K - 3) / 2 else (K - 1) / 2
 
 /-- The all-depths dimension-synthesis claim
-    (`prop:cyclotomic-dimension-synthesis-all-depths`), as a **predicate** on the
+    (`conj:cyclotomic-dimension-synthesis-all-depths`), as a **predicate** on the
     actual dimension at depth `n` over `ℚ(ζ_K)` (prime `K`): it equals the
     parity-cased prediction.
 
