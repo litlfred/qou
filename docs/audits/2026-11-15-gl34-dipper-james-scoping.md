@@ -40,7 +40,7 @@ infrastructure.
 ## 2. A key literature finding: Doty–Giaquinto assumes generation
 
 Doty–Giaquinto, *Presenting Schur algebras* (arXiv:math/0108046, now held at
-`library/arxiv-math-0108046v3/`, key `doty-giaquinto2001`) gives a presentation of the q-Schur
+`library/arxiv-math-0108046v3/`, key `doty-giaquinto-2002`) gives a presentation of the q-Schur
 algebra and a basis `Y⁺ = ⋃_λ {e_A 1_λ f_C}` whose size equals `dim S`.
 
 **It does not prove that `U → S` is surjective.** Its §9 closes `T ≅ S` by counting `|Y⁺| = dim S`
@@ -63,7 +63,7 @@ numbers.
 | **DJ1** | **Weight spaces are permutation modules.** For `μ ∈ Λ(d,n)` with sorted word `b_μ`: `V_μ = b_μ · H`, and `Hom_H(V_μ, W) ≅ {w ∈ W : w·T_s = q w for s ∈ S_μ}`. Uses `Ř e_{(x,x)} = q e_{(x,x)}` (`rCheckN`, checked). | `mathas1999` Ch. 4 (`M^μ = x_μ H`); `dipper-james1986` (key exists, **PDF not held**) | 400–700 lines, 1–2 sessions | `weightProj` (`QuantumGLWeights.lean`); `stdElt` (`HeckeStandardBasis.lean`) |
 | **DJ2** | **Standard basis of `S`.** `S = ⊕_{λ,μ} Hom_H(V_μ, V_λ)`, with basis `φ_M` indexed by `d×d` ℕ-matrices `M` of total `n`: the `S_λ × S_μ`-orbit sums with q-weights. Hence `dim S = C(n+d²−1, n)`. Proof: spanning via DJ1 (an element of `S` is fixed by its values on the `b_μ`); independence via disjoint supports. | `dipper-james1986` Thm 3.4 (**not held**); `mathas1999` Ch. 4 gives the semistandard version (held) | 600–1000 lines, 2 sessions | DJ1 |
 | **DJ3a** | **Weight idempotents lie in `B`.** `1_μ ∈ alg⟨cartan⟩`, by Lagrange interpolation once the Cartan characters separate `Λ(d,n)` (needs `q` not a root of unity). | elementary | ≤150 lines | `cartan_mul_weightProj` |
-| **DJ3b** | **Triangularity.** For a matrix `M`, `image(e^{(M⁺)} 1_μ f^{(M⁻)}) = φ_M + Σ_{M' ≺ M} c_{M'} φ_{M'}` in a suitable partial order. Divided powers need `[m]_q! ≠ 0`. | **Du 1995 / R.M. Green 1996 / BLM 1990: none held.** `doty-giaquinto2001` supplies only the index set `Y⁺` and the count. | 1500–2500 lines, 3–6 sessions | DJ2, DJ3a |
+| **DJ3b** | **Triangularity.** For a matrix `M`, `image(e^{(M⁺)} 1_μ f^{(M⁻)}) = φ_M + Σ_{M' ≺ M} c_{M'} φ_{M'}` in a suitable partial order. Divided powers need `[m]_q! ≠ 0`. | **Du 1995 / R.M. Green 1996 / BLM 1990: none held.** `doty-giaquinto-2002` supplies only the index set `Y⁺` and the count. | 1500–2500 lines, 3–6 sessions | DJ2, DJ3a |
 | **DJ4** | **Generation `S ⊆ B`.** Follows from DJ2 and DJ3b. **Coproduct caveat:** the merged `lowerOp` is not the standard `Δ(F)`. Either show that it generates the same algebra together with the Cartan operators (#7864 F1 found `lowerOp = raiseOpᵀ`; a diagonal Cartan twist is the likely bridge, not yet checked), or run DJ3b with the merged operators. | as DJ3b | 100–400 lines | DJ3b |
 | **DJ5** | **G3.4: `B' = A`.** `B = S = A'` ⟹ `B' = A'' = A` (DJ0). | — | ≤100 lines | DJ0, DJ4 |
 
@@ -92,7 +92,7 @@ So DJ1–DJ4 buy exactly two things over "DJ0 + stream 14":
 Held:
 
 - `mathas1999`: `library/hecke-alg/`, Ch. 4.
-- `doty-giaquinto2001`: **new**, `library/arxiv-math-0108046v3/`.
+- `doty-giaquinto-2002`: already on main, `library/arxiv-math-0108046v3/`.
 - `doty2006`: **new**, `library/arxiv-math-0610591v3/`. Doty's survey of Schur–Weyl duality,
   ingested for its double-centraliser section.
 
