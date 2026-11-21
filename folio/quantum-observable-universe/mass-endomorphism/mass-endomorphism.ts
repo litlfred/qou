@@ -101,26 +101,6 @@ export default chapter({
       ],
     }),
 
-    // ═══ THE COMPLEX VOLUME $\mathfrak{V}$ ═══════════════════════════════════
-    // Binding (Re $\mathfrak{V}$) and β-decay Q-value (Im $\mathfrak{V}$) are two real
-    // shadows of one complex fibre observable. Frames the rest of
-    // the mass + β-decay narrative as one derivation.
-    section({
-      title:
-        "The complex volume $\\mathfrak{V}$: binding and decay as $\\operatorname{Re}$/$\\operatorname{Im}$",
-      label: "sec:complex-volume",
-      blocks: [
-        "complex-volume-intro",
-        "binding-qbeta-complex-volume",
-        "channel-rotation-askey-lit",
-        "whipple-rotation-intertwining",
-        "complex-volume-character-variety-path",
-        "color-spacetime-s5-factorization",
-        "mass-modulus-em-phase-color-grading",
-        "color-spacetime-s5-factorization-derivation",
-      ],
-    }),
-
     // ═══ ALGEBRAIC FACE ═════════════════════════════════════════
     section({
       title: "Categorical mass foundations: eigenspace decompositions",
@@ -175,6 +155,27 @@ export default chapter({
         "categorical-neutrality-saturated-shells-notation",
         "phi-n-global-section",
         "categorical-neutrality-saturated-shells-interpretation",
+      ],
+    }),
+    // ═══ THE COMPLEX VOLUME $\mathfrak{V}$ ═══════════════════════════════════
+    // Binding (Re $\mathfrak{V}$) and β-decay Q-value (Im $\mathfrak{V}$) are two real
+    // shadows of one complex fibre observable. Frames the rest of
+    // the mass + β-decay narrative as one derivation. Placed after the
+    // Markov-trace sections (reading-order drain L4, 2026-11-21): the
+    // complex-volume conjecture cites prop:categorical-mass-markov.
+    section({
+      title:
+        "The complex volume $\\mathfrak{V}$: binding and decay as $\\operatorname{Re}$/$\\operatorname{Im}$",
+      label: "sec:complex-volume",
+      blocks: [
+        "complex-volume-intro",
+        "binding-qbeta-complex-volume",
+        "channel-rotation-askey-lit",
+        "whipple-rotation-intertwining",
+        "complex-volume-character-variety-path",
+        "color-spacetime-s5-factorization",
+        "mass-modulus-em-phase-color-grading",
+        "color-spacetime-s5-factorization-derivation",
       ],
     }),
     section({
