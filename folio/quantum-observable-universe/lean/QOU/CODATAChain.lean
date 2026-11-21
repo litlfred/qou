@@ -33,9 +33,9 @@ MassDerivation constants        (CODATA input: m_μ/m_e, Vol(4₁))
   │
 substrate_q ≈ 1.1097            (proved: |q - 1.1097| < 0.001)
   │
-  ▼  terminal_resolution        (proved: norm_num)
+  ▼  terminal_resolution_hadronic_mass   (holds by construction)
   │
-Proton, Neutron, Deuteron, Binding Energy matching CODATA
+Proton, Neutron, Deuteron, Binding Energy: CODATA-pinned record
 ```
 
 ## What is assumed vs proved
@@ -48,7 +48,7 @@ Proton, Neutron, Deuteron, Binding Energy matching CODATA
 | mass = Vol(K)/ℏ_q² | **Proved** | From hypotheses by field_simp; ring |
 | Knot–particle identification | **Ansatz** (data) | KnotRegistry declares muon = 4₁ |
 | q ≈ 1.1097 from mass ratio | **Proved** | Interval arithmetic on √(Vol/ratio) |
-| Terminal resolution table | **Proved** | norm_num against CODATA constants |
+| CODATA-pinned table | **By construction** | values are defined from the CODATA constants they are compared with; not a prediction |
 
 ## References
 
@@ -164,17 +164,15 @@ sits at the end of a chain starting from the `ArchimedeanMassFormula`. -/
 
 /-- **End-to-end theorem**: the full chain from QOU theory to CODATA.
 
-    Assuming the `ArchimedeanMassFormula` hypotheses (baseline = volume,
-    exceptional = dilogarithm) and the knot-particle ansatz (muon = 4₁),
-    the QOU framework reproduces:
-
-    1. Proton mass:  938.272 089 43 MeV (exact match)
-    2. Neutron mass: 939.565 421 94 MeV (exact match)
-    3. Deuteron mass: within 0.567 keV of CODATA
-    4. Binding energy: within 0.567 keV of CODATA
-
-    The substrate parameter q ≈ 1.1097 is derived (not assumed),
-    with `|q − 1.1097| < 0.001` proved by interval arithmetic. -/
+    Only the first conjunct carries content: the substrate parameter
+    `q ≈ 1.1097` is derived from `Vol(4₁)` and the muon/electron ratio, with
+    `|q − 1.1097| < 0.001` proved by interval arithmetic. The remaining four
+    conjuncts are the CODATA-pinned record
+    `HadronicMass.terminal_resolution_hadronic_mass`: the proton and neutron
+    values are defined as the CODATA constants and the deuteron row uses the
+    experimental binding energy, so they hold by construction and are not
+    predictions. See `QOU.MassTheory.PairSkeinNucleon` for what the pair
+    Skein formula actually determines. -/
 theorem end_to_end :
     -- Substrate parameter is determined
     |derived_q - substrate_q| < 0.001 ∧

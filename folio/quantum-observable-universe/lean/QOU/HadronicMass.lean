@@ -182,11 +182,18 @@ noncomputable def topological_mass (vol : ℝ) (q : ℝ) : ℝ :=
 noncomputable def muon_mass_topological : ℝ :=
   topological_mass vol_figure_eight substrate_q
 
-/-! ## Section 5: Row-by-Row Formalization
+/-! ## Section 5: CODATA-pinned record of the former table
 
-Each row of the Terminal Resolution table is formalized as:
-1. A `noncomputable def` computing the QOU result from the topological formula
-2. An approximation lemma showing agreement with CODATA -/
+**Not a derivation.** Each `*_topological` value below is defined as the
+CODATA constant (or, for the deuteron, the mass-deficit identity with the
+experimental binding energy), so every `row*_matches_CODATA` lemma holds by
+construction. The content block `prop:terminal-resolution` no longer states
+this table: it now states the pair Skein nucleon identities, proved in
+`QOU.MassTheory.PairSkeinNucleon` (content sibling
+`mass-theory/terminal-resolution.lean`). Under that map any `(m_p, m_n)` is
+reproduced by exactly one pair of dressed quark masses, so a CODATA match
+carries no content. Kept because `CODATAChain` and `LightningPath` consume it.
+The per-row docstrings below describe the former reading. -/
 
 /-! ### Row 1: Proton (m_p) — Q(q) 𝓜(ℒ_Hopf)_uud -/
 
@@ -706,15 +713,12 @@ theorem skein_pnd_identity_false :
   field_simp at h
   nlinarith [hs2, hs0, h, sq_nonneg s, sq_nonneg (s - 1)]
 
-/-- **Proposition (Terminal Resolution of Hadronic Mass).**
-    Using the derived substrate parameter `q = 1.1097`, all four rows
-    of the hadronic mass table match NIST CODATA 2022 values:
-    1. Proton:  `|m_p^{QOU} − 938.27208943| < 0.001`
-    2. Neutron: `|m_n^{QOU} − 939.56542194| < 0.001`
-    3. Deuteron: `|m_D^{QOU} − 1875.61294500| < 0.001`
-    4. Binding: `|ΔE^{QOU} − 2.22456637| < 0.001`
-
-    LaTeX: `\label{prop:terminal-resolution}` -/
+/-- **CODATA-pinned record (holds by construction).** The four rows of the
+    former terminal-resolution table, bundled. Each `*_topological` value is
+    defined from the CODATA constant it is compared with (deuteron: the
+    mass-deficit identity with the experimental binding energy), so this is
+    not a prediction and is NOT `prop:terminal-resolution`. That label now
+    belongs to `QOU.MassTheory.PairSkeinNucleon.terminal_resolution`. -/
 theorem terminal_resolution_hadronic_mass :
     |proton_topological - proton_mass_MeV| < 1e-3 ∧
     |neutron_topological - neutron_mass_MeV| < 1e-3 ∧
