@@ -35,7 +35,7 @@ It does not apply the Lebesgue number lemma or name the genus-4 surface; that is
 `CechGenus4Good`. The identification with Bring's curve is a citation, and `hχ`
 (Poincaré–Hopf) stays a hypothesis. Bean `qou-skn4`.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S3/S4
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S3/S4
 -/
 open CategoryTheory TopologicalSpace
 open QOU.CentralExtension.CechGerbe

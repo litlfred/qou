@@ -34,7 +34,7 @@ It does not control mesh or compare with all open covers (`CechGenus4Good`).
 The identification of the genus-4 model with Bring's curve is a citation, and
 `hχ` (Poincaré–Hopf) stays a hypothesis. Bean `qou-skn4`.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S3/S4
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S3/S4
 -/
 open CategoryTheory Opposite TopologicalSpace
 open QOU.CentralExtension.CechGerbe

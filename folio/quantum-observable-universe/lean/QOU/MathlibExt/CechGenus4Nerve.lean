@@ -37,7 +37,7 @@ It is combinatorics only. It does not yet say that these faces are the nerve of
 an open cover of a topological genus-4 surface (step S2), nor compare with the
 colimit `Ȟ²` (steps S3–S4). Bean `qou-skn4`.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S1
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S1
 -/
 
 namespace QOU.CentralExtension.Cech.Genus4

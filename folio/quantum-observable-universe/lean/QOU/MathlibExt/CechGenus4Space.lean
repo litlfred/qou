@@ -28,7 +28,7 @@ It does not identify this space with Bring's curve (that is the classification
 of closed surfaces, a citation), and it does not compute the colimit `Ȟ²` over
 all covers (steps S3–S4). Bean `qou-skn4`.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S2
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S2
 -/
 open Topology
 

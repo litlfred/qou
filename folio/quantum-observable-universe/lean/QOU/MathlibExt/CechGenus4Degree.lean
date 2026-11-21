@@ -30,7 +30,7 @@ surface is `CechGenus4Cover`.
 
 No topology here. Bean `qou-skn4`.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S2
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S2
 -/
 
 namespace QOU.CentralExtension.Cech.Genus4

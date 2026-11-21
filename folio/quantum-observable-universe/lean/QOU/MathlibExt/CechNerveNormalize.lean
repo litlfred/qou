@@ -34,7 +34,7 @@ indices:
 It does not compute `H²` of any nerve. It is the reduction that lets a later
 file (S1b) work with one value per oriented 2-face.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S1
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S1
 Bean `qou-skn4`.
 -/
 

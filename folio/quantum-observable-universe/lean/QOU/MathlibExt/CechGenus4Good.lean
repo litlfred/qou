@@ -42,7 +42,7 @@ refinements that `toCech_bijective_of_good` needs.
   (`deg c₁(T_S) = χ(S) = −6`, Poincaré–Hopf). That stays a hypothesis. It also
   does not build the tangent cocycle of `Surf` with local real lifts.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S3/S4
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S3/S4
 -/
 
 open CategoryTheory TopologicalSpace

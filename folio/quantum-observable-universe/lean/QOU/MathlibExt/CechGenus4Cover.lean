@@ -24,7 +24,7 @@ This is `H²` of ONE cover. It does not compare with the colimit `Ȟ²` over all
 open covers (steps S3–S4), and it does not identify `Surf` with Bring's curve.
 Bean `qou-skn4`.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S2
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S2
 -/
 open CategoryTheory Opposite TopologicalSpace
 
