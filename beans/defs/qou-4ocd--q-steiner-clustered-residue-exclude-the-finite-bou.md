@@ -1,13 +1,13 @@
 ---
 # qou-4ocd
 title: 'q-Steiner clustered residue: exclude the finite bounded-run words per k_odd (the remaining open frontier after genNoCycle_of_lead closed the spread regime)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T14:25:28Z
-updated_at: 2026-11-18T11:37:12Z
+updated_at: 2026-11-21T13:17:00Z
 parent: qcz14
 ---
 
@@ -48,3 +48,5 @@ Branch `claude/qcollatz-cycle-classification-2026-11-21` (commit `532c188f3`) ad
 Scope: the formal ring ℤ[q^{±1}] only; says nothing about `reaches_cycle` or about classical Collatz. The PR awaits owner approval (math-repo rule). Mark completed when it merges.
 
 **For this bean:** the clustered bounded-run residue is covered: the classification needs no spread/clustered split and no q=1 height bound. This bean can be completed when the PR merges.
+
+2026-11-21: PR #8846 MERGED. QOU.AppendixSurreals.CollatzCycleClassification.laurent_cycle_classification (sorry-free, standard axioms) classifies every cycle of the Skein-Collatz map on Z[q^±1]: only 0, -q^-2 and the fundamental cycle {q^-1, 1+q^-1}. Convergence/divergence stays open (not claimed).

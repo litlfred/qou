@@ -1,13 +1,13 @@
 ---
 # qcz8
 title: 'Attack B: full nontrivial-cycle exclusion (affine A≠1 case)'
-status: in-progress
+status: completed
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-11-18T11:37:12Z
+updated_at: 2026-11-21T13:17:00Z
 parent: qcz14
 ---
 
@@ -65,3 +65,5 @@ Branch `claude/qcollatz-cycle-classification-2026-11-21` (commit `532c188f3`) ad
 Scope: the formal ring ℤ[q^{±1}] only; says nothing about `reaches_cycle` or about classical Collatz. The PR awaits owner approval (math-repo rule). Mark completed when it merges.
 
 **For this bean:** B1/B2/B3 are all superseded by a full classification. The affine (A≠1) nontrivial-cycle exclusion holds for every word, so this bean's goal is met once the PR merges.
+
+2026-11-21: PR #8846 MERGED. QOU.AppendixSurreals.CollatzCycleClassification.laurent_cycle_classification (sorry-free, standard axioms) classifies every cycle of the Skein-Collatz map on Z[q^±1]: only 0, -q^-2 and the fundamental cycle {q^-1, 1+q^-1}. Convergence/divergence stays open (not claimed).

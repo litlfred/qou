@@ -7,7 +7,7 @@ priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-31T20:00:00Z
-updated_at: 2026-10-04T15:26:07Z
+updated_at: 2026-11-21T13:17:00Z
 parent: qcz14
 ---
 
@@ -39,3 +39,5 @@ Branch `claude/qcollatz-cycle-classification-2026-11-21` (commit `532c188f3`) ad
 Scope: the formal ring ℤ[q^{±1}] only; says nothing about `reaches_cycle` or about classical Collatz. The PR awaits owner approval (math-repo rule). Mark completed when it merges.
 
 **For this bean:** B2 (the general-word q-Steiner bound) is no longer needed as a separate result. The general-word statement is proved by a different invariant (end coefficients, not the q=1 height).
+
+2026-11-21: PR #8846 MERGED. QOU.AppendixSurreals.CollatzCycleClassification.laurent_cycle_classification (sorry-free, standard axioms) classifies every cycle of the Skein-Collatz map on Z[q^±1]: only 0, -q^-2 and the fundamental cycle {q^-1, 1+q^-1}. Convergence/divergence stays open (not claimed). Part B2 closed by it; rest of qcz19 stays open.
