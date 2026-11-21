@@ -148,21 +148,13 @@ export default chapter({
       ],
     }),
     section({
-      title: "Terminal resolution and the $W$-boson discrepancy",
+      title: "Terminal resolution",
       label: "sec:mass-predictions-derivations-terminal-resolution-proof",
       blocks: [
         "mass-predictions-derivations-terminal-resolution-proof-intro",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
-        "w-boson-mass-discrepancy",
 
-        "w-boson-mass-discrepancy-table1-data",
-        "w-boson-mass-discrepancy-table2-data",
-        "w-boson-mass-discrepancy-table3-data",
-        "w-boson-mass-discrepancy-table4-data",
-        "w-boson-mass-discrepancy-table5-data",
-        "w-boson-mass-discrepancy-table6-data",
-        "w-boson-mass-discrepancy-table7-data",
       ],
     }),
 
@@ -356,7 +348,7 @@ export default chapter({
 
     // ── Proton radius and gravity ─────────────────────────────────────
     section({
-      title: "Proton Radius and Gravity Tests",
+      title: "Proton Radius, Gravity Tests and the $W$-Boson Mass",
       label: "sec:proton-gravity-tests",
       blocks: [
         "proton-gravity-tests-intro",
@@ -366,6 +358,14 @@ export default chapter({
         "entropic-gravity-data",
         "local-substrate-q",
         "local-substrate-q-proof",
+        "w-boson-mass-discrepancy",
+        "w-boson-mass-discrepancy-table1-data",
+        "w-boson-mass-discrepancy-table2-data",
+        "w-boson-mass-discrepancy-table3-data",
+        "w-boson-mass-discrepancy-table4-data",
+        "w-boson-mass-discrepancy-table5-data",
+        "w-boson-mass-discrepancy-table6-data",
+        "w-boson-mass-discrepancy-table7-data",
       ],
     }),
 
