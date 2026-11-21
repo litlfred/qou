@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-21T23:18:15Z
+updated_at: 2026-11-21T23:48:16Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -65,3 +65,10 @@ Scope (a): the curve provides the right pole (residue 1 over z=-1) but the class
 2026-11-21 proof attempt for I_n(1)=pi^2/(4n), not closed. Useful reductions: (a) on the real branch X=-y, the curve is (1+y^n)/(1+y) = (1-t^n)/(1-t), with the factor y+t (the X=t component) split off; (b) in K2 mod Steinberg, X^t == [n-1]_X ^ [n-1]_t, from X[n-1]_X = t[n-1]_t = S. A numeric check of the Rogers-dilog boundary split did NOT reproduce pi^2/(4n) (n=3 gave -1/4 pi^2 vs +1/12), so my sign or branch handling of L at negative arguments is wrong; do not reuse those numbers. Still numeric only.
 
 2026-11-21 retry: clean equivalent form found (numerically confirmed n=3,5,7 to 15 digits). Put y=-X=1/s on the real branch; the curve reads log[n]_t + phi(s) + (n-1)log s = 0 with phi(u)=log((1+u)/(1+u^n)). Then I_n(1) = pi^2/(4n) is EQUIVALENT to J := int_0^1 phi(s(t)) dt/t = int_0^1 phi(u) du/u = (n-1)pi^2/(12n), because int_0^1 log[n]_t dt/t = (n-1)pi^2/(6n) is elementary. So the open content is a substitution-type identity for phi along the curve. Not proved. The earlier Rogers-dilog boundary numbers remain wrong; do not reuse.
+
+
+
+2026-11-21 (session 01Qmmkt6): φ identity still NOT proved. Two restatements recorded, neither closes it.
+(1) Area form: I_n(1) = μ(R), where μ = dlog t dlog w and R = {(t,w): 0<t<1, w>1, (1+w^n)(1-t) < (1-t^n)(1+w)}. This assumes A(w)=(1+w^n)/(1+w) is increasing on w>1, which was not checked. So the claim is that this region has log-area π²/(4n).
+(2) All-branch sum, proved by hand: P(X)-P(t) = (X-t)R(X), with R monic of degree n-2 and R(0) = [n-1]_t. For odd n the residual roots multiply to -[n-1]_t, so Σ_branches log|X_i| = log[n-1]_t. Integrating over all residual branches gives (n-2)π²/(6(n-1)), which generalises the n=5 check (π²/8). The real-branch claim is therefore equivalent to: the complex branches carry (n-2)π²/(6(n-1)) - π²/(4n).
+A Steinberg/Rogers route on complex factors (1-ζ^k X) does not integrate directly, because the arg·d arg terms survive. Parametrising X = r·t gives Σ_{k=1}^{n-1} t^{k-1}[k]_r = 0 and X∧t = r∧t. For n=3 this is t = -1/(1+r), which gives the Li2 proof. For n≥5 the relation is a cubic or higher in t. Still numeric only.
