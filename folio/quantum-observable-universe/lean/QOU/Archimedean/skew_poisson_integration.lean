@@ -60,7 +60,13 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
     fields are deleted. The context as it stands is opaque data with no
     formal-group structure, so the statement is not provable from it; a
     proof needs the formal groups, `Dist`, and the Gröbner–Shirshov
-    deformation as actual structures. -/
+    deformation as actual structures.
+
+    Formal-group infrastructure now exists in `QOU.FormalGroups.FormalGroupLaw`
+    (n-dimensional, possibly non-commutative laws over any commutative ring, base change =
+    reduction mod p, the lift relation `IsLift`, sorry-free). Still missing before this
+    statement can be restated on it and proved: the distribution algebra `Dist(G)`, the
+    skewed-Poisson bracket on `H`, and the Gröbner–Shirshov deformation. -/
 -- Ref: [leitner2026] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
 theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
     (∃ (f : ctx.G_mod_p → ctx.H) (g : ctx.H → ctx.G_mod_p),
