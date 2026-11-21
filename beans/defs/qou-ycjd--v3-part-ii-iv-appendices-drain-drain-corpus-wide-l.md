@@ -104,3 +104,6 @@ STILL OPEN (192, each needs the block's later result; the ratchet on #8637 stays
 
 
 2026-11-21T07:00Z (W14): owner "merge what is ready": #8702 merged (merge commit 21d4adeda2; not rebaseable), #8637 auto-merged with it; all six drains and #8633 merged earlier. On main: L4 18 (17 recorded + gs-residue-at-root-existence <-> residue-at-root mutual link new from main), L1-L3 0 after #8756 (ratchet --shrink + one Lean sentence moved), #8756 labelled ready-to-merge.
+
+
+2026-11-21T07:25Z (W14): owner picked record-as-debt + dim_q-defined-in-place + fix-outro. #8756 head 114e87c06d: dim_q rule (18->14), baseline records the 14 (ratchet green), stochastic-mechanics/outro-braids-and-knots renamed outro-substrate-arithmetic (was not a duplicate; two blocks shared a filename). Remaining recorded debt (14): mi-sw-abelianisation, gluon-stabiliser-ledger, mass-endomorphism-conjecture x2, hecke-baer-star-generic-proof, chirality-period-pairing, bring-embeddable-knots, knot-operator-energy-exists, geom-yekutieli-alignment, gs-residue-at-root-existence, confined-knot-binding, ns-regular-qou, ns-singularity-descartes-proof, transcendental-accounting-table. Three are citation defects (target lacks claimed fact).
