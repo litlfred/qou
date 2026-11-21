@@ -29,11 +29,16 @@ The algorithm:
 
 We formalise:
 
-  • Termination via well-founded recursion on `(n, ℓ(w))`.
-  • The disjoint-product property
-    `tr_M(α ⊗ β) = tr_M(α) · tr_M(β)`
-    for `α, β` on disjoint commuting strand-clusters separated by
-    an unused generator slot.
+  • A terminating *shape* only (`markovTraceRecursiveReducer_terminates`):
+    it is met by a constant tracer, so it says nothing about the actual
+    reducer. Termination of the algorithm is proved in the `.md` sibling,
+    not here.
+  • The disjoint-product law `markovTrace_disjointProduct`, proved from
+    the axioms of `IsMarkovTrace`: `tr(α · β↑) = tr(α) · tr(β)` with `α` on
+    `σ_0, …, σ_k` and `β↑` on `σ_{k+1}, …` (0-indexed). The two clusters
+    share one strand. The split form, with an unused slot between them,
+    additionally needs shift invariance of the trace, which is not
+    formalised.
 
 Ref: [jones1987] Hecke algebra representations of braid groups,
 Annals of Math. 126, 335-388.
@@ -113,34 +118,17 @@ theorem markovTraceRecursiveReducer_terminates {R : Type*} [Inhabited R] :
 
 /-! ## Disjoint-product property of the Markov trace
 
-    *Statement (concrete):* for any commutative ring `R` carrying
-    an opaque `markovTrace : (n : ℕ) → List ℤ → R` and a "shift
-    embedding" `embedRight : List ℤ → ℕ → List ℤ` that re-indexes
-    a word's generators by adding a fixed offset to land on a
-    disjoint set of strands, the Markov trace satisfies
-
-      markovTrace n (α ++ embedRight β (k+1))
-        = markovTrace k α * markovTrace (n - k - 1) β
-
-    whenever `α` uses only generators in `Fin (k - 1)`,
-    `β` uses only generators in `Fin (n - k - 2)`, and
-    `k + 2 ≤ n` (so the slot `σ_{k+1}` separates the two clusters
-    and is unused).
-
-    Proof sketch (delegated to references): cyclicity moves `β`'s
-    generators to the right; the Markov axiom strips `σ_{n-2}`,
-    `σ_{n-3}`, …, `σ_{k+2}` in turn, each contributing a factor
-    `z` that exactly matches the standalone `markovTrace β`
-    computed in its own algebra `H_{n-k-1}`.
+    The statement is `DisjointProductLaw` below, and the proof is
+    `markovTrace_disjointProduct` at the end of the file. The argument is
+    Ocneanu's reduction (`HeckeRel.reduce`), not iterated stripping:
+    stripping alone handles only words in which each generator occurs once
+    (`markovTrace_disjointProduct_ascendingRun`). For general words the
+    proof inducts on the number of generators of `β` and uses the Hecke,
+    braid and far-commutation relations to bring every word down to one
+    that uses the top generator at most once.
 
     Ref: [kassel1995] Theorem III.3.3 (Markov-trace stability under
-    embedding); [wenzl1988] §3 (block decomposition).
-
-    The Lean elaboration requires (1) a `Hecke n q` algebra type;
-    (2) a `MarkovTrace` typeclass; (3) the explicit embedding of
-    `H_k ⊗ H_{n-k-1}` into `H_n` via the strand-shift map.  Full
-    proof structure mirrors the cyclic-peeling argument; see the
-    `.md` sibling. -/
+    embedding); [jones1987] §5 (Ocneanu trace). -/
 
 /-- `w` is a **positive word on the first `n` generators**: every letter is an
     index `c` with `0 ≤ c < n`.  `mT n` is only constrained on such words; the
@@ -214,11 +202,10 @@ structure IsMarkovTrace {R : Type*} [CommRing R]
 
 Peeling an *ascending* run `σ_n σ_{n+1} ⋯ σ_{n+m-1}` off a word of `H_n` costs
 exactly `z^m`; this is `strip` iterated, and the support bookkeeping is now
-explicit.  The **general** disjoint-product law is *not* derived here: for a
-word `β` with repeated generators it needs the Hecke-quadratic reduction of `β`
-to a normal form, i.e. a basis of the Hecke algebra, which this file does not
-construct (it is Ocneanu's uniqueness argument).  It is stated below as the
-proposition `DisjointProductLaw` and left open (bean `qou-tmmt`). -/
+explicit.  The **general** disjoint-product law, for a word `β` with repeated
+generators, needs Ocneanu's reduction of `β` modulo the Hecke relations.  It is
+stated below as the proposition `DisjointProductLaw` and proved at the end of
+the file (`markovTrace_disjointProduct`, via `HeckeRel.reduce`). -/
 
 /-- The ascending run of generator indices `[n, n+1, …, n+m-1]`, written so
     that the *last* letter is exposed — the form `IsMarkovTrace.strip`
@@ -304,12 +291,12 @@ theorem markovTrace_disjointProduct_ascendingRun {R : Type*} [CommRing R]
   rw [this, mul_comm]
 
 /-- **The general disjoint-product law** — `tr(α ⊗ β) = tr(α) tr(β)` for `α`
-    a word of `H_{k+1}` and `β` any positive word, shifted past the separating
-    slot `σ_{k+1}`.  True of the genuine Markov trace (Ocneanu; [kassel1995]
-    Thm III.3.3), but **not proved here**: the proof reduces `β` to a normal
-    form with `hecke`/`braid`/`far_comm`, which needs a basis of the Hecke
-    algebra.  Before 2026-11-20 a "proof" existed only because the axioms had
-    collapsed `mT` to `z ^ |w|`.  Open: bean `qou-tmmt`. -/
+    a word on the generators `σ_0, …, σ_k` and `β` any positive word, shifted
+    by `k + 1`, so that its lowest generator lands on `σ_{k+1}`.  Proved from
+    the axioms below (`markovTrace_disjointProduct`, 2026-11-21).  Before
+    2026-11-20 a "proof" existed only because the axioms had collapsed `mT` to
+    `z ^ |w|`; the present proof uses the Hecke, braid and far-commutation
+    relations essentially. -/
 def DisjointProductLaw {R : Type*} [CommRing R]
     (mT : ℕ → List ℤ → R) (embedRight : List ℤ → ℕ → List ℤ) : Prop :=
   ∀ (k m : ℕ) (α β : List ℤ), Supp (k + 1) α → Supp m β →
@@ -368,8 +355,10 @@ theorem not_isMarkovTrace_two_pow_length :
     `disjoint_product` as an axiom would be correct rather than lazy — but the
     counter-model also says exactly what to add, so the better move is to add
     the two axioms and re-attempt the derivation. That is what
-    `markovTrace_disjointProduct` below now does: the field is gone and the
-    product law is proved. This theorem is kept because it is what justifies
+    `markovTrace_disjointProduct` below now does, together with the Hecke,
+    braid and far-commutation relations (normalisation and stability alone,
+    quantified over all words, collapse the trace to `z ^ |w|`): the field is
+    gone and the product law is proved. This theorem is kept because it is what justifies
     the axiom set being the size it is — three of these axioms genuinely do not
     suffice. Bean `qou-tmmt`. -/
 theorem disjointProduct_independent_of_strip_cyclic_embed :
@@ -387,5 +376,401 @@ theorem disjointProduct_independent_of_strip_cyclic_embed :
   · intro h
     have hcontra := h 0 2 (by norm_num) [] []
     exact absurd hcontra (by norm_num)
+
+
+/-! ## The general disjoint-product law, derived (bean `qou-tmmt`)
+
+The proof is Ocneanu's reduction.  Any function `G` on positive words that
+satisfies the three in-context relations of the Hecke tower (`HeckeRel`) and
+vanishes on words using the top generator at most once vanishes everywhere
+(`HeckeRel.reduce`): two consecutive top letters `σ_T x σ_T` are either pushed
+together through `x` and merged by the quadratic relation (when `x` avoids
+`σ_{T-1}`), or turned by one braid move into a word with one top letter fewer
+(when `x` uses `σ_{T-1}` once); otherwise `x` is first reduced one level down.
+The difference of the two sides of the product law is such a `G`, and it
+vanishes on words using the top generator at most once by stability, cyclicity
+and Markov stabilisation. -/
+
+section DisjointProduct
+
+variable {R : Type*} [CommRing R]
+
+theorem supp_append_iff {n : ℕ} {u v : List ℤ} :
+    Supp n (u ++ v) ↔ Supp n u ∧ Supp n v := List.forall_mem_append
+
+theorem supp_cons_iff {n : ℕ} {a : ℤ} {w : List ℤ} :
+    Supp n (a :: w) ↔ (0 ≤ a ∧ a < n) ∧ Supp n w := List.forall_mem_cons
+
+theorem supp_nil {n : ℕ} : Supp n [] := fun _ h => by simp at h
+
+/-- The in-context relations of the Hecke tower `H_{n+1}(q)` (generators
+    `σ_0, …, σ_{n-1}`), for a function `G` on positive words. -/
+def HeckeRel (n : ℕ) (h : R) (G : List ℤ → R) : Prop :=
+  (∀ (u v : List ℤ) (i : ℤ), Supp n (u ++ [i] ++ v) →
+      G (u ++ [i, i] ++ v) = h * G (u ++ [i] ++ v) + G (u ++ v)) ∧
+  (∀ (u v : List ℤ) (i : ℤ), Supp n (u ++ [i, i + 1] ++ v) →
+      G (u ++ [i, i + 1, i] ++ v) = G (u ++ [i + 1, i, i + 1] ++ v)) ∧
+  (∀ (u v : List ℤ) (i j : ℤ), 2 ≤ |i - j| → Supp n (u ++ [i, j] ++ v) →
+      G (u ++ [i, j] ++ v) = G (u ++ [j, i] ++ v))
+
+/-- Split a word at the first occurrence of a letter. -/
+theorem exists_split_first (a : ℤ) :
+    ∀ w : List ℤ, a ∈ w → ∃ p s, w = p ++ a :: s ∧ a ∉ p
+  | [], h => by simp at h
+  | b :: w, h => by
+    by_cases hb : b = a
+    · exact ⟨[], w, by simp [hb], by simp⟩
+    · have hw : a ∈ w := by
+        rcases List.mem_cons.mp h with h | h
+        · exact absurd h.symm hb
+        · exact h
+      obtain ⟨p, s, rfl, hp⟩ := exists_split_first a w hw
+      exact ⟨b :: p, s, rfl, by simp [Ne.symm hb, hp]⟩
+
+/-- A letter far from every letter of `y` moves through `y`. -/
+theorem HeckeRel.move {n : ℕ} {h : R} {G : List ℤ → R} (hG : HeckeRel n h G)
+    (T : ℤ) : ∀ (y u v : List ℤ), (∀ c ∈ y, 2 ≤ |T - c|) →
+      Supp n (u ++ [T] ++ y ++ v) →
+      G (u ++ [T] ++ y ++ v) = G (u ++ y ++ [T] ++ v)
+  | [], u, v, _, _ => by simp
+  | c :: y, u, v, hy, hs => by
+    have hs' : Supp n (u ++ [T, c] ++ (y ++ v)) := by
+      simp only [supp_append_iff, supp_cons_iff] at hs ⊢; tauto
+    have h1 := hG.2.2 u (y ++ v) T c (hy c (by simp)) hs'
+    have hs2 : Supp n ((u ++ [c]) ++ [T] ++ y ++ v) := by
+      simp only [supp_append_iff, supp_cons_iff] at hs ⊢; tauto
+    have h2 := HeckeRel.move hG T y (u ++ [c]) v
+      (fun d hd => hy d (by simp [hd])) hs2
+    simp only [List.append_assoc, List.cons_append, List.singleton_append,
+      List.nil_append] at h1 h2 ⊢
+    rw [h1, h2]
+
+theorem count_eq_zero_of_supp {n : ℕ} {y : List ℤ} (hy : Supp n y) :
+    y.count (n : ℤ) = 0 :=
+  List.count_eq_zero_of_not_mem (fun hm => by have := hy _ hm; omega)
+
+/-- **Ocneanu's reduction.** A function on the positive words of `H_{n+1}(q)`
+    satisfying the in-context Hecke-tower relations, and vanishing on words
+    that use the top generator `σ_{n-1}` at most once, vanishes on every
+    word (up to any length bound `L`). -/
+theorem HeckeRel.reduce (h : R) : ∀ (n : ℕ) (G : List ℤ → R), HeckeRel n h G →
+    ∀ L : ℕ, (∀ w, Supp n w → w.length ≤ L → w.count ((n : ℤ) - 1) ≤ 1 → G w = 0) →
+    ∀ w, Supp n w → w.length ≤ L → G w = 0
+  | 0, G, _, L, h0, w, hw, hL => by
+    have hwnil : w = [] := by
+      cases w with
+      | nil => rfl
+      | cons c w => have := hw c (by simp); push_cast at this; omega
+    subst hwnil; exact h0 [] hw hL (by simp)
+  | n + 1, G, hG, L, h0, w, hw, hL => by
+    have hcnt : ((n + 1 : ℕ) : ℤ) - 1 = (n : ℤ) := by push_cast; ring
+    have key : ∀ K : ℕ, ∀ w, Supp (n + 1) w → w.length ≤ L →
+        w.length + w.count (n : ℤ) < K → G w = 0 := by
+      intro K
+      induction K with
+      | zero => intro w _ _ hk; omega
+      | succ K ih =>
+        intro w hw hL hk
+        by_cases hc : w.count (n : ℤ) ≤ 1
+        · exact h0 w hw hL (by rw [hcnt]; exact hc)
+        push_neg at hc
+        obtain ⟨p, r, rfl, hp⟩ :=
+          exists_split_first (n : ℤ) w (List.count_pos_iff.mp (by omega))
+        have hp0 : p.count (n : ℤ) = 0 := List.count_eq_zero_of_not_mem hp
+        have hcr : 1 ≤ r.count (n : ℤ) := by
+          simp only [List.count_append, List.count_cons, beq_self_eq_true,
+            if_true] at hc
+          omega
+        obtain ⟨x, s, rfl, hx⟩ :=
+          exists_split_first (n : ℤ) r (List.count_pos_iff.mp (by omega))
+        have hx0 : x.count (n : ℤ) = 0 := List.count_eq_zero_of_not_mem hx
+        have hwsplit := hw
+        simp only [supp_append_iff, supp_cons_iff] at hwsplit
+        obtain ⟨hP, ⟨-, hX, -, hS⟩⟩ := hwsplit
+        have hTn : (0 : ℤ) ≤ n ∧ (n : ℤ) < ((n + 1 : ℕ) : ℤ) := by
+          constructor <;> push_cast <;> omega
+        have hXn : Supp n x := fun c hc => by
+          have := hX c hc
+          have hne : c ≠ (n : ℤ) := fun e => hx (e ▸ hc)
+          push_cast at this; omega
+        -- `G' y = G (p ++ σ_n y σ_n ++ s)`, reduced one level down
+        let G' : List ℤ → R := fun y => G (p ++ [(n : ℤ)] ++ y ++ [(n : ℤ)] ++ s)
+        have hctx : ∀ y, Supp n y →
+            Supp (n + 1) (p ++ [(n : ℤ)] ++ y ++ [(n : ℤ)] ++ s) := by
+          intro y hy
+          simp only [supp_append_iff, supp_cons_iff]
+          exact ⟨⟨⟨⟨hP, hTn, supp_nil⟩, hy.mono (Nat.le_succ n)⟩, hTn, supp_nil⟩, hS⟩
+        have hG' : HeckeRel n h G' := by
+          refine ⟨?_, ?_, ?_⟩
+          · intro u v i hs
+            have := hG.1 (p ++ [(n : ℤ)] ++ u) (v ++ [(n : ℤ)] ++ s) i (by
+              have := hctx _ hs
+              simp only [supp_append_iff, supp_cons_iff] at this ⊢; tauto)
+            simp only [G', List.append_assoc, List.cons_append,
+              List.singleton_append, List.nil_append] at this ⊢
+            exact this
+          · intro u v i hs
+            have := hG.2.1 (p ++ [(n : ℤ)] ++ u) (v ++ [(n : ℤ)] ++ s) i (by
+              have := hctx _ hs
+              simp only [supp_append_iff, supp_cons_iff] at this ⊢; tauto)
+            simp only [G', List.append_assoc, List.cons_append,
+              List.singleton_append, List.nil_append] at this ⊢
+            exact this
+          · intro u v i j hij hs
+            have := hG.2.2 (p ++ [(n : ℤ)] ++ u) (v ++ [(n : ℤ)] ++ s) i j hij (by
+              have := hctx _ hs
+              simp only [supp_append_iff, supp_cons_iff] at this ⊢; tauto)
+            simp only [G', List.append_assoc, List.cons_append,
+              List.singleton_append, List.nil_append] at this ⊢
+            exact this
+        have hlenw : (p ++ (n : ℤ) :: (x ++ (n : ℤ) :: s)).length
+            = p.length + x.length + s.length + 2 := by simp; omega
+        have hcw : (p ++ (n : ℤ) :: (x ++ (n : ℤ) :: s)).count (n : ℤ)
+            = s.count (n : ℤ) + 2 := by
+          simp only [List.count_append, List.count_cons, beq_self_eq_true, if_true]
+          omega
+        rw [hlenw] at hL
+        rw [hlenw, hcw] at hk
+        have h0' : ∀ y, Supp n y → y.length ≤ x.length →
+            y.count ((n : ℤ) - 1) ≤ 1 → G' y = 0 := by
+          intro y hy hyl hyc
+          have hy0 : y.count (n : ℤ) = 0 := count_eq_zero_of_supp hy
+          have hfar : ∀ c ∈ y, c ≠ (n : ℤ) - 1 → 2 ≤ |(n : ℤ) - c| := by
+            intro c hc hne
+            have := hy c hc
+            exact le_trans (by omega) (le_abs_self _)
+          rcases Nat.le_one_iff_eq_zero_or_eq_one.mp hyc with hyc | hyc
+          · -- `y` avoids `σ_{n-1}`: push the two top letters together
+            have hnot : ∀ c ∈ y, 2 ≤ |(n : ℤ) - c| := fun c hc =>
+              hfar c hc (fun e => by
+                have : 0 < y.count ((n : ℤ) - 1) := List.count_pos_iff.mpr (e ▸ hc)
+                omega)
+            have hm := HeckeRel.move hG (n : ℤ) y p ([(n : ℤ)] ++ s) hnot (by
+              have := hctx y hy
+              simp only [supp_append_iff, supp_cons_iff] at this ⊢; tauto)
+            have hq := hG.1 (p ++ y) s (n : ℤ) (by
+              have := hctx y hy
+              simp only [supp_append_iff, supp_cons_iff] at this ⊢; tauto)
+            have e1 : G (p ++ y ++ [(n : ℤ)] ++ s) = 0 := by
+              apply ih
+              · have := hctx y hy
+                simp only [supp_append_iff, supp_cons_iff] at this ⊢; tauto
+              · simp; omega
+              · simp only [List.length_append, List.length_cons, List.length_nil,
+                  List.count_append, List.count_cons, beq_self_eq_true, if_true,
+                  List.count_nil]
+                omega
+            have e2 : G (p ++ y ++ s) = 0 := by
+              apply ih
+              · have := hctx y hy
+                simp only [supp_append_iff, supp_cons_iff] at this ⊢; tauto
+              · simp; omega
+              · simp only [List.length_append, List.count_append]
+                omega
+            simp only [G', List.append_assoc, List.cons_append,
+              List.singleton_append, List.nil_append] at hm hq e1 e2 ⊢
+            rw [hm, hq, e1, e2]; ring
+          · -- `y` uses `σ_{n-1}` once: one braid move removes a top letter
+            obtain ⟨a, b, rfl, ha⟩ := exists_split_first ((n : ℤ) - 1) y
+              (List.count_pos_iff.mp (by omega))
+            have hb : (n : ℤ) - 1 ∉ b := by
+              intro hm
+              have h1 : 0 < b.count ((n : ℤ) - 1) := List.count_pos_iff.mpr hm
+              have h2 : a.count ((n : ℤ) - 1) = 0 := List.count_eq_zero_of_not_mem ha
+              simp only [List.count_append, List.count_cons, beq_self_eq_true,
+                if_true] at hyc
+              omega
+            have hya := hy
+            simp only [supp_append_iff, supp_cons_iff] at hya
+            obtain ⟨hA, hτ, hB⟩ := hya
+            have hfa : ∀ c ∈ a, 2 ≤ |(n : ℤ) - c| := fun c hc =>
+              hfar c (by simp [hc]) (fun e => ha (e ▸ hc))
+            have hfb : ∀ c ∈ b, 2 ≤ |(n : ℤ) - c| := fun c hc =>
+              hfar c (by simp [hc]) (fun e => hb (e ▸ hc))
+            have hfull := hctx _ hy
+            have m1 := HeckeRel.move hG (n : ℤ) a p
+              ([(n : ℤ) - 1] ++ b ++ [(n : ℤ)] ++ s) hfa (by
+                simp only [supp_append_iff, supp_cons_iff] at hfull ⊢; tauto)
+            have m2 := HeckeRel.move hG (n : ℤ) b
+              (p ++ a ++ [(n : ℤ), (n : ℤ) - 1]) s hfb (by
+                simp only [supp_append_iff, supp_cons_iff] at hfull ⊢; tauto)
+            have br := hG.2.1 (p ++ a) (b ++ s) ((n : ℤ) - 1) (by
+              simp only [sub_add_cancel]
+              simp only [supp_append_iff, supp_cons_iff] at hfull ⊢; tauto)
+            simp only [sub_add_cancel] at br
+            have e1 : G (p ++ a ++ [(n : ℤ) - 1, (n : ℤ), (n : ℤ) - 1] ++ b ++ s) = 0 := by
+              apply ih
+              · simp only [supp_append_iff, supp_cons_iff] at hfull ⊢; tauto
+              · simp only [List.length_append, List.length_cons, List.length_nil] at hyl ⊢
+                omega
+              · have ha0 : a.count (n : ℤ) = 0 := count_eq_zero_of_supp hA
+                have hb0 : b.count (n : ℤ) = 0 := count_eq_zero_of_supp hB
+                have hne : ((n : ℤ) - 1 == (n : ℤ)) = false := by simp
+                simp only [List.length_append, List.length_cons, List.length_nil,
+                  List.count_append, List.count_cons, beq_self_eq_true, if_true,
+                  List.count_nil, hne, Bool.false_eq_true, if_false] at ⊢
+                simp only [List.length_append, List.length_cons] at hyl
+                omega
+            simp only [G', List.append_assoc, List.cons_append,
+              List.singleton_append, List.nil_append] at m1 m2 br e1 ⊢
+            rw [m1, ← m2, ← br, e1]
+        have := HeckeRel.reduce h n G' hG' x.length h0' x hXn le_rfl
+        simp only [G', List.append_assoc, List.cons_append,
+          List.singleton_append, List.nil_append] at this ⊢
+        exact this
+    exact key _ w hw hL (Nat.lt_succ_self _)
+
+/-- **The general disjoint-product law, proved** (bean `qou-tmmt`).  For a
+    word `α` of `H_{k+2}` (generators `σ_0, …, σ_k`) and any positive word `β`
+    on `σ_0, …, σ_{m-1}` shifted onto `σ_{k+1}, …, σ_{k+m}`,
+    `tr(α · β↑) = tr(α) · tr(β)`.  Induction on `m`; inside a level, the
+    difference of the two sides satisfies the Hecke-tower relations and
+    vanishes on words using the top generator at most once, so it vanishes
+    by `HeckeRel.reduce`. -/
+theorem markovTrace_disjointProduct {mT : ℕ → List ℤ → R}
+    {embedRight : List ℤ → ℕ → List ℤ} {z h : R}
+    (hmT : IsMarkovTrace mT embedRight z h) : DisjointProductLaw mT embedRight := by
+  intro k m
+  induction m with
+  | zero =>
+    intro α β _ hβ
+    have hβnil : β = [] := by
+      cases β with
+      | nil => rfl
+      | cons c β => have := hβ c (by simp); push_cast at this; omega
+    subst hβnil
+    rw [hmT.embed_disjoint]
+    simp [hmT.normalised]
+  | succ m ih =>
+    intro α β hα hβ
+    set c : ℤ := ((k + 1 : ℕ) : ℤ) with hc
+    have hemb : ∀ γ : List ℤ, embedRight γ (k + 1) = γ.map (· + c) := by
+      intro γ; rw [hmT.embed_disjoint]; simp [hc]
+    simp only [hemb] at ih ⊢
+    have hN : k + 1 + (m + 1) = k + 1 + m + 1 := by ring
+    have hαN : ∀ j, Supp (k + 1 + j) α := fun j => hα.mono (Nat.le_add_right _ _)
+    have hsh : ∀ j (γ : List ℤ), Supp j γ → Supp (k + 1 + j) (γ.map (· + c)) := by
+      intro j γ hγ d hd
+      obtain ⟨e, he, rfl⟩ := List.mem_map.mp hd
+      have := hγ e he
+      simp only [hc] at *
+      push_cast at this ⊢
+      omega
+    -- the difference of the two sides, as a function of `β`
+    let F : List ℤ → R := fun γ =>
+      mT (k + 1 + (m + 1)) (α ++ γ.map (· + c)) - mT (k + 1) α * mT (m + 1) γ
+    have hF : HeckeRel (m + 1) h F := by
+      refine ⟨?_, ?_, ?_⟩
+      · intro u v i hs
+        have h1 := hmT.hecke (k + 1 + (m + 1)) (α ++ u.map (· + c)) (v.map (· + c))
+          (i + c) (by
+            have := hsh _ _ hs
+            simp only [List.map_append, List.map_cons, List.map_nil] at this
+            simp only [supp_append_iff, supp_cons_iff] at this ⊢
+            exact ⟨⟨⟨hαN _, this.1.1⟩, this.1.2⟩, this.2⟩)
+        have h2 := hmT.hecke (m + 1) u v i hs
+        simp only [F, List.map_append, List.map_cons, List.map_nil,
+          List.append_assoc, List.cons_append, List.singleton_append,
+          List.nil_append] at h1 h2 ⊢
+        rw [h1, h2]; ring
+      · intro u v i hs
+        have h1 := hmT.braid (k + 1 + (m + 1)) (α ++ u.map (· + c)) (v.map (· + c))
+          (i + c) (by
+            have := hsh _ _ hs
+            simp only [List.map_append, List.map_cons, List.map_nil] at this
+            have e : i + 1 + c = i + c + 1 := by ring
+            rw [e] at this
+            simp only [supp_append_iff, supp_cons_iff] at this ⊢
+            exact ⟨⟨⟨hαN _, this.1.1⟩, this.1.2⟩, this.2⟩)
+        have h2 := hmT.braid (m + 1) u v i hs
+        have e : i + 1 + c = i + c + 1 := by ring
+        simp only [F, List.map_append, List.map_cons, List.map_nil, e,
+          List.append_assoc, List.cons_append, List.singleton_append,
+          List.nil_append] at h1 h2 ⊢
+        rw [h1, h2]
+      · intro u v i j hij hs
+        have h1 := hmT.far_comm (k + 1 + (m + 1)) (α ++ u.map (· + c)) (v.map (· + c))
+          (i + c) (j + c) (by rw [show i + c - (j + c) = i - j by ring]; exact hij) (by
+            have := hsh _ _ hs
+            simp only [List.map_append, List.map_cons, List.map_nil] at this
+            simp only [supp_append_iff, supp_cons_iff] at this ⊢
+            exact ⟨⟨⟨hαN _, this.1.1⟩, this.1.2⟩, this.2⟩)
+        have h2 := hmT.far_comm (m + 1) u v i j hij hs
+        simp only [F, List.map_append, List.map_cons, List.map_nil,
+          List.append_assoc, List.cons_append, List.singleton_append,
+          List.nil_append] at h1 h2 ⊢
+        rw [h1, h2]
+    have hcm : ((m + 1 : ℕ) : ℤ) - 1 = (m : ℤ) := by push_cast; ring
+    have h0 : ∀ γ, Supp (m + 1) γ → γ.length ≤ β.length →
+        γ.count (((m + 1 : ℕ) : ℤ) - 1) ≤ 1 → F γ = 0 := by
+      intro γ hγ _ hγc
+      rw [hcm] at hγc
+      rcases Nat.le_one_iff_eq_zero_or_eq_one.mp hγc with hγc | hγc
+      · -- `γ` avoids the top generator: stability on both sides
+        have hγm : Supp m γ := fun d hd => by
+          have := hγ d hd
+          have hne : d ≠ (m : ℤ) := fun e => by
+            have : 0 < γ.count (m : ℤ) := List.count_pos_iff.mpr (e ▸ hd)
+            omega
+          push_cast at this; omega
+        have s1 := hmT.stable (k + 1 + m) (α ++ γ.map (· + c))
+          (supp_append_iff.mpr ⟨hαN _, hsh _ _ hγm⟩)
+        have s2 := hmT.stable m γ hγm
+        simp only [F]
+        rw [hN, s1, s2, ih α γ hα hγm]; ring
+      · -- `γ` uses the top generator once: cyclicity and stabilisation
+        obtain ⟨a, b, rfl, ha⟩ := exists_split_first (m : ℤ) γ
+          (List.count_pos_iff.mp (by omega))
+        have hγ' := hγ
+        simp only [supp_append_iff, supp_cons_iff] at hγ'
+        obtain ⟨hA, -, hB⟩ := hγ'
+        have hb : (m : ℤ) ∉ b := by
+          intro hm
+          have h1 : 0 < b.count (m : ℤ) := List.count_pos_iff.mpr hm
+          have h2 : a.count (m : ℤ) = 0 := List.count_eq_zero_of_not_mem ha
+          simp only [List.count_append, List.count_cons, beq_self_eq_true,
+            if_true] at hγc
+          omega
+        have low : ∀ (l : List ℤ), Supp (m + 1) l → (m : ℤ) ∉ l → Supp m l := by
+          intro l hl hn d hd
+          have := hl d hd
+          have hne : d ≠ (m : ℤ) := fun e => hn (e ▸ hd)
+          push_cast at this; omega
+        have hAm := low a hA ha
+        have hBm := low b hB hb
+        have hshA := hsh m a hAm
+        have hshB := hsh m b hBm
+        have htop : (m : ℤ) + c = ((k + 1 + m : ℕ) : ℤ) := by
+          simp only [hc]; push_cast; ring
+        -- left side
+        have c1 := hmT.cyclic (k + 1 + m + 1)
+          (α ++ a.map (· + c) ++ [((k + 1 + m : ℕ) : ℤ)]) (b.map (· + c))
+          (by
+            simp only [supp_append_iff, supp_cons_iff]
+            refine ⟨⟨(hαN _).mono (Nat.le_succ _), hshA.mono (Nat.le_succ _)⟩,
+              ⟨by omega, by push_cast; omega⟩, supp_nil⟩)
+          (hshB.mono (Nat.le_succ _))
+        have st := hmT.strip (k + 1 + m) (b.map (· + c) ++ α ++ a.map (· + c))
+          (supp_append_iff.mpr ⟨supp_append_iff.mpr ⟨hshB, hαN _⟩, hshA⟩)
+        have c2 := hmT.cyclic (k + 1 + m) (b.map (· + c)) (α ++ a.map (· + c))
+          hshB (supp_append_iff.mpr ⟨hαN _, hshA⟩)
+        have ihab := ih α (a ++ b) hα (supp_append_iff.mpr ⟨hAm, hBm⟩)
+        -- right side
+        have d1 := hmT.cyclic (m + 1) (a ++ [(m : ℤ)]) b
+          (supp_append_iff.mpr ⟨hAm.mono (Nat.le_succ _),
+            supp_cons_iff.mpr ⟨⟨by omega, by push_cast; omega⟩, supp_nil⟩⟩)
+          (hBm.mono (Nat.le_succ _))
+        have st2 := hmT.strip m (b ++ a) (supp_append_iff.mpr ⟨hBm, hAm⟩)
+        have d2 := hmT.cyclic m b a hBm hAm
+        simp only [Int.ofNat_eq_coe] at st st2
+        simp only [F, List.map_append, List.map_cons, List.map_nil, htop,
+          List.append_assoc, List.cons_append, List.singleton_append,
+          List.nil_append] at c1 st c2 ihab d1 st2 d2 ⊢
+        rw [hN, c1, st, c2, ihab, d1, st2, d2]; ring
+    have := HeckeRel.reduce h (m + 1) F hF β.length h0 β hβ le_rfl
+    simp only [F] at this
+    exact sub_eq_zero.mp this
+
+end DisjointProduct
 
 end QOU.BraidKnot
