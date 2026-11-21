@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T04:22:16.301344+00:00",
-  "commitSha": "003fc26aeb6c8445bfc805b289931fca516cb6f1",
+  "computedAt": "2026-11-21T22:58:22.567763+00:00",
+  "commitSha": "d00849cd280bde10c55bc48457454a73aa614c5f",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 164,
+  "durationMs": 5,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "9a06024826b6",
-  "scriptCommitSha": "056a00fc678a0c1d03d33d77c14f59479044eb86",
+  "scriptHash": "623cbfc88dbb",
+  "scriptCommitSha": "e914c589b2d1c37dc117374808953804913fec0c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "8094096a28948d48"
+    "pyhecke_native_build": "011771826c068199"
   },
   "invocation": {
     "argv": [
@@ -371,13 +371,39 @@
         "miss_factor": "238.3",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
-        "note": "CONDITIONAL on three unproved classes (ArchimedeanLimit, BlochSuslinUniqueness, BringZeroModeBlochClass) — a conditional prediction, not a proved derivation. The Schwinger factor is NOT FITTED and this is measured, not asserted: parametrising it as (1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 and the 1-sigma window is [0.61846303, 0.84400502], so the published c = 1 lies OUTSIDE it, at 2.383 sigma -- a fitter would have taken 0.731. But it is NOT DERIVED either: the exact vertex-moment check (docs/audits/2026-07-14-alpha-em-phase3-schwinger-coefficient-exact-check.md) gives +0.1281 against the claimed -h^2 = -0.0437, wrong order and wrong sign, ratio -2.93, and recommends the tier 'structurally-motivated / empirically-anchored'. That is the honest label. Second-best scoreable row: 238x, against 970x (m_mu) and 152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the CODATA edition (the 2018->2022 shift is 2.2x the residual); the reference is read from the registry so the edition is not a choice.",
+        "note": "CANONICAL FORM OPEN (qou-aemx): see `arms` for the CS tower and the additive A/B arms; compute consumers use the CS tower. The additive form rests on an unproved postulate, the [10]_q coefficient, the one-loop normalisation and c (docs/audits/2026-11-21-alpha-em-which-form-is-canonical.md); of the three classes once listed here, two are settled on main and the third is not load-bearing. The Schwinger factor is NOT FITTED and this is measured, not asserted: parametrising it as (1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 and the 1-sigma window is [0.61846303, 0.84400502], so the published c = 1 lies OUTSIDE it, at 2.383 sigma -- a fitter would have taken 0.731. But it is NOT DERIVED either: the exact vertex-moment check (docs/audits/2026-07-14-alpha-em-phase3-schwinger-coefficient-exact-check.md) gives +0.1281 against the claimed -h^2 = -0.0437, wrong order and wrong sign, ratio -2.93, and recommends the tier 'structurally-motivated / empirically-anchored'. That is the honest label. Second-best scoreable row: 238x, against 970x (m_mu) and 152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the CODATA edition (the 2018->2022 shift is 2.2x the residual); the reference is read from the registry so the edition is not a choice.",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "alpha-em-schwinger-ladder.witness.json :: data.ladder_proton.form_B_alpha_inv (cubic form with the derived Schwinger factor (1-h^2 alpha), proton pin)",
         "sigma_source": "qou_substrate.codata registry — 'inverse fine-structure constant', CODATA 2022",
         "compute_truncation_ppb": "7.297e-54",
-        "compute_output_dps": 60
+        "compute_output_dps": 60,
+        "arms": {
+          "cs_tower": {
+            "pred_MeV": "137.035935094",
+            "err_ppb": "467.6",
+            "target_100x_ppb": "0.001532",
+            "miss_factor": "3.052e+5",
+            "source_witness": "meson_em_sinh_closed_form.alpha_em_inv_derived (exact resummation); the form every alpha consumer in compute uses"
+          },
+          "additive_A_c0": {
+            "pred_MeV": "137.035999313",
+            "err_ppb": "0.9937",
+            "target_100x_ppb": "0.001532",
+            "miss_factor": "648.4",
+            "source_witness": "alpha-em-schwinger-ladder.witness.json :: form_A_alpha_inv"
+          },
+          "additive_B_c1": {
+            "pred_MeV": "137.035999127",
+            "err_ppb": "0.3652",
+            "target_100x_ppb": "0.001532",
+            "miss_factor": "238.3",
+            "source_witness": "alpha-em-schwinger-ladder.witness.json :: form_B_alpha_inv (c = 1 is a choice)"
+          }
+        },
+        "headline_arm": "additive_B_c1",
+        "canonical_form": "OPEN (qou-aemx); arms reported side by side",
+        "consumer_arm": "cs_tower"
       },
       {
         "obs": "m_e",
@@ -560,11 +586,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "5f4ef497a9efed547416fdfb12567ff02e35b10b1eb0c0e02a63a2c697a39f81",
-        "size_bytes": 12083,
-        "commitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
-        "scriptCommitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
-        "computedAt": "2026-11-20T16:01:41.475202+00:00"
+        "sha256": "a6c067d77c5a87eec3a553aec7ba24eaac6a66dde6e6a31aa6d1d4b063b5a255",
+        "size_bytes": 12056,
+        "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
+        "scriptCommitSha": "056a00fc678a0c1d03d33d77c14f59479044eb86",
+        "computedAt": "2026-11-21T04:37:58.464849+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
