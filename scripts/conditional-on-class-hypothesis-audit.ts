@@ -31,7 +31,7 @@
  *      (`prop:b1-figure-8-row-theorem`) — a locally-minted context class is a
  *      different defect (item 5), not an unconditional statement;
  *   3. matching `class` alone missed `(S : BodyOrderJetGrading)`
- *      (`lem:bond-order-eq-jet-degree`) — a `structure` binds identically;
+ *      (`conj:bond-order-eq-jet-degree`) — a `structure` binds identically;
  *   4. matching same-file declarations only missed `(amphi : Amphicheiral …)`
  *      (`cor:knot-factor-amphicheiral`), whose carrier lives upstream.
  *

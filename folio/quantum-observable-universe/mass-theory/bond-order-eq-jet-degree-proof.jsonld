@@ -6,18 +6,19 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-bond-order-eq-jet-degree",
+  "@id": "papers/quantum-observable-universe/blocks/rem-bond-order-eq-jet-degree-sketch",
   "@type": [
-    "folio-assistant-sci:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:bond-order-eq-jet-degree",
-  "kind": "proof",
-  "title": "Proof that body order equals jet degree",
+  "label": "rem:bond-order-eq-jet-degree-sketch",
+  "kind": "remark",
+  "title": "Argument sketch: body order equals jet degree",
   "uses": [
-    "papers/quantum-observable-universe/blocks/lem-bond-order-eq-jet-degree",
+    "papers/quantum-observable-universe/blocks/conj-bond-order-eq-jet-degree",
     "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence"
   ],
   "text": "bond-order-eq-jet-degree-proof.md",
-  "provenance": "authored"
+  "provenance": "authored",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-bond-order-eq-jet-degree"
 }
