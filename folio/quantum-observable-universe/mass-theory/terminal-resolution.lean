@@ -1,192 +1,152 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
-# QOU.Experimental.terminal_resolution — Terminal resolution
+# QOU.MassTheory.PairSkeinNucleon — nucleon masses under the pair Skein formula
 
-Using the derived q ≈ 1.1097, hadronic masses are computed from
-the topological mass formula m(K) = Vol(K) / ℏ_q² and the quantum
-Skein relation.  The derivation chain is:
+LaTeX label: `prop:terminal-resolution`.
 
-  q ≈ 1.1097  →  ℏ_q = 1 - q⁻¹  →  m(K) = Vol(K) / ℏ_q²
+The pair Skein formula (`lem:pair-skein-mass-formula`) assigns to an ordered
+quark pair `(a, b)` the crossing-pair mass
 
-CODATA values are independent experimental measurements. The QOU
-predictions are derived from q and the knot volumes, then compared.
+  `S_ab = (q·μ_a + q⁻¹·μ_b) / (q^{1/2} + q^{-1/2})`,
 
-All four rows match CODATA to sub-keV precision:
-- Proton:   938.272 MeV (QOU) vs 938.272 MeV (CODATA)
-- Neutron:  939.565 MeV (QOU) vs 939.565 MeV (CODATA)
-- Deuteron: 1875.613 MeV (QOU) vs 1875.613 MeV (CODATA)
-- Binding:  2.224 MeV (QOU) vs 2.2245 MeV (CODATA)
+and a nucleon mass is the sum over its three pairs:
+`m_p = S_uu + 2·S_ud`, `m_n = 2·S_ud + S_dd`.
 
-LaTeX label: `prop:terminal-resolution`
+This file proves what that formula determines, and nothing more:
 
-## References
+1. `neutron_sub_proton` — the exact splitting identity
+   `m_n − m_p = [2]_q · (μ_d − μ_u) / (q^{1/2} + q^{-1/2})`.
+2. `det_eq` — the 2×2 map `(μ_u, μ_d) ↦ (m_p, m_n)` has determinant
+   `3·[2]_q²` (before the common factor `(q^{1/2}+q^{-1/2})⁻²`).
+3. `up_eq`, `down_eq`, `injective` — when `[2]_q ≠ 0` the map is invertible,
+   with explicit inverse. So every pair `(m_p, m_n)` is reproduced by exactly
+   one pair of dressed quark masses: reproducing measured nucleon masses this
+   way is a change of variables and carries no predictive content.
 
-- CODATA 2018 recommended values
-- [leitner2026] §11-experimental-evidence/terminal-resolution
+No numerical value of `q` and no measured mass appears here.
 
-**Ground ring**: `ℝ` (archimedean realisation).
-Evaluates formal results at q₀ ≈ 1.1098 for comparison with
-experimental data. NOT part of the formal proof chain.
-See `GroundRingAnnotations.lean`.
+**Base ring (§7c).** A generic field `K`. The square root is avoided by
+working with `s`, where `q = s²`; so `q^{1/2} + q^{-1/2} = s + s⁻¹`.
+
+**Convention.** The denominator `s + s⁻¹` is the reciprocal of the excised
+convention-C Markov weight; the results hold in that frame, as the pair Skein
+formula does. Re-deriving the formula under convention D is open.
+
+-- Ref: [leitner2026] mass-theory, `lem:pair-skein-mass-formula`
 -/
 
-namespace QOU.Experimental
+namespace QOU.MassTheory.PairSkeinNucleon
 
-/-! ## Physical constants -/
+variable {K : Type*} [Field K]
 
-/-- The substrate parameter q ≈ 1.1097 (derived from m_μ/m_e and Vol(4₁)). -/
-noncomputable def substrate_q : ℝ := 1.1097
+/-- Crossing-pair mass `S_ab` with `q = s²`. -/
+def pairSkein (s a b : K) : K := (s ^ 2 * a + (s ^ 2)⁻¹ * b) / (s + s⁻¹)
 
-/-- The quantum Planck constant ℏ_q = 1 - q⁻¹. -/
-noncomputable def hbarQ : ℝ := 1 - substrate_q⁻¹
+/-- Proton mass `S_uu + 2·S_ud` under the pair Skein formula. -/
+def protonMass (s u d : K) : K := pairSkein s u u + 2 * pairSkein s u d
 
-/-- Hyperbolic volume of the figure-eight knot 4₁. -/
-noncomputable def vol_figure_eight : ℝ := 2.02988
+/-- Neutron mass `2·S_ud + S_dd` under the pair Skein formula. -/
+def neutronMass (s u d : K) : K := 2 * pairSkein s u d + pairSkein s d d
 
-/-! ## CODATA 2018 measurements (independent of QOU) -/
+/-- **Splitting identity.** `m_n − m_p = [2]_q·(μ_d − μ_u)/(q^{1/2}+q^{-1/2})`,
+with `[2]_q = q + q⁻¹`, `q = s²`. Holds with no hypothesis. -/
+theorem neutron_sub_proton (s u d : K) :
+    neutronMass s u d - protonMass s u d
+      = (s ^ 2 + (s ^ 2)⁻¹) * (d - u) / (s + s⁻¹) := by
+  unfold neutronMass protonMass pairSkein
+  ring
 
-noncomputable def codata_proton_MeV : ℝ := 938.272
-noncomputable def codata_neutron_MeV : ℝ := 939.565
-noncomputable def codata_deuteron_MeV : ℝ := 1875.613
-noncomputable def codata_binding_MeV : ℝ := 2.2245
+/-- **Linear form.** `(s + s⁻¹)·m_p = (3q + q⁻¹)·μ_u + 2q⁻¹·μ_d` and
+`(s + s⁻¹)·m_n = 2q·μ_u + (q + 3q⁻¹)·μ_d`, given `s + s⁻¹ ≠ 0`. -/
+theorem proton_linear (s u d : K) (hD : s + s⁻¹ ≠ 0) :
+    (s + s⁻¹) * protonMass s u d
+      = (3 * s ^ 2 + (s ^ 2)⁻¹) * u + 2 * (s ^ 2)⁻¹ * d := by
+  have h : protonMass s u d
+      = ((3 * s ^ 2 + (s ^ 2)⁻¹) * u + 2 * (s ^ 2)⁻¹ * d) / (s + s⁻¹) := by
+    unfold protonMass pairSkein
+    ring
+  rw [h, mul_div_assoc', mul_div_cancel_left₀ _ hD]
 
-/-! ## QOU predictions via topological mass formula
+theorem neutron_linear (s u d : K) (hD : s + s⁻¹ ≠ 0) :
+    (s + s⁻¹) * neutronMass s u d
+      = 2 * s ^ 2 * u + (s ^ 2 + 3 * (s ^ 2)⁻¹) * d := by
+  have h : neutronMass s u d
+      = (2 * s ^ 2 * u + (s ^ 2 + 3 * (s ^ 2)⁻¹) * d) / (s + s⁻¹) := by
+    unfold neutronMass pairSkein
+    ring
+  rw [h, mul_div_assoc', mul_div_cancel_left₀ _ hD]
 
-The topological mass formula is m(K) = Vol(K) / ℏ_q².  In a complete
-formalisation each `qou_*_MeV` below would be the output of evaluating
-the Skein polynomial at q = substrate_q.
+/-- **Determinant.** `(3q + q⁻¹)(q + 3q⁻¹) − (2q⁻¹)(2q) = 3·[2]_q²`, for `q ≠ 0`. -/
+theorem det_eq (q : K) (hq : q ≠ 0) :
+    (3 * q + q⁻¹) * (q + 3 * q⁻¹) - (2 * q⁻¹) * (2 * q)
+      = 3 * (q + q⁻¹) ^ 2 := by
+  field_simp
+  ring
 
-**Honesty note (2026-06-09 axiom audit).** That evaluation is NOT yet
-wired into Lean: the absolute hadron masses from `q₀` are the
-framework's open mass-gap (AGENTS.md "2.89% m_p gap"), and proton mass
-is not one of the three sanctioned calibration inputs (CAL-1 `m_e`,
-CAL-2 `Q_β/τ_n`, CAL-3 `m_π`), so it cannot be pinned as a calibration
-either. Consequently each `qou_*_MeV` is currently a **placeholder
-pinned to the CODATA literal**, and every `*_bound` below is the
-**tautology** `|x − x| ≤ 0.001`.  These bounds were formerly `axiom`s
-(asserting a deep external fact); they are now ordinary theorems closed
-by `norm_num`, since a literal equals itself.  This removes four
-spurious axioms and stops the file presenting a circular identity as a
-derived, externally-verified prediction.  Replacing the placeholders
-with the genuine `Real.rpow` Skein evaluation at `q₀` is the open
-follow-up — do NOT fabricate a derivation by editing the literals. -/
+/-- **Inverse, up quark.** When `s ≠ 0`, `s + s⁻¹ ≠ 0`, `[2]_q ≠ 0` and `3 ≠ 0`,
+`μ_u` is recovered from `(m_p, m_n)`. -/
+theorem up_eq (s u d : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
+    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
+    u = (s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * protonMass s u d
+          - 2 * (s ^ 2)⁻¹ * neutronMass s u d)
+        / (3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2) := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hP := proton_linear s u d hD
+  have hN := neutron_linear s u d hD
+  have hden : 3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2 ≠ 0 := mul_ne_zero h3 (pow_ne_zero 2 h2)
+  rw [eq_div_iff hden]
+  have e1 : (s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * protonMass s u d
+          - 2 * (s ^ 2)⁻¹ * neutronMass s u d)
+        = (s ^ 2 + 3 * (s ^ 2)⁻¹) * ((s + s⁻¹) * protonMass s u d)
+          - 2 * (s ^ 2)⁻¹ * ((s + s⁻¹) * neutronMass s u d) := by ring
+  rw [e1, hP, hN]
+  have hdet := det_eq (s ^ 2) hq
+  linear_combination (-u) * hdet
 
-/-- **Placeholder** (CODATA-pinned): QOU-predicted proton mass (MeV).
-    Stands in for the topological mass formula at q ≈ 1.1097 pending the
-    `Real.rpow` Skein evaluation; see the honesty note above. -/
--- Ref: [leitner2026] §11, CODATA 2018
--- Ref: [kronheimer2004] Kronheimer & Mrowka, "Witten's conjecture and Property P," arXiv:math/0311489
-noncomputable def qou_proton_MeV : ℝ := 938.272
+/-- **Inverse, down quark.** -/
+theorem down_eq (s u d : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
+    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
+    d = (s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * neutronMass s u d
+          - 2 * s ^ 2 * protonMass s u d)
+        / (3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2) := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hP := proton_linear s u d hD
+  have hN := neutron_linear s u d hD
+  have hden : 3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2 ≠ 0 := mul_ne_zero h3 (pow_ne_zero 2 h2)
+  rw [eq_div_iff hden]
+  have e1 : (s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * neutronMass s u d
+          - 2 * s ^ 2 * protonMass s u d)
+        = (3 * s ^ 2 + (s ^ 2)⁻¹) * ((s + s⁻¹) * neutronMass s u d)
+          - 2 * s ^ 2 * ((s + s⁻¹) * protonMass s u d) := by ring
+  rw [e1, hP, hN]
+  have hdet := det_eq (s ^ 2) hq
+  linear_combination (-d) * hdet
 
-theorem qou_proton_bound :
-    |qou_proton_MeV - codata_proton_MeV| ≤ 0.001 := by
-  unfold qou_proton_MeV codata_proton_MeV; rw [sub_self, abs_zero]; norm_num
-
-theorem predicted_proton_MeV_val :
-    ∃ (predicted : ℝ), |predicted - codata_proton_MeV| ≤ 0.001 :=
-  ⟨qou_proton_MeV, qou_proton_bound⟩
-
-/-- **Placeholder** (CODATA-pinned): QOU-predicted neutron mass (MeV).
-    See the honesty note above. -/
--- Ref: [leitner2026] §11, CODATA 2018
-noncomputable def qou_neutron_MeV : ℝ := 939.565
-
-theorem qou_neutron_bound :
-    |qou_neutron_MeV - codata_neutron_MeV| ≤ 0.001 := by
-  unfold qou_neutron_MeV codata_neutron_MeV; rw [sub_self, abs_zero]; norm_num
-
-theorem predicted_neutron_MeV_val :
-    ∃ (predicted : ℝ), |predicted - codata_neutron_MeV| ≤ 0.001 :=
-  ⟨qou_neutron_MeV, qou_neutron_bound⟩
-
-/-- **Placeholder** (CODATA-pinned): QOU-predicted deuteron mass (MeV).
-    See the honesty note above. -/
--- Ref: [leitner2026] §11, CODATA 2018
-noncomputable def qou_deuteron_MeV : ℝ := 1875.613
-
-theorem qou_deuteron_bound :
-    |qou_deuteron_MeV - codata_deuteron_MeV| ≤ 0.001 := by
-  unfold qou_deuteron_MeV codata_deuteron_MeV; rw [sub_self, abs_zero]; norm_num
-
-theorem predicted_deuteron_MeV_val :
-    ∃ (predicted : ℝ), |predicted - codata_deuteron_MeV| ≤ 0.001 :=
-  ⟨qou_deuteron_MeV, qou_deuteron_bound⟩
-
-/-- **Placeholder** (CODATA-pinned): QOU-predicted deuteron binding
-    energy (MeV).  See the honesty note above. -/
--- Ref: [leitner2026] §11, CODATA 2018
-noncomputable def qou_binding_MeV : ℝ := 2.2245
-
-theorem qou_binding_bound :
-    |qou_binding_MeV - codata_binding_MeV| ≤ 0.001 := by
-  unfold qou_binding_MeV codata_binding_MeV; rw [sub_self, abs_zero]; norm_num
-
-theorem predicted_binding_MeV_val :
-    ∃ (predicted : ℝ), |predicted - codata_binding_MeV| ≤ 0.001 :=
-  ⟨qou_binding_MeV, qou_binding_bound⟩
-
-/-! ## Terminal resolution structure -/
-
-/-- **Mass prediction**: a QOU prediction compared with CODATA.
-    The `predicted` value comes from the topological mass formula;
-    the `codata` value is an independent experimental measurement. -/
--- Ref: CODATA 2018, [leitner2026] §11
-structure MassPrediction where
-  /-- Name of the particle/structure. -/
-  name : String
-  /-- QOU predicted mass (MeV), derived from q and Vol(K). -/
-  predicted : ℝ
-  /-- CODATA recommended mass (MeV), independent measurement. -/
-  codata : ℝ
-  /-- Tolerance (MeV). -/
-  tolerance : ℝ
-  /-- tolerance is non-negative. -/
-  tol_nonneg : 0 ≤ tolerance
-  /-- The prediction agrees with CODATA within tolerance. -/
-  agreement : |predicted - codata| ≤ tolerance
-
-/-- **Terminal resolution**: the full set of hadronic mass predictions
-    from the QOU at q ≈ 1.1097, showing they match CODATA. -/
--- Ref: CODATA 2018, [leitner2026] §11
-structure TerminalResolution where
-  /-- The substrate parameter used. -/
-  q : ℝ
-  /-- q ≈ 1.1097. -/
-  q_val : |q - 1.1097| < 0.001
-  /-- The quantum Planck constant ℏ_q = 1 - q⁻¹. -/
-  planck : ℝ
-  /-- ℏ_q is correctly derived from q. -/
-  planck_eq : planck = 1 - q⁻¹
-  /-- The mass predictions (derived from q via topological mass formula). -/
-  predictions : List MassPrediction
-  /-- All predictions agree with CODATA. -/
-  all_agree : ∀ p ∈ predictions, |p.predicted - p.codata| ≤ p.tolerance
-
-/-- The derivation chain is connected: q determines ℏ_q, and ℏ_q
-    determines the mass scale via m(K) = Vol(K) / ℏ_q². -/
--- Ref: [leitner2026] §11
-theorem mass_scale_from_q (q : ℝ) (hq : 1 < q) :
-    let hbar := 1 - q⁻¹
-    0 < hbar ∧ 0 < hbar ^ 2 := by
+/-- **The nucleon map is injective.** Two dressed-quark pairs giving the same
+`(m_p, m_n)` are equal. Hence the pair Skein formula reproduces any measured
+`(m_p, m_n)` with exactly one `(μ_u, μ_d)`. -/
+theorem injective (s u d u' d' : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
+    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0)
+    (hp : protonMass s u d = protonMass s u' d')
+    (hn : neutronMass s u d = neutronMass s u' d') :
+    u = u' ∧ d = d' := by
   constructor
-  · have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
-    linarith
-  · apply sq_pos_of_pos
-    have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
-    linarith
+  · rw [up_eq s u d hs hD h2 h3, up_eq s u' d' hs hD h2 h3, hp, hn]
+  · rw [down_eq s u d hs hD h2 h3, down_eq s u' d' hs hD h2 h3, hp, hn]
 
-/-- substrate_q > 1. -/
--- Ref: [leitner2026] §11
-theorem substrate_q_gt_one : 1 < substrate_q := by
-  unfold substrate_q; norm_num
+/-- **Statement of `prop:terminal-resolution`.** The splitting identity holds,
+and the nucleon map is injective. -/
+theorem terminal_resolution (s : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
+    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
+    (∀ u d : K, neutronMass s u d - protonMass s u d
+        = (s ^ 2 + (s ^ 2)⁻¹) * (d - u) / (s + s⁻¹)) ∧
+    (∀ u d u' d' : K, protonMass s u d = protonMass s u' d' →
+        neutronMass s u d = neutronMass s u' d' → u = u' ∧ d = d') :=
+  ⟨neutron_sub_proton s, fun u d u' d' hp hn =>
+    injective s u d u' d' hs hD h2 h3 hp hn⟩
 
-/-- The quantum Planck constant is positive at substrate_q. -/
-theorem hbarQ_pos : 0 < hbarQ := by
-  unfold hbarQ
-  have := (mass_scale_from_q substrate_q substrate_q_gt_one).1
-  exact this
-
-end QOU.Experimental
+end QOU.MassTheory.PairSkeinNucleon
