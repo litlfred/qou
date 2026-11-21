@@ -325,19 +325,19 @@ theorem grouplike_weight (q : ℝ) (hq : 0 < q) (i j : ℤ) :
 /-! ## The Gibbs reading on T³ sectors (the step named in §10)
 
 The dictionary is stated for Wedderburn blocks λ with weight y_λ. Under Schur–Weyl a block's
- factor  has a -eigenbasis with weights , so the block's own weight is
-already a sum over those states: . Each  is a Boltzmann weight at
- with energy  (). So the  sectors are the microstates the block
+`U_q(sl₂)` factor `V_λ` has a `K`-eigenbasis with weights `q^μ`, so the block's own weight is
+already a sum over those states: `Tr(K|V_λ) = Σ_μ q^μ`. Each `q^μ` is a Boltzmann weight at
+`β = ln q` with energy `−μ` (`state_weight`). So the `T³` sectors are the microstates the block
 weight is built from, not a new reading. -/
 
-/-- **A -weight state is a Boltzmann state at :** . -/
+/-- **A `K`-weight state is a Boltzmann state at `β = ln q`:** `e^{−(ln q)·(−μ)} = q^μ`. -/
 theorem state_weight (q : ℝ) (hq : 0 < q) (μ : ℤ) :
     Real.exp (-Real.log q * (-(μ : ℝ))) = q ^ μ := by
   rw [show -Real.log q * (-(μ : ℝ)) = (μ : ℝ) * Real.log q by ring,
     ← Real.log_zpow, Real.exp_log (zpow_pos hq μ)]
 
-/-- **One strand:**  is the partition function of the two weight states
- at . -/
+/-- **One strand:** `[2]_q = q + q⁻¹` is the partition function of the two weight states
+`μ = ±1` at `β = ln q`. -/
 theorem qd2_is_partition (q : ℝ) (hq : 0 < q) :
     Real.exp (-Real.log q * (-(1 : ℝ))) + Real.exp (-Real.log q * (-(-1 : ℝ))) = q + q⁻¹ := by
   have h1 := state_weight q hq 1
