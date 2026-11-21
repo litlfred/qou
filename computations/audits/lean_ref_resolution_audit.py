@@ -253,7 +253,14 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
         if rg.returncode == 0 and rg.stdout.strip():
             grep_hit = True
             hit_paths = rg.stdout.strip().splitlines()
-            row["grep_hits"] = hit_paths[:5]
+            # Repo-relative, so the witness does not record the
+            # checkout location (the 2026-06-02 run carried
+            # /home/runner/work/qou/qou/... in every row).
+            row["grep_hits"] = [
+                str(Path(h).resolve().relative_to(REPO_ROOT))
+                if Path(h).resolve().is_relative_to(REPO_ROOT) else h
+                for h in hit_paths[:5]
+            ]
             # If grep finds the decl under the package's Lake root
             # (and the file is part of the Lake build), the URI is
             # resolvable — the lean.ref's purpose is to identify the
@@ -358,17 +365,19 @@ def main() -> int:
         .add_data("rows", rows)
         .add_assertion(
             name="no_unregistered_package_prefixes",
-            computed=1.0 if "unregistered_package" not in buckets else 0.0,
-            expected=1.0, tolerance=0.0,
+            # Strings keep these exact values out of float64 (the
+            # drained convention, qou-t0rf; see WitnessBuilder.add_assertion).
+            computed="1" if "unregistered_package" not in buckets else "0",
+            expected="1", tolerance="0",
             unit="boolean",
             source="Every lean.ref prefix must appear in LEAN_PACKAGES "
                    "(folio-assistant/cat-harness/schemas/lean-packages.ts).",
         )
         .add_assertion(
             name="ok_count_matches_total_minus_failures",
-            computed=float(len(buckets.get("ok", []))),
-            expected=float(len(rows)),
-            tolerance=0.0,
+            computed=str(len(buckets.get("ok", []))),
+            expected=str(len(rows)),
+            tolerance="0",
             unit="count (gates only at full closure)",
             source="Closure gate: when this passes, every content-block "
                    "lean.ref resolves to an actual declaration.  Currently "
