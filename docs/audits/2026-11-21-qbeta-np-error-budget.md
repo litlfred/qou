@@ -328,3 +328,35 @@ one-sided trace, **no map on record gives the lepton factor a positive rest ener
 placement would need the final-state trace to stop being a plain product, for example through
 the γγ construction of the ν̄ the owner asked for. That is the next question, not a choice of
 map.
+
+## 14. A non-product final-state trace (owner: "not a product because of the flavor/color terms")
+
+Let x = ε(p e⁻ ν̄) be free: the product ε_p·f plus the flavour/colour cross terms. Pre-registered
+as Addendum 5; probe `nonproduct_window_probe.py`; Lean `QOU/QBeta/NonProductFinalState.lean`
+(lean-direct exit 0, no `sorry`).
+
+**Proved, for every x.**
+- *Increasing maps are excluded however large the cross terms are* (`increasing_excluded`). A
+  positive lepton pair and a positive Q_β would need ε_p < x < ε_n, and ε_n = ε_p/q² < ε_p.
+- *Decreasing maps* (−log, ℏ/𝔇 = 1/x) work **exactly** when ε_n < x < ε_p (`decreasing_window`).
+- *The plain product is below that window* (`product_outside_window`).
+
+**Size of what the flavour/colour terms must supply (q₀).** The window is
+(0.33174, 0.40872), but the product is only 0.02774. So the cross terms must add between 0.304 and
+0.381, which is at least **11× the product term itself**. They would be the leading part of the
+final-state trace, not a correction to it.
+
+**What a decreasing map fixes, independent of x.** E(n) − E(p) = g(ε_n) − g(ε_p) uses the nucleons
+only:
+- −log: 2E₀·ln q = 0.88220 MeV. If the lepton pair is set to m_e, then x = 0.36218 (inside the
+  window) and Q_β = 0.37120 MeV.
+- 1/x: E₀(q² − 1)/ε_p = 2.40018 MeV. If the pair is set to m_e, then x = 0.38948 and
+  Q_β = 1.88918 MeV.
+
+The cross terms only decide how a fixed n − p difference splits between Q_β and the lepton pair.
+The difference itself is decided by the map, and the map is not derived. (Comparison, printed
+after the fact: CODATA m_n − m_p = 1.29333 MeV, Q_β = 0.78233 MeV.)
+
+**Next step, not done here.** The γγ construction of ν̄ (eigenphase thread) must compute x. It
+then has to answer: does x land in (ε_n, ε_p), and which decreasing map does the construction
+itself force?
