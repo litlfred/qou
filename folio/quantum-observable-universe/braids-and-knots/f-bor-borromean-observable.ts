@@ -30,7 +30,7 @@ import { definition } from "../../schema/builders";
  * over any base ring.
  *
  * Authoring history: factored out 2026-06-01 from the previously-
- * combined prop:proton-mass-substrate-identity block (see q-usage
+ * combined conj:proton-mass-substrate-identity block (see q-usage
  * audit, docs/audits/2026-06-01-q-usage-dispensation-plan.md, Policy
  * C/1 split).
  */

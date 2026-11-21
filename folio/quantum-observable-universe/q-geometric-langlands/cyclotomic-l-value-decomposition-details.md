@@ -53,8 +53,3 @@ dim 1 = $\mathrm{Cl}_2(2\pi/3)$ (Gieseking).
 
 - Theorem A: [General Jonquière Tate-rationality](#prop:jonquiere-cyclotomic-tate-rationality)
 - Theorem G: [Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even](#prop:cyclotomic-dimension-synthesis-all-depths)
-- Bloch–Suslin (depth-2 theorem):
-  [Depth-2 identification of $G^{(2)}(\mathcal{H}_q)$ with $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$](#prop:depth-2-identification-bloch-suslin)
-- Borel partial discharge: [Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution)
-- K-theory $\leftrightarrow$ depth filtration: [K-theory $\leftrightarrow$ depth filtration Rosetta](#rem:k-theory-period-rosetta)
-- Period ledger: [Transcendental-accounting ledger: every period in the paper, indexed by Goncharov depth](#rem:transcendental-accounting)

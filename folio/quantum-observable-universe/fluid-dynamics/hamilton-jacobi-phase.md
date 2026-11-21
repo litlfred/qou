@@ -51,4 +51,4 @@ $$
   \qquad n \in \mathbb{Z},
 $$
 
-enforcing the Bohr--Sommerfeld quantisation condition. The $q$-deformation upgrades the integer $n$ to the spin label $j$ under $\mathrm{SU}_q(2)$ representation theory: permitted phase windings measure $2\pi\hbar_q[j]_q$ rather than $2\pi\hbar_qn$. This grounds the Hamilton--Jacobi picture in the [discrete vortex spectrum](#prop:discrete-vortex-spectrum) and completes the correspondence between wave mechanics, fluid dynamics, and knot particles.
+enforcing the Bohr--Sommerfeld quantisation condition. The $q$-deformation upgrades the integer $n$ to the spin label $j$ under $\mathrm{SU}_q(2)$ representation theory: permitted phase windings measure $2\pi\hbar_q[j]_q$ rather than $2\pi\hbar_qn$.

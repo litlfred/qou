@@ -1,7 +1,7 @@
-**Theorem (binding closure, conditional on [Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$](#conj:binding-manybody-eq-jet-filtration)).**
+**Theorem (binding closure, conditional on the per-term identity (B)).**
 
 Suppose the per-isotope binding of the canonical braid $\mathcal{B}_K$ admits
-the two structural inputs of the many-body conjecture:
+the two structural inputs of the many-body conjecture ([Binding many-body series equals the jet-order filtration](#conj:binding-manybody-eq-jet-filtration)):
 
 1. **(C, proved)** the binding is the body-order series — the cluster
    filtration coincides with the jet-graded filtration

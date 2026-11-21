@@ -12,7 +12,7 @@ since $(q^{d+1} - q^{-d-1}) + (q^{d-1} - q^{1-d}) = (q + q^{-1})(q^d - q^{-d})$.
 
 *Single edge.* Adding a cell to the first row raises $a - b$ by one and the total by one, so $t\,[d]_q\, y_{(a+1,b)} = [d+1]_q\,[d]_q / t^{a+b} = [d+1]_q\, y_{(a,b)}$. The second row is the same with $[d-1]_q$.
 
-Three-row shapes carry weight $0$ under convention D (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`), so the recursion on two-row shapes is the whole recursion. The divisions are by $[2]_q$ and $[d]_q$, non-zero at generic $q$. Lean: `QOU.BraidsAndKnots.wedderburn_bratteli_recursion`, `jonesWeightD_edge_row`, `jonesWeightD_edge_col` (sorry-free over a generic field). At $n = 3$ the weights are $([4]_q/[2]_q^3,\; 1/[2]_q^2,\; 0)$ (`jonesWeightD_h3`). $\square$
+Three-row shapes carry weight $0$ under convention D, so the recursion on two-row shapes is the whole recursion. The divisions are by $[2]_q$ and $[d]_q$, non-zero at generic $q$. At $n = 3$ the weights are $([4]_q/[2]_q^3,\; 1/[2]_q^2,\; 0)$. $\square$
 
 The normalisation $\sum_{\lambda \vdash n} f^\lambda y_\lambda = 1$ follows from the restriction form and the branching rule $f^\lambda = \sum_{\mu \nearrow \lambda} f^\mu$; it is not formalised.
 

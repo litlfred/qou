@@ -4,7 +4,7 @@ Let $\beta_{{}^4\mathrm{He}}$ be the canonical atomic braid word for $^4\mathrm{
 $$
   c_\lambda(q_0) \;:=\; y_\lambda(q_0) \cdot \chi^\lambda_q\!\bigl(\beta_{{}^4\mathrm{He}}\bigr),
 $$
-where $y_\lambda$ is the Wenzl weight ([Canonical q-deformed Wedderburn-block weight $\tilde w_\lambda$ and named scalings (BW, LP for all $\lambda$)](#prop:wedderburn-weight-canonical)) and $\chi^\lambda_q$ is the Hoefsmit character. Explicitly:
+where $y_\lambda$ is the Wenzl weight and $\chi^\lambda_q$ is the Hoefsmit character. Explicitly:
 $$
   \sum_{\lambda \vdash 12} c_\lambda(q_0) \;=\; \mathrm{tr}_M\!\bigl(\beta_{{}^4\mathrm{He}}\bigr)(q_0).
 $$

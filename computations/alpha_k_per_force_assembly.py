@@ -10,7 +10,7 @@ Owner directive (alpha_{basis-knot} program): "per-force alpha_K assembly
 
 WHAT IS ESTABLISHED (corpus, not fitted).
   The per-force assembly mechanism is already carried by
-  prop:force-carrier-intertwining-correspondence (conditional on
+  conj:force-carrier-intertwining-correspondence (conditional on
   conj:e-hartree-categorical-derivation): a torus-knot force carrier T_{m,k}
   (first index m = strand count) acts on an n-strand molecular braid via
   B_m -> B_n and lands on the Wedderburn partition
@@ -59,7 +59,7 @@ WHAT REMAINS OPEN (honest scope; NOT fitted here).
   the step-2 writhe decorations, and tabulates the derived (partition, writhe)
   data per carrier.  Nothing fitted.
 
-Refs: prop:force-carrier-intertwining-correspondence (the assembly mechanism);
+Refs: conj:force-carrier-intertwining-correspondence (the assembly mechanism);
 prop:alpha-em-categorical-trace-ratio (the EM trace-ratio, no pi);
 prop:torus-knot-delta-q-writhe (step 2: delta_q = h[(m-1)k]_q);
 prop:force-carrier-bring-uniqueness (T_{2,9}, T_{3,5} are THE genus-4 carriers).
@@ -299,7 +299,7 @@ def main() -> None:
         "conj:e-hartree-categorical-derivation; NO carrier-pair-vs-coupling "
         "enumeration is done (anti-fishing).  Pre-archimedean decorations, no pi."
     )
-    w.set_content_block("prop:force-carrier-intertwining-correspondence")
+    w.set_content_block("conj:force-carrier-intertwining-correspondence")
     w.add_data("q0", str(q))
     # Which anchor this run actually used, and how it was obtained. Recorded
     # unconditionally so a later reader never has to infer the layer from a
@@ -338,7 +338,7 @@ def main() -> None:
     w.add_assertion(
         "carrier intertwining channels (3,1) and (2,1,1) are transpose partitions",
         computed=bool(transpose_ok), expected=True,
-        source="prop:force-carrier-intertwining-correspondence",
+        source="conj:force-carrier-intertwining-correspondence",
     )
     w.add_assertion(
         "1/alpha_EM assembled from derived decorations is within 0.2% of CODATA",

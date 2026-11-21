@@ -180,7 +180,7 @@ def main():
         "Phase 1c proved h²(tr_M) = 0; this shows F_Bor's h² = 19/2 comes "
         "entirely from [3]_q! (11/4) and q³ (9/8) via division."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     w.set_audit_only("docs/audits/2026-05-26-phase1d-f-bor-h-expansion.md")
 
     for label, coeffs in [("tr_M", tr_coeffs), ("qfact3", qf_coeffs),

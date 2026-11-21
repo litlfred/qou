@@ -35,6 +35,19 @@ same day: *"That was already decided. Why did it get changed back to the wrong f
   `V³ = (σ₀σ₁⁻¹)³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)`, `h = q − q⁻¹`
   (`borromeanV3A_eq_switched_photon_product` and its `B` twin, sorry-free).
 
+## 🟥 OWNER RULINGS LIVE IN THE REPO — NO PROJECT MEMORY (owner directive 2026-11-21) — STRICT
+
+Verbatim: *"No use of PROJECT MEMORY allowed. It all needs to be in repo."*
+Every owner ruling and working instruction is recorded in
+[`docs/coordination/owner-rulings.md`](docs/coordination/owner-rulings.md).
+Read it at session start. When the owner rules on something, add a dated row
+there (verbatim words where available) in the same session, and pass the
+ruling to every running subagent. Do not store rulings or preferences in
+chat-app / project memory. Current headline rulings: the photon form above;
+**the electron is σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure (trefoil σ₀³ ∈ B₂ kept as
+backup)**; the up quark is an unknot strand; Q_β from γγ pair production;
+two-term Lagrangian trace on the scoreboard and all β-decay routes.
+
 ## User accessibility
 
 The repo owner is physically disabled and types with difficulty.

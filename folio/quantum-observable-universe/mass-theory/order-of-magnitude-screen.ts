@@ -10,6 +10,7 @@ export default proposition({
   uses: [],
   tags: ["q-beta", "formalize-first", "direction-sanity", "screen", "no-fit"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): These are the mathematical facts under the screening rule [$\\mathfrak{Q}_\\beta$ order-of-magnitude gate](#rem:q-beta-direction-sanity-gate). The rule fixes $\\lambda=10$ and a target built from a measured value; neither is part of this statement." },
     {
       kind: "status",
       date: "2026-11-16",

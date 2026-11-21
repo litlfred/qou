@@ -20,7 +20,7 @@ representation matrices via Hoefsmit construction).  Adds:
 
 Reference content blocks:
   def:delta-q-decoration                            (the formal definition)
-  prop:force-carrier-intertwining-correspondence    (T_{p,q} → λ = (p, 1^{n-p}))
+  conj:force-carrier-intertwining-correspondence    (T_{p,q} → λ = (p, 1^{n-p}))
   prop:alpha-em-categorical-trace-ratio             (α_EM = h²/[q·δ_q·δ_q])
   rem:bound-state-frobenius-self-dual-channel       ((3,1) ↔ (2,1,1) transpose)
 """
@@ -178,7 +178,7 @@ def trM_via_wedderburn(word: Sequence[int], n: int, *, use_cache: bool = True) -
 def force_carrier_channel(p: int, n: int) -> Tuple[int, ...]:
     """Predicted Wedderburn channel for T_{p,*} acting on n-strand braid.
 
-    Per prop:force-carrier-intertwining-correspondence:
+    Per conj:force-carrier-intertwining-correspondence:
       T_{p,q} intertwines p of n strands → λ = (p, 1, 1, ..., 1).
     """
     if p > n:

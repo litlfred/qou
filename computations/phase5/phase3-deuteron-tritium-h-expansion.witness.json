@@ -42,7 +42,7 @@
     "reproduce": "python3 -u computations/phase5/phase3_deuteron_tritium_h_expansion.py"
   },
   "description": "Per-partition h-expansion for deuteron (H₆), tritium (H₉), and ³He (H₉). Tests whether the h²=0 cancellation proved at H₃ (proton) extends to heavier isotopes. Complete partition enumeration (not just trace-dominant).",
-  "contentBlock": "prop:proton-mass-substrate-identity",
+  "contentBlock": "conj:proton-mass-substrate-identity",
   "data": {
     "atom_deuteron": {
       "Z": 1,

@@ -11,8 +11,7 @@
 | CODATA 2022                               | $137.035999177(21)$                |
 | Residual                                  | $-468\;\mathrm{ppb}$               |
 
-All rows are evaluated at the **proton** pin $q_0$, the production default
-([`local-substrate-q`](#prop:local-substrate-q)), and compared against the
+All rows are evaluated at the **proton** pin $q_0$, the production default, and compared against the
 **CODATA-2022** adjustment.
 
 The $\alpha^{-1}_{\mathrm{CS}}$ row is the Chern--Simons tower summed to **all

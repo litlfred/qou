@@ -18,5 +18,5 @@ Four consequences of the definition fix how the word is used elsewhere:
 
 1. A single crossing $\sigma_i$ is not a photon. It is the $\sigma_i$-term of a photon's support.
 2. The form $\mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$ is the specialisation $\varphi_{01} = 0$, not a second definition.
-3. $L_- = \sigma_1\sigma_0$ and $e^- = \sigma_0\sigma_1\sigma_0$ are not in the normal-form support of one photon. They first appear in the product $\gamma(\varphi)\gamma(\psi)$ of two photons ([$\gamma\gamma$ generation](#prop:gamma-gamma-generates-particles)).
+3. $L_- = \sigma_1\sigma_0$ and $e^- = \sigma_0\sigma_1\sigma_0$ are not in the normal-form support of one photon.
 4. The Borromean braid is a product of two photons that carry only their vertex term: $(\sigma_0\sigma_1^{-1})^3 = \gamma(0,0,qh)\,\gamma(0,0,-q^{-1}h)$ ([two-photon factorisation](#prop:borromean-two-photon-factorisation)).

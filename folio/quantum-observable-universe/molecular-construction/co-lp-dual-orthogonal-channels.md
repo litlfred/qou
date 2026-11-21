@@ -20,7 +20,7 @@ $$
 
 with each channel binding $b_i > 0$ and $V_{CO}$ the shared valence budget. Its active set (the occupied orthogonal channels) has cardinality equal to the bond order. This is the molecular instance of the bond order $=$ LP active-set cardinality identity.
 
-For $CO$, the covalent budget is fixed by the octet valence of carbon ([carbon valence](#rem:carbon-valence)) and oxygen, derived ab initio below. An oxygen lone pair donated to carbon enters separately as a dative channel, not as a covalent LP term.
+For $CO$, the covalent budget is fixed by the octet valence of carbon and oxygen, derived ab initio below. An oxygen lone pair donated to carbon enters separately as a dative channel, not as a covalent LP term.
 
 The orthogonal-channel LP $\max_x \sum_i b_i x_i$ subject to $\sum_i x_i \le \min(N_{\dim}, V)$ is computed for the diatomic series (witness `co-bond-order-active-set`), with the valence budget $V$ derived ab initio from the octet rule ($V_A = 10 - Z_A$ for second-row atoms: $\mathrm{C}=4$, $\mathrm{N}=3$, $\mathrm{O}=2$). The LP returns active-set cardinalities $(\mathrm{O_2}, \mathrm{N_2}, \mathrm{CO}) = (2, 3, 2)$. For $\mathrm{O_2}$ and $\mathrm{N_2}$ this equals the observed bond order. For $\mathrm{CO}$ the covalent active-set is $2$. The observed triple bond includes one dative bond (an oxygen lone pair donated to carbon). This makes $\mathrm{CO}$ isoelectronic with $\mathrm{N_2}$. The covalent count yields $2$, and the dative channel is a named addition. The ceiling is $N_{\dim} = 3$: physical space $\mathbb{R}^3$ admits at most three mutually-orthogonal directions (one axial $\sigma$, two transverse $\pi$). No $p$-block bond exceeds order three. The active set is capped by the spatial dimension.
 

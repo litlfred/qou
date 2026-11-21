@@ -10,6 +10,7 @@ export default proposition({
   uses: [],
   tags: ["regime", "combinatorics", "pair-graph", "max-contact", "no-fit"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): It shows that the boundaries $2\\mid3$ and $4\\mid5$ used in [Mass formula regime switch](#conj:mass-formula-regime-switching) are determined by $A$ alone. It does not say which evaluation belongs to which regime; that assignment remains a selection against the measured target. The criterion was identified after the selected cut-offs were known, and is recorded as such." },
     {
       kind: "status",
       date: "2026-11-16",

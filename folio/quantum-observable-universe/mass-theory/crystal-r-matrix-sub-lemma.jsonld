@@ -13,9 +13,8 @@
   ],
   "label": "prop:crystal-r-matrix-sub-lemma",
   "kind": "proposition",
-  "title": "Crystal R-matrix Sub-lemma 2.1 (operator-valued)",
+  "title": "Crystal R-matrix Sub-lemma 2.1: pole order of the seminormal diagonal entry",
   "uses": [
-    "papers/quantum-observable-universe/blocks/conj-crystal-graph-realization",
     "papers/quantum-observable-universe/blocks/prop-alpha-shift-torus-knot"
   ],
   "cites": [
@@ -31,11 +30,9 @@
     "operator-valued",
     "pole-order",
     "axial-distance",
-    "hecke-branching",
-    "conditional-class",
-    "section-3b-cond"
+    "hecke-branching"
   ],
-  "leanRef": "qou:QOU.BraidKnot.CrystalRMatrixSubLemma",
+  "leanRef": "qou:QOU.BraidKnot.CrystalRMatrix.seminormalDiag_of_le_neg_one",
   "text": "crystal-r-matrix-sub-lemma.md",
   "leanSource": "crystal-r-matrix-sub-lemma.lean",
   "provenance": "authored"

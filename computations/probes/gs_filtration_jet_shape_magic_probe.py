@@ -5,7 +5,7 @@ This closes the gap the q-degree probe left. `symbolic_nf_q_degree_magic_probe`
 measured the **q-degree** of the six normal-form coefficients and found no
 magic signal (A = 2..20, merged as 09af8355f9). But the q-degree is NOT the
 Groebner-Shirshov filtration. The corpus's grading -- the one
-`prop:jet-prefix-gb-filtration` and `bond-order-eq-jet-degree-proof` are about
+`conj:jet-prefix-gb-filtration` and `bond-order-eq-jet-degree-proof` are about
 -- indexes by the **Coxeter length of the normal-form word**, not by degree in
 q. That grading had not been measured.
 

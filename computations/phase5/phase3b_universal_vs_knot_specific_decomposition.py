@@ -258,7 +258,7 @@ def main():
         "mechanism is KNOT-SPECIFIC: it holds only for braids that map to "
         "the identity permutation."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
 
     w.add_data("universal_y_h2_identity", {
         "statement": "Σ_λ (h² of y_λ) · d_λ = 0",

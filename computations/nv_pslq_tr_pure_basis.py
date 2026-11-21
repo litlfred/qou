@@ -207,7 +207,7 @@ def main() -> int:
         "reference_blocks": [
             "conj:hoefsmit-ew-cell-content",
             "conj:weak-spectral-completeness",
-            "prop:weak-symmetric-normalization",
+            "conj:weak-symmetric-normalization",
         ],
         "audit": "docs/audits/2026-05-05-path-alpha-bring-refinement.md",
         "ratio_target": mpmath.nstr(ratio, 25),

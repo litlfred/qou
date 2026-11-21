@@ -58,6 +58,8 @@ export default definition({
     "projection",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The orthogonal projection onto this two-row Wedderburn subalgebra — the two-row projection $\\pi_{\\mathrm{2-row}}$ — and the induced splitting of the canonical Markov trace are given in [Two-row projection $\\pi_{\\mathrm{2-row}}$ onto the two-row Wedderburn subalgebra](#def:two-row-projection)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This is stated precisely in [Two-row stratum carries $\\ge 80\\%$ of $\\mathrm{tr}_M(\\beta_{^4\\mathrm{He}})$ at $q_0$](#prop:he4-two-row-dominance)." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): including the magic-shell coupling of `conj:magic-shell-stabilization`" },
   ],
 });

@@ -66,8 +66,7 @@ $U_q(\mathfrak{sl}_3)$ is not constructed.
 
 **Conditional on $N = 3$.**
 This decomposition requires the flavor fundamental to be
-three-dimensional ($N = 3$).  As noted in
-[the Schur--Weyl proposition](#prop:schur-weyl-eightfold), the $N = 3$ question is
+three-dimensional ($N = 3$).  The $N = 3$ question is
 the chapter's central open problem.  The tensor decomposition itself
 is a theorem of $\mathrm{SU}(3)$ representation theory; its applicability
 to QOU depends on resolving how the three-dimensional flavor space

@@ -58,7 +58,7 @@
     "reproduce": "python3 -u computations/phase5/phase3c_a5_a7_knot_volume_targets.py"
   },
   "description": "Target knot volumes for A=5,6,7 isotopes. A=5 is unbound (no stable nucleus). A=6,7 can be modeled as α+fragment clusters: ⁶Li=⁴He+D, ⁷Li=⁴He+T, ⁷Be=⁴He+³He. Separation energies computed from AME 2020.",
-  "contentBlock": "prop:proton-mass-substrate-identity",
+  "contentBlock": "conj:proton-mass-substrate-identity",
   "data": {
     "alpha_cluster_separations_MeV": {
       "6Li_alpha_d": "1.4738214",

@@ -14,7 +14,7 @@ export default theorem({
     ref: "qou:QOU.BraidKnot.frobenius_codim_universal",
     validation: "not_checked",
   },
-  uses: ["prop:hook-weight-derivation"],
+  uses: ["conj:hook-weight-derivation"],
   cites: ["kassel1995"],
   tags: [
     "frobenius",

@@ -220,7 +220,7 @@ def main():
         "q-deformed analogues: 2 → [2]_q, 6 → [3]_q!. Tests multiple "
         "q-deformation hypotheses against CODATA."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     best = min(candidates, key=lambda c: abs(float((c[1]-m_p_codata)/m_p_codata)))
     w.add_data("best_q_deformed_formula", {
         "name": best[0],

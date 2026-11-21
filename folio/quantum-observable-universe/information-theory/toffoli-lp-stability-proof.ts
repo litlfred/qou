@@ -10,5 +10,6 @@ export default proof({
       kind: "refined-framing",
       body: "This proof used to close with \"all amplitudes of the correct sign\", and located the sign reversal at q_Φ ≈ 0.466 with the claim that the gate fails CCNOT semantics on (q_Φ, 1). Both were withdrawn along with Φ.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The consequences previously drawn here — that the $q$-GoL ([q-Game of Life](#prop:q-game-of-life)) is thereby well-defined and information-preserving, and that a substrate with $q < q_\\star$ could support no universal reversible computation — both rest on the withdrawn threshold $q_\\star$ and on the uniform-positivity step, so neither is carried by this proof as it now stands. They are neither asserted nor refuted here." },
   ],
 });

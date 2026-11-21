@@ -70,7 +70,21 @@ structure CQuantumObservableUniverse extends CRManifoldData where
 
 /-- **Instanton connection** on a principal bundle `P` over a CR manifold.
 
-    LaTeX: `\label{def:instanton}` -/
+    LaTeX: `\label{def:instanton}`
+
+    **Vacuity status (bean `qou-dx7g`, 2026-11-20) — this structure does NOT
+    yet encode `def:instanton`.**  `curvature_H` is a real-valued proxy for
+    `‖F_A|_H‖`, `hodgeStar` is an arbitrary involution supplied with the
+    connection, and `yang_mills_minimises` asserts only `YM(A) ≥ 0`.  So
+    `curvature_H := 0`, `hodgeStar := id`, `yangMillsEnergy := 0` is an
+    inhabitant, and neither self-duality nor minimisation is constrained.
+    Repairing it needs (i) curvature as an `Ad(P)`-valued 2-form on `H`,
+    (ii) the Hodge star of the Webster metric `g_θ` on `Λ²H` (fixed by `θ`
+    and `J`, not by the instance), and (iii) `YM` as the integral
+    `∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ` minimised over the gauge orbit — none of which
+    the corpus or Mathlib defines on a CR manifold.  The fields are kept
+    unchanged rather than constrained by stand-ins, because a constraint on a
+    real-valued proxy would not be a constraint on the curvature. -/
 structure InstantonConnection (cr : CRManifoldData) where
   /-- Abstract connection data (gauge potential). -/
   connectionData : cr.M → ℝ
@@ -82,7 +96,8 @@ structure InstantonConnection (cr : CRManifoldData) where
   hodgeStar : cr.n = 2 → HodgeInvolution (cr.M → ℝ)
   /-- The Yang–Mills energy functional. -/
   yangMillsEnergy : ℝ
-  /-- Yang–Mills minimisation: energy is non-negative. -/
+  /-- Non-negativity of the Yang–Mills energy only; minimisation is not
+      encoded (GAP, bean `qou-dx7g`). -/
   yang_mills_minimises : yangMillsEnergy ≥ 0
   /-- **Self-duality**: when `dim_ℝ H = 4`, the curvature is self-dual. -/
   self_dual : ∀ (hn : cr.n = 2), (hodgeStar hn).IsSelfDual curvature_H

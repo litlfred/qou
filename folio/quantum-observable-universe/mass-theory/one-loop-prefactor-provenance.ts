@@ -40,7 +40,9 @@ export default proposition({
     ref: "qou:QOU.OneLoopPrefactorInvariance.k_const_iff_exponent_neg_half",
     validation: "validated",
   },
-  uses: ["conj:b1-hyperbolic-rows-theorem"],
+  uses: [
+    // conj:b1-hyperbolic-rows-theorem removed (qou-tm3c): the .md is about the DGLZ / van der Veen saddle point and never cites the depth correspondence.
+  ],
   cites: [
     "dimofte-gukov-lenells-zagier-2009",
     "gukov-murakami-2008",

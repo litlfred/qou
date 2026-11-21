@@ -64,6 +64,7 @@ export default conjecture({
         "into the prose now lives only in the referenced library file " +
         "`lean/QOU/BraidsKnots/LinearJSJVolume.lean`.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ; it is the same additivity principle as the per-tetrahedron decomposition of [Thurston volume additivity](#prop:thurston-volume-additivity)" },
   ],
   tags: [
     "jsj-decomposition",

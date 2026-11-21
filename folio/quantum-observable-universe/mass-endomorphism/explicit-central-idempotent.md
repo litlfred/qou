@@ -1,14 +1,14 @@
 **Proposition.** The idempotency below is proved unconditionally, for every $n$, at generic $q$ ([The Murphy–Lagrange elements $e_\lambda$ are the central primitive idempotents of $H_n(q)$](#thm:explicit-central-idempotent-cross-checks)).
 
-*Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ at generic $q$ ($q \neq 0$, not a root of unity). The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ ([Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block](#prop:jucys-murphy-central-elements-qou)) commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, one has $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
+*Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ at generic $q$ ($q \neq 0$, not a root of unity). The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, one has $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
 
 $$
   c_T(k; q) \;=\; q^{\,2(j(k) - i(k))}
 $$
 
-*is the $q$-content of the box containing $k$ at row $i(k)$ and column $j(k)$ ([Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$](#prop:hoefsmit-seminormal-form)).*
+*is the $q$-content of the box containing $k$ at row $i(k)$ and column $j(k)$.*
 
-*The central primitive idempotent $e_\lambda \in Z(H_n(q))$ projecting onto the $\lambda$-Wedderburn block ([Canonical q-deformed Wedderburn-block weight $\tilde w_\lambda$ and named scalings (BW, LP for all $\lambda$)](#prop:wedderburn-weight-canonical)) carries the explicit formula:*
+*The central primitive idempotent $e_\lambda \in Z(H_n(q))$ projecting onto the $\lambda$-Wedderburn block carries the explicit formula:*
 
 $$
   \boxed{\;
@@ -55,8 +55,6 @@ $$
   \;=\; 2\,\mathrm{Cl}_2(\pi/3)
   \;=\; \mathrm{Vol}(S^3 \setminus 4_1).
 $$
-
-This is numerically verified in [Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness).
 
 ## Provenance
 

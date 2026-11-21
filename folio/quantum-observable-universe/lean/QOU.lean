@@ -7,6 +7,9 @@ import QOU.BringsSurface.CoveringDegreeRamification
 import QOU.RiemannSurface.GermStabiliserCyclic
 import QOU.RiemannSurface.CombinatorialMapQuotient
 import QOU.RiemannSurface.CombinatorialMapEuler
+import QOU.RiemannSurface.CycleCountSwap
+import QOU.RiemannSurface.MapGenusNonneg
+import QOU.BringsSurface.GenusFourFromEquivariantMap
 import QOU.BringsSurface.GenusFourFromGermStabilisers
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
@@ -477,6 +480,9 @@ import QOU.QuantumObservableUniverse
 import QOU.QuantumObservableUniverses.DilogPentagonAssociator
 import QOU.QuantumObservableUniverses.NoClosedCausalChains
 import QOU.QuantumObservableUniverses.HiggsVacuumResidual
+import QOU.QuantumObservableUniverses.NSymHostStructure
+import QOU.QuantumObservableUniverses.NSymSlotDerivation
+import QOU.QuantumObservableUniverses.NSymTraceAlgebra
 import QOU.QuantumObservableUniverses.QAnalysis
 import QOU.QuantumObservableUniverses.QBetaEnergyDictionary
 import QOU.QuantumObservableUniverses.QExpEntire
@@ -486,6 +492,8 @@ import QOU.SchurWeyl.BurnsideSpan
 import QOU.SchurWeyl.PiBlockSeparation
 import QOU.SchurWeyl.HeckeProductSurjective
 import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.SchurWeyl.OcneanuMarkovTraceEveryZ
+import QOU.SchurWeyl.OcneanuTraceFaithful
 import QOU.SchurWeyl.SpinSectorMeasure
 import QOU.SchurWeyl.HeckeSemisimpleGeneral
 import QOU.SchurWeyl.HeckeSemisimpleReal
@@ -623,6 +631,7 @@ import QOU.Archimedean.LobMonotonicity
 import QOU.Archimedean.BlochWignerNonneg
 import QOU.Archimedean.BlochWignerPositive
 import QOU.Archimedean.HyperbolicVolumeMeasure
+import QOU.Archimedean.HyperbolicVolumeInversion
 import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
@@ -658,6 +667,8 @@ import QOU.BraidKnot
 -- that is pre-existing and now visible in the package build rather than
 -- hidden outside it.
 import QOU.BraidKnot.MesonFusionIndexSelection
+import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.LongestWordNotTwoPhoton
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.GBRewriteDifferential
@@ -1139,11 +1150,13 @@ import QOU.Archimedean.TauFunctorTargetSpec
 import QOU.Archimedean.DeckRealityEquivariance
 import QOU.Archimedean.BorelProperTimeMoment
 import QOU.MathlibExt.FrechetShohat
+import QOU.MathlibExt.StieltjesCompactDeterminacy
 import QOU.Archimedean.BalancedKernelConfluence
 import QOU.Archimedean.BalancedMomentConfluence
 import QOU.Archimedean.BalancedKernelTightness
 import QOU.Archimedean.BalancedCarrierJacobi
 import QOU.Archimedean.SWJacksonMomentFactorization
+import QOU.Archimedean.SWGaussianLogNormalMoments
 import QOU.Archimedean.SWCoreJacobi
 import QOU.Archimedean.TropicalClassTransport
 import QOU.Archimedean.AwZeroLocalization
@@ -1183,6 +1196,13 @@ import QOU.Mathlib.ArgumentPrincipleAnnulus
 import QOU.Mathlib.EllipticAnnulusWinding
 import QOU.Mathlib.LiouvilleThird
 import QOU.Mathlib.HadamardFactorization
+import QOU.Mathlib.JensenZeroCounting
+import QOU.Mathlib.ExponentOfConvergence
+import QOU.Mathlib.HadamardZeroFree
+import QOU.Mathlib.CanonicalProductGrowth
+import QOU.Mathlib.HadamardQuotient
+import QOU.Mathlib.HadamardMinimumModulus
+import QOU.Mathlib.HadamardAssembly
 -- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
 -- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the
 -- Mathlib gap); #zeros−#poles=Σ ord counting brick + 2πi≠0 proved sorry-free.
@@ -1601,6 +1621,10 @@ import QOU.Mathlib.RothInductionHypothesis
 import QOU.Mathlib.KazhdanLusztigBasis
 import QOU.Mathlib.ConcentratedColumnCollapse
 import QOU.Mathlib.StandardYoungCountInstance
+import QOU.Mathlib.LieValuedForms
+import QOU.Mathlib.ManifoldForms
+import QOU.Mathlib.ContactForms
+import QOU.Mathlib.SDPStrongDuality
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
 -- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar
@@ -1774,8 +1798,21 @@ import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
 import QOU.Eightfold.USpinColemanGlashowLambdaSigma
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
+import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
+import QOU.StandardModel.ElectroweakVevGaps
 import QOU.Archimedean.BringSchwingerNormalizationDerivation
 import QOU.QBeta.CoshHolonomyAndGPMTBaseBridge
 import QOU.ShellCondensation.SelectorPrune
 import QOU.ShellCondensation.BringLatticeRanks
 import QOU.ShellCondensation.CoefficientPurity
+import QOU.ShellCondensation.GammaGammaAtom
+import QOU.Machinery.HeckeBraidedCategoryScaffoldInstances
+import QOU.Machinery.HeckeTowerBasicConstructionInstances
+import QOU.Machinery.KashiwaraCrystalBasicInstances
+import QOU.Machinery.MarkovTraceOnHeckeInstances
+import QOU.Machinery.SpectralSequenceBasicInstances
+import QOU.Machinery.StrongAJFigureEightInstances
+import QOU.MathlibExt.RSZIsoformalInterfaceInstances
+import QOU.MathlibExt.WenzlSchurElementInstances
+import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
+import QOU.QBeta.RationalStateIntegralCuspTorsionBringHomologyGoldenDilogCostinTransseriesBridge

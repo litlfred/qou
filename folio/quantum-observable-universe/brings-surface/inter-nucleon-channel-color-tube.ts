@@ -18,6 +18,7 @@ export default conjecture({
         "`docs/canonical-derivation-cheat-sheet.md`. The supplier class " +
         "`conj:s5-so3-fiber-action` is PR #1081 Task 3.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Existence of the atom-knot for any (Z, N)](#prop:atom-knot-exists))" },
   ],
   label: "conj:inter-nucleon-channel-color-tube",
   title: "Inter-nucleon Hecke channel assignment from Bring color-tube weighting",

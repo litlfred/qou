@@ -50,5 +50,6 @@ export default proposition({
       date: "2026-06-24",
       body: "The archived four-anchor cross-check (_deprecated/probes/probe_tau_M_four_anchors.py) over-stated 'four independent constructions': only Kashiwara genuinely computes the $N=1$ coupling $b$ (Habiro asserts it by the residue-sum equivalence). Its JM '$c_1 = 0$' (diagonal $J_k$; the $O(\\hbar_q^2)$ quantity $p_2/2 = h^2$ mis-indexed as a higher rung) and Macdonald '$c_1 = 165.6$' (un-normalised $O(1)$ zonal norm $\\to 20/9$, not $1 + O(\\hbar_q^2)$) are compute artefacts, not refutations. The anchors are complementary structural pictures of one ladder.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): from [Hoefsmit seminormal matrix for $V_{(2,1)}$ + Markov-symmetrized cos character](#prop:hoefsmit-V21-cos-symmetrization)" },
   ],
 });

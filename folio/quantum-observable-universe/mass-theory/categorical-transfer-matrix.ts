@@ -10,11 +10,11 @@ export default definition({
     "interaction-filtration",
   ],
   uses: [
+    // conj:crystal-graph-realization removed (qou-tm3c): the definition does not mention crystals.
     "rem:knot-factorization",
     "rem:jet-planck-steps",
     "rem:observation-braid",
     "def:operational-entropy",
-    "conj:crystal-graph-realization",
   ],
   cites: [
     "brundankleshchev2009",

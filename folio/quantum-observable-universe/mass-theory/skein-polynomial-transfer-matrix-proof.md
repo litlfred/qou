@@ -116,8 +116,7 @@ All evaluated in milliseconds.
 
 **Consequence for beta decay.**
 
-The $Q$-value
-([transition energy](#def:Q-value-transition)) is the ratio
+The $Q$-value is the ratio
 of two Skein polynomials evaluated at the substrate parameter $q$:
 
 $$
@@ -132,17 +131,14 @@ $$
 
 (in action units).  Since the parent and daughter polynomials
 differ only at generators $\sigma_0, \ldots, \sigma_p$ (the
-1-jet support of the beta decay
-([jet expansion](#prop:generator-volume-decomposition))), the
+1-jet support of the beta decay), the
 difference is a polynomial of lower degree — concentrated in
 the converting nucleon's generators.
 
 **Consequence for double beta decay.**
 
-The 2-jet cross-term $\Delta_{p_1 p_2}$
-([generator volume decomposition](#prop:generator-volume-decomposition))
-corresponds to the **interference** between two Skein
-polynomial modifications.  In the polynomial language:
+The interference between two Skein polynomial modifications
+reads, in the polynomial language:
 
 $$
   P_{\mathcal{N}}^{(2\beta)}(q)

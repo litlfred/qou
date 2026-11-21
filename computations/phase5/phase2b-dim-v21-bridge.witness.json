@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.18",
-  "computedAt": "2026-11-20T15:38:16.072071+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:38:04.224589+00:00",
+  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
   "assertions": [
     {
       "name": "factored_form_exact",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "phase2b-dim-v21-bridge",
   "scriptFile": "phase2b_dim_v21_bridge_derivation.py",
-  "scriptHash": "5656f110d985",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "e5f96a7c4c50",
+  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.18",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "cvxpy": "absent",
-    "pyhecke_native_build": "930c010e26215e56"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -42,7 +42,7 @@
     "reproduce": "python3 -u computations/phase5/phase2b_dim_v21_bridge_derivation.py"
   },
   "description": "Formal derivation of why dim V_(2,1) = 2 enters the proton mass formula linearly. The Borromean mass formula factors through the bar-pair Z/2 symmetry y_(3) ↔ y_(1,1,1), with dim V_(2,1) = |{bar-pair}| as the fold factor. F_Bor decomposes as 1 + q⁻³·χ^(2,1) + q⁻⁶ via Wedderburn, and the integer 2 divides both 2·m_μ and 12·m_e = 2·6·m_e.",
-  "contentBlock": "prop:proton-mass-substrate-identity",
+  "contentBlock": "conj:proton-mass-substrate-identity",
   "data": {
     "wedderburn_decomposition": {
       "F_Bor": "1 + q⁻³·χ^(2,1)(β_Bor) + q⁻⁶",

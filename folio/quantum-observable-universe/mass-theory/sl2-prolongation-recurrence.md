@@ -58,10 +58,8 @@ with $\tau \approx 2.6423863$, iterating from the true $a_D^{(2)}, a_D^{(3)}$:
 | $8$ | $55.35461055$ | $115.8262242$ | $-52.21\%$ |
 
 The depth-$2$ form is therefore an **$n \le 4$ effective germ**, and the
-prolongation law carrying the true growth is the residue-sum object itself. This is
-the reading already recorded downstream in
-[The depth-2 prolongation recurrence has a conserved first integral](#prop:sl2-period-conserved-quantity), which
-uses this block: a factorial sequence has unbounded ratio $a_D^{(n+1)}/a_D^{(n)}$, so
+prolongation law carrying the true growth is the residue-sum object itself. A
+factorial sequence has unbounded ratio $a_D^{(n+1)}/a_D^{(n)}$, so
 it satisfies no depth-$2$ recurrence, and the exact prolongation kernel is of
 q-Bessel class.
 

@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.18",
-  "computedAt": "2026-11-20T15:38:14.471716+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:38:06.327601+00:00",
+  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
   "assertions": [
     {
       "name": "m_n_residual_within_5ppm",
-      "computed": "1.971837220267523940863768383271954789963576100338150322405369999265592",
+      "computed": "1.97183722026752394086376838327195478996357614458188278293109151375739",
       "expected": 0.0,
       "passed": true,
       "tolerance": 5.0,
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 19,
   "computation": "phase1e-neutron-cross-isotope-h-expansion",
   "scriptFile": "phase1e_neutron_and_cross_isotope_h_expansion.py",
-  "scriptHash": "63c9dd4b4b07",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "78c416db9efc",
+  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.18",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "cvxpy": "absent",
-    "pyhecke_native_build": "930c010e26215e56"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -43,7 +43,7 @@
     "reproduce": "python3 -u computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py"
   },
   "description": "Extend Phase 1 h-expansion to neutron, Q_β, and cross-isotope map. Derives exact h-series for the flavor-split X = (q−1)²(1−q⁻⁴)/3 and the neutron ratio R = 1 + X/(1−X/2). Identifies that the m_n 2.0 ppm residual decomposes as 0.24 ppm (F_Bor) + 1.76 ppm (X), and Q_β's 2113 ppm is dominated by X.",
-  "contentBlock": "prop:proton-mass-substrate-identity",
+  "contentBlock": "conj:proton-mass-substrate-identity",
   "data": {
     "X_h_expansion": {
       "3": "1/6",

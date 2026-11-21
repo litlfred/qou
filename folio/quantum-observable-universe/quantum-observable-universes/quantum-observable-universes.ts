@@ -36,6 +36,7 @@ export default chapter({
         "quantum-observable-universe-exists-proof",
         "braiding-induced-ordering",
         "braiding-induced-ordering-proof",
+        "braiding-induced-ordering-interpretation",
         "crossing-application-chains",
         "no-goedel-closed-chains-remark",
         "frobenius-integration",
@@ -85,18 +86,6 @@ export default chapter({
             "spin-half-representation",
           ],
         }),
-        section({
-          title: "The $G$-action on the substrate",
-          label: "sec:emergence-g-action",
-          blocks: [
-            // Phase 7 orphan reconnection (2026-05-25):
-            "g-action-on-substrate",
-            "g-action-on-substrate-table1-data",
-            "g-action-on-substrate-table2-data",
-            "higgs-vacuum-residual-idempotent",
-            "higgs-vacuum-residual-graviton",
-          ],
-        }),
       ],
     }),
 
@@ -144,7 +133,6 @@ export default chapter({
         "categorical-reeb-unique",
         "categorical-reeb-unique-proof",
         "reeb-su2",
-        "categorical-reeb-brings",
         "projective-line-object",
         "projective-line-su2",
         "contact-affine-chart",
@@ -158,8 +146,6 @@ export default chapter({
         "fibre-functor-atlas",
         "fibre-functor-atlas-proof",
         "fibre-functor-atlas-affine-charts",
-        "substrate-radial-coordinate",
-        "substrate-radial-coordinate-proof",
         "fiber-adjoint-involution",
         "fai-projector-coadjoint-orbit",
         "fai-projector-coadjoint-orbit-proof",
@@ -207,6 +193,23 @@ export default chapter({
       ],
     }),
 
+    // ── G-action on the substrate ─────────────────────────────────────
+    // Moved here from sec:emergence (reading-order drain, qou-d4kh,
+    // 2026-11-20): the conjecture is stated in q-dimensions [n]_q, so it
+    // must follow sec:substrate-parameter, where q is introduced. The
+    // idempotent proposition precedes the conjecture that cites it.
+    section({
+      title: "The $G$-action on the substrate",
+      label: "sec:emergence-g-action",
+      blocks: [
+        "higgs-vacuum-residual-idempotent",
+        "g-action-on-substrate",
+        "g-action-on-substrate-table1-data",
+        "g-action-on-substrate-table2-data",
+        "higgs-vacuum-residual-graviton",
+      ],
+    }),
+
     // ── Heisenberg commutator ────────────────────────────────────────
     // Relocated from models-of-qous/sec:categorical-differential-bridge
     // per Phase 3 of chapter-restructure-2026-05-25. The Heisenberg
@@ -238,6 +241,10 @@ export default chapter({
         "substrate-preamble",
         "frobenius-hopf-substrate",
         "brings-coordinate-ring",
+        // Moved from sec:differential-structures-reeb (reading-order drain,
+        // qou-d4kh): the example lives on O_q(B) and uses
+        // def:brings-coordinate-ring, which now precedes it.
+        "categorical-reeb-brings",
         "substrate-parameter-planck",
         "categorical-reeb-derivation",
         "reeb-flow-bridge",
@@ -424,6 +431,11 @@ export default chapter({
         "q-connection",
         "q-reeb-vector-field",
         "q-reeb-flow",
+        // Moved from sec:differential-structures-fiber-adjoint (reading-order
+        // drain, qou-d4kh): the statement is in q and uses ex:q-reeb-flow
+        // and def:fermion-boson-decomposition, both read earlier now.
+        "substrate-radial-coordinate",
+        "substrate-radial-coordinate-proof",
         "q-torsion-leaf",
         "q-torsion-existence",
         "quantum-torsion-motivation",

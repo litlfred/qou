@@ -50,13 +50,30 @@ universe u
 
     We axiomatise rather than construct: the canonical model is
     `K = 𝐍𝐨` (Conway's surreal numbers), but mathlib does not
-    yet expose `𝐍𝐨` as a `LinearOrderedField`. -/
+    yet expose `𝐍𝐨` as a `LinearOrderedField`.
+
+    **🛑 What this class does and does not pin (audited 2026-11-20, bean
+    `qou-dx7g`, triage rank 3).**  The ordered-field, `ofReal` and `omegaSurreal`
+    fields give a non-archimedean ordered field extending `ℝ` — the only
+    structure most of the ~26 consumers use.  The six `birthday` fields give
+    **upper bounds only**, so they do **not** pin Conway's birthday:
+    `flatBirthday x := if x = 0 then 0 else 1` on `ℝ*` satisfies all six
+    (`HyperrealTransfer.surrealFieldHyperreal`).  Hence "surreal field" is not
+    enforced by this class, and nothing about `birthday` proved from it alone is
+    specific to Conway.  The missing content lives in two **opt-in mixins** in
+    `AppendixSurreals/BirthdayFaithful.lean`, each proved independent of the six
+    axioms by the flat model: `BirthdayFaithful` (`birthday n = n`) and
+    `ConwaySimplicity` (Conway's simplicity/tree axiom).  They are mixins rather
+    than fields because the flat `ℝ*` model is the carrier the birthday-free
+    limit-transfer results use (`HyperrealLimitTransfer` §3); a result that needs
+    real birthday content must take them as hypotheses. -/
 class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedRing K where
   /-- ℝ-algebra structure: every real number embeds in K. -/
   ofReal : ℝ →+* K
   /-- The embedding is order-preserving. -/
   ofReal_strictMono : StrictMono ofReal
-  /-- Conway's birthday function. -/
+  /-- A birthday function, constrained here only from above (see the class
+      docstring; Conway's birthday needs the mixins in `BirthdayFaithful`). -/
   birthday : K → Ordinal
   /-- The birthday of zero is zero. -/
   birthday_zero : birthday 0 = 0

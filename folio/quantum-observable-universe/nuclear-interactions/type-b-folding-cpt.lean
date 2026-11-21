@@ -1,5 +1,6 @@
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic.NormNum
+import QOU.Machinery.KashiwaraCrystalBasic
 
 /-!
 # QOU.BraidsAndKnots.TypeBFoldingCpt — the D22 conjecture carrier
@@ -55,7 +56,16 @@ that. These are **not** derivable from field 1 — `typeBFoldingCpt_refutable_on
 below exhibits a caller satisfying every other field and failing this one, so the leg
 carries independent content.
 
-`V`, `n`, `fold`, `foldAct`, `stable` and `anti` are all supplied by the **caller**, per
+**2a. `foldAct` is the lift of the fold (added 2026-11-20, bean `qou-dx7g`).** The
+crystal is now an explicit `QOU.Machinery.CrystalGraph` `G`, every label `i ∈ [1, n-1]` must
+act on it (`labels_act`), and `foldAct` must intertwine the Kashiwara operators with the
+label fold, `foldAct ∘ fᵢ = f_{ι(i)} ∘ foldAct` (and likewise for `eᵢ`). Before this,
+`foldAct` was an arbitrary involution of an arbitrary type, unrelated to `fold`, and
+`foldAct = id`, `stable = True`, `anti = False` satisfied every field for every `n` — so the
+matter/antimatter split asserted nothing about any crystal.
+`typeBFoldingCpt_refutable_on_crystal` shows that inhabitant now fails on `B(Λ₁)` of `𝔰𝔩₃`.
+
+`G`, `n`, `fold`, `foldAct`, `stable` and `anti` are all supplied by the **caller**, per
 the design rule recorded in `QOU/AlgebraicSubstrate/ConditionalClasses.lean` after its own
 retraction — an `∃` over a quantity the statement is itself free to choose cannot be
 false, whereas a `∀` over a quantity the caller supplies can. So the class is refutable,
@@ -132,8 +142,8 @@ that something does.
 
 ## Base ring
 
-Deliberately generic — there is no ring here at all. Labels are `ℕ`, the crystal vertex
-type `V` is an arbitrary type, and the chirality grading is `Bool`-valued. Nothing
+Deliberately generic — there is no ring here at all. Labels are `ℕ`, the crystal is an
+abstract `CrystalGraph` (vertex type arbitrary), and the chirality grading is `Bool`-valued. Nothing
 archimedean is needed to say what the fold does, so per §7c this stays over type variables
 rather than specialising to `ℝ`. Bar-involution and crystal combinatorics are algebraic.
 
@@ -193,11 +203,22 @@ module docstring for what must grow first in each case.
 -- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
 -- Ref: [lecouvey2007] Lecouvey, "Combinatorics of crystal graphs for the root systems of types A_n, B_n, C_n, D_n and G_2," MSJ Memoirs 17 (2007)
 -- Ref: [leitner2026] conj:type-b-folding-cpt -/
-class TypeBFoldingCpt {V : Type*} (n : ℕ) (fold : ℕ → ℕ)
-    (foldAct : V → V) (stable anti : V → Prop) : Prop where
+class TypeBFoldingCpt (G : QOU.Machinery.CrystalGraph) (n : ℕ) (fold : ℕ → ℕ)
+    (foldAct : G.V → G.V) (stable anti : G.V → Prop) : Prop where
   /-- The fold is the **diagram reversal** `αᵢ ↔ α_{n-i}` on the `A_{n-1}` simple-root
   labels — the block's own `ι`. -/
   fold_reverses : ∀ i, 1 ≤ i → i ≤ n - 1 → fold i = n - i
+  /-- **Every simple root acts on the crystal.**  Each label `i ∈ [1, n-1]` has at least
+  one `fᵢ`-arrow, so the crystal is a genuine rank-`(n-1)` crystal and not the trivial one
+  (on which every operator is `none` and any vertex map would intertwine). -/
+  labels_act : ∀ i, 1 ≤ i → i ≤ n - 1 → ∃ v w, G.f i v = some w
+  /-- **`foldAct` is the lift of the label fold to the crystal**: it intertwines the
+  lowering operators, `foldAct ∘ fᵢ = f_{ι(i)} ∘ foldAct`.  (Added 2026-11-20, bean
+  `qou-dx7g`: before this field `foldAct` was an arbitrary involution unrelated to `fold`,
+  so `foldAct = id` with `stable = True`, `anti = False` inhabited the class.) -/
+  foldAct_f : ∀ i, 1 ≤ i → i ≤ n - 1 → ∀ v, (G.f i v).map foldAct = G.f (fold i) (foldAct v)
+  /-- Same for the raising operators. -/
+  foldAct_e : ∀ i, 1 ≤ i → i ≤ n - 1 → ∀ v, (G.e i v).map foldAct = G.e (fold i) (foldAct v)
   /-- The fold **induces a `ℤ/2` on the crystal**. This is a genuine assumption: that the
   label-level reversal lifts to an involution of crystal vertices at all is part of what
   "the folded crystal is a symmetric crystal" asserts. -/
@@ -213,8 +234,8 @@ Each is derived from the fields above; none is a restatement of one. -/
 
 /-- **The label fold is an involution** — derived from `fold_reverses` plus the closure of
 the label range, not assumed. -/
-theorem typeBFold_label_involutive {V : Type*} {n : ℕ} {fold : ℕ → ℕ} {foldAct : V → V}
-    {stable anti : V → Prop} [h : TypeBFoldingCpt n fold foldAct stable anti]
+theorem typeBFold_label_involutive {G : QOU.Machinery.CrystalGraph} {n : ℕ} {fold : ℕ → ℕ} {foldAct : G.V → G.V}
+    {stable anti : G.V → Prop} [h : TypeBFoldingCpt G n fold foldAct stable anti]
     {i : ℕ} (hi : 1 ≤ i) (hi' : i ≤ n - 1) :
     fold (fold i) = i := by
   obtain ⟨k, k'⟩ := typeBFold_label_mem_range hi hi'
@@ -224,9 +245,9 @@ theorem typeBFold_label_involutive {V : Type*} {n : ℕ} {fold : ℕ → ℕ} {f
 /-- **A simple root is `ι`-fixed exactly when `n = 2i`** — so a fixed label exists only for
 an even strand count, and then only at `i = n/2`. The label-level shadow of the block's
 matter/antimatter split. -/
-theorem typeBFold_label_fixed_iff_even_strands {V : Type*} {n : ℕ} {fold : ℕ → ℕ}
-    {foldAct : V → V} {stable anti : V → Prop}
-    [h : TypeBFoldingCpt n fold foldAct stable anti]
+theorem typeBFold_label_fixed_iff_even_strands {G : QOU.Machinery.CrystalGraph} {n : ℕ} {fold : ℕ → ℕ}
+    {foldAct : G.V → G.V} {stable anti : G.V → Prop}
+    [h : TypeBFoldingCpt G n fold foldAct stable anti]
     {i : ℕ} (hi : 1 ≤ i) (hi' : i ≤ n - 1) :
     fold i = i ↔ n = 2 * i := by
   rw [h.fold_reverses i hi hi']
@@ -239,9 +260,9 @@ below — an odd `n` leaves no `ι`-fixed simple root to carry stable matter.
 Proved directly from `fold_reverses` rather than by rewriting with the theorem above: the
 latter's `V`, `foldAct`, `stable` and `anti` are implicit and undetermined by the label
 arguments, so the instance search would be stuck on metavariables. -/
-theorem typeBFold_label_free_of_odd_strands {V : Type*} {n : ℕ} {fold : ℕ → ℕ}
-    {foldAct : V → V} {stable anti : V → Prop}
-    [h : TypeBFoldingCpt n fold foldAct stable anti]
+theorem typeBFold_label_free_of_odd_strands {G : QOU.Machinery.CrystalGraph} {n : ℕ} {fold : ℕ → ℕ}
+    {foldAct : G.V → G.V} {stable anti : G.V → Prop}
+    [h : TypeBFoldingCpt G n fold foldAct stable anti]
     (hodd : ¬ 2 ∣ n) {i : ℕ} (hi : 1 ≤ i) (hi' : i ≤ n - 1) :
     fold i ≠ i := by
   intro hfix
@@ -251,8 +272,8 @@ theorem typeBFold_label_free_of_odd_strands {V : Type*} {n : ℕ} {fold : ℕ �
 /-- **Orbit equality in terms of the carrier's own `fold`.** The transport of
 `typeBFold_orbit_complete_invariant` along `fold_reverses`: two simple roots lie in the
 same `ι`-orbit exactly when one is the other's fold image. -/
-theorem typeBFold_orbit_eq_iff {V : Type*} {n : ℕ} {fold : ℕ → ℕ} {foldAct : V → V}
-    {stable anti : V → Prop} [h : TypeBFoldingCpt n fold foldAct stable anti]
+theorem typeBFold_orbit_eq_iff {G : QOU.Machinery.CrystalGraph} {n : ℕ} {fold : ℕ → ℕ} {foldAct : G.V → G.V}
+    {stable anti : G.V → Prop} [h : TypeBFoldingCpt G n fold foldAct stable anti]
     {i j : ℕ} (hi : 1 ≤ i) (hi' : i ≤ n - 1) (hj : 1 ≤ j) (hj' : j ≤ n - 1) :
     min i (fold i) = min j (fold j) ↔ (j = i ∨ j = fold i) := by
   rw [h.fold_reverses i hi hi', h.fold_reverses j hj hj']
@@ -260,8 +281,8 @@ theorem typeBFold_orbit_eq_iff {V : Type*} {n : ℕ} {fold : ℕ → ℕ} {foldA
 
 /-- **Matter and antimatter partition the crystal** — the block's word "complement", made
 precise. Derived from the two predicate fields; neither alone gives it. -/
-theorem typeBFold_stable_iff_not_anti {V : Type*} {n : ℕ} {fold : ℕ → ℕ} {foldAct : V → V}
-    {stable anti : V → Prop} [h : TypeBFoldingCpt n fold foldAct stable anti] (v : V) :
+theorem typeBFold_stable_iff_not_anti {G : QOU.Machinery.CrystalGraph} {n : ℕ} {fold : ℕ → ℕ} {foldAct : G.V → G.V}
+    {stable anti : G.V → Prop} [h : TypeBFoldingCpt G n fold foldAct stable anti] (v : G.V) :
     stable v ↔ ¬ anti v := by
   rw [h.stable_iff_fixed v, h.anti_iff_moved v]
   simp
@@ -278,11 +299,11 @@ the same dilemma for a bare involution and reads it against this very block. So 
 repaired carrier is strong enough to entail a known non-trivial result about itself —
 and it agrees with, rather than contradicts, the existing scope-(a) finding that this
 fold involution cannot itself be the chirality involution. -/
-theorem typeBFold_no_global_chirality_grading {V : Type*} {n : ℕ} {fold : ℕ → ℕ}
-    {foldAct : V → V} {stable anti : V → Prop}
-    [h : TypeBFoldingCpt n fold foldAct stable anti]
-    {v : V} (hv : stable v) :
-    ¬ ∃ chir : V → Bool, ∀ w, chir (foldAct w) = ! chir w := by
+theorem typeBFold_no_global_chirality_grading {G : QOU.Machinery.CrystalGraph} {n : ℕ} {fold : ℕ → ℕ}
+    {foldAct : G.V → G.V} {stable anti : G.V → Prop}
+    [h : TypeBFoldingCpt G n fold foldAct stable anti]
+    {v : G.V} (hv : stable v) :
+    ¬ ∃ chir : G.V → Bool, ∀ w, chir (foldAct w) = ! chir w := by
   rintro ⟨chir, hodd⟩
   have hfix : foldAct v = v := (h.stable_iff_fixed v).mp hv
   have hv' := hodd v
@@ -291,27 +312,54 @@ theorem typeBFold_no_global_chirality_grading {V : Type*} {n : ℕ} {fold : ℕ 
 
 /-! ### Refutability
 
-The property the `holds : Prop` carrier lacked. Two witnesses, because the class has two
-independent legs and a single witness would only show one of them has content. -/
+The property the `holds : Prop` carrier lacked. Three witnesses, because the class has
+independent legs and a single witness would only show one of them has content.
+
+`symBoolCrystal` is a two-vertex crystal in which *every* label `i` acts by the same arrow
+`false ↦ true`; it is `ι`-symmetric by construction, so the identity intertwines `fᵢ` with
+`f_{ι(i)}`, and it is the cheapest crystal on which the label and matter legs can be tested
+separately. `string3Crystal` is the standard `𝔰𝔩₃` crystal `B(Λ₁)` with labels `1, 2`
+(`0 →f₁→ 1 →f₂→ 2`); on it the crystal leg has teeth. -/
+
+/-- A two-vertex crystal on which every label acts by `false ↦ true`. -/
+def symBoolCrystal : QOU.Machinery.CrystalGraph where
+  V := Bool
+  f := fun _ v => if v = false then some true else none
+  e := fun _ v => if v = true then some false else none
+
+/-- The standard `𝔰𝔩₃` crystal `B(Λ₁)`, labels `1, 2`: `0 →f₁→ 1 →f₂→ 2`. -/
+abbrev string3Crystal : QOU.Machinery.CrystalGraph where
+  V := Fin 3
+  f := fun i v =>
+    if i = 1 ∧ v = 0 then some 1 else if i = 2 ∧ v = 1 then some 2 else none
+  e := fun i v =>
+    if i = 1 ∧ v = 1 then some 0 else if i = 2 ∧ v = 2 then some 1 else none
 
 /-- **The label leg is refutable**: the identity label map is not the diagram reversal at
 `n = 4`, so it fails `fold_reverses` at `i = 1`. -/
 theorem typeBFoldingCpt_refutable :
-    ¬ TypeBFoldingCpt (V := Bool) 4 id id (fun _ => True) (fun _ => True) := by
+    ¬ TypeBFoldingCpt symBoolCrystal 4 id id (fun _ => True) (fun _ => True) := by
   intro hc
   have h := hc.fold_reverses 1 (by norm_num) (by norm_num)
   simp at h
 
-/-- **The matter leg is refutable independently**: this caller supplies the *correct*
-diagram reversal `i ↦ 4 - i`, and an identity crystal action satisfying
-`foldAct_involutive` and `stable_iff_fixed`. It still fails, because an action that moves
-nothing cannot have a non-empty orbit complement — so `anti_iff_moved` carries content that
-the label fields do not supply.
-
-This is what separates the repair from a definitional restatement of `ι`. -/
+/-- **The matter leg is refutable independently**: the *correct* reversal `i ↦ 4 - i`, an
+identity crystal action that genuinely intertwines (every label acts alike on
+`symBoolCrystal`), and still a failure, because an action that moves nothing has an empty
+orbit complement — so `anti_iff_moved` carries content the other fields do not supply. -/
 theorem typeBFoldingCpt_refutable_on_matter :
-    ¬ TypeBFoldingCpt (V := Bool) 4 (fun i => 4 - i) id (fun _ => True) (fun _ => True) := by
+    ¬ TypeBFoldingCpt symBoolCrystal 4 (fun i => 4 - i) id (fun _ => True) (fun _ => True) := by
   intro hc
   exact ((hc.anti_iff_moved true).mp trivial) rfl
+
+/-- **The crystal leg is refutable — the old trivial inhabitant is gone.**  Before
+2026-11-20, `foldAct = id`, `stable = True`, `anti = False` satisfied the class for every
+`n`.  On the genuine `𝔰𝔩₃` crystal `B(Λ₁)` the identity does not intertwine `f₁` with
+`f_{ι(1)} = f₂` (`f₁ 0 = 1` but `f₂ 0` is undefined), so it is not a lift of the fold. -/
+theorem typeBFoldingCpt_refutable_on_crystal :
+    ¬ TypeBFoldingCpt string3Crystal 3 (fun i => 3 - i) id (fun _ => True) (fun _ => False) := by
+  intro hc
+  have h := hc.foldAct_f 1 (by norm_num) (by norm_num) 0
+  simp at h
 
 end QOU.BraidsAndKnots

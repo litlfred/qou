@@ -28,4 +28,4 @@ The $e_\lambda$ are linearly independent, so $\#(\sigma_{\mathrm{shell}}) = \sig
 **Scope.** Steps 1 and 3 are proved here. Step 2 is cited.
 
 **Relation to existing propositions.**
-This result refines [mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price) (which gives $y_\lambda$ per partition) by characterising when the shell operator's coefficients are symmetric under transposition. Whether $\sigma_{\mathrm{shell}}$ is in fact $\#$-invariant is not settled here. It complements [skein-crossing-asymmetry](#prop:skein-crossing-asymmetry) (which encodes the parity-violation mechanism at level 3).
+Whether $\sigma_{\mathrm{shell}}$ is in fact $\#$-invariant is not settled here.

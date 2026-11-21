@@ -46,5 +46,6 @@ export default proposition({
   lean: { ref: "qou:QOU.EightfoldWay.SymmetricChannelDimension.quadruplet_dim" },
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean.**  `QOU.EightfoldWay.SymmetricChannelDimension`:\n`quadruplet_dim` (the dimension, as a consequence of the general\n`finrank_homogeneousSubmodule`), `twoI3_quartetPoint` (attained),\n`twoI3_mem_ladder` (closed), `twoI3_odd` (odd) and `twoI3_injOn` (faithful)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This is the opposite of the situation for the octet, where the weight\nmap is proved non-injective\n([Proposition](#prop:baryon-octet-decomposition))." },
   ],
 });

@@ -35,6 +35,9 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:markov-trace-recursive-reducer",
+  authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): the restricted axiom set (stripping, stability and cyclicity on words of H_n, plus the Hecke quadratic, braid and far-commutation relations) is the one the Lean formalisation uses." },
+  ],
   title:
     "Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property",
   uses: [

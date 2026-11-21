@@ -18,6 +18,6 @@ $$
   I_P(q) =  n_R(q) \cdot \eta_q.
 $$
 
-Here $\eta_q = (2q-1)/q^3$ is the operational entropy ([operational entropy](#def:operational-entropy)). This parameter quantifies the information generated per $f_q$-iteration, dictated strictly by the gravitational self-consistency condition.
+Here $\eta_q = (2q-1)/q^3$ is the operational entropy. This parameter quantifies the information generated per $f_q$-iteration, dictated strictly by the gravitational self-consistency condition.
 
 In the deep-quantum regime ($q \to \infty$), $n_R \to 1$ and $\eta_q \to 0$. The dynamics simplify entirely, yielding $I_P \to 0$. At the classical limit ($q \to 1$), $\eta_q \to 1$ nat per step. At $q = q_0$, $I_P \approx 10.1 \times 0.892 \approx 9.0$ $q$-bits per Planck time.
