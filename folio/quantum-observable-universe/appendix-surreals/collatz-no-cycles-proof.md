@@ -97,8 +97,9 @@ once it is negative.
    even step reverses to itself, since $1+q$ and $[3]_q$ are palindromic. The
    count of case 1 applies to the reversed sequence, whose constant term is the
    leading coefficient of $S$, so there is no even step. Then
-   $D = qP + 1$ obeys $(1+q)D' = [3]_q D$, forcing $qP = -1$, which is not a
-   polynomial identity. So this sub-case has no cycle.
+   $D = P + q^{-2}$ obeys $(1+q)D' = [3]_q D$ as in case 1, forcing
+   $P = -q^{-2}$, which has $\operatorname{ord}_q = -2 \neq -1$. So this
+   sub-case has no cycle.
 
 Formalised sorry-free as `cycle_classification` and
 `laurent_cycle_classification` in
