@@ -37,6 +37,7 @@ export default proposition({
   label: "prop:markov-trace-recursive-reducer",
   authorNotes: [
     { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): the restricted axiom set (stripping, stability and cyclicity on words of H_n, plus the Hecke quadratic, braid and far-commutation relations) is the one the Lean formalisation uses." },
+    { kind: "status", date: "2026-11-21", body: "The general disjoint-product law is now proved from the restricted axioms (Lean `QOU.BraidKnot.markovTrace_disjointProduct`, sorry-free, axioms propext/Classical.choice/Quot.sound). The proof is Ocneanu's reduction, `HeckeRel.reduce`: a function on positive words that satisfies the in-context Hecke, braid and far-commutation relations and vanishes on words using the top generator at most once vanishes everywhere. The Lean form has the two clusters sharing one strand (connected sum); the split case in the statement additionally needs shift invariance of the trace, which is not formalised. Thread N2 Lean foundations." },
   ],
   title:
     "Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property",
