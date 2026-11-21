@@ -1,13 +1,13 @@
 ---
 # qou-5u4a
 title: Cite 0006051v1.pdf at rem:q-dilog-three-contexts
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:30Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T13:32:29Z
 pr: 8315
 parent: qou-ysb7
 ---
@@ -45,3 +45,5 @@ rem:q-dilog-three-contexts now cites besser2000 Prop. 2.1, Cor. 2.2, scoped to q
 
 Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
 Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.
+
+PR #8828 merged 2026-11-21 (rebased onto main as a8b394e108). Completed.

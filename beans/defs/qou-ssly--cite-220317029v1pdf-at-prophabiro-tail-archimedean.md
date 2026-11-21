@@ -1,14 +1,14 @@
 ---
 # qou-ssly
 title: Cite 2203.17029v1.pdf at prop:habiro-tail-archimedean-action
-status: in-progress
+status: completed
 pr: 8397
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:19Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T13:32:29Z
 parent: qou-ysb7
 ---
 
@@ -42,3 +42,5 @@ prop:habiro-tail-archimedean-action: paragraph citing garoufalidis-wheeler-modul
 
 Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
 Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.
+
+PR #8828 merged 2026-11-21 (rebased onto main as a8b394e108). Completed.

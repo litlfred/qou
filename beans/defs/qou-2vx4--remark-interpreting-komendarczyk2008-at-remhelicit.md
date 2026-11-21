@@ -1,13 +1,13 @@
 ---
 # qou-2vx4
 title: Remark interpreting [komendarczyk2008] at rem:helicity-physical
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:28Z
-updated_at: 2026-10-04T15:23:52Z
+updated_at: 2026-11-21T13:32:29Z
 parent: qou-vva9
 ---
 
@@ -28,3 +28,5 @@ rem:helicity-physical now cites komendarczyk2008 (v3 locators: Rem. 2.3 antisymm
 
 Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
 Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.
+
+PR #8828 merged 2026-11-21 (rebased onto main as a8b394e108). Completed.

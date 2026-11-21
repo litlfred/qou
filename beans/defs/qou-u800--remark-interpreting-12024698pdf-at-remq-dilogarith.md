@@ -1,14 +1,14 @@
 ---
 # qou-u800
 title: Remark interpreting 1202.4698.pdf at rem:q-dilogarithm-pentagon-associator
-status: in-progress
+status: completed
 pr: 8412
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T00:10:51Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T13:32:29Z
 parent: qou-vva9
 ---
 
@@ -46,3 +46,5 @@ rem:q-dilogarithm-pentagon-associator: semiclassical anchor citing terashima-yam
 
 Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
 Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.
+
+PR #8828 merged 2026-11-21 (rebased onto main as a8b394e108). Completed.

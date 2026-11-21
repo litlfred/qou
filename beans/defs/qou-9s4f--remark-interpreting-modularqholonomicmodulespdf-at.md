@@ -1,13 +1,13 @@
 ---
 # qou-9s4f
 title: Remark interpreting modular.qholonomic.modules.pdf at rem:phi-q-aj-machinery-identification-details
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:00Z
-updated_at: 2026-10-04T15:23:59Z
+updated_at: 2026-11-21T13:32:29Z
 parent: qou-vva9
 ---
 
@@ -35,3 +35,5 @@ rem:phi-q-aj-machinery-identification-details: paragraph citing garoufalidis-whe
 
 Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
 Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.
+
+PR #8828 merged 2026-11-21 (rebased onto main as a8b394e108). Completed.

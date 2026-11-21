@@ -1,13 +1,13 @@
 ---
 # qou-c7lf
 title: Cite 1003.4808v2.pdf at prop:phi-q-aj-machinery-identification
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:21Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T13:32:29Z
 pr: 8325
 parent: qou-ysb7
 ---
@@ -43,3 +43,5 @@ prop:phi-q-aj-machinery-identification now cites dimofte-gukov2010 §2.2 eqs. (2
 
 Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
 Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.
+
+PR #8828 merged 2026-11-21 (rebased onto main as a8b394e108). Completed.
