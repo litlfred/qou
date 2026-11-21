@@ -250,4 +250,78 @@ theorem hookOp_mono_eq_beltW (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 
 
 end BeltBraid
 
+/-! ### The braid-closure trace of the Whitehead braid -/
+
+section Assembly
+
+variable (q : 𝕜) (m : ℕ)
+
+/-- `K ⊗ K ⊗ K` on `V^{⊗3}`. -/
+def kTri : Matrix (Tri m) (Tri m) 𝕜 :=
+  diagonal fun x => q ^ wt m x.1.1 * q ^ wt m x.1.2 * q ^ wt m x.2
+
+/-- Closing the third strand of `R₂₃ Y₁₂ R₂₃ Z₁₂` with `K³` closes the hook against `Z`. -/
+theorem trace_kTri_hook (R Y Z : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜) :
+    trace (kTri q m * (leg23 R * leg12 Y * leg23 R * leg12 Z))
+      = trace (kk q m * hookOp q m R Y * Z) := by
+  have hh : hookOp q m R Y = fun y x => ∑ r : Fin (m + 1),
+      q ^ wt m r * (leg23 R * leg12 Y * leg23 R) (y, r) (x, r) := by
+    funext y x; exact hookOp_eq_ptr m q R Y y x
+  rw [hh]
+  generalize leg23 R * leg12 Y * leg23 R = H
+  simp only [trace, diag, kTri, kk, Matrix.mul_assoc, diagonal_mul]
+  simp only [mul_apply, leg12_apply, Fintype.sum_prod_type, one_apply, mul_ite, mul_one, mul_zero,
+    Finset.sum_ite_eq', Finset.mem_univ, if_true, Finset.sum_mul, Finset.mul_sum]
+  refine Finset.sum_congr rfl fun a _ => Finset.sum_congr rfl fun b _ => ?_
+  rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl fun c _ => ?_
+  rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl fun d _ => Finset.sum_congr rfl fun r _ => ?_
+  ring
+
+variable {q} in
+theorem kk_eq_deltaK (hq : q ≠ 0) : kk q m = deltaK q m m := by
+  rw [kk, deltaK, irrepKp, diagonal_kronecker_diagonal]
+  congr 1; funext x
+  rw [kp_eq_zpow q hq (Nat.lt_succ_iff.mp x.1.isLt), kp_eq_zpow q hq (Nat.lt_succ_iff.mp x.2.isLt)]
+
+/-- `K³` commutes with `A₂₃` when `K ⊗ K` commutes with `A`. -/
+theorem leg23_mul_kTri (A : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜)
+    (hA : A * kk q m = kk q m * A) : leg23 A * kTri q m = kTri q m * leg23 A := by
+  ext x y
+  have h := congrFun (congrFun hA (x.1.2, x.2)) (y.1.2, y.2)
+  simp only [kk, mul_diagonal, diagonal_mul] at h
+  simp only [kTri, mul_diagonal, diagonal_mul, leg23_apply, one_apply]
+  split_ifs with hxy
+  · rw [hxy]; linear_combination (q ^ wt m y.1.1) * h
+  · simp
+
+variable (s : 𝕜) (hs : s ≠ 0) (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0)
+
+include hq2 in
+/-- **The Whitehead braid closed with `K³`.** For `β = σ₁⁻² σ₂ σ₁⁻¹ σ₂` on `V_{m+1}^{⊗3}`
+(`σ₁ = Ř ⊗ 1`, `σ₂ = 1 ⊗ Ř`, `σ⁻¹` the quarter turn of `Ř`),
+`tr(K³ β) = (−1)^m s^{m(m+2)} tr((K ⊗ K) · beltW · clasp)`. -/
+theorem trace_kTri_whitehead (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k ≠ 0) :
+    trace (kTri (s ^ 2) m
+        * (leg12 (rotOp (s ^ 2) m (rCheckMat s hs m m)) * leg12 (rotOp (s ^ 2) m (rCheckMat s hs m m))
+          * leg23 (rCheckMat s hs m m) * leg12 (rotOp (s ^ 2) m (rCheckMat s hs m m))
+          * leg23 (rCheckMat s hs m m)))
+      = ((-1) ^ m * s ^ (m * (m + 2))) * trace (kk (s ^ 2) m * beltW s hs m * clasp s hs m) := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  set Ř := rCheckMat s hs m m with hŘ
+  set Ri := rotOp (s ^ 2) m Ř with hRi
+  have hcomm : leg23 Ř * kTri (s ^ 2) m = kTri (s ^ 2) m * leg23 Ř :=
+    leg23_mul_kTri _ m _ (by rw [kk_eq_deltaK m hq, hŘ, rCheckMat_deltaK s hs m m])
+  have h1 : trace (kTri (s ^ 2) m * (leg12 Ri * leg12 Ri * leg23 Ř * leg12 Ri * leg23 Ř))
+      = trace (kTri (s ^ 2) m * (leg23 Ř * leg12 (Ri * Ri) * leg23 Ř * leg12 Ri)) := by
+    rw [← Matrix.mul_assoc, trace_mul_comm, ← Matrix.mul_assoc, hcomm, leg12_mul]
+    simp only [Matrix.mul_assoc]
+  rw [h1, trace_kTri_hook, hRi, trace_mul_rotOp, natOp_flype s hs m hq2 hint, smul_mul_assoc,
+    trace_smul, smul_eq_mul, Matrix.mul_assoc, trace_mul_comm, Matrix.mul_assoc,
+    show Ř * Ř = mono s hs m m from rfl, ← trace_mul_rotOp, ← clasp_eq_rotOp,
+    hookOp_mono_eq_beltW s hs m hq2 hint]
+
+end Assembly
+
 end QOU.Mass.QuantumSl2
