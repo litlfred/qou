@@ -50,18 +50,21 @@ class FrobeniusRelationContext where
   μ_tensor_id : TensorAAA → TensorAA
   /-- The lifted comultiplication `id ⊗ Δ_μ : A ⊗ A → A ⊗ A ⊗ A`. -/
   id_tensor_Δμ : TensorAA → TensorAAA
-  /-- Manuscript Frobenius relation: the diagram commutes — equivalently,
-      `(μ ⊗ id) ∘ (id ⊗ Δ_μ) = Δ_μ ∘ μ` as morphisms `A ⊗ A → A ⊗ A`. -/
-  claim_frobenius_relation : ∀ x : TensorAA,
-    μ_tensor_id (id_tensor_Δμ x) = Δ_μ (μ x)
 
 /-- **Frobenius relation** ([`prop:frobenius-relation`]).
 
-    `(μ ⊗ id) ∘ (id ⊗ Δ_μ) = Δ_μ ∘ μ` as morphisms `A ⊗ A → A ⊗ A`. -/
+    `(μ ⊗ id) ∘ (id ⊗ Δ_μ) = Δ_μ ∘ μ` as morphisms `A ⊗ A → A ⊗ A`.
+
+    Stated, not proved. Until 2026-11-21 the context class carried this
+    equation as its field `claim_frobenius_relation` and the theorem
+    returned it (round-trip audit pass 2, C09). The field is deleted.
+    The context as it stands has no axioms linking `Δ_μ` to `μ` (no
+    Frobenius pairing), so this statement is not provable from it; a
+    proof needs the pairing and the duality `Δ_μ = (μ ⊗ id)∘(id ⊗ copairing)`. -/
 -- Ref: [leitner2026] quantum-observable-universe/quantum-universes/frobenius-relation.md
 -- Ref: [kock2004] Frobenius algebras and 2D TQFTs.
 theorem frobenius_relation [ctx : FrobeniusRelationContext] (x : ctx.TensorAA) :
-    ctx.μ_tensor_id (ctx.id_tensor_Δμ x) = ctx.Δ_μ (ctx.μ x) :=
-  ctx.claim_frobenius_relation x
+    ctx.μ_tensor_id (ctx.id_tensor_Δμ x) = ctx.Δ_μ (ctx.μ x) := by
+  sorry
 
 end QOU

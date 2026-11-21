@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "caveat", date: "2026-11-21", body: "Lean now states the relation with an honest `sorry`. The context field `claim_frobenius_relation`, which was the conclusion, is deleted (round-trip audit pass 2, C09). The previous proof paired a map $A \\otimes A \\to A \\otimes A$ with a single test element of $A$; it is rewritten." },
+  ],
   label: "prop:frobenius-relation",
   lean: { ref: "qou:QOU.frobenius_relation",
     validation: "not_checked",
