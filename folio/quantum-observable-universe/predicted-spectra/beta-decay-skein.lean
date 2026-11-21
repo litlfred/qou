@@ -10,12 +10,12 @@ import Mathlib.Tactic
 Beta decay is mediated by the torus knot T_{3,5} with 10 crossings.
 The T_{3,5} braid (σ₁σ₂)⁵ is inserted at the converting quark, and
 its 10 crossings partition into:
-  - 3 crossings → electron trefoil T_{2,3}
+  - 3 crossings → electron word σ₀σ₁σ₀ (closure: Hopf link)
   - 0 crossings → antineutrino unknot K_{0_1}
   - 7 crossings → nuclear re-reduction (R2 moves)
 
-β⁻: N̄(p,n) · β_{T_{3,5}} → N̄(p+1, n-1) ⊔ T_{2,3} ⊔ K_{0_1}
-β⁺: N̄(p,n) · β̄_{T_{3,5}} → N̄(p-1, n+1) ⊔ σ(T_{2,3}) ⊔ K_{0_1}
+β⁻: N̄(p,n) · β_{T_{3,5}} → N̄(p+1, n-1) ⊔ e⁻ ⊔ K_{0_1}
+β⁺: N̄(p,n) · β̄_{T_{3,5}} → N̄(p-1, n+1) ⊔ e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹ ⊔ K_{0_1}
 
 The Z/2 symmetry q ↔ q⁻¹ exchanges β⁻ ↔ β⁺.
 
@@ -43,7 +43,7 @@ namespace QOU.Archimedean
 structure WeakVertex where
   /-- Number of crossings in the T_{3,5} braid. -/
   crossings : ℕ := 10
-  /-- Crossings allocated to the electron trefoil T_{2,3}. -/
+  /-- Crossings allocated to the electron word σ₀σ₁σ₀ (closure: Hopf link). -/
   electron_crossings : ℕ := 3
   /-- Crossings allocated to the neutrino unknot. -/
   neutrino_crossings : ℕ := 0
@@ -94,11 +94,11 @@ def NuclearLink.A (l : NuclearLink) : ℕ := l.p + l.n
 
 /-- A beta-minus decay: T_{3,5} insertion at the converting d-quark.
     The 10-crossing T_{3,5} braid (σ₁σ₂)⁵ partitions into:
-    - 3 crossings → electron trefoil T_{2,3}
+    - 3 crossings → electron word σ₀σ₁σ₀ (closure: Hopf link)
     - 0 crossings → antineutrino unknot K_{0_1}
     - 7 crossings → nuclear re-reduction (R2 moves)
 
-    Produces: daughter nucleus + electron T_{2,3} + antineutrino K_{0_1}. -/
+    Produces: daughter nucleus + electron e⁻ = σ₀σ₁σ₀ + antineutrino K_{0_1}. -/
 -- Ref: [leitner2026] §6/beta-decay-skein, §6/force-knot-identification
 structure BetaMinusDecay where
   /-- The parent nucleus. -/
@@ -111,7 +111,7 @@ structure BetaMinusDecay where
   n_pos : 0 < parent.n
   /-- The daughter has one fewer neutron. -/
   n_dec : daughter.n = parent.n - 1
-  /-- The electron mass (trefoil T_{2,3}). -/
+  /-- The electron mass (electron word σ₀σ₁σ₀; m_e is CAL-1). -/
   m_e : ℝ
   /-- Electron mass is positive. -/
   m_e_pos : 0 < m_e
@@ -127,7 +127,7 @@ def BetaMinusDecay.Q_q (d : BetaMinusDecay) : ℝ :=
 /-- A beta-plus decay: conjugate T̄_{3,5} insertion at the converting u-quark.
     Mirror of β⁻ under q ↔ q⁻¹.
 
-    Produces: daughter nucleus + positron σ(T_{2,3}) + neutrino K_{0_1}. -/
+    Produces: daughter nucleus + positron e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹ + neutrino K_{0_1}. -/
 -- Ref: [leitner2026] §6/beta-decay-skein, §6/force-knot-identification
 structure BetaPlusDecay where
   /-- The parent nucleus. -/
@@ -140,7 +140,7 @@ structure BetaPlusDecay where
   p_dec : daughter.p = parent.p - 1
   /-- The daughter has one more neutron. -/
   n_inc : daughter.n = parent.n + 1
-  /-- The positron mass (mirror trefoil σ(T_{2,3})); same as electron mass. -/
+  /-- The positron mass (e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹); same as electron mass. -/
   m_e : ℝ
   m_e_pos : 0 < m_e
 

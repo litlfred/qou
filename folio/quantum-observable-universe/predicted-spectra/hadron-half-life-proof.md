@@ -1,6 +1,6 @@
 ## Decay rate from $q$ and $\mu_0$
 
-The torus knot $T_{3,5}$ mediates beta decay ([beta decay as crossing change](#def:beta-decay-skein), [force identification](#rem:force-knot-identification)). The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ inserts at the converting quark. Its $10$ crossings partition into the electron trefoil ($3$), the neutrino unknot ($0$), and the nuclear re-reduction residue ($7$). The fundamental weak coupling is the weak vertex form factor $\mathcal{W}(q)$, the Markov trace of the $T_{3,5}$ braid word in $H_3(q)$.
+The torus knot $T_{3,5}$ mediates beta decay ([beta decay as crossing change](#def:beta-decay-skein), [force identification](#rem:force-knot-identification)). The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ inserts at the converting quark. Its $10$ crossings partition into the electron word $e^- = \sigma_0\sigma_1\sigma_0$ ($3$, a braid factor of the vertex, `QOU.BraidKnot.WeakVertexElectronFactor.weakVertex_eq_electron_mul`), the neutrino unknot ($0$), and the nuclear re-reduction residue ($7$). The fundamental weak coupling is the weak vertex form factor $\mathcal{W}(q)$, the Markov trace of the $T_{3,5}$ braid word in $H_3(q)$.
 
 The decay rate is
 
