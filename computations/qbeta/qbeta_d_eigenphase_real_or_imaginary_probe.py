@@ -72,6 +72,7 @@ from __future__ import annotations
 import importlib.util
 import os
 import sys
+from pathlib import Path
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 for _p in ("computations/substrate", "computations", "tools/qou-substrate/python"):
@@ -336,6 +337,81 @@ def main() -> int:
           f"at least {mp.nstr(ratio_min, 6)}x too small. Diagnostic only; no "
           "cell is chosen, none is scored.")
 
+    # ---- 4. CURRENT RULINGS (owner, 2026-11-20 / 11-21) ---------------------
+    # Section 2 uses the census elements and the one-term z_D trace on an
+    # order-zero E_0. All three are SUPERSEDED (docs/coordination/
+    # owner-rulings.md): the photon is gamma = 1 + phi0 s0 + phi1 s1 +
+    # phi01 s0 s1^-1, Q_beta comes from gamma-gamma pair production on the
+    # base V^3 = (s0 s1^-1)^3 (the same element for p and n), and the scored
+    # cell is the T^3 weight split eps_flavour(V^3) times the canonical
+    # (tower-summed) E_0. On three quark strands the two-term Lagrangian
+    # trace's connected part vanishes for every word
+    # (BetaRoutesTwoTerm.pairSum_eq_of_total_eq), so the two-term value of
+    # this cell equals the one-term value. Section 2 rows are kept, labelled.
+    for r in rows:
+        r["superseded"] = ("census element, one-term trace, order-zero E_0; "
+                           "replaced by the V^3 weight-split cell below")
+    Vb = sp.simplify(S0 * S1.inv())
+    V3 = sp.simplify(Vb ** 3)
+    cur_rows = []
+    cur_types = []
+    for nm, M in (("V = s0 s1^-1 (photon vertex)", Vb), ("V^3 (scored base)", V3),
+                  ("V^-3", sp.simplify(V3.inv()))):
+        trv, detv = mpv(M.trace()), mpv(M.det())
+        kind, t, disc = classify(trv, detv)
+        cur_types.append(kind)
+        cur_rows.append({"element": nm, "tr_V21": mp.nstr(trv, 30),
+                         "det_V21": mp.nstr(detv, 30), "disc_V21": mp.nstr(disc, 30),
+                         "phase_type": kind,
+                         "half_normalised_trace": (mp.nstr(t, 30) if t is not None else None)})
+        print(f"  {nm:<30} tr {mp.nstr(trv, 12):>16}  det {mp.nstr(detv, 6):>6}  {kind}")
+    print()
+    check("current_base_V3_has_no_imaginary_V21_eigenphase",
+          not any(k.startswith("IMAGINARY") for k in cur_types),
+          f"V_(2,1) blocks of the corrected-photon vertex, V^3 and V^-3: "
+          f"{cur_types}. det V = det(s0) det(s1)^-1 = 1, so V^3 is in SL_2; "
+          "a cosh >= 1 would need real positive spectrum, which none has.")
+
+    # scored cell: eps_flavour(V^3) = (q^2-1) P(q) / (q^4 (q^2+1)^3)
+    # (QOU.QBeta.FlavourWeightSplit.epsFlavour_V3_eq, sorry-free)
+    Pq = q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1
+    epsF = (q**2 - 1) * Pq / (q**4 * (q**2 + 1)**3)
+    epsF0 = mpv(epsF)
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import qbeta_e0 as _e0
+    E0c = mp.mpf(_e0.canonical())
+    QB_scored = abs(epsF0) * E0c
+    wpath = (Path(__file__).resolve().parents[1] / "probes" /
+             "qbeta_flavour_weight_split" / "qbeta-flavour-weight-split.witness.json")
+    wtxt = wpath.read_text()
+    import json as _json
+    def _find_v3(node):
+        if isinstance(node, dict):
+            if node.get("element") == "V^3" and "eps_flavour" in node:
+                return node
+            node = list(node.values())
+        if isinstance(node, list):
+            for x in node:
+                hit = _find_v3(x)
+                if hit is not None:
+                    return hit
+        return None
+    v3w = _find_v3(_json.loads(wtxt))
+    xok = v3w is not None \
+        and abs(epsF0 - mp.mpf(v3w["eps_flavour"])) < mp.mpf(10) ** -40 \
+        and abs(QB_scored - mp.mpf(v3w["Q_beta_MeV"])) < mp.mpf(10) ** -25
+    F_cur = MP_QB / QB_scored
+    a_need = mp.acosh(F_cur)
+    short = a_need / abs(mp.im(bDc))
+    check("scored_cell_reproduced_and_cosh_lever_still_far_too_small",
+          xok and F_cur > 1 and cosh_wick < F_cur,
+          f"|eps_flavour(V^3)| E_0^canonical = {mp.nstr(QB_scored, 15)} MeV "
+          f"(matches qbeta-flavour-weight-split.witness.json); F_required = "
+          f"{mp.nstr(F_cur, 12)} > 1, so a real ladder phase (factor <= 1) "
+          f"cannot reach it. A cosh reading needs a = {mp.nstr(a_need, 10)}, "
+          f"against the Wick-rotated |beta_D| = {mp.nstr(abs(mp.im(bDc)), 8)}: "
+          f"{mp.nstr(short, 6)}x short. Diagnostic only; CODATA in this ratio only.")
+
     allp = all(ok for _, ok, _ in RESULTS)
     print(f"  {sum(ok for _, ok, _ in RESULTS)}/{len(RESULTS)} checks passed")
 
@@ -364,7 +440,21 @@ def main() -> int:
         "beta_D_unit_circle": mp.nstr(bDc, 30),
         "alpha_D_unit_circle": mp.nstr(aDc, 30),
         "cosh_wick": mp.nstr(cosh_wick, 30),
-        "elements": rows,
+        "elements_superseded": rows,
+        "current_rulings": {
+            "rulings": "photon s0 s1^-1 (2026-11-20); Q_beta from gamma-gamma, "
+                       "T^3 weight-split scored cell (2026-11-20); two-term "
+                       "Lagrangian trace on all beta routes (2026-11-21)",
+            "two_term_note": "connected two-term part is 0 on three quark "
+                             "strands (BetaRoutesTwoTerm.pairSum_eq_of_total_eq)",
+            "elements": cur_rows,
+            "eps_flavour_V3": mp.nstr(epsF0, 40),
+            "E0_canonical_MeV": mp.nstr(E0c, 30),
+            "Q_beta_scored_MeV": mp.nstr(QB_scored, 30),
+            "F_required": mp.nstr(F_cur, 20),
+            "arccosh_F_required": mp.nstr(a_need, 20),
+            "cosh_lever_shortfall": mp.nstr(short, 10),
+        },
         "scope": ("(a) for every number; (b) only for real phase => factor <= 1 "
                   "and bar-odd real-coefficient phase => real on the real axis, "
                   "both proved in DEigenphaseRealOrImaginary.lean."),
