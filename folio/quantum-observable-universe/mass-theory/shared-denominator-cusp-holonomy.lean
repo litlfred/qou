@@ -89,6 +89,7 @@ namespace QOU.QPochhammer
     predicate is not dischargeable by a *real* constant witness — see
     `exists_geometricShape` for why that is much weaker than it sounds. -/
 -- Ref: [thurston1978] §4.5 (gluing equations)
+-- Ref: [futer-gueritaud-angled] Def 2.4 (edge and completeness equations), Prop 2.5 (they glue to a hyperbolic metric; complete iff completeness eqns hold) — held copy, library/angled-survey
 structure GeometricShape (z : ℂ) : Prop where
   /-- Shape nondegeneracy: `z ≠ 0` (the degenerate collapsed vertex; the
       meridian holonomy equation `Hol_μ(z) = 1` itself remains open). -/
