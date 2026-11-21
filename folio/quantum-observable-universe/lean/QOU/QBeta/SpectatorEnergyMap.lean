@@ -250,4 +250,36 @@ theorem dictionary_beta_lt_quantum_beta (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     rw [lt_div_iff₀ (by linarith)]; linarith
   linarith
 
+/-! ## Reconciling the two temperatures (pre-registration addendum 2)
+
+Both corpus readings use the same Boltzmann weight `y`. Equal weights fix only the product
+`β·E`, so two inverse temperatures describe one Gibbs state in two energy units. -/
+
+/-- **One weight, two units.** `e^{−β₁E₁} = e^{−β₂E₂}` iff `E₂ = (β₁/β₂)·E₁`. -/
+theorem same_weight_iff (β₁ β₂ E₁ E₂ : ℝ) (h₂ : β₂ ≠ 0) :
+    Real.exp (-β₁ * E₁) = Real.exp (-β₂ * E₂) ↔ E₂ = β₁ / β₂ * E₁ := by
+  rw [Real.exp_eq_exp]
+  constructor
+  · intro h
+    field_simp
+    linarith
+  · intro h
+    rw [h]
+    field_simp
+
+/-- **The dictionary's energy unit in units of `m_e`.** With `β_D = ln q` and `β_q = 1/ℏ_q`, one
+dictionary unit is `(β_D/β_q)` natural units, i.e. `ℏ_q·ln q·c_q² = (E₀/m_e)·ln q`. -/
+theorem dictionary_unit (q : ℝ) (hq : 1 < q) :
+    Real.log q / (1 / ((q - 1) / q)) * (1 / (q - 1)) ^ 2 = e0 q * Real.log q := by
+  unfold e0
+  have h1 : q - 1 ≠ 0 := by linarith
+  have h0 : q ≠ 0 := by linarith
+  field_simp
+
+/-- **Reconciled: route D, converted to the natural unit, is route T.** -/
+theorem routeD_converted_eq_routeT (q : ℝ) (hq : 1 < q) :
+    2 * (Real.log q / (1 / ((q - 1) / q)) * (1 / (q - 1)) ^ 2) = 2 * e0 q * Real.log q := by
+  rw [dictionary_unit q hq]
+  ring
+
 end QOU.QBeta.SpectatorEnergyMap

@@ -143,3 +143,30 @@ against m_n − m_p. Nothing selected.
   and |c| = E₀ via route T.
 - Not derived: which corpus temperature is the physical one (T or D); whether the tower factor
   belongs; and the reading (Q_β or m_n − m_p) of the cell.
+
+## 9. Reconciled: one Gibbs state, two energy units (owner card "Reconcile first"; addendum 2)
+
+**Correction to §8.** §8 called the two temperatures a corpus inconsistency. That was too strong.
+Both readings use the same Boltzmann weight y of the same trace. Equal weights fix only the
+product β·E (`same_weight_iff`), so β_D = ln q and β_q = 1/ℏ_q are one Gibbs state written in two
+energy units. They would conflict only if a block stated T = 1/ln q in natural units, and none
+does: the dictionary's own `.ts` note says "energies are relative to the weights" (grep of
+`folio/` for `T = 1/\ln q` and `\beta = \ln q`: only the dictionary block). The inequality
+`dictionary_beta_lt_quantum_beta` is true but compares numbers in different units, so it is not
+evidence of a conflict. Nothing else repeated the "conflict" wording: this audit, the PR #8904
+comment of f821e479a, and the thread reply only.
+
+**The unit.** One dictionary unit is (β_D/β_q) natural units = ℏ_q·ln q·m_e·c_q² = **E₀·ln q**
+(`dictionary_unit`). Route D's exact 2 units is then 2E₀·ln q, the route-T cell
+(`routeD_converted_eq_routeT`; probe 15/15).
+
+**So the scale is derived, given its premises:**
+1. S (spectator invariance) ⇒ E = c·log ε + d (`eq_log_of_spectatorInvariant`);
+2. the corpus reads the trace as a Gibbs state ⇒ |c| = k_B T;
+3. `def:quantum-temperature` (k_B T_q = ℏ_q) and 𝔈 = 𝔪·c_q² with the CAL-1 unit m_e ⇒
+   k_B T = E₀ exactly (`kT_eq_e0`); the dictionary agrees once its unit is fixed (§9).
+
+Result: n − p cell = 2E₀·ln q = 2m_e·ln q/(q(q−1)) = **0.873537 MeV** at the proton q₀, and it
+lies in (2m_e/q², 2m_e/q) for every q > 1. No fitted or selected quantity enters. Still not
+derived: the tower factor (ruled, +1 %), and which observable the cell is. Comparison (outside any
+proof): +11.66 % against Q_β; it cannot be m_n − m_p (below 2m_e at every q).
