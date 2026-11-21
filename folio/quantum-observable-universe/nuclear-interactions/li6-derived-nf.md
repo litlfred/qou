@@ -1,9 +1,9 @@
 **Example.**
-Lithium-6 ($Z = 3$, $N = 3$, $A = 6$) is the lightest nucleus beyond the doubly-magic helium-4 core. Its construction demonstrates the operator transition from Regime II (Hopf link) back to Regime III (bare crossing) after the He-4 magic shell closes.
+Lithium-6 ($Z = 3$, $N = 3$, $A = 6$) is the lightest nucleus beyond the doubly-magic helium-4 core. Its construction demonstrates the operator transition from Regime II ($L_\pm$, whose closure in $B_3$ is the unknot) back to Regime III (bare crossing) after the He-4 magic shell closes.
 
 ## Inductive construction
 
-The He-4 core is built by Regime I $\to$ II operators. The fifth nucleon still uses a Hopf link, riding the stability of the doubly-magic core. But the sixth nucleon transitions to the bare mixed crossing $C_{pn}$ (Regime III).
+The He-4 core is built by Regime I $\to$ II operators. The fifth nucleon still uses an $L_\pm$ operator, riding the stability of the doubly-magic core. But the sixth nucleon transitions to the bare mixed crossing $C_{pn}$ (Regime III).
 
 ## Normal form at $q_0$
 
@@ -24,4 +24,4 @@ $$
 1. All coefficients are positive. Li-6 is deficit-free. This is consistent with Li-6 being the lightest stable lithium isotope.
 2. The dominant term is $L_-$. This reflects the strong neutron-proton $L_-$ binding inherited from the He-4 core.
 3. The operator transition at step 6 marks the passage from the magic-shell regime to the open-shell regime. Beyond this point, nucleons interact via bare crossings. The collective shell effect diminishes.
-4. The $e^-$ coefficient is positive. The nucleus absorbs the trefoil deficit. The positive $e^-$ means the nucleus is a trefoil supplier, not a deficit-bearer. It can emit electrons without beta-decay instability.
+4. The $e^-$ coefficient is positive. The nucleus absorbs the electron-word ($\sigma_0\sigma_1\sigma_0$) deficit. The positive $e^-$ means the nucleus supplies the electron word rather than bearing a deficit in it. It can emit electrons without beta-decay instability.

@@ -15,7 +15,7 @@ $$
   \Phi_k \in \{L_+ = \sigma_0\sigma_1,\; L_- = \sigma_1\sigma_0\}
 $$
 
-*The Hopf link achieves demand closure at magic shell boundaries.*
+*The $L_\pm$ operators, whose closures are the unknot, achieve demand closure at magic shell boundaries.*
 
 *(Regime III — Open shell.) Beyond a closed magic shell, the optimal operator reverts to the bare typed crossing:*
 
