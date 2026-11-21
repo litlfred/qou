@@ -5777,6 +5777,14 @@ git fetch --depth=1 origin "$BR" \
 # Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
 # used, because the real limit is a per-session quota near 38G.
 
+# 🟩 RESEEDED 2026-11-21, head `7c61a1ba876` (bean qou-56qy): an incremental
+# `lake build QOU UGB Fred2005` at main 9428c3511c, 7464 jobs green. 24 parts,
+# 2.1 GB, 61436 tar entries: 7478 oleans / 7479 traces (mathlib 3697, QOU 3466,
+# UGB 35, Fred2005 2). Paper paths are stored as `folio/...`, so the
+# content->folio transform below is a no-op on this seed. Checked: a clean
+# restore plus scripts/lake-restore-package-git.sh, then `lake build`, rebuilds
+# 0 modules. The figures below (a792c46d01b, 2026-09-06) are history.
+#
 # 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
 # flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
 # is now FALSE for this branch: `lake-cache/qou-v4-24-0` was RESEEDED AGAIN
