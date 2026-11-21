@@ -312,6 +312,27 @@ def convention_fingerprint(crossings) -> str:
     return "+".join(f"{ct}:{counts[ct]}" for ct in CTYPES if counts.get(ct))
 
 
+def word_fingerprint(crossings) -> str:
+    """A stable hash of the ORDERED word: every (generator, ctype) in sequence.
+
+    `convention_fingerprint` is a ctype multiset, so it cannot see a
+    reordering of the same letters. The 2026-09-05 intra-ordering ruling
+    (grouped -> alternating, bean qou-hu1f) is exactly such a reordering, and
+    it left the multiset unchanged: measured 2026-11-20, chi-neutron-h3 and
+    chi-deuteron-h6 matched their multiset fingerprint while serving
+    characters of the superseded word (bean qou-4383). A cache guard keyed on
+    the word itself has to hash the order.
+
+    Returns the first 16 hex digits of SHA-256 over "gen:ctype" joined by ",".
+    """
+    import hashlib
+    for _, ct in crossings:
+        if ct not in CTYPES:
+            raise ValueError(f"unknown ctype {ct!r}")
+    s = ",".join(f"{int(g)}:{ct}" for g, ct in crossings)
+    return hashlib.sha256(s.encode()).hexdigest()[:16]
+
+
 def convention_label(crossings) -> str:
     """The human-facing convention name for a word, derived not declared.
 

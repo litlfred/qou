@@ -1,13 +1,9 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:cyclotomic-depth3-dimension-synthesis",
+export default conjecture({
+  label: "conj:cyclotomic-depth3-dimension-synthesis",
   title:
     "Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \\geq 5$",
-  lean: {
-    ref: "qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound",
-    validation: "not_checked",
-  },
   computation: {
     engine: "mpmath",
     script: "computations/cyclotomic_depth3_dimension_pslq.py",
@@ -16,6 +12,19 @@ export default proposition({
     status: "verified",
   },
   uses: ["conj:two-filtration-bridge-general"],
+  authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "Demoted from proposition to conjecture (owner card, 2026-11-21, \"Prove and demote\"). " +
+        "The equality needs a lower bound: that the surviving real (or imaginary) parts are " +
+        "Q-linearly independent modulo the Tate and zeta lines. That is the open Beilinson / Zagier " +
+        "conjecture for cyclotomic fields, not an unconditional result. The upper-bound counting " +
+        "is kept as a sketch; the PSLQ witnesses at small K are evidence, not proof. The old " +
+        "lean.ref named a declaration that does not exist and is removed.",
+    },
+  ],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "cyclotomic",
@@ -26,6 +35,5 @@ export default proposition({
     "K-7-certified",
     "synthesis",
     "graded-mikusinski",
-    "theorem-level",
   ],
 });

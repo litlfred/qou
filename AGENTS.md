@@ -5777,6 +5777,14 @@ git fetch --depth=1 origin "$BR" \
 # Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
 # used, because the real limit is a per-session quota near 38G.
 
+# 🟩 RESEEDED 2026-11-21, head `7c61a1ba876` (bean qou-56qy): an incremental
+# `lake build QOU UGB Fred2005` at main 9428c3511c, 7464 jobs green. 24 parts,
+# 2.1 GB, 61436 tar entries: 7478 oleans / 7479 traces (mathlib 3697, QOU 3466,
+# UGB 35, Fred2005 2). Paper paths are stored as `folio/...`, so the
+# content->folio transform below is a no-op on this seed. Checked: a clean
+# restore plus scripts/lake-restore-package-git.sh, then `lake build`, rebuilds
+# 0 modules. The figures below (a792c46d01b, 2026-09-06) are history.
+#
 # 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
 # flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
 # is now FALSE for this branch: `lake-cache/qou-v4-24-0` was RESEEDED AGAIN
@@ -6027,6 +6035,23 @@ re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 > **A source-change count is the wrong population.** Six of those 74 have no
 > olean at all — a *new* file inherits its dependencies' staleness without ever
 > appearing in a drift count keyed on changed sources. Use the closure.
+>
+> **Check your own module before you trust a `lean`-direct green on it (owner
+> approval 2026-11-21, bean `qou-56qy` item 3).** The census is cheap and
+> prints whether the module you touched sits in the dirty closure:
+>
+> ```bash
+> scripts/lean-library-sweep.py --report --only-exact QOU.Your.Module   # one module
+> scripts/lean-library-sweep.py --report --only QOU.Your.Chapter        # a prefix
+> ```
+>
+> It exits 0 and builds nothing. Its last line reads `selection <X>: N of them
+> are dirty`. Measured on `QOU.BringConeGauge` after the 2026-11-21 reseed:
+> 35 modules in its graph, 0 dirty, about 30 s. If N is above 0, rebuild that
+> module's cone with `scripts/lean-direct-cone.sh QOU.Your.Module` (it never
+> calls `lake`, so the restored cache survives), then re-run `lean`-direct. A
+> green from a module with N above 0 is a claim about the snapshot, not about
+> your source.
 >
 > This block is an owner-reviewable wording change to the repo's primary
 > verification guidance, added on the evidence above; revert the wording if you

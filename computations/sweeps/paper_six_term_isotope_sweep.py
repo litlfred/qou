@@ -1565,7 +1565,7 @@ if __name__ == "__main__":
             "upstream_witness_hashes": _upstream_hashes,
         },
         # The Phase-3 substrate-Δm benchmark (PR #696 D3 lift) lives
-        # entirely in the sibling probe `probe_flavor_dressed_mass_split.py`
+        # entirely in the sibling probe `probe_flavor_dressed_mass_from_substrate_split.py`
         # / `flavor-dressed-mass-from-substrate-split.witness.json`.
         # This sweep does NOT consume the substrate-Δm witness — it is
         # an independent end-to-end test — so the substrate-Δm blocks

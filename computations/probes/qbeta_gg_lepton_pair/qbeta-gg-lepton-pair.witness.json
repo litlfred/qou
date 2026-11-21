@@ -1,0 +1,3324 @@
+{
+  "engine": "fractions",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T15:12:32.894668+00:00",
+  "commitSha": "5aa5ed6fe4b504a0f4e9fbbf28b9f164798cdc58",
+  "assertions": [
+    {
+      "name": "G1_hecke_relation",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "sigma^2 = h sigma + 1 for the Jimbo R at q = 2, 3 (exact)."
+    },
+    {
+      "name": "G2_framing_corrected_trace_is_markov_invariant",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "q^(-2 writhe) Tr(K^n rho) is unchanged by positive and negative stabilisation on four samples at q = 2, 3, exactly."
+    },
+    {
+      "name": "G3_parity_holds_on_every_word",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "n + #components is even for every gamma-gamma word enumerated on 3 and 5 strands (Lean gammaGamma_components_parity)."
+    },
+    {
+      "name": "G4_none_on_three_strands",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "no gamma-gamma word on 3 strands (<= 6 vertices) closes to three components with linking pattern {1,0,0}: three components force the identity permutation, all components are single strands with no self-crossings, so writhe = 2 lk = +-2, but every gamma-gamma word has writhe 0."
+    },
+    {
+      "name": "G5_report_five_strand_matches",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "86 gamma-gamma words on 5 strands (<= 6 vertices) have the invariant of e- + nu-bar or its mirror at q = 2 and 3; smallest vertex counts {'e- + nu-bar': 3, 'mirror (e+ + nu)': 3}. Evidence of isotopy, not a proof. None is selected."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 199,
+  "computation": "qbeta-gg-lepton-pair",
+  "scriptFile": "qbeta_gg_lepton_pair_probe.py",
+  "scriptHash": "6a76e0e5d985",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_gg_lepton_pair/qbeta_gg_lepton_pair_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_gg_lepton_pair/qbeta_gg_lepton_pair_probe.py"
+  },
+  "description": "Which gamma-gamma words close to the lepton pair e- + nu-bar (Hopf link + unknot): parity, writhe, and an exact framing-corrected quantum invariant at q = 2, 3. Nothing selected or scored.",
+  "beans": [
+    "qou-cds1",
+    "qou-99qc"
+  ],
+  "lean": "QOU/QBeta/GammaGammaLeptonPair.lean",
+  "reference_invariant": {
+    "2": "425/128",
+    "3": "8200/2187"
+  },
+  "candidates": [
+    {
+      "n": 5,
+      "word": "V0V0V1",
+      "vertices": 3,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0",
+      "vertices": 3,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1",
+      "vertices": 3,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0",
+      "vertices": 3,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1",
+      "vertices": 3,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0",
+      "vertices": 3,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2",
+      "vertices": 3,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1",
+      "vertices": 3,
+      "self_crossings": [
+        0,
+        0,
+        2
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2",
+      "vertices": 3,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1",
+      "vertices": 3,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2",
+      "vertices": 3,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1",
+      "vertices": 3,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V2",
+      "vertices": 4,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V2",
+      "vertices": 4,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V0",
+      "vertices": 4,
+      "self_crossings": [
+        0,
+        1,
+        1
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V2",
+      "vertices": 4,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V0V1",
+      "vertices": 4,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V1V2",
+      "vertices": 4,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V2V0",
+      "vertices": 4,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V0",
+      "vertices": 4,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V2",
+      "vertices": 4,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V0",
+      "vertices": 4,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V1",
+      "vertices": 4,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V0",
+      "vertices": 4,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V2",
+      "vertices": 4,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V2V1",
+      "vertices": 4,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V0",
+      "vertices": 4,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V1",
+      "vertices": 4,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V0V1",
+      "vertices": 5,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V0V2",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        1,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V1V1",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V0V1",
+      "vertices": 5,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V1V0",
+      "vertices": 5,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V1V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V1V2",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        0,
+        4
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1V0V1",
+      "vertices": 5,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V0V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        0,
+        4
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V1V2",
+      "vertices": 5,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V0V0V2",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V0V2V0",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V0V2V2",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V1V1V0",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V0V2",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V1V1",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V1V0",
+      "vertices": 5,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V2V1",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V0V0",
+      "vertices": 5,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V0V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V1V0",
+      "vertices": 5,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V2V0",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V2V2V1",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V0V2",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V1V0",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V2V2",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2V1V2",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V1V0",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V1V2",
+      "vertices": 5,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V1V2",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V2V0",
+      "vertices": 5,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V2V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V2V2",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        0,
+        6
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V1V2",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V2V0",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        1,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V0V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        0,
+        4
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V2V1",
+      "vertices": 5,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V2V0V0",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V2V0V2",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V2V2V0",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V0V0",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V0V2",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V2V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V0V1",
+      "vertices": 5,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V1V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V1V2",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        0,
+        6
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V2V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V2V0",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V1V0",
+      "vertices": 5,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V2V1",
+      "vertices": 5,
+      "self_crossings": [
+        0,
+        0,
+        6
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V0V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V0V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V1V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        8,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V1V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V1V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        2
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V2V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V0V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V0V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        8,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V1V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V2V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        3,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V2V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V2V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V2V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V1V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V0V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        1,
+        3
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V1V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V2V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        1,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V2V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V2V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V0V2V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        8,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V0V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        8,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        6
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        1,
+        3
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V0V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1V0V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        3,
+        0,
+        1
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1V1V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        8,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1V2V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        2
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V1V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V0V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V0V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        3,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V0V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V1V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V2V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V2V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        6
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V2V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        1,
+        3
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V2V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V1V2V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V0V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V0V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V0V1V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V0V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        3
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V1V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V1V1V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        3
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V1V2V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V1V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V0V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        2
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V1V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V1V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V2V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V2V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V0V2V2V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V0V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        8,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V0V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        4
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V0V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V2V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        3,
+        1
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V2V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        1,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V0V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        8,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V0V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V0V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        3,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        8,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V2V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V1V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V2V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V2V1V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V2V2V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V0V2V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V0V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V0V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V0V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        3,
+        1
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V1V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V1V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        3,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V2V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V0V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V0V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V0V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V1V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V1V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V1V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        4
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V2V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V1V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2V0V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2V1V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        4
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2V2V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V1V2V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        2
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V0V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V0V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V0V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V2V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V2V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V0V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        2
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V1V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        4
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V1V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V2V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V1V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        8
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V0V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        6,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V0V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V2V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V2V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V2V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V2V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        4
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V1V2V2V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V0V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V0V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V1V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        3,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V1V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V2V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V0V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V0V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        6
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V0V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        3,
+        0,
+        1
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V2V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V2V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V1V2V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        1,
+        3
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V2V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V2V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        3
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V2V2V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V0V2V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V0V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V0V0V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V0V0V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V0V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V0V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        3,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V0V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V0V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V1V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V1V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V2V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V1V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        6,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V0V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        8
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        8,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V1V2V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        1
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V1V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        6
+      ],
+      "match": "e- + nu-bar"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V1V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V1V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V1V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V0V2V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        0,
+        3
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V0V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        2,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V0V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V0V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V1V0V2",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V1V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V1V2V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        3,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V2V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        1,
+        1,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V2V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        8
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V1V2V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V0V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V0V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V0V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V1V0V0",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V1V0V1",
+      "vertices": 6,
+      "self_crossings": [
+        2,
+        0,
+        0
+      ],
+      "match": "mirror (e+ + nu)"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V1V1V0",
+      "vertices": 6,
+      "self_crossings": [
+        4,
+        0,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V1V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V1V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        0,
+        8
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V1V2V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V2V1V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V2V1V2",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    },
+    {
+      "n": 5,
+      "word": "V2V2V2V2V2V1",
+      "vertices": 6,
+      "self_crossings": [
+        0,
+        4,
+        0
+      ],
+      "match": "other link"
+    }
+  ],
+  "first_match_vertex_counts": {
+    "e- + nu-bar": 3,
+    "mirror (e+ + nu)": 3
+  },
+  "scope": "(a): 3 and 5 strands, at most 6 vertices."
+}
