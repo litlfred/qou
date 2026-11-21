@@ -52,7 +52,6 @@ export default chapter({
         "intro-pair-production-knot-operators",
         "q-value-transition",
         "q-value-transition-properties",
-        "photon",
         "breit-wheeler-pair-production",
         "gamma-gamma-generates-particles",
         "breit-wheeler-pair-production-derivation",

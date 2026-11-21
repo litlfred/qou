@@ -2,7 +2,7 @@
   Photon: the four-term Hecke element
       γ(φ) = 𝟙 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁⁻¹.
 
-  Library home of `def:photon` (predicted-spectra/photon.md). It lives in the
+  Library home of `def:photon` (knots-particles-confinement/photon.md). It lives in the
   library, not as a content-block sibling, so that library modules can import
   it and state their photons with this one `photon` rather than a local copy.
 
