@@ -672,6 +672,7 @@ import QOU.BraidKnot
 import QOU.BraidKnot.MesonFusionIndexSelection
 import QOU.BraidKnot.ElectronWordCandidates
 import QOU.BraidKnot.WeakVertexElectronFactor
+import QOU.QBeta.WeakVertexTwoTerm
 import QOU.BraidKnot.ElectronPositronWrithe
 import QOU.BraidKnot.ElectronLevelWord
 import QOU.BraidKnot.LongestWordNotTwoPhoton
