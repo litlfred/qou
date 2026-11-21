@@ -101,6 +101,79 @@ theorem value_rModel_braidClosure {m : ℕ} (w : List (Fin m × Bool)) :
   refine Finset.sum_congr rfl fun a _ => ?_
   simp [siteWt, rModel]
 
+/-! ### The Reidemeister identities that follow from the braid action -/
+
+section Identities
+
+open QOU.Mass.QuantumSl2.Markov (ptr ptr_rCheck ptr_rCheckInv rCheckInv_mul)
+
+theorem rModel_X_true (uin uout oin oout : Fin (d + 1)) :
+    (rModel s hs d).X true uin uout oin oout = rCheckMat s hs d d (oin, uin) (uout, oout) := rfl
+
+theorem rModel_X_false (uin uout oin oout : Fin (d + 1)) :
+    (rModel s hs d).X false uin uout oin oout = rCheckInv s hs d (uin, oin) (oout, uout) := rfl
+
+theorem rModel_K (r : Fin (d + 1)) : ((rModel s hs d).K r : 𝕜) = qWt s d r := rfl
+
+/-- **Parallel R2** for every colour, from `Ř Ř⁻¹ = 1 = Ř⁻¹ Ř`. -/
+theorem rModel_r2par (b : Bool) (a b' c e : Fin (d + 1)) :
+    ∑ i, ∑ j, (rModel s hs d).X b c j a i * (rModel s hs d).X (!b) j e i b' =
+      if a = b' ∧ c = e then 1 else 0 := by
+  cases b
+  · have h := congrFun (congrFun (rCheckInv_mul s hs d) (c, a)) (e, b')
+    rw [mul_apply, Fintype.sum_prod_type] at h
+    simp only [Bool.not_false, rModel_X_false, rModel_X_true]
+    rw [h, one_apply]
+    simp [Prod.ext_iff, and_comm]
+  · have h := congrFun (congrFun (rCheck_mul_inv s hs d) (a, c)) (b', e)
+    rw [mul_apply, Fintype.sum_prod_type, Finset.sum_comm] at h
+    simp only [Bool.not_true, rModel_X_false, rModel_X_true]
+    rw [h, one_apply]
+    simp [Prod.ext_iff]
+
+include hq2 hint in
+/-- **R3** for every colour, from the braid relation. -/
+theorem rModel_r3 (a₀ a₂ b₀ b₂ c₀ c₂ : Fin (d + 1)) :
+    ∑ i, ∑ j, ∑ k, (rModel s hs d).X true b₀ j a₀ i * (rModel s hs d).X true c₀ k i a₂ *
+      (rModel s hs d).X true k c₂ j b₂ =
+    ∑ i, ∑ j, ∑ k, (rModel s hs d).X true c₀ k b₀ j * (rModel s hs d).X true k c₂ a₀ i *
+      (rModel s hs d).X true j b₂ i a₂ := by
+  have h := congrFun (congrFun (QOU.Mass.QuantumSl2.rCheck_braid s hs hq2 d hint)
+    ((a₀, b₀), c₀)) ((c₂, b₂), a₂)
+  simp only [mul_apply, Fintype.sum_prod_type, QOU.Mass.QuantumSl2.leg12_apply,
+    QOU.Mass.QuantumSl2.leg23_apply, one_apply, mul_ite, ite_mul, mul_one, mul_zero,
+    zero_mul, Finset.sum_ite_eq, Finset.sum_ite_eq', Finset.mem_univ, if_true,
+    Finset.sum_ite_irrel, Finset.sum_const_zero, Finset.sum_mul] at h
+  simp only [rModel_X_true]
+  rw [← h, Finset.sum_comm]
+  exact Finset.sum_congr rfl fun j _ => Finset.sum_comm
+
+include hq2 hint in
+/-- R1 with the loop traced on the right (`ptr(Ř^{±1}) = θ^{±1}`). -/
+theorem rModel_r1_right (b : Bool) (x y : Fin (d + 1)) :
+    ∑ i, kinkW (rModel s hs d) (!b) b x y i *
+        ((((rModel s hs d).K i ^ kinkTurn (!b) b : 𝕜ˣ)) : 𝕜) =
+      ((thetaU s hs d ^ signZ b : 𝕜ˣ) : 𝕜) * if x = y then 1 else 0 := by
+  cases b
+  · have h := congrFun (congrFun (ptr_rCheckInv s hs d hq2 hint) x) y
+    simp only [ptr, smul_apply, one_apply, smul_eq_mul] at h
+    simp only [Bool.not_false, kinkW_true, rModel_X_false, kinkTurn, signZ]
+    simp only [Bool.true_eq_false, Bool.false_eq_true, if_false, zpow_one, zpow_neg_one,
+      Units.val_inv_eq_inv_val, thetaU, Units.val_mk0, rModel_K]
+    rw [← h]
+    refine Finset.sum_congr rfl fun i _ => ?_
+    rw [qWt, mul_comm]
+  · have h := congrFun (congrFun (ptr_rCheck s hs d hq2 hint) x) y
+    simp only [ptr, smul_apply, one_apply, smul_eq_mul] at h
+    simp only [Bool.not_true, kinkW_false, rModel_X_true, kinkTurn, signZ]
+    simp only [Bool.false_eq_true, if_false, if_true, zpow_one, thetaU,
+      Units.val_mk0, rModel_K]
+    rw [← h]
+    refine Finset.sum_congr rfl fun i _ => ?_
+    rw [qWt, mul_comm]
+
+end Identities
+
 /-! ### Writhe -/
 
 /-- The writhe of a closure code is the exponent sum of the word. -/
