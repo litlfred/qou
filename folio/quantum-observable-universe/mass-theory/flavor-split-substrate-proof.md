@@ -1,6 +1,6 @@
 **Proof.**
 
-Steps 3 to 5 prove the identity. Steps 1, 2 and 6 show how its left-hand side arises as the substrate formula for $(m_n - m_p)/M_N$, under the pair-Skein formula and the ansatz of Step 2.
+Step 5 proves the identity: dividing (4) by 3 gives it, and it holds for every nonzero $q$. Steps 1 to 4 and 6 show how its two sides arise as the substrate formula for $(m_n - m_p)/M_N$, under the pair-Skein formula and the ansatz of Step 2. Those steps are not needed for the identity.
 
 *Step 1 (Pair-Skein difference, exact).*
 
@@ -40,7 +40,7 @@ $$
 This is the minimal substrate-atom combination satisfying three conditions:
 (a) Bar-involution antisymmetry under $q \mapsto q^{-1}$ (consistent with the antisymmetry of the splitting under flavor exchange $\mathfrak{u} \leftrightarrow \mathfrak{d}$).
 (b) Leading order $(q-1)^3$ at the classical limit.
-(c) Numerical agreement to $-0.67\%$ at $q = q_0$.
+(c) Numerical agreement to $-0.13\%$ at the proton pin $q = q_0$.
 
 **Scope of Step 2.** Equation (2) is a phenomenological ansatz rather than a derived identity: Condition (c) chooses the form because it agrees with experiment, which is selection against the target. Conditions (a) and (b) do not single it out:
 
@@ -63,7 +63,7 @@ $$
   z_0,
 $$
 
-and $\hbar_q \cdot \sqrt{q} = (q - 1)/\sqrt{q} = q^{1/2} - q^{-1/2} = z_0$. So $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$. The first equality holds for the convention-C weight only: at the canonical weight $h_q z \approx 0.1281$ at $q_0$, against $q_0^{1/2} - q_0^{-1/2} \approx 0.1044$. This gives the chain of equivalent forms:
+and $\hbar_q \cdot \sqrt{q} = (q - 1)/\sqrt{q} = q^{1/2} - q^{-1/2} = z_0$. So $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$. The first equality holds for the convention-C weight only: at the canonical weight $h_q z \approx 0.1281$ at the proton pin $q_0$, against $q_0^{1/2} - q_0^{-1/2} \approx 0.1044$. This gives the chain of equivalent forms:
 
 $$
   h_q^2 \cdot \frac{\hbar_q}{\sqrt{q}}

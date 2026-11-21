@@ -2,26 +2,26 @@
 
 This remark is where the formula of [the flavor-split identity](#prop:flavor-split-substrate) is compared with measurement. The identity itself makes no empirical claim.
 
-At $q = q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps):
+At the proton pin $q = q_0 \approx 1.1099785827513808$, evaluated at 40 digits:
 
 $$
   (q_0 - 1)^2 \cdot (1 - q_0^{-4}) / 3
   \;\approx\;
-  (0.10998)^2 \cdot (1 - 0.6585) / 3
+  0.0120953 \cdot 0.341218 / 3
   \;\approx\;
-  0.01210 \cdot 0.3415 / 3
-  \;\approx\;
-  1.376 \times 10^{-3},
+  1.3757 \times 10^{-3},
 $$
 
-against the CODATA value $1.293 / 938.92 \approx 1.377 \times 10^{-3}$, a residual of $-0.10\%$.
+against the CODATA value $(m_n - m_p)/M_N \approx 1.2933 / 938.919 \approx 1.3775 \times 10^{-3}$, with $M_N = (m_p + m_n)/2$. The residual is $-0.128\%$.
 
 **Evaluation at $q_0$.**
 
-| Quantity                       | Substrate formula                 | Substrate value        | CODATA target          | Residual  |
-| ------------------------------ | --------------------------------- | ---------------------- | ---------------------- | --------- |
-| $(m_n - m_p)/M_N$              | $(q-1)^2 (1 - q^{-4}) / 3$        | $1.376 \times 10^{-3}$ | $1.377 \times 10^{-3}$ | $-0.10\%$ |
-| $(m_n - m_p)/\mu_{\text{avg}}$ | $\hbar_q^2 \cdot h_q \cdot [2]_q$ | $4.127 \times 10^{-3}$ | $4.148 \times 10^{-3}$ | $-0.49\%$ |
-| $m_n - m_p$                    | $M_N \cdot (q-1)^2(1-q^{-4})/3$   | $1.287\,\text{MeV}$    | $1.293\,\text{MeV}$    | $-0.52\%$ |
+| Quantity                       | Substrate formula                 | Substrate value          | CODATA target            | Residual   |
+| ------------------------------ | --------------------------------- | ------------------------ | ------------------------ | ---------- |
+| $(m_n - m_p)/M_N$              | $(q-1)^2 (1 - q^{-4}) / 3$        | $1.3757 \times 10^{-3}$  | $1.3775 \times 10^{-3}$  | $-0.128\%$ |
+| $(m_n - m_p)/\mu_{\text{avg}}$ | $\hbar_q^2 \cdot h_q \cdot [2]_q$ | $4.1271 \times 10^{-3}$  | $4.1324 \times 10^{-3}$  | $-0.128\%$ |
+| $m_n - m_p$                    | $M_N \cdot (q-1)^2(1-q^{-4})/3$   | $1.2917\,\text{MeV}$     | $1.2933\,\text{MeV}$     | $-0.128\%$ |
 
-The $-0.10\%$ residual exceeds the formal precision of $q_0$, so the substrate ansatz is approximate at the subleading order. The ansatz of Step 2 of the proof was chosen partly for its agreement with experiment, so this agreement is not independent evidence for it.
+The three rows carry the same residual. The CODATA target of the second row is $3 (m_n - m_p)/M_N$, using $M_N = 3\mu_{\text{avg}}$ from Step 6 of the proof, and the third row multiplies the first by $M_N$. So the table records one comparison, not three.
+
+The residual is far larger than the uncertainty in $q_0$ and in the CODATA masses, so the formula does not reproduce the splitting exactly. The ansatz of Step 2 of the proof was chosen partly for its agreement with experiment, so this agreement is not independent evidence for it.

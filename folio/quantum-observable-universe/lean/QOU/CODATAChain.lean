@@ -180,19 +180,13 @@ The theorems in this file depend on:
 - `KnotRegistry.trefoilEntry` — electron = trefoil (3₁)
 - `KnotRegistry.borromeanRingsEntry` — nucleon = Borromean (6₂³)
 
-### Formerly assumed, now PROVED (2026-08-31)
+### Removed (owner decision, PR #8917)
 
-Both were context classes whose single field was the bound itself, on the
-stated ground of a "`Real.rpow` limitation". The root is eliminated rather
-than evaluated — with `s = q^{1/2}`, only `s > 0` and `s * s = q` are needed —
-and both are now sorry-free theorems in `HadronicMass`, with the classes
-deleted. The side hypothesis they bound
-(`|q^{1/2} + q^{-1/2} − 2.00228| < 1e-4`) is in fact **false** by 4.3×, so
-neither declaration had ever been invocable; that is recorded as
-`HadronicMass.pair_skein_denom_hypothesis_false`.
-
-They are used only by the pair Skein decomposition (§5a of HadronicMass), not
-by `end_to_end`.
+The two pair-Skein agreement bounds that once sat here were removed with the
+other model-vs-CODATA comparisons. Their side hypothesis
+(`|q^{1/2} + q^{-1/2} − 2.00228| < 1e-4`) is false by 4.3×, which is kept as
+`HadronicMass.pair_skein_denom_hypothesis_false`. Nothing in this file used
+them.
 -/
 
 end QOU.CODATAChain
