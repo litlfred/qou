@@ -46,3 +46,12 @@ for every braid Markov-equivalent to σ₁⁻²σ₂σ₁⁻¹σ₂, [N]⁻¹·J
 theorem (#8902), so the statement covers the Markov class, not yet every braid presentation of
 the link. Polynomiality of the normalised invariant not proved (value at the root = the limit).
 Bean stays open.
+
+## 2026-11-21: polynomiality (PR #8944)
+
+`QOU/Knot/WhiteheadJonesLaurent.lean`, sorry-free:
+- `[N]⁻¹ J_N` for the Whitehead braid's Markov class is `P_N(σ²)` with `P_N ∈ ℤ[q,q⁻¹]` (`braidJonesRT_eq_laurent`).
+- `P_N(e^{πi/N})` equals the Kashaev value (`laurent_at_kashaev_point`).
+- The volume limit is restated as a limit of evaluations of `P_N`.
+
+Next: the combinatorial Markov theorem (Vogel + Traczyk), coordinated with the PL thread. The conjecture stays open in general, so the bean is not closed.
