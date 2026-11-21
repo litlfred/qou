@@ -15,4 +15,4 @@ For the neutron, the deficit is larger: $\gamma = -0.202$, $L_+ = -0.010$, $e^- 
 
 ## Confinement universality
 
-The confined nucleon NF depends only on $q_0$ and the quark types. It is independent of the photon polarization $(\varphi_0, \varphi_1, \varphi_{01})$ that created the quarks. The strong interaction washes out the electromagnetic initial conditions.
+The confined nucleon NF depends only on $q_0$ and the quark types. It is independent of the photon polarization $(\varphi_0, \varphi_1, \varphi_{01})$ that created the quarks.
