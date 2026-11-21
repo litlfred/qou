@@ -147,7 +147,26 @@ Two tensions in `conj:g-action-on-substrate`, reported and not edited:
    outside the equivariant category, which is the categorical form of the no-go above.
 2. G-2/G-4 give `dim_q = [2]_q` for a rank-1 projector. A weight line has quantum dimension `q^{±1}`.
 
-## 10. What remains open
+## 10. A type-B boundary picks a direction, not a size (2026-11-21)
+
+This search was pre-registered in `h5_boundary_datum_preregistration.md`. The computations are exact, in `h5_boundary_sweep_probe.py` and `h5_ruled_photon_probe.py`.
+
+A braid with a wall carries a boundary generator on an end strand. It acts by a 2×2 matrix `𝒦` that must solve the reflection equation `Ř𝒦Ř𝒦 = 𝒦Ř𝒦Ř`. For the Jimbo Ř, the only non-scalar solutions have one diagonal entry forced to zero: the `d` entry when the wall is at strand 1, and the `u` entry when it is at strand 3. In either case `𝒦` does not commute with `F₃`.
+
+Only the diagonal of `𝒦` enters the restricted traces, so the type-B eigenvalues cancel from `T_p/T_n`. For the special pair V³ the ratio does not depend on where the boundary is inserted:
+
+| wall | V³: `T_p/T_n` | at `q = 1` |
+|---|---|---|
+| strand 1 | `−q⁶(q⁶ − 3q⁴ + 3q² − 3)/(q⁶ − 2q⁴ + 3q² − 1)`, which is `2.4287166711934…` at `q₀` | 2 |
+| strand 3 | `q⁸(q² − 2)(q⁴ − q² + 1)/(q¹² − 4q¹⁰ + 6q⁸ − 7q⁶ + 4q⁴ − 3q² + 1)` | 1/2 |
+
+Check against the ruled photon `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹`. V³ is the pair `γ(0,0,qh)·γ(0,0,−q⁻¹h)`. For a general pair `γ(φ)γ(φ′)`, the ratio depends on the photon parameters and on where the boundary is inserted. The general formula reduces exactly to the V³ row above.
+
+This computes only the `M_QCD` term of the two-term trace. The `M_QED` charge term on a boundary would need `Y` and is not computed.
+
+Verdict, scope (a). The boundary fixes the direction up to one binary choice, namely which end carries the wall. It does not fix the size of an n − p splitting, that is, the coupling between the boundary and the bulk.
+
+## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
   framework. Without it, `m_d − m_u` is an input.
