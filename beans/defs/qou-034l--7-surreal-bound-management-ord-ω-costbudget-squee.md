@@ -18,3 +18,19 @@ parent: qou-b1je
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8312, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-21T12:18:03Z — grade algebra complete under +, ·, ∘ (pnp-collatz drain, https://claude.ai/code/session_01Qmmkt4pcG1jyT27PJvFyQ3)
+
+Superseded-premise check (owner request 2026-11-21): none used; pure complexity / growth-order mathematics.
+
+The body's only progress entry points at closed batch PR #8312. Here is what is actually on main:
+- The squeeze `not_polyBounded_of_superPoly` (`QOU/Information/SurrealBudgetGrade.lean`, commit d339df7c39).
+- `+` and `·` closure on the constant-safe class `PolyGrowth` (`QOU/Information/PolyGrowthAlgebra.lean`: `add`, `mul`, `PolyGrowth.mono`).
+
+Branch `claude/pnp-surreal-grade-comp-2026-11-21` (commit `819da5b7f`, additive only) adds three results:
+- `PolyGrowth.comp`: the budget grade is closed under composition.
+- `superPolynomial_not_stable_under_precomp`: the super-poly grade is **not** closed under precomposition (2ⁿ after the constant 0). So the title's "stable under ∘" is true for the budget side only, and false as stated for the super-poly side.
+- `polyGrowth_iff_not_superPolynomial`: the exact De Morgan dual. `PolyBounded` is not the dual, despite its docstring: `n ↦ n+1` is neither.
+
+All three: lean exit 0, axioms [propext, Classical.choice, Quot.sound]. Complete this bean when that PR merges.

@@ -18,3 +18,9 @@ parent: qou-b1je
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8334, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-21T12:18:03Z — triage (pnp-collatz drain, https://claude.ai/code/session_01Qmmkt4pcG1jyT27PJvFyQ3)
+
+Superseded-premise check (owner request 2026-11-21): none used; pure complexity / growth-order mathematics.
+The restricted (bandwidth) model is on main: `PhysicalIntractability.lean`. Strengthening it to monotone, bounded-depth or communication models means importing those models' known lower bounds (e.g. Razborov monotone, Håstad depth), and none of them is in Mathlib. This is open research scope with no quick chip, and it stays todo. Finding bean qou-4hbq (main commit 77f886747a) records that this is substantially formalized for the bandwidth model.

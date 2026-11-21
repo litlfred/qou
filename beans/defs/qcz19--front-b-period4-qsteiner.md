@@ -24,3 +24,18 @@ STALE-REFRESH 2026-08-29. B1 LANDED: AppendixSurreals/collatz_period4.lean prove
 
 ## Round 68 Progress
 - Addressed in PR litlfred/qou#8436 (`2d8b265bb4efb67d3e22c86c7d7605f3f1bb60ad`): de-vacuified with non-tautological substantive theorems, 0 sorry/axiom, 0 static audit findings, and 80-dps 2-commit witness.
+
+
+## 2026-11-21T12:17:51Z — every cycle classified, sorry-free (pnp-collatz drain, https://claude.ai/code/session_01Qmmkt4pcG1jyT27PJvFyQ3)
+
+Superseded-premise check (owner request 2026-11-21): none used; pure algebra over ℤ[q^{±1}].
+
+Branch `claude/qcollatz-cycle-classification-2026-11-21` (commit `532c188f3`) adds `QOU/AppendixSurreals/collatz_cycle_classification.lean`. `laurent_cycle_classification` proves that every periodic orbit of the Skein–Collatz map on `LaurentPolynomial ℤ` starts at `0`, `-q⁻²` (the odd fixed point), `q⁻¹` or `1+q⁻¹` (the fundamental cycle). There is no positivity hypothesis, no real-q evaluation, and no restriction on the parity word. Proof by end-coefficient invariants:
+- `ord ≤ -2`: an even step lowers the second-lowest coefficient by the lowest one and an odd step fixes it ⇒ no even step ⇒ affine all-odd fixed point.
+- `ord ≥ 0`: evaluation at `q=0` adds 1 per odd step ⇒ no odd step ⇒ 0.
+- `ord = -1`: the same count on the reversed polynomial.
+`lean -DautoImplicit=false` exit 0, no warnings; `#print axioms` = [propext, Classical.choice, Quot.sound].
+
+Scope: the formal ring ℤ[q^{±1}] only; says nothing about `reaches_cycle` or about classical Collatz. The PR awaits owner approval (math-repo rule). Mark completed when it merges.
+
+**For this bean:** B2 (the general-word q-Steiner bound) is no longer needed as a separate result. The general-word statement is proved by a different invariant (end coefficients, not the q=1 height).
