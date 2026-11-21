@@ -24,14 +24,13 @@ in the QOU formalization.  Its purpose is twofold:
    | Gauge group emergence | VolumeForm | `SU2Emergence.det_one` |
    | Self-dual instantons | Instanton | `categorical_self_duality` |
    | Topological mass decomposition | TopologicalMass | `topological_mass_decomposition` |
-   | CODATA end-to-end chain | CODATAChain | `end_to_end` |
+   | Derived substrate parameter | CODATAChain | `end_to_end` |
    | Descartes terminality | ArchimedeanUniverse | `descartes_terminal` |
 
 > **Canonical-accuracy note.** This synthesis node bundles the *proved*
-> pillars, but the CODATA leg (`end_to_end`) rests on CODATA-pinned mass
-> constants (`HadronicMass`) and the deprecated `Vol(K)/ℏ_q²` mass shape,
-> **not** the canonical muon-anchored Hecke energy (`computations/canonical_mass.py`),
-> and its binding row is a consistency identity rather than a prediction.
+> pillars. Pillar 4 (`end_to_end`) is only the derived substrate parameter;
+> pillar 3 uses the deprecated `Vol(K)/ℏ_q²` mass shape, **not** the
+> canonical muon-anchored Hecke energy (`computations/canonical_mass.py`).
 > Read pillars 3–4 below with those caveats — per-isotope binding is the
 > still-open `Δ_λ` gate.  Canonical sources:
 > `docs/canonical-mass-formula-guardrail.md`,
@@ -67,7 +66,7 @@ lake exe graph QOU.LightningPath   -- renders the full dependency DAG
 
 The resulting graph shows the critical path from `FrobeniusHopfData` through
 `ArchimedeanSubstrateField`, `TopologicalMassDecomposition`, `ArchimedeanMassFormula`,
-and `HadronicMass` to `terminal_resolution_hadronic_mass`.
+and `HadronicMass` to `CODATAChain.end_to_end`.
 -/
 
 
@@ -101,20 +100,14 @@ open HadronicMass CODATAChain ArchimedeanUniverse Torsion
        mass (read with `K = 𝓑₃` it gives `m_p ≈ 966` MeV, +2.96%; the λ_A
        linking weight is a fit).  See `docs/canonical-mass-formula-guardrail.md`.
 
-    4. **CODATA agreement**: the substrate parameter `q ≈ 1.1097` is *derived*
-       (not assumed) from `Vol(4₁)` and the muon/electron ratio, with
-       `|q − 1.1097| < 0.001` proved by interval arithmetic — this is the one
-       genuinely-derived observable on this leg.  The proton and neutron rows
-       of `end_to_end` are **CODATA-pinned reference constants**
-       (`proton_topological := proton_mass_MeV`; see the `HadronicMass`
-       honesty note), so `row1/row2_matches_CODATA` are equalities-by-
-       construction, not predictions.  The deuteron and binding rows are a
-       mass-deficit **consistency identity** `m_p + m_n − B_exp ≈ m_D` with
-       `B_exp = binding_energy_QOU` the *experimental* deficit rounded to
-       4 s.f. — **not** an independent binding prediction.  Canonically the
-       per-isotope binding `B(K) = m_e·Σ_λ y_λ χ^λ Δ_λ` is the **OPEN `Δ_λ`
-       gate**: derived only to ≈ −9% on the deuteron and off 44–72% for
-       A ≥ 3 (`docs/canonical-derivation-cheat-sheet.md` §9b).
+    4. **Substrate parameter**: `q ≈ 1.1097` is *derived* (not assumed) from
+       `Vol(4₁)` and the muon/electron ratio, with `|q − 1.1097| < 0.001`
+       proved by interval arithmetic (`CODATAChain.end_to_end`).  The former
+       CODATA nucleon and deuteron rows held by construction and were removed
+       (PR #8897).  Canonically the per-isotope binding
+       `B(K) = m_e·Σ_λ y_λ χ^λ Δ_λ` is the **OPEN `Δ_λ` gate**: derived only
+       to ≈ −9% on the deuteron and off 44–72% for A ≥ 3
+       (`docs/canonical-derivation-cheat-sheet.md` §9b).
 
     5. **Descartes terminality**: the Descartes universe with `χ = −6` is the
        unique rigid completion (`descartes_terminal`).
@@ -141,19 +134,16 @@ theorem lightning_path_synthesis :
     ∧ (∀ {M : Type*} (tmd : TopologicalMassDecomposition M),
         tmd.totalMass = tmd.baselineHolonomy +
           (Finset.univ.sum fun i => tmd.exceptionalContribution i))
-    -- Pillar 4: CODATA-pinned hadronic rows (hold by construction; see
-    -- HadronicMass §5 — these are not predictions)
-    ∧ (|proton_topological - proton_mass_MeV| < 1e-3 ∧
-       |neutron_topological - neutron_mass_MeV| < 1e-3 ∧
-       |deuteron_topological - deuteron_mass_MeV| < 1e-3 ∧
-       |binding_energy_QOU - binding_energy_CODATA| < 0.001)
+    -- Pillar 4: the substrate parameter is derived (the former CODATA
+    -- nucleon rows held by construction and were removed, PR #8897)
+    ∧ |Calculations.derived_q - MassDerivation.substrate_q| < 0.001
     -- Pillar 5: Descartes terminality
     ∧ (∀ (dc : ArchimedeanCondition) (tk : TannakaKreinRigidity),
         dc.eulerChar = -6 ∧ tk.iso_count = 1) :=
   ⟨fun emg g => emg.det_one g,
    fun _ inst => categorical_self_duality _ inst,
    fun tmd => topological_mass_decomposition tmd,
-   terminal_resolution_hadronic_mass,
+   end_to_end,
    fun dc tk => descartes_terminal dc tk⟩
 
 end QOU

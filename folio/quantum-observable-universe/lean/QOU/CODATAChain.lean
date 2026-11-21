@@ -33,9 +33,9 @@ MassDerivation constants        (CODATA input: m_μ/m_e, Vol(4₁))
   │
 substrate_q ≈ 1.1097            (proved: |q - 1.1097| < 0.001)
   │
-  ▼  terminal_resolution_hadronic_mass   (holds by construction)
-  │
-Proton, Neutron, Deuteron, Binding Energy: CODATA-pinned record
+  ×  (the former CODATA-pinned nucleon rows held by construction and were
+     removed; see QOU.MassTheory.PairSkeinNucleon for what the pair Skein
+     formula determines)
 ```
 
 ## What is assumed vs proved
@@ -162,26 +162,17 @@ theorem substrate_from_archimedean_formula :
 Restate the terminal resolution theorem, making explicit that it
 sits at the end of a chain starting from the `ArchimedeanMassFormula`. -/
 
-/-- **End-to-end theorem**: the full chain from QOU theory to CODATA.
+/-- **End-to-end theorem**: the substrate parameter `q ≈ 1.1097` is derived
+    from `Vol(4₁)` and the muon/electron ratio, with `|q − 1.1097| < 0.001`
+    proved by interval arithmetic.
 
-    Only the first conjunct carries content: the substrate parameter
-    `q ≈ 1.1097` is derived from `Vol(4₁)` and the muon/electron ratio, with
-    `|q − 1.1097| < 0.001` proved by interval arithmetic. The remaining four
-    conjuncts are the CODATA-pinned record
-    `HadronicMass.terminal_resolution_hadronic_mass`: the proton and neutron
-    values are defined as the CODATA constants and the deuteron row uses the
-    experimental binding energy, so they hold by construction and are not
-    predictions. See `QOU.MassTheory.PairSkeinNucleon` for what the pair
-    Skein formula actually determines. -/
+    This theorem used to also carry four CODATA nucleon rows. Those held by
+    construction (the values were defined as the CODATA constants) and were
+    removed (owner decision, PR #8897). See `QOU.MassTheory.PairSkeinNucleon`
+    for what the pair Skein formula actually determines. -/
 theorem end_to_end :
-    -- Substrate parameter is determined
-    |derived_q - substrate_q| < 0.001 ∧
-    -- Terminal resolution matches CODATA
-    |proton_topological - proton_mass_MeV| < 1e-3 ∧
-    |neutron_topological - neutron_mass_MeV| < 1e-3 ∧
-    |deuteron_topological - deuteron_mass_MeV| < 1e-3 ∧
-    |binding_energy_QOU - binding_energy_CODATA| < 0.001 :=
-  ⟨substrate_error_bound, terminal_resolution_hadronic_mass⟩
+    |derived_q - substrate_q| < 0.001 :=
+  substrate_error_bound
 
 /-- The proton–neutron mass splitting is exactly 1.29333251 MeV. -/
 theorem end_to_end_splitting :
@@ -203,7 +194,6 @@ The theorems in this file depend on:
 - `ArchimedeanMassFormula.mass_pos` — positivity
 - `Calculations.substrate_error_bound` — interval arithmetic
 - `Calculations.full_derivation_chain` — repackaging
-- `HadronicMass.terminal_resolution_hadronic_mass` — norm_num
 - `HadronicMass.proton_neutron_mass_difference` — norm_num
 - `HadronicMass.nucleon_mass_ratio_approx` — norm_num
 - All bridge theorems in §1–§2 — rfl / rw
@@ -231,7 +221,7 @@ neither declaration had ever been invocable; that is recorded as
 `HadronicMass.pair_skein_denom_hypothesis_false`.
 
 They are used only by the pair Skein decomposition (§5a of HadronicMass), not
-by `terminal_resolution_hadronic_mass` or `end_to_end`.
+by `end_to_end`.
 -/
 
 end QOU.CODATAChain
