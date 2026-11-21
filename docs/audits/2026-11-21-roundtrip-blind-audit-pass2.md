@@ -209,3 +209,12 @@ light platform does not carry (the qou copy predates the `content/` →
 `folio/` rename). An algebraic identity has no numerical prediction; the
 honest fix is a sorry-free proof, which needs the pairing/copairing axioms
 the context class lacks.
+
+**C09 closed (2026-11-21).** `QOU.frobenius_relation` is now sorry-free
+(axioms `propext, Quot.sound`). The context class of bare types is replaced by
+`FrobeniusCopairingData`: an `R`-algebra `A` with form `ε`, copairing `γ` and
+the snake identity. `Δ_μ := (μ ⊗ id) ∘ (id ⊗ γ)`, and the theorem states
+`(μ ⊗ id) ∘ (id ⊗ Δ_μ) = Δ_μ ∘ μ` as linear maps `A ⊗ A → A ⊗ A`, proved by
+associativity. That `Δ_μ` is the transpose of `μ` under the pairing is cited
+(Kock 2004, §2.3), not formalised. This replaces the open note above on the
+frobenius compute checks, which pass sorry-free Lean.
