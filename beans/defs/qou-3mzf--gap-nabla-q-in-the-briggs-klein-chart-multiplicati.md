@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-21T22:35:42Z
+updated_at: 2026-11-21T22:39:42Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -53,3 +53,9 @@ Scope (a): this construction, with the classical form X dz on the colour cubic, 
 - Striking: I(1) = pi^2/20 to 50 digits (-Li2(-1) = pi^2/12; ratio 3/5). Not explained. F(X,z)(1-z)(X-1)(X-z) = (1-z)X^5 - (1-z^5)X + z(1-z^4), a quintic, so a fifth-root-of-unity structure is plausible but unproved.
 - PSLQ at z = 2, 1/2, 1/4 (60 dps, coeffs <= 500) on {I, pi^2, log^2 z, log z log(1+z), Li2(-z), Li2(-z^5), log z log X(z), Li2(-X), Li2(-X^5), log^2 X} found no relation. Absence of evidence in that basis only.
 Scope (a): the curve provides the right pole (residue 1 over z=-1) but the classical iterated integral built from it is a different function from -Li2(-z). Bean stays open.
+
+
+2026-11-21 (N2 thread), explaining I(1) = pi^2/20:
+- Structure found: the colour cubic is F(X,t) = (s(X) - s(t))/(X - t) with s(u) = u + u^2 + u^3 + u^4 (sympy, exact). So the curve is [5]_X = [5]_t, i.e. (X^5-1)/(X-1) = (t^5-1)/(t-1), minus the diagonal, and it is symmetric under X <-> t. The real branch through (0,-1) and (-1,0) is swapped with itself, with fixed point at s'(t) = 0, t ~ -0.606.
+- pi^2/20 is still NOT explained. PSLQ at z = 2 and 1/2 (60 dps, coeffs <= 1000) on a non-redundant 11-term basis including Li2 of fifth powers of z and X(z) found no relation.
+- q-version test, answered by continuity: any q-deformation of I(z) that tends to I(z) as q -> 1 cannot equal -Li2^q(-z), because -Li2^q(-z) tends to -Li2(-z) and I(z) != -Li2(-z) (e.g. z = 1: pi^2/20 vs pi^2/12). So this route can match only through a deformation that is discontinuous at q = 1, or a different inner form. Scope (a).
