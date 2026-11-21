@@ -3,8 +3,8 @@
 The process $\gamma\gamma \to \nu\nu^{\sigma}$ has no tree-level realisation. The minimal topology is a box with four vertices and four internal propagators at brane tower level $A_1$.
 
 **Vertex structure.**
-- **EM vertices** ($\gamma \leftrightarrow e^-e^+$): The photon's $\dagger$-involution couples to the trefoil's antisymmetric crossing energy. This creates virtual pairs.
-- **Weak vertices** ($e \to \nu$ via $T_{3,5}$): The Skein relation converts the charged trefoil to the neutral unknot.
+- **EM vertices** ($\gamma \leftrightarrow e^-e^+$): The photon's $\dagger$-involution couples to the antisymmetric crossing energy of the electron word $\sigma_0\sigma_1\sigma_0$ (closure: the Hopf link). This creates virtual pairs.
+- **Weak vertices** ($e \to \nu$ via $T_{3,5}$): The skein relation converts the charged electron word to the neutral unknot.
 
 **Corollary: neutrino stability.**
 The neutrino is strictly stable. It cannot decay via any process.

@@ -15,11 +15,11 @@ $$
   \mathrm{net}(\mathcal{N}(2,2)) \approx +0.749
 $$
 
-The four-nucleon Hopf chain generates large trefoil content from iterated proton-neutron crossings. The $e^-$ term dominates.
+The chain of inter-nucleon crossings among the four nucleons puts a large coefficient on the electron word $\sigma_0\sigma_1\sigma_0$. The $e^-$ term dominates.
 
 ## Full atom NF (with $1s^2$ shell)
 
-Add two Hopf-linked electrons:
+Attach two electron words $\sigma_0\sigma_1\sigma_0$ (each closing to the Hopf link), as in the hydrogen example:
 
 $$
   \mathrm{NF}(\mathcal{A}(2,2)) = +0.236\gamma - 0.061\sigma_0 + 0.176\sigma_1 + 0.384 L_+ - 0.037 L_- + 1.190 e^-.
