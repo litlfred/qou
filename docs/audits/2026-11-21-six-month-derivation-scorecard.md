@@ -2,7 +2,7 @@
 
 Date 2026-11-21. Issue #8956. Repo `litlfred/qou` at `main` `507688841`. Read-only assessment: no content block, Lean file or producer is changed.
 
-**Revision 2 (same day), after QA on PR #8957.** Version 1 overstated α_em form B (called it derived up to one factor and an independent confirmation of the proton q₀). Corrected in §1, §3, §5 and §6. Revision 3 (same day, second QA pass) relabels Coleman–Glashow, fixes the legend, reconciles the electroweak figures and the sources of two counts. Also: m_p/m_e relabelled as the experimental pin, not CAL-2; the −12 result scoped (a); bare α_em and Coleman–Glashow relabelled; binding rows flagged as on a superseded word; m_n given in ppm only.
+**Revision 2 (same day), after QA on PR #8957.** Version 1 overstated α_em form B (called it derived up to one factor and an independent confirmation of the proton q₀). Corrected in §1, §3, §5 and §6. Revision 3 (same day, second QA pass) relabels Coleman–Glashow, fixes the legend, reconciles the electroweak figures and the sources of two counts. Revision 5 (23:10Z) records the three-strand Coleman–Glashow Lean. Revision 4 (22:45Z) folds in results from the sibling work streams on α_em, the −12, the Borromean word and the /q³ (see §8). Also: m_p/m_e relabelled as the experimental pin, not CAL-2; the −12 result scoped (a); bare α_em and Coleman–Glashow relabelled; binding rows flagged as on a superseded word; m_n given in ppm only.
 
 **Sources.** The live L2 dashboard witness `computations/per-observable-100x-status.witness.json` (computed 2026-11-21 04:22Z), `docs/coordination/owner-rulings.md`, `docs/canonical-derivation-cheat-sheet.md`, and the dated audits under `docs/audits/` (each row cites one). Commit history 2026-05-01 → 2026-11-21 (35,740 commits on `main`). Measured data (CODATA, PDG, AME) appear only in the comparison columns, never as proof inputs.
 
@@ -24,10 +24,10 @@ Date 2026-11-21. Issue #8956. Repo `litlfred/qou` at `main` `507688841`. Read-on
 
 ## 1. Bottom line
 
-1. **Two numbers are close, and both are conditional.** With q₀ pinned from the experimental proton ratio m_p/m_e, the figure-eight formula m_μ/m_e = Vol(4₁)/ℏ_q² lands **211 ppb** from CODATA (9.49σ on the ratio). First seen 2026-05-25 at 0.24 ppm, it has not degraded through three re-pins and two convention changes. The fine-structure constant in form B sits **−0.37 ppb (2.4σ)** at the same pin (+79 ppb at the muon pin). Form B is **conditional** on three unproved Lean classes, one of which (`BringZeroModeBlochClass`) has no instance, and its Schwinger factor c = 1 is not derived. These are the closest numbers in the corpus, but closeness is not evidence of correctness under the repo's own rules.
+1. **Two numbers are close, and both are conditional.** With q₀ pinned from the experimental proton ratio m_p/m_e, the figure-eight formula m_μ/m_e = Vol(4₁)/ℏ_q² lands **211 ppb** from CODATA (9.49σ on the ratio). First seen 2026-05-25 at 0.24 ppm, it has not degraded through three re-pins and two convention changes. The fine-structure constant in form B sits **−0.37 ppb (2.4σ)** at the same pin (+79 ppb at the muon pin). Form B rests on four assumed steps: the postulate that b₁/Area is added to 1/α (the decisive gap), the [10]_q in the tree term, the normalisation of H, and the Schwinger factor c = 1 (the exact check gives c ≈ 0.73). These are the closest numbers in the corpus, but closeness is not evidence of correctness under the repo's own rules.
 2. **The two cannot both be good at once.** The one-term proton pin gives α_em 2.4σ and m_μ 9.5σ. The two-term pin gives m_μ 0.36σ but α_em 495σ, and the owner reverted it on 2026-11-20 (citing the α cost and that covariant insertions give zero proton self-energy, PR #8565). So α_em and the muon are not two independent confirmations of one q₀; the pin choice trades one for the other.
 3. **The L2 dashboard says 1/6 scoreable predictions meet the 100× target (m_K/m_π); the AGENTS.md red-team (2026-08-22) counts 0/6 unconditional parameter-free.** m_K/m_π is the one win and it is fitted.
-4. **Both close numbers carry selected joints.** For α_em: three unproved classes, c = 1 underived (an exact check gives c ≈ 0.73), and forms A, B and the Chern–Simons tower are all live, with the canonical one an open owner decision (bean `qou-aemx`). For the muon–proton check, the proton side m_p = 2(m_μ·F_Bor − 6m_e) uses the Borromean braid (conjecture), a /q³ normalisation (asserted, a 37 % lever), and the integers 2 and 12. On 2026-11-21 the −12 was shown not to arise as a tower correction in the tested class (scope (a); one sub-case C1 is excluded structurally by a pole-order invariant, `ProtonTwelveOrigin.lean`). Without the −12 the proton misses by about 0.65 %. Both are selected, not D: the muon–proton check is **D|sel**, α_em form B is **C / D|sel**.
+4. **Both close numbers carry selected joints.** For α_em: the four assumed steps above, and forms A, B and the Chern–Simons tower are all live. A new sorry-free Lean result (sibling branch, not yet merged) shows B and the CS tower differ at q = 1 for every c and κ, so the choice reduces to one axiom question: does the correction survive the classical limit? The owner left it open on 2026-11-21 (bean `qou-aemx`). For the muon–proton check, the proton side m_p = 2(m_μ·F_Bor − 6m_e) uses the Borromean braid (conjecture), a /q³ normalisation (asserted, a 37 % lever), and the integers 2 and 12. On 2026-11-21 the −12 was shown not to arise as a tower correction in the tested class (scope (a); one sub-case C1 is excluded structurally by a pole-order invariant, `ProtonTwelveOrigin.lean`). Writing −12 = −k²·3, the 3 is now derived as the dimension of the proton weight space (PR #8968, merged), but k = 2 is not: neither Reeb realisation in the corpus gives it (KZ ≈ 0.05, Bring triad k = 1), so the 12 is still a fit (scope (a): those two realisations). Without the −12 the proton misses by about 0.65 %. Both are selected, not D: the muon–proton check is **D|sel**, α_em form B is **C / D|sel**.
 5. **The rest of the mass spectrum is far.** Q_β is 58 % low, m_n − m_p 35 % low, ⁴He binding 3.3× low. A Lean bound proved today shows the scored Q_β cell can **never** exceed 0.383 MeV at any q (target 0.782). The error sits in the q = 1 base, not in a missing small correction.
 6. **Standard Model structure is mostly not derived.** The gauge group, three generations, anomaly cancellation and CKM are open or conjectural. The eightfold way has one derived entry (I₃ on the nucleon doublet, with the coupling c = ½ derived) and a growing set of proved structural facts and negatives.
 7. **The trend is real, but it runs in a different direction from "closer numbers".** May had many sub-1 % matches; most were later reclassified as fits. Since August the corpus has gained hard structure: convention D forced, exact closed forms, Lean bounds and exclusions. The numbers got worse because they became honest. That is progress toward a derivation, but not yet progress toward the spectrum.
@@ -66,7 +66,7 @@ Errors use the live dashboard (one-term proton pin, q₀ = 1.10997858275…).
 | quantity | status | model vs data | free inputs | source |
 |---|---|---|---|---|
 | α_em⁻¹ bare q[9]_q[10]_q | **C** (the [10]_q factor is asserted, bean `qou-15sj`) | 136.823, **−0.155 %** | 1 (q₀) | `2026-08-22-alpha-em-deriva*.md` |
-| **α_em⁻¹ form B (Schwinger)** | **C / D\|sel** | **−0.37 ppb (2.4σ)** at the proton pin, +79 ppb at the muon pin; 238× from the 100× target | q₀ + three unproved classes (incl. `BringZeroModeBlochClass`, no instance); 8/(12π) = b₁/Area is a proved template; c = 1 not derived (exact check gives c ≈ 0.73); one of three live forms, canonical undecided (`qou-aemx`) | `alpha_em_schwinger_ladder_probe.py`; `2026-11-20-alpha-em-two-term-q0-pull.md` |
+| **α_em⁻¹ form B (Schwinger)** | **C / D\|sel** | **−0.37 ppb (2.4σ)** at the proton pin, +79 ppb at the muon pin, +76 ppb at the two-term pin; 238× from the 100× target | q₀ + four assumed steps (b₁/Area added to 1/α; [10]_q; H normalisation; c = 1, exact check gives ≈ 0.73). The value 8/(12π) = b₁/Area is proved. Of the three classes named in rev 2, `ArchimedeanLimit` is proved on [0,1), `BlochSuslinUniqueness` is vacuous (D = 0 only), and `BringZeroModeBlochClass` is expected false with nothing depending on it. One of three live forms; canonical open (`qou-aemx`) | `alpha_em_schwinger_ladder_probe.py`; `2026-11-20-alpha-em-two-term-q0-pull.md` |
 | α_em⁻¹ form A | C | +0.99 ppb | live alternative; canonical undecided | same |
 | α_em⁻¹ CS tower | C | −468 ppb | κ not derived; live alternative | same |
 | α_em⁻¹ 45·[3]_q form | F, ruled out | 2.6 ppb | PSLQ single-point fit | `2026-06-10-alpha-em-legacy-empirical-forms.md` |
@@ -74,7 +74,7 @@ Errors use the live dashboard (one-term proton pin, q₀ = 1.10997858275…).
 | g = π·h₀, v ratio = log 6 | F/C | ±0.5 % | empirical-match hypotheses (May) | cheat sheet §5 |
 | strong coupling, Yukawas, CKM, PMNS | O | — | — | `sm-params-ckm.md` |
 
-Note on α_em (corrected after QA, 2026-11-21): an earlier version of this note called α_em and m_p "two independent observables, one parameter", agreeing on q₀ to 0.053 ppb. That was wrong. The proton pin shares the selected inputs of the proton formula (Borromean word, /q³, the integers 2 and 12), and form B depends on three unproved classes and an underived c = 1, so the agreement is between two conditional constructions, not two independent derivations. The pins also trade off: one-term gives α 2.4σ and m_μ 9.5σ, two-term gives m_μ 0.36σ and α 495σ. The bare backbone is 0.155 % off with an asserted [10]_q. Forms A, B and the CS tower are all live; which is canonical is an open owner decision. The sign of the form-B residual also flipped between CODATA 2018 and 2022.
+Note on α_em (corrected after QA, 2026-11-21): an earlier version of this note called α_em and m_p "two independent observables, one parameter", agreeing on q₀ to 0.053 ppb. That was wrong. The proton pin shares the selected inputs of the proton formula (Borromean word, /q³, the integers 2 and 12), and form B rests on four assumed steps including an underived c = 1, so the agreement is between two conditional constructions, not two independent derivations. The pins also trade off: one-term gives α 2.4σ and m_μ 9.5σ, two-term gives m_μ 0.36σ and α 495σ. The bare backbone is 0.155 % off with an asserted [10]_q. Forms A, B and the CS tower are all live; which is canonical is an open owner decision. The sign of the form-B residual also flipped between CODATA 2018 and 2022.
 
 ## 4. Standard Model structure
 
@@ -99,13 +99,13 @@ Note on α_em (corrected after QA, 2026-11-21): an earlier version of this note 
 | A₂ Cartan matrix, roots, weight lattice | standard | true by construction of three strands |
 | 3 ⊗ 3̄ = 8 ⊕ 1, decuplet row cap | proved (arithmetic) | representation content carried by names, not by Lean |
 | Gell-Mann–Okubo | **N / O** | first order withdrawn; second order under-determined (2 equations, 3 unknowns) |
-| Coleman–Glashow Σ = N + Ξ | **exact (symbolic probe), non-discriminating; Lean open for three strands** (new, 2026-11-21) | exact in q for the isospin/charge Murphy sum, from an exact symbolic probe (only the two-strand lemmas are in Lean); `ColemanGlashowIdentity.lean` (`cg_cannot_discriminate`) notes that reproducing CG is evidence for nothing; the hypercharge Murphy sum gives zero splitting |
+| Coleman–Glashow Σ = N + Ξ | **proved identity, non-discriminating (Lean, three strands, 2026-11-21)** | `IsospinMurphyOctetThreeStrand.lean` (sorry-free): for the weighted Murphy sum, Σ − N − Ξ = 0 for **every** weight and every flavour order of the Jimbo braiding, because each flavour pair has a one-sided braiding coefficient. So exact CG is evidence for nothing (matches `cg_cannot_discriminate`). Same file: the hypercharge sum gives zero nucleon splitting always, but zero Σ and Ξ splittings only when s is on one side of u and d; with s between them the Σ split is h²(q²+2)(w_s − w_u) |
 | sign of the octet isospin coefficient α₂/α₁ | N for this operator (scope a) | +0.056 at q₀ vs lattice −0.141: right structure, wrong sign, 0.4× size |
 | strange strand and n − p | **N (Lean)** | an s strand cannot change the n–p direction result |
 | octet mass degeneracy m_Λ = m_Σ⁰ | N | weight-only mass forces the degeneracy |
 | nonet mixing angle | proved unconstrained | — |
 
-Ledger count (eightfold chapter, 2026-08-08): 1 derived, 3 proved, 8 standard, 2 refuted, 9 open of 23 rows. SM appendix: of 26 SM parameters, 1 input, 1 proxy, 1 partial, 2 conjectural, 21 open. The 2026-11-15 map and today's Murphy-octet work add structure (Coleman–Glashow exact as a probe, several Lean negatives) but no new derived SM parameter.
+Ledger count (eightfold chapter, 2026-08-08): 1 derived, 3 proved, 8 standard, 2 refuted, 9 open of 23 rows. SM appendix: of 26 SM parameters, 1 input, 1 proxy, 1 partial, 2 conjectural, 21 open. The 2026-11-15 map and today's Murphy-octet work add structure (Coleman–Glashow proved to be a weight-independent identity, several Lean negatives) but no new derived SM parameter.
 
 ---
 
@@ -134,7 +134,7 @@ Ledger count (eightfold chapter, 2026-08-08): 1 derived, 3 proved, 8 standard, 2
 | m_p absolute | +2.9 % (λ_A volume form) | excised as an absolute claim (2026-08-11) | λ_A was a CODATA-implied fit |
 | deuteron | +0.19 % (m_e·Vol·Δtr) | about +5 % (B_can⁰); production form posited | trace convention and word fixed |
 | ⁴He | +5.87 % (magic-A) | 3.26× low on production | magic-A was a census selection |
-| α_em | 2.6 ppb (PSLQ fit) | −0.37 ppb form B, conditional on unproved classes and c = 1; 0.155 % bare | PSLQ form ruled out (2026-06-10); form B built Jul–Nov; canonical form undecided |
+| α_em | 2.6 ppb (PSLQ fit) | −0.37 ppb form B, resting on four assumed steps incl. c = 1; 0.155 % bare | PSLQ form ruled out (2026-06-10); form B built Jul–Nov; canonical form undecided |
 | EW ratios | W/Z +1.07 %, Z²/H² ≈ 3 % (g, v hypotheses ±0.5 %) | still conjectural; knot assignment not derived | never derived |
 | generations | "3" | 4 / 3 / 2 / 3 unresolved | counting criteria disagree |
 
@@ -153,14 +153,27 @@ A single trace-to-energy map, fixed once and pre-registered, that predicts a **s
 
 1. **Derive the −12** (or the /q³) from the two-term Lagrangian or the electron word. That would turn the 211 ppb μ–p cross-check from D|sel into D|cal, which would be a strong result.
 2. **Find the q = 1 factor in Q_β** (about 2.04). The Lean bound says no q-correction can supply it, so it must come from the counting 3/8, the factor 2, or the identification of the cell with Q_β (the β-decay GB reduction now in progress, PR #8904).
-3. **Prove the three classes behind form B and derive c = 1**, then let the owner pick the canonical α_em form. Only then is α_em a test of the framework rather than of a selected form.
+3. **Derive the b₁/Area addition and c = 1**, then settle whether the correction survives q → 1 (that decides between form B and the CS tower). Only then is α_em a test of the framework rather than of a selected form.
 
 ---
 
 ## 7. Next steps (pick by number)
 
 1. ~~Turn this scorecard into a repo doc~~ Done: this file, issue #8956 (owner chose 1 and 4).
-2. The −12 already has its own work stream ("Derive the proton's integers 2 and 12"): it has derived the 3 in −12 = −k²·3 as the dimension of the proton weight space; k = 2 is open. Sibling work streams cover the Borromean word and the /q³. Update the rows above when they report.
+2. The −12, Borromean word and /q³ have their own work streams; see §8 for where they stand.
 3. Pre-register a "one map, two observables" test: fix the trace-to-energy map on Q_β's GB reduction, then predict Δm or ²H with no new choice.
 4. ~~Bring the α_em canonical-functional decision (bean `qou-aemx`) to you~~ Posted as a decision card 2026-11-21.
 5. Add a dated "status" column to `sm-params-intro.md` so the 26-parameter count is tracked over time automatically.
+
+---
+
+## 8. Sibling work-stream status (as of 2026-11-21 22:45Z)
+
+| joint | result so far | effect on the rows above |
+|---|---|---|
+| −12 = −k²·3 | 3 = dim of the proton weight space, Lean, PR #8968 **merged**. k = 2 not found: KZ Reeb gives ≈ 0.05, Bring-triad Reeb gives k = 1, and in that realisation parity forbids k = 2 on three strands | m_μ cross-check stays D\|sel; the 12 is still a fit (scope (a)) |
+| Borromean word | PR #8966 (draft): no other word with the same trace at lengths 1–8 under convention-D weights; length-16 search running | still a conjecture, now with a uniqueness check up to length 8 |
+| Borromean weight | that stream reports F_Bor divides by the corpus weight y₃ ≈ 0.223, while convention D gives y₃ ≈ 0.505. **Not checked here**; passed to the /q³ stream | if confirmed, the proton formula's inputs change and the 211 ppb must be recomputed |
+| /q³ | in progress: proving in Lean that the units of ℤ[q, q⁻¹] are ±q^m | none yet |
+| α_em canonical form | Lean (unmerged branch): B ≠ CS tower at q = 1 for all c, κ; owner chose "leave open, draft PR, rewrite the block's framing" | α rows relabelled in rev 4 |
+| ⁴He binding | nucleon order is a conjugation, so it cannot change a trace (argument only, not yet proved); next is a γγ formation word | none yet |
