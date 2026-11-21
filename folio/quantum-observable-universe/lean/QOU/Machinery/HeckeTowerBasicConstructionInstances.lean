@@ -2,34 +2,31 @@ import QOU.Machinery.HeckeTowerBasicConstruction
 import Mathlib.LinearAlgebra.Matrix.Trace
 
 /-!
-# `JonesBasicConstruction` is mis-indexed: it forces `ε(e) = 1` on the Jones projection
+# `JonesBasicConstruction`: why the two-level form failed, and the three-level form
 
-The absorption field of `JonesBasicConstruction` reads
-`e · y · e = ι(ε y) · e` for **every** `y : Hn1`, where the Jones projection
-`e = jonesIdempotent q (σn1 n)` itself lies in `Hn1`. Taking `y = e` and using
-`e² = e` gives `e = ι(ε e) · e`. In the Jones basic construction the relation
-`e y e = E(y) e` is for `y` in the algebra *below* the one containing `e`
-(`y ∈ H_{n+1}`, `e = e_{n+1} ∈ H_{n+2}`); with `y` allowed to be `e` the
-relation pins `ε(e)` to act as `1` on `e`.
+**History.** Until 2026-11-21 the class used two levels: the Jones projection
+`e = jonesIdempotent q (σn1 n)` lay in `Hn1`, and absorption was required for
+every `y : Hn1`, including `y = e`. With `e² = e` that forces `e = ι(ε e) · e`.
+The class was restated with three levels (owner "Fix", bean `qou-c8p8`). The
+defective two-level relation is kept here as the plain predicate
+`SameLevelAbsorption`, so that the reason for the restatement stays checkable.
 
 **What is proved (sorry-free).**
-* `jonesProjection_eq_zero_of_scalar_expectation` — for any instance, if the
-  generator `σn1 n` satisfies the Hecke quadratic, `q ≠ 0`, `q + q⁻¹ ≠ 0`, and
-  `ε(e) = τ • 1` with `τ ≠ 1`, then `e = 0`. For a Markov conditional
-  expectation `ε(e) = τ • 1` with `τ = (q − z)/(q + q⁻¹)`, so `τ ≠ 1` is every
-  Markov parameter except `z = −q⁻¹`; and `e = 0` means `σn1 n = q • 1`. So the
-  class cannot hold at a nondegenerate Markov trace with a genuine generator.
-* A concrete refutation (`not_jonesBasicConstruction_halfTrace`): with
-  `Hn = ℚ`, `Hn1 = M₂(ℚ)`, `σ = diag(2, −1/2)` (a genuine Hecke generator at
-  `q = 2`, every rank), `ι` the unit map and `ε = ½·trace` (a conditional
-  expectation), the class fails.
-* A concrete inhabitant (`jonesBasicConstruction_corner`): the same data with
-  `ε y = y₁₁` (compression to the `e`-corner) satisfies the class. So the class
-  is satisfiable, but only for the degenerate `ε` with `ε(e) = 1`.
+* `sameLevel_forces_e_eq_zero` — if same-level absorption holds, the generator
+  satisfies the Hecke quadratic, `q ≠ 0`, `q + q⁻¹ ≠ 0`, and `ε(e) = τ • 1`
+  with `τ ≠ 1`, then `e = 0`. A Markov conditional expectation has
+  `τ = (q − z)/(q + q⁻¹)`, so `τ ≠ 1` holds at every Markov parameter except
+  `z = −q⁻¹`.
+* `not_sameLevel_halfTrace` / `sameLevel_corner` — a concrete model at `q = 2`
+  in `M₂(ℚ)`. Same-level absorption fails for `ε = ½·trace` and holds only for
+  the degenerate corner compression with `ε(e) = 1`.
+* `jonesBasicConstruction_bottom` — the restated three-level class has a
+  non-degenerate inhabitant at the bottom of the tower:
+  `ℚ ⊂ ℚ ⊂ M₂(ℚ)`, `ε = id` (a genuine conditional expectation), and the genuine
+  generator `σ = diag(2, −1/2)` on top, with `e = diag(0, 1) ≠ 0`.
 
-**What is not proved.** The genuine basic-construction relation for the Hecke
-tower `H_n ⊂ H_{n+1} ⊂ H_{n+2}` (with `y ∈ H_{n+1}`, `e ∈ H_{n+2}`). Restating
-the class with three levels is a refactor needing owner approval.
+**What is not proved.** The three-level relation for the Hecke tower
+`H_n ⊂ H_{n+1} ⊂ H_{n+2}` at general `n`.
 
 -- Ref: [leitner2026] QOU.Machinery.HeckeTowerBasicConstruction; [jones1983]
 -- V. F. R. Jones, Index for subfactors, Invent. Math. 72 (1983), §3 (basic
@@ -42,21 +39,28 @@ namespace QOU.Machinery.HeckeTower.Instances
 
 open QOU.Machinery.HeckeTower QOU.Machinery.HeckeBraidedCategory Matrix
 
-/-- **Structural refutation at a scalar conditional expectation.** -/
-theorem jonesProjection_eq_zero_of_scalar_expectation
-    {R : Type*} [Field R] {q : R} {rank : ℕ}
+/-- The **defective two-level** absorption relation that the class carried until
+2026-11-21: `e · y · e = ι (ε y) · e` for every `y` in the algebra containing
+`e = jonesIdempotent q (σn1 n)`. Kept as a plain predicate, not a class. -/
+def SameLevelAbsorption {R : Type*} [Field R] (q : R)
     {Hn Hn1 : Type*} [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
-    {σn1 : ℕ → Hn1} [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
-    {ι : Hn →ₐ[R] Hn1} {ε : Hn1 →ₗ[R] Hn}
-    [HeckeConditionalExpectation R q rank Hn Hn1 σn1 ι ε] {n : ℕ}
-    [hJ : JonesBasicConstruction R q rank Hn Hn1 σn1 ι ε n]
+    (σn1 : ℕ → Hn1) (ι : Hn →ₐ[R] Hn1) (ε : Hn1 →ₗ[R] Hn) (n : ℕ) : Prop :=
+  ∀ y : Hn1, jonesIdempotent q (σn1 n) * y * jonesIdempotent q (σn1 n) =
+    ι (ε y) * jonesIdempotent q (σn1 n)
+
+/-- **Same-level absorption kills `e` at a scalar conditional expectation.** -/
+theorem sameLevel_forces_e_eq_zero
+    {R : Type*} [Field R] {q : R}
+    {Hn Hn1 : Type*} [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
+    {σn1 : ℕ → Hn1} {ι : Hn →ₐ[R] Hn1} {ε : Hn1 →ₗ[R] Hn} {n : ℕ}
+    (habs : SameLevelAbsorption q σn1 ι ε n)
     (hq : q ≠ 0) (hd : q + q⁻¹ ≠ 0)
     (hs : σn1 n * σn1 n = (q - q⁻¹) • σn1 n + 1)
     (τ : R) (hτ : ε (jonesIdempotent q (σn1 n)) = τ • 1) (hτ1 : τ ≠ 1) :
     jonesIdempotent q (σn1 n) = 0 := by
   set e := jonesIdempotent q (σn1 n) with he
   have hidem : e * e = e := jonesIdempotent_mul_self q (σn1 n) hq hd hs
-  have key := hJ.absorb e
+  have key := habs e
   rw [hidem, hidem, hτ, map_smul, map_one, smul_mul_assoc, one_mul] at key
   -- key : e = τ • e
   have h1 : (1 - τ) • e = 0 := by
@@ -116,24 +120,62 @@ instance condExp_corner (rank : ℕ) :
 theorem jones_σ2 : jonesIdempotent (2 : ℚ) σ2 = Matrix.of ![![0, 0], ![0, (1 : ℚ)]] :=
   jonesIdempotent_h2 (2 : ℚ) (by norm_num)
 
-/-- **Refutation**: half-trace conditional expectation violates absorption. -/
-theorem not_jonesBasicConstruction_halfTrace (rank n : ℕ) :
-    ¬ JonesBasicConstruction ℚ 2 rank ℚ (Matrix (Fin 2) (Fin 2) ℚ)
-      (fun _ => σ2) ιQ halfTrace n := by
+/-- **Refutation**: half-trace conditional expectation violates same-level
+absorption. -/
+theorem not_sameLevel_halfTrace (n : ℕ) :
+    ¬ SameLevelAbsorption (2 : ℚ) (fun _ => σ2) ιQ halfTrace n := by
   intro h
-  have key := h.absorb (jonesIdempotent (2 : ℚ) σ2)
+  have key := h (jonesIdempotent (2 : ℚ) σ2)
+  simp only at key
   rw [jones_σ2, ιQ_apply] at key
   have := congrFun (congrFun key 1) 1
   simp [halfTrace, Matrix.trace_fin_two, Matrix.mul_apply, Fin.sum_univ_two] at this
 
-/-- **Inhabitant**: the corner compression satisfies absorption. -/
-theorem jonesBasicConstruction_corner (rank n : ℕ) :
-    JonesBasicConstruction ℚ 2 rank ℚ (Matrix (Fin 2) (Fin 2) ℚ)
-      (fun _ => σ2) ιQ corner n where
+/-- **Degenerate inhabitant**: the corner compression (`ε(e) = 1`) satisfies
+same-level absorption. -/
+theorem sameLevel_corner (n : ℕ) :
+    SameLevelAbsorption (2 : ℚ) (fun _ => σ2) ιQ corner n := by
+  intro y
+  simp only
+  rw [jones_σ2, ιQ_apply]
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [corner, Matrix.mul_apply, Fin.sum_univ_two, Matrix.vecMul, dotProduct]
+
+/-! ## The restated three-level class at the bottom of the tower -/
+
+/-- One strand carries no generators, so any family presents rank 1. -/
+instance presentation_rank_one (σ : ℕ → ℚ) :
+    HeckeBraidedPresentationOfRank (2 : ℚ) 1 ℚ σ where
+  hecke_quadratic i hi := absurd hi (by omega)
+  braid_adjacent i hi := absurd hi (by omega)
+  far_commute _ j _ hj := absurd hj (by omega)
+
+/-- The identity is a conditional expectation `ℚ → ℚ`. -/
+instance condExp_id :
+    HeckeConditionalExpectation ℚ 2 1 ℚ ℚ (fun _ => 0) (AlgHom.id ℚ ℚ)
+      LinearMap.id where
+  retract _ := rfl
+  bimodule _ _ _ := rfl
+
+/-- **Non-degenerate inhabitant of the restated class**: `ℚ ⊂ ℚ ⊂ M₂(ℚ)`,
+`ε = id`, top generator `diag(2, −1/2)`, `e = diag(0, 1) ≠ 0`. -/
+theorem jonesBasicConstruction_bottom :
+    JonesBasicConstruction ℚ 2 1 ℚ ℚ (Matrix (Fin 2) (Fin 2) ℚ)
+      (fun _ => 0) (fun _ => σ2) (AlgHom.id ℚ ℚ) LinearMap.id ιQ 0 where
+  compat i hi := absurd hi (by omega)
   absorb y := by
+    simp only [AlgHom.id_apply, LinearMap.id_apply]
     rw [jones_σ2, ιQ_apply]
     ext i j
     fin_cases i <;> fin_cases j <;>
-      simp [corner, Matrix.mul_apply, Fin.sum_univ_two, Matrix.vecMul, dotProduct]
+      simp [Matrix.mul_apply, Fin.sum_univ_two]
+
+/-- The Jones projection in that inhabitant is nonzero. -/
+theorem jones_σ2_ne_zero : jonesIdempotent (2 : ℚ) σ2 ≠ 0 := by
+  rw [jones_σ2]
+  intro h
+  have := congrFun (congrFun h 1) 1
+  simp at this
 
 end QOU.Machinery.HeckeTower.Instances
