@@ -227,6 +227,10 @@ export default chapter({
     // Detangler P4 split (2026-05-23): 25-block sec:archimedean-lifting
     // split 3-way into foundations + topological-mass-formula +
     // topological-mass-variants.
+    // Reading-order drain L4 (2026-11-21): cor:quantum-dilogarithm and its
+    // proof moved to mass-endomorphism after prop:topological-mass-upper-bound;
+    // the two topological-mass sections, left holding only their (stale)
+    // intros, were removed and the outro now closes the foundations section.
     section({
       title: "Archimedean specialisations: foundations",
       label: "sec:archimedean-lifting-foundations",
@@ -240,26 +244,6 @@ export default chapter({
         // moved to mass-theory (2026-05-27).
         "euler-char-stability-C",
         "brane-boundary-structure-proof",
-      ],
-    }),
-    section({
-      title: "Archimedean specialisations: topological-mass formula",
-      label: "sec:archimedean-lifting-topological-mass-formula",
-      blocks: [
-        "archimedean-lifting-topological-mass-formula-intro",
-        "quantum-dilogarithm",
-        "quantum-dilogarithm-proof",
-        // topological-mass + topological-mass-conjecture moved to
-        // mass-theory (2026-05-27).
-      ],
-    }),
-    section({
-      title: "Archimedean specialisations: topological-mass variants",
-      label: "sec:archimedean-lifting-topological-mass-variants",
-      blocks: [
-        // topological-mass variants (eigenspace, holonomy, transient,
-        // dilogarithm, proof, su2) moved to mass-theory (2026-05-27).
-        "archimedean-lifting-topological-mass-variants-intro",
         "outro-lifting-and-descent",
       ],
     }),

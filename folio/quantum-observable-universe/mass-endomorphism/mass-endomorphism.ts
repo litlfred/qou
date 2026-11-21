@@ -63,6 +63,8 @@ export default chapter({
           label: "sec:mass-endomorphism-topological-mass",
           blocks: [
             "topological-mass-upper-bound",
+            "quantum-dilogarithm",
+            "quantum-dilogarithm-proof",
             "topological-mass",
             "topological-mass-conjecture",
             "topological-mass-conjecture-proof",

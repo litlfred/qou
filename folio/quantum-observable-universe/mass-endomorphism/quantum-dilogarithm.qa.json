@@ -3,9 +3,9 @@
   "label": "cor:quantum-dilogarithm",
   "kind": "corollary",
   "paths": {
-    "ts": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts",
-    "md": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md",
-    "lean": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.md",
+    "lean": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean"
   },
   "source_hashes": {
     "md": "1926d9b25b97",
@@ -379,7 +379,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"lifting-and-descent\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"mass-endomorphism\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -466,7 +466,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md:1 — detected regime [real-gt-1, real-positive] is disjoint from chapter 'lifting-and-descent' expected [generic-R, na, symbolic]"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.md:1 — detected regime [real-gt-1, real-positive] is disjoint from chapter 'lifting-and-descent' expected [generic-R, na, symbolic]"
       }
     ],
     "canonical-calibration-count": [
@@ -1439,7 +1439,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claim in 'Quantum Dilogarithm as Localized Torsion Volume' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:1"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean:1"
       },
       {
         "result": "pass",
@@ -1506,7 +1506,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum Dilogarithm as Localized Torsion Volume'.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.ts:1"
       },
       {
         "result": "pass",
@@ -1574,7 +1574,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum Dilogarithm as Localized Torsion Volume'.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.ts:1"
       },
       {
         "result": "pass",
@@ -1606,9 +1606,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.730183Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:1"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean:1"
       },
       {
         "result": "pass",
@@ -1640,9 +1640,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.730183Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1676,7 +1676,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Quantum Dilogarithm as Localized Torsion Volume', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.ts:1"
       },
       {
         "result": "pass",
@@ -1710,7 +1710,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Quantum Dilogarithm as Localized Torsion Volume' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.ts:1"
       },
       {
         "result": "pass",
@@ -1744,7 +1744,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Quantum Dilogarithm as Localized Torsion Volume' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.ts:1"
       },
       {
         "result": "pass",
@@ -1778,7 +1778,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Quantum Dilogarithm as Localized Torsion Volume' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.ts:1"
       },
       {
         "result": "pass",
@@ -1810,9 +1810,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.730183Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:1 — /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean:1 — /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
       },
       {
         "result": "pass",
@@ -1844,11 +1844,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.730183Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean contains compilation errors: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean contains compilation errors: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
       },
       {
         "result": "pass",
