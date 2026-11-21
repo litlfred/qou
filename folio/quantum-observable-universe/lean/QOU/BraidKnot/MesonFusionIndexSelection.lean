@@ -24,8 +24,9 @@ the pair `(3,4)`, or the EM factor's form?* What is proved here:
    of every member of the scan family `{[a]_q[b]_q}` and carries **no**
    information selecting `(3,4)`: it certifies the algebra of whatever pair is
    chosen, not the choice.
-2. `scanPair_four_not_dictionary_index` — the index `4` is not a quark
-   torus-knot index (all are odd: `T(2,3), T(2,5), T(2,7)`) and not a meson
+2. `scanPair_four_not_dictionary_index` — the index `4` is not a
+   generation index of the dictionary (all are odd: the lepton partners
+   `T(2,3), T(2,5), T(2,7)`) and not a meson
    total crossing count (`6, 8, 10`) of the corpus's
    lepton–meson torus-knot dictionary (`prop:lepton-meson-torus-knot-dictionary`,
    `knots-particles-confinement/lepton-meson-torus-knot-dictionary.lean`,
@@ -34,6 +35,16 @@ the pair `(3,4)`, or the EM factor's form?* What is proved here:
    against that dictionary (a parity invariant); it does not exclude every
    possible reading (e.g. a spin-3/2 dimension), none of which the corpus
    defines for the kaon.
+
+   **Note (2026-11-21): this side result has lost its premise as a statement
+   about quarks.** It was written when the dictionary was read as giving each
+   quark its own torus-knot index. Under the owner rulings of 2026-11-20 and
+   2026-11-21 a quark is an unknot strand carrying one crossing letter, and
+   `3, 5, 7` are the crossing counts of its **lepton partner** — generation
+   labels. The theorem still holds as stated (it is arithmetic on
+   `quarkTorusIndex`), but it now says "4 is not a generation label", not "4
+   is not a quark's knot index". It is kept, not deleted. The credited
+   `m_K/m_π` identities (item 1) never read this index and are unaffected.
 3. `sqrt_jet_agrees_to_order_two`, `pade_jet_agrees_to_order_two` — the order-2
    jet `1 + h − h²/2`, which is all the 2026-05-28 term-by-term hunt matched
    to data before the factor was named `1 + log(1+h)`, is shared exactly
@@ -120,8 +131,11 @@ end QCG
 
 section Dictionary
 
-/-- Quark torus-knot index of generation `g` in the lepton–meson dictionary:
-`T(2,3), T(2,5), T(2,7)` (restates `leptonTorusKnotIndex`). -/
+/-- Generation index `g` of the lepton–meson dictionary: the crossing count of
+the lepton partner `T(2,3), T(2,5), T(2,7)` of the generation-`g` quarks
+(restates `leptonTorusKnotIndex`). The name `quarkTorusIndex` predates the
+owner rulings of 2026-11-20 / 2026-11-21 (a quark is an unknot strand, the
+torus knot is its lepton partner) and is kept as an identifier only. -/
 def quarkTorusIndex : Fin 3 → ℕ
   | 0 => 3
   | 1 => 5
@@ -134,7 +148,8 @@ def mesonCrossingCount : Fin 3 → ℕ
   | 1 => 8
   | 2 => 10
 
-/-- Every quark torus-knot index of the dictionary is odd. -/
+/-- Every generation index of the dictionary (a lepton partner's crossing
+count) is odd. -/
 theorem quarkTorusIndex_odd (g : Fin 3) : Odd (quarkTorusIndex g) := by
   fin_cases g
   · exact ⟨1, rfl⟩
@@ -142,8 +157,9 @@ theorem quarkTorusIndex_odd (g : Fin 3) : Odd (quarkTorusIndex g) := by
   · exact ⟨3, rfl⟩
 
 /-- **The index `4` of the scan-selected pair is not a dictionary index** — neither a
-quark torus-knot index (parity) nor a meson total crossing count; and the kaon's own
-constituent pair `(3, 5)` is not `(3, 4)`. -/
+generation index (parity; read as the lepton partner's crossing count since the
+2026-11-21 ruling, not as a quark's own knot index) nor a meson total crossing
+count; and the kaon's own constituent label pair `(3, 5)` is not `(3, 4)`. -/
 theorem scanPair_four_not_dictionary_index :
     (∀ g : Fin 3, quarkTorusIndex g ≠ 4) ∧
     (∀ g : Fin 3, mesonCrossingCount g ≠ 4) ∧
