@@ -446,3 +446,60 @@ order 4 on. Every construction on record fails this:
 
 The test is a requirement on a future γγ-derived n/p pair, not a lead on any specific pair.
 Probe: `computations/qbeta/qbeta_framed_splitting_order_probe.py` (8/8 checks).
+
+## 16. Correction to §15, and the owner's "1 2" (2026-11-21)
+
+**Correction.** §15(b) and PR #8714's title say that a difference between writhe-0 γγ words
+"starts at second order". That holds for **knots** only. For links the first-order term is the
+linking number. Measured exactly: every braid word on 3 strands up to length 7 and on 4 strands
+up to length 6, as a dual number at `q = 1 + e` (probe below, 3/3 checks plus a one-crossing
+sanity check). The `z_D` trace of an `n`-strand word whose closure has `c` components, writhe
+`w` and total linking number `lk` is
+
+$$
+  \mathrm{tr}_{z_D}(w) = 2^{-(n-c)}\Bigl(1 + (2w - 3\,\mathrm{lk})\,e + O(e^2)\Bigr),
+  \qquad e = q - 1 .
+$$
+
+So two words on the same number of strands differ:
+- at **order 0** if their component counts differ;
+- at **order 1** by `2^{-(n-c)}(2Δw − 3Δlk)` otherwise.
+
+Example: σ₁σ₃⁻¹ and σ₁σ₃σ₂⁻² on 4 strands both have writhe 0 and 2 components, but `lk` is 0
+and −1. Their first-order coefficients are 0 and 3/4.
+
+The §15 test, "equal Jones coefficients through `x³`", is unaffected. It already requires
+equal component count and equal `lk`. What was wrong is the claim that writhe 0 alone buys the
+second order. What else repeated it:
+- PR #8714's title and body;
+- bean `qou-99qc`'s 2026-11-21 entry, corrected there;
+- nothing in content blocks or code.
+
+The general formula above is **measured, not proved**.
+
+**Option 2 (Lean).** `QOU/QBeta/CrossingChangeTrace.lean`, sorry-free over a generic
+commutative ring and algebra; axioms `propext`, `Quot.sound`.
+- `inv_of_quadratic`: if `g² = h·g + 1` then `g⁻¹ = g − h`.
+- `crossing_change`: for every linear `tr`,
+  `tr(a g b) − tr(a g⁻¹ b) = h·tr(a b)`. One crossing change costs `h` times the smoothed
+  trace, which is the algebraic kernel of the counting.
+
+The closed first-order formula is not formalised. It needs braid words, closure components and
+a constructed Ocneanu trace on the Hecke tower, and the corpus has none of these in Lean
+(`MathlibExt/OcneanuTrace.lean` axiomatises the trace and constructs it on no Hecke tower).
+
+**Option 1 (γγ beyond four strands).**
+- **Scope (b), by construction.** The ruled selection (γγ words plus reading 3,
+  `χ_λ(w) ≥ 0` on blocks with `y_λ > 0`) takes no nucleon argument. It returns the same word
+  for n and p on every number of strands. Distinct n and p links need a rule that sees the
+  nucleon. That is an added premise, not something more strands supply.
+- **The one labelled rule on record** (PR #8636: state-weighted positivity S-w, with strand 4
+  a lepton) gives the same word for n and p at `q₀`.
+  - The selections split only above `q* = 1.1510`: n gets σ₁σ₃⁻¹ (2 components), p gets
+    `V₁³` or `V₂³` (4 components).
+  - So the pair fails the §15 test at **order 0**: the leading traces are `1/4` and `1`.
+- **Not run.** S-w on 5 or 6 strands. It needs a choice of how the lepton pair attaches
+  (which strands, which orientation), and no ruling fixes that. Running every attachment and
+  keeping the one that passes would be selection against the target.
+
+Probe: `computations/qbeta/qbeta_splitting_first_order_linking_probe.py`.
