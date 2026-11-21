@@ -252,6 +252,91 @@ theorem chainJoins_eq (top mid bot : P → E) (t t' : ℤ) (S : Finset P) :
   rw [chainJoins, ← Multiset.bind_singleton, ← Multiset.bind_singleton, ← Multiset.bind_add]
   rfl
 
+/-! ### Merging chains of joins -/
+
+/-- **Merging many chains at once**: `top p → mid p → bot p` becomes `top p → bot p`. -/
+theorem mergeJoins (top mid bot : P → E) (t t' : ℤ)
+    (hmid : Function.Injective mid) (htop : ∀ p q, mid p ≠ top q) (hbot : ∀ p q, mid p ≠ bot q)
+    (S : Finset P) (R : Code E) (hR : ∀ p ∈ S, ¬ R.Occurs (mid p)) :
+    ReidemeisterEquiv ⟨E, R + Code.ofJs (chainJoins top mid bot t t' S)⟩
+      ⟨E, R + Code.ofJs (S.val.map fun p => (top p, bot p, t + t'))⟩ := by
+  induction S using Finset.induction_on generalizing R with
+  | empty => exact (ReidemeisterEquiv.refl _).of_eq rfl (by rfl)
+  | @insert p S hp ih =>
+    have h₁ := ih (R + Code.ofJs {(top p, mid p, t), (mid p, bot p, t')}) fun q hq => by
+      rw [occurs_add, occurs_ofJs_pair]
+      have hpq : p ≠ q := fun h => hp (h ▸ hq)
+      have := hmid.ne hpq
+      have := htop q p
+      have := hbot q p
+      have := hR q (Finset.mem_insert_of_mem hq)
+      tauto
+    have hp' : ¬ (R + Code.ofJs (S.val.map fun q => (top q, bot q, t + t'))).Occurs (mid p) := by
+      rw [occurs_add, occurs_ofJs]
+      refine not_or.2 ⟨hR p (Finset.mem_insert_self p S), ?_⟩
+      rintro ⟨j, hj, h⟩
+      obtain ⟨q, -, rfl⟩ := Multiset.mem_map.1 hj
+      rcases h with h | h
+      exacts [htop p q h.symm, hbot p q h.symm]
+    have h₂ := ReidemeisterEquiv.of_move (Move.merge
+      (R + Code.ofJs (S.val.map fun q => (top q, bot q, t + t'))) (top p) (mid p) (bot p) t t' hp'
+      (htop p p) (hbot p p))
+    have h₁' : ReidemeisterEquiv ⟨E, R + Code.ofJs (chainJoins top mid bot t t' (insert p S))⟩
+        ⟨E, R + Code.ofJs (S.val.map fun q => (top q, bot q, t + t')) +
+          Code.ofJs {(top p, mid p, t), (mid p, bot p, t')}⟩ := by
+      refine h₁.of_eq ?_ ?_ <;> refine code_ext ?_ ?_ <;>
+        simp only [ofJs, add_xs, add_js, chainJoins_insert top mid bot _ _ hp,
+          Multiset.insert_eq_cons, ← Multiset.singleton_add, add_zero] <;> abel
+    refine h₁'.trans (h₂.of_eq rfl ?_)
+    refine code_ext ?_ ?_ <;>
+      simp only [ofJs, add_xs, add_js, Finset.insert_val_of_notMem hp,
+        ← Multiset.singleton_add, Multiset.map_add, Multiset.map_singleton, add_zero] <;> abel
+
+omit [DecidableEq P] in
+/-- The joins `e 0 → e 1 → ⋯ → e n`, without turns. -/
+def chainOf {n : ℕ} (e : Fin (n + 1) → E) : Multiset (E × E × ℤ) :=
+  (Finset.univ.val : Multiset (Fin n)).map fun j => (e j.castSucc, e j.succ, 0)
+
+omit [Fintype E] [DecidableEq E] in
+theorem occurs_chainOf {n : ℕ} (e : Fin (n + 1) → E) (x : E) :
+    (Code.ofJs (chainOf e)).Occurs x → ∃ j, e j = x := by
+  rw [occurs_ofJs]
+  rintro ⟨_, hj, h⟩
+  obtain ⟨j, -, rfl⟩ := Multiset.mem_map.1 hj
+  rcases h with h | h
+  exacts [⟨_, h⟩, ⟨_, h⟩]
+
+/-- **Merging one long chain**: `a → e 0 → e 1 → ⋯ → e n` becomes `a → e n`, if the edges
+`e 0, …, e (n - 1)` occur nowhere else. -/
+theorem mergeChain (R : Code E) (a : E) (t : ℤ) :
+    ∀ (n : ℕ) (e : Fin (n + 1) → E), Function.Injective e → (∀ j, e j ≠ a) →
+      (∀ j : Fin n, ¬ R.Occurs (e j.castSucc)) →
+      ReidemeisterEquiv ⟨E, R + Code.ofJs ({(a, e 0, t)} + chainOf e)⟩
+        ⟨E, R + Code.ofJs {(a, e (Fin.last n), t)}⟩
+  | 0, e, _, _, _ => (ReidemeisterEquiv.refl _).of_eq (by simp [chainOf]) rfl
+  | n + 1, e, he, ha, hR => by
+    have hrest : ¬ (R + Code.ofJs (chainOf fun k => e k.succ)).Occurs (e 0) := by
+      rw [occurs_add]
+      refine not_or.2 ⟨hR 0, fun h => ?_⟩
+      obtain ⟨j, hj⟩ := occurs_chainOf _ _ h
+      exact Fin.succ_ne_zero j (he hj)
+    have h₁ := ReidemeisterEquiv.of_move (Move.merge (R + Code.ofJs (chainOf fun k => e k.succ))
+      a (e 0) (e 1) t 0 hrest (ha 0) (he.ne (Fin.zero_ne_one)))
+    have h₂ := mergeChain R a t n (fun k => e k.succ) (he.comp (Fin.succ_injective _))
+      (fun j => ha _) (fun j => by
+        show ¬ R.Occurs (e j.castSucc.succ)
+        rw [Fin.succ_castSucc]
+        exact hR j.succ)
+    refine (h₁.of_eq ?_ (?_ : _ = R + Code.ofJs ({(a, e 1, t)} +
+        chainOf fun k => e k.succ))).trans (h₂.of_eq (by simp) ?_)
+    · refine code_ext ?_ ?_ <;> simp only [ofJs, add_xs, add_js, chainOf, univ_map_zero_succ,
+        Multiset.insert_eq_cons, ← Multiset.singleton_add, add_zero]
+      simp only [Fin.succ_zero_eq_one, Fin.castSucc_zero, Fin.succ_castSucc]
+      abel
+    · refine code_ext ?_ ?_ <;> simp only [ofJs, add_xs, add_js, add_zero]
+      abel
+    · simp [Fin.succ_last]
+
 /-! ### Closures of words given as functions -/
 
 /-- The closure of the braid word `g 0, g 1, …, g (n - 1)`. `braidClosure w` is `closureOf w.get`. -/
@@ -474,5 +559,213 @@ theorem braidClosure_rotate (x : Fin m × Bool) (w : List (Fin m × Bool)) :
   exact h₁.trans ((closureOf_cons_equiv_snoc w.get i b).trans h₂)
 
 end Conj
+
+/-! ### Stabilisation -/
+
+section Stab
+
+variable {m L : ℕ}
+
+/-- The crossings and pass-through joins of the closure of `g`, without the closing arcs. -/
+def wordCode (g : Fin L → Fin m × Bool) : Code (Fin (L + 1) × Fin (m + 1)) where
+  xs := (Finset.univ.val : Multiset (Fin L)).map fun k => letterCrossing k (g k).1 (g k).2
+  js := (Finset.univ.val : Multiset (Fin L)).bind fun k => letterJoins k (g k).1
+
+/-- Include a closure on `m + 1` strands and `L` levels into one with an extra strand and an extra
+level. -/
+def stabEmb : Fin (L + 1) × Fin (m + 1) ↪ Fin (L + 1 + 1) × Fin (m + 1 + 1) :=
+  ⟨fun e => (e.1.castSucc, e.2.castSucc), fun e e' h => by
+    simp only [Prod.mk.injEq, Fin.castSucc_inj] at h; exact Prod.ext h.1 h.2⟩
+
+/-- The word `g` read on `m + 2` strands. -/
+def liftWord (g : Fin L → Fin m × Bool) : Fin L → Fin (m + 1) × Bool :=
+  fun j => ((g j).1.castSucc, (g j).2)
+
+@[simp] theorem stabEmb_apply (e : Fin (L + 1) × Fin (m + 1)) :
+    (stabEmb e : Fin (L + 1 + 1) × Fin (m + 1 + 1)) = (e.1.castSucc, e.2.castSucc) := rfl
+
+theorem untouched_castSucc (i : Fin m) :
+    untouched i.castSucc = insert (Fin.last (m + 1)) ((untouched i).map Fin.castSuccEmb) := by
+  ext p
+  refine Fin.lastCases ?_ (fun q => ?_) p
+  · simp only [untouched, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_insert,
+      true_or, iff_true]
+    exact ⟨(Fin.castSucc_lt_last _).ne', by
+      rw [Fin.succ_castSucc]; exact (Fin.castSucc_lt_last _).ne'⟩
+  · simp only [untouched, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_insert,
+      Finset.mem_map, Fin.castSuccEmb_apply, Fin.castSucc_inj, (Fin.castSucc_lt_last q).ne,
+      false_or, exists_eq_right]
+    rw [Fin.succ_castSucc]
+    simp only [ne_eq, Fin.castSucc_inj]
+
+theorem letterCrossing_stab (j : Fin L) (i : Fin m) (b : Bool) :
+    (letterCrossing j i b).map stabEmb = letterCrossing j.castSucc i.castSucc b := by
+  cases b <;> simp only [letterCrossing, Crossing.map, stabEmb_apply, Fin.succ_castSucc] <;> rfl
+
+theorem letterJoins_stab (j : Fin L) (i : Fin m) :
+    letterJoins j.castSucc i.castSucc =
+      {((j.castSucc.castSucc, Fin.last (m + 1)), (j.succ.castSucc, Fin.last (m + 1)), 0)} +
+      (letterJoins j i).map (Prod.map stabEmb (Prod.map stabEmb id)) := by
+  rw [letterJoins, letterJoins, ← untouched, ← untouched, untouched_castSucc,
+    Finset.insert_val_of_notMem (by simp),
+    Multiset.map_cons, Finset.map_val, Multiset.map_map, Multiset.map_map,
+    ← Multiset.singleton_add, Fin.succ_castSucc]
+  rfl
+
+theorem wordPart_liftWord (g : Fin L → Fin m × Bool) :
+    wordPart (liftWord g) = (wordCode g).map stabEmb +
+      Code.ofJs (chainOf fun r : Fin (L + 1) => (r.castSucc, Fin.last (m + 1))) := by
+  refine code_ext ?_ ?_
+  · simp only [wordPart, wordCode, Code.map, liftWord, Code.ofJs, add_xs, add_zero,
+      Multiset.map_map, Function.comp_def, letterCrossing_stab]
+  · simp only [wordPart, wordCode, Code.map, liftWord, Code.ofJs, add_js, chainOf,
+      Multiset.map_bind, letterJoins_stab]
+    rw [Multiset.bind_add, Multiset.bind_singleton]
+    exact add_comm _ _
+
+theorem castSuccEmb_univ_eq :
+    (Finset.univ.map Fin.castSuccEmb : Finset (Fin (m + 1 + 1))) =
+      insert (Fin.last m).castSucc (untouched (Fin.last m)) := by
+  ext p
+  refine Fin.lastCases ?_ (fun q => ?_) p
+  · simp only [Finset.mem_map, Finset.mem_univ, Fin.castSuccEmb_apply, true_and, untouched,
+      Finset.mem_insert, Finset.mem_filter, Fin.succ_last, ne_eq, not_true_eq_false, and_false,
+      or_false]
+    constructor
+    · rintro ⟨x, hx⟩; exact absurd hx (Fin.castSucc_lt_last x).ne
+    · intro h; exact absurd h.symm (Fin.castSucc_lt_last _).ne
+  · have hq : q.castSucc ∈ (Finset.univ.map Fin.castSuccEmb : Finset (Fin (m + 1 + 1))) :=
+      Finset.mem_map_of_mem _ (Finset.mem_univ q)
+    simp only [hq, true_iff, Finset.mem_insert, untouched, Finset.mem_filter, Finset.mem_univ,
+      true_and, Fin.succ_last]
+    by_cases h : q = Fin.last m
+    · exact Or.inl (by rw [h])
+    · exact Or.inr ⟨fun h' => h (Fin.castSucc_inj.1 h'), (Fin.castSucc_lt_last q).ne⟩
+
+theorem kink_stab (b : Bool) :
+    kink (topE L (Fin.last m).castSucc) (midE L (Fin.last m).castSucc)
+        (midE L (Fin.last (m + 1))) (topE L (Fin.last (m + 1))) (!b) b =
+      letterCrossing (Fin.last L) (Fin.last m) b := by
+  rw [letterCrossing_last]
+  cases b <;> simp [kink, uPos, oPos, Fin.succ_last]
+
+/-- **Stabilisation.** Adding a strand and closing it with `σₘ^{±1}` does not change the closure up
+to Reidemeister equivalence. -/
+theorem closureOf_stab (g : Fin L → Fin m × Bool) (b : Bool) :
+    ReidemeisterEquiv ⟨_, closureOf g⟩
+      ⟨_, closureOf (Fin.snoc (liftWord g) (Fin.last m, b) : Fin (L + 1) → Fin (m + 1) × Bool)⟩ := by
+  set W := (wordCode g).map stabEmb with hWdef
+  set m' : Fin (m + 1 + 1) := (Fin.last m).castSucc with hm'
+  set M : Fin (m + 1 + 1) := Fin.last (m + 1) with hM
+  set U := untouched (Fin.last m) with hU
+  have hmM : m' ≠ M := (Fin.castSucc_lt_last _).ne
+  have hW : ∀ e, W.Occurs e → ∃ (k : Fin (L + 1)) (p : Fin (m + 1)), e = (k.castSucc, p.castSucc) := by
+    intro e he
+    obtain ⟨x, -, rfl⟩ := (occurs_map _ _ _).1 he
+    exact ⟨x.1, x.2, rfl⟩
+  have hWM : ∀ e, W.Occurs e → e.2 ≠ M := by
+    intro e he
+    obtain ⟨k, p, rfl⟩ := hW e he
+    exact (Fin.castSucc_lt_last p).ne
+  have hUM : ∀ p ∈ U, p ≠ M := by
+    intro p hp
+    simp only [hU, untouched, Finset.mem_filter, Finset.mem_univ, true_and, Fin.succ_last] at hp
+    exact hp.2
+  have hcU : ∀ e, (Code.ofJs (chainJoins (topE L) (midE L) (botE L) 0 1 U)).Occurs e → e.2 ≠ M := by
+    intro e he
+    obtain ⟨p, hp, h⟩ := occurs_chainJoins _ _ _ _ _ _ _ he
+    rcases h with rfl | rfl | rfl <;> exact hUM p hp
+  have hmid : Function.Injective (midE (m := m + 1) L) := fun p q h => (Prod.mk.inj h).2
+  have hrow : (Fin.last (L + 1) : Fin (L + 1 + 1)) ≠ (Fin.last L).castSucc :=
+    (Fin.castSucc_lt_last _).ne'
+  have htop : ∀ p q : Fin (m + 1 + 1), midE L p ≠ topE L q := fun p q h => hrow (Prod.mk.inj h).1
+  have hbot : ∀ p q : Fin (m + 1 + 1), midE L p ≠ botE L q := fun p q h =>
+    Fin.last_pos.ne' (Prod.mk.inj h).1
+  -- Step 1: embed.
+  have hc : (closureOf g).map stabEmb = W + Code.ofJs
+      ((Finset.univ.map Fin.castSuccEmb : Finset (Fin (m + 1 + 1))).val.map
+        fun p => (topE L p, botE L p, (0 : ℤ) + 1)) := by
+    refine code_ext ?_ ?_
+    · simp [closureOf, wordCode, hWdef, Code.map, Code.ofJs]
+    · simp only [closureOf, wordCode, hWdef, Code.map, Code.ofJs, add_js, Multiset.map_add,
+        Finset.map_val, Multiset.map_map]
+      congr 1
+  have h1 := ReidemeisterEquiv.of_move (Move.embed stabEmb (closureOf g))
+  rw [hc] at h1
+  -- Step 2: split the closing arcs at the middle row.
+  have h2 := (mergeJoins (topE L) (midE L) (botE L) 0 1 hmid htop hbot
+    (Finset.univ.map Fin.castSuccEmb) W fun p _ h => by
+      obtain ⟨k, q, hk⟩ := hW _ h
+      exact (Fin.castSucc_lt_last k).ne' (Prod.mk.inj hk).1).symm
+  rw [castSuccEmb_univ_eq, chainJoins_insert _ _ _ _ _ (by
+    simp [hU, untouched, Fin.succ_last])] at h2
+  -- Step 3: a kink on strand `m'`.
+  set R1 := W + Code.ofJs {(midE L m', botE L m', (1 : ℤ))} +
+    Code.ofJs (chainJoins (topE L) (midE L) (botE L) 0 1 U) with hR1
+  have hR1M : ∀ e, R1.Occurs e → e.2 ≠ M := by
+    intro e he
+    simp only [hR1, occurs_add, occurs_ofJs_single] at he
+    rcases he with (h | rfl | rfl) | h
+    exacts [hWM e h, hmM, hmM, hcU e h]
+  have h3 := ReidemeisterEquiv.of_move (Move.r1 R1 (topE L m') (midE L m') (midE L M) (topE L M)
+    (!b) b (fun h => hR1M _ h rfl) (fun h => hR1M _ h rfl) (fun h => hrow (Prod.mk.inj h).1)
+    (by
+      intro x hx
+      simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hx
+      rcases hx with rfl | rfl <;>
+        exact ⟨fun h => hmM (Prod.mk.inj h).2, fun h => hmM (Prod.mk.inj h).2⟩))
+  -- Step 4: the new strand `M` becomes a chain through every level.
+  set eM : Fin (L + 1) → Fin (L + 1 + 1) × Fin (m + 1 + 1) := fun r => (r.castSucc, M) with heM
+  set R2 := W + Code.ofXs {kink (topE L m') (midE L m') (midE L M) (topE L M) (!b) b} +
+    Code.ofJs {(midE L m', botE L m', (1 : ℤ))} +
+    Code.ofJs (chainJoins (topE L) (midE L) (botE L) 0 1 U) with hR2
+  have h4 := (mergeChain R2 (midE L M) 1 L eM
+    (fun r s h => Fin.castSucc_inj.1 (Prod.mk.inj h).1)
+    (fun j h => (Fin.castSucc_lt_last j).ne (Prod.mk.inj h).1)
+    (fun j h => by
+      simp only [hR2, occurs_add, occurs_ofJs_single, occurs_ofXs_kink] at h
+      rcases h with ((h | (h | h) | (h | h)) | (h | h)) | h
+      · exact hWM _ h rfl
+      · exact hmM (Prod.mk.inj h).2
+      · exact hmM (Prod.mk.inj h).2
+      · exact (Fin.castSucc_lt_last _).ne (Prod.mk.inj h).1.symm
+      · exact (Fin.castSucc_lt_last j).ne (Fin.castSucc_inj.1 (Prod.mk.inj h).1.symm)
+      · exact hmM (Prod.mk.inj h).2
+      · exact hmM (Prod.mk.inj h).2
+      · exact hcU _ h rfl)).symm
+  rw [castSuccEmb_univ_eq] at h1
+  refine (h1.trans h2).trans ((h3.of_eq ?_
+    (?_ : _ = R2 + Code.ofJs {(midE L M, eM (Fin.last L), (1 : ℤ))})).trans (h4.of_eq rfl ?_))
+  · refine code_ext ?_ ?_ <;>
+      simp only [hR1, ofJs, ofXs, add_xs, add_js, Multiset.insert_eq_cons,
+        ← Multiset.singleton_add, add_zero, zero_add] <;> abel
+  · have hk : kinkTurn (!b) b = 1 := by cases b <;> rfl
+    rw [hk]
+    refine code_ext ?_ ?_ <;>
+      simp only [hR1, hR2, ofJs, ofXs, add_xs, add_js, Multiset.insert_eq_cons,
+        ← Multiset.singleton_add, add_zero, zero_add] <;> abel
+  · rw [closureOf_snoc_eq, wordPart_liftWord, ← kink_stab]
+    cases b <;> refine code_ext ?_ ?_ <;>
+      simp only [hR2, hWdef, hm', hM, hU, heM, ofJs, ofXs, add_xs, add_js,
+        Multiset.insert_eq_cons, uPos, oPos, Fin.succ_last, Fin.castSucc_zero, Nat.succ_eq_add_one, if_true, if_false, Bool.false_eq_true, Bool.not_true, Bool.not_false,
+        ← Multiset.singleton_add, add_zero, zero_add] <;> abel
+
+/-- **Stabilisation (braid words).** The closure of `w` on `m + 1` strands is Reidemeister
+equivalent to the closure, on `m + 2` strands, of `w` followed by `σₘ^{±1}`. -/
+theorem braidClosure_stab (w : List (Fin m × Bool)) (b : Bool) :
+    ReidemeisterEquiv ⟨_, braidClosure w⟩
+      ⟨_, braidClosure (w.map (fun x => (x.1.castSucc, x.2)) ++ [(Fin.last m, b)])⟩ := by
+  have h₂ := closureOf_congr (m := m + 1)
+    (by simp : w.length + 1 = (w.map (fun x => (x.1.castSucc, x.2)) ++ [(Fin.last m, b)]).length)
+    (Fin.snoc (liftWord w.get) (Fin.last m, b))
+    (w.map (fun x => (x.1.castSucc, x.2)) ++ [(Fin.last m, b)]).get fun k => by
+      refine Fin.lastCases ?_ (fun j => ?_) k
+      · simp
+      · simp [liftWord, List.getElem_append_left]
+  rw [braidClosure_eq_closureOf, braidClosure_eq_closureOf]
+  exact (closureOf_stab w.get b).trans h₂
+
+
+end Stab
 
 end QOU.MathlibExt.PL.Diagram
