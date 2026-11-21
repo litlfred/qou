@@ -11,6 +11,9 @@ export default proposition({
   uses: [
     "rem:gram-matrix-spectral-connection",
     "prop:weak-spectral-completeness",
+    "def:hecke-normal-form",
+    "prop:frobenius-gram-matrix",
+    "def:demand-profile",
   ],
   tags: [
     "lp-dual",
@@ -23,6 +26,11 @@ export default proposition({
     "shadow-price",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body: "**$S$ and $n_T$ defined from the corpus; the operator family and the cost $t$ are data, and no producer is attached (owner-authorised task \"Define S, n_T + producer\").** Fixed by the corpus: $G$ and $G^{+}$ (`pyhecke.gram.gram_matrix_mp` / `G_PINV`, convention D, owner ruling P2); the supply matrix, column $o = \\mathrm{NF}(\\beta(o))$ (Lean field `KnotOperatorLP.supply`; the $(\\mathbf{1},\\mathbf{1})$ entry of `computations/knot-operator-table.py`); the demand vector $n_T^{i} = \\max(0, -c_i)$ for $\\mathrm{NF}(T) = \\sum c_i b_i$ (`def:demand-profile` magnitudes; the demand vector $\\sum_{c_i<0} |c_i|\\, b_i^{\\vee}$ of `prf:knot-operator-selection`), now `demandVector` in the Lean. NOT fixed, so stated as data rather than chosen: (1) the operator family and braid words $\\beta(T_{m,m'})$. `knot-operator-table.py` lists $T_{1,0}, T_{2,1} = \\sigma_0, T_{2,2} = \\sigma_0^2, T_{2,3} = \\sigma_0\\sigma_1\\sigma_0, T_{2,5} = (\\sigma_0\\sigma_1)^2\\sigma_0$ in $H_3$; `prop:knot-operator-selection` and `torus-embeddable-complete` name the generator set $T_{1,0}$ and $T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}$. The two lists differ, and the closure of $\\sigma_0\\sigma_1\\sigma_0 \\in B_3$ is the Hopf link (conjugate to $\\sigma_0^2\\sigma_1$, then Markov destabilisation), not the trefoil. (2) the cost $t$, read as crossing energy: the corpus carries per-crossing weights $q$ / $-q^{-1}$ (`def:crossing-energy`), $\\tfrac12(q-q^{-1})$ (`binding-knots-visual-inventory`) and $q+q^{-1}$ (`chapter-overview`), and `confinement-operator-selection.py` uses $\\sum_i |c_i|\\,\\deg(b_i)\\,E_\\times$ on an NF vector. An LP producer needs both choices plus a target set, so none is written; the `computation` pointer stays absent. The block's theorem holds for every choice of these data.",
+    },
     {
       kind: "status",
       date: "2026-11-21",
