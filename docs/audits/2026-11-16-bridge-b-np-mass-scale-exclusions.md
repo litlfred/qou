@@ -265,6 +265,10 @@ H16: the six-strand V³ word (H9), folded by Lusztig's descent and traced by the
 
 Both cases fold to B₂: bulk b of weight 2, and wall w of weight 1 at n = 4 or 3 at n = 5. On the stand-in word (T_b T_w⁻¹)³, Lusztig's descent and the naive projection agree mod 2 and differ as Laurent polynomials at both n. This matches H16 at n = 6, so the weight-3 wall added to conj:type-b-folding-cpt passes the same necessary check. The two-strand trace model satisfies the B₂ relation for every wall parameter, so it cannot test the weight. B₂ has no second bulk letter, so this is not the photon vertex. Details: `computations/probes/bridge_b/h17_result.md`.
 
+### 10n. A model that forces the weight: even n passes, odd n untested (H18, 2026-11-21)
+
+The ambient Jimbo module (C²)^{⊗n} is used with ι realised as J = (spin flip)·(strand reversal). The twisted power sums tr(J A^k) of each orbit generator then fix its weight from the ambient operator alone. At n = 4 and 6 the weight is forced, to 1 for the fixed root and 2 for swapped pairs, and every wrong weight fails. The swapped pairs carry the sign +v⁻² rather than Lusztig's −v⁻², a sign-normalisation question (§16.4) that is left open. At n = 5 and 7 every twisted power sum vanishes, because the module has zero twisted character at odd n. The weight-3 wall is therefore neither tested nor refuted. A spin-1 module would test it. Details: `computations/probes/bridge_b/h18_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
