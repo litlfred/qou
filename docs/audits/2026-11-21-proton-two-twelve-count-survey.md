@@ -99,9 +99,8 @@ search result over that surface, not a proof that no such map can exist.
 ### What would count as a derivation
 
 Unchanged from the −12 audit: a map in the framework that produces m_e·N with N a
-q-independent integer, N = 12 on β_Bor, by construction. This survey adds that the map
-cannot be "take one standard count of β_Bor, its closure, or H₃(q)": none of the seven
-equals 12.
+q-independent integer, N = 12 on β_Bor, by construction. This survey adds a scope-(a) negative: the map is not "take one of the seven
+pre-registered counts K1–K7", since none of them equals 12. Other counts were not tested.
 
 No number moves.
 
@@ -113,15 +112,18 @@ Until now the 3 was the size of that matrix. Lean: `QOU/MassTheory/ProtonWeightS
 (core Lean, exit 0; `dim_proton_weight_space`, `charge_iff_one_d`, `kostka_split` use no axioms,
 `twelve_iff_weight_two` and `large_weight_misses` use propext and Quot.sound).
 
-**Derived.** dim W_p = 3 follows from three inputs the pipeline already fixes:
+**Derived, with two steps cited.** dim W_p = 3 follows from three inputs the pipeline already fixes:
 (1) three strands, β_Bor ∈ B₃; (2) V = C² per strand (level-2 Jimbo, `NucleonWeightSpaceTraces`);
 (3) the proton sector is the K^{⊗3}-eigenspace of eigenvalue q (`Kp = q • 1`). A state with d
 copies of e₂ has weight q^(3−2d); the exponents on (C²)^{⊗3} are 3, 1, −1, −3, so for q not a
 root of unity weight q means d = 1, and there are exactly 3 such states, the corpus basis
 e₁e₁e₂, e₁e₂e₁, e₂e₁e₁ (`protonStates_eq`). Charge +1 with Q = diag(2/3, −1/3) cuts out the
 same 3 states (`charge_iff_one_d`); the neutron sector (charge 0, weight q⁻¹) also has
-dimension 3 (`neutron_dim`). Schur–Weyl splits W_p as V_(3) ⊕ V_(2,1), 3 = 1 + 2
-(`kostka_split`).
+dimension 3 (`neutron_dim`). Lean proves the exponent step (weight exponent 1 ⇔ d = 1,
+`weight_one_iff_one_d`). That q^e = q forces e = 1 for q not a root of unity is stated in prose.
+Schur–Weyl splits W_p as V_(3) ⊕ V_(2,1), 3 = 1 + 2. That decomposition is cited. Lean checks only
+the arithmetic (`kostka_split`) and that S₃ acts transitively on the three states
+(`transitive_on_proton`).
 
 **Scope.** This is the 3 of the two-term Lagrangian route (`CategoricalLagrangianTwoTermBridge`),
 which the scoreboard uses by the 2026-11-21 ruling. The production identity in
@@ -193,8 +195,9 @@ builds the matrices from quaternion products.
    (diagonal −3, off-diagonal −2). The Casimir `Σ_u R_u²` on `W_p` has eigenvalues −15 (once)
    and −3 (twice), so it is not scalar either.
 
-The Reeb direction `u` is a recorded open freedom in `BringCone.lean`. Only `u = ±i` gives
-an endomorphism of `W_p`.
+The Reeb direction `u` is a recorded open freedom in `BringCone.lean`. For a general pure unit
+`u = a·i + b·j + c·k`, the sympy twin shows that `R_u` preserves `W_p` iff `b = c = 0`, i.e.
+`u = ±i`. That check is not in Lean.
 
 **Combined with §4.** Neither concrete realisation of `R` in the corpus gives `k = 2`:
 
