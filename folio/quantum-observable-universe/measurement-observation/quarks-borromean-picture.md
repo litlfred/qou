@@ -7,4 +7,4 @@ The original dictionary assigned individual knot types to quarks. The revised pi
 
 Up/down flavour arises from the crossing orientation of each unknot within $\mathcal{B}_3$, not from distinct knot types. The baryon mass comes almost entirely from the Borromean linking volume $\mathrm{Vol}(S^3 \setminus \mathcal{B}_3) = 7.328\ldots$.
 
-The mass of each hadron is determined by the terminal resolution, matching CODATA values to sub-keV precision.
+Under the pair Skein formula the proton and neutron masses are an invertible function of two dressed quark masses, so the formula reproduces the measured values once those two masses are chosen; it does not predict them.
