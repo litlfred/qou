@@ -9,7 +9,8 @@ mirror clasp is the clasp with its crossings reversed:
     X̄ = (cap ⊗ 1 ⊗ 1)(1 ⊗ M⁻¹ ⊗ 1)(1 ⊗ 1 ⊗ cup)     on `V_{m+1} ⊗ V_{m+1}`.
 
 We show it acts on the summand `V_{2n+1}` (`n = m − j`) by `claspSc` at `s⁻¹`, i.e. by van der
-Veen's `C(n, t⁻¹)` before the framing factor (`claspBar_strVec`). The proof:
+Veen's `C(n, t⁻¹)` before the framing factor and up to the sign `(−1)^{N−1}` from the cup and
+cap (`claspBar_strVec`). The proof:
 
 * `claspWith Y` is the clasp with any middle operator `Y`; it commutes with `Δ(E)`, `Δ(F)` when
   `Y` commutes with `Δ(E)`, `Δ(F)`, `Δ(K^{±1})`. With `Y = M⁻¹ = D P M(s⁻¹) P D⁻¹`
