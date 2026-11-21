@@ -16,6 +16,8 @@ The normaliser is asserted, not derived. Every normaliser $q^k [3]_q!$ equals $|
 
 Convention D also gives the sign block weight $y_{(1^3)} = 0$, while this normaliser is that block's Schur element. That tension is open. Under convention D the Markov weight of the trivial partition is $y_{(3)} = (q^4+1)/(q^2+1)^2$, so $q^3/[3]_q!$ is not $y_{(3)}$. Relabelling the root $q \mapsto -q^{-1}$ swaps the trivial and sign characters, and only in that relabelled frame is $q^3/[3]_q!$ attached to the trivial partition.
 
+A modified-trace reading addresses the tension without settling it. On the family of Markov traces $\mathrm{tr}_z$, the function $t(z) = \mathrm{tr}_z(x_-)$ vanishes at $z = z_D$, and $\partial_z t(z_D) = -q^{-3}$. That derivative depends on the coordinate used for the family. Take the coordinate $\mathrm{tr}_z(b)$ for an element $b = u\,\sigma_1 + v$ of $H_2$; then the derivative becomes $u^{-1} q^{-3}$. Suppose $b$ and $1$ span $H_2$ over $\mathbb{Z}[q, q^{-1}]$ and $b$ is fixed by the bar involution. Then $u = \pm 1$, $b = \pm(\sigma_1 - q) + c$ with $c$ bar-invariant, and the derivative is $\pm q^{-3}$. Each condition is needed: integrality alone allows $u = q^m$ for every $m$, and bar invariance alone allows $u = [2]_q$. Both results are proved in `QOU/MathlibExt/LaurentUnits.lean` and `QOU/MathlibExt/KLCoordinateLaurent.lean`. No axiom requires this coordinate. It is recorded as a working conjecture: the factor $q^{-3}$ in $c_{\mathrm{sign}} = [3]_q!\,q^{-3}$ is the derivative of the sign-block trace at $z_D$ in an integral, bar-invariant coordinate.
+
 Every coefficient of $F_{\mathrm{Bor}}$ in the variable $h = q - q^{-1}$ is an exact rational number:
 $$
   F_{\mathrm{Bor}}(h)
