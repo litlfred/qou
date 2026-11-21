@@ -2,41 +2,37 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   authorNotes: [
-    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "caveat",
-      date: "2026-08-11",
+      date: "2026-11-21",
       body:
-        "**The caption's precision claim was wrong and is now scoped.** It " +
-        "read *\"match CODATA to sub-keV precision\"* over a table whose own " +
-        "binding-energy row differs by 1 keV, and whose proof closes at a " +
-        "$-0.53\\%$ residual on $m_n - m_p$ — about 6.9 keV, seven times the " +
-        "figure claimed. The neighbouring `rem:dressed-quark-numerology-at-q0` " +
-        "already stated the residual plainly, so the caption was the outlier " +
-        "in its own neighbourhood.\n\n" +
-        "**Two things this did not fix, both derivation work rather than " +
-        "wording.** (1) The formula column and the proof are different routes: " +
-        "the column applies $Q(q)$ to a Hopf-link mass, the proof sums Skein " +
-        "crossing pairs over dressed quark masses. Nothing here shows they " +
-        "agree. (2) The deuteron and binding-energy rows are not derived by " +
-        "the accompanying proof; whether another block derives them was not " +
-        "established. Either derive them here or move them to the block that " +
-        "does. Surfaced by the adversarial second reader on PR #4921.",
+        "**Restated (issue #8893).** This block used to read *\"the hadronic " +
+        "masses are determined without free parameters\"* over a table whose " +
+        "proton, neutron, deuteron and binding rows equalled CODATA. Its Lean " +
+        "sibling set the substrate parameter to `1.1097` and the QOU masses to " +
+        "the CODATA values, then proved each matched itself. The proton and " +
+        "neutron rows took the mean nucleon mass as an input through " +
+        "$\\bar\\mu \\approx M_N/3$, and the deuteron and binding rows were not " +
+        "derived anywhere. The statement now gives only what the pair Skein " +
+        "formula determines: the splitting identity, and the invertibility of " +
+        "the nucleon map. Invertibility is the reason the old table could not " +
+        "test anything.",
+    },
+    {
+      kind: "note",
+      body:
+        "Lean sibling over a generic field (AGENTS.md §7c). The square root is " +
+        "avoided by writing $q = s^2$.",
     },
   ],
   label: "prop:terminal-resolution",
-  lean: { ref: "qou:QOU.Experimental.TerminalResolution",
+  lean: { ref: "qou:QOU.MassTheory.PairSkeinNucleon.terminal_resolution",
     validation: "not_checked",
   },
-  title: "Terminal Resolution of Hadronic Mass",
+  title: "Nucleon masses under the pair Skein formula",
   uses: [
-    // Was rem:skein-mass-relation, reached only for "q = q_0 fixed by the
-    // lepton mass ratio". q_0 is fixed by the CAL-2 calibration, which is a
-    // definition; the remark's route went through conj:topological-mass-formula.
-    // Retargeted 2026-11-20 (owner, option 2 on the q_0 pair; bean qou-tm3c).
-    "def:three-calibration-discipline",
-    "cor:mass-identity-C",
+    "lem:pair-skein-mass-formula",
   ],
   proofs: ["prf:terminal-resolution"],
-  tags: ["mass", "hadronic"],
+  tags: ["mass", "hadronic", "pair-skein", "convention-c"],
 });
