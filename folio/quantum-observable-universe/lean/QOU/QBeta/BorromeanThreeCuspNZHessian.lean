@@ -52,7 +52,7 @@ ideal octahedra) around the complete hyperbolic structure $u = (0, 0, 0)$:
    $\frac{1}{12} + 2\left(-\frac{1}{4}\right) = -\frac{5}{12} = -5\,a_{3,\text{self}}$ on the
    symmetric 3-cusp locus $(u,u,u)$.
 
--- Ref: [neumann-zagier-1985] Neumann & Zagier, Topology 24 (1985), 307-332
+-- Ref: [neumann-zagier1985] Neumann & Zagier, Topology 24 (1985), 307-332
 -- Ref: [pandey-wong-2023] Pandey & Wong, arXiv:2308.06643 (Borromean rings shadow link)
 -- Ref: [manuscript] computations/qbeta/borromean_three_cusp_nz_hessian_probe.py
 -/

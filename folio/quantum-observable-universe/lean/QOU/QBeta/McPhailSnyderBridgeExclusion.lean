@@ -49,8 +49,8 @@ the braid diagram alone to the real archimedean substrate pin $q_0 > 1$:
      for $0 < y < 1$, giving the $\tilde{q} \sim 10^{-165}$ suppression at $y = \frac{\ln q_0}{2\pi}$).
 
 -- Ref: [mcphail-snyder-2025] McPhail-Snyder, arXiv:2502.04286 (diagrammatic state-sum at roots of unity)
--- Ref: [habiro-2002] Habiro, Invent. Math. 171 (2008), 1-81
--- Ref: [faddeev-1995] Faddeev, Lett. Math. Phys. 34 (1995), 249-254
+-- Ref: [habiro2002] Habiro, Invent. Math. 171 (2008), 1-81
+-- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995), 249-254
 -/
 import QOU.QBeta.HabiroEvaluationTrichotomy
 import QOU.QBeta.ModularDoubleReciprocity

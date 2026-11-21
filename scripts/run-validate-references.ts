@@ -5,7 +5,7 @@
  *
  * WHY THIS FILE EXISTS
  *
- * `folio-assistant/cat-harness-tools/pipeline/validate-references.ts` is the only checker
+ * `folio-assistant/folio-assistant-sci/pipeline/validate-references.ts` is the only checker
  * that cross-checks Lean `-- Ref: [key]` comments and `\cite{}` against
  * `folio/schema/references.ts`. Run directly it does not merely report
  * nothing — it THROWS, on its own first statement:
@@ -79,4 +79,4 @@ if (!process.argv.includes("--paper")) {
 }
 
 // Dynamic, and after configuration — see the note above.
-await import("../folio-assistant/cat-harness-tools/pipeline/validate-references");
+await import("../folio-assistant/folio-assistant-sci/pipeline/validate-references");
