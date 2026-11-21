@@ -90,6 +90,8 @@ curve, as forced by Riemann–Hurwitz: `2g − 2 = d·(2·0 − 2) + R`, so
 
 This is a **definition encoding** Riemann–Hurwitz for a `ℙ¹` target, not a proof
 of it — Mathlib has no branched-covering API. -/
+-- Ref: [braden-disney-hogg-2022] https://arxiv.org/abs/2208.13692 — §4.1, the
+--      Riemann–Hurwitz formula as applied to the quotients B → B/⟨σ⟩ of Bring's curve.
 def ramification (g d : ℕ) : ℤ := 2 * (g : ℤ) - 2 + 2 * (d : ℤ)
 
 /-- Bring's surface at the verification block's degree: `R = 14`. -/

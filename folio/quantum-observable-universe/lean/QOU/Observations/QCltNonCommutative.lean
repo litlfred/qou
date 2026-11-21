@@ -22,8 +22,13 @@ Resolves issue #649 §1 (q-CLT proof / derivation).
 
 ## References
 
+- [blitvic2012-clt] N. Blitvić, *Two-parameter non-commutative central
+  limit theorem*, Int. Math. Res. Not. (2014); https://arxiv.org/abs/1205.4003.
+  The CLT this file's conjecture is modelled on (Thm 2, eq. (12): pair-partition
+  moments weighted q^{cross} t^{nest}; locator from bean qou-9mrz, PDF not held).
 - [blitvic2012] N. Blitvić, *The (q,t)-Gaussian process*, J. Funct.
-  Anal. 263 (2012) 3270-3305. https://arxiv.org/abs/1205.4003
+  Anal. 263 (2012) 3270-3305, doi:10.1016/j.jfa.2012.08.006 (the limit process;
+  a different paper — arXiv 1205.4003 is the CLT paper above, not this one).
 - [marsh2006] J. A. Marsh, M. A. Fuentes, L. G. Moyano, C. Tsallis,
   *Influence of global correlations on central limit theorems and
   entropic extensivity*, Physica A 372 (2006) 183-202.

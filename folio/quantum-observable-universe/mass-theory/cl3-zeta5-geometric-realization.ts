@@ -9,7 +9,7 @@ export default conjecture({
     "conj:joint-galois-braid-action",
     "rem:transcendental-accounting",
   ],
-  cites: ["bloch2000", "kontsevich1995", "zagier1986"],
+  cites: ["bloch2000", "kontsevich1995", "zagier1986", "zhao2010-standard-relations"],
   tags: [
     "tier:S",
     "depth-3",

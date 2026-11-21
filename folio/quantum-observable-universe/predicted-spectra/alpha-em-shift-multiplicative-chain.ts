@@ -39,6 +39,13 @@ import { proposition } from "../../schema/builders";
  *   re-derivation).
  */
 export default proposition({
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-21",
+      body: "**Lean scope (disclosure, not a change of claim).** The `lean.ref` theorem `alpha_em_shift_chain` states `chainIndices = bareIndices`, i.e. the index lists [α_shift(2,9), α_shift(3,5)] and [9, 10] agree, and proves it by rewriting with the instance data of `HasAlphaShiftTorus 2 9` and `HasAlphaShiftTorus 3 5`. α_EM does not occur in the Lean. The `.md` writes an equality for a model quantity whose comparison to CODATA shows a reported gap; the equality is a statement about the model quantity only, and the comparison is where the empirical claim sits. Found by the blind round-trip audit (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md, block B06; bean qou-tdhw).",
+    },
+  ],
   label: "prop:alpha-em-shift-multiplicative-chain",
   title:
     "Multiplicative-chain form: $\\alpha_{EM}^{-1} = q \\cdot [\\alpha_{\\mathrm{shift}}(T_{2,9})]_q \\cdot [\\alpha_{\\mathrm{shift}}(T_{3,5})]_q$",
