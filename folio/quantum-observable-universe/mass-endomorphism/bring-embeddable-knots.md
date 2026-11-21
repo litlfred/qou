@@ -36,4 +36,4 @@ $$
   e_{\lambda_K} \cdot \mathrm{Li}_2^q(z_K) \bigr).
 $$
 
-A single counter-example falsifies the depth correspondence. One verified the figure-$8$ row ([Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness)), but confirming nodes like $5_2$, $6_2$, and $6_3$ remains necessary. This verification entails identifying $\lambda_K$ and $z_K$, and computing the projection $e_{\lambda_K}$ as the explicit Goncharov-period witness ([Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent)).
+A single counter-example falsifies the depth correspondence. Confirming nodes like $5_2$, $6_2$, and $6_3$ remains necessary. This verification entails identifying $\lambda_K$ and $z_K$, and computing the projection $e_{\lambda_K}$ as the explicit Goncharov-period witness ([Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent)).

@@ -95,5 +95,6 @@ export default conjecture({
       date: "2026-06-16",
       body: "**Story/structure follow-up (owner-flagged).** This collapses the mass-binding and β-decay chapters into one derivation (compute `$\mathfrak{V}$(K)` once; Re = every binding, Im = every Q-value). A chapter/section reorg + one-voice pass is warranted so the paper tells the single complex-volume story rather than two disjoint ones — tracked as a follow-up, not done in this PR.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): See the\ncompanion remarks\n[The channel rotation in the Askey scheme: same eigenfunctions rotated, different measures](#rem:channel-rotation-askey-lit) and\n[Bound $\\leftrightarrow$ free as a character-variety path: the deformation reading of $\\mathfrak{V}$](#rem:complex-volume-character-variety-path)." },
   ],
 });

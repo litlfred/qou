@@ -32,7 +32,7 @@ Every mechanism question is resolved. The coupling-parity routes are refuted. Th
 
 1. **The bare LP/SDP framework.** The $H_2$ molecular braid and its primal/dual program are set up rigorously in [LP dual binding](#prop:h2-lp-dual-binding) and [ILP covalent bond](#prop:ilp-covalent-bond). Strong duality ([operator-selection LP](#prop:operator-selection-lp)) gives $y_{\mathrm{cov}}^{*}$ as the binding energy per shared electron.
 
-2. **The bare formula.** The singlet-idempotent / Bring force-carrier complexity ([EM coupling projection](#prop:em-coupling-projection)) rigorously derives the leading expression $1/\alpha_{EM} = q\,[9]_q\,[10]_q$. It lies in $R$. It admits the equivalent shift-exponent form $1/\alpha_{EM} = q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q \cdot [\alpha_{\mathrm{shift}}(T_{3,5})]_q$ ([multiplicative-chain form](#prop:alpha-em-shift-multiplicative-chain)). This exposes the same combinatorial primitive that controls the atomic-shift framework. The primitive is the pole order at $q = 0$ of a seminormal Hecke trace.
+2. **The bare formula.** The singlet-idempotent / Bring force-carrier complexity ([EM coupling projection](#prop:em-coupling-projection)) rigorously derives the leading expression $1/\alpha_{EM} = q\,[9]_q\,[10]_q$. It lies in $R$.
 
 3. **The Frobenius / curvature-rank decomposition.** The Gröbner–Shirshov spectral sequence collapses at $E_1$ ([spectral sequence collapse](#prop:spectral-sequence-collapse)). The molecular operator decomposes by curvature rank ([curvature-rank GB stratification](#conj:curvature-rank-gb-stratification)). The covalent bond shares two electrons through two crossings. It sits at curvature rank $2$.
 
