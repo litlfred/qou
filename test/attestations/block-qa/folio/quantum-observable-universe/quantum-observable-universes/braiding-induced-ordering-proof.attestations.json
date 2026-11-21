@@ -73,6 +73,22 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:36-66 'Two faces of the arrow of time' and 'Crossing reversal = time reversal' (CPT reading) are interpretation inside a proof block; rem:i-as-braiding-orientation, which interprets this proposition, is the better home."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.889Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:37-62 the proof block carries a 25-line physical interpretation ('Two faces of the arrow of time', 'Crossing reversal = time reversal', CPT) after the QED marks; prop:braiding-induced-ordering defers this interpretation to 'after the proof', but it belongs in a remark interpreting the proposition, not inside the proof block. The interpretation also contradicts the proof: :55-57 'switching the braiding ... flips the ordering ≺_c' while :33 says 'No braiding hypothesis is used' and the proposition defines ≺_c as degree-lex on the positive letters with an arbitrary letter order, so switching c leaves ≺_c unchanged; :45-46 speak of σ_i^{-1}, which is not in the monoid W_n of positive letters."
       }
     ],
     "da-false-claim": [
@@ -568,6 +584,21 @@
         "reviewed_at": "2026-11-20T17:43:47.185Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.938Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:30 'it uses only concatenation, not the Hecke or Yang--Baxter relations' is a substantive scope statement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -601,6 +632,21 @@
         "reviewed_at": "2026-11-20T17:43:47.212Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.961Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
       }
     ],
     "trap-em-dash": [
@@ -635,6 +681,22 @@
         "reviewed_at": "2026-11-20T17:43:47.237Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.986Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:60 'with time reversed — precisely the opposite braiding' is a dramatic em-dash pivot; folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:11 '(n-1)^d such words — a finite set' is a mild aside."
       }
     ],
     "trap-triples": [
@@ -667,6 +729,21 @@
         "reviewed_at": "2026-11-20T17:43:47.262Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.009Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "The C, P, T triple at :58-61 is the content of CPT, not a rhetorical triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -702,6 +779,21 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:68 closes on 'its physical interpretation ... is a novel conceptual contribution introduced by the Quantum Observable Universe' — an evaluative closer, not content."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.039Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "The closing aphorism was removed; the block now ends on the CPT statement."
       }
     ],
     "trap-meta-commentary": [
@@ -737,6 +829,21 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:68 announces the significance of the work ('novel conceptual contribution') instead of stating a result."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.061Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
       }
     ],
     "trap-thesis-restatement": [
@@ -770,6 +877,22 @@
         "reviewed_at": "2026-11-20T17:43:47.338Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.081Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:32-33 'Both parts are proved: well-foundedness and compatibility with concatenation. No braiding hypothesis is used.' restates the two QED-marked parts immediately above."
       }
     ],
     "trap-performed-warmth": [
@@ -802,6 +925,21 @@
         "reviewed_at": "2026-11-20T17:43:47.364Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.104Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
       }
     ],
     "trap-superlative": [
@@ -836,6 +974,22 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:68 'formally linking the categorical braid-over-under structure to the macroscopic thermodynamic arrow of time' — unqualified strength; nothing in the block establishes a thermodynamic link."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.124Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:60 'precisely the opposite braiding' — intensifier on an interpretive claim."
       }
     ],
     "trap-nonspeakable": [
@@ -871,6 +1025,21 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:68 'the categorical braid-over-under structure to the macroscopic thermodynamic arrow of time' noun chain."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:22.145Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Symbols speakable."
       }
     ],
     "does_not_default_to_float": [
@@ -888,6 +1057,21 @@
         "reviewed_at": "2026-11-20T17:43:10.859Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.673Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "compute_no_mpf_to_float_cast": [
@@ -905,6 +1089,21 @@
         "reviewed_at": "2026-11-20T17:43:10.891Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.693Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "respects_archimedean_wall": [
@@ -922,6 +1121,21 @@
         "reviewed_at": "2026-11-20T17:43:10.916Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.715Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "code_is_commented": [
@@ -939,6 +1153,21 @@
         "reviewed_at": "2026-11-20T17:43:10.945Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.736Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "variables_typed": [
@@ -956,6 +1185,21 @@
         "reviewed_at": "2026-11-20T17:43:10.968Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.759Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "has_references_to_paper": [
@@ -973,6 +1217,21 @@
         "reviewed_at": "2026-11-20T17:43:10.998Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.779Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "connected_to_ci_pipeline": [
@@ -990,6 +1249,21 @@
         "reviewed_at": "2026-11-20T17:43:11.022Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.798Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "deprecated": [
@@ -1007,6 +1281,21 @@
         "reviewed_at": "2026-11-20T17:43:11.053Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.820Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "uses_library_framework_appropriately": [
@@ -1024,6 +1313,21 @@
         "reviewed_at": "2026-11-20T17:43:11.086Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.843Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "assertions_are_falsifiable": [
@@ -1041,6 +1345,21 @@
         "reviewed_at": "2026-11-20T17:43:11.111Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.866Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "uses-editorial-completeness": [
@@ -1059,6 +1378,22 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md leans on the Reeb vector field ξ ('defined later in this chapter') and the admissible-system definition (linked inline) but uses[] lists only prop:braiding-induced-ordering."
+      },
+      {
+        "field_hash": {
+          "md": "2561707910f0",
+          "ts": "79a1abbe5804"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.915Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:39-41 relies on the categorical Reeb derivation ('defined later in this chapter') and folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md:57-58 on the Feynman–Stueckelberg reading and CPT, none in uses[] (only prop:braiding-induced-ordering); the admissible-system link to unital-groebner-bases:def:admissible-system is also not in uses[]."
       }
     ]
   }
