@@ -10,7 +10,6 @@ export default conjecture({
   tags: ["flavor-split", "u-d-splitting", "fitted-ansatz", "conjecture"],
   uses: [
     "prop:flavor-split-substrate",
-    "lem:pair-skein-mass-formula",
   ],
   authorNotes: [
     {
