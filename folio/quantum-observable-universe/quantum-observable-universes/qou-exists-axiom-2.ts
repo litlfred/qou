@@ -8,7 +8,7 @@ export default lemma({
   lean: { ref: "qou:QOU.QuantumObservableUniverse.exists_axiom_2_observability",
     validation: "not_checked",
   },
-  title: "Axiom 2 — observability via Peter--Weyl decomposition",
+  title: "Axiom 2 — the adjoint representation of $\\mathfrak{sl}_2$ has no invariants",
   tags: ["peter-weyl", "observability", "adjoint-action", "compact-quantum-group"],
   uses: [],
   proofs: ["prf:qou-exists-axiom-2"],
