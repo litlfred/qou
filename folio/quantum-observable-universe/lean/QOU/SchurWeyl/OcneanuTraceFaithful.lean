@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.OcneanuMarkovTraceEveryZ
 import QOU.SchurWeyl.HeckeWedderburnAnyChar
+import QOU.SchurWeyl.JimboActionKernel
 
 /-!
 # QOU.SchurWeyl.OcneanuTraceFaithful — when the Ocneanu trace is faithful
@@ -21,6 +22,12 @@ the three-row weight vanishes. This file gives the general answer.
   finite set `S ⊆ K` such that for every `z ∉ S` the Ocneanu trace on `H_{n+1}(q)` is faithful.
   `S` is the root set of `∏_{|ν| = n+1} N_ν(z)`, a nonzero polynomial because every per-cell
   factor has constant term `q^{2i}(q² − 1) ≠ 0`.
+
+* `ocneanuMarkovTraceEveryZ_zD_eq_jimboTrace` / `jimboTrace_faithful_iff` — **the physics
+  weighting.** The two-term Lagrangian trace `τ(ℒ_q) = τ(𝒟²) + τ(ψ*𝒟ψ)` is evaluated with the
+  quantum trace `Tr(K^{⊗n} ·)/[2]_q^n` (owner ruling 2026-11-20, bean `qou-7xl8`). That functional
+  is the every-`z` trace at `z = z_D` and nowhere else; its radical is governed by the
+  convention-D weights, which vanish exactly on diagrams with three or more rows.
 
 So faithfulness fails only on finitely many `z` per level. Convention D is one of them from
 `n + 1 = 3` on, which is `OcneanuTraceNotFaithful` again, now as a special case of the `iff`.
@@ -204,6 +211,47 @@ theorem ocneanuTrace_faithful_iff (q : K) (hq0 : q ≠ 0)
         (∀ b, (ocneanuMarkovTraceEveryZ q hq0 hq2 hgen z).tr n (x * b) = 0) → x = 0)
       ↔ ∀ ν : YoungDiagram, ν.cells.card = n + 1 → ocneanuWeight q z ν ≠ 0 :=
   wtraceW_faithful_iff q hq0 hq2 (ocneanuWeight q z) n
+
+/-! ## The physics weighting: the `U_q(sl₂)` quantum trace is the trace at `z_D`
+
+The two-term categorical Lagrangian trace `τ(ℒ_q) = τ(𝒟²) + τ(ψ*𝒟ψ)`
+(`QOU.CategoricalLagrangianTwoTermBridge`) is evaluated, by the owner ruling of 2026-11-20
+(bean `qou-7xl8`, option 2), with the derived weighting `Tr(K^{⊗n} ·)/[2]_q^n`: the quantum trace
+of the Jimbo action. `JimboActionKernel.jimboMarkov` shows that functional is a Markov trace at
+`z_D = q³/(q²+1)`. So on the Hecke tower the weighting the physics uses is the every-`z` trace
+at the single point `z = z_D`, and only there; the other `z` are mathematics with no physics
+reading. -/
+
+/-- `hgen` already forces `q² + 1 ≠ 0`: otherwise `(q²)² = 1`. -/
+theorem sq_add_one_ne_zero_of_gen {q : K} (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : K)) ^ k ≠ 1) :
+    q ^ 2 + 1 ≠ 0 := by
+  intro h
+  have h2 : q ^ 2 = -1 := eq_neg_of_add_eq_zero_left h
+  apply hgen 2 (by norm_num)
+  rw [zpow_ofNat, h2]
+  norm_num
+
+/-- **At `z_D` the every-`z` trace is the quantum trace of the Jimbo action**, on every
+`H_{n+1}(q)`, by uniqueness. This is the trace behind the ruled two-term weighting. -/
+theorem ocneanuMarkovTraceEveryZ_zD_eq_jimboTrace (q : K) (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : K)) ^ k ≠ 1) (n : ℕ) (x : Hecke K q q⁻¹ n) :
+    (ocneanuMarkovTraceEveryZ q hq0 hq2 hgen (q ^ 3 / (q ^ 2 + 1))).tr n x
+      = JimboActionKernel.jimboTrace q hq0 n x :=
+  HeckeCoset.markovTrace_unique _
+    (JimboActionKernel.jimboMarkov q hq0 (sq_add_one_ne_zero_of_gen hgen)) n x
+
+/-- **Faithfulness of the physics weighting.** The quantum trace of the Jimbo action on
+`H_{n+1}(q)` has zero radical iff every convention-D Ocneanu weight of size `n + 1` is nonzero. -/
+theorem jimboTrace_faithful_iff (q : K) (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : K)) ^ k ≠ 1) (n : ℕ) :
+    (∀ x : Hecke K q q⁻¹ n, (∀ b, JimboActionKernel.jimboTrace q hq0 n (x * b) = 0) → x = 0)
+      ↔ ∀ ν : YoungDiagram, ν.cells.card = n + 1 →
+          ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν ≠ 0 := by
+  rw [← ocneanuTrace_faithful_iff q hq0 hq2 hgen]
+  simp only [ocneanuMarkovTraceEveryZ_zD_eq_jimboTrace q hq0 hq2 hgen]
+
 
 end SeminormalRep
 
