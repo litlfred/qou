@@ -2894,6 +2894,25 @@
         "reviewed_at": "2026-07-07T14:26:56.891130Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "9e7158a63eb4",
+          "ts": "c47985e60ead",
+          "lean": "2de9828ffe25",
+          "lean_statement": "be5ed55922a3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "severity": "minor",
+        "evidence": "The italic statement (i)-(ii) is a bare claim, but the block then carries a 'Scope.' paragraph ('a change of variables, not a prediction', 'the dressed quark masses can always be chosen to fit', the flavor-split commentary). That is interpretation inside the proposition block; clarity-stmt-pure asks for it in a follow-on remark interpreting prop:terminal-resolution. The content is accurate and honest; only its placement is at issue.",
+        "notes": "Not fixed (QA does not edit content). Proposed: move the Scope paragraph to a rem: block with interprets: prop:terminal-resolution."
       }
     ],
     "fit-section-chapter": [
@@ -2943,6 +2962,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9e7158a63eb4",
+          "ts": "c47985e60ead",
+          "lean": "2de9828ffe25",
+          "lean_statement": "be5ed55922a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Pair Skein nucleon identities sit in mass-theory next to lem:pair-skein-mass-formula, which is the only block they use. Fits the chapter."
       }
     ],
     "wall-side-statement": [
@@ -3000,6 +3036,23 @@
         "reviewed_at": "2026-11-21T12:46:49.000Z",
         "reviewed_sha": "1fc598b8a74908495e5c4348cf4ab75f4e008986",
         "evidence": "Read at 1fc598b8a7. The added sentence (proton/neutron rows take M_N as input via mu-bar ~ M_N/3, so they reproduce rather than predict it) keeps the block in its declared archimedean CODATA-comparison regime; MeV/keV tokens match. No wall crossing introduced."
+      },
+      {
+        "field_hash": {
+          "md": "9e7158a63eb4",
+          "ts": "c47985e60ead",
+          "lean": "2de9828ffe25",
+          "lean_statement": "be5ed55922a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Statement (i)-(ii) is a pair of identities in q over the field of the formula; no numerical q, no MeV, no CODATA value. Measured masses appear only in the Scope paragraph as the comparison boundary. Convention-C frame is declared, not hidden. No wall crossing."
       }
     ],
     "wall-side-proof": [
@@ -3020,6 +3073,23 @@
         "reviewed_at": "2026-07-07T14:26:56.891130Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "9e7158a63eb4",
+          "ts": "c47985e60ead",
+          "lean": "2de9828ffe25",
+          "lean_statement": "be5ed55922a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Proof is algebra in q (substitution, cancellation, 2x2 determinant, Cramer). Lean sibling works over a generic Field K with q = s^2; lean-direct -DautoImplicit=false exit 0, axioms propext/Classical.choice/Quot.sound only."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -3089,6 +3159,25 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "evidence": "Full read of the restated block (issue #8893). Matches: pairSkein s a b = (q a + q^-1 b)/(s+s^-1) with q = s^2 is the pair Skein formula; protonMass/neutronMass are the .md sums."
+      },
+      {
+        "field_hash": {
+          "md": "9e7158a63eb4",
+          "ts": "c47985e60ead",
+          "lean": "2de9828ffe25",
+          "lean_statement": "be5ed55922a3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "severity": "minor",
+        "evidence": "Lean matches (i) exactly (neutron_sub_proton, no hypotheses) and matches the determinant numerator (det_eq) and the inverse formulas (up_eq/down_eq). Two gaps against (ii): (1) the .md says 'each pair (m_p, m_n) comes from exactly one pair (mu_u, mu_d)' and the Scope paragraph rests on 'can always be chosen to fit', i.e. existence/surjectivity; terminal_resolution states only uniqueness (injectivity), and up_eq/down_eq hold only for (m_p, m_n) already in the image. Surjectivity is true over a field and a few lines to prove, but it is not stated. (2) Lean carries hypotheses the .md does not state: s != 0, s + s^-1 != 0 and (3 : K) != 0 besides [2]_q != 0. Harmless for q > 0 real, but the .md's 'whenever [2]_q != 0' is not the Lean's condition (fails in characteristic 3).",
+        "notes": "Independent review; supersedes the authoring agent's pass. Proposed: add a surjectivity lemma (define mu_u, mu_d by the inverse formulas and check protonMass/neutronMass) and state the extra nonvanishing conditions in the .md."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3919,6 +4008,23 @@
           "ts": "30b19a331e57",
           "lean": "0f49b494967c"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9e7158a63eb4",
+          "ts": "c47985e60ead",
+          "lean": "2de9828ffe25",
+          "lean_statement": "be5ed55922a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Full read of the restated block: statement, two parts, scope, convention, in that order; short declarative sentences; symbols ([2]_q, S_ab, mu_u, mu_d) introduced before use."
       }
     ],
     "expo-milnor-clarity": [

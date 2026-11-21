@@ -1542,6 +1542,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Observations chapter comparison table; the PR changed only the Notes sentence citing prop:terminal-resolution. Fits."
       }
     ],
     "da-false-claim": [
@@ -2227,6 +2242,21 @@
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "'tautological by construction'; 'encode combinatorial crossing structure, not mass directly'",
         "notes": "substantive scope guards preventing misreading of the LO rows and certificate fields as predictions"
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2261,6 +2291,21 @@
         "reviewed_at": "2026-08-15T11:26:26.232Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no rhetorical pivot construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-em-dash": [
@@ -2295,6 +2340,21 @@
         "reviewed_at": "2026-08-15T11:26:26.277Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no em dash construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-triples": [
@@ -2329,6 +2389,21 @@
         "reviewed_at": "2026-08-15T11:26:26.356Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no triples construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-closing-aphorism": [
@@ -2363,6 +2438,21 @@
         "reviewed_at": "2026-08-15T11:26:26.465Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no closing aphorism construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-meta-commentary": [
@@ -2397,6 +2487,21 @@
         "reviewed_at": "2026-08-15T11:26:26.508Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no meta commentary construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-thesis-restatement": [
@@ -2431,6 +2536,21 @@
         "reviewed_at": "2026-08-15T11:26:26.544Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no thesis restatement construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-performed-warmth": [
@@ -2465,6 +2585,21 @@
         "reviewed_at": "2026-08-15T11:26:26.610Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no performed warmth construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-superlative": [
@@ -2499,6 +2634,21 @@
         "reviewed_at": "2026-08-15T11:26:26.664Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no superlative construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "trap-nonspeakable": [
@@ -2533,6 +2683,21 @@
         "reviewed_at": "2026-08-15T11:26:26.709Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Read full block in context; no nonspeakable construction present."
+      },
+      {
+        "field_hash": {
+          "md": "ac0a3f49548a",
+          "ts": "7be6fbc6487d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the block with focus on the changed Notes sentence ('Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them'). Accurate against the restated proposition, no trap pattern. Remaining prose unchanged from the previously passed version."
       }
     ],
     "wall-base-ring-minimal": [
