@@ -7,7 +7,7 @@ priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:00:00Z
-updated_at: 2026-11-15T09:50:00Z
+updated_at: 2026-11-21T08:00:00Z
 parent: qou-qs0e
 ---
 
@@ -26,3 +26,7 @@ Scope (a)/(b) discipline on any exclusion.
 `docs/audits/2026-11-15-quark-equals-strand-implications.md` + `QOU/SchurWeyl/QuarkStrandConsequences.lean` (lean-direct exit 0, std axioms). Proved: a factorised strand space (colour x spin x flavour) is not a Hecke rep at q>1 (crossing eigenvalues q^2,-1,q^-2 satisfy no quadratic) -> at most one factor is q-deformed; integer charge <-> triality (imported charges). Matches the constituent quark model at q=1; at q0 the corpus deforms isospin (conv D) while physics gauges colour. Nuclear ratio 33.7 = B_d / virtual-state energy: one-crossing ratio is (N+1)/(N-1) <= 3 in any SU(N) frame; owner decision (re-scope as ill-posed) framed in §4. Hypothesis, not a definition yet: quark = one strand's label.
 
 ## 2026-11-15 — owner D1 = C (no change for now), via coordinator. §6 options I/II/III stay framed, deferred.
+
+## 2026-11-15 — owner asked "I vs II; does II throw away D; deep impact of II" (from PR #7845 branch, restored 2026-11-21)
+`docs/audits/2026-11-15-option-ii-colour-deformation-impact.md`. Same algebra/words/characters; I and II are r=2 and r=3 of one proved Wenzl family; D = level-3 trace conditioned to two colours (Levi argument, not formalised, G1). II keeps every theorem but retires D as the observable; reverses R1 + D7. Measured (exact rationals): Q_beta base -43.16% (D) -> -61.43% (z3); mass-channel weight -18%; compute 119x at n=12; Borromean 1100x cost frame-independent (writhe 0) - corrects my earlier "re-run in SU(3) frame". D1 = C stands.
+2026-11-21: the audit is cherry-picked onto `claude/port-unowned-leftovers-2026-11-21` (session https://claude.ai/code/session_01Qmmkt91GpCvJB15AZz7wMr). Caveat for readers: those Q_beta percentages predate the 2026-11-21 two-term-trace ruling (docs/coordination/owner-rulings.md); re-check before quoting.
