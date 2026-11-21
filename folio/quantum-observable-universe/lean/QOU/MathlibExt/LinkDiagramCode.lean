@@ -19,7 +19,9 @@ closure and the local moves be written without renumbering edges; `contract` rem
 The moves:
 
 * `embed`: relabel the edges along an injection (this also adds unused edges);
-* `contract`: remove a join `(a, b)` with `a ≠ b` by identifying `b` with `a`;
+* `contract`: remove a join `(a, b)` with `a ≠ b` by identifying `b` with `a`, when `a` or `b`
+  occurs elsewhere (true in every well-formed code; it excludes a dangling join, which no state
+  sum can remove without changing the value);
 * `r1`: a join becomes a kink (four kinds: sign, and whether the strand passes under or over first);
 * `r2par` / `r2anti`: two joins become a bigon, with the strands parallel or antiparallel;
 * `r3`: the braid-like positive triangle move, read off `σ₁σ₂σ₁ = σ₂σ₁σ₂`.
@@ -152,7 +154,8 @@ fresh, i.e. not to occur in the rest `R` of the code and to be distinct from the
 inductive Move : Bundled.{u} → Bundled.{u} → Prop
   | embed {E F : Type u} [Fintype E] [DecidableEq E] [Fintype F] [DecidableEq F]
       (f : E ↪ F) (D : Code E) : Move ⟨E, D⟩ ⟨F, D.map f⟩
-  | contract {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b : E) (hab : a ≠ b) :
+  | contract {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b : E) (hab : a ≠ b)
+      (hR : R.Occurs a ∨ R.Occurs b) :
       Move ⟨E, R + Code.ofJs {(a, b)}⟩ ⟨E, R.map (Function.update id b a)⟩
   | r1 {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b ℓ : E) (u s : Bool)
       (hℓ : ¬ R.Occurs ℓ) (ha : ℓ ≠ a) (hb : ℓ ≠ b) :
