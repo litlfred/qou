@@ -3436,3 +3436,9 @@ priority** than #7252 claimed: α is off the L2 critical path.
 ## 2026-11-20T14:39:28Z W13 — owner asked "if derived+proved, update compute; if not, work on it"
 
 Mirror projection alpha_D - h^2/4: algebra proved (LadderPhaseMirrorCovariance.lean, phaseTwiceD_sub_hsq_bar_odd, sorry-free). Open premise: that the ladder phase must be bar-odd (docstring analogy to writhe only); u is not bar-even so the projection is incomplete (qou-cds1 ~:258). Not wired by default; owner asked it to be worked on.
+
+## 2026-11-21: premise check and lever audit (PR #8794, merged as 5a8974f71f)
+- Checked against docs/coordination/owner-rulings.md on main. This work uses convention D, the proton pin, the γγ V³ base and the two-term covariant all-pairs trace (connected part 0 on V³). It does not rely on any superseded premise. The single-term trace, convention C, the census words and 'c_2 = -1 PROVED' all appear only as labelled historical cells.
+- On the scored V³ base (0.325433928735 MeV, conditional on C1-C3), the D rungs recover −0.0083 %. Closing the gap would need a uniform |c| ≥ 7982.
+- The cosh and GPMT levers of the bridge probe (48f446490c) do NOT close the gap on V³. cosh(6 ln q) gives F = 2.00. The full twist inserted into the trace gives F = 1.86. GPMT adds exactly 0, because the weight spaces carry no (1³) block. On nuc11 the full-twist insertion is ×1.7427, not cosh 6u. Scope (a). Audit: docs/audits/2026-11-21-cosh-gpmt-levers-audit.md.
+- Still open: on the ruled base no derived object supplies a factor above 1. This bean stays open.
