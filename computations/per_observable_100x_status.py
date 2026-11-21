@@ -1174,6 +1174,52 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     }
 
 
+def _mk_over_mpi_at(qq: mpf) -> mpf:
+    """m_K/m_π = sqrt([3]_q·[4]_q + (α_em(q)/π)·(1 + log(1+ℏ_q))) at the given q.
+
+    Strong core [3]_q·[4]_q: Lean `qou:QOU.BraidKnot.meson_qCG_3x4`. EM factor is
+    the FULL sinh-channel series (the (3q²−1)/(2q²) truncation was removed
+    2026-08-22 as a data-selected stopping point). α_em is DERIVED at the same q
+    by `meson_em_sinh_closed_form.alpha_em_inv_derived` (CS tower, conditional on
+    the Witten-κ Gram class). Previously this was inline in main(); lifted out
+    unchanged (2026-11-21) so the two-term block evaluates the identical form at
+    the covariant two-term q₀ pin.
+    """
+    # CLASS-A acknowledged anchor: pending Witten-κ Gram-determinant sorry.
+    # α_em is DERIVED, not copied. The consumer once held the literal
+    # mpf("137.035944") -- the MUON-anchor evaluation from before the
+    # 2026-05-28 proton re-pin, and a TRUNCATED CS tower besides (65.0 ppb off
+    # at the proton pin; effect on m_K/m_pi 0.0066 ppb).
+    from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
+    _hbar_q = 1 - 1 / qq
+    _hbar_factor = 1 + mp.log(1 + _hbar_q)  # sinh-channel, FULL series
+    _qcg_strong = (qq ** 2 + 1 + qq ** -2) * (
+        (qq ** 4 - qq ** -4) / (qq - qq ** -1)
+    )  # [3]_q · [4]_q
+    _alpha_em_inv = alpha_em_inv_derived(qq)
+    return mp.sqrt(_qcg_strong + (1 / _alpha_em_inv) / mp.pi * _hbar_factor)
+
+
+def _alpha_em_inv_form_b_at(qq: mpf) -> mpf:
+    """Form-B α_em⁻¹ at the given q: 1/α = T + α·H·(1 − h²α),
+    T = q[9]_q[10]_q + 8/(12π), H = [2]_q/(8π), h = q − q⁻¹.
+
+    The SAME cubic as `alpha_em_schwinger_ladder_probe.py` (whose witness
+    supplies the one-term row). Re-stated here only so the row can be evaluated
+    at another q₀ pin; main() asserts it reproduces that witness's
+    `form_B_alpha_inv` at the one-term pin, so the two cannot drift silently.
+    """
+    def _qb(n):
+        return (qq ** n - qq ** (-n)) / (qq - qq ** (-1))
+    h2 = (qq - 1 / qq) ** 2
+    T = qq * _qb(9) * _qb(10) + mpf(8) / (12 * mp.pi)
+    H = _qb(2) / (8 * mp.pi)
+    roots = mp.polyroots([-H * h2, H, T, -1], maxsteps=200, extraprec=2 * mp.prec)
+    aB = min([mp.re(r) for r in roots if abs(mp.im(r)) == 0 and mp.re(r) > 0],
+             key=lambda r: abs(r - mpf("0.0073")))
+    return 1 / aB
+
+
 def main() -> dict:
     rows = []
 
@@ -1667,26 +1713,11 @@ def main() -> dict:
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
     from mpmath import pi as _pi
     q0 = mpf(Q_50_DIGIT_STR)
-    _hbar_q = 1 - 1 / q0
-    _hbar_factor = 1 + mp.log(1 + _hbar_q)  # sinh-channel, FULL series
-    _qcg_strong = (q0 ** 2 + 1 + q0 ** -2) * (
-        (q0 ** 4 - q0 ** -4) / (q0 - q0 ** -1)
-    )  # [3]_q · [4]_q
-    # CLASS-A acknowledged anchor: pending Witten-κ Gram-determinant sorry.
-    # α_em is DERIVED, not copied. This line held the literal
-    # mpf("137.035944") -- the MUON-anchor evaluation from before the
-    # 2026-05-28 proton re-pin, and a TRUNCATED CS tower besides. At the
-    # current proton pin the exact resummation gives 137.0359350939756,
-    # i.e. the literal was 65.0 ppb off, and its stated "399 ppb vs CODATA"
-    # understated the real residual of 468 ppb. pyhecke.constants and
-    # meson_em_sinh_closed_form were both corrected; this consumer and
-    # meson_em_residual_alpha_em were not, so the fix never reached the
-    # dashboard. Effect on m_K/m_pi is 0.0066 ppb -- the L2 verdict is
-    # unchanged; the defect was in what the number CLAIMED, not what it did.
-    from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
-    _alpha_em_inv = alpha_em_inv_derived(q0)
-    _mk_sq_over_mpi_sq = _qcg_strong + (1 / _alpha_em_inv) / _pi * _hbar_factor
-    mk_pred = mp.sqrt(_mk_sq_over_mpi_sq)
+    # The closed form is evaluated by `_mk_over_mpi_at(q)` (module level) so the
+    # two-term block below can evaluate it at the covariant two-term pin with the
+    # identical expression. The α_em input there is `alpha_em_inv_derived(q)`,
+    # DERIVED at the same q, never a literal (history in that function's docstring).
+    mk_pred = _mk_over_mpi_at(q0)
     rows.append(_row_for(
         "m_K/m_pi", mk_pred,
         "[3]_q·[4]_q + (α_em/π)·(1+log(1+ℏ_q)) — closed form. Strong core "
