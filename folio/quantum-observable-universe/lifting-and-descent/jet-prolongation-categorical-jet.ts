@@ -9,5 +9,4 @@ export default lemma({
   tags: ["kahler-differential", "frobenius-hopf", "jet-bundle", "deformation"],
   uses: [],
   proofs: ["prf:jet-prolongation-categorical-jet"],
-  cites: ["fred2005"],
 });

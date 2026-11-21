@@ -4,5 +4,5 @@ export default proof({
   label: "prf:jet-prolongation-categorical-jet",
   title: "Proof that $J^1(A)$ inherits the Frobenius--Hopf structure",
   uses: ["lem:jet-prolongation-categorical-jet"],
-  cites: ["fred2005"],
+  cites: ["leitner2006"],
 });

@@ -11,5 +11,5 @@ export default remark({
     "prop:skew-poisson-integration",
   ],
   tags: ["poisson", "hkr", "deformation-theory"],
-  cites: ["yekutieli2010", "fred2005"],
+  cites: ["yekutieli2010", "leitner2006"],
 });

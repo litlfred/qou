@@ -1,7 +1,3 @@
+Item 1 is Theorem 1.9 of Leitner (arXiv:math/0602138), proved by a Gröbner basis argument (Proposition 2.4): the relations $\eta^p - F(\eta)$ and $\eta\zeta - \zeta\eta - \tilde\pi(\eta,\zeta)$ form a Gröbner basis of the defining ideal, so the ordered monomials in the $A_i$ are a $k$-basis of $U$. Item 2 is Proposition 1.13: strong multiplicativity (Definition 1.11) is exactly the condition that $\Delta$ kills the relations $fg - gf - \pi(f, g)$. Item 3 is Theorem 3.7, which combines items 1 and 2 with Lemma 3.5 and Proposition 3.6. The paper's own proof gives the bialgebra structure in detail and only sketches that $U$ is the distribution algebra of a formal group.
 
-This is the Main Theorem of Fresse.  Item (1) is the
-existence statement; item (2) follows from the
-Grobner--Shirshov normal-form construction for $\mathrm{Dist}(G)$;
-item (3) is the strong multiplicativity theorem, which guarantees
-that the co-multiplication is compatible with the deformed product at
-every stage of the $\pp$-adic filtration.
+The Lean declaration `QOU.FormalGroups.integrationMk_commutator` formalises only the defining relation: in the quotient $U$, the image of $fg - gf$ equals the image of $\pi(f, g)$. Items 1–3 are not formalised.

@@ -1,10 +1,13 @@
-Let $H/\mathbb{F}_p$ be a smooth commutative formal group and $\pi_<$ a skewed-Poisson structure on $H$. There exists a (generally non-commutative) formal group $G/\mathbb{Z}_p$ whose reduction modulo $p$ recovers $H$,
+Let $k$ be a field of characteristic $p$. Let $X$ be a splay over $k$: a finite family $\{A_i\}$ of commutative Hopf algebras of distributions of one-dimensional formal groups $H_i$, with $T$ their free product. Let $\pi$ be a Poisson structure on $X$ with internal symmetry ($\pi(A_i, A_i) = 0$) that is strongly filtered. Put
 
 $$
-G \otimes_{\mathbb{Z}_p} \mathbb{F}_p \;\cong\; H,
+U \;=\; T \big/ \bigl(fg - gf - \pi(f, g)\bigr).
 $$
 
-and such that:
+Then (Leitner, Theorem 3.7):
 
-1. $\mathrm{Dist}(G)$ is a deformation of $\mathrm{Dist}(H)$. The distribution algebra of $G$ deforms that of $H$ and degenerates back to it under reduction modulo $p$. This is computed via a Gröbner–Shirshov basis for the relations of the enveloping algebra.
-2. The comultiplication on $\mathrm{Dist}(G)$ satisfies the *strong multiplicativity* condition. The Frobenius relation $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id}) = \Delta\circ m$ (the comultiplication $\Delta$ intertwines with the multiplication $m$) is preserved under the deformation.
+1. $U \cong \bigotimes_i A_i$ as $k$-modules (Poincaré–Birkhoff–Witt, Theorem 1.9).
+2. If $\pi$ is strongly multiplicative, the comultiplication of $T$ descends to an algebra map $\Delta\colon U \to U \otimes U$, so $U$ is a bialgebra (Proposition 1.13).
+3. $U$ is the distribution algebra $\mathrm{Dist}(G)$ of a (generally non-commutative) formal group $G$ over $k$, and $\{H_i, G\}$ is geometric (Definition 3.1).
+
+Everything is over the field $k$. The statement makes no claim about a lift to $\mathbb{Z}_p$ or $W(k)$.
