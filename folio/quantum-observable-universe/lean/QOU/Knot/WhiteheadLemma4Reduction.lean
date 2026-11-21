@@ -37,7 +37,7 @@ published Lemma 2a/2b content (signed form), not a new conjecture.
 
 So after this file, **the Whitehead-link volume conjecture rests on a real,
 positive-sum shape estimate**; no oscillatory analysis remains.
--- Ref: [manuscript] library/arxiv-math-0611181v2/0611181v2.pdf, Lemma 4 (Steps 3–6)
+-- Ref: [vanderveen2008] library/arxiv-math-0611181v2/0611181v2.pdf, Lemma 4 (Steps 3–6)
 -/
 
 import QOU.Knot.WhiteheadPhaseAlgebra

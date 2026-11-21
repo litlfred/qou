@@ -79,7 +79,7 @@ The trace $\mathrm{tr}_M$ admits the explicit form:
 $$
   \mathrm{tr}_M(x) \;=\; \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(x),
 $$
-where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every other character is annihilated — and $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$. Equivalently $\mathrm{tr}_M$ factors through $\mathrm{TL}_n(q)$, and the surviving blocks carry $\sum d_\lambda^2 = \mathrm{Catalan}(n)$ of the $n!$ dimensions of $H_n(q)$.
+where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every other character is annihilated — and $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$. Equivalently $\mathrm{tr}_M$ factors through $\mathrm{TL}_n(q)$, whose dimension is $\mathrm{Catalan}(n)$ \cite{kimlee2018}, and the surviving blocks carry $\sum d_\lambda^2 = \mathrm{Catalan}(n)$ of the $n!$ dimensions of $H_n(q)$. For a geometric construction of a two-parameter trace on the Hecke algebra whose expansion in irreducible characters is given by Lusztig's Fourier transform and mixed Poincaré polynomials of character sheaves, see \cite{webster-williamson-2014-markov}, Cor. 13.
 
 ## Selection theorem
 

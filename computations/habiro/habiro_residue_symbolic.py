@@ -78,7 +78,7 @@ from witness_polynomial import expose_polynomial  # noqa: F401
 from sympy import Rational, Symbol, Integer, expand, factor, simplify
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as _Q_CANONICAL
+from q_parameter import Q as _Q_CANONICAL, Q_50_DIGIT_STR as _Q_50_DIGIT_STR
 
 
 def q_pochhammer(m, q):
@@ -158,7 +158,7 @@ def eval_schur_weyl_exact_at_q0(A_values=(1, 2, 3, 4)):
     from wedderburn_jones_markov import global_wedderburn_sum_jones_markov
 
     q = sp.Symbol('q', positive=True, real=True)
-    q0 = Rational(int(_Q_CANONICAL * 10 ** 16), 10 ** 16)
+    q0 = Rational(_Q_50_DIGIT_STR)  # was a 16-digit truncation of float Q (F64_CAST, 2026-11-21)
 
     out = {}
     for A in A_values:
@@ -240,7 +240,7 @@ if __name__ == "__main__":
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": str(float(_Q_CANONICAL)),
+            "q_0": _Q_50_DIGIT_STR,
             "engine": "sympy Rational (exact)",
         },
         "toy_residues": toy,

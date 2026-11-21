@@ -19,8 +19,25 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "bar-involution-parity-decomposition.lean:37-49 all three clauses proved",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "7dcaca8006bc",
+          "ts": "d1d90f6e4a25",
+          "lean": "537c9fc40e03",
+          "lean_statement": "86a074c40fd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:25.336Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: a label replaced by its title. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: bar-involution-parity-decomposition.lean:37-49 all three clauses proved"
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:33.143Z"
+  "updated_at": "2026-11-21T08:18:25.336Z"
 }

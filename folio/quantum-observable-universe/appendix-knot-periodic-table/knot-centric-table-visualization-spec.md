@@ -11,7 +11,7 @@ The visualization should be an interactive HTML page
 (`simulators/knot_periodic_table.html`).  Its feature
 groups fall into three physical layers the static table cannot expose
 side by side — the nuclear Borromean composition of each element, the
-trefoil-shell structure of its electrons, and the way both respond to
+shell structure of its electrons (the level words $e_n$), and the way both respond to
 the substrate parameter $q$ — so the specification below unfolds from
 layout and tiles through the nuclear and electron panels to the $q$
 control that ties them together:
@@ -32,11 +32,12 @@ control that ties them together:
    - Whether it's in a magic-receptive shell
    - Stability pair membership ($\diamond$, $\star$)
 
-4. **Electron side panel**: show the trefoil writhe diagram:
+4. **Electron side panel**: show the electron level word:
    - Current shell $n$ and sub-shell $\ell$
-   - Occupied Fourier modes as standing waves on the trefoil
-   - Visual: animated trefoil spinning around a Borromean
-     anchor, with the current mode highlighted
+   - The level word $e_n = \sigma_0\sigma_1\sigma_0\sigma_2\cdots\sigma_n$ and its
+     writhe $n + 2$
+   - Visual: the closure of $e_n$, starting from the Hopf link at $n = 1$,
+     linked to a Borromean anchor
 
 5. **Controls**:
    - Toggle between standard and knot-centric layouts
@@ -47,8 +48,8 @@ control that ties them together:
 
 6. **Knot notation**: use the visual conventions from
    [knot atom diagrams](#rem:knot-atom-diagrams):
-   - Solid trefoil = forward-time fermion
-   - Outlined trefoil = backward-time (antiparticle)
+   - Solid glyph = forward-time particle
+   - Outlined glyph = backward-time (antiparticle)
    - Circle = unknot (neutrino)
    - Interlocked circles = Hopf link
    - Borromean symbol = 3 interlocked rings (quark composite)

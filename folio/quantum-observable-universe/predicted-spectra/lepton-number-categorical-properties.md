@@ -3,7 +3,7 @@ The categorical lepton number possesses several structural properties.
 Each beta decay applies the Skein relation at one crossing. This produces a smoothing $L_0^{\pm}$. It contains exactly one lepton–antilepton pair. Lepton number counts these smoothings.
 
 Each smoothing $L_0^{\pm}$ contributes:
-- One charged lepton ($T_{2,3}$ or $T_{2,3}^{\sigma}$) with lepton number $+1$.
+- One charged lepton ($e^- = \sigma_0\sigma_1\sigma_0$ or $e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$) with lepton number $\pm 1$.
 - One neutrino or antineutrino ($K_{0_1}$ or $K_{0_1}^{\sigma}$) with lepton number $-1$.
 
 The net lepton number of each $L_0^{\pm}$ pair is zero.
@@ -51,10 +51,12 @@ unknot is amphichiral. It is also the convention of
 $\sigma_i \mapsto \sigma_i^{-1}$ on braid words and records that it
 *preserves the knot type*.
 
-The braid words are fixed by the $\chi = -6$ constraint below: $T(2,n)$ is the
-closure of $\sigma_1^n$, so $\nu_e = \sigma_1$, $e^- = \sigma_1^3$, and the
-antiparticles are $\sigma_1^{-1}, \sigma_1^{-3}$ --- distinct braid words that
-both close to the unknot, which is exactly how the mirror acts freely.
+The braid words are $\nu_e = \sigma_1$ and, by the electron ruling
+([electron](#def:electron-knot)), $e^- = \sigma_0\sigma_1\sigma_0$, with
+antiparticles $\sigma_1^{-1}$ and $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ --- distinct braid words
+(the neutrino words close to the unknot, the electron words to the positive and
+negative Hopf links), which is exactly how the mirror acts freely. Both electron
+words have writhe $\pm 3$, as $\sigma_1^{\pm 3}$ did, so the signs below are unchanged.
 The writhes follow from the
 words, and the candidate
 $$
@@ -95,15 +97,15 @@ crossing sum.
 
 | Particle | Knot type | Lepton number $L$ | Origin |
 |----------|-----------|:---:|--------|
-| $e^-$ | $T_{2,3}$ (trefoil) | $+1$ | $L_0^{-}$ charged component ($\beta^-$) |
-| $e^+$ | $T_{2,3}^{\sigma}$ (mirror trefoil) | $-1$ | $L_0^{+}$ charged component ($\beta^+$) |
+| $e^-$ | $\sigma_0\sigma_1\sigma_0$ (closure: Hopf link) | $+1$ | $L_0^{-}$ charged component ($\beta^-$) |
+| $e^+$ | $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ (closure: negative Hopf link) | $-1$ | $L_0^{+}$ charged component ($\beta^+$) |
 | $\nu_e$ | $K_{0_1}$ (unknot) | $+1$ | $L_0^{+}$ neutral component ($\beta^+$) |
 | $\nu_e^{\sigma}$ | $K_{0_1}^{\sigma}$ (mirror unknot) | $-1$ | $L_0^{-}$ neutral component ($\beta^-$) |
 
 The charged lepton carries $L = \pm 1$. The neutrino carries $L = \mp 1$. Each pair sums to zero.
 
 **The $\chi = -6$ constraint.**
-In the Descartes universe, the Euler characteristic $\chi_{\mathrm{eu}}(M_0) = -6$ constrains Bring's surface. The torus knot generators $T(2, n)$ with odd $n \leq 7$ exhaust the fermion spectrum. The electron ($T_{2,3}$) and neutrino ($K_{0_1} = T_{2,1}$) are the lowest torus knots in this sequence. The smoothing $L_0^{-}$ must decompose into exactly these knot types. They are the only single-component closures of a 2-arc resolution at a Borromean crossing.
+In the Descartes universe, the Euler characteristic $\chi_{\mathrm{eu}}(M_0) = -6$ constrains Bring's surface. The torus knot generators $T(2, n)$ with odd $n \leq 7$ exhaust the fermion spectrum. In the backup model the electron ($T_{2,3}$) and neutrino ($K_{0_1} = T_{2,1}$) are the lowest torus knots in this sequence, and the argument read the smoothing $L_0^{-}$ as decomposing into exactly these single-component closures. **This selection does not hold for the ruled electron.** The closure of $\sigma_0\sigma_1\sigma_0$ is the Hopf link, which has two components (`QOU.BraidKnot.ElectronWordCandidates.numCycles_s0s1s0`) and is not a $T(2,n)$ with odd $n$. So the $\chi = -6$ constraint, as stated, does not select the electron. Scope-(a): this is a statement about this argument, not about lepton number, whose conservation clauses above do not use it.
 
 **Structural origin of lepton-number conservation.**
 In the Standard Model, lepton number conservation is an accidental symmetry. Here, it is a structural invariant. The Skein relation is the unique operation that changes crossing type. It always produces exactly one lepton pair. The Iwahori–Hecke algebra contains no mechanism to produce an odd number of leptons. The smoothing is a topological operation on a single crossing. Each smoothing is binary.

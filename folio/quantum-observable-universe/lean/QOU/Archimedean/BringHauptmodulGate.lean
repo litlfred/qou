@@ -37,11 +37,19 @@ literature, not formalized here — this module asserts only the exact arithmeti
 reduce to at `τ₀`.
 
 -- Ref: [riera-rodriguez-1992] The period matrix of Bring's curve, Pacific J. Math.
---       154 (1992) — Thm 1: residual gauge Γ₀(5) on Bring's modulus.
+--       154 (1992) — Thm 1 (p. 184): the stabiliser of Bring's half-plane τc in
+--       Sp(8,ℤ) is SpS₅ × SpΓ₀(5), with SpΓ₀(5) acting on τ by Möbius maps
+--       (residual gauge Γ₀(5) on Bring's modulus); the 5 | p condition is Lemma 1
+--       (pp. 183–184).
 -- Ref: [braden-disney-hogg-2022] https://arxiv.org/abs/2208.13692 — j(τ₀) =
 --       −121945/32, j(5τ₀) = −25/2, τ₀ ≈ −0.5 + 0.186676i.
 -- Ref: [braden-northover-2012] SIGMA 8 (2012) 065 — corrected j(τ₀)/j(5τ₀)
 --       labelling (RR92 swaps the two equations).
+--       Its §4.2 prints τ₀ ≈ −0.5 + 0.185576i; that value does not satisfy
+--       its own conditions (1728·J(τ) ≈ −4039.6, 1728·J(5τ) ≈ −9.76 there),
+--       while the BDH-2022 value −0.5 + 0.186676i gives ≈ −3810.874 and
+--       ≈ −12.4988 against −121945/32 = −3810.78125 and −25/2 (mpmath,
+--       30 dps, 6-d.p. input). The 0.186676 above is the one to use.
 -/
 
 namespace QOU.Archimedean.BringHauptmodulGate

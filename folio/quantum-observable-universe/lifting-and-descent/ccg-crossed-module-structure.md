@@ -1,1 +1,1 @@
-*At each level $n$, the pair $(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ is a crossed module \cite{yekutieli2010}, with boundary $\partial(a) = a \cdot \mathbf{1}$ and conjugation action $g \cdot a = g a g^{-1}$.*
+*At each level $n$, the pair $(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ is a crossed module \cite[Def.~1.2, Rem.~1.3]{yekutieli2014-descent}, with boundary $\partial(a) = a \cdot \mathbf{1}$ and conjugation action $g \cdot a = g a g^{-1}$.*

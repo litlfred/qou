@@ -2,7 +2,7 @@ The categorical [$q$-chromaticity construction](#rem:q-chromaticity) yields a fa
 
 **The empirical result (Bujack et al., 2022).**
 
-Bujack et al. \cite{bujack2022} proved that perceived color differences violate Riemannian additivity along geodesics. The observed differences satisfy the strict inequality:
+Bujack et al. \cite{bujack2022} report experimental evidence that perceived color differences violate Riemannian additivity along geodesics. The observed differences satisfy the strict inequality:
 
 $$
   \Delta E(A, B) + \Delta E(B, C) > \Delta E(A, C).
@@ -38,7 +38,7 @@ $$
   d^{\,*} := 1/\eta \approx 9.59.
 $$
 
-The transition from Riemannian to Weber–Fechner scaling occurs at $\Delta E \approx 9.6$ on a normalized $L^{*}$-style scale. This closely matches the empirical crossover. Bujack et al. \cite{bujack2022} found the diminishing-returns effect barely significant at $\Delta d = 5$ ($\beta_{\Delta d = 5} = 0.048$, $p = 0.010$) and strongly significant at $\Delta d = 10$ ($\beta_{\Delta d = 10} = 0.119$, $p < 0.001$). The perceptual crossover empirically lies in $[5, 10]$, bracketing the predicted $d^{\,*} \approx 9.6$.
+On this reading the transition from Riemannian to Weber–Fechner scaling would occur at $\Delta E \approx 9.6$ on a normalized $L^{*}$-style scale. The cited experiment does not measure a crossover scale, so it neither corroborates nor refutes this value. In its regression the two coefficients indexed by the difference of differences, $\beta_{\Delta d = 5} = 0.048$ and $\beta_{\Delta d = 10} = 0.119$, are level effects of $\Delta d$, not the onset of diminishing returns at a particular scale. The only diminishing-returns coefficient is $\beta_{\bar d} = -0.005$, and the authors read its negativity as weak support for nonadditivity, conditional on the $L^{*}$ axis being nearly perceptually uniform, an assumption they say may not be appropriate \cite[Results, Table~1]{bujack2022}. The value $d^{\,*} \approx 9.6$ therefore has no empirical comparison in that source.
 
 **Falsifiability protocol.**
 

@@ -1263,6 +1263,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "electron-period-base.lean:46-50 `second_period_contains_me … := by have h := T.recurrence 0; rw [T.base0] at h` — faithful to .md:3 ('a defining field of the tower, not a result') but only the n=2 consequence of hypothesised structure fields; '.md:1 Every period is generated from the triple' not stated",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "0979055c2ece",
+          "ts": "4a652b709516",
+          "lean": "1dee20a21d42",
+          "lean_statement": "04be5ef724ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:53.904Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: link labels replaced by titles and the Lean declaration names removed from the prose; the 'defining field, not a result' framing is kept. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: electron-period-base.lean:46-50 `second_period_contains_me … := by have h := T.recurrence 0; rw [T.base0] at h` — faithful to .md:3 ('a defining field of the tower, not a result') but only the n=2 consequence of hypothesised structure fields; '.md:1 Every period is generated from the triple' not stated"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2517,6 +2534,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:28.939Z",
+  "updated_at": "2026-11-21T08:16:53.904Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

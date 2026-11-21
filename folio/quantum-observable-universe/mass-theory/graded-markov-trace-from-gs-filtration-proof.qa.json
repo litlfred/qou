@@ -162,6 +162,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "proof:9-14 'tr_M(T_1T_2) − tr_M(T_2T_1) = 0 ∈ ℚ(q)_{a+b} … any T ∈ J^{ℓ+1} has tr_M(T) ∈ ℚ(q)_{ℓ+1}, which is strictly above the level ℓ' — ℚ(q) is not graded; descent needs tr_M|J^{ℓ+1}=0, false for any block ideal with y_λ ≠ 0; proof:7-8 J^aJ^b ⊂ J^{a+b} not implied by two-sidedness",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "77e5f13a1e93",
+          "ts": "ee278837f39b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:57.448Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: cross-ref labels replaced by titles; the grading/descent steps found faulty earlier are unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: proof:9-14 'tr_M(T_1T_2) − tr_M(T_2T_1) = 0 ∈ ℚ(q)_{a+b} … any T ∈ J^{ℓ+1} has tr_M(T) ∈ ℚ(q)_{ℓ+1}, which is strictly above the level ℓ' — ℚ(q) is not graded; descent needs tr_M|J^{ℓ+1}=0, false for any block ideal with y_λ ≠ 0; proof:7-8 J^aJ^b ⊂ J^{a+b} not implied by two-sidedness"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1506,6 +1521,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:24.676Z",
+  "updated_at": "2026-11-21T08:17:57.448Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

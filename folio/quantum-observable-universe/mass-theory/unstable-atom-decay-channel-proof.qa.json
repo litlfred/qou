@@ -975,6 +975,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "(S↔P column of prop:unstable-atom-decay-channel row) Lean takes `hsel` (every minimiser equals λ*) as a hypothesis and concludes uniqueness: a tautology over the hypothesised selection. The sibling docstring says so honestly. The statement says λ* is well-defined for every unstable K, but the proof only gets \"generically, off the boundary variety\", so the q-range or genericity is missing. False steps: \"the relaxation is the convex hull of integer solutions\"; \"the unique optimal vertex\" of a cone {x ≥ 0 : Gx ≥ 0} with no objective. Root defect: `def:stable-atom` asks for ∃x ∈ ℤ≥0^N with Gx ≥ 0, and x = 0 always works (the proof says so in its own line 4). So every atom is stable and \"unstable\" is empty as written"
+      },
+      {
+        "field_hash": {
+          "md": "c4bc09622da4",
+          "ts": "f73464c5090d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:37.017Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. Diff added a 'Scope of the LP-relaxation argument' paragraph (prf:1) that concedes the earlier root defect: the existential form of stability is satisfied by x = 0, so every atom is stable under it and the ILP-infeasibility premise of the proof body never holds. It says that under the universal form the violated constraint is read as argmin_gamma (G(q) x(K,q))_gamma for a non-negative NF vector, and that the signed case and generic uniqueness 'remain open'. That is an improvement in honesty, but the proof body is unchanged and still rests on the conceded existential form, with the same false steps: 'the relaxation is the convex hull of integer solutions' and 'the unique optimal vertex' of the cone {x >= 0 : Gx >= 0}, which has no objective; uniqueness only 'generically, off the boundary variety'. The statement (unstable-atom-decay-channel.md:1) still claims lambda* is well-defined and unique for every unstable K, which the new scope paragraph itself says is open. The proof does not establish the statement. No photon/electron/quark ruling conflict."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1536,6 +1552,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:04.451Z",
+  "updated_at": "2026-11-21T08:17:37.017Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

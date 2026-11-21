@@ -18,7 +18,7 @@ The 2D carrier is NOT discharged: no instance is provided.  Numerically
 `N = 20, 40, 80, 160, 320` (`∝ N^{-1/2}`), so the tolerance `1/8` holds from
 `N ≈ 160` on.  The open content is vdV Lemma 2a (window, quadratic expansion of
 `log S_{n,k}` about `(N/2, N/4)`) + Lemma 2b (tails), bean qou-vy77.
--- Ref: [manuscript] library/arxiv-math-0611181v2/0611181v2.pdf, Lemma 2a/2b
+-- Ref: [vanderveen2008] library/arxiv-math-0611181v2/0611181v2.pdf, Lemma 2a/2b
 -/
 
 namespace QOU.MathlibExt

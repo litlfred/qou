@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T11:36:23.937707+00:00",
-  "commitSha": "6e9557d5cebd9e0836c6f3228083f7c0e1eca2c2",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T12:55:43.751315+00:00",
+  "commitSha": "2cf8025d65f4606e1523b59c623c34ad474b9e5d",
   "assertions": [
     {
       "name": "partition_count_is_p_3A_atom",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 5,
   "computation": "atom-chi-rust-d",
   "scriptFile": "compute_atom_chi_rust.py",
-  "scriptHash": "256c48b588d2",
-  "scriptCommitSha": "cf412d98f9c4885f059eb4d03a02ce6903f57f6b",
+  "scriptHash": "5b9da84b363a",
+  "scriptCommitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "1118a40f67c66cdb"
   },
   "invocation": {
     "argv": [
@@ -63,7 +63,7 @@
             6
           ],
           "dim": -1,
-          "chi_lambda": "1.5598701995641515927061666224371716599524918200175"
+          "chi_lambda": "1.5598701995641515927061666224371716599524918200174"
         },
         {
           "partition": [
@@ -71,7 +71,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.68228501276057044641239950847620023335096905058466"
+          "chi_lambda": "-0.68228501276057044641239950847620023335096905058463"
         },
         {
           "partition": [
@@ -79,7 +79,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "0.32908034753961323775704153752221780532274628165492"
+          "chi_lambda": "0.32908034753961323775704153752221780532274628165489"
         },
         {
           "partition": [
@@ -88,7 +88,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-1.2048051340890402241435135085474942280236731990496"
+          "chi_lambda": "-1.2048051340890402241435135085474942280236731990495"
         },
         {
           "partition": [
@@ -96,7 +96,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": "0.71394515175138574642252125970790802050354907040102"
+          "chi_lambda": "0.71394515175138574642252125970790802050354907040103"
         },
         {
           "partition": [
@@ -134,7 +134,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.036698171845523450423048631745848489536874060518191"
+          "chi_lambda": "-0.036698171845523450423048631745848489536874060518207"
         },
         {
           "partition": [
@@ -157,17 +157,17 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.67687668343293797886250168375128986008721472052128"
+          "chi_lambda": "-0.67687668343293797886250168375128986008721472052131"
         }
       ],
-      "compute_time_sec": 0.013691425323486328,
+      "compute_time_sec": 0.010544538497924805,
       "Z": 1,
       "N": 1,
       "A": 2,
       "include_inter": true,
       "precision": "mpfr",
       "dps": 50,
-      "engine": "chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr (Rust + MPFR, 50 dps) [canonical tier]"
+      "engine": "chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr (Rust + MPFR, 70 dps, printed at 50) [canonical tier]"
     },
     "free": {
       "n_strands": 6,
@@ -178,7 +178,7 @@
             6
           ],
           "dim": -1,
-          "chi_lambda": "1.5513064682004775733400041715565838634937585726284"
+          "chi_lambda": "1.5513064682004775733400041715565838634937585726283"
         },
         {
           "partition": [
@@ -186,7 +186,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "0.72222319547663343251347893677940906919180389075582"
+          "chi_lambda": "0.72222319547663343251347893677940906919180389075580"
         },
         {
           "partition": [
@@ -194,7 +194,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "0.82659166702554648129002182549834801191414346754892"
+          "chi_lambda": "0.82659166702554648129002182549834801191414346754888"
         },
         {
           "partition": [
@@ -203,7 +203,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-2.8133263317193534457867808083023876346566998957614"
+          "chi_lambda": "-2.8133263317193534457867808083023876346566998957613"
         },
         {
           "partition": [
@@ -211,7 +211,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": "1.6556749397493906221165470602755228062160981494215"
+          "chi_lambda": "1.6556749397493906221165470602755228062160981494214"
         },
         {
           "partition": [
@@ -220,7 +220,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.089833625420115395706083967429905079519892136322515"
+          "chi_lambda": "-0.089833625420115395706083967429905079519892136322500"
         },
         {
           "partition": [
@@ -239,7 +239,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "0.77762536791912660023010658965790678908304049819181"
+          "chi_lambda": "0.77762536791912660023010658965790678908304049819182"
         },
         {
           "partition": [
@@ -249,7 +249,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "1.3081380721250292477974620795672986184204238901556"
+          "chi_lambda": "1.3081380721250292477974620795672986184204238901557"
         },
         {
           "partition": [
@@ -272,17 +272,17 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "0.67325689637021355145356370093896784636070092139872"
+          "chi_lambda": "0.67325689637021355145356370093896784636070092139874"
         }
       ],
-      "compute_time_sec": 0.0012328624725341797,
+      "compute_time_sec": 0.009873628616333008,
       "Z": 1,
       "N": 1,
       "A": 2,
       "include_inter": false,
       "precision": "mpfr",
       "dps": 50,
-      "engine": "chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr (Rust + MPFR, 50 dps) [canonical tier]"
+      "engine": "chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr (Rust + MPFR, 70 dps, printed at 50) [canonical tier]"
     },
     "precision": "mpfr",
     "canonical_status": "canonical-with-empirical-assignment"

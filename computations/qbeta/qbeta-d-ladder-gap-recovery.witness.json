@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-16T06:58:20.788332+00:00",
-  "commitSha": "372c56c1139aad1e9deec2629452db31c2514444",
+  "computedAt": "2026-11-21T07:44:07.464942+00:00",
+  "commitSha": "c45bca44bd68e517316719c8bcbc1c3fff2dddfa",
   "assertions": [
     {
       "name": "1. b^2 = [3]_q/[2]_q^2 equals the Hoefsmit b^2 (D-forced)",
@@ -11,7 +11,7 @@
       "passed": true
     },
     {
-      "name": "2. live cell reproduces the dashboard factor 1.20016236389",
+      "name": "2. nuc11_interleaved|tower base reproduces the recorded 0.65185631006 MeV",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 180,
+  "durationMs": 3,
   "computation": "qbeta-d-ladder-gap-recovery",
   "scriptFile": "qbeta_d_ladder_gap_recovery_probe.py",
-  "scriptHash": "337bba94f610",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a176369e13e0",
+  "scriptCommitSha": "c61dd68ca97043b90dcf8b7e05084d93e0d91307",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_d_ladder_gap_recovery_probe.py"
   },
-  "description": "Convention-D Q_beta ladder: the only derived D rung (c_2 = -1, b^2 = [3]_q/[2]_q^2) gives 1 - u^2 = 0.99992746 and recovers between -0.01 % and -0.05 % of the log-gap on every D cell (wrong direction); a ladder closing the gap would need uniform |c_k| >= 1997..5898. No rung fitted, no cell selected, nothing re-scored. Bean qou-cds1.",
+  "description": "Convention-D Q_beta ladder: the only derived D rung (c_2 = -1, b^2 = [3]_q/[2]_q^2) gives 1 - u^2 = 0.99992746 and recovers between -0.008 % and -0.05 % of the log-gap on every D cell, including the scored gamma-gamma V^3 base (wrong direction); a ladder closing the gap would need uniform |c_k| >= 1997..7982. No rung fitted, no cell selected, nothing re-scored. Bean qou-cds1.",
   "data": {
     "substrate": {
       "q0": "1.10997858275138080759166909561",
@@ -79,104 +79,115 @@
       "b_sq_forced_3_over_2sq": "0.75270211325196540159377935162",
       "derived_rung_factor_N2": "0.999927456715617626498201895199",
       "geometric_total_G": "0.0000731664602858326226586190145449",
-      "Q_beta_codata_MeV": "0.78233341"
+      "Q_beta_codata_MeV": "0.78233355931"
     },
     "cells": {
       "nuc9_build_nucleon_nf|tower": {
         "tr_zD": "-0.1290754381703192805582969",
         "E0_form": "tower",
         "Q_base_MeV": "0.545664266485548807494141631709",
-        "Q_base_err_pct": "-30.2516983794",
-        "F_required": "1.43372666683629916613429921946",
-        "ln_F_required": "0.360277115108475707999447924408",
+        "Q_base_err_pct": "-30.251711691",
+        "F_required": "1.43372694046609164211692214683",
+        "ln_F_required": "0.360277305960590475711880439133",
         "derived_rung_factor": "0.999927456715617626498201895199",
-        "recovery_pct_of_log_gap": "-0.0201361431885",
-        "Q_after_derived_rung_err_pct": "-30.2567581503",
-        "C_min_uniform": "4134.64014266"
+        "recovery_pct_of_log_gap": "-0.0201361325217",
+        "Q_after_derived_rung_err_pct": "-30.2567714609",
+        "C_min_uniform": "4134.64196202"
       },
       "nuc9_build_nucleon_nf|order_zero": {
         "tr_zD": "-0.1290754381703192805582969",
         "E0_form": "order_zero",
         "Q_base_MeV": "0.540307378640024933605380741409",
-        "Q_base_err_pct": "-30.9364304613",
-        "F_required": "1.44794137731223321574049353718",
-        "ln_F_required": "0.370142807862366594521586124641",
+        "Q_base_err_pct": "-30.9364436422",
+        "F_required": "1.44794165365493350574797441699",
+        "ln_F_required": "0.370142998714481362234018639365",
         "derived_rung_factor": "0.999927456715617626498201895199",
-        "recovery_pct_of_log_gap": "-0.0195994395225",
-        "Q_after_derived_rung_err_pct": "-30.9414405594",
-        "C_min_uniform": "4228.225657"
+        "recovery_pct_of_log_gap": "-0.0195994294166",
+        "Q_after_derived_rung_err_pct": "-30.9414537394",
+        "C_min_uniform": "4228.2274585"
       },
       "nuc11_interleaved|tower": {
         "tr_zD": "-0.1541948850472397056592555",
         "E0_form": "tower",
         "Q_base_MeV": "0.651856310060337537759386764181",
-        "Q_base_err_pct": "-16.6779404116",
-        "F_required": "1.20016236389210554401362656706",
-        "ln_F_required": "0.182456850884717652987348934559",
+        "Q_base_err_pct": "-16.6779563138",
+        "F_required": "1.20016259294565261511503686817",
+        "ln_F_required": "0.182457041736832420699781449284",
         "derived_rung_factor": "0.999927456715617626498201895199",
-        "recovery_pct_of_log_gap": "-0.0397605874605",
-        "Q_after_derived_rung_err_pct": "-16.6839848674",
-        "C_min_uniform": "2279.45158839"
+        "recovery_pct_of_log_gap": "-0.0397605458705",
+        "Q_after_derived_rung_err_pct": "-16.6840007685",
+        "C_min_uniform": "2279.45376182"
       },
       "nuc11_interleaved|order_zero": {
         "tr_zD": "-0.1541948850472397056592555",
         "E0_form": "order_zero",
         "Q_base_MeV": "0.645456915123079459561875817038",
-        "Q_base_err_pct": "-17.4959286063",
-        "F_required": "1.2120613966167209446483373228",
-        "ln_F_required": "0.192322543638608539509487134792",
+        "Q_base_err_pct": "-17.4959443524",
+        "F_required": "1.21206162794122379164116132279",
+        "ln_F_required": "0.192322734490723307221919649516",
         "derived_rung_factor": "0.999927456715617626498201895199",
-        "recovery_pct_of_log_gap": "-0.0377209631285",
-        "Q_after_derived_rung_err_pct": "-17.5019137226",
-        "C_min_uniform": "2391.24983469"
+        "recovery_pct_of_log_gap": "-0.037720925696",
+        "Q_after_derived_rung_err_pct": "-17.5019294676",
+        "C_min_uniform": "2391.25198678"
       },
       "nuc11_gen_grouped|tower": {
         "tr_zD": "-0.1580160043414912980550614",
         "E0_form": "tower",
         "Q_base_MeV": "0.6680100282766590925672037433",
-        "Q_base_err_pct": "-14.6131278892",
-        "F_required": "1.1711402177872596398777704927",
-        "ln_F_required": "0.157977819366183419038930359085",
+        "Q_base_err_pct": "-14.6131441855",
+        "F_required": "1.17114044130186822321276679581",
+        "ln_F_required": "0.157978010218298186751362873809",
         "derived_rung_factor": "0.999927456715617626498201895199",
-        "recovery_pct_of_log_gap": "-0.0459215832101",
-        "Q_after_derived_rung_err_pct": "-14.6193221334",
-        "C_min_uniform": "1997.2440695"
+        "recovery_pct_of_log_gap": "-0.0459215277325",
+        "Q_after_derived_rung_err_pct": "-14.6193384284",
+        "C_min_uniform": "1997.24629679"
       },
       "nuc11_gen_grouped|order_zero": {
         "tr_zD": "-0.1580160043414912980550614",
         "E0_form": "order_zero",
         "Q_base_MeV": "0.661452049275741565895300654373",
-        "Q_base_err_pct": "-15.4513867335",
-        "F_required": "1.18275150988891448214139486894",
-        "ln_F_required": "0.167843512120074305561068559317",
+        "Q_base_err_pct": "-15.4514028698",
+        "F_required": "1.18275173561956292973079454514",
+        "ln_F_required": "0.167843702972189073273501074042",
         "derived_rung_factor": "0.999927456715617626498201895199",
-        "recovery_pct_of_log_gap": "-0.0432223532845",
-        "Q_after_derived_rung_err_pct": "-15.4575201676",
-        "C_min_uniform": "2111.81279962"
+        "recovery_pct_of_log_gap": "-0.0432223041371",
+        "Q_after_derived_rung_err_pct": "-15.4575363027",
+        "C_min_uniform": "2111.81500504"
       },
       "delta_S_short_normal_form|tower": {
         "tr_zD": "-0.106235639848092790892142",
         "E0_form": "tower",
         "Q_base_MeV": "0.449109399232412464983750733502",
-        "Q_base_err_pct": "-42.5936060647",
-        "F_required": "1.74196623659427206295154312408",
-        "ln_F_required": "0.555014496264448275250453024043",
+        "Q_base_err_pct": "-42.5936170208",
+        "F_required": "1.7419665690522438960741522164",
+        "ln_F_required": "0.555014687116563042962885538768",
         "derived_rung_factor": "0.999927456715617626498201895199",
-        "recovery_pct_of_log_gap": "-0.013070994769",
-        "Q_after_derived_rung_err_pct": "-42.597770513",
-        "C_min_uniform": "5821.46599661"
+        "recovery_pct_of_log_gap": "-0.0130709902743",
+        "Q_after_derived_rung_err_pct": "-42.5977814684",
+        "C_min_uniform": "5821.46749404"
       },
       "delta_S_short_normal_form|order_zero": {
         "tr_zD": "-0.106235639848092790892142",
         "E0_form": "order_zero",
         "Q_base_MeV": "0.444700408521780409100962266771",
-        "Q_base_err_pct": "-43.1571753376",
-        "F_required": "1.75923699418342922111603532701",
-        "ln_F_required": "0.564880189018339161772591224276",
+        "Q_base_err_pct": "-43.1571861862",
+        "F_required": "1.75923732993756197830943833512",
+        "ln_F_required": "0.564880379870453929485023739",
         "derived_rung_factor": "0.999927456715617626498201895199",
-        "recovery_pct_of_log_gap": "-0.0128427084511",
-        "Q_after_derived_rung_err_pct": "-43.1612989028",
-        "C_min_uniform": "5898.49162704"
+        "recovery_pct_of_log_gap": "-0.012842704112",
+        "Q_after_derived_rung_err_pct": "-43.1613097506",
+        "C_min_uniform": "5898.49310976"
+      },
+      "V3_gamma_gamma|two-term scored (conditional on C1-C3)": {
+        "Q_base_MeV": "0.325433928735",
+        "Q_base_err_pct": "-58.402151504",
+        "F_required": "2.40397048442681641339587043965",
+        "ln_F_required": "0.877121738904917619436410552344",
+        "derived_rung_factor": "0.999927456715617626498201895199",
+        "recovery_pct_of_log_gap": "-0.00827090614175",
+        "Q_after_derived_rung_err_pct": "-58.4051691486",
+        "C_min_uniform": "7982.09333564",
+        "source": "per-observable-100x-status.witness.json Q_beta two_term_qed_diagnostics.pred_two_term_scored_MeV"
       }
     },
     "not_applied": {
