@@ -377,3 +377,26 @@ with W = 1. What gives way is then a choice among: (Q); the one-temperature requ
 nucleon energy as a linear sum of crossing trace values. This test does not pick one. Normalising by
 τ(σ + σ⁻¹) would force W = 1, but that divisor is chosen to meet the constraint, so it is not a
 derivation and is recorded as such.
+
+### Addendum 14 (owner "Drop nucleon energy is sum")
+
+The reading "nucleon energy = linear sum of crossing trace values" is dropped. (Q) and route T
+(k_B T = E₀) are kept. Order of work, stated honestly: a sympy symbolic check of claim 2 below was run
+before this addendum was written; the Lean has not been written yet.
+
+Replacement premise (G), a premise, not derived: the nucleon's Gibbs weight is the trace of
+K^{⊗3}·β_Bor over the weight space of its flavour content in V^{⊗3}, V = ⟨u, d⟩, with u of weight
+H = +1 and d of weight H = −1 (premise L). Ř is Hecke-normalised: uu ↦ q·uu, dd ↦ q·dd, ud ↦ du,
+du ↦ ud + h·du, so σ² = hσ + 1. E_N = −E₀·ln w_N.
+
+To be proved:
+1. On each weight space K^{⊗3} acts as the scalar q^m, so w_N = q^{m_N}·T_{m_N}(β_Bor), where
+   T_m is the plain trace of β_Bor on the weight space M_m. p = (u,u,d) has m = +1, n = (u,d,d) has m = −1.
+2. (generic field, using only q² = hq + 1) T_{+1}(β_Bor) = T_{−1}(β_Bor), both equal to
+   −(q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1)/q⁶ when h = q − q⁻¹.
+3. (real, T > 0) E_n − E_p = −E₀[ln(q⁻¹T) − ln(qT)] = 2E₀ ln q, the n–p cell, with W = 1 automatically.
+   The trace T enters only as a flavour-independent additive term −E₀ ln T, which cancels in n − p.
+
+Expected outcome: the §19/§22/§23 mismatch disappears under (G), because the trace no longer weights
+the quark masses. n − p is the cell, 0.873537 MeV at the proton q₀, which is still below
+m_n − m_p (1.29333 MeV), the comparison value. So (G) settles consistency, not accuracy.
