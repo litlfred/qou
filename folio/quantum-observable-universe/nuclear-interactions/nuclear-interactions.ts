@@ -245,6 +245,7 @@ export default chapter({
         "branching-qvalue-factorization-proof",
         "parity-regime-selection",
         "parity-regime-selection-proof",
+        "parity-regime-dispatch",
         "positron-correction",
         "tritium-qvalue-symbolic",
         "frobenius-positivity-filter",
