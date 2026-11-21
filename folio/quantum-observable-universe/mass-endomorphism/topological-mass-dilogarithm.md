@@ -11,4 +11,4 @@ $$
   -\mathrm{Li}_2^q(-z_i).
 $$
 
-*Here $\mathrm{Li}_2^q(z) = \sum_{n \ge 1} z^n/(n\,[n]_q)$ with the symmetric $q$-integer $[n]_q$, and $z_i > -1$, so that $\ln_q(1+t)$ is defined on the whole interval of integration. This is not the product $\Phi_q(z) = \prod_{k\ge1}(1-q^{-k}z)^{-1}$; see the [disambiguation](#def:quantum-dilogarithm-disambiguation).*
+*Here $\mathrm{Li}_2^q(z) = \sum_{n \ge 1} z^n/(n\,[n]_q)$ with the symmetric $q$-integer $[n]_q$. The series converges for $|z| < q$; for other $z_i > -1$ both sides are meant by analytic continuation. The Lean field `chart_eval` carries no hypothesis on the domain of $z_i$. This is not the product $\Phi_q(z) = \prod_{k\ge1}(1-q^{-k}z)^{-1}$; see the [disambiguation](#def:quantum-dilogarithm-disambiguation).*

@@ -1,7 +1,7 @@
 The proof proceeds in four steps: decomposition of the mass integral
 using the :refterm[descent]{#descent} involution, identification of the descended term
 with the unknot-core holonomy, localisation of the transient terms to
-exceptional divisors, and evaluation via the quantum dilogarithm.
+exceptional divisors, and evaluation via the symmetric $q$-dilogarithm.
 
 By
 ([eigenspace decomposition of the mass integrand](#lem:topological-mass-eigenspace-decomp)),
