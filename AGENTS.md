@@ -6036,6 +6036,23 @@ re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 > olean at all — a *new* file inherits its dependencies' staleness without ever
 > appearing in a drift count keyed on changed sources. Use the closure.
 >
+> **Check your own module before you trust a `lean`-direct green on it (owner
+> approval 2026-11-21, bean `qou-56qy` item 3).** The census is cheap and
+> prints whether the module you touched sits in the dirty closure:
+>
+> ```bash
+> scripts/lean-library-sweep.py --report --only-exact QOU.Your.Module   # one module
+> scripts/lean-library-sweep.py --report --only QOU.Your.Chapter        # a prefix
+> ```
+>
+> It exits 0 and builds nothing. Its last line reads `selection <X>: N of them
+> are dirty`. Measured on `QOU.BringConeGauge` after the 2026-11-21 reseed:
+> 35 modules in its graph, 0 dirty, about 30 s. If N is above 0, rebuild that
+> module's cone with `scripts/lean-direct-cone.sh QOU.Your.Module` (it never
+> calls `lake`, so the restored cache survives), then re-run `lean`-direct. A
+> green from a module with N above 0 is a claim about the snapshot, not about
+> your source.
+>
 > This block is an owner-reviewable wording change to the repo's primary
 > verification guidance, added on the evidence above; revert the wording if you
 > disagree — the measurement stands either way.
