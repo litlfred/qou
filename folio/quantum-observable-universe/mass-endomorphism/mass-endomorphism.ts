@@ -209,7 +209,6 @@ export default chapter({
         "categorical-chain-convergence-mechanisms",
         "categorical-chain-convergence-mechanisms-neutron-truncation",
         "categorical-chain-convergence-mechanisms-table-data",
-        "tau-M-asymptotic-rep-theory",
         "tau-M-asymptotic-rep-theory-proof",
         "tau-M-asymptotic-rep-theory-scope",
         "tau-M-asymptotic-rep-theory-interpretation",

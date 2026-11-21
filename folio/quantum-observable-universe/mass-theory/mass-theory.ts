@@ -727,6 +727,7 @@ export default chapter({
         "borromean-h4-categorical-derivation-proof",
         "borromean-h4-categorical-derivation-context",
         "habiro-precision-ladder-equivalence",
+        "tau-M-asymptotic-rep-theory",
         "habiro-precision-ladder-equivalence-context",
         "habiro-pochhammer-bridge",
         "habiro-pochhammer-bridge-proof",

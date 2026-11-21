@@ -3,9 +3,9 @@
   "label": "prop:tau-M-asymptotic-rep-theory",
   "kind": "proposition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts",
-    "md": "folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.md",
-    "lean": "folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.lean"
   },
   "source_hashes": {
     "md": "0abb8caffe6e",
@@ -1233,7 +1233,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"mass-endomorphism\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -1881,7 +1881,7 @@
           "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: prop:hoefsmit-V21-cos-symmetrization"
         },
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:hoefsmit-V21-cos-symmetrization | folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:habiro-residue-sum-equivalence | folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:q-beta-categorical-precision-ladder | folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/nuclear-interactions: prop:q-beta-cos-resummation | folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:q-beta-c-k-recursion-from-habiro-q-difference"
+        "evidence": "folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:hoefsmit-V21-cos-symmetrization | folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:habiro-residue-sum-equivalence | folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:q-beta-categorical-precision-ladder | folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/nuclear-interactions: prop:q-beta-cos-resummation | folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:q-beta-c-k-recursion-from-habiro-q-difference"
       }
     ],
     "detangler-graph-energy": [
