@@ -1901,3 +1901,4 @@ import QOU.QFTMath.SpinorMinkowski
 import QOU.QFTMath.Su3StructureConstants
 import QOU.QFTMath.SpinFlavourAxialCharge
 import QOU.QFTMath.InfinitesimalPureBraid
+import QOU.Interactions.HopfElectronTwoTermMass
