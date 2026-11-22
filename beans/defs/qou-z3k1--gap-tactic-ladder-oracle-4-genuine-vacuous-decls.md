@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-11-22T09:20:44Z
+updated_at: 2026-11-22T09:44:01Z
 parent: qou-6qbv
 ---
 
@@ -271,3 +271,7 @@ re-work item 1. The file is also candid about it in its own docstring
 
 
 2026-11-22 (triviality snapshot regenerated on main, PR #8937): mass_tower_coefficient_stratification is NOT closed by the ladder any more, but its statement is unchanged and its proof is still `cases term <;> decide`. Plain simp does not unfold stratumDepth, so the ladder now misses a known vacuous declaration. The snapshot's closed count is therefore not a vacuity count. Possible fix: a `cases <;> decide` rung, or simp with the decl's own defs unfolded. Record: docs/audits/2026-11-22-lean-audit-snapshot-gaps.md §2. Epic qou-uwyf.
+
+
+
+2026-11-22: cases-decide rung (last rung, case analysis on one binder then decide) added to the probe in litlfred/folio-assistant-sci#213; Lean-backed confirmation on mass_tower_coefficient_stratification pending. Record: docs/audits/2026-11-22-triviality-decl-not-found-triage.md §4.
