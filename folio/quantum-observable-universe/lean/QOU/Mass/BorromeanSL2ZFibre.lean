@@ -1,5 +1,6 @@
 import QOU.Mass.BorromeanWordForcing
 import Mathlib.Data.Complex.Basic
+import QOU.MathlibExt.SL2ZPositiveWords
 
 /-!
 # The same-character fibre of `β_Bor` at writhe 0, at every length
@@ -14,7 +15,8 @@ exactly `β_Bor`'s conjugacy class, at any length.
 1. At `q = i` the character of a writhe-0 word is the trace of its image under the
    Burau representation at `t = −1`, `B₃ → SL(2, ℤ)` (`chi21_I`); for `β_Bor` it is 18.
 2. That image is conjugate to a positive word in `R = [[1,1],[0,1]]`, `L = [[1,0],[1,1]]`
-   (hypothesis `PositiveRepresentatives`).
+   (`PositiveRepresentatives`, proved as `positiveRepresentatives` from
+   `QOU.MathlibExt.SL2Z.exists_conj_posProd`).
 3. **Trace bound** (`ptr_ge`): `r` letters `R` and `l` letters `L` give trace at least
    `2 + r·l`. With one letter of a kind the trace is exactly `2 +` the other count
    (`ptr_oneL`, `ptr_oneR`).
@@ -27,12 +29,16 @@ exactly `β_Bor`'s conjugacy class, at any length.
 6. `χ₍₂,₁₎` is a class function on `B₃` (`chi21_conj`), and `R⁴L⁴` has a different value
    at `q = 2`. So only `β_Bor` remains.
 
-## Hypotheses (cited classical facts, not proved here)
+## Classical facts
 
 * `KernelIsDeltaFour` (from `BorromeanWordForcing`): the kernel of `B₃ → SL(2, ℤ)` is
-  `⟨Δ⁴⟩`, `Δ = σ₀σ₁σ₀`. Surjectivity is proved (`burauNeg_surjective`).
+  `⟨Δ⁴⟩`, `Δ = σ₀σ₁σ₀`. **Still a named hypothesis** here; surjectivity is proved
+  (`burauNeg_surjective`).
 * `PositiveRepresentatives`: every element of `SL(2, ℤ)` of trace `> 2` is conjugate to
-  a positive `R/L` word.
+  a positive `R/L` word. **Proved** (`positiveRepresentatives`, via
+  `QOU.MathlibExt.SL2Z.exists_conj_posProd`, sorry-free, standard axioms).
+
+So `fibre_of_kernel` is conditional on the kernel fact alone.
 
 No measured value enters.
 -/
@@ -341,12 +347,38 @@ theorem count_add (u : List Bool) : u.count true + u.count false = u.length := b
   | nil => simp
   | cons x u ih => cases x <;> simp <;> omega
 
-/-- **Cited classical fact (F2):** every element of `SL(2, ℤ)` of trace `> 2` is
-conjugate to a positive word in `R = [[1,1],[0,1]]` and `L = [[1,0],[1,1]]`. Taken as a
-hypothesis, not proved here. -/
+/-- **Classical fact (F2):** every element of `SL(2, ℤ)` of trace `> 2` is
+conjugate to a positive word in `R = [[1,1],[0,1]]` and `L = [[1,0],[1,1]]`. Proved
+below as `positiveRepresentatives`. -/
 def PositiveRepresentatives : Prop :=
   ∀ M : Matrix.SpecialLinearGroup (Fin 2) ℤ, 2 < (M : Matrix (Fin 2) (Fin 2) ℤ).trace →
     ∃ u : List Bool, IsConj M (burauNeg (eval (toWord u)))
+
+/-- `burauNeg` of a positive word is the matching `R/L` product of
+`QOU.MathlibExt.SL2Z`. -/
+theorem burauNeg_toWord_eq_posProd (u : List Bool) :
+    burauNeg (eval (toWord u)) = QOU.MathlibExt.SL2Z.posProd u := by
+  induction u with
+  | nil => simp [toWord, eval]
+  | cons x u ih =>
+    cases x
+    · simp only [toWord, List.map_cons, Bool.false_eq_true, if_false] at ih ⊢
+      rw [eval_cons, map_mul, ih, QOU.MathlibExt.SL2Z.posProd_cons_false]
+      congr 1
+      simp only [evalLetter, Bool.false_eq_true, if_false, one_ne_zero, map_inv, burauNeg_σ]
+      ext i j; fin_cases i <;> fin_cases j <;>
+        simp [burauGen, QOU.MathlibExt.SL2Z.L, Matrix.SpecialLinearGroup.coe_inv,
+          Matrix.adjugate_fin_two]
+    · simp only [toWord, List.map_cons, if_true] at ih ⊢
+      rw [eval_cons, map_mul, ih, QOU.MathlibExt.SL2Z.posProd_cons_true]
+      congr 1
+      simp only [evalLetter, if_true, burauNeg_σ]
+      ext i j; fin_cases i <;> fin_cases j <;> simp [burauGen, QOU.MathlibExt.SL2Z.R]
+
+/-- The classical fact (F2), now proved (`QOU.MathlibExt.SL2Z.exists_conj_posProd`). -/
+theorem positiveRepresentatives : PositiveRepresentatives := fun M hM => by
+  obtain ⟨u, hu⟩ := QOU.MathlibExt.SL2Z.exists_conj_posProd M hM
+  exact ⟨u, by rw [burauNeg_toWord_eq_posProd]; exact hu⟩
 
 theorem trace_isConj {M N : Matrix.SpecialLinearGroup (Fin 2) ℤ} (h : IsConj M N) :
     (M : Matrix (Fin 2) (Fin 2) ℤ).trace = (N : Matrix (Fin 2) (Fin 2) ℤ).trace := by
@@ -438,5 +470,14 @@ theorem fibre (hK : KernelIsDeltaFour) (hP : PositiveRepresentatives) (w : Word)
     simp only [r4l4, List.mem_cons, List.not_mem_nil, or_false] at hr44
     rcases hr44 with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
       (simp [chi21, rep21, toWord, heckeMat, Matrix.trace_fin_two] at h2; norm_num at h2)
+
+
+/-- `fibre` with the positive-representative fact discharged: conditional only on the
+kernel fact `KernelIsDeltaFour`. -/
+theorem fibre_of_kernel (hK : KernelIsDeltaFour) (w : Word) (hw : InB3Letters w)
+    (h0 : writhe w = 0)
+    (hχ : ∀ q : ℂ, q ≠ 0 → chi21 q w = chi21 q [a, b', a, b', a, b']) :
+    IsConj (eval w) (eval [a, b', a, b', a, b']) :=
+  fibre hK positiveRepresentatives w hw h0 hχ
 
 end QOU.Mass.BorromeanSL2ZFibre
