@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T09:23:07Z
-updated_at: 2026-11-22T09:29:31Z
+updated_at: 2026-11-22T11:05:00Z
 ---
 
 Owner 2026-11-22 (thread, PR #8804): siblings work under this working assumption and track this bean for proving and formalising it.
@@ -33,3 +33,6 @@ Prior art: QOU/MassTheory/QOneFlipSymmetry.lean (s34) proves the n = 3 weight-sp
 
 
 2026-11-22, from the n-p cell thread (PR #8955, via coordinator): the assumption holds in E0 units. The cell term 2 ln q and both vertex splits vanish at q = 1. Caveat: E0 = m_e/(q(q-1)) has a pole at q = 1, so the MeV cell term 2 E0 ln q tends to 2 m_e, not 0. This is the same class as item 4 (unit maps with poles turn O(h) terms into nonzero or divergent limits); the defect is in the unit map, not in the braid functional. Gap bean qou-sgav.
+
+
+2026-11-22 (issue #9002, branch claude/np-gap-q-one-unit-map-2026-11-22): PROVED for the closure mass of def:mass-identity. At q = 1 the mass is 2^(components of the closure) (Lean CategoricalMassAtOne.card_fixedColouring / mass_at_one, given the q = 1 bridge), so m_p = m_n = 8 for beta_Bor and its mirror. The Borromean rings are amphichiral, so the closure mass gives no n-p split at any q. Item 4 (E0 pole): the pole is the c_q^2 of comparing an energy with a mass. Through def:mass-energy the cell is 2 m_e hbar_q ln q, which vanishes at q = 1 (Lean cell_mass_eq, hbar_log_bounds) and is -99.18 % against CODATA at q0. Audit docs/audits/2026-11-22-np-gap-at-q-one-unit-map.md.
