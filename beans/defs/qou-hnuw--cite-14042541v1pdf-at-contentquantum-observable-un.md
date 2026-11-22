@@ -1,14 +1,14 @@
 ---
 # qou-hnuw
 title: Cite 1404.2541v1.pdf at folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernelLevel…
-status: todo
+status: in-progress
 pr: 8355
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:15Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:00:00Z
 parent: qou-ysb7
 ---
 
@@ -29,3 +29,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8355, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22 — done in draft PR #9116 (issue #9115)
+
+Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.

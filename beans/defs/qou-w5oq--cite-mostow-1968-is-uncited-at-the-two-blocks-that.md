@@ -1,13 +1,13 @@
 ---
 # qou-w5oq
 title: 'CITE: Mostow 1968 is uncited at the two blocks that make it load-bearing — M — approach-to-exceptional-divisor, swampland-island-of-consistency'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:05:25Z
-updated_at: 2026-10-04T15:17:55Z
+updated_at: 2026-11-22T21:00:00Z
 parent: qou-mub3
 ---
 
@@ -61,3 +61,7 @@ paths in `bib-qa-verifications.json`, or ingest the two IHÉS papers (both free 
 numdam.org, URLs already in `references.ts`).
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+## 2026-11-22 — done in draft PR #9116 (issue #9115)
+
+Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.

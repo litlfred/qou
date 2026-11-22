@@ -1,14 +1,14 @@
 ---
 # qou-udpt
 title: Cite 9308100v1 (1).pdf at rem:information-paradox-incompleteness
-status: todo
+status: in-progress
 pr: 8412
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:10Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-22T21:00:00Z
 parent: qou-19m0
 ---
 
@@ -45,3 +45,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8412, closed o
 Not cited. Mis-sourced: Susskind–Thorlacius argue complementarity (information in the radiation; no observer sees the duplicate), not the 'preserved but inaccessible' position the remark adopts. The remark already cites Harlow–Hayden and LPS. Finding F7. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-22 — done in draft PR #9116 (issue #9115)
+
+Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.

@@ -1,13 +1,13 @@
 ---
 # qou-p6xl
 title: Cite [faddeev1994] at cor:quantum-dilogarithm
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:09Z
-updated_at: 2026-10-04T15:17:31Z
+updated_at: 2026-11-22T21:00:00Z
 parent: qou-1qhv
 ---
 
@@ -21,3 +21,7 @@ Source: `faddeev1994` (bib key; PDF not committed to this repo)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-22 — done in draft PR #9116 (issue #9115)
+
+Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.

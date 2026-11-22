@@ -1,7 +1,7 @@
 ---
 # qou-vsho
 title: Cite [sauloy2004] at QOU/MathlibExt/RSZIsoformalInterface.lean — Prop 4.1 gives the algebraic 'one slope ⇒ End^{>0}(M0)=0 ⇒ trivial Stokes sheaf' behind rszIsoformalDim_one
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - qdiff-stokes
     - reorg-2026-10-04
 created_at: 2026-09-07T08:36:01Z
-updated_at: 2026-10-04T15:17:46Z
+updated_at: 2026-11-22T21:00:00Z
 parent: qou-mub3
 ---
 
@@ -24,3 +24,7 @@ The corpus argues "a pure isoclinic module has no local Stokes data" two ways (d
 What to do: (1) add `-- Ref: [sauloy2004] https://arxiv.org/abs/math/0409393 (Prop 4.1, Thm 3.18)` next to the RSZ ref in RSZIsoformalInterface.lean and cite Prop 4.1 in the `rszIsoformalDim_one` docstring as the algebraic form of the same fact; (2) add the citation to the c1-infinity audit §2.
 
 Not claimed: anything about C1's global connection matrix (qou-wgnx), which is not a local Stokes-sheaf question.
+
+## 2026-11-22 — done in draft PR #9116 (issue #9115)
+
+Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.
