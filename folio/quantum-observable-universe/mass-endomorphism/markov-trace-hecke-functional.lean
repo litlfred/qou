@@ -1452,3 +1452,619 @@ theorem markov_binding_eq_free_minus_atom_pair (hq : q ≠ 0) (s h z : K) (hs : 
 end Markov
 
 end QOU.BraidKnot.BindingHalf
+
+
+/-!
+# Bonds that cross the interface twice
+
+Setting of `MarkovTraceHeckeFunctional`: a first cluster `x ∈ H_m` (generators
+`σ_0, …, σ_{m-1}`), a second cluster `Y↑ᵐ⁺¹`, and the interface generator `σ_m` between
+them. `towerTr_singleGapBond` covers bonds with one interface letter. This file covers two.
+
+* `towerTr_twoGapBond_reduce` — `tr(x · Y↑ · (A₁C₁↑ · u · A₂C₂↑ · v · A₃C₃↑))
+  = tr(P · Q↑ · (u A₂ C₂↑ v))` with `P = A₃ x A₁`, `Q = C₃ Y C₁`, any letters `u, v`.
+* `towerTr_twoLetter_expand` — for `u = α + βσ_m`, `v = γ + δσ_m` (so `σ_m⁻¹ = σ_m − h`
+  is included), the terms with at most one `σ_m` give
+  `(αγ + (αδ + βγ) z) · tr(P A) · tr(Q C)`; what remains is `βδ` times the core
+  `tr(P · Q↑ · σ_m A C↑ σ_m)`.
+* `towerTr_twoGap` — the core, for `m = n + 1`, `A = a₀ + a₁ σ_n a₂` (`aᵢ ∈ H_n`) and
+  `C = c₀↑¹ + c₁↑¹ σ_0 c₂↑¹`:
+
+      tr(P Q↑ σ A C↑ σ) = (hz + 1) tr(P a₀) tr(Q c₀↑¹)
+                        + z tr(P a₁ σ_n² a₂) tr(Q c₀↑¹)
+                        + z tr(P a₀) tr(Q c₁↑¹ σ_0² c₂↑¹)
+                        + tr(a₂ P a₁ · (c₂↑¹ Q c₁↑¹)↑ · σ_{n+1} σ_n σ_{n+2} σ_{n+1}).
+
+  The first three terms are products of single-cluster traces (rank ≤ 2 between them). The
+  last, the cable term, is the trace of the crossing of two 2-cables and does not split.
+* `towerTr_twoGap_outerLeft` / `towerTr_twoGap_outerRight` — if `A` has no `σ_n` or `C`
+  has no `σ_0`, the core is a product `f(P) · g(Q)`.
+* `towerTr_twoGap_outerLeft_crossRatio` / `towerTr_twoGap_outerRight_crossRatio` — for such
+  bonds, with any two gap letters `α + βσ_m`, `γ + δσ_m`, the atom traces of the four pairs
+  satisfy `T₁₁ T₂₂ = T₁₂ T₂₁`; with `not_both_lt_one_of_crossRatio` this excludes
+  "pn and np bind, pp and nn do not" whenever the μ are positive.
+
+* `not_pattern_of_affine_rankOne` — if `μᵢⱼ = c + aᵢ bⱼ` with `c ≤ 1/2`, the pattern
+  (with all four `μ > 0`) is impossible. A rank-2 bond form whose span contains the free trace
+  in both arguments has this shape, `μ(x, y) = c + ℓ'(x) r'(y)`, on the whole cluster algebra.
+
+Not covered: the cable term (both inner letters present), and three or more gap letters.
+Generic over `[CommRing R]` (§7c).
+-/
+namespace QOU.BraidKnot.HeckeFunctional
+open QOU.MathlibExt.HeckeTowerWitness
+variable {R : Type*} [CommRing R] (z h : R)
+
+theorem mg_comm_shift {n : ℕ} {a : HeckeTower R h} (ha : a ∈ twH h n) {k : ℕ} (hk : n + 1 ≤ k)
+    (Y : HeckeTower R h) : Commute a (shift h k Y) := by
+  obtain ⟨j, rfl⟩ : ∃ j, k = j + 1 := ⟨k - 1, by omega⟩
+  exact twH_comm_shift h j (twH_mono h (by omega) ha) Y
+
+theorem mg_comm_gen {n : ℕ} {a : HeckeTower R h} (ha : a ∈ twH h n) {k : ℕ} (hk : n + 1 ≤ k) :
+    Commute a (twGen h k) := by
+  have := mg_comm_shift h ha hk (twGen h 0)
+  rwa [shift_twGen, zero_add] at this
+
+theorem mg_shift_mul (k : ℕ) (Y c : HeckeTower R h) :
+    shift h (k + 1) Y * shift h (k + 1 + 1) c = shift h (k + 1) (Y * shift h 1 c) := by
+  rw [map_mul, shift_shift, show 1 + (k + 1) = k + 1 + 1 by omega]
+
+theorem towerTr_XYg (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m) (Y : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y * twGen h m) = z * towerTr z h X * towerTr z h Y := by
+  rw [twH_comm_shift h m hX Y, mul_assoc, towerTr_mul_comm, towerTr_connectedSum z h m hX Y]
+
+theorem towerTr_XYgg (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m) (Y : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y * (twGen h m * twGen h m))
+      = (h * z + 1) * towerTr z h X * towerTr z h Y := by
+  rw [twGen_quad, mul_add, mul_smul_comm, mul_one, map_add, map_smul,
+    towerTr_XYg z h m hX Y, towerTr_split z h m hX Y, smul_eq_mul]; ring
+
+/-- Left factor, outer letter: `a ∈ H_n`, `n + 1 ≤ m`, so `a` commutes with `σ_m`. -/
+theorem towerTr_twoGap_left_outer (m n : ℕ) (hnm : n + 1 ≤ m) {X a : HeckeTower R h}
+    (hX : X ∈ twH h m) (ha : a ∈ twH h n) (Y : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y * (twGen h m * a * twGen h m))
+      = (h * z + 1) * towerTr z h (X * a) * towerTr z h Y := by
+  have ca := mg_comm_gen h ha hnm
+  have cs := mg_comm_shift h ha (k := m + 1) (by omega) Y
+  have e : X * shift h (m + 1) Y * (twGen h m * a * twGen h m)
+      = X * a * shift h (m + 1) Y * (twGen h m * twGen h m) := by
+    rw [← ca.eq]; simp only [mul_assoc]; rw [cs.symm.left_comm]
+  rw [e, towerTr_XYgg z h m (Subalgebra.mul_mem _ hX (twH_mono h (by omega) ha))]
+
+/-- Left factor, inner letter: `A = a₁ σ_n a₂` with `a₁, a₂ ∈ H_n`, gap `σ_{n+1}`. -/
+theorem towerTr_twoGap_left_inner (n : ℕ) {X a₁ a₂ : HeckeTower R h}
+    (hX : X ∈ twH h (n + 1)) (ha₁ : a₁ ∈ twH h n) (ha₂ : a₂ ∈ twH h n) (Y : HeckeTower R h) :
+    towerTr z h (X * shift h (n + 1 + 1) Y *
+        (twGen h (n + 1) * (a₁ * twGen h n * a₂) * twGen h (n + 1)))
+      = z * towerTr z h (X * a₁ * (twGen h n * twGen h n) * a₂) * towerTr z h Y := by
+  have c1g := mg_comm_gen h ha₁ (k := n + 1) le_rfl
+  have c2g := mg_comm_gen h ha₂ (k := n + 1) le_rfl
+  have c1s := mg_comm_shift h ha₁ (k := n + 1 + 1) (by omega) Y
+  have hg' : twGen h n ∈ twH h (n + 1) := twGen_mem h n
+  have cgs : Commute (twGen h n) (shift h (n + 1 + 1) Y) := twH_comm_shift h (n + 1) hg' Y
+  have hX' : twGen h n * (a₂ * X * a₁) * twGen h n ∈ twH h (n + 1) :=
+    Subalgebra.mul_mem _ (Subalgebra.mul_mem _ hg' (Subalgebra.mul_mem _
+      (Subalgebra.mul_mem _ (twH_mono h (by omega) ha₂) hX) (twH_mono h (by omega) ha₁))) hg'
+  calc towerTr z h (X * shift h (n + 1 + 1) Y *
+        (twGen h (n + 1) * (a₁ * twGen h n * a₂) * twGen h (n + 1)))
+      = towerTr z h ((X * a₁ * shift h (n + 1 + 1) Y *
+          (twGen h (n + 1) * twGen h n * twGen h (n + 1))) * a₂) := by
+        congr 1; simp only [mul_assoc]; rw [c2g.eq, c1g.symm.left_comm, c1s.symm.left_comm]
+    _ = towerTr z h (a₂ * (X * a₁ * shift h (n + 1 + 1) Y *
+          (twGen h (n + 1) * twGen h n * twGen h (n + 1)))) := towerTr_mul_comm z h _ _
+    _ = towerTr z h ((a₂ * X * a₁ * shift h (n + 1 + 1) Y * twGen h n * twGen h (n + 1))
+          * twGen h n) := by rw [twGen_braid]; simp only [mul_assoc]
+    _ = towerTr z h (twGen h n * (a₂ * X * a₁ * shift h (n + 1 + 1) Y * twGen h n
+          * twGen h (n + 1))) := towerTr_mul_comm z h _ _
+    _ = towerTr z h (twGen h n * (a₂ * X * a₁) * twGen h n * shift h (n + 1 + 1) Y
+          * twGen h (n + 1)) := by congr 1; simp only [mul_assoc]; rw [cgs.symm.left_comm]
+    _ = z * towerTr z h (twGen h n * (a₂ * X * a₁) * twGen h n) * towerTr z h Y :=
+        towerTr_XYg z h (n + 1) hX' Y
+    _ = z * towerTr z h (X * a₁ * (twGen h n * twGen h n) * a₂) * towerTr z h Y := by
+        congr 2
+        rw [mul_assoc, towerTr_mul_comm,
+          show a₂ * X * a₁ * twGen h n * twGen h n
+            = a₂ * (X * a₁ * (twGen h n * twGen h n)) by simp only [mul_assoc],
+          towerTr_mul_comm]
+
+/-- Right factor, outer letter: `C↑ = c↑ᵐ⁺²` commutes with `σ_m`. -/
+theorem towerTr_twoGap_right_outer (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)
+    (Y c : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y * (twGen h m * shift h (m + 1 + 1) c * twGen h m))
+      = (h * z + 1) * towerTr z h X * towerTr z h (Y * shift h 1 c) := by
+  have cg : Commute (twGen h m) (shift h (m + 1 + 1) c) :=
+    twH_comm_shift h (m + 1) (twGen_mem h m) c
+  rw [← towerTr_XYgg z h m hX, ← mg_shift_mul]
+  congr 1; simp only [mul_assoc]; rw [cg.left_comm]
+
+/-- Right factor, inner letter: `C↑ = c₁↑ σ_{m+1} c₂↑` (`c↑ = c↑ᵐ⁺²`). -/
+theorem towerTr_twoGap_right_inner (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)
+    (Y c₁ c₂ : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y * (twGen h m *
+        (shift h (m + 1 + 1) c₁ * twGen h (m + 1) * shift h (m + 1 + 1) c₂) * twGen h m))
+      = z * towerTr z h X *
+          towerTr z h (Y * shift h 1 c₁ * (twGen h 0 * twGen h 0) * shift h 1 c₂) := by
+  have c1 : Commute (twGen h m) (shift h (m + 1 + 1) c₁) :=
+    twH_comm_shift h (m + 1) (twGen_mem h m) c₁
+  have c2 : Commute (twGen h m) (shift h (m + 1 + 1) c₂) :=
+    twH_comm_shift h (m + 1) (twGen_mem h m) c₂
+  have cXg := mg_comm_gen h hX (k := m + 1) le_rfl
+  have cX2 := mg_comm_shift h hX (k := m + 1 + 1) (by omega) c₂
+  have hk : 1 + (m + 1) = m + 1 + 1 := by omega
+  have e3 : twGen h (m + 1) * shift h (m + 1 + 1) c₂ * shift h (m + 1) Y
+        * shift h (m + 1 + 1) c₁ * twGen h (m + 1)
+      = shift h (m + 1) (twGen h 0 * shift h 1 c₂ * Y * shift h 1 c₁ * twGen h 0) := by
+    simp only [map_mul, shift_twGen, shift_shift, zero_add, hk]
+  calc towerTr z h (X * shift h (m + 1) Y * (twGen h m *
+        (shift h (m + 1 + 1) c₁ * twGen h (m + 1) * shift h (m + 1 + 1) c₂) * twGen h m))
+      = towerTr z h ((X * shift h (m + 1) Y * shift h (m + 1 + 1) c₁ * twGen h (m + 1)
+          * twGen h m) * (twGen h (m + 1) * shift h (m + 1 + 1) c₂)) := by
+        congr 1
+        have hb : ∀ w : HeckeTower R h, twGen h m * (twGen h (m + 1) * (twGen h m * w))
+            = twGen h (m + 1) * (twGen h m * (twGen h (m + 1) * w)) := by
+          intro w; simp only [← mul_assoc]; rw [twGen_braid]
+        simp only [mul_assoc]; rw [c1.left_comm, ← c2.eq, hb]
+    _ = towerTr z h ((twGen h (m + 1) * shift h (m + 1 + 1) c₂) *
+          (X * shift h (m + 1) Y * shift h (m + 1 + 1) c₁ * twGen h (m + 1) * twGen h m)) :=
+        towerTr_mul_comm z h _ _
+    _ = towerTr z h (X * (twGen h (m + 1) * shift h (m + 1 + 1) c₂ * shift h (m + 1) Y
+          * shift h (m + 1 + 1) c₁ * twGen h (m + 1)) * twGen h m) := by
+        congr 1; simp only [mul_assoc]; rw [cX2.symm.left_comm, cXg.symm.left_comm]
+    _ = z * towerTr z h X *
+          towerTr z h (twGen h 0 * shift h 1 c₂ * Y * shift h 1 c₁ * twGen h 0) := by
+        rw [e3, towerTr_XYg z h m hX]
+    _ = z * towerTr z h X *
+          towerTr z h (Y * shift h 1 c₁ * (twGen h 0 * twGen h 0) * shift h 1 c₂) := by
+        congr 1
+        rw [show twGen h 0 * shift h 1 c₂ * Y * shift h 1 c₁ * twGen h 0
+            = twGen h 0 * (shift h 1 c₂ * Y * shift h 1 c₁ * twGen h 0) by
+              simp only [mul_assoc], towerTr_mul_comm,
+          show shift h 1 c₂ * Y * shift h 1 c₁ * twGen h 0 * twGen h 0
+            = shift h 1 c₂ * (Y * shift h 1 c₁ * (twGen h 0 * twGen h 0)) by
+              simp only [mul_assoc], towerTr_mul_comm]
+
+/-- **The cable term**: both inner letters present. `σ_{n+1} (a₁ σ_n a₂) (c₁↑ σ_{n+2} c₂↑) σ_{n+1}`
+    reduces to the four-letter word `σ_{n+1} σ_n σ_{n+2} σ_{n+1}` (the crossing of two 2-cables). -/
+theorem towerTr_twoGap_cable (n : ℕ) {X a₁ a₂ : HeckeTower R h}
+    (hX : X ∈ twH h (n + 1)) (ha₁ : a₁ ∈ twH h n) (ha₂ : a₂ ∈ twH h n)
+    (Y c₁ c₂ : HeckeTower R h) :
+    towerTr z h (X * shift h (n + 1 + 1) Y *
+        (twGen h (n + 1) * (a₁ * twGen h n * a₂) *
+          (shift h (n + 1 + 1 + 1) c₁ * twGen h (n + 1 + 1) * shift h (n + 1 + 1 + 1) c₂)
+          * twGen h (n + 1)))
+      = towerTr z h (a₂ * X * a₁ * shift h (n + 1 + 1) (shift h 1 c₂ * Y * shift h 1 c₁) *
+          (twGen h (n + 1) * twGen h n * twGen h (n + 1 + 1) * twGen h (n + 1))) := by
+  have c1g := mg_comm_gen h ha₁ (k := n + 1) le_rfl
+  have c1s := mg_comm_shift h ha₁ (k := n + 1 + 1) (by omega) Y
+  have c2S1 := mg_comm_shift h ha₂ (k := n + 1 + 1 + 1) (by omega) c₁
+  have c2S2 := mg_comm_shift h ha₂ (k := n + 1 + 1 + 1) (by omega) c₂
+  have c2g'' := mg_comm_gen h ha₂ (k := n + 1 + 1) (by omega)
+  have c2g := mg_comm_gen h ha₂ (k := n + 1) le_rfl
+  have cgS1 : Commute (twGen h (n + 1)) (shift h (n + 1 + 1 + 1) c₁) :=
+    twH_comm_shift h (n + 1 + 1) (twGen_mem h (n + 1)) c₁
+  have cgS2 : Commute (twGen h (n + 1)) (shift h (n + 1 + 1 + 1) c₂) :=
+    twH_comm_shift h (n + 1 + 1) (twGen_mem h (n + 1)) c₂
+  have cg'S1 : Commute (twGen h n) (shift h (n + 1 + 1 + 1) c₁) :=
+    mg_comm_shift h (twGen_mem h n) (k := n + 1 + 1 + 1) (by omega) c₁
+  have c2S2' := mg_comm_shift h ha₂ (k := n + 1 + 1 + 1) (by omega) c₂
+  have cXS2 := mg_comm_shift h hX (k := n + 1 + 1 + 1) (by omega) c₂
+  have c1S2 := mg_comm_shift h ha₁ (k := n + 1 + 1 + 1) (by omega) c₂
+  have hk : 1 + (n + 1 + 1) = n + 1 + 1 + 1 := by omega
+  have hS : shift h (n + 1 + 1) (shift h 1 c₂ * Y * shift h 1 c₁)
+      = shift h (n + 1 + 1 + 1) c₂ * shift h (n + 1 + 1) Y * shift h (n + 1 + 1 + 1) c₁ := by
+    simp only [map_mul, shift_shift, hk]
+  calc _ = towerTr z h ((X * a₁ * shift h (n + 1 + 1) Y * shift h (n + 1 + 1 + 1) c₁ *
+          (twGen h (n + 1) * twGen h n * twGen h (n + 1 + 1) * twGen h (n + 1)) *
+          shift h (n + 1 + 1 + 1) c₂) * a₂) := by
+        congr 1; simp only [mul_assoc]
+        rw [c1g.symm.left_comm, c1s.symm.left_comm, c2S1.left_comm, c2g''.left_comm,
+          c2S2.left_comm, c2g.eq, cgS2.symm.left_comm, cg'S1.left_comm, cgS1.left_comm]
+    _ = towerTr z h (a₂ * (X * a₁ * shift h (n + 1 + 1) Y * shift h (n + 1 + 1 + 1) c₁ *
+          (twGen h (n + 1) * twGen h n * twGen h (n + 1 + 1) * twGen h (n + 1)) *
+          shift h (n + 1 + 1 + 1) c₂)) := towerTr_mul_comm z h _ _
+    _ = towerTr z h ((a₂ * X * a₁ * shift h (n + 1 + 1) Y * shift h (n + 1 + 1 + 1) c₁ *
+          (twGen h (n + 1) * twGen h n * twGen h (n + 1 + 1) * twGen h (n + 1))) *
+          shift h (n + 1 + 1 + 1) c₂) := by simp only [mul_assoc]
+    _ = towerTr z h (shift h (n + 1 + 1 + 1) c₂ * (a₂ * X * a₁ * shift h (n + 1 + 1) Y *
+          shift h (n + 1 + 1 + 1) c₁ *
+          (twGen h (n + 1) * twGen h n * twGen h (n + 1 + 1) * twGen h (n + 1)))) :=
+        towerTr_mul_comm z h _ _
+    _ = _ := by
+        congr 1; rw [hS]; simp only [mul_assoc]
+        rw [c2S2'.symm.left_comm, cXS2.symm.left_comm, c1S2.symm.left_comm]
+
+/-- Moving a right cluster's outer piece `c↑ᵐ⁺²` out of the bond into the second cluster. -/
+theorem mg_absorb (m : ℕ) {B : HeckeTower R h} (hB : B ∈ twH h (m + 1))
+    (X Y c : HeckeTower R h) :
+    X * shift h (m + 1) Y * (twGen h m * B * shift h (m + 1 + 1) c * twGen h m)
+      = X * shift h (m + 1) (Y * shift h 1 c) * (twGen h m * B * twGen h m) := by
+  have cgB : Commute (twGen h m * B) (shift h (m + 1 + 1) c) :=
+    twH_comm_shift h (m + 1)
+      (Subalgebra.mul_mem _ (twGen_mem h m) hB) c
+  have e : twGen h m * B * shift h (m + 1 + 1) c * twGen h m
+      = shift h (m + 1 + 1) c * (twGen h m * B * twGen h m) := by
+    rw [cgB.eq, mul_assoc]
+  rw [e, ← mg_shift_mul, ← mul_assoc, mul_assoc X]
+
+/-- Moving a left cluster's outer piece `a ∈ H_n` (`n + 1 ≤ m`) out of the bond. -/
+theorem mg_pull_left (m n : ℕ) (hnm : n + 1 ≤ m) {a : HeckeTower R h} (ha : a ∈ twH h n)
+    (X Y W : HeckeTower R h) :
+    X * shift h (m + 1) Y * (twGen h m * a * W * twGen h m)
+      = X * a * shift h (m + 1) Y * (twGen h m * W * twGen h m) := by
+  have ca := mg_comm_gen h ha hnm
+  have cs := mg_comm_shift h ha (k := m + 1) (by omega) Y
+  rw [← ca.eq]; simp only [mul_assoc]; rw [cs.symm.left_comm]
+
+/-- **Two gap letters: the four-term decomposition.** Gap `σ_{n+1}`, first cluster
+    `x ∈ H_{n+1}`, second cluster `Y↑ⁿ⁺²`. Between the two gap letters sits `A · C↑ⁿ⁺²` with
+    `A = a₀ + a₁ σ_n a₂` (`aᵢ ∈ H_n`) and `C = c₀↑¹ + c₁↑¹ σ_0 c₂↑¹`. Then
+    `tr(x · Y↑ · σ A C↑ σ)` is the sum of three products of single-cluster traces and one
+    cable term (the trace of `σ_{n+1} σ_n σ_{n+2} σ_{n+1}` between the dressed clusters). -/
+theorem towerTr_twoGap (n : ℕ) {X a₀ a₁ a₂ : HeckeTower R h}
+    (hX : X ∈ twH h (n + 1)) (ha₀ : a₀ ∈ twH h n) (ha₁ : a₁ ∈ twH h n) (ha₂ : a₂ ∈ twH h n)
+    (Y c₀ c₁ c₂ : HeckeTower R h) :
+    towerTr z h (X * shift h (n + 1 + 1) Y *
+        (twGen h (n + 1) * (a₀ + a₁ * twGen h n * a₂) *
+          shift h (n + 1 + 1) (shift h 1 c₀ + shift h 1 c₁ * twGen h 0 * shift h 1 c₂)
+          * twGen h (n + 1)))
+      = (h * z + 1) * towerTr z h (X * a₀) * towerTr z h (Y * shift h 1 c₀)
+        + z * towerTr z h (X * a₁ * (twGen h n * twGen h n) * a₂) * towerTr z h (Y * shift h 1 c₀)
+        + z * towerTr z h (X * a₀) *
+            towerTr z h (Y * shift h 1 c₁ * (twGen h 0 * twGen h 0) * shift h 1 c₂)
+        + towerTr z h (a₂ * X * a₁ * shift h (n + 1 + 1) (shift h 1 c₂ * Y * shift h 1 c₁) *
+            (twGen h (n + 1) * twGen h n * twGen h (n + 1 + 1) * twGen h (n + 1))) := by
+  have hk : 1 + (n + 1 + 1) = n + 1 + 1 + 1 := by omega
+  have hC : shift h (n + 1 + 1) (shift h 1 c₀ + shift h 1 c₁ * twGen h 0 * shift h 1 c₂)
+      = shift h (n + 1 + 1 + 1) c₀
+        + shift h (n + 1 + 1 + 1) c₁ * twGen h (n + 1 + 1) * shift h (n + 1 + 1 + 1) c₂ := by
+    simp only [map_add, map_mul, shift_shift, shift_twGen, hk, zero_add]
+  have hA₁ : a₁ * twGen h n * a₂ ∈ twH h (n + 1 + 1) :=
+    Subalgebra.mul_mem _ (Subalgebra.mul_mem _ (twH_mono h (by omega) ha₁)
+      (twH_mono h (by omega) (twGen_mem h n))) (twH_mono h (by omega) ha₂)
+  rw [hC]
+  have hsplit : ∀ (g A₀ A₁ S₀ W : HeckeTower R h),
+      g * (A₀ + A₁) * (S₀ + W) * g
+        = g * A₀ * S₀ * g + g * A₁ * S₀ * g + g * A₀ * W * g + g * A₁ * W * g := by
+    intros; noncomm_ring
+  rw [hsplit, mul_add, mul_add, mul_add, map_add, map_add, map_add,
+    mg_absorb h (n + 1) (twH_mono h (by omega) ha₀),
+    mg_absorb h (n + 1) hA₁,
+    towerTr_twoGap_left_outer z h (n + 1) n le_rfl hX ha₀,
+    towerTr_twoGap_left_inner z h n hX ha₁ ha₂,
+    mg_pull_left h (n + 1) n le_rfl ha₀,
+    towerTr_twoGap_right_inner z h (n + 1) (Subalgebra.mul_mem _ hX (twH_mono h (by omega) ha₀)),
+    towerTr_twoGap_cable z h n hX ha₁ ha₂]
+
+/-- **A general two-gap-letter bond reduces to the core.** For `x, A₁ ∈ H_m`, any letters
+    `u, v` and any `A₂, A₃`, `C₁, C₂, C₃` (`↑ = ↑ᵐ⁺¹`):
+    `tr(x · Y↑ · (A₁C₁↑ · u · A₂C₂↑ · v · A₃C₃↑)) = tr(P · Q↑ · (u A₂ C₂↑ v))`,
+    `P = A₃ x A₁`, `Q = C₃ Y C₁`. -/
+theorem towerTr_twoGapBond_reduce (m : ℕ) {X A₁ : HeckeTower R h} (hX : X ∈ twH h m)
+    (hA₁ : A₁ ∈ twH h m) (A₂ A₃ Y C₁ C₂ C₃ u v : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y *
+        (A₁ * shift h (m + 1) C₁ * u * (A₂ * shift h (m + 1) C₂) * v *
+          (A₃ * shift h (m + 1) C₃)))
+      = towerTr z h (A₃ * X * A₁ * shift h (m + 1) (C₃ * Y * C₁) *
+          (u * A₂ * shift h (m + 1) C₂ * v)) := by
+  have c3X : Commute X (shift h (m + 1) C₃) := twH_comm_shift h m hX C₃
+  have c13 : Commute A₁ (shift h (m + 1) C₃) := twH_comm_shift h m hA₁ C₃
+  have c1Y : Commute A₁ (shift h (m + 1) Y) := twH_comm_shift h m hA₁ Y
+  rw [show X * shift h (m + 1) Y *
+        (A₁ * shift h (m + 1) C₁ * u * (A₂ * shift h (m + 1) C₂) * v *
+          (A₃ * shift h (m + 1) C₃))
+      = (X * shift h (m + 1) Y *
+        (A₁ * shift h (m + 1) C₁ * u * (A₂ * shift h (m + 1) C₂) * v)) *
+          (A₃ * shift h (m + 1) C₃) by simp only [mul_assoc], towerTr_mul_comm]
+  congr 1
+  simp only [map_mul, mul_assoc]
+  rw [c3X.symm.left_comm, c1Y.symm.left_comm, c13.symm.left_comm]
+
+/-- **Expanding the two gap letters.** With `u = α + β σ_m`, `v = γ + δ σ_m`, `P, A ∈ H_m`:
+    the terms with at most one `σ_m` factorise, and the `σ_m … σ_m` term is the core. -/
+theorem towerTr_twoLetter_expand (m : ℕ) {P A : HeckeTower R h} (hP : P ∈ twH h m)
+    (hA : A ∈ twH h m) (Q C : HeckeTower R h) (α β γ δ : R) :
+    towerTr z h (P * shift h (m + 1) Q *
+        ((α • 1 + β • twGen h m) * A * shift h (m + 1) C * (γ • 1 + δ • twGen h m)))
+      = (α * γ + (α * δ + β * γ) * z) * towerTr z h (P * A) * towerTr z h (Q * C)
+        + β * δ * towerTr z h (P * shift h (m + 1) Q *
+            (twGen h m * A * shift h (m + 1) C * twGen h m)) := by
+  have hPA : P * A ∈ twH h m := Subalgebra.mul_mem _ hP hA
+  have hAP : A * P ∈ twH h m := Subalgebra.mul_mem _ hA hP
+  have cAQ : Commute A (shift h (m + 1) Q) := twH_comm_shift h m hA Q
+  have cPC : Commute P (shift h (m + 1) C) := twH_comm_shift h m hP C
+  have hsplit : (α • 1 + β • twGen h m) * A * shift h (m + 1) C * (γ • 1 + δ • twGen h m)
+      = (α * γ) • (A * shift h (m + 1) C) + (α * δ) • (A * shift h (m + 1) C * twGen h m)
+        + (β * γ) • (twGen h m * A * shift h (m + 1) C)
+        + (β * δ) • (twGen h m * A * shift h (m + 1) C * twGen h m) := by
+    simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, one_mul, mul_one, smul_add,
+      smul_smul]
+    rw [mul_comm γ α, mul_comm γ β, mul_comm δ α, mul_comm δ β]
+    abel
+  have t1 : towerTr z h (P * shift h (m + 1) Q * (A * shift h (m + 1) C))
+      = towerTr z h (P * A) * towerTr z h (Q * C) := by
+    rw [← towerTr_split z h m hPA, map_mul (shift h (m + 1))]; congr 1; simp only [mul_assoc]
+    rw [cAQ.symm.left_comm]
+  have t2 : towerTr z h (P * shift h (m + 1) Q * (A * shift h (m + 1) C * twGen h m))
+      = z * towerTr z h (P * A) * towerTr z h (Q * C) := by
+    rw [← towerTr_XYg z h m hPA, map_mul (shift h (m + 1))]; congr 1; simp only [mul_assoc]
+    rw [cAQ.symm.left_comm]
+  have t3 : towerTr z h (P * shift h (m + 1) Q * (twGen h m * A * shift h (m + 1) C))
+      = z * towerTr z h (P * A) * towerTr z h (Q * C) := by
+    rw [show P * shift h (m + 1) Q * (twGen h m * A * shift h (m + 1) C)
+        = (P * shift h (m + 1) Q * (twGen h m * A)) * shift h (m + 1) C by
+          simp only [mul_assoc], towerTr_mul_comm,
+      show shift h (m + 1) C * (P * shift h (m + 1) Q * (twGen h m * A))
+        = (shift h (m + 1) C * P * shift h (m + 1) Q * twGen h m) * A by
+          simp only [mul_assoc], towerTr_mul_comm, ← cPC.eq,
+      show A * (P * shift h (m + 1) C * shift h (m + 1) Q * twGen h m)
+        = A * P * shift h (m + 1) (C * Q) * twGen h m by simp only [map_mul, mul_assoc],
+      towerTr_XYg z h m hAP, towerTr_mul_comm z h A P, towerTr_mul_comm z h C Q]
+  rw [hsplit, mul_add, mul_add, mul_add, map_add, map_add, map_add, mul_smul_comm,
+    mul_smul_comm, mul_smul_comm, mul_smul_comm, map_smul, map_smul, map_smul, map_smul,
+    t1, t2, t3, smul_eq_mul, smul_eq_mul, smul_eq_mul, smul_eq_mul]
+  ring
+
+/-- **Two gap letters, left inner letter absent**: if the piece between the two `σ_{n+1}`
+    has its first-cluster part `a₀ ∈ H_n` (no `σ_n`), the core factorises. -/
+theorem towerTr_twoGap_outerLeft (n : ℕ) {X a₀ : HeckeTower R h}
+    (hX : X ∈ twH h (n + 1)) (ha₀ : a₀ ∈ twH h n) (Y c₀ c₁ c₂ : HeckeTower R h) :
+    towerTr z h (X * shift h (n + 1 + 1) Y *
+        (twGen h (n + 1) * a₀ *
+          shift h (n + 1 + 1) (shift h 1 c₀ + shift h 1 c₁ * twGen h 0 * shift h 1 c₂)
+          * twGen h (n + 1)))
+      = towerTr z h (X * a₀) * ((h * z + 1) * towerTr z h (Y * shift h 1 c₀)
+          + z * towerTr z h (Y * shift h 1 c₁ * (twGen h 0 * twGen h 0) * shift h 1 c₂)) := by
+  have := towerTr_twoGap z h n hX ha₀ (Subalgebra.zero_mem _) (Subalgebra.zero_mem _) Y c₀ c₁ c₂
+  simp only [zero_mul, mul_zero, add_zero, map_zero] at this
+  rw [this]; ring
+
+/-- **Two gap letters, right inner letter absent**: if the second-cluster part of the piece
+    between the two `σ_{n+1}` is `c₀↑ⁿ⁺³` (no `σ_{n+2}`), the core factorises. -/
+theorem towerTr_twoGap_outerRight (n : ℕ) {X a₀ a₁ a₂ : HeckeTower R h}
+    (hX : X ∈ twH h (n + 1)) (ha₀ : a₀ ∈ twH h n) (ha₁ : a₁ ∈ twH h n) (ha₂ : a₂ ∈ twH h n)
+    (Y c₀ : HeckeTower R h) :
+    towerTr z h (X * shift h (n + 1 + 1) Y *
+        (twGen h (n + 1) * (a₀ + a₁ * twGen h n * a₂) *
+          shift h (n + 1 + 1) (shift h 1 c₀) * twGen h (n + 1)))
+      = ((h * z + 1) * towerTr z h (X * a₀)
+          + z * towerTr z h (X * a₁ * (twGen h n * twGen h n) * a₂))
+        * towerTr z h (Y * shift h 1 c₀) := by
+  have := towerTr_twoGap z h n hX ha₀ ha₁ ha₂ Y c₀ 0 0
+  simp only [map_zero, zero_mul, mul_zero, add_zero] at this
+  rw [this]; ring
+
+/-- **The cross-ratio survives two gap letters when one inner letter is absent (left).**
+    Bond `A₁C₁↑ · u · a₀C₂↑ · v · A₃C₃↑` with `a₀ ∈ H_n`, `C₂ = c₀↑¹ + c₁↑¹σ₀c₂↑¹`, gap
+    letters `u = α + βσ`, `v = γ + δσ`: the atom traces satisfy `T₁₁ T₂₂ = T₁₂ T₂₁`. -/
+theorem towerTr_twoGap_outerLeft_crossRatio (n : ℕ) {X₁ X₂ A₁ A₃ a₀ : HeckeTower R h}
+    (h₁ : X₁ ∈ twH h (n + 1)) (h₂ : X₂ ∈ twH h (n + 1)) (hA₁ : A₁ ∈ twH h (n + 1))
+    (hA₃ : A₃ ∈ twH h (n + 1)) (ha₀ : a₀ ∈ twH h n)
+    (Y₁ Y₂ C₁ c₀ c₁ c₂ C₃ : HeckeTower R h) (α β γ δ : R) :
+    let B := A₁ * shift h (n + 1 + 1) C₁ * (α • 1 + β • twGen h (n + 1)) *
+      (a₀ * shift h (n + 1 + 1) (shift h 1 c₀ + shift h 1 c₁ * twGen h 0 * shift h 1 c₂)) *
+      (γ • 1 + δ • twGen h (n + 1)) * (A₃ * shift h (n + 1 + 1) C₃)
+    towerTr z h (X₁ * shift h (n + 1 + 1) Y₁ * B) * towerTr z h (X₂ * shift h (n + 1 + 1) Y₂ * B)
+      = towerTr z h (X₁ * shift h (n + 1 + 1) Y₂ * B)
+        * towerTr z h (X₂ * shift h (n + 1 + 1) Y₁ * B) := by
+  intro B
+  have ha₀' : a₀ ∈ twH h (n + 1) := twH_mono h (Nat.le_succ n) ha₀
+  have key : ∀ X Y, X ∈ twH h (n + 1) → towerTr z h (X * shift h (n + 1 + 1) Y * B)
+      = towerTr z h (A₃ * X * A₁ * a₀) *
+        ((α * γ + (α * δ + β * γ) * z) *
+            towerTr z h (C₃ * Y * C₁ * (shift h 1 c₀ + shift h 1 c₁ * twGen h 0 * shift h 1 c₂))
+          + β * δ * ((h * z + 1) * towerTr z h (C₃ * Y * C₁ * shift h 1 c₀)
+            + z * towerTr z h (C₃ * Y * C₁ * shift h 1 c₁ * (twGen h 0 * twGen h 0)
+                * shift h 1 c₂))) := by
+    intro X Y hX
+    have hP : A₃ * X * A₁ ∈ twH h (n + 1) :=
+      Subalgebra.mul_mem _ (Subalgebra.mul_mem _ hA₃ hX) hA₁
+    simp only [B]
+    rw [towerTr_twoGapBond_reduce z h (n + 1) hX hA₁, towerTr_twoLetter_expand z h (n + 1) hP ha₀',
+      towerTr_twoGap_outerLeft z h n hP ha₀]
+    ring
+  rw [key X₁ Y₁ h₁, key X₂ Y₂ h₂, key X₁ Y₂ h₁, key X₂ Y₁ h₂]
+  ring
+
+/-- **The cross-ratio survives two gap letters when one inner letter is absent (right).**
+    Bond `A₁C₁↑ · u · (a₀ + a₁σ_na₂)c₀↑ⁿ⁺³ · v · A₃C₃↑`. -/
+theorem towerTr_twoGap_outerRight_crossRatio (n : ℕ) {X₁ X₂ A₁ A₃ a₀ a₁ a₂ : HeckeTower R h}
+    (h₁ : X₁ ∈ twH h (n + 1)) (h₂ : X₂ ∈ twH h (n + 1)) (hA₁ : A₁ ∈ twH h (n + 1))
+    (hA₃ : A₃ ∈ twH h (n + 1)) (ha₀ : a₀ ∈ twH h n) (ha₁ : a₁ ∈ twH h n) (ha₂ : a₂ ∈ twH h n)
+    (Y₁ Y₂ C₁ c₀ C₃ : HeckeTower R h) (α β γ δ : R) :
+    let B := A₁ * shift h (n + 1 + 1) C₁ * (α • 1 + β • twGen h (n + 1)) *
+      ((a₀ + a₁ * twGen h n * a₂) * shift h (n + 1 + 1) (shift h 1 c₀)) *
+      (γ • 1 + δ • twGen h (n + 1)) * (A₃ * shift h (n + 1 + 1) C₃)
+    towerTr z h (X₁ * shift h (n + 1 + 1) Y₁ * B) * towerTr z h (X₂ * shift h (n + 1 + 1) Y₂ * B)
+      = towerTr z h (X₁ * shift h (n + 1 + 1) Y₂ * B)
+        * towerTr z h (X₂ * shift h (n + 1 + 1) Y₁ * B) := by
+  intro B
+  have hA : a₀ + a₁ * twGen h n * a₂ ∈ twH h (n + 1) :=
+    Subalgebra.add_mem _ (twH_mono h (Nat.le_succ n) ha₀)
+      (Subalgebra.mul_mem _ (Subalgebra.mul_mem _ (twH_mono h (Nat.le_succ n) ha₁)
+        (twGen_mem h n)) (twH_mono h (Nat.le_succ n) ha₂))
+  have key : ∀ X Y, X ∈ twH h (n + 1) → towerTr z h (X * shift h (n + 1 + 1) Y * B)
+      = ((α * γ + (α * δ + β * γ) * z) *
+            towerTr z h (A₃ * X * A₁ * (a₀ + a₁ * twGen h n * a₂))
+          + β * δ * ((h * z + 1) * towerTr z h (A₃ * X * A₁ * a₀)
+            + z * towerTr z h (A₃ * X * A₁ * a₁ * (twGen h n * twGen h n) * a₂)))
+        * towerTr z h (C₃ * Y * C₁ * shift h 1 c₀) := by
+    intro X Y hX
+    have hP : A₃ * X * A₁ ∈ twH h (n + 1) :=
+      Subalgebra.mul_mem _ (Subalgebra.mul_mem _ hA₃ hX) hA₁
+    simp only [B]
+    rw [towerTr_twoGapBond_reduce z h (n + 1) hX hA₁, towerTr_twoLetter_expand z h (n + 1) hP hA,
+      towerTr_twoGap_outerRight z h n hP ha₀ ha₁ ha₂]
+    ring
+  rw [key X₁ Y₁ h₁, key X₂ Y₂ h₂, key X₁ Y₂ h₁, key X₂ Y₁ h₂]
+  ring
+
+/-- **A rank-one perturbation of a constant cannot carry the pattern when the constant is at
+    most `1/2`.** If `μᵢⱼ = c + aᵢ bⱼ` with `c ≤ 1/2`, then not (`μ₁₁ > 1`, `μ₂₂ > 1` and
+    `0 < μ₁₂, μ₂₁ < 1`). This is the shape of a rank-2 bond form whose span contains the free
+    trace in both arguments: `μ(x, y) = c + ℓ'(x) r'(y)`. -/
+theorem not_pattern_of_affine_rankOne {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] {c a₁ a₂ b₁ b₂ : K} (hc : c ≤ 1 / 2) :
+    ¬ (1 < c + a₁ * b₁ ∧ 1 < c + a₂ * b₂ ∧ 0 < c + a₁ * b₂ ∧ c + a₁ * b₂ < 1 ∧
+        0 < c + a₂ * b₁ ∧ c + a₂ * b₁ < 1) := by
+  rintro ⟨h11, h22, l12, u12, l21, u21⟩
+  have hd : (1 - c) * (1 - c) < (a₁ * b₁) * (a₂ * b₂) := by
+    have : 0 ≤ 1 - c := by linarith
+    nlinarith
+  have he : (a₁ * b₂) * (a₂ * b₁) < (1 - c) * (1 - c) := by
+    rcases le_or_gt 0 (a₁ * b₂) with p | p <;> rcases le_or_gt 0 (a₂ * b₁) with r | r
+    · nlinarith
+    · nlinarith
+    · nlinarith
+    · nlinarith
+  have : (a₁ * b₁) * (a₂ * b₂) = (a₁ * b₂) * (a₂ * b₁) := by ring
+  linarith
+
+end QOU.BraidKnot.HeckeFunctional
+
+
+/-!
+# Two γγ bonds landing on one nucleon: the convergence factor `ρ₂` does not see the
+transport's crossing sign or the bond order
+
+Setting of `computations/probes/he4_closed_form/` (`conv_word`, `k = 2`): two external
+strands `0, 1`, each bonded by the γγ vertex `V³ = (σ₀σ₁⁻¹)³` placed on `σ₁, σ₂` to a
+nucleon `N ∈ H₂` sitting on strands `2..4` as `N↑²`. Strand `1` is bonded directly;
+strand `0` is carried to position `1` by `σ₀` ("over") or `σ₀⁻¹` ("under") and carried
+back by the inverse. The probe measured that the trace of the resulting word does not
+depend on the crossing sign of the transport, nor on which of the two bonds is applied
+first. This file proves it, for any bond element `a` placed as `a↑¹` (so in particular
+for `V³`), and any `N`.
+
+* `towerTr_gen_zero_shift` — `tr(σ₀ · Z↑¹) = z · tr Z` (connected sum at `m = 0`).
+* `towerTr_conj_over_eq_under` — for any `Y, B`,
+  `tr(σ₀ Y↑¹ σ₀⁻¹ B↑¹) = tr(σ₀⁻¹ Y↑¹ σ₀ B↑¹)`. The two expansions differ only by
+  `h·tr(σ₀ Y↑¹ B↑¹)` against `h·tr(Y↑¹ σ₀ B↑¹)`, both `h z tr(YB)`.
+* `towerTr_rho2_over_eq_under`, `towerTr_rho2_order`, `towerTr_rho2_all` — the four
+  arrangements (direct bond first or second, transport over or under) of the `k = 2`
+  convergence word have one trace.
+
+What is NOT proved here: the `k = 3` case (measured, all `3!` orders and both signs), and
+the reduction of the full ⁴He word with the other nucleon blocks set to `1` to the
+`k + 3`-strand word (that needs the free strands the transport crosses to be removed,
+which is a Markov destabilisation through a crossing, not cyclicity or far commutation).
+
+Generic over `[CommRing R]` (§7c). Everything is proved.
+-/
+
+namespace QOU.BraidKnot.HeckeFunctional
+
+open QOU.MathlibExt.HeckeTowerWitness
+
+section GammaGammaAllPairs
+
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- `tr(σ₀ · Z↑¹) = z · tr Z`. -/
+theorem towerTr_gen_zero_shift (Z : HeckeTower R h) :
+    towerTr z h (twGen h 0 * shift h 1 Z) = z * towerTr z h Z := by
+  have := towerTr_connectedSum z h 0 (Subalgebra.one_mem (twH h 0)) Z
+  rwa [one_mul, towerTr_one, mul_one] at this
+
+/-- `tr(σ₀ · Y↑¹ · B↑¹) = tr(Y↑¹ · σ₀ · B↑¹)`: both are `z · tr(Y B)`. -/
+theorem towerTr_gen_zero_slide (Y B : HeckeTower R h) :
+    towerTr z h (twGen h 0 * shift h 1 Y * shift h 1 B)
+      = towerTr z h (shift h 1 Y * twGen h 0 * shift h 1 B) := by
+  have e1 : towerTr z h (twGen h 0 * shift h 1 Y * shift h 1 B)
+      = z * towerTr z h (Y * B) := by
+    rw [mul_assoc, ← map_mul, towerTr_gen_zero_shift]
+  have e2 : towerTr z h (shift h 1 Y * twGen h 0 * shift h 1 B)
+      = z * towerTr z h (B * Y) := by
+    rw [mul_assoc, towerTr_mul_comm, mul_assoc, ← map_mul, towerTr_gen_zero_shift]
+  rw [e1, e2, towerTr_mul_comm]
+
+/-- **Over equals under.** Conjugating `Y↑¹` by `σ₀` or by `σ₀⁻¹` gives the same trace
+    against any `B↑¹`. -/
+theorem towerTr_conj_over_eq_under (Y B : HeckeTower R h) :
+    towerTr z h (twGen h 0 * shift h 1 Y * twGenInv h 0 * shift h 1 B)
+      = towerTr z h (twGenInv h 0 * shift h 1 Y * twGen h 0 * shift h 1 B) := by
+  simp only [twGenInv, mul_sub, sub_mul, mul_smul_comm, smul_mul_assoc, mul_one, one_mul,
+    map_sub, map_smul]
+  rw [towerTr_gen_zero_slide]
+
+/-- `σ₀^{±1}` commute with anything placed at `↑²`. -/
+theorem twGen_zero_comm_shift_two (N : HeckeTower R h) :
+    twGen h 0 * shift h 2 N = shift h 2 N * twGen h 0 :=
+  twH_comm_shift h 1 (twGen_mem h 0) N
+
+theorem twGenInv_zero_comm_shift_two (N : HeckeTower R h) :
+    twGenInv h 0 * shift h 2 N = shift h 2 N * twGenInv h 0 :=
+  twH_comm_shift h 1 (twGenInv_mem h 0) N
+
+theorem shift_one_one (N : HeckeTower R h) : shift h 1 (shift h 1 N) = shift h 2 N := by
+  rw [shift_shift]
+
+theorem shift_one_mul (x y : HeckeTower R h) :
+    shift h 1 (x * y) = shift h 1 x * shift h 1 y := (shift h 1).map_mul x y
+
+/-- The transported-bond-then-direct-bond word, cycled: for either sign pair `(s, t)`,
+    `tr((s a↑¹ t) · a↑¹ · N↑²) = tr(s a↑¹ t · (a · N↑¹)↑¹)`. -/
+theorem towerTr_rho2_regroup (s t a N : HeckeTower R h) :
+    towerTr z h ((s * shift h 1 a * t) * shift h 1 a * shift h 2 N)
+      = towerTr z h (s * shift h 1 a * t * shift h 1 (a * shift h 1 N)) := by
+  rw [shift_one_mul, shift_one_one, mul_assoc (s * shift h 1 a * t)]
+
+/-- **`ρ₂`, the transport sign**: with the direct bond first,
+    `tr(a↑¹ · σ₀ a↑¹ σ₀⁻¹ · N↑²) = tr(a↑¹ · σ₀⁻¹ a↑¹ σ₀ · N↑²)`. -/
+theorem towerTr_rho2_over_eq_under (a N : HeckeTower R h) :
+    towerTr z h (shift h 1 a * (twGen h 0 * shift h 1 a * twGenInv h 0) * shift h 2 N)
+      = towerTr z h (shift h 1 a * (twGenInv h 0 * shift h 1 a * twGen h 0) * shift h 2 N) := by
+  have cyc : ∀ X : HeckeTower R h,
+      towerTr z h (shift h 1 a * X * shift h 2 N)
+        = towerTr z h (X * shift h 1 (shift h 1 N * a)) := by
+    intro X
+    rw [mul_assoc, towerTr_mul_comm, shift_one_mul, shift_one_one, mul_assoc]
+  rw [cyc, cyc]
+  exact towerTr_conj_over_eq_under z h a (shift h 1 N * a)
+
+/-- The direct-bond-first word, cycled: for `(s, t) = (σ₀, σ₀⁻¹)`,
+    `tr(a↑¹ · σ₀ a↑¹ σ₀⁻¹ · N↑²) = tr(σ₀⁻¹ a↑¹ σ₀ · (a · N↑¹)↑¹)`. -/
+theorem towerTr_rho2_direct_first_cycled (a N : HeckeTower R h) :
+    towerTr z h (shift h 1 a * (twGen h 0 * shift h 1 a * twGenInv h 0) * shift h 2 N)
+      = towerTr z h (twGenInv h 0 * shift h 1 a * twGen h 0 * shift h 1 (a * shift h 1 N)) := by
+  calc towerTr z h (shift h 1 a * (twGen h 0 * shift h 1 a * twGenInv h 0) * shift h 2 N)
+      = towerTr z h ((shift h 1 a * twGen h 0 * shift h 1 a) * (twGenInv h 0 * shift h 2 N)) := by
+        simp only [mul_assoc]
+    _ = towerTr z h ((twGenInv h 0 * shift h 2 N) * (shift h 1 a * twGen h 0 * shift h 1 a)) :=
+        towerTr_mul_comm z h _ _
+    _ = towerTr z h (shift h 2 N * (twGenInv h 0 * shift h 1 a * twGen h 0 * shift h 1 a)) := by
+        rw [twGenInv_zero_comm_shift_two]; simp only [mul_assoc]
+    _ = towerTr z h ((twGenInv h 0 * shift h 1 a * twGen h 0 * shift h 1 a) * shift h 2 N) :=
+        towerTr_mul_comm z h _ _
+    _ = towerTr z h (twGenInv h 0 * shift h 1 a * twGen h 0 * shift h 1 (a * shift h 1 N)) := by
+        rw [shift_one_mul, shift_one_one]; simp only [mul_assoc]
+
+/-- **`ρ₂`, the bond order** (over transport): applying the direct bond before or after the
+    transported one gives one trace. -/
+theorem towerTr_rho2_order (a N : HeckeTower R h) :
+    towerTr z h (shift h 1 a * (twGen h 0 * shift h 1 a * twGenInv h 0) * shift h 2 N)
+      = towerTr z h ((twGen h 0 * shift h 1 a * twGenInv h 0) * shift h 1 a * shift h 2 N) := by
+  rw [towerTr_rho2_direct_first_cycled, ← towerTr_conj_over_eq_under z h a (a * shift h 1 N),
+    towerTr_rho2_regroup]
+
+/-- **`ρ₂` is one number**: the four arrangements (bond order × transport sign). -/
+theorem towerTr_rho2_all (a N : HeckeTower R h) :
+    let t := towerTr z h (shift h 1 a * (twGen h 0 * shift h 1 a * twGenInv h 0) * shift h 2 N)
+    towerTr z h (shift h 1 a * (twGenInv h 0 * shift h 1 a * twGen h 0) * shift h 2 N) = t ∧
+    towerTr z h ((twGen h 0 * shift h 1 a * twGenInv h 0) * shift h 1 a * shift h 2 N) = t ∧
+    towerTr z h ((twGenInv h 0 * shift h 1 a * twGen h 0) * shift h 1 a * shift h 2 N) = t := by
+  intro t
+  refine ⟨(towerTr_rho2_over_eq_under z h a N).symm, (towerTr_rho2_order z h a N).symm, ?_⟩
+  rw [towerTr_rho2_regroup]
+  exact (towerTr_rho2_direct_first_cycled z h a N).symm
+
+/-- The corpus instance: the γγ vertex `V³`. -/
+theorem towerTr_rho2_vertexCube (N : HeckeTower R h) :
+    towerTr z h (shift h 1 (vertexCube h) * (twGenInv h 0 * shift h 1 (vertexCube h) * twGen h 0)
+        * shift h 2 N)
+      = towerTr z h (shift h 1 (vertexCube h)
+          * (twGen h 0 * shift h 1 (vertexCube h) * twGenInv h 0) * shift h 2 N) :=
+  (towerTr_rho2_over_eq_under z h (vertexCube h) N).symm
+
+end GammaGammaAllPairs
+
+end QOU.BraidKnot.HeckeFunctional

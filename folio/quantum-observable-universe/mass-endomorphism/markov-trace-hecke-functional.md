@@ -67,3 +67,11 @@ The difference between the trace of the chain without bonds and the trace with b
 ## Remark on the knot factor and trace differences
 
 For any trace $t(x) = \tau(x\kappa)$ and any two elements $a, c$, linearity gives $t(a) - t(c) = \tau\bigl((a - c)\,\kappa\bigr)$, so a difference of traces is the pairing of a difference of elements with one knot factor. On a split element $x \cdot y^{\uparrow m}$ the pairing with the knot factor of $H_n$ equals the product of the pairings with the knot factors of the two smaller algebras. The functional $x \mapsto t(x\,b)$ is paired by $b\kappa$, and it is a trace exactly when $b\kappa$ is central.
+
+## Remark on two interface letters
+
+With two interface letters $u = \alpha + \beta\sigma_m$ and $v = \gamma + \delta\sigma_m$, the trace of a bond between two clusters is a sum of products of single-cluster traces plus $\beta\delta$ times one term in which two $2$-cables cross, $\mathrm{tr}_M\bigl(P\,Q^{\uparrow}\,\sigma_{n+1}\sigma_n\sigma_{n+2}\sigma_{n+1}\bigr)$. That cable term does not split into a product. When one side of the bond carries no inner interface letter, the cable term is absent and the cross-ratio identity holds again.
+
+## Remark on two bonds into one cluster
+
+Let $a$ be any bond and $N$ any cluster. The trace of $a^{\uparrow 1}\,(\sigma_0\,a^{\uparrow 1}\,\sigma_0^{-1})\,N^{\uparrow 2}$ is unchanged when $\sigma_0$ is replaced by $\sigma_0^{-1}$ in the transport, and when the two bonds are exchanged.
