@@ -309,6 +309,7 @@ import QOU.MathlibExt.PLPolygonalLink
 import QOU.MathlibExt.PLAffineEquivariance
 import QOU.MathlibExt.PLVertexSlide
 import QOU.MathlibExt.PLCollinear
+import QOU.MathlibExt.PLDropVertex
 import QOU.MathlibExt.PLStability
 import QOU.MathlibExt.PLAmbientIsotopy
 import QOU.MathlibExt.PLPush

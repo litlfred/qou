@@ -244,5 +244,94 @@ theorem eventually_segment_inter_convexHull_subset {o w y z : X → E}
       exact hv.symm
   · simp
 
+lemma convexHull_pair_dup (a b : E) : convexHull ℝ {a, b, b} = segment ℝ a b := by
+  rw [Set.insert_eq_of_mem (Set.mem_singleton b), convexHull_pair]
+
+/-- **Disjoint segments stay disjoint.** -/
+theorem eventually_segment_inter_segment_eq_empty {a b c d : X → E}
+    (ha : Continuous a) (hb : Continuous b) (hc : Continuous c) (hd : Continuous d)
+    (h : segment ℝ (a x₀) (b x₀) ∩ segment ℝ (c x₀) (d x₀) = ∅) :
+    ∀ᶠ x in 𝓝 x₀, segment ℝ (a x) (b x) ∩ segment ℝ (c x) (d x) = ∅ := by
+  have := eventually_segment_inter_convexHull_eq_empty ha hb hc hd hd
+    (by rwa [convexHull_pair_dup])
+  filter_upwards [this] with x hx
+  rwa [convexHull_pair_dup] at hx
+
+/-- **Two segments from a common endpoint `o` keep meeting only at `o`**, as long as neither
+collapses. -/
+theorem eventually_segment_inter_segment_subset {o w y : X → E}
+    (ho : Continuous o) (hw : Continuous w) (hy : Continuous y)
+    (h1 : segment ℝ (o x₀) (w x₀) ∩ segment ℝ (o x₀) (y x₀) ⊆ {o x₀})
+    (hy0 : y x₀ ≠ o x₀) (hw0 : w x₀ ≠ o x₀) :
+    ∀ᶠ x in 𝓝 x₀, segment ℝ (o x) (w x) ∩ segment ℝ (o x) (y x) ⊆ {o x} := by
+  have := eventually_segment_inter_convexHull_subset ho hw hy hy
+    (by rwa [convexHull_pair_dup])
+    (by rw [segment_same]; exact fun h => hy0 (Set.mem_singleton_iff.mp h).symm) hw0
+  filter_upwards [this] with x hx
+  rwa [convexHull_pair_dup] at hx
+
+namespace Polygon
+
+/-- **Simplicity is an open condition on the vertices.** -/
+theorem eventually_isSimple {n : ℕ} (hn : 2 ≤ n) {V : X → Fin (n + 1) → E}
+    (hV : Continuous V) (h : (⟨n, hn, V x₀⟩ : Polygon E).IsSimple) :
+    ∀ᶠ x in 𝓝 x₀, (⟨n, hn, V x⟩ : Polygon E).IsSimple := by
+  have hVi : ∀ i, Continuous fun x => V x i := fun i => (continuous_apply i).comp hV
+  set P₀ : Polygon E := ⟨n, hn, V x₀⟩
+  have hnext : ∀ x, (⟨n, hn, V x⟩ : Polygon E).next = P₀.next := fun _ => rfl
+  -- injectivity
+  have hinj : ∀ᶠ x in 𝓝 x₀, ∀ i j : Fin (n + 1), i ≠ j → V x i ≠ V x j := by
+    refine Filter.eventually_all.mpr fun i => Filter.eventually_all.mpr fun j => ?_
+    by_cases hij : i = j
+    · exact Filter.Eventually.of_forall fun _ h => absurd hij h
+    · have hne : V x₀ i ≠ V x₀ j := fun he => hij (h.1 he)
+      filter_upwards [((hVi i).sub (hVi j)).continuousAt.eventually_ne (sub_ne_zero.mpr hne)]
+        with x hx
+      exact fun _ => sub_ne_zero.mp hx
+  -- each pair of edges
+  have hpair : ∀ i j : Fin (n + 1), i ≠ j → ∀ᶠ x in 𝓝 x₀,
+      segment ℝ (V x i) (V x (P₀.next i)) ∩ segment ℝ (V x j) (V x (P₀.next j)) =
+        if j = P₀.next i then {V x j} else if i = P₀.next j then {V x i} else ∅ := by
+    intro i j hij
+    have h0 := h.2 i j hij
+    have hni : P₀.next i ≠ i := P₀.next_ne i
+    have hnj : P₀.next j ≠ j := P₀.next_ne j
+    have hvne : ∀ a b : Fin (n + 1), a ≠ b → V x₀ a ≠ V x₀ b := fun a b hab he => hab (h.1 he)
+    by_cases h1 : j = P₀.next i
+    · subst h1
+      simp only at h0 ⊢
+      have := eventually_segment_inter_segment_subset (hVi (P₀.next i)) (hVi i)
+        (hVi (P₀.next (P₀.next i)))
+        (by rw [segment_symm]; exact h0.subset)
+        (hvne _ _ (P₀.next_ne _)) (hvne _ _ hni.symm)
+      filter_upwards [this] with x hx
+      apply Subset.antisymm
+      · rw [segment_symm]; exact hx
+      · rintro _ rfl; exact ⟨right_mem_segment ℝ _ _, left_mem_segment ℝ _ _⟩
+    · by_cases h2 : i = P₀.next j
+      · subst h2
+        simp only [if_neg h1] at h0 ⊢
+        have := eventually_segment_inter_segment_subset (hVi (P₀.next j)) (hVi j)
+          (hVi (P₀.next (P₀.next j)))
+          (by rw [segment_symm, inter_comm]; exact h0.subset)
+          (hvne _ _ (P₀.next_ne _)) (hvne _ _ hnj.symm)
+        filter_upwards [this] with x hx
+        apply Subset.antisymm
+        · rw [inter_comm, segment_symm]; exact hx
+        · rintro _ rfl; exact ⟨left_mem_segment ℝ _ _, right_mem_segment ℝ _ _⟩
+      · simp only [if_neg h1, if_neg h2] at h0 ⊢
+        exact eventually_segment_inter_segment_eq_empty (hVi i) (hVi _) (hVi j) (hVi _) h0
+  have hall : ∀ᶠ x in 𝓝 x₀, ∀ i j : Fin (n + 1), i ≠ j →
+      segment ℝ (V x i) (V x (P₀.next i)) ∩ segment ℝ (V x j) (V x (P₀.next j)) =
+        if j = P₀.next i then {V x j} else if i = P₀.next j then {V x i} else ∅ := by
+    refine Filter.eventually_all.mpr fun i => Filter.eventually_all.mpr fun j => ?_
+    by_cases hij : i = j
+    · exact Filter.Eventually.of_forall fun _ h => absurd hij h
+    · filter_upwards [hpair i j hij] with x hx using fun _ => hx
+  filter_upwards [hinj, hall] with x hx1 hx2
+  exact ⟨fun i j he => by_contra fun hij => hx1 i j hij he, fun i j hij => hx2 i j hij⟩
+
+end Polygon
+
 end
 end QOU.MathlibExt.PL
