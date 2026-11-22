@@ -39,6 +39,8 @@ export default chapter({
         "categorical-boson-fermion",
         "symmetric-quotient-colour",
         "colour-singlet-flavour-generator",
+        "colour-singlet-flavour-generator-proof",
+        "colour-singlet-rescaled-bond-law",
         "braid-base-field",
         "braid-lifting-compatibility",
       ],
