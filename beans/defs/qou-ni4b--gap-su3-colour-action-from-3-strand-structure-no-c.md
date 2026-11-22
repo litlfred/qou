@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-11-22T17:16:18Z
+updated_at: 2026-11-22T18:29:38Z
 parent: qou-8lxd
 ---
 
@@ -64,3 +64,14 @@ PR #9059. Prereg e16afb61a6d, probe in c3f1b05557a (swept into the sibling's com
 **Not tested:** non-diagonal or non-grouplike central twists. Those would be selection.
 
 **Bean stays open.**
+
+
+
+## 2026-11-22 — residual symmetry of the D colour twist (PR #9059, computations/probes/qcd_d_residual_symmetry/)
+
+Prereg 3f7b5b43e13; probe 3b45170517a; out 055432050b4; RESULT 2556e7c3247. 27/28 exact over Q(q); the one FAIL is my own pre-registered R3 prediction.
+- R1: on (C^3)^n, D = the U_q(gl2) quantum trace on (C^2)^n, extended by zero (K_D = pivotal * q P_12). The twist forces the 2+1 split and the selection rule N3 = 0 (K_D^n N3 = 0). It does not force U(1) charge values; the traceless diag(1,1,-2) is a convention.
+- R2: [N3, rho(w)] = 0 for the photon, the electron s0s1s0, the trefoil, the quark letters and V^3. Scope (b) by Schur-Weyl: the U(1) labels colour states, never words. So it cannot be the missing word-level hypercharge.
+- R3: each of {1,2}, {2,3} and {1,3} leaves a rank-1 U_q(gl2)xU(1); on {1,3} this is the root-(a1+a2) q-sl2. The pre-registered prediction 'Cartan only' FAILED. All three give the same H_n trace, so the choice is a selection that no Hecke observable sees.
+- R4: the -2 ratio comes from tracelessness alone; the mixing family is 1/(12 s^2+1). No Weinberg angle is forced.
+Verdict: a colour-breaking stabiliser, not electroweak. This is a reading argument, not an invariant. Bean stays open.
