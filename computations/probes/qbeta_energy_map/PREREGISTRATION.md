@@ -523,3 +523,25 @@ P_λ of Addendum 18. Same ΔE.
 **Expected verdict.** D1 is identically 1, or of order h², and D2 is of order h² with a sign set by
 convention: scope-(a) negatives. A value within 10 % of either budget would be reported as a
 near-match only.
+
+## Addendum 20 (2026-11-22): is E₀'s c_q² part of a mass? (owner: "Try and show E_0 c_q^2 part of mass")
+
+Written before any computation.
+
+**Claim to test.** The corpus mass formula is m(K) = m_e·Vol(K)·ρ(K)/ℏ_q², and the muon pin is
+its K = 4₁ case, m_μ = m_e·Vol(4₁)/ℏ_q². Since 1/ℏ_q² = q²c_q², every model mass is a
+multiple of 𝔈_e := m_e·c_q² (the electron's categorical energy under def:mass-energy).
+E₀ = m_e/(q(q−1)) = m_e·c_q²·ℏ_q = 𝔈_e·ℏ_q is a multiple of the same unit. If that holds, then
+
+  (A) E₀ = m_μ·ℏ_q/(q²·Vol(4₁)), a CAL-2 quantity times a pure element of ℚ(q, Vol(4₁)); and
+  (B) E₀ = m_e·w/ℏ_q² with categorical weight w = ℏ_q/q², so the n–p cell 2E₀ ln q has weight
+      2ℏ_q·ln q/q², which tends to 0 at q = 1 while its MeV value tends to 2m_e.
+
+**Test.** Prove (A) and (B) in Lean over a generic field (no numbers), and check (A) numerically
+at q₀ against E₀ = 4.18598 MeV with CODATA m_μ.
+
+**What would count as failure.** Any mismatch of (A) at q₀ beyond mpmath precision.
+
+**Scope, fixed now.** This is an identity-level consistency result. It shows E₀'s c_q² is the
+same c_q² the muon pin already puts in every model mass. It does not derive the extra factor
+ℏ_q/q² from Hecke structure, and it does not derive the 1/ℏ_q² itself, which is the CAL-2 pin.
