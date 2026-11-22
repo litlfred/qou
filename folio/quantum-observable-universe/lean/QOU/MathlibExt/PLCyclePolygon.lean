@@ -41,7 +41,7 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 
 namespace Polygon
 
-lemma next_val (P : Polygon E) (i : Fin (P.n + 1)) :
+lemma next_val_ite (P : Polygon E) (i : Fin (P.n + 1)) :
     (P.next i : ℕ) = if (i : ℕ) = P.n then 0 else (i : ℕ) + 1 := by
   have hi := i.2
   unfold next
@@ -57,7 +57,7 @@ lemma next_next_ne (P : Polygon E) (i : Fin (P.n + 1)) : P.next (P.next i) ≠ i
   have h2 := P.two_le
   have hi := i.2
   have := congrArg Fin.val h
-  rw [next_val, next_val] at this
+  rw [next_val_ite, next_val_ite] at this
   split_ifs at this <;> omega
 
 lemma edge_eq_convexHull (P : Polygon E) (i : Fin (P.n + 1)) :
@@ -167,7 +167,7 @@ lemma cyclePolygon_v_next {x : S.vertices} (p : (complexGraph S).Walk x x) (hp :
   have h3 := hp.three_le_length
   have hn : (cyclePolygon p hp).n = p.length - 1 := rfl
   show (p.getVert ((cyclePolygon p hp).next i : ℕ)).1 = _
-  rw [Polygon.next_val]
+  rw [Polygon.next_val_ite]
   split_ifs with h
   · rw [show (i : ℕ) + 1 = p.length by omega, SimpleGraph.Walk.getVert_length,
       SimpleGraph.Walk.getVert_zero]

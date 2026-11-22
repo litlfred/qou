@@ -362,6 +362,7 @@ import QOU.MathlibExt.PLSurfaceSlice
 import QOU.MathlibExt.PLCyclePolygon
 import QOU.MathlibExt.PLPlaneTransport
 import QOU.MathlibExt.PLSlicePolygons
+import QOU.MathlibExt.PLSliceDisks
 import QOU.MathlibExt.PLCone
 import QOU.MathlibExt.PLDerived
 import QOU.MathlibExt.PLConeMap
