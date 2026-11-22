@@ -83,6 +83,28 @@ theorem jet_split (j : jetModule R S) :
   simp only [AlgHom.comp_apply, AlgHom.id_apply] at this
   rw [map_sub, this, sub_self]
 
+/-- **The complement is `I/I²`**: `ker r` is the image of `I = ker m` in `J¹(S)`. -/
+theorem ker_jetRetract :
+    RingHom.ker (jetRetract R S) =
+      (KaehlerDifferential.ideal R S).map
+        (Ideal.Quotient.mk (KaehlerDifferential.ideal R S ^ 2)) := by
+  ext x
+  obtain ⟨y, rfl⟩ := Ideal.Quotient.mk_surjective x
+  rw [RingHom.mem_ker]
+  constructor
+  · intro h
+    exact Ideal.mem_map_of_mem _ ((RingHom.mem_ker).mpr (by simpa [jetRetract] using h))
+  · intro h
+    rw [Ideal.mem_map_iff_of_surjective _ Ideal.Quotient.mk_surjective] at h
+    obtain ⟨z, hz, hzy⟩ := h
+    rw [Ideal.Quotient.eq] at hzy
+    have hd : z - y ∈ KaehlerDifferential.ideal R S := Ideal.pow_le_self two_ne_zero hzy
+    have hz' : z ∈ KaehlerDifferential.ideal R S := hz
+    have hy : y ∈ KaehlerDifferential.ideal R S := by
+      have := Ideal.sub_mem _ hz' hd
+      simpa using this
+    simpa [jetRetract] using (RingHom.mem_ker).mp hy
+
 end Standard
 
 end QOU.LiftingDescent
