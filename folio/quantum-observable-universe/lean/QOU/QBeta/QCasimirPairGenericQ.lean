@@ -25,8 +25,12 @@ scalar `λ_j` on each irreducible summand. Since the weights `±½` occur once i
 * `a(n) = k(n)·τ` with `τ = Σ_j tr(core on the multiplicity space of j)`,
 * `h²c(n) = k(n)·(μ − (q k(n) + (q k(n))⁻¹)·τ)` with `μ = Σ_j λ_j·tr(...)`,
 where `c(n)` is the trace with `fe` inserted. The two hypotheses `ha`, `hc` below are exactly these
-two lines. They are standard representation theory of `U_q(sl₂)` at generic `q`; they are
-hypotheses of this file, not theorems of it.
+two lines. They are hypotheses of this file. They are proved elsewhere: the reduction from the
+two-block trace to `a`, `c` is `PairReadoutTensorReduction.readout_eq_pairReadout`, and the equality
+of `τ`, `μ` on the two charge sectors of a three-strand block is
+`BlockChargeSectorTrace.sectorTrace_eq` / `feTrace_eq` (audit §32, §33). The link between the
+8-dimensional block space and its 3×3 sector matrices, and the assembled end-to-end statement, are
+in `BlockSectorRestriction` (`readout_pp_eq_nn`, audit §34).
 
 **What is proved here, over any field and for every `τ`, `μ`.** pp = nn
 (`pairReadout_pp_eq_nn_of_blockData`), and the interaction `pp − pn − np + nn = h²·[2]_q`
