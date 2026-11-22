@@ -902,3 +902,57 @@ nucleon mass 2(m_μF_Bor − 6m_e): 2E₀ ln q = m_μ·2ℏ_q ln q/(q²·Vol(4�
 
 **Not shown (scope fixed in the prereg).** Why the weight is ℏ_q/q² is not derived from Hecke
 structure, and 1/ℏ_q² is the CAL-2 pin itself, not derived. Both stay open in qou-91w7.
+
+## §33 CS of the hydrogen capture-braid closure, both electron placements (2026-11-22)
+
+Prereg: `computations/probes/nucleon_width/PREREGISTRATION.md` Addendum 1 (commit 322e9c1b320),
+before any number. Words from #8804 §43: `W_L = (σ₀σ₁⁻¹)³·(σ₂σ₁σ₀²σ₁σ₂)⁻¹` (proton left) and
+`W_R = (σ₁σ₂⁻¹)³·(σ₀σ₁σ₂²σ₁σ₀)⁻¹` (proton right). SnapPy 3.3.2, high precision.
+
+- Both closures have 4 components and are **L12n2208**, the Borromean rings plus their braid axis,
+  Vol = 12.17929927691584…, CS = 0 (to ~1e-64). `is_isometric_to`: W_L ≅ W_R.
+- All three predictions held: four components; the electron circle is isotopic to the braid axis;
+  the two placements give the same manifold.
+
+**Verdict, scope (a).** The capture-braid closure gives no p/n width difference in either placement.
+The placement, which fixes the sign of the weight-space S in #8804, is invisible to the closure's
+complex volume. A width read as Im of a complex volume would have to come from decorations of the
+braid (weights, cabling, the gluon), as for the bare core (bean `qou-zslg`). This is a SnapPy
+(hyperbolic-geometry) result and is not formalised in Lean; Mathlib has no hyperbolic volume or CS.
+
+## §34 Is E₀'s weight ℏ_q/q² a Markov trace? (2026-11-22)
+
+Prereg: `computations/probes/e0_weight/PREREGISTRATION.md` (commit 89dc8589e37), six fixed
+candidates, all at convention D. Result `computations/probes/e0_weight/RESULT.md`.
+
+- None of tr(σ⁻¹) (n = 2), y_(2), y_(1,1), tr(σ₀σ₁σ₀), tr((σ₀σ₁σ₀)⁻¹), tr(σ₀σ₁⁻¹),
+  tr((σ₀σ₁⁻¹)³) equals w = (q − 1)/q³, even up to a monomial q^k. Scope (a).
+- Lean, `QOU/QBeta/E0WeightCandidates.lean` (sorry-free, standard axioms): the closed forms of
+  each candidate from the Ocneanu weights and the (2,1) representation; that none equals w on
+  q > 1; and the limits log q/(q(q−1)) → 1 and 2(q−1) log q/q³ → 0 as q → 1⁺ (§30, §32).
+- **Why a single word looks unlikely (argument, not in Lean):** at q = 1 every braid word's trace is
+  2^{c−n} > 0, while w(1) = 0. Signed combinations and tower sums (1/(q(q−1)) = Σ_{k≥2} q⁻ᵏ) are
+  not excluded and were not searched, since searching for the target is selection against it.
+  The weight stays open (bean `qou-91w7`).
+
+## §35 Lean coverage of the assertions so far (owner 2026-11-22: "Lean prove all Assertions so far")
+
+**Now certified in Lean, sorry-free, standard axioms only** (`propext`, `Classical.choice`, `Quot.sound`; `lean -DautoImplicit=false -s 65536`, exit 0):
+
+| Assertion | Where | Lean |
+|---|---|---|
+| E₀ = m_e·c_q²·ℏ_q, and E₀ = m_μ·ℏ_q/(q²·Vol(4₁)) under the muon pin | §32 | `QOU/QBeta/E0MuonUnit.lean` (merged in #8955) |
+| None of the six preregistered convention-D traces equals w = ℏ_q/q² | §34 | `QOU/QBeta/E0WeightCandidates.lean`: `C1/C2a/C2b/C3a/C3b/C4b_not_weight` |
+| The cell's unit and weight limits at q → 1 | §34 | `cell_unit_limit`, `cell_weight_limit` |
+| The §25 sign change of the cell polynomial T | §25 | `Tpoly_eq_Tx`, `T_sign_change` |
+| Full twist F = (σ₁σ₂σ₃)⁴ on the weight-zero space of V^{⊗4}, its minimal polynomial (eigenvalues q¹², q⁴, 1) | §29 | `QOU/QBeta/H4YoungChannelCert.lean`: `F_eq`, `F_minpoly` |
+| The Young weight W = Σ q^c P_λ (c = 6, 2, 0) in Lagrange form, and its initial/final sums | §29 | `W_eq`, `W_init_sum`, `W_final_sum` |
+| The β_Bor-dressed D2 numerator and denominator | §31 | `D_eq`, `D2_eq`, `D2_init_sum`, `D2_final_sum` |
+
+`W_eq` needs the hypothesis `1 − q⁸ ≠ 0`. It holds at every q > 1, so the cert is stated over a generic field with that hypothesis. q₀ is never fixed.
+
+**Not in Lean, and why:**
+
+1. **§33, the CS invariant and volume of the capture-braid closures** (L12n2208, Vol 12.1792992769…, CS 0). These are SnapPy numerics. Mathlib has no hyperbolic-volume or Chern–Simons theory, so they stay as recorded computations. The same holds for the identification W_L ≅ W_R.
+2. **§34's general-word argument** (at q = 1 every braid-word Markov trace equals 2^{c−n} > 0, while w(1) = 0). This is a statement about all braid words. Formalising it needs the Markov trace on the full braid group, which the corpus does not have yet. Only the six preregistered words are certified.
+3. **Numeric renderings at q₀ and every comparison to CODATA or AME.** Per the owner's rule, empirical numbers stay out of formal proofs.
