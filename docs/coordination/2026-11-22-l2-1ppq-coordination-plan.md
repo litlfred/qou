@@ -205,3 +205,12 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - Caveats. The trace is degenerate at z_D for n+1 ≥ 3, because the three-row weights vanish. So only the inequality half of the T_β collapse holds at z_D. Also, `TraceTwist` as stated is satisfied by a degenerate twist; the proposal is to require † to be anti-multiplicative (owner call).
   - Hecke models: `QOU/Hecke/HeckeModelsBridge.lean` gives equivalences between the IwahoriHecke, SchurWeyl.Hecke and HeckeSectorRep models, and a map into #9126's all-strands H(q). This closes plan obligation 4 (one Hecke model).
   - Legacy axioms: 8 have no consumers. `proton_mass_from_substrate_axiom` is false (its left side is 746.40). The deletion is on an owner card.
+- **2026-11-22 22:19Z, W7** (branch claude/bridge-a-stokes-nbody-2026-11-22, commit 44c3767db, `QOU/Mass/BridgeAStokesNBody.lean`; sorry-free, standard axioms only; no PR yet, owner card pending; bean qou-x09k):
+  - Under P1–P3, the n-body form with residues α + βP_ab equals `KZHolonomy.kzForm`, with κ = β/2 and c = −α/β.
+  - Its generator monodromy is `kzBraidRep`. For V = ℂ² this is conjugate to Jimbo after a scalar, and it satisfies the Hecke quadratic.
+  - `lagrangian_gauge_to_KZ_of_stokes` replaces the circular hL with a named assumption, `StokesToBraiding`. hL itself was too strong: the derived relation is conjugacy, not equality with Ř.
+  - On colour singlets, under `ColourTubeBraided` (qou-et5f), X satisfies (X+1)(X−q⁻²) = 0.
+  - **Plan obligation 1 narrows:** the circularity is gone. What remains open:
+    - `StokesToBraiding` (a continuous multiplicative integral);
+    - P1–P3 for n ≥ 4 (triple collisions);
+    - a substrate instance of HeckeMonodromy (passed to W8).
