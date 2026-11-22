@@ -129,3 +129,24 @@ agreement or disagreement with AME is reported as a comparison only.
 Scope (a): this candidate family (nucleon `V^m`, `m ∈ {3,6}`; bonds `V^k`, `k ≤ 3`, at
 straddling vertices; chain), convention D, proton pin. A negative result here excludes nothing
 outside this family.
+
+## 7. Relation to the open owner decision `qou-8274` (addendum, still before computing)
+
+Read before computing (beans mount): `qou-8274` (in progress, OWNER DECISION: is the level-local
+H₆ = 3A deuteron word the right binding object, or only the faster one), `qou-w6x3`,
+`qou-hxz4`, `qou-xkjt`, `qou-sv7h`, `qou-ypq6`.
+
+- The words here are **not** the binding producer's word. `unified_iterative_correction` couples
+  every pair of nucleons (`C(A,2)` inter-nucleon letters, the complete graph `K_A`) inside a fixed
+  `H_k`, `k ≤ 11`. The words here live on `3A` contiguous strands, so they can couple only
+  consecutive nucleons, the path `P_A` (`QOU/Hecke/ContiguousCouplingGraph.lean::
+  complete_coupling_forces_A_le_two`). For A = 2 the two graphs coincide; for A ≥ 3 they do not,
+  and ⁴He gets 3 bonds against 6 pairs.
+- So this probe evaluates one specific family of 3A words with the single-level formula. It does
+  **not** decide `qou-8274`: it neither adopts the 3A word for the deuteron nor rejects the
+  producer's word. Its results are inputs to that decision and are reported as such.
+- The comparison with the old UIC value is between two different elements of the algebra and two
+  different formulas (UIC is a sum over levels k = 2..11; the cap K = 11 is not derived, `qou-xkjt`).
+  It is a comparison column, not a calibration.
+- Cost: two-row blocks at n = 12 have dimension ≤ 297, so the O(dim³) wall of `qou-sv7h` does not
+  arise for the weighted sum. It would arise only for three-row blocks, which carry `y_λ = 0`.
