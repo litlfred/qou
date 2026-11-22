@@ -85,7 +85,7 @@ only. "Closure of `β_Bor` is not the unlink" also needs a link invariant
   shortest length is 6 and every length-6 solution is conjugate to `β_Bor`. It does
   not enumerate `B₃` conjugacy classes, and it does not say a longer word is never
   conjugate to `β_Bor` (many are).
-* That `χ` separates `β_Bor`'s conjugacy class, **in Lean**. Surjectivity and the
+* That `χ` separates `β_Bor`'s conjugacy class **without hypotheses**, in Lean. Surjectivity and the
   lifting step are proved above; the rest is in `QOU.Mass.BorromeanSL2ZFibre`. The companion
   `computations/probes/borromean_word_forcing/result.md` gives an all-length argument.
   It reduces to SL(2,ℤ) via Burau at `t = −1`, and it cites two facts: that this map is
