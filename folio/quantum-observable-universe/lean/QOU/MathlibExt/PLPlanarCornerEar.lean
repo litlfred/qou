@@ -235,11 +235,19 @@ lemma isEar_add_period (P : Polygon R2) (k : ℕ) : P.IsEar (k + (P.n + 1)) ↔ 
     show k + (P.n + 1) + 1 = (k + 1) + (P.n + 1) by omega, w_add_period, w_add_period,
     w_add_period]
 
-/-- **An empty corner at the lowest-leftmost vertex is an ear.** -/
-theorem isEar_of_empty_corner {P : Polygon R2} (hP : P.IsSimple) (hn : 3 ≤ P.n)
+/-- **Cutting off an empty corner.** For the rotation `R = P.rotateBy 1` (so `R.w 0 = w 1`),
+the chord from `R.w 0 = w 1` to `R.w (n - 1) = w n` is valid and both pieces see the rest of the
+polygon as outside. -/
+theorem empty_corner_split {P : Polygon R2} (hP : P.IsSimple) (hn : 3 ≤ P.n)
     (hlex : ∀ i, P.w 0 0 ≤ P.v i 0) (hD : cross (P.w P.n) (P.w 0) (P.w 1) ≠ 0)
     (hempty : ∀ j, 2 ≤ j → j ≤ P.n - 1 → P.w j ∉ convexHull ℝ {P.w P.n, P.w 0, P.w 1}) :
-    P.IsEar 0 := by
+    ∃ (hβ : 2 ≤ P.n - 1) (h2 : 2 ≤ (P.rotateBy 1).n + 1 - (P.n - 1)),
+      segment ℝ ((P.rotateBy 1).w 0) ((P.rotateBy 1).w (P.n - 1)) ∩ (P.rotateBy 1).carrier ⊆
+        {(P.rotateBy 1).w 0, (P.rotateBy 1).w (P.n - 1)} ∧
+      (∀ y ∈ (P.rotateBy 1).carrier, y ∉ ((P.rotateBy 1).cut (P.n - 1) hβ).carrier →
+        ((P.rotateBy 1).cut (P.n - 1) hβ).parity y = 0) ∧
+      (∀ y ∈ (P.rotateBy 1).carrier, y ∉ ((P.rotateBy 1).cocut (P.n - 1) h2).carrier →
+        ((P.rotateBy 1).cocut (P.n - 1) h2).parity y = 0) := by
   have A1 := corner_inter_of_empty hP hn hD hempty
   set R := P.rotateBy 1 with hR
   have hRs : R.IsSimple := Polygon.isSimple_rotateBy P hP 1
@@ -332,9 +340,19 @@ theorem isEar_of_empty_corner {P : Polygon R2} (hP : P.IsSimple) (hn : 3 ≤ P.n
       rw [seg_rotateBy]; unfold seg
       rw [show 1 + β + 1 = P.n + 1 by omega, P.w_period,
         show P.n + 1 + 1 = 1 + (P.n + 1) by omega, w_add_period]; exact h
+  exact ⟨hβ, h2, hchord, S₁, S₂⟩
+
+/-- **An empty corner at the lowest-leftmost vertex is an ear.** -/
+theorem isEar_of_empty_corner {P : Polygon R2} (hP : P.IsSimple) (hn : 3 ≤ P.n)
+    (hlex : ∀ i, P.w 0 0 ≤ P.v i 0) (hD : cross (P.w P.n) (P.w 0) (P.w 1) ≠ 0)
+    (hempty : ∀ j, 2 ≤ j → j ≤ P.n - 1 → P.w j ∉ convexHull ℝ {P.w P.n, P.w 0, P.w 1}) :
+    P.IsEar 0 := by
+  obtain ⟨hβ, h2, hchord, S₁, S₂⟩ := empty_corner_split hP hn hlex hD hempty
+  have hRs : (P.rotateBy 1).IsSimple := Polygon.isSimple_rotateBy P hP 1
+  have hRn : (P.rotateBy 1).n = P.n := rotateBy_n P 1
   have hear := isEar_of_cocut hRs hβ h2 hchord S₁ S₂ (k := 1) le_rfl (by omega)
     (Or.inr (by omega))
-  rw [isEar_rotateBy, show 1 + β + 1 = 0 + (P.n + 1) by omega, isEar_add_period] at hear
+  rw [isEar_rotateBy, show 1 + (P.n - 1) + 1 = 0 + (P.n + 1) by omega, isEar_add_period] at hear
   exact hear
 
 end QOU.MathlibExt.PL
