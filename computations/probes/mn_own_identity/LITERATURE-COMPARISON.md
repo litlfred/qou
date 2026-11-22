@@ -1103,3 +1103,51 @@ Reading, with each assumption named:
 - **Assumptions, not derived:** (i) reuse of the m_p identity's normalisation 2([3]_q!/q³) and the
   K-weights for τ_n; (ii) "negative degree 0 = potential" is the agent's reading of the ruling;
   (iii) the quark charges are adopted, not derived (§33).
+
+## §36 Quark channels as eigenvalues of the γγ vertex; q-dependent charges (pre-registered)
+
+Owner, 2026-11-22: *"Derive quark words, but they are not isolated … Where do u, down and strange
+appear in braid words? Check corpus."*, *"Try eigenvalues approach"*, *"Also check H_6"*, *"1 yes"*
+(potential sign confirmed, `owner-rulings.md`). Pre-registrations 34369e6d5df (H₃), 857ea510990 +
+addendum (H₆), 3522c467284 (charges). **Everything here is order zero in the jet tower** (H₃/H₆
+only); the full-tower ruling of 2026-09-03 is not yet met.
+
+**Corpus check (quark words).** u = σᵢ, d = σᵢ⁻¹ as single letters (`particle-nf-table.md`); s uses
+the same letter as d and differs only by |κ| = 5, its jet order (`knot-notation-convention.md`,
+`jet-planck-particle-spectrum.md` step 5). A single letter is not a γγ word
+(`not_gammaGamma_single`). In 𝓑₃ = (σ₀σ₁⁻¹)³ every strand has 4 crossings, 2 over and 2 under,
+signed sum 0, so the word itself does not mark a 2+1 split.
+
+**H₃ eigenvalues (all predictions held).** V = σ₀σ₁⁻¹ is 1 on (3) and (1³). On (2,1), det V = 1 and
+tr V = −(q⁴ − q² + 1)/q², so λ = e^{±iθ(q)} with |λ| = 1 at q₀, and t := θ/2π satisfies
+t(1) = 1/3 exactly (the 3-cycle) and t(q₀) = 0.3373795454 = 1/3 + 0.0040462. Series:
+t(1+ε) = 1/3 + (2√3/3π)ε² + O(ε³). **The ⅓ is an eigenvalue phase of the γγ vertex, derived, not
+adopted.** V³ has phases ±(3t − 1) = ±0.01214 at q₀ and 1 at q = 1.
+
+**H₆ eigenvalues (all eleven irreps, seminormal form, Hecke and braid relations checked to 1e−20).**
+P1, P2 held: one vertex and the interface bond V₂³ give only {1, λ^{±1}} and {1, λ^{±3}};
+two disjoint vertices give sums of H₃ phases (±t, ±(2t − 1)). New content: the staggered words
+V₀V₂ and V₁V₃ give **fifths** at q = 1 (phases 0, ±1/5, ±2/5; (012)(234) is a 5-cycle), split at q₀
+into three nearby values each (0.1955/0.2024/0.2036, 0.3903/0.4012/0.4061), still |λ| = 1. The word
+V₀³V₃³V₂³ is not unitary at q₀ (||λ| − 1| up to 0.013). The q = 1 + 10⁻²⁵ values for V³-type words
+show ~1e−4 phases; these are root-finding error on a 16-fold degenerate root (charpoly at 30 dps),
+and the exact value is 0 (V³ = 1 at q = 1, §29). The fifths are a permutation-cycle fact; reading
+them as the k = 5 generation is not claimed.
+
+**q-dependent charges from t(q) (predictions held).** Two readings fixed in advance:
+
+| reading | q_u, q_d at q₀ | p, n charge at q₀ | E_n − E_p, electron map (P / K) | at q = 1 | M2 muon scale |
+|---|---|---|---|---|---|
+| R1 mirror (+t, −t) | ±0.33738 | +0.33738 / −0.33738 | +0.0566 keV / −3.80 keV | 0 | −8.12 MeV |
+| R2 gap 1 (1 − t, −t) | 0.66262 / −0.33738 | 0.98786 / −0.01214 | +53.12 keV / +47.60 keV | 1/8 | +101.6 MeV |
+
+Reading:
+- **R2** gives the SM charges at q = 1 (c = 1/6) from the γγ vertex, with the representative fixed
+  by the corpus gap q_u − q_d = 1. At q₀ the neutron charge is 1 − 3t = −0.01214, which equals minus
+  the Borromean V³ phase. It keeps the 1/8 at q = 1, so it breaks m_p = m_n at q = 1.
+- **R1** keeps m_p = m_n at q = 1 (S drops out there), but the neutron carries charge −t.
+- **No reading does both.** This is §34 again: q_u² = q_d² and a neutral neutron force zero charge.
+  Correction of my earlier option text: deriving c does not remove the 1/8.
+- **Item 3 (the factor ~7.6):** not searched. Hunting structures for a ratio set by CODATA is
+  selection against the target. The one derived change (eigenvalue charges) was run as pre-registered;
+  arm 1 (+0.171 MeV) stands as a scope (a) result.

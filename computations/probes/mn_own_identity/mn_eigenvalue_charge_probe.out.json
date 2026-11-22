@@ -1,0 +1,45 @@
+{
+  "preregistration": "3522c467284",
+  "t_q0": "0.33737954541841213377",
+  "readings": {
+    "R1_mirror": {
+      "M2_E_n_minus_E_p_MeV_at_q0": "-8.11589079408",
+      "Epot_P_plain": {
+        "E_over_m_e_at_q0": "0.000110692618570117",
+        "E_n_minus_E_p_keV_at_q0": "0.0565638119385",
+        "value_at_q=1+1e-30": "4.86173068583e-63"
+      },
+      "Epot_K_quantum": {
+        "E_over_m_e_at_q0": "-0.00743963046916786",
+        "E_n_minus_E_p_keV_at_q0": "-3.80164336327",
+        "value_at_q=1+1e-30": "-8.33333333333e-32"
+      },
+      "charges_q0": {
+        "u": "0.337379545418412",
+        "d": "-0.337379545418412",
+        "proton": "0.337379545418412",
+        "neutron": "-0.337379545418412"
+      }
+    },
+    "R2_gap1": {
+      "M2_E_n_minus_E_p_MeV_at_q0": "101.628457107",
+      "Epot_P_plain": {
+        "E_over_m_e_at_q0": "0.103960253005146",
+        "E_n_minus_E_p_keV_at_q0": "53.1235801991",
+        "value_at_q=1+1e-30": "0.125"
+      },
+      "Epot_K_quantum": {
+        "E_over_m_e_at_q0": "0.0931602192797149",
+        "E_n_minus_E_p_keV_at_q0": "47.604774298",
+        "value_at_q=1+1e-30": "0.125"
+      },
+      "charges_q0": {
+        "u": "0.662620454581588",
+        "d": "-0.337379545418412",
+        "proton": "0.987861363744764",
+        "neutron": "-0.0121386362552364"
+      }
+    }
+  },
+  "comparison_printed_after": "CODATA m_n - m_p = 1.29333 MeV (context only; nothing selected)"
+}
