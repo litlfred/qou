@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:55Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-533l
 ---
 
@@ -43,3 +43,7 @@ against D1 and D3. The gerbe ≃ cocycle equivalence remains open.
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 State on main: CechGerbe.lean (cocycle-level Thm 4.17, cl2_eq_one_iff, exists_iso_lift_iff) plus the colimit layer CechColimit / CechColimitConverse (PRs #7945, #7969) make the class cover-independent. The gerbe ≃ cocycle equivalence is still ASSUMED. Not attempted in this pass.
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Cocycle-level Thm 4.17 exists; gerbe ≃ cocycle equivalence is still assumed, as the bean requires it be stated.

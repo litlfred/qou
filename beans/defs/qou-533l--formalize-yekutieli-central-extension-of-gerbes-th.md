@@ -5,7 +5,7 @@ status: todo
 type: feature
 priority: high
 created_at: 2026-10-12T19:14:51Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-vo9t
 ---
 
@@ -33,3 +33,7 @@ Mathlib has no gerbes and no nonabelian H^2. Planned tiers, each sorry-free befo
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 Tier status on main: T1 (CentralExtensionObstruction), T2/T2b (PresheafCentralExtensionObstruction, CechCentralExtensionObstruction), T3 partial (StackGerbe M1–M3, CechGerbe cocycle form, Čech colimit, S² comparison). T4 holds at cocycle level only, with gerbe ≃ cocycle assumed. T5 (jet tower) is moot as stated: the jet-tower perpetual obstruction was retracted for the degree condition (qou-lx8f, 2026-11-15). Open conjecture-level feature; stays todo.
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Tier status unchanged since 2026-11-21 (no commits to CentralExtension*/Cech*/StackGerbe* since 2026-11-20). The self-assuming carriers YekutieliLifting / YekutieliLiftingCondition are still the reason for the bean.

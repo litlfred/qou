@@ -10,7 +10,7 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-11-21T07:30:00Z
-updated_at: 2026-11-22T22:00:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-mq3p
 ---
 Created 2026-11-21 by W9 (session_01VQDpPcjxVSqN8ELUBjiBHk). The owner ruling of 2026-11-21 says time- or resource-limited work goes to a bean for Antigravity.
@@ -36,3 +36,7 @@ Identity theorem PROVED, sorry-free, on branch `claude/riemann-identity-theorem-
 - `local_effective_of_faithful`: hloc of ChartStep holds for a faithful holomorphic action.
 - `isCyclic_stabilizer_of_faithful` (ChartStep with hloc discharged) and `isCyclic_stabilizer` (no chart hypothesis at all: finite faithful holomorphic action on a connected Riemann surface has cyclic point stabilisers).
 lean -DautoImplicit=false exit 0 against the restored lake-cache (ChartStep compiled lean-direct); #print axioms [propext, Classical.choice, Quot.sound]. No PR yet (math repo: owner asked first). Close this bean when the branch merges.
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+ALREADY-DONE pending merge: PR #9133 (stacked on #8750) proves eq_id_of_eventuallyEq_id and local_effective_of_faithful, which discharge hloc. Complete this bean when #9133 merges, not before.

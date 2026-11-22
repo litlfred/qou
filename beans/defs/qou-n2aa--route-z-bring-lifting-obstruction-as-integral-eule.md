@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:30:20Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-vo9t
 ---
 
@@ -28,3 +28,7 @@ Route 2 of qou-lx8f (owner, 2026-10-12: pursue in parallel; band deferred).
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 Same PR #8150 as qou-2a2o, same verification and the same caveat: bring_integral_euler_nonzero is surfaceEulerChar 4 = −6 by rfl; kappa_0 = e is still not derived from a Z-kernel central extension. The cochain-level derivation that exists is CechChernClass (expExtension Z → R → U(1), chernClass, kummer_obstruction obs_n = c_1 mod n), merged earlier; what is missing is (i) local real lifts (IsRealLift is a hypothesis) and (ii) deg c_1(TΣ₄) = χ. Bean stays open.
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Unchanged since 2026-11-21: κ₀ = e is not derived from a ℤ-kernel central extension; bring_integral_euler_nonzero in #8150 is −6 by rfl. Critical note: 'chiral Seifert linking residue' in the 2026-11-16 note uses Seifert linking language that predates the 2026-11-22 linking-neutrality ruling for γγ words; it is a separate object (surface linking), so no conflict, but do not read it as a charge statement.

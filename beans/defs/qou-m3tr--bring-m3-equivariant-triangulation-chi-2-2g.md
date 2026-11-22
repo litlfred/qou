@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-21T05:40:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-qhcr
 ---
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
@@ -131,3 +131,7 @@ Combinatorial M3 is now steps 1+2. **Open:** step 3, triangulation of a compact 
 **The only topological gap left in M3:** existence of a G-equivariant map (triangulation with branch points at vertices) for a compact Riemann surface with a holomorphic G-action. This is Rado plus an equivariant refinement. It is a large Mathlib gap and not attempted.
 
 Bean stays open.
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Step 2 (cyclic stabilisers) is now hypothesis-free via #9133; the only gap left is the equivariant triangulation (qou-yslf). Stays in-progress.

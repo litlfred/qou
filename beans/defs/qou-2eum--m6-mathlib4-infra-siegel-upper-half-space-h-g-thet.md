@@ -10,7 +10,7 @@ tags:
     - siegel-modular
     - brings-curve
 created_at: 2026-11-19T08:19:50Z
-updated_at: 2026-11-19T08:19:50Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-dxbw
 ---
 
@@ -55,3 +55,7 @@ parent: qou-dxbw
 ## Standalone `axiom` / `opaque` Declarations in `M6_SIEGEL_THETA_MODULAR_CURVES` (Sample up to 15)
 
 - *(none)*
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+RESCOPE. Item 3 names 'modular curve X₀(15)' and 'Jac(Bring) ~ E_15^4'. The held source does not say that. Braden–Disney-Hogg, Bring's curve: old and new (library/arxiv-2208.13692v1, §2.2 'The period matrix'): τ₀ is a distinguished point of X₀(5); the elliptic quotients are the conductor-50 curves 50H and 50E, which Serre notes are 15-isogenous over ℚ. The 15 is an isogeny degree, not a level. The corpus already uses conductor 50 (commit 3c4c98fcc: colour cubic mapped to Cremona 50a1; Bring period-matrix gate with isogeny tuple (1,5,5,5)). Corrected question for item 3: formalize Jac(Bring) ~ E⁴ with E of conductor 50 and the 15-isogeny 50H → 50E (Riera–Rodríguez; Serre Ex. 8.3.2c), not X₀(15). Items 1–2 (Siegel H_g, theta characteristics, S₅ carriers) APPLY unchanged.

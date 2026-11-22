@@ -9,7 +9,7 @@ tags:
     - research
     - open-derivation
 created_at: 2026-11-21T07:30:00Z
-updated_at: 2026-11-21T07:30:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-qhcr
 ---
 Created 2026-11-21 by W9 (session_01VQDpPcjxVSqN8ELUBjiBHk). The gap was named in `docs/audits/2026-11-17-bring-foundations-trace-sites-and-genus-attack.md` §3 and had no bean.
@@ -21,3 +21,7 @@ Created 2026-11-21 by W9 (session_01VQDpPcjxVSqN8ELUBjiBHk). The gap was named i
 **Constraint (NO FITTING).** Every order-5 structure in the corpus is downstream of Bring (audit §2 item 4, qou-qhcr sessions of 2026-09-15). The lift must not be chosen because it yields 4.
 
 **Open; do not close** (AGENTS.md §13a).
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Nothing landed on the fibre-to-base lift. Critical note: the anti-fit constraint in the body is the binding one; any lift chosen because it yields genus 4 is selection against the target. Open; stays open.

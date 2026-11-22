@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:30:20Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-vo9t
 ---
 
@@ -31,3 +31,7 @@ Route 1 of qou-lx8f (owner, 2026-10-12: pursue the Z/2 and Z readings in paralle
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 Open PR #8150 (Antigravity, 'ready' since 2026-11-16, mergeable clean) carries this bean's Lean. Re-verified here: BringLiftingObstructionRoutes.lean lean-direct exit 0, no sorry; probe re-run 12/12 assertions pass, no float literals or float() in it (precision-gates.sh could not resolve a merge base in a shallow clone, so the gate itself was not run). Caveat for review: the declarations are integer arithmetic named as cohomology (mod2StiefelWhitney e := e % 2, tangentW2 g := (2 − 2g) % 2). This is the lemma qou-lx8f (2026-10-12) deliberately declined to add, and PNeqNpEquivalence.chi_mod_vanishes_iff already covers the arithmetic. '136 % 5 = 1' does not prove a unique S₅-fixed even theta characteristic. The PR also bundles unrelated Hecke MTC (S,T) data. The bean's real next step, identifying WHICH principal bundle the tower lifts, is untouched. Merge decision raised to the coordinator.
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Unchanged since 2026-11-21. The real next step (which principal bundle the tower lifts) is still untouched; '136 % 5 = 1' still does not prove a unique S₅-fixed even theta characteristic.

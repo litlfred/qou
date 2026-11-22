@@ -3,12 +3,12 @@
 title: 'T3h: Fano plane from genus-3 restriction of Bring surface — derive octonions from geometry'
 status: todo
 type: task
-priority: critical
+priority: low
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-04T10:18:37Z
-updated_at: 2026-11-20T16:40:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-8lxd
 ---
 
@@ -185,3 +185,7 @@ Completed (`0 sorry, 0 axiom`, Red-Team UNCONDITIONAL PASS): `QOU/Eightfold/Brin
 ## Reopened (owner instruction 2026-11-20, via W12)
 This bean was set to completed by local commits on `cat/cat-harness/beans` (e223ed1 / 4fcd2cb / 89bb5e0, 2026-11-19, `litlfred@fenugreek.home`, no session trailer). The Lean / probe / witness files its resolution names are not on main, on any branch, or in any PR found by the bean id (measured 2026-11-20). See GAP bean qou-w12g.
 The work existed on PR #8149, closed unmerged 2026-11-20 (W4 batch, CLOSE-VACUOUS). W12 read `G2IsotropyComplexThreefold.lean`: a hand-built Int 6-vector with J = L_{e1} written by coordinates, Fano lines entered as a list, and `gcd(120,168) = 24` as the "S4 bridge". Nothing is derived from the genus-3 restriction of Bring's surface, which is this bean's subject. Not ported.
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+RESCOPE (priority critical → low). Three problems. (1) Retired premise: the chain starts from 'SM fermions exhaust at genus 3; tau T(2,7) and charm are the genus-3 generators', i.e. the T(2,n) torus-knot tower as the matter family. Since 2026-11-21/22 the electron is σ₀σ₁σ₀ ∈ B₃ with Hopf closure and the T(2,n) tower is the backup family only (owner-rulings.md row 'rem:torus-knot-generators-interpretation updated to the 11-21 electron'). So the bean is conditional on the backup family. (2) Selection, not derivation: the step 'genus-3 curve with S₄ enhances to PSL(2,7)' is not forced. Smooth plane quartics with an S₄ action form the one-parameter pencil x⁴+y⁴+z⁴ + a(x²y²+y²z²+z²x²); the Klein quartic is one member of it (as is the Fermat quartic, with a larger group). Picking the Klein member is choosing the object that gives the answer, which the NO FITTING section forbids. (3) The bean's own anti-fit test ('forced or merely compatible?') is answered by (2): compatible only. Also 168 ∤ 120 rules out restriction, and Blichfeldt PSL(2,7) ⊂ SU(3) is a fact about SU(3), not a derivation of it. Corrected question, if kept: is there a mechanism on Bring's genus-4 surface that FORCES the Klein member of the S₄-invariant quartic pencil (e.g. a degeneration whose limit is pinned without choosing a), and does it survive with σ₀σ₁σ₀ as the electron? Absent such a mechanism the octonion-from-Bring route is not on the current derivation chain. Not closed: open conjecture (13a).

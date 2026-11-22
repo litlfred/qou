@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:54Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-533l
 ---
 
@@ -42,3 +42,7 @@ thm:qu-to-qou item 2's "= χ" and item 3's "χ mod n" are NOT formalised. Only t
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 Item 4 progress on main: (b) Ȟ² and the refinement colimit now exist (CechColimit, CechColimitConverse), and for S² the comparison with the coefficient group is proved (PR #7969). Still open: (a) local real lifts (IsRealLift hypothesis; on S² the box covers have convex-cone pieces, so a lift through exp exists on each piece, which is a feasible next Lean step), (c) bundles ↔ cocycles, (d) c_1 = χ / Poincaré–Hopf.
+
+## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Unchanged; IsRealLift hypothesis (local real lifts) is still the open item.
