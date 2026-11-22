@@ -1577,3 +1577,22 @@ q ≠ 0 and q⁴ + q² + 1 ≠ 0.
 - It proves S(W_L) = −h²[3]_q/q² and S(W_L) + S(W_R) = 0.
 The reduction from 16 dimensions to the weight spaces is stated in that file's docstring, not
 proved.
+
+## §40-bis Reconciling §40 with "u = e₁ is derived" (PR #8800, np-splitting audit §16)
+
+The np-splitting audit (§16, on branch `claude/neutron-heavier-sign-2026-11-21`) says u = e₁ is
+derived. Its derivation uses `OverStrandWeight.lean` (draft PR #7971, sorry-free): under convention
+D a crossing is a pure transposition iff its over strand carries the K = q vector. It then adds two
+corpus conventions: (i) in σᵢ the lower strand passes over; (ii) `def:down-quark` says u passes over d.
+
+The two statements do not contradict each other; they answer different questions.
+- §40: no braid word, photon weight or trace derived so far fixes which bit is u. The mirror X·V·X =
+  P·V⁻¹·P swaps p and n exactly (§40, §42–§46).
+- §16: once conventions (i) and (ii) are adopted, u = e₁ follows.
+
+Conventions (i) and (ii) are the GS letter-order convention. The ⁴He sign table (PR #8969, commit
+79a91b084d0) shows that bond chirality, bond side and strand reflection are this one convention.
+Mirroring flips (i), and so flips the conclusion. So the accurate wording is "u = e₁ is fixed by the
+crossing convention (i)+(ii), not derived from the word". §40's "not fixed" means "not fixed without
+that convention". Nothing in §29–§46 changes. The conditional sign (neutron heavier under §16) stands
+as conditional on (i), (ii) and #7971.
