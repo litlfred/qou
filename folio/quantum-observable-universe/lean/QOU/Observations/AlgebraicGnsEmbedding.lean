@@ -169,6 +169,80 @@ theorem markov_gns_null_ideal (tr : A →ₗ[ℝ] ℝ)
 
 end NullIdeal
 
+/-! ### The pre-Hilbert space `A/𝒩` and the left-regular action
+
+With the null set an ideal, the GNS construction needs four more facts, all on
+representatives: the form `⟨[x], [y]⟩ = tr(x* y)` is well defined on `A/𝒩`; it
+is definite there (`[x] = 0` iff `⟨[x], [x]⟩ = 0`, which is the definition of
+`𝒩`, and iff `[x]` pairs to zero with everything); left multiplication descends
+to `A/𝒩`; and it is a `*`-action, `⟨[a x], [y]⟩ = ⟨[x], [a* y]⟩`.  For a unital
+algebra the action is faithful on the quotient: `a` acts as zero on `A/𝒩`
+exactly when `a ∈ 𝒩`.
+
+One more hypothesis is used: `tr` is hermitian, `tr(a*) = tr(a)`.  Over `ℝ` this
+is not implied by positivity, and it is what makes `tr(x* y)` symmetric.  The
+Hilbert-space completion of `A/𝒩` is not constructed here.
+-/
+
+section PreHilbert
+
+variable {A : Type u} [Ring A] [StarRing A] [Algebra ℝ A] [StarModule ℝ A]
+
+/-- A null vector pairs to zero with everything, on both sides. -/
+theorem null_pair_eq_zero (tr : A →ₗ[ℝ] ℝ) (hpos : ∀ a : A, 0 ≤ tr (star a * a))
+    (hherm : ∀ a : A, tr (star a) = tr a) {x : A} (hx : tr (star x * x) = 0) (y : A) :
+    tr (star x * y) = 0 ∧ tr (star y * x) = 0 := by
+  have h := null_polar tr hpos hx y
+  have hs : tr (star y * x) = tr (star x * y) := by
+    rw [← hherm (star x * y), star_mul, star_star]
+  constructor <;> linarith
+
+/-- **The GNS form is well defined on `A/𝒩`.** -/
+theorem gns_form_well_defined (tr : A →ₗ[ℝ] ℝ) (hpos : ∀ a : A, 0 ≤ tr (star a * a))
+    (hherm : ∀ a : A, tr (star a) = tr a) {x x' y y' : A}
+    (hx : tr (star (x - x') * (x - x')) = 0) (hy : tr (star (y - y') * (y - y')) = 0) :
+    tr (star x * y) = tr (star x' * y') := by
+  have h1 := (null_pair_eq_zero tr hpos hherm hx y).2
+  have h2 := (null_pair_eq_zero tr hpos hherm hy x').2
+  have e1 : star y * (x - x') = star y * x - star y * x' := mul_sub _ _ _
+  have e2 : star x' * (y - y') = star x' * y - star x' * y' := mul_sub _ _ _
+  rw [e1, map_sub] at h1
+  rw [e2, map_sub] at h2
+  have s1 : tr (star y * x) = tr (star x * y) := by rw [← hherm, star_mul, star_star]
+  have s2 : tr (star y * x') = tr (star x' * y) := by rw [← hherm, star_mul, star_star]
+  linarith
+
+/-- **The GNS form is definite on `A/𝒩`**: `x` is null iff it pairs to zero
+with every `y`. -/
+theorem gns_form_definite (tr : A →ₗ[ℝ] ℝ) (hpos : ∀ a : A, 0 ≤ tr (star a * a))
+    (hherm : ∀ a : A, tr (star a) = tr a) (x : A) :
+    tr (star x * x) = 0 ↔ ∀ y : A, tr (star y * x) = 0 :=
+  ⟨fun hx y => (null_pair_eq_zero tr hpos hherm hx y).2, fun h => h x⟩
+
+/-- **Left multiplication descends to `A/𝒩`.** -/
+theorem gns_action_well_defined (tr : A →ₗ[ℝ] ℝ) (hpos : ∀ a : A, 0 ≤ tr (star a * a))
+    (hcyc : ∀ a b : A, tr (a * b) = tr (b * a)) (a : A) {x x' : A}
+    (hx : tr (star (x - x') * (x - x')) = 0) :
+    tr (star (a * x - a * x') * (a * x - a * x')) = 0 := by
+  rw [← mul_sub]
+  exact (markov_gns_null_ideal tr hpos hcyc).2.2.1 a _ hx
+
+omit [StarModule ℝ A] in
+/-- **The action is a `*`-action**: `⟨a x, y⟩ = ⟨x, a* y⟩`. -/
+theorem gns_action_adjoint (tr : A →ₗ[ℝ] ℝ) (a x y : A) :
+    tr (star (a * x) * y) = tr (star x * (star a * y)) := by
+  rw [star_mul, mul_assoc]
+
+/-- **The action is faithful on `A/𝒩`**: `a` sends every class to `0` iff
+`a ∈ 𝒩`. -/
+theorem gns_action_faithful (tr : A →ₗ[ℝ] ℝ) (hpos : ∀ a : A, 0 ≤ tr (star a * a))
+    (hcyc : ∀ a b : A, tr (a * b) = tr (b * a)) (a : A) :
+    (∀ b : A, tr (star (a * b) * (a * b)) = 0) ↔ tr (star a * a) = 0 := by
+  refine ⟨fun h => by simpa using h 1, fun ha b => ?_⟩
+  exact (markov_gns_null_ideal tr hpos hcyc).2.2.2 a b ha
+
+end PreHilbert
+
 /-! ### Removed 2026-08-30 — self-assuming projections
 
 - `markov_gns_embedding` — body was `⟨inst.repr, inst.repr_add, inst.repr_mul, inst.repr_faithful⟩`: the conclusion was the

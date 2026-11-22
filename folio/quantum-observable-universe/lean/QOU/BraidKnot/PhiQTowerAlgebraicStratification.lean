@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Powerset
+import Mathlib.Algebra.BigOperators.Ring.Finset
 
 /-!
 # Algebraic stratification of the Φ_q tower
@@ -143,6 +144,39 @@ theorem phi_q_tower_algebraic_stratification_of_pentagon
     exact hbig i (by omega)
   rw [hsplit, h1, ← h2, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_one]
   simp [hg, Finset.powersetCard_zero]
+
+/-! ### What pentagon ascension would have to mean
+
+`def:phi-q-piece` gives the stratum summand as `Φ_q(x_S)` with
+`Φ_q(x) = ∏_{m ≥ 0} (1 − q^m x)`.  Every finite truncation of that product
+vanishes only at a resonance, `q^m x = 1` for some `m`; in particular
+`Φ_q(0) = 1`.  So if `f S` is that summand, "`f S = 0` for `|S| ≥ 3`" is not a
+general fact: it holds only when every triple's argument is resonant.  The
+narrative (proof step 3) says instead that a level-3 term is *rewritten* into
+lower factors plus a residual at jet level `n + 1`; that is a statement about
+regrouping the tower, and the vanishing hypothesis of
+`phi_q_tower_algebraic_stratification_of_pentagon` is the bookkeeping form of
+it, not a consequence of the summand's definition.
+-/
+
+/-- The truncated quantum dilogarithm `∏_{m < N} (1 − q^m x)`. -/
+def phiQTrunc {R : Type u} [CommRing R] (q x : R) (N : ℕ) : R :=
+  ∏ m ∈ Finset.range N, (1 - q ^ m * x)
+
+/-- **A truncated `Φ_q` vanishes only at a resonance**: over a field (or any
+domain), `∏_{m < N} (1 − q^m x) = 0` iff `q^m x = 1` for some `m < N`. -/
+theorem phiQTrunc_eq_zero_iff {R : Type u} [CommRing R] [IsDomain R] (q x : R) (N : ℕ) :
+    phiQTrunc q x N = 0 ↔ ∃ m < N, q ^ m * x = 1 := by
+  unfold phiQTrunc
+  rw [Finset.prod_eq_zero_iff]
+  simp only [Finset.mem_range, sub_eq_zero]
+  exact ⟨fun ⟨m, hm, h⟩ => ⟨m, hm, h.symm⟩, fun ⟨m, hm, h⟩ => ⟨m, hm, h.symm⟩⟩
+
+/-- `Φ_q(0) = 1` at every truncation: a stratum whose argument is `0`
+contributes `1`, not `0`. -/
+theorem phiQTrunc_zero {R : Type u} [CommRing R] (q : R) (N : ℕ) :
+    phiQTrunc q 0 N = 1 := by
+  simp [phiQTrunc]
 
 /-! ### Removed 2026-08-30 — self-assuming projections
 

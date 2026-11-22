@@ -1,0 +1,102 @@
+{
+ "probe": "electron_tl_borromean_weights",
+ "photon": "1 + a s0 + b s1 + c s0 s1^-1",
+ "electron": "s0 s1 s0",
+ "quotient": "TL (trivial + 2-dim block)",
+ "V_block2": "[[-q**2, q], [-q, 1 - 1/q**2]]",
+ "E_block2": "[[0, -1], [-1, 0]]",
+ "iii": {
+  "gamma2_given_c": {
+   "a2": "-q**3*(c - 1)/((q - 1)*(q + 1)*(c*q**4 - c*q**2 + c - q**2))",
+   "b2": "-q*(c*q**4 - 2*c*q**2 + c - q**2)/((q - 1)*(q + 1)*(c*q**4 - c*q**2 + c - q**2))",
+   "c2": "c*q**2/(c*q**4 - c*q**2 + c - q**2)",
+   "lam": "q*(-c**2*q**2 + c*q**4 - c*q**2 + c - q**2)/((q - 1)*(q + 1)*(c*q**4 - c*q**2 + c - q**2))"
+  },
+  "lambda_given_c": "q*F1/((q^2-1)*(c(q^4-q^2+1)-q^2)),  F1 = -q^2 det(I+cV)",
+  "trivial_block_residual": "-(q**2 - q + 1)*(q**2 + q + 1)*(-c**2*q**2 + c**2 + c*q**4 - 2*c*q**2 + c - q**2)/((q - 1)*(q + 1)*(c*q**4 - c*q**2 + c - q**2))",
+  "TL_condition_F2": "(q^2-1) c^2 - (q^2-1)^2 c + q^2 = 0",
+  "roots": "c = [(q^2-1)^2 +- sqrt((q^2-1)((q^2-1)^3 - 4q^2))] / (2(q^2-1))",
+  "discriminant": "(q - 1)*(q + 1)*(q**3 - q**2 - q - 1)*(q**3 + q**2 - q + 1)",
+  "resultant_F2_F1": "q**6",
+  "resultant_F2_denominator": "-q**8",
+  "c_not_in_Q(q)": "discriminant has an odd-multiplicity factor, so the roots are quadratic irrationals over Q(q), not rational functions",
+  "reality": "disc = (q^2-1)(q^3-q^2-q-1)(q^3+q^2-q+1); for q>1 the last factor is (q-1)^3+4(q-1)^2+4(q-1)+2 > 0, so the roots are real iff q^3-q^2-q-1 >= 0, i.e. q >= the tribonacci constant (real root of q^3=q^2+q+1, bracketed in (18/10, 19/10)); at q0 ~ 1.11 the two roots are a complex-conjugate pair",
+  "rational_q_sanity": {
+   "11/10": {
+    "disc": "-101445519/100000000",
+    "real_roots": false
+   },
+   "2": {
+    "disc": "33",
+    "real_roots": true
+   },
+   "3": {
+    "disc": "3808",
+    "real_roots": true
+   }
+  }
+ },
+ "i_qh": {
+  "c": "(q - 1)*(q + 1)",
+  "F2(c)": "-q**2",
+  "F1(c)": "-1",
+  "TL_fits": false,
+  "block2_only_gamma2": [
+   "-q**3*(q**2 - 2)/((q - 1)*(q + 1)*(q**3 - q - 1)*(q**3 - q + 1))",
+   "-q*(q**6 - 3*q**4 + 2*q**2 - 1)/((q - 1)*(q + 1)*(q**3 - q - 1)*(q**3 - q + 1))",
+   "q**2*(q - 1)*(q + 1)/((q**3 - q - 1)*(q**3 - q + 1))"
+  ],
+  "block2_only_lambda": "-q/((q - 1)*(q + 1)*(q**3 - q - 1)*(q**3 - q + 1))",
+  "trivial_residual": "q**2*(q**2 - q + 1)*(q**2 + q + 1)/((q - 1)*(q + 1)*(q**3 - q - 1)*(q**3 - q + 1))"
+ },
+ "i_minus_h_over_q": {
+  "c": "-(q - 1)*(q + 1)/q**2",
+  "F2(c)": "-(q**8 - q**6 + 2*q**2 - 1)/q**4",
+  "F1(c)": "-q**4",
+  "TL_fits": false,
+  "block2_only_gamma2": [
+   "-q**3*(2*q**2 - 1)/((q - 1)*(q + 1)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1))",
+   "-q*(q**6 - 2*q**4 + 3*q**2 - 1)/((q - 1)*(q + 1)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1))",
+   "q**2*(q - 1)*(q + 1)/((q**3 - q**2 + 1)*(q**3 + q**2 - 1))"
+  ],
+  "block2_only_lambda": "q**7/((q - 1)*(q + 1)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1))",
+  "trivial_residual": "-(q**2 - q + 1)*(q**2 + q + 1)*(q**8 - q**6 + 2*q**2 - 1)/(q**2*(q - 1)*(q + 1)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1))"
+ },
+ "ii": {
+  "trV": "-q**2 + 1 - 1/q**2",
+  "detV": "1",
+  "product": "(1 - c c') I + (c + c' + c c' (1 - q^2 - q^-2)) V",
+  "reason": "product lies in span{I,V}; equal to lam*E forces beta*q + lam = 0 and -beta*q + lam = 0, so 2 lam = 0: lam = 0 (any q). Hence no factorisation E = lam gamma(0,0,c) gamma(0,0,c'), already on the 2-dim block alone, before the trivial block is used.",
+  "fits": false
+ },
+ "checks": {
+  "S1_S1inv": true,
+  "hecke_rel": true,
+  "ruled_product_is_V3": true,
+  "span_I_S0_S1_V_is_Mat2": true,
+  "block2_unique_solution": true,
+  "F1_is_minus_q2_detM1": true,
+  "lam_formula": true,
+  "triv_resid_formula": true,
+  "q4_q2_1_factor": true,
+  "lam_nonzero_on_F2": true,
+  "denominator_nonzero_on_F2": true,
+  "disc_factorisation": true,
+  "tribonacci_bracket": true,
+  "q3+q2-q+1_positive_for_q_gt_1": true,
+  "disc_not_square_in_Qq": true,
+  "sanity_q11/10_root_Add(Rational(21, 200": true,
+  "sanity_q2_root_Add(Rational(3, 2), ": true,
+  "sanity_q2_root_Add(Mul(Rational(1, ": true,
+  "sanity_q3_root_Add(Integer(4), Mul(": true,
+  "sanity_q3_root_Add(Mul(Rational(1, ": true,
+  "disc_neg_at_11_10": true,
+  "i_qh_F2_nonzero": true,
+  "i_minus_h_over_q_F2_nonzero": true,
+  "i_F2_at_qh_is_minus_q2": true,
+  "cayley_hamilton": true,
+  "ii_in_span_I_V": true,
+  "ii_offdiag": true
+ },
+ "all_checks_pass": true
+}

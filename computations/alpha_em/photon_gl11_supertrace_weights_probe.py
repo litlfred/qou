@@ -263,6 +263,28 @@ def main():
     checks.append(('tau(w) = q^e - (-q^-1)^e, e = exponent sum (writhe)', ok_exp))
     checks.append(('electron s1 s2 s1: tau = q^3 + q^-3',
                    sp.simplify(blocks('121')[1][0] - blocks('121')[1][2] - (q ** 3 + q ** -3)) == 0))
+    # Electron word and the mass-formula words (2026-11-22, option 1/2 of section 15).
+    th = sp.symbols('theta', real=True)
+    def split(w):
+        e, c = blocks(w)
+        tr = sp.simplify(y3 * c[0] + y21 * c[1] + y111 * c[2])
+        odd = sp.simplify((y3 - y111) / 2 * (c[0] - c[2]))
+        return tr, sp.simplify(tr - odd), odd
+    tr_e, ev_e, od_e = split('121')
+    checks.append(('electron: hook trace 0, tr_M = y3 q^3', blocks('121')[1][1] == 0
+                   and sp.simplify(tr_e - y3 * q ** 3) == 0))
+    checks.append(('electron at q=1: tr_M = iota-odd part = 1/2, iota-even part 0',
+                   sp.limit(tr_e, q, 1) == sp.Rational(1, 2) and sp.limit(od_e, q, 1) == sp.Rational(1, 2)
+                   and sp.limit(ev_e, q, 1) == 0))
+    checks.append(('Borromean (s1 s2^-1)^3 and 4_1 (s1 s2^-1)^2: iota-odd part 0',
+                   split('1b1b1b')[2] == 0 and split('1b1b')[2] == 0))
+    u = sp.exp(sp.I * th)
+    def on_circle(x):
+        return sp.simplify(sp.expand_complex(x.subs(q, u)))
+    checks.append(('unit circle: y3 is real', sp.simplify(sp.im(on_circle(y3))) == 0))
+    checks.append(('unit circle: electron iota-odd part is real, T35 iota-odd part is imaginary',
+                   sp.simplify(sp.im(on_circle(od_e))) == 0
+                   and sp.simplify(sp.re(on_circle(split('1212121212')[2]))) == 0))
     for n, c in checks:
         print(('PASS ' if c else 'FAIL ') + n)
     return 0 if all(c for _, c in checks) else 1

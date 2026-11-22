@@ -176,3 +176,342 @@ The owner picked all three options. They are reconciled as follows:
 (criterion on the coordinate only, element scaled by its identity coefficient).
 It is **retired** as a derivation route (status note, tag `retired`), with the
 negative result kept in the block and here. PR #8964 is marked ready for review.
+
+## Round 4 (2026-11-22): the three follow-up options
+
+Owner, verbatim: *"Merge and try all"*. PR #8964 was merged (rebase) and the
+three remaining options were tried.
+
+1. **k = 0.** Already measured by the pre-registered probe
+   `computations/probes/proton_q3_normaliser/` (arm A1): with `[3]_q!` the
+   proton-pinned `q₀` moves to `1.13154` (+1.94 %), and `m_p` at the muon pin
+   is `1285.39` MeV (+37.0 %). Nothing new was computed.
+2. **The proton from the convention-D trace.** Pre-registered in
+   `computations/probes/proton_d_trace_normaliser/PREREGISTRATION.md` before
+   the run. The production `tr_M` is already the registry's convention-D value
+   (gate passes at 1e-30), so the question reduces to the normaliser. Closure
+   normalisers supplied by D, against `m_p` at the muon pin: `tr(1) = 1`
+   −78.2 %, `[2]_q²` −9.7 %, `[2]_q³` +82.2 %, `(1/z_D)²` −40.7 %. As
+   expected, none reproduces `m_p`.
+3. **Labelling.** `conj:proton-mass-substrate-identity` now states that the
+   identity is fitted in the normaliser, and that its 0.24 ppm residual is at
+   the muon pin (at the proton pin it holds exactly, by construction).
+
+## Round 5 (2026-11-22): does the photon form fix the scale of x₋?
+
+**Question.** The `/q³` in `F_Bor` is the scaling of `x₋ = Σ_w (−q)^{−ℓ(w)} σ_w` that gives
+it identity coefficient 1. The photon `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` has identity
+coefficient 1 by definition. If `x₋` were a photon product at a *forced* scale, the
+normaliser would be inherited from the photon rather than chosen.
+
+**Result: scope-(a) negative, two halves.** Exact symbolic arithmetic at generic `q`,
+[`computations/probes/proton_q3_photon_factorisation/`](../../computations/probes/proton_q3_photon_factorisation/proton_q3_photon_factorisation_probe.py).
+
+1. **Chiral photons `γ(0,0,c)` never give `x₋`.** `σ₀σ₁⁻¹` acts as `q·q⁻¹ = 1` in the
+   trivial representation and as `(−q⁻¹)(−q) = 1` in the sign representation, so every
+   product of chiral photons, of any length, has equal trivial and sign images. A nonzero
+   multiple of `x₋` has trivial image 0 and sign image `1 + 2q⁻² + 2q⁻⁴ + q⁻⁶ ≠ 0`. This is
+   the family the Borromean core `V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)` lives in.
+2. **General two-photon products give `x₋` at any scale.** `γ·γ = λ·x₋` has a
+   two-parameter family of solutions, and `λ` varies continuously on it (at `q = 11/10`:
+   0.13832…, 0.11467…, 0.03135… at three sample points; one point cross-checked in the
+   six-dimensional regular representation). So the photon definition does not fix `λ`.
+
+**What this does not exclude.** A further rule that singles out one point of the family
+(for example a bar-invariance or unit condition on the photon parameters) could still
+fix `λ`. No such rule is in the corpus. Not formalised in Lean: half 1 is a one-line
+character evaluation, and half 2 is a statement about a solution family that the probe
+checks exactly.
+
+**Status of `/q³` after Round 5:** still chosen, not derived; the photon route does not
+supply it.
+
+## Round 6 (2026-11-22): what a bar-invariant photon would imply
+
+Owner: *"Photon may have bar invariance ... But what would that mean about the particles it
+generates under γγ?"* Exact check at generic `q` (bar: `q ↦ q⁻¹`, `σ_i ↦ σ_i⁻¹`). In the
+basis `{1, σ₀, σ₁, σ₀σ₁}`, with `h = q − q⁻¹` and `f̄(q) = f(q⁻¹)`:
+
+    γ      = 1 + (φ₀ − hφ₀₁)σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁
+    bar(γ) = (1 − h(φ̄₀ + φ̄₁)) + φ̄₀σ₀ + (φ̄₁ − hφ̄₀₁)σ₁ + φ̄₀₁σ₀σ₁
+
+1. **Strict invariance `bar(γ) = γ` forces `φ₀ + φ₁ = 0`** (identity coefficient), together
+   with `φ̄₀₁ = φ₀₁` and `φ̄₀ = φ₀ − hφ₀₁`. Then `χ_triv(γ) = 1 + q(φ₀+φ₁) + φ₀₁ = 1 + φ₀₁ =
+   χ_sign(γ)`. So every product of bar-invariant photons has equal trivial and sign images,
+   and it can never be a nonzero multiple of `x₋` (or of `x₊`).
+2. **It excludes the chiral vertex.** `bar(σ₀σ₁⁻¹) = σ₀⁻¹σ₁`, its mirror, and
+   `bar(V³) ≠ V³`. A nonzero chiral photon `γ(0,0,c)` is never bar-invariant, because
+   invariance would need `φ₀ = hφ₀₁` with `φ₀ = 0`. So strict invariance would forbid the
+   γγ factorisation of the Borromean core `V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)`. Every γγ particle
+   would equal its own mirror.
+3. **The weaker reading holds: the photon family is closed under bar up to scale.**
+   `bar(γ)` always lies in the photon span. Its identity coefficient is `1 − h(φ̄₀+φ̄₁)`, so
+   after rescaling it is again a photon. Example: `bar(γ(0,0,c)) = γ(hc̄, −hc̄, c̄)`. So bar
+   pairs each photon with a mirror photon (matter with antimatter, per AGENTS.md §7b). The
+   identity-coefficient-1 normalisation is not bar-stable. This matches Round 2:
+   `bar(x₋) = q⁶x₋`, and the bar-stable normaliser is `[3]_q!`, not `[3]_q!/q³`.
+
+### Round 6, formalised (2026-11-22)
+
+All Round 6 assertions are proved in
+[`QOU/MassTheory/PhotonBarClosure.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/PhotonBarClosure.lean).
+lean-direct (`-DautoImplicit=false -s 65536`) exits 0. The file has no `sorry`, and every
+declaration depends only on `propext`, `Quot.sound` and `Classical.choice`. The setting is an
+`R`-algebra with units `σ₀, σ₁`, `σᵢ⁻¹ = σᵢ − h`, and a `θ`-semilinear ring map `b` with
+`b σᵢ = σᵢ⁻¹`. No other relation of `H₃(q)` is assumed.
+
+| claim | declaration |
+|---|---|
+| `b γ(φ) = γ(barColour φ) + (s − 1)·1`, with `s = 1 − h(θφ₀ + θφ₁)` | `bar_photon` |
+| closure up to scale: `b γ = s • γ(s⁻¹ • barColour φ)` | `bar_photon_eq_smul` |
+| `b γ(0,0,c) = γ(hθc, −hθc, θc)` | `bar_chiral` |
+| `b(σ₀σ₁⁻¹) = σ₀σ₁⁻¹ + hσ₀ − hσ₁` | `bar_vertex` |
+| strict invariance forces `φ₀ + φ₁ = 0` (independence, `h` a non-zero-divisor) | `phi_sum_zero_of_bar_fixed` |
+| a chiral photon is bar-fixed iff `c = 0` | `chiral_bar_fixed_iff` |
+| the vertex is not bar-fixed | `vertex_not_bar_fixed` |
+| characters with `χσ₀ = χσ₁` agree on products of `φ₀+φ₁=0` photons, so no such product is `λx` with `λ ≠ 0` when `χ₁x = 0 ≠ χ₂x` | `chars_agree_on_products`, `no_multiple_of_split` |
+| trivial and sign characters intertwine bar with `θ` on photons | `char_bar_photon` |
+| `(σ₀⁻¹σ₁)³ ≠ (σ₀σ₁⁻¹)³` on the 3-dim weight space (`q² ≠ 1`, `q⁴ ≠ −1`) | `bar_borromean_ne` |
+
+## Round 7 (2026-11-22): a norm instead of a fixed 1
+
+Owner: *"maybe … the photon have Norm one? So there isn't a fixed 1? But photon lives on a
+sphere? Then maybe we can see more symmetries?"* This round is an exact sympy computation at
+generic `q`; it is not formalised.
+
+Replace the fixed identity coefficient 1 by homogeneous coordinates `(e, φ₀, φ₁, φ₀₁)`. The
+natural norms on `H₃(q)` are the block norms `N = (χ_triv, χ_sign, det ρ₂)`. Their product,
+`χ_triv · χ_sign · det ρ₂`, is the reduced norm, a quartic form.
+
+1. **All three block norms are bar-equivariant on photons:** `N(b γ) = θ N(γ)`, checked
+   symbolically for each component. They are multiplicative, so "norm one" is a condition
+   that bar preserves and products preserve. The identity coefficient is preserved by
+   neither.
+2. **Norm-one photons cannot produce the proton's projector.** `x₋` and every block
+   idempotent are zero divisors, with norm `0`. So no product of norm-one photons, nor of
+   any units, is a nonzero multiple of `x₋`. The scale of `x₋` is fixed instead by
+   idempotency: `e₋ = x₋ / c_sign` with `c_sign = q⁻³[3]_q!`. `e₋` is bar-invariant, since
+   `b x₋ = q⁶ x₋` and `θ c_sign = q³[3]_q!`. Its identity coefficient is `q³/[3]_q!`. So
+   `F_Bor`'s normaliser `[3]_q!/q³` is `1/(identity coefficient of e₋)`, the Schur element
+   already identified (`ProtonQ3SchurElement`). A norm adds nothing new on `/q³`.
+3. **The Borromean photons are a conjugate pair.** The two chiral factors of
+   `V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)` have block norms `(q², q², q⁻²)` and `(q⁻², q⁻², q²)`.
+   Their weights are related by `θ(qh) = −q⁻¹h`, so `V³ = γ(0,0,c)·γ(0,0,θc)` with
+   `c = qh`, a norm-like product `γ·γ^θ`, where `θ` acts on coefficients only. `V` itself
+   has block norm `(1,1,1)`. This is an observation; whether other γγ particle words have
+   the form `γ·γ^θ` is untested.
+
+## Round 8 (2026-11-22): which particles are γγ products, and why V³ is γ·γ̄
+
+Owner: *"Aren't all of the other particles generated from the photons so they would
+necessarily need to have that form? … Can we actually generate the particles that we have
+now?"* Exact sympy at generic `q`, except where marked numerical.
+[`electron_two_photon_probe.py`](../../computations/probes/proton_q3_photon_factorisation/electron_two_photon_probe.py).
+
+1. **Why `V³ = γ·γ̄`.** In `H₃(q)`, `V³ = 1 + h²V − h²V²` with `V = σ₀σ₁⁻¹`. Factoring the
+   quadratic `1 + h²x − h²x²` as `(1 + αx)(1 + βx)` gives `α + β = h²` and `αβ = −h²`, so
+   `{α, β} = {qh, −q⁻¹h}`. The coefficients involve only `h²`, and `θ(h²) = h²`, so `θ`
+   permutes the two roots. The conjugate pair therefore comes from the bar involution acting
+   on the coefficients of `V`'s polynomial: a Galois-type symmetry of this one element.
+2. **Not every γγ product has this form.** `V³` itself has a continuous family of other
+   two-photon factorisations, with varying scale and non-chiral weights (60-digit mpmath
+   root finding at `q = 1.1`, five distinct real solutions found). The Borromean pair is
+   the one point with scale 1 and both factors chiral.
+3. **The electron `σ₀σ₁σ₀` is not a two-photon product.** No `γ₁γ₂` with any weights,
+   complex allowed, is a nonzero multiple of `σ₀σ₁σ₀`. Because `σ₀σ₁σ₀` is a unit, `γ₁` must
+   be invertible. A lex Gröbner basis of the two remaining conditions forces `b = c/q` or
+   `b = −cq`, and on both branches every solution has `det ρ₂(γ₁) = 0`. This is the algebra-level
+   counterpart of the corpus's word-level `gammaGamma_length_even`. Three or more photons are
+   untested.
+4. **Mass computations: no number moves.** At `q = 1`, `h = 0`, both Borromean photons are the
+   bare photon and `V³ = 1`. This agrees with the working assumption `m_p = m_n` at `q = 1`
+   (bean `qou-az9l`, `FlipSymmetryAtOne`). A rule "particle words are norms `γ·γ̄`" would be a
+   non-census way to select words (`qou-ales`). It is a hypothesis only, and point 3 shows it
+   does not cover the electron as a two-photon word.
+
+## Round 9 (2026-11-22): the electron from photons, in Lean and with three factors
+
+Owner: *"Both. What does Breit–Wheeler / Feynman diagram say about producing electrons from
+constituents, particularly photons?"*
+
+1. **Two photons: proved in Lean.**
+   [`QOU/MassTheory/ElectronNotTwoPhoton.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/ElectronNotTwoPhoton.lean),
+   generic field `R` with `q ≠ 0`, `q² + 1 ≠ 0`, `q² ± q + 1 ≠ 0`, no `sorry`, lean-direct
+   exit 0. `electron_not_two_photon` says: if `γ(a,b,c)·γ(a',b',c') = λ·σ₀σ₁σ₀` holds on the
+   2-dim block (where `σ₀σ₁σ₀` is the antidiagonal `−1`, `electronMat_eq`) and under the
+   trivial (`↦ q³`) and sign (`↦ −q⁻³`) characters, then `λ = 0`. The proof is a polynomial
+   certificate: `λ·det γ` and `det γ·det γ' + λ²` are explicit combinations of the six block
+   equations, so `λ³ = 0`. The same file proves that `S0, S1` satisfy the Hecke and braid
+   relations and that `V³ = 1 + h²(V − V²)` on the 2-dim block (`vertex_cube`). **Not
+   formalised:** the Wedderburn step "an identity in `H₃(q)` holds iff it holds in the three
+   blocks". It is taken as the hypothesis shape.
+2. **Three photons: yes, numerically.**
+   [`electron_three_photon_probe.py`](../../computations/probes/proton_q3_photon_factorisation/electron_three_photon_probe.py),
+   mpmath 60 dps at the sample point `q = 11/10` (a value of the formal variable, not an
+   anchor). With `γ₃ = γ(3/10, −7/10, 9/20)` fixed and `λ = 1`, Newton converges to residual
+   below `10⁻⁵⁰`, the Jacobian is nonsingular (`det J ≈ 453`) and all three photons are
+   invertible in every block. So `σ₀σ₁σ₀ = γ₁γ₂γ₃` has an isolated solution there. This is
+   numerical evidence, not a proof. An exact solution was not found.
+3. **Any `n ≥ 3` photons then work**, by padding with the bare photon `γ(0,0,0) = 1`. One photon
+   fails because `σ₀σ₁σ₀` is not in `span{1, σ₀, σ₁, σ₀σ₁⁻¹}`. So the count is: 1 and 2 fail,
+   3 and more succeed.
+4. **Correction to Round 8 point 3.** Round 8 called the two-photon negative "the algebra-level
+   counterpart of `gammaGamma_length_even`". That overstates it. `H₃(q)` has no parity grading
+   at generic `q`: `σ² = hσ + 1` mixes word lengths 2 and 1. And point 3 shows three photons
+   succeed, which a parity law would also allow, while four also succeed, which it would forbid.
+   The two-photon obstruction is a statement about two factors, not about even length. Nothing
+   else cites the Round 8 wording.
+5. **Breit–Wheeler and Feynman diagrams (comparison only; no proof uses this).**
+   In QED, `γγ → e⁺e⁻` (Breit–Wheeler, 1934) has two tree diagrams, electron exchange in the
+   `t` and `u` channels, and a threshold `s ≥ (2m_e)²`. It was seen with many laser photons
+   plus one high-energy photon at SLAC E144 (1997). Photons are neutral and a vertex conserves
+   charge, so **no number of photons makes a single electron**: they make pairs. Furry's
+   theorem (odd-photon closed loops vanish by C-parity) concerns loops, not this.
+   Set against the model: products in `H₃(q)` carry no charge bookkeeping, so the algebra lets
+   three photons multiply to the electron word, which physics forbids as a process. If photon
+   products are meant to model production, the model needs a charge (or lepton-number)
+   grading that photons do not carry and `σ₀σ₁σ₀` does. If the products are only a way to
+   **select** words (`qou-ales`), Breit–Wheeler says the natural two-photon target is a
+   particle–antiparticle pair (for example an electron word times its mirror), not the
+   electron alone. Both readings are open. Neither changes a computed number.
+
+## Round 10 — 2026-11-22: charge, norm 1, and the electron in the TL quotient
+
+Photon throughout (owner ruling 2026-11-20): `γ(a,b,c) = 1 + a·σ₀ + b·σ₁ + c·σ₀σ₁⁻¹`.
+
+### 10.1 Photons conserve charge (Lean, sorry-free)
+
+`QOU/MassTheory/PhotonChargeConservation.lean` works on `(C²)^⊗3` with the Jimbo
+check-R matrices (`ee ↦ q·ee`, `ud ↦ du`, `du ↦ ud + h·du`, `h = q − q⁻¹`), over a
+generic field.
+
+- `photon_prod_preserves`: every finite product of photons maps the span of basis
+  vectors with `#u = n` into itself. The proton weight space is `n = 2` (K = q) and the
+  neutron is `n = 1` (K = q⁻¹), with charge per strand `1/6 + T³`. So photon products
+  conserve charge. The proof is Schur–Weyl in its easy direction: every element of the
+  algebra generated by `σ₁, σ₂` commutes with each `diag(f(#u))` (`adjoin_commute`).
+- `hecke_sig2`: `σ₂² = h·σ₂ + 1` on this representation.
+- Not in Lean: the match of `σ₁, σ₂` restricted to `#u = 2` with the matrices in
+  `NucleonWeightSpaceTraces`. Checked by hand only.
+
+### 10.2 H₃(q) itself has no U(1) charge (Lean)
+
+`no_scaling_of_hecke`: an algebra map that scales a generator `σ ↦ t·σ` and respects
+`σ² = h·σ + 1` forces `t = 1` (for `h ≠ 0`). So charge cannot be an internal grading of
+H₃(q). It lives only in a representation, as in 10.1.
+
+### 10.3 "Norm 1" for a single word
+
+`trivWord_eq`: the trivial block of a word is `q^writhe`. The block norms of a word are
+`(q^w, (−q⁻¹)^w, (−1)^w)`. All three equal 1 iff `w = 0` (`trivWord_eq_one_iff`, for q
+not a root of unity). With `writhe_eq_zero_of_neutral` (PhotonU1NeutralCut) this gives:
+neutral ⇒ norm 1. The converse fails, for example `σ₀²σ₁⁻²` has writhe 0 and is not
+neutral. So "norm 1" is weaker than the neutrality cut of the 2026-11-21 ruling.
+
+### 10.4 Quantum versions of norm 1 (computed, not ruled)
+
+Let `†` be the anti-involution `q ↦ q⁻¹` on coefficients, `σ ↦ σ⁻¹`, words reversed.
+
+| option | statement | status |
+|---|---|---|
+| A. block norm | each linear character is 1 | 10.3; equals writhe 0 on words |
+| B. bar norm | `γγ† = 1` | The two ruled Borromean photons `γ(0,0,qh)`, `γ(0,0,−q⁻¹h)` give `γγ† = 1` on the trivial and sign blocks and det 1 on the 2-dim block, but not the identity there (sympy, scratch `qnorm.py`) |
+| B′. Galois norm | `N(γ)·θ(N(γ)) = 1`, θ: q ↦ q⁻¹ | This is the relative norm of `Q(q)/Q(q+q⁻¹)`. By Hilbert 90 its kernel is `{x/θ(x)}`, for example `q² = q/θ(q)`. Fits the Borromean pair |
+| C. unitarity at \|q\| = 1 | θ becomes complex conjugation | gives a genuine compact unit sphere; not computed |
+| D. Markov sphere | `τ(γγ†) = 1` at convention D | not computed |
+| E. Hopf / antipode | photon group-like, tied to K | speculative; asked of the α_em thread |
+
+General photon, trivial and sign blocks of `γγ†`:
+`triv = (a+b+cq+q)(aq+bq+c+1)/q`, `sign = −(−a−b+cq+q)(aq+bq−c−1)/q`.
+
+### 10.5 The electron as a photon product: TL changes the answer
+
+- **H₃(q), all three blocks:** not a two-photon product (Lean,
+  `electron_not_two_photon`); a three-photon product (rigorous now: Krawczyk interval
+  test at q = 11/10, box radius 1e-20, `K` strictly inside; probe
+  `electron_three_photon_krawczyk.py`).
+- **TL quotient (trivial + 2-dim block only):** this is what `(C²)^⊗3` sees. There is
+  no sign block in Schur–Weyl for sl₂, and convention D has `y_(1³) = 0`. Here the
+  electron **is** a two-photon product, exactly, at generic q. Probe
+  `electron_two_photon_tl_probe.py` (exact sympy; all checks pass). Two families:
+  - `γ₁ = γ(0, −(q⁴−4q²+2)/(q(q²−q−1)(q²+q−1)), 1)`,
+    `λ = (q²−2)(2q²−1)/(q(q²−1)(q²−q−1)²(q²+q−1)²)`;
+  - `γ₁ = γ(0, −q³/(q⁴−q²+1), −1)`, `λ = q/((q²−1)(q⁴−q²+1)²)`.
+
+  The sign-block mismatch is nonzero in both, which is the H₃ negative again.
+- So the two-photon negative is a statement about the sign block. In the 6-strand
+  U_q(sl₂) picture of the lepton-pair ruling the sign block is absent, and the negative
+  does not apply. The TL solutions use rational-function photon weights, not the ruled
+  Borromean weights `qh, −q⁻¹h`. They are existence results, not a selection.
+- Not done: photons placed at other positions on 6 strands. A 6-strand photon is not
+  ruled; any such extension would be the agent's.
+
+### 10.6 Pair word
+
+In B₃, `σ₀σ₁σ₀ · (σ₀σ₁σ₀)⁻¹ = 1 = γ(0,0,0)²`. The Breit–Wheeler pair test is trivial
+there. The meaningful version is the 6-strand one (e⁻ ⊔ ν̄ ⊔ unknot), which needs a
+6-strand photon placement that is not ruled.
+
+### 10.7 Drafted wording for the 2026-11-21 neutrality ruling (for owner approval only)
+
+The ledger row says "whole-word U(1) neutrality". 10.2 shows H₃ has no U(1) grading and
+10.3 shows the cut is stronger than writhe 0. Draft, not applied:
+
+> **The γγ word is selected by whole-word linking neutrality** (the central colouring of
+> QEDHigherOrderCovariance §P applied to the whole braid: the word's net linking under
+> that colouring is zero), then reading-3 Frobenius selection. It implies writhe 0
+> (block norm 1) but is strictly stronger. It is not a U(1) grading of H₃(q), which has
+> none (`no_scaling_of_hecke`); charge is conserved only in the `(C²)^⊗3` representation
+> (`photon_prod_preserves`).
+
+No ledger row is edited until the owner approves.
+
+## Round 11 — 2026-11-22: owner "Do all" follow-ups
+
+Owner approved the "linking neutrality" wording (ledger row revised and a dated row
+added). The other items:
+
+### 11.1 Lean: the TL two-photon electron
+
+`QOU/MassTheory/ElectronTwoPhotonTL.lean` (lean-direct exit 0, axioms propext /
+Classical.choice / Quot.sound; generic field). For the family
+`γ₁ = γ(0, −q³/(q⁴−q²+1), −1)` with `λ = q/((q²−1)(q⁴−q²+1)²)`, it proves
+`electron_two_photon_block`, `electron_two_photon_triv`, `lam_ne_zero`, and
+`electron_two_photon_sign_defect` (sign mismatch
+`= (q²+1)(q²−q+1)(q²+q+1)/(q²(q²−1)(q⁴+1))`). These are block identities; the bridge
+to H₃(q)'s TL quotient as an algebra is not formalised (same as the sibling file).
+Checking it lean-direct needs an olean for `ElectronNotTwoPhoton`, built the same way
+first.
+
+### 11.2 Do the ruled Borromean weights fit the TL two-photon electron? No.
+
+Probe `electron_tl_borromean_weights_probe.py` (exact sympy, 27/27 checks):
+- With `γ₁ = γ(0,0,c)` the 2-dim block fixes `γ₂, λ` uniquely; the trivial block then
+  requires `F2(c) = (q²−1)c² − (q²−1)²c + q² = 0`. Its discriminant
+  `(q²−1)(q³−q²−q−1)(q³+q²−q+1)` is not a square in Q(q), so the admissible chiral
+  `c` are quadratic irrationals, complex at q₀ (real only for q at or above the
+  tribonacci constant). The partner `γ₂` is never chiral.
+- The ruled `c = qh` gives `F2 = −q²`; `c = −q⁻¹h` gives `F2 = −(q⁸−q⁶+2q²−1)/q⁴`.
+  Both nonzero for q > 1.
+- Two chiral photons `γ(0,0,c)γ(0,0,c′)` lie in span{1, V} and cannot equal `λE` for
+  any `λ ≠ 0`, even on the 2-dim block alone.
+- Reverse order (ruled photon as `γ₂`, checked in scratch): trivial-block residuals
+  `q²(q²−2)(q²−q+1)(q²+q+1)/(q²−1)` for `qh` and
+  `−(q²−q+1)(q²+q+1)(q⁴−q²+1)/(q²(q²−1))` for `−q⁻¹h`. Nonzero at generic q and at
+  q₀; the first vanishes only at q² = 2.
+
+### 11.3 Quantum norm options C and D
+
+Probe `quantum_norm_cd_probe.py` (exact sympy, 30/30 checks):
+- **C (unitarity, |q| = 1):** the unique invariant Hermitian form on the 2-dim block is
+  `H = [[1, −q/(q²+1)], [−q/(q²+1), 1]]`, positive for |θ| < π/3. Under it the adjoint
+  of σ is σ⁻¹, so unitarity equals `γγ† = 1`. Each Borromean photon is unitary on the
+  1-dim blocks, not on the 2-dim block. Their product is unitary only because it is
+  the braid word V³. Among chiral photons only `c = 0` is unitary on all blocks.
+- **D (Markov sphere, convention D):** `y₃ = (q⁴+1)/(q²+1)²`, `y₂₁ = q²/(q²+1)²`,
+  `y₁₁₁ = 0`. Each Borromean photon gives
+  `τ(γγ†) = −(q⁸−2q⁶−2q⁴−2q²+1)/(q²(q²+1)²)` (≈ 0.9671 at the proton q₀), not 1.
+  The product gives 1, again only as a braid word.
+
+So no quantum norm-1 option singles out the individual ruled photon weights; every
+option is satisfied by their product for the trivial reason that it is a braid word.
