@@ -177,8 +177,11 @@ theorem completing_the_square_substrate {R : Type u} [CommRing R]
          docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          docs/coordination/1ppq-qbeta.md (session log 2026-06-03)
 
-    **Status.** Substrate-model proof complete (sorry-free).  General
-    H_n(R, q) lift deferred to follow-up PR. -/
+    **Status.** This declaration is only the substrate congruence
+    `X = S → X·X = S·S`; it does not prove the minimum-norm claim.  The
+    claim itself is `QOU.QBeta.MarkovFrobeniusCollapse.t_beta_collapse`
+    (`t-beta-markov-frobenius-collapse.lean`), derived from positivity
+    and non-degeneracy of the twisted form `τ(X·Y†)` (bean `qou-uu6g`). -/
 theorem t_beta_markov_min_frobenius_collapse_substrate {R : Type u} [CommRing R]
     (S X : R) (h_constraint : X = S) :
     -- Min Frobenius norm squared = S²; attained at X = S.
