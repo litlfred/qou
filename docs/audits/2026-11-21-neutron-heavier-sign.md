@@ -667,3 +667,26 @@ problems, not literature gaps.
 
 **Scope.** Algebraic identity, proved. Nothing here fixes s² or the Z mass; no number is claimed.
 Tower status: not a tower computation.
+
+## §30 Colour on the strand does not move the p/n readout (2026-11-22, owner: "Merge and continue")
+
+The lead: if colour travels with the strand, the baryon trace of a word is the colour-singlet
+twist of the flavour trace, and that twist could flip a sign in the p/n split. On colour singlets
+there are two ways to write the strand letter (PR #9107, `ColourSingletSignTwist`,
+`coideal_mul_tensor`):
+
+- **Tensor route, raw letter.** X = −q⁻¹·b. Every letter is multiplied by the same scalar, so a fixed
+  word of length L has every sector trace multiplied by (−q⁻¹)^L. The ratio T_X/T_1 in each sector
+  is unchanged, so pp, pn, np and nn are exactly the flavour values. The owner ruling on #9107 makes
+  b = −q·X the bond letter, which removes even the scalar.
+- **gl₆ coideal route (the Hecke mirror).** s = −b⁻¹. This is not a scalar. But the mirrored core
+  still commutes with U_q on each block, since an inverse of a commuting operator commutes, so the
+  Lean result of §28 (`pairReadout_pp_eq_nn_of_blockData`, every U_q-commuting core) already gives
+  pp = nn for the q-Casimir coupling. `np_gaudin_colour_mirror_probe.py` recomputes the q-Casimir
+  and the KZ monodromy M with b ↦ −b⁻¹ in ℤ[q, q⁻¹], and both give pp = nn identically in q.
+
+So neither colour route breaks the u ↔ d reflection, and colour cannot supply the Coulomb ordering
+p < n through these couplings. The missing ingredient is still the U(1)_em grading of §28–§29.
+
+**Scope.** Scope-(a) for M under the mirror (exact symbolic computation, not Lean). The tensor-route
+statement is the scalar-cancellation argument above. Tower status: n = 6 only. No empirical input.
