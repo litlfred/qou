@@ -160,6 +160,79 @@ theorem graded_trace_residue_split_of_section
 
 end FilteredSplit
 
+/-! ### The split over a whole finite filtration
+
+The step theorem above handles one quotient `J^ℓ/J^{ℓ+1}`.  Over a finite
+filtration `J 0 ⊇ J 1 ⊇ ⋯ ⊇ J N = 0` the step is iterated.  At each level the
+section composed with the symbol is a single linear map `e ℓ : M → M`; the only
+property used is that `e ℓ` lifts the symbol, i.e. `m − e ℓ m ∈ J (ℓ+1)` for
+`m ∈ J ℓ`.  Starting from `x ∈ J 0`, the successive residues are
+`r 0 = x`, `r (ℓ+1) = r ℓ − e ℓ (r ℓ)`.  Then `r ℓ ∈ J ℓ` for every `ℓ`, and
+
+    x = Σ_{ℓ<k} e ℓ (r ℓ) + r k,
+
+so `τ x = Σ_{ℓ<k} τ(e ℓ (r ℓ)) + τ(r k)` for any linear `τ`: the graded parts
+of the first `k` levels plus the residue, which lies in `J k`.  At `k = N` the
+residue is `0` and `τ x` is the sum of the graded parts alone.  Taking
+`e ℓ m = s_ℓ(σ_ℓ m)` with the section of `graded_trace_residue_split_of_section`
+recovers the block's level-by-level split.
+-/
+
+section FilteredTower
+
+variable {R : Type u} [CommRing R] {M : Type*} [AddCommGroup M] [Module R M]
+
+/-- The successive residues `r 0 = x`, `r (ℓ+1) = r ℓ − e ℓ (r ℓ)`. -/
+def filtrationResidue (e : ℕ → M →ₗ[R] M) (x : M) : ℕ → M
+  | 0 => x
+  | ℓ + 1 => filtrationResidue e x ℓ - e ℓ (filtrationResidue e x ℓ)
+
+/-- Each residue lies in its filtration level. -/
+theorem filtrationResidue_mem (J : ℕ → Submodule R M) (e : ℕ → M →ₗ[R] M)
+    (he : ∀ ℓ, ∀ m ∈ J ℓ, m - e ℓ m ∈ J (ℓ + 1)) {x : M} (hx : x ∈ J 0) :
+    ∀ ℓ, filtrationResidue e x ℓ ∈ J ℓ
+  | 0 => hx
+  | ℓ + 1 => he ℓ _ (filtrationResidue_mem J e he hx ℓ)
+
+/-- Telescoping: `x = Σ_{ℓ<k} e ℓ (r ℓ) + r k`. -/
+theorem filtrationResidue_telescope (e : ℕ → M →ₗ[R] M) (x : M) :
+    ∀ k, x = ∑ ℓ ∈ Finset.range k, e ℓ (filtrationResidue e x ℓ) + filtrationResidue e x k
+  | 0 => by simp [filtrationResidue]
+  | k + 1 => by
+    rw [Finset.sum_range_succ, filtrationResidue]
+    have h := filtrationResidue_telescope e x k
+    calc x = ∑ ℓ ∈ Finset.range k, e ℓ (filtrationResidue e x ℓ) + filtrationResidue e x k := h
+      _ = _ := by abel
+
+/-- **Graded-trace residue split over a finite filtration**
+([`prop:graded-trace-residue-split`]).  Let `J : ℕ → Submodule R M` be a
+filtration with `J N = ⊥`, and let each `e ℓ` lift the symbol at level `ℓ`
+(`m − e ℓ m ∈ J (ℓ+1)` for `m ∈ J ℓ`).  For `x ∈ J 0` and linear `τ`:
+
+1. for every `k`, `τ x = Σ_{ℓ<k} τ(e ℓ (r ℓ)) + τ(r k)` with `r k ∈ J k`;
+2. `τ x = Σ_{ℓ<N} τ(e ℓ (r ℓ))`: the trace is the sum of its graded parts. -/
+theorem graded_trace_residue_split_filtration (J : ℕ → Submodule R M) (N : ℕ)
+    (hN : J N = ⊥) (e : ℕ → M →ₗ[R] M) (he : ∀ ℓ, ∀ m ∈ J ℓ, m - e ℓ m ∈ J (ℓ + 1))
+    (τ : M →ₗ[R] R) {x : M} (hx : x ∈ J 0) :
+    (∀ k, filtrationResidue e x k ∈ J k ∧
+      τ x = ∑ ℓ ∈ Finset.range k, τ (e ℓ (filtrationResidue e x ℓ))
+        + τ (filtrationResidue e x k)) ∧
+    τ x = ∑ ℓ ∈ Finset.range N, τ (e ℓ (filtrationResidue e x ℓ)) := by
+  have hk : ∀ k, filtrationResidue e x k ∈ J k ∧
+      τ x = ∑ ℓ ∈ Finset.range k, τ (e ℓ (filtrationResidue e x ℓ))
+        + τ (filtrationResidue e x k) := by
+    intro k
+    refine ⟨filtrationResidue_mem J e he hx k, ?_⟩
+    conv_lhs => rw [filtrationResidue_telescope e x k]
+    rw [map_add, map_sum]
+  refine ⟨hk, ?_⟩
+  have h0 : filtrationResidue e x N = 0 := by
+    have := filtrationResidue_mem J e he hx N
+    rwa [hN, Submodule.mem_bot] at this
+  rw [(hk N).2, h0, map_zero, add_zero]
+
+end FilteredTower
+
 /-! ### Removed 2026-08-30 — self-assuming projections
 
 - `graded_trace_residue_split` — body was `s.split_identity`: the conclusion was the projected field
