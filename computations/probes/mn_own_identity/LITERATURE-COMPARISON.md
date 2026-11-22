@@ -1017,3 +1017,31 @@ terms survive at q = 1 with the neutron lighter (for any positive "charge square
 proved). The neutron-heavier routes are either a sign choice on a static term, or a flavour mass
 difference μ_d − μ_u that the corpus does not derive. This is a corpus search, so the scope is
 "not found in the searched class".
+
+## §33 Deriving the quark charges qᵢ: what is already derived and what is left (owner ruling 2026-11-22)
+
+Owner: *"Needs to derive the q_i"* (recorded in `docs/coordination/owner-rulings.md`). Until it is
+done, §31–§32 are conditional on the adopted values +⅔ / −⅓.
+
+**Corpus state (searched: `eightfold-way/*`, `knots-particles-confinement/{up,down}-quark*`,
+`coulomb-charge`).**
+- Isospin I₃ is derived: the writhe / T³ map gives I₃(u) − I₃(d) = 1 on the nucleon doublet
+  (`flavor-charge-assignments.md`; also T³ = ±½ on our weight spaces).
+- Hypercharge Y is open (`eightfold-open-problems.md` item 2). The writhe is excluded as Y (p and
+  n share Y = 1 but differ in writhe). The canonical ribbon-twist content sum Q = c(λ)/3 is
+  excluded at n = 3 (scope a). The helon battery is shown to test only its own definition.
+- The crossing Coulomb charge Q = ½(n₊ − n₋) is mirror-odd, so it gives q_d = −q_u and cannot
+  produce thirds (`down-quark.md`). On the ruled electron σ₀σ₁σ₀ it gives 3/2, not 1.
+
+**Proved here (Lean `QuarkChargeReduction.lean`, lean-direct exit 0, standard axioms).** If the
+charge is affine in isospin on quark strands, Q = I₃ + c, then q_u − q_d = 1 and exactly one
+more linear condition is needed. Each of these gives c = 1/6, so (q_u, q_d) = (⅔, −⅓):
+neutron neutral (`c_of_neutron_neutral`), proton charge +1 (`c_of_proton_one`), or hydrogen
+neutral with electron charge −1 (`c_of_hydrogen`). With c = 0 the neutron would have charge −½
+(`neutron_charge_c_zero`), so isospin alone is not enough.
+
+**So the derivation needs two things, neither derived yet:**
+1. Why the charge is affine in I₃ with slope 1 (the Gell-Mann–Nishijima form Q = I₃ + Y/2).
+2. One number: c = Y/2 for a quark strand. The natural candidate is Y = B = ⅓, i.e. one unit of
+   baryon number per closed Borromean link shared over its three strands. That still needs
+   "baryon number 1 per Borromean" and "Y = B for u, d" from the category.
