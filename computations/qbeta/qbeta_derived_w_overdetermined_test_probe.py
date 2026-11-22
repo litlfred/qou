@@ -198,11 +198,89 @@ def main() -> int:
             continue
         prepared[name] = (n, ta, tf)
 
+    # ── Trace table: every (term word + suffix) evaluated ONCE ──────────
+    # Performance only (owner request 2026-11-21, PR #8940). The values are
+    # the same exact strings `tr_m_atomic_mpfr` returns per word, and trM
+    # sums them in the same order as before, so every number is unchanged.
+    #  * dedup: the candidates use only four distinct suffixes ([], sigma_1,
+    #    T1T1, the interface word); P+ and P- reuse the first two.
+    #  * batch: `tr_m_atomic_mpfr_batch` reduces shared prefixes once (the
+    #    reduction was measured at >99 % of the wall; the trace recursion and
+    #    its cache are negligible).
+    #  * cache: computations/trace_cache.py stores each value keyed on the
+    #    engine source tree, q0 string, dps, n and word, journals after every
+    #    chunk, and seeds the `trace-cache` branch family, so an interrupted
+    #    run resumes.
+    from trace_cache import TraceCache
+    T_START = time.monotonic_ns()
+
+    def _secs(ns):
+        return f"{ns // 10**8 / 10}s"
+
+    have_batch = hasattr(ph, "tr_m_atomic_mpfr_batch")
+
+    def _eval(n, words):
+        if have_batch:
+            return ph.tr_m_atomic_mpfr_batch([list(w) for w in words], n, Q0S, DPS)
+        return [ph.tr_m_atomic_mpfr(list(w), n, Q0S, DPS) for w in words]
+
+    cache = TraceCache(Q0S, DPS)
+    cache.verify(_eval)
+    table, failed = {}, {}
+    chunk = int(os.environ.get("QOU_TRACE_CHUNK", "256"))
+    for name, (n, ta, tf) in prepared.items():
+        sufs = {(): None}
+        for combo in candidates(n).values():
+            for (_c, word) in combo:
+                sufs.setdefault(tuple(word), None)
+        words = list(dict.fromkeys(
+            tuple(word) + suf for terms in (tf, ta) for (_w, word) in terms for suf in sufs))
+        found, missing = cache.lookup(n, words)
+        for i, v in found.items():
+            table[(n, words[i])] = v
+        todo = sorted(words[i] for i in missing)
+        print(f"  [{_secs(time.monotonic_ns() - T_START)}] {name} n={n}: "
+              f"{len(words)} distinct words ({len(ta)}+{len(tf)} terms x {len(sufs)} "
+              f"suffixes), {len(found)} cached, {len(todo)} to compute", flush=True)
+        t_atom = time.monotonic_ns()
+        for k in range(0, len(todo), chunk):
+            part = todo[k:k + chunk]
+            t_c = time.monotonic_ns()
+            try:
+                vals = _eval(n, part)
+                ok_part = list(zip(part, vals))
+            except RuntimeError:
+                ok_part = []
+                for w in part:
+                    try:
+                        ok_part.append((w, ph.tr_m_atomic_mpfr(list(w), n, Q0S, DPS)))
+                    except RuntimeError as exc:
+                        failed[(n, w)] = str(exc)
+            for w, v in ok_part:
+                table[(n, w)] = v
+            cache.store(n, [w for w, _ in ok_part], [v for _, v in ok_part])
+            cache.maybe_publish()
+            done = k + len(part)
+            el = time.monotonic_ns() - t_atom
+            eta = el * (len(todo) - done) // done
+            print(f"  [{_secs(time.monotonic_ns() - T_START)}] {name}: {done}/{len(todo)} "
+                  f"chunk {_secs(time.monotonic_ns() - t_c)}, atom {_secs(el)}, "
+                  f"ETA {_secs(eta)}", flush=True)
+        print(f"  [{_secs(time.monotonic_ns() - T_START)}] {name}: trace table done in "
+              f"{_secs(time.monotonic_ns() - t_atom)}; {cache.stats()}", flush=True)
+    cache.publish()
+    if hasattr(ph, "tr_m_word_lq_cache_stats"):
+        h, m_, c_, sz = ph.tr_m_word_lq_cache_stats()
+        print(f"  tr_m_word_lq recursion cache: {h} hits / {m_} misses, "
+              f"{c_} wholesale clears at the 100k cap, {sz} entries", flush=True)
+
     def trM(terms, n, suffix):
         tot = mp.mpf(0)
         for (w, word) in terms:
-            tot += w * mp.mpf(ph.tr_m_atomic_mpfr(
-                list(word) + list(suffix), n, Q0S, DPS))
+            key = (n, tuple(word) + tuple(suffix))
+            if key in failed:
+                raise RuntimeError(failed[key])
+            tot += w * mp.mpf(table[key])
         return tot
 
     def S(terms_f, terms_a, n, combo):
