@@ -25,3 +25,6 @@ Applicability check against the rulings in force on 2026-11-22 (docs/coordinatio
 ## 2026-11-22T21:58:00Z: applicability review — RESCOPE
 
 Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. See the reset note: "q-NS regularity" is fixed q > 1 only; #8454 note void.
+
+
+Correction 2026-11-22T22:00:00Z: the reset note above lists "photon norm 1" among the rulings checked. That wording was wrong: the 2026-11-22 ruling keeps the photon as 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1 with its fixed constant term 1, not a norm-one definition. No verdict here depended on it.
