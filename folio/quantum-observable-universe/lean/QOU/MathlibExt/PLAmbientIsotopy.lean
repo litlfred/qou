@@ -25,8 +25,9 @@ first; a PL version and the proof that the two agree come later.
   finite sum of continuous terms.
 * `OrientedReparam φ` — `φ : ℝ → ℝ` continuous, strictly increasing, `φ (t + 1) = φ t + 1`:
   the lift of an orientation-preserving homeomorphism of the circle.
-* `AmbientIsotopy L L'` — a continuous family `H t` (`t ∈ [0, 1]`) of homeomorphisms of `E`
-  with `H 0 = id`, and a bijection `e` of components such that `H 1 ∘ param (L.comp i)` is an
+* `AmbientIsotopy L L'` — a family `H t` (`t ∈ [0, 1]`) of homeomorphisms of `E`, with
+  `(t, x) ↦ H t x` and `(t, x) ↦ (H t)⁻¹ x` both continuous (a level-preserving homeomorphism
+  of `[0, 1] × E`), `H 0 = id`, and a bijection `e` of components such that `H 1 ∘ param (L.comp i)` is an
   orientation-preserving reparametrization of `param (L'.comp (e i))`.
 * `AmbientIsotopic L L'` — such an isotopy exists.
 
@@ -34,11 +35,13 @@ first; a PL version and the proof that the two agree come later.
 
 * `continuous_hat`, `Polygon.continuous_param` — the parametrization is continuous.
 * `Polygon.param_add_one`, `Polygon.param_zero` — it has period `1` and starts at `v 0`.
-* `AmbientIsotopic.refl` — every link is ambient isotopic to itself.
+* `OrientedReparam.comp`, `.surjective`, `.symm` — oriented reparametrizations compose, are
+  onto, and have oriented inverses.
+* `AmbientIsotopic.refl`, `.symm`, `.trans` — ambient isotopy is an equivalence relation.
+  Transitivity runs both isotopies at once, `t ↦ K t ∘ H t`; symmetry uses `t ↦ H (1 - t) ∘ (H 1)⁻¹`.
 
 ## What is NOT proved here
 
-* That `AmbientIsotopic` is symmetric and transitive (needs continuity of `(t, x) ↦ (H t)⁻¹ x`).
 * That the image of `param` is the polygon's point set.
 * Either direction of "Δ-equivalent ↔ ambient isotopic". These are the next steps of stage 2.
 -/
@@ -128,8 +131,57 @@ structure OrientedReparam (φ : ℝ → ℝ) : Prop where
   strictMono : StrictMono φ
   add_one : ∀ t, φ (t + 1) = φ t + 1
 
-theorem OrientedReparam.id : OrientedReparam id :=
+namespace OrientedReparam
+
+theorem id : OrientedReparam id :=
   ⟨continuous_id, strictMono_id, fun _ => rfl⟩
+
+theorem comp {φ ψ : ℝ → ℝ} (hψ : OrientedReparam ψ) (hφ : OrientedReparam φ) :
+    OrientedReparam (ψ ∘ φ) :=
+  ⟨hψ.continuous.comp hφ.continuous, hψ.strictMono.comp hφ.strictMono,
+    fun t => by simp [hφ.add_one, hψ.add_one]⟩
+
+variable {φ : ℝ → ℝ} (h : OrientedReparam φ)
+include h
+
+lemma add_nat (t : ℝ) (n : ℕ) : φ (t + n) = φ t + n := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    push_cast
+    rw [← add_assoc, h.add_one, ih, add_assoc]
+
+lemma sub_nat (t : ℝ) (n : ℕ) : φ (t - n) = φ t - n := by
+  have := h.add_nat (t - n) n
+  rw [sub_add_cancel] at this
+  linarith
+
+/-- An oriented reparametrization is onto. -/
+theorem surjective : Function.Surjective φ := by
+  intro y
+  set n := ⌈|y - φ 0|⌉₊
+  have hn : |y - φ 0| ≤ n := Nat.le_ceil _
+  have h1 := h.sub_nat 0 n
+  have h2 := h.add_nat 0 n
+  rw [zero_sub] at h1
+  rw [zero_add] at h2
+  obtain ⟨hl, hr⟩ := abs_le.mp hn
+  exact intermediate_value_univ (-(n : ℝ)) n h.continuous ⟨by linarith, by linarith⟩
+
+/-- The order isomorphism `ℝ ≃o ℝ` defined by an oriented reparametrization. -/
+noncomputable def toOrderIso : ℝ ≃o ℝ :=
+  StrictMono.orderIsoOfSurjective φ h.strictMono h.surjective
+
+/-- **The inverse of an oriented reparametrization is one.** -/
+theorem symm : OrientedReparam h.toOrderIso.symm :=
+  ⟨h.toOrderIso.symm.continuous, h.toOrderIso.symm.strictMono, fun t => by
+    apply h.strictMono.injective
+    have e1 : ∀ s, φ (h.toOrderIso.symm s) = s := fun s => h.toOrderIso.apply_symm_apply s
+    rw [h.add_one, e1, e1]⟩
+
+lemma apply_symm (s : ℝ) : φ (h.toOrderIso.symm s) = s := h.toOrderIso.apply_symm_apply s
+
+end OrientedReparam
 
 /-- **A topological ambient isotopy** carrying the oriented link `L` onto `L'`. -/
 structure AmbientIsotopy (L L' : PolygonalLink E) where
@@ -137,6 +189,8 @@ structure AmbientIsotopy (L L' : PolygonalLink E) where
   H : unitInterval → E ≃ₜ E
   /-- Joint continuity in time and space. -/
   continuous : Continuous fun p : unitInterval × E => H p.1 p.2
+  /-- Joint continuity of the inverses. -/
+  continuous_symm : Continuous fun p : unitInterval × E => (H p.1).symm p.2
   /-- The isotopy starts at the identity. -/
   start : ∀ x, H 0 x = x
   /-- How the components correspond. -/
@@ -153,8 +207,57 @@ omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
 theorem AmbientIsotopic.refl (L : PolygonalLink E) : AmbientIsotopic L L :=
   ⟨{ H := fun _ => Homeomorph.refl E
      continuous := continuous_snd
+     continuous_symm := continuous_snd
      start := fun _ => rfl
      e := Equiv.refl _
      finish := fun _ => ⟨id, OrientedReparam.id, fun _ => rfl⟩ }⟩
+
+omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- **Ambient isotopy is symmetric.** Run the isotopy backwards and undo its end. -/
+theorem AmbientIsotopic.symm {L L' : PolygonalLink E} (h : AmbientIsotopic L L') :
+    AmbientIsotopic L' L := by
+  obtain ⟨I⟩ := h
+  refine ⟨{ H := fun t => (I.H 1).symm.trans (I.H (unitInterval.symm t))
+            continuous := ?_
+            continuous_symm := ?_
+            start := ?_
+            e := I.e.symm
+            finish := ?_ }⟩
+  · exact I.continuous.comp ((unitInterval.continuous_symm.comp continuous_fst).prodMk
+      ((I.H 1).symm.continuous.comp continuous_snd))
+  · exact (I.H 1).continuous.comp (I.continuous_symm.comp
+      ((unitInterval.continuous_symm.comp continuous_fst).prodMk continuous_snd))
+  · intro x
+    simp
+  · intro j
+    obtain ⟨φ, hφ, hH⟩ := I.finish (I.e.symm j)
+    rw [Equiv.apply_symm_apply] at hH
+    refine ⟨hφ.toOrderIso.symm, hφ.symm, fun t => ?_⟩
+    have := hH (hφ.toOrderIso.symm t)
+    rw [hφ.apply_symm] at this
+    simp only [Homeomorph.trans_apply, unitInterval.symm_one, I.start]
+    rw [← this, Homeomorph.symm_apply_apply]
+
+omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- **Ambient isotopy is transitive.** Run both isotopies at once and compose. -/
+theorem AmbientIsotopic.trans {L L' L'' : PolygonalLink E} (h : AmbientIsotopic L L')
+    (h' : AmbientIsotopic L' L'') : AmbientIsotopic L L'' := by
+  obtain ⟨I⟩ := h
+  obtain ⟨J⟩ := h'
+  refine ⟨{ H := fun t => (I.H t).trans (J.H t)
+            continuous := ?_
+            continuous_symm := ?_
+            start := ?_
+            e := I.e.trans J.e
+            finish := ?_ }⟩
+  · exact J.continuous.comp (continuous_fst.prodMk I.continuous)
+  · exact I.continuous_symm.comp (continuous_fst.prodMk J.continuous_symm)
+  · intro x
+    simp [I.start, J.start]
+  · intro i
+    obtain ⟨φ, hφ, hH⟩ := I.finish i
+    obtain ⟨ψ, hψ, hK⟩ := J.finish (I.e i)
+    exact ⟨ψ ∘ φ, hψ.comp hφ, fun t => by
+      simp only [Homeomorph.trans_apply, hH, hK, Equiv.trans_apply, Function.comp]⟩
 
 end QOU.MathlibExt.PL
