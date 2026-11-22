@@ -1,6 +1,9 @@
 import Mathlib.Algebra.Algebra.Hom
 import Mathlib.Algebra.Algebra.Prod
 import Mathlib.Logic.Function.Basic
+import Mathlib.Algebra.Algebra.Subalgebra.Basic
+import Mathlib.LinearAlgebra.Dimension.Constructions
+import Mathlib.RingTheory.SimpleRing.Matrix
 
 /-!
 # QOU.DescentLemma — Descent preserves the quantum observable universe
@@ -63,6 +66,44 @@ and the intertwining, and the archimedean realisation as a surjective
 `*`-homomorphism of section algebras. The two algebras and the map are
 caller-supplied.
 
+## 2026-11-22 — the descent map, proved where it holds and refuted where it does not
+
+Bean `qou-nfn4`. The proof block (`descent-lemma-proof.md`, Step 4) builds the
+descent map from the unit section `ℓ : A_{n-1} → A_n` and the counit
+restriction `r : A_n → A_{n-1}`, with `r ∘ ℓ = id` (Step 1: `A_{n-1}` is a
+direct summand). The map it then means is the **compression**
+`𝔡(φ) = r ∘ φ ∘ ℓ`. Over that datum the section below proves, with no
+hypothesis beyond `r ∘ ℓ = id`:
+
+1. `descentCompression_surjective`: compression `End(A_n) → End(A_{n-1})` is a
+   surjective **linear** map (lift `φ` to `ℓ ∘ φ ∘ r`).
+2. `descentHom_surjective`: on the subalgebra `blockEnd ℓ r` of endomorphisms
+   commuting with the idempotent `e = ℓ ∘ r` (the block-diagonal ones),
+   compression is a surjective **algebra** homomorphism.
+
+It also proves that the `.md`'s wording, *a surjective algebra homomorphism on
+all of `End(A_n)`*, does not follow and is false in the cases one can check:
+
+3. `descentCompression_not_multiplicative`: on `ℤ × ℤ → ℤ` with `ℓ = inl`,
+   `r = fst`, the swap `φ` has `𝔡(φ²) = 1` and `𝔡(φ)² = 0`. Step 4's
+   "`r_n` preserves multiplication" is a statement about `r_n` on `A_n`; it
+   does not make `φ ↦ r ∘ φ ∘ ℓ` multiplicative on `End(A_n)`.
+4. `not_surjective_matrix_algHom`: over a field, no algebra map from
+   `k × k` matrices onto `j × j` matrices is surjective when `0 < j < k`
+   (matrix algebras are simple, so the map would be injective and the
+   dimensions `k²`, `j²` would agree). So whenever `End_C(A_n)` is a full
+   matrix algebra of size larger than `End_C(A_{n-1})`, **no** surjective
+   algebra homomorphism between them exists, by any construction.
+
+Step 4's surjectivity argument ("`ℓ_n` is injective, so its adjoint `r_n` is
+surjective") proves that `r_n : A_n → A_{n-1}` is onto; it is a different map
+from `𝔡_n`, and items 3 and 4 show the gap is real. What survives is item 2:
+the descent homomorphism is an algebra map on the block-diagonal subalgebra.
+Whether `End_C` in the category `C` is that subalgebra is not decided here.
+
+Still unencoded: the brane tower itself, the Frobenius–Hopf structure, the
+`G_q`-intertwining and the archimedean realisation.
+
 ## References
 
 - [leitner2026] §3 Lifting and Descent
@@ -114,4 +155,121 @@ theorem not_descentSurjective_diagonal :
   have h2 : r = 0 := congrArg Prod.snd hr
   omega
 
+section Compression
+
+variable {R M N : Type*} [CommRing R] [AddCommGroup M] [Module R M]
+  [AddCommGroup N] [Module R N]
+
+/-- **Compression along a split pair** `ℓ : N → M`, `r : M → N`:
+`𝔡(φ) = r ∘ φ ∘ ℓ`. With `ℓ` the unit section and `r` the counit
+restriction this is the descent map of `lem:descent`. It is linear; it is not
+multiplicative (`descentCompression_not_multiplicative`). -/
+-- Ref: [leitner2026] §3 Lifting and Descent, descent-lemma-proof Step 4
+def descentCompression (ℓ : N →ₗ[R] M) (r : M →ₗ[R] N) :
+    Module.End R M →ₗ[R] Module.End R N where
+  toFun φ := r ∘ₗ φ ∘ₗ ℓ
+  map_add' φ ψ := by ext x; simp
+  map_smul' c φ := by ext x; simp
+
+@[simp] lemma descentCompression_apply (ℓ : N →ₗ[R] M) (r : M →ₗ[R] N)
+    (φ : Module.End R M) : descentCompression ℓ r φ = r ∘ₗ φ ∘ₗ ℓ := rfl
+
+/-- **Descent is surjective as a linear map**, given only `r ∘ ℓ = id`:
+`φ` is the compression of `ℓ ∘ φ ∘ r`. -/
+-- Ref: [leitner2026] §3 Lifting and Descent, descent-lemma-proof Step 4
+theorem descentCompression_surjective {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N}
+    (hrl : r ∘ₗ ℓ = LinearMap.id) :
+    Function.Surjective (descentCompression ℓ r) := by
+  intro φ
+  refine ⟨ℓ ∘ₗ φ ∘ₗ r, ?_⟩
+  ext x
+  have h : ∀ y, r (ℓ y) = y := fun y => LinearMap.congr_fun hrl y
+  simp [h]
+
+/-- **The block-diagonal endomorphisms**: those commuting with the idempotent
+`e = ℓ ∘ r`. They form a subalgebra of `End(M)`, and it is on this subalgebra
+that descent is an algebra map. -/
+def blockEnd (ℓ : N →ₗ[R] M) (r : M →ₗ[R] N) : Subalgebra R (Module.End R M) where
+  carrier := {φ | (ℓ ∘ₗ r) * φ = φ * (ℓ ∘ₗ r)}
+  mul_mem' {φ ψ} hφ hψ := by
+    simp only [Set.mem_setOf_eq] at *
+    rw [← mul_assoc, hφ, mul_assoc, hψ, mul_assoc]
+  add_mem' {φ ψ} hφ hψ := by
+    simp only [Set.mem_setOf_eq] at *
+    rw [mul_add, add_mul, hφ, hψ]
+  algebraMap_mem' c := by
+    simp only [Set.mem_setOf_eq, Algebra.commutes]
+
+lemma mem_blockEnd {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N} {φ : Module.End R M} :
+    φ ∈ blockEnd ℓ r ↔ (ℓ ∘ₗ r) * φ = φ * (ℓ ∘ₗ r) := Iff.rfl
+
+/-- **The descent homomorphism** on block-diagonal endomorphisms, an `R`-algebra
+map. Multiplicativity: `r φ ψ ℓ = r φ (ℓ r) ψ ℓ` because `φ` commutes with
+`ℓ ∘ r` and `r ∘ ℓ = id`. -/
+-- Ref: [leitner2026] §3 Lifting and Descent, descent-lemma-proof Step 4
+def descentHom {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N} (hrl : r ∘ₗ ℓ = LinearMap.id) :
+    blockEnd ℓ r →ₐ[R] Module.End R N where
+  toFun φ := r ∘ₗ (φ : Module.End R M) ∘ₗ ℓ
+  map_one' := by simpa using hrl
+  map_mul' φ ψ := by
+    have hφ := (mem_blockEnd.mp φ.2)
+    have h : ∀ y, r (ℓ y) = y := fun y => LinearMap.congr_fun hrl y
+    ext x
+    have := LinearMap.congr_fun hφ ((ψ : Module.End R M) (ℓ x))
+    simp only [Module.End.mul_apply, LinearMap.comp_apply] at this ⊢
+    simp only [Subalgebra.coe_mul, Module.End.mul_apply]
+    rw [← this, h]
+  map_zero' := by ext x; simp
+  map_add' φ ψ := by ext x; simp
+  commutes' c := by
+    ext x
+    have h : ∀ y, r (ℓ y) = y := fun y => LinearMap.congr_fun hrl y
+    simp [Algebra.algebraMap_eq_smul_one, h]
+
+/-- **`lem:descent`, in the form that holds**: descent is a surjective algebra
+homomorphism from the block-diagonal subalgebra of `End(M)` onto `End(N)`,
+for any split pair `r ∘ ℓ = id`. The lift `ℓ ∘ φ ∘ r` is block-diagonal. -/
+-- Ref: [leitner2026] §3 Lifting and Descent, descent-lemma-proof Step 4
+theorem descentHom_surjective {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N}
+    (hrl : r ∘ₗ ℓ = LinearMap.id) : Function.Surjective (descentHom hrl) := by
+  intro φ
+  have h : ∀ y, r (ℓ y) = y := fun y => LinearMap.congr_fun hrl y
+  refine ⟨⟨ℓ ∘ₗ φ ∘ₗ r, ?_⟩, ?_⟩
+  · rw [mem_blockEnd]; ext x; simp [h]
+  · ext x; simp [descentHom, h]
+
+/-- **Compression is not multiplicative on all of `End(M)`.** `M = ℤ × ℤ`,
+`N = ℤ`, `ℓ = inl`, `r = fst`, `φ` the swap: `𝔡(φ * φ) = 𝔡(1) = 1` but
+`𝔡(φ) = 0`. So the `.md`'s "surjective algebra homomorphism" on the whole
+of `End(A_n)` is not what Step 4 proves. -/
+theorem descentCompression_not_multiplicative :
+    let ℓ : ℤ →ₗ[ℤ] ℤ × ℤ := LinearMap.inl ℤ ℤ ℤ
+    let r : ℤ × ℤ →ₗ[ℤ] ℤ := LinearMap.fst ℤ ℤ ℤ
+    let φ : Module.End ℤ (ℤ × ℤ) := (LinearEquiv.prodComm ℤ ℤ ℤ).toLinearMap
+    r ∘ₗ ℓ = LinearMap.id ∧
+      descentCompression ℓ r (φ * φ) ≠ descentCompression ℓ r φ * descentCompression ℓ r φ := by
+  intro ℓ r φ
+  refine ⟨by ext; simp [ℓ, r], fun h => ?_⟩
+  have := LinearMap.congr_fun h 1
+  simp [ℓ, r, φ] at this
+
+end Compression
+
+/-- **No surjective algebra map shrinks a full matrix algebra.** Over a field,
+for `0 < j < k` no `K`-algebra homomorphism `M_k(K) → M_j(K)` is surjective:
+`M_k(K)` is simple, so the map is injective, hence a linear isomorphism, and
+`k² = j²` fails. Whenever `End_C(A_n)` and `End_C(A_{n-1})` are full matrix
+algebras with the first strictly larger, the `.md`'s statement is false. -/
+theorem not_surjective_matrix_algHom {K : Type*} [Field K] {k j : ℕ}
+    (hj : 0 < j) (hjk : j < k)
+    (f : Matrix (Fin k) (Fin k) K →ₐ[K] Matrix (Fin j) (Fin j) K) :
+    ¬ Function.Surjective f := by
+  intro hs
+  haveI : Nonempty (Fin j) := ⟨⟨0, hj⟩⟩
+  haveI : Nonempty (Fin k) := ⟨⟨0, by omega⟩⟩
+  have hinj : Function.Injective f := (f.toRingHom).injective
+  have e := LinearEquiv.ofBijective f.toLinearMap ⟨hinj, hs⟩
+  have := e.finrank_eq
+  simp [Module.finrank_matrix] at this
+  nlinarith
 end QOU
