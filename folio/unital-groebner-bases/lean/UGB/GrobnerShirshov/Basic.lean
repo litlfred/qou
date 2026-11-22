@@ -262,12 +262,32 @@ noncomputable abbrev ReductionRule.lc {G : Type u} {k : Type v} [Ring k]
     (r : ReductionRule G k) (ord : AdmissibleOrder G) : k :=
   leadingCoeff ord r.relation r.nonzero
 
-/-- A **rewriting system**: a set of reduction rules. -/
+/-- A **rewriting system**: a set of reduction rules.
+
+    The rules form a `Set`, not a `List`, so a system may have infinitely many
+    rules. This is needed for Gröbner–Shirshov bases that are infinite, e.g. the
+    PBW system of a distribution algebra in characteristic `p`, whose divided-power
+    generators `δ^{p^r}` are infinite in number (arXiv:math/0602138, Thm 1.9).
+    Every argument about a rewriting system uses only membership `r ∈ sys.rules`,
+    so nothing in the diamond lemma depends on finiteness. A finite system is
+    built from a list with `RewritingSystem.ofList`. -/
 structure RewritingSystem (G : Type u) (k : Type v) [Ring k] where
   /-- The collection of reduction rules. -/
-  rules : List (ReductionRule G k)
+  rules : Set (ReductionRule G k)
   /-- The system has at least one rule (non-trivial). -/
-  nonempty : rules ≠ []
+  nonempty : rules.Nonempty
+
+/-- The finite rewriting system whose rules are the entries of a non-empty list. -/
+def RewritingSystem.ofList {G : Type u} {k : Type v} [Ring k]
+    (L : List (ReductionRule G k)) (h : L ≠ []) : RewritingSystem G k where
+  rules := {r | r ∈ L}
+  nonempty := by
+    obtain ⟨r, t, rfl⟩ := List.exists_cons_of_ne_nil h
+    exact ⟨r, List.mem_cons_self⟩
+
+@[simp] theorem RewritingSystem.mem_ofList_rules {G : Type u} {k : Type v} [Ring k]
+    {L : List (ReductionRule G k)} {h : L ≠ []} {r : ReductionRule G k} :
+    r ∈ (RewritingSystem.ofList L h).rules ↔ r ∈ L := Iff.rfl
 
 /-- **Single-step reduction**, repaired (repair 2).
 
@@ -721,7 +741,7 @@ theorem one_not_reduces_to_zero {G : Type u} {k : Type v} [Ring k] [Nontrivial k
 theorem isGrobnerShirshovBasis_of_single_letter_rule {G : Type u} {k : Type v}
     [Ring k] [DecidableEq G] (ord : AdmissibleOrder G) (r : ReductionRule G k)
     (g : G) (hlm : r.lm ord = [g]) :
-    IsGrobnerShirshovBasis G k ord ⟨[r], by simp⟩ := by
+    IsGrobnerShirshovBasis G k ord (.ofList [r] (by simp)) := by
   constructor
   · intro oc h₁ h₂
     have hr₁ : oc.rule₁ = r := by simpa using h₁

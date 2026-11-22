@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:51:11.028982+00:00",
-  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-21T12:14:00.247526+00:00",
+  "commitSha": "d10c58cc00086b00d7ff4fc74c9bd9ff05257faf",
   "assertions": [
     {
       "name": "u_levels_computed_for_proton",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 11,
   "computation": "iterative-lp-dual-levels",
   "scriptFile": "iterative_lp_dual_levels.py",
-  "scriptHash": "ee30fbcfc6c2",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "08cb157eb057",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,61 +30,70 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/iterative_lp_dual_levels.py"
+    ],
+    "reproduce": "python3 -u computations/iterative_lp_dual_levels.py"
   },
   "description": "Item (c) — Full iterative LP-dual u^{(ℓ)*}(β) extraction per term7-alpha5's prop:mass-formula-iterative-lp-dual. Computes u^{(ℓ)*} = m_e · tr_M(P_ℓ·β)/[n]_q! for the proton at H_3, ℓ ∈ {0, 1, 2, 3}, where P_ℓ = e_ℓ(J_1,…,J_n) acts on V_λ as c_ℓ(λ) = e_ℓ({q^{2c(□)}}). Reveals that Σ_ℓ u^{(ℓ)*}(p) at H_3 does NOT recover m_p — the sum-of-shadow-prices captures only H_3-internal structure (descended trace + JM iterates), not the gluon dressing or higher-order corrections that bring m_p to its CODATA value. Confirms that the proper iterative LP-dual is at the FULL Hecke level (which for compounds is H_6, H_9, H_12). Neutron level extraction documented as requiring the σ⁻¹-aware closed-form chain (a separate scope).",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",
   "parameters": {
-    "q_0": 1.1099785827513808,
-    "M_p_codata": 938.27208816,
-    "M_n_codata": 939.56542052,
-    "M_e_codata": 0.51099895069,
+    "q_0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "M_p_codata": "938.27208943",
+    "M_n_codata": "939.56542179",
+    "M_e_codata": "0.51099895069",
     "hecke_level_n": 3
   },
   "data": {
     "y_lambda_at_q0_h3": {
-      "(3,)": 0.5018014088346436,
-      "(2, 1)": 0.2509007044173218,
-      "(1, 1, 1)": -0.003602817669287202
+      "(3,)": "0.501801408834643601062519567746824091886783732583269787550685",
+      "(2, 1)": "0.250900704417321800531259783873412045943391866291634893775343",
+      "(1, 1, 1)": "-0.00360281766928720212503913549364818377356746516653957510137088"
     },
     "c_ell_at_q0": {
       "(3,)": {
-        "0": 1.0,
-        "1": 3.75000570398511,
-        "2": 4.620203730734218,
-        "3": 1.870198026749108
+        "0": "1.00000000000000000000000000000000000000000000000000000000000",
+        "1": "3.75000570398510986881691469631190982447046193243015501460390",
+        "2": "4.62020373073421788681624558021011973856895674007411310973638",
+        "3": "1.87019802674910801799933088389820991409849480764395809513248"
       },
       "(2, 1)": {
-        "0": 1.0,
-        "1": 3.043706208532522,
-        "2": 3.043706208532522,
-        "3": 1.0
+        "0": "1.00000000000000000000000000000000000000000000000000000000000",
+        "1": "3.04370620853252198940201933567738830976821396071350610903595",
+        "2": "3.04370620853252198940201933567738830976821396071350610903595",
+        "3": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       "(1, 1, 1)": {
-        "0": 1.0,
-        "1": 2.4704355713417883,
-        "2": 2.0051383063982793,
-        "3": 0.5347027350564907
+        "0": "1.00000000000000000000000000000000000000000000000000000000000",
+        "1": "2.47043557134178837614351855668199162676198636979299565918933",
+        "2": "2.00513830639827906988517204968243950766241312202563809653801",
+        "3": "0.534702735056490693741653493000447880900426752232642437348683"
       }
     },
     "chi_lambda_proton_at_q0": {
-      "(3,)": 3.151088420630976,
-      "(2, 1)": 1.2034860665075826,
-      "(1, 1, 1)": -0.31735066317173016
+      "(3,)": "3.15108842063097573113437369850435938970605994337707335042513",
+      "(2, 1)": "1.20348606650758251795492966142655003249046903865431356107030",
+      "(1, 1, 1)": "-0.317350663171730177371296737673006904305520865799685093265906"
     },
     "u_levels_proton_MeV": {
-      "0": 0.1573193037473461,
-      "1": 0.5720204309274219,
-      "2": 0.6868543257093073,
-      "3": 0.27215319852923137
+      "0": "0.157319303747346087329084338743845017630966740807307998574191",
+      "1": "0.572020430927421981714958848280339624863814797046397435087308",
+      "2": "0.686854325709307247241747031122942942073328669065106622231621",
+      "3": "0.272153198529231352855872521586448334840480612826017185718503"
     },
-    "sum_u_levels_proton_MeV": 1.6883472589133066,
-    "sum_vs_codata_pct": -99.82005781902517,
+    "sum_u_levels_proton_MeV": "1.68834725891330666914166273973357591940859081974482924161162",
+    "sum_vs_codata_pct": "-99.8200578192687179851453074089235870403197977538984424227327407564235",
     "interpretation": "Σ_ℓ u^{(ℓ)*}(p) at H_3 does NOT recover m_p; the sum captures only the H_3-internal structure. The full iterative LP-dual unification (per term7-alpha5) is at H_n with n = 3A, where atomic-braid binding and gluon dressing are encoded. The H_3 levels reported here are necessary infrastructure but not sufficient for absolute mass."
   },
   "q0Anchor": "proton",

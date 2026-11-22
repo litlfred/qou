@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Find self-assuming projections: `theorem f (h : P) ... : P := h`.
+r"""Find self-assuming projections: `theorem f (h : P) ... : P := h`.
 
 The triviality probe (folio-assistant lean-triviality-probe.ts) surfaces
 these, but costs a `lean` elaboration per declaration (~11 min / 40
@@ -60,6 +60,15 @@ BINDER = re.compile(r"\((?P<names>[^():]+?)\s*:\s*(?P<type>(?:[^()]|\([^()]*\))*
 BINDER_INST = re.compile(
     r"\[(?P<names>[^\[\]:]+?)\s*:\s*(?P<type>(?:[^\[\]]|\[[^\[\]]*\])*)\]"
 )
+# Anonymous instance-implicit binder `[HasClaim X]` (no `:`). With no binder
+# name, Lean projects fields through the class name (`HasClaim.claim`), so
+# keying the binder map by the head class identifier lets Rule 2 (`qou-1ccx`)
+# resolve `binders.get("HasClaim")` identically to `[ctx : HasClaim X]`.
+BINDER_INST_ANON = re.compile(
+    r"\[(?P<type>[^\[\]:]+?)\]"
+)
+# A bare identifier (rule 4 components; qou-0exp).
+BARE_NAME = re.compile(r"[A-Za-z_][A-Za-z0-9_'₀-₉]*")
 BINDER_IMPL = re.compile(
     r"\{(?P<names>[^{}:]+?)\s*:\s*(?P<type>(?:[^{}]|\{[^{}]*\})*)\}"
 )
@@ -387,18 +396,35 @@ def _same_prop(a: str, b: str) -> bool:
     return strip_binder_types(a) == strip_binder_types(b)
 
 
-def analyze(path: Path):
-    raw = path.read_text(encoding="utf-8", errors="replace")
+def analyze_text(raw: str, file_str: str = "<mem>"):
     src = strip_comments(raw)
     classes = parse_classes(src)
     out = []
     for m in DECL.finditer(src):
         body = m.group("rest")
-        # split at the LAST top-level `:=` that starts the proof term
-        idx = body.rfind(":=")
+        # split at the LAST top-level `:=` (depth == 0) that starts the proof
+        # term, so named arguments like `(vd := vd)` inside the proof term do
+        # not steal the split (`GaugeTheory.variational_transport`).
+        idx = -1
+        d_eq = 0
+        for i_eq, ch_eq in enumerate(body):
+            if ch_eq in _OPEN:
+                d_eq += 1
+            elif ch_eq in _CLOSE:
+                d_eq = max(0, d_eq - 1)
+            elif d_eq == 0 and body.startswith(":=", i_eq):
+                idx = i_eq
         if idx < 0:
             continue
         proof = norm(body[idx + 2 :])
+        # qou-0exp: `by exact ⟨…⟩` and `And.intro a b` are the same term as the
+        # anonymous constructor; unwrap them so rules 3 and 4 see them.
+        _m = re.fullmatch(r"by\s+exact\s+(⟨.*⟩)", proof, re.S)
+        if _m:
+            proof = _m.group(1)
+        _m = re.fullmatch(r"And\.intro\s+([A-Za-z_][A-Za-z0-9_'₀-₉]*)\s+([A-Za-z_][A-Za-z0-9_'₀-₉]*)", proof)
+        if _m:
+            proof = f"⟨{_m.group(1)}, {_m.group(2)}⟩"
         # A bare identifier is rule 1; a projection application is rule 2; an
         # anonymous constructor is rule 3.  Anything else (tactic block, real
         # term) is not a candidate.
@@ -442,6 +468,12 @@ def analyze(path: Path):
             for b in rx.finditer(sig[:concl_at]):
                 for nm in b.group("names").split():
                     binders[nm] = norm(b.group("type"))
+        for b in BINDER_INST_ANON.finditer(sig[:concl_at]):
+            t_anon = norm(b.group("type"))
+            if t_anon:
+                cname = t_anon.split()[0].lstrip("@")
+                if cname in classes:
+                    binders.setdefault(cname, t_anon)
 
         def _hit(hypothesis: str, variant: str, **extra) -> None:
             out.append(
@@ -451,7 +483,7 @@ def analyze(path: Path):
                     "hypothesis": hypothesis,
                     "statement": conclusion,
                     "variant": variant,
-                    "file": str(path),
+                    "file": file_str,
                     "line": src[: m.start()].count("\n") + 1,
                     **extra,
                 }
@@ -521,6 +553,31 @@ def analyze(path: Path):
                         components=len(ms),
                     )
                     break
+            else:
+                # Rule 4 (qou-0exp) — HYPOTHESIS re-packaging: every component
+                # is a bare explicit hypothesis whose declared type is the
+                # matching conjunct, e.g. `(h1 : A) (h2 : B) : A ∧ B :=
+                # ⟨h1, h2⟩`.  Rule 3 only accepts fields of one class binder,
+                # so this shape was never considered.  `⟨ha, hab ha⟩` is real
+                # work and is not caught: an applied component is not a name.
+                for comps, cjs in (
+                    (tup, parts),
+                    (
+                        _flatten_right(tup, tuple_components),
+                        _flatten_right(parts, _expand_conjunct),
+                    ),
+                ):
+                    if len(comps) < 2 or len(comps) != len(cjs):
+                        continue
+                    if not all(BARE_NAME.fullmatch(c) and c in binders
+                               for c in comps):
+                        continue
+                    if all(_same_prop(binders[c], cj)
+                           for c, cj in zip(comps, cjs)):
+                        _hit(", ".join(comps),
+                             "hypotheses-conjunction-is-conclusion",
+                             components=len(comps))
+                        break
             continue
         # Rule 2 — the proof projects a class field whose DECLARED TYPE is the
         # conclusion: `class C where claim : P` + `theorem t [ctx : C] : P :=
@@ -555,10 +612,16 @@ def analyze(path: Path):
     return out
 
 
+def analyze(path: Path):
+    raw = path.read_text(encoding="utf-8", errors="replace")
+    return analyze_text(raw, str(path))
+
+
 VARIANTS = (
     "hypothesis-is-conclusion",
     "class-field-is-conclusion",
     "conjunction-is-conclusion",
+    "hypotheses-conjunction-is-conclusion",
 )
 
 # (path, decl, expected-variant-or-None).  `None` means "must NOT be flagged".
@@ -640,6 +703,38 @@ def selftest() -> int:
          bool(TUPLE_COMPONENT.match("h.hγ₁")), True),
         ("applied component is rejected",
          TUPLE_COMPONENT.match("ctx.field s t"), None),
+        ("anonymous instance binder [HasClaim X] + HasClaim.claim caught (qou-1ccx)",
+         [h["variant"] for h in analyze_text(
+             "class HasClaim (X : Type) : Prop where\n"
+             "  claim : X = X\n"
+             "theorem probeB (X : Type) [HasClaim X] : X = X := HasClaim.claim\n"
+         )], ["class-field-is-conclusion"]),
+        # qou-0exp: hypothesis re-packaging, four spellings caught, real work not.
+        ("bare hypotheses re-bundled (qou-0exp)",
+         [h["variant"] for h in analyze_text(
+             "theorem sq (e : Nat) (h_pos : 0 < e) (h_inf : e < 1) : "
+             "0 < e ∧ e < 1 := ⟨h_pos, h_inf⟩\n")],
+         ["hypotheses-conjunction-is-conclusion"]),
+        ("And.intro spelling unwrapped (qou-0exp)",
+         [h["variant"] for h in analyze_text(
+             "theorem ai (a b : Prop) (ha : a) (hb : b) : a ∧ b := "
+             "And.intro ha hb\n")],
+         ["hypotheses-conjunction-is-conclusion"]),
+        ("by exact spelling unwrapped (qou-0exp)",
+         [h["variant"] for h in analyze_text(
+             "theorem be (a b : Prop) (ha : a) (hb : b) : a ∧ b := "
+             "by exact ⟨ha, hb⟩\n")],
+         ["hypotheses-conjunction-is-conclusion"]),
+        ("reordered components caught (qou-0exp)",
+         [h["variant"] for h in analyze_text(
+             "theorem ro (a b : Prop) (ha : a) (hb : b) : b ∧ a := "
+             "⟨hb, ha⟩\n")],
+         ["hypotheses-conjunction-is-conclusion"]),
+        ("applied component is real work, not caught (qou-0exp)",
+         [h["variant"] for h in analyze_text(
+             "theorem rw (a b : Prop) (ha : a) (hab : a → b) : a ∧ b := "
+             "⟨ha, hab ha⟩\n")],
+         []),
     ]
     for label, got, want in units:
         if got != want:
@@ -706,6 +801,10 @@ def main():
             if v == "class-field-is-conclusion":
                 print(f"    class field {h['hypothesis']} : {h['statement']}"
                       f"  ⊢  {h['statement']}")
+            elif v == "hypotheses-conjunction-is-conclusion":
+                print(f"    ⟨{h['hypothesis']}⟩   ({h['components']} bare "
+                      f"hypotheses)")
+                print(f"    ⊢  {h['statement']}")
             elif v == "conjunction-is-conclusion":
                 print(f"    ⟨{h['hypothesis']}⟩   ({h['components']} fields of "
                       f"{h['carrier']})")

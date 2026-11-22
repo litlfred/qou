@@ -10,7 +10,7 @@ the algebraic layer of the Phase-5q closed form
 with Markov parameter `z = q³/(q²+1)` (**convention D**, canonical per the
 owner ruling of 2026-08-15), Hecke skein parameter
 `h = q − q⁻¹`, and the PROVEN leading flavor split
-`δ(q) = (q−1)²·(1−q⁻⁴)/3` (prop:flavor-split-substrate; the posited
+`δ(q) = (q−1)²·(1−q⁻⁴)/3` (conj:flavor-split-substrate-mass; the posited
 subleading `(1+ℏ_q³)` correction was de-wired 2026-06-29 and is NOT used).
 
 Everything is stated in the variable `s` with `q = s²` over a generic
@@ -127,7 +127,7 @@ named factor to the `MarkovTrace` class via the `(c, d)` bond data of
 - [jones1987] https://doi.org/10.2307/1971403
 - [leitner2026] prop:constit-factor-tau-M-proton-identity (Phase 5l)
 - [leitner2026] prop:interface-knot-markov-z (Phase 5c.1)
-- [leitner2026] prop:flavor-split-substrate (PR #690 leading split)
+- [leitner2026] conj:flavor-split-substrate-mass (PR #690 leading split)
 - computations/closed_form_tau_M.py (conventions; bring_color_weighted)
 - computations/probe_9b_laurent_degree_10a5.py (exact-ℚ verification)
 -/
@@ -177,7 +177,7 @@ def hbarQ (s : R) : R := 1 - (s ^ 2)⁻¹
 def quantumTwo (s : R) : R := s ^ 2 + (s ^ 2)⁻¹
 
 /-- PROVEN leading flavor split `δ(q) = (q−1)²·(1−q⁻⁴)/3`
-(prop:flavor-split-substrate, `_li_2_q_util.flavor_split_leading`).
+(conj:flavor-split-substrate-mass, `_li_2_q_util.flavor_split_leading`).
 In `s`: `(s²−1)²·(1−s⁻⁸)/3`. -/
 def flavorDelta (s : R) : R := (s ^ 2 - 1) ^ 2 * (1 - ((s ^ 2) ^ 4)⁻¹) / 3
 
@@ -385,7 +385,7 @@ theorem strictAvg_bar_invariant (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0)
 /-! ## §4. Structure of the flavor split `δ` -/
 
 /-- **Structural identity** `δ = ℏ_q² · h · [2]_q / 3`
-(prop:flavor-split-substrate; `_li_2_q_util.flavor_split_leading`
+(conj:flavor-split-substrate-mass; `_li_2_q_util.flavor_split_leading`
 docstring). -/
 theorem flavorDelta_eq_hbar_form (s : R) (hs : s ≠ 0) :
     flavorDelta s = hbarQ s ^ 2 * heckeH s * quantumTwo s / 3 := by

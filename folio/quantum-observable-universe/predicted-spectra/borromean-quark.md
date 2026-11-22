@@ -57,7 +57,7 @@ The gluon is $T(2,2)$, the Hopf link, not $T(2,7)$. The Hopf link has two compon
 
 **Consistency with the Skein mass relation.**
 
-The terminal resolution ([terminal resolution](#prop:terminal-resolution)) decomposes any hadronic link into a polynomial in unknots and Hopf links:
+Under the mass reading of [hadron reading of skein generation](#rem:skein-generation-hadron-reading), the skein resolution of [skein generation](#prop:skein-generation) writes the mass of a hadronic link as a polynomial in unknot and Hopf-link masses. That reading needs a specialisation of the skein relation in which the Hopf link is not identified with the unknot, and [skein generation](#prop:skein-generation) does not fix one, so the decomposition below is conditional on that choice:
 
 $$
   \mathfrak{m}(\mathcal{H})

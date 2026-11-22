@@ -1,12 +1,19 @@
 *The affine cone $C(\mathcal{B})$ of
-[the tetraplectic structure](#def:bring-cone-tetraplectic-structure) is a real
-$4$-manifold, so the link of its singularity is $3$-dimensional. That link is
+[the tetraplectic structure](#def:bring-cone-tetraplectic-structure) has real
+dimension $4$ and is a manifold away from its vertex, which is singular; so the link
+of that singularity is $3$-dimensional. That link is
 the unit tangent bundle $UT(\Sigma_4)$ with Seifert Euler number $-6$; it
-carries the invariant contact structure whose Reeb flow is the geodesic flow,
-and the triad of flows it supports closes into the* **split** *real form
+carries the Boothby–Wang contact form (the connection form of the circle
+bundle), whose Reeb flow rotates the circle fibres. Writing
+$UT(\Sigma_4) = \Gamma\backslash\mathrm{PSL}_2(\mathbb{R})$ for a hyperbolic
+metric, it also carries the Liouville contact form, a different form whose Reeb
+flow is the geodesic flow. The three flows coming from
+$\mathfrak{sl}_2(\mathbb{R})$ (the geodesic flow and the two horocycle flows; the
+fibre rotation is a combination of the horocycle generators) close into the*
+**split** *real form
 $\mathfrak{sl}_2(\mathbb{R})$. The* **compact** *$\mathfrak{su}(2)$ triad
 identified below is a statement about the quaternions $\mathbb{H} =
-\mathbb{C}^2$ — the smooth local model of the cone, whose own link is the Hopf
+\mathbb{C}^2$ — the local model of the cone at its smooth points, whose own link is the Hopf
 fibration $S^3$ at Euler number $-1$ — and is a local/frame statement, not a
 structure on $UT(\Sigma_4)$.*
 
@@ -21,8 +28,8 @@ hence infinite $\pi_1$, whereas a $3$-Sasakian $3$-manifold is a spherical
 space form $S^3/\Gamma$ with $\pi_1$ finite; a closed aspherical $3$-manifold
 also admits no non-trivial $\mathrm{SU}(2)$-action, so three Reeb fields
 closing into $\mathfrak{su}(2)$ cannot exist there.* **(iii)** *A
-non-degenerate quaternionic-contact structure — a rank-$3$ contact object, three
-forms $\alpha_a$ each with $\alpha_a \wedge (d\alpha_a)^n$ a volume form —
+non-degenerate quaternionic-contact structure — three $1$-forms $\alpha_a$ whose
+common kernel $H$ has rank $4n$, with each $d\alpha_a|_H$ non-degenerate —
 lives on a $(4n+3)$-manifold with $n \geq 1$, hence in dimension at least $7$.
 The link has dimension $3$, so no non-degenerate quaternionic-contact structure
 exists on it. (Dimension alone excludes nothing about $3$-Sasakian structures,

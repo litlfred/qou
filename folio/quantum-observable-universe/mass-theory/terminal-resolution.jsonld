@@ -13,19 +13,20 @@
   ],
   "label": "prop:terminal-resolution",
   "kind": "proposition",
-  "title": "Terminal Resolution of Hadronic Mass",
+  "title": "Nucleon masses under the pair Skein formula",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-three-calibration-discipline",
-    "papers/quantum-observable-universe/blocks/cor-mass-identity-C"
+    "papers/quantum-observable-universe/blocks/lem-pair-skein-mass-formula"
   ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-terminal-resolution"
   ],
   "tags": [
     "mass",
-    "hadronic"
+    "hadronic",
+    "pair-skein",
+    "convention-c"
   ],
-  "leanRef": "qou:QOU.Experimental.TerminalResolution",
+  "leanRef": "qou:QOU.MassTheory.PairSkeinNucleon.terminal_resolution",
   "text": "terminal-resolution.md",
   "leanSource": "terminal-resolution.lean",
   "provenance": "authored"

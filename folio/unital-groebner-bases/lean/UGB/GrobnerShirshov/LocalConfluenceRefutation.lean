@@ -78,7 +78,7 @@ theorem rule_lc : rule.lc degLexOrder = 2 := by
   rw [rule_lm, rel_coeff]; simp
 
 /-- The one-rule system. -/
-noncomputable def sys : RewritingSystem SU2Gen ℤ := ⟨[rule], by simp⟩
+noncomputable def sys : RewritingSystem SU2Gen ℤ := .ofList [rule] (by simp)
 
 theorem sys_isGS : IsGrobnerShirshovBasis SU2Gen ℤ degLexOrder sys :=
   isGrobnerShirshovBasis_of_single_letter_rule degLexOrder rule K rule_lm

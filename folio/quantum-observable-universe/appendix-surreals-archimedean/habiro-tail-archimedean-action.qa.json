@@ -8,8 +8,8 @@
     "lean": "folio/quantum-observable-universe/lean/QOU/QBeta/HabiroTailAction.lean"
   },
   "source_hashes": {
-    "md": "8551fdf0bf30",
-    "ts": "531ff2f76e11"
+    "md": "c15b77230422",
+    "ts": "765245e4e781"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -59,6 +59,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-probe-narrative": [
@@ -96,6 +113,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "cite-named-theorem": [
@@ -133,6 +167,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-agent-speak": [
@@ -170,6 +221,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-emoji-content": [
@@ -207,6 +275,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-first-person-work": [
@@ -244,6 +329,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -281,6 +383,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-unicode-crash": [
@@ -318,6 +437,23 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-editorializing": [
@@ -355,6 +491,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-scholarly-default": [
@@ -392,6 +545,38 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. Scholarly register in the added paragraph(s)."
       }
     ],
     "voice-title-scholarly": [
@@ -466,6 +651,38 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No filler or hype in the added paragraph(s)."
       }
     ],
     "voice-author-notes-pollution": [
@@ -503,6 +720,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "voice-status-section": [
@@ -540,6 +774,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "framework-canonical": [
@@ -577,6 +828,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "wall-side-correct": [
@@ -1089,6 +1357,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "canonical-no-numerology": [
@@ -1126,6 +1411,23 @@
           "def_hash": "bfbb93c220cc"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "canonical-witness-pinned": [
@@ -1163,6 +1465,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1237,6 +1556,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1274,6 +1610,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -1311,6 +1664,23 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1348,6 +1718,23 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -1385,6 +1772,23 @@
           "def_hash": "791b80875ca1"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "compute-prop-has-probe": [
@@ -1611,6 +2015,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781",
+          "graph": "343ff612a784"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1649,6 +2071,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781",
+          "graph": "343ff612a784"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1839,6 +2280,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781",
+          "graph": "343ff612a784"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2346,6 +2805,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. 'is not a consequence of crew2023' and 'makes no statement about the real-q tail' are scope statements, not rhetorical not-X-but-Y."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2395,6 +2869,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "trap-em-dash": [
@@ -2444,6 +2933,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "trap-triples": [
@@ -2493,6 +2997,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "trap-closing-aphorism": [
@@ -2542,6 +3061,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "trap-meta-commentary": [
@@ -2591,6 +3125,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "trap-thesis-restatement": [
@@ -2640,6 +3189,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "trap-performed-warmth": [
@@ -2689,6 +3253,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "trap-superlative": [
@@ -2738,6 +3317,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "trap-nonspeakable": [
@@ -2787,6 +3381,21 @@
         "reviewed_at": "2026-11-21T12:51:05.000Z",
         "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
         "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2844,6 +3453,23 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "proof-no-placeholder-stub": [
@@ -3113,6 +3739,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "foreshadows-point-forward": [
@@ -3133,6 +3776,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781",
+          "graph": "343ff612a784"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b"
       }
     ],
     "da-false-claim": [
@@ -3201,6 +3862,21 @@
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. The new paragraphs explicitly decline to transfer crew2023's resurgence result to 4_1 and confine Garoufalidis-Wheeler to the state-integral face. No duplicate statement remains after the conflict resolution."
       }
     ],
     "da-hidden-dof": [
@@ -3388,6 +4064,21 @@
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
     "dak-bpmn-has-process": [
@@ -3456,6 +4147,21 @@
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b3e7fcf28a3fdb92012ccc797cc169f875525a1b",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
     "id-unique": [
@@ -3497,6 +4203,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T12:51:05.000Z",
+  "updated_at": "2026-11-21T13:30:28.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

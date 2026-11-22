@@ -56,3 +56,21 @@ and in general the composition of a lateral sum with the half-power
 of the Stokes automorphism \cite{ecalle1981}. For a series with real
 coefficients whose Stokes ray is the positive real axis, the median
 sum is the unique **real and single-valued** resummation.
+
+## Beyond a single series: trans-series
+
+The definition above resums one Gevrey-1 series. A trans-series
+$\Phi = \sum_{\ell \ge 0} y^{\ell} \varphi_\ell(g)$ adds a second layer.
+Its lateral resummation $s_\pm(\Phi) = \sum_{\ell} y^\ell s_\pm(\varphi_\ell)(g)$
+is itself an infinite sum over the non-perturbative sectors, and that sum
+is a potential new source of divergence even when every lateral sum
+$s_\pm(\varphi_\ell)$ exists \cite[\S2, eq.~(2.5)]{arxiv-2302.08363v2}.
+Reorganising by a fixed power $g^n$ gives the partial series
+$G_n(y) = \sum_\ell a_{n,\ell}\, y^\ell$ with $\Phi = \sum_n g^n G_n(y)$
+\cite[eqs.~(2.6)--(2.7)]{arxiv-2302.08363v2}; the convergence property
+the source studies is that the $G_n$ converge with a common radius $R$,
+with $a_{n,\ell} \sim \ell^{-b_n} R^{-\ell}$ expected generically
+\cite[eq.~(2.8)]{arxiv-2302.08363v2}. That property is proved for
+nonlinear ODEs in the work the source cites, and the source examines
+QFT examples in which it holds; it is not implied by the single-series construction of
+this definition.

@@ -19,7 +19,7 @@ export default remark({
     "def:up-quark",
     "def:down-quark",
     "def:categorical-meson",
-    "prop:four-term-pair-nucleon",
+    "conj:four-term-pair-nucleon",
     "prop:confinement-operator-selection",
   ],
   authorNotes: [

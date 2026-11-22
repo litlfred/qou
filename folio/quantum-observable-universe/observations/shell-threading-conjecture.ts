@@ -23,6 +23,7 @@ export default remark({
     "molecular-hopf-ring",
   ],
   uses: [
+    "lem:pair-skein-mass-formula",
     "def:molecular-hopf-ring",
     "ex:half-life-shell-worked",
   ],

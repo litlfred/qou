@@ -1,8 +1,10 @@
 /-
   Wigner coefficient = [5]_q! · m_e from Frobenius reciprocity.
 
-  The isospin Casimir traced over H₅(q) gives Σ dim_q(λ)² = [5]_q!
-  by the Wedderburn-Artin trace identity.
+  Note: `Σ_λ dim_q(λ)² = [n]_q!` is FALSE for n ≥ 3
+  (`QOU.MathlibExt.sum_qDim_sq_ne_qFactorial_n3_at_two`); the true identity
+  carries a factor `q^{-κ_λ}` and `f^λ` (`molienSum_eq_qFactorial`). This
+  header said the false form until 2026-11-21.
 
   Ref: [leitner2026] §5.7, prop:wigner-coefficient-derivation
 -/
@@ -27,25 +29,29 @@ noncomputable def qFactorial (n : ℕ) (q : ℝ) : ℝ :=
 noncomputable def wignerCoefficient (k : ℕ) (q m_e : ℝ) : ℝ :=
   qFactorial k q * m_e
 
-/- At k=5: [5]_q! · m_e ≈ 67.1 MeV (2.6% from fitted 68.9). -/
-/-- **External axiom (§3b-cond pattern): wigner_coefficient.**
+/-- **`[5]_q! · m_e` written out** (prop:wigner-coefficient-derivation).
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
+    What this proves: the level-5 Wigner coefficient is the explicit product
+    `[1]_q [2]_q [3]_q [4]_q [5]_q · m_e` displayed in the block. That is all.
 
-    See the theorem docstring below for the cited reference. -/
--- Ref: [leitner2026] Ch. mass-theory, prop:wigner-coefficient-derivation ([5]_q!·m_e near-match to 68.9 MeV at q_0)
-axiom wigner_coefficient_axiom (q₀ m_e : ℝ)
-    (hq : q₀ = 1.109978595554181)
-    (hme : m_e = 0.51099895069) :
-    |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03
+    What it does not prove: that the Wigner term of the Bethe–Weizsäcker mass
+    formula equals this coefficient. That identification is the content of
+    `conj:q-integer-mass-formula` and is not formalised.
 
-theorem wigner_coefficient (q₀ m_e : ℝ)
-    (hq : q₀ = 1.109978595554181)
-    (hme : m_e = 0.51099895069) :
-    |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03 :=
-  wigner_coefficient_axiom q₀ m_e hq hme
+    Until 2026-11-21 this theorem asserted
+    `|wignerCoefficient 5 q₀ m_e − 68.896| / 68.896 < 0.03` at
+    `q₀ = 1.109978595554181` (the retired CODATA-2018 muon pin), discharged by
+    an `axiom` carrying that bound. 68.896 MeV is a fitted liquid-drop
+    coefficient, so the axiom put an empirical comparison inside a formal
+    result (round-trip audit pass 2, C12; bean `qou-wg3c`). Axiom and bound
+    are deleted. -/
+-- Ref: [leitner2026] Ch. mass-theory, prop:wigner-coefficient-derivation
+theorem wigner_coefficient (q m_e : ℝ) :
+    wignerCoefficient 5 q m_e =
+      qInt 1 q * qInt 2 q * qInt 3 q * qInt 4 q * qInt 5 q * m_e := by
+  unfold wignerCoefficient qFactorial
+  rw [Finset.prod_range_succ, Finset.prod_range_succ, Finset.prod_range_succ,
+    Finset.prod_range_succ, Finset.prod_range_succ, Finset.prod_range_zero, one_mul]
 
 end QOU.BraidKnot
 

@@ -56,7 +56,7 @@ it would decide the path. It is now settled, and it goes the OTHER way.
 line 21 states it outright:
 
     alpha = (z-1)h/2 is the single-wrap EIGENPHASE on V_(2,1)
-    (per prop:q-beta-spectral-bridge)
+    (per conj:q-beta-spectral-bridge)
 
 So the `1` is an artifact of an eigenphase computation on the 2-dimensional
 Wedderburn block, **not** the trace normalisation. The weight-0 argument does
@@ -78,7 +78,7 @@ convention-independent.** The entire convention dependence of the phase sits in
 the `(z - 1)` factor.
 
 So the D-frame ladder phase is obtained by re-deriving the single-wrap
-eigenphase on V_(2,1) under the D trace, from prop:q-beta-spectral-bridge —
+eigenphase on V_(2,1) under the D trace, from conj:q-beta-spectral-bridge —
 NOT by substituting z_D, and NOT by adjusting the offset to weight -4. That is
 the concrete open item, and it is narrower than "re-derive the ladder".
 
@@ -230,7 +230,7 @@ def main() -> int:
         "link_settled_and_FALSE": (
             "the `1` is NOT tr_M(1). q-beta-categorical-precision-ladder.md:21 "
             "states alpha = (z-1)h/2 is the single-wrap EIGENPHASE on V_(2,1) "
-            "(prop:q-beta-spectral-bridge). So the weight-0 argument does not "
+            "(conj:q-beta-spectral-bridge). So the weight-0 argument does not "
             "bind it and the 'offset repair is CLOSED' verdict is RETRACTED; "
             "the offset question is REOPENED. The tr_M(1) = 1 measurement is "
             "unaffected — it simply lacks the consequence Step 2 expected."
@@ -311,7 +311,7 @@ def main() -> int:
     print(f"  => Step 2 expected weight -4 to close the offset repair. RETRACTED:")
     print(f"     the `1` is NOT tr_M(1). It is the single-wrap EIGENPHASE on")
     print(f"     V_(2,1) (q-beta-categorical-precision-ladder.md:21,")
-    print(f"     prop:q-beta-spectral-bridge), so the weight-0 argument does not")
+    print(f"     conj:q-beta-spectral-bridge), so the weight-0 argument does not")
     print(f"     bind it. The offset question is REOPENED.")
     print(f"\n  What survives: the measurement. tr_M(1) = 1 is preserved under D,")
     print(f"  imposed not derived, and nothing replaces it — it simply lacks the")

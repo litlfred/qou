@@ -7,8 +7,8 @@
     "md": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet-proof.md"
   },
   "source_hashes": {
-    "md": "2edb3ad4f4b7",
-    "ts": "29d4db73b8ff"
+    "md": "26ee0e5864e2",
+    "ts": "da461fc1cb6c"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -21,6 +21,21 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "voice-status-leak": [
@@ -39,6 +54,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-emoji-content": [
@@ -57,6 +89,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-first-person-work": [
@@ -75,6 +124,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -93,6 +159,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-unicode-crash": [
@@ -111,6 +194,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-editorializing": [
@@ -129,6 +229,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-scholarly-default": [
@@ -162,6 +279,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -180,6 +329,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-ai-slop": [
@@ -213,6 +379,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -231,6 +429,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:58.314Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-status-section": [
@@ -249,6 +464,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:58.314Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "framework-canonical": [
@@ -267,6 +499,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "wall-side-correct": [
@@ -285,6 +534,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -417,6 +684,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-witness-pinned": [
@@ -435,6 +719,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -453,6 +754,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -471,6 +789,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -489,6 +824,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-witness-exists": [
@@ -507,6 +859,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-lp-dual-present": [
@@ -525,6 +894,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "detangler-no-forward-ref": [
@@ -624,7 +1010,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -708,6 +1094,25 @@
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -727,6 +1132,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -748,6 +1172,25 @@
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -768,6 +1211,25 @@
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -787,6 +1249,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -828,6 +1309,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-false-claim": [
@@ -856,6 +1352,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-vacuous": [
@@ -884,6 +1410,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-circular": [
@@ -912,6 +1468,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-overclaim": [
@@ -940,6 +1526,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -968,6 +1584,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -1012,6 +1658,37 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] sibling `def jp_categorical_jet : Nonempty C := ⟨fhd.obj⟩` (vacuous). Library ref returns the class field `antipode_involutive` (S'²=id), which is not in the statement and is false for general Hopf algebras. S↔P: Step 2 asserts that Δ restricts to Δ' : J¹→J¹⊗J¹ \"by the Frobenius relation\" with no computation; Step 1's \"ε∘m non-degenerate ⇒ Ω¹ is a direct summand of A⊗A\" needs a splitting of m (special/separable Frobenius), not stated; the char-p paragraph cites [fred2005] for a different construction (Dist(G))"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "major",
+        "evidence": "Re-read at c8da524af60. Partly resolved: the [fred2005] char-p citation for a different construction is gone. Still open (pre-existing): Step 2 asserts that Delta restricts to Delta' : J^1 -> J^1 (x) J^1 'by the Frobenius relation' with no computation, and Step 1's 'epsilon o m non-degenerate => Omega^1 is a direct summand of A (x) A' needs a splitting of m (special/separable Frobenius) that is not stated."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1040,6 +1717,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-citation-misuse": [
@@ -1068,6 +1775,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1096,6 +1833,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-empirical-fragility": [
@@ -1124,6 +1891,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -1152,6 +1949,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-reproducibility": [
@@ -1180,6 +2007,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -1208,6 +2065,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "expo-milnor-clarity": [
@@ -1223,6 +2110,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "milnor-brevity": [
@@ -1238,6 +2140,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "voice-probe-narrative": [
@@ -1256,6 +2173,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:58.314Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "cite-named-theorem": [
@@ -1274,6 +2208,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:58.314Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-agent-speak": [
@@ -1292,6 +2243,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:58.314Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "uses-editorial-hygiene": [
@@ -1311,6 +2279,29 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "metrics": {
           "uses_count": 1,
           "broken_edges": 0,
@@ -1336,6 +2327,25 @@
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -1355,6 +2365,24 @@
         },
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "trap-negation-contrast": [
@@ -1389,6 +2417,21 @@
         "reviewed_at": "2026-08-15T21:42:31.232Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no assert-by-denial construction; contrasts present are substantive mathematical distinctions or absent."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1423,6 +2466,21 @@
         "reviewed_at": "2026-08-15T21:42:31.272Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no setup-then-reframe pivot construction."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -1457,6 +2515,21 @@
         "reviewed_at": "2026-08-15T21:42:31.311Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no load-bearing spaced dashes; any dashes are ranges or true parentheticals."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -1491,6 +2564,21 @@
         "reviewed_at": "2026-08-15T21:42:31.351Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no reflex three-item list; enumerations present are substantive."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -1525,6 +2613,21 @@
         "reviewed_at": "2026-08-15T21:42:31.392Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no quotable-sounding final line."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -1559,6 +2662,22 @@
         "reviewed_at": "2026-08-15T21:42:31.430Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no narration of emphasis (no 'we emphasize'/'note the framing')."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60. New closing paragraph ('No deformation enters this step ... strong multiplicativity of leitner2006 is a different condition ... and is not used here') cites a source only to say it is not used; it is a correction note and belongs in authorNotes."
       }
     ],
     "trap-thesis-restatement": [
@@ -1593,6 +2712,21 @@
         "reviewed_at": "2026-08-15T21:42:31.470Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no block-final restatement of already-established content."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -1627,6 +2761,21 @@
         "reviewed_at": "2026-08-15T21:42:31.510Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no personal register in institutional prose."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -1661,6 +2810,21 @@
         "reviewed_at": "2026-08-15T21:42:31.549Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): no unqualified maximum-strength claims."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -1695,6 +2859,21 @@
         "reviewed_at": "2026-08-15T21:42:31.592Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
         "evidence": "Full-block read in context (agent:q15): prose parses aloud; no stalling noun chains."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1714,9 +2893,205 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:13.326Z",
+  "updated_at": "2026-11-21T20:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

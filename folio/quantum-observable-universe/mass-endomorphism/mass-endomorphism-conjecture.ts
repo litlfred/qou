@@ -35,6 +35,7 @@ export default conjecture({
     "murakami-murakami2001",
   ],
   authorNotes: [
+    { kind: "caveat", date: "2026-11-21", body: "The descended-vs-transient table row read \"e⁻ (trefoil)\". Under the owner ruling the electron is σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure, and the trefoil σ₀³ ∈ B₂ is only a backup. The producer of this table is not in the tree (no witness carries 0.551 / 111.86), so it is not known which word was used. The values are kept as recorded and the row now says the word is not recorded; re-measure on σ₀σ₁σ₀ before quoting. Candidate (a) previously said 4₁ \"acts as the identity on the trefoil\"; it now states only what its equation shows, tr_M(e⁻·4₁) = tr_M(e⁻) with e⁻ = σ₀σ₁σ₀." },
     { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): This limit object is the motive of the mass: it carries the combinatorial data mapping to $\\mathrm{Vol}(K)/\\hbar_q^2$ only when the archimedean realization [$\\rho_\\infty$](#def:archimedean-realization-functor) of the [motivic substrate](#def:motivic-substrate) is applied at $q_0 \\in \\mathbb{R}$." },
     { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): ([Habiro ring](#def:habiro-ring))" },
     { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): ([algebraic quantum volume](#def:algebraic-quantum-volume))" },

@@ -50,7 +50,8 @@ for _p in (str(_HERE),
         sys.path.insert(0, _p)
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
-from q_parameter import Q as q0
+from q_parameter import Q_MP as q0
+from _precision import fmt
 
 
 def is_palindrome(w):
@@ -67,7 +68,9 @@ def palindromic_defect(w):
 
 def main() -> None:
     w = WitnessBuilder("h2s-lone-pair-asymmetry", engine="python")
-    q = float(q0)
+    # The computation below is integer word combinatorics; q₀ is only
+    # recorded, so record it at full precision (was float(Q), F64_CAST).
+    q = fmt(q0)
 
     s_lone = (0, 1, 0)        # 3s²  : self-dual e⁻ (palindrome)
     p_lone = (0, 0, 1)        # 3p_z : chiral (non-palindrome)

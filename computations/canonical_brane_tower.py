@@ -38,10 +38,40 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from hecke_core import h as H_VAL, z as Z_MARK  # noqa: E402
-from mass_at_3A_proper import chi_lambda_of_word  # noqa: E402
-from hecke_characters import build_seminormal_matrices  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+
+set_compute_dps()
+
+
+def _as_mpf_q(q_val) -> mp.mpf:
+    """q as mpf. A Python float is refused: it caps every trace at ~1e-16
+    (f64_into_mpmath_audit F64_CAST). Pass `q_parameter.Q_MP` or a string."""
+    if isinstance(q_val, float):
+        raise TypeError("canonical_brane_tower: pass q as mpf/str (Q_MP), "
+                        "not float; a float caps the trace at ~1e-16")
+    return mp.mpf(q_val)
+
+
+def _z_D(q: mp.mpf) -> mp.mpf:
+    """Convention-D Markov parameter z = q^3/(q^2+1) (owner ruling 2026-08-15).
+    Was `hecke_core.z`, the same value as a float64 constant."""
+    return q ** 3 / (q ** 2 + 1)
+
+
+def _seminormal_mp(shape, q: mp.mpf):
+    """Exact mpmath seminormal matrices [rho(sigma_1), ...] via the MPFR binding."""
+    from a_operator.a_operator_categorical import exact_seminormal_matrices
+    dps = mp.mp.dps
+    return exact_seminormal_matrices(tuple(shape), mp.nstr(q, dps + 5), dps)
+
+
+def _chi_mp(mats, dim: int, word) -> mp.mpf:
+    """chi(W) = tr prod_k (c_k sigma_{g_k} + d_k I), all in mpf."""
+    M = mp.eye(dim)
+    for (c, d, g) in word:
+        M = M * (mp.mpf(c) * mats[g] + mp.mpf(d) * mp.eye(dim))
+    return sum(M[i, i] for i in range(dim))
 
 
 def vol_q_S(word: list, S: set[int], n_total_gens: int,
@@ -68,47 +98,48 @@ def vol_q_S(word: list, S: set[int], n_total_gens: int,
     n_sub_strands = len(sorted_S) + 1     # |S| generators → |S|+1 strands
     n_sub_gens = len(sorted_S)            # n_sub_strands - 1
 
-    y_vals = y_lambda_at(n_sub_strands, q_val=q_val)
+    q = _as_mpf_q(q_val)
+    y_vals = y_lambda_at(n_sub_strands, q_val=q)
     total = mp.mpf(0)
     for shape, y in y_vals.items():
-        sigmas, dim, _ = build_seminormal_matrices(shape, q=q_val)
+        # Exact mpmath seminormal rep + mpf character (2026-11-21). This was
+        # the float64 build_seminormal_matrices / chi_lambda_of_word pair,
+        # which capped every Vol_q^(S) at ~1e-16; the sub-words have at most
+        # three strands, so the mpf path costs nothing measurable.
+        mats, dim = _seminormal_mp(shape, q)
         if dim == 0:
             continue
-        chi = chi_lambda_of_word(sigmas, dim, sub_remapped, n_sub_gens)
-        # NOTE: chi is float64 (chi_lambda_of_word uses numpy/scipy matrix
-        # arithmetic at native float precision).  The float→mpf conversion
-        # is direct (no repr round-trip needed); the upstream float64 floor
-        # is the real precision limit — promoting matrix ops to mpmath is
-        # a separate refactor tracked for future precision tightening.
-        total += mp.mpf(y) * mp.mpf(chi)
+        total += mp.mpf(y) * _chi_mp(mats, dim, sub_remapped)
     return total
 
 
 def term2_canonical(word: list, n_gens: int, q_val: float) -> mp.mpf:
     """T_2 = Σ_i z · Vol_q^({i})(β)   — canonical Markov-invariant form."""
+    z = _z_D(_as_mpf_q(q_val))
     total = mp.mpf(0)
     for i in range(n_gens):
         vol_i = vol_q_S(word, {i}, n_gens, q_val)
-        total += Z_MARK * vol_i
+        total += z * vol_i
     return total
 
 
 def term3_canonical(word: list, n_gens: int, q_val: float) -> mp.mpf:
     """T_3 = z² Σ_{i<j} Vol_q^({i, j})(β) — canonical Markov-invariant form."""
     from itertools import combinations
+    z = _z_D(_as_mpf_q(q_val))
     total = mp.mpf(0)
     for i, j in combinations(range(n_gens), 2):
         vol_ij = vol_q_S(word, {i, j}, n_gens, q_val)
-        total += Z_MARK ** 2 * vol_ij
+        total += z ** 2 * vol_ij
     return total
 
 
 def t2_t3_canonical_compare_to_old(Z: int, N: int) -> dict:
     """Compute canonical T_2/T_3 for an atom via the algebraic Markov form."""
     from mass_at_3A_proper import atom_braid_word_3A
-    from q_parameter import Q as Q_0
-    q_val = float(Q_0)
-    word = atom_braid_word_3A(Z, N, include_inter=True)
+    from q_parameter import Q_MP
+    q_val = Q_MP
+    word = atom_braid_word_3A(Z, N, include_inter=True, q=Q_MP)
     n_strands = 3 * (Z + N)
     n_gens = n_strands - 1
 
@@ -116,8 +147,8 @@ def t2_t3_canonical_compare_to_old(Z: int, N: int) -> dict:
         "atom": f"(Z={Z}, N={N})",
         "n_strands": n_strands,
         "word_length": len(word),
-        "t2_canonical_Markov_trace": float(term2_canonical(word, n_gens, q_val)),
-        "t3_canonical_Markov_trace": float(term3_canonical(word, n_gens, q_val)),
+        "t2_canonical_Markov_trace": term2_canonical(word, n_gens, q_val),
+        "t3_canonical_Markov_trace": term3_canonical(word, n_gens, q_val),
     }
 
 
@@ -130,7 +161,7 @@ if __name__ == "__main__":
             r = t2_t3_canonical_compare_to_old(Z, N)
             print(f"  {label:>5}: n_strands={r['n_strands']:>2}  "
                   f"|word|={r['word_length']:>2}  "
-                  f"T_2(canonical) = {r['t2_canonical_Markov_trace']:>+12.4f}  "
-                  f"T_3(canonical) = {r['t3_canonical_Markov_trace']:>+12.4f}")
+                  f"T_2(canonical) = {mp.nstr(r['t2_canonical_Markov_trace'], 30)}  "
+                  f"T_3(canonical) = {mp.nstr(r['t3_canonical_Markov_trace'], 30)}")
         except Exception as exc:
             print(f"  {label:>5}: ERROR {type(exc).__name__}: {exc}")
