@@ -300,3 +300,31 @@ natural norms on `H₃(q)` are the block norms `N = (χ_triv, χ_sign, det ρ₂
    `c = qh`, a norm-like product `γ·γ^θ`, where `θ` acts on coefficients only. `V` itself
    has block norm `(1,1,1)`. This is an observation; whether other γγ particle words have
    the form `γ·γ^θ` is untested.
+
+## Round 8 (2026-11-22): which particles are γγ products, and why V³ is γ·γ̄
+
+Owner: *"Aren't all of the other particles generated from the photons so they would
+necessarily need to have that form? … Can we actually generate the particles that we have
+now?"* Exact sympy at generic `q`, except where marked numerical.
+[`electron_two_photon_probe.py`](../../computations/probes/proton_q3_photon_factorisation/electron_two_photon_probe.py).
+
+1. **Why `V³ = γ·γ̄`.** In `H₃(q)`, `V³ = 1 + h²V − h²V²` with `V = σ₀σ₁⁻¹`. Factoring the
+   quadratic `1 + h²x − h²x²` as `(1 + αx)(1 + βx)` gives `α + β = h²` and `αβ = −h²`, so
+   `{α, β} = {qh, −q⁻¹h}`. The coefficients involve only `h²`, and `θ(h²) = h²`, so `θ`
+   permutes the two roots. The conjugate pair therefore comes from the bar involution acting
+   on the coefficients of `V`'s polynomial: a Galois-type symmetry of this one element.
+2. **Not every γγ product has this form.** `V³` itself has a continuous family of other
+   two-photon factorisations, with varying scale and non-chiral weights (60-digit mpmath
+   root finding at `q = 1.1`, five distinct real solutions found). The Borromean pair is
+   the one point with scale 1 and both factors chiral.
+3. **The electron `σ₀σ₁σ₀` is not a two-photon product.** No `γ₁γ₂` with any weights,
+   complex allowed, is a nonzero multiple of `σ₀σ₁σ₀`. Because `σ₀σ₁σ₀` is a unit, `γ₁` must
+   be invertible. A lex Gröbner basis of the two remaining conditions forces `b = c/q` or
+   `b = −cq`, and on both branches every solution has `det ρ₂(γ₁) = 0`. This is the algebra-level
+   counterpart of the corpus's word-level `gammaGamma_length_even`. Three or more photons are
+   untested.
+4. **Mass computations: no number moves.** At `q = 1`, `h = 0`, both Borromean photons are the
+   bare photon and `V³ = 1`. This agrees with the working assumption `m_p = m_n` at `q = 1`
+   (bean `qou-az9l`, `FlipSymmetryAtOne`). A rule "particle words are norms `γ·γ̄`" would be a
+   non-census way to select words (`qou-ales`). It is a hypothesis only, and point 3 shows it
+   does not cover the electron as a two-photon word.
