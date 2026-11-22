@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T16:04:30Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T16:20:54Z
 parent: qou-9nnz
 ---
 
@@ -98,3 +98,15 @@ most recent witnesses record. Nothing in the repo pins it.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8345, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-22 — witness regenerated; both failures still hold (PR #9055)
+
+Re-ran `qbeta_level_k_binding_operator_probe.py` on main `6075d36b3c`, which has the 1x1-safe eigenvalue helper (`3e72ea2c81`). Under mpmath 1.3.0 it no longer crashes: the `mp.eig` shape problem in the environment note above is fixed. Exit 1, 6/8 pass. The two failures are the same ones:
+
+- `binding_character_is_largest_in_a_tl_kernel_block`
+- `the_only_small_eigenphases_are_in_blind_blocks`
+
+The regenerated witness is committed on PR #9055 with `allPassed: false`. Compared with the committed witness, the only moves are float noise in `data.blocks[3,5,6,7,8,9,10].omega_abs` (about 1e-16 to 1e-18 becomes about 1e-71 to 1e-72, because the helper keeps mpf) and provenance fields. `engineVersion` is now mpmath 1.3.0. No assertion and no other data field changed.
+
+The bean stays open. Regenerating the witness only records the red state honestly. It does not resolve the grouped-only finding above.
