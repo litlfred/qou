@@ -368,26 +368,30 @@ structure AmbientIsotopy (L L' : PolygonalLink E) where
 def AmbientIsotopic (L L' : PolygonalLink E) : Prop := Nonempty (AmbientIsotopy L L')
 
 omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
-/-- **Every link is ambient isotopic to itself.** -/
-theorem AmbientIsotopic.refl (L : PolygonalLink E) : AmbientIsotopic L L :=
-  ⟨{ H := fun _ => Homeomorph.refl E
-     continuous := continuous_snd
-     continuous_symm := continuous_snd
-     start := fun _ => rfl
-     e := Equiv.refl _
-     finish := fun _ => ⟨id, OrientedReparam.id, fun _ => rfl⟩ }⟩
+/-- The identity isotopy. -/
+def AmbientIsotopy.refl (L : PolygonalLink E) : AmbientIsotopy L L where
+  H := fun _ => Homeomorph.refl E
+  continuous := continuous_snd
+  continuous_symm := continuous_snd
+  start := fun _ => rfl
+  e := Equiv.refl _
+  finish := fun _ => ⟨id, OrientedReparam.id, fun _ => rfl⟩
 
 omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
-/-- **Ambient isotopy is symmetric.** Run the isotopy backwards and undo its end. -/
-theorem AmbientIsotopic.symm {L L' : PolygonalLink E} (h : AmbientIsotopic L L') :
-    AmbientIsotopic L' L := by
-  obtain ⟨I⟩ := h
-  refine ⟨{ H := fun t => (I.H 1).symm.trans (I.H (unitInterval.symm t))
-            continuous := ?_
-            continuous_symm := ?_
-            start := ?_
-            e := I.e.symm
-            finish := ?_ }⟩
+/-- **Every link is ambient isotopic to itself.** -/
+theorem AmbientIsotopic.refl (L : PolygonalLink E) : AmbientIsotopic L L :=
+  ⟨AmbientIsotopy.refl L⟩
+
+omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- The reversed isotopy `t ↦ H (1 - t) ∘ (H 1)⁻¹`. -/
+def AmbientIsotopy.symm {L L' : PolygonalLink E} (I : AmbientIsotopy L L') :
+    AmbientIsotopy L' L := by
+  refine { H := fun t => (I.H 1).symm.trans (I.H (unitInterval.symm t))
+           continuous := ?_
+           continuous_symm := ?_
+           start := ?_
+           e := I.e.symm
+           finish := ?_ }
   · exact I.continuous.comp ((unitInterval.continuous_symm.comp continuous_fst).prodMk
       ((I.H 1).symm.continuous.comp continuous_snd))
   · exact (I.H 1).continuous.comp (I.continuous_symm.comp
@@ -404,17 +408,21 @@ theorem AmbientIsotopic.symm {L L' : PolygonalLink E} (h : AmbientIsotopic L L')
     rw [← this, Homeomorph.symm_apply_apply]
 
 omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
-/-- **Ambient isotopy is transitive.** Run both isotopies at once and compose. -/
-theorem AmbientIsotopic.trans {L L' L'' : PolygonalLink E} (h : AmbientIsotopic L L')
-    (h' : AmbientIsotopic L' L'') : AmbientIsotopic L L'' := by
-  obtain ⟨I⟩ := h
-  obtain ⟨J⟩ := h'
-  refine ⟨{ H := fun t => (I.H t).trans (J.H t)
-            continuous := ?_
-            continuous_symm := ?_
-            start := ?_
-            e := I.e.trans J.e
-            finish := ?_ }⟩
+/-- **Ambient isotopy is symmetric.** Run the isotopy backwards and undo its end. -/
+theorem AmbientIsotopic.symm {L L' : PolygonalLink E} (h : AmbientIsotopic L L') :
+    AmbientIsotopic L' L :=
+  let ⟨I⟩ := h; ⟨I.symm⟩
+
+omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- Both isotopies run at once, `t ↦ J.H t ∘ I.H t`. -/
+def AmbientIsotopy.trans {L L' L'' : PolygonalLink E} (I : AmbientIsotopy L L')
+    (J : AmbientIsotopy L' L'') : AmbientIsotopy L L'' := by
+  refine { H := fun t => (I.H t).trans (J.H t)
+           continuous := ?_
+           continuous_symm := ?_
+           start := ?_
+           e := I.e.trans J.e
+           finish := ?_ }
   · exact J.continuous.comp (continuous_fst.prodMk I.continuous)
   · exact I.continuous_symm.comp (continuous_fst.prodMk J.continuous_symm)
   · intro x
@@ -424,6 +432,12 @@ theorem AmbientIsotopic.trans {L L' L'' : PolygonalLink E} (h : AmbientIsotopic 
     obtain ⟨ψ, hψ, hK⟩ := J.finish (I.e i)
     exact ⟨ψ ∘ φ, hψ.comp hφ, fun t => by
       simp only [Homeomorph.trans_apply, hH, hK, Equiv.trans_apply, Function.comp]⟩
+
+omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- **Ambient isotopy is transitive.** Run both isotopies at once and compose. -/
+theorem AmbientIsotopic.trans {L L' L'' : PolygonalLink E} (h : AmbientIsotopic L L')
+    (h' : AmbientIsotopic L' L'') : AmbientIsotopic L L'' :=
+  let ⟨I⟩ := h; let ⟨J⟩ := h'; ⟨I.trans J⟩
 
 omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
 /-- **A relabelling is an ambient isotopy**, with `H t = id`: re-indexing a polygon only shifts
