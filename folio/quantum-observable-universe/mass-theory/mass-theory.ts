@@ -327,6 +327,7 @@ export default chapter({
           label: "sec:hoefsmit-qdifference-prolongation",
           blocks: [
             "qdifference-kernel-prolongation-symbol",
+            "ramanujan-equation-connection-prior-art",
             "c1-ggm-bar-parity-faces",
             "c1-theta-zero-locus-and-pole-divisor",
             "prolonged-periods-fixed-depth",
