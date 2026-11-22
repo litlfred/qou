@@ -3,14 +3,12 @@
 title: 'EPIC: REV_n asymptotics — the upper bound on M_n (the deuteron-wall q-Borel gate)'
 status: in-progress
 type: epic
-priority: high
+priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:01:20Z
-updated_at: 2026-11-22T21:40:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-10v9
-blocking:
-    - qou-v2om
 ---
 
 Arc-level container created 2026-10-10 on owner instruction ("reorganize this Arc within
@@ -98,3 +96,7 @@ The newest Round entries here cite a PR that is open and unmerged (#8393); its L
 
 ## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
 Verdict: NEEDS-OWNER. The mathematics (REV_n = O(sqrt n), M_n upper bound) is anchor-free except eps_m at the proton q0, and uses no z, word or colour, so no ruling invalidates it. What is stale is its stated purpose, 'the deuteron-wall q-Borel gate' with blocking edge to qou-v2om: (1) the q-Borel-Laplace resummation of Z_n(q0) was already run and is a scope-(a) negative (best 2.745 % of B_D, reaching B_D only through the Borel singularity, a fit; recorded in qou-hok7, correction of 2026-09-07); an M_n bound can only certify that resummation, not enlarge it. (2) qou-v2om's body does not mention qou-hok7, qou-3e6w, REV_n or the wall; the edge exists only on this side. (3) v2om's current deuteron work is the log-bond B_sym route. So the arc gates nothing on the current derivation chain. Options for the owner: keep it as standalone combinatorics at low priority and drop the blocking edge (recommended); keep it as is; or park it with a reminder. Default if no answer: nothing changes. Open conjecture; not closed.
+
+
+## 2026-11-22: owner decision (session_01Qmmkt8qREoAzcE1YKVx5nz)
+Owner card choice "Keep as math, drop the link" (21:44Z) on "What should happen to the REV_n arc now that its gate purpose is stale?". Done: blocking edge to qou-v2om removed, priority set to low. The arc stays open as standalone combinatorics (REV_n = O(sqrt n) is an open conjecture; not closed). Reason recorded in the applicability note above: the q-Borel resummation it gated is already a scope-(a) negative.
