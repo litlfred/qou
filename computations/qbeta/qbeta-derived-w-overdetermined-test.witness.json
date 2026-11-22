@@ -15,11 +15,11 @@
       "passed": true
     },
     {
-      "name": "deciding_interface_test_is_recorded_as_blocked_not_passed",
+      "name": "deciding_interface_test_evaluated_at_every_atom",
       "computed": true,
       "expected": true,
       "passed": true,
-      "note": "one atom is fitted by construction; the n=9 evaluation is needed"
+      "note": "Case C is implemented (PR #8940), so the interface candidate is evaluated at every prepared atom; its spread is the verdict, and no candidate is promoted on it"
     },
     {
       "name": "shortfall_measured_at_every_prepared_atom",
@@ -59,7 +59,8 @@
     "atoms_prepared": [
       "2H",
       "3H",
-      "3He"
+      "3He",
+      "4He"
     ]
   },
   "data": {
@@ -67,26 +68,34 @@
       "2H": {
         "n": 6,
         "terms": 32,
-        "dtr_pred": "0.55654466040444",
+        "dtr_pred": "0.14704667798041",
         "dtr_required": "2.8435012151175",
-        "shortfall_R": "2.2869565547131",
-        "fraction_supplied": "0.19572514"
+        "shortfall_R": "2.6964545371371",
+        "fraction_supplied": "0.051713246"
       },
       "3H": {
         "n": 9,
         "terms": 128,
-        "dtr_pred": "0.88853612687367",
+        "dtr_pred": "0.11292801443633",
         "dtr_required": "10.84166660795",
-        "shortfall_R": "9.9531304810764",
-        "fraction_supplied": "0.081955677"
+        "shortfall_R": "10.728738593514",
+        "fraction_supplied": "0.010416112"
       },
       "3He": {
         "n": 9,
         "terms": 128,
-        "dtr_pred": "0.89290857539352",
+        "dtr_pred": "0.12958238934505",
         "dtr_required": "9.8654140397853",
-        "shortfall_R": "8.9725054643918",
-        "fraction_supplied": "0.090508981"
+        "shortfall_R": "9.7358316504403",
+        "fraction_supplied": "0.013135018"
+      },
+      "4He": {
+        "n": 12,
+        "terms": 512,
+        "dtr_pred": "0.078172562842163",
+        "dtr_required": "36.168304540332",
+        "shortfall_R": "36.090131977489",
+        "fraction_supplied": "0.0021613555"
       }
     },
     "overdetermined_test": [
@@ -95,108 +104,121 @@
         "ratio_to_w1": {
           "2H": "1.0",
           "3H": "1.0",
-          "3He": "1.0"
+          "3He": "1.0",
+          "4He": "1.0"
         },
         "blocked_at": null,
         "c_per_atom": {
-          "2H": "4.109205815",
-          "3H": "11.20171727",
-          "3He": "10.04862727"
+          "2H": "18.33740533",
+          "3H": "95.00511142",
+          "3He": "75.13236713",
+          "4He": "461.672621"
         },
-        "spread": "0.839034"
+        "spread": "2.7276"
       },
       {
         "w": "sigma_1 (control)",
         "ratio_to_w1": {
-          "2H": "1.318452615852908",
-          "3H": "1.318452615852908",
-          "3He": "1.318452615852908"
+          "2H": "0.8547993293843977",
+          "3H": "0.8547993293843977",
+          "3He": "0.8547993293843977",
+          "4He": "0.8547993293843977"
         },
         "blocked_at": null,
         "c_per_atom": {
-          "2H": "3.116688279",
-          "3H": "8.496109105",
-          "3He": "7.621530841"
+          "2H": "21.45229261",
+          "3H": "111.143175",
+          "3He": "87.89474272",
+          "4He": "540.0947393"
         },
-        "spread": "0.839034"
+        "spread": "2.7276"
       },
       {
         "w": "L_2 = T1T1",
         "ratio_to_w1": {
-          "2H": "1.275636097818101",
-          "3H": "1.275636097818101",
-          "3He": "1.275636097818101"
+          "2H": "1.178704603211414",
+          "3H": "1.178704603211414",
+          "3He": "1.178704603211414",
+          "4He": "1.178704603211414"
         },
         "blocked_at": null,
         "c_per_atom": {
-          "2H": "3.221299414",
-          "3H": "8.781279625",
-          "3He": "7.877346284"
+          "2H": "15.55725267",
+          "3H": "80.60128989",
+          "3He": "63.74147257",
+          "4He": "391.6779656"
         },
-        "spread": "0.839034"
+        "spread": "2.7276"
       },
       {
         "w": "P+ of sigma_1",
         "ratio_to_w1": {
-          "2H": "1.103672165665516",
-          "3H": "1.103672165665516",
-          "3He": "1.103672165665516"
+          "2H": "0.873101769866078",
+          "3H": "0.873101769866078",
+          "3He": "0.873101769866078",
+          "4He": "0.873101769866078"
         },
         "blocked_at": null,
         "c_per_atom": {
-          "2H": "3.723212329",
-          "3H": "10.14949695",
-          "3He": "9.104721118"
+          "2H": "21.00259783",
+          "3H": "108.8133305",
+          "3He": "86.05224468",
+          "4He": "528.7729758"
         },
-        "spread": "0.839034"
+        "spread": "2.7276"
       },
       {
         "w": "P- of sigma_1",
         "ratio_to_w1": {
-          "2H": "-0.1036721656655155",
-          "3H": "-0.1036721656655155",
-          "3He": "-0.1036721656655155"
+          "2H": "0.126898230133922",
+          "3H": "0.126898230133922",
+          "3He": "0.126898230133922",
+          "4He": "0.126898230133922"
         },
         "blocked_at": null,
         "c_per_atom": {
-          "2H": "-39.63653878",
-          "3H": "-108.0494191",
-          "3He": "-96.92695441"
+          "2H": "144.5048155",
+          "3H": "748.6716821",
+          "3He": "592.0678882",
+          "4He": "3638.132861"
         },
-        "spread": "0.839034"
+        "spread": "2.7276"
       },
       {
         "w": "interface product",
         "ratio_to_w1": {
-          "2H": "-0.9179091747058017"
+          "2H": "-0.9179091747058017",
+          "3H": "-0.8664393945790959",
+          "3He": "-1.198058590690677",
+          "4He": "-1.109886410649332"
         },
-        "blocked_at": [
-          "3H: tr_m_word_lq: Case C (multiple top-1 in segment) not impleme",
-          "3He: tr_m_word_lq: Case C (multiple top-1 in segment) not impleme"
-        ],
+        "blocked_at": null,
         "c_per_atom": {
-          "2H": "-4.476701974",
-          "3H": null,
-          "3He": null
+          "2H": "-19.9773636",
+          "3H": "-109.6500367",
+          "3He": "-62.71176361",
+          "4He": "-415.9638469"
         },
-        "spread": null
+        "spread": "2.60388"
       }
     ],
     "candidates_with_spread_under_5pct": [],
     "smallest_spread": {
-      "w": "w = 1 (control)",
+      "w": "interface product",
       "ratio_to_w1": {
-        "2H": "1.0",
-        "3H": "1.0",
-        "3He": "1.0"
+        "2H": "-0.9179091747058017",
+        "3H": "-0.8664393945790959",
+        "3He": "-1.198058590690677",
+        "4He": "-1.109886410649332"
       },
       "blocked_at": null,
       "c_per_atom": {
-        "2H": "4.109205815",
-        "3H": "11.20171727",
-        "3He": "10.04862727"
+        "2H": "-19.9773636",
+        "3H": "-109.6500367",
+        "3He": "-62.71176361",
+        "4He": "-415.9638469"
       },
-      "spread": "0.839034"
+      "spread": "2.60388"
     }
   },
   "context": {
@@ -206,16 +228,16 @@
     "numerical_accident": "The deuteron shortfall 2.286957 sits near the 2.2867072 maximum ell-1 ceiling of the sibling probe. Different normalisations (Q_beta vs m_e, ratio 1.53098) — coincidence, flagged so it is not chased.",
     "scope": "Scope-(a). No content block is edited here."
   },
-  "gitCommit": "73efaf38f59f303101bd3f94f27ae47af3a3d4f0",
+  "gitCommit": "3583ca6b8097380ad2092231188092f48b702686",
   "durationMs": 0,
   "scriptFile": "qbeta_derived_w_overdetermined_test_probe.py",
-  "scriptHash": "5e9bab7a8dd4",
-  "scriptCommitSha": "unknown",
-  "commitSha": "73efaf38f59f303101bd3f94f27ae47af3a3d4f0",
+  "scriptHash": "982184451911",
+  "scriptCommitSha": "77dc728c01ff35361dac103bf463d253973adb07",
+  "commitSha": "3583ca6b8097380ad2092231188092f48b702686",
   "engine": "mpmath",
-  "computedAt": "2026-09-03T04:00:37.050248+00:00",
-  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-22T16:28:43.728118+00:00",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
-  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

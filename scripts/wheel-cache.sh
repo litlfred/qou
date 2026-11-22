@@ -38,6 +38,7 @@
 #   scripts/wheel-cache.sh key     <package>
 #   scripts/wheel-cache.sh restore <package> <outdir>   # prints the wheel path
 #   scripts/wheel-cache.sh seed    <package> <wheel>
+#     (build-pyhecke-native.sh calls `seed` only when PYHECKE_NATIVE_PUSH=1)
 #   scripts/wheel-cache.sh list
 #
 # EXIT CODES

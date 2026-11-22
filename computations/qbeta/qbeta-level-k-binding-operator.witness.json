@@ -109,7 +109,7 @@
         ],
         "rows": 3,
         "dim": 10,
-        "omega_abs": "5.6329819e-17",
+        "omega_abs": "1.2866954e-72",
         "visible": false,
         "chi_binding": "1.60852119763",
         "eigenphases": []
@@ -134,7 +134,7 @@
         ],
         "rows": 3,
         "dim": 16,
-        "omega_abs": "1.8678421e-16",
+        "omega_abs": "1.404516e-71",
         "visible": false,
         "chi_binding": "0.474862236947",
         "eigenphases": []
@@ -148,7 +148,7 @@
         ],
         "rows": 4,
         "dim": 10,
-        "omega_abs": "8.6955631e-17",
+        "omega_abs": "9.4053904e-72",
         "visible": false,
         "chi_binding": "2.45810264032",
         "eigenphases": []
@@ -161,7 +161,7 @@
         ],
         "rows": 3,
         "dim": 5,
-        "omega_abs": "5.8167812e-17",
+        "omega_abs": "5.493558e-72",
         "visible": false,
         "chi_binding": "-1.95805732152",
         "eigenphases": []
@@ -175,7 +175,7 @@
         ],
         "rows": 4,
         "dim": 9,
-        "omega_abs": "6.0593502e-17",
+        "omega_abs": "2.1009026e-72",
         "visible": false,
         "chi_binding": "-1.34483624397",
         "eigenphases": []
@@ -190,7 +190,7 @@
         ],
         "rows": 5,
         "dim": 5,
-        "omega_abs": "1.2203009e-17",
+        "omega_abs": "1.0422502e-72",
         "visible": false,
         "chi_binding": "-1.54203224126",
         "eigenphases": []
@@ -206,7 +206,7 @@
         ],
         "rows": 6,
         "dim": 1,
-        "omega_abs": "5.7063666e-18",
+        "omega_abs": "1.392697e-72",
         "visible": false,
         "chi_binding": "-1.3501335798",
         "eigenphases": []
@@ -328,14 +328,14 @@
     "corrects": "Step 25's 'the corpus is H_3-valued at every A, so the level-k avenue is not instantiated'. The 6-vector is the observation, not the object.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted. q* and the 0.13 % ratio are facts about the operator, never criteria."
   },
-  "gitCommit": "46ba3c0243f537f046dfd6ffa8e995ace65802f5",
+  "gitCommit": "3583ca6b8097380ad2092231188092f48b702686",
   "durationMs": 0,
   "scriptFile": "qbeta_level_k_binding_operator_probe.py",
-  "scriptHash": "976453697efb",
-  "scriptCommitSha": "46ba3c0243f537f046dfd6ffa8e995ace65802f5",
-  "commitSha": "46ba3c0243f537f046dfd6ffa8e995ace65802f5",
-  "computedAt": "2026-09-14T16:06:07.356910+00:00",
-  "engineVersion": "mpmath 1.4.1",
+  "scriptHash": "5431320b9ba2",
+  "scriptCommitSha": "3e72ea2c817ea9e9b74b7b914b51c062b19f6145",
+  "commitSha": "3583ca6b8097380ad2092231188092f48b702686",
+  "computedAt": "2026-11-22T16:20:26.727763+00:00",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561"
 }
