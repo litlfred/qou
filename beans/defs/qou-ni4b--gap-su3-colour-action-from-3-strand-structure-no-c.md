@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-11-22T17:14:32Z
+updated_at: 2026-11-22T17:16:18Z
 parent: qou-8lxd
 ---
 
@@ -47,3 +47,20 @@ Still open. Closure needs either an owner ruling that K0 counts, or a coideal / 
 2026-11-22 (spin/background-field probe, PR #9059, computations/probes/qcd_spin_background/, prereg 0415291e97a, probe 4a21dae23ee 39/39, RESULT aa514549e55): scope-(a) MISS. Background colour holonomy K^{(x)n} on (C^N)^{(x)n} (exact Q(q), N=2,3,4): susceptibility at q=1 is sum l_i^2 N^(#cyc-1) (strand winding squared, not spin); Hecke-sign (S2) ratio 2/N; full-twist (S1) expansion 2N+8hbar+4N hbar^2, all positive, only negative constant the -1/N sl-framing. N=3 coincidences 2/N=1-1/N=2/3=(2*1/2)^2-1/3 are N-dependent traps, do not cite. Post-hoc: photon s0s1^-1 alone has negative hbar^2 coefficient -4(N^2-3). No paramagnetic/diamagnetic split exists in colour-only data; the 11/3:-1/3 structure needs a non-colour spin factor = the un-derived theta_I=1 hypothesis of TwistedChannelSplitting.lean. Heat-kernel per-state susceptibility 1 -> 12/17; its RG sign is convention-set. No gluon selected.
 
 2026-11-22 spin-factor probe (PR #9059; 2abaa8ed425 prereg, c3f1b05557a probe, 18dfa1a27e4 result). P1: no transported member of the 16-member commutant class (Jimbo R for colour (x) spin, eigenvalues q, -1/q) braids at real q>1; elim ideal contains q^2(q^2-1)^2(q^2+1)^3(q^4+q^2+1). Scope (b) within the class only. P2: theta_I=1 derived in D/F; no (2s)^2-1/3 split. P3 MISS; -1/3 at N=2 for Lambda^2 W is a post-hoc coincidence. Gluon stays open.
+
+
+
+## 2026-11-22 — full-tower colour (owner: "What about looking in the full Tower for the color")
+PR #9059. Prereg e16afb61a6d, probe in c3f1b05557a (swept into the sibling's commit, after the prereg), RESULT 5ab55a24497, computations/probes/qcd_colour_full_tower/. 27/27 exact over Q(q).
+
+**T1.** On (C^3)^n the full H_n(q) has U_q(gl3) as commutant, and that action meets (a)(b)(c)(f). The diagonal Markov twists K give z by rank: rank 1 gives q, rank 2 gives z_D (all three supports), rank 3 gives z_3. The unique U_q(gl3)-invariant twist is diag(q^-4,q^-2,1), which is rank 3, i.e. z_3. So convention D is the colour-twisted trace with a SINGULAR twist. Its stabiliser is U_q(gl2) x U(1), and (d) fails: scope (b) within diagonal twists on C^3.
+
+**T4, confirmed.** The colour-singlet sector of (C^3)^{3A} is the (A,A,A) block, which lies in D's radical (dim n!-Catalan) for every A. Scope (b), from ocneanuWeight_conventionD_eq_zero_of_three_rows. In other words, the colour is in the tower and D puts every colour singlet in its radical.
+
+**T2.** The relative commutants have M3 blocks at depth 3, which is generic (a pre-declared coincidence). (b) fails because the centre is commutative.
+
+**T3.** There is no Z3 at real q>1: V^3 is scalar on (2,1) iff h^2(h^2+2)=0, and the branching-graph automorphism group is {id, transpose} / trivial.
+
+**Not tested:** non-diagonal or non-grouplike central twists. Those would be selection.
+
+**Bean stays open.**
