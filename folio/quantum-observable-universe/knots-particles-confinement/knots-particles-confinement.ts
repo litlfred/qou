@@ -29,6 +29,7 @@ export default chapter({
       title: "Interactions are pairwise",
       label: "sec:interactions-are-pairwise",
       blocks: [
+        "knotted-particles-history",
         "interactions-are-pairwise-intro",
         "pairwise-interaction-decomposition",
         "pairwise-interaction-decomposition-proof",
