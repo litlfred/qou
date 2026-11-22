@@ -440,3 +440,37 @@ top of the trefoil. In this algebra the family members differ only in which powe
 `τ` reads. So choosing `m = 1` needs a reason from outside, which is the `[10]_q` value
 itself. Using that value to choose `m` would be selection against the target. Scope (a):
 nothing here excludes a reason for `m = 1` that comes from somewhere else.
+
+## 18. What picks one full twist: the Bring genus bound (2026-11-22)
+
+**Correction to §16–§17: prior work I missed.** `QOU/BraidKnot/WeakVertexElectronFactor.lean`
+(on main, 2026-11-21) already proves `(σ₀σ₁)⁵ = e⁻ · (e⁻ · (σ₀σ₁)²)` and
+`e⁻ · e⁻ = (σ₀σ₁)³` in the braid group `B₃` itself (`weakVertex_eq_electron_mul`,
+`electron_sq_eq`). That is stronger than the block-level `t35_hook` / `t35_sym_alt` of #9017,
+which were derived again without citing it. There it is the `3 + 7` crossing split of the
+β-decay weak vertex. The block-level lemmas remain correct and are consistent with it.
+Neither result moves any number.
+
+**Corpus search.** §1 of this audit already says the 9 and the 10 of `q·[9]_q·[10]_q` "come
+from the two genus-4 torus knots `T(2,9)` and `T(3,5)` on Bring's surface". The genus rule
+`g(K) ≤ 4 = g(Σ₄)` is `rem:bring-embeddable-knots`, and the generator set is
+`prop:torus-knot-generators` (`brings-surface/torus-knot-generators.lean`). The
+electroweak blocks call `{T(2,9), T(3,5)}` the *saturating* carriers: the only coprime
+solutions of `(p−1)(q−1) = 8`.
+
+**Applied to the electron family** (`QOU/AlphaEM/TorusFamilyGenus.lean`, sorry-free):
+
+- `T(3, 3m+2) = e^(2m+1)·σ₁` has genus `3m + 1`. The Bring bound allows `m ∈ {0, 1}`
+  (trefoil, `T(3,5)`), and genus 4 holds only at `m = 1`.
+- The backup-electron family `T(2, 2m+1) = σ₀^(2m+1)` has genus `m`, and genus 4 holds only
+  at `m = 4`, which is `T(2,9)`.
+
+So the one full twist is the genus-saturation rule the corpus already uses for both factors
+of the tree term. It is not chosen from the α_em value.
+
+**Status of that rule, stated plainly.** The genus bound is a `remark`, and its
+exhaustiveness is marked open (`rem:knot-exhaustiveness`). "Saturating" is stated as a
+selection mechanism inside conjecture-level electroweak blocks; it is not proved. So `m = 1`
+rests on an adopted rule, not on a theorem. Two further limits: the photon letter could
+enter at another position, and in `B₂` any odd power of `σ₀` is "electron-built", so the
+backup family is a weak statement.
