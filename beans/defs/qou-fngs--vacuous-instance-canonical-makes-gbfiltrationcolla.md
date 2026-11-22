@@ -1,13 +1,13 @@
 ---
 # qou-fngs
 title: 'Vacuous: instance canonical makes GBFiltrationCollapsesAtE2 free for every R'
-status: todo
+status: completed
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:13:08Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:17:12Z
 parent: qou-6qbv
 ---
 
@@ -365,3 +365,7 @@ Was in-progress with no bean update since 2026-09-03 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8147, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-24: "qou-fngs: collapse PROVED from a parity grading, not assumed"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+Done on main: `lean/QOU/Mathlib/SpectralSequence.lean` declares `def canonicalTrivial` (not an `instance`), with a docstring explaining why. No global instance of `GBFiltrationCollapsesAtE2` exists (`git grep "instance.*GBFiltrationCollapsesAtE2"` is empty). Nothing left to do.

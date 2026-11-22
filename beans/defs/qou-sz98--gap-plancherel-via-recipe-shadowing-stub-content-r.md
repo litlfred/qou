@@ -1,14 +1,14 @@
 ---
 # qou-sz98
 title: 'GAP: plancherel_via_recipe shadowing stub + content-ref points at the vacuous twin'
-status: in-progress
+status: completed
 pr: 8206
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:12:24Z
-updated_at: 2026-11-16T21:22:30Z
+updated_at: 2026-11-22T21:17:12Z
 parent: qou-6qbv
 ---
 
@@ -38,3 +38,7 @@ Doubly vacuous: the class field is `rfl`-provable so it constrains nothing, and 
 - [x] Defined `recipeWeight d s i = s i / ∑ j, d j * s j` and proved `recipe_plancherel_normalization : ∑ i, d i * recipeWeight d s i = 1` in `QOU/BraidsAndKnots/PlancherelViaRecipe.lean`, constructed `canonicalH2PlancherelContext`, and added nested `QOU.BraidsAndKnots.PlancherelViaRecipe.plancherel_via_recipe` matching `mass-theory/wedderburn-trace-identity.ts` (PR #8206, HEAD `aecfe3f528c442bfb5e105f53d801fa139604119`).
 - [x] Verified 80-dps `mpmath` witness `round51-devacuify-6qbv.witness.json` (`allPassed: true`, `0` float64 values) and `0` findings across all 6 vacuity audits.
 - [ ] Awaiting Merge Manager merge of PR #8206.
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+Done on main: `lean/QOU/BraidsAndKnots/PlancherelViaRecipe.lean` no longer has `holds : (1 : ℝ) = 1`. `PlancherelViaRecipeContext` now carries `d`, `y` and the normalisation `∑ d·y = 1` (line 61), built from `recipe_plancherel_normalization`; `mass-theory/wedderburn-trace-identity.ts:19` points at the nested `QOU.BraidsAndKnots.PlancherelViaRecipe.plancherel_via_recipe`. Nothing left to do.

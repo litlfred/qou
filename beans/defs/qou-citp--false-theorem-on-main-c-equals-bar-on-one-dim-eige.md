@@ -1,14 +1,14 @@
 ---
 # qou-citp
 title: 'FALSE THEOREM on main: c_equals_bar_on_one_dim_eigenvalue_neg_q_inv is false (-3q = q); Z toy encoding conflates the two Hecke eigenvalues'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - needs-owner
     - reorg-2026-10-04
 created_at: 2026-08-21T21:24:54Z
-updated_at: 2026-10-04T15:19:07Z
+updated_at: 2026-11-22T21:17:12Z
 parent: qou-6qbv
 ---
 
@@ -55,3 +55,7 @@ it just does not apply to a content-block sibling like this one.
 
 Remaining: the additive ℤ toy `c_equals_bar_on_one_dim_eigenvalue_q` is retained (true under its
 encoding) but is now superseded by the multiplicative section, and is marked as such at the site.
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+Done on main: the false theorem `c_equals_bar_on_one_dim_eigenvalue_neg_q_inv` is absent from `knots-particles-confinement/c-equals-bar-iff-all-1dim.lean` (and from every `.lean` file), as is the superseded additive toy. Nothing left to do.

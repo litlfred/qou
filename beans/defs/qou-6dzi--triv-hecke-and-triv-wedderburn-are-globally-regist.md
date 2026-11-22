@@ -1,13 +1,13 @@
 ---
 # qou-6dzi
 title: triv_hecke and triv_wedderburn are globally registered PUnit instances that discharge real hypotheses by typeclass search
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T16:32:45Z
-updated_at: 2026-10-04T15:25:12Z
+updated_at: 2026-11-22T21:17:12Z
 parent: qou-6qbv
 ---
 
@@ -78,3 +78,7 @@ Three distinct things share the `WedderburnDecomp*` name; do not conflate them.
 - **Status:** `in-progress` (opened `litlfred/qou#8304`, branch `claude/round58-devacuify-6qbv-b9cj`, HEAD `e72e4e04168ffebca669be8e58b6df711ee7f5ed`, C1 `e3528dd09222e2ddccf5556168d0aa31aca7f5d7`).
 - **Target:** `folio/quantum-observable-universe/lean/QOU/Hecke/Wedderburn.lean` + 80-dps witness `computations/probes/round58-devacuify-6qbv-b9cj.witness.json` (`scriptHash = a44d91e59ddc`, `allPassed = true`, `0` `float64`).
 - **Updated at:** `2026-11-17T10:34:25Z`.
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+Done on main: `triv_hecke` is a `def` (`lean/QOU/Mathlib/HeckeAlgebra.lean` ~line 246, docstring "A `def`, not an `instance`, since 2026-08-23"), and `triv_wedderburn` was fixed with it; `CrystalGraphRealization.lean:117` and `QIntegerMassFormula.lean:256` cite the same disposition. Nothing left to do.

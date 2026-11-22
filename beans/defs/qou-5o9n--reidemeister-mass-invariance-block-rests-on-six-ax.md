@@ -1,13 +1,13 @@
 ---
 # qou-5o9n
 title: Reidemeister mass-invariance block rests on six axioms
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - lean
 created_at: 2026-11-22T09:20:31Z
-updated_at: 2026-11-22T09:51:31Z
+updated_at: 2026-11-22T21:17:12Z
 parent: qou-uwyf
 ---
 
@@ -17,3 +17,7 @@ Record: docs/audits/2026-11-22-lean-audit-snapshot-gaps.md (§3). Epic qou-uwyf.
 
 
 2026-11-22 (branch claude/honest-lean-descent-reidemeister-schurweyl-2026-11-22, commit 3870f504e): six axioms replaced by class ReidemeisterMassInvariance (bareMass bindingEnergy); consistent (mass 0, energy writhe) and refutable (constant energy). New bareMass_eq_of_parity: on the (writhe, crossingNumber) carrier any R-I/R-II invariant depends only on (w+c) mod 2, so the carrier cannot hold a hyperbolic volume. conj:borromean-quark link not encoded (types unrelated). 0 axioms in file.
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+Done on main: PR #8999 merged 2026-11-22T10:58Z (merge fc2a6fab5). `mass-theory/reidemeister-mass-invariance.lean` has 0 `axiom` declarations; the six are the class `ReidemeisterMassInvariance`, as this bean asked. The link to `conj:borromean-quark` is not encoded (types unrelated), as the previous note says; that is a separate item, not this bean's ask.

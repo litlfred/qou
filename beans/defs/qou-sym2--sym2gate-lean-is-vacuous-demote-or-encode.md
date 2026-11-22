@@ -1,13 +1,13 @@
 ---
 # qou-sym2
 title: Sym2Gate.lean is vacuous — demote or encode the real decomposition claim
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-10-04T15:24:41Z
+updated_at: 2026-11-22T21:17:12Z
 parent: qou-6qbv
 ---
 
@@ -60,3 +60,7 @@ Parent coverage bean: `qou-8fl1`.
 ## Round 56 Update (PR #8271)
 - Opened PR https://github.com/litlfred/qou/pull/8271 (`b2cbd4734e5f10beb2130e3555212a3d78a87989`, C1 `22c4bf632182163314cbb930ffed44b139fa5265`).
 - Compiled under Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0` warnings) and verified `0` advisories across all 6 static vacuity & borrowed-name audits, with 80-dps `mpmath` witness `computations/probes/round56-devacuify-6qbv-b9cj.witness.json` (`scriptHash = c44bdf430d4f`).
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+Done on main: `lean/QOU/Eightfold/Sym2Gate.lean` is deleted (no `sym2_dim_3` / `corpus_T1_fails_sym2_gate` / `octonion_3_passes_sym2_gate` anywhere). The representation-level content is in `Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three` and `Sym2GateMultiplicity.lean`; `eightfold-way/color-su3-from-g2.ts:47` points at the former. This is option 1 of this bean (encode the decomposition). Nothing left to do.
