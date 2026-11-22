@@ -63,6 +63,6 @@ a prediction of m_n.
 
 New probe `mn_four_strand_probe.py` in this directory: exact sympy over `ℚ(q)` on the 16-dim
 `V^{⊗4}`, Ř checked against `A1, A2` of the three-strand probe and against #8636's
-`χ^N − χ^P` on the isospin-½ block; mpmath 60 dps at the muon pin (honest test) and proton pin
+`χ^N − χ^P` on the isospin-½ block; mpmath 60 dps at the muon pin (E1 comparison, proton vs muon pin) and proton pin
 (round trip). CODATA m_n, m_p only in comparison columns. Lean only if a structural statement
 results (L-A).

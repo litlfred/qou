@@ -9,7 +9,7 @@ The production proton identity (convention D) is
     m_p/m_e = 2 (Vol(4₁)/ℏ_q²) F_Bor(q) − 12,   F_Bor = |tr_M(β_Bor)| [3]_q! / q³,
 
 with tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶)/(h² + 4), h = q − q⁻¹. Goal: state the neutron's
-own identity of this shape, evaluate it at q₀ (muon pin = the honest test; proton pin = a
+own identity of this shape, evaluate it at q₀ (muon pin = an E1 comparison (proton vs muon pin); proton pin, the default, = a
 round trip), and report m_n directly, not as m_p + Q_β + m_e. Framework (owner rulings,
 `docs/coordination/owner-rulings.md`): photon γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹; electron
 σ₀σ₁σ₀ ∈ B₃ (Hopf closure); up quark = unknot strand; two-term Lagrangian trace.

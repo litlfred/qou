@@ -49,7 +49,7 @@ The muon pin (an E1 comparison of the two pins) agrees to < 3·10⁻⁸ on every
 
 `m_e`-scaled renderings (MeV; CODATA in comparison columns only):
 
-| reading | muon pin (honest test) | vs CODATA m_n | proton pin (round trip) | vs CODATA m_n |
+| reading | muon pin (E1 comparison) | vs CODATA m_n | proton pin (round trip) | vs CODATA m_n |
 |---|---|---|---|---|
 | proton identity, m_p | 938.271861 | (m_p: −0.244 ppm) | 938.272089 | (m_p: 0, by construction) |
 | **N0** literal, m_n | **938.271861** | **−1376.8 ppm (−1.2936 MeV)** | 938.272089 | −1376.5 ppm |

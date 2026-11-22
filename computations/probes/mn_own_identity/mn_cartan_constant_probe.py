@@ -5,7 +5,7 @@ Pre-registration: PREREGISTRATION-cartan-constant.md (committed before this ran)
 
 Assembly m_N = sum_k c_k omega_k(N) t_k, each term bare (omega = 1) or
 Cartan-weighted (omega(p) = s q, omega(n) = s/q). Exact sympy checks, then mpmath
-values (60 dps) at the muon pin (honest test) and the proton pin (round trip).
+values (60 dps) at the muon pin (E1 comparison, proton vs muon pin) and the proton pin (round trip).
 CODATA and literature values appear in comparison fields only.
 """
 from __future__ import annotations
