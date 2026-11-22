@@ -128,3 +128,36 @@ Verdict, scope (a): coloured strands put flavour on the strands, and the u ↔ d
 exact symmetry of the algebra and of the forced trace. The neutron-heavier question has no sign to
 settle there. A mass ordering needs a u/d asymmetry that is not in Y₂,₃ with x = 0. Candidates are
 the knot assignment u = T(2,3), d = mirror (§14), or a charge term. Either would be an added input.
+
+## Options for a u/d asymmetry, and what each does downstream (2026-11-22, owner: "explore options and figure out the implications")
+
+Nothing new was computed for this section. Each row cites the result it rests on. The downstream
+objects checked: the ruled Q_β (D1 = A, 2026-11-20: Q_β = |t_n − t_p|·E₀^full = 0.3254 MeV), the
+kinematic identity m_n − m_p = Q_β + m_e, the ruled photon and V³ (γγ selection, `qou-ales`), the
+b₃ / isospin bond pattern (`qou-q8vl`), and the anti-fit rule.
+
+| option | where u ≠ d enters | n vs p | ruled Q_β | photon / V³ | binding bonds | fit risk |
+|---|---|---|---|---|---|---|
+| O1 weight space + K (current) | K weight q on W_p, q⁻¹ on W_n | ε_n = q⁻²ε_p | **is** the ruled Q_β | compatible | none (bonds flavour-blind) | none; u = e₁ is derived (§16) |
+| O2 coloured strands (Yokonuma, x = 0) | strand colour | n = p exactly | **forces Q_β = 0**, contradicts D1 | V³ = γγ product fails as an element | pn crossing (involution) ≠ pp, nn (Hecke) | none, but kills a ruling |
+| O3 knot assignment u = T(2,3), d = mirror | d–d crossings inverted | nonzero (§12 Y1: −45.8 % half, +35.2 % full) | changes it; not re-scored | rewrites letters of the γγ word | not computed | second selection rule on top of γγ: owner call |
+| O4 quark charges in the matter term | e_u, e_d | p: Σe = 1, n: 0 | adds an EM piece | compatible | Coulomb pp only | hypercharge Y is open (flavor-charge-assignments), so e_u, e_d are inputs; α_em conditional on a sorry |
+| O5 FE or EF alone (§22) | order of the weak insertion | flips sign with FE | changes it | compatible | — | choosing FE over EF is a choice; the state-dependent order gives q⁻² (Addendum B) |
+| O6 x ≠ 0 off the E-system | trace fugacity | n − p = x(x²−1)/4 | — | — | — | sign of x is chosen: a fit |
+| O7 kinematic reading | none: m_n − m_p := Q_β + m_e | neutron heavier by construction | consistent with D1 (gives 0.8364 MeV, −35.3 %) | compatible | — | none, but the sign is assumed, not derived |
+
+Implications.
+
+1. **O2 conflicts with D1.** If flavour is a strand colour with the forced trace, then ε_flavour(V³)
+   = 0, and the ruled Q_β becomes 0. Coloured strands and the ruled Q_β cannot both stand as the
+   flavour carrier. Coloured strands could still be used for bonds only (pn vs pp/nn), where they
+   separate the unlike pair. That matches the sign-mixed pattern b₃ > 0 needs (`qou-q8vl`), but
+   whether μ_pn > 1 there has not been computed.
+2. **O1 + O7 is the consistent pair now on record.** O1 supplies Q_β, and O7 reads the mass gap from
+   kinematics. The cost is explicit: under O7 the neutron-heavier sign is assumed, and "mass ∝
+   trace" (R1/R2) is excluded as a reading (scope a). No ruling is touched.
+3. **O3 is the only option that derives a nonzero sign from strand data**, and it touches the γγ
+   ruling. Its numbers in §12 come from the old chirality table, on the half and full twist, not on
+   V³. It needs a pre-registered V³ run and an owner decision on whether a mirror rule may act on a
+   γγ-selected word.
+4. **O4 and O5 import a choice** (hypercharge; E/F order), so they are not derivations today.
