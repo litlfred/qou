@@ -21,3 +21,7 @@ Method: every `library/arxiv-*` directory whose arXiv id (old-style ids as `math
 - **37** are mentioned nowhere outside `library/`.
 
 Still open: a relevance verdict (core / supporting / tangential / not-relevant) for the 188 nothing cites, per `paper-relevance-triage`.
+
+## 2026-11-22: relevance verdicts for the 188 uncited arXiv papers
+
+All 188 read from abstracts and given a verdict: core 18 (17 works; ENO math/0203060 is held twice, v10 and v11, neither marked duplicate), supporting 83, tangential 72, not-relevant 15. Table: /mnt/project-files/library-triage/uncited-arxiv-verdicts.md. Next: reference entries for the core papers (needs owner OK for the PR).
