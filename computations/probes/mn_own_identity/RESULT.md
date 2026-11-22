@@ -31,7 +31,23 @@ Sector shares of `tr_M(β_Bor)` at the muon q₀: uuu 0.1684, **uud (proton) 0.4
 **udd (neutron) 0.3322**, ddd 0.0901. The proton identity reads 59 % of its trace from
 sectors that are not the proton.
 
-## Values (MeV; CODATA in comparison columns only)
+## Values
+
+Lead quantities are dimensionless: `m_n/m_p` and the splitting `Δ_pn = m_n − m_p` in units of
+`m_e`, at the proton pin (the default pin). CODATA: `m_n/m_p = 1.00137841946`, `Δ_pn/m_e = 2.531`.
+Under the 2026-08-11 ruling that excises absolute mass, the MeV columns below are `m_e`-scaled
+renderings of these ratios, not predictions; they are kept for comparison with earlier text.
+
+| reading | m_n/m_p (proton pin) | Δ_pn/m_e (proton pin) |
+|---|---|---|
+| **N0** literal | **1** (exact) | **0** |
+| N1 own T³ sector | 0.8104228 | −348.09 |
+| N2a bar mirror of F_Bor | 1.8758851 | +1608.26 |
+| N2b bar mirror of F_Bor/ℏ_q² | 1.5213383 | +957.26 |
+
+The muon pin (an E1 comparison of the two pins) agrees to < 3·10⁻⁸ on every ratio.
+
+`m_e`-scaled renderings (MeV; CODATA in comparison columns only):
 
 | reading | muon pin (honest test) | vs CODATA m_n | proton pin (round trip) | vs CODATA m_n |
 |---|---|---|---|---|
@@ -76,7 +92,11 @@ output [`mn_four_strand_probe.out.json`](mn_four_strand_probe.out.json): 12/12 e
 (Ř reproduces the three-strand matrices, Hecke and braid relations, `tr_M(V³)` closed form,
 #8636's amplitude norm `(q⁴+1)/q²`, `tr_D(σ₀σ₁σ₀) = q³(q⁴+1)/(q²+1)²`, split-union factorisation).
 
-| arm | what it is | m_n or composite (muon pin, MeV) | vs CODATA | prediction held? |
+In ratio form (proton pin): L-A gives `m_n/m_p = 1`, `Δ_pn = 0`; L-B gives `m_n/m_p = 1.0460024`,
+`Δ_pn/m_e = +84.47` (CODATA 1.0013784, +2.531). The MeV column below is an `m_e`-scaled rendering,
+not a prediction (2026-08-11 absolute-mass ruling).
+
+| arm | what it is | m_n or composite (muon pin, MeV, m_e-scaled rendering) | vs CODATA | prediction held? |
 |---|---|---|---|---|
 | L-A | spectator lepton strand, `V³⊗1` on `N = n⊗ν`, `P = p⊗e` | 938.271861 | −1376.8 ppm | yes (equal, exact) |
 | L-B | #8636 selected word `σ₁σ₃⁻¹` (and `σ₃⁻¹σ₁`), `F^(n) = F_Bor·tr_N(w)/tr_P(w)` | **981.43** | **+4.46 %**, neutron heavier | partly: separates, but 4.5 % not "tens of %" |
