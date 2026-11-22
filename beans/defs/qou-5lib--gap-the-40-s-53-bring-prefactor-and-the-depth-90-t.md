@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T21:48:29Z
-updated_at: 2026-11-22T21:45:35Z
+updated_at: 2026-11-22T21:52:52Z
 parent: qou-n4nr
 ---
 
@@ -80,3 +80,6 @@ No change; (i)–(iv) are open. The latest note above points at batch PR #8198, 
 ## 2026-11-22 — owner card "Keep it in Lean, labelled"
 
 Done on PR #9141, commit 0b29d648f: v_over_m_e_bridge docstring now labels it a comparison point (measured v_ew, m_e; 40 and 90 not derived; not citable as a prediction). The bean's derivation question stays open.
+
+## 2026-11-22 — merged
+PR #9141 merged to main (3a1a9e87e).

@@ -1,14 +1,14 @@
 ---
 # qou-6eik
 title: 'FALSE: "UpperHalfPlane carries no Riemannian metric" — Mathlib Metric.lean gives ℍ the hyperbolic metric + isometries (2 sites: HyperbolicVolumeMeasure.lean:12 and bean qou-5gai)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-11-22T21:33:04Z
+updated_at: 2026-11-22T21:52:52Z
 parent: qou-n4nr
 ---
 
@@ -81,3 +81,6 @@ Fix commit: `e71a48aa9` on branch `claude/volume-conjecture-bean-drain-2026-11-2
 ## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
 
 **Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.
+
+## 2026-11-22 — merged
+PR #9141 merged to main (3a1a9e87e). HyperbolicVolumeMeasure.lean header corrected on main.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-20T03:21:57Z
-updated_at: 2026-11-22T21:45:34Z
+updated_at: 2026-11-22T21:52:52Z
 parent: c7vs
 ---
 
@@ -31,3 +31,6 @@ No change in status. Blocked on the same defect as `qou-y7o7`: the corpus's `Tra
 ## 2026-11-22 — TransferLemmas restated (owner card "Restate with L-length")
 
 Done on PR #9141, commit f6b5788f1. TransferLemmas (Machinery/StrongAJFigureEight.lean) now measures order by lLength = top − bottom of the L-support. strong_aj_figure_eight_of_transfer derives I = span {Â} via principal_of_length_division_minimality (sorry-free, standard axioms), and a non-vacuity example (I = ⊤, Â = 1) shows the class is inhabited. The old topDeg class is kept as TransferLemmasTopDeg with not_transferLemmasTopDeg. Still open for a 4₁ instance: division for the length (skew-Laurent Euclidean property; NOT brick B3, which divides topDeg) and minimality (plain AJ content; AJMinimality.lean shows [Tr4] L3.1–3.3 do not supply it). aj_mem is corpus-proved.
+
+## 2026-11-22 — merged
+PR #9141 merged to main (3a1a9e87e).

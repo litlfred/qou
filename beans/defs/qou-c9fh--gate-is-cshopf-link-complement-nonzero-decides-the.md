@@ -1,13 +1,13 @@
 ---
 # qou-c9fh
 title: 'GATE: is CS(Hopf link complement) nonzero? Decides the deuteron complex-volume resolution'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T09:39:35Z
-updated_at: 2026-11-22T21:33:02Z
+updated_at: 2026-11-22T21:52:51Z
 parent: qou-n4nr
 ---
 
@@ -24,3 +24,6 @@ parent: qou-n4nr
 ## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
 
 **Verdict: ALREADY-DONE.** ALREADY-DONE in substance: answered 0 (structural, scope b) in docs/audits/2026-11-22-hopf-link-complement-complex-volume.md and QOU/Archimedean/HopfLinkComplexVolume.lean on branch claude/volume-conjecture-bean-drain-2026-11-22, PR awaiting owner card. On review it is consistent with Ruling A (2026-08-29: deuteron binding is not a hyperbolic-volume term); the result adds that the CS axis is empty too. Complete once the PR merges.
+
+## 2026-11-22 — merged
+PR #9141 merged to main (3a1a9e87e). Gate answered: CS(Hopf complement) = 0, structural (scope b); HopfLinkComplexVolume.lean + audit on main.
