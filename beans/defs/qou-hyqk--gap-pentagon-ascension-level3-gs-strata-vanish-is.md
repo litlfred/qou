@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:15Z
-updated_at: 2026-11-22T11:58:12Z
+updated_at: 2026-11-22T15:22:48Z
 parent: qou-uwyf
 ---
 
@@ -20,3 +20,5 @@ Follow-up to qou-02q4 (PR #9001, merged). Owner 2026-11-22: 'Fill the gaps ... M
 2026-11-22 owner 'Works of Pentagon' (option 1): hypothesis restated as regrouping. phi_q_tower_algebraic_stratification_of_regrouping proves stratification mod J given (level>=3 sum - low-stratum correction delta) in J; vanishing form is delta=0, J=bot. PR #9018. Ascension itself still unproved (needs J from jet tower, delta from Faddeev-Kashaev pentagon). Stays open.
 
 2026-11-22 coordination note: before defining J from the jet tower, coordinate with thread 'Give descent, Reidemeister, Schur-Weyl honest Lean' (cmsg_01H9cBvdoT3vcjHkS7QAyTqgArV4fqfX1pv4MzvPNQug8A), which is switching the tower definition and descent Step 1 to the jet module (S⊗S)/I^2. J should be built from that module.
+
+2026-11-22 owner 'Both': #9018 merged. J fixed as I^(k+1) in the jet module, first order J1(S)=(S⊗S)/I^2 (stratification_in_first_jet), PR #9025. Still hypotheses: residual in I^2 (ascension), strata as elements of S⊗S. Stays open.
