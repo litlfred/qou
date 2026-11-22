@@ -1,0 +1,388 @@
+{
+ "probe": "qcd_spin_background",
+ "bean": "qou-bwwr",
+ "route": "qou-ni4b",
+ "S3_words_N3": {
+  "1": {
+   "chi": "27",
+   "chi_at_q1": "27",
+   "chi_hbar_series": "27",
+   "chi_at_q0": "27",
+   "direction_independent": true
+  },
+  "s0s1": {
+   "chi": "3*(5*q**2 - 2)",
+   "chi_at_q1": "9",
+   "chi_hbar_series": "30*hbar**2 + 30*hbar + 9",
+   "chi_at_q0": "12.4807868125015",
+   "direction_independent": true
+  },
+  "photon s0s1^-1": {
+   "chi": "-3*(2*q**4 - 7*q**2 + 2)/q**2",
+   "chi_at_q1": "9",
+   "chi_hbar_series": "9 - 24*hbar**2",
+   "chi_at_q0": "8.73776274880487",
+   "direction_independent": true
+  },
+  "core V^3": {
+   "chi": "-3*(2*q**12 - 6*q**10 + 6*q**8 - 13*q**6 + 6*q**4 - 6*q**2 + 2)/q**6",
+   "chi_at_q1": "27",
+   "chi_hbar_series": "27",
+   "chi_at_q0": "26.9651148778798",
+   "direction_independent": true
+  },
+  "electron s0s1s0": {
+   "chi": "15*q**3",
+   "chi_at_q1": "15",
+   "chi_hbar_series": "135*hbar**2/2 + 45*hbar + 15",
+   "chi_at_q0": "20.5132775542708",
+   "direction_independent": true
+  },
+  "full twist D^2_3": {
+   "chi": "3*(5*q**6 + 4)",
+   "chi_at_q1": "27",
+   "chi_hbar_series": "270*hbar**2 + 90*hbar + 27",
+   "chi_at_q0": "40.0529704012366",
+   "direction_independent": true
+  }
+ },
+ "S3_adjoint_channel_N3": {
+  "1": {
+   "chi_adj": "12",
+   "chi_adj_q1": "12",
+   "hbar_series": "12",
+   "at_q0": "12"
+  },
+  "s0s1": {
+   "chi_adj": "-6",
+   "chi_adj_q1": "-6",
+   "hbar_series": "-6",
+   "at_q0": "-6"
+  },
+  "photon s0s1^-1": {
+   "chi_adj": "-6*(q**4 - q**2 + 1)/q**2",
+   "chi_adj_q1": "-6",
+   "hbar_series": "-24*hbar**2 - 6",
+   "at_q0": "-6.26223725119513"
+  },
+  "core V^3": {
+   "chi_adj": "-6*(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**6",
+   "chi_adj_q1": "12",
+   "hbar_series": "12",
+   "at_q0": "11.9651148778798"
+  },
+  "electron s0s1s0": {
+   "chi_adj": "0",
+   "chi_adj_q1": "0",
+   "hbar_series": "0",
+   "at_q0": "0"
+  },
+  "full twist D^2_3": {
+   "chi_adj": "12",
+   "chi_adj_q1": "12",
+   "hbar_series": "12",
+   "at_q0": "12"
+  }
+ },
+ "S3_adjoint_ratio_to_identity_q1": {
+  "1": "1",
+  "s0s1": "-1/2",
+  "photon s0s1^-1": "-1/2",
+  "core V^3": "1",
+  "electron s0s1s0": "0",
+  "full twist D^2_3": "1"
+ },
+ "S3_heat_kernel": {
+  "mu": {
+   "(3,)": "(q**2 + 1)**3/q**3",
+   "(2, 1)": "(q**2 + 1)/q",
+   "(1, 1, 1)": "(q**2 + 1)/q"
+  },
+  "per_state_chi_t0": "1",
+  "per_state_chi_tinf": "12/17",
+  "d_dt_at_t0": "-5*(q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(27*q**3)",
+  "d_dt_at_t0_q0": "-1.13344060702131",
+  "reading": {
+   "real background exp(eps a): Gamma ~ -log Z": "falling chi -> 1/g^2 rises toward IR -> screening",
+   "unitary background exp(i eps a)": "sign of eps^2 flips; falling |chi| -> antiscreening reading",
+   "verdict": "sign is set by the background convention, not by the construction"
+  }
+ },
+ "S2_across_N": {
+  "2": {
+   "chi_1": "4",
+   "chi_sigma": "4*q",
+   "ratio_q1": "1"
+  },
+  "3": {
+   "chi_1": "6",
+   "chi_sigma": "(5*q**2 - 1)/q",
+   "ratio_q1": "2/3"
+  },
+  "4": {
+   "chi_1": "8",
+   "chi_sigma": "2*(3*q**2 - 1)/q",
+   "ratio_q1": "1/2"
+  }
+ },
+ "S1_across_N": {
+  "2": {
+   "chi_D2": "4*q**2",
+   "chi_D2_hbar": "8*hbar**2 + 8*hbar + 4",
+   "chi_D2sl": "4*q",
+   "chi_D2sl_hbar": "2*hbar**2 + 4*hbar + 4",
+   "sigma_sl_exponent_Sym2": "1/2",
+   "sigma_sl_exponent_Lambda2": "-3/2",
+   "hbar1_coeff": "8",
+   "hbar2_coeff": "8"
+  },
+  "3": {
+   "chi_D2": "(5*q**4 + 1)/q**2",
+   "chi_D2_hbar": "12*hbar**2 + 8*hbar + 6",
+   "chi_D2sl": "(5*q**4 + 1)/q**(8/3)",
+   "chi_D2sl_hbar": "8*hbar**2 + 4*hbar + 6",
+   "sigma_sl_exponent_Sym2": "2/3",
+   "sigma_sl_exponent_Lambda2": "-4/3",
+   "hbar1_coeff": "8",
+   "hbar2_coeff": "12"
+  },
+  "4": {
+   "chi_D2": "2*(3*q**4 + 1)/q**2",
+   "chi_D2_hbar": "16*hbar**2 + 8*hbar + 8",
+   "chi_D2sl": "2*(3*q**4 + 1)/q**(5/2)",
+   "chi_D2sl_hbar": "13*hbar**2 + 4*hbar + 8",
+   "sigma_sl_exponent_Sym2": "3/4",
+   "sigma_sl_exponent_Lambda2": "-5/4",
+   "hbar1_coeff": "8",
+   "hbar2_coeff": "16"
+  }
+ },
+ "posthoc_photon_hbar2_across_N": {
+  "2": {
+   "chi": "-(q**2 - 3*q - 1)*(q**2 + 3*q - 1)/q**2",
+   "hbar_series": "9 - 4*hbar**2",
+   "hbar1": "0",
+   "hbar2": "-4",
+   "hbar2_over_q1": "-4/9"
+  },
+  "3": {
+   "chi": "-3*(2*q**4 - 7*q**2 + 2)/q**2",
+   "hbar_series": "9 - 24*hbar**2",
+   "hbar1": "0",
+   "hbar2": "-24",
+   "hbar2_over_q1": "-8/3"
+  },
+  "4": {
+   "chi": "-(13*q**4 - 35*q**2 + 13)/q**2",
+   "hbar_series": "9 - 52*hbar**2",
+   "hbar1": "0",
+   "hbar2": "-52",
+   "hbar2_over_q1": "-52/9"
+  }
+ },
+ "verdict": {
+  "S1": "MISS: twist label is the colour content ct(lambda); hbar-expansion of the background trace has positive coefficients only (8 hbar, 4N hbar^2 at n=2); the only negative constant is the sl-framing shift -1/N, N-dependent. 1-1/3 at N=3 is the pre-declared coincidence.",
+  "S2": "MISS: Hecke-sign-weighted susceptibility q(N+2)-q^-1(N-2); q=1 ratio 2/N (swap l^2=4 over 2N), N-dependent. 2/3 at N=3 is the pre-declared coincidence.",
+  "S3": "MISS (no split): background susceptibility of a braid word at q=1 is sum l_i^2 N^(#cyc-1): a strand cycle of length l couples like charge l (l^2 'paramagnetic-like'), with no opposite-sign diamagnetic term; heat-kernel per-state susceptibility 1 -> 12/17, sign of the RG reading set by the background convention.",
+  "hit": false
+ },
+ "checks": [
+  {
+   "name": "Hecke (s-q)(s+1/q)=0 on (C^3)^3",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "s1 s1^-1 = 1",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "braid relation s1 s2 s1 = s2 s1 s2",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(1) independent of Cartan direction",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(1) at q=1 = sum l_i^2 N^(#cyc-1) = 27",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(s0s1) independent of Cartan direction",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(s0s1) at q=1 = sum l_i^2 N^(#cyc-1) = 9",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(photon s0s1^-1) independent of Cartan direction",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(photon s0s1^-1) at q=1 = sum l_i^2 N^(#cyc-1) = 9",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(core V^3) independent of Cartan direction",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(core V^3) at q=1 = sum l_i^2 N^(#cyc-1) = 27",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(electron s0s1s0) independent of Cartan direction",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(electron s0s1s0) at q=1 = sum l_i^2 N^(#cyc-1) = 15",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(full twist D^2_3) independent of Cartan direction",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S3 chi(full twist D^2_3) at q=1 = sum l_i^2 N^(#cyc-1) = 27",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S1 isotypic cross-check: chi(D^2_3) = sum f q^{2ct} 2T",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "adjoint projector P_(2,1) idempotent (trace rank 16)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "mu_(2,1) = mu_(1^3) = [2] (ties the IR)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "per-state susceptibility at t=0 is 1",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "per-state susceptibility at t->oo is 12/17",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "d/dt (chi/Z) at t=0 < 0 at q0 (falling toward IR)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S2 N=2: chi(sigma) = q(N+2) - q^-1(N-2)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S2 N=2: q=1 ratio chi(sigma)/chi(1) = 2/N",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S1 N=2: chi(D^2) hbar^1 coeff = 8 (N-independent, Zeeman-like, sign-definite)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S1 N=2: chi(D^2) hbar^2 coeff = 4N > 0 (no negative orbital term)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S2 N=3: chi(sigma) = q(N+2) - q^-1(N-2)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S2 N=3: q=1 ratio chi(sigma)/chi(1) = 2/N",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S1 N=3: chi(D^2) hbar^1 coeff = 8 (N-independent, Zeeman-like, sign-definite)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S1 N=3: chi(D^2) hbar^2 coeff = 4N > 0 (no negative orbital term)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S2 N=4: chi(sigma) = q(N+2) - q^-1(N-2)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S2 N=4: q=1 ratio chi(sigma)/chi(1) = 2/N",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S1 N=4: chi(D^2) hbar^1 coeff = 8 (N-independent, Zeeman-like, sign-definite)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S1 N=4: chi(D^2) hbar^2 coeff = 4N > 0 (no negative orbital term)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S1: the -1/N framing shift is N-dependent (not the Nielsen-Hughes -1/3)",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "S2: q=1 ratio is N-dependent (2/N), so 2/3 at N=3 is a coincidence",
+   "pass": true,
+   "preregistered": true
+  },
+  {
+   "name": "photon N=2: hbar^1 coefficient vanishes (writhe 0)",
+   "pass": true,
+   "preregistered": false
+  },
+  {
+   "name": "photon N=3: hbar^1 coefficient vanishes (writhe 0)",
+   "pass": true,
+   "preregistered": false
+  },
+  {
+   "name": "photon N=4: hbar^1 coefficient vanishes (writhe 0)",
+   "pass": true,
+   "preregistered": false
+  },
+  {
+   "name": "photon hbar^2 / chi(q=1) is N-dependent (not a fixed diamagnetic constant)",
+   "pass": true,
+   "preregistered": false
+  }
+ ],
+ "n_pass": 39,
+ "n_total": 39
+}
