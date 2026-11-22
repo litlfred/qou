@@ -196,3 +196,32 @@ three remaining options were tried.
 3. **Labelling.** `conj:proton-mass-substrate-identity` now states that the
    identity is fitted in the normaliser, and that its 0.24 ppm residual is at
    the muon pin (at the proton pin it holds exactly, by construction).
+
+## Round 5 (2026-11-22): does the photon form fix the scale of x₋?
+
+**Question.** The `/q³` in `F_Bor` is the scaling of `x₋ = Σ_w (−q)^{−ℓ(w)} σ_w` that gives
+it identity coefficient 1. The photon `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` has identity
+coefficient 1 by definition. If `x₋` were a photon product at a *forced* scale, the
+normaliser would be inherited from the photon rather than chosen.
+
+**Result: scope-(a) negative, two halves.** Exact symbolic arithmetic at generic `q`,
+[`computations/probes/proton_q3_photon_factorisation/`](../../computations/probes/proton_q3_photon_factorisation/proton_q3_photon_factorisation_probe.py).
+
+1. **Chiral photons `γ(0,0,c)` never give `x₋`.** `σ₀σ₁⁻¹` acts as `q·q⁻¹ = 1` in the
+   trivial representation and as `(−q⁻¹)(−q) = 1` in the sign representation, so every
+   product of chiral photons, of any length, has equal trivial and sign images. A nonzero
+   multiple of `x₋` has trivial image 0 and sign image `1 + 2q⁻² + 2q⁻⁴ + q⁻⁶ ≠ 0`. This is
+   the family the Borromean core `V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)` lives in.
+2. **General two-photon products give `x₋` at any scale.** `γ·γ = λ·x₋` has a
+   two-parameter family of solutions, and `λ` varies continuously on it (at `q = 11/10`:
+   0.13832…, 0.11467…, 0.03135… at three sample points; one point cross-checked in the
+   six-dimensional regular representation). So the photon definition does not fix `λ`.
+
+**What this does not exclude.** A further rule that singles out one point of the family
+(for example a bar-invariance or unit condition on the photon parameters) could still
+fix `λ`. No such rule is in the corpus. Not formalised in Lean: half 1 is a one-line
+character evaluation, and half 2 is a statement about a solution family that the probe
+checks exactly.
+
+**Status of `/q³` after Round 5:** still chosen, not derived; the photon route does not
+supply it.
