@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:46Z
-updated_at: 2026-11-22T10:47:46Z
+updated_at: 2026-11-22T11:07:23Z
 parent: qou-wxhi
 ---
 
@@ -20,3 +20,7 @@ CANDIDATE (preregister first): under conj:complex-mass-constituent-functional th
 
 Related: neutron beta width D_beta is CAL-2 (a calibration, not a prediction). Its proxy Q_beta: dashboard pred 0.325433928735 MeV vs CODATA 0.782333559310 MeV (-58.4 %), conditional on conjectures C1-C3 (per-observable-100x-status.witness.json).
 Not started.
+
+
+
+2026-11-22 RESULT (computations/probes/nucleon_width/, prereg then RESULT.md, PR #8955): CS(L6a4) = -1.5e-65 (SnapPy high precision), so CS = 0 (amphichiral => CS in {0, 1/2}). Proton and neutron closures isometric. Under width = Im Vol_C = CS the closure gives width 0 for BOTH nucleons: derives proton stability but predicts a stable neutron. Scope-(a) negative for the closure-only reading; a width difference must come from braid decorations. Claim 1 not Lean-proved (standard 3-manifold topology + SnapPy isometry). Bean stays open: no derived width for the neutron, no CS-to-width unit map.
