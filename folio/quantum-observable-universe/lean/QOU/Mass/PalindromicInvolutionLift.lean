@@ -101,6 +101,9 @@ real-valued `dilation_gt_one_not_involutive`, which is about an ordering.
 -- Ref: [leitner2026] docs/audits/2026-09-07-w1-route2-fibre-monodromy-is-order-two.md (W1 routes 1-2)
 -/
 
+-- Homogeneous form (issue #9083): the inversion `z ↦ l/z` is the swap `[z:w] ↦ [w:z]`, which
+-- fixes the sextic (`QOU.Mass.BranchLocusStabiliser.sextic_swap`, no `z ≠ 0`), followed by a
+-- diagonal map; `inversion_rigid_of_diagonal` re-derives `inversion_rigid` that way.
 namespace QOU.Mass.PalindromicInvolutionLift
 
 open Polynomial
