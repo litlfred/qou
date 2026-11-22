@@ -37,16 +37,17 @@ ENVIRONMENT
 """
 from __future__ import annotations
 
-import hashlib
-import json
 import os
 import random
 import subprocess
+import sys
 import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = ROOT / "scripts" / "trace-cache.sh"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _branch_cache import ShardedCache  # noqa: E402  (the shared branch-cache layer)
 
 
 def word_key(word) -> str:
@@ -65,80 +66,39 @@ def _parse_word(text: str):
     return [tuple(int(x) for x in p.split(":")) for p in text.split(",")]
 
 
-class TraceCache:
-    """Cache for one producer `function` at one (q0, dps)."""
+class TraceCache(ShardedCache):
+    """Cache for one producer `function` at one (q0, dps).
+
+    The journal, restore, seed and refusal rules are the shared ones in
+    `_branch_cache.ShardedCache` / `scripts/lib/branch-cache.sh`; this class
+    adds the member key (through `scripts/trace-cache.sh key`), the
+    (n, word, suffix) entry key, and verification against the live binary.
+    """
 
     def __init__(self, function: str, q0_str: str, dps: int, *, log=print):
         self.function = function
         self.q0 = q0_str
         self.dps = int(dps)
-        self.log = log
-        self.values: dict[tuple[int, str, str], str] = {}
-        self.remote_keys: set[tuple[int, str, str]] = set()
-        self.unpublished: dict[tuple[int, str, str], str] = {}
-        self.hits = 0
-        self.misses = 0
-        self.enabled = os.environ.get("QOU_TRACE_CACHE", "1") != "0"
-        self.push = os.environ.get("QOU_TRACE_CACHE_PUSH", "1") != "0"
-        self.member = None
-        self.journal = None
-        self.last_publish = time.monotonic_ns()
-        if not self.enabled:
-            self.log("  trace-cache: off (QOU_TRACE_CACHE=0)")
-            return
-        r = subprocess.run(["bash", str(SCRIPT), "key", function, q0_str, str(self.dps)],
-                           capture_output=True, text=True)
-        if r.returncode != 0:
-            self.log(f"  trace-cache: off — {r.stdout.strip() or r.stderr.strip()}")
-            self.enabled = False
-            return
-        self.member = r.stdout.strip()
-        base = Path(os.environ.get("QOU_TRACE_CACHE_DIR",
-                                   Path.home() / ".cache" / "qou" / "trace-cache"))
-        self.dir = base / self.member
-        (self.dir / "local").mkdir(parents=True, exist_ok=True)
-        if os.environ.get("QOU_TRACE_CACHE_RESTORE", "1") != "0":
-            t0 = time.monotonic_ns()
-            r = subprocess.run(["bash", str(SCRIPT), "restore", function, q0_str, str(self.dps),
-                                str(self.dir / "remote")], capture_output=True, text=True)
-            msg = (r.stderr.strip().splitlines() or [""])[-1]
-            self.log(f"  trace-cache: restore exit {r.returncode} ({msg}) "
-                     f"in {(time.monotonic_ns() - t0) // 10**8 / 10}s")
-        n_remote = self._load_dir(self.dir / "remote" / "shards", remote=True)
-        n_local = self._load_dir(self.dir / "local", remote=False)
-        # Local journal entries the branch store does not hold yet.
-        for k, v in self.values.items():
-            if k not in self.remote_keys:
-                self.unpublished[k] = v
-        self.log(f"  trace-cache: member {self.member}: {len(self.values)} entries "
-                 f"({n_remote} from branch shards, {n_local} from local journals, "
-                 f"{len(self.unpublished)} not yet on the branch)")
-        stamp = time.strftime("%Y%m%dT%H%M%S", time.gmtime())
-        self.journal_path = self.dir / "local" / f"journal-{stamp}-{os.getpid()}.jsonl"
 
-    # ── loading and verification ─────────────────────────────────────
-    def _load_dir(self, d: Path, *, remote: bool) -> int:
-        count = 0
-        if not d.is_dir():
-            return 0
-        for f in sorted(d.glob("*.jsonl")):
-            for line in f.read_text().splitlines():
-                if not line.strip():
-                    continue
-                rec = json.loads(line)
-                if "v" not in rec:
-                    continue
-                k = (int(rec["n"]), rec["w"], rec.get("s", ""))
-                old = self.values.get(k)
-                if old is not None and old != rec["v"]:
-                    raise RuntimeError(f"trace-cache: two different stored values for "
-                                       f"{k!r} in {self.dir}; refusing")
-                self.values[k] = rec["v"]
-                if remote:
-                    self.remote_keys.add(k)
-                count += 1
-        return count
+        def member_fn():
+            r = subprocess.run(["bash", str(SCRIPT), "key", function, q0_str, str(self.dps)],
+                               capture_output=True, text=True)
+            if r.returncode != 0:
+                return None, (r.stdout.strip() or r.stderr.strip())
+            return r.stdout.strip(), ""
 
+        super().__init__(
+            "trace-cache",
+            member_fn=member_fn,
+            restore_argv=lambda m, d: ["bash", str(SCRIPT), "restore", function, q0_str,
+                                       str(self.dps), d],
+            seed_argv=lambda m, p: ["bash", str(SCRIPT), "seed", function, self.q0,
+                                    str(self.dps), p],
+            key_of=lambda rec: (int(rec["n"]), rec["w"], rec.get("s", "")),
+            rec_of=lambda k, v: {"n": k[0], "w": k[1], "s": k[2], "v": v},
+            env="QOU_TRACE_CACHE", log=log)
+
+    # ── verification ─────────────────────────────────────────────────
     def verify(self, compute) -> None:
         """Recompute a sample with `compute(n, word, suffix) -> str` (the producer)."""
         if not self.enabled or not self.values:
@@ -171,7 +131,7 @@ class TraceCache:
         """pairs = [(signed word, positive suffix)] -> (found {index: str}, missing [index])."""
         found, missing = {}, []
         for i, (w, sfx) in enumerate(pairs):
-            v = self.values.get((n, word_key(w), suffix_key(sfx))) if self.enabled else None
+            v = self.get((n, word_key(w), suffix_key(sfx)))
             if v is None:
                 missing.append(i)
             else:
@@ -181,50 +141,4 @@ class TraceCache:
         return found, missing
 
     def store(self, n: int, pairs, values) -> None:
-        if not self.enabled:
-            return
-        lines = []
-        for (w, sfx), v in zip(pairs, values):
-            k = (n, word_key(w), suffix_key(sfx))
-            if k in self.values:
-                continue
-            self.values[k] = v
-            self.unpublished[k] = v
-            lines.append(json.dumps({"n": n, "w": k[1], "s": k[2], "v": v}))
-        if lines:
-            with open(self.journal_path, "a") as f:
-                f.write("\n".join(lines) + "\n")
-                f.flush()
-                os.fsync(f.fileno())
-
-    def maybe_publish(self, every_s: int = 600) -> None:
-        if time.monotonic_ns() - self.last_publish >= every_s * 10**9:
-            self.publish()
-
-    def publish(self) -> None:
-        """Seed the unpublished entries as one content-addressed shard."""
-        self.last_publish = time.monotonic_ns()
-        if not (self.enabled and self.push and self.unpublished):
-            return
-        body = "".join(json.dumps({"n": n, "w": w, "s": sfx, "v": v}) + "\n"
-                       for (n, w, sfx), v in sorted(self.unpublished.items()))
-        sha = hashlib.sha256(body.encode()).hexdigest()
-        p = self.dir / "local" / f"shard-{sha[:16]}.pending"
-        p.write_text(body)
-        t0 = time.monotonic_ns()
-        r = subprocess.run(["bash", str(SCRIPT), "seed", self.function, self.q0,
-                            str(self.dps), str(p)],
-                           capture_output=True, text=True)
-        msg = (r.stderr.strip().splitlines() or [""])[-1]
-        self.log(f"  trace-cache: seed {len(self.unpublished)} entries: exit "
-                 f"{r.returncode} ({msg}) in {(time.monotonic_ns() - t0) // 10**8 / 10}s")
-        p.unlink(missing_ok=True)
-        if r.returncode == 0:
-            self.remote_keys.update(self.unpublished)
-            self.unpublished.clear()
-
-    def stats(self) -> str:
-        tot = self.hits + self.misses
-        rate = f"{100 * self.hits // tot}%" if tot else "n/a"
-        return (f"trace-cache: {self.hits} hits / {self.misses} misses "
-                f"(hit rate {rate}), {len(self.values)} entries held")
+        self.put_many(((n, word_key(w), suffix_key(sfx)), v) for (w, sfx), v in zip(pairs, values))
