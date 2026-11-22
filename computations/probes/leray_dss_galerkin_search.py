@@ -398,7 +398,11 @@ def main():
         keep = {tuple(map(int, t.split(','))) for t in only.split(';')}
         seeds['cases'] = [c for c in seeds['cases'] if (c['L'], c['N']) in keep]
         outf = outf.replace('.witness.json', '-' + only.replace(';', '_').replace(',', '') + '.witness.json')
-    out = dict(description=__doc__.strip().splitlines()[0], dps=DPS, alpha_test=str(ALPHA),
+    out = dict(description=__doc__.strip().splitlines()[0],
+               q0Anchor='independent',
+               q0AnchorReason='Numerical Galerkin search for Leray self-similar Navier-Stokes profiles over exact '
+                              'rational harmonics in mpmath; no substrate q is read or evaluated anywhere.',
+               dps=DPS, alpha_test=str(ALPHA),
                trial_tail='(1+rho)^-p, n=0 member ~ |y|^-1 (weak-L3)', results=[])
     log = lambda *x: print(*x, flush=True)
     for case in seeds['cases']:
