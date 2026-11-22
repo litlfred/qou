@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:44Z
-updated_at: 2026-11-22T10:47:44Z
+updated_at: 2026-11-22T10:53:52Z
 parent: qou-wxhi
 ---
 
@@ -19,3 +19,7 @@ FINDING (corpus grep of content/ + docs/audits only; computations/ and beans not
 OPEN: state whether these are one object in three coordinates or three different objects. Specifically (a) modulus/phase vs Re/Im are not the same split unless one is a log of the other (log tr_M = log|tr_M| + i arg tr_M would make reading 1 the Re/Im of log tr_M); (b) readings 2 and 3 assign Im to different observables (Q_beta vs width) and Re to different ones (binding vs mass). (c) at the archimedean level q0 is real, so tr_M at q0 is real and arg is 0 or pi: say where the phase lives (fibre q, root of unity, framing).
 
 Not started. Related: alpha_EM thread "Settle which alpha_em form is canonical"; bean for the electron-word test (sibling of this one).
+
+
+
+2026-11-22, from thread 'Settle which alpha_em form is canonical' (PR #8987): under convention D the iota-odd part (iota: sigma -> -sigma^-1) of the Markov trace is exactly (y3/2)*tau with tau = chi_3 - chi_111 the alpha_em functional; tau(w) = q^e - (-q^-1)^e depends only on the writhe e. Sorry-free Lean: QOU/AlphaEM/TauExponentSum.lean. Electron sigma0 sigma1 sigma0: tau = q^3 + q^-3. At q = 1, tau = 1 - (-1)^e (not yet compared with -m_e/720). Consistent with the writhe-phase reading of rem:mass-modulus-em-phase-color-grading; does NOT show mass is the iota-even part.
