@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-22T10:12:40Z
+updated_at: 2026-11-22T10:14:02Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -80,3 +80,5 @@ A Steinberg/Rogers route on complex factors (1-ζ^k X) does not integrate direct
 2026-11-22 n=5 computer algebra (scripts: /mnt/project-files/epic-n2/pi20-n5/). The residual curve sum_{i+j<=3} X^i t^j = 0 is an ELLIPTIC curve E (genus 1), not rational. (1) Regulator: eta(X,t) integrates to 0 (to 1e-20) on loops around branch-point pairs and on |t|=r lifts, so {X,t} is plausibly 0 in K2(E) tensor Q. (2) Exact result: with S = 15 points of E over Q(i) (coordinates in {0,+-1,+-i,inf}; 34 lines meet E only in S; 273 pencil relations, rank 72), X wedge t lies in the Q-span of the Steinberg elements f wedge (1-f) MODULO CONSTANTS. Exact rational solution found, 71 terms, denominators up to 1820. Not sparse. (3) What this does NOT give: I(1) then equals a Li2 combination at the fiber point (r,1), r^3+2r^2+3r+4=0, which is not in S. So pi^2/20 reduces to a dilogarithm identity over Q(i,r), i.e. the fiber element must be torsion in the Bloch group. Not shown. Constant wedge terms also not yet tracked. Status: still numeric only.
 
 2026-11-22 (b): Numerically I_n(1)=pi^2/(4n) holds for n=3,5,7,9 to 18 digits (gn.py). For even n the branch construction does not apply. Equivalent forms: (i) since pi^2/(4n) = int_0^1 log((1+u^n)/(1-u^n)) du/u, the claim is int_0^1 [log y(t) - log((1+t^n)/(1-t^n))] dt/t = 0. (ii) Separable area: in a=-log t, b=log y, I = area{(a,b)>0 : A1(b) < A2(a)}, where A1(b)=log((1+e^{nb})/(1+e^b)) and A2(a)=log((1-e^{-na})/(1-e^{-a})). The target is (1/n) area{a < -log tanh(b/2)}. Since the result holds for every odd n, the per-n K2/Bloch route (n=5: an elliptic curve plus a cubic-field identity) is probably the wrong level. A uniform argument on form (ii) is the better bet.
+
+2026-11-22 (c): KEY. In the separable-area form, I(n) = area{A1(b)<A2(a)} = pi^2/(4n) holds for ALL REAL n>1, not just odd integers. Checked n=2, 2.5, 3, 4, 5, 6.3 to ~1e-9 (rn.py). n=2 is a rational curve, t = y(y-1)/(y+1), and gives pi^2/8 to 30 digits. Suggested proof: show d/dn [n*area(n)] = 0 uniformly (Euler-operator / boundary-variation argument), with n=2 or n->1+ as the base case. Partial: n*area'(n) = -2*area + int_Gamma (E Phi)/|grad F| ds, where Phi(a,b) = log((1-e^{-a})/(1+e^b)), E = a d_a + b d_b, F = Phi(n p) - Phi(p). So the claim is equivalent to int_Gamma (E Phi)/|grad F| ds = area(n).
