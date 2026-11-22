@@ -794,3 +794,36 @@ tower beyond n = 6. The conclusion is the same as §28: this coupling cannot mak
 and a Coulomb shape from it has κ = 0. That is now a theorem, not a computation.
 
 **Scope.** Exact algebra, no empirical input, no fitting. Scope-(b) for this coupling class.
+
+## §35 Cores that braid across the two nucleons break pp = nn (2026-11-22, pre-registered)
+
+Pre-registered in `np_cross_core_probe.py` (committed before the run, fixed list of five cores,
+decision rule: d = TX[pp]·T1[nn] − TX[nn]·T1[pp] in ℤ[q, q⁻¹]). Same readout and pair operator as §28;
+the core is the §28 in-block core times a word that crosses strand 2 (block A) with strand 3 (block B).
+
+| core (× in-block base) | pp = nn identically in q | ΔE_pp − ΔE_nn at q₀ (proton pin) |
+|---|---|---|
+| (a) σ₂ | no | +1.290e-4 |
+| (b) σ₂⁻¹ | no | +2.154e-4 |
+| (c) σ₂² (pure braid: strands return to their nucleon) | no | +1.142e-5 |
+| (d) σ₂σ₃σ₁σ₂ | no | +6.095e-5 |
+| (e) β_AB² full twist (control) | **yes** | 0 |
+
+(mpmath 50 dps; exact polynomials in `np_cross_core_probe.out.txt`.)
+
+**What this shows.** §34's restriction to in-block cores is load-bearing. The full twist β_AB² (central
+on the pair) keeps pp = nn, but a single linking of one strand of each nucleon, σ₂², does not, and it
+still returns every strand to its own nucleon, so the pp and nn labels stay meaningful. Cores (a), (b),
+(d) move a strand between nucleons, so their sector readouts are diagonal restrictions of a
+charge-moving operator and are harder to read physically; (c) is the clean case.
+
+**Shape.** For core (c) the split is not Coulomb-shaped. pn and np sit well below nn (at q₀:
+ΔE_pn − ΔE_nn = −0.0572, ΔE_np − ΔE_nn = −0.0287), pn ≠ np because the core is not A ↔ B symmetric,
+and pp − nn is small and positive. The sign of pp − nn is positive at q = 1.01, 1.05, q₀, 1.3, 2, 3. It
+is not definite on q > 1: T1 has real zeros at 1.502, 1.668 (pp) and 1.544, 1.613 (nn), and the ratio
+changes sign in that window.
+
+**Scope.** Scope-(a): these cores, alone, with this coupling. No empirical input, no fitting. The core list
+was fixed in advance and was not chosen for the sign. Whether a cross-nucleon linking is physically the
+right core is not decided here: it would be the first coupling on record with pp ≠ nn at generic q from the
+braid alone. Tower status: n = 6.

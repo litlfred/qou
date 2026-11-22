@@ -48,3 +48,33 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def split_at(q0_str="1.1099785827513808"):
+    """Value of dE_pp - dE_nn at the proton-pinned q0 (mpmath, 50 dps), for each core."""
+    import mpmath as mp
+    mp.mp.dps = 50
+    q0 = mp.mpf(q0_str)
+
+    def ev(p):
+        return sum(mp.mpf(v.numerator) / v.denominator * q0 ** k for k, v in LP.of(p).c.items())
+
+    S = P.setup(q)
+    S = {k: ([[LP.of(x) for x in r] for r in v] if isinstance(v, list) else v) for k, v in S.items()}
+    A, B, AB = [0, 1, 2], [3, 4, 5], list(range(6))
+    V = [(0, False), (1, True)] * 3 + [(3, False), (4, True)] * 3
+    Kd = {s: q ** (2 * sum(1 for x in P.bits(s) if x == 0) - P.N) for s in range(P.D)}
+    X = P.add(GQ.scaled_casimir(S, AB), GQ.scaled_casimir(S, A), GQ.scaled_casimir(S, B), coeffs=[1, -1, -1])
+    for name, word in [("(a)", V + [(2, False)]), ("(b)", V + [(2, True)]), ("(c)", V + [(2, False)] * 2),
+                       ("(d)", V + [(2, False), (3, False), (1, False), (2, False)])]:
+        base = P.word(S, word)
+        T1 = P.readout(S, base, Kd, P.eye())
+        TX = P.readout(S, base, Kd, X)
+        epp = ev(TX[(1, 1)]) / ev(T1[(1, 1)])
+        enn = ev(TX[(0, 0)]) / ev(T1[(0, 0)])
+        print(f"{name} at q0: dE_pp = {mp.nstr(epp, 15)}, dE_nn = {mp.nstr(enn, 15)}, "
+              f"dE_pp - dE_nn = {mp.nstr(epp - enn, 15)}")
+
+
+if __name__ == "__main__":
+    split_at()
