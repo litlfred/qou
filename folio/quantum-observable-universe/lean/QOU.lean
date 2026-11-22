@@ -370,6 +370,7 @@ import QOU.MathlibExt.PLConeMap
 import QOU.MathlibExt.PLBarycentric
 import QOU.MathlibExt.PLRegularNbhd
 import QOU.MathlibExt.PLStar
+import QOU.MathlibExt.PLBall
 import QOU.MathlibExt.PLMoiseAssembly
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
