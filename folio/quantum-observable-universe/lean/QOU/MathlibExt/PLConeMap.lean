@@ -3,6 +3,8 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import QOU.MathlibExt.PLCone
+import Mathlib.LinearAlgebra.Dual.Lemmas
+import Mathlib.Topology.Algebra.Module.FiniteDimension
 
 set_option autoImplicit false
 
@@ -28,10 +30,15 @@ Given cone points `p` (for `S`) and `q` (for `S'`) that see their sets along ray
   map sends `lineMap p y s` to `lineMap q (A y) s`: it is linear on the cone face.
 * `coneFun_mapsTo`, `coneFun_leftInvOn`, `coneFun_invOn` — if `f` and `g` are mutually inverse
   between `S` and `S'`, the cone maps are mutually inverse between the cones; `coneFun_bijOn`.
+* `exists_affine_extend` — in finite dimension, an affine map on `affineSpan σ` extends to an
+  affine map with any prescribed value at a point off that span.
+* `isLinearOn_coneComplex` — **the cone of a PL map is PL**: if `f` is linear on every face of
+  `K`, then `coneFun p q K.space f` is linear on every face of `coneComplex K p hp hray`.
 
 ## What is NOT proved here
 
-Continuity and PL-ness of the cone map. Those are the next steps.
+Continuity of the cone map on all of `coneSet` (it is PL on the cone complex, so continuous on
+each closed face; gluing needs finitely many faces). That is the next step.
 -/
 
 namespace QOU.MathlibExt.PL
@@ -168,5 +175,83 @@ theorem coneFun_lineMap_of_eqOn {p q : E} {S : Set E} {f : E → E} (hray : Rays
     coneFun p q S f (AffineMap.lineMap p y s) = AffineMap.lineMap q (A y) s := by
   rw [AffineMap.lineMap_apply_module', AffineMap.lineMap_apply_module', add_comm,
     coneFun_eq_of_eqOn hray hp hσ hA hy hs, add_comm]
+
+section Extend
+
+variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
+
+/-- **Affine extension off an affine span**: in finite dimension, an affine map `A` extends from
+`affineSpan σ` to an affine map taking any prescribed value `q` at a point `p ∉ affineSpan σ`. -/
+theorem exists_affine_extend [FiniteDimensional ℝ E] {σ : Set E} {p : E}
+    (hp : p ∉ affineSpan ℝ σ) (A : E →ᴬ[ℝ] F) (q : F) :
+    ∃ B : E →ᴬ[ℝ] F, B p = q ∧ EqOn B A (affineSpan ℝ σ) := by
+  rcases σ.eq_empty_or_nonempty with rfl | ⟨y0, hy0⟩
+  · refine ⟨ContinuousAffineMap.const ℝ E q, rfl, fun x hx => ?_⟩
+    simp only [AffineSubspace.span_empty, SetLike.mem_coe] at hx
+    exact absurd hx (AffineSubspace.notMem_bot ℝ E x)
+  have hy0' : y0 ∈ affineSpan ℝ σ := mem_affineSpan ℝ hy0
+  have hv : p - y0 ∉ (affineSpan ℝ σ).direction := fun h =>
+    hp ((AffineSubspace.vsub_right_mem_direction_iff_mem hy0' p).mp h)
+  obtain ⟨φ, hφv, hφW⟩ :=
+    (affineSpan ℝ σ).direction.exists_dual_map_eq_bot_of_notMem hv inferInstance
+  set L : E →ₗ[ℝ] F := (((φ (p - y0))⁻¹ • φ : Module.Dual ℝ E)).smulRight (q - A p) with hLdef
+  have hLc : Continuous L := LinearMap.continuous_of_finiteDimensional L
+  have hLp : L (p - y0) = q - A p := by
+    rw [hLdef, LinearMap.smulRight_apply, LinearMap.smul_apply, smul_eq_mul,
+      inv_mul_cancel₀ hφv, one_smul]
+  have hL0 : ∀ x ∈ affineSpan ℝ σ, L (x - y0) = 0 := by
+    intro x hx
+    have hw : x - y0 ∈ (affineSpan ℝ σ).direction := AffineSubspace.vsub_mem_direction hx hy0'
+    have h0 : φ (x - y0) = 0 := by
+      have := Submodule.mem_map_of_mem (f := φ) hw
+      rw [hφW] at this
+      simpa using this
+    simp [hLdef, h0]
+  refine ⟨⟨A.toAffineMap + (L.toAffineMap - AffineMap.const ℝ E (L y0)), ?_⟩, ?_, ?_⟩
+  · change Continuous fun x => A x + (L x - L y0)
+    exact A.cont.add (hLc.sub continuous_const)
+  · change A p + (L p - L y0) = q
+    rw [← map_sub, hLp]
+    abel
+  · intro x hx
+    change A x + (L x - L y0) = A x
+    rw [← map_sub, hL0 x hx, add_zero]
+
+end Extend
+
+/-- **The cone of a PL map is PL**: if `f` is linear on every face of `K`, the cone map is linear
+on every face of the cone complex. -/
+theorem isLinearOn_coneComplex [DecidableEq E] [FiniteDimensional ℝ E]
+    {K : Geometry.SimplicialComplex ℝ E} {p q : E} (hp : p ∉ K.space)
+    (hray : RaysMeetOnce p K.space) {f : E → E} (hf : IsLinearOn K f) :
+    IsLinearOn (coneComplex K p hp hray) (coneFun p q K.space f) := by
+  intro s hs
+  rcases mem_coneComplex_faces.mp hs with hs | ⟨σ, hσ | rfl, rfl⟩
+  · obtain ⟨A, hA⟩ := hf s hs
+    refine ⟨A, fun x hx => ?_⟩
+    have hxK := K.convexHull_subset_space hs hx
+    rw [coneFun_eq hray hp (s := 1) (y := x) ⟨hxK, ⟨one_pos, le_rfl⟩, by simp⟩]
+    simp [hA hx]
+  · obtain ⟨A, hA⟩ := hf σ hσ
+    have hσK := K.convexHull_subset_space hσ
+    obtain ⟨B, hBp, hBA⟩ := exists_affine_extend (notMem_affineSpan_of_rays hray hp hσK) A q
+    refine ⟨B, fun x hx => ?_⟩
+    rw [Finset.coe_insert, mem_convexHull_insert_iff] at hx
+    rcases hx with rfl | ⟨y, hy, b, hb, rfl⟩
+    · rw [coneFun_apex hp, hBp]
+    rw [coneFun_eq_of_eqOn (A := A.toAffineMap) hray hp hσK (fun z hz => hA hz) hy hb]
+    have e1 : B.toAffineMap y = A y := hBA (convexHull_subset_affineSpan _ hy)
+    have e2 : B.toAffineMap p = q := hBp
+    have h1 : B (p + b • (y - p)) = B.toAffineMap (AffineMap.lineMap p y b) := by
+      rw [AffineMap.lineMap_apply_module', add_comm]; rfl
+    rw [h1, AffineMap.apply_lineMap, AffineMap.lineMap_apply_module', e1, e2]
+    change q + b • (A y - q) = b • (A y - q) + q
+    abel
+  · refine ⟨ContinuousAffineMap.const ℝ E q, fun x hx => ?_⟩
+    simp only [insert_empty_eq, Finset.coe_singleton, convexHull_singleton,
+      mem_singleton_iff] at hx
+    subst hx
+    rw [coneFun_apex hp]
+    rfl
 
 end QOU.MathlibExt.PL
