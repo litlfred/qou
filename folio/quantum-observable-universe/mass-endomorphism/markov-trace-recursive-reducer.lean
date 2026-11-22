@@ -40,9 +40,9 @@ We formalise:
   • The disjoint-product law `markovTrace_disjointProduct`, proved from
     the axioms of `IsMarkovTrace`: `tr(α · β↑) = tr(α) · tr(β)` with `α` on
     `σ_0, …, σ_k` and `β↑` on `σ_{k+1}, …` (0-indexed). The two clusters
-    share one strand. The split form, with an unused slot between them,
-    additionally needs shift invariance of the trace, which is not
-    formalised.
+    share one strand. Shift invariance (`markovTrace_shift`) is the law with
+    `α` empty, and the split form, with an unused slot between the clusters,
+    follows (`markovTrace_disjointProduct_split`).
   • Uniqueness `markovTrace_unique`: the axioms of `IsMarkovTrace` fix the
     trace on every positive word, so the reducer's output, which uses only
     those axioms, is the trace. With existence, every Markov trace equals the
@@ -779,6 +779,34 @@ theorem markovTrace_disjointProduct {mT : ℕ → List ℤ → R}
     have := HeckeRel.reduce h (m + 1) F hF β.length h0 β hβ le_rfl
     simp only [F] at this
     exact sub_eq_zero.mp this
+
+/-- **Shift invariance**, derived from the product law with `α = []`:
+    raising every generator index of `β` by `j` does not change its trace. -/
+theorem markovTrace_shift {mT : ℕ → List ℤ → R}
+    {embedRight : List ℤ → ℕ → List ℤ} {z h : R}
+    (hmT : IsMarkovTrace mT embedRight z h) (j m : ℕ) (β : List ℤ) (hβ : Supp m β) :
+    mT (j + m) (embedRight β j) = mT m β := by
+  cases j with
+  | zero =>
+    rw [hmT.embed_disjoint, Nat.zero_add]
+    congr 1
+    simp
+  | succ k =>
+    have := markovTrace_disjointProduct hmT k m [] β supp_nil hβ
+    rw [List.nil_append, hmT.normalised, one_mul] at this
+    exact this
+
+/-- **The split disjoint-product law.** `α` on `σ_0, …, σ_k` and `β` shifted
+    by `k + 2`, so that the generator `σ_{k+1}` between the two clusters is
+    unused: `tr(α ⊗ β) = tr(α) · tr(β)`. -/
+theorem markovTrace_disjointProduct_split {mT : ℕ → List ℤ → R}
+    {embedRight : List ℤ → ℕ → List ℤ} {z h : R}
+    (hmT : IsMarkovTrace mT embedRight z h) (k m : ℕ) (α β : List ℤ)
+    (hα : Supp (k + 1) α) (hβ : Supp m β) :
+    mT (k + 2 + m) (α ++ embedRight β (k + 2)) = mT (k + 1) α * mT m β := by
+  have := markovTrace_disjointProduct hmT (k + 1) m α β (hα.mono (Nat.le_succ _)) hβ
+  rw [hmT.stable (k + 1) α hα] at this
+  exact this
 
 /-- **Uniqueness: the axioms determine the trace.** Two functions satisfying
     `IsMarkovTrace` with the same parameters `z` and `h` agree on every
