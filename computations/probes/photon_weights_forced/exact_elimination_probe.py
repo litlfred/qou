@@ -10,8 +10,8 @@ All arithmetic is exact (sympy Rational). Roots are printed with mpmath only for
 Every candidate is checked against t, s, det G != 0, so solutions created by clearing
 denominators are discarded. Bean qou-99qc.
 """
-import sympy as sp, mpmath as mp
-q = sp.Rational(11, 10)
+import sys, sympy as sp, mpmath as mp
+q = sp.Rational(sys.argv[1]) if len(sys.argv) > 1 else sp.Rational(11, 10)
 a, b, c = sp.symbols('a b c')
 M = sp.Matrix
 I2 = sp.eye(2)
@@ -47,7 +47,11 @@ for f, m in sp.factor_list(R.as_expr())[1]:
 
 print("branch a = 0 (genuine solutions):",
       [S for S in sp.solve([x.subs(a, 0) for x in eqs], [b, c], dict=True) if nondeg({a: 0, **S})])
-for sub in [{b: -a}, {b: q}, {b: -1/q}, {a: (21*b + 110)/100}, {a: -(21*b + 110)/121}]:
+branches = []
+for f, _ in sp.factor_list(g)[1]:
+    v = a if sp.Poly(f, a, b).degree(a) > 0 else b
+    branches.append({v: sp.solve(f, v)[0]})
+for sub in branches:
     v = [x for x in (a, b) if x not in sub][0]
     S = sp.solve([sp.expand(x.subs(sub)) for x in eqs], [v, c], dict=True)
     full = lambda z: {**z, **{k: sp.sympify(e).subs(z) for k, e in sub.items()}}
