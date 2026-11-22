@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Algebraic stratification of the Φ$_q$ tower in $H_n(R, q)$ (no 3-manifold language)",
   lean: {
-    ref: "qou:QOU.BraidKnot.phi_q_tower_algebraic_stratification_of_pentagon",
+    ref: "qou:QOU.BraidKnot.phi_q_tower_algebraic_stratification_of_regrouping",
     validation: "not_checked",
   },
   uses: ["def:phi-q-piece", "rem:mass-endomorphism-jet-tower"],
