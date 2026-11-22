@@ -574,8 +574,11 @@ symmetric under the Weyl reflection u ↔ d, which swaps the proton and neutron 
 V: it is baryon number and adds the same constant for p and n. The q-deformed Casimir is not Weyl
 symmetric in its coproduct, yet the Ř-compatible one still gives pp = nn at all four q measured, and
 its interaction is the q-number [2]_q = q + q⁻¹ where the classical one gives 2. That is a q-deformed
-isospin coupling with an ordering asymmetry pn ≠ np. pp = nn for G-q and M is measured exactly at four
-q, not proved for all q.
+isospin coupling with an ordering asymmetry pn ≠ np. pp = nn for G-q and M now holds identically
+in q: `np_gaudin_generic_q_probe.py` computes every trace in ℤ[q, q⁻¹] (the Casimir scaled by h² to
+clear its denominator) and finds pp = nn, pp − pn − np + nn = [2]_q, and pp = nn for M, each with
+residual exactly 0 as a Laurent polynomial. The reason is visible in the output: for 1, G-q and M
+alike, the pp sector trace is exactly q⁴ times the nn sector trace, so the ratio dE is equal.
 
 **What Coulomb needs.** The Coulomb operator is Q⊗Q with strand charge Q = T₃ + B/2, B = 1/3 per
 strand: u ↦ 2/3, d ↦ −1/3, block charge n − 1 (`blockCharge_eq`). Written in gl(2),
@@ -602,7 +605,8 @@ for every q and every weight-preserving core in `WeightShiftZeroTrace.lean`
 (`sectorTrace_eq_zero_of_shift`, `sectorTrace_diag`, `gaudin_readout`; that the Jimbo Ř preserves
 the u-count entrywise is `jimbo_weight_preserving`). For M, pp = nn is proved at q = 2 in Lean
 (`dE_M_pp_eq_nn`, `M_coulomb_kappa_zero` in `TwoBlockExchangeNotCoulomb.lean`, kernel `decide`).
-Scope-(a) for G-q (exact at four q, not all q). Both G-q and M are invariant under the map
+For G-q and M, pp = nn at generic q is an exact symbolic computation over ℤ[q, q⁻¹] (2026-11-22),
+not a Lean proof; the Lean statement at generic q is open. Both G-q and M are invariant under the map
 u ↔ d together with i ↦ 5 − i (checked exactly at q = 7/5); a general proof of pp = nn from that
 symmetry is open. Tower status: n = 6 only; the tower in n is open. No empirical
 input, no fit.
