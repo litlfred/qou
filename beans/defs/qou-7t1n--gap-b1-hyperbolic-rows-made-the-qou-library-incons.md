@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T17:15:19Z
-updated_at: 2026-11-17T06:55:30Z
+updated_at: 2026-11-22T10:40:19Z
 parent: qou-rtxm
 ---
 
@@ -183,3 +183,6 @@ this session's cases fall to a two-line witness.
 ## 2026-11-17 — Finite Hyperbolic Row Count & Consistent LP Duality (`litlfred/qou#8237`)
 - Formalized `HyperbolicRow`, `countVerifiedRows_le_three`, `three_le_countVerifiedRows_iff`, and `consistent_lp_duality_gap_iff_slack_zero` over generic `CommRingOps R` in `folio/quantum-observable-universe/lean/QOU/Foundations/BarConditionHyperbolicSphericalMetric.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `62b14488de4f16d02964a9976964f16ed12bcdcd`, PR [https://github.com/litlfred/qou/pull/8237](https://github.com/litlfred/qou/pull/8237)).
 - Kept `status: in-progress` per no-unilateral-closure policy.
+
+
+2026-11-22 (Lean backlog thread, session_01Qmmkt8ZNqpSFQQHuWejKfe, commit bcd6849df on claude/project-thread-tcbklh): the Schrijver modelling follow-up for OperatorSelectionLP is done. QOU.BraidKnot.LpDualityOperatorSelection proves exists_primal_min (compact feasible set), exists_optimal_pair (zero-gap dual certificate via farkas_alternative_real on the standard form) and HasFiniteLPDuality.ofFeasible, all sorry-free. HasFiniteLPDuality is now a theorem for every feasible LP. Not touched: the block-sibling copy of HasFiniteLPDuality in mass-theory/confinement-nf-partial-proof.lean (a different structure).
