@@ -1590,9 +1590,21 @@ The two statements do not contradict each other; they answer different questions
   P·V⁻¹·P swaps p and n exactly (§40, §42–§46).
 - §16: once conventions (i) and (ii) are adopted, u = e₁ follows.
 
-Conventions (i) and (ii) are the GS letter-order convention. The ⁴He sign table (PR #8969, commit
-79a91b084d0) shows that bond chirality, bond side and strand reflection are this one convention.
-Mirroring flips (i), and so flips the conclusion. So the accurate wording is "u = e₁ is fixed by the
-crossing convention (i)+(ii), not derived from the word". §40's "not fixed" means "not fixed without
-that convention". Nothing in §29–§46 changes. The conditional sign (neutron heavier under §16) stands
-as conditional on (i), (ii) and #7971.
+**Correction, same day (sibling check, np-splitting audit §21, commit 718ab5f90c5, exact sympy).**
+A first version of this paragraph said mirroring flips (i) and so flips the conclusion. That is wrong.
+The partial trace over factor 2 of Rc (h on e₂e₁) with weight K = (q, q⁻¹) is q²·1, a Markov trace;
+with K⁻¹ it is not. After X·Rc·X (h on e₁e₂) this reverses. So the Markov weight moves with the letter
+order, and in either order the over strand that keeps its label is the K = q vector. With
+`def:down-quark` ("u passes over d"), u is the K = q vector in every basis.
+
+The §40 swap keeps Rc and K and moves u onto the K = q⁻¹ vector. With Rc fixed, that breaks the Markov
+property (`OverStrandWeight.ptr_other_not_scalar`, PR #7971, merged) and the over/under rule. The
+coherent relabel conjugates Rc as well, and it leaves every E_n − E_p unchanged.
+
+**Corrected statement of §40.** The photon form and the Borromean core alone do not fix the p/n bit.
+What fixes it is `def:down-quark` ("u passes over d") together with #7971: u = e₁ for this Rc and K.
+This matches the ⁴He sign table (PR #8969, commit 79a91b084d0), where the e₁/e₂ order and the flavour
+order are one letter-order convention, so that relabelling it coherently changes nothing. §42–§46
+showed that no braid word fixes the bit; that is the "photon form and core alone" case and stands. The
+mirror results in §42, §43 and §46 used the incoherent swap, so they measure dependence on that swap.
+They are not evidence that the bit is unfixed once `def:down-quark` is used.
