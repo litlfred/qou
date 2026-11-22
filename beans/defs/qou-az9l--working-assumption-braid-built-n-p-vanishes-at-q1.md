@@ -3,8 +3,9 @@
 title: 'Working assumption: braid-built n-p vanishes at q=1 (isospin breaking is O(h)); prove and formalise in general'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-11-22T09:23:07Z
-updated_at: 2026-11-22T09:23:07Z
+updated_at: 2026-11-22T09:23:50Z
 ---
 
 Owner 2026-11-22 (thread, PR #8804): siblings work under this working assumption and track this bean for proving and formalising it.
@@ -26,3 +27,6 @@ OPEN (what remains to prove/formalise):
 5. p <-> n orientation is an underived label (X V X = P V^-1 P); the assumption is symmetric under it.
 
 Refs: PR #8804 LITERATURE-COMPARISON.md s37-s41.
+
+
+Prior art: QOU/MassTheory/QOneFlipSymmetry.lean (s34) proves the n = 3 weight-space version (flip_A_i_one, trace_word_flip) and the charge condition q_u^2 = q_d^2 (self/pair_charge_equal_iff). FlipSymmetryAtOne(Bridge) generalise it to all n on C2^n.
