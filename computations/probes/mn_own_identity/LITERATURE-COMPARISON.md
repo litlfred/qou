@@ -1236,3 +1236,51 @@ numerical charges. Treating charge as the vertex operator removes it: every brai
 including the charge operator, gives m_p = m_n at q = 1, at every jet order and every n tested.
 The size of n − p then has to come from the O(h) terms; at q₀ they give +0.171 MeV (muon scale, 𝒟²,
 §35) plus keV-level operator-charge corrections.
+
+## §39 Per-quark charge, all-n flip theorem, operator charge on the muon map (pre-registered 7d4bfaa6d9d)
+
+Owner, 2026-11-22: *"All 3. Anything from physics to guide?"* Probe `mn_per_quark_charge_probe.py`
+(mpmath 60 dps). All predictions held.
+
+**C1 — joint spectrum of (T³, Q̂).** [V, T³] = 0, and the eight joint pairs are (±3/2, 0) and, on
+each nucleon block, (±1/2, 0), (±1/2, +t), (±1/2, −t), all with |eigenvalue of V| = 1 to 10⁻⁶⁰.
+
+**C2 — reading B (one candidate, written after seeing t(1) = 1/3).** B := 3t (the winding of the
+hol = V³ eigenphase), with the Gell-Mann–Nishijima rule Q = T³ + B/2 imported, gives per-strand
+charges q_u = (1 + t)/2, q_d = (t − 1)/2.
+- At q = 1: exactly 2/3 and −1/3, Q_p = 1, Q_n = 0.
+- At q₀: q_u = 0.668690, q_d = −0.331310, **Q_p = 1.006069, Q_n = +0.006069**. Matter is neutral
+  to about 10⁻²¹ e, so this reading **fails at the comparison** (scope (a)): the B = 3t
+  identification cannot hold at q₀ unless every other charge shifts with it.
+- As scalar charges in S: E-pot +55.10 keV (plain) and +49.80 keV (K) at q₀, limit 1/8 (63.87 keV)
+  at q = 1, and M2 diverges as q → 1. Same failure pattern as every scalar-charge arm (§36).
+
+**L — Lean, all n.** `QOU/MassTheory/FlipSymmetryAtOne.lean`, sorry-free, axioms propext,
+Classical.choice, Quot.sound (lean-direct, `-DautoImplicit=false`). Over any commutative ring:
+strand-permutation matrices commute with the global flip, flip-invariant matrices form a ring, and
+mirror blocks have equal trace. `blockTr_hol_sub_one_pow`: for hol any product of strand
+permutations, tr_w((hol − 1)ᵏ) = tr_{n−w}((hol − 1)ᵏ) for all n, k, w ≤ n. Scope: the identification
+"Rc at q = 1 is the swap, and the T³ coefficient vanishes" is stated in the docstring, not proved.
+
+**M3 — operator charge on the §35 muon map.** E = 2m_μ([3]!/q³)(τ_n − τ_p)(𝒟² − Q̂²·hol).
+- At q₀: 𝒟² gives +0.1712 MeV, the charge term −Q̂²·hol gives **+5.519 MeV**, total **+5.691 MeV**.
+- As q → 1 the charge term diverges like 1/h, and h·E → **(4/3)·m_e·Vol(4₁) = 1.383024 MeV**,
+  matched to 7 digits at q = 1 + 10⁻⁸. The coefficient is derived: (τ_n − τ_p)(Q̂²·hol) → (q⁻¹ − q)·2t²/[2]³
+  = −h/36, the map's [3]!/q³ → 6 and m_μ → 4m_e·Vol(4₁)/h².
+- So m_p = m_n at q = 1 holds on the electron map (§38) but **not** on the muon map: the K-weights
+  q^{±1} in τ make any spectrum-symmetric charge term O(h), and m_μ's ℏ⁻² pole turns that into 1/h.
+  On this map only terms of order h² or higher stay finite. This is a scope (a) negative for
+  "operator charge on the muon map", not for the operator charge.
+
+**Physics as a guide (comparison only).** CODATA m_n − m_p = 1.29333 MeV. Lattice QCD+QED
+(Borsanyi et al. 2015, Science 347, 1452) splits it as about +2.52 MeV from m_d > m_u and about
+−1.00 MeV electromagnetic. Three points this suggests, none of them used as input:
+1. The two parts have **opposite signs**. Electromagnetism makes the proton heavier. The model's
+   charge terms so far make the neutron heavier (§38 +0.06 / +2.7 keV, M3 +5.5 MeV), so if any of
+   them is the electromagnetic part, its sign is wrong; or they are not the electromagnetic part.
+2. The dominant part is the quark-mass difference, which in the standard picture vanishes in the
+   isospin limit. That matches what the model gives: every braid-built term is 0 at q = 1, so h
+   plays the role of the isospin-breaking parameter. The O(h) target would be about +2.5 MeV, not 1.29.
+3. The electromagnetic part is proportional to α, not to h, so it need not vanish at q = 1. In the
+   model a term that survives q = 1 must come from outside the braid-built algebra (§34), which is
+   where the adopted charges sat.
