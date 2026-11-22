@@ -125,6 +125,8 @@ for k, val in rows.items():
     print(f"  {k:22s} vs Q_β {s(a, 5):>9s} %   vs m_n−m_p {s(b, 5):>9s} %")
 
 OUT["ok"] = not FAILED
+from q0_stamp import stamp_q0_anchor  # noqa: E402
+stamp_q0_anchor(OUT, __file__)
 (_HERE / "qbeta-energy-map.witness.json").write_text(json.dumps(OUT, indent=2, ensure_ascii=False) + "\n")
 print(f"{len(OUT['checks']) - len(FAILED)}/{len(OUT['checks'])} checks passed")
 sys.exit(1 if FAILED else 0)

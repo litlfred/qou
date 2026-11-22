@@ -49,8 +49,11 @@ print('Wi',Wi); print('Wf',Wf); r=sp.factor(Wi/Wf); print('ratio',r)
 init_r=[b[::-1] for b in init]; fin_r=[b[::-1] for b in fin]
 Wir=sum(W[idx[b],idx[b]] for b in init_r); Wfr=sum(W[idx[b],idx[b]] for b in fin_r)
 print('rev ratio',sp.factor(Wir/Wfr), sp.simplify(Wir/Wfr*r))
+import sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / 'substrate'))
 import mpmath as mp
+from q_parameter import Q_MP  # canonical proton q0 (70-digit mpf)
 mp.mp.dps=40
-q0=mp.mpf('1.1099785827513808'); me=mp.mpf('0.51099895069'); E0=me/(q0*(q0-1))
+q0=Q_MP; me=mp.mpf('0.51099895069'); E0=me/(q0*(q0-1))
 rv=sp.lambdify(q,r,'mpmath')(q0)
 print('dE4',mp.nstr(E0*mp.log(rv),10),'cell',mp.nstr(2*E0*mp.log(q0),10))

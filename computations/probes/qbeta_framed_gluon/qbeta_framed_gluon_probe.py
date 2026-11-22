@@ -76,8 +76,8 @@ def main() -> int:
     core = gg.gg_word((0, 0, 0))
     e3 = gsw.eps_pair(gsw.diag_all(core, 3, Q0), 3, 3, Q0)
     ruled = e3["n"] - e3["p"]
-    check("R1_ruled_cell", abs(e3["p"] - mp.mpf("0.408718179341")) < mp.mpf("1e-11") and
-          abs(e3["n"] - mp.mpf("0.331737644740")) < mp.mpf("1e-11"),
+    check("R1_ruled_cell", abs(e3["p"] - gsw.RULED_EPS_P) < mp.mpf("1e-11") and
+          abs(e3["n"] - gsw.RULED_EPS_N) < mp.mpf("1e-11"),
           f"eps_flavour = {mp.nstr(ruled, 12)}.")
     rows, ok2 = [], True
     for n, L in FAMILY:

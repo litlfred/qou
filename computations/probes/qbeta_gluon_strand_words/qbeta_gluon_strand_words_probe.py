@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import importlib.util
 import itertools
+import json
 import sys
 from pathlib import Path
 
@@ -40,6 +41,12 @@ Q0 = mp.mpf(Q_50_DIGIT_STR)
 D2 = Q0 + 1 / Q0
 F_REQ = mp.mpf("2.40397")
 TOL = mp.mpf("1e-40")
+# The ruled D1 cell (eps_p, eps_n at q0), READ from the energy-map witness that
+# computes it, rather than typed here.
+_EMAP = json.loads((_ROOT / "computations/probes/qbeta_energy_map/"
+                    "qbeta-energy-map.witness.json").read_text(encoding="utf-8"))["numbers"]
+RULED_EPS_P = mp.mpf(_EMAP["eps_p"])
+RULED_EPS_N = mp.mpf(_EMAP["eps_n"])
 RESULTS: list[tuple[str, bool, str]] = []
 
 
@@ -92,8 +99,8 @@ def main() -> int:
     core = gg.gg_word((0, 0, 0))
     d3 = diag_all(core, 3, Q0)
     e3 = eps_pair(d3, 3, 3, Q0)
-    ok1 = abs(e3["p"] - mp.mpf("0.408718179341")) < mp.mpf("1e-11") and \
-        abs(e3["n"] - mp.mpf("0.331737644740")) < mp.mpf("1e-11")
+    ok1 = abs(e3["p"] - RULED_EPS_P) < mp.mpf("1e-11") and \
+        abs(e3["n"] - RULED_EPS_N) < mp.mpf("1e-11")
     ruled = e3["n"] - e3["p"]
     check("W1_ruled_cell", ok1, f"eps_p = {mp.nstr(e3['p'], 12)}, eps_n = {mp.nstr(e3['n'], 12)}, "
           f"eps_flavour = {mp.nstr(ruled, 12)}.")
