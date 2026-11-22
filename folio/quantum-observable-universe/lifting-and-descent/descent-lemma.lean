@@ -101,8 +101,15 @@ from `𝔡_n`, and items 3 and 4 show the gap is real. What survives is item 2:
 the descent homomorphism is an algebra map on the block-diagonal subalgebra.
 Whether `End_C` in the category `C` is that subalgebra is not decided here.
 
+Intertwining (added the same day): `descentCompression_intertwines`,
+`descentCompression_conj` and `descentHom_sandwich` prove that descent
+commutes with every action of the form `φ ↦ Σᵢ ρ(uᵢ) φ ρ(vᵢ)` (group
+conjugation, Hopf adjoint action) once `r` and `ℓ` are equivariant. The
+equivariance of `r_n`, `ℓ_n` is a hypothesis here; Step 5 derives it from
+`r_n` being a Hopf morphism, which is not encoded.
+
 Still unencoded: the brane tower itself, the Frobenius–Hopf structure, the
-`G_q`-intertwining and the archimedean realisation.
+equivariance of `r_n` and `ℓ_n`, and the archimedean realisation.
 
 ## References
 
@@ -252,6 +259,79 @@ theorem descentCompression_not_multiplicative :
   refine ⟨by ext; simp [ℓ, r], fun h => ?_⟩
   have := LinearMap.congr_fun h 1
   simp [ℓ, r, φ] at this
+
+/-! ### Intertwining the `G_q`-actions (`lem:descent`, proof Step 5)
+
+An action on each level is a map `ρ : H → End(M)`, `ρ' : H → End(N)`, and the
+split pair is **equivariant** when `r ∘ ρ h = ρ' h ∘ r` and
+`ρ h ∘ ℓ = ℓ ∘ ρ' h`. The induced action on endomorphisms is a finite sum of
+sandwiches `φ ↦ Σᵢ ρ(uᵢ) φ ρ(vᵢ)`: one term `ρ(g) φ ρ(g⁻¹)` for a group, and
+`Σ ρ(h₍₁₎) φ ρ(S h₍₂₎)` for the adjoint action of a Hopf algebra (any
+presentation of `Δ h`). Descent commutes with every such operator, so it
+intertwines the actions on `End(M)` and `End(N)`. Nothing about `H` is used
+beyond the two equivariance equations. -/
+
+/-- **Descent commutes with one sandwich.** -/
+-- Ref: [leitner2026] §3 Lifting and Descent, descent-lemma-proof Step 5
+theorem descentCompression_sandwich {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N}
+    {a b : Module.End R M} {a' b' : Module.End R N}
+    (ha : r ∘ₗ a = a' ∘ₗ r) (hb : b ∘ₗ ℓ = ℓ ∘ₗ b') (φ : Module.End R M) :
+    descentCompression ℓ r (a * φ * b) = a' * descentCompression ℓ r φ * b' := by
+  ext x
+  have h1 := LinearMap.congr_fun hb x
+  have h2 := LinearMap.congr_fun ha (φ (ℓ (b' x)))
+  simp only [LinearMap.comp_apply] at h1 h2
+  simp [Module.End.mul_apply, h1, h2]
+
+/-- **Descent intertwines any finite-sum action** `φ ↦ Σᵢ ρ(uᵢ) φ ρ(vᵢ)` built
+from an equivariant pair of actions. Covers group conjugation and the Hopf
+adjoint action. -/
+-- Ref: [leitner2026] §3 Lifting and Descent, descent-lemma-proof Step 5
+theorem descentCompression_intertwines {H ι : Type*} {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N}
+    {ρ : H → Module.End R M} {ρ' : H → Module.End R N}
+    (hr : ∀ h, r ∘ₗ ρ h = ρ' h ∘ₗ r) (hl : ∀ h, ρ h ∘ₗ ℓ = ℓ ∘ₗ ρ' h)
+    (s : Finset ι) (u v : ι → H) (φ : Module.End R M) :
+    descentCompression ℓ r (∑ i ∈ s, ρ (u i) * φ * ρ (v i)) =
+      ∑ i ∈ s, ρ' (u i) * descentCompression ℓ r φ * ρ' (v i) := by
+  rw [map_sum]
+  exact Finset.sum_congr rfl fun i _ => descentCompression_sandwich (hr _) (hl _) φ
+
+/-- **Group case**: for representations `ρ : G →* End(M)`, `ρ' : G →* End(N)`
+with `r`, `ℓ` equivariant, descent commutes with conjugation. -/
+-- Ref: [leitner2026] §3 Lifting and Descent, descent-lemma-proof Step 5
+theorem descentCompression_conj {G : Type*} [Group G] {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N}
+    {ρ : G →* Module.End R M} {ρ' : G →* Module.End R N}
+    (hr : ∀ g, r ∘ₗ ρ g = ρ' g ∘ₗ r) (hl : ∀ g, ρ g ∘ₗ ℓ = ℓ ∘ₗ ρ' g)
+    (g : G) (φ : Module.End R M) :
+    descentCompression ℓ r (ρ g * φ * ρ g⁻¹) =
+      ρ' g * descentCompression ℓ r φ * ρ' g⁻¹ :=
+  descentCompression_sandwich (hr g) (hl g⁻¹) φ
+
+/-- **Equivariant actions preserve the block-diagonal subalgebra**: `ρ h`
+commutes with `e = ℓ ∘ r`, so a sandwich of a block-diagonal `φ` by `ρ`-values
+stays block-diagonal. Hence the action restricts to `blockEnd ℓ r` and the
+descent homomorphism `descentHom` is itself equivariant. -/
+theorem rho_mem_blockEnd {H : Type*} {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N}
+    {ρ : H → Module.End R M} {ρ' : H → Module.End R N}
+    (hr : ∀ h, r ∘ₗ ρ h = ρ' h ∘ₗ r) (hl : ∀ h, ρ h ∘ₗ ℓ = ℓ ∘ₗ ρ' h) (h : H) :
+    ρ h ∈ blockEnd ℓ r := by
+  rw [mem_blockEnd]
+  ext x
+  have h1 := LinearMap.congr_fun (hr h) x
+  have h2 := LinearMap.congr_fun (hl h) (r x)
+  simp only [LinearMap.comp_apply] at h1 h2
+  simp [Module.End.mul_apply, h1, h2]
+
+/-- **`descentHom` is equivariant** for an equivariant pair of actions. -/
+-- Ref: [leitner2026] §3 Lifting and Descent, descent-lemma-proof Step 5
+theorem descentHom_sandwich {H : Type*} {ℓ : N →ₗ[R] M} {r : M →ₗ[R] N}
+    (hrl : r ∘ₗ ℓ = LinearMap.id)
+    {ρ : H → Module.End R M} {ρ' : H → Module.End R N}
+    (hr : ∀ h, r ∘ₗ ρ h = ρ' h ∘ₗ r) (hl : ∀ h, ρ h ∘ₗ ℓ = ℓ ∘ₗ ρ' h)
+    (a b : H) (φ : blockEnd ℓ r) :
+    descentHom hrl (⟨ρ a, rho_mem_blockEnd hr hl a⟩ * φ * ⟨ρ b, rho_mem_blockEnd hr hl b⟩) =
+      ρ' a * descentHom hrl φ * ρ' b :=
+  descentCompression_sandwich (hr a) (hl b) (φ : Module.End R M)
 
 end Compression
 

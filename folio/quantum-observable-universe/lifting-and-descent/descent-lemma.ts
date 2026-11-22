@@ -13,7 +13,7 @@ export default lemma({
     {
       kind: "caveat",
       date: "2026-11-22",
-      body: "The Lean file proves the compression is surjective and linear on all of End, a surjective algebra homomorphism on the centralizer of e_n, not multiplicative on all of End (Z^2 counterexample), and that no surjective algebra homomorphism M_k(K) -> M_j(K) exists for 0 < j < k. The G_q intertwining and the archimedean *-homomorphism in the last paragraph are argued in Steps 4-5 of the proof and are not formalised.",
+      body: "The Lean file proves the compression is surjective and linear on all of End, a surjective algebra homomorphism on the centralizer of e_n, not multiplicative on all of End (Z^2 counterexample), and that no surjective algebra homomorphism M_k(K) -> M_j(K) exists for 0 < j < k. The G_q intertwining is proved given equivariant r_n and l_n (descentCompression_intertwines, descentCompression_conj, descentHom_sandwich); the equivariance itself (Step 5, r_n a Hopf morphism) and the archimedean *-homomorphism are not formalised.",
       see: "docs/audits/2026-11-22-lean-audit-snapshot-gaps.md",
     },
   ],

@@ -37,5 +37,8 @@ Applying $\tau$ gives the archimedean map on sections; that it is a $*$-homomorp
 *Step 5: Equivariance.*
 The $\mathrm{SU}(2)$-action on sections at level $n$ is the adjoint
 representation of the Hopf algebra; since $r_n$ is a Hopf algebra
-morphism, it intertwines the adjoint actions at levels $n$ and $n{-}1$.
+morphism, $r_n \circ \rho_n(h) = \rho_{n-1}(h) \circ r_n$, and likewise
+$\rho_n(h) \circ \ell_n = \ell_n \circ \rho_{n-1}(h)$. For any $a, b$,
+$\mathfrak{d}_n(\rho_n(a) \circ \varphi \circ \rho_n(b)) = r_n \circ \rho_n(a) \circ \varphi \circ \rho_n(b) \circ \ell_n = \rho_{n-1}(a) \circ \mathfrak{d}_n(\varphi) \circ \rho_{n-1}(b)$.
+The adjoint action $\varphi \mapsto \sum \rho_n(h_{(1)}) \circ \varphi \circ \rho_n(S h_{(2)})$ is a finite sum of such terms, so $\mathfrak{d}_n$ intertwines the adjoint actions at levels $n$ and $n{-}1$. Each $\rho_n(h)$ commutes with $e_n$, so the action preserves the block-diagonal subalgebra.
 $\square$
