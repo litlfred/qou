@@ -236,7 +236,9 @@ def main() -> int:
         for r in diff_rows:
             print(f"    {r['case']} [{r['convention']}]  series {r['series_match']}  q=8/7 {r['rational_q_8_7_match']}")
     print(f"\n  conventions passing [SW] on all six words: {good}")
-    out = w.save()
+    out = w.save({"q0Anchor": "independent",
+                  "q0AnchorReason": "exact Fraction power series in eps = q - 1 and exact rationals at "
+                                    "q = 8/7; q0 is never read or evaluated"})
     print(f"  witness -> {out}")
     print(f"  ALL PASSED: {ok}   ({time.time()-T0:.0f}s)")
     return 0 if ok else 1
