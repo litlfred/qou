@@ -62,7 +62,7 @@ stated in the source and was not re-checked here.
 | A1 | m_n − m_p, any increasing trace→mass map | n lighter, wrong (measured, Lean) | p/n label; map | open | PR #8800, `NeutronHeavierSign.lean` |
 | A2 | single flip K→K⁻¹ or u = e₂ | swaps n, p (proved) | p/n label | each single flip excluded; both together invariant | #8800 R5/R6 |
 | A3 | coloured strands, u↔d mirror | n = p, Q_β = 0 | colour; knot assignment | open, owner call | #8800 O2/O3 |
-| A4 | every E_n − E_p, PR #8804 §29–§40 | flips under p↔n | which bit is u | **conflict**: §40 "not fixed", #8800 O1 "u = e₁ derived (§16, #7971)" | `LITERATURE-COMPARISON.md` §40 |
+| A4 | every E_n − E_p, PR #8804 §29–§40 | flips under p↔n | which bit is u | **reconciled in PR #8800 §21** (not re-checked here): reversing the letter order also flips the Markov weight, so u is the K = q vector in either order, given the definition "u passes over" | `LITERATURE-COMPARISON.md` §40; #8800 §21 |
 | A5 | 𝒟² arm of m_n − m_p | +0.171 MeV, sign from ε³ term | A4 | open | §40 |
 | A6 | α·S EM term | −2.30 MeV, QED sign | A4; c_q² reading | S sign ruled (ℒ ⊃ −α·S) | §41–§45 |
 | B1 | Q_β and lepton pair, one-sided reading | one is negative for any monotone map | trace→energy map | **closed (b)**, `monotone_excluded` | `2026-11-21-qbeta-np-error-budget.md` |
@@ -87,8 +87,9 @@ and the −12 m_e coefficient.
   and the tower reading for the side, all five are fixed together. Hypothesis, untested: the
   flavour order F1 is the same letter order on more strands.
 - **One p/n bit (rows A1–A6).** A single bit decides every n − p sign. The corpus contradicts
-  itself on whether it is derived (A4). Hypothesis, untested: by Schur–Weyl duality the order of
-  the basis vectors e₁, e₂ of V is the same choice as the letter order on the Hecke side.
+  itself on whether it is derived (A4). PR #8800 §21 reports (exact sympy) that the order of the basis
+  vectors e₁, e₂ of V is the same choice as the letter order on the Hecke side, so the p/n bit
+  joins the letter-order group. The remaining input is the definition "u passes over".
 - **One map (rows A1, B1, B2).** Wherever a sign enters through \|·\| or a monotone map, two
   proved obstructions apply.
 - **Downstream (rows E1, E2).** These follow from C4 and close only when a bond binds.
@@ -98,6 +99,5 @@ and the −12 m_e coefficient.
 1. Prove `P`-invariance of `towerTr` in Lean (fact 2). Cheap.
 2. Decide whether the photon ruling `σ₀σ₁⁻¹` is meant as "invert the larger letter". If yes,
    C1 and C4 are fixed and the ⁴He chain unbinds by −0.862 keV.
-3. Reconcile A4: read §16 of PR #8804 and PR #7971 and say whether u = e₁ is derived.
-4. Test the two hypotheses in §4 by computing the n − p sign under a letter-order flip and
-   under e₁ ↔ e₂ on the same word.
+3. A4 is reconciled by PR #8800 §21, modulo the definition "u passes over".
+4. Test the flavour-order hypothesis in §4 (F1) the same way.
