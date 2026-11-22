@@ -14,7 +14,7 @@ export default proposition({
     {
       kind: "status",
       date: "2026-11-22",
-      body: "Proved in Lean, sorry-free (axioms propext, Classical.choice, Quot.sound): `towerTr`, `towerTr_mul_comm`, `towerTr_markov`, `towerTr_disjoint`, `towerTr_connectedSum`, `towerTr_interface`, `heckeMarkovTrace`, `heckeMarkovTrace_mul_comm`, `heckeMarkovTrace_σ`, `markovKnotFactor`, `markov_trace_eq_tau_mul_knotFactor`. Not proved: the connected-sum rule on the finite types `IwahoriHecke K q n`, which have no inclusion maps yet; it is stated on the tower. Issue #8960.",
+      body: "Proved in Lean, sorry-free (axioms propext, Classical.choice, Quot.sound): `towerTr`, `towerTr_mul_comm`, `towerTr_markov`, `towerTr_disjoint`, `towerTr_connectedSum`, `towerTr_interface`, `heckeMarkovTrace`, `heckeMarkovTrace_mul_comm`, `heckeMarkovTrace_σ`, `markovKnotFactor`, `markov_trace_eq_tau_mul_knotFactor`. Also proved: `heckeIncl`, `heckeShift`, `heckeMarkovTrace_heckeIncl` (coherence along inclusions), `heckeMarkovTrace_disjoint` and `heckeMarkovTrace_connectedSum` on the finite algebras (factor s z). Issue #8960.",
     },
   ],
   uses: ["prop:markov-trace-recursive-reducer"],

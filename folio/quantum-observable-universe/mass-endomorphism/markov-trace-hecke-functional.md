@@ -21,4 +21,8 @@ For $H_n(q)$, $(s\sigma)^2 = q(h\sigma + 1) = (q-1)(s\sigma) + q$, because $q h 
 
 ## Remark on scope
 
-Rule (5) shows that a bond made of one crossing contributes the same factor $a + b z$ whichever two clusters it joins. The connected-sum rule is stated on the tower, where the inclusions $H_m \subset H_{m+1}$ and the shift are defined. The finite algebras $H_n(q)$ in the Lean library have no inclusion maps yet.
+Rule (5) shows that a bond made of one crossing contributes the same factor $a + b z$ whichever two clusters it joins. On the finite algebras, the inclusion $H_m(q) \to H_n(q)$ ($\sigma_i \mapsto \sigma_i$) and the shift $H_p(q) \to H_n(q)$ ($\sigma_i \mapsto \sigma_{i+k}$) commute with the rescaling into the tower. So the trace on $H_n(q)$ restricts to the trace on $H_m(q)$, and for $m + 1 + p \leq n$,
+$$
+  \mathrm{tr}_n\bigl(x\,\sigma_m\,y^{\uparrow (m+1)}\bigr) = s z\,\mathrm{tr}_m(x)\,\mathrm{tr}_p(y), \qquad x \in H_m(q),\ y \in H_p(q).
+$$
+The factor $s$ comes from the rescaling $\sigma_m \mapsto s\,\sigma_m$.

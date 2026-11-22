@@ -40,8 +40,10 @@ tower (`toTower`), so
   `QOU.Hecke.KnotFactor`: for `q ≠ 0` and any splitting, `tr_M x = τ(x κ)` with `κ`
   central.
 
-The connected-sum rule is stated on the tower, where the inclusions `H_m ⊂ H_{m+1}` and
-the shift live; the finite types `IwahoriHecke K q n` have no inclusion maps yet.
+On the finite algebras: `heckeIncl : H_m(q) →ₐ H_n(q)` and `heckeShift k`, compatible with
+the tower (`toTower_heckeIncl`, `toTower_heckeShift`), so the trace is coherent along
+inclusions (`heckeMarkovTrace_heckeIncl`), and the connected-sum rule holds there,
+`tr_n(x · σ_m · y↑ᵐ⁺¹) = s z · tr_m x · tr_p y` (`heckeMarkovTrace_connectedSum`).
 
 Generic over `[CommRing R]` with `z h : R` (§7c).
 
@@ -606,5 +608,172 @@ theorem markov_trace_eq_tau_mul_knotFactor (hq : q ≠ 0)
     (heckeMarkovTrace_mul_comm s h z hs hh) x
 
 end KnotFactor
+
+/-! ## Inclusions and shifts of the finite algebras -/
+
+open QOU.Hecke
+open QOU.BraidKnot QOU.MathlibExt.HeckeTowerWitness QOU.Hecke
+
+section Incl
+
+variable {K : Type*} [CommRing K] {q : K}
+
+/-- Algebra maps out of `H_m(q)` agree when they agree on the generators. -/
+theorem iwahori_hom_ext {m : ℕ} {A : Type*} [Semiring A] [Algebra K A]
+    {f g : IwahoriHecke K q m →ₐ[K] A}
+    (H : ∀ i, f (IwahoriHecke.σ K q m i) = g (IwahoriHecke.σ K q m i)) : f = g := by
+  apply RingQuot.ringQuot_ext' K (s := QOU.Hecke.HeckeRel K q m)
+  apply FreeAlgebra.hom_ext
+  funext i
+  exact H i
+
+/-- An algebra map out of `H_m(q)` from images of the generators satisfying the relations. -/
+noncomputable def iwahoriLift {m : ℕ} {A : Type*} [Ring A] [Algebra K A] (g : Fin m → A)
+    (hq : ∀ i, g i * g i = (q - 1) • g i + q • 1)
+    (hb : ∀ (i : Fin m) (hi : (i : ℕ) + 1 < m),
+      g i * g ⟨(i : ℕ) + 1, hi⟩ * g i = g ⟨(i : ℕ) + 1, hi⟩ * g i * g ⟨(i : ℕ) + 1, hi⟩)
+    (hc : ∀ i j : Fin m, (j : ℕ) + 2 ≤ (i : ℕ) → g i * g j = g j * g i) :
+    IwahoriHecke K q m →ₐ[K] A :=
+  RingQuot.liftAlgHom K ⟨FreeAlgebra.lift K g, by
+    intro x y hxy
+    cases hxy with
+    | quadratic i =>
+      simp only [map_mul, map_add, map_smul, map_one, FreeAlgebra.lift_ι_apply]
+      exact hq i
+    | braid i hi =>
+      simp only [map_mul, FreeAlgebra.lift_ι_apply]
+      exact hb i hi
+    | commute i j hij =>
+      simp only [map_mul, FreeAlgebra.lift_ι_apply]
+      exact hc i j hij⟩
+
+theorem iwahoriLift_σ {m : ℕ} {A : Type*} [Ring A] [Algebra K A] (g : Fin m → A)
+    (hq hb hc) (i : Fin m) :
+    iwahoriLift (q := q) g hq hb hc (IwahoriHecke.σ K q m i) = g i := by
+  simp only [iwahoriLift, IwahoriHecke.σ, IwahoriHecke.mk]
+  erw [RingQuot.liftAlgHom_mkAlgHom_apply]
+  simp
+
+/-- The generator of `H_n(q)` with index `a < n`. -/
+noncomputable abbrev gN (n a : ℕ) (ha : a < n) : IwahoriHecke K q n :=
+  IwahoriHecke.σ K q n ⟨a, ha⟩
+
+/-- Relations for a family `i ↦ σ_{i+k}` of generators of `H_n(q)`. -/
+theorem shifted_rels {m n : ℕ} (k : ℕ) (hkn : m + k ≤ n) :
+    (∀ i : Fin m, gN (q := q) n (i + k) (by omega) * gN n (i + k) (by omega)
+        = (q - 1) • gN n (i + k) (by omega) + q • 1) ∧
+    (∀ (i : Fin m) (hi : (i : ℕ) + 1 < m),
+        gN (q := q) n (i + k) (by omega) * gN n ((i + 1) + k) (by omega) * gN n (i + k) (by omega)
+          = gN n ((i + 1) + k) (by omega) * gN n (i + k) (by omega)
+              * gN n ((i + 1) + k) (by omega)) ∧
+    (∀ i j : Fin m, (j : ℕ) + 2 ≤ (i : ℕ) →
+        gN (q := q) n (i + k) (by omega) * gN n (j + k) (by omega)
+          = gN n (j + k) (by omega) * gN n (i + k) (by omega)) := by
+  refine ⟨fun i => IwahoriHecke.σ_quadratic K q n _, fun i hi => ?_, fun i j hij => ?_⟩
+  · have := IwahoriHecke.σ_braid K q n ⟨(i : ℕ) + k, by omega⟩ (show (i : ℕ) + k + 1 < n by omega)
+    have e : (⟨(i : ℕ) + k + 1, by omega⟩ : Fin n) = ⟨(i : ℕ) + 1 + k, by omega⟩ :=
+      Fin.ext (show (i : ℕ) + k + 1 = (i : ℕ) + 1 + k by omega)
+    simpa [gN, e] using this
+  · exact IwahoriHecke.σ_commute K q n ⟨(i : ℕ) + k, by omega⟩ ⟨(j : ℕ) + k, by omega⟩
+      (show (j : ℕ) + k + 2 ≤ (i : ℕ) + k by omega)
+
+/-- **The shift** `H_m(q) → H_n(q)`, `σ_i ↦ σ_{i+k}`, for `m + k ≤ n`. -/
+noncomputable def heckeShift {m n : ℕ} (k : ℕ) (hkn : m + k ≤ n) :
+    IwahoriHecke K q m →ₐ[K] IwahoriHecke K q n :=
+  iwahoriLift (fun i : Fin m => gN (q := q) n (i + k) (by omega))
+    (shifted_rels k hkn).1 (shifted_rels k hkn).2.1 (shifted_rels k hkn).2.2
+
+theorem heckeShift_σ {m n : ℕ} (k : ℕ) (hkn : m + k ≤ n) (i : Fin m) :
+    heckeShift (q := q) k hkn (IwahoriHecke.σ K q m i)
+      = IwahoriHecke.σ K q n ⟨(i : ℕ) + k, by omega⟩ :=
+  iwahoriLift_σ _ _ _ _ i
+
+/-- **The inclusion** `H_m(q) → H_n(q)`, `σ_i ↦ σ_i`, for `m ≤ n`. -/
+noncomputable def heckeIncl {m n : ℕ} (hmn : m ≤ n) :
+    IwahoriHecke K q m →ₐ[K] IwahoriHecke K q n :=
+  heckeShift 0 (by omega)
+
+theorem heckeIncl_σ {m n : ℕ} (hmn : m ≤ n) (i : Fin m) :
+    heckeIncl (q := q) hmn (IwahoriHecke.σ K q m i)
+      = IwahoriHecke.σ K q n (Fin.castLE hmn i) := by
+  rw [heckeIncl, heckeShift_σ]
+  rfl
+
+/-! ## Compatibility with the rescaling map into the tower -/
+
+variable (s h z : K) (hs : s * s = q) (hh : s * h = q - 1)
+
+theorem toTower_heckeShift {m n : ℕ} (k : ℕ) (hkn : m + k ≤ n) :
+    (toTower (n := n) s h hs hh).comp (heckeShift k hkn)
+      = (shift h k).comp (toTower (n := m) s h hs hh) := by
+  apply iwahori_hom_ext
+  intro i
+  simp only [AlgHom.comp_apply, heckeShift_σ, toTower_σ, map_smul, shift_twGen]
+
+theorem toTower_heckeIncl {m n : ℕ} (hmn : m ≤ n) :
+    (toTower (n := n) s h hs hh).comp (heckeIncl hmn) = toTower (n := m) s h hs hh := by
+  apply iwahori_hom_ext
+  intro i
+  simp only [AlgHom.comp_apply, heckeIncl_σ, toTower_σ, Fin.coe_castLE]
+
+theorem toTower_heckeIncl_apply {m n : ℕ} (hmn : m ≤ n) (x : IwahoriHecke K q m) :
+    toTower (n := n) s h hs hh (heckeIncl hmn x) = toTower s h hs hh x :=
+  congrArg (fun f => f x) (toTower_heckeIncl s h hs hh hmn)
+
+theorem toTower_heckeShift_apply {m n : ℕ} (k : ℕ) (hkn : m + k ≤ n)
+    (x : IwahoriHecke K q m) :
+    toTower (n := n) s h hs hh (heckeShift k hkn x) = shift h k (toTower s h hs hh x) :=
+  congrArg (fun f => f x) (toTower_heckeShift s h hs hh k hkn)
+
+/-- **The Markov tower is coherent**: the trace on `H_n` restricts to the trace on `H_m`. -/
+theorem heckeMarkovTrace_heckeIncl {m n : ℕ} (hmn : m ≤ n) (x : IwahoriHecke K q m) :
+    heckeMarkovTrace (n := n) s h z hs hh (heckeIncl hmn x) = heckeMarkovTrace s h z hs hh x := by
+  rw [heckeMarkovTrace_apply, heckeMarkovTrace_apply, toTower_heckeIncl_apply]
+
+/-- The image of `H_m(q)` lies in the tower's `H_m`. -/
+theorem toTower_mem_twH {m : ℕ} (x : IwahoriHecke K q m) :
+    toTower s h hs hh x ∈ twH h m := by
+  obtain ⟨a, rfl⟩ := RingQuot.mkAlgHom_surjective K (QOU.Hecke.HeckeRel K q m) x
+  induction a using FreeAlgebra.induction with
+  | grade0 r =>
+    erw [AlgHom.commutes, AlgHom.commutes]
+    exact Subalgebra.algebraMap_mem _ r
+  | grade1 i =>
+    have : RingQuot.mkAlgHom K (QOU.Hecke.HeckeRel K q m) (FreeAlgebra.ι K i)
+        = IwahoriHecke.σ K q m i := rfl
+    rw [this, toTower_σ]
+    have hi : twGen h (i : ℕ) ∈ twH h m :=
+      Algebra.subset_adjoin (Set.mem_image_of_mem (twGen h) (show (i : ℕ) ∈ {a | a < m} from i.isLt))
+    exact Subalgebra.smul_mem _ hi s
+  | mul a b ha hb => rw [map_mul, map_mul]; exact Subalgebra.mul_mem _ ha hb
+  | add a b ha hb => rw [map_add, map_add]; exact Subalgebra.add_mem _ ha hb
+
+/-! ## The disjoint and connected-sum rules on the finite algebras -/
+
+/-- **No crossing between the clusters** (they share strand `m`):
+    `tr_n(x · y↑ᵐ) = tr_m x · tr_p y` for `m + p ≤ n`. -/
+theorem heckeMarkovTrace_disjoint {m p n : ℕ} (hmn : m ≤ n) (hpn : p + m ≤ n)
+    (x : IwahoriHecke K q m) (y : IwahoriHecke K q p) :
+    heckeMarkovTrace (n := n) s h z hs hh (heckeIncl hmn x * heckeShift m hpn y)
+      = heckeMarkovTrace s h z hs hh x * heckeMarkovTrace s h z hs hh y := by
+  rw [heckeMarkovTrace_apply, map_mul (toTower s h hs hh), toTower_heckeIncl_apply,
+    toTower_heckeShift_apply, towerTr_disjoint z h m (toTower_mem_twH s h hs hh x), heckeMarkovTrace_apply,
+    heckeMarkovTrace_apply]
+
+/-- **The connected-sum rule on `H_n(q)`**: one crossing `σ_m` joining a cluster in `H_m` to
+    a cluster in `H_p` shifted above it, `tr_n(x · σ_m · y↑ᵐ⁺¹) = s z · tr_m x · tr_p y`. -/
+theorem heckeMarkovTrace_connectedSum {m p n : ℕ} (hmn : m ≤ n) (hm : m < n)
+    (hpn : p + (m + 1) ≤ n) (x : IwahoriHecke K q m) (y : IwahoriHecke K q p) :
+    heckeMarkovTrace (n := n) s h z hs hh
+        (heckeIncl hmn x * IwahoriHecke.σ K q n ⟨m, hm⟩ * heckeShift (m + 1) hpn y)
+      = s * z * heckeMarkovTrace s h z hs hh x * heckeMarkovTrace s h z hs hh y := by
+  rw [heckeMarkovTrace_apply, map_mul (toTower s h hs hh), map_mul (toTower s h hs hh),
+    toTower_heckeIncl_apply,
+    toTower_heckeShift_apply, toTower_σ, mul_smul_comm, smul_mul_assoc, map_smul,
+    towerTr_connectedSum z h m (toTower_mem_twH s h hs hh x), heckeMarkovTrace_apply,
+    heckeMarkovTrace_apply, smul_eq_mul]
+  ring
+
+end Incl
 
 end QOU.BraidKnot.HeckeFunctional
