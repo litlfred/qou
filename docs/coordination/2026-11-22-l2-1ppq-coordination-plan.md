@@ -214,3 +214,6 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
     - `StokesToBraiding` (a continuous multiplicative integral);
     - P1–P3 for n ≥ 4 (triple collisions);
     - a substrate instance of HeckeMonodromy (passed to W8).
+- **2026-11-22 22:20Z, W7 ↔ W8 hand-off:**
+  - At fixed β, a substrate HeckeMonodromy instance is only vacuous. `subsingleton_of_isUnit_h` forces the shadow target to be 0 over ℂ.
+  - Next step for W7: a β-family version of `nbody_monodromy_hecke`, over ℂ[[β]] or a Laurent ring. W8 then builds the instance on that family plus `ocneanuMarkovTrace`.
