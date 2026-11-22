@@ -56,6 +56,7 @@ import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Module.LinearMap.Defs
 import Mathlib.Tactic.Abel
+import QOU.SchurWeyl.WtraceTwistedPositivity
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
@@ -356,5 +357,58 @@ theorem markov_frobenius_min_norm_twisted_uniqueness
   · rintro rfl
     rw [h, sub_self, zero_mul, map_zero]
     ring
+
+
+/-! ## The instance at convention D (W8, bean `qou-baov`)
+
+The Markov trace `tr_M` at `z_D = q³/(q²+1)` is `QOU.SchurWeyl.SeminormalRep.wtrace` on the
+presented Hecke algebra `Hecke K q q⁻¹ n = H_{n+1}(q)`. For `q > 1` over any ordered field it is a
+`NormalizedTrace`, the anti-involution `†` fixing each `σᵢ` is a `TraceTwist` for it, and the
+twisted form is positive (`wtrace_mul_dag_nonneg`). So `markov_frobenius_min_norm_twisted` applies
+to `tr_M` at `z_D`: `S² ≤ tr_M(X·X†)` whenever `tr_M(X) = S`.
+
+**`TwistedNonDegTrace` is not supplied, and is false here for `n + 1 ≥ 3`.** The Ocneanu weights
+at `z_D` vanish on every shape with three rows
+(`ocneanuWeight_conventionD_eq_zero_of_three_rows`), so the form has a nonzero radical
+(`QOU.SchurWeyl.OcneanuTraceNotFaithful.exists_nonzero_wtrace_orthogonal`, at `n + 1 = 3` over `ℝ`). The
+equality case `markov_frobenius_min_norm_twisted_uniqueness` therefore does not apply to `tr_M`
+at `z_D`. -/
+
+section ConventionD
+
+open QOU.SchurWeyl QOU.SchurWeyl.SeminormalRep
+
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+
+theorem one_lt_ne_zero {q : K} (hq : 1 < q) : q ≠ 0 := ne_of_gt (lt_trans one_pos hq)
+
+/-- `tr_M` at `z_D`, as a normalized trace on `H_{n+1}(q)`, for `q > 1`. -/
+noncomputable def markovTraceZD (q : K) (hq : 1 < q) (n : ℕ) :
+    NormalizedTrace K (QOU.SchurWeyl.Hecke K q q⁻¹ n) where
+  tau := wtrace q (one_lt_ne_zero hq) (notRootOfUnity_of_one_lt q hq) n
+  tau_one := wtrace_one q (one_lt_ne_zero hq) (notRootOfUnity_of_one_lt q hq)
+    (by positivity) (fun i hi => (one_lt_pow₀ (by nlinarith) hi.ne').ne') n
+  tau_cyc := wtrace_cyclic q (one_lt_ne_zero hq) (notRootOfUnity_of_one_lt q hq) n
+
+/-- The anti-involution `σᵢ ↦ σᵢ` as a twist of `tr_M` at `z_D`. -/
+noncomputable def markovTraceZDTwist (q : K) (hq : 1 < q) (n : ℕ) :
+    TraceTwist K (QOU.SchurWeyl.Hecke K q q⁻¹ n) (markovTraceZD q hq n) where
+  dag := QOU.SchurWeyl.Hecke.dag K q q⁻¹ n
+  dag_one := QOU.SchurWeyl.Hecke.dag_one K q q⁻¹ n
+  tau_dag x := wtrace_dag q hq _ _ n x
+
+/-- **`TwistedPSDTrace` for `tr_M` at `z_D`**, `q > 1`. -/
+instance markovTraceZD_twistedPSD (q : K) (hq : 1 < q) (n : ℕ) :
+    TwistedPSDTrace K (QOU.SchurWeyl.Hecke K q q⁻¹ n) (markovTraceZD q hq n)
+      (markovTraceZDTwist q hq n) where
+  psd x := wtrace_mul_dag_nonneg q hq _ _ n x
+
+/-- **The T_β lower bound for `tr_M` at `z_D`:** if `tr_M(X) = S` then `S² ≤ tr_M(X·X†)`. -/
+theorem markov_frobenius_min_norm_zD (q : K) (hq : 1 < q) (n : ℕ) (S : K)
+    (X : QOU.SchurWeyl.Hecke K q q⁻¹ n) (h : (markovTraceZD q hq n).tau X = S) :
+    S * S ≤ (markovTraceZD q hq n).tau (X * QOU.SchurWeyl.Hecke.dag K q q⁻¹ n X) :=
+  markov_frobenius_min_norm_twisted K _ (markovTraceZD q hq n) (markovTraceZDTwist q hq n) S X h
+
+end ConventionD
 
 end QOU.QBeta.MarkovFrobeniusCollapse.General
