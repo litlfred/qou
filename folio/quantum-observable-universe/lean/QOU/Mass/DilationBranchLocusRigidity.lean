@@ -58,6 +58,8 @@ Ground ring: `[Field K] [CharZero K]` (§7c). Characteristic zero is used exactl
 to invert `16` and `24`; nothing archimedean appears.
 -/
 
+-- Homogeneous form (issue #9083): `QOU.Mass.BranchLocusStabiliser.dilation_rigid_of_diagonal`
+-- re-derives `dilation_scaling_rigid` from the one `diag(α, β)` lemma `diagonal_rigid`.
 namespace QOU.Mass.DilationBranchLocusRigidity
 
 open Polynomial
