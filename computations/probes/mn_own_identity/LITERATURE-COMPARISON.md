@@ -1566,3 +1566,14 @@ Correction to §43: the capture's exact S_B1 is −(q²−1)²(q⁴+q²+1)/q⁶ 
 cross-thread note, both corrected.
 
 Step 4 (the gluon) is the one step of the six the corpus cannot yet build.
+
+**§43/§46 Lean (sibling thread "Derive the neutron mass m_n", relayed; branch
+`claude/hydrogen-capture-lean-2026-11-22`, commit ca85cb1c34a, not yet a PR, not re-verified here).**
+`QOU/BraidsAndKnots/HydrogenCaptureWeightSpace.lean` is reported sorry-free over a generic field with
+q ≠ 0 and q⁴ + q² + 1 ≠ 0.
+- It gives an explicit intertwiner between the two 4-dimensional weight spaces, so every word has
+  equal trace on them.
+- It shows S equals a difference of two matrix entries.
+- It proves S(W_L) = −h²[3]_q/q² and S(W_L) + S(W_R) = 0.
+The reduction from 16 dimensions to the weight spaces is stated in that file's docstring, not
+proved.
