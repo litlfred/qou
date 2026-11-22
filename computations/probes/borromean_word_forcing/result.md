@@ -16,6 +16,11 @@ No measured value is used anywhere.
 | `eval_borOrbit_conj`, `conj_flip`, `conj_mirror` | The 4 Borromean words are conjugate in B₃ (the flip s₀↔s₁ is conjugation by Δ = σ₀σ₁σ₀, `conj_flip`; the mirror is a cyclic rotation followed by the flip, `conj_mirror`). |
 | `eval_borromean_ne_one` | β_Bor ↦ [[13, 8], [8, 5]] under the integer Burau representation at t = −1. |
 | `markovTrace_writhe_zero` | With y₍₃₎ + 2y₍₂,₁₎ + y₍₁³₎ = 1, a writhe-0 word has tr = 1 + y₍₂,₁₎(χ − 2), χ its (2,1) character. |
+| `two_strand_pureZeroLinking` | A word in σ₀^{±1} alone that is pure with zero linking is the identity, so three strands is the minimum. |
+| `borromean_minimises_energy` | For q > 1, β_Bor has the least corpus crossing energy (`def:crossing-energy`) among non-trivial reduced pure zero-linking three-strand words; a tie is conjugate to β_Bor. Zero linking forces writhe 0, so energy = length·(q − q⁻¹)/2 and this is the crossing-count cost restated, not a new reason. |
+| `burauNeg_surjective` | Burau at t = −1 maps B₃ onto SL(2,ℤ) (Mathlib `SL2Z_generators`; σ₀ ↦ T, Δ ↦ S⁻¹). |
+| `burauNeg_delta_four`, `exponentSum_delta_four` | Δ⁴ is in the kernel and has writhe 12. |
+| `isConj_of_burauNeg_isConj` | **Conditional on `KernelIsDeltaFour`** (kernel = ⟨Δ⁴⟩, cited): writhe-0 braids with SL(2,ℤ)-conjugate images are conjugate in B₃. Proof steps 1–2 of the all-lengths argument below. |
 
 Topological reading (cited, not formalised): for a pure 3-braid, removing a strand
 leaves σ^{2k} with k the remaining pair's linking number, so the closure is Brunnian
