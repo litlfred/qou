@@ -1,0 +1,55 @@
+370 H. Wenz!
+
+square roots. We will need the orthogonal representations in the following when
+positivity will play an important role. So from now on JV, is assumed to be
+a complex Hilbert space with orthonormal basis {#,, te 7;}. It will be essential
+for the construction of subfactors that for a representation p of H,,(q) also subal-
+gebras of the form p((@m, @m+1> +++» €n—1>) are C* algebras.
+
+Definition 2.8. A representation p of H,,(q) or H..(q) on a Hilbert space is called
+a C* representation if p(e,) is a selfadjoint projection for i=1, 2, ...,n—1 or
+for all icN respectively.
+
+Note that 7;,;(e;))=0 and ,1(e,)=1 for neN and i=1, 2, ...,n—1. Obviously
+these are C* representations. Any C* representation isomorphic to a direct
+sum of such representations will be called a trivial C* representation. To charac-
+terize nontrivial C* representations, we say that a Young diagram AeA, is
+an m-diagram if 1,+k<m+2, where k is the number of rows of A. Note that
+this equivalent to |d, ;, ;|<m for all teT, and 1 Si,jSn.
+
+For the proof of the next proposition we will use the following property
+of H.,.(q). Let
+
+Am,n= (8m &m+1 ++ Sn—1)(Bm Sm+ i++ Sn—2) +++ (Sm m+ 1) Bm:
+
+By [B], Lemma (2.5.1) we have for mSiSn—1 that 4), 8; 4m.h=&m+n-i-1-
+Hence conjugation by 4,,,, yields an inner automorphism v,,,, of H,,(q) or
+H,(q), k= n with Vy, n(€)) =€m+n-i-1 for mSi<n and with v,,, ,(e;)) =e; for igSm—2
+or i2=n+1. We use this to show by induction on i that if p is a representation
+of H,,(q) with p(e,)=p(e.), then
+
+p(e)=ple,) for i=1,2,...n—1. (2.15)
+
+Indeed, this is trivially true for i=2. Assume it is true for i and i—1. Using
+the fact that 7;_1,;42 is inner we have
+
+P(Ci+1)=P(Vi-1,1+2(C:- 1) =P Wi-1,1+2(€)) = P(e).
+
+We can now use the positivity trick of [W-1] to find necessary conditions
+for the existence of C* representations of H,,(q) (see also [O]).
+
+Proposition 2.9. There are nontrivial C* representations of H,(q) only if 4 is
+real and not negative or if |q|=1. Let in the second case q=e?"'* with 0<|x|<1/2
+and assume that there is an meN such that m—1<|1/x|<m. Then any irreducible
+C* representation of H,(q) is equivalent to x, for some m-diagram in A,. !"
+particular, there are no nontrivial C* representations of H,(q) for n>((m+ 1)/2).
+
+Proof. Let p be an irreducible C* representation of H,(q). Note that ey =P)
+So it follows from corollary (2.3) that the only possible spectral values of the
+positive element p(e, e, e,) are 0, 1 and q/(1+4q)?. If g/(1+4)? is not a spectral
+value, p)4,(q) Would only contain the trivial representations 1,2, and ™%12)- But
+then p(e,)=p(e2) by definition of these representations. It follows from (2.45)
+that p(e,)=(e,) for i=1, 2, ...n—1. As p is irreducible, it has to be one dimen-
+sional, ie. it has to be a trivial C* representation. So if p is a nontrivial c ;
+representation, q/(1+)” has to be a nonnegative spectral value of the positive
+element p(e, e2 e,). This implies that q is real and not negative or that |ql= 1.
