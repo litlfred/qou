@@ -29,6 +29,9 @@ list** `Q.sampleVerts S` lists `Q.param s` for `s ∈ S` in increasing order.
 * `Polygon.refines_sampleVerts` — **if `S ⊆ [0, 1)` contains all vertex times, the sample list
   refines the vertex list**: it is reached by insertions on edges and re-indexings.
 * `PolygonalLink.reaches_sampleVerts` — so a component is Δ-equivalent to its sample.
+* `Polygon.refines_reparam`, `PolygonalLink.reaches_reparam` — the same along an oriented
+  reparametrization `φ`, when the times `fract (φ s)` hit every vertex time. This is the form
+  met at the end of an ambient isotopy.
 -/
 
 namespace QOU.MathlibExt.PL
@@ -323,6 +326,112 @@ lemma three_le_card {S : Finset ℝ} (hV : Q.vertexTimes ⊆ S) : 3 ≤ S.card :
   have := Q.two_le
   omega
 
+/-- **Sampling after an oriented reparametrization.** If `φ` is an oriented reparametrization and
+the times `fract (φ s)`, `s ∈ S`, hit every vertex time, the list `Q.param (φ s)` over the sorted
+`S` refines the vertex list. It is a rotation of the sample at `fract ∘ φ '' S`. -/
+theorem refines_reparam (S : Finset ℝ) (hS : ∀ x ∈ S, 0 ≤ x ∧ x < 1) {φ : ℝ → ℝ}
+    (hφ : OrientedReparam φ) (hV : ∀ i, ∃ s ∈ S, Int.fract (φ s) = Q.vtime i) :
+    Refines (List.ofFn Q.v) ((S.sort (· ≤ ·)).map fun s => Q.param (φ s)) := by
+  classical
+  set f : ℝ → ℝ := fun s => Int.fract (φ s)
+  set S' := S.image f
+  have hS' : ∀ x ∈ S', 0 ≤ x ∧ x < 1 := by
+    intro x hx
+    obtain ⟨s, -, rfl⟩ := Finset.mem_image.mp hx
+    exact ⟨Int.fract_nonneg _, Int.fract_lt_one _⟩
+  have hV' : Q.vertexTimes ⊆ S' := by
+    intro x hx
+    obtain ⟨i, -, rfl⟩ := Finset.mem_image.mp hx
+    obtain ⟨s, hs, he⟩ := hV i
+    exact Finset.mem_image.mpr ⟨s, hs, he⟩
+  have href := Q.refines_sampleVerts S' hS' hV'
+  set z := ⌊φ 0⌋
+  have hφ1 : φ 1 = φ 0 + 1 := by simpa using hφ.add_one 0
+  have hrange : ∀ s ∈ S, φ 0 ≤ φ s ∧ φ s < φ 0 + 1 := fun s hs =>
+    ⟨hφ.strictMono.monotone (hS s hs).1, hφ1 ▸ hφ.strictMono (hS s hs).2⟩
+  have hz0 : (z : ℝ) ≤ φ 0 := Int.floor_le _
+  have hz1 : φ 0 < z + 1 := Int.lt_floor_add_one _
+  set p : ℝ → Bool := fun s => decide (φ s < z + 1)
+  set l := S.sort (· ≤ ·) with hl
+  have hlt : l.Sorted (· < ·) := Finset.sort_sorted_lt S
+  have hlS : ∀ s ∈ l, s ∈ S := fun s hs => (Finset.mem_sort _).mp hs
+  have hfa : ∀ s ∈ S, p s = true → f s = φ s - z := by
+    intro s hs hp
+    have := hrange s hs
+    simp only [p, decide_eq_true_eq] at hp
+    simp only [f, Int.fract, Int.floor_eq_iff.mpr ⟨by linarith, hp⟩]
+  have hfb : ∀ s ∈ S, p s = false → f s = φ s - (z + 1) := by
+    intro s hs hp
+    have := hrange s hs
+    simp only [p, decide_eq_false_iff_not, not_lt] at hp
+    have hfl : ⌊φ s⌋ = z + 1 := Int.floor_eq_iff.mpr ⟨by push_cast; linarith, by push_cast; linarith⟩
+    simp only [f, Int.fract, hfl]; push_cast; ring
+  set la := l.filter p
+  set lb := l.filter (fun s => !p s)
+  have hcross : ∀ a ∈ la, ∀ b ∈ lb, a < b := by
+    intro a ha b hb
+    simp only [la, lb, List.mem_filter, p, decide_eq_true_eq, Bool.not_eq_true',
+      decide_eq_false_iff_not, not_lt] at ha hb
+    by_contra h
+    push_neg at h
+    have := hφ.strictMono.monotone h
+    linarith [ha.2, hb.2]
+  have hsplit : l = la ++ lb := by
+    apply List.eq_of_perm_of_sorted (r := (· < ·)) _ hlt
+    · exact List.pairwise_append.mpr ⟨hlt.filter _, hlt.filter _, hcross⟩
+    · exact (List.filter_append_perm p l).symm
+  -- the sorted sample at `S'`
+  have hsort : S'.sort (· ≤ ·) = lb.map f ++ la.map f := by
+    have hsa : (la.map f).Sorted (· < ·) := by
+      refine List.pairwise_map.mpr ((hlt.filter p).imp_of_mem fun {a b} ha hb hab => ?_)
+      have ha' := List.mem_filter.mp ha
+      have hb' := List.mem_filter.mp hb
+      rw [hfa a (hlS a ha'.1) ha'.2, hfa b (hlS b hb'.1) hb'.2]
+      linarith [hφ.strictMono hab]
+    have hsb : (lb.map f).Sorted (· < ·) := by
+      refine List.pairwise_map.mpr ((hlt.filter _).imp_of_mem fun {a b} ha hb hab => ?_)
+      have ha' := List.mem_filter.mp ha
+      have hb' := List.mem_filter.mp hb
+      rw [hfb a (hlS a ha'.1) (by simpa using ha'.2), hfb b (hlS b hb'.1) (by simpa using hb'.2)]
+      linarith [hφ.strictMono hab]
+    have hsorted : (lb.map f ++ la.map f).Sorted (· < ·) := by
+      refine List.pairwise_append.mpr ⟨hsb, hsa, fun x hx y hy => ?_⟩
+      obtain ⟨b, hb, rfl⟩ := List.mem_map.mp hx
+      obtain ⟨a, ha, rfl⟩ := List.mem_map.mp hy
+      have ha' := List.mem_filter.mp ha
+      have hb' := List.mem_filter.mp hb
+      rw [hfb b (hlS b hb'.1) (by simpa using hb'.2), hfa a (hlS a ha'.1) ha'.2]
+      have := hrange a (hlS a ha'.1)
+      have := hrange b (hlS b hb'.1)
+      linarith
+    apply List.eq_of_perm_of_sorted (r := (· < ·)) _ (Finset.sort_sorted_lt _) hsorted
+    rw [List.perm_ext_iff_of_nodup (Finset.sort_nodup _ _) hsorted.nodup]
+    intro x
+    rw [Finset.mem_sort, Finset.mem_image, List.perm_append_comm.mem_iff, ← List.map_append,
+      ← hsplit, List.mem_map]
+    simp only [l, Finset.mem_sort]
+  have hparam : ∀ s, Q.param (φ s) = Q.param (f s) := fun s => by
+    simp only [f, param, Int.fract_fract]
+  have hmap : (l.map fun s => Q.param (φ s)) = la.map (Q.param ∘ f) ++ lb.map (Q.param ∘ f) := by
+    rw [hsplit, List.map_append]
+    congr 1 <;> exact List.map_congr_left fun s _ => hparam s
+  rw [hmap]
+  have hS'v : Q.sampleVerts S' = lb.map (Q.param ∘ f) ++ la.map (Q.param ∘ f) := by
+    rw [sampleVerts, hsort, List.map_append, List.map_map, List.map_map]
+  rw [hS'v] at href
+  have := href.rotate (lb.map (Q.param ∘ f)).length
+  rwa [List.rotate_append_length_eq] at this
+
+lemma card_le_of_reparam (S : Finset ℝ) {φ : ℝ → ℝ}
+    (hV : ∀ i, ∃ s ∈ S, Int.fract (φ s) = Q.vtime i) : 3 ≤ S.card := by
+  classical
+  have hsub : Q.vertexTimes ⊆ S.image fun s => Int.fract (φ s) := by
+    intro x hx
+    obtain ⟨i, -, rfl⟩ := Finset.mem_image.mp hx
+    obtain ⟨s, hs, he⟩ := hV i
+    exact Finset.mem_image.mpr ⟨s, hs, he⟩
+  exact (Q.three_le_card hsub).trans Finset.card_image_le
+
 end Polygon
 
 namespace PolygonalLink
@@ -339,6 +448,18 @@ theorem reaches_sampleVerts (S : Finset ℝ) (hS : ∀ x ∈ S, 0 ≤ x ∧ x < 
       simp only [List.length_ofFn]; have := (L.comp m).two_le; omega) :=
     (Polygon.ofList_ofFn _).symm
   exact Reaches.of_refines L m ((L.comp m).refines_sampleVerts S hS hV) _ hm
+
+/-- **The `t = 1` end.** A component is Δ-equivalent to its sample along an oriented
+reparametrization, when the reparametrized times hit every vertex time. -/
+theorem reaches_reparam (S : Finset ℝ) (hS : ∀ x ∈ S, 0 ≤ x ∧ x < 1) {φ : ℝ → ℝ}
+    (hφ : OrientedReparam φ) (hV : ∀ i, ∃ s ∈ S, Int.fract (φ s) = (L.comp m).vtime i) :
+    L.Reaches m (Polygon.ofList ((S.sort (· ≤ ·)).map fun s => (L.comp m).param (φ s))
+      (by simp only [List.length_map, Finset.length_sort]
+          exact (L.comp m).card_le_of_reparam S hV)) := by
+  have hm : L.comp m = Polygon.ofList (List.ofFn (L.comp m).v) (by
+      simp only [List.length_ofFn]; have := (L.comp m).two_le; omega) :=
+    (Polygon.ofList_ofFn _).symm
+  exact Reaches.of_refines L m ((L.comp m).refines_reparam S hS hφ hV) _ hm
 
 end PolygonalLink
 
