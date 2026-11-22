@@ -1,0 +1,703 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0103228v2",
+ "source": {
+  "file": "0103228v2.pdf",
+  "sha256": "7d66dbbd4b87798fb9fa7e1ca5f4be67dba1cd9864dd87a5f8922d3bdbec03c8",
+  "bytes": 439195,
+  "pages": 62,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-22T18:41:33Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0103228",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "9 Apr 2002"
+  },
+  "doi": null,
+  "title": "arXiv:math/0103228v2 [math.QA] 9 Apr 2002",
+  "authors_raw": "Mathematics Department",
+  "title_lines": [
+   "Coideal Subalgebras and Quantum Symmetric Pairs",
+   "Gail Letzter 1"
+  ],
+  "abstract": "Coideal subalgebras of the quantized enveloping algebra ar e sur- veyed, with selected proofs included. The \ufb01rst half of the pa per studies generators, Harish-Chandra modules, and associated quant um homo- geneous spaces. The second half discusses various well know n quan- tum coideal subalgebras and the implications of the abstrac t theory on these examples. The focus is on the locally \ufb01nite part of th e quan- tized enveloping algebra, analogs of enveloping algebras o f nilpotent Lie subalgebras, and coideals used to form quantum symmetri c pairs. The last family of examples is explored in detail. Connectio ns are made to the construction of quantum symmetric spaces. The introduction of quantum groups in the early 1980\u2019s has ha d a tremen- dous in\ufb02uence on the theory of Hopf algebras. Indeed, quantu m groups pro- vide a source of new and interesting examples. We shall discu ss the reverse impact: the theory of quantum groups uses the Hopf structure extensively. This special structure is often hidden in the classical sett ing, while it is prominent and fundamental for quantum analogs. Let g be a semisimple Lie algebra and write G for the corresponding con- nected, simply connected algebraic group. There are two sta ndard types of quantum groups associated to g and G. The \ufb01rst is the quantized envelop- ing algebra which is a quantum analog of the enveloping algeb ra of g. The second is the quantized function algebra which is a quantum a nalog of the algebra of regular functions on G. We will be focusing on a particular aspect of the Hopf theory of both types of quantum groups: the study o f (one-sided) coideal subalgebras. 1supported by NSA grant no. MDA 904-99-1-0033.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126163315-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0103228v2  [math.QA]  9 Apr 2002"
+  },
+  "title_raw": "Coideal Subalgebras and Quantum Symmetric Pairs Gail Letzter 1",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0103228v2 [math.QA] 9 Apr 2002",
+   "text": "Coideal Subalgebras and Quantum Symmetric Pairs Gail Letzter 1",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Background and Notation",
+   "page": 4,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Harish-Chandra modules",
+   "page": 9,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The Dual Picture",
+   "page": 14,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Generators and Filtrations",
+   "page": 16,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The locally \ufb01nite part of U",
+   "page": 26,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Nilpotent and parabolic coideal subalgebras",
+   "page": 34,
+   "source": "inferred",
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum symmetric pairs",
+   "page": 37,
+   "source": "inferred",
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 8576,
+   "n_words": 1453,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-background-and-notation",
+   "number": "1",
+   "title": "Background and Notation",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 7594,
+   "n_words": 1583,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-harish-chandra-modules",
+   "number": "2",
+   "title": "Harish-Chandra modules",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 11751,
+   "n_words": 2281,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-the-dual-picture",
+   "number": "3",
+   "title": "The Dual Picture",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3396,
+   "n_words": 643,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-generators-and-filtrations",
+   "number": "4",
+   "title": "Generators and Filtrations",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 26,
+   "n_chars": 19173,
+   "n_words": 4018,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-the-locally-\ufb01nite-part-of-u",
+   "number": "5",
+   "title": "The locally \ufb01nite part of U",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 34,
+   "n_chars": 14273,
+   "n_words": 2933,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-6-nilpotent-and-parabolic-coideal-subalgebras",
+   "number": "6",
+   "title": "Nilpotent and parabolic coideal subalgebras",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 6916,
+   "n_words": 1486,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-7-quantum-symmetric-pairs",
+   "number": "7",
+   "title": "Quantum symmetric pairs",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 62,
+   "n_chars": 50127,
+   "n_words": 10048,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 121806,
+  "furniture_lines_stripped": 0
+ }
+}

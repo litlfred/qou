@@ -1,0 +1,62 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0103228v2",
+ "source_sha256": "7d66dbbd4b87798f",
+ "brief": "arXiv:math/0103228v2 [math.QA] 9 Apr 2002 — Coideal subalgebras of the quantized enveloping algebra ar e sur- veyed, with selected proofs included.",
+ "extended": "**arXiv:math/0103228v2 [math.QA] 9 Apr 2002**\n\n*Mathematics Department*\n\n62 pp, 8 sections.\n\n**Abstract.** Coideal subalgebras of the quantized enveloping algebra ar e sur- veyed, with selected proofs included. The ﬁrst half of the pa per studies generators, Harish-Chandra modules, and associated quant um homo- geneous spaces. The second half discusses various well know n quan- tum coideal subalgebras and the implications of the abstrac t theory on these examples. The focus is on the locally ﬁnite part of th e quan- tized enveloping algebra, analogs of enveloping algebras o f nilpotent Lie subalgebras, and coideals used to form quantum symmetri c pairs. The last family of examples is explored in detail. Connectio ns are made to the construction of quantum symmetric spaces. The introduction of quantum groups in the early 1980’s has ha d a tremen- dous inﬂuence on the theory of Hopf algebras. Indeed, quantu m groups pro- vide a source of new and interesting examples.\n\n**Outline.** Front matter; 1 Background and Notation; 2 Harish-Chandra modules; 3 The Dual Picture; 4 Generators and Filtrations; 5 The locally ﬁnite part of U; 6 Nilpotent and parabolic coideal subalgebras; 7 Quantum symmetric pairs\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: The direct sum of all the ﬁnite-di-\n- Theorem 2.4: Every ﬁnite-dimensional unitary I module can be written as\n- Theorem 11.7: ]. Thus ([L1, Lemma 4.2]) S(w,w ) ⁄= 0 for any nonzero vector\n- Theorem 2.7: The sum of all the ﬁnite-dimensional simple unitary I mod-\n- Theorem 3.1: For any left coideal I ofU, Rq[G]I\n- Theorem 4.1: The set of (left) coideal subalgebras of U(L) is the set of en-",
+ "tokens": {
+  "brief": 36,
+  "extended": 417
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-000-1-background-and-notation",
+   "title": "Background and Notation",
+   "pages": "4-9"
+  },
+  {
+   "id": "sec-001-2-harish-chandra-modules",
+   "title": "Harish-Chandra modules",
+   "pages": "9-14"
+  },
+  {
+   "id": "sec-002-3-the-dual-picture",
+   "title": "The Dual Picture",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-003-4-generators-and-filtrations",
+   "title": "Generators and Filtrations",
+   "pages": "16-26"
+  },
+  {
+   "id": "sec-004-5-the-locally-ﬁnite-part-of-u",
+   "title": "The locally ﬁnite part of U",
+   "pages": "26-34"
+  },
+  {
+   "id": "sec-005-6-nilpotent-and-parabolic-coideal-subalgebras",
+   "title": "Nilpotent and parabolic coideal subalgebras",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-006-7-quantum-symmetric-pairs",
+   "title": "Quantum symmetric pairs",
+   "pages": "37-62"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

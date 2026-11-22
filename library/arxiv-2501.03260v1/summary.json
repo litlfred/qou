@@ -1,0 +1,91 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2501.03260v1",
+ "source_sha256": "510ae5435ae95664",
+ "brief": "Preons, Braid Topology, and Representations of Fundamental Particles — In particle phenomenology, preon models study composition al rules of standard model interactions.",
+ "extended": "**Preons, Braid Topology, and Representations of Fundamental Particles**\n\n*David Chester 1, ∗ Xerxes D. Arsiwalla 2, † Louis H. Kauffman 3, ‡*\n\n32 pp, 14 sections.\n\n**Abstract.** In particle phenomenology, preon models study composition al rules of standard model interactions. In spite of empirical success, mathema tical underpinnings of preon models in terms of group representation theory have no t been fully worked out. Here, we address this issue while clarifying the relati on between diﬀerent preon models. In particular, we focus on two prominent models: Bils on-Thompson’s helon model, and Lambek’s 4-vector model. We determine the mappin g between helon model particle states and representation theory of Lie alge bras. Braided ribbon dia- grams of the former represent on-shell states of spinors of t he Lorentz group. Braids correspond to chirality, and twists, to charges. We note tha t this model captures only the SU (3)c × U (1)em sector of the standard model. We then map the twists of helon diagrams to the weight polytope of SU (3)c × U (1)em.\n\n**Outline.** Front matter; Introduction; The Helon Model; Particle Representation with Helons; Composition Laws with Helons; The 4-Vector Representation; Mapping Helons to Four-Vectors; CPT Invariance and Braid Topology; Standard Model Interactions in the Helon Model; Gauge Boson Interactions; Interactions with Fermions; The Helon Model from the SU(3)cU(1)em Weight L; Conclusions and Discussion; Standard Model Conventions",
+ "tokens": {
+  "brief": 42,
+  "extended": 372
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-the-helon-model",
+   "title": "The Helon Model",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-particle-representation-with-helons",
+   "title": "Particle Representation with Helons",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-003-composition-laws-with-helons",
+   "title": "Composition Laws with Helons",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-004-the-4-vector-representation",
+   "title": "The 4-Vector Representation",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-005-mapping-helons-to-four-vectors",
+   "title": "Mapping Helons to Four-Vectors",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-cpt-invariance-and-braid-topology",
+   "title": "CPT Invariance and Braid Topology",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-007-standard-model-interactions-in-the-helon-model",
+   "title": "Standard Model Interactions in the Helon Model",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-008-gauge-boson-interactions",
+   "title": "Gauge Boson Interactions",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-009-interactions-with-fermions",
+   "title": "Interactions with Fermions",
+   "pages": "16-20"
+  },
+  {
+   "id": "sec-010-the-helon-model-from-the-su3cu1em-weight-lattice",
+   "title": "The Helon Model from the SU(3)cU(1)em Weight Lattice",
+   "pages": "20-25"
+  },
+  {
+   "id": "sec-011-conclusions-and-discussion",
+   "title": "Conclusions and Discussion",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-012-standard-model-conventions",
+   "title": "Standard Model Conventions",
+   "pages": "27-32"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

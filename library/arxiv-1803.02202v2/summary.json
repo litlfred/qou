@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1803.02202v2",
+ "source_sha256": "ffb9cdfe4f415177",
+ "brief": "Braids, normed division algebras, and Standard Model symmetries — This paper represents a ﬁrst attempt at unifying two promising attempts to understand the origin of the internal symmetries of",
+ "extended": "**Braids, normed division algebras, and Standard Model symmetries**\n\n*N. Gresnigt*\n\n21 pp, 18 sections.\n\n**Abstract.** This paper represents a ﬁrst attempt at unifying two promising attempts to understand the origin of the internal symmetries of leptons and quarks. It is shown that each of the four normed division algebras over the reals admits a representation of a circular braid group. For the complex numbers and the quaternions, the represented circular braid groups areB2 and Bc 3, precisely those used to construct leptons and quarks as framed braids in the Helon model of Bilson-Thompson. It is then shown that these framed braids coincide with the states that span the minimal left ideals of the complex (chained) octonions, shown by Furey to describe one generation of leptons and quarks with unbrokenSU (3)c and U(1)em symmetry. The identiﬁcation of basis states of minimal ideals with certain framed braids is possible because the braiding inB2 and Bc 3 in the Helon model are interchangeable.\n\n**Outline.** Front matter; 1 Introduction; 2 The Helon model; 2.1 The Artin braid groups; 2.2 Semi-direct product structure of the Helon; 3 Normed division algebras and Clifford algebr; 3.2 Clifford algebras; 3.3 Minimal left ideals of the complex chained; 4 Normed division algebra representations of c; 4.1 The Clifford Braiding Theorem; 4.2 A representation of the Artin braid group ; 4.3 A representation of the circular Artin bra; 4.5 Connecting the Helon model with normed div; 5 Helon braids as basis states of minimal left; 5.1 Interchanging between braiding and twistin; 5.2 Braid representations of minimal left idea; 6 Discussion; A Braid group representations in terms of C+(n",
+ "tokens": {
+  "brief": 48,
+  "extended": 424
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-the-helon-model",
+   "title": "The Helon model",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-21-the-artin-braid-groups",
+   "title": "The Artin braid groups",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-22-semi-direct-product-structure-of-the-helon-mo",
+   "title": "Semi-direct product structure of the Helon model",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-004-3-normed-division-algebras-and-clifford-algebras",
+   "title": "Normed division algebras and Clifford algebras",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-005-32-clifford-algebras",
+   "title": "Clifford algebras",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-006-33-minimal-left-ideals-of-the-complex-chained-oc",
+   "title": "Minimal left ideals of the complex chained octonions",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-007-4-normed-division-algebra-representations-of-cir",
+   "title": "Normed division algebra representations of circular Artin braid groups",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-008-41-the-clifford-braiding-theorem",
+   "title": "The Clifford Braiding Theorem",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-009-42-a-representation-of-the-artin-braid-group-b2",
+   "title": "A representation of the Artin braid group B2 from C",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-43-a-representation-of-the-circular-artin-braid",
+   "title": "A representation of the circular Artin braid group Bc3 from H",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-011-45-connecting-the-helon-model-with-normed-divisi",
+   "title": "Connecting the Helon model with normed division algebras",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-012-5-helon-braids-as-basis-states-of-minimal-left-i",
+   "title": "Helon braids as basis states of minimal left ideals of CO",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-013-51-interchanging-between-braiding-and-twisting",
+   "title": "Interchanging between braiding and twisting",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-014-52-braid-representations-of-minimal-left-ideals",
+   "title": "Braid representations of minimal left ideals of the complex chained octonions",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-015-6-discussion",
+   "title": "Discussion",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-016-a-braid-group-representations-in-terms-of-cn0-an",
+   "title": "A Braid group representations in terms of C+(n,0) and C(0,n-1)",
+   "pages": "20-21"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

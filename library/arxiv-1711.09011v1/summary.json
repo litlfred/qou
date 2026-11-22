@@ -1,0 +1,80 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1711.09011v1",
+ "source_sha256": "d046698777f38634",
+ "brief": "Quantum groups and braid groups as fundamental symmetries — 12 sections: Front matter; Introduction; The Helon model",
+ "extended": "**Quantum groups and braid groups as fundamental symmetries**\n\n*Niels G. Gresnigt∗†*\n\n10 pp, 12 sections.\n\n**Outline.** Front matter; 1 Introduction; 3 The Helon model; 4 Normed division algebras; 5 Clifford algebra representations of circular; 5.1 The complex numbers and a representation o; 5.2 The quaternions and a representation of th; 5.3 The octonions and a representation of the ; 6 Common elements of the Helon model and norme; 7 Discussion; Acknowledgments; References",
+ "tokens": {
+  "brief": 29,
+  "extended": 119
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-3-the-helon-model",
+   "title": "The Helon model",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-4-normed-division-algebras",
+   "title": "Normed division algebras",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-5-clifford-algebra-representations-of-circular-a",
+   "title": "Clifford algebra representations of circular Artin braid groups",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-51-the-complex-numbers-and-a-representation-of-t",
+   "title": "The complex numbers and a representation of the Artin braid group B2",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-005-52-the-quaternions-and-a-representation-of-the-c",
+   "title": "The quaternions and a representation of the circular Artin braid group Bc",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-53-the-octonions-and-a-representation-of-the-cir",
+   "title": "The octonions and a representation of the circular Artin braid group Bc",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-6-common-elements-of-the-helon-model-and-normed",
+   "title": "Common elements of the Helon model and normed division algebra model",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-7-discussion",
+   "title": "Discussion",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-009-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "9-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

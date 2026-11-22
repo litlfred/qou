@@ -1,0 +1,232 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1507.06276v2",
+ "source_sha256": "f552aa5de7125b23",
+ "brief": "UNIVERSAL K-MATRIX FOR QUANTUM SYMMETRIC PAIRS — Let g be a symmetrizable Kac-Moody algebra and let Uq(g) de- note the corresponding quantized enveloping algebra.",
+ "extended": "**UNIVERSAL K-MATRIX FOR QUANTUM SYMMETRIC PAIRS**\n\n*MARTINA BALAGOVIĆ AND STEFAN KOLB*\n\n52 pp, 42 sections.\n\n**Abstract.** Let g be a symmetrizable Kac-Moody algebra and let Uq(g) de- note the corresponding quantized enveloping algebra. In th e present paper we show that quantum symmetric pair coideal subalgebras Bc,s of Uq(g) have a universal K-matrix if g is of ﬁnite type. By a universal K-matrix for Bc,s we mean an element in a completion of Uq(g) which commutes with Bc,s and provides solutions of the reﬂection equation in all integra ble Uq(g)-modules in category O. The construction of the universal K-matrix for Bc,s bears sig- niﬁcant resemblance to the construction of the universal R- matrix for Uq(g). Most steps in the construction of the universal K-matrix are performed in the general Kac-Moody setting. In the late nineties T. tom Dieck and R. H¨ aring-Oldenburg de veloped a program of representations of categories of ribbons in a cyl inder.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Background; 1.2 Universal K-matrix for coideal subalgebras; 1.3 Main results; 1.4 Organization; 2 Preliminaries on quantum groups; 2.1 The root datum; 2.2 Quantized enveloping algebras; 2.4 Lusztig's skew derivations ri and ir; 3 The completion U of Uq(g); 3.1 The algebra U; 3.2 The coproduct on U; 3.3 Quasi R-matrix and commutativity isomorphi; 4 Braided tensor categories with a cylinder tw; 4.1 Cylinder twists and the reflection equatio; 4.2 Twisted cylinder twists; 4.3 Cylinder-braided coideal subalgebras and t\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.3: ([KW92], [Kol14, Theorem 2.7]) The map\n- Theorem 5.6: ([BK15, Theorem 3.11]) Assume that conditions (i) and (ii) hold.\n- Theorem: s 2.10, 6.4] for the coideal subalgebras corresponding to the symmetric\n- Theorem 6.10: There exists a uniquely determined element X = ∑\n- Theorem 7.5: Letξ :P → K(q1/d)× be a function satisfying the recursion (7.8).\n- Theorem 9.4: The intertwiner X satisﬁes the relation",
+ "tokens": {
+  "brief": 40,
+  "extended": 499
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-background",
+   "title": "Background",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-12-universal-k-matrix-for-coideal-subalgebras",
+   "title": "Universal K-matrix for coideal subalgebras",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-13-main-results",
+   "title": "Main results",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-14-organization",
+   "title": "Organization",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-2-preliminaries-on-quantum-groups",
+   "title": "Preliminaries on quantum groups",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-006-21-the-root-datum",
+   "title": "The root datum",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-007-22-quantized-enveloping-algebras",
+   "title": "Quantized enveloping algebras",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-008-24-lusztigs-skew-derivations-ri-and-ir",
+   "title": "Lusztig's skew derivations ri and ir",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-009-3-the-completion-u-of-uqg",
+   "title": "The completion U of Uq(g)",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-010-31-the-algebra-u",
+   "title": "The algebra U",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-011-32-the-coproduct-on-u",
+   "title": "The coproduct on U",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-012-33-quasi-r-matrix-and-commutativity-isomorphisms",
+   "title": "Quasi R-matrix and commutativity isomorphisms",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-013-4-braided-tensor-categories-with-a-cylinder-twis",
+   "title": "Braided tensor categories with a cylinder twist",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-014-41-cylinder-twists-and-the-reflection-equation",
+   "title": "Cylinder twists and the reflection equation",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-015-42-twisted-cylinder-twists",
+   "title": "Twisted cylinder twists",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-016-43-cylinder-braided-coideal-subalgebras-and-the",
+   "title": "Cylinder-braided coideal subalgebras and the universal K-matrix",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-017-44-cylinder-braided-coideal-subalgebras-via-char",
+   "title": "Cylinder braided coideal subalgebras via characters",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-018-5-quantum-symmetric-pairs",
+   "title": "Quantum symmetric pairs",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-019-51-involutive-automorphisms-of-the-second-kind",
+   "title": "Involutive automorphisms of the second kind",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-020-52-the-construction-of-quantum-symmetric-pairs",
+   "title": "The construction of quantum symmetric pairs",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-021-53-the-bar-involution-for-quantum-symmetric-pair",
+   "title": "The bar involution for quantum symmetric pairs",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-022-54-assumptions",
+   "title": "Assumptions",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-023-6-the-quasi-k-matrix-x",
+   "title": "The Quasi K-matrix X",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-024-61-a-recursive-formula-for-x",
+   "title": "A recursive formula for X",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-025-62-systems-of-equations-given-by-skew-derivation",
+   "title": "Systems of equations given by skew derivations",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-026-63-three-technical-lemmas",
+   "title": "Three technical lemmas",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-027-64-constructing-x",
+   "title": "Constructing X",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-028-65-constructing-x",
+   "title": "Constructing X",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-029-7-construction-of-the-universal-k-matrix",
+   "title": "Construction of the universal K-matrix",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-030-71-a-pseudo-longest-element-of-w",
+   "title": "A pseudo longest element of W",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-031-72-the-twisted-universal-k-matrix-in-the-kac-moo",
+   "title": "The twisted universal K-matrix in the Kac-Moody case",
+   "pages": "38-41"
+  },
+  {
+   "id": "sec-032-73-the-universal-k-matrix-in-the-finite-case",
+   "title": "The universal K-matrix in the finite case",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-033-8-a-special-choice-of",
+   "title": "A special choice of",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-034-81-choosing",
+   "title": "Choosing",
+   "pages": "42-43"
+  },
+  {
+   "id": "sec-035-82-the-coproduct-of",
+   "title": "The coproduct of",
+   "pages": "43-45"
+  },
+  {
+   "id": "sec-036-9-the-coproduct-of-the-universal-k-matrix-k",
+   "title": "The coproduct of the universal K-matrix K",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-037-91-preliminary-calculations-with-the-quasi-r-mat",
+   "title": "Preliminary calculations with the quasi R-matrix",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-038-92-the-coproduct-of-the-quasi-k-matrix-x",
+   "title": "The coproduct of the quasi K-matrix X",
+   "pages": "47-49"
+  },
+  {
+   "id": "sec-039-93-the-coproduct-of-k",
+   "title": "The coproduct of K",
+   "pages": "49-51"
+  },
+  {
+   "id": "sec-040-references",
+   "title": "References",
+   "pages": "51-52"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
