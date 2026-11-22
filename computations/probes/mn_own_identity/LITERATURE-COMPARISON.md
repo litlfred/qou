@@ -1659,3 +1659,58 @@ arms; min |tr_M| would pick V₀³, 0.763345 vs 0.764055); H₈ 43/258 pass. Sur
 objectives reward non-reduced telescoping words (σᵢσᵢ₊₁⁻¹σᵢ₊₁σᵢ₊₂⁻¹ = σᵢσᵢ₊₂⁻¹), so any objective must
 act on reduced words. Not built: adjacent-pair layouts, the σ₀σ₁σ₀ electron, reading 3 on the whole
 H₈ element. The open-gluon ruling holds; nothing is selected.
+
+## §51 Adjacent-pair hydrogen on H₈ (commits b83c44f1773, df95a1c15b3, 7faa56084b9)
+
+Bonds follow the owner ruling of 2026-11-22: reading A (σ_iσ_{i+1}⁻¹, larger letter inverted) with
+right-hand closure. Reading-B numbers survive only as a labelled non-canonical comparison. The probe
+builds layouts L1 q₁q̄₁q₂q̄₂q₃q̄₃e⁻e⁺, L2 (antiparticle left) and L3 (leptons left), with F as control.
+The quarks and e⁻ are gathered by a positive or negative permutation braid G_T, and the
+non-rightmost strands are closed by an arc on side S. The disposed element is Y·R_TS, where Y is the
+§46 element and R_TS = E(G_T G_S⁻¹). Checks: 22/22, exact over ℚ(q).
+
+**Results.**
+- Before disposal, the only cross-pair quark–quark letters are the six of V³. The gathering step adds
+  only quark–antiquark and lepton crossings.
+- For T = S, R = 1 exactly, so the result is the §46 element.
+- For T ≠ S, R is non-scalar and non-central. It lies outside span{1, V, V²} and carries letters other
+  than V: σ₁ in L1; σ₁ and σ₂ in L3; σ₀, σ₁ and σ₂ in L2. These are candidate letters only. They come
+  from the T/S mismatch, which is a construction choice the ruling does not fix, not from the photons.
+- Reading 3 on the whole H₈ element is weaker than on H₄, because H₈ characters are positive sums of H₄
+  characters. GL₋ fails on H₄ and passes on H₈.
+- Freely reduced enumeration (reading A, T = S = +): 18 / 19 / 17 / 16 of 197 pass in F / L1 / L2 / L3.
+  The min-|tr_M| picks differ by layout, so they are not stable and are reported only.
+- The σ₀σ₁σ₀ (Hopf) electron arm has tr_D = 0.691166. Y₆ and the whole H₉ element pass reading 3 in
+  every gluon arm tested.
+
+**Not established:** a derivation of T/S; the core at positions other than 0; the antinucleon arm.
+
+## §52 No scale-free β₀ from the braid (commits 78a5efe3447, ac98056911a)
+
+Three maps were pre-registered, with hit sets fixed in advance (ratio 33/2, or a value in
+{11, 11/3, 22/3, 11/2, 11/6, 22, 11/12}). All three are scope-(a) misses.
+- **(i) ff : quark-loop ratio.** The four-strand pure braid (σ₀σ₁⁻¹σ₂)⁴ has G-coefficient 0 at ħ and
+  ħ², and from ħ³ on the projection leaves the span. Closing a strand of V³ gives an Ω term first at ħ³
+  with coefficient −16 under both closures (they differ at ħ⁴). No ratio exists.
+- **(ii) Expansions.** c_F(V³) = −16 sinh²ħ cosh²(ħ/2) cosh 2ħ = −16ħ²(1 + (31/12)ħ²). The H₃
+  commutator is 4ħ²(1 + (7/3)ħ²). Neither gives a β₀-like value.
+- **(iii) Casimir reading.** The ħ² part 4(C − C²) is not central (eigenvalues ±4√3 i on the 8), so no
+  Casimir slope exists.
+
+n_f cannot enter a three-strand baryon word. The corpus derives QCD β₀ nowhere: `ElectroweakVevGaps.lean`
+takes 11/3 as an input, and bean `qou-n1ks` is scrapped with files that never existed.
+
+## §53 Gap study: α_s, β₀, string tension, Λ_QCD (commit df3a5128ce6, `GAP-STUDY-qcd-scales.md`)
+
+All four quantities are blocked on two missing objects:
+1. **A scale variable.** No bean names this gap. q₀ can only be a boundary value, because deriving q₀
+   is forbidden. Candidates: tower index n, q-heat-kernel time t, KZ coupling κ ∼ log q.
+2. **A colour action on qou's state space** (bean `qou-ni4b`). `ThreeStrandColourTowerCP.lean` shows
+   that H₃(q) is too small for su(3).
+
+The scale-free formulas 1/α_s = q^p[9]_q give 0.0871–0.1071 for p ∈ [−1, 1], and q⁻¹/[7]_q gives
+0.11815. Choosing p or the bracket to match PDG would be selection against the target, and without a
+scale the comparison with α_s(M_Z) is not well posed. `confinement-curvature-rank` still defines
+string tension through the filtration route that `qou-hnri` declared dead; that is flagged for the
+owner. Proposed beans: B1 scale variable, B2 β₀ bridge, B3 Wilson-loop object, B4 heat-kernel time
+as RG time. Not created.
