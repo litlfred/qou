@@ -15,13 +15,13 @@
   "kind": "remark",
   "title": "Master formula: ingredients, corollaries, computational protocol",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-confinement-frobenius-reciprocity",
+    "papers/quantum-observable-universe/blocks/conj-confinement-frobenius-reciprocity",
     "papers/quantum-observable-universe/blocks/conj-knot-factor-frobenius-pairing",
     "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price",
     "papers/quantum-observable-universe/blocks/rem-yekutieli-stokes",
     "papers/quantum-observable-universe/blocks/prop-confinement-operator-selection"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-frobenius-reciprocity",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-confinement-frobenius-reciprocity",
   "tags": [
     "frobenius-pairing",
     "lp-duality",

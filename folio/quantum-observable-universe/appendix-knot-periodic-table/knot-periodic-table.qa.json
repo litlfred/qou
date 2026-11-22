@@ -723,26 +723,10 @@
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "01b5959701ad",
-          "ts": "d82c2d761dd1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-23T15:44:54.692Z",
-        "reviewed_sha": "df9e1f3a9502c8acaa534e7504e5c33be9668e4a"
-      },
-      {
-        "field_hash": {
           "md": "beb8f3e66b32",
           "ts": "c1de179e19fc"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
@@ -752,9 +736,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
-        "severity": "major",
-        "evidence": "computations/codata_masses.py:1: computation script contains SUPERSEDED/DEPRECATED marker"
+        "reviewed_tree": "1195d3de78bb4f1c93205ffdc7eb3c08be3a646a"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -1812,6 +1794,21 @@
         "reviewed_at": "2026-11-21T18:30:00.000Z",
         "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
         "evidence": "Independent QA of #8908 at f60933ebae. 'The nucleon masses from the pair Skein formula' now cites lem:pair-skein-mass-formula, which states m_N = S_12 + S_13 + S_23. This is correct, and the edge is added to uses[]."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-definitional-ambiguity": [
@@ -2349,6 +2346,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2398,6 +2410,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-em-dash": [
@@ -2448,6 +2475,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-triples": [
@@ -2497,6 +2539,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-closing-aphorism": [
@@ -2546,6 +2603,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-meta-commentary": [
@@ -2596,6 +2668,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-thesis-restatement": [
@@ -2645,6 +2732,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-performed-warmth": [
@@ -2694,6 +2796,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-superlative": [
@@ -2743,6 +2860,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "trap-nonspeakable": [
@@ -2792,6 +2924,21 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the nucleon-mass sentence: the pair Skein formula is now cited as lem:pair-skein-mass-formula. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "beb8f3e66b32",
+          "ts": "c1de179e19fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "No block change. canonical-script-not-deprecated now passes after the module docstring of computations/codata_masses.py stopped using the word 'deprecated' for a different alias (codata_constants.M_N_MEV); the script itself was never deprecated. No instance."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3064,6 +3211,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T17:55:08.000Z",
+  "updated_at": "2026-11-21T18:17:40.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

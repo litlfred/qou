@@ -100,7 +100,7 @@ is **not** a statement about the production `pn` interface.
    the factor *law* for every letter including the production one, so what
    remains is precisely the colour weight's value — not the form of its
    contribution. `δ = (q−1)²(1−q⁻⁴)/3 = ℏ_q²·h_q·[2]_q/3` is the substrate
-   flavour split (`prop:flavor-split-substrate`, i.e. `Δm/M_N`), so it is
+   flavour split (`conj:flavor-split-substrate-mass`, i.e. `Δm/M_N`), so it is
    assembled from corpus quantities rather than fitted; why the weight is
    `1/2 − δ/4` specifically is `qou-qqm4`'s live open item.
 2. **`h` is a hypothesis, not a value.** That `h = q − q⁻¹` for `H_n(q)`, and

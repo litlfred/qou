@@ -147,7 +147,137 @@ Two tensions in `conj:g-action-on-substrate`, reported and not edited:
    outside the equivariant category, which is the categorical form of the no-go above.
 2. G-2/G-4 give `dim_q = [2]_q` for a rank-1 projector. A weight line has quantum dimension `q^{±1}`.
 
-## 10. What remains open
+## 10. A type-B boundary picks a direction, not a size (2026-11-21)
+
+This search was pre-registered in `h5_boundary_datum_preregistration.md`. The computations are exact, in `h5_boundary_sweep_probe.py` and `h5_ruled_photon_probe.py`.
+
+A braid with a wall carries a boundary generator on an end strand. It acts by a 2×2 matrix `𝒦` that must solve the reflection equation `Ř𝒦Ř𝒦 = 𝒦Ř𝒦Ř`. For the Jimbo Ř, the only non-scalar solutions have one diagonal entry forced to zero: the `d` entry when the wall is at strand 1, and the `u` entry when it is at strand 3. In either case `𝒦` does not commute with `F₃`.
+
+Only the diagonal of `𝒦` enters the restricted traces, so the type-B eigenvalues cancel from `T_p/T_n`. For the special pair V³ the ratio does not depend on where the boundary is inserted:
+
+| wall | V³: `T_p/T_n` | at `q = 1` |
+|---|---|---|
+| strand 1 | `−q⁶(q⁶ − 3q⁴ + 3q² − 3)/(q⁶ − 2q⁴ + 3q² − 1)`, which is `2.4287166711934…` at `q₀` | 2 |
+| strand 3 | `q⁸(q² − 2)(q⁴ − q² + 1)/(q¹² − 4q¹⁰ + 6q⁸ − 7q⁶ + 4q⁴ − 3q² + 1)` | 1/2 |
+
+Check against the ruled photon `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹`. V³ is the pair `γ(0,0,qh)·γ(0,0,−q⁻¹h)`. For a general pair `γ(φ)γ(φ′)`, the ratio depends on the photon parameters and on where the boundary is inserted. The general formula reduces exactly to the V³ row above.
+
+This computes only the `M_QCD` term of the two-term trace. The `M_QED` charge term on a boundary would need `Y` and is not computed.
+
+Verdict, scope (a). The boundary fixes the direction up to one binary choice, namely which end carries the wall. It does not fix the size of an n − p splitting, that is, the coupling between the boundary and the bulk.
+
+### 10a. What fixes the coupling and the end: no hit (H6, 2026-11-21)
+
+Pre-registered in `computations/probes/bridge_b/h6_boundary_coupling_preregistration.md`; result
+in `h6_result.md`. Six candidates were checked, and none fixes `ε` or the end:
+- the Stokes boundary term: the corpus has no forms (`qou-20bk`), and the surface-term coefficient is not derived;
+- the type-B Markov value `q²(x+y)/(q²+1)`: still free;
+- the XXZ surface term: restricted traces 0 on both spaces;
+- folding, the Markov orientation, the over-strand rule, Reeb.
+
+One exact fact sharpens the gap. Strand reversal composed with the flavour swap fixes the Jimbo
+`Ř` and inverts the pivot `K`. So the end choice is the same bit as the sign of n − p. It is not a
+second unknown. Scope (a).
+
+### 10b. Forms for a Stokes boundary, and the M_QED wall term (H7, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h7_result.md`.
+
+- **Forms.** Generic Lie-valued forms now exist (`QOU/Mathlib/LieValuedForms.lean`, rewired into
+  `NonAbelianStokes.lean` today). No specific α, β is defined on the form side. A categorical connection `∇ : A → A ⊗ Ω¹(A)` does exist, but the categorical action `ev ∘ ℒ_q ∘ coev` is a closed trace with no boundary datum. Stokes is still an assumed class whose
+  only model is trivial, and no wall sits on `cellBoundary`. No hit.
+- **M_QED, carried all-pairs insertion.** It is constant on each weight space, so it factors out of
+  the wall trace: n − p = −Y with or without the wall.
+- **Slot-averaged exchange.** It is a virtual-photon model, which is not admissible (no virtual
+  photons); comparison only.
+
+### 10c. An open categorical trace with a boundary object (H8, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h8_result.md`. If the boundary inherits the action's λ, the
+wall's effect beyond the pivot is set by `s = x + y` alone. No corpus statement fixes `s`.
+
+- Folding (`s = h`, conditional on `conj:type-b-folding-cpt` plus an eigenvalue-matching reading)
+  gives an order-`h` effect that vanishes at q = 1: `D(q₀) = 0.93996`.
+- The Markov and quantum-dimension conventions give order-1 effects (5/7 at q = 1).
+
+No hit.
+
+### 10d. The folded wall (H9, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h9_result.md`. In the six-strand folded model the wall is the
+middle crossing, so its size is fixed with no free number. Its effect beyond the pivot:
+- is 1 at q = 1;
+- at q₀ is `D = 0.958360` (mirror strands summed) or `0.957145` (mirror pinned to the ι-image).
+
+It is not a hit. It is conditional on `conj:type-b-folding-cpt`, on the boundary sharing the bulk λ,
+and on the choice of mirror reading.
+
+### 10e. Folding breaks the bulk Hecke relation (H9b, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h9b_result.md`.
+
+- A folded bulk generator is a product of two commuting crossings. It satisfies the cubic
+  `(σ̂ − q²)(σ̂ + 1)(σ̂ − q⁻²) = 0`, not the Hecke quadratic. So braid-level folding derives the wall's
+  Hecke relation but leaves `H₃(q)`, where the photon lives. `V³ ≠ γγ` after folding: 0.958360 against
+  0.958055.
+- For a general photon pair, `D = 1` at q = 1 for every φ, and `D` depends on φ at q₀.
+- The Hecke-level reading (type B with equal parameters: the H5 wall with eigenvalues `{q, −q⁻¹}`, H8
+  N1, `D(q₀) = 0.939957`) keeps the bulk Hecke.
+
+### 10f. The wall's Hecke parameter from folding (H10, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h10_result.md`. In the folding, the bulk type-B generator is a
+length-2 pair and the wall has length 1. With Lusztig's weight function `L = ℓ` restricted to the
+fixed-point group, the wall's parameter is the square root of the bulk's: `Q = q^{1/2}`. That gives
+`D(q₀) = 0.968071` on V³ and `D = 1` at q = 1.
+
+It is a conditional derivation: it rests on `conj:type-b-folding-cpt`, on the boundary sharing λ, and on
+the Lusztig monograph, which is not held. Equal parameters (`0.939957`) has no corpus support. A
+Markov condition fixes a trace value, not `Q`.
+
+### 10g. Lusztig's monograph read: normalisation corrected (H10b, 2026-11-21)
+
+The source is now held (`uploads/0208154v2.pdf`, commit `f5d31c46b93`). §16.2 confirms the folding rule: the fixed group is Coxeter on the orbit longest elements, with the weight function L equal to the restricted ambient length. So the wall has L = 1 and the bulk L = 2. §16.7(b) fixes the quadratic relations with the **ambient** v. `conj:type-b-folding-cpt` folds the physical H_n(q), so v = q: the folded bulk is at q² and the wall at q. H10 had set the folded bulk to q (v = q^{1/2}), which does not match the conjecture's ambient. On V³ the supported reading gives D(q₀) = 0.94911520554914481986 (H10 as written: 0.96807142877888556063); D(1) = 1 in both. Whether the photon words live in the folded bulk (q²) or the ambient (q) is a new open input. D is a trace ratio, not a mass. Details: `computations/probes/bridge_b/h10_result.md` and `h10b_lusztig_normalisation_probe.py`.
+
+### 10h. Where the photon word lives (H11, 2026-11-21)
+
+The corpus fixes the home: `conj:type-b-folding-cpt` folds the physical H_n(q), and the owner ruling of 2026-11-21 writes the nucleon word in the ambient six-strand H_6(q), mirrors summed. So the words live in the ambient at q. What is open is the descent to the type-B algebra: Lusztig §16 uses the ι-twisted K♯ trace (traceless swapped pairs vanish), while the ruling uses a plain trace. A one-letter toy check gives plain {q², −1, −1, q⁻²}, naive swap trace {q², q⁻²}, Lusztig {q², −q⁻²}; the naive model has the wrong sign on the q⁻² line. Reading B (0.949115) is the K♯-level descent and has no strand-level model in the corpus. Details: `computations/probes/bridge_b/h11_result.md`.
+
+### 10i. Graded strand model for the descent (H12, 2026-11-21)
+
+Grading the σ eigenlines with the −q⁻¹ line odd and putting a Koszul sign on the doubled letter makes the mirror-twisted trace reproduce Lusztig's folded letter {q², −q⁻²} for one letter and for two commuting letters; the opposite grading fails. The test is weak (diagonal, target known in advance), the Koszul sign is a modelling choice, and non-commuting letters, the wall and V³ are untested. Details: `computations/probes/bridge_b/h12_result.md`.
+
+### 10j. The graded six-strand test fails (H13, 2026-11-21)
+
+Written inside H₆(q), H12's per-letter Koszul sign (bᵢ = σ̂ᵢ − 2q⁻²E₃₊ᵢE₃₋ᵢ, mirror ι = reversal with basis flip) is ι-equivariant. But the folded quadratic holds under the twisted trace only for F ∈ {1, b₁}, and the graded letters break the type-B braid relations as operators (exact, q = 3/2 and 2). Scope (a): this construction is not a model of Lusztig's descent. His sign lives on the per-element structures φ_x (§16.4), not per letter. D was not computed. Details: `computations/probes/bridge_b/h13_result.md`.
+
+### 10k. Whole-word KL signs reproduce Lusztig's descent (H14, 2026-11-21)
+
+The KL bases of S₆ (equal parameters) and of its ι-fixed B₃ with L = (1, 2, 2) were computed independently. For all 847 pairs y ≤ x in W, every folded coefficient is ≡ the ambient one mod 2 and no larger in absolute value, as Lusztig §16.6 predicts. The equal-parameter control fails. The two differ at 188 positions, 90 of them negative: the sign lives on whole words, which is why H13's per-crossing sign failed. This gives a strand-level model of reading B (bulk q², wall q). Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h14_result.md`.
+
+### 10l. Folding rule for all n, and the V³ word through the descent (H15, H16, 2026-11-21)
+
+H15: the KL-level check of §10k passes for n = 3..7. Even n folds to B_{n/2} with wall weight 1. Odd n folds to B_{(n−1)/2} with the middle generator s_m s_{m+1} s_m, of weight 3 (A₁ at n = 3). Details: `h15_result.md`.
+
+H16: the six-strand V³ word (H9), folded by Lusztig's descent and traced by the H8 functional, gives D = 0.94911520554914481986 at q₀, i.e. reading B to 20 digits. The naive untwisted projection agrees only mod 2 and gives D = 0.93900102455152553557; the two agree at q → 1. D is a trace ratio, not a mass. Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h16_result.md`.
+
+### 10m. The descent at n = 4 and n = 5 (H17, 2026-11-21)
+
+Both cases fold to B₂: bulk b of weight 2, and wall w of weight 1 at n = 4 or 3 at n = 5. On the stand-in word (T_b T_w⁻¹)³, Lusztig's descent and the naive projection agree mod 2 and differ as Laurent polynomials at both n. This matches H16 at n = 6, so the weight-3 wall added to conj:type-b-folding-cpt passes the same necessary check. The two-strand trace model satisfies the B₂ relation for every wall parameter, so it cannot test the weight. B₂ has no second bulk letter, so this is not the photon vertex. Details: `computations/probes/bridge_b/h17_result.md`.
+
+### 10n. A model that forces the weight: even n passes, odd n untested (H18, 2026-11-21)
+
+The ambient Jimbo module (C²)^{⊗n} is used with ι realised as J = (spin flip)·(strand reversal). The twisted power sums tr(J A^k) of each orbit generator then fix its weight from the ambient operator alone. At n = 4 and 6 the weight is forced, to 1 for the fixed root and 2 for swapped pairs, and every wrong weight fails. The swapped pairs carry the sign +v⁻² rather than Lusztig's −v⁻², a sign-normalisation question (§16.4) that is left open. At n = 5 and 7 every twisted power sum vanishes, because the module has zero twisted character at odd n. The weight-3 wall is therefore neither tested nor refuted. A spin-1 module would test it. Details: `computations/probes/bridge_b/h18_result.md`.
+
+### 10o. The weight-3 wall on a three-state module (H19, 2026-11-21)
+
+H18's test was re-run on the three-state Hecke module (C³)^{⊗n} with the gl₃ Jimbo Ř. The spin-1 sl₂ R-matrix has three eigenvalues and is not a Hecke representation, so this gl₃ module stands in for it. The N = 2 control reproduces H18 exactly. At n = 4..7 every orbit's weight is forced to its ambient length: 1 for the fixed root, 2 for swapped pairs, and 3 for the middle orbit s_m s_{m+1} s_m at n = 5 and 7, whose twisted power sums are now non-zero. The weight-3 wall carries Lusztig's sign −v⁻³. The swapped pairs still carry +v⁻² against Lusztig's −v⁻², the same open normalisation question as H18. Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h19_result.md`.
+
+### 10p. Why the swapped pairs carry +v⁻² (H20, 2026-11-21)
+
+On every swapped-pair orbit of (C^N)^{⊗n} (N = 2, 3; n = 4..7), the twisted power sums are exactly c₊ v^{2k} + c₋ v^{−2k}, and the mixed joint eigenspaces contribute 0. Reason: J swaps the commuting generators T_i and T_{n−i}, so it moves every joint eigenspace with unequal eigenvalues, and only the squares v² and (−v⁻¹)² = +v⁻² survive. So the +v⁻² of §10n and §10o is forced for any module in which J swaps two commuting generators, and a J-twisted trace of the ambient pair product cannot give Lusztig's −v⁻². Whether another twist does is not tested. Details: `computations/probes/bridge_b/h20_result.md`.
+
+## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
   framework. Without it, `m_d − m_u` is an input.

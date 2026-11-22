@@ -6,7 +6,4 @@ export default proof({
   uses: [
     "lem:pair-skein-mass-formula",
   ],
-  lean: { ref: "qou:QOU.MassTheory.PairSkeinNucleon.terminal_resolution",
-    validation: "not_checked",
-  },
 });

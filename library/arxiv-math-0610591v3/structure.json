@@ -1,0 +1,289 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0610591v3",
+ "source": {
+  "file": "arxiv-math-0610591v3.pdf",
+  "sha256": "187a84c35624b1713db2f1b4e581ac4938a5bb0e12f2d99f26f4da834014184a",
+  "bytes": 246593,
+  "pages": 17,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:02:06Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0610591",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "28 Aug 2008"
+  },
+  "doi": null,
+  "title": "SCHUR\u2013WEYL DUALITY IN POSITIVE CHARACTERISTIC",
+  "authors_raw": "STEPHEN DOTY",
+  "title_lines": [
+   "SCHUR\u2013WEYL DUALITY IN POSITIVE",
+   "CHARACTERISTIC"
+  ],
+  "abstract": "Complete proofs of Schur\u2013Weyl duality in positive characteristic are scarce in the literature. The purpose of this sur- vey is to write out the details of such a proof, deriving the result in positive characteristic from the classical result in characteristic zero, using only known facts from representation theory.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20130923191909-04'00'"
+  },
+  "title_raw": "SCHUR\u2013WEYL DUALITY IN POSITIVE CHARACTERISTIC",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "SCHUR\u2013WEYL DUALITY IN POSITIVE CHARACTERISTIC 1. Introduction Given a set A write S A for the symmetric group on A , i.e., the group of bijections of A . For \u03c3 \u2208 S A and a \u2208 A we always write a\u03c3 for the image of a under \u03c3 . In other words, we choose to write maps in S A on the right of their argumen",
+   "outline": "1. Introduction",
+   "text": "SCHUR\u2013WEYL DUALITY IN POSITIVE CHARACTERISTIC",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Surjectivity of",
+   "page": 2,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Surjectivity of",
+   "page": 7,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 16,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 430,
+   "n_words": 62,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2781,
+   "n_words": 523,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-surjectivity-of",
+   "number": "2",
+   "title": "Surjectivity of",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 9444,
+   "n_words": 1838,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-surjectivity-of",
+   "number": "3",
+   "title": "Surjectivity of",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 16,
+   "n_chars": 20507,
+   "n_words": 4042,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3526,
+   "n_words": 502,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 36688,
+  "furniture_lines_stripped": 0
+ }
+}

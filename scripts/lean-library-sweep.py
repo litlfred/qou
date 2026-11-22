@@ -30,9 +30,22 @@ imports one that did.
    only over-sweep.
 2. Rebuilds the closure from source, in topological order, into a shadow tree
    placed first on `LEAN_PATH`.
-3. **Continues past a failure**, marking that module's dependents `skipped`
-   rather than aborting — one break must not mask the rest, which is the whole
-   point of a sweep.
+3. **Continues past a failure**, marking that module's dependents rather than
+   aborting — one break must not mask the rest, which is the whole point of a
+   sweep.  A dependent is `SKIPPED` (behind a RED) or `BLOCKED` (behind only
+   TIMEOUT / UNVERIFIED roots, so NOT judged); roots are traced transitively.
+
+## Exit status (bean `qou-tpdg`)
+
+    0  GREEN       every module in the closure compiled
+    1  RED         at least one module failed on a real error
+    8  INCOMPLETE  no RED, but some module was TIMEOUT / UNVERIFIED / BLOCKED
+
+Exit 8 closes a false-green: before 2026-11-21 a run whose only problems were
+unjudged modules exited 0 and printed `0 RED`, even when the module named by
+`--only-exact` was itself skipped.  8 is chosen so it ORs cleanly with the
+1 / 2 / 4 codes `lean-progressive-reseed.py` already uses.  The last line of
+every run is `VERDICT: ...` with the code, so quote that line as gate evidence.
 
 `lake` is never invoked, so the restored cache cannot be evicted.  Mathlib is
 never rebuilt.
@@ -695,6 +708,14 @@ def sweep_one(args) -> int:
 
         red, skipped, timed_out, unverified, ok = {}, {}, {}, {}, 0
         broken = set()
+        # roots[m]: the modules that were themselves judged not-ok (RED,
+        # TIMEOUT or UNVERIFIED) and that m sits behind, transitively.  A
+        # skipped module is only "behind a RED" if one of its roots is RED;
+        # behind a TIMEOUT/UNVERIFIED root it was never judged, and the old
+        # single "skipped (dependency red)" label called that red AND let the
+        # run exit 0 (bean qou-tpdg, 2026-09-13: `--only-exact X` printed
+        # `0 RED` and exited 0 with X itself skipped).
+        roots: dict[str, set[str]] = {}
         t0 = time.time()
         n = sum(len(l) for l in order)
         done_ct = 0
@@ -760,6 +781,7 @@ def sweep_one(args) -> int:
             for m in layer:
                 if m not in runnable:
                     skipped[m] = sorted(d for d in imports[m] if d in broken)
+                    roots[m] = set().union(*(roots.get(d, {d}) for d in skipped[m]))
                     broken.add(m)
             if not runnable:
                 continue
@@ -831,9 +853,18 @@ def sweep_one(args) -> int:
                             for e in errs[:3]:
                                 print(f"        {e}", flush=True)
 
+        # Split the cascade by what it sits behind.  Behind any RED root: the
+        # module is "skipped behind RED" (fixing the RED is the next step).
+        # Behind only TIMEOUT/UNVERIFIED roots: it is BLOCKED -- not judged,
+        # not failing, and NOT green either.
+        behind_red = {m: deps for m, deps in skipped.items()
+                      if roots.get(m, set()) & red.keys()}
+        blocked = {m: deps for m, deps in skipped.items() if m not in behind_red}
+        unjudged = len(timed_out) + len(unverified) + len(blocked)
         print(f"\n=== library sweep: {ok} ok, {len(red)} RED, "
-              f"{len(timed_out)} TIMEOUT + {len(unverified)} UNVERIFIED (NOT failing), "
-              f"{len(skipped)} skipped (dependency red), "
+              f"{len(timed_out)} TIMEOUT + {len(unverified)} UNVERIFIED + "
+              f"{len(blocked)} BLOCKED (NOT judged), "
+              f"{len(behind_red)} skipped behind RED, "
               f"{time.time() - t0:.0f}s ===")
         for m in sorted(timed_out):
             print(f"TIMEOUT {m} -- unverified; re-run with a larger --timeout to judge it")
@@ -843,11 +874,33 @@ def sweep_one(args) -> int:
             print(f"\nRED {m}")
             for e in errs:
                 print(f"    {e}")
-        for m, deps in sorted(skipped.items()):
-            print(f"SKIPPED {m}  (red dependency: {', '.join(deps)})")
+        for m, deps in sorted(behind_red.items()):
+            print(f"SKIPPED {m}  (behind RED: "
+                  f"{', '.join(sorted(roots[m] & red.keys()))}; via {', '.join(deps)})")
+        for m, deps in sorted(blocked.items()):
+            print(f"BLOCKED {m}  (NOT judged; behind unverified: "
+                  f"{', '.join(sorted(roots[m]))}; via {', '.join(deps)})")
+        # A request for named modules that were not all compiled is not a
+        # green, whatever the RED count says.  Name them.
+        asked = ([args.only_exact] if args.only_exact else [])
+        for m in asked:
+            if m in red or m in timed_out or m in unverified or m in skipped:
+                print(f"TARGET {m} was NOT verified ok "
+                      f"({'RED' if m in red else 'skipped behind RED' if m in behind_red else 'not judged'})")
+        if red:
+            verdict, code = "RED", 1
+        elif unjudged:
+            # Exit 8, not 0: "no RED" with modules left unjudged is the
+            # false-green this bean is about.  8 so it ORs cleanly with the
+            # 1 / 2 / 4 that lean-progressive-reseed.py already uses.
+            verdict, code = (f"INCOMPLETE -- {unjudged} of {n} module(s) not judged; "
+                             f"this is NOT a green"), 8
+        else:
+            verdict, code = f"GREEN -- all {ok} module(s) compiled", 0
+        print(f"VERDICT: {verdict}  (exit {code})")
         if keep:
             print(f"\nshadow kept at {shadow}")
-        return 1 if red else 0
+        return code
     finally:
         if not keep:
             shutil.rmtree(shadow, ignore_errors=True)

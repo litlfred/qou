@@ -6,7 +6,7 @@ export default remark({
   title: "Predictive scope of the pair Skein nucleon map",
   uses: [
     "prop:terminal-resolution",
-    "prop:flavor-split-substrate",
+    "conj:flavor-split-substrate-mass",
   ],
   tags: ["mass", "hadronic", "pair-skein", "convention-c", "scope"],
 });

@@ -1,6 +1,6 @@
 ## Discussion
 
-This proposition provides the master formula for computing numerical predictions about a confined bound state of $H_n(q)$. It governs binding energies, form factors, axial couplings, and magnetic moments.
+This conjecture, if it holds, provides the master formula for computing numerical predictions about a confined bound state of $H_n(q)$. It governs binding energies, form factors, axial couplings, and magnetic moments.
 
 **Three distinct ingredients are required.**
 
