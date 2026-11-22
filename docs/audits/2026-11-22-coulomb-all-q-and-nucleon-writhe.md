@@ -190,7 +190,41 @@ Lean (`QOU.QBeta.PairTermSectorSymmetry`, sorry-free, axioms propext and Quot.so
 α₀(q) + α₀(q⁻¹) = 1 whenever α is pinned; `not_coulomb_of_pinned_alpha` excludes Coulomb from that
 alone; `beta_eq_bar_alpha_of_unique_ray` gives β(q) = α(q⁻¹) when the ray is unique. So with
 spectators the exclusion of Coulomb reduces to one computed fact, that α is pinned. That fact is
-established for N ≤ 8; it is not proved for general N.
+established for N ≤ 10 (§5); it is not proved for general N.
+
+## 5. Which side the spectators sit on (issue #9124, generic n)
+
+Same symbolic probe, more layouts, all exact over Q(q):
+
+| layout | N | spectators | ΔE span | rank | reachable | Coulomb |
+|---|---|---|---|---|---|---|
+| L8e | 8 | two after B | 10 / 16 | 2 | the L6 ray | no |
+| L9e | 9 | three after B | 10 / 16 | 2 | the L6 ray | no |
+| L7b | 7 | one before A | 16 / 16 | 0 | everything | **yes** |
+| L8o | 8 | one before A, one after B | 16 / 16 | 0 | everything | **yes** |
+| L9s | 9 | three between | 14 / 16 | 1 | α = α₆(q), β free | no |
+| L9m | 9 | one between, two after | 14 / 16 | 1 | α = α₆(q), β free | no |
+| L10s | 10 | four between | 14 / 16 | 1 | α = α₆(q), β free | no |
+
+**Spectators after the pair change nothing, for every N.** The weighted partial trace E over
+strands to the right of both blocks satisfies tr_N(j(y)·X) = tr_6(y·E(X)) by definition, and
+E(y ⊗ 1) = (q + q⁻¹)^m · y. Lean `readout_partialTrace` and `span_shift_eq` (sorry-free, axioms
+propext, Classical.choice, Quot.sound) turn that into equality of the reachable spans, given one
+hypothesis: E maps the N-strand Hecke image into the six-strand one. That is the right partial
+quantum trace being a U_q(sl₂)-module map, which preserves commutants, and the commutants are the
+Hecke images by Jimbo's Schur–Weyl duality [jimbo1986]. That hypothesis is cited, not formalised.
+The rows L7e, L8e, L9e are the computed instances.
+
+**A spectator before the pair breaks the exclusion.** With one strand to the left of block A the
+span is all 16 sectors and the Coulomb form is reachable, as an identity in q. The left partial
+trace with the same weight K is not a module map, so it does not stay in the commutant. So the
+statement "Coulomb is excluded" depends on where the other strands sit relative to the pair, not
+only on how many there are. With the readout of §26 the pair must have no strands to its left.
+
+**Why α is pinned and β free with strands between.** The pattern in the table is consistent with
+a block rule: strands to the right of a block are harmless to it, strands to its left free its
+parameter. Between the blocks, strands are right of A and left of B, and one parameter frees;
+before A, they are left of both, and both free. This is a reading of seven layouts, not a proof.
 
 ## Scope
 
