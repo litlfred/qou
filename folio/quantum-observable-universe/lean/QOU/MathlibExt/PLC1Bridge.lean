@@ -221,6 +221,71 @@ lemma exists_pos_sep_of_disjoint {A B : Set E} (hA : IsCompact A) (hB : IsCompac
     · exact hmin (show (a, b) ∈ A ×ˢ B from ⟨ha, hb⟩)
   · refine ⟨1, one_pos, fun a ha b hb => absurd ⟨(a, b), ha, hb⟩ hne⟩
 
+/-- The polygon inscribed in `H t (component i)` at the sample times `S`. -/
+noncomputable def AmbientIsotopy.inscribed {L L' : PolygonalLink E} (I : AmbientIsotopy L L')
+    (t : unitInterval) (i : Fin L.k) (S : Finset ℝ) {N : ℕ} (hcard : S.card = N + 3) :
+    Polygon E :=
+  polyOf fun k => I.H t ((L.comp i).param (S.orderEmbOfFin hcard k))
+
+/-- **Assembly.** Let `φ i` be the end reparametrizations of an ambient isotopy. Choose, for each
+component, sample times in `[0, 1)` containing the vertex times and, for each vertex of the
+partner, a time sent onto it. If the inscribed polygons form a link at every time `t`, the two
+ends are Δ-equivalent. -/
+theorem AmbientIsotopy.deltaEquiv_of_inscribed {L L' : PolygonalLink E} (I : AmbientIsotopy L L')
+    (φ : Fin L.k → ℝ → ℝ) (hφ : ∀ i, OrientedReparam (φ i))
+    (hfin : ∀ i t, I.H 1 ((L.comp i).param t) = (L'.comp (I.e i)).param (φ i t))
+    (N : Fin L.k → ℕ) (S : Fin L.k → Finset ℝ) (hcard : ∀ i, (S i).card = N i + 3)
+    (hS01 : ∀ i, ∀ x ∈ S i, 0 ≤ x ∧ x < 1) (hV : ∀ i, (L.comp i).vertexTimes ⊆ S i)
+    (hV' : ∀ i v, ∃ s ∈ S i, Int.fract (φ i s) = (L'.comp (I.e i)).vtime v)
+    (hsimple : ∀ t i, (I.inscribed t i (S i) (hcard i)).IsSimple)
+    (hdisj : ∀ t, Pairwise fun i j => Disjoint (I.inscribed t i (S i) (hcard i)).carrier
+      (I.inscribed t j (S j) (hcard j)).carrier) :
+    DeltaEquiv L L' := by
+  classical
+  let σ : (i : Fin L.k) → Fin (N i + 3) → ℝ := fun i k => (S i).orderEmbOfFin (hcard i) k
+  let Lt : unitInterval → PolygonalLink E := fun t =>
+    ⟨L.k, fun i => I.inscribed t i (S i) (hcard i), hsimple t, hdisj t⟩
+  let V : unitInterval → (i : Fin L.k) → Fin (N i + 3) → E :=
+    fun t i k => I.H t ((L.comp i).param (σ i k))
+  have hVc : ∀ i, Continuous fun t => V t i := fun i => continuous_pi fun k =>
+    I.continuous.comp (continuous_id.prodMk continuous_const)
+  have hreal : ∀ t, PolygonalLink.Realizes (V t) (Lt t) := fun t => ⟨rfl, fun i => rfl⟩
+  have h01 : DeltaEquiv (Lt 0) (Lt 1) :=
+    PolygonalLink.deltaEquiv_of_preconnected V hVc (fun t => ⟨_, hreal t⟩) 0 1 (hreal 0)
+      (hreal 1)
+  -- `L` to the start
+  have hL0 : DeltaEquiv L (Lt 0) := by
+    refine PolygonalLink.deltaEquiv_of_reaches_all L (fun i => (Lt 0).comp i)
+      (fun L'' m i him => ?_) (Lt 0) rfl (fun i => rfl)
+    have h := PolygonalLink.reaches_sampleVerts L'' m (S i) (hS01 i) (by rw [him]; exact hV i)
+    rw [Polygon.ofList_eq_of_ofFn (P := (Lt 0).comp i) _ (by
+      rw [him, Polygon.sampleVerts, ← Polygon.ofFn_orderEmbOfFin (S i) (hcard i)]
+      exact congrArg List.ofFn (funext fun k => I.start _))] at h
+    exact h
+  -- the end to `L'`
+  let L3 : PolygonalLink E := ⟨L'.k, fun j => (Lt 1).comp (I.e.symm j), fun j => (Lt 1).simple _,
+    fun j j' h => (Lt 1).disjoint (I.e.symm.injective.ne h)⟩
+  have h13 : DeltaEquiv (Lt 1) L3 :=
+    Relation.EqvGen.rel _ _ (Move.relabel (Lt 1) L3 I.e (fun _ => 0) fun i => by
+      show (Lt 1).comp (I.e.symm (I.e i)) = (Lt 1).comp i
+      rw [Equiv.symm_apply_apply])
+  have h3 : DeltaEquiv L' L3 := by
+    refine PolygonalLink.deltaEquiv_of_reaches_all L' (fun j => (Lt 1).comp (I.e.symm j))
+      (fun L'' m j hjm => ?_) L3 rfl (fun j => rfl)
+    set i := I.e.symm j
+    have hm' : L''.comp m = L'.comp (I.e i) := by rw [hjm, Equiv.apply_symm_apply]
+    have key : ∀ Q' : Polygon E, Q' = L'.comp (I.e i) →
+        ∀ v : Fin (Q'.n + 1), ∃ s ∈ S i, Int.fract (φ i s) = Q'.vtime v := by
+      rintro _ rfl v
+      exact hV' i v
+    have h := PolygonalLink.reaches_reparam L'' m (S i) (hS01 i) (hφ i) (key _ hm')
+    rw [Polygon.ofList_eq_of_ofFn (P := (Lt 1).comp i) _ (by
+      rw [hm', ← Polygon.ofFn_orderEmbOfFin (S i) (hcard i)]
+      exact congrArg List.ofFn (funext fun k => hfin i (σ i k)))] at h
+    exact h
+  exact deltaEquiv_equivalence.trans hL0 (deltaEquiv_equivalence.trans h01
+    (deltaEquiv_equivalence.trans h13 (deltaEquiv_equivalence.symm h3)))
+
 section Bridge
 
 variable [FiniteDimensional ℝ E]
@@ -348,49 +413,12 @@ theorem deltaEquiv (I : C1AmbientIsotopy L L') : DeltaEquiv L L' := by
     fun t i j hij => (P i).disjoint_image_of_fine (I.H t) (P j) hM0 (I.c1.diff t) (hPK i)
       (hPK j) (hMb t).1 (hlen i) (hlen j) (hηK t)
       (fun a ha b hb => hD0 i j hij a (hPQ i ha) b (hPQ j hb)) h4D
-  -- the inscribed links
-  let Lt : unitInterval → PolygonalLink E := fun t =>
-    ⟨L.k, fun i => (P i).image (I.H t), hsimple t, hdisj t⟩
-  let V : unitInterval → (i : Fin L.k) → Fin (N i + 3) → E := fun t i k => I.H t ((P i).v k)
-  have hV : ∀ i, Continuous fun t => V t i := fun i => continuous_pi fun k =>
-    I.continuous.comp (continuous_id.prodMk continuous_const)
-  have hreal : ∀ t, PolygonalLink.Realizes (V t) (Lt t) := fun t => ⟨rfl, fun i => rfl⟩
-  have h01 : DeltaEquiv (Lt 0) (Lt 1) :=
-    PolygonalLink.deltaEquiv_of_preconnected V hV (fun t => ⟨_, hreal t⟩) 0 1 (hreal 0) (hreal 1)
-  -- `L` to the start
-  have hP0 : ∀ i, (Lt 0).comp i = P i := fun i =>
-    Polygon.ext' rfl fun k => by simp [Lt, Polygon.image_v, I.start]
-  have hL0 : DeltaEquiv L (Lt 0) := by
-    refine PolygonalLink.deltaEquiv_of_reaches_all L P (fun L'' m i him => ?_) (Lt 0) rfl
-      (fun i => hP0 i)
-    have h := PolygonalLink.reaches_sampleVerts L'' m (S i) (hS01 i)
-      (by rw [him]; exact (hRV i).trans (hRS i))
-    rwa [Polygon.ofList_eq_of_ofFn _ (by rw [him]; exact Polygon.ofFn_sampled (S i) (hcard i) (hm i))] at h
-  -- the end to `L'`
-  let L3 : PolygonalLink E := ⟨L'.k, fun j => (Lt 1).comp (I.e.symm j), fun j => (Lt 1).simple _,
-    fun j j' h => (Lt 1).disjoint (I.e.symm.injective.ne h)⟩
-  have h13 : DeltaEquiv (Lt 1) L3 :=
-    Relation.EqvGen.rel _ _ (Move.relabel (Lt 1) L3 I.e (fun _ => 0) fun i => by
-      show (Lt 1).comp (I.e.symm (I.e i)) = (Lt 1).comp i
-      rw [Equiv.symm_apply_apply])
-  have h3 : DeltaEquiv L' L3 := by
-    refine PolygonalLink.deltaEquiv_of_reaches_all L' (fun j => (Lt 1).comp (I.e.symm j))
-      (fun L'' m j hjm => ?_) L3 rfl (fun j => rfl)
-    set i := I.e.symm j
-    have hm' : L''.comp m = L'.comp (I.e i) := by rw [hjm, Equiv.apply_symm_apply]
-    have key : ∀ Q' : Polygon E, Q' = L'.comp (I.e i) →
-        ∀ v : Fin (Q'.n + 1), ∃ s ∈ S i, Int.fract (φ i s) = Q'.vtime v := by
-      rintro _ rfl v
-      exact ⟨_, hRS i (Finset.mem_union_right _ (Finset.mem_image_of_mem _ (Finset.mem_univ v))),
-        (hφ i).fract_apply_fract_symm _ ((L'.comp (I.e i)).vtime_mem_Ico v).1
-          ((L'.comp (I.e i)).vtime_mem_Ico v).2⟩
-    have h := PolygonalLink.reaches_reparam L'' m (S i) (hS01 i) (hφ i) (key _ hm')
-    rw [Polygon.ofList_eq_of_ofFn (P := (Lt 1).comp i) _ (by
-      rw [hm', ← Polygon.ofFn_orderEmbOfFin (S i) (hcard i)]
-      exact congrArg List.ofFn (funext fun k => hfin i (σ i k)))] at h
-    exact h
-  exact deltaEquiv_equivalence.trans hL0 (deltaEquiv_equivalence.trans h01
-    (deltaEquiv_equivalence.trans h13 (deltaEquiv_equivalence.symm h3)))
+  exact I.toAmbientIsotopy.deltaEquiv_of_inscribed φ hφ hfin N S hcard hS01
+    (fun i => (hRV i).trans (hRS i))
+    (fun i v => ⟨_, hRS i (Finset.mem_union_right _ (Finset.mem_image_of_mem _ (Finset.mem_univ v))),
+      (hφ i).fract_apply_fract_symm _ ((L'.comp (I.e i)).vtime_mem_Ico v).1
+        ((L'.comp (I.e i)).vtime_mem_Ico v).2⟩)
+    hsimple hdisj
 
 end C1AmbientIsotopy
 
