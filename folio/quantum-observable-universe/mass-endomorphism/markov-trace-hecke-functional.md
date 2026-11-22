@@ -4,20 +4,21 @@
 
 1. *$\mathrm{tr}_M(1) = 1$ and $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$;*
 2. *$\mathrm{tr}_M(x\,\sigma_m) = z\,\mathrm{tr}_M(x)$ for $x \in H_m$;*
-3. *$\mathrm{tr}_M(x\,y^{\uparrow m}) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$ and any $y$;* *in particular $\mathrm{tr}_M(y^{\uparrow m}) = \mathrm{tr}_M(y)$, and $\mathrm{tr}_M(x\,y^{\uparrow (m+1)}) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$;*
+3. *$\mathrm{tr}_M(x\,y^{\uparrow m}) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$ and any $y$; in particular $\mathrm{tr}_M(y^{\uparrow m}) = \mathrm{tr}_M(y)$, and $\mathrm{tr}_M(x\,y^{\uparrow (m+1)}) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$;*
 4. *(connected-sum rule) $\mathrm{tr}_M(x\,\sigma_m\,y^{\uparrow (m+1)}) = z\,\mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$ and any $y$;*
 5. *for an interface letter $a + b\,\sigma_m$ with $a, b \in R$,*
-$$
-  \mathrm{tr}_M\bigl(x\,(a + b\,\sigma_m)\,y^{\uparrow (m+1)}\bigr) = (a + b z)\,\mathrm{tr}_M(x)\,\mathrm{tr}_M(y).
-$$
 
-*Let $s, h \in R$ with $s^2 = q$ and $s h = q - 1$. Then $\sigma_i \mapsto s\,\sigma_i$ is an algebra map from $H_n(q)$, presented with $\sigma_i^2 = (q-1)\sigma_i + q$, into $H_\infty$. Composing gives a linear trace on $H_n(q)$ with $\mathrm{tr}_M(\sigma_i) = s z$. When $R$ is a field and $q \neq 0$, for every splitting of $H_n(q)$ into matrix blocks this trace equals $x \mapsto \tau(x\,\kappa)$ for a central element $\kappa$, where $\tau$ is the canonical symmetrizing trace.*
+   $$
+   \mathrm{tr}_M\bigl(x\,(a + b\,\sigma_m)\,y^{\uparrow (m+1)}\bigr) = (a + b z)\,\mathrm{tr}_M(x)\,\mathrm{tr}_M(y).
+   $$
+
+*Let $q, s \in R$ with $s^2 = q$ and $s h = q - 1$. Then $\sigma_i \mapsto s\,\sigma_i$ is an algebra map from $H_n(q)$, presented with $\sigma_i^2 = (q-1)\sigma_i + q$, into $H_\infty$. Composing gives a linear trace on $H_n(q)$ with $\mathrm{tr}_M(\sigma_i) = s z$. When $R$ is a field and $q \neq 0$, for every splitting of $H_n(q)$ into matrix blocks this trace equals $x \mapsto \tau(x\,\kappa)$ for a central element $\kappa$, where $\tau$ is the canonical symmetrizing trace.*
 
 ## Proof
 
 The word trace satisfies the Hecke, braid and far-commutation relations inside any two-sided context of words. Extended linearly to the free algebra, it therefore vanishes on the two-sided ideal of the defining relations and descends to $H_\infty$. Cyclicity passes from words to the algebra by linearity. Every element of $H_m$ is a linear combination of words in $\sigma_0, \ldots, \sigma_{m-1}$, so the Markov property and the shared-strand product law of the reducer extend linearly to (2) and (3). Shift invariance is (3) with $x = 1$; the split form is (3) for $x \in H_m \subset H_{m+1}$. Then (4) is (3) applied to $x\,\sigma_m \in H_{m+1}$, followed by (2). For (5), expand the interface letter and apply (3) and (4).
 
-For $H_n(q)$, $(s\sigma)^2 = q(h\sigma + 1) = (q-1)(s\sigma) + q$, because $q h = s(sh) = s(q-1)$. The braid and far-commutation relations are homogeneous, so the rescaling respects them. The knot-factor statement is the general result for any trace on a split semisimple algebra whose pairing trace has nonzero block weights, applied to this trace.
+For $H_n(q)$, $(s\sigma)^2 = q(h\sigma + 1) = (q-1)(s\sigma) + q$, because $q h = s(sh) = s(q-1)$. The braid and far-commutation relations are homogeneous, so the rescaling respects them. The knot-factor statement is the general fact that every cyclic trace on $H_n(q)$, for $q \neq 0$ and a splitting into matrix blocks, equals $x \mapsto \tau(x\,\kappa)$ for a unique central $\kappa$; it is applied here to the trace just constructed.
 
 ## Remark on scope
 
@@ -27,12 +28,22 @@ $$
 $$
 The factor $s$ comes from the rescaling $\sigma_m \mapsto s\,\sigma_m$.
 
+## Remark on normalisation
+
+The parameter $q$ of $H_n(q)$ here is the one of the relation $\sigma_i^2 = (q-1)\sigma_i + q$, with eigenvalues $q$ and $-1$. The generator $\sigma_i$ of $H_n(q)$ maps to $s$ times the tower generator $\sigma_i$, and the tower generators satisfy $(\sigma_i - Q)(\sigma_i + Q^{-1}) = 0$ with $Q = s$, since $h = s - s^{-1}$ when $s$ is a unit. So the tower is the Hecke algebra in the normalisation with eigenvalues $Q$ and $-Q^{-1}$, $h = Q - Q^{-1}$ and $Q^2 = q$.
+
 ## Remark on bond words
 
 The same argument covers any bond word placed on its own block of generators. If $x \in H_m$, $B \in H_k$ and $y$ is arbitrary, then $B^{\uparrow m}$ uses $\sigma_m, \ldots, \sigma_{m+k-1}$ and shares one strand with each cluster, and
 $$
   \mathrm{tr}_M\bigl(x\,B^{\uparrow m}\,y^{\uparrow (m+k)}\bigr) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(B)\,\mathrm{tr}_M(y).
 $$
-For $B = V^3 = (\sigma_0\sigma_1^{-1})^3$ the factor is $\mathrm{tr}_M(V^3) = 1 - h^4 + h^4 z^2 - h^5 z$, the Borromean trace.
+For $B = V^3 = (\sigma_0\sigma_1^{-1})^3 \in H_2$, a direct computation in $H_3$ with $\sigma_1^{-1} = \sigma_1 - h$ gives the factor $\mathrm{tr}_M(V^3) = 1 - h^4 + h^4 z^2 - h^5 z$, the Borromean trace.
 
-The $\gamma\gamma$ bond of the nucleon probes is not of this block form: its letter $\sigma_3$ is a generator of the second nucleon. For a bond that overlaps the second cluster, $\mathrm{tr}_M\bigl(x\,B^{\uparrow m}\,y^{\uparrow (m+1)}\bigr) = \mathrm{tr}_M(x)\,\mathrm{tr}_M\bigl(B\,y^{\uparrow 1}\bigr)$ for $x \in H_m$. The bond ratio is then independent of the first nucleon and depends on the second.
+The $\gamma\gamma$ bond $(\sigma_2\sigma_3^{-1})^3 = (V^3)^{\uparrow 2}$ between a first nucleon word $x \in H_2$ and a second nucleon word $y^{\uparrow 3}$ is not of this block form: its letter $\sigma_3$ is also a generator of the second nucleon. For a bond $B \in H_2$ that overlaps the second cluster in this way,
+
+$$
+  \mathrm{tr}_M\bigl(x\,B^{\uparrow m}\,y^{\uparrow (m+1)}\bigr) = \mathrm{tr}_M(x)\,\mathrm{tr}_M\bigl(B\,y^{\uparrow 1}\bigr), \qquad x \in H_m,
+$$
+
+and the same holds with the bond placed after $y^{\uparrow (m+1)}$. The bond ratio $\mathrm{tr}_M\bigl(x\,B^{\uparrow m}\,y^{\uparrow (m+1)}\bigr) / \mathrm{tr}_M\bigl(x\,y^{\uparrow (m+1)}\bigr) = \mathrm{tr}_M\bigl(B\,y^{\uparrow 1}\bigr)/\mathrm{tr}_M(y)$, where defined, is therefore a function of the second cluster alone.
