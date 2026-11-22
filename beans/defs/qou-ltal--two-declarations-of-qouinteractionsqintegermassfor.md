@@ -1,13 +1,13 @@
 ---
 # qou-ltal
 title: Two declarations of QOU.Interactions.QIntegerMassFormula — one compiled with no consumers, one honest and uncompiled
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T20:01:42Z
-updated_at: 2026-10-04T15:25:13Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-wp3h
 ---
 
@@ -106,3 +106,9 @@ manuscript sees the other.**
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
 - **Summary**: Added `asym_minus_volume_eq_half_volume`, `shell_eq_cube_q2_mul_exchange`, and `pairing_volume_cross_relation` in `QOU/Interactions/QIntegerMassFormula.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).
+
+## 2026-11-22 — CLOSED: resolved as documented, notes present in both files (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The 2026-08-30 resolution (keep both declarations, document the collision) is on main: `folio/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean:123-138` names the content-block sibling and `eaebcc286c4`, and `folio/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean:120-127` names the compiled module. The bean asked for no other action. The conjecture inside the file (`fits_AME`) is not this bean's subject; this bean tracked the duplicate declaration only.

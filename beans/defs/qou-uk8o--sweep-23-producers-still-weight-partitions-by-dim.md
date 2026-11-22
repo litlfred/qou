@@ -1,13 +1,13 @@
 ---
 # qou-uk8o
 title: 'Sweep: 23 producers still weight partitions by dim_q^2/[n]_q!; triage by CROSS-ATOM exposure (c_n cancels within one n)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:55:41Z
-updated_at: 2026-10-04T15:14:02Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-10v9
 ---
 
@@ -68,3 +68,9 @@ stronger evidence than the upstream numerical table and is independent of it.
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
 
 - **Round 55 Progress (`2026-11-16T21:09:27Z`)**: Opened [`litlfred/qou#8202`](https://github.com/litlfred/qou/pull/8202) (`61d4706edbc97c195108082e38b072c982ba2984`, Commit 1 `842a8da69cdb997861cc48f6f16593cc33e1e707`). Keeping bean at `status: in-progress` pending owner review.
+
+## 2026-11-22 — CLOSED: the sweep finished on 2026-09-05 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+This bean's task is the sweep, and the section above records it done: 22 producers, 8 fixed, 3 deliberately unchanged with reasons, 10 unaffected, 1 excluded. The audit `docs/audits/2026-09-05-plancherel-weight-sweep.md` is on main. The 3 "deliberately unchanged" are stated decisions, not unfinished work. The bean was left in-progress only by the 2026-10-04 claim reset.

@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T12:56:59Z
-updated_at: 2026-10-04T15:12:49Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-5vkl
 ---
 
@@ -90,3 +90,9 @@ Was in-progress with no bean update since 2026-08-10 and no main commit naming i
 
 ## Round 56 Implementation (PR #8333)
 - Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).
+
+## 2026-11-22 — note (bean-hygiene wave 2): drained once, self-stale again
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The drift this bean was filed for was drained by PR #4935. Measured today it has drifted again: `computations/probes/canonical-ordering-dof.witness.json` records `scriptHash 90067a088722`, the live `canonical_ordering_dof_probe.py` hashes to `ae5c62009a63`. Not refreshed here (witness refreshes are outside this hygiene pass; see AGENTS.md "diff the producer first"). Left open because the title is true again.

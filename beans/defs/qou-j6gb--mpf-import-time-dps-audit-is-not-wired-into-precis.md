@@ -1,13 +1,13 @@
 ---
 # qou-j6gb
 title: mpf_import_time_dps_audit is NOT wired into precision-gates.sh — 288 findings, 185 proven lossy, gate silent
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T02:36:03Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:18:21Z
 parent: qou-9nnz
 ---
 
@@ -1048,3 +1048,14 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8349, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-15: "beans: close qou-s41x; record post-merge state on qou-j6gb"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-22 — CLOSED: wired, and its own done-condition (literal count 0) is met on main (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The 2026-09-08 reopen was right at the time: line 168 says "Bean stays open with status in-progress until the `literal` count reaches 0". That condition is now measured, not assumed:
+
+- Wiring: `scripts/precision-gates.sh:73` lists `import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes` (blocking).
+- Re-run today: `python3 computations/mpf_import_time_dps_audit.py --strict` exits **0**: `proven lossy (literal arg): 0`, `position-risky (expr arg): 20` across 11 files (was 288 / 185 / 91 on 2026-08-25). The witness it rewrote was restored; nothing committed.
+
+The 20 `expr` findings are "not statically provable" by the audit's own wording and are not this bean's done-condition. Not one of the six reds PR #9105 is fixing.

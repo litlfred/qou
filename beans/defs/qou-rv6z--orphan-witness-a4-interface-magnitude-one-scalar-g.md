@@ -1,13 +1,13 @@
 ---
 # qou-rv6z
 title: 'Orphan witness a4-interface-magnitude-one-scalar-gate: no provenance, no producer, carries stale z_C; needs a producer before its number can be regenerated'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T11:21:24Z
-updated_at: 2026-10-04T15:13:25Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-5vkl
 ---
 
@@ -60,3 +60,9 @@ branch and last modified on main by fcc65c1380 (qou-tekx muon-pin fix).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-22 — CLOSED: producer written and on main (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The orphan this bean names now has a producer: `computations/deltalambda/a4_interface_magnitude_one_scalar_gate.py` sits beside `a4-interface-magnitude-one-scalar-gate.witness.json` on main, as the "RESOLVED 2026-08-30" entry says. Nothing in the body names further work; the status was left in-progress by the 2026-10-04 claim reset.

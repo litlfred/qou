@@ -1,11 +1,11 @@
 ---
 # qou-99fk
 title: qa-sweep writes block-qa attestations into the TRACKED test/attestations store -- undeclared and unignored
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-10-10T07:37:59Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-5vkl
 ---
 
@@ -172,3 +172,9 @@ Owner decision 6a (ofri, 2026-10-10): leave `test/attestations/` and the in-tree
 Parent `(none)` → `qou-5vkl`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
 
 In-progress in Round 98 PR litlfred/qou#8442.
+
+## 2026-11-22 — CLOSED: answered by owner decision 6a (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF.
+
+The question this bean raised (should `test/attestations/` hold qa-sweep output, tracked and unignored) was decided by the owner on 2026-10-10, recorded in the section above: decision 6a (ofri), "leave `test/attestations/` and the in-tree `.qa.json` sidecars as they are". Nothing is left for an agent to do. The optional grep of the platform's write path is named as the step if the owner reopens the question; reopen this bean then.

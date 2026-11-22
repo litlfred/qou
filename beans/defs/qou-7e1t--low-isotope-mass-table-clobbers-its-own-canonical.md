@@ -1,14 +1,14 @@
 ---
 # qou-7e1t
 title: 'low_isotope_mass_table clobbers its own canonical upstream: default re-runs it at target-dps 11 over a committed 60-dps table'
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-22T15:29:23Z
-updated_at: 2026-10-04T15:15:45Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-9nnz
 ---
 
@@ -319,3 +319,12 @@ send the next agent to a run that fails on its first two rows.
 Left OPEN rather than completed: the commit message says "opt 1", so further
 options may have been intended, and closing someone else's bug bean on the
 strength of one measured behaviour is not mine to do.
+
+## 2026-11-22 — CLOSED: the titled defect is fixed on main (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The bean's subject is that the default run re-ran and clobbered the canonical upstream. On main:
+- `d4c196c030` "low-isotope table: stop rewriting the canonical table it projects from (qou-7e1t opt 1)": `computations/low_isotope_mass_table.py:22-45` makes `--rerun-canonical` opt-in, and `--target-dps` is omitted unless set (lines 130-133).
+- PR #5460: `canonical_mass_table_extended.py` refuses a lower-dps overwrite unless `--allow-precision-downgrade` (line 541).
+The 2026-09-07 entry left it open because "further options may have been intended". Option 3 (reconcile `auto` vs `branching` widths) is a separate design question, not this defect; reopen or file it on its own if someone wants it.

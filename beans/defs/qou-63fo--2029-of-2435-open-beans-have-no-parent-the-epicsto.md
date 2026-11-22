@@ -1,14 +1,14 @@
 ---
 # qou-63fo
 title: 2029 of 2435 open beans have no parent — the epic/story layer is 10 epics deep
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - beans-hygiene
     - reorg-2026-10-04
 created_at: 2026-09-26T10:52:40Z
-updated_at: 2026-10-04T15:16:00Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-5vkl
 ---
 
@@ -91,3 +91,10 @@ MCP agent. A hierarchy change is therefore visible to every future session, whic
 is the argument both for doing it well and for not doing it fast.
 
 - **Round 95 (`litlfred/qou#8426`)**: Advanced in `feat/round95-layout-lowerbound-bondrule-maxcontact-simplex-43c1` (Commit 1 `d482ea2750e00fbd6e9e74457e935101b2f8b093`, Commit 2 `8ed5dd0ff69b4804c5e40f393e7c9157a2067a42`, probe sha256 `8b786124c3dfda15d0d1672a05f3bc16f486d17a5f41250533162305ad901679`).
+
+## 2026-11-22 — CLOSED: the decision was taken and the orphan count is 15, not 2,029 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF.
+
+Re-measured with `bun folio-assistant/cat-harness-tools/scripts/check-bean-parents.ts` on the mounted store (tip 2cd91ce4ea5): **2,006 open beans below the roadmap roots, 15 open with no parent**, 26 whose parent is a task, 1 feature under a feature. The 2026-10-04 work-plan reorganisation (`d4a2181f059`, pillars and epics) and the owner-approved bean triage of 2026-11-15 (the "Parented 2026-11-15" notes on many beans) did what option B/C proposed.
+The 42 remaining parent problems are listed on qou-w3yy, the hygiene epic, which is where the residue belongs.

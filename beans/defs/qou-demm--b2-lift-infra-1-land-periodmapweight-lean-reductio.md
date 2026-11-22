@@ -1,13 +1,13 @@
 ---
 # qou-demm
 title: 'B2-lift infra (1): land PeriodMapWeight Lean reduction — collapse 2-field TauRhoHodgeLift interface to the single MOC existence field, sorry-free'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T19:31:31Z
-updated_at: 2026-10-04T15:16:33Z
+updated_at: 2026-11-22T21:18:22Z
 parent: b9cj
 ---
 
@@ -41,3 +41,9 @@ Interface sharpening, NOT a closure; 1/(8pi) stays phase-4. Re-verified by orche
 ## Round 56 Update (PR #8271)
 - Opened PR https://github.com/litlfred/qou/pull/8271 (`b2cbd4734e5f10beb2130e3555212a3d78a87989`, C1 `22c4bf632182163314cbb930ffed44b139fa5265`).
 - Compiled under Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0` warnings) and verified `0` advisories across all 6 static vacuity & borrowed-name audits, with 80-dps `mpmath` witness `computations/probes/round56-devacuify-6qbv-b9cj.witness.json` (`scriptHash = c44bdf430d4f`).
+
+## 2026-11-22 — CLOSED: the reduction landed (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+This bean's task is to land the PeriodMapWeight reduction. It is on main at `folio/quantum-observable-universe/lean/QOU/Archimedean/PeriodMapWeightReduction.lean` (`class PeriodMapWeight` at line 85; no `sorry` in the file). The body itself calls it "interface sharpening, NOT a closure": the uninstantiated Prop and the 1/(8pi) phase-4 question are the parent B2-lift problem's, not this infra bean's, so closing this does not close any conjecture (rule 13a). The "Round 56 Update" cites batch PR #8271, closed on 2026-11-20; nothing here rests on it.

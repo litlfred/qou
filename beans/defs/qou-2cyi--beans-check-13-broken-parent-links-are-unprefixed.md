@@ -1,7 +1,7 @@
 ---
 # qou-2cyi
 title: 'beans check: 13 broken parent links are unprefixed bean IDs (0yqu, krvm)'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - beans
     - tracker-hygiene
 created_at: 2026-08-16T12:55:03Z
-updated_at: 2026-10-04T15:15:35Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-5vkl
 ---
 
@@ -82,3 +82,11 @@ Pre-existing; untouched by PR #5221 (which installed the CLI). Found while
 running `beans check` during PR #5230.
 
 - **Round 92 (`litlfred/qou#8416`)**: Advanced in `feat/round92-jetmono-jetsign-kzratio-kzunit-kappacorr-43c1` (Commit 1 `b85484a2b9309c11a8832becee2e728a03219677`, Commit 2 `de3ca907bd3d3c7bb260ce5aa08259ade30c6cc9`, probe sha256 `7a5dfeb80aacf1b23a7e663221ecc9f97b20abf96256db6ae736e9dd7742c6f9`).
+
+## 2026-11-22 — CLOSED: all 13 parent links are full-form now (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked on the mounted store (cat/cat-harness/beans tip 2cd91ce4ea5).
+
+None of the 13 beans named in the Symptom section still carries `parent: 0yqu` or `parent: krvm`. Six now point at `qou-0yqu`, `rvnc` at `qou-krvm`, and the rest were re-homed by the 2026-10-04 reorganisation (`qou-n4nr`, `b9cj`).
+Tracker-wide, a parent value that names no bean now occurs exactly once: `qou-s5v5` (completed) -> `qou-xhci`, which was never created. That is recorded on qou-w3yy, not here.
+The checklist's last two items (renaming bare-ID beans; filing upstream) were optional and the body itself recommends against the first.

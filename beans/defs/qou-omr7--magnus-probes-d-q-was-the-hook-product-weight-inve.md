@@ -1,13 +1,13 @@
 ---
 # qou-omr7
 title: 'Magnus probes: d_q was the hook product, weight inverted (4 files)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:40:28Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:18:21Z
 parent: qou-m6dn
 ---
 
@@ -276,3 +276,16 @@ Was in-progress with no bean update since 2026-09-11 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8343, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-04: "beans(qou-omr7): he4-sparse complete, and this bean's own "2 of 4" count was wrong"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-22 — CLOSED: the fix and all four witnesses are on main (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+This bean's subject is mechanical (a weight inverted in four probes), so rule 13a does not hold it open.
+
+- Fix: `5e21b5cbb5` "fix(magnus probes): d_q was the hook product, not [n]_q!/hook product" (PR #6442). On main, `deuteron_magnus_omega2_sign_probe.py:171-173` and `triton_magnus_omega2_sign_probe.py:186-188` compute `dq = nfact / hook_prod`; `he4_magnus_omega2_sign_sparse_probe.py:199` carries the same fix.
+- Witnesses: `deuteron-`, `triton-` and `he4-magnus-omega2-sign.witness.json` are all on main (triton regenerated in #6533, he4 produced in #6670, last touched by `3d892061fc` / `ba999afe26`).
+- The "2 of 4 remain" item is answered by this bean's own 2026-09-04 section.
+
+The "Round 91" entry above cites batch PR #8343, closed as vacuous on 2026-11-20; nothing here rests on it.
+The Magnus-sign mathematics (A2/A3/A4 sign, Delta_lambda gate) is NOT this bean's subject and stays with qou-x631 / qou-za3q.

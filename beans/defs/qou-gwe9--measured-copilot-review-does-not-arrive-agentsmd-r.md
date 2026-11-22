@@ -1,13 +1,13 @@
 ---
 # qou-gwe9
 title: 'MEASURED: Copilot review does not arrive — AGENTS.md rule 10''s last surviving Phase-4 gate'
-status: in-progress
+status: scrapped
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-22T21:18:22Z
 parent: qou-5vkl
 ---
 
@@ -1053,3 +1053,9 @@ gate standing, it is the only one, which is what AGENTS.md's corrected text alre
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-22 — SCRAPPED: Copilot review is no longer a gate (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF.
+
+Owner ruling 2026-11-22, recorded in AGENTS.md (line 1288, rule 7, and line 1493, Phase 1b): *"co-pilot review is no longer required. We are using audit checks."* This bean measured whether Copilot review arrives because it was "AGENTS.md rule 10's last surviving Phase-4 gate". With the gate removed, nothing waits on the answer. The measurements above stay as history of why the gate was dropped. Scrapped rather than completed: the arrival mechanism was never settled.
