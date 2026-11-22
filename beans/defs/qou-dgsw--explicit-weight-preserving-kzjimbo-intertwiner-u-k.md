@@ -1,11 +1,11 @@
 ---
 # qou-dgsw
 title: Explicit weight-preserving KZ→Jimbo intertwiner ⊕U_k; linear independence of Jones words in Pres
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-12T20:03:36Z
-updated_at: 2026-11-18T07:46:25Z
+updated_at: 2026-11-22T21:21:36Z
 parent: qou-59vq
 ---
 
@@ -22,3 +22,6 @@ Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the b
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
 
 - Round 72 (`lane-e667`): Formalized `qou-sx5r`, `qou-slck`, `qou-dgsw`, `qou-jfr8`, `qou-zoyv` in `QOU.Foundations.SandwichTraceCyclicityVectorBraidingReducedWordSeparationRibbonMonodromy` with 80-dps `mpmath` 2-commit witness stamp (`c95261a9c444144dd0cc07d50ddaabb0b496a13f` -> `c3e4ad1f706f5fd2e70cbb90c8c9bd7753ec1e10`, `scriptHash=e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8`) in PR `litlfred/qou#8390` (`status: in-progress`).
+
+## 2026-11-22: closed completed (hecke-schur-weyl-lean drain)
+Both items are on main. Re-verified this session at main 3c4c98fcc with lean-direct exit 0 and #print axioms = propext, Classical.choice, Quot.sound for QOU.Mass.KohnoIntertwiner.kz_jimbo_intertwiner (item 1) and QOU.IwahoriHecke.JonesNormalForm.words_pres_linearIndependent (item 2). The residual scopes (roots of unity, V != C^2) are tracked on qou-gzsp, which stays open.

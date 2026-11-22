@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:31:38Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:21:36Z
 parent: qou-59vq
 ---
 
@@ -32,3 +32,6 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8399, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22: kept open (hecke-schur-weyl-lean drain)
+Checked, not closed. kz_jimbo_intertwiner (qou-dgsw, now completed) gives one weight-preserving unit U for every non-root-of-unity kappa, but U is still existential. Still open per this bean's own body: roots of unity q != 1 (non-semisimple), an explicit U, and V != C^2 / general Drinfeld-Kohno.
