@@ -4,14 +4,14 @@ representing the gauge-bundle data of $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 By
 ([categorical jet object inherits Frobenius--Hopf structure](#lem:jet-prolongation-categorical-jet)),
-$J^1(A) := A \otimes \Omega^1(A)$ is an object of the ambient category
+$J^1(A) := (A \otimes A)/I^2$, $I = \ker m$, is an object of the ambient category
 and inherits the Frobenius--Hopf data $(\Delta', \varepsilon', S')$
 from $A$.
 
 *Non-degeneracy and vanishing.*
 The non-degeneracy of the Frobenius form on $A$ (the pairing
 $\varepsilon \circ m$ is a perfect pairing) implies non-degeneracy of the
-induced form on $J^1(A)$, since $\Omega^1(A)$ is a direct summand.
+induced form on $J^1(A)$, since $A$ is a direct summand of $J^1(A)$ with complement $I/I^2$.
 For the vanishing condition, $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
 implies $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(J^1(A))) = 0$: the adjoint
 representation of $J^1(A)$ contains $\mathrm{Ad}(A)$ as a subobject, and any

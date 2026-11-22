@@ -474,3 +474,27 @@ selection mechanism inside conjecture-level electroweak blocks; it is not proved
 rests on an adopted rule, not on a theorem. Two further limits: the photon letter could
 enter at another position, and in `B₂` any odd power of `σ₀` is "electron-built", so the
 backup family is a weak statement.
+
+## 19. Can "saturation" (genus exactly 4) be derived? Not as an identification of curves (2026-11-22)
+
+**What the corpus actually says.** `rem:torus-knot-generators-interpretation` uses
+"saturation" descriptively: `T(2,9)` "at genus 4 exactly saturates Bring's surface", and
+"new particle types would require composite construction". That is the bound being met,
+not a rule that selects the genus-4 member. The selective use ("the saturation mechanism
+that forces `{T(2,9), T(3,5)}`") appears only in the conjecture-level electroweak blocks.
+The same remark also names `T(2,3)` as the electron and calls `T(2,9)` "symmetry-broken".
+That predates the 2026-11-21 owner ruling (electron = `σ₀σ₁σ₀` with Hopf closure, trefoil as
+backup). It is recorded here and not edited, since that is an owner call.
+
+**One natural derivation route, tested.** The route: the saturating knots are singled out
+because their fibre *is* Bring's curve. `T(3,5)` and `T(2,9)` are the links of `y³ = x⁵` and
+`y² = x⁹`. Their Milnor fibres compactify to the smooth genus-4 curves `y³ = x⁵ + 1` and
+`y² = x⁹ + 1`, which carry automorphisms of order 15 and 9 (standard, cited). The corpus
+records `Aut(Σ₄) ≅ S₅`. `QOU/AlphaEM/SaturationNotBringFibre.lean` (sorry-free, by cycle
+types) proves that `S₅` has no element of order 9 or 15. So neither curve is Bring's curve,
+and the genus-4 match is topological only.
+
+**Scope (a).** This rules out *that* identification, under the standard algebraic structure
+on the Milnor fibre. It does not rule out a different reason for the genus-4 member, for
+example a topological embedding of the fibre surface into `Σ₄`, or an `S₅`-equivariance
+argument. The saturation rule stays adopted, not derived.

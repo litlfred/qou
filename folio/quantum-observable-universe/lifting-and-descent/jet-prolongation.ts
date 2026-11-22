@@ -6,9 +6,19 @@ export default proposition({
   title: "Jet Prolongation",
   tags: ["jet-bundle", "frobenius-hopf", "prolongation"],
   examples: ["ex:jet-prolongation-su2", "rem:prolongation-categorical", "ex:brane-tower-levels"],
-  uses: ["def:quantum-observable-universe"],
+  uses: ["def:quantum-observable-universe", "def:categorical-jet"],
   proofs: ["prf:jet-prolongation"],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-22",
+      body:
+        "On the owner ruling of 2026-11-22 the jet object is $(A \\otimes A)/I^2$, $I = \\ker m$. That " +
+        "object contains $A$ as a direct summand (`lem:jet-prolongation-categorical-jet`), which the old " +
+        "$A \\otimes \\Omega^1(A)$ did not. The Frobenius–Hopf inheritance is still open for the new object: " +
+        "for a commutative Hopf algebra $I$ is a Hopf ideal, but $I^2$ is not a coideal in general, so " +
+        "$(A \\otimes A)/I^2$ is not obviously a quotient bialgebra.",
+    },
     {
       kind: "caveat",
       date: "2026-11-21",
