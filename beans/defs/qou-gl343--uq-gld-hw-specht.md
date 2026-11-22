@@ -40,3 +40,7 @@ Still open: HW_λ ≅ S_λ as H-modules, and the any-field case (#7874).
 
 `QOU.SchurWeyl.QuantumGL.hwCharStatement_all` (QuantumGLHWSpechtId.lean): for every dominant μ with Σμ = m+1 and every z ∈ H_{m+1}(q), tr(z | HW_μ) = tr(ρ_{rowDiagram μ}(z)) (seminormal rep). Ordered field, q not a root of unity. Sorry-free; axioms propext, Classical.choice, Quot.sound; lean-direct -DautoImplicit=false exit 0. Proof: induction on m via corner restriction + density injectivity; base m=1 separates row/column by the σ₀ eigenvalue (q vs −q⁻¹, using q² ≠ −1).
 Still open: module isomorphism HW_μ ≅ S_λ as H-modules (follows from characters + semisimplicity; not yet written). Bean stays open.
+
+## 2026-11-22 — module isomorphism proved (PR #9026)
+
+`exists_hwSpace_equiv_specht`: HW_μ ≅ S_{λ(μ)} as H_{m+1}(q)-modules, via generic `exists_linearEquiv_of_trace_eq` (surjective reps + equal traces + equal dim ⇒ iso). Sorry-free, standard axioms. G3.4c identification is complete over an ordered field; remaining open: any-field case (#7874).
