@@ -238,4 +238,69 @@ theorem traceD_ne_weight (w : List (Letter α)) :
     ¬ ∀ q : ℝ, 1 < q → traceD q w = weight q :=
   traceD_ne_of_tendsto_zero w weight weight_tendsto
 
+/-! ### Tower-level objects (prereg Addendum 1)
+
+The invariant is the order of vanishing at `q = 1`. `w` has order exactly `1`
+(`w/(q − 1) → 1`). The lemmas below exclude objects of order `0` (a non-zero limit) and of
+order `≥ 2` (`ℏ_q²` times anything finite at `1`). They also give the first-order coefficient of
+the skein difference `h · T_β`, the one canonical tower operation of order `1`.
+-/
+
+/-- `ℏ_q = 1 − q⁻¹`. -/
+noncomputable def hbar (q : ℝ) : ℝ := 1 - q⁻¹
+
+/-- **Order 0.** No function with a non-zero limit at `q → 1⁺` is `w` on `q > 1`. This covers
+the Markov stabilisation tower `z_Dⁿ`, `z_D/(1 − z_D)` and the levels and partial sums of
+`Σ_{k ≥ 2} q⁻ᵏ` (prereg T2, T3). -/
+theorem ne_weight_of_tendsto_ne_zero (f : ℝ → ℝ) (c : ℝ) (hc : c ≠ 0)
+    (hf : Tendsto f (𝓝[>] 1) (𝓝 c)) : ¬ ∀ q : ℝ, 1 < q → f q = weight q := by
+  intro h
+  have heq : f =ᶠ[𝓝[>] 1] weight := eventually_nhdsWithin_of_forall fun q hq => h q hq
+  exact hc (tendsto_nhds_unique (hf.congr' heq) weight_tendsto)
+
+/-- **Order ≥ 2.** `ℏ_q² · g` is never `w` on `q > 1` when `g` is continuous at `1`. This covers
+every brane-tower level `(ℏ_q²λ)ⁿ`, its sum `ℏ_q²λ/(1 − ℏ_q²λ)` and the implemented correction
+`1/(1 − ℏ_q²) − 1`, whenever `λ` is finite at `q = 1` (prereg T1). -/
+theorem hbar_sq_mul_ne_weight (g : ℝ → ℝ) (hg : ContinuousAt g 1) :
+    ¬ ∀ q : ℝ, 1 < q → hbar q ^ 2 * g q = weight q := by
+  intro h
+  have h1 : Tendsto (fun q : ℝ => 1 / q ^ 3) (𝓝[>] 1) (𝓝 1) := by
+    have : ContinuousAt (fun q : ℝ => 1 / q ^ 3) 1 :=
+      continuousAt_const.div (continuousAt_id.pow 3) (by norm_num)
+    simpa using this.tendsto.mono_left (nhdsWithin_le_nhds (s := Set.Ioi (1 : ℝ)))
+  have h2 : Tendsto (fun q : ℝ => (q - 1) * g q / q ^ 2) (𝓝[>] 1) (𝓝 0) := by
+    have : ContinuousAt (fun q : ℝ => (q - 1) * g q / q ^ 2) 1 :=
+      ((continuousAt_id.sub continuousAt_const).mul hg).div (continuousAt_id.pow 2)
+        (by norm_num)
+    simpa using this.tendsto.mono_left (nhdsWithin_le_nhds (s := Set.Ioi (1 : ℝ)))
+  have heq : (fun q : ℝ => (q - 1) * g q / q ^ 2) =ᶠ[𝓝[>] 1] (fun q : ℝ => 1 / q ^ 3) := by
+    refine eventually_nhdsWithin_of_forall fun q (hq : 1 < q) => ?_
+    have e := h q hq
+    have hq0 : q ≠ 0 := by positivity
+    have hq1 : q - 1 ≠ 0 := sub_ne_zero.2 (ne_of_gt hq)
+    unfold hbar weight at e
+    field_simp at e ⊢
+    linear_combination e
+  exact one_ne_zero (tendsto_nhds_unique (h2.congr' heq) h1).symm
+
+/-- **Order 1, the skein difference.** `h · T_β`, `h = q − q⁻¹ = τ(βσ) − τ(βσ⁻¹)`, vanishes to
+first order at `q = 1` with coefficient `2 · trClassical(π_β) = 2^{c − n + 1}`. It matches `w`'s
+first-order coefficient `1` exactly when `c = n − 1` (prereg T4). Exact equality would force
+`T_β = w/h = 1/(q²(q + 1))`, which has a pole at `q = −1` while every word trace is finite there.
+That last step is a rational-function argument recorded in the audit, not formalised here. -/
+theorem skein_first_order (w : List (Letter α)) :
+    Tendsto (fun q : ℝ => (q - q⁻¹) * traceD q w / (q - 1)) (𝓝[>] 1)
+      (𝓝 (2 * (trClassical (wordPerm w) : ℝ))) := by
+  have hc : ContinuousAt (fun q : ℝ => (q + 1) / q * traceD q w) 1 :=
+    ((continuousAt_id.add continuousAt_const).div continuousAt_id (by norm_num)).mul
+      (traceD_continuousAt_one w)
+  have ht := hc.tendsto.mono_left (nhdsWithin_le_nhds (s := Set.Ioi (1 : ℝ)))
+  rw [traceD_one] at ht
+  norm_num at ht
+  refine ht.congr' (eventually_nhdsWithin_of_forall fun q (hq : 1 < q) => ?_)
+  have hq0 : q ≠ 0 := by positivity
+  have hq1 : q - 1 ≠ 0 := sub_ne_zero.2 (ne_of_gt hq)
+  field_simp
+  ring
+
 end QOU.QBeta.E0WeightAllWords
