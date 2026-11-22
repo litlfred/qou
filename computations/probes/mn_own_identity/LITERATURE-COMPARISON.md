@@ -1165,3 +1165,40 @@ The ruling asks for all n of the Hecke tower and all orders in q. Measured again
   §36 H₆ eigenvalue check, which used no 𝒟 at all.
 So every negative in §29–§36 (no n − p surviving at q = 1, no reading doing both, no 2+1 split in
 the word) is scope (a): low jet degree, n = 3. None is a structural exclusion along the tower.
+
+## §37 Jet tower of 𝒟 on 𝓑₃; Lean for the vertex eigenvalues; what the fifths are
+
+Owner, 2026-11-22: *"Pre-register a full-tower test. Expand 𝒟 on 𝓑₃ jet by jet …"* and
+*"1. Full-tower test … 2. Prove the H₃ eigenvalue facts in Lean … 3. Look at the fifths"*.
+
+**Jet tower (pre-registered dce76e1655a; `mn_jet_tower_probe.py`, exact over ℚ(q), k = 0..8).**
+Δᵏ = tr_{W_n}(𝒟ᵏ) − tr_{W_p}(𝒟ᵏ) (plain) and q⁻¹tr_{W_n} − q·tr_{W_p} (K-weighted).
+
+| k | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|---|---|
+| plain: leading order in h = q − 1 | ≡ 0 | 1 | 5 | 3 | 7 | 5 | 9 | 7 | 11 |
+| K: leading order in h | 1 | 1 | 3 | 3 | 5 | 5 | 7 | 7 | 9 |
+
+- **P1 held:** Δᵏ(1) = 0 for every k, both weightings.
+- **Q1: the u/d split appears at the first jet, k* = 1**, at order h¹. Pattern: odd k at order hᵏ;
+  even k ≥ 2 at order h^{k+3}, and every even-k plain Δᵏ carries the factor
+  (q² + q + 1)(q² − q + 1) = q²[3]_q.
+- **Q2(a) held (negative):** the C² model has two flavour states per strand at every k; no third
+  state appears.
+- **Q2(b): no strange marker at k = 5.** Neither [5]_q nor J_{T(2,5)} divides Δ⁵. Δ⁵ does have an
+  irreducible factor not seen at k ≤ 4, but so does every k ≥ 1, so k = 5 is not singled out.
+- **The §36 conflict does not resolve along this direction.** Every 𝒟ᵏ term vanishes at q = 1 (P1),
+  so no jet order can change the q = 1 value of the degree-0 charge term S. Higher jets add
+  h-suppressed n − p, never a q = 1 one. Scope (a): n = 3 only; the n-direction of the tower is open.
+
+**Lean (`QOU/MassTheory/GammaGammaVertexEigenvalues.lean`, generic field, sorry-free, lean-direct
+exit 0, standard axioms).** On the (2,1) Hoefsmit block: σ₁² = hσ₁ + 1 (`sigma1_hecke`),
+det(σ₀σ₁⁻¹) = 1 (`vertex_det`), tr = −(q⁴ − q² + 1)/q² (`vertex_trace`), Cayley–Hamilton
+(`vertex_cayley_hamilton`), and arccos(−1/2)/2π = 1/3 (`phase_at_one`). The q = 1 value is read
+from the closed-form trace; the Hoefsmit entries themselves are singular there.
+
+**The fifths (§36 H₆).** V₀V₂ = σ₀σ₁⁻¹σ₂σ₃⁻¹ permutes strands by (012)(234), a 5-cycle, hence the
+phases k/5 at q = 1. Its closure is the **unknot**: σ₃ occurs once, so Markov destabilisation
+removes it, then σ₂, then σ₁⁻¹, leaving σ₀ in B₂, whose closure is the unknot. V₁V₃ is the same
+up to shift. So the fifths are a permutation-cycle fact of a word that closes to the unknot; they
+are not the cinquefoil T(2,5) and not the k = 5 generation.
