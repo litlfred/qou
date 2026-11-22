@@ -265,14 +265,14 @@ not a binding prediction.
 | Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_{\text{AME}}$ (MeV) | Binding Error | $M_{\text{atom}}$ (MeV) | $M_{\text{atom}}$ Error |
 |---|---|---|---|---|---|---|---|
 | $\mathfrak{p}$ | 1 | 0 | — | — | — | 938.2721 | -0.00 $\pm$ 0.01 ppb |
-| $\mathfrak{n}$ | 1 | 1 | — | — | — | 939.5659 | +501.43 $\pm$ 0.47 ppb |
+| $\mathfrak{n}$ | 1 | 1 | — | — | — | 939.1085 | -486288.26 $\pm$ 0.47 ppb |
 | D | 2 | 1 | 2.2488 | 2.2246 | +1.09 $\pm$ 0.0000 % | — | — |
 | T | 3 | 2 | 8.4686 | 8.4818 | -0.16 $\pm$ 0.0000 % | — | — |
 | ${}^3$He | 3 | 1 | 7.4889 | 7.7180 | -2.97 $\pm$ 0.0000 % | — | — |
 | ${}^4$He | 4 | 2 | 29.9557 | 28.2957 | +5.87 $\pm$ 0.0000 % | — | — |
 | ${}^5$Li | 5 | 2 | — | 26.3280 | — | — | — |
 | ${}^6$Li | 6 | 3 | — | 31.9940 | — | — | — |
-| ${}^7$Li | 7 | 4 | — | 39.2452 | — | — | — |
+| ${}^7$Li | 7 | 4 | — | 39.2451 | — | — | — |
 
 _Computed by the extended canonical mass-table computation (method: auto); nucleon masses (m_p, m_n) from the canonical nucleon-mass routine. Paper hard floor (CAL-2 propagation): ~780 ppb._
 
