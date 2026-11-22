@@ -26,9 +26,10 @@ common faces).
 * `Subdivides K' K` — same underlying space, and every face of `K'` lies in a face of `K`.
 * `IsLinearOn K f` — `f` is affine on every face of `K`.
 * `simplicialNbhd K L` — the union of the faces of `K` meeting `L.space`.
-* `IsDerived K' K` — `K'` is a derived (barycentric-type) subdivision of `K`: one vertex `a σ` in the
-  open simplex of each face `σ` (a centre of mass with all weights positive), and the faces of `K'` are the `a`-images of the strict chains
-  `σ₀ ⊂ ⋯ ⊂ σₖ` of faces of `K`.
+* `IsDerived K' K` — `K'` is a derived (barycentric-type) subdivision of `K`: one vertex `a σ` in
+  the open simplex of each face `σ` (a centre of mass with all weights positive), and the faces of
+  `K'` are the `a`-images of the chains `σ₀ ⊂ ⋯ ⊂ σₖ` of faces of `K` (finite sets of faces totally
+  ordered by inclusion).
 * `IsRegularNbhd N P M` — `N` is a second-derived neighbourhood of `P` in `M`: `N` is the simplicial
   neighbourhood of `P` in a second derived `K''` of a triangulation `K` of `M` that contains a
   subcomplex triangulating `P` (Rourke–Sanderson, *Introduction to piecewise-linear topology*,
@@ -43,8 +44,8 @@ common faces).
 
 ## What is NOT proved here
 
-Existence of triangulations of compact PL sets, of derived subdivisions, and the uniqueness of
-regular neighbourhoods. These are classical (Rourke–Sanderson Ch. 2–3) and are not used by the
+Existence of triangulations of compact PL sets and the uniqueness of regular neighbourhoods
+(existence of derived subdivisions is `exists_derived` in `PLBarycentric.lean`). These are classical (Rourke–Sanderson Ch. 2–3) and are not used by the
 Alexander trick (`PLAlexander.lean`).
 -/
 
@@ -89,8 +90,8 @@ def IsDerived (K' K : SimplicialComplex ℝ E) : Prop :=
   ∃ a : Finset E → E,
     (∀ σ ∈ K.faces, ∃ w : E → ℝ, (∀ v ∈ σ, 0 < w v) ∧ ∑ v ∈ σ, w v = 1 ∧
       a σ = σ.centerMass w id) ∧
-    K'.faces = {s : Finset E | ∃ c : List (Finset E), c ≠ [] ∧ (∀ σ ∈ c, σ ∈ K.faces) ∧
-      c.IsChain (· ⊂ ·) ∧ (s : Set E) = {x | x ∈ c.map a}}
+    K'.faces = {s : Finset E | ∃ C : Finset (Finset E), C.Nonempty ∧ (∀ σ ∈ C, σ ∈ K.faces) ∧
+      (∀ σ ∈ C, ∀ τ ∈ C, σ ⊆ τ ∨ τ ⊆ σ) ∧ (s : Set E) = a '' (C : Set (Finset E))}
 
 /-- `N` is a **regular (second-derived) neighbourhood** of `P` in `M`. -/
 def IsRegularNbhd (N P M : Set E) : Prop :=

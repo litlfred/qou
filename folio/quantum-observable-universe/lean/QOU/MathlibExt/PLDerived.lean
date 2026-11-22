@@ -26,7 +26,8 @@ affinely independent, and distinct faces of the chain have distinct centres.
 ## What is NOT proved here
 
 That the derived subdivision is a simplicial complex with the same space as `K` (the
-intersection property and the covering). Those are the next steps.
+intersection property and the covering). For the barycentric choice `a = bary` these are proved in
+`PLBarycentric.lean` (`baryComplex`, `baryComplex_space`, `exists_derived`).
 -/
 
 namespace QOU.MathlibExt.PL

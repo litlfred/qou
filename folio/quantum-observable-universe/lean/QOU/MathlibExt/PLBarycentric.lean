@@ -3,6 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import QOU.MathlibExt.PLDerived
+import Mathlib.Algebra.BigOperators.Field
 
 set_option autoImplicit false
 
@@ -29,6 +30,9 @@ set_option autoImplicit false
   point.
 * `baryComplex K` — the barycentric subdivision is a simplicial complex: its faces are the images
   under `bary` of the chains of faces of `K`.
+* `exists_chain_of_weights`, `baryComplex_space` — it has the same space as `K`.
+* `baryComplex_faces_finite`, `subdivides_baryComplex`, `isDerived_baryComplex`.
+* `exists_derived` — **every triangulation of `P` has a derived subdivision triangulating `P`.**
 -/
 
 namespace QOU.MathlibExt.PL
@@ -342,5 +346,164 @@ noncomputable def baryComplex (K : SimplicialComplex ℝ E) : SimplicialComplex 
     exact (convex_convexHull ℝ _).sum_mem (fun σ hσ => hμ σ (mem_filter.mp hσ).1) hμ1'
       fun σ hσ => subset_convexHull ℝ _ ⟨mem_coe.mpr (mem_image_of_mem _ (mem_filter.mp hσ).1),
         mem_coe.mpr (mem_image_of_mem _ (key σ hσ))⟩
+
+/-- **Positive weights are a chain combination of barycentres** (peel off the least weight). -/
+theorem exists_chain_of_weights : ∀ (n : ℕ) (S : Finset E), S.card ≤ n → ∀ β : E → ℝ,
+    (∀ u ∈ S, 0 < β u) → ∑ u ∈ S, β u = 1 →
+    ∃ C : Finset (Finset E), C.Nonempty ∧ (∀ τ ∈ C, τ ⊆ S ∧ τ.Nonempty) ∧
+      (∀ σ ∈ C, ∀ τ ∈ C, σ ⊆ τ ∨ τ ⊆ σ) ∧ ∃ μ : Finset E → ℝ, (∀ τ ∈ C, 0 ≤ μ τ) ∧
+        ∑ τ ∈ C, μ τ = 1 ∧ ∑ u ∈ S, β u • u = ∑ τ ∈ C, μ τ • bary τ := by
+  intro n
+  induction n with
+  | zero =>
+    intro S hS β _ h1
+    rw [card_eq_zero.mp (Nat.le_zero.mp hS), sum_empty] at h1
+    exact absurd h1 zero_ne_one
+  | succ n ih =>
+  intro S hS β hβ h1
+  have hSne : S.Nonempty := by
+    rw [Finset.nonempty_iff_ne_empty]
+    rintro rfl
+    rw [sum_empty] at h1
+    exact zero_ne_one h1
+  obtain ⟨v0, hv0, hmin⟩ := S.exists_min_image β hSne
+  set m := β v0 with hm
+  set k : ℝ := (S.card : ℝ) with hk
+  have hk0 : 0 < k := Nat.cast_pos.mpr hSne.card_pos
+  set S' := S.filter (fun u => m < β u) with hS'def
+  have hS'S : S' ⊆ S := filter_subset _ _
+  have hv0S' : v0 ∉ S' := fun h => lt_irrefl _ (mem_filter.mp h).2
+  have hoff : ∀ u ∈ S, u ∉ S' → β u = m := fun u hu hu' =>
+    le_antisymm (not_lt.mp fun h => hu' (mem_filter.mpr ⟨hu, h⟩)) (hmin u hu)
+  have hsplit : ∑ u ∈ S, β u • u = m • ∑ u ∈ S, u + ∑ u ∈ S', (β u - m) • u := by
+    have e : ∑ u ∈ S', (β u - m) • u = ∑ u ∈ S, (β u - m) • u :=
+      sum_filter_of_ne fun u hu h => by
+        by_contra hlt
+        exact h (by rw [hoff u hu fun h' => hlt (mem_filter.mp h').2, sub_self, zero_smul])
+    rw [e, smul_sum, ← sum_add_distrib]
+    exact sum_congr rfl fun u _ => by rw [sub_smul]; abel
+  have hsplit1 : 1 = m * k + ∑ u ∈ S', (β u - m) := by
+    have e : ∑ u ∈ S', (β u - m) = ∑ u ∈ S, (β u - m) :=
+      sum_filter_of_ne fun u hu h => by
+        by_contra hlt
+        exact h (by rw [hoff u hu fun h' => hlt (mem_filter.mp h').2, sub_self])
+    rw [e, sum_sub_distrib, sum_const, nsmul_eq_mul, h1, hk]
+    ring
+  have hbary : m • ∑ u ∈ S, u = (m * k) • bary S := by
+    rw [bary, smul_smul, mul_assoc, mul_inv_cancel₀ hk0.ne', mul_one]
+  rcases S'.eq_empty_or_nonempty with hS'e | hS'ne
+  · refine ⟨{S}, singleton_nonempty _, fun τ hτ => by
+      rw [mem_singleton.mp hτ]; exact ⟨subset_refl _, hSne⟩, fun σ hσ τ hτ => by
+      rw [mem_singleton.mp hσ, mem_singleton.mp hτ]; exact Or.inl (subset_refl _),
+      fun _ => 1, fun _ _ => zero_le_one, by simp, ?_⟩
+    have hmk : m * k = 1 := by
+      rw [hS'e, sum_empty, add_zero] at hsplit1
+      exact hsplit1.symm
+    rw [hsplit, hS'e, sum_empty, add_zero, hbary, hmk, sum_singleton]
+  · set r := ∑ u ∈ S', (β u - m) with hr
+    have hr0 : 0 < r := sum_pos (fun u hu => sub_pos.mpr (mem_filter.mp hu).2) hS'ne
+    have hcard : S'.card ≤ n := by
+      have := card_lt_card (ssubset_of_subset_of_ne hS'S fun h => hv0S' (h ▸ hv0))
+      omega
+    obtain ⟨C', hC'ne, hC', hch', μ', hμ', hμ'1, he'⟩ := ih S' hcard (fun u => (β u - m) / r)
+      (fun u hu => div_pos (sub_pos.mpr (mem_filter.mp hu).2) hr0)
+      (by
+        show ∑ u ∈ S', (β u - m) / r = 1
+        rw [← Finset.sum_div, ← hr, div_self hr0.ne'])
+    have hSC' : S ∉ C' := fun h => hv0S' ((hC' S h).1 hv0)
+    refine ⟨insert S C', insert_nonempty _ _, ?_, ?_,
+      fun τ => if τ = S then m * k else r * μ' τ, ?_, ?_, ?_⟩
+    · intro τ hτ
+      rcases mem_insert.mp hτ with rfl | hτ
+      · exact ⟨subset_refl _, hSne⟩
+      · exact ⟨(hC' τ hτ).1.trans hS'S, (hC' τ hτ).2⟩
+    · intro σ hσ τ hτ
+      rcases mem_insert.mp hσ with h1 | h1 <;> rcases mem_insert.mp hτ with h2 | h2
+      · rw [h1, h2]
+        exact Or.inl (subset_refl _)
+      · rw [h1]
+        exact Or.inr ((hC' τ h2).1.trans hS'S)
+      · rw [h2]
+        exact Or.inl ((hC' σ h1).1.trans hS'S)
+      · exact hch' σ h1 τ h2
+    · intro τ hτ
+      show 0 ≤ if τ = S then m * k else r * μ' τ
+      split_ifs with h
+      · exact mul_nonneg (hβ v0 hv0).le hk0.le
+      · exact mul_nonneg hr0.le (hμ' τ ((mem_insert.mp hτ).resolve_left h))
+    · have hne : ∀ τ ∈ C', τ ≠ S := fun τ hτ h => hSC' (h ▸ hτ)
+      show (∑ τ ∈ insert S C', if τ = S then m * k else r * μ' τ) = 1
+      rw [sum_insert hSC', if_pos rfl, sum_congr rfl fun τ hτ => if_neg (hne τ hτ), ← mul_sum,
+        hμ'1, mul_one, ← hsplit1]
+    · have hne : ∀ τ ∈ C', τ ≠ S := fun τ hτ h => hSC' (h ▸ hτ)
+      show ∑ u ∈ S, β u • u = ∑ τ ∈ insert S C', (if τ = S then m * k else r * μ' τ) • bary τ
+      rw [sum_insert hSC', if_pos rfl]
+      have e2 : ∑ τ ∈ C', (if τ = S then m * k else r * μ' τ) • bary τ =
+          r • ∑ τ ∈ C', μ' τ • bary τ := by
+        rw [smul_sum]
+        exact sum_congr rfl fun τ hτ => by rw [if_neg (hne τ hτ), mul_smul]
+      rw [e2, ← he', hsplit, hbary, smul_sum]
+      congr 1
+      refine sum_congr rfl fun u _ => ?_
+      rw [smul_smul]
+      congr 1
+      field_simp
+
+/-- **The barycentric subdivision has the same space.** -/
+theorem baryComplex_space (K : SimplicialComplex ℝ E) : (baryComplex K).space = K.space := by
+  ext x
+  simp only [SimplicialComplex.space, mem_iUnion, exists_prop]
+  constructor
+  · rintro ⟨s, ⟨C, ⟨hne, hK, hch⟩, rfl⟩, hx⟩
+    obtain ⟨M, hMC, hM⟩ := exists_max_of_chain hne hch
+    exact ⟨M, hK M hMC, convexHull_image_bary_subset
+      (fun σ hσ => ⟨hM σ hσ, K.nonempty_of_mem_faces (hK σ hσ)⟩) hx⟩
+  · rintro ⟨σ, hσ, hx⟩
+    obtain ⟨β, hβ0, hβ1, hβx⟩ := Finset.mem_convexHull'.mp hx
+    set S := σ.filter (fun u => β u ≠ 0) with hSdef
+    have hS1 : ∑ u ∈ S, β u = 1 := by rw [hSdef, sum_filter_ne_zero, hβ1]
+    have hSx : ∑ u ∈ S, β u • u = x := by
+      have e := sum_filter_of_ne (s := σ) (f := fun u => β u • u) (p := fun u => β u ≠ 0)
+        fun u _ h hb => h (by dsimp only; rw [hb, zero_smul])
+      rw [hSdef, e, hβx]
+    obtain ⟨C, hne, hC, hch, μ, hμ, hμ1, he⟩ := exists_chain_of_weights S.card S le_rfl β
+      (fun u hu => lt_of_le_of_ne (hβ0 u (mem_filter.mp hu).1) (Ne.symm (mem_filter.mp hu).2))
+      hS1
+    have hSσ : S ⊆ σ := filter_subset _ _
+    refine ⟨C.image bary, ⟨C, ⟨hne, fun τ hτ => K.down_closed hσ ((hC τ hτ).1.trans hSσ)
+      (hC τ hτ).2.ne_empty, hch⟩, rfl⟩, ?_⟩
+    rw [← hSx, he]
+    exact (convex_convexHull ℝ _).sum_mem hμ hμ1 fun τ hτ =>
+      subset_convexHull ℝ _ (mem_coe.mpr (mem_image_of_mem _ hτ))
+
+theorem baryComplex_faces_finite {K : SimplicialComplex ℝ E} (hK : K.faces.Finite) :
+    (baryComplex K).faces.Finite := by
+  refine ((hK.toFinset.powerset : Finset (Finset (Finset E))).finite_toSet.image
+    (fun C => C.image bary)).subset ?_
+  rintro s ⟨C, ⟨-, hKC, -⟩, rfl⟩
+  exact ⟨C, mem_coe.mpr (mem_powerset.mpr fun σ hσ => hK.mem_toFinset.mpr (hKC σ hσ)), rfl⟩
+
+theorem subdivides_baryComplex (K : SimplicialComplex ℝ E) : Subdivides (baryComplex K) K := by
+  refine ⟨baryComplex_space K, ?_⟩
+  rintro s ⟨C, ⟨hne, hK, hch⟩, rfl⟩
+  obtain ⟨M, hMC, hM⟩ := exists_max_of_chain hne hch
+  exact ⟨M, hK M hMC, convexHull_image_bary_subset
+    (fun σ hσ => ⟨hM σ hσ, K.nonempty_of_mem_faces (hK σ hσ)⟩)⟩
+
+theorem isDerived_baryComplex (K : SimplicialComplex ℝ E) : IsDerived (baryComplex K) K := by
+  refine ⟨bary, fun σ hσ => bary_eq_centerMass (K.nonempty_of_mem_faces hσ), ?_⟩
+  ext s
+  constructor
+  · rintro ⟨C, ⟨hne, hK, hch⟩, rfl⟩
+    exact ⟨C, hne, hK, hch, coe_image⟩
+  · rintro ⟨C, hne, hK, hch, h⟩
+    exact ⟨C, ⟨hne, hK, hch⟩, coe_injective (by rw [h, coe_image])⟩
+
+/-- **Derived subdivisions exist**: a triangulation of `P` has a derived subdivision that also
+triangulates `P`. -/
+theorem exists_derived {K : SimplicialComplex ℝ E} {P : Set E} (hK : Triangulates K P) :
+    ∃ K' : SimplicialComplex ℝ E, IsDerived K' K ∧ Subdivides K' K ∧ Triangulates K' P :=
+  ⟨baryComplex K, isDerived_baryComplex K, subdivides_baryComplex K,
+    baryComplex_faces_finite hK.1, (baryComplex_space K).trans hK.2⟩
 
 end QOU.MathlibExt.PL
