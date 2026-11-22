@@ -105,6 +105,7 @@ export default chapter({
           label: "sec:categorical-braiding-markov-trace-nf",
           blocks: [
             "markov-trace-inductive-limit",
+            "affine-hecke-homology-prior-art",
             "trm-hopf-sigma1-sq-closed-form",
             "trm-hopf-sigma1-sq-closed-form-table1-data",
             "trm-hopf-sigma1-sq-closed-form-proof",

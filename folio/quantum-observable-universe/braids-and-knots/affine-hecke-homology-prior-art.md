@@ -1,0 +1,10 @@
+**Remark (prior art: Hochschild homology of affine Hecke algebras is independent of $q$).**
+Let $\mathcal{R}$ be a based root datum with finite Weyl group $W$, let $T = \mathrm{Hom}_{\mathbb{Z}}(X, \mathbb{C}^\times)$, and let $\mathcal{H}(\mathcal{R}, q)$ be the associated affine Hecke algebra with positive, possibly unequal, parameters $q$. Solleveld constructs families of representations $\pi(w, i, t, \epsilon)$ of $\mathcal{H}(\mathcal{R}, q^\epsilon)$ and proves that, for $\epsilon \notin \sqrt{-1}\,\mathbb{R}^\times$, two of them have the same trace exactly when they have the same $w$ and $i$ and their $t$ lie in one $Z_W(w)$-orbit \cite[Theorem 1(d), p. 3]{solleveld2022}. For the same $\epsilon$ the Hochschild homology is
+$$
+HH_*\big(\mathcal{H}(\mathcal{R}, q^\epsilon)\big) \cong \Omega^*(\widetilde{T})^W,
+$$
+the $W$-invariant algebraic differential forms on the extended quotient of $T$ by $W$; only the action of the centre depends on $q^\epsilon$ \cite[Theorem 2, pp. 3--4]{solleveld2022}. The construction of the families was found in 2021 to have problems, which the author discusses on pages 16, 18, 19 and 22 \cite[Abstract]{solleveld2022}.
+
+Since traces on an algebra are the linear functionals on $HH_0$, this says that for an affine Hecke algebra the space of trace functionals has a description that does not move with $q$, so any $q$-dependence of a trace value comes from the functional chosen and not from the algebra.
+
+The [inductive-limit trace](#rem:markov-trace-inductive-limit) is not covered by this. Solleveld's algebras have a fixed root datum of finite rank, and for each $n$ the finite Hecke algebra $H_n(q)$ is a subalgebra of the affine Hecke algebra of type $A_{n-1}$. The union $H_\infty(q) = \bigcup_n H_n(q)$ along the strand-adding inclusions is not an affine Hecke algebra of any root datum, so these theorems do not apply to it without a further argument. The note in the Lean scaffold that names the open construction as an inductive limit on the affine Hecke algebra should be read with that in mind.
