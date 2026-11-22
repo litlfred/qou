@@ -8,9 +8,9 @@ group $G_q = \mathrm{Aut}^{\otimes}(\tau)$
 The fibre functor $\tau \colon \mathbf{C} \to \mathrm{Vect}_R$ is
 $R$-linear and exact, sending $\mathbf{1}$ to $R$ and the
 [Frobenius pairing](#def:frobenius-pairing) on $A$ to a non-degenerate
-$R$-bilinear form on $\tau(A)$.  At each finite level, the Frobenius trace
+$R$-bilinear form on $\tau(A)$.  At each finite level, the unit–counit trace
 $\mathrm{tr}_n(\alpha) = (\varepsilon \circ \alpha \circ \eta)(\mathbf{1})$,
-where $\eta$ and $\varepsilon$ are the Frobenius unit and counit, is
+where $\eta$ and $\varepsilon$ are the unit and counit of the Hopf structure on $A_n$, is
 $G_q$-invariant by naturality (they are morphisms in $\mathbf{C}$,
 hence invariant under monoidal automorphisms of $\tau$).
 The :refterm[descent]{#descent} homomorphisms $\mathfrak{d}_n$ ([:refterm[descent]{#descent}](#lem:descent)) are

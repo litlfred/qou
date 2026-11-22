@@ -1750,6 +1750,10 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Lickorish 1997 (knot theory textbook) ─────────────────────
   { id: "lickorish1997" },
 
+  // ── Moise 1952 / Bing 1954 — TOP vs PL comparison for tame links (#8902) ──
+  { id: "moise1952" },
+  { id: "bing1954" },
+
   // ── Washington (1997) — Introduction to Cyclotomic Fields ─────
   { id: "washington1997" },
 
@@ -2275,6 +2279,28 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Borodin–Okounkov–Olshanski 2000 (descent DPP / discrete Bessel kernel) ──
   { id: "borodin-okounkov-olshanski2000" },
+  { id: "brundan2017" },
+  { id: "tonini2014" },
+  { id: "tonini2020" },
+  { id: "chattopadhyay-dutta-mukherjee-neetu2019" },
+  { id: "dutta-mukherjee-neetu-parihar2021" },
+  { id: "aishwarya-rotem2023" },
+  { id: "vanderveen2008cabling" },
+  { id: "black2010" },
+  { id: "parkinson2011" },
+  { id: "garoufalidis-thurston-zickert2011" },
+  { id: "lasy2012" },
+  { id: "marin-wagner2014" },
+  { id: "giambrone2014" },
+  { id: "bettin-drappeau2019" },
+  { id: "gresnigt-marciano-zappala2021" },
+  { id: "lentner-mombelli2023" },
+  { id: "zhao2024markov" },
+  { id: "jing-liu2025" },
+  { id: "tolmachov-zhylinskyi2025" },
+  { id: "hikami-kirillov2003" },
+  { id: "murakami2000yokota" },
+  { id: "etingof-nikshych-ostrik2002" },
 
   // ── Johansson 2001 (discrete OPE ensembles / Plancherel edge + Bessel bounds) ──
   { id: "johansson2001" },
@@ -2864,6 +2890,14 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "deligne1970" },
   { id: "zagier1991" },
   { id: "mcphail-snyder-2025" },
+  { id: "helmholtz1858" },
+  { id: "thomson1867vortexatoms" },
+  { id: "tait1877knots" },
+  { id: "maxwell1873treatise2" },
+  { id: "kragh2002vortexatom" },
+  { id: "silver2006knotorigins" },
+  { id: "przytycki2007knothistory" },
+  { id: "faddeevniemi1997" },
 ];
 
 export const references: Reference[] = assemble(ORDER);
