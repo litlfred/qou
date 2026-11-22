@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-22T15:37:08Z
+updated_at: 2026-11-22T22:06:00Z
 parent: qou-wxhi
 ---
 
@@ -51,3 +51,5 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 - Linked-pair excess, Hopf± and the electron closure: order 1, with coefficient ±3 or ±12, never 1. The Hopf⁺ excess is −q⁻²·h·[3]/[2].
 - No equality with w. The weight stays a definition: w = ℏ_q·(ℏ_q c_q)².
 - The missing piece is a canonical object giving the one-sided deficit ℏ_q = h/(1+q).
+
+2026-11-22 (W6, branch claude/energy-scale-cal-map-2026-11-22, commit 5438997b7, no PR yet): QOU/Observations/EnergyScaleMap.lean, sorry-free. The 𝔈→MeV map allowed by CAL-1/2/3 is Φ(𝔈)=m_e·𝔈/𝔈_e at q₀ (CAL-1 the MeV value, CAL-2 the point q₀, CAL-3 nothing here). c_q² cancels in it (energy_map_eq_mass_map); the −99 % reading is a mixing of an energy with the electron's mass (mixed_map). The calibrations cannot fix the unit/weight split nor whether c_q² sits in the weights (gauge, Chart.matches_rescale). The one open input is the electron's categorical weight 𝔈_e: the trace pipeline (σ₀σ₁σ₀, finite at q=1) and the mass formula (ℏ_q², order 2) use different ones. E₀/m_e = 1/(q(q−1)) is not a ratio of framed braid-word traces (E0_not_trace_ratio). Audit docs/audits/2026-11-22-energy-scale-cal-map.md.
