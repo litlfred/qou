@@ -30,7 +30,7 @@ both, and `rowLen_anti` is the half that has no counterpart in the tableau's own
 Structure only. The **content** of `toListTableau S` — that its entries are exactly `1 … |μ|`, and
 the shift to the `0`-based timestamps brick 32's `Q` hypotheses use — is the next brick, and the
 round trip `listStandardYT (toListTableau S) = S` is past it. Nothing here claims `rskPair` is
-bijective; `RSKBurnsideHolds` for general `n` remains open.
+bijective; at the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 
