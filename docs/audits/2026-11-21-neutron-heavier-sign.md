@@ -388,3 +388,55 @@ Comparison only: observed Q_β(³H) = 18.59 keV and Q_β(n) = 782.3 keV.
 - With `B_log` instead of `B_diff`, B(³He) − B(³H) lies between −3.8 and 0 keV. The conclusion is
   the same.
 - No A = 6 or A = 8 binding values exist yet, so ⁶He and ⁸Li are not given.
+
+## §25 The Coulomb energy, and the ³H row with it (2026-11-22, owner: "we're missing the coulomb energy")
+
+The §24 chain binds by about 1 keV and carries no electromagnetic term. The repo's Coulomb term is
+`computations/coulomb_energy.py`:
+
+E_C(Z, A) = (3/5)·Z(Z−1)·α_EM·ℏc / R,  R = λ̄_π·A^{1/3}.
+
+**Status of each input.**
+
+| input | status | why |
+|---|---|---|
+| Z(Z−1) | derived | pair count of Z discrete charges; `CoulombFromCrossingCounts` rewrites it as (n₊−n₋)(n₊−n₋−4)/16 |
+| α_EM = 1/(q[9]_q[10]_q·tower) | conditional | bare value is −0.155 %; the tower needs the Gram matrix Gq, which is a parameter with no instance of `ChernSimonsCorrectionConjecture` (beans qou-gbsa, qou-aemx) |
+| ℏc | external | unit conversion |
+| coefficient 1 on λ̄_π | selection | the data want 0.985 ± 0.069; no derivation fixes it |
+| A^{1/3} | assumption | liquid-drop scaling; the A = 3 data want exponents 0.43 (³H) and 0.53 (³He) |
+| 3/5 | imported | uniform-ball self-energy; nothing in the braid picture gives a charge density |
+
+So E_C is a standard-physics estimate with one derived-but-conditional input, not a derivation.
+At A = 3 it gives E_C(³He) = 0.847 MeV against the 0.764 MeV the masses require (+10.95 %).
+
+**³H with E_C.** B(³He) loses E_C, so every §24 row moves by −847.4 keV:
+
+| ³H order | ³He order | Q_β(³H), chain only | Q_β(³H), chain + E_C |
+|---|---|---:|---:|
+| pnn | ppn / pnp | 324.84 | −522.56 |
+| npn / nnp | ppn / pnp | 325.11 | −522.29 |
+| pnn | npp | 324.48 | −522.92 |
+| npn / nnp | npp | 324.75 | −522.65 |
+
+Comparison only: observed 18.59 keV.
+
+- The sign is now wrong: ³H would be stable and ³He would decay.
+- The cause is the neutron term, not the Coulomb term. With the observed Q_β(n) = 782.3 keV the
+  same formula gives 782.3 − 763.8 = 18.5 keV. The model's 325.43 keV is short by 457 keV, and E_C
+  is only 84 keV high. Fixing the Coulomb inputs cannot rescue this row.
+
+**What is proved in Lean about Coulomb.**
+
+- `QOU.Hecke.BoundedDegreeCoulomb`: a bounded-degree bond graph cannot carry a Z(Z−1) term. Coulomb
+  must come from a long-range pair sum, not from the nearest-neighbour bonds the γγ chain uses.
+- `QOU.MassTheory.CoulombFromCrossingCounts`: with n₊ − n₋ = 4Z, 16·Z(Z−1) = (n₊−n₋)(n₊−n₋−4).
+  This is arithmetic. That the half-writhe *is* the charge is the open identification in
+  `def:coulomb-charge`.
+- `QOU.MassTheory.NeutronProtonEMSign`: Σ_{i<j} QᵢQⱼ is 0 for uud and −1/3 for udd, so a pair
+  term ∝ QᵢQⱼ lowers m_n − m_p.
+
+**What is missing, and the next target.** No result derives a pair term ∝ Q_A·Q_B between two
+separate nucleon blocks from the ruled photon. That is the physics the formula above imports.
+§26 pre-registers the test: exchange the ruled photon between two V³ blocks and decompose the result
+by charge.
