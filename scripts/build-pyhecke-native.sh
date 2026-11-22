@@ -33,6 +33,13 @@ ROOT="$(git rev-parse --show-toplevel)"
 # seconds; building takes ~2.5 min. The trace-convention gate below runs on the
 # installed binary either way, so a cached wheel is checked as hard as a fresh
 # one. Set PYHECKE_NATIVE_NO_CACHE=1 to force a build.
+#
+# Restoring is on by default; SEEDING IS OPT-IN. A fresh build writes a new
+# member to origin only when PYHECKE_NATIVE_PUSH=1, the same `<ENV>_PUSH=1`
+# convention computations/_branch_cache.py uses (PR #9044). This script runs at
+# every SessionStart, so a default seed would push from every container that
+# misses the cache. PYHECKE_NATIVE_NO_SEED=1 is kept for back-compat and
+# overrides PYHECKE_NATIVE_PUSH=1 (owner approval 2026-11-22, issue #9054).
 BUILT=0
 WHL=""
 if [ "${PYHECKE_NATIVE_NO_CACHE:-0}" != 1 ]; then
@@ -115,13 +122,21 @@ if d > 1e-15:
 print("  -> convention D confirmed.")
 PYGATE
 
-# A fresh build that passed the gate is worth keeping. Seeding is best-effort:
-# a dirty source tree has no key and is refused, and a member that already
-# exists is never overwritten (scripts/wheel-cache.sh).
-if [ "$BUILT" = 1 ] && [ "${PYHECKE_NATIVE_NO_SEED:-0}" != 1 ]; then
-  restore  # put the github->mirror rewrite back first: the seed pushes to origin
-  "$ROOT/scripts/wheel-cache.sh" seed pyhecke-native "$WHL" \
-    || echo "[pyhecke-native] (wheel not cached; the build itself is fine)"
+# A fresh build that passed the gate can be kept, but only on request: seeding
+# pushes to origin, so it needs PYHECKE_NATIVE_PUSH=1 (opt-in, see the header).
+# PYHECKE_NATIVE_NO_SEED=1 still wins over it. Seeding is best-effort: a dirty
+# source tree has no key and is refused, and a member that already exists is
+# never overwritten (scripts/wheel-cache.sh).
+if [ "$BUILT" = 1 ]; then
+  if [ "${PYHECKE_NATIVE_NO_SEED:-0}" = 1 ]; then
+    echo "[pyhecke-native] not seeding the wheel cache (PYHECKE_NATIVE_NO_SEED=1)"
+  elif [ "${PYHECKE_NATIVE_PUSH:-0}" = 1 ]; then
+    restore  # put the github->mirror rewrite back first: the seed pushes to origin
+    "$ROOT/scripts/wheel-cache.sh" seed pyhecke-native "$WHL" \
+      || echo "[pyhecke-native] (wheel not cached; the build itself is fine)"
+  else
+    echo "[pyhecke-native] built wheel not pushed to the wheel cache (set PYHECKE_NATIVE_PUSH=1 to seed origin)"
+  fi
 fi
 
 echo "[pyhecke-native] done — Hecke-dependent producers now run at full precision."
