@@ -1854,6 +1854,7 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.Mass.BridgeADeligneGauge
 import QOU.Mass.BridgeADeligneKZ
+import QOU.Mass.BridgeAStokesNBody
 import QOU.Mass.KZHolonomy.FlatCocycle
 import QOU.Mass.KZHolonomy.FlatGauge
 import QOU.Mass.KZHolonomy.ODETransport
