@@ -534,7 +534,7 @@ dimensionless circuit, not a distance between particles, and C shows that strand
 supply one either. The length in E_C is λ̄_π, which comes from the CAL-3 calibration.
 
 **Scope.** Scope-(a) negatives. A and C are computed at n = 6 and n ≤ 9 at two rational q, not proved for
-all q or all n. The α + β = 1 identity is measured exactly at two q and is not proved. Tower status:
+all q or all n. The α + β = 1 identity was measured exactly at two q; it holds over Q(q) at n = 6 (`docs/audits/2026-11-22-coulomb-all-q-and-nucleon-writhe.md`). Tower status:
 A covers every element at n = 6 (all orders in φ there). The tower in n is open.
 
 ## §28 Gaudin / KZ coupling on the surface: isospin, not Coulomb; what Coulomb needs (2026-11-22, owner: "Yes, go ahead" on the Bring-surface test)
@@ -616,7 +616,7 @@ for every U_q-commuting core, not only V = σ₀σ₁⁻¹. The hypotheses thems
 representation theory and are not proved in the file. For M, pp = nn at generic q is the symbolic
 computation only. Both G-q and M are invariant under the map
 u ↔ d together with i ↦ 5 − i (checked exactly at q = 7/5); a general proof of pp = nn from that
-symmetry is open. Tower status: n = 6 only; the tower in n is open. No empirical
+symmetry is open. Both pp = nn identities, and the §27A identity α + β = 1, hold exactly over Q(q) at n = 6: `docs/audits/2026-11-22-coulomb-all-q-and-nucleon-writhe.md` (computer algebra, pre-registered). Tower status: n = 6 only; the tower in n is open. No empirical
 input, no fit.
 
 **Owner decision this raises (not taken).** Whether the model adds a U(1)_em grading (strand charge
