@@ -330,6 +330,7 @@ export default chapter({
             "qdifference-kernel-prolongation-symbol",
             "ramanujan-equation-connection-prior-art",
             "birkhoff-qdifference-riemann-problem-prior-art",
+            "square-series-multisummability-prior-art",
             "c1-ggm-bar-parity-faces",
             "c1-theta-zero-locus-and-pole-divisor",
             "prolonged-periods-fixed-depth",
