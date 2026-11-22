@@ -29,7 +29,11 @@ same cell read as a mass through `def:mass-energy` (`𝔈 = 𝔪 c_q²`), i.e. d
 
 No empirical input enters any statement here.
 -/
-import Mathlib
+import Mathlib.GroupTheory.GroupAction.Quotient
+import Mathlib.Algebra.Group.Subgroup.ZPowers.Basic
+import Mathlib.SetTheory.Cardinal.Finite
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Exp
 
 namespace QOU.MassTheory.CategoricalMassAtOne
 
@@ -55,28 +59,27 @@ lemma fixed_zpow {π : Equiv.Perm (Fin n)} (f : Fin n → Fin 2)
   induction k using Int.induction_on generalizing i with
   | zero => simp
   | succ k ih =>
-      rw [zpow_add_one, Equiv.Perm.mul_apply, hf, ih]
+      rw [zpow_add_one, Equiv.Perm.mul_apply, ih, hf]
   | pred k ih =>
-      rw [zpow_sub_one, Equiv.Perm.mul_apply]
+      rw [zpow_sub_one, Equiv.Perm.mul_apply, ih]
       have h := hf (π⁻¹ i)
       simp only [Equiv.Perm.apply_inv_self] at h
-      rw [ih, ← h]
+      exact h.symm
 
 /-- A fixed colouring is the same thing as a colouring of the components. -/
 noncomputable def fixedColouringEquiv (π : Equiv.Perm (Fin n)) :
     FixedColouring π ≃ (Components π → Fin 2) where
   toFun f := Quotient.lift f.1 (by
     intro a b hab
-    rw [MulAction.orbitRel_apply] at hab
-    obtain ⟨⟨g, hg⟩, rfl⟩ := hab
+    have hab' : a ∈ MulAction.orbit (Subgroup.zpowers π) b := hab
+    obtain ⟨⟨g, hg⟩, rfl⟩ := hab'
     obtain ⟨k, rfl⟩ := Subgroup.mem_zpowers_iff.mp hg
     exact fixed_zpow f.1 f.2 k b)
   invFun g := ⟨fun i => g ⟦i⟧, by
     intro i
-    congr 1
-    apply Quotient.sound
-    rw [MulAction.orbitRel_apply]
-    exact ⟨⟨π, Subgroup.mem_zpowers π⟩, rfl⟩⟩
+    have h : π i ∈ MulAction.orbit (Subgroup.zpowers π) i :=
+      ⟨⟨π, Subgroup.mem_zpowers π⟩, rfl⟩
+    exact congrArg g (Quotient.sound h)⟩
   left_inv f := by
     rfl
   right_inv g := by
@@ -98,7 +101,7 @@ theorem mass_at_one (π : Equiv.Perm (Fin n)) :
       = 2 ^ Nat.card (Components π) := by
   rw [card_fixedColouring]
   push_cast
-  field_simp
+  exact mul_div_cancel₀ _ (pow_ne_zero _ two_ne_zero)
 
 /-- **Equal masses at q = 1.** Two braids (possibly on different numbers of strands)
 whose closures have the same number of components have equal categorical mass at
@@ -123,7 +126,6 @@ theorem e0_eq (m q : ℝ) (hq : 1 < q) :
   have h1 : q - 1 ≠ 0 := by linarith
   have h2 : q ≠ 0 := by linarith
   field_simp
-  ring
 
 /-- **The cell read as a mass.** Dividing the cell energy `2 E₀ log q` by `c_q²`
 (`def:mass-energy`, `𝔈 = 𝔪 c_q²`) gives `2 m ℏ_q log q`. -/
@@ -164,7 +166,7 @@ theorem cell_energy_ratio_ge (q : ℝ) (hq : 1 < q) :
     have : (q - 1) / q = 1 - q⁻¹ := by field_simp
     rw [this]; linarith
   rw [div_le_div_iff₀ (by positivity) (by positivity)]
-  have : 2 * (q * (q - 1)) = 2 * q ^ 2 * ((q - 1) / q) := by field_simp; ring
+  have : 2 * (q * (q - 1)) = 2 * q ^ 2 * ((q - 1) / q) := by field_simp
   rw [this]
   have hq2 : 0 < 2 * q ^ 2 := by positivity
   nlinarith [mul_le_mul_of_nonneg_left hlog hq2.le]

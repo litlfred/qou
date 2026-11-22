@@ -9,7 +9,9 @@ owner working assumption m_p = m_n at q = 1 (bean `qou-az9l`). Two questions:
 
 Probe: [`computations/qbeta/np_gap_q_one_probe.py`](../../computations/qbeta/np_gap_q_one_probe.py)
 (Part A exact over ℚ(q) with sympy; Part B mpmath at 40 digits).
-Lean: [`QOU/MassTheory/CategoricalMassAtOne.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/CategoricalMassAtOne.lean).
+Lean: [`QOU/MassTheory/CategoricalMassAtOne.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/CategoricalMassAtOne.lean)
+(`scripts/lean-verify.sh` exit 0, no `sorry`, `#print axioms` gives propext, Classical.choice, Quot.sound only).
+Precision gates (`--changed`): no report names the probe. The red ratchets are the same tree-wide ones PR #8955 reported.
 
 ## 1. Answer to question 2: yes, the categorical mass at q = 1 counts components
 
