@@ -1714,3 +1714,33 @@ scale the comparison with α_s(M_Z) is not well posed. `confinement-curvature-ra
 string tension through the filtration route that `qou-hnri` declared dead; that is flagged for the
 owner. Proposed beans: B1 scale variable, B2 β₀ bridge, B3 Wilson-loop object, B4 heat-kernel time
 as RG time. Not created.
+
+## §54 Lean: the colour structure constant commutator (commit b657a4f47a0)
+
+`QOU/Braiding/ColourStructureConstantCommutator.lean`. Sorry-free; lean-direct `-DautoImplicit=false
+-s 65536` exit 0; axioms propext, Classical.choice, Quot.sound; Mathlib-only imports.
+
+**(A) Commutator and Fierz identity.**
+- `omega12_omega23_commutator`: [Ω₁₂,Ω₂₃] = ¼(C − C²) over any field.
+- `fierz`: the Fierz identity for explicit Gell-Mann matrices, over a char-0 field with i² = −1 and
+  r² = 1/3. `gellMann_hyps_satisfiable` shows ℂ satisfies these hypotheses.
+- `omega12GM_eq`, `omega23GM_eq`, `omega13GM_eq`: Σ_a T^a⊗T^a = (P − 1/3)/2.
+- `fGM_eq_neg_quarter_cyc`: F = −¼(C − C²).
+- `omega_commutator_eq_neg_fGM`: [Ω₁₂,Ω₂₃] = −F.
+
+**(B) F-coefficients.** fCoef X = ⟨F,X⟩/⟨F,F⟩, using HS-orthogonality to the other permutation
+operators.
+- `fCoef_letter`: σ₀σ₁⁻¹ has fCoef −(q+1)²/(2q).
+- `fCoef_core`: V³ has fCoef −(q−1)²(q+1)⁴(q⁴+1)/(2q⁵).
+- `fCoef_s0s1` gives the same value as σ₀σ₁⁻¹. `fCoef_s1invS0` gives the opposite sign.
+  `fCoef_s0s1s0` gives 0.
+
+These match the §49 probe.
+
+**Not formalised.**
+- That the Haar projection equals fCoef. This needs Schur–Weyl (the commutant is spanned by
+  permutations) and the Haar average being the HS-orthogonal projection.
+- The explicit f^{abc} and d^{abc} tables.
+- §49 M2, M3 and M5.
+
+No gluon is selected.
