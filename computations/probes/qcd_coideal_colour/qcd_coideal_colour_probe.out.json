@@ -1,0 +1,330 @@
+{
+ "Q2a_AI_commutant_dim_on_V": 1,
+ "Q2a_AI_commutant_basis_on_V": [
+  "Matrix([[c1**4*c2**3*q**7, 0, 0], [0, c1**4*c2**3*q**7, 0], [0, 0, c1**4*c2**3*q**7]])"
+ ],
+ "Q2c_AI_invariant_twists_V_dim": 1,
+ "Q2c_AI_invariant_twists_V": [
+  "Matrix([[c1**4*c2**3*q**3, 0, 0], [0, c1**4*c2**3*q**5, 0], [0, 0, c1**4*c2**3*q**7]])"
+ ],
+ "Q2c_AI_invariant_twists_VV_dim": 3,
+ "Q2d_AI_pivotal_twist": {
+  "z": "q**5/((q**2 - q + 1)*(q**2 + q + 1))",
+  "trace_ok": "True",
+  "markov_ok": "True",
+  "alt_weight": "q**6/((q**2 - q + 1)**3*(q**2 + q + 1)**3)",
+  "tr1": "(q**2 - q + 1)*(q**2 + q + 1)/q**4"
+ },
+ "Q2e_AI_Dtwist_c_solutions": {
+  "(0, 1)": [],
+  "(0, 2)": [],
+  "(1, 2)": []
+ },
+ "Q4_AI_classical_lie_dim": 3,
+ "Q4_AI_lie_basis": [
+  "Matrix([[0, -c1, 0], [1, 0, 0], [0, 0, 0]])",
+  "Matrix([[0, 0, 0], [0, 0, -c2], [0, 1, 0]])",
+  "Matrix([[0, 0, c1*c2], [0, 0, 0], [-1, 0, 0]])"
+ ],
+ "Q3_AI_commutant_dim_VV": 3,
+ "Q3e_AI_B_invariants_dim_V2": 1,
+ "Q3e_AI_B_invariants_dim_V3": 1,
+ "Q3d_AI_hecke_on_singlets": {
+  "sigma1": "Matrix([[-1/q]])",
+  "sigma2": "Matrix([[-1/q]])"
+ },
+ "Q3d_AI_singlet_eigenvalue": "-1/q",
+ "Q3e_AI_hecke_on_VV_singlets": "Matrix([[q]])",
+ "Q2a_AIII_commutant_dim_on_V": 2,
+ "Q2a_AIII_commutant_basis_on_V": [
+  "Matrix([[c1**2*c2*q*(c1*q - c2), 0, c1**3*c2**2*q], [0, -c1**2*c2**2*q, 0], [c1**2*c2*q**2, 0, 0]])",
+  "Matrix([[c1**2*c2*q**2, 0, 0], [0, c1**2*c2*q**2, 0], [0, 0, c1**2*c2*q**2]])"
+ ],
+ "Q2b_AIII_J0": "Matrix([[c1**2*c2*q*(c1*q - c2), 0, c1**3*c2**2*q], [0, -c1**2*c2**2*q, 0], [c1**2*c2*q**2, 0, 0]])",
+ "Q2b_AIII_charpoly_J0": "(c1**2*c2**2*q + lam)**2*(c1**3*c2*q**2 - lam)",
+ "Q2b_AIII_eigen_J0": {
+  "-c1**2*c2**2*q": 2,
+  "c1**3*c2*q**2": 1
+ },
+ "Q2b_AIII_RE_gcd_of_residuals": "beta*c1**2*c2*(q - 1)*(q + 1)*(alpha + beta*c1**3*c2*q**2 - beta*c1**2*c2**2*q)",
+ "Q2b_AIII_RE_solutions_alpha": [
+  "{alpha: -beta*c1**3*c2*q**2 + beta*c1**2*c2**2*q}"
+ ],
+ "Q2b_AIII_K_matrix": "Matrix([[0, 0, c1**3*c2**2*q], [0, -c1**3*c2*q**2, 0], [c1**2*c2*q**2, 0, c1**2*c2*q*(-c1*q + c2)]])",
+ "Q2b_AIII_K_matrix_eigen": {
+  "c1**2*c2**2*q": 1,
+  "-c1**3*c2*q**2": 2
+ },
+ "Q2b_AIII_K_eigen_ratio": "-c2/(c1*q)",
+ "Q2c_AIII_invariant_twists_V_dim": 2,
+ "Q2c_AIII_invariant_twists_V": [
+  "Matrix([[c1**2*c2*q**6*(c1*q - c2), 0, c1**3*c2**2*q**6], [0, -c1**2*c2**2*q**8, 0], [c1**2*c2*q**11, 0, 0]])",
+  "Matrix([[c1**2*c2*q**7, 0, 0], [0, c1**2*c2*q**9, 0], [0, 0, c1**2*c2*q**11]])"
+ ],
+ "Q2c_AIII_invariant_twists_VV_dim": 7,
+ "Q2c_AIII_productTT_solutions": [
+  "{beta: 0}"
+ ],
+ "Q2d_AIII_product_twist": {
+  "z": "q**5/((q**2 - q + 1)*(q**2 + q + 1))",
+  "trace_ok": "True",
+  "markov_ok": "True",
+  "alt_weight": "q**6/((q**2 - q + 1)**3*(q**2 + q + 1)**3)",
+  "tr1": "-(-alpha*q**4 - alpha*q**2 - alpha - beta*c1**3*c2*q**11 + beta*c1**2*c2**2*q**12 + beta*c1**2*c2**2*q**10)/q**4"
+ },
+ "Q2d_AIII_z_equals_z3": true,
+ "Q2e_AIII_Dtwist_c_solutions": {
+  "(0, 1)": [],
+  "(0, 2)": [],
+  "(1, 2)": []
+ },
+ "Q4_AIII_classical_lie_dim": 4,
+ "Q4_AIII_lie_basis": [
+  "Matrix([[0, 0, 0], [1, 0, -c1], [0, 0, 0]])",
+  "Matrix([[0, -c2, 0], [0, 0, 0], [0, 1, 0]])",
+  "Matrix([[1, 0, 0], [0, -2, 0], [0, 0, 1]])",
+  "Matrix([[c2, 0, -c1*c2], [0, -c1 - c2, 0], [-1, 0, c1]])"
+ ],
+ "Q3_AIII_commutant_dim_VV": 7,
+ "Q3e_AIII_B_invariants_dim_V2": 0,
+ "Q3e_AIII_B_invariants_dim_V3": 3,
+ "Q3d_AIII_hecke_on_singlets": {
+  "sigma1": "Matrix([[-1/q, 0, c2], [0, -1/q, -1/q**2], [0, 0, q]])",
+  "sigma2": "Matrix([[-1/q, c1, c1/q], [0, (q - 1)*(q + 1)/q, 1], [0, 1, 0]])"
+ },
+ "acceptance_a_to_f": {
+  "AI": {
+   "a_su3_dim8": false,
+   "Q4_colour": false,
+   "e_unique_singlet_V3": true,
+   "e_prime_no_singlet_V2": false,
+   "b_commutes": true,
+   "c_hecke_braid": true,
+   "f_transport": true,
+   "d_zD_from_B_invariant_markov_twist": false
+  },
+  "AIII": {
+   "a_su3_dim8": false,
+   "Q4_colour": false,
+   "e_unique_singlet_V3": false,
+   "e_prime_no_singlet_V2": true,
+   "b_commutes": true,
+   "c_hecke_braid": true,
+   "f_transport": true,
+   "d_zD_from_B_invariant_markov_twist": false
+  }
+ },
+ "checks": [
+  {
+   "name": "CAL R commutes with Delta(E_i), Delta(F_i), Delta(K_i) (variant B) on V(x)V",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "CAL gl3 pivotal diag(q^-4,q^-2,1) is ad*-invariant (reproduces T1)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1a [AI] Delta(B_i) = B_i(x)K_i^-1 + 1(x)F_i - c_i K_tau(i)K_i^-1(x)E_tau(i)K_i^-1, first legs in B (right/'left' coideal Delta(B) in B(x)U, convention of the prereg)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1b [AI] every Delta^n(B generator) commutes with every sigma_i, n = 2,3 (structural: B in U)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1c [AI] transport: R|_(q=1) = P (colour moves with the strand)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2a [AI] commutant of B on C^3 has dim 1 (prediction)",
+   "pass": true,
+   "detail": "dim 1",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2c [AI] B-invariant twists on V: dim 1 (prediction)",
+   "pass": true,
+   "detail": "dim 1",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2c [AI] the gl3 pivotal is among them (sanity: B in U)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2d [AI] prediction: the only B-invariant twist is the pivotal, whose Markov parameter is z3 (not z_D)",
+   "pass": true,
+   "detail": "z = q**5/((q**2 - q + 1)*(q**2 + q + 1))",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2e [AI] no c with c != 0 makes a rank-2 D twist B-invariant (any support)",
+   "pass": true,
+   "detail": "{'(0, 1)': [], '(0, 2)': [], '(1, 2)': []}",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3(a)/Q4 [AI] prediction: q->1 Lie closure of B has dim 3, not 8, so B is NOT colour (acceptance (a) and Q4 FAIL as predicted)",
+   "pass": true,
+   "detail": "dim 3 (c1, c2 symbolic)",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3 [AI] commutant of B on V(x)V is larger than the Hecke image (dim 2), so B is a proper part of colour",
+   "pass": true,
+   "detail": "dim 3",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3(c) [AI] Hecke (sigma-q)(sigma+q^-1)=0 and braid relation on V^(x)3",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3(e) [AI] prediction: dim 1 invariants in V^(x)3 AND dim 1 in V(x)V (so3 has a two-strand singlet)",
+   "pass": true,
+   "detail": "V3 1, V2 1",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1a [AIII] Delta(B_i) = B_i(x)K_i^-1 + 1(x)F_i - c_i K_tau(i)K_i^-1(x)E_tau(i)K_i^-1, first legs in B (right/'left' coideal Delta(B) in B(x)U, convention of the prereg)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1b [AIII] every Delta^n(B generator) commutes with every sigma_i, n = 2,3 (structural: B in U)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1c [AIII] transport: R|_(q=1) = P (colour moves with the strand)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2a [AIII] commutant of B on C^3 has dim 2 (prediction)",
+   "pass": true,
+   "detail": "dim 2",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2b [AIII] J0 has exactly 2 distinct eigenvalues and a quadratic minimal polynomial (type-B Hecke generator)",
+   "pass": true,
+   "detail": "charpoly (c1**2*c2**2*q + lam)**2*(c1**3*c2*q**2 - lam); eigen {'-c1**2*c2**2*q': 2, 'c1**3*c2*q**2': 1}",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2b [AIII] the reflection equation has a non-scalar solution in the commutant pencil alpha*1 + beta*J0 (prediction: J satisfies RE possibly after normalisation)",
+   "pass": true,
+   "detail": "residual gcd beta*c1**2*c2*(q - 1)*(q + 1)*(alpha + beta*c1**3*c2*q**2 - beta*c1**2*c2**2*q); solutions [{alpha: -beta*c1**3*c2*q**2 + beta*c1**2*c2**2*q}]",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2b [AIII] the RE solution line is exactly J proportional to J0^-1",
+   "pass": true,
+   "detail": "",
+   "kind": "posthoc"
+  },
+  {
+   "name": "Q2b [AIII] J(x)1(x)..(x)1 commutes with Delta^n(B), n = 2,3 (cylinder: K on the first strand)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2b [AIII] 1(x)J0 does NOT commute with Delta(B) on V(x)V (the K-matrix belongs to the first strand only)",
+   "pass": true,
+   "detail": "commutes=False",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2c [AIII] B-invariant twists on V: dim 2 (prediction)",
+   "pass": true,
+   "detail": "dim 2",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2c [AIII] the gl3 pivotal is among them (sanity: B in U)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2c [AIII] only (pivotal)(x)(pivotal) among product twists T(x)T, T in the V-invariant span, is B-invariant on V(x)V",
+   "pass": true,
+   "detail": "solutions [{beta: 0}]",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2c [AIII] T1(x)pivotal is B-invariant on V(x)V for every V-invariant T1 (cylinder-type product twist)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2d [AIII] product twist T1(x)piv(x)piv: functional on H3 is a trace (alpha, beta free)",
+   "pass": true,
+   "detail": "True",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2d [AIII] its Markov parameter tr2(sigma) is NOT z_D identically in (alpha, beta)",
+   "pass": true,
+   "detail": "z = q**5/((q**2 - q + 1)*(q**2 + q + 1))",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2d [AIII] prediction: the type-A Markov parameter of the product twist is z3 = q^3/[3]_q for all (alpha, beta)",
+   "pass": true,
+   "detail": "z = q**5/((q**2 - q + 1)*(q**2 + q + 1))",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2e [AIII] no c with c != 0 makes a rank-2 D twist B-invariant (any support)",
+   "pass": true,
+   "detail": "{'(0, 1)': [], '(0, 2)': [], '(1, 2)': []}",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3(a)/Q4 [AIII] prediction: q->1 Lie closure of B has dim 4, not 8, so B is NOT colour (acceptance (a) and Q4 FAIL as predicted)",
+   "pass": true,
+   "detail": "dim 4 (c1, c2 symbolic)",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3 [AIII] commutant of B on V(x)V is larger than the Hecke image (dim 2), so B is a proper part of colour",
+   "pass": true,
+   "detail": "dim 7",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3(c) [AIII] Hecke (sigma-q)(sigma+q^-1)=0 and braid relation on V^(x)3",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3(e) [AIII] prediction: dim > 1 invariants in V^(x)3 (classically 3)",
+   "pass": true,
+   "detail": "V3 3, V2 0",
+   "kind": "prereg"
+  }
+ ],
+ "summary": "35/35"
+}
