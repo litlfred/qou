@@ -325,6 +325,7 @@ import QOU.MathlibExt.PLSampleGeom
 import QOU.MathlibExt.PLSampleBuild
 import QOU.MathlibExt.PLC1Uniform
 import QOU.MathlibExt.PLReachAll
+import QOU.MathlibExt.PLC1Bridge
 import QOU.MathlibExt.PLAmbientIsotopy
 import QOU.MathlibExt.PLPush
 import QOU.MathlibExt.PLDeltaIsotopy
