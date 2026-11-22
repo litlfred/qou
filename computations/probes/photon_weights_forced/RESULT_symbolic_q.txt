@@ -18,3 +18,16 @@ eliminant in a, irreducible factors over Z[q, a] (degrees are (q, a, b, c)):
   degrees (115, 10, 0, 0), multiplicity 1: <a-degree 10, q-degree 115, 562 terms>
   degrees (64, 6, 0, 0), multiplicity 1: <a-degree 6, q-degree 64, 176 terms>
 a-degree-6 factor present and irreducible over Z[q, a]: True
+branch checks (generic q, i.e. over Q(q)):
+  branch a = (q**8 - 2*q**6 + 2*q**4 - 2*q**2 + 1)/(q**5 - q**3 + q): no genuine solution over Q(q)
+  branch a = -q: no genuine solution over Q(q)
+  branch a = 0: genuine: b = ... [(0, -(-c + q**2 - 1)*(c*q**2 + q**2 - 1)/q**2)]
+    a = 0 gives exactly the ruled pair c^2 - h^2 c - h^2 = 0 at b = 0: True
+  branch a = 1/q: no genuine solution over Q(q)
+  branch a = q: no genuine solution over Q(q)
+  branch b = -a: no genuine solution over Q(q)
+  branch b = q: no genuine solution over Q(q)
+  branch b = -1/q: no genuine solution over Q(q)
+  branch q^2 a + q^2 b + q - b = 0: no genuine solution over Q(q)
+  branch q^2 b + q - a - b = 0: no genuine solution over Q(q)
+ALL BRANCH CHECKS PASS: True []
