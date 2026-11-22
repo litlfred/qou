@@ -281,3 +281,34 @@ link to the photon, and whether `K ↦ K⁻¹` is the bar involution on the gaug
 is still open; the norm-one photon thread (PR #8981) has been asked about it.
 No Lean change: the criterion is linear algebra on the sector weights, which are
 computed exactly in the probe, not formalised.
+
+## 13. Is the Cartan insertion derivable? (owner, 2026-11-22: work the options)
+
+**The direction, yes, from one symmetry. The reason for that symmetry and the sign, no.**
+
+1. **`(1, 0, −1)` is the same thing as oddness under `ι : σᵢ ↦ −σᵢ⁻¹`.**
+   `QOU/AlphaEM/IotaOddTrace.lean`, `iota_odd_iff` (lean-direct exit 0, axioms
+   `propext, Classical.choice, Quot.sound`): for `q ≠ 0`, `q² + 1 + q⁻² ≠ 0` and
+   characteristic 0, a block functional satisfies `τ(ι x) = −τ(x)` on every word iff
+   its weights are `w₃·(1, 0, −1)`. `ι` swaps the trivial and sign blocks;
+   `trace_iota_hook` shows it keeps the hook character, via an explicit intertwiner
+   `P` with `det P = q² + 1 + q⁻²`.
+2. **On the gl(1|1) side `ι` is the parity swap.** The trace of `ρ(ιx)` on sector `k`
+   equals that of `ρ(x)` on sector `3 − k`. Because 3 is odd, the supertrace sign
+   flips under this swap, so an insertion `f(H)` that is even under `H ↦ −H`
+   (`K ↦ K⁻¹`) gives an `ι`-odd functional. This is why §12's condition appears.
+3. **Scale, up to sign.** Among even insertions, the idempotent ones with nonzero
+   weights are `P_ext` (weights `(1, 0, −1)`) and `1 − P_ext` (`(−1, 0, 1)`).
+   `P_ext = (c − c(1))/(c(3) − c(1))` with `c = K + K⁻¹`. Asking for a projection fixes
+   the scale; the sign (keep the extremal sectors or the mixed ones) stays a choice.
+4. **Casimir route: excluded.** A central element of `U_q(gl(1|1))` acts on `V^{⊗3}`
+   by a `U`-endomorphism, hence by an element of `H₃(q)` (Schur–Weyl double
+   centraliser, Mitsuhashi; quoted, not proved here). The full supertrace vanishes on
+   all of `H₃(q)` (§9), so any central insertion gives zero. Scope (b), invariant: the
+   vanishing full supertrace. Only a non-central (torus) insertion can work.
+
+Probe `photon_gl11_supertrace_weights_probe.py` now 26/26 (`ι` Hecke and braid
+relations, the sector swap, `P_ext` as a polynomial in `K + K⁻¹`).
+
+Still open, and not derived: why the α_em functional should be `ι`-odd, and the sign.
+`ι` sends the chiral vertex `σ₀σ₁⁻¹` to `σ₀⁻¹σ₁`; the ruled photon is not `ι`-invariant.
