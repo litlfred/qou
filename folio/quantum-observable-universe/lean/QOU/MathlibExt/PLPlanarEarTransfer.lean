@@ -244,4 +244,53 @@ theorem isEar_of_cut {P : Polygon R2} (hP : P.IsSimple) {β : ℕ} (hβ : 2 ≤ 
   rw [hwp]
   exact ⟨hD, hsub, hpar⟩
 
+lemma Polygon.ext_w {P Q : Polygon R2} (hn : P.n = Q.n) (hw : ∀ k, P.w k = Q.w k) : P = Q := by
+  obtain ⟨n₁, h₁, v₁⟩ := P
+  obtain ⟨n₂, h₂, v₂⟩ := Q
+  simp only at hn
+  subst hn
+  congr 1
+  funext i
+  have := hw i
+  simpa [Polygon.w, Nat.mod_eq_of_lt i.isLt] using this
+
+lemma isEar_rotateBy (P : Polygon R2) (r k : ℕ) : (P.rotateBy r).IsEar k ↔ P.IsEar (k + r) := by
+  unfold Polygon.IsEar
+  simp only [w_rotateBy, rotateBy_n, carrier_rotateBy, parity_rotateBy]
+  rw [show k + P.n + r = k + r + P.n by omega, show k + 1 + r = k + r + 1 by omega]
+
+lemma cocut_cocut (P : Polygon R2) {β : ℕ} (hβ : 2 ≤ β) (h2 : 2 ≤ P.n + 1 - β)
+    (h' : 2 ≤ (P.rotateBy β).n + 1 - (P.n + 1 - β)) :
+    (P.rotateBy β).cocut (P.n + 1 - β) h' = P.cut β hβ := by
+  have hb : (P.rotateBy β).n + 1 - (P.n + 1 - β) = β := by rw [rotateBy_n]; omega
+  apply Polygon.ext_w
+  · exact hb
+  · intro k
+    unfold cocut
+    rw [cut_w, cut_w, w_rotateBy, w_rotateBy, hb, add_assoc,
+      show P.n + 1 - β + β = P.n + 1 by omega, w_add_period]
+
+/-- **An ear of the complementary piece, away from the chord, is an ear of the polygon.** -/
+theorem isEar_of_cocut {P : Polygon R2} (hP : P.IsSimple) {β : ℕ} (hβ : 2 ≤ β)
+    (h2 : 2 ≤ P.n + 1 - β)
+    (hchord : segment ℝ (P.w 0) (P.w β) ∩ P.carrier ⊆ {P.w 0, P.w β})
+    (S₁ : ∀ y ∈ P.carrier, y ∉ (P.cut β hβ).carrier → (P.cut β hβ).parity y = 0)
+    (S₂ : ∀ y ∈ P.carrier, y ∉ (P.cocut β h2).carrier → (P.cocut β h2).parity y = 0)
+    {k : ℕ} (hk1 : 1 ≤ k) (hkβ : k < P.n + 1 - β)
+    (hE : (P.cocut β h2).IsEar k ∨ P.n + 1 - β = 2) : P.IsEar (k + β) := by
+  have h' : 2 ≤ (P.rotateBy β).n + 1 - (P.n + 1 - β) := by rw [rotateBy_n]; omega
+  have hcc := cocut_cocut P hβ h2 h'
+  have hcut : (P.rotateBy β).cut (P.n + 1 - β) h2 = P.cocut β h2 := rfl
+  rw [← isEar_rotateBy]
+  refine isEar_of_cut (Polygon.isSimple_rotateBy P hP β) h2 h' ?_ ?_ ?_ hk1 hkβ ?_
+  · rw [w_rotateBy, w_rotateBy, zero_add, show P.n + 1 - β + β = P.n + 1 by omega, w_period,
+      carrier_rotateBy, segment_symm]
+    intro y hy
+    rcases hchord hy with h | h
+    · exact Or.inr h
+    · exact Or.inl h
+  · rw [carrier_rotateBy, hcut]; exact S₂
+  · rw [carrier_rotateBy, hcc]; exact S₁
+  · rw [hcut]; exact hE
+
 end QOU.MathlibExt.PL
