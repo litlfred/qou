@@ -85,3 +85,29 @@ skein difference h, times a loop ratio [3]/[2] that is 3/2 at q = 1. The 4₁ ex
 **Not done, by the prereg rule:** rescaling, extra powers of q, and combinations of routes.
 The match q⁻²·(something) is suggestive. But choosing the something to equal ℏ_q is exactly the
 step that would be a fit.
+
+---
+
+# Addendum 3 result (2026-11-22): ℏ_q is not a one-sided (positive-word) object
+
+Prereg: Addendum 3, commit 84c36bfa812. Probe: `e0_weight_one_sided_probe.py`, output in
+`e0_weight_one_sided_probe_result.txt`. Lean: `QOU/QBeta/E0WeightOneSided.lean`, sorry-free,
+axioms [propext, Classical.choice, Quot.sound].
+
+**No enumerated object equals w = ℏ_q/q² or ℏ_q. No monomial match q^k·ℏ_q occurs.**
+
+- **T1, confirmed and proved.** R·(R − h·1) = 1, so σ⁻¹ = σ − h (`jimboR_inv_eq`). And a + bσ is
+  scalar only if b = 0 (`smul_one_add_smul_jimboR_eq`). So "positive crossings only" has no meaning
+  for Hecke elements, and ℏ_q is not the scalar of any one-sided skein relation.
+- **T2, single-crossing increments: 136 of 136 excluded**, all with ord₁ = 0 (nonzero at q = 1), as
+  predicted. Scope (a) for the enumerated words (n = 2, 3, |β| ≤ 3). The parity argument that would
+  make it scope (b) for all positive words is stated by hand, not proved in Lean.
+- **T3, two-crossing increments: 124 objects.**
+  - Framed mass: none matches. Coefficients −3, −12, −24 at order 1, or order 0, or order 2.
+  - Unframed τ: 28 objects match w to first order (coefficient 1). All 28 carry the factor q + 1, so
+    they vanish at q = −1, where w = 2. So none equals w (`ne_weight_of_vanish_neg_one`). They are
+    the skein route of Addendum 1 again: τ(βσ²) − τ(β) = h·τ(βσ) by the Hecke relation.
+
+**What this fixes.** ℏ_q = 1 − q⁻¹ is not produced by positive braid words, by their one- or
+two-crossing increments, or by a one-sided skein scalar. The weight stays the corpus definition
+w = ℏ_q·(ℏ_q c_q)². Bean `qou-91w7` stays open.
