@@ -448,22 +448,13 @@
       "scriptExists": true
     },
     {
-      "script": "computations/confinement_operator_selection.py",
-      "witnesses": [
-        "computations/confinement-operator-selection.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-table1-data.ts"
-      ],
-      "scriptExists": false
-    },
-    {
       "script": "computations/confinement-operator-selection.py",
       "witnesses": [
         "computations/confinement-operator-selection.witness.json"
       ],
       "blocks": [
         "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step10-confinement-sdp.ts",
+        "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-table1-data.ts",
         "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection.ts",
         "folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts"
       ],
@@ -827,8 +818,7 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/observations/knot-volumes-verification.ts",
-        "folio/quantum-observable-universe/observations/local-substrate-q-proof.ts",
-        "folio/quantum-observable-universe/observations/terminal-resolution-proof.ts"
+        "folio/quantum-observable-universe/observations/local-substrate-q-proof.ts"
       ],
       "scriptExists": true
     },
@@ -1218,7 +1208,7 @@
       "scriptExists": true
     },
     {
-      "script": "computations/probe_flavor_dressed_mass_split.py",
+      "script": "computations/probe_flavor_dressed_mass_from_substrate_split.py",
       "witnesses": [
         "computations/flavor-dressed-mass-from-substrate-split.witness.json"
       ],
@@ -1226,7 +1216,7 @@
         "folio/quantum-observable-universe/mass-theory/flavor-dressed-mass-from-substrate-split.ts",
         "folio/quantum-observable-universe/mass-theory/flavor-mass-splitting-bound.ts"
       ],
-      "scriptExists": false
+      "scriptExists": true
     },
     {
       "script": "computations/probe_he4_canonical_tr_m_fingerprint.py",
@@ -1422,6 +1412,7 @@
         "computations/probes/flavor-split-substrate-probe.witness.json"
       ],
       "blocks": [
+        "folio/quantum-observable-universe/mass-theory/flavor-split-substrate-codata-comparison.ts",
         "folio/quantum-observable-universe/mass-theory/flavor-split-substrate.ts"
       ],
       "scriptExists": true
@@ -1470,7 +1461,8 @@
     {
       "script": "computations/probes/h2_gg_electron/h2_gg_electron_probe.py",
       "witnesses": [
-        "computations/probes/h2_gg_electron/h2-gg-electron.witness.json"
+        "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+        "computations/probes/h2_ruled_electron/h2-ruled-electron.witness.json"
       ],
       "blocks": [
         "folio/quantum-observable-universe/molecular-construction/ilp-covalent-bond.ts"
