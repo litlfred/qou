@@ -217,3 +217,8 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
 - **2026-11-22 22:20Z, W7 ↔ W8 hand-off:**
   - At fixed β, a substrate HeckeMonodromy instance is only vacuous. `subsingleton_of_isUnit_h` forces the shadow target to be 0 over ℂ.
   - Next step for W7: a β-family version of `nbody_monodromy_hecke`, over ℂ[[β]] or a Laurent ring. W8 then builds the instance on that family plus `ocneanuMarkovTrace`.
+- **2026-11-22 22:22Z, W7** (commit 2b13465d3; sorry-free). Laurent-family bridge:
+  - `specialise β` evaluates at q = e^{iπβ}.
+  - `specialise_strandBraid` and `nbody_monodromy_specialises`: one W per generic β conjugates the Jimbo-normalised n-body monodromy to the specialised `strandBraid` family over ℤ[q, q⁻¹].
+  - `lagrangian_monodromy_specialises`: the same under StokesToBraiding.
+  - Next: W8 to decide whether its HeckeMonodromy instance sits on this Laurent family.
