@@ -1,13 +1,13 @@
 ---
 # qou-kt8o
 title: The ck-dk registry JSON twin never absorbed the dc_3/dq 3.84e6 correction, and a green probe assertion still pins the stale 4.6e6
-status: in-progress
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T01:22:39Z
-updated_at: 2026-11-22T21:42:09Z
+updated_at: 2026-11-22T21:52:48Z
 parent: qou-5vkl
 ---
 
@@ -290,3 +290,7 @@ Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against
     T5 JSON: production.dashboard_{beats_100x,total} = 1/5, but the witness scores 1/6
 
 The denominator moved to 6 when the α_em⁻¹ row was added (`d626761a34`, 2026-09-07), and the JSON was not updated. The fix is corpus-derived (the witness decides it) and mechanical, but it is a repo change needing a PR. Restating this bean to that one item rather than opening a new one, since the failing check is the one this bean built.
+
+## 2026-11-22 — CLOSED: fixed by PR #9146 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. PR #9146 merged by rebase as `2656dcf976` (owner-approved). Verified before merge: `ck_dk_registry_validate.py --twin` exit 0 and `sync-qou-mass-vendor.py --check` exit 0. Issue #9145.

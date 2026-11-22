@@ -1,13 +1,13 @@
 ---
 # qou-wpp2
 title: 'Vendor mirror ratchet is RED on main: 9 modules drifted, 1 witness missing from the cone'
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T21:03:40Z
-updated_at: 2026-11-22T21:40:40Z
+updated_at: 2026-11-22T21:52:48Z
 parent: qou-5vkl
 ---
 
@@ -166,3 +166,7 @@ Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against
 **Applicability:** tooling; no physics premise. Still applies.
 
 `python3 scripts/sync-qou-mass-vendor.py --check` now reports **1** drifted file (was 9 + 1 missing): `data/canonical-mass-table-extended.witness.json`. Its source was re-run today on main (`b3d9e750da`, "re-run the m_n producer and its three consumers on the merged tree"), so this is fresh drift from that re-run, not the old backlog. The fix is `--apply` plus a commit, which needs a PR; not done in this tracker-only pass. The stored grouped word in that shard is separately qou-36i2 (todo).
+
+## 2026-11-22 — CLOSED: fixed by PR #9146 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. PR #9146 merged by rebase as `2656dcf976` (owner-approved). Verified before merge: `ck_dk_registry_validate.py --twin` exit 0 and `sync-qou-mass-vendor.py --check` exit 0. Issue #9145.
