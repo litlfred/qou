@@ -23,7 +23,7 @@ vertices of the polygon: the first, set-level half of the planar Schoenflies the
 
 * `Polygon.parity_subdivideLast` — the parity of `M.subdivideLast c` is the parity of `M` plus the
   parity of the triangle `M.v last, c, M.v 0`.
-* `parity_eq_one_of_mem_convexHull` — a polygon of parity `1` on the open triangle has parity `1`
+* `parity_eq_of_mem_convexHull` — a polygon of constant parity on an open triangle has that parity
   at every point of the closed triangle off the polygon.
 * `region_triPoly` — the region of a non-degenerate triangle is its convex hull.
 * `Polygon.region_subdivideLast` — **clipping an ear**: the region of `M.subdivideLast c` is the
@@ -96,10 +96,10 @@ lemma centroid_mem_openTri {p q r : R2} (hD : cross p q r ≠ 0) :
   · rw [cross_combo _ _ _ _ _ _ _ _ (by norm_num), cross_left, cross_right]
     nlinarith
 
-/-- **Parity extends from the open triangle to the closed one.** -/
-theorem parity_eq_one_of_mem_convexHull (Q : Polygon R2) {p q r : R2} (hD : cross p q r ≠ 0)
-    (hpar : ∀ z ∈ openTri p q r, Q.parity z = 1) {y : R2} (hy : y ∈ convexHull ℝ {p, q, r})
-    (hyQ : y ∉ Q.carrier) : Q.parity y = 1 := by
+/-- **Parity extends from the open triangle to the closed one**, off the polygon. -/
+theorem parity_eq_of_mem_convexHull (Q : Polygon R2) {p q r : R2} (hD : cross p q r ≠ 0)
+    (e : ZMod 2) (hpar : ∀ z ∈ openTri p q r, Q.parity z = e) {y : R2}
+    (hy : y ∈ convexHull ℝ {p, q, r}) (hyQ : y ∉ Q.carrier) : Q.parity y = e := by
   set m := (1 / 3 : ℝ) • p + (1 / 3 : ℝ) • q + (1 / 3 : ℝ) • r with hm
   have hmT := centroid_mem_openTri hD
   obtain ⟨h1, h2, h3⟩ := (mem_convexHull_triple_iff hD).mp hy
@@ -124,6 +124,11 @@ theorem parity_eq_one_of_mem_convexHull (Q : Polygon R2) {p q r : R2} (hD : cros
       nlinarith
     exact ⟨key _ _ h1 m1, key _ _ h2 m2, key _ _ h3 m3⟩
   rw [← ht]; exact hpar _ hfT
+
+theorem parity_eq_one_of_mem_convexHull (Q : Polygon R2) {p q r : R2} (hD : cross p q r ≠ 0)
+    (hpar : ∀ z ∈ openTri p q r, Q.parity z = 1) {y : R2} (hy : y ∈ convexHull ℝ {p, q, r})
+    (hyQ : y ∉ Q.carrier) : Q.parity y = 1 :=
+  parity_eq_of_mem_convexHull Q hD 1 hpar hy hyQ
 
 /-- **The region of a non-degenerate triangle is its convex hull.** -/
 theorem region_triPoly {p q r : R2} (hD : cross p q r ≠ 0) :

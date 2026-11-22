@@ -328,6 +328,7 @@ import QOU.MathlibExt.PLPlanarCornerEar
 import QOU.MathlibExt.PLPlanarTwoEars
 import QOU.MathlibExt.PLPlanarEarRemoval
 import QOU.MathlibExt.PLPlanarDisk
+import QOU.MathlibExt.PLPlanarDiskComplex
 import QOU.MathlibExt.PLSubdivide
 import QOU.MathlibExt.PLC1Estimates
 import QOU.MathlibExt.PLInscribed
