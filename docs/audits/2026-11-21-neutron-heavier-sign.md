@@ -305,3 +305,60 @@ or the over/under rule.
 - The letter order of the vertex, `(σ₀σ₁⁻¹)³` against `(σ₁σ₀⁻¹)³`, does not change ε at three strands or in either four-strand placement (checked in exact sympy, 2026-11-22). Only the side of the extra strand matters.
 
 The generator is in `computations/probes/np_splitting/lean_gen/`.
+
+## §23 The capture is a conditional expectation; the sign at the Markov end for every word (2026-11-22, owner: "options 2 and 3")
+
+Pre-registered: `np_capture_conditional_expectation_preregistration.md` (commit 057cd44e7ac, pushed
+before the run; its honesty clause records that the adjacent-capture ratio was checked by hand
+first). Probe: `np_capture_conditional_expectation_probe.py`, output in `.out.txt`. Lean:
+`QOU/QBeta/HydrogenCaptureFactor.lean`. All five predictions hold.
+
+**Placement.** Owner ruling 2026-11-22 (reading A, right-hand closure) puts a newly added strand on
+the right, where the K-weighted partial trace is Markov. That is the nucleon-on-strands-0–2
+placement of §22. This is the reading of the ruling used below; the ruling names bonds and
+vertices, and its application to the electron strand is my reading, not a separate ruling.
+
+**Option 3: the neutron is never heavier at the Markov end.**
+- Lean, four strands, every word (`HydrogenCaptureFactor`):
+  - `eps_eq_one_sub_mul_tp`: `ε = (1 − q⁻²)·t_p`, so ε has the sign of t_p.
+  - `left_abs_tn_lt`, `left_increasing_reading_neutron_lighter`: for 1 < q, |t_n| < |t_p| whenever
+    t_p ≠ 0, so every strictly increasing reading of the absolute sector trace (R2) makes the
+    neutron lighter, whatever the capture or gluon word.
+  - `left_signed_reading_iff`: under the signed reading (R1) the neutron is heavier iff t_p < 0.
+- More strands (P1, exact at q = 111/100 and 7/5): every word of length ≤ 4 on 5 strands (4681)
+  and ≤ 3 on 6 strands (1111) keeps E_n = q⁻²E_p, with zero failures.
+- Why, for every n (argument, not formalised): let E be the K-weighted partial trace over the
+  last strand divided by [2]. It maps the braid image on n strands into the image on n−1, because
+  H_n = H_{n−1} + H_{n−1}σ_{n−1}H_{n−1} [jones1985] and E(σ_{n−1}) is a scalar
+  (`OverStrandWeight.ptr_markov`). Π_c acts on strands 0–2 only, so the n-strand functional is the
+  three-strand one on E^{n−3}(W), where the ratio is q⁻² (§1). Only the n = 4 case is in Lean.
+- P2: with the nucleon not at the left end the ratio fails for about half of all short words
+  (268/585 and 272/585 on 5 strands). The Markov end is what makes the result hold.
+
+So under the ruled functional, with reading A, no capture or gluon word on the right makes the
+neutron heavier by R1 with t_p > 0 or by any R2 reading. The sign question is then entirely the
+choice of reading (§1 table), not of element.
+
+**Option 2: the capture correction to Q_β.** At the Markov end, ε(V³·C) = ε₃(V³·E(C)) for any
+capture word C on the new strand. For both capture words E(C) is central in the three-strand
+image, so the capture only reweights the two isotypic blocks of ε(V³):
+
+| capture | E(C) | ε(W)/ε(V³) at q₀ | Lean |
+|---|---|---|---|
+| adjacent σ₂⁻² | scalar c_adj = (q⁴+1)/(q²(q²+1)) = 1 + h² − hq²/[2] | 0.915617464418 | `wAL_eps_eq_factor` |
+| cabled (σ₂σ₁σ₀σ₀σ₁σ₂)⁻¹, the inverse Jucys–Murphy element of strand 3 | c₃ = (q⁸+1)/(q⁶(q²+1)) on (3), c₂₁ = (q⁴+1)/(q⁴(q²+1)) on (2,1) | 0.759320340517 | `wL_eps_eq_blocks` |
+
+The blocks of ε(V³) are ε₍₃₎ = q²(q²−1)/(q²+1)³ (V³ acts as 1 on the symmetric block, so this is
+h/[2]³) and ε₍₂,₁₎ = −(q²−1)(q⁴−q²+1)(q⁸−2q⁶−2q²+1)/(q⁴(q²+1)³); they sum to ε(V³)
+(`blocks_sum`). Both block dimensions are 4.
+
+Implications:
+1. The capture correction is exact and has a closed form once the capture word is fixed. It
+   multiplies the ruled Q_β cell (0.3254 MeV, −58.4 %) by 0.9156 (adjacent, 0.2980 MeV) or 0.7593
+   (cabled, 0.2471 MeV). Both move away from CODATA. Under the owner rule of 2026-11-21 (keep
+   derivable small corrections) it is a correction to keep; it is not small (−8 % or −24 %).
+2. What is still a choice: cabled versus adjacent capture (the sibling's labelled choice), and the
+   gluon letter (owner-unresolved). The placement is now fixed by reading A. The formula
+   ε₃(V³·E(C)) covers any future choice, including a gluon letter on the new strand; if E(C) is
+   not central it is no longer a pure block reweighting.
+3. No number here was compared with CODATA for selection (P5).
