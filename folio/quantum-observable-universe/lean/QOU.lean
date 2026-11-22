@@ -342,6 +342,7 @@ import QOU.MathlibExt.PLHomeo
 import QOU.MathlibExt.PLAlexander
 import QOU.MathlibExt.PLTriangulation
 import QOU.MathlibExt.PLLipschitz
+import QOU.MathlibExt.PLLipschitzPiecewise
 import QOU.MathlibExt.PLScaling
 import QOU.MathlibExt.PLMoiseAssembly
 import QOU.Knot.FiveTwoVolumeConstant
