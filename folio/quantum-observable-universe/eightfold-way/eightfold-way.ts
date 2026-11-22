@@ -143,6 +143,7 @@ export default chapter({
       label: "sec:knot-particle-force-dictionary",
       blocks: [
         "dictionary-flavor-layer",
+        "torus-knot-flavour-labels-prior-art",
       ],
     }),
 
