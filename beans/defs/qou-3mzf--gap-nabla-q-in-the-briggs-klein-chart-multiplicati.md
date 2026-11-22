@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-22T10:25:58Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-gwte
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -86,3 +87,7 @@ A Steinberg/Rogers route on complex factors (1-ζ^k X) does not integrate direct
 2026-11-22 (d) uniform route, no proof yet. (1) Log-scale form: with f(x)=x/(e^x-1) (Bose) and g(x)=x/(1+e^{-x}), the claim n*area(n) = pi^2/4 is the statement area{(a,b)>0 : (g*k_w)(b) < (f*k_w)(a)} = pi^2/4 for every w = log n >= 0. Here k_w is the symmetric box kernel of width w in log scale (Mellin convolution). (2) The w->0 case is a single transcendental identity, still unproved: area{a/(e^a-1) > b/(1+e^{-b})} = pi^2/4 (numerically 2.46740 incl. tail). (3) A Gaussian log-kernel in place of the box BREAKS invariance (sigma=0.3: 0.9984; sigma=0.7: 0.950 x pi^2/4; ker.py), so the box/geometric-sum structure is essential, not a generic smoothing invariance. (4) The off-diagonal family (1+y^m)/(1+y) = (1-t^n)/(1-t) is not pi^2-rational in general: (3,2)=pi^2/15, (2,3)=0.15520 pi^2, (5,2)=0.034697 pi^2 (mn.py).
 
 2026-11-22 (e) 'try both', no proof. d/dn route: with chi(a)=-log(1-e^{-a}), phi(b)=log(1+e^b), EH = a chi'(a) + b phi'(b), and the curve parametrised by lambda = A2(a) = A1(b) in (0, log n), the claim d/dn[n*area(n)] = 0 is EXACTLY equivalent to Int_0^{log n} [EH(a,b) + EH(na,nb)] a'(lambda) b'(lambda) dlambda = 0. Numerically 1e-11 at n=5 (d2.py). The integrand is not antisymmetric under lambda -> log n - lambda. Writing u = U/A2', v = V/A1', it is the line integral of u(a) db + v(b) da along the curve; no simple potential found (u, v are not affine). Base case at n -> 1 also not proved. Library: arxiv-2506.10206 (beta-integral dilog identities, Legendre chi_2) is the nearest held source; pi^2/4 = 2 chi_2(1) is the target constant. Not applied yet. NOTE: n=2 and n=3 are rational curves and are proved classically (pi^2/8, pi^2/12), so the d/dn route only needs the derivative identity, not the n->1 base.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-gwte`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

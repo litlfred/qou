@@ -1,5 +1,5 @@
 ---
-# neutron_proton_splitting
+# qou-1rvh
 title: neutron proton splitting missing hypotheses
 status: completed
 type: task
@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-15T18:11:00Z
+updated_at: 2026-11-22T21:55:07Z
 ---
 
 File: `folio/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean`
@@ -64,3 +64,7 @@ Report: /mnt/project-files/qou-np-splitting/np-splitting-error-budget.md. Diagno
 **Readings under D:** suffix-inclusive −2.9 % (mislabels a crossing); adjacent +20.8 %; genuine half twist −69.6 %; full twist −39.6 % (ratio q⁻²).
 
 **See also** bean qou-jwl8 on the traced_volume product ∏ᵢ∏_{j>i}(σᵢ+dᵢⱼ) vs the half-twist trace.
+
+## 2026-11-22 — id renamed `neutron_proton_splitting` → `qou-1rvh` (bean-hygiene, owner-approved)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. The old id contained underscores, which the tracker's id pattern `[A-Za-z0-9-]+` rejects, so `scripts/check-beans.sh` reported this file as having no id and every `beans` query missed it. Renamed on the owner's approval of qou-w3yy (project-chat card, 2026-11-22 21:53Z). Content unchanged; the old id stays greppable here.

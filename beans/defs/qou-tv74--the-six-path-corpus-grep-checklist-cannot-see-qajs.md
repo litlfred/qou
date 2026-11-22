@@ -4,7 +4,8 @@ title: The six-path corpus-grep checklist cannot see .qa.json agent verdicts —
 status: todo
 type: task
 created_at: 2026-09-19T07:18:29Z
-updated_at: 2026-11-22T21:23:26Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-nu9d
 ---
 
 
@@ -146,3 +147,7 @@ Top criteria among the long ones are the voice traps (`trap-superlative` 525, `t
 Answer to item 1: **this is a checklist gap, not a curiosity.** About a third of the paper's blocks carry at least one substantive agent verdict that none of the six corpus-grep paths reaches.
 
 Items 2 and 3 are unchanged: whether to add a seventh path is an AGENTS.md STRICT-section edit and the owner's call. Not done here. **Stays open** (rule 13a / owner decision).
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-nu9d`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

@@ -8,8 +8,8 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T12:00:00Z
-updated_at: 2026-11-15T12:00:00Z
-parent: qou-qs4c
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-qs0e
 ---
 
 G3 of the qou-qs4c dispatch (2026-11-15), investigated and recorded as OPEN.
@@ -39,3 +39,7 @@ It IS needed to identify the multiplicity spaces with U_q(gl_d) irreducibles
 
 Also open, separate: the kernel identification over a non-ordered field (e.g. ℂ, generic q);
 the transpose/positivity route does not reach it.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-qs0e`: old parent `qou-qs4c` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

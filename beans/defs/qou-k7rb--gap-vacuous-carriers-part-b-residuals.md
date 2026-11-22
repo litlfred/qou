@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T21:28:46Z
-updated_at: 2026-11-20T21:28:46Z
-parent: qou-dx7g
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-dxbw
 ---
 
 PR #8690 tied part-B carriers to corpus definitions where they exist. Open:
@@ -34,3 +34,7 @@ Items 3 and 5 were worded around a single trace. The corpus's mass functional is
 Lagrangian trace tau(L) = tau(D^2) + tau(psi* D psi) (qou-7xl8), with tau the Jimbo quantum
 trace = convention-D Markov trace. A real repair of TopologicalMassDecomposition and
 TrefoilElectronMassConj must state both terms; the matter term for the electron is not formalised.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-dxbw`: old parent `qou-dx7g` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

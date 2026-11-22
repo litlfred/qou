@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T20:41:54Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-avtq
 ---
 
 Opened 2026-11-15 from owner question on a decay trigger and translating ILP/SDP likelihood into a rate; owner chose 'bean both gaps, then probe'. prop:hadron-half-life: Γ_β = |W|²μ₀/(2π³)·[2]_q·|M_q|²·f(Q). W(q) has a D closed form (qou-egvf); μ₀, |M_q|² (prop:trace-ratio-observable, proportionality only) and f(Q) do not. def:beta-decay-skein says WHAT, not WHEN. LP/SDP shadow prices are used only for shell binding from measured Q-values. Candidate to test, pre-registered: per-step probability = trace weight of the channel where the insertion reduces to the daughter. half-life-as-q-probe states environmental predictions (neutron-star q ≫ q₀; 1e-9 per metre) with no derivation — scope (a). Neutron lifetime not derived.
@@ -77,3 +78,7 @@ W_corpus = q⁻¹J and W_mirror = qJ confirmed as 4×4 matrices. The Ř coeffici
 
 ## 2026-11-20T22:30Z — the flavour-changing vertex found (PR #8638, bean qou-99qc N1 entry)
 Under strand tracking (P·Ř) the crossing is R₀ + h·E⊗F (σ) / R₀' − h·F⊗E (σ⁻¹). The flavour-changing W term is the h term, which RESULT 1 could not see because it read the Ř transposition. Lepton strand (same doublet assumption as PRE-REG 3) passing the nucleon: n ν → p e⁻ = (q²−1)·Δ²(E), chiral, |M|² = (q²−1)² on isospin ½ (∝ h² at q→1). μ₀ / G_F still underived (no MeV scale emerges); f(Q) computed with Q from label C. Lean `ChargedCurrentW.lean`. Bean stays open.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-avtq`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

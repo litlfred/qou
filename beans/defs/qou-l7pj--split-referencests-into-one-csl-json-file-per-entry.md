@@ -8,8 +8,8 @@ tags:
     - migration
     - content
 created_at: 2026-10-14T17:50:00Z
-updated_at: 2026-11-15T13:30:00Z
-parent: qou-8tlx
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-5lsb
 ---
 
 ## Owner ruling, 2026-10-14 (session https://claude.ai/code/session_01QHu5UpKG62GzKEgprQkzDh)
@@ -92,3 +92,7 @@ Measured:
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-5lsb`: old parent `qou-8tlx` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

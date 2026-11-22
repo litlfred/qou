@@ -8,8 +8,8 @@ tags:
     - quark-state
     - colour
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T08:30:00Z
-parent: qou-qs4c
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-qs0e
 ---
 
 **Finding (verified, sorry-free Lean pending verification):**
@@ -49,3 +49,7 @@ Implemented on PR #7830:
 - New blocks in eightfold-way sec:color-algebra: prop:sl-n-color-framing (lean.ref forced_framing_eq_inv) and rem:sl-n-color-frame-scope, which holds the scoped convention, the det T re-scope and the 33.7 -> 3 fact.
 - level_three_colour_channel_probe: re-scope note at the top of the docstring, plus a caveat. Its producer was re-run; values are unchanged.
 Remaining: owner merge go. Sidecars (.qa.json / .jsonld) were not generated, because the folio-assistant pipeline is not available in this container.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-qs0e`: old parent `qou-qs4c` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

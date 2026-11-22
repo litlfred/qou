@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T21:28:46Z
-updated_at: 2026-11-20T21:28:46Z
-parent: qou-dx7g
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-dxbw
 ---
 
 PR #8691 repaired the part-A carriers where an object to tie them to exists. These stay open,
@@ -34,3 +34,7 @@ not_doubleMagicConjecture holds for every (Z,N): lambda+mu always occurs, unique
 lambda+mu, conjugation symmetry forces it self-conjugate, but its first row exceeds its first
 column. Conditional (for the .md statement) on LR conjugation symmetry, not formalised (GAP).
 Open: LR commutativity/conjugation symmetry; lr_conj-free refutation; bridge to Interactions.LRFusion.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-dxbw`: old parent `qou-dx7g` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

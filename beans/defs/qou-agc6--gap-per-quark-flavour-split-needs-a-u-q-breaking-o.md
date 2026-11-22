@@ -4,7 +4,8 @@ title: 'GAP: per-quark flavour split needs a U_q-breaking object with a triple z
 status: todo
 type: task
 created_at: 2026-11-21T18:48:13Z
-updated_at: 2026-11-21T18:48:13Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-qs0e
 ---
 
 Owner chose this on 2026-11-21 (card in the per-quark flavour split thread). Issue #8922, PR #8931.
@@ -20,3 +21,7 @@ ansatz = h²(√q − 1/√q)/q. The prefactor is exactly bar-odd with the same 
 
 ## Next honest step
 Look for an object that breaks U_q(sl2), for example a boundary datum on the Bring colour tube, a sea strand, or a non-additive strand rule, whose p/n differentiator starts at (q−1)³. A natural shape is a third-order product of first-order differentiators (h·h·ħ_q). Bridge B audit (2026-11-16) records none in the corpus.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-qs0e`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

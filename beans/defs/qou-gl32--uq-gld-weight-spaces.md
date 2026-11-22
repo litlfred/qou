@@ -8,8 +8,8 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T10:10:00Z
-updated_at: 2026-11-15T10:10:00Z
-parent: qou-gld3
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-qs0e
 ---
 
 V_μ = span{e_a : content(a) = μ}, μ ∈ ℕ^d with |μ| = n. Cartan acts on V_μ by q^{μ_j}. Ř preserves content, so ρ(H) preserves each V_μ. E_i maps V_μ to V_{μ+α_i}. Generic CommRing; separating the weights needs q not a root of unity (field).
@@ -22,3 +22,7 @@ Owner ruling 2026-11-15 ("G3: add infra"): build the highest-weight theory that 
 - jimbo_commute_weightProj: ρ(H) preserves every V_μ.
 - cartan_mul_weightProj: the Cartan acts on V_μ by ∏ c(x)^{μ(x)}.
 - weightProj_mul_raiseOp_mul_weightProj: E_i maps V_μ into V_{μ+α_i}.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-qs0e`: old parent `qou-gld3` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

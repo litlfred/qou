@@ -9,8 +9,8 @@ tags:
     - research
     - open-derivation
 created_at: 2026-11-21T07:30:00Z
-updated_at: 2026-11-22T21:45:00Z
-parent: qou-qhcr
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-6qbv
 ---
 Created 2026-11-21 by W9 (session_01VQDpPcjxVSqN8ELUBjiBHk). The gap was named in `docs/audits/2026-11-17-bring-foundations-trace-sites-and-genus-attack.md` §3 and had no bean.
 
@@ -27,3 +27,7 @@ Created 2026-11-21 by W9 (session_01VQDpPcjxVSqN8ELUBjiBHk). The gap was named i
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Nothing landed. The only named carrier (Gauss–Manin rank 8 in prop:prolonged-periods-fixed-depth) is still read off Bring, so it is circular as the bean says. Open; stays open.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-6qbv`: old parent `qou-qhcr` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

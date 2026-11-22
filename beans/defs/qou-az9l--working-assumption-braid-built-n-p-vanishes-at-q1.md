@@ -5,7 +5,8 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T09:23:07Z
-updated_at: 2026-11-22T11:05:00Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-10v9
 ---
 
 Owner 2026-11-22 (thread, PR #8804): siblings work under this working assumption and track this bean for proving and formalising it.
@@ -36,3 +37,7 @@ Prior art: QOU/MassTheory/QOneFlipSymmetry.lean (s34) proves the n = 3 weight-sp
 
 
 2026-11-22 (issue #9002, branch claude/np-gap-q-one-unit-map-2026-11-22): PROVED for the closure mass of def:mass-identity. At q = 1 the mass is 2^(components of the closure) (Lean CategoricalMassAtOne.card_fixedColouring / mass_at_one, given the q = 1 bridge), so m_p = m_n = 8 for beta_Bor and its mirror. The Borromean rings are amphichiral, so the closure mass gives no n-p split at any q. Item 4 (E0 pole): the pole is the c_q^2 of comparing an energy with a mass. Through def:mass-energy the cell is 2 m_e hbar_q ln q, which vanishes at q = 1 (Lean cell_mass_eq, hbar_log_bounds) and is -99.18 % against CODATA at q0. Audit docs/audits/2026-11-22-np-gap-at-q-one-unit-map.md.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-10v9`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

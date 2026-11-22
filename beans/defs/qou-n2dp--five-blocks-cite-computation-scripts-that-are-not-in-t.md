@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T00:00:00Z
-updated_at: 2026-11-21T00:00:00Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-trd0
 ---
 
 Found during epic N2 (Lean foundations), session https://claude.ai/code/session_01Qmmkt6y3aQRP3f1SXsiZqC, on main 313bff6.
@@ -35,3 +36,7 @@ block decide: point it at a live producer on the current basis, or mark the
 block's numbers as historical / superseded with this evidence.
 
 Owner decision needed for any block whose kind or claims change.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-trd0`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

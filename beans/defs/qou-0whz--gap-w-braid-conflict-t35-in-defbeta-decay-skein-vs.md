@@ -5,7 +5,8 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T19:26:06Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-avtq
 ---
 
 Opened 2026-11-15 (thread 'Derive the left-projector weak vertex'; owner: 'bean to reconcile W braids. explore it now.'). Two blocks assign different braids to the W: def:beta-decay-skein inserts T(3,5)=(σ₁σ₂)⁵ at the converting d quark, reducing to daughter ⊔ T(2,3) ⊔ unknot; conj weak-spectral-completeness / thm:hoefsmit-ew-cell-content assign W ↔ σ₁⁴=T(2,4), W⁻ = alt block. Both are topological assignments, neither derived. Structural constraint (Schur–Weyl, level 2 / convention D): every Hecke element commutes with U_q(gl₂) incl. K, so NO braid word changes flavour; the flavour changer is E/F (matches g-action table W± on T±). So a W braid can only supply a vertex weight/amplitude. T(3,5) trace is not left-supported (−9.33 % at q₀, PR #7887). Open: what (if anything) each braid is, decided structurally — never by selecting against Q_β or τ_n. Do not close while open.
@@ -24,3 +25,7 @@ Scope (a): excludes a braid as the W *process*, not as amplitude/form factor. St
 ## 2026-11-20 — W2 cross-workstream briefing (owner: "make sure they know")
 Full briefing: PR #8526 comment 7047864732 and docs/coordination/2026-11-20-w2-qbeta-ud-briefing.md. Record: docs/audits/2026-11-20-qbeta-epsilon-is-ruled-not-derived.md sections 1-11.
 Key points: Q_beta = (h[2]/2)*y3*E0 and sees only the isospin-3/2 block. The ruled epsilon (z_D, -43%) = label-A round trip = whole-space quantum trace. Label B (J4, strand-4 gamma-gamma) gives +0.33% and is NOT adopted (it labels isospin multiplicity, not n<->p). Label C gives 1/3, 0 and 0.202, none close. The owner made no label ruling ("3 2"). u/d are separate lines of the (3,1) rep of H4, not orientation-only (def:up/down-quark are stale). Convention-D volumes lie past the Phi_q pole. The six-term -2.43e15 was a truncated divergent series (fixed). The +0.17% / ~1 ppm Q_beta values and the April BW run are superseded or circular.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-avtq`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

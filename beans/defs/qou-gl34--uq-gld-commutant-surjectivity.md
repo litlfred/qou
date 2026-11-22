@@ -8,8 +8,8 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T10:10:00Z
-updated_at: 2026-11-15T11:45:00Z
-parent: qou-gld3
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-qs0e
 ---
 
 Needs: (i) complete reducibility of V^{⊗n} under U' = ⟨K, E, F⟩ at generic q; (ii) dim HW_λ = f^λ; then dim End_{U'} ≤ Σ_{ℓ(λ)≤d} (f^λ)² = dim ρ(H) (JimboGL.finrank_range_jimbo) gives equality. Mathlib has no quantum-group highest-weight theory and no complete reducibility for it. Feasibility flag: research-scale formalisation (weeks), not PR-sized. Possible shortcuts to weigh: q-Schur algebra (Dipper–James), or a dimension bound from the weight-space decomposition plus HW_λ ≅ S_λ.
@@ -25,3 +25,7 @@ Owner ruling 2026-11-15 ("G3: add infra"): build the highest-weight theory that 
 
 ## 2026-11-15 follow-up 2 done (session_01Qmmkt9G83BWVJD2uM6cPfq, owner "Prove it in Lean, one PR")
 `QOU/SchurWeyl/QuantumGLJantzen.lean`, Jantzen's coproduct Δ(E)=E⊗1+K⊗E, Δ(F)=F⊗K⁻¹+1⊗F, Δ(K)=K⊗K (Lectures on Quantum Groups §3.1), any `CommRing`, q·qi=1, every d, n: `raiseOp_eq_jDelta` (raiseOp i = Δ⁽ⁿ⁾(F_i) exactly); `lowerOp_eq_smul_cartan_mul_jDelta` (lowerOp i = q·Δ⁽ⁿ⁾(K_i)⁻¹·Δ⁽ⁿ⁾(E_i)); `jDelta_E_eq` (converse). So {raiseOp, lowerOp, cartan} and the iterated Jantzen images of {E_i, F_i, K_i^{±1}} generate the same algebra: item (2) is closed. NAMING: `raiseOp` sends e_i ↦ e_{i+1}, lowering the weight, so it is the standard F_i, not E_i as the entry above says; `lowerOp` is E_i up to the Cartan factor. Checked first exactly in sympy over ℚ(q) (d=2,3; n=2,3; every i). lean-direct `-DautoImplicit=false -s 65536` exit 0; axioms propext/Classical.choice/Quot.sound. Remaining: (3) and the any-field extension (#7874).
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-qs0e`: old parent `qou-gld3` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

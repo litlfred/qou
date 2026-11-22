@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T07:42:40Z
-updated_at: 2026-10-04T15:25:02Z
-parent: qou-weeq
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-0cyu
 ---
 
 Measured 2026-09-27 while looking for the next step after
@@ -210,3 +210,7 @@ other step this arc has closed today.
 
 Bean stays open (rule 13a). Its three open items are unchanged; item 1 is now this
 one sharp statement rather than a vague direction.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-0cyu`: old parent `qou-weeq` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

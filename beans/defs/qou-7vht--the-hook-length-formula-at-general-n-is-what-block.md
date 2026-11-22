@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T05:30:10Z
-updated_at: 2026-10-04T15:24:55Z
-parent: qou-weeq
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-0cyu
 ---
 
 Found while extending PR #7470 (branch claude/tl-quotient-ringcon-lift-2026-09-26).
@@ -379,3 +379,7 @@ is in NEITHER library/ NOR uploads/. Checked: the two jones-named library dirs a
 colored-Jones papers, a different subject. So that half cannot be done from the
 container at all; it needs the PDF supplied. Recorded so a future agent does not
 spend a session looking for it.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-0cyu`: old parent `qou-weeq` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

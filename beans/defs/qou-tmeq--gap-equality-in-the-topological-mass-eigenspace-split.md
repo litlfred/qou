@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T16:45:00Z
-updated_at: 2026-11-20T16:40:00Z
-parent: qou-27ys
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-ncxf
 ---
 
 Opened by tm on owner approval of D3 (2026-11-20, relayed by the coordinator on #8526). Do NOT close while the equality is open.
@@ -29,3 +29,7 @@ The corpus fixes two different descent maps, and the transient trace behaves opp
 2. **Surjective algebra homomorphism**, the categorical reading: `lem:descent`, `def:descent-involution`. Trace-compatibility holds only on the image, so the transient trace can be nonzero. But no concrete realisation of τ̂ in H_n is given, so the reading-3 positivity route (`trM_nonneg_of_reading3`) has no element to act on. It cannot be attempted until τ̂ is made concrete.
 
 Next honest step: decide or derive which map 𝔡_{n+1} is in the Hecke realisation. If it is (1), the conjecture is trivially true and the dilogarithm identification must move off the trace. If it is (2), construct τ̂ in H_n and test reading 3 on τ̂α and α − τ̂α. Stays open.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-ncxf`: old parent `qou-27ys` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

@@ -5,8 +5,8 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:00:00Z
-updated_at: 2026-11-22T21:30:52Z
-parent: qou-0fmb
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-59vq
 ---
 
 Stream 4 of the 2026-10-12 stalled-session split (coordinator session_01M5GA1LmsEf8tSMxFjMkmnn,
@@ -85,3 +85,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - Verified at 80-dps `mpmath` (`computations/probes/tl_uniqueness_threerow_factorisation_shadow_gluon_probe.py`, `scriptHash: 3ae4cba85e90`, Commit 1 `1f88e71305a6e71d41389edf2285daae1528f7d8`, Commit 2 / Witness `cfb7f3d64020483db10298c3ccdd51ae1d1bd7d8`, PR `litlfred/qou#8297`).
 
 ## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): NEEDS-OWNER. Its target is the factorisation of atom_braid_word, whose single-crossing interface letters are superseded (owner 2026-11-15: gamma-gamma rule covers nuclear bond letters; docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md). Generic-bond-weight Lean stays valid; the concrete word needs re-selection (#7876) before this is worth finishing. Kept open (section 13a).
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-59vq`: old parent `qou-0fmb` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

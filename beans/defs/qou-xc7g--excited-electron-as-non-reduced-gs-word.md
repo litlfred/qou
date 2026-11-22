@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T00:00:00Z
-updated_at: 2026-11-21T00:00:00Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-8lxd
 ---
 
 Owner question (2026-11-21): "Can we see this in the grobner bases calculations that an excited electron is a non-reduced?" Measured in PR #8727 (branch claude/photon-excitation-gs-reduction-2026-11-21, audit docs/audits/2026-11-21-photon-excitation-gs-reduction.md).
@@ -18,3 +19,7 @@ Open: (1) which construction the corpus means (owner); (2) general-n Lean for ch
 
 ## 2026-11-21 coordinator note
 Owner: the electron is σ₀σ₁σ₀, whose closure is the Hopf link (ruled 2026-11-21; trefoil σ₀³ is the backup). Under that ruling, the strand-adding construction is the consistent one: the excited word is reduced, its closure stays the Hopf link, and the level is word length. The writhe +2 reading belongs only to the trefoil backup. Audit §4a (#8732). Bean stays open: general-n Lean for χ = q^writhe and the +1 length per strand.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-8lxd`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

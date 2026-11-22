@@ -5,7 +5,8 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-19T06:32:38Z
-updated_at: 2026-11-20T09:55:00Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-trd0
 ---
 
 
@@ -127,3 +128,7 @@ probe's code is deliberately untouched.
 
 **Stays open** per rule 13a: whether the appendix should point somewhere else
 entirely is unresolved, and nobody has established what it *should* name.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-trd0`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

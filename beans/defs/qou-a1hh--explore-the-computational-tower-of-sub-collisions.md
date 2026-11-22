@@ -5,7 +5,8 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:48:36Z
-updated_at: 2026-11-15T17:26:00Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-0uga
 ---
 
 Owner 2026-10-12: explore two types of towers. Parent context: qou-jfx8 (segment collision datum, PR #7741). Prior-work grep in progress.
@@ -151,3 +152,7 @@ L± added: pass ⟺ pure (5460 words). H₂ with chiral electrons σ₁², V⁻�
 - STANDBY backups (owner, 08:22Z): (i) put the q² on the bond letter, with the electron staying V³; (ii) unseen emitters at the exceptional divisor = the conjugation-invariant reading.
 
 **2026-11-16 (PR #8128, 04e78f0 / 8519534).** Connected-part principle formalised: `connected`, `connected_eq_zero_of_split` (sorry-free) in observations/virtual-subword.lean. Borromean three-party Jones cumulant exact: log(1 − (t−1)⁴(t²+t+1)/(t²(t+1)²)) ≈ −¾(log t)⁴, pairs 0. Stage 4: entangled pair admissible but reading 3 does not discriminate it from a self-twist or no pair (scope a). Stage 5 (6-node ring) pre-registered, not run. Open: t↔q dictionary; whether φ is b₃.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-0uga`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

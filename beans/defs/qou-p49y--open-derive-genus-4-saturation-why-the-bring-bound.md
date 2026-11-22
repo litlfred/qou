@@ -4,7 +4,8 @@ title: 'OPEN: derive genus-4 saturation (why the Bring bound picks genus exactly
 status: todo
 type: task
 created_at: 2026-11-22T18:27:46Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-gwte
 ---
 
 Owner 2026-11-22 (issue #8979, thread "Settle which α_em form is canonical"): leave saturation open as a bean for exploration.
@@ -24,3 +25,7 @@ Leads not yet tried: a counting/extremal argument (why the maximal admissible me
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Created today; its premises (electron family T(3,3m+2), T(2,n) backup) match the 2026-11-22 rulings. Open; stays open.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-gwte`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

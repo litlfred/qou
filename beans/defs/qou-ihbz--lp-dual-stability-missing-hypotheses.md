@@ -1,5 +1,5 @@
 ---
-# lp_dual_stability
+# qou-ihbz
 title: lp dual stability missing hypotheses
 status: completed
 pr: 8218
@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-22T21:31:33Z
+updated_at: 2026-11-22T21:55:07Z
 parent: qou-uot9
 ---
 
@@ -32,3 +32,7 @@ Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
 
 Verdict: ALREADY-DONE for claims (1) and (4), which are derived. Claims (2) and (3) concern the specific 6×6 Gram matrix at q₀ and stay unproved (lean docstring lines 39, 116). That matrix must be convention D at the proton pin to be current; this was not re-verified here, and it sits in the convention lane (qou-cdx1/cds1).
+
+## 2026-11-22 — id renamed `lp_dual_stability` → `qou-ihbz` (bean-hygiene, owner-approved)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. The old id contained underscores, which the tracker's id pattern `[A-Za-z0-9-]+` rejects, so `scripts/check-beans.sh` reported this file as having no id and every `beans` query missed it. Renamed on the owner's approval of qou-w3yy (project-chat card, 2026-11-22 21:53Z). Content unchanged; the old id stays greppable here.

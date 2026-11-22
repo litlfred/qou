@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T16:00:00Z
-updated_at: 2026-11-20T16:00:00Z
-parent: qou-6gf9
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-2002
 ---
 
 Filed from PR #8573 (`docs/audits/2026-11-20-lepton-self-energy-front.md` §5 item 1).
@@ -35,3 +35,7 @@ is a fit and is forbidden (NO FITTING, owner 2026-09-05).
 library section quoted. Run the six-path corpus-grep first.
 
 Stays clear of the q_0-derivation gate (qou-eic1): q_0 is held fixed.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-2002`: old parent `qou-6gf9` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

@@ -8,8 +8,8 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T10:20:00Z
-updated_at: 2026-11-15T17:30:00Z
-parent: qou-gl34
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-qs0e
 ---
 
 Character route (coordinator suggestion): weight multiplicities in V^{⊗n} against Kostka numbers, the G2 trace identity Tr(K|λ-block) = s_λ(1,q²,…) and linear independence of Schur polynomials.
@@ -44,3 +44,7 @@ Still open: module isomorphism HW_μ ≅ S_λ as H-modules (follows from charact
 ## 2026-11-22 — module isomorphism proved (PR #9026)
 
 `exists_hwSpace_equiv_specht`: HW_μ ≅ S_{λ(μ)} as H_{m+1}(q)-modules, via generic `exists_linearEquiv_of_trace_eq` (surjective reps + equal traces + equal dim ⇒ iso). Sorry-free, standard axioms. G3.4c identification is complete over an ordered field; remaining open: any-field case (#7874).
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-qs0e`: old parent `qou-gl34` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

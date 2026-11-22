@@ -9,8 +9,8 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-22T21:45:00Z
-parent: qou-qhcr
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-6qbv
 ---
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
 
@@ -135,3 +135,7 @@ Bean stays open.
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Step 2 (cyclic stabilisers) is now hypothesis-free via #9133; the only gap left is the equivariant triangulation (qou-yslf). Stays in-progress.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-6qbv`: old parent `qou-qhcr` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

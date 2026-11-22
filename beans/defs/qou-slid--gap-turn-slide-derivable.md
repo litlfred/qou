@@ -7,7 +7,8 @@ priority: normal
 tags:
     - pl-knots
 created_at: 2026-11-21T22:45:00Z
-updated_at: 2026-11-22T10:30:00Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-rtxm
 ---
 
 Issue #8902, PR #8962. `Move.slide` in `QOU/MathlibExt/LinkDiagramCode.lean` moves `t` turns from
@@ -99,3 +100,7 @@ excluded by r1. **Consequence:** no linear-rack model separates the slide. This 
 a statement about the ansatz only, so it does not settle derivability; the bean stays OPEN.
 Diagrammatic hint for route 1: the proof uses one r3 (strand c over a, b) with a kink
 at a and at b, i.e. "push a kink through a crossing with r3".
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-rtxm`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

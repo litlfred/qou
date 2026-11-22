@@ -5,7 +5,8 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:48:35Z
-updated_at: 2026-11-15T21:40:00Z
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-gwte
 ---
 
 Owner 2026-10-12: explore two types of towers. Parent context: qou-jfx8 (segment collision datum, PR #7741). Prior-work grep in progress.
@@ -29,3 +30,7 @@ Extended `QOU/Brings/BringCoverTower.lean` (`lean -DautoImplicit=false -s 65536`
 - Proved the generic `[CommRing R]` Cayley–Hamilton trace criteria for projective order 4 (`t² = 2Δ ⟹ M⁴ = -Δ² I₂`, `projOrder4_cayley_hamilton`) and projective order 5 (`t⁴ - 3t²Δ + Δ² = 0 ⟹ M⁵ = -(t³ - 2tΔ)Δ I₂` with discriminant `5Δ²`, `projOrder5_cayley_hamilton`, `projOrder5_discriminant_identity`).
 - At `p = 5`, `PSL₂(𝔽₅) ≅ A₅` (`|A₅| = 60`) fails Riemann–Hurwitz (`40 ∤ 60`, `psl2_five_not_rh245`), while `PGL₂(𝔽₅) ≅ S₅` (`|S₅| = 120`) yields `Σ₄` (`g = 4`, `bring_pgl2_five_rh`).
 - For prime `p > 5` with `p ≡ ±1 (mod 5)`, both the direct `PSL₂(𝔽_p)` branch (`p ≡ ±1, ±9 mod 40`, e.g. `p = 31, 41`, subdirect product `G_p = S₅ × PSL₂(𝔽_p)`) and the fiber-product `PGL₂(𝔽_p)` branch (`p ≡ ±11, ±19 mod 40`, e.g. `p = 11, 19, 29`, index-2 fiber product `G_p = S₅ ×_{C₂} PGL₂(𝔽_p)` over `Δ(2,4,5)^ab ≅ C₂`) have order `120 · |PSL₂(𝔽_p)|` and yield unramified `PSL₂(𝔽_p)`-Galois covers `Σ(G_p) → Σ₄` of genus `g(p) = 3 |PSL₂(𝔽_p)| + 1` (`bringPSL2Cover_rh`, `bringPSL2CoverGenus_values`: `g(11) = 1981`, `g(19) = 10261`, `g(29) = 36541`, `g(31) = 44641`, `g(41) = 103321`).
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-gwte`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.

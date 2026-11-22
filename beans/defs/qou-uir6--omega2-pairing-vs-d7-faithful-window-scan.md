@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T19:30:00Z
-updated_at: 2026-11-20T16:06:50Z
-parent: qou-za3q
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-x631
 ---
 **Recreated 2026-10-12** (stream 4 of #7735, session_01PmZzY27QHceKGXwNivRt64). The original bean,
 its window-scan probe and its data lived only in a stalled container and were lost; the
@@ -72,3 +72,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8353, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-x631`: old parent `qou-za3q` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

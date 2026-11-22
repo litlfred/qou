@@ -8,8 +8,8 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T12:00:00Z
-updated_at: 2026-11-15T10:00:00Z
-parent: qou-qs4c
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-qs0e
 ---
 
 G2 of the qou-qs4c dispatch (2026-11-15).
@@ -46,3 +46,7 @@ normaliser is forced. It is derived from G1/G2, `heckeProduct` bijectivity and M
 - SchurWeyl/OcneanuWeightSystemScope.lean: deleted. not_isOcneanuWeightSystem was the evidence for the ruling.
 - 6 files carried prose mentions; they are updated.
 - No imports, content blocks, witnesses or Python code used the class.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-qs0e`: old parent `qou-qs4c` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

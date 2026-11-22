@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T17:35:00Z
-updated_at: 2026-11-21T13:20:00Z
-parent: qou-lx8f
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-vo9t
 ---
 
 Open conjecture-level question (keep open per AGENTS §13a). The owner chose
@@ -53,3 +53,7 @@ No change: R2 (a non-jet Ř⁽ⁿ⁾ fixed before computing) has no derivation i
 ## 2026-11-21 R2 candidates A and B excluded in Lean (PR #8865)
 
 `QOU/SchurWeyl/R2TwistTower.lean` (sorry-free). Candidate A (strand tower, full twist, convention D): κ₁ = (q²−1)(q⁸+q⁶+q⁴+1)/(q²+1)² ≠ 0 for real q ≠ 0, q² ≠ 1, so its zero set is not {n ∣ 6}. Scope (a): this tower with this element only. Candidate B (jet in q): a level-independent κ cannot vanish exactly at n ∣ 6. Scope (b), invariant = level-independence. Candidate C (roots of unity) has the target built in and was not adopted. No candidate realises C-5a, so this bean stays open.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-vo9t`: old parent `qou-lx8f` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

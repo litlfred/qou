@@ -7,8 +7,8 @@ priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:45:00Z
-updated_at: 2026-11-20T16:06:50Z
-parent: qou-usxh
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-qs0e
 ---
 
 From qou-qs1d exploration (PR #7827, audit §4c; all statements below are proved, sorry-free).
@@ -51,3 +51,7 @@ On three strands every γγ word is a power of V = σ₀σ₁⁻¹, so a γγ-bu
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8439, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-qs0e`: old parent `qou-usxh` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

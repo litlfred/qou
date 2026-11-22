@@ -7,9 +7,9 @@ priority: normal
 tags:
     - compute
     - provenance
-parent: qou-ales
+parent: qou-v2om
 created_at: 2026-10-13T14:10:00Z
-updated_at: 2026-10-13T16:00:00Z
+updated_at: 2026-11-22T21:59:12Z
 ---
 
 Owner ruling 2026-10-13 (option 1, "delete + bean"): the producer
@@ -39,3 +39,7 @@ finding to report, not a bug to fit away.
 ## Round 68 Formalization Progress (PR #8285)
 - Formalized `QOU.Mass.TwoBodyInterfaceBond.cross_difference_eq_zero` (sorry-free, 0 advisories across all 6 static vacuity audits).
 - Verified at 80-dps `mpmath` (`computations/probes/twobody_deficit_regulator_sdp_milnor_probe.py`, `scriptHash: 39a564805d3e`, Commit 1 `70bec575bb493c7f91cf1b39cb54e58ef8343777`, Commit 2 / Witness `250465c60a6cea44d9f569e88cc79ee2c8d8051b`, PR `litlfred/qou#8285`).
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-v2om`: old parent `qou-ales` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.

@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T12:00:00Z
-updated_at: 2026-11-15T12:00:00Z
-parent: qou-99qc
+updated_at: 2026-11-22T21:59:12Z
+parent: qou-10v9
 ---
 
 Owner-approved task (relayed 2026-11-15): derive the nucleon gluon segment by the γγ rule, then enumerate if it is not unique.
@@ -47,3 +47,7 @@ Branch `claude/gg-gluon-7876-reconcile-2026-11-21`, cut from #7876 and merged wi
 - Superseded: question 2 (D1 = A scores bare V³; CORE·TAIL·V¹ was offered to the owner and not chosen).
 - Diagnostic (`d1a_functional_arm.py`, not pre-registered): ε_flavour on CORE·TAIL·Vᵏ, k = 0..3 gives 0.2531 / 0.1451 / 0.2680 / 0.2477 MeV; V³ calibrates to the scored cell to 1e-25. Nothing selected.
 - Still open: question 1 (γγ vs H₂-parity σ₀²). It is moot for the scored Q_β, but no ruling closes it for H₂ bond letters or the old-letter binding redo. Bean stays todo (rule 13a).
+
+## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
+
+Parent set to `qou-10v9`: old parent `qou-99qc` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.
