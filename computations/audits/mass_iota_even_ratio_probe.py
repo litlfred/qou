@@ -7,7 +7,7 @@ Compared to m_p/m_e = 1836.15267343 (CODATA 2022). Pass: within 1 %.
 """
 import sys
 from mpmath import mp, mpf, matrix, nstr
-from qou_substrate.constants import q_at
+from qou_substrate.constants import MASS_RATIO_P_E_STR, q_at
 
 mp.dps = 70
 q = q_at(70)
@@ -40,7 +40,7 @@ def O(word):
 
 be = [(0, True), (1, True), (0, True)]
 bp = [(0, True), (1, False)] * 3
-target = mpf("1836.15267343")
+target = mpf(MASS_RATIO_P_E_STR)  # CODATA 2022 m_p/m_e, read rather than typed (#9104)
 R = abs(E(bp)) / abs(E(be))
 print("q0      ", nstr(q, 20))
 print("E(e)    ", nstr(E(be), 20), " O(e)", nstr(O(be), 20))
