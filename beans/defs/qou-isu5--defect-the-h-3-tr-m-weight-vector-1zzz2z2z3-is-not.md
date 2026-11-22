@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-11-22T21:30:50Z
+updated_at: 2026-11-22T21:55:54Z
 parent: qou-59vq
 ---
 
@@ -275,3 +275,12 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8356, closed o
 Still applies. The defect is convention-independent, so convention D and today's rulings leave it standing. computations/probes/trm5_zcubed_live_producer_audit.py records that five computations/ producers still carry z**3 and that fixing the weight alone exposes the singular D-frame Gram. That is a compute change with downstream numbers; it waits on the owner (ask-owner rule), not done here.
 
 ## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): NEEDS-OWNER. Convention-independent defect, still live in 5 producers; fixing it moves downstream numbers and exposes the singular D-frame Gram.
+
+## 2026-11-22 CORRECTION to my two notes above (hecke-schur-weyl-lean drain): verdict is ALREADY-DONE, not NEEDS-OWNER
+I wrote 'still live in 5 producers' from the probe's docstring, which describes the state before the 2026-08-30 fix. Measured today on main 3c4c98fcc:
+- The shape-keyed scan in trm5_zcubed_live_producer_audit.py finds 0 live sites with z^3 as the sixth weight; all 13 remaining hits are under fsh-guts/deprecated/computations/.
+- All 12 live sites carry h*z^2 + z (checked by hand, incl. compound_shift_nf.py:323, substrate/hecke_core_symbolic.py:166).
+- Re-ran the affected producers that write witnesses: compound_shift_nf, h4_markov_character_decomposition, probes/markov_reduction_h3_to_h4_verify, shift_from_nf_basis. No numeric field moved (only scriptHash/environment/new provenance keys); restored, nothing committed.
+- atom-mass-derived.witness.json was computed 2026-09-04, after the fix. Its producer currently crashes on an mpf format string (line 396), unrelated to the weight.
+- The other affected scripts are print-only and write no witness.
+So nothing would move. Not closed here; waiting on the owner's card.
