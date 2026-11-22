@@ -59,6 +59,20 @@ f(3) = f(-3) (f even in H on V^{(x)3}) with f(3) != f(1). K = q^H alone
 fails; K + K^-1 gives [2]_q h^2 (1, 0, -1), K^2 + K^-2 and H^2 also work.
 The direction is forced by evenness under K -> K^-1; the overall scale
 f(3) - f(1) is not fixed by this.
+
+Where the evenness comes from (added 2026-11-22). iota: sigma -> -sigma^-1
+is an involution of H_3(q) (Hecke and braid checked on V^{(x)3}). On the
+gl(1|1) side it is the parity swap: the trace of rho(iota x) on sector k
+equals the trace of rho(x) on sector 3 - k. Since 3 is odd, the supertrace
+sign (-1)^k flips under k -> 3 - k, so str(f(H) rho(iota x)) =
+-str(f(-H) rho(x)). An even f therefore gives an iota-odd functional, and
+(Lean: QOU.AlphaEM.IotaOdd.iota_odd_iff) the iota-odd block functionals are
+exactly the multiples of (1, 0, -1). Normalisation: among even insertions,
+the idempotent ones with nonzero weights are P_ext (weights (1, 0, -1)) and
+1 - P_ext (weights (-1, 0, 1)); P_ext is a polynomial in K + K^-1. So
+requiring a projection fixes the scale up to the sign choice of which
+sectors are kept. Not derived: why the alpha_em functional should be
+iota-odd, and that sign.
 """
 import sympy as sp
 
@@ -205,6 +219,20 @@ def main():
                        for g, e in zip(kk, [1, 0, -1]))))
     k1 = ins_weights([q ** x for x in hval])
     checks.append(('K alone has a nonzero hook weight', sp.simplify(k1[1]) != 0))
+    # iota = sigma -> -sigma^-1 is the parity swap k -> 3 - k.
+    i1, i2 = -s1.inv(), -s2.inv()
+    checks.append(('iota: Hecke relation', sp.simplify(i1 * i1 - h * i1 - sp.eye(8)) == sp.zeros(8, 8)))
+    checks.append(('iota: braid relation', sp.simplify(i1 * i2 * i1 - i2 * i1 * i2) == sp.zeros(8, 8)))
+    swap_ok = all(sp.simplify(sector_tr(word(w, i1, i2, sp.eye(8)), k)
+                              - sector_tr(word(w, s1, s2, sp.eye(8)), 3 - k)) == 0
+                  for w in words for k in range(4))
+    checks.append(('iota swaps sector k with sector 3-k', swap_ok))
+    # P_ext as a polynomial in c = K + K^-1, and its weights.
+    cK = lambda x: q ** x + q ** -x
+    pext = [sp.simplify((cK(x) - cK(1)) / (cK(3) - cK(1))) for x in hval]
+    checks.append(('P_ext = (c - c(1))/(c(3) - c(1)) is the extremal projector',
+                   pext == [1 if abs(x) == 3 else 0 for x in hval]))
+    checks.append(('P_ext insertion weights (1,0,-1)', ins_weights(pext) == [1, 0, -1]))
     for n, c in checks:
         print(('PASS ' if c else 'FAIL ') + n)
     return 0 if all(c for _, c in checks) else 1
