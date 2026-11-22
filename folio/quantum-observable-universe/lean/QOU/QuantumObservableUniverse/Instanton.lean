@@ -364,7 +364,9 @@ theorem categorical_dq_squared_nonvanishing {C : Type u}
     cqd.dq ≫ cqd.dq ≠ 0 :=
   h.nonvanishing
 
-/-- **Categorical jet object**: `J¹(A) = A ⊗_C Ω¹(A)`.
+/-- **Categorical jet object**: `J¹(A) = (A ⊗ A)/I²`, `I = ker m`, a split extension
+    of `A` by `Ω¹(A) = I/I²` (owner ruling 2026-11-22; the commutative case is
+    `QOU.LiftingDescent.jetRetract_comp_jetSection`).
     LaTeX: `\label{def:categorical-jet}` -/
 structure CategoricalJet (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
@@ -373,10 +375,16 @@ structure CategoricalJet (C : Type u) [CategoryTheory.Category.{v} C]
   frobHopf : @FrobeniusHopfData C _ _ _
   /-- The jet object `J¹(A)` in `C`. -/
   jetObj : C
-  /-- Jet evaluation `j¹ : J¹(A) → A` (the counit). -/
+  /-- The differentials `Ω¹(A) = I/I²` in `C`. -/
+  differentials : C
+  /-- Jet evaluation `j¹ : J¹(A) → A` (the retraction induced by `m`). -/
   jetEval : jetObj ⟶ frobHopf.obj
-  /-- The kernel inclusion `A ⊗ Ω¹(A) ↪ J¹(A)`. -/
-  kernelIncl : frobHopf.obj ⟶ jetObj
+  /-- The section `ℓ : A → J¹(A)`, `a ↦ [a ⊗ 1]`. -/
+  unitSection : frobHopf.obj ⟶ jetObj
+  /-- **Splitting**: `ℓ ≫ j¹ = 𝟙_A`. -/
+  section_retract : unitSection ≫ jetEval = 𝟙 frobHopf.obj
+  /-- The kernel inclusion `Ω¹(A) ↪ J¹(A)`. -/
+  kernelIncl : differentials ⟶ jetObj
   /-- **Exactness**: `kernelIncl ≫ jetEval = 0`. -/
   exact : kernelIncl ≫ jetEval = 0
 

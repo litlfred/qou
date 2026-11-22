@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Min-Frobenius-norm collapse: T_β = S · 1_A — general unital R-algebra lift of [prop:t-beta-markov-frobenius-collapse]",
   lean: {
-    ref: "qou:QOU.QBeta.MarkovFrobeniusCollapse.General.markov_frobenius_min_norm_lift",
+    ref: "qou:QOU.QBeta.MarkovFrobeniusCollapse.General.markov_frobenius_min_norm_twisted",
     validation: "not_checked",
   },
   uses: [
@@ -25,7 +25,8 @@ export default proposition({
   authorNotes: [
     {
       kind: "status",
-      body: "**Theorem (sorry-free, LSP-verified).** Lean proof landed via [PR #1761](https://github.com/litlfred/qou/pull/1761) at namespace `QOU.QBeta.MarkovFrobeniusCollapse.General`.  Three sorry-free declarations + one reusable lemma:\n\n- `smul_one_sq` — reusable algebraic identity $(r \\cdot 1)(r \\cdot 1) = (r^2 \\cdot 1)$ over any unital $R$-algebra.\n- `completing_the_square_general` — the algebraic content of the Lagrangian proof, over $[\\mathrm{CommRing}\\, R]$.\n- `markov_frobenius_min_norm_lift` — the inequality $S^2 \\le \\tau(X \\cdot X)$ under $\\mathsf{PSDTrace}$.\n- `markov_frobenius_min_norm_uniqueness` — the equality case $\\tau(X \\cdot X) = S^2 \\Leftrightarrow X = S \\cdot 1$ under $\\mathsf{PSDTrace} + \\mathsf{NonDegTrace}$.\n\nSee sibling `.lean` file for the re-export.",
+      date: "2026-11-22",
+      body: "**Theorem (sorry-free).** Restated with the twisted form $\\tau(X \\cdot X^\\dagger)$ on owner ruling 2026-11-22 (bean `qou-baov`). Declarations in the sibling `t-beta-markov-collapse-general-lift.lean`, namespace `QOU.QBeta.MarkovFrobeniusCollapse.General`: `completing_the_square_twisted`, `markov_frobenius_min_norm_twisted` (the bound, under `TwistedPSDTrace`) and `markov_frobenius_min_norm_twisted_uniqueness` (the equality case, under `TwistedNonDegTrace`). The untwisted declarations (`markov_frobenius_min_norm_lift`, `_uniqueness`) are the case $\\dagger = \\mathrm{id}$. The library file `QOU/QBeta/MarkovFrobeniusCollapse/General.lean`, whose `markov_frobenius_min_norm_lift` only projected its own hypothesis, is removed.",
     },
   ],
 });

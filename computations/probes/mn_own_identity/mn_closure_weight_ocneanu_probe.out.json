@@ -1,0 +1,21 @@
+{
+ "probe": "mn_closure_weight_ocneanu_probe",
+ "checks": {
+  "tau(T_{w_C}) = z^{n - c} for every class": true,
+  "z_D: class weight gives 6 + 3/q^2": true,
+  "z = q: class weight gives 6": true,
+  "z_D times any q^{k(n-c)}: never q-independent (k = -6..6)": true
+ },
+ "all_pass": true,
+ "counts": {
+  "z_D = q^3/(q^2+1)": {
+   "weight 1/tau(T_wC)": "3*(2*q**2 + 1)/q**2",
+   "weight 1/tau(T_sigma)": "(5*q**6 + 3*q**4 + 7*q**2 + 3)/(q**2*(q**4 + 1))"
+  },
+  "z = q": {
+   "weight 1/tau(T_wC)": "6",
+   "weight 1/tau(T_sigma)": "(5*q**2 + 1)/q**2"
+  }
+ },
+ "reading": "The weight q^{c-n} is 1/tau_z(T_{w_C}) at z = q; at the canonical z_D the count is 6 + 3/q^2."
+}

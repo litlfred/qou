@@ -6,5 +6,5 @@ export default definition({
   title: "Recursive Brane Tower",
   tags: ["brane-tower", "jet-bundle", "frobenius-hopf"],
   examples: ["ex:recursive-brane-tower-su2"],
-  uses: ["prop:jet-prolongation"],
+  uses: ["prop:jet-prolongation", "def:categorical-jet"],
 });

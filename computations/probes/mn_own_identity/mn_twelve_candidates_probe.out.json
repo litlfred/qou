@@ -1,0 +1,62 @@
+{
+ "probe": "mn_twelve_candidates_probe",
+ "checks": {
+  "Burnside: proton 6, neutron 6, nucleons 12, whole 24": true,
+  "2 F_Bor(1) = 12": true
+ },
+ "all_pass": true,
+ "candidates": {
+  "S3 count on proton sector (Burnside)": {
+   "value": 6,
+   "mechanism": "sector"
+  },
+  "S3 count on neutron sector": {
+   "value": 6,
+   "mechanism": "sector"
+  },
+  "S3 count on both nucleon sectors": {
+   "value": 12,
+   "mechanism": "sector"
+  },
+  "S3 count on whole V^(x)3": {
+   "value": 24,
+   "mechanism": "whole space"
+  },
+  "2 * F_Bor(1) = 2 [3]_1!": {
+   "value": 12,
+   "mechanism": "volume-term functional at q=1"
+  },
+  "dim H_3 (= |S_3|) * 2": {
+   "value": 12,
+   "mechanism": "none"
+  },
+  "dim H_4 / 2": {
+   "value": 12,
+   "mechanism": "none"
+  },
+  "dim TL_3, dim TL_4": {
+   "value": [
+    5,
+    14
+   ],
+   "mechanism": "none"
+  },
+  "|A_4|": {
+   "value": 12,
+   "mechanism": "none"
+  },
+  "3 colours x 4 weights of V^(x)3": {
+   "value": 12,
+   "mechanism": "none"
+  },
+  "2 |chi(Bring)|, genus 4": {
+   "value": 12,
+   "mechanism": "none"
+  },
+  "trace of su(2) Casimir on W_p": {
+   "value": "21/4",
+   "mechanism": "sector"
+  }
+ },
+ "note": "Values equal to 12 without a mechanism are listed, not selected."
+}

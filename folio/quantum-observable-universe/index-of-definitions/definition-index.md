@@ -1,4 +1,4 @@
-**1321** indexed entries across 7 categories.
+**1320** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -561,7 +561,6 @@
 | [prop:categorical-proton-exists](#prop:categorical-proton-exists) | Existence of the categorical proton | Ch 14 |
 | [prop:confinement-level-exists](#prop:confinement-level-exists) | Existence of the confinement level | Ch 7 |
 | [prop:frobenius-pairing-exists](#prop:frobenius-pairing-exists) | Existence of the Frobenius pairing | Ch 1 |
-| [prop:mass-identity-exists](#prop:mass-identity-exists) | Existence of the inertial mass identity | Ch 9 |
 | [prop:knot-operator-energy-exists](#prop:knot-operator-energy-exists) | Existence of the knot operator energy | Ch 10 |
 | [prop:assembly-projector-exists](#prop:assembly-projector-exists) | Existence of the symmetric-block assembly projector | Ch 16 |
 | [prop:qbeta-canonical-markov-weights-explicit-instance](#prop:qbeta-canonical-markov-weights-explicit-instance) | Explicit $\sqrt q$-bearing instance of $\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable) | Ch 9 |
@@ -957,7 +956,7 @@
 | [conj:bond-order-eq-jet-degree](#conj:bond-order-eq-jet-degree) | Body order equals jet degree: the n-nucleon cluster sits at jet vertical degree n | Ch 11 |
 | [lem:degree-one-braid-trivial-volume](#lem:degree-one-braid-trivial-volume) | Braid words of a degree-one element have non-hyperbolic closures | Ch 11 |
 | [lem:mi-sw-abelianisation-cartan](#lem:mi-sw-abelianisation-cartan) | Cartan reduction recovers the SW differential | Ch 6 |
-| [lem:jet-prolongation-categorical-jet](#lem:jet-prolongation-categorical-jet) | The jet object $J^1(A)$ is built from a direct summand of $A \otimes A$ | Ch 4 |
+| [lem:jet-prolongation-categorical-jet](#lem:jet-prolongation-categorical-jet) | The base object is a direct summand of the jet object $J^1(S)$ | Ch 4 |
 | [lem:chebyshev-degree-genus](#lem:chebyshev-degree-genus) | Chebyshev degree equals Seifert genus for $T_{2,p}$ | Ch 6 |
 | [lem:mobius-energy-frobenius-kernel](#lem:mobius-energy-frobenius-kernel) | Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$ | Ch 10 |
 | [lem:crossing-application-chains](#lem:crossing-application-chains) | Closed chains of crossing applications on words and on states | Ch 2 |
@@ -967,7 +966,7 @@
 | [lem:ccg-crossed-module-structure](#lem:ccg-crossed-module-structure) | Crossed-module structure on $(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ | Ch 4 |
 | [lem:topological-mass-cat-descended](#lem:topological-mass-cat-descended) | Descended term equals the base-level mass | Ch 9 |
 | [lem:topological-mass-holonomy](#lem:topological-mass-holonomy) | Descended term is the unknot-core holonomy | Ch 9 |
-| [lem:descent](#lem:descent) | Descent preserves the quantum observable universe | Ch 4 |
+| [lem:descent](#lem:descent) | Descent along the brane tower | Ch 4 |
 | [lem:feynman-eigenbasis-decomposition](#lem:feynman-eigenbasis-decomposition) | Eigenbasis decomposition for the Feynman amplitude | Ch 11 |
 | [lem:topological-mass-cat-eigenspace](#lem:topological-mass-cat-eigenspace) | Eigenspace decomposition of the categorical mass integrand | Ch 9 |
 | [lem:topological-mass-eigenspace-decomp](#lem:topological-mass-eigenspace-decomp) | Eigenspace decomposition of the mass integrand (descent involution) | Ch 9 |

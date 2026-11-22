@@ -106,7 +106,7 @@
         "keyedBy": "family",
         "keyFrom": "<package>-<version>-<cpython-tag>-<platform>-<source-key>, e.g. pyhecke-native-0.9.0-cp313-linux_x86_64-<12 hex>"
       },
-      "description": "Built wheels of qou's native Python extensions, today only `pyhecke-native` (not on PyPI; a maturin build takes about 2.5 min per container). One orphan branch per package, version, CPython tag, platform and source key, where the source key hashes the git trees of `tools/pyhecke-native` and `tools/hecke-engine`. Read and written by scripts/wheel-cache.sh, which keeps its git objects in a private bare repository rather than the checkout; scripts/build-pyhecke-native.sh restores before it builds and seeds after a clean build passes its convention gate. `wheel-cache/` is where a member is mounted; nothing is tracked there. Bean qou-dgkf."
+      "description": "Built wheels of qou's native Python extensions, today only `pyhecke-native` (not on PyPI; a maturin build takes about 2.5 min per container). One orphan branch per package, version, CPython tag, platform and source key, where the source key hashes the git trees of `tools/pyhecke-native` and `tools/hecke-engine`. Read and written by scripts/wheel-cache.sh, which keeps its git objects in a private bare repository rather than the checkout; scripts/build-pyhecke-native.sh restores before it builds by default, but seeds origin only when PYHECKE_NATIVE_PUSH=1 (and never when PYHECKE_NATIVE_NO_SEED=1), after a clean build passes its convention gate. `wheel-cache/` is where a member is mounted; nothing is tracked there. Bean qou-dgkf."
     },
     {
       "id": "qou-typologies",
@@ -129,6 +129,45 @@
       ],
       "description": "Deprecated and retired material, kept and addressable, deliberately absent from the rendered site (platform kind `fsh-guts`, holds: context). Kept on its own branch, `cat/cat-harness/fsh-guts`, not on main: `bun run state:mount` (from folio-assistant/) puts it at `fsh-guts/`, and `state:push` splices edits back. Holds the parked renderers and workflows from the migration (bean qou-6u3n) and older scratch. A file is a graph node only if it declares `$schema: folio-fsh-guts/v1`; the rest is kept bytes, which this declaration makes discoverable rather than claiming they are nodes. Also holds the three former `_deprecated/` trees under `fsh-guts/deprecated/` (computations, docs/audits, qou-mass data).",
       "_comment": "Declared 2026-10-04, story TOOLS T2 (bean qou-4r5m), as a plain path. Moved to the platform's `source: {kind: branch}` form 2026-10-10 on owner instruction (\"_deprecated is now branch cat/cat-harness/fsh-guts ... migrate if not\", then option 2, full cut-over), bean qou-6u3n. Same shape as the platform's own fsh-guts declaration in folio-assistant.json."
+    },
+    {
+      "id": "trace-cache",
+      "path": "trace-cache/",
+      "graphTypologies": [
+        "trace-cache"
+      ],
+      "storage": {
+        "branchPrefix": "cat/qou/trace-cache/",
+        "keyedBy": "family",
+        "keyFrom": "<function>-<engine-key>-q<q-key>-dps<dps>, e.g. tr-m-atomic-mpfr-suffixes-<12 hex>-q<12 hex>-dps40; function is tr-m-atomic-mpfr or tr-m-atomic-mpfr-suffixes, one member per route because two routes to one exact value may round its last digits differently; engine-key hashes the git trees of tools/hecke-engine and tools/pyhecke-native (the wheel-cache source key), q-key hashes the q0 decimal string"
+      },
+      "description": "Exact results of qou's native trace producers (`pyhecke_native.tr_m_atomic_mpfr` and `tr_m_atomic_mpfr_suffixes`), stored so a long probe run resumes and a re-run recomputes nothing. One orphan branch per producer function, engine source key, q0 string and dps; inside it, content-addressed JSONL shards of (n, signed word, suffix) -> the producer's exact decimal string, never a float. A dirty engine tree has no key, so a stale value is never served, and `computations/trace_cache.py` re-evaluates a sample of loaded entries against the live binary before using any. Read and written by scripts/trace-cache.sh, whose git objects live in a private bare repository; computations/trace_cache.py restores by default but seeds origin only when QOU_TRACE_CACHE_PUSH=1; a seed adds a shard on top of the tip and never forces. `trace-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/trace-cache.json`."
+    },
+    {
+      "id": "mn-chi-cache",
+      "path": "mn-chi-cache/",
+      "graphTypologies": [
+        "mn-chi-cache"
+      ],
+      "storage": {
+        "branchPrefix": "cat/qou/mn-chi-cache/",
+        "keyedBy": "family",
+        "keyFrom": "mn-chi-q-<engine-key>, where engine-key is the wheel-cache / trace-cache source key (git trees of tools/pyhecke-native and tools/hecke-engine)"
+      },
+      "description": "Exact values of `pyhecke_native.mn_chi_q(lambda, mu)`, the q-Murnaghan-Nakayama Hecke character table, stored so a sweep that needs a heavy table (n = 24, 27) computes each entry once. One orphan branch per engine source key; inside it, content-addressed JSONL shards of (lambda, mu) -> the producer's exact [q-degree, coefficient-string] pairs, never a float. Before 2026-11-22 this was the in-tree file computations/.derived-chi-mn-cache.json, keyed by (lambda, mu) alone, so an entry from one engine build was served to every later one. Read and written by computations/derived_chi_catalogue_mn_disk_cache.py through the shared layer (scripts/lib/branch-cache.sh, computations/_branch_cache.py); it restores by default but seeds origin only when QOU_MN_CHI_CACHE_PUSH=1. A dirty engine tree has no key and nothing is served from the store; loaded entries are re-checked against the live binary first. `mn-chi-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/mn-chi-cache.json`."
+    },
+    {
+      "id": "xbot-relaxation-ckpt",
+      "path": "xbot-relaxation-ckpt/",
+      "graphTypologies": [
+        "xbot-relaxation-ckpt"
+      ],
+      "storage": {
+        "branchPrefix": "cat/qou/xbot-relaxation-ckpt/",
+        "keyedBy": "family",
+        "keyFrom": "xbot-relaxation-<source-key>, where source-key is the branch-cache source key of the probe's import cone: the probe file, the evaluator it execs (rev_e_infinity_edge_limit_probe.py) and tools/qou-substrate/python/qou_substrate"
+      },
+      "description": "Stage and call checkpoints of computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py, a ~200-minute probe run inside a 120-minute harness window, stored so a killed run resumes in any container. One orphan branch per git state of the probe's import cone (the probe, the evaluator it execs, and qou_substrate; the probe refuses the store if any other module from the checkout is loaded); inside it, content-addressed JSONL shards of record name -> the probe's own record, where each record name carries a SHA-256 of the probe source up to that stage, the committed evaluator, the q0 string, mp.dps and every REV_XBOT* override. mpf values are exact `_mpf_` tuples (hex mantissa), never a float. Before 2026-11-22 the records were per-file JSON under ~/.cache/qou/xbot-relaxation-ckpt, which is still the fallback when a file in the cone is dirty (no source key, so the branch store is off). Read and written through the shared layer (scripts/lib/branch-cache.sh, computations/_branch_cache.py); it restores by default but seeds origin only when QOU_XBOT_CKPT_CACHE_PUSH=1. `xbot-relaxation-ckpt/` is where a member is mounted; nothing is tracked there. The kind is `typologies/xbot-relaxation-ckpt.json`."
     },
     {
       "id": "beans",

@@ -1,0 +1,26 @@
+target w = (q - 1)/q**3,  ord1(w) = 1
+
+T1 level n=1: (hbar^2 lam)^1               ord1 =  2  -> excluded by ord1
+T1 level n=2: (hbar^2 lam)^2               ord1 =  4  -> excluded by ord1
+T1 level n=3: (hbar^2 lam)^3               ord1 =  6  -> excluded by ord1
+T1 sum: hbar^2 lam/(1-hbar^2 lam)          ord1 =  2  -> excluded by ord1
+T1 implemented: 1/(1-hbar^2) - 1           ord1 =  2  -> excluded by ord1
+T2 z_D^1                                   ord1 =  0  -> excluded by ord1
+T2 z_D^2                                   ord1 =  0  -> excluded by ord1
+T2 z_D^3                                   ord1 =  0  -> excluded by ord1
+T2 sum: z_D/(1-z_D)                        ord1 =  0  -> excluded by ord1
+T3 level q^-2                              ord1 =  0  -> excluded by ord1
+T3 level q^-3                              ord1 =  0  -> excluded by ord1
+T3 level q^-4                              ord1 =  0  -> excluded by ord1
+T3 partial S_2                             ord1 =  0  -> excluded by ord1
+T3 partial S_3                             ord1 =  0  -> excluded by ord1
+T3 partial S_5                             ord1 =  0  -> excluded by ord1
+T3 full: 1/(q(q-1))                        ord1 = -1  -> excluded by ord1
+T4 h*tau(1_n)                              ord1 =  1, leading coeff X/(q-1) at 1 = 2  -> excluded by leading coefficient (w has 1)
+T4 h*tau(sigma), n=2 (= h z_D)             ord1 =  1, leading coeff X/(q-1) at 1 = 1  -> first-order match only (not equal)
+T4 h*tau(sigma^-1), n=2                    ord1 =  1, leading coeff X/(q-1) at 1 = 1  -> first-order match only (not equal)
+
+required value for T4 equality: tau(beta) = w/h = 1/(q**2*(q + 1))
+  has a pole at q = -1; every word trace is N(q)/(q^2+1)^n with N Laurent, finite at q = -1
+
+no candidate equals w: True

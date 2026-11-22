@@ -153,8 +153,11 @@ The full run is ~200 min.  R1..R5 are keyed checkpoints and every ascent and `xr
 disk-memoised (see the block above `R1`), so a killed run is simply re-run: finished stages
 replay in seconds and a half-finished stage resumes at its last completed call.  The key is a
 hash of the source and every input, so a restore can never return a number from other code.
-`REV_XBOTR_CKPT=0` forces a cold run; `REV_XBOTR_CKPT_DIR` moves the store (default
-`~/.cache/qou/xbot-relaxation-ckpt`).  The witness records which stages were restored.
+`REV_XBOTR_CKPT=0` forces a cold run.  Records live on the shared branch-cache layer (kind
+`xbot-relaxation-ckpt`, member keyed on the git tree of `computations/`), so a run resumes in
+another container; with a dirty `computations/` tree they fall back to the per-file directory
+`REV_XBOTR_CKPT_DIR` (default `~/.cache/qou/xbot-relaxation-ckpt`).  The witness records which
+stages were restored.
 
 -- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/SupergradientCertificate.lean
 """
@@ -796,9 +799,31 @@ def blocks_with_sum_at_most(S: int) -> int:
 # run killed mid-stage resumes at the last finished ascent / run length rather than at the
 # stage start.  `REV_XBOTR_CKPT=0` disables all of it; the witness records which stages were
 # restored, and from which key, so a restored figure is never presented as a fresh one.
+#
+# WHERE A RECORD LIVES (2026-11-22, issue #8996).  Records go to the shared branch-cache layer
+# (`computations/_branch_cache.py`, kind `xbot-relaxation-ckpt` in qou.json): an fsync'd local
+# journal under `~/.cache/qou/xbot-relaxation-ckpt/<member>/` plus one orphan branch per member,
+# so a run resumes in another container too.  The member is `xbot-relaxation-<key>`, where key
+# is the branch-cache source key of this probe's IMPORT CONE (`_BC_CONE` below: this file, the
+# committed evaluator it execs, and the `qou_substrate` package both import), and inside it
+# each record is still keyed by the per-stage / per-call hash above.  Until 2026-11-22 (post-
+# merge QA of PR #8997) the key was the tree of `computations/` as a whole, so any merge under
+# computations/ started a new member and any stray untracked file there switched the store off.
+# The cone is read off the two files' imports, and `_bc_member` refuses the store if a module
+# from this checkout outside the cone is loaded, so the narrowing cannot silently go stale.
+# Untracked files outside the cone no longer matter; a dirty file INSIDE it still has no key,
+# so the branch store is off and records fall back to the per-file directory
+# `REV_XBOTR_CKPT_DIR` (the pre-migration layout, still read as a fallback).
+# `QOU_XBOT_CKPT_CACHE=0` turns the branch store off; `_PUSH=1` (pushing to origin is OFF by
+# default) / `_RESTORE=0` / `_DIR` as for every ShardedCache.  (The env prefix deliberately does NOT start `REV_XBOT`:
+# those variables are hashed into every key.)  Values are unchanged: exact `_mpf_` tuples with a
+# hex mantissa, bit-identical on restore.
 # --------------------------------------------------------------------------------------------
+import atexit  # noqa: E402
 import hashlib  # noqa: E402
 import io  # noqa: E402
+
+import _branch_cache as _bc  # noqa: E402
 
 _CKPT_ON = os.environ.get("REV_XBOTR_CKPT", "1") != "0"
 _CKPT_DIR = os.environ.get(
@@ -807,6 +832,106 @@ _CKPT_DIR = os.environ.get(
 _SELF_TEXT = open(os.path.abspath(__file__)).read()
 _ENV_KEY = sorted((k, v) for k, v in os.environ.items() if k.startswith("REV_XBOT"))
 _CKPT_LOG: list[dict] = []
+
+_BC_KIND = "xbot-relaxation-ckpt"
+_BSTORE = None
+
+
+_BC_CONE = (
+    "computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py",
+    "computations/deltalambda/rev_e_infinity_edge_limit_probe.py",   # exec'd as `_SRC`
+    "tools/qou-substrate/python/qou_substrate",                       # Q_50_DIGIT_STR
+)
+# Loaded from this checkout but deliberately outside the key: it moves bytes, not values.
+_BC_CONE_EXEMPT = ("computations/_branch_cache.py",)
+
+
+def _bc_cone_escapes() -> list[str]:
+    """Modules loaded from this checkout that the member key does not cover."""
+    root = str(_bc.ROOT) + os.sep
+    out = []
+    for name, mod in list(sys.modules.items()):
+        f = getattr(mod, "__file__", None)
+        if not f or not os.path.abspath(f).startswith(root):
+            continue
+        rel = os.path.relpath(os.path.abspath(f), str(_bc.ROOT))
+        if rel in _BC_CONE_EXEMPT or any(rel == c or rel.startswith(c + os.sep) for c in _BC_CONE):
+            continue
+        out.append(rel)
+    # The keyed qou_substrate must be the one imported (an editable install of another
+    # checkout would put different source behind the same key).
+    qs = sys.modules.get("qou_substrate")
+    qs_file = os.path.abspath(getattr(qs, "__file__", "") or "")
+    if qs is not None and not qs_file.startswith(os.path.join(str(_bc.ROOT), _BC_CONE[2]) + os.sep):
+        out.append(f"qou_substrate from {qs_file}")
+    return sorted(out)
+
+
+def _bc_member():
+    escapes = _bc_cone_escapes()
+    if escapes:
+        return None, ("loaded source the member key does not cover: "
+                      + ", ".join(escapes[:5]) + " (extend _BC_CONE, or run with this checkout's qou_substrate)")
+    key, why = _bc.source_key("the xbot probe's import cone", _BC_CONE)
+    return (f"xbot-relaxation-{key}", "") if key else (None, why)
+
+
+def _bc_seed_argv(member, shard):
+    meta = {"probe": "computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py",
+            "sourceKey": member.rsplit("-", 1)[1],
+            "sourceTrees": _bc.source_trees(_BC_CONE)}
+    readme = (f"# {member}\n\nOne member of qou's `{_BC_KIND}` family (declared in qou.json; "
+              f"kind in `typologies/{_BC_KIND}.json`). Stage and call checkpoints of "
+              "`computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py`, keyed by the "
+              "git ids of the probe's import cone (the member) and by a hash of the probe source and "
+              "inputs (each record). mpf values are exact `_mpf_` tuples. Never edit by hand.")
+    return _bc.generic_seed_argv(_BC_KIND, meta, readme, _BSTORE.dir / "local")(member, shard)
+
+
+def _store():
+    """The branch-cache store, opened on first use; None when it is off."""
+    global _BSTORE
+    if not _CKPT_ON:
+        return None
+    if _BSTORE is None:
+        _BSTORE = _bc.ShardedCache(
+            _BC_KIND, member_fn=_bc_member,
+            restore_argv=lambda m, d: ["bash", str(_bc.CLI), "shard-restore", _BC_KIND, m, d],
+            seed_argv=_bc_seed_argv,
+            key_of=lambda rec: (rec["k"],), rec_of=lambda k, v: {"k": k[0], "v": v},
+            env="QOU_XBOT_CKPT_CACHE", log=lambda msg: print(msg, file=sys.stderr))
+        atexit.register(_BSTORE.publish)
+    return _BSTORE if _BSTORE.enabled else None
+
+
+def _ckpt_read(name: str):
+    """The stored record `name` (branch store first, then the per-file fallback), or None."""
+    st = _store()
+    if st is not None and st.get((name,)) is not None:
+        st.hits += 1
+        return st.get((name,))
+    path = os.path.join(_CKPT_DIR, f"{name}.json")
+    if os.path.exists(path):
+        with open(path) as fh:
+            return json.load(fh)
+    return None
+
+
+def _ckpt_write(name: str, rec, *, seed_now: bool) -> None:
+    """Record `name`: into the branch store's fsync'd journal when it is on (seeded at once for a
+    stage, at most every 10 min for a call memo, and at exit), else atomically into the per-file
+    fallback directory."""
+    st = _store()
+    if st is not None:
+        st.misses += 1
+        st.put_many([((name,), rec)])
+        st.publish() if seed_now else st.maybe_publish()
+        return
+    path = os.path.join(_CKPT_DIR, f"{name}.json")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path + ".tmp", "w") as fh:
+        json.dump(rec, fh)
+    os.replace(path + ".tmp", path)                 # atomic: a kill mid-write leaves no record
 
 
 def _stage_key(end_marker: str) -> str:
@@ -868,10 +993,9 @@ _STAGE: dict = {}
 def _stage_begin(name: str, end_marker: str) -> bool:
     """True: run the stage.  False: it was restored (globals, output and checks replayed)."""
     key = _stage_key(end_marker)
-    path = os.path.join(_CKPT_DIR, f"{name}-{key[:24]}.json")
-    if _CKPT_ON and os.path.exists(path):
-        with open(path) as fh:
-            rec = json.load(fh)
+    cname = f"{name}-{key[:24]}"
+    rec = _ckpt_read(cname) if _CKPT_ON else None
+    if rec is not None:
         if rec.get("key") == key:
             globals().update({k: _dec(v) for k, v in rec["globals"].items()})
             CHECKS.extend((n, bool(o), d) for n, o, d in rec["checks"])
@@ -881,7 +1005,7 @@ def _stage_begin(name: str, end_marker: str) -> bool:
             _CKPT_LOG.append({"stage": name, "restored": True, "key": key,
                               "computed_at": rec["computed_at"]})
             return False
-    _STAGE.update(name=name, key=key, path=path, t0=time.time(), nchk=len(CHECKS),
+    _STAGE.update(name=name, key=key, cname=cname, t0=time.time(), nchk=len(CHECKS),
                   before={k: id(v) for k, v in globals().items()}, tee=_Tee(sys.stdout))
     sys.stdout = _STAGE["tee"]
     return True
@@ -907,11 +1031,7 @@ def _stage_end() -> None:
            "checks": [list(c) for c in CHECKS[_STAGE["nchk"]:]],
            "stdout": _STAGE["tee"].buf.getvalue()}
     if _CKPT_ON:
-        os.makedirs(_CKPT_DIR, exist_ok=True)
-        tmp = _STAGE["path"] + ".tmp"
-        with open(tmp, "w") as fh:
-            json.dump(rec, fh)
-        os.replace(tmp, _STAGE["path"])             # atomic: a kill mid-write leaves no record
+        _ckpt_write(_STAGE["cname"], rec, seed_now=True)
     _CKPT_LOG.append({"stage": _STAGE["name"], "restored": False, "key": _STAGE["key"],
                       "seconds": round(secs), "not_checkpointed": skipped})
     _STAGE.clear()
@@ -927,19 +1047,18 @@ def _disk_memo(tag: str, args, fn, key=None):
     h = hashlib.sha256((key or _stage_key("# ===CKPT-" + "MEMO-KEY===")).encode())
     h.update(tag.encode())
     h.update(json.dumps(_enc(args), sort_keys=True).encode())
-    path = os.path.join(_CKPT_DIR, "memo", f"{tag}-{h.hexdigest()[:32]}.json")
-    if os.path.exists(path):
-        with open(path) as fh:
-            return _dec(json.load(fh))
+    cname = f"memo/{tag}-{h.hexdigest()[:32]}"
+    got = _ckpt_read(cname)
+    if got is not None:
+        return _dec(got)
     out = fn()
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path + ".tmp", "w") as fh:
-        json.dump(_enc(out), fh)
-    os.replace(path + ".tmp", path)
+    _ckpt_write(cname, _enc(out), seed_now=False)
     return out
 
 
 # ===CKPT-MEMO-KEY===
+
+_store()   # open (and restore) the store now, so it is not a global a stage would try to save
 
 
 def _relaxed_sup_ck(pe: int, Tlen: int, warm=None, lam=None):

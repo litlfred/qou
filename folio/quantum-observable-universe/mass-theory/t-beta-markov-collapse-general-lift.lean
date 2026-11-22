@@ -16,8 +16,9 @@
   Then the SDP-min-norm primal-feasible element of A satisfying
   `τ X = S` is `X = S • 1`, exactly.  The hypotheses FAIL for
   A = H_n(R, q), n ≥ 3, with τ = τ_M (τ_M(X·X) < 0 at σ₁σ₂ − σ₂σ₁);
-  the Hecke case needs the twisted form τ_M(X · X†) and is not
-  covered by this file.
+  the Hecke case needs the twisted form τ_M(X · X†), which the
+  `TraceTwist` section at the end of this file covers (bean
+  `qou-baov`, owner ruling 2026-11-22).
 
   **Strategy.**
 
@@ -275,5 +276,85 @@ theorem markov_frobenius_min_norm_uniqueness
     -- Goal: τ.tau ((S•1) * (S•1)) = S * S
     -- Use reusable lemma smul_one_sq (extracted per Copilot review).
     rw [smul_one_sq, τ.tau.map_smul, smul_eq_mul, τ.tau_one, mul_one]
+
+/-! ## Twisted form (owner ruling 2026-11-22, bean `qou-baov`)
+
+The positive form on `H_n(R, q)` is the twisted one, `τ(X · X†)`. The
+statements below replace `τ(X · X)` by `τ(X · X†)` for an `R`-linear
+map `† : A → A` with `1† = 1` and `τ(X†) = τ(X)`. Nothing else about
+`†` is used, so `† = id` is allowed and recovers the untwisted
+statements above as a special case. For `H_n(R, q)`, `†` is the
+anti-involution fixing each `σ_i`, and positivity of `τ_M(Y Y†)` is
+Wenzl's theorem (`Σ_λ y_λ ‖Y_λ‖²_F` with every `y_λ ≥ 0`). -/
+
+/-- An `R`-linear map `†` on `A` that fixes `1` and preserves `τ`. -/
+structure TraceTwist (R : Type u) [CommRing R] (A : Type v) [Ring A] [Algebra R A]
+    (τ : NormalizedTrace R A) where
+  dag : A →ₗ[R] A
+  dag_one : dag 1 = 1
+  tau_dag : ∀ x : A, τ.tau (dag x) = τ.tau x
+
+/-- Positivity of the twisted form: `0 ≤ τ(X · X†)`. -/
+class TwistedPSDTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+    (A : Type v) [Ring A] [Algebra R A] (τ : NormalizedTrace R A)
+    (t : TraceTwist R A τ) : Prop where
+  psd : ∀ x : A, 0 ≤ τ.tau (x * t.dag x)
+
+/-- Non-degeneracy of the twisted form: `τ(X · X†) = 0 → X = 0`. -/
+class TwistedNonDegTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+    (A : Type v) [Ring A] [Algebra R A] (τ : NormalizedTrace R A)
+    (t : TraceTwist R A τ) : Prop where
+  nondeg : ∀ x : A, τ.tau (x * t.dag x) = 0 → x = 0
+
+/-- Completing the square for the twisted form:
+    `τ(X X†) = τ((X − S·1)(X − S·1)†) + 2 S τ(X) − S²`. -/
+theorem completing_the_square_twisted (R : Type u) [CommRing R]
+    (A : Type v) [Ring A] [Algebra R A]
+    (τ : NormalizedTrace R A) (t : TraceTwist R A τ) (X : A) (S : R) :
+    τ.tau (X * t.dag X) =
+      τ.tau ((X - S • 1) * t.dag (X - S • 1)) + 2 * (S * τ.tau X) - S * S := by
+  have hd : t.dag (X - S • (1 : A)) = t.dag X - S • 1 := by
+    rw [map_sub, map_smul, t.dag_one]
+  rw [hd]
+  have hexp : (X - S • (1 : A)) * (t.dag X - S • 1)
+      = X * t.dag X - S • X - S • t.dag X + (S * S) • 1 := by
+    simp only [sub_mul, mul_sub, mul_smul_comm, smul_mul_assoc, one_mul, mul_one, smul_smul,
+      smul_sub]
+    abel
+  rw [hexp, map_add, map_sub, map_sub, map_smul, map_smul, map_smul, t.tau_dag, τ.tau_one]
+  simp only [smul_eq_mul, mul_one]
+  ring
+
+/-- **T_β = S · 1, general algebra, twisted form — lower bound.**
+    Under `τ(X) = S` and positivity of `τ(Y Y†)`, `S² ≤ τ(X X†)`. -/
+theorem markov_frobenius_min_norm_twisted
+    (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+    (A : Type v) [Ring A] [Algebra R A]
+    (τ : NormalizedTrace R A) (t : TraceTwist R A τ) [TwistedPSDTrace R A τ t]
+    (S : R) (X : A) (h_constraint : τ.tau X = S) :
+    S * S ≤ τ.tau (X * t.dag X) := by
+  have h := completing_the_square_twisted R A τ t X S
+  rw [h_constraint] at h
+  have h_psd := TwistedPSDTrace.psd (τ := τ) (t := t) (X - S • 1)
+  linarith
+
+/-- **T_β = S · 1, general algebra, twisted form — equality case.**
+    With non-degeneracy as well, `τ(X X†) = S²` iff `X = S · 1`. -/
+theorem markov_frobenius_min_norm_twisted_uniqueness
+    (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+    (A : Type v) [Ring A] [Algebra R A]
+    (τ : NormalizedTrace R A) (t : TraceTwist R A τ)
+    [TwistedNonDegTrace R A τ t]
+    (S : R) (X : A) (h_constraint : τ.tau X = S) :
+    τ.tau (X * t.dag X) = S * S ↔ X = S • 1 := by
+  have h := completing_the_square_twisted R A τ t X S
+  rw [h_constraint] at h
+  constructor
+  · intro h_eq
+    exact sub_eq_zero.mp
+      (TwistedNonDegTrace.nondeg (τ := τ) (t := t) _ (by linarith))
+  · rintro rfl
+    rw [h, sub_self, zero_mul, map_zero]
+    ring
 
 end QOU.QBeta.MarkovFrobeniusCollapse.General

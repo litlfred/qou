@@ -1,0 +1,62 @@
+{
+  "preregistration": "PREREGISTRATION-em-scale.md",
+  "S1": {
+    "hadronicScale_mul_q_sq_hbar_eq_me: E0*q^2*hbar - m_e": "0",
+    "hadronicScale_strong_to_matter_ratio: E0*hbar/hbar^2 - m_e/(q-1)^2": "0",
+    "E0*hbar (what an E0-scaled matter term would carry)": "m_e/q**2",
+    "identities_hold_for_free_m_e": true
+  },
+  "S2": {
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/CategoricalLagrangianTwoTermBridge.lean": [
+      {
+        "line": 299,
+        "text": "def hadronicScale (m_e q : F) : F :="
+      },
+      {
+        "line": 306,
+        "text": "theorem hadronicScale_mul_q_sq_hbar_eq_me (m_e q : F) (hq : q \u2260 0) (hq1 : q - 1 \u2260 0) :"
+      },
+      {
+        "line": 307,
+        "text": "hadronicScale m_e q * (q ^ 2 * (1 - q\u207b\u00b9)) = m_e := by"
+      },
+      {
+        "line": 308,
+        "text": "unfold hadronicScale"
+      },
+      {
+        "line": 316,
+        "text": "theorem hadronicScale_strong_to_matter_ratio (m_e q : F) (hq : q \u2260 0) (hq1 : q - 1 \u2260 0) :"
+      },
+      {
+        "line": 317,
+        "text": "(hadronicScale m_e q * (1 - q\u207b\u00b9)) / (1 - q\u207b\u00b9) ^ 2 = m_e / (q - 1) ^ 2 := by"
+      },
+      {
+        "line": 318,
+        "text": "unfold hadronicScale"
+      }
+    ],
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean": [
+      {
+        "line": 682,
+        "text": "def hadronicScaleE0 (m_e q : R) : R := m_e / (q * (q - 1))"
+      },
+      {
+        "line": 685,
+        "text": "theorem hadronicScaleE0_mul_hbar_eq_me (m_e q : R) (hq : q \u2260 0) (hq1 : q - 1 \u2260 0) :"
+      },
+      {
+        "line": 686,
+        "text": "hadronicScaleE0 m_e q * (q ^ 2 * (1 - q\u207b\u00b9)) = m_e := by"
+      },
+      {
+        "line": 687,
+        "text": "unfold hadronicScaleE0"
+      }
+    ],
+    "occurrences_applying_scale_to_a_trace": [],
+    "prediction_no_application_held": true
+  },
+  "verdict": "The corpus does not fix the energy scale of the matter-Coulomb term: the Gap-5 lemmas are field identities valid for any m_e and no declaration applies E0 to a trace; the n-p block records the scale step (H_alpha) as underived and E0 as compared against targets (2026-11-19). Scope (a) negative; no energy evaluated."
+}

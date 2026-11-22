@@ -440,3 +440,120 @@ top of the trefoil. In this algebra the family members differ only in which powe
 `τ` reads. So choosing `m = 1` needs a reason from outside, which is the `[10]_q` value
 itself. Using that value to choose `m` would be selection against the target. Scope (a):
 nothing here excludes a reason for `m = 1` that comes from somewhere else.
+
+## 18. What picks one full twist: the Bring genus bound (2026-11-22)
+
+**Correction to §16–§17: prior work I missed.** `QOU/BraidKnot/WeakVertexElectronFactor.lean`
+(on main, 2026-11-21) already proves `(σ₀σ₁)⁵ = e⁻ · (e⁻ · (σ₀σ₁)²)` and
+`e⁻ · e⁻ = (σ₀σ₁)³` in the braid group `B₃` itself (`weakVertex_eq_electron_mul`,
+`electron_sq_eq`). That is stronger than the block-level `t35_hook` / `t35_sym_alt` of #9017,
+which were derived again without citing it. There it is the `3 + 7` crossing split of the
+β-decay weak vertex. The block-level lemmas remain correct and are consistent with it.
+Neither result moves any number.
+
+**Corpus search.** §1 of this audit already says the 9 and the 10 of `q·[9]_q·[10]_q` "come
+from the two genus-4 torus knots `T(2,9)` and `T(3,5)` on Bring's surface". The genus rule
+`g(K) ≤ 4 = g(Σ₄)` is `rem:bring-embeddable-knots`, and the generator set is
+`prop:torus-knot-generators` (`brings-surface/torus-knot-generators.lean`). The
+electroweak blocks call `{T(2,9), T(3,5)}` the *saturating* carriers: the only coprime
+solutions of `(p−1)(q−1) = 8`.
+
+**Applied to the electron family** (`QOU/AlphaEM/TorusFamilyGenus.lean`, sorry-free):
+
+- `T(3, 3m+2) = e^(2m+1)·σ₁` has genus `3m + 1`. The Bring bound allows `m ∈ {0, 1}`
+  (trefoil, `T(3,5)`), and genus 4 holds only at `m = 1`.
+- The backup-electron family `T(2, 2m+1) = σ₀^(2m+1)` has genus `m`, and genus 4 holds only
+  at `m = 4`, which is `T(2,9)`.
+
+So the one full twist is the genus-saturation rule the corpus already uses for both factors
+of the tree term. It is not chosen from the α_em value.
+
+**Status of that rule, stated plainly.** The genus bound is a `remark`, and its
+exhaustiveness is marked open (`rem:knot-exhaustiveness`). "Saturating" is stated as a
+selection mechanism inside conjecture-level electroweak blocks; it is not proved. So `m = 1`
+rests on an adopted rule, not on a theorem. Two further limits: the photon letter could
+enter at another position, and in `B₂` any odd power of `σ₀` is "electron-built", so the
+backup family is a weak statement.
+
+## 19. Can "saturation" (genus exactly 4) be derived? Not as an identification of curves (2026-11-22)
+
+**What the corpus actually says.** `rem:torus-knot-generators-interpretation` uses
+"saturation" descriptively: `T(2,9)` "at genus 4 exactly saturates Bring's surface", and
+"new particle types would require composite construction". That is the bound being met,
+not a rule that selects the genus-4 member. The selective use ("the saturation mechanism
+that forces `{T(2,9), T(3,5)}`") appears only in the conjecture-level electroweak blocks.
+The same remark also names `T(2,3)` as the electron and calls `T(2,9)` "symmetry-broken".
+That predates the 2026-11-21 owner ruling (electron = `σ₀σ₁σ₀` with Hopf closure, trefoil as
+backup). It is recorded here and not edited, since that is an owner call.
+
+**One natural derivation route, tested.** The route: the saturating knots are singled out
+because their fibre *is* Bring's curve. `T(3,5)` and `T(2,9)` are the links of `y³ = x⁵` and
+`y² = x⁹`. Their Milnor fibres compactify to the smooth genus-4 curves `y³ = x⁵ + 1` and
+`y² = x⁹ + 1`, which carry automorphisms of order 15 and 9 (standard, cited). The corpus
+records `Aut(Σ₄) ≅ S₅`. `QOU/AlphaEM/SaturationNotBringFibre.lean` (sorry-free, by cycle
+types) proves that `S₅` has no element of order 9 or 15. So neither curve is Bring's curve,
+and the genus-4 match is topological only.
+
+**Scope (a).** This rules out *that* identification, under the standard algebraic structure
+on the Milnor fibre. It does not rule out a different reason for the genus-4 member, for
+example a topological embedding of the fibre surface into `Σ₄`, or an `S₅`-equivariance
+argument. The saturation rule stays adopted, not derived.
+
+## 20. The topological route: no S₅-equivariant embedding of a genus-4 fibre surface (2026-11-22)
+
+**Question (pre-registered before any proof was attempted).** §19 left open whether the
+genus-4 members `T(3,5)` and `T(2,9)` could be tied to Bring's surface `Σ₄` topologically
+rather than as curves. Two readings were tested, and the outcome of each was written down
+as "embeds", "does not embed" or "undecided" before starting:
+
+1. *Subsurface reading.* The fibre surface `F` (genus 4, one boundary circle) sits in `Σ₄`
+   as an `S₅`-invariant subsurface.
+2. *Mapping-class reading.* The monodromy `h` of the fibration (order 15 for `T(3,5)`,
+   order 18 for `T(2,9)`, after capping the boundary) lies in a finite group of mapping
+   classes of the closed genus-4 surface together with an `S₅`, for example commuting with
+   it or normalising it.
+
+**Result: neither reading holds. Both are scope-(b) exclusions with named invariants.**
+
+*Reading 1.* A genus-4 one-boundary subsurface `F ⊂ Σ₄` has complement a closed disk `D`.
+If `S₅` preserved `F` it would preserve `D`. The `S₅` action is holomorphic, so it is
+faithful on `D` (an automorphism that is the identity on an open set is the identity). A
+finite group of homeomorphisms of a closed disk is conjugate to a subgroup of `O(2)`
+(Kerékjártó; Eilenberg), so it fixes a point `p`. The stabiliser of `p` in a holomorphic
+action acts faithfully on the tangent line, hence is cyclic. That would make `S₅` cyclic,
+and `perm5_not_isCyclic` proves it is not. The argument uses only the genus and the single
+boundary circle, so it excludes `T(3,5)` and `T(2,9)` alike.
+
+*Reading 2.* By Nielsen realisation (Kerckhoff 1983, cited as [Ker] in the held source
+`library/bn/`), a finite group of mapping classes of the closed genus-4 surface acts by
+conformal automorphisms of some complex structure. The largest conformal automorphism group
+in genus 4 has order 120 and belongs to Bring's surface (`library/210811825v1/`, appendix
+E; `def:brings-surface`). If `h` normalises or commutes with an `S₅`, the group they
+generate is finite (a finite-order element normalising a finite group), contains `S₅`, and
+has order at most 120. `no_overgroup_of_perm5` proves such a group has no element of order
+15 or 18. So `h` cannot be there.
+
+**Lean.** Appended to `QOU/AlphaEM/SaturationNotBringFibre.lean`, lean-direct exit 0,
+`#print axioms` free of `sorryAx`:
+
+| Declaration | Statement |
+|---|---|
+| `perm5_not_isCyclic` | `S₅` is not cyclic |
+| `perm5_no_order_18` | `S₅` has no element of order 18 |
+| `no_overgroup_of_perm5` | a finite group of order ≤ 120 containing `S₅` has no element of order 15 or 18 |
+
+The topological inputs (disk actions are linear, cyclic point stabilisers, Nielsen
+realisation, the genus-4 bound 120) are cited, not formalised.
+
+**What this does and does not say.** Every route tried so far fails to tie the genus-4
+member to `Σ₄` beyond the number 4: not as a curve (§19), not as an invariant subsurface,
+not through its monodromy. So the selection of exactly one full twist (`T(3,5)`, genus 4)
+rests on the Bring bound `g ≤ 4` plus the adopted saturation rule, and saturation is still
+not derived. This does not touch the bound `g ≤ 4` itself, which only needs a topological
+embedding without equivariance, and that always exists for `g ≤ 4`.
+
+**A discrepancy with the corpus, flagged and not changed.** `prop:s5-equivariant-torus-knots`
+and audit `2026-06-02-lepton-t2n-torus-tower.md` §2 call `T(2,n)` `S₅`-equivariant when
+`ℤ_n ↪ S₅`. The monodromy of `T(2,n)` has order `2n`, not `n`. Under a monodromy-order
+criterion the verdicts change: `T(2,3)` (order 6) passes, `T(2,5)` (order 10) fails. Which
+cyclic group the corpus criterion means is an owner question. Nothing here edits that block.
