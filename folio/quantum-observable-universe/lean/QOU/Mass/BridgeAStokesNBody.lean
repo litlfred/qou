@@ -225,6 +225,37 @@ theorem nbody_monodromy_hecke (hβ : β ≠ 0)
   rw [mul_inv_cancel₀ (qC_ne_zero (β / 2))] at hq
   exact quad_of_conj W _ _ (hW j) hq
 
+/-- `q = e^{iπβ}` as a unit of `ℂ`. -/
+noncomputable def qUnit (β : ℂ) : ℂˣ := Units.mk0 (qC (β / 2)) (qC_ne_zero (β / 2))
+
+/-- Specialisation `ℤ[q, q⁻¹] → ℂ`, `q ↦ e^{iπβ}`. -/
+noncomputable def specialise (β : ℂ) : LaurentPolynomial ℤ →+* ℂ :=
+  LaurentPolynomial.eval₂ (Int.castRingHom ℂ) (qUnit β)
+
+/-- The Laurent-ring Jimbo generator `Ř_{j,j+1}(q, q⁻¹)` over `ℤ[q, q⁻¹]`, specialised at
+`q = e^{iπβ}`, is the Jimbo generator at that `q`. -/
+theorem specialise_strandBraid (β : ℂ) (j : Fin m) :
+    (strandBraid (LaurentPolynomial.T 1 : LaurentPolynomial ℤ) (LaurentPolynomial.T (-1)) j).map
+        (specialise β) = strandBraid (qC (β / 2)) (qC (β / 2))⁻¹ j := by
+  rw [strandBraid_map]
+  congr 1
+  · simp [specialise, LaurentPolynomial.eval₂_T, qUnit]
+  · simp [specialise, LaurentPolynomial.eval₂_T, qUnit]
+
+/-- **The bridge for a Laurent-family `HeckeMonodromy` instance.** At every generic `β`, one
+invertible `W` conjugates the Jimbo-normalised `n`-body monodromy, on every generator, to the
+specialisation at `q = e^{iπβ}` of the single family `Ř_{j,j+1}(q, q⁻¹)` over `ℤ[q, q⁻¹]`.
+The family carries the Hecke relations; the substrate enters only through this statement. -/
+theorem nbody_monodromy_specialises (hβ : β ≠ 0)
+    (hκ : GenericParameter.NotRootOfUnity (qC (β / 2))) (U : Fin m → ℝ → Mat m)
+    (hU : ∀ j, IsTransport (nbodyForm (pairResid permRep α β)) (genPath j) (genPath' j) (U j)) :
+    ∃ W : (Mat m)ˣ, ∀ j : Fin m,
+      (W : Mat m) * jimboNormalised α β (genMonodromy permRep (U j) j) =
+        (strandBraid (LaurentPolynomial.T 1 : LaurentPolynomial ℤ)
+          (LaurentPolynomial.T (-1)) j).map (specialise β) * (W : Mat m) := by
+  obtain ⟨W, hW⟩ := nbody_monodromy_conj_jimbo hβ hκ U hU
+  exact ⟨W, fun j => by rw [specialise_strandBraid]; exact hW j⟩
+
 end Jimbo
 
 /-! ## Bridge A with the Stokes step named -/
@@ -275,6 +306,22 @@ theorem lagrangian_monodromy_conj_jimbo (hβ : β ≠ 0)
   unfold jimboNormalised
   rw [lagrangian_monodromy_eq_kz hβ FL hS j]
   exact hW j
+
+omit [Nontrivial S] in
+/-- The Lagrangian form of `nbody_monodromy_specialises`: under `StokesToBraiding`, the
+Jimbo-normalised Lagrangian monodromy is conjugate to the specialisation of the
+`ℤ[q, q⁻¹]` family. -/
+theorem lagrangian_monodromy_specialises (hβ : β ≠ 0)
+    (hκ : GenericParameter.NotRootOfUnity (qC (β / 2)))
+    {ωL : ι → Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) S}
+    (FL : FundamentalSolution (Γ := BraidGroup m) (K := ℂ) D ωL)
+    (hS : StokesToBraiding FL (nbodyForm (pairResid permRep α β))) :
+    ∃ W : (Mat m)ˣ, ∀ j : Fin m,
+      (W : Mat m) * jimboNormalised α β (FL.M (σ j)) =
+        (strandBraid (LaurentPolynomial.T 1 : LaurentPolynomial ℤ)
+          (LaurentPolynomial.T (-1)) j).map (specialise β) * (W : Mat m) := by
+  obtain ⟨W, hW⟩ := lagrangian_monodromy_conj_jimbo hβ hκ FL hS
+  exact ⟨W, fun j => by rw [specialise_strandBraid]; exact hW j⟩
 
 /-- **Bridge A, route B, without `hL`.** The Lagrangian connection is algebraically gauge
 equivalent to KZ (same coupling and shift), given P1–P3, `StokesToBraiding`, Deligne full
