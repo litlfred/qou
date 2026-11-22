@@ -340,6 +340,7 @@ import QOU.MathlibExt.PLGenericSlide
 import QOU.MathlibExt.PLRegularProjection
 import QOU.MathlibExt.PLHomeo
 import QOU.MathlibExt.PLAlexander
+import QOU.MathlibExt.PLMoiseAssembly
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
