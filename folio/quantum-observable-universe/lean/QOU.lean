@@ -343,6 +343,7 @@ import QOU.MathlibExt.PLLipschitz
 import QOU.MathlibExt.PLScaling
 import QOU.MathlibExt.PLSlice
 import QOU.MathlibExt.PLCone
+import QOU.MathlibExt.PLDerived
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
