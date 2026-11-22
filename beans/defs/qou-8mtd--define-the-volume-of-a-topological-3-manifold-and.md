@@ -10,7 +10,7 @@ tags:
     - open-problem
     - reorg-2026-10-04
 created_at: 2026-08-10T18:00:39Z
-updated_at: 2026-11-22T21:15:46Z
+updated_at: 2026-11-22T21:33:05Z
 parent: b9cj
 ---
 
@@ -205,3 +205,7 @@ unverified.
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change; the open parts are as the 2026-08-29 note says (Mostow rigidity, hyperbolisation, a triangulation of the knot complement). The PL-topology work (PR #9114, relative Moise) is owned by another thread. Related closures today: `qou-krvm` (volume maximum on `main` for m004/L6a4), `qou-f8lit` (exact `VOL_4_1`). The latest note above points at batch PR #8483, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

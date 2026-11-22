@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-20T13:48:00Z
-updated_at: 2026-11-22T21:15:50Z
+updated_at: 2026-11-22T21:33:03Z
 parent: qou-n4nr
 ---
 
@@ -20,3 +20,7 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change; see `qou-p6m1`: the symbol calculus is present (`Machinery/QuantumTorusSymbol`). The latest note above points at batch PR #8408, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: ALREADY-DONE.** Largely ALREADY-DONE per qou-p6m1: the q-D-module symbol calculus is present (Machinery/QuantumTorusSymbol). What remains is the keystone identification, tracked in qou-d8as.

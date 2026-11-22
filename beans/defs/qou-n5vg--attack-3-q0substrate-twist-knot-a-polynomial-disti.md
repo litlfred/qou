@@ -1,13 +1,13 @@
 ---
 # qou-n5vg
 title: 'ATTACK #3: q0/substrate <- twist-knot A-polynomial distinguished point (Subgoal-2 geometric); Takata+Garoufalidis'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T00:19:26Z
-updated_at: 2026-11-22T21:15:51Z
+updated_at: 2026-11-22T21:33:11Z
 parent: c7vs
 ---
 
@@ -20,3 +20,7 @@ parent: c7vs
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. The latest note above points at batch PR #8257, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: SUPERSEDED-BY.** SUPERSEDED-BY the forever-gate on substrate-q₀ derivation (owner ruling 2026-08-02, AGENTS.md §Precision goals Subgoal-2, bean qou-eic1). This bean (created 2026-07-19) is an attack on deriving q₀ from the 4₁/twist-knot A-polynomial distinguished point, which is now a forbidden route in any form. The pure-algebra fact in the Round 73 note (trace 4, norm 1, discriminant 12 at s² = 3) needs no bean and is on unmerged batch PR #8257 only. Scrapped; reopen only if the owner lifts the gate.

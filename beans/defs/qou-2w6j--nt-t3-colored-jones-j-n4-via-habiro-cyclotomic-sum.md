@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-20T03:21:57Z
-updated_at: 2026-11-22T21:20:17Z
+updated_at: 2026-11-22T21:33:11Z
 parent: c7vs
 ---
 
@@ -24,3 +24,7 @@ Check against `main`: `BraidKnot/AJFigureEightAnnihilation.lean` `figureEightOpe
 ## 2026-11-22 — verified, closed
 
 **Closed with evidence.** `BraidKnot/HabiroNewtonLadder.lean` defines `coloredJones41 q N = Σ_{k<N} habiroTerm q N k` (the Habiro cyclotomic sum), and `BraidKnot/AJFigureEightAnnihilation.lean` `figureEightOperator_annihilates` proves the order-2 inhomogeneous recurrence for every `N`. `#print axioms` → [propext, Classical.choice, Quot.sound], checked 2026-11-22 with lean-direct against the restored cache. The Round 73 batch-PR note above (#8257) is unrelated to this result.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: ALREADY-DONE.** Confirmed on review: the result is on main (see the note above) and none of its premises is on the retired list in owner-rulings.md.

@@ -9,7 +9,7 @@ tags:
     - integrity
     - reorg-2026-10-04
 created_at: 2026-08-11T10:50:00Z
-updated_at: 2026-11-22T21:15:47Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-mub3
 ---
 
@@ -63,3 +63,7 @@ slopes (qou-52sn, the genuinely unverified input).
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. Stokes matrices verified 2026-08-11 (`QBeta/StokesMatrixProvenance.lean`). Still open: the A_{4_1} monomials and the 5₂ boundary slopes (`qou-52sn`).
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

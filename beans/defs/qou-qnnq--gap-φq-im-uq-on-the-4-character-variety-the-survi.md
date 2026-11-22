@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-27T15:06:31Z
-updated_at: 2026-11-22T21:15:52Z
+updated_at: 2026-11-22T21:32:59Z
 parent: qou-n4nr
 ---
 
@@ -150,3 +150,7 @@ Was in-progress with no bean update since 2026-08-02 and no main commit naming i
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change; open. The latest note above points at batch PR #8222, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: RESCOPE.** RESCOPE. Two premises are stale. (1) The listed values ϑ_{4₁}(proton) = 0.203 and ϑ_{4₁}(muon) = 0.059 are T4-inverted from the two q₀ pins, so they are data-conditioned (the bean's own 2026-08-01 note and qou-offl correction 1 say so); one knot giving two values at two pins is the signature. (2) The physical role, "surviving DOF in the Δ_λ magnitude chain", rests on a per-knot volume reading of binding: the Δ_λ value is proved (PR #4580), the magnitude is a separate extensive many-body term (2026-08-02 audit), Ruling A (2026-08-29) says the deuteron binding is not a hyperbolic-volume term, and the owner dropped "nucleon energy = sum of crossing values" (2026-11-21). Corrected question, formal mathematics only: which row of the GL_{max(A,B)}(ℤ[q^±]) Stokes matrix a braid closure selects (the 2026-08-01 restatement). No physical role until a binding chain that uses ϑ_K is re-established. Open-question bean, stays open.

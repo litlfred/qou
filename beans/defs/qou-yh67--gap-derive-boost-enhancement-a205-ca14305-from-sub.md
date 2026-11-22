@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T23:51:10Z
-updated_at: 2026-11-15T17:33:11Z
+updated_at: 2026-11-22T21:32:59Z
 parent: qou-avtq
 blocked_by:
     - qou-cds1
@@ -95,3 +95,7 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 
 ### Progress (Round 74 — PR litlfred/qou#8322)
 - Formalized in PR `litlfred/qou#8322` (`feat/round74-kashaev-stokes3-stokesamp-ohtsukinz-pauli-43c1`, Commit 1 `82ec77a3b69cc6d79a85c01e64b63d422fa51c45`, Head `d13ffedea3175ba61da12a5b2abf5cf08d471608`, `scriptHash: 79ed375a0246`).
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** APPLIES, with a guard. Deriving the boost A (the {𝔙, Φ = 2𝔙} object choice, ObservableComplexVolumeVsFullPotential.lean) is formal mathematics and is not the gated q₀ derivation. Guard: the comparison value A ≈ 2.054 is measured and must stay a comparison point; it may not be used to pick the object, and no route here may go through deriving q₀ (forever-gated 2026-08-02).

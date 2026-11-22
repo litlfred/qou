@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T20:42:09Z
-updated_at: 2026-11-22T21:15:50Z
+updated_at: 2026-11-22T21:33:02Z
 parent: qou-n4nr
 ---
 
@@ -26,3 +26,7 @@ CAUTION FOR THE NEXT AGENT: 'Hadamard' matches 24 beans in this tracker and NONE
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change; template only, naive form excluded (`ConnectedSumAnnihilator.lean`). The latest note above points at batch PR #8202, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** APPLIES as recorded (route D is a template; order ≤ n1·n2 does not cross depth). No premise retired.

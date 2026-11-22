@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-20T03:21:57Z
-updated_at: 2026-11-22T21:15:43Z
+updated_at: 2026-11-22T21:33:06Z
 parent: c7vs
 ---
 
@@ -23,3 +23,7 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change in status. Blocked on the same defect as `qou-y7o7`: the corpus's `TransferLemmas` encoding is uninhabitable (`not_transferLemmas`), so a Nguyen–Tran formalization would first need the class restated with the L-length order. Owner decision requested 2026-11-22.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

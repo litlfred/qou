@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-11-22T21:15:46Z
+updated_at: 2026-11-22T21:33:01Z
 parent: qou-v2om
 ---
 
@@ -879,3 +879,7 @@ measurement in `docs/audits/2026-10-12-first-pytest-run.md`.
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change in this pass; last substantive note 2026-10-12 (the §(xliii) regression guard has never run).
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: NEEDS-OWNER.** NEEDS-OWNER (framed in the report, no card yet). Route E reads the n = 3 Ptolemy / SL(3) holonomy as a flavour carrier. Today's working assumption (2026-11-22) gives each strand three colour states with true U_q(gl₃) colour braided by Ř_colour ⊗ Ř_flavour. Whether an SL(3) holonomy on the knot complement should now be read as colour, as flavour, or neither changes what this route is for. Until that is settled the tranche can proceed only as the mathematical question (does the non-geometric Ptolemy component at n = 3 give a non-self-dual rep?).

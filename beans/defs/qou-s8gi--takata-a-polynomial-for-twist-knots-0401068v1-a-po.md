@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T22:17:25Z
-updated_at: 2026-11-22T21:15:53Z
+updated_at: 2026-11-22T21:33:00Z
 parent: c7vs
 ---
 
@@ -24,3 +24,7 @@ Takata gives the EXPLICIT twist-knot recursion → A-polynomial (5₂ order-3, 6
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. The latest note above points at batch PR #8252, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: RESCOPE.** RESCOPE. Drop the "q₀ ← A-polynomial Subgoal-2 geometric route" half (forever-gated 2026-08-02). The twist-knot recurrence orders (Takata: 5₂ order 3, 6₁ order 4) are formal mathematics and APPLY. The "binding kernel R(q,x)" consumer (qou-6poy) should be re-checked against Ruling A before any binding claim is drawn from it.

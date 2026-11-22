@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-11-22T21:15:53Z
+updated_at: 2026-11-22T21:33:02Z
 parent: qou-n4nr
 ---
 
@@ -30,3 +30,7 @@ NOT absolute-mass work (qou-exam): this is the W_lambda/ratio continuation, not 
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. The latest note above points at batch PR #8222, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** APPLIES. Continuation of the W_λ value map to the real point q₀ is not the gated q₀ derivation (q₀ is an input here). Note for whoever works it: say which weight family W_λ is (Plancherel d_q²/[n]_q! is not self-normalised at q ≠ 1; Molien is canonical for Φ_k, owner 2026-09-05/09-08).

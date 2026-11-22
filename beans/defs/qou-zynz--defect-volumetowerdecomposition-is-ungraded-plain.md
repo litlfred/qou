@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T22:14:21Z
-updated_at: 2026-11-22T21:15:54Z
+updated_at: 2026-11-22T21:33:09Z
 parent: qou-n4nr
 ---
 
@@ -19,3 +19,7 @@ parent: qou-n4nr
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. The fix is a change to how `rem:yekutieli-transcendence-shadow` argues, so it needs the owner. The latest note above points at batch PR #8244 (closed), which was closed unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

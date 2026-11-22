@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-04T01:49:55Z
-updated_at: 2026-11-22T21:15:44Z
+updated_at: 2026-11-22T21:33:08Z
 parent: qou-n4nr
 ---
 
@@ -65,3 +65,7 @@ Finding (measured with sympy): the sl₂ R-matrix is not such a model while code
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No status change; the conjecture for `J_N(W)` itself is open. On `main`: inner-sum limit unconditional (`whitehead_vc_innerSum_half`), polynomiality (#8944), diagram-invariant route (#8962, owner decision on turn markers pending). Remaining: `VdVWhiteheadLemma4` (outer-sum non-cancellation).
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

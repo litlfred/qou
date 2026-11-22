@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T07:05:23Z
-updated_at: 2026-11-22T21:15:45Z
+updated_at: 2026-11-22T21:33:03Z
 parent: qou-n4nr
 ---
 
@@ -75,3 +75,7 @@ Do not run the PF computation against three terms.
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 **Closed with evidence: answered as posed.** The question (does a depth-≤8 Gauss–Manin recurrence admit `a2:a3:a4 = 1:−0.52:+4.45`?) has the answer YES, vacuously, proved sorry-free in `MassTheory/BodyOrderRecurrenceDepth.lean` (`three_le_depth`, `depth_three_kernel_reaches`: at depth 3 the map to `(a3,a4)` is surjective). The answerable revised form needs `a5, a6` from ⁶Li/⁷Li, which is binding-front work owned by the L2 program (`qou-v2om`), not this list.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: ALREADY-DONE.** ALREADY-DONE as asked (depth_three_kernel_reaches, BodyOrderRecurrenceDepth). Caveat on review: the ratio a2:a3:a4 = 1 : −0.52 : +4 is a measured body-order ratio, so "a depth-≤8 recurrence admits it" is a scope-(a) feasibility statement with free kernel coefficients, not a derivation. Do not cite it as evidence for the Bring Gauss–Manin route.

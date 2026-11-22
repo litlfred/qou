@@ -13,7 +13,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-11-22T21:15:48Z
+updated_at: 2026-11-22T21:33:09Z
 parent: qou-n4nr
 ---
 
@@ -1766,3 +1766,7 @@ Also known as `qou-fybg` (its former front-matter header id; the beans CLI uses 
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. `hc` merged (#4729); `htau` needs the 1-loop torsion formalized (`tau_DG` has no Lean definition). The Round 74 note (#8322) is a closed batch PR.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

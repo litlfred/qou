@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-11-22T21:20:17Z
+updated_at: 2026-11-22T21:33:04Z
 parent: qou-n4nr
 ---
 
@@ -77,3 +77,7 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F1, §F2,
 Fixed on branch `claude/volume-conjecture-bean-drain-2026-11-22`: `Archimedean/HyperbolicVolumeMeasure.lean` header now says ℍ carries the hyperbolic metric (`UpperHalfPlane/Metric.lean`: `Dist ℍ`, `dist_eq`, the isometries incl. `ModularGroup.S`) and a manifold structure, but no volume measure and no geodesics, and is 2-dimensional; the misleading "Analysis/Complex only" line is gone. Comment-only, exemption 2 (the Mathlib file decides it). Site B (bean `qou-5gai`) gets an appended correction note. Close when the PR merges. The latest note above points at batch PR #8231, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
 
 Fix commit: `e71a48aa9` on branch `claude/volume-conjecture-bean-drain-2026-11-22` (lean-direct exit 0).
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

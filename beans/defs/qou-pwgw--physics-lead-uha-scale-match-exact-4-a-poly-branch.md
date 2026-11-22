@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-11T14:42:20Z
-updated_at: 2026-11-22T21:15:52Z
+updated_at: 2026-11-22T21:32:58Z
 parent: c7vs
 ---
 
@@ -20,3 +20,7 @@ parent: c7vs
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. The latest note above points at batch PR #8257, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: RESCOPE.** RESCOPE. The title's "|u| = ℏ·A scale-match" matches the A-polynomial deformation to ℏ_q times the boost factor A ≈ 2.054, and qou-yh67 records that A as MEASURED (read off the CAL-2 channel), not derived. A match against a measured scale is a fit under §NO FITTING. Corrected question: the 4₁ A-polynomial branch tracking and phase as formal mathematics (branch discriminant, norm-one locus), with no scale matched to data until qou-yh67 derives A. Blocked on qou-yh67 for any physical reading.

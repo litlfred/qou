@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T08:47:49Z
-updated_at: 2026-11-22T21:15:45Z
+updated_at: 2026-11-22T21:33:03Z
 parent: qou-n4nr
 ---
 
@@ -19,3 +19,7 @@ parent: qou-n4nr
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 Pointer: `qou-vdvS` (completed) gives the closed form for the whole `b = 1` family, `c_σ(W_{a,1,c,d}) = 2^{1/2−n}(n²+m²)^{−1/4}`. At the Whitehead link `n = m = 1` this is `2^{−3/4} = 0.594604…`, matching the numerical `c_σ ≈ 0.5946`. Not closing here: the value is derived on the Jones side in `qou-vdvS`, and whether a Lean statement of it exists has not been checked in this pass; the Round 75 note's `c_sigma_sq = 1/8` (from an assumed `tau_DG = 4`) contradicts `2^{−3/2}` and is a batch-PR artefact (open PR, not on `main`).
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** APPLIES, nearly done: qou-vdvS gives c_σ = 2^{−3/4} for the Whitehead link (the b = 1 family closed form). Remaining step is to check that identification is proved, not only matched numerically, then complete. No premise retired.

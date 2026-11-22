@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T22:17:25Z
-updated_at: 2026-11-22T21:15:51Z
+updated_at: 2026-11-22T21:33:01Z
 parent: c7vs
 ---
 
@@ -24,3 +24,7 @@ Garoufalidis–Lê q-holonomicity GUARANTEES the (Borromean) colored Jones has a
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. The latest note above points at batch PR #8252, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** APPLIES as formal mathematics (Garoufalidis–Lê q-holonomicity, finite-depth recursion). Its physical consumers (binding kernel R(q,x), the Q_β odd-channel Habiro element) are not current: the Q_β c_k/Habiro work is convention-C-frame pending qou-cds1, and binding-from-volume is retired for the deuteron (Ruling A). Do not cite a result here as a physics closure.

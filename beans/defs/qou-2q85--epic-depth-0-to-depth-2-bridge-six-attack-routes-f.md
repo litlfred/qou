@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T20:42:08Z
-updated_at: 2026-11-22T21:15:46Z
+updated_at: 2026-11-22T21:33:01Z
 parent: qou-n4nr
 ---
 
@@ -54,3 +54,7 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. Routes A–D closed or non-crossing per the earlier notes; E (`qou-960k`) and F (`qou-zovy`) remain. The latest note above points at batch PR #8392, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** APPLIES as recorded: the epic itself reports no surviving depth-crossing route (A, B, C closed; D template; E → qou-47nf). Nothing in today's rulings reopens one. Stays open as the record of the gap; see qou-47nf for the colour/flavour question on route E.

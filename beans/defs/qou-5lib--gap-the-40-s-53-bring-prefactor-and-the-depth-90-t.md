@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T21:48:29Z
-updated_at: 2026-11-22T21:15:49Z
+updated_at: 2026-11-22T21:33:00Z
 parent: qou-n4nr
 ---
 
@@ -72,3 +72,7 @@ situation — a decidable statement assumed — has NOT been checked.
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change; (i)–(iv) are open. The latest note above points at batch PR #8198, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: NEEDS-OWNER.** NEEDS-OWNER, two findings. (1) `observations/n-v-leading-order-derivation.lean:114` `v_over_m_e_bridge` proves, by norm_num on decimal literals, that measured v_ew/m_e (246220 / 0.51099895069) equals 40·q₀^90·(1+ε) with |ε| ≤ 0.006. That is a model-equals-measurement claim inside Lean, the class the owner moved out of Lean on 2026-11-21 (TjonSimplexForm, PR #8852); it is not a calibration input or a refutation, so the "leave them" ruling of the same day does not cover it. Decision card posted in thread "Work the volume conjecture beans". (2) The integers 40 and 90 were found by matching that measured ratio; until (i)–(iii) of this bean derive them they are a selection against the target (§NO FITTING). The bean's derivation question itself applies.

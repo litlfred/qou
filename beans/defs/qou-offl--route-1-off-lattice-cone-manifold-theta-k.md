@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-31T19:30:00Z
-updated_at: 2026-11-22T21:15:47Z
+updated_at: 2026-11-22T21:32:59Z
 parent: qou-n4nr
 ---
 
@@ -139,3 +139,7 @@ buys nothing.
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change; open research. The latest note above points at batch PR #8213, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: RESCOPE.** RESCOPE, same reasons as parent qou-qnnq. Keep the geometric question (cone-manifold / generalized Dehn filling deformation of 4₁ and the Borromean rings, Hodgson–Kerckhoff rigidity) as formal mathematics. Drop any comparison to the T4-inverted ϑ values (data-conditioned) and the Δ_λ-magnitude role (see qou-qnnq). Stays open.

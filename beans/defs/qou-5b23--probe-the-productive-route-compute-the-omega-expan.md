@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T22:06:33Z
-updated_at: 2026-11-22T21:15:49Z
+updated_at: 2026-11-22T21:33:01Z
 parent: qou-n4nr
 ---
 
@@ -25,3 +25,7 @@ Was in-progress with no bean update since 2026-08-09 and no main commit naming i
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change; probe not run. The latest note above points at batch PR #8252, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: RESCOPE.** RESCOPE. The ω-expansion of q-deformed volumes is formal mathematics and applies. If the knot triple (4₁, 5₂, …) was chosen as particle assignments by volume, that is census selection, replaced by γγ construction plus the confinement SDP (owner 2026-09-08, qou-ales). Compute the expansion per knot as mathematics; attach no particle until a γγ-selected word picks the knot.

@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-08-02T08:47:49Z
-updated_at: 2026-11-22T21:15:42Z
+updated_at: 2026-11-22T21:33:10Z
 parent: qou-n4nr
 ---
 
@@ -21,3 +21,7 @@ parent: qou-n4nr
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 **Closed with evidence.** PR #4532 was closed without merging, but its content is on `main`: `Knot/WhiteheadVolumeConjecture.lean` carries `whiteheadS_log`, `innerSum_saddle_scaledLog_diff_tendsto_zero`, `whitehead_vc_of_saddle_value`, and `Knot/WhiteheadSaddleClausen.lean` discharges the saddle value unconditionally (`whiteheadS_explicit_saddle_tendsto`, `whitehead_vc_innerSum_half`). Nothing is left to land.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: ALREADY-DONE.** Confirmed on review: the result is on main (see the note above) and none of its premises is on the retired list in owner-rulings.md.

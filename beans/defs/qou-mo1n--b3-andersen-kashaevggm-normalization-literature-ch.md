@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T02:49:30Z
-updated_at: 2026-11-22T21:15:51Z
+updated_at: 2026-11-22T21:32:59Z
 parent: qou-n4nr
 ---
 
@@ -26,3 +26,7 @@ Evidence tier only; feeds the OhtsukiNZBridgeScale lock equation.
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change. The latest note above points at batch PR #8222, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** APPLIES (evidence tier only, as the bean says). It feeds qou-yh67's derivation, not a fit. Same guard as qou-yh67: the measured A is a comparison, not an input.

@@ -12,7 +12,7 @@ tags:
     - formalization-gap
     - reorg-2026-10-04
 created_at: 2026-08-08T22:20:00Z
-updated_at: 2026-10-04T15:24:57Z
+updated_at: 2026-11-22T21:33:06Z
 ---
 
 ## What is and is not formalised
@@ -1414,3 +1414,7 @@ this one open. Do not read "the analytic gaps are closed" as "c_sigma(4_1) =
 
 Duplicate of `mlgp` (work-plan reorganisation 2026-10-04). Evidence: same lane "Mathlib gap for analytic half of c_sigma" as epic mlgp (Clausen/Lobachevsky, Λ″=−cot)
 Content is untouched; only this work item is closed.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

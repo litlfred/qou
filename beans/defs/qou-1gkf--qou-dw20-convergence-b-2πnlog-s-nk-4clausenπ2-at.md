@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-08-02T08:33:15Z
-updated_at: 2026-11-22T21:15:44Z
+updated_at: 2026-11-22T21:33:04Z
 parent: qou-n4nr
 ---
 
@@ -34,3 +34,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8301, closed o
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 Re-scope, no status change. The analytic content is on `main` and unconditional: `WhiteheadSaddleClausen.whitehead_vc_innerSum_half` (inner sum at `⌊N/2⌋` → 4G). What this bean still literally asks is a port to the class `WhiteheadVolumeConjectureLimit`, which uses index `(N−1)/2`; for even `N` that is `N/2 − 1`, a different sequence, and the file itself calls it a placeholder link. Porting buys little: that class is about the inner sum, not `J_N(W)`. The mathematically live gap is the phased outer sum (`VdVWhiteheadLemma4`, epic `qou-u1b5`). Suggest: replace the placeholder index by `N/2` and instantiate the class from `whitehead_vc_innerSum_half` (a short Lean change), then close this bean; left for a Lean-capable pass because it edits a theorem statement.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.

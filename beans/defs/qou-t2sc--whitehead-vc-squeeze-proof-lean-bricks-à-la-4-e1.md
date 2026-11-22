@@ -8,7 +8,7 @@ tags:
     - close-candidate
     - reorg-2026-10-04
 created_at: 2026-08-01T19:45:02Z
-updated_at: 2026-11-22T21:15:42Z
+updated_at: 2026-11-22T21:33:10Z
 parent: qou-n4nr
 ---
 
@@ -86,3 +86,7 @@ Was in-progress with no bean update since 2026-08-01 and no main commit naming i
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 **Closed with evidence.** The bricks this bean asked for are all on `main`, and the one input the 2026-08-01 note left open (`hsaddle`, the saddle term → 4G) is discharged: `QOU.Knot.WhiteheadSaddle.whiteheadS_explicit_saddle_tendsto` at `(n*,k*) = (⌊N/2⌋,⌊N/4⌋)`, giving `whitehead_vc_innerSum_half` (inner sum at `⌊N/2⌋` → 4G, unconditional). What remains of the Whitehead volume conjecture is the phased OUTER sum (`VdVWhiteheadLemma4`, epic `qou-u1b5`) and the general statement (bean `qou-r75d`); neither is a squeeze brick.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: ALREADY-DONE.** Confirmed on review: the result is on main (see the note above) and none of its premises is on the retired list in owner-rulings.md.

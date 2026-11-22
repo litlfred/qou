@@ -8,7 +8,7 @@ tags:
     - close-candidate
     - reorg-2026-10-04
 created_at: 2026-08-01T23:54:37Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-11-22T21:33:11Z
 parent: qou-n4nr
 ---
 
@@ -48,3 +48,7 @@ Was in-progress with no bean update since 2026-08-01 and no main commit naming i
 ## 2026-11-15 — closed (branch `claude/volume-dilog-bricks-2026-11-15`)
 
 Discharged on main: `whitehead_vc_innerSum_half` (`QOU/Knot/WhiteheadSaddleClausen.lean`, sorry-free) proves the ⌊N/2⌋ inner-sum limit 4G via the explicit saddle term `whiteheadS_explicit_saddle_tendsto`.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: ALREADY-DONE.** Confirmed on review: the result is on main (see the note above) and none of its premises is on the retired list in owner-rulings.md.

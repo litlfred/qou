@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T03:32:44Z
-updated_at: 2026-11-22T21:15:48Z
+updated_at: 2026-11-22T21:33:02Z
 parent: qou-n4nr
 ---
 
@@ -64,3 +64,7 @@ Was in-progress with no bean update since 2026-07-19 and no main commit naming i
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 No change; the wall is the Beasley–Witten localization construction. The latest note above points at batch PR #8222, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
+
+**Verdict: APPLIES.** APPLIES as the bean's own 2026-07-19 re-scope states it: the real wall is bwS0_eq_hecke (no genuine instance), not the continuation. Same W_λ weight-family note as qou-sib1.
