@@ -225,3 +225,28 @@ checks exactly.
 
 **Status of `/q³` after Round 5:** still chosen, not derived; the photon route does not
 supply it.
+
+## Round 6 (2026-11-22): what a bar-invariant photon would imply
+
+Owner: *"Photon may have bar invariance ... But what would that mean about the particles it
+generates under γγ?"* Exact check at generic `q` (bar: `q ↦ q⁻¹`, `σ_i ↦ σ_i⁻¹`). In the
+basis `{1, σ₀, σ₁, σ₀σ₁}`, with `h = q − q⁻¹` and `f̄(q) = f(q⁻¹)`:
+
+    γ      = 1 + (φ₀ − hφ₀₁)σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁
+    bar(γ) = (1 − h(φ̄₀ + φ̄₁)) + φ̄₀σ₀ + (φ̄₁ − hφ̄₀₁)σ₁ + φ̄₀₁σ₀σ₁
+
+1. **Strict invariance `bar(γ) = γ` forces `φ₀ + φ₁ = 0`** (identity coefficient), together
+   with `φ̄₀₁ = φ₀₁` and `φ̄₀ = φ₀ − hφ₀₁`. Then `χ_triv(γ) = 1 + q(φ₀+φ₁) + φ₀₁ = 1 + φ₀₁ =
+   χ_sign(γ)`. So every product of bar-invariant photons has equal trivial and sign images,
+   and it can never be a nonzero multiple of `x₋` (or of `x₊`).
+2. **It excludes the chiral vertex.** `bar(σ₀σ₁⁻¹) = σ₀⁻¹σ₁`, its mirror, and
+   `bar(V³) ≠ V³`. A nonzero chiral photon `γ(0,0,c)` is never bar-invariant, because
+   invariance would need `φ₀ = hφ₀₁` with `φ₀ = 0`. So strict invariance would forbid the
+   γγ factorisation of the Borromean core `V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)`. Every γγ particle
+   would equal its own mirror.
+3. **The weaker reading holds: the photon family is closed under bar up to scale.**
+   `bar(γ)` always lies in the photon span. Its identity coefficient is `1 − h(φ̄₀+φ̄₁)`, so
+   after rescaling it is again a photon. Example: `bar(γ(0,0,c)) = γ(hc̄, −hc̄, c̄)`. So bar
+   pairs each photon with a mirror photon (matter with antimatter, per AGENTS.md §7b). The
+   identity-coefficient-1 normalisation is not bar-stable. This matches Round 2:
+   `bar(x₋) = q⁶x₋`, and the bar-stable normaliser is `[3]_q!`, not `[3]_q!/q³`.
