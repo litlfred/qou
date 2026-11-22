@@ -1374,3 +1374,34 @@ unit-coefficient S arms (§31 ±54 keV, §35 M2 and E-pot, §36 R1/R2 scalar-cha
 E-pot/M2) as double counts of the Coulomb term with an adopted coefficient. Live: the 𝒟² arms, the
 operator-charge terms as braid-built objects, and §40 EM-1 (−0.358 keV at q₀, −m_e/720 at q = 1),
 whose scale is still not derived.
+
+## §42 Hydrogen as one bound word: orientation test (pre-registered baa76c230b7)
+
+Owner, 2026-11-22: *"1"*. Bound word on C²⊗⁶: proton N = (σ₀σ₁⁻¹)³ on strands 0–2, electron
+σ₃σ₄σ₃ on 3–5, bond G = (σ₂σ₃⁻¹)³ (the γγ product shape of V³; a chosen bond, not derived).
+Control: the proton on the right, same bond. Neutrality tested with B1 = tr(T³·W·Π_O) and
+B2 = tr(T³·K·W·Π_O), Π_O the projector onto proton strands carrying w = 2 (O₊) or w = 1 (O₋) zeros.
+Exact sympy over ℚ(q), evaluated at 60 dps (`mn_hydrogen_bound_orientation_probe.py`, 5 s).
+
+| | B1 at q₀ | B2 at q₀ | electron-strand share of B1 at q₀ |
+|---|---|---|---|
+| proton left, O₊ | +8.16444 | +14.13644 | −0.02713 |
+| proton left, O₋ | −8.17292 | −3.64913 | +0.01434 |
+| proton right, O₊ | +8.12717 | +14.06029 | −0.03181 |
+| proton right, O₋ | −8.11909 | −3.62399 | +0.04821 |
+
+All four pre-registered predictions hold. At q = 1 every value is exactly ±6 (P1). No value is zero
+at q₀ (P3), so **neither orientation makes the bound atom neutral, and the orientation is not fixed**
+(not found in the searched class: one bond, two T³ functionals).
+
+Two exact facts are new. First, the bond gives the electron strands a T³ share, exactly
+∝ (q − 1)³(q + 1)³, so O(h³), absent in the unbound §41 test. Second, binding breaks the relabel
+symmetry: S = F(O₊) + F(O₋) is 0 at q = 1 and, for B1,
+
+    proton left:  S = −4q·h⁴        (−0.00848 at q₀)
+    proton right: S = +(3q² + 1)·h⁴/q  (+0.00808 at q₀)
+
+with h = q − q⁻¹. The sign of S follows the placement of the proton, so the asymmetry is set by the
+left/right convention for the bond, not by the p ↔ n label. Under the pre-registered decision rule
+that disqualifies it as a fixer. B2's S is O(h) and larger (+10.49, +10.44) because K is not
+relabel-symmetric on its own, so it carries no independent information.
