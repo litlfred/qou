@@ -84,6 +84,7 @@ export default chapter({
             "confinement-phase-stratification",
             "confinement-phase-stratification-proof",
             "confinement-phase-stratification-interpretation",
+            "confinement-phase-boundaries",
             "phase-scoped-applicability",
             "lp-stable",
             "lp-confined",

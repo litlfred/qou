@@ -29,17 +29,17 @@ See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
 The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)). One injects no CODATA nucleon masses and does not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
 
-The Convention-D base evaluation at single wrap ($\varepsilon$ evaluated via the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
+The Convention-D $\Delta$ evaluation at single wrap ($\varepsilon$ evaluated via the Markov trace at $z_D = q_0^3/(q_0^2+1)$, with the order-zero $E_0 = m_e/(q_0(q_0-1))$) is:
 
 $$
 \boxed{
-\mathfrak{Q}_\beta^{\text{pred}} = \mathfrak{Q}_\beta^{z_D} =
+\mathfrak{Q}_\beta^{z_D} =
 \Bigl|\tfrac{h^2}{2} - h\,z_D\Bigr|\,E_0
 \approx 0.4447 \text{ MeV}
 }
 $$
 
-This yields a $-43.16\%$ error ($-337.6$ keV) against the CODATA value of $0.7823$ MeV. The convention-D $c_k$ ladder that would correct this base is not yet derived, so the miss is reported as it stands.
+This yields a $-43.16\%$ error ($-337.6$ keV) against the CODATA value of $0.7823$ MeV. The convention-D $c_k$ ladder that would correct this base is not yet derived, so the miss is reported as it stands. The tower-summed $E_0$ gives $0.4491$ MeV ($-42.59\%$). The scored value is not the $\Delta$ trace. It applies the $T^3$ weight split of the same $z_D$ trace to the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$ and gives $\mathfrak{Q}_\beta \approx 0.3254$ MeV ($-58.40\%$) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)). The $\Delta$ value is kept as an unscored comparison.
 
 The base comes from the symbolic normal-form difference between the single-wrap proton ($L_+ - \tfrac{h}{2}\sigma_0$) and neutron ($L_+ - h\sigma_0 - \tfrac{h}{2}\sigma_1 + \tfrac{h^2}{2}\gamma$), namely $\Delta = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ with $h = q_0 - q_0^{-1}$. The Markov trace at $z_D$ sends $\gamma \mapsto 1$ and each $\sigma_i \mapsto z_D$, which gives $h^2/2 - h z_D$. This is multiplied by the energy scale $E_0 = m_e/(q_0(q_0-1))$. At single wrap, the $L_+$, $L_-$, and $e^-$ contributions cancel exactly.
 

@@ -1,0 +1,198 @@
+{
+ "E6_trace18_classes": [
+  {
+   "RL_word": "R^1L^1 R^1L^1 R^1L^1",
+   "matrix": [
+    [
+     13,
+     8
+    ],
+    [
+     8,
+     5
+    ]
+   ],
+   "braid_writhe": 0,
+   "writhe0_lift": true,
+   "chi_equals_bor": true,
+   "lift": "s0s1's0s1's0s1'"
+  },
+  {
+   "RL_word": "R^1L^2 R^1L^3",
+   "matrix": [
+    [
+     15,
+     4
+    ],
+    [
+     11,
+     3
+    ]
+   ],
+   "braid_writhe": -3,
+   "writhe0_lift": false,
+   "chi_equals_bor": null,
+   "lift": null
+  },
+  {
+   "RL_word": "R^1L^16",
+   "matrix": [
+    [
+     17,
+     1
+    ],
+    [
+     16,
+     1
+    ]
+   ],
+   "braid_writhe": -15,
+   "writhe0_lift": false,
+   "chi_equals_bor": null,
+   "lift": null
+  },
+  {
+   "RL_word": "R^2L^1 R^3L^1",
+   "matrix": [
+    [
+     14,
+     11
+    ],
+    [
+     5,
+     4
+    ]
+   ],
+   "braid_writhe": 3,
+   "writhe0_lift": false,
+   "chi_equals_bor": null,
+   "lift": null
+  },
+  {
+   "RL_word": "R^2L^8",
+   "matrix": [
+    [
+     17,
+     2
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "braid_writhe": -6,
+   "writhe0_lift": false,
+   "chi_equals_bor": null,
+   "lift": null
+  },
+  {
+   "RL_word": "R^4L^4",
+   "matrix": [
+    [
+     17,
+     4
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "braid_writhe": 0,
+   "writhe0_lift": true,
+   "chi_equals_bor": false,
+   "lift": "s0s0s0s0s1's1's1's1'"
+  },
+  {
+   "RL_word": "R^8L^2",
+   "matrix": [
+    [
+     17,
+     8
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "braid_writhe": 6,
+   "writhe0_lift": false,
+   "chi_equals_bor": null,
+   "lift": null
+  },
+  {
+   "RL_word": "R^16L^1",
+   "matrix": [
+    [
+     17,
+     16
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "braid_writhe": 15,
+   "writhe0_lift": false,
+   "chi_equals_bor": null,
+   "lift": null
+  }
+ ],
+ "E7_same_chi_distinct_classes": [
+  {
+   "trace": 15,
+   "classes": [
+    "R^1L^1 R^2L^2",
+    "R^1L^2 R^2L^1"
+   ]
+  },
+  {
+   "trace": 15,
+   "classes": [
+    "R^1L^13",
+    "R^13L^1"
+   ]
+  },
+  {
+   "trace": 27,
+   "classes": [
+    "R^1L^1 R^3L^3",
+    "R^1L^3 R^3L^1"
+   ]
+  },
+  {
+   "trace": 27,
+   "classes": [
+    "R^1L^25",
+    "R^25L^1"
+   ]
+  },
+  {
+   "trace": 30,
+   "classes": [
+    "R^1L^2 R^3L^2",
+    "R^2L^1 R^2L^3"
+   ]
+  },
+  {
+   "trace": 30,
+   "classes": [
+    "R^2L^14",
+    "R^14L^2"
+   ]
+  },
+  {
+   "trace": 39,
+   "classes": [
+    "R^1L^1 R^1L^1 R^2L^2",
+    "R^1L^1 R^1L^2 R^2L^1"
+   ]
+  },
+  {
+   "trace": 39,
+   "classes": [
+    "R^1L^37",
+    "R^37L^1"
+   ]
+  }
+ ]
+}

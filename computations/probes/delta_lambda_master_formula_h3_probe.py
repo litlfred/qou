@@ -2,7 +2,7 @@
 """Δ_λ master-formula route — H₃ collapse test + q-Casimir energy (EXPLORATORY).
 
 Owner steer: attack the cooperative-binding (Δ_λ) gate via the master formula
-(prop:confinement-frobenius-reciprocity) the way g_A is computed, NOT a Δ_λ
+(conj:confinement-frobenius-reciprocity) the way g_A is computed, NOT a Δ_λ
 content-count ansatz. This is the tractable FIRST step from
 docs/audits/2026-06-17-delta-lambda-master-formula-active-set-redesign.md §4:
 test, at the single-nucleon H₃ level (existing 6×6 Gram, no new wall), whether

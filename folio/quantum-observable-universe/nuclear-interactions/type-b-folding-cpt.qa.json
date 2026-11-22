@@ -8,8 +8,8 @@
     "lean": "folio/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.lean"
   },
   "source_hashes": {
-    "md": "3b18eb13681d",
-    "ts": "737994d53a65",
+    "md": "0717656a1da2",
+    "ts": "0f8d578b3b03",
     "lean": "295ae8c5371d",
     "lean_statement": "a050af936d84"
   },
@@ -63,6 +63,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-emoji-content": [
@@ -102,6 +121,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-first-person-work": [
@@ -141,6 +179,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-time-stamped-notes": [
@@ -180,6 +237,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-unicode-crash": [
@@ -219,6 +295,25 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-editorializing": [
@@ -258,6 +353,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-title-scholarly": [
@@ -297,6 +411,25 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-ai-slop": [
@@ -352,6 +485,25 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-author-notes-pollution": [
@@ -391,6 +543,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-status-section": [
@@ -430,6 +601,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "framework-canonical": [
@@ -469,6 +659,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "wall-side-correct": [
@@ -508,6 +717,25 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "q-usage-regime-detected": [
@@ -526,6 +754,22 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"nuclear-interactions\",\"expected\":null}"
+      },
+      {
+        "field_hash": {
+          "ts": "0f8d578b3b03",
+          "md": "0717656a1da2",
+          "lean": "295ae8c5371d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "704f60ada46a"
+        },
+        "reviewed_at": "2026-11-21T18:42:28.748Z",
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-positive\",\"symbolic\"],\"chapter\":\"nuclear-interactions\",\"expected\":null}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -543,6 +787,21 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      },
+      {
+        "field_hash": {
+          "ts": "0f8d578b3b03",
+          "md": "0717656a1da2",
+          "lean": "295ae8c5371d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "704f60ada46a"
+        },
+        "reviewed_at": "2026-11-21T18:42:28.748Z",
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -560,6 +819,21 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      },
+      {
+        "field_hash": {
+          "ts": "0f8d578b3b03",
+          "md": "0717656a1da2",
+          "lean": "295ae8c5371d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "704f60ada46a"
+        },
+        "reviewed_at": "2026-11-21T18:42:28.748Z",
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -577,6 +851,21 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      },
+      {
+        "field_hash": {
+          "ts": "0f8d578b3b03",
+          "md": "0717656a1da2",
+          "lean": "295ae8c5371d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "704f60ada46a"
+        },
+        "reviewed_at": "2026-11-21T18:42:28.748Z",
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -594,6 +883,21 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      },
+      {
+        "field_hash": {
+          "ts": "0f8d578b3b03",
+          "md": "0717656a1da2",
+          "lean": "295ae8c5371d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "704f60ada46a"
+        },
+        "reviewed_at": "2026-11-21T18:42:28.748Z",
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -611,6 +915,21 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      },
+      {
+        "field_hash": {
+          "ts": "0f8d578b3b03",
+          "md": "0717656a1da2",
+          "lean": "295ae8c5371d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "704f60ada46a"
+        },
+        "reviewed_at": "2026-11-21T18:42:28.748Z",
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -628,6 +947,21 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      },
+      {
+        "field_hash": {
+          "ts": "0f8d578b3b03",
+          "md": "0717656a1da2",
+          "lean": "295ae8c5371d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "704f60ada46a"
+        },
+        "reviewed_at": "2026-11-21T18:42:28.748Z",
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "canonical-calibration-count": [
@@ -667,6 +1001,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "canonical-no-numerology": [
@@ -706,6 +1059,25 @@
           "def_hash": "bfbb93c220cc"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "canonical-witness-pinned": [
@@ -745,6 +1117,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -784,6 +1175,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -823,6 +1233,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -862,6 +1291,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -901,6 +1349,25 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -940,6 +1407,25 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "compute-witness-exists": [
@@ -979,6 +1465,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "compute-lp-dual-present": [
@@ -1018,6 +1523,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1059,6 +1583,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "detangler-section-band": [
@@ -1100,6 +1644,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1142,6 +1706,27 @@
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1183,6 +1768,27 @@
           "def_hash": "19a5005a8bb6"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1251,6 +1857,39 @@
           "edge_span_mean": 2,
           "worst_target": ""
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 5,
+          "in_degree": 1,
+          "cone_size": 84,
+          "depth": 20,
+          "pagerank": 0.000138,
+          "edge_span_max": 3,
+          "edge_span_mean": 2,
+          "worst_target": ""
+        }
       }
     ],
     "detangler-graph-energy": [
@@ -1302,6 +1941,31 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "detangler-topic-coherence": [
@@ -1343,6 +2007,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1384,6 +2068,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "bib-cite-resolves": [
@@ -1425,6 +2129,26 @@
           "def_hash": "e703243fe06f"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1466,6 +2190,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1507,6 +2251,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1548,6 +2312,26 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1669,6 +2453,26 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "fit-section-chapter": [
@@ -1718,6 +2522,24 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "Type-B folding / CPT carrier in nuclear-interactions beside the C, P, T carriers it uses; the added paragraph (rank, Lusztig weights) stays inside the block's own topic.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1736,6 +2558,24 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The goal is stated as a conjecture. The new arithmetic (rank floor(n/2) = number of iota-orbits on n-1 simple roots; weights 2 bulk, 1 or 3 middle) is correct and matches the H15 check for n = 3..7 (|W^iota| = 2, 8, 8, 48, 48).",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-false-claim": [
@@ -1771,6 +2611,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "Checked each new claim. A_{n-1} under i -> n-i has floor(n/2) orbits on n-1 nodes. The fixed subgroup of S_n is the centraliser of w0, of type B_{floor(n/2)} at the Coxeter level, generated by the orbit longest elements s_i s_{n-i} (length 2), with middle s_{n/2} (length 1, n even) or s_m s_{m+1} s_m (length 3, n = 2m+1). n = 3 gives A_1 = B_1. Unequal weights for n >= 4. Parameters v^L with v = q give q^2 and q or q^3. All correct.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-vacuous": [
@@ -1805,6 +2663,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The carrier is refutable on three independent legs (label, matter, crystal), all proved. The new paragraph makes falsifiable arithmetic claims.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-circular": [
@@ -1840,6 +2716,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "No claim is used to support itself. The rank is derived from orbit counting, and the weights come from Lusztig's quasisplit construction.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-overclaim": [
@@ -1875,6 +2769,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The physical identifications (matter = fixed points, CPT tensor decomposition) stay inside the italic conjecture. The fixed-q scope section restricts P explicitly. The new paragraph claims only standard Coxeter-level facts and says 'At the level of Coxeter groups'.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-hidden-dof": [
@@ -1910,6 +2822,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "'With the ambient parameter equal to q, as for H_n(q)' is stated, not tuned. No parameter is chosen against data.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-non-sequitur": [
@@ -1945,6 +2875,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The rank paragraph's steps follow: orbit count -> rank; orbit longest elements -> generators; lengths -> weights; weights unequal for n >= 4 -> unequal-parameter Hecke algebra.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1979,6 +2927,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The carrier encodes the fold and its orbit count with ℕ division n / 2 (= floor), so it agrees with the new B_{floor(n/2)}. Its docstrings still write 'rank n/2' / 'B_{n/2}' in ℕ notation (same value). The carrier explicitly does not encode the type-B label or the weights ('a root-system / Cartan-matrix type must grow first'), and the .md paragraph is exposition beyond the encoded legs, not a contradiction.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-citation-misuse": [
@@ -2014,6 +2980,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "\\cite[Sec.~16.2]{lusztig2003}: Lusztig, Hecke Algebras with Unequal Parameters, CRM Monograph Ser. 18, AMS 2003 (metadata corroborated by held bibliographies, e.g. library/hdr/sections/sec-029-bibliography.md [Lu6]). Chapter 16 is the quasisplit example with L = length restricted to W^sigma, which is what is claimed. CAVEAT: the source text is not in library/ (INDEX, sections and ocr grep found only citations to it) and arXiv is blocked here, so the section number 16.2 was checked against known content, not the held text. geck-lambropoulou-2004 is pre-existing.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-definitional-ambiguity": [
@@ -2049,6 +3033,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "severity": "minor",
+        "evidence": "The italic statement says 'folds into a Type-B Cartan datum B_{floor(n/2)}'. That is exact at the Coxeter/Weyl level, where B = C. At the Cartan-datum level the type depends on parity and convention. For n = 2m the diagram-automorphism fixed-point algebra of sl_{2m} is sp_{2m} (type C_m); B_m is the orbit (dual) algebra. For n = 2m+1 the fixed-point algebra is so_{2m+1} (B_m), but the orbit {alpha_m, alpha_{m+1}} contains adjacent nodes, so iota is not an admissible folding in Lusztig's quantum-group sense, and no folded Cartan datum in that sense exists. The added paragraph scopes itself correctly ('At the level of Coxeter groups'). The statement still says 'Cartan datum', and #8774 now extends it explicitly to odd n. Proposed: 'a Coxeter datum of type B_{floor(n/2)}', or a parity note. Flagged, not fixed (claim-bearing wording). Also: the new heading 'Rank and wall weight' uses 'wall', which the block never defines; the body says 'middle generator'. (The author's own store verdict f580598 raised this independently; it is confirmed here.)",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-empirical-fragility": [
@@ -2084,6 +3087,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "No numerical value and no q0 pin in the block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-physical-implausibility": [
@@ -2119,6 +3140,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The physical reading is kept conjectural. The block itself shows that no letter-level map has the profile of P at fixed real q, and the carrier entails the corpus's chirality obstruction rather than contradicting it. Nothing new is added by #8774.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-reproducibility": [
@@ -2154,6 +3193,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "No witness is attached. The arithmetic is reproducible by hand and by computations/probes/bridge_b/h15_folding_all_n_probe.py (exact integers, n = 3..7; output committed in this PR).",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "da-referee-verdict": [
@@ -2191,6 +3248,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "severity": "minor",
+        "evidence": "Strongest objection: 'Type-B Cartan datum' over-states the fold for odd n, and blurs B vs C for even n (see da-definitional-ambiguity). The rank fix itself (n/2 -> floor(n/2)) is correct and needed. Otherwise sound as a scoped conjecture.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2377,6 +3453,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "cite-named-theorem": [
@@ -2416,6 +3511,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-agent-speak": [
@@ -2455,6 +3569,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "expo-milnor-clarity": [
@@ -2470,6 +3603,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The new paragraph introduces s_i before using it, defines the rank as an orbit count, and gives both parities with an n = 3 example. Lusztig's term 'weight function' is glossed by 'given by their ambient lengths'. The undefined acronym GS is pre-existing and covered by the acronym-in-glossary warn.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "milnor-brevity": [
@@ -2485,6 +3636,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The added paragraph is eight sentences, each carrying one fact (rank, construction, two parities, n = 3, unequal weights, parameters). No padding.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "uses-editorial-hygiene": [
@@ -2531,6 +3700,31 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
+        "metrics": {
+          "uses_count": 5,
+          "broken_edges": 0,
+          "redundant_edges": 1
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
         "metrics": {
           "uses_count": 5,
           "broken_edges": 0,
@@ -2585,6 +3779,30 @@
           "formal_only_count": 0,
           "editorial_only_count": 5
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 5
+        }
       }
     ],
     "lean-ref-owns-decl": [
@@ -2632,6 +3850,29 @@
         "metrics": {
           "decl_claimants": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
+        "metrics": {
+          "decl_claimants": 1
+        }
       }
     ],
     "trap-negation-contrast": [
@@ -2666,6 +3907,24 @@
         "reviewed_at": "2026-08-22T06:13:07.861Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. 'Neither ... nor ... unless q^2 = 1' in the scope section is a real dichotomy, not manufactured contrast.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2700,6 +3959,24 @@
         "reviewed_at": "2026-08-22T06:13:07.941Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. ",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-em-dash": [
@@ -2734,6 +4011,24 @@
         "reviewed_at": "2026-08-22T06:13:08.010Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. The .md has no em dash; 'Breit–Wheeler' is an en dash in a name.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-triples": [
@@ -2768,6 +4063,24 @@
         "reviewed_at": "2026-08-22T06:13:08.084Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. The C/P/T bullets and the three involutions are substantive enumerations.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-closing-aphorism": [
@@ -2802,6 +4115,24 @@
         "reviewed_at": "2026-08-22T06:13:08.170Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. The final sentence ('Hence no letter-level map has the profile of P at fixed real q.') is the conclusion of the argument, not an aphorism.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-meta-commentary": [
@@ -2836,6 +4167,24 @@
         "reviewed_at": "2026-08-22T06:13:08.262Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. 'The Type-B folding view is more compact but requires more category theory' is a pre-existing cost statement, passed before.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-thesis-restatement": [
@@ -2870,6 +4219,24 @@
         "reviewed_at": "2026-08-22T06:13:08.342Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. ",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-performed-warmth": [
@@ -2904,6 +4271,24 @@
         "reviewed_at": "2026-08-22T06:13:08.420Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. ",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-superlative": [
@@ -2938,6 +4323,24 @@
         "reviewed_at": "2026-08-22T06:13:08.490Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. 'exactly one for each parameter z and each sequence (y_k)' is the cited classification theorem (Geck–Lambropoulou Thm 4.3), not a superlative.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "trap-nonspeakable": [
@@ -2972,6 +4375,24 @@
         "reviewed_at": "2026-08-22T06:13:08.577Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "New 'Rank and wall weight' paragraph read for this pattern; none found. 'the iota-fixed subgroup of S_n is a Coxeter group generated by the longest elements of the iota-orbits' reads aloud.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3050,6 +4471,25 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "foreshadows-point-forward": [
@@ -3091,6 +4531,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84",
+          "graph": "810abaeef02f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "voice-scholarly-default": [
@@ -3130,6 +4590,25 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "proof-no-placeholder-stub": [
@@ -3173,6 +4652,26 @@
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
         "notes": "4 acronym(s) are candidates for the glossary: GS, CPT, CT, CP. Run glossary:acronyms for the folio-wide list with expansions."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
+        "notes": "4 acronym(s) are candidates for the glossary: GS, CPT, CT, CP. Run glossary:acronyms for the folio-wide list with expansions."
       }
     ],
     "dak-companion-present": [
@@ -3191,6 +4690,23 @@
           "version": "v1"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
@@ -3249,6 +4765,23 @@
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
     "dak-label-prefix-matches-kind": [
@@ -3267,6 +4800,23 @@
           "version": "v1"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
@@ -3289,6 +4839,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
       }
     ],
     "id-stable": [
@@ -3310,9 +4879,269 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6f3e6d833a07bc69baea6515aa335d6e47f7726f"
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c98e20de74d629292745a0fe682008e5580aa4d1"
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "severity": "minor",
+        "evidence": "Statement: 'The resulting Kashiwara crystal is a symmetric crystal whose GS normal forms are bar-involution invariant by construction.' That leg is carried by conj:symmetric-crystal-pair-production (the .lean carrier says so: 'That leg already has a carrier'), which is not in uses[]. A reader meets 'symmetric crystal' with no pointer. Pre-existing: the sentence predates #8774. The new paragraph adds no block dependency (Lusztig is a citation).",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block. (The Lean carrier is over ℕ and an abstract CrystalGraph, with no ℝ.)",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "The block declares no computation script or witness (.ts has no `computation` field); this script-quality criterion judges Python producers, so it does not apply to a conjecture block.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f580598611f843423a7ffeda54fea222ce5f4b73",
+        "evidence": "B_{floor(n/2)} is stated as an n-indexed family with the two parities treated separately; nothing is read as a single proposition.",
+        "notes": "Full read of .md (with the 'Rank and wall weight' paragraph added by #8774), .ts (cites lusztig2003) and the unchanged .lean carrier; carrier lean-direct exit 0 (-DautoImplicit=false -s 65536), #print axioms on typeBFold_no_global_chirality_grading / _refutable_on_crystal / _orbit_complete_invariant / _label_free_of_odd_strands: propext, Classical.choice, Quot.sound only."
       }
     ]
   },
-  "updated_at": "2026-11-21T12:50:32.704Z",
+  "updated_at": "2026-11-21T19:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

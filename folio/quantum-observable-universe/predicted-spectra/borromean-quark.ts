@@ -54,6 +54,8 @@ export default conjecture({
   ],
   cites: ["dgkmsv2013"],
   uses: [
+    "prop:skein-generation",
+    "rem:skein-generation-hadron-reading",
     "def:neutrino-knot",
     "prop:bn-mtc-action",
   ],

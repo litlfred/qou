@@ -19,7 +19,7 @@ export default proposition({
     "prop:plancherel-weight-boundedness",
   ],
   cites: ["jones1985", "wenzl1988", "kassel1995", "orellana1998"],
-  lean: { ref: "qou:QOU.BraidKnot.wedderburnWeightCanonical" },
+  lean: { ref: "qou:QOU.BraidKnot.WedderburnWeightCanonical" },
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): the manifest title and the Lean both say $\\tilde w_\\lambda$, and they are correct." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): > **Disposition: dropped from the class signature.** Of the three options — restrict the field to $\\lambda = (1)$, drop it, or demote the block to a conjecture — the author chose to drop. The field `y_eq_self_conjugate` and its projection theorem `y_self_conjugate` are removed from the Lean; `y` remains in the class as data only, and the class is inhabitable at the honest values. The two definitional scalings and `beta_mul_h_eq_neg_C` are unchanged. Weakening the field to make the class inhabitable would have been laundering, which is why the choice waited for the author. Measurement: [`wenzl_bridge_self_conjugate_premise_is_false.py`](https://github.com/litlfred/qou/blob/main/computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py), whose first check now guards the drop." },

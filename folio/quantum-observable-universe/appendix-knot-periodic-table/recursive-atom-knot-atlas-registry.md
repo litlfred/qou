@@ -225,7 +225,7 @@ Each per-isotope record lists the knot operators used to build its canonical bra
 | p–n | $\sigma + \bigl(-h(1/2 - \delta/4)\bigr)\cdot\mathbf{1}$ (colour-tube-weighted average) |
 
 where $h = q_0 - q_0^{-1}$ and $\delta$ is the substrate flavour split of
-[Substrate-pure derivation of the $u$--$d$ flavor split](#prop:flavor-split-substrate).
+[the substrate flavor split conjecture](#conj:flavor-split-substrate-mass).
 
 The $\delta = 0$ form $\sigma + (-h/2)\cdot\mathbf{1}$ is **not** the p–n
 interface: it is the intra-nucleon quark crossing, and it never appears at a
