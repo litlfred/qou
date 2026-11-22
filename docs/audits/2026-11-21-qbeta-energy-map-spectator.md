@@ -755,3 +755,58 @@ construction, alone, does not supply the vertex energy. Its order is O(h²) whil
 so no rescaling within this family closes the gap without a free factor, which would be a fit.
 What it does not exclude: a vertex term built from more than the one strand pair (for instance all
 three quark strands together with the lepton, in H₄), which is not tested here.
+
+## 29. The full vertex in H₄ (prereg Addendum 18; owner "Do all", item 1)
+
+**Result: a scope-(a) negative, but a larger one than §28.** Splitting all four strands (three
+quark, one lepton) by the Young channels of H₄ gives ΔE₄ = 0.19867 MeV at the proton q₀. That is
+2.2 times the §28 pair split, and still second order in h. Placement B needs 2.11 times more,
+placement C 3.94 times more.
+
+**What is Lean-proved** (`QOU/QBeta/H4VertexEnergy.lean`, lean-direct exit 0, 11 declarations
+checked with `#print axioms`, all on the standard axioms, no sorry):
+- `hecke1..3`, `braid12`, `braid23`, `comm13`: the three 6×6 Jimbo generators on the weight-zero
+  space of V^{⊗4} satisfy the H₄ relations. The braid relations need q² = hq + 1, and the proofs
+  go through multiplied-out product matrices.
+- Two rational functions are defined: `wInit` (the summed weight of {uddu, dudu, dduu}) and
+  `wFinal` (the summed weight of {uudd, udud, duud}). About them:
+  - `init_add_final`: wInit + wFinal = q⁶ + 3q² + 2.
+  - `init_sub_final`: wInit − wFinal = (q² − 1)²(q⁸ + 3q⁶ + 5q⁴ + q² + 2)/((q² + 1)(q⁴ + 1)).
+    The split is second order in h.
+  - `one_lt_ratio`: for q > 1 the ratio exceeds 1.
+  - `log_ratio_le`: ln(wInit/wFinal) ≤ (q² − 1)²(q⁸ + 3q⁶ + 5q⁴ + q² + 2)/(2q²(q⁶ + 3q⁴ + 2)).
+  - `log_ratio_lt_cell`: for 1 < q, q² ≤ 2, the energy is strictly below the cell 2E₀ ln q.
+    It is not below the cell for all q: the comparison polynomial changes sign near q ≈ 1.579.
+
+**What is exact computation, not Lean.** The state weights themselves (P_λ as Lagrange
+polynomials in the full twist; diagonals; sums over the two sets) are computed in exact ℚ(q)
+arithmetic by
+[`h4_young_channel_vertex.py`](../../computations/probes/qbeta_energy_map/h4_young_channel_vertex.py),
+as Addendum 18 allowed. The 6×6 symbolic full twist was not attempted in Lean. That script also
+checks the idempotent relations, Σ P_λ = 1, and the channel traces 1, 3, 2.
+
+**Preregistered claims.**
+1. Trace q⁶ + 3q² + 2: **holds**, computed exactly; the set-sum identity is Lean-proved.
+2. The n = 2 rule reproduces §28: **holds**. With weights q^{c(λ)}, the n = 2 operator is
+   q·P_sym + q⁻¹·P_anti, which is exactly what §28 proves.
+3. Reversing the tensor order negates ΔE₄: **holds**. The reversed sets have exactly the swapped
+   sums (exact computation), and `vertexEnergy_swap` from §28 gives the sign flip. So the sign is a
+   convention again.
+4. Size at the proton q₀ (mpmath, 40 dps, after the Lean):
+
+| quantity | MeV |
+|---|---|
+| ΔE₄ (full H₄ split) | 0.198670 |
+| first-order bound E₀(r − 1) | 0.203460 |
+| §28 pair split | 0.090491 |
+| cell 2E₀ ln q | 0.873537 |
+| needed, placement B | 0.41979 (2.11 × ΔE₄) |
+| needed, placement C | 0.78233 (3.94 × ΔE₄) |
+
+Neither target is within 10 %, so there is no near-match to flag.
+
+**Verdict.** This construction, alone, does not supply the vertex energy. Going from two strands
+(§28) to four doubles the split, and both are O(h²) against an O(h) cell. Reaching 0.42 MeV with
+this weight family would need a free factor of about 2.1, which would be a fit. Not excluded: a
+vertex weight that is not a function of the Young channel alone, for example one that uses β_Bor on
+the quark strands (premise G) together with the lepton.
