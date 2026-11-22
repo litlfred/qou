@@ -1,13 +1,13 @@
 ---
 # qou-24m2
 title: 'GAP (detector): lean-self-assuming-audit.py misses the CLASS-INSTANCE self-assuming variant - the exact pattern AGENTS.md 3b-cond rule 5 names. DeltaLambdaSignRule.burnside was ''class C where claim : <conclusion>'' + ''theorem burnside [ctx : C] ... := ctx.claim ...'' and the detector scored 0 candidates on it. Two independent causes: (1) BINDER regex only matches round-bracket ''(h : T)'', so instance-implicit ''[ctx : C]'' never enters the binder map; (2) the bare-identifier guard re.fullmatch(''[A-Za-z_][A-Za-z0-9_]*'', proof) rejects a projection APPLICATION like ''ctx.claim n ps hc hn''. Fix: also parse ''[name : Type]'' binders, and match proofs of the form ''<binder>.<field> <args>'' where the class field''s declared type equals the conclusion. Cross-ref PR #4695 (8 P->P theorems), PR #4712 (triviality sweep), bean qou-q407, qou-z3k1.'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T00:15:05Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-22T22:10:00Z
 parent: qou-5p7n
 ---
 
@@ -44,3 +44,6 @@ confirms a genuine, already-documented instance rather than noise.
 ## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
 - Measured: PR #8471 / #8474 / #8481 (2026-11-18, `QOU/Foundations/*` new files) do **not** resolve this bean. Each adds a standalone Lean file whose structures hold the bean's own audit counts as `Int` fields, with a `canonical…` def filling in the counts and theorems such as `x*x = 0 ↔ x = 0`. No corpus file named by this bean is touched, so the defect it tracks is unchanged by those PRs. Read from the PR patches; not merged.
 - Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md on main 2ae54ab40; list: L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, single-term trace, trefoil-primary electron, 'c_2 = −1 PROVED', χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean's premises or in the files it names.
+
+## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
+Completed, evidence: the fix described in the 2026-08-22 entry is on main 3c4c98fcc (scripts/lean-self-assuming-audit.py: BINDER_INST line 60, PROJ_APP line 114, variant class-field-is-conclusion line 663). Measured today: python3 scripts/lean-self-assuming-audit.py scans 4704 .lean files, 54 candidates, 29 of them class-field-is-conclusion. The wave-1 note that #8471/#8474/#8481 do not resolve this bean is correct but beside the point: the fix had already landed. Known limit kept in the script's own output: cross-file classes are not resolved, so counts are a lower bound.

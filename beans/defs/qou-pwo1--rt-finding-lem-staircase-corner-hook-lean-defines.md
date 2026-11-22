@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: low
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-21T16:00:00Z
+updated_at: 2026-11-22T22:10:00Z
 parent: qou-ncxf
 ---
 
@@ -24,3 +24,6 @@ qou-ncxf pass-1 (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md, block B1
 ## 2026-11-21 (honesty-audits sibling)
 
 Statement restated to what the Lean proves (owner ruling 2026-11-21, PR #8888; record in docs/audits/2026-11-21-roundtrip-blind-audit-pass2.md §3). The `.md` no longer claims more than the `lean.ref` theorem. Left open on purpose: the original, stronger claim is still unproved, and the narrative-proof defects noted above are not yet fixed.
+
+## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
+Verified on main 3c4c98fcc: the restatement from #8888 (merged 2026-11-21) is in the .ts caveat ('Statement restated 2026-11-21'). The honesty defect this bean records is fixed; what stays open is the original stronger claim. Whether to close this bean (and track the stronger claim, if wanted, elsewhere) is put to the owner on a card.

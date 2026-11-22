@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-22T22:10:00Z
 parent: qou-ncxf
 ---
 
@@ -26,3 +26,6 @@ W5 (2026-11-20) notes PR #8528 (merged) replaced the missing `roundtrip-blind-pa
 ## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
 - Still absent on main 2ae54ab40: no `folio/pipeline/roundtrip-blind-packets.ts`. `scripts/roundtrip-blind-sample.py` (PR #8528) is the working substitute and gained dotted-name lookup, `--offset` and `--ref-audit` (commit 24c44167e). It does not write verdicts into `.qa.json`, which this bean also asks for. Recommendation for the qou-ncxf owner (judgement): close as superseded once a decision is made on the `.qa.json` wiring; not closed here.
 - Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md on main 2ae54ab40; list: L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, single-term trace, trefoil-primary electron, 'c_2 = −1 PROVED', χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean's premises or in the files it names.
+
+## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
+Still absent on main 3c4c98fcc: no folio/pipeline/roundtrip-blind-packets.ts. scripts/roundtrip-blind-sample.py did pass 3 after two fixes on this branch (comment-blanked decl lookup; one proof per block by label suffix). It still writes no .qa.json verdicts. Closing as superseded by #8528 is put to the owner on a card.

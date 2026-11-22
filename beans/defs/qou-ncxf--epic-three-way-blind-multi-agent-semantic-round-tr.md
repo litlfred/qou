@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-21T15:51:20Z
+updated_at: 2026-11-22T22:10:00Z
 ---
 
 End-to-end blind multi-agent round-trip audit architecture across all 741 provable claims (and definitions/conjectures) in QOU, using strictly isolated, tool-free blind agents at every leg plus deterministic comment/spoiler scrubbing (`folio/pipeline/roundtrip-blind-packets.ts`).
@@ -27,3 +27,6 @@ Pass 2 done (20 blocks, offset 15; PR #8888, docs/audits/2026-11-21-roundtrip-bl
 ## 2026-11-21 (honesty-audits sibling, fixes)
 
 All pass-2 findings acted on in PR #8888 (§6 of the pass-2 audit doc). Self-assuming fields deleted with honest `sorry` + Ref: C04, C06, C09, C17. C12 empirical axiom deleted. C16 conjunct 2 derived. Narrative proofs rewritten: C01, C04, C06, C09, C13. Restated: C03, C11. Minor slips: C02, C08, C18, C20. C13 reclassified genuine → B (scalar-only Lean). New, unfixed: `models-of-qous/skew-poisson-integration.lean` stores Bool flags and reads them back (Class A family). Epic stays in-progress; next cursor offset 40.
+
+## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
+Pass 3 done: 20 blocks at --offset 40 (population 408), four blind legs + my adjudication, docs/audits/2026-11-22-roundtrip-blind-audit-pass3.md (commit 48b749e80). Lean: A 7, T 5, B 4, genuine 4; no sorry/axiom. Text defects in 13/20. Findings only; restatements, sorries, kind changes and disclosures are put to the owner. Sampler fixed twice (docstring taken for a decl; proof paired with every block it cites), which re-pairs pass-1 B07. Next cursor --offset 60, 348 blocks remain.

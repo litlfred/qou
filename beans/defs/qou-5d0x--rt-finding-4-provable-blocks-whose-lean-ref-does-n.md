@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-22T09:20:44Z
+updated_at: 2026-11-22T22:10:00Z
 parent: qou-ncxf
 ---
 
@@ -29,3 +29,6 @@ Next step: a full scan of all 435 sampled-population refs for this class.
 
 
 2026-11-22: centered-hecke-variance-positive is still unresolved on main; the repoint to centeredVariance_pos is now qou-g7nn (epic qou-uwyf, docs/audits/2026-11-22-lean-audit-snapshot-gaps.md §3).
+
+## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
+Pass 3 window (offset 40) skipped five more decl-not-found refs: prop:local-substrate-q, prop:vertex-is-exceptional-divisor, prop:plancherel-term-7-formulation, prop:level-sufficiency, prop:yekutieli-lifting. Also: QOU.CategoricalQConnection.exists had resolved to a docstring line in Wedderburn.lean; the sampler now ignores comments, and the real decl is in categorical-q-connection-exists.lean.

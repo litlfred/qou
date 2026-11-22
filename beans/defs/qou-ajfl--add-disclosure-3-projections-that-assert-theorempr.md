@@ -1,7 +1,7 @@
 ---
 # qou-ajfl
 title: Add disclosure — 3 projections that assert **Theorem/Proposition** with none
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - issue-2472
     - reorg-2026-10-04
 created_at: 2026-08-10T01:47:53Z
-updated_at: 2026-11-15T20:59:00Z
+updated_at: 2026-11-22T22:10:00Z
 parent: qou-6qbv
 ---
 
@@ -31,3 +31,6 @@ Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`
 
 - PR: https://github.com/litlfred/qou/pull/8001 (`claude/qou-z3k1-ajfl-z9fx-2026-11-15`, head `dc257cfe44475b4d418b26d8e48c2b5566459344`)
 - Replaced the tautological `claim_placement_well_defined` in `folio/quantum-observable-universe/lean/QOU/BraidKnot/KnotIndexedConvolutionGrid.lean` with the genuine injectivity statement `(bar_class k₁, depth k₁) = (bar_class k₂, depth k₂) → k₁ = k₂` and verified downstream consumer `folio/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.lean` compiles cleanly.
+
+## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
+Completed, evidence: all three declarations are gone from main 3c4c98fcc, removed 2026-08-30 under bean qou-z9ws as self-assuming projections with zero references. Each file records the removal: Cl3Zeta5PslqIndependence.lean:141 (pslq_independence), KnotIndexedConvolutionGrid.lean:34 (grid_placement), QHeckeSeminormalCharacterClosure.lean:99 (character_closure_holds). No **Theorem** framing over a projection remains.
