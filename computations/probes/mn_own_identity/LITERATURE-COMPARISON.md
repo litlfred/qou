@@ -1608,3 +1608,54 @@ order are one letter-order convention, so that relabelling it coherently changes
 showed that no braid word fixes the bit; that is the "photon form and core alone" case and stands. The
 mirror results in §42, §43 and §46 used the incoherent swap, so they measure dependence on that swap.
 They are not evidence that the bit is unfixed once `def:down-quark` is used.
+
+## §47 What qou holds of gluon dynamics (corpus grep, commit 874db75007e)
+
+Owner, 2026-11-22: *"What do we already capture in qou?"* Six-path grep, report
+`CORPUS-GREP-gluon-dynamics.md`. Held: Drinfeld–Kohno / infinitesimal braid relations (sl₂ KZ,
+gl_n residues incl. gl₃, Drinfeld pentagon; n-strand theorem open, `qou-9634`). Partial: one-gluon
+colour factors and C_F (`sl-n-color-framing`), colour singlet selection, flux-tube topology. Not found
+in the searched corpus: running α_s, QCD β₀, asymptotic freedom (prose only), antiscreening (label
+only), f^{abc} vertex, C_A/C_F = 9/4, string-tension value, Λ_QCD, 't Hooft double-line notation.
+"Three-gluon"/"gluon vertex" hits are homonyms (crossing counts, candidate letters).
+
+## §48 Quark–gluon vertex = the crossing on (C³)^⊗n (commits c9e3d453c16, e8eaf46ec43)
+
+With the U_q(sl₃) Jimbo R and framing q^{-1/3} (forced: monodromy of V around Λ³V is q²), the crossing
+eigenvalues give every one-gluon colour factor exactly: T·T = 1/3 (Sym²), −2/3 (Λ²), ratio −2; baryon
+Λ³V gets Σ T_i·T_j = −2 = −(3/2)C_F; qq̄ singlet −C_F = −4/3, octet +1/6 (via V* ≅ Λ²V). In log q the
+exponent is exactly linear. This is the standard ribbon fact R ~ q^{2Ω}; nothing is QOU-specific. The
+QOU nucleon model on (C²)^⊗3 (convention D = the N = 2 partial trace q³/(q²+1)) cannot see C_F = 4/3,
+only the SU(2) value 3/4 after framing. So colour needs the N = 3 representation, which the level-2
+nucleon model does not carry. Pre-registration slip recorded (z₃ = q⁵/(q⁴+q²+1), not q⁴/…).
+
+## §49 Three- and four-gluon colour structure in the braid algebra (commits 256c16034ca, bc61fc257a0)
+
+F = i f^{abc}T^a⊗T^b⊗T^c. [Ω₁₂,Ω₂₃] = −F exactly (no d^{abc}). In the braid relation f^{abc} appears
+only as a cancellation at order ħ²: CYBE(2Ω) = +4F, CYBE(r_a) = −4F. R̃₁₂R̃₂₃ (two crossings sharing a
+strand) has F-coefficient −8/3 at ħ²; Ř₁₂Ř₂₃Ř₁₂ has 0 at every q. QOU-specific: the photon letter
+σ₀σ₁⁻¹ has F-coefficient −(q+1)²/(2q), the same as σ₀σ₁ (the q = 1 three-cycle carries F already);
+the Borromean core V³ has −(q−1)²(q+1)⁴(q⁴+1)/(2q⁵) = −16ħ² + …. Four strands: [[Ω₁₂,Ω₂₃],Ω₃₄] = −G
+(G = f^{abe}f^{cde}…), outside the degree-≤2 Ω span. Pre-registered prediction M5 FAILED: the ff
+structure appears already at ħ² in R̃₁₂R̃₂₃R̃₃₄ (−38/45, from two disjoint crossings averaged). The
+projection is a classical SU(3) Haar average, so −2/3 and −38/45 are choice-dependent. No vertex,
+coupling or gluon is identified.
+
+## §50 Full-strand γγ hydrogen: where the gluon would enter (commits 4c6cb4ad589, e0b5d9a7e8b)
+
+H₈, layout q₁q₂q₃e⁻ | e⁺q̄₁q̄₂q̄₃, right four strands disposed by the convention-D closure (checked
+E(σ) = z_D, E(1) = 1; 12/12 checks). Pair creation and Breit–Wheeler place no letters. The only
+letters joining quarks of different pairs are the six of V₀³, i.e. the photon vertex V = σ₀σ₁⁻¹; the
+capture adds six quark–lepton letters. Disposal returns c·(§46 element), c = 1 (annihilation) or
+tr_M(V³) = 0.998562… (antinucleon). In a general collision γ(φ)γ(ψ) all four ledger candidates occur
+as words (σ₁: φ₁+ψ₁; σ₀σ₀: φ₀ψ₀; L₋: φ₁ψ₀; V: φ₀₁+ψ₀₁); at the derived weights only V³ survives. Every
+γγ word has writhe 0, so of the four only V is a γγ word.
+
+**Answer to the owner's question, scope (a).** In construction F the knot operation that binds the
+quarks is V³ itself; the photons generate no further gluon letter. The core and the γγ gluon unit are
+the same letter and differ only in multiplicity. No separate gluon was found in the searched class.
+Enumeration (cap 6, reading 3, measured only): H₃ core·Vᵏ passes for k = 0, 3; H₄ 2/14 pass (V₀³, V₁³
+arms; min |tr_M| would pick V₀³, 0.763345 vs 0.764055); H₈ 43/258 pass. Surprise: at H₈ the raw
+objectives reward non-reduced telescoping words (σᵢσᵢ₊₁⁻¹σᵢ₊₁σᵢ₊₂⁻¹ = σᵢσᵢ₊₂⁻¹), so any objective must
+act on reduced words. Not built: adjacent-pair layouts, the σ₀σ₁σ₀ electron, reading 3 on the whole
+H₈ element. The open-gluon ruling holds; nothing is selected.
