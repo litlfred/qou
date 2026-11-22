@@ -322,6 +322,7 @@ import QOU.MathlibExt.PLInscribed
 import QOU.MathlibExt.PLParamSample
 import QOU.MathlibExt.PLParamBiLip
 import QOU.MathlibExt.PLSampleGeom
+import QOU.MathlibExt.PLSampleBuild
 import QOU.MathlibExt.PLAmbientIsotopy
 import QOU.MathlibExt.PLPush
 import QOU.MathlibExt.PLDeltaIsotopy
