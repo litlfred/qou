@@ -417,3 +417,60 @@ identity therefore holds in `H₃(q)`. The full twist acts as `1` on the hook bl
   It also fixes no value, and nothing in it was chosen against a target.
 - At `q = 1` the writhe is 10, which is even, so `τ(T35) = 0`. The linchpin's content is
   off `q = 1`, which matches §15: on `|q| = 1` its α_em part is imaginary.
+
+## 17. Why the cube? The torus family T(3, 3m+2) (2026-11-22)
+
+Lean: `QOU/AlphaEM/TorusFamilyTrace.lean` (sorry-free, standard axioms only). Probe 43/43.
+
+- `(σ₀σ₁)²` is literally the list `electron ++ [σ₁]` (`trefoil_eq_electron_letter`). Its
+  closure is a knot, the trefoil `T(3,2)`. The electron word alone closes to a 2-component
+  link, since its permutation is a transposition. So one photon letter turns the electron's
+  Hopf-link closure into a trefoil, which is the backup electron of the owner ruling.
+- With `m` full twists, `Δ² = electron²` gives `(σ₀σ₁)^(3m+2) = electron^(2m+1)·σ₁`. This is
+  `T(3, 3m+2)`, of writhe `6m + 4`. `m = 1` is the `T(3,5)` linchpin.
+- Full twists act as `1` on the hook block (`hookWord_fullTwists`). So the hook trace is `−1`
+  for every `m` (`torusWord_hook_trace`), and `τ = q^(6m+4) − q^-(6m+4)` (`torusWord_tau`).
+  The trace of `T(3,5)` is `y₃q¹⁰ − y₂₁`. Unlike the electron's trace, this is not a single phase.
+- At `q = 1` the ι-odd part of `γ·electron³` is `(1 + φ₀₁)/2`. That is the same value as for
+  `γ·electron`, because the extra full twist is invisible there.
+
+**Answer to "why k = 3".** The braid group does not force it. Every odd power
+`electron^(2m+1)·σ₁` is a 3-strand torus knot, and `k = 3` is `m = 1`: one full twist on
+top of the trefoil. In this algebra the family members differ only in which power of `q`
+`τ` reads. So choosing `m = 1` needs a reason from outside, which is the `[10]_q` value
+itself. Using that value to choose `m` would be selection against the target. Scope (a):
+nothing here excludes a reason for `m = 1` that comes from somewhere else.
+
+## 18. What picks one full twist: the Bring genus bound (2026-11-22)
+
+**Correction to §16–§17: prior work I missed.** `QOU/BraidKnot/WeakVertexElectronFactor.lean`
+(on main, 2026-11-21) already proves `(σ₀σ₁)⁵ = e⁻ · (e⁻ · (σ₀σ₁)²)` and
+`e⁻ · e⁻ = (σ₀σ₁)³` in the braid group `B₃` itself (`weakVertex_eq_electron_mul`,
+`electron_sq_eq`). That is stronger than the block-level `t35_hook` / `t35_sym_alt` of #9017,
+which were derived again without citing it. There it is the `3 + 7` crossing split of the
+β-decay weak vertex. The block-level lemmas remain correct and are consistent with it.
+Neither result moves any number.
+
+**Corpus search.** §1 of this audit already says the 9 and the 10 of `q·[9]_q·[10]_q` "come
+from the two genus-4 torus knots `T(2,9)` and `T(3,5)` on Bring's surface". The genus rule
+`g(K) ≤ 4 = g(Σ₄)` is `rem:bring-embeddable-knots`, and the generator set is
+`prop:torus-knot-generators` (`brings-surface/torus-knot-generators.lean`). The
+electroweak blocks call `{T(2,9), T(3,5)}` the *saturating* carriers: the only coprime
+solutions of `(p−1)(q−1) = 8`.
+
+**Applied to the electron family** (`QOU/AlphaEM/TorusFamilyGenus.lean`, sorry-free):
+
+- `T(3, 3m+2) = e^(2m+1)·σ₁` has genus `3m + 1`. The Bring bound allows `m ∈ {0, 1}`
+  (trefoil, `T(3,5)`), and genus 4 holds only at `m = 1`.
+- The backup-electron family `T(2, 2m+1) = σ₀^(2m+1)` has genus `m`, and genus 4 holds only
+  at `m = 4`, which is `T(2,9)`.
+
+So the one full twist is the genus-saturation rule the corpus already uses for both factors
+of the tree term. It is not chosen from the α_em value.
+
+**Status of that rule, stated plainly.** The genus bound is a `remark`, and its
+exhaustiveness is marked open (`rem:knot-exhaustiveness`). "Saturating" is stated as a
+selection mechanism inside conjecture-level electroweak blocks; it is not proved. So `m = 1`
+rests on an adopted rule, not on a theorem. Two further limits: the photon letter could
+enter at another position, and in `B₂` any odd power of `σ₀` is "electron-built", so the
+backup family is a weak statement.

@@ -67,8 +67,9 @@ predictions.*
 
 ### Correctness conditions
 
-1. *[Existence of the inertial mass identity](#prop:mass-identity-exists) gives
-   existence of the nucleon mass ratio in the QOU premise.*
+1. *The [mass identity](#def:mass-identity) is well-defined by construction
+   ([well-definedness](#rem:mass-identity-exists)), which gives existence of
+   the nucleon mass ratio in the QOU premise.*
 2. *[Uniqueness of the inertial mass identity](#prop:mass-identity-unique) makes
    the identity unique modulo the calibration choice.*
 3. *[Unified mass formula: tower + Frobenius co-Casimir correction](#thm:knot-mass-formula-unified)

@@ -311,6 +311,16 @@ def main():
             if blocks('121' * k + w)[0] == 10]
     checks.append(('writhe 10 among electron^k * photon-term (k<=4): only electron^3 * s1, electron^3 * s2',
                    sorted(hits) == [(3, '1'), (3, '2')]))
+    # T(3, 3m+2) = electron^(2m+1) * s2 (audit section 17).
+    checks.append(('(s1 s2)^2 is literally electron * s2; T(3,3m+2) hook trace is -1 for m = 0, 1, 2',
+                   '1212' == '121' + '2' and all(sp.simplify(blocks('121' * (2 * m + 1) + '2')[1][1]) == -1
+                                                 and blocks('121' * (2 * m + 1) + '2')[0] == 6 * m + 4
+                                                 for m in range(3))))
+    checks.append(('T35: tr_M = y3 q^10 - y21 (not a single phase, unlike the electron)',
+                   sp.simplify(split('1212121212')[0] - (y3 * q ** 10 - y21)) == 0))
+    ge3 = [(c, '121' * 3 + w) for c, w in gam]
+    checks.append(('gamma*electron^3 at q=1: iota-odd part = (1 + phi01)/2, as for gamma*electron',
+                   sp.simplify(sp.limit(lin(ge3, 2), q, 1) - (1 + f01) / 2) == 0))
     for n, c in checks:
         print(('PASS ' if c else 'FAIL ') + n)
     return 0 if all(c for _, c in checks) else 1

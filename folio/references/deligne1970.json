@@ -1,0 +1,28 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "deligne1970",
+  "type": "book",
+  "_comment": [
+    "Title, author, series, year, publisher and DOI checked against the Springer landing page 2026-11-22.",
+    "The landing-page extract did not show the series volume; 163 is the number the citing Lean sites give and is not independently checked."
+  ],
+  "title": "Équations différentielles à points singuliers réguliers",
+  "author": [
+    {
+      "family": "Deligne",
+      "given": "Pierre"
+    }
+  ],
+  "collection-title": "Lecture Notes in Mathematics",
+  "volume": "163",
+  "publisher": "Springer",
+  "publisher-place": "Berlin, Heidelberg",
+  "issued": {
+    "date-parts": [
+      [
+        1970
+      ]
+    ]
+  },
+  "DOI": "10.1007/BFb0061194"
+}
