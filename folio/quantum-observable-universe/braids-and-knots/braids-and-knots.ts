@@ -38,6 +38,7 @@ export default chapter({
         "why-b3",
         "categorical-boson-fermion",
         "symmetric-quotient-colour",
+        "colour-singlet-flavour-generator",
         "braid-base-field",
         "braid-lifting-compatibility",
       ],

@@ -23,6 +23,8 @@ comparison points are named only to say which ones would move.
 
 ## 2. The one choice that decides every downstream number
 
+**Settled 2026-11-22 (owner card choice): the rescaled generator `−q·X = b`.** Content block `prop:colour-singlet-flavour-generator`.
+
 On the singlet sector there are two natural generators: the raw strand braid `X`, and the
 rescaled `−q·X = b`. The Lean above says exactly what each choice does.
 
@@ -64,7 +66,7 @@ structural exclusion: a bond law written for `X`'s own quadratic was not attempt
 
 ## 5. Open
 
-* Owner choice between the rescaled and raw generators (asked 2026-11-22).
-* Owner confirmation that "Barry" means baryon.
+* ~~Owner choice between the rescaled and raw generators~~ settled: rescaled `−q·X = b`.
+* ~~Owner confirmation that "Barry" means baryon~~ confirmed.
 * Leptons: under the assumption a lepton strand is coloured too; which colour sector the electron
   occupies is not fixed by anything above.
