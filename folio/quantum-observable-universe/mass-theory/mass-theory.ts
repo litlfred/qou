@@ -308,6 +308,8 @@ export default chapter({
             "level-selection-not-linear",
             "linear-chain-bond-count",
             "alpha-cluster-activation-gate",
+            "milnor-triple-linking-seifert-prior-art",
+            "braid-third-order-winding-scope",
             "alpha-cluster-model-g-closure",
             "bk-coordination-multiplicity",
             "binding-period-involution-statistic",
