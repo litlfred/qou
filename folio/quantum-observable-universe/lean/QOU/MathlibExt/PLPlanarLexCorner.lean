@@ -111,4 +111,105 @@ lemma exit_triangle {a v b p q y : R2} (hD : cross a v b ≠ 0) (hy : y ∈ segm
         have hz' : cross a v ((1 - t) • p + t • q) * cross a v b = 0 := by rw [e]; exact hz
         exact (mul_eq_zero.mp hz').resolve_right hD
 
+/-- **An edge away from `v` stays low in the triangle.** If every vertex of `P` other than
+`a, v, b` that lies in the triangle `a v b` has `v`-weight at most `c ≥ 0`, so does every point
+of an edge not incident to `v` that lies in the triangle. -/
+theorem edge_weight_le {P : Polygon R2} (hP : P.IsSimple) (hn : 3 ≤ P.n)
+    (hD : cross (P.w P.n) (P.w 0) (P.w 1) ≠ 0) {c : ℝ} (hc0 : 0 ≤ c)
+    (hin : ∀ j, 2 ≤ j → j ≤ P.n - 1 → P.w j ∈ convexHull ℝ {P.w P.n, P.w 0, P.w 1} →
+      cross (P.w 1) (P.w P.n) (P.w j) * cross (P.w P.n) (P.w 0) (P.w 1) ≤ c)
+    {k : ℕ} (hk1 : 1 ≤ k) (hk2 : k ≤ P.n - 1) {y : R2} (hy : y ∈ P.seg k)
+    (hyT : y ∈ convexHull ℝ {P.w P.n, P.w 0, P.w 1}) :
+    cross (P.w 1) (P.w P.n) y * cross (P.w P.n) (P.w 0) (P.w 1) ≤ c := by
+  by_contra hlt
+  push_neg at hlt
+  -- a vertex of the edge in the triangle cannot have weight above `c`
+  have hvert : ∀ m, (m = k ∨ m = k + 1) → P.w m ∈ convexHull ℝ {P.w P.n, P.w 0, P.w 1} →
+      c < cross (P.w 1) (P.w P.n) (P.w m) * cross (P.w P.n) (P.w 0) (P.w 1) → False := by
+    intro m hm hT hc
+    by_cases h1 : m = 1
+    · subst h1; rw [cross_left, zero_mul] at hc; linarith
+    by_cases h2 : m = P.n
+    · subst h2; rw [cross_right, zero_mul] at hc; linarith
+    exact absurd (hin m (by omega) (by omega) hT) (not_le.mpr hc)
+  have hside : ∀ y', y' ∈ P.seg k → y' ∈ convexHull ℝ {P.w P.n, P.w 0, P.w 1} →
+      c < cross (P.w 1) (P.w P.n) y' * cross (P.w P.n) (P.w 0) (P.w 1) →
+      (y' = P.w k ∨ y' = P.w (k + 1) ∨ cross (P.w 0) (P.w 1) y' = 0 ∨
+        cross (P.w P.n) (P.w 0) y' = 0) → False := by
+    intro y' hy' hT hc hcase
+    rcases hcase with h | h | h | h
+    · exact hvert k (Or.inl rfl) (h ▸ hT) (h ▸ hc)
+    · exact hvert (k + 1) (Or.inr rfl) (h ▸ hT) (h ▸ hc)
+    · have hD' : cross (P.w 0) (P.w 1) (P.w P.n) ≠ 0 := by rw [cross_rot]; exact hD
+      have hT' : y' ∈ convexHull ℝ {P.w 0, P.w 1, P.w P.n} := by rwa [triple_rot]
+      have h0 : y' ∈ P.seg 0 := mem_segment_of_mem_convexHull_of_cross hD' hT' h
+      have hin2 : y' ∈ P.seg k ∩ P.seg 0 := ⟨hy', h0⟩
+      rw [hP.seg_inter (by omega) (by omega) (by omega)] at hin2
+      split_ifs at hin2 with c1 c2
+      · rw [Nat.mod_eq_of_lt (by omega)] at c1; omega
+      · rw [hin2] at hT hc; exact hvert k (Or.inl rfl) hT hc
+      · exact hin2
+    · have hn' : y' ∈ P.seg P.n := by
+        have := mem_segment_of_mem_convexHull_of_cross hD hT h
+        unfold seg; rwa [P.w_period]
+      have hin2 : y' ∈ P.seg k ∩ P.seg P.n := ⟨hy', hn'⟩
+      rw [hP.seg_inter (by omega) le_rfl (by omega)] at hin2
+      split_ifs at hin2 with c1 c2
+      · rw [Nat.mod_eq_of_lt (by omega)] at c1
+        rw [hin2] at hT hc; exact hvert (k + 1) (Or.inr rfl) (c1 ▸ hT) (c1 ▸ hc)
+      · rw [Nat.mod_self] at c2; omega
+      · exact hin2
+  rcases le_total (cross (P.w 1) (P.w P.n) (P.w k) * cross (P.w P.n) (P.w 0) (P.w 1))
+    (cross (P.w 1) (P.w P.n) (P.w (k + 1)) * cross (P.w P.n) (P.w 0) (P.w 1)) with hm | hm
+  · obtain ⟨y', hy', hT, hc, hcase⟩ := exit_triangle hD hy hyT hm hlt
+    exact hside y' hy' hT hc (by tauto)
+  · have hy2 : y ∈ segment ℝ (P.w (k + 1)) (P.w k) := by rw [segment_symm]; exact hy
+    obtain ⟨y', hy', hT, hc, hcase⟩ := exit_triangle hD hy2 hyT hm hlt
+    rw [segment_symm] at hy'
+    exact hside y' hy' hT hc (by tauto)
+
+/-- **A point strictly inside the angle at `v`** (positive weights of `a` and `b`): neither
+neighbour lies in the closed cone spanned by the other neighbour and the point. -/
+lemma cone_facts {a v b z : R2} (hD : cross a v b ≠ 0) (hMa : 0 < cross v b z * cross a v b)
+    (hMb : 0 < cross a v z * cross a v b) :
+    (∀ s t : ℝ, 0 ≤ s → 0 ≤ t → a - v ≠ s • (b - v) + t • (z - v)) ∧
+    (∀ s t : ℝ, 0 ≤ s → 0 ≤ t → b - v ≠ s • (z - v) + t • (a - v)) ∧
+    cross v b z ≠ 0 ∧ cross v z a ≠ 0 := by
+  have hD2 : 0 < cross a v b * cross a v b := mul_self_pos.mpr hD
+  refine ⟨fun s t hs ht h => ?_, fun s t hs ht h => ?_, fun h => ?_, fun h => ?_⟩
+  · have E0 := congrFun h 0
+    have E1 := congrFun h 1
+    simp only [Pi.sub_apply, Pi.add_apply, Pi.smul_apply, smul_eq_mul] at E0 E1
+    have c1 : cross a v b = t * cross v b z := by
+      unfold cross; linear_combination (b 0 - v 0) * E1 - (b 1 - v 1) * E0
+    have c2 : 0 = s * cross a v b + t * cross a v z := by
+      unfold cross; linear_combination (a 1 - v 1) * E0 - (a 0 - v 0) * E1
+    have k1 : cross a v b * cross a v b = t * (cross v b z * cross a v b) := by rw [c1]; ring
+    have k2 : 0 = s * (cross a v b * cross a v b) + t * (cross a v z * cross a v b) := by
+      linear_combination (cross a v b) * c2
+    have ht0 : t * (cross a v z * cross a v b) = 0 := by nlinarith [mul_nonneg hs hD2.le]
+    have : t = 0 := by
+      rcases mul_eq_zero.mp ht0 with h | h
+      · exact h
+      · linarith
+    rw [this, zero_mul] at k1; linarith
+  · have E0 := congrFun h 0
+    have E1 := congrFun h 1
+    simp only [Pi.sub_apply, Pi.add_apply, Pi.smul_apply, smul_eq_mul] at E0 E1
+    have c1 : cross a v b = s * cross a v z := by
+      unfold cross; linear_combination (v 0 - a 0) * E1 - (v 1 - a 1) * E0
+    have c2 : 0 = s * cross v b z + t * cross a v b := by
+      unfold cross; linear_combination (b 0 - v 0) * E1 - (b 1 - v 1) * E0
+    have k1 : cross a v b * cross a v b = s * (cross a v z * cross a v b) := by rw [c1]; ring
+    have k2 : 0 = s * (cross v b z * cross a v b) + t * (cross a v b * cross a v b) := by
+      linear_combination (cross a v b) * c2
+    have hs0 : s * (cross v b z * cross a v b) = 0 := by nlinarith [mul_nonneg ht hD2.le]
+    have : s = 0 := by
+      rcases mul_eq_zero.mp hs0 with h | h
+      · exact h
+      · linarith
+    rw [this, zero_mul] at k1; linarith
+  · rw [h, zero_mul] at hMa; exact lt_irrefl _ hMa
+  · rw [cross_rot] at h; rw [h, zero_mul] at hMb; exact lt_irrefl _ hMb
+
 end QOU.MathlibExt.PL
