@@ -7,6 +7,39 @@ Witnesses: `computations/probes/leray-dss-galerkin-search.witness.json` (steady 
 spectrum, all five truncations) and `computations/probes/leray-dss-galerkin-search-22.witness.json`
 and `-23.witness.json` (periodic candidates at L2N2 and L2N3).
 
+
+## 0. Verdict: this route is a dead end (owner, 2026-11-22)
+
+Owner, verbatim: *"Ok. Document this is a dead end."*
+
+**This Galerkin route is closed. That is a scope-(a) negative: it closes the method, not the
+mathematics.** Five phases of search (§§2–12) found no nonzero backward DSS solution that survives
+refinement:
+
+1. **Phase 1, weak-L³ trial class.** Steady and periodic truncation solutions exist, and each one
+   vanishes, turns steady, or jumps period under refinement (§§5–6).
+2. **Phase 2, other radial scales and `L ≤ 6`.** Same outcome. The shared mechanism is amplitude
+   escaping into the `|y|⁻¹` tail, and a tail that the true problem forbids (§9).
+3. **Phase 3, a basis carrying the admissible log-phase tail `|y|^{−1−2imω}`.** Exactly
+   divergence-free, pressure-free, 60-digit Arb. No random start converges at θ = 1 (§10).
+4. **Phase 4, arclength continuation of orbits B and C.** Neither gets past θ ≈ 0.06 within budget
+   (§11).
+5. **Phase 5, direct Newton at θ = 1 from the phase-4 shapes.** 0 of 22 runs converge (§12).
+
+**What it does NOT show.** It does not show that a DSS profile fails to exist. The class that stays
+open in the literature is non-steady DSS with a nonzero `|y|⁻¹` tail and `λ` outside the
+Chae–Wolf range (§1).
+
+**Limits.** Truncations `L ≤ 3, N ≤ 3` at the admissible tail, the axisymmetric and parity-odd
+sectors for the random starts, and finite compute. The steady solutions found here are excluded in
+any case by Tsai 1998.
+
+**Do not reopen this scheme without a new idea.** Examples: another basis class, a higher
+truncation at the admissible tail, or the non-axisymmetric sector. Do not treat this negative as a
+structural exclusion of any ingredient: no invariant forbids a DSS profile here. The period `S` is
+not identified with any `q` quantity. Recorded in
+[`docs/coordination/owner-rulings.md`](../coordination/owner-rulings.md).
+
 Context: content block `fluid-dynamics/leray-profile-construction.md` (after #8842) describes a
 finite truncation of the Leray system for a discretely self-similar (DSS) profile as a Galerkin
 approximation indexed by angular degree and Fourier mode in `s`. It says that the period is not
