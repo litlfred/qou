@@ -46,9 +46,12 @@ relations and the target is *derived*, not fitted.
 
 References:
 - [hakimoglu-brown2025] Hakimoglu-Brown, *Analytic dilogarithm identities*,
-  arXiv:2506.10206v2 (2025) — analytic (beta-integral) proofs of two-term Li₂
-  relations and ladder identities over ℚ(√5); supplies the analytic proofs of
-  the reflection/duplication/Landen relations and the ℚ(√5) golden-ratio value.
+  arXiv:2506.10206v2 (2025) — recalls the reflection/duplication/Landen
+  relations as standard (§1.1); its own golden-ratio result is a different
+  identity, π²/100 = Re Li₂(r₀) at a root r₀ of a quartic (§6, Thm 3 / Ex. 4).
+- [zagier-dilogarithm] Zagier, *The dilogarithm function*, Ch. I §1 (special values)
+  and §2 (functional equations) — the
+  classical value Li₂(φ⁻²) = π²/15 − ln²φ and the reflection/duplication/Landen relations.
 - Lewin (1991), *Polylogarithms and Associated Functions*, §1.20 (the two
   classical golden-ratio dilogarithm values, Landen 1780).
 -/
@@ -122,8 +125,8 @@ theorem habiroFactor_bar_even (q : ℝ) (j : ℕ) :
 /-! ## Classical dilogarithm functional equations (cited scaffold) -/
 
 /-- The three standard real-dilogarithm functional equations, packaged as a
-    conditional class (each field is a *cited* identity — Lewin, and analytically
-    proved in [hakimoglu-brown2025]).  `Li2` is the real dilogarithm on `(-∞, 1]`;
+    conditional class (each field is a *cited* identity — Lewin; Zagier,
+    *The dilogarithm function* Ch. I §2; recalled in [hakimoglu-brown2025] §1.1).  `Li2` is the real dilogarithm on `(-∞, 1]`;
     the fields are used only at the golden points, where every argument lies in
     range. -/
 class ClassicalDilog where
