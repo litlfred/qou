@@ -75,6 +75,7 @@ Adapt ALL responses accordingly:
 - **Offer choices as numbered lists** so the user can reply "1" or "2".
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
+- **Files attached in chat are not in the repo (owner directive 2026-11-22).** When the owner attaches a file to a chat message, decide by context, or ask once with numbered options, whether it goes into `library/` (fully ingested), into `uploads/` (parked), or is used for the task only. Papers default to `library/`. Ingest fully and verify each section holds real text. Procedure: [`local/document-intake` §Files uploaded into the agent chat](.claude/skills/local/document-intake.md).
 - **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
 - **Mirror every `AskUserQuestion` to chat BEFORE calling the tool (STRICT, 2026-06-09).** Write the question text, every option label, and every option description (with full evidence + trade-offs + math context) as plain chat prose *immediately above* the `AskUserQuestion` tool call. The structured tool call must mirror what is already in the chat — it does not replace it. Reasons:
   - **Cancellation/dismissal safety.** If the user dismisses the structured UI, accidentally cancels, or the question component fails to render, the full context survives in the transcript. No round-trip needed to re-state options.

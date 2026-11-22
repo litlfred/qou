@@ -32,6 +32,48 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 > or year in the ledger — bibliographic metadata belongs in
 > `folio/schema/references.ts` alone.
 
+## Files uploaded into the agent chat (owner directive 2026-11-22)
+
+Owner, verbatim: *"Make sure processes are and skills are up to date that
+uploaded into agent discussion chat. The agent should see or determine by
+context or by asking the user if they should be added to the library and or
+uploads"*, followed by *"Make sure you ingest all those papers properly"*.
+
+A file the owner attaches to a chat message is **not** in the repo. It lands
+outside the tree (for example `/mnt/user-data/uploads/hearth/<id>/<id>.pdf`
+or `~/.claude/uploads/<session>/…`), named by an opaque id, and is gone when
+the container is reclaimed. Corpus-grep path 5 cannot see it. So on every
+chat upload, the agent decides what happens to it, in this order:
+
+1. **Look at what it is.** Read page 1: title, authors, arXiv stamp or DOI.
+   Name it in the reply so the owner can see what was received.
+2. **Decide from context.** Add it to the library by default when it is a
+   paper, preprint or book chapter that is, or may become, a source for the
+   corpus. Signals: the owner asks for a review against a chapter, a prior-art
+   or citation question, or a paper an earlier survey ranked "to acquire".
+   Do not add it when it is clearly transient: a screenshot, a log, a draft
+   the owner wants edited, or a personal or sensitive document.
+3. **Ask when it is unclear.** One short question with numbered options:
+   (1) ingest into `library/`, (2) park in `uploads/` for later ingest,
+   (3) use for this task only. Keep working on the task while waiting.
+4. **Ingest properly.** Copy the file into a working branch, then run the
+   full pipeline into `library/<doc-id>/`: `structure.json`, `sections/*.md`,
+   `candidates.json`, then `scripts/summarize-library.py --apply` so
+   `library/INDEX.md` has its row. `<doc-id>` comes from the page-1 arXiv
+   stamp (`arxiv-1803.02202v2`) or a slug of the title. A paper parked in
+   `uploads/` is not ingested; say so.
+5. **Verify the text arrived.** Check that every `sections/*.md` file holds
+   the paper's own text, not a stub or a download banner. Grep a distinctive
+   term from the paper. A scanned PDF needs OCR text; the outline-skips-OCR
+   bug (cat-harness-tools PR 2498) made scanned papers with an outline land
+   with empty sections. Check the INDEX invariant
+   `directories − index rows == duplicates + containers`.
+6. **Register the citation** if the paper is or will be cited: one
+   `folio/references/<key>.json` (CSL-JSON) plus its line in `ORDER` in
+   `folio/schema/references.ts`, with fields taken from the PDF itself.
+7. **Report** per file: doc-id, section count, byte total, INDEX row present,
+   reference key, and anything that failed.
+
 ## Overview
 
 This skill manages the `library/` directory as an intake pipeline for
@@ -52,6 +94,7 @@ final content-object generation step.
 
 - User says "upload", "scan", "process document", "intake"
 - User drops a file into `library/`
+- User attaches a file to a chat message (see §Files uploaded into the agent chat)
 - User mentions WHO, L1, L2, guideline, normative
 - User wants to convert a raw document into content objects
 - Files appear in `library/` that haven't been processed yet
