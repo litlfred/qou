@@ -28,11 +28,22 @@ points where it crosses the edges.
   `convexHull s ∩ {ψ = c} = convexHull (crossSet ψ c s)`. No affine independence is needed. For
   `x = ∑ w v • v` on the hyperplane put `A = ∑_{ψ v > c} w v (ψ v - c) = ∑_{ψ u < c} w u (c - ψ u)`;
   then `x = ∑_{u, v} (w u w v (ψ v - ψ u) / A) • crossPt u v`, with weights summing to `1`.
+* `sliceComplex K hdim hgen` — for `K` of dimension at most two (faces with at most three
+  vertices) and a hyperplane missing every vertex, the crossing sets of the faces of `K` form a
+  simplicial complex of dimension at most one (`sliceComplex_card_le_two`), finite when `K` is
+  (`sliceComplex_faces_finite`), with space `K.space ∩ {ψ = c}` (`sliceComplex_space`).
+* `sliceComplex_vertex` — each vertex of the slice is `crossPt u v` for an edge `{u, v}` of `K`
+  with `ψ u < c < ψ v`.
+* `sliceComplex_edge` — each edge of the slice is the crossing set of a triangle of `K`, and lies
+  in it.
+
+In dimension three a tetrahedron can cross a plane in four coplanar points, which are not affinely
+independent; that case needs a subdivision and is not treated here.
 -/
 
 namespace QOU.MathlibExt.PL
 
-open Set
+open Set Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] (ψ : E →L[ℝ] ℝ) (c : ℝ)
 
@@ -171,5 +182,190 @@ theorem convexHull_inter_hyperplane [DecidableEq E] (s : Finset E) (hgen : ∀ v
     exact mem_image_of_mem _ hp
   · refine convexHull_min (crossSet_subset s) ?_
     exact (convex_convexHull ℝ _).inter (convex_hyperplane ψ.isLinear c)
+
+/-! ### Combinatorics of `crossSet` -/
+
+lemma mem_crossSet [DecidableEq E] {s : Finset E} {x : E} :
+    x ∈ crossSet ψ c s ↔ ∃ u ∈ s, ∃ v ∈ s, ψ u < c ∧ c < ψ v ∧ crossPt ψ c u v = x := by
+  simp only [crossSet, Finset.mem_image, Finset.mem_product, Finset.mem_filter, Prod.exists]
+  constructor
+  · rintro ⟨u, v, ⟨⟨hu, hu'⟩, hv, hv'⟩, rfl⟩
+    exact ⟨u, hu, v, hv, hu', hv', rfl⟩
+  · rintro ⟨u, hu, v, hv, hu', hv', rfl⟩
+    exact ⟨u, v, ⟨⟨hu, hu'⟩, hv, hv'⟩, rfl⟩
+
+lemma crossSet_mono [DecidableEq E] {s t : Finset E} (h : s ⊆ t) :
+    crossSet ψ c s ⊆ crossSet ψ c t := by
+  intro x hx
+  obtain ⟨u, hu, v, hv, hu', hv', rfl⟩ := mem_crossSet.mp hx
+  exact mem_crossSet.mpr ⟨u, h hu, v, h hv, hu', hv', rfl⟩
+
+lemma crossSet_pair [DecidableEq E] {u v : E} (hu : ψ u < c) (hv : c < ψ v) :
+    crossSet ψ c {u, v} = {crossPt ψ c u v} := by
+  ext x
+  rw [mem_crossSet, Finset.mem_singleton]
+  constructor
+  · rintro ⟨a, ha, b, hb, ha', hb', rfl⟩
+    simp only [Finset.mem_insert, Finset.mem_singleton] at ha hb
+    rcases ha with rfl | rfl
+    · rcases hb with rfl | rfl
+      · exact absurd ha' (not_lt.mpr hb'.le)
+      · rfl
+    · exact absurd ha' (not_lt.mpr hv.le)
+  · rintro rfl
+    exact ⟨u, by simp, v, by simp, hu, hv, rfl⟩
+
+lemma card_filter_add_le (s : Finset E) :
+    (s.filter fun u => ψ u < c).card + (s.filter fun v => c < ψ v).card ≤ s.card := by
+  classical
+  have h := Finset.filter_card_add_filter_neg_card_eq_card (s := s) (fun x => ψ x < c)
+  have : (s.filter fun v => c < ψ v).card ≤ (s.filter fun x => ¬ ψ x < c).card :=
+    Finset.card_le_card fun x hx => by
+      simp only [Finset.mem_filter] at hx ⊢
+      exact ⟨hx.1, not_lt.mpr hx.2.le⟩
+  omega
+
+lemma card_crossSet_le_mul [DecidableEq E] (s : Finset E) :
+    (crossSet ψ c s).card ≤
+      (s.filter fun u => ψ u < c).card * (s.filter fun v => c < ψ v).card :=
+  Finset.card_image_le.trans (Finset.card_product _ _).le
+
+/-- A face with at most three vertices crosses a hyperplane in at most two points. -/
+lemma card_crossSet_le_two [DecidableEq E] {s : Finset E} (hs : s.card ≤ 3) :
+    (crossSet ψ c s).card ≤ 2 := by
+  have h1 := card_crossSet_le_mul (ψ := ψ) (c := c) s
+  have h2 := card_filter_add_le (ψ := ψ) (c := c) s
+  have key : ∀ a b : ℕ, a + b ≤ 3 → a * b ≤ 2 := by
+    intro a b h
+    have : a ≤ 3 := by omega
+    interval_cases a <;> omega
+  exact h1.trans (key _ _ (h2.trans hs))
+
+/-- Two crossing points need at least three vertices. -/
+lemma three_le_card_of_card_crossSet [DecidableEq E] {s : Finset E}
+    (hs : 2 ≤ (crossSet ψ c s).card) : 3 ≤ s.card := by
+  have h1 := card_crossSet_le_mul (ψ := ψ) (c := c) s
+  have h2 := card_filter_add_le (ψ := ψ) (c := c) s
+  have key : ∀ a b : ℕ, 2 ≤ a * b → 3 ≤ a + b := by
+    intro a b h
+    by_contra hab
+    have : a ≤ 2 := by omega
+    interval_cases a <;> omega
+  exact (key _ _ (hs.trans h1)).trans h2
+
+/-- A finite set of at most two points is affinely independent. -/
+lemma affineIndependent_of_card_le_two {t : Finset E} (ht : t.card ≤ 2) :
+    AffineIndependent ℝ ((↑) : t → E) := by
+  classical
+  rcases Nat.lt_or_ge t.card 2 with h | h
+  · haveI : Subsingleton t := Finset.card_le_one_iff_subsingleton_coe.mp (by omega)
+    exact affineIndependent_of_subsingleton ℝ _
+  · obtain ⟨a, b, hab, rfl⟩ := Finset.card_eq_two.mp (le_antisymm ht h)
+    refine (affineIndependent_of_ne ℝ hab).range.mono ?_
+    intro x hx
+    have hx' : x ∈ ({a, b} : Finset E) := hx
+    rw [Finset.mem_insert, Finset.mem_singleton] at hx'
+    rcases hx' with rfl | rfl
+    · exact ⟨0, rfl⟩
+    · exact ⟨1, rfl⟩
+
+/-! ### The slice of a complex of dimension at most two -/
+
+/-- **The slice complex**: the faces are the crossing sets of the faces of `K`. For `K` of
+dimension at most two (faces with at most three vertices) these are points and segments. -/
+noncomputable def sliceComplex [DecidableEq E] (K : SimplicialComplex ℝ E)
+    (hdim : ∀ s ∈ K.faces, s.card ≤ 3) (hgen : ∀ s ∈ K.faces, ∀ v ∈ s, ψ v ≠ c) :
+    SimplicialComplex ℝ E where
+  faces := {σ | ∃ τ ∈ K.faces, crossSet ψ c τ = σ ∧ σ.Nonempty}
+  empty_notMem := fun ⟨_, _, _, h⟩ => Finset.not_nonempty_empty h
+  indep := by
+    rintro σ ⟨τ, hτ, rfl, -⟩
+    exact affineIndependent_of_card_le_two (card_crossSet_le_two (hdim τ hτ))
+  down_closed := by
+    rintro σ t ⟨τ, hτ, rfl, hne⟩ hts ht
+    by_cases heq : t = crossSet ψ c τ
+    · exact ⟨τ, hτ, heq.symm, heq ▸ hne⟩
+    have hlt : t.card < (crossSet ψ c τ).card :=
+      Finset.card_lt_card (Finset.ssubset_iff_subset_ne.mpr ⟨hts, heq⟩)
+    have h2 := card_crossSet_le_two (ψ := ψ) (c := c) (hdim τ hτ)
+    have hpos : 0 < t.card := Finset.card_pos.mpr (Finset.nonempty_iff_ne_empty.mpr ht)
+    obtain ⟨x, rfl⟩ := Finset.card_eq_one.mp (show t.card = 1 by omega)
+    obtain ⟨u, hu, v, hv, hu', hv', rfl⟩ := mem_crossSet.mp (hts (Finset.mem_singleton_self x))
+    refine ⟨{u, v}, K.down_closed hτ ?_ (by simp), crossSet_pair hu' hv',
+      Finset.singleton_nonempty _⟩
+    exact Finset.insert_subset hu (Finset.singleton_subset_iff.mpr hv)
+  inter_subset_convexHull := by
+    rintro _ _ ⟨τ, hτ, rfl, -⟩ ⟨τ', hτ', rfl, -⟩
+    rw [← convexHull_inter_hyperplane τ (hgen τ hτ),
+      ← convexHull_inter_hyperplane τ' (hgen τ' hτ')]
+    rintro x ⟨⟨hx, hxψ⟩, hx', -⟩
+    have hint := K.inter_subset_convexHull hτ hτ' ⟨hx, hx'⟩
+    rw [← Finset.coe_inter] at hint
+    have h2 : x ∈ convexHull ℝ ↑(crossSet ψ c (τ ∩ τ')) := by
+      rw [← convexHull_inter_hyperplane _ fun v hv => hgen τ hτ v (Finset.mem_inter.mp hv).1]
+      exact ⟨hint, hxψ⟩
+    refine convexHull_mono ?_ h2
+    rw [← Finset.coe_inter]
+    exact Finset.coe_subset.mpr (Finset.subset_inter (crossSet_mono Finset.inter_subset_left)
+      (crossSet_mono Finset.inter_subset_right))
+
+section sliceComplex
+
+variable [DecidableEq E] {K : SimplicialComplex ℝ E} {hdim : ∀ s ∈ K.faces, s.card ≤ 3}
+  {hgen : ∀ s ∈ K.faces, ∀ v ∈ s, ψ v ≠ c}
+
+lemma mem_sliceComplex_faces {σ : Finset E} :
+    σ ∈ (sliceComplex K hdim hgen).faces ↔ ∃ τ ∈ K.faces, crossSet ψ c τ = σ ∧ σ.Nonempty :=
+  Iff.rfl
+
+/-- **The slice is a complex of dimension at most one.** -/
+lemma sliceComplex_card_le_two {σ : Finset E} (hσ : σ ∈ (sliceComplex K hdim hgen).faces) :
+    σ.card ≤ 2 := by
+  obtain ⟨τ, hτ, rfl, -⟩ := hσ
+  exact card_crossSet_le_two (hdim τ hτ)
+
+lemma sliceComplex_faces_finite (hK : K.faces.Finite) :
+    (sliceComplex K hdim hgen).faces.Finite :=
+  (hK.image (crossSet ψ c)).subset fun _ ⟨τ, hτ, h, _⟩ => ⟨τ, hτ, h⟩
+
+/-- **The slice of the space**: `S.space = K.space ∩ {ψ = c}`. -/
+theorem sliceComplex_space :
+    (sliceComplex K hdim hgen).space = K.space ∩ {x | ψ x = c} := by
+  ext x
+  simp only [SimplicialComplex.mem_space_iff, mem_inter_iff, mem_setOf_eq]
+  constructor
+  · rintro ⟨_, ⟨τ, hτ, rfl, -⟩, hx⟩
+    rw [← convexHull_inter_hyperplane τ (hgen τ hτ)] at hx
+    exact ⟨⟨τ, hτ, hx.1⟩, hx.2⟩
+  · rintro ⟨⟨τ, hτ, hx⟩, hψ⟩
+    have hmem : x ∈ convexHull ℝ ↑(crossSet ψ c τ) := by
+      rw [← convexHull_inter_hyperplane τ (hgen τ hτ)]
+      exact ⟨hx, hψ⟩
+    refine ⟨crossSet ψ c τ, ⟨τ, hτ, rfl, ?_⟩, hmem⟩
+    by_contra h
+    rw [Finset.not_nonempty_iff_eq_empty] at h
+    rw [h, Finset.coe_empty, convexHull_empty] at hmem
+    exact hmem
+
+/-- **Each vertex of the slice lies on an edge of `K`**, where that edge crosses `{ψ = c}`. -/
+theorem sliceComplex_vertex {x : E} (hx : {x} ∈ (sliceComplex K hdim hgen).faces) :
+    ∃ u v, ({u, v} : Finset E) ∈ K.faces ∧ ψ u < c ∧ c < ψ v ∧ x = crossPt ψ c u v := by
+  obtain ⟨τ, hτ, h, -⟩ := hx
+  obtain ⟨u, hu, v, hv, hu', hv', hx⟩ :=
+    mem_crossSet.mp (h ▸ Finset.mem_singleton_self x : x ∈ crossSet ψ c τ)
+  exact ⟨u, v, K.down_closed hτ (Finset.insert_subset hu (Finset.singleton_subset_iff.mpr hv))
+    (by simp), hu', hv', hx.symm⟩
+
+/-- **Each edge of the slice lies in a triangle of `K`**: it is the crossing set of a face of
+`K` with three vertices. -/
+theorem sliceComplex_edge {σ : Finset E} (hσ : σ ∈ (sliceComplex K hdim hgen).faces)
+    (h2 : σ.card = 2) : ∃ τ ∈ K.faces, τ.card = 3 ∧ crossSet ψ c τ = σ ∧
+      convexHull ℝ (σ : Set E) ⊆ convexHull ℝ (τ : Set E) := by
+  obtain ⟨τ, hτ, rfl, -⟩ := hσ
+  refine ⟨τ, hτ, le_antisymm (hdim τ hτ) (three_le_card_of_card_crossSet h2.ge), rfl, ?_⟩
+  rw [← convexHull_inter_hyperplane τ (hgen τ hτ)]
+  exact inter_subset_left
+
+end sliceComplex
 
 end QOU.MathlibExt.PL
