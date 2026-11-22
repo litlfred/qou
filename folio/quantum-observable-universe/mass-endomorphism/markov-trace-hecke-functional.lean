@@ -987,3 +987,468 @@ theorem towerTr_gammaGammaBond (X : HeckeTower R h) (hX : X ∈ twH h 2) (Y : He
 end InterfaceWord
 
 end QOU.BraidKnot.HeckeFunctional
+
+
+/-!
+# Bonds that touch both clusters: no gap letter, or one gap letter, factorise
+
+Setting of the interface-word section of `MarkovTraceHeckeFunctional`: a cluster `x ∈ H_m` (generators `σ_0, …, σ_{m-1}`)
+and a second cluster `Y↑ᵐ⁺¹`, with the generator `σ_m` between them. A bond
+`A · C↑ᵐ⁺¹` with `A ∈ H_m` enters **both** clusters but does not use `σ_m`. For the
+γγ words of the he4 probe (`m = 2`) these are the products of vertices
+`σ_iσ_{i+1}⁻¹` with `i ∈ {0, 3}` only; any such word equals `A · C↑³` by far commutation.
+
+* `towerTr_gapBond` — `tr(x · Y↑ · A · C↑) = tr(x A) · tr(Y C)`.
+* `towerTr_gapBond_crossRatio` — for two first clusters `x₁, x₂` and two second clusters
+  `Y₁, Y₂`, the atom traces satisfy `T₁₁ T₂₂ = T₁₂ T₂₁`. The free traces satisfy the
+  same identity (`towerTr_split`), so the bond ratios obey `μ₁₁ μ₂₂ = μ₁₂ μ₂₁`.
+* `towerTr_singleGapBond` — a bond `A₁ C₁↑ · (a + b σ_m) · A₂ C₂↑` with **one** gap
+  letter: `tr(x · Y↑ · bond) = (a + b z) · tr(x A₁ A₂) · tr(Y C₁ C₂)` (cyclicity, far
+  commutation, then the connected-sum rule). `σ_m⁻¹ = σ_m − h` is such a letter.
+* `towerTr_singleGapBond_crossRatio` — the same cross-ratio identity for that case.
+* `not_both_lt_one_of_crossRatio` — over an ordered field, `μ₁₁ μ₂₂ = μ₁₂ μ₂₁`,
+  `μ₁₁ > 1`, `μ₂₂ > 1` and `μ₁₂ ≥ 0` exclude `μ₁₂ < 1 ∧ μ₂₁ < 1`.
+
+So a bond with at most one gap letter cannot give "pn and np bind, pp and nn do not".
+A bond with two or more gap letters (that do not cancel) is not covered here; the he4
+probe `computations/probes/he4_bond_both_nucleons/` finds the cross-ratio identity
+fails for 9 such γγ words of length ≤ 6.
+
+Generic over `[CommRing R]` (§7c); the order lemma is over a linear ordered field.
+-/
+
+namespace QOU.BraidKnot.HeckeFunctional
+
+open QOU.MathlibExt.HeckeTowerWitness
+
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- **A gap-avoiding bond factorises**: for `x, A ∈ H_m`,
+    `tr(x · Y↑ᵐ⁺¹ · (A · C↑ᵐ⁺¹)) = tr(x A) · tr(Y C)`. -/
+theorem towerTr_gapBond (m : ℕ) {X A : HeckeTower R h} (hX : X ∈ twH h m)
+    (hA : A ∈ twH h m) (Y C : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y * (A * shift h (m + 1) C))
+      = towerTr z h (X * A) * towerTr z h (Y * C) := by
+  have e : X * shift h (m + 1) Y * (A * shift h (m + 1) C)
+      = (X * A) * shift h (m + 1) (Y * C) := by
+    rw [map_mul, ← mul_assoc, mul_assoc X, ← twH_comm_shift h m hA Y]
+    simp only [mul_assoc]
+  rw [e, towerTr_split z h m (Subalgebra.mul_mem _ hX hA)]
+
+
+/-- **A bond crossing the gap exactly once factorises.** For `x, A₁, A₂ ∈ H_m`, any `Y, C₁, C₂`
+    and one gap letter `g = a + b σ_m`, the bond `A₁ C₁↑ · g · A₂ C₂↑` gives
+    `tr(x · Y↑ · bond) = (a + b z) · tr(x A₁ A₂) · tr(Y C₁ C₂)`. -/
+theorem towerTr_singleGapBond (m : ℕ) {X A₁ A₂ : HeckeTower R h} (hX : X ∈ twH h m)
+    (hA₁ : A₁ ∈ twH h m) (hA₂ : A₂ ∈ twH h m) (Y C₁ C₂ : HeckeTower R h) (a b : R) :
+    towerTr z h (X * shift h (m + 1) Y *
+        (A₁ * shift h (m + 1) C₁ * (a • 1 + b • twGen h m) * (A₂ * shift h (m + 1) C₂)))
+      = (a + b * z) * towerTr z h (X * A₁ * A₂) * towerTr z h (Y * C₁ * C₂) := by
+  have hZ : A₂ * X * A₁ ∈ twH h m :=
+    Subalgebra.mul_mem _ (Subalgebra.mul_mem _ hA₂ hX) hA₁
+  have c1 := twH_comm_shift h m hX C₂
+  have c2 := twH_comm_shift h m hA₁ (C₂ * Y)
+  have c3 := twH_comm_shift h m hZ (C₂ * Y * C₁)
+  -- cycle the trailing `A₂ C₂↑` to the front, then regroup
+  have e : towerTr z h (X * shift h (m + 1) Y *
+        (A₁ * shift h (m + 1) C₁ * (a • 1 + b • twGen h m) * (A₂ * shift h (m + 1) C₂)))
+      = towerTr z h ((A₂ * X * A₁) * (a • 1 + b • twGen h m)
+          * shift h (m + 1) (C₂ * Y * C₁)) := by
+    rw [show X * shift h (m + 1) Y *
+          (A₁ * shift h (m + 1) C₁ * (a • 1 + b • twGen h m) * (A₂ * shift h (m + 1) C₂))
+        = (X * shift h (m + 1) Y * (A₁ * shift h (m + 1) C₁ * (a • 1 + b • twGen h m)))
+          * (A₂ * shift h (m + 1) C₂) by simp only [mul_assoc], towerTr_mul_comm]
+    have e2 : A₂ * shift h (m + 1) C₂ *
+          (X * shift h (m + 1) Y * (A₁ * shift h (m + 1) C₁ * (a • 1 + b • twGen h m)))
+        = shift h (m + 1) (C₂ * Y * C₁) * ((A₂ * X * A₁) * (a • 1 + b • twGen h m)) := by
+      calc A₂ * shift h (m + 1) C₂ *
+            (X * shift h (m + 1) Y * (A₁ * shift h (m + 1) C₁ * (a • 1 + b • twGen h m)))
+          = A₂ * (shift h (m + 1) C₂ * X) * shift h (m + 1) Y * A₁ * shift h (m + 1) C₁
+              * (a • 1 + b • twGen h m) := by simp only [mul_assoc]
+        _ = A₂ * X * (shift h (m + 1) C₂ * shift h (m + 1) Y) * A₁ * shift h (m + 1) C₁
+              * (a • 1 + b • twGen h m) := by rw [← c1]; simp only [mul_assoc]
+        _ = A₂ * X * (A₁ * shift h (m + 1) (C₂ * Y)) * shift h (m + 1) C₁
+              * (a • 1 + b • twGen h m) := by
+            rw [← map_mul, c2]; simp only [mul_assoc]
+        _ = (A₂ * X * A₁) * shift h (m + 1) (C₂ * Y * C₁) * (a • 1 + b • twGen h m) := by
+            rw [map_mul (shift h (m + 1)) (C₂ * Y) C₁]; simp only [mul_assoc]
+        _ = shift h (m + 1) (C₂ * Y * C₁) * ((A₂ * X * A₁) * (a • 1 + b • twGen h m)) := by
+            rw [c3, mul_assoc]
+    rw [e2, towerTr_mul_comm]
+  rw [e, towerTr_interface z h m hZ]
+  have t1 : towerTr z h (A₂ * X * A₁) = towerTr z h (X * A₁ * A₂) := by
+    rw [mul_assoc, towerTr_mul_comm]
+  have t2 : towerTr z h (C₂ * Y * C₁) = towerTr z h (Y * C₁ * C₂) := by
+    rw [mul_assoc, towerTr_mul_comm]
+  rw [t1, t2]
+
+/-- **Cross-ratio for a single-gap-crossing bond**: the atom traces of the four pairs
+    `(xᵢ, Yⱼ)` satisfy `T₁₁ T₂₂ = T₁₂ T₂₁`. -/
+theorem towerTr_singleGapBond_crossRatio (m : ℕ) {X₁ X₂ A₁ A₂ : HeckeTower R h}
+    (h₁ : X₁ ∈ twH h m) (h₂ : X₂ ∈ twH h m) (hA₁ : A₁ ∈ twH h m) (hA₂ : A₂ ∈ twH h m)
+    (Y₁ Y₂ C₁ C₂ : HeckeTower R h) (a b : R) :
+    let B := A₁ * shift h (m + 1) C₁ * (a • 1 + b • twGen h m) * (A₂ * shift h (m + 1) C₂)
+    towerTr z h (X₁ * shift h (m + 1) Y₁ * B) * towerTr z h (X₂ * shift h (m + 1) Y₂ * B)
+      = towerTr z h (X₁ * shift h (m + 1) Y₂ * B) * towerTr z h (X₂ * shift h (m + 1) Y₁ * B) := by
+  intro B
+  simp only [B, towerTr_singleGapBond z h m h₁ hA₁ hA₂, towerTr_singleGapBond z h m h₂ hA₁ hA₂]
+  ring
+
+/-- **Cross-ratio of the atom traces** for a gap-avoiding bond. -/
+theorem towerTr_gapBond_crossRatio (m : ℕ) {X₁ X₂ A : HeckeTower R h}
+    (h₁ : X₁ ∈ twH h m) (h₂ : X₂ ∈ twH h m) (hA : A ∈ twH h m) (Y₁ Y₂ C : HeckeTower R h) :
+    towerTr z h (X₁ * shift h (m + 1) Y₁ * (A * shift h (m + 1) C))
+      * towerTr z h (X₂ * shift h (m + 1) Y₂ * (A * shift h (m + 1) C))
+    = towerTr z h (X₁ * shift h (m + 1) Y₂ * (A * shift h (m + 1) C))
+      * towerTr z h (X₂ * shift h (m + 1) Y₁ * (A * shift h (m + 1) C)) := by
+  rw [towerTr_gapBond z h m h₁ hA, towerTr_gapBond z h m h₂ hA,
+    towerTr_gapBond z h m h₁ hA, towerTr_gapBond z h m h₂ hA]
+  ring
+
+/-- **Cross-ratio of the free traces** (no bond). -/
+theorem towerTr_free_crossRatio (m : ℕ) {X₁ X₂ : HeckeTower R h}
+    (h₁ : X₁ ∈ twH h m) (h₂ : X₂ ∈ twH h m) (Y₁ Y₂ : HeckeTower R h) :
+    towerTr z h (X₁ * shift h (m + 1) Y₁) * towerTr z h (X₂ * shift h (m + 1) Y₂)
+    = towerTr z h (X₁ * shift h (m + 1) Y₂) * towerTr z h (X₂ * shift h (m + 1) Y₁) := by
+  rw [towerTr_split z h m h₁, towerTr_split z h m h₂, towerTr_split z h m h₁,
+    towerTr_split z h m h₂]
+  ring
+
+/-- **The sign-mixed pattern is excluded by a cross-ratio identity**: if
+    `μ₁₁ μ₂₂ = μ₁₂ μ₂₁`, `1 < μ₁₁`, `1 < μ₂₂` and `μ₁₂ ≥ 0`, then not both
+    `μ₁₂ < 1` and `μ₂₁ < 1`. -/
+theorem not_both_lt_one_of_crossRatio {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] {a b c d : K} (hx : a * d = b * c) (ha : 1 < a) (hd : 1 < d)
+    (hb : 0 ≤ b) : ¬ (b < 1 ∧ c < 1) := by
+  rintro ⟨hb1, hc1⟩
+  have h1 : 1 < a * d := by nlinarith
+  have h2 : b * c < 1 := by nlinarith
+  linarith
+
+end QOU.BraidKnot.HeckeFunctional
+
+
+/-!
+# The γγ chain factorises into second-nucleon bond factors
+
+For a chain of nucleon blocks `N₀, N₁, …, N_k ∈ H₂` (each on its own three strands, block
+`j` on strands `3j, 3j+1, 3j+2`) joined by the γγ bond `V³ = (σ₀σ₁⁻¹)³` placed on
+generators `σ_{3j-1}, σ_{3j}` directly after block `j` (the probe order of
+`computations/probes/he4_gg_all_pairs/`), the Markov trace is
+
+  `tr(W_chain) = tr N₀ · ∏_{j ≥ 1} tr(V³ · N_j↑¹)`,
+
+while the free word (no bonds) has `tr(W_free) = ∏_j tr N_j`.  So each bond contributes
+the factor `tr(V³ · N↑¹) / tr N` of the nucleon on its right, and nothing else.
+
+What is proved, over a generic `CommRing R` (§7c):
+
+* `towerTr_ggTail`, `towerTr_ggChain` — the chain law for any list of blocks;
+* `towerTr_freeTail` — the free word is the product of the block traces;
+* `towerTr_he4_ggChain_word`, `towerTr_he4_free_word` — the ⁴He words written out letter
+  block by letter block, exactly as the probe assembles them;
+* `he4_ggChain_trace_difference` — `tr W_free − tr W_chain` as a closed form in the
+  single-nucleon factors.
+
+Every step is the disjoint law `towerTr_disjoint` (two clusters sharing one strand and no
+generator) plus cyclicity; no numerical value enters.
+-/
+
+namespace QOU.BraidKnot.HeckeFunctional
+
+open QOU.MathlibExt.HeckeTowerWitness
+
+section GammaGammaChain
+
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- The chain above the first nucleon, read from strand `2` (the first nucleon's last
+    strand) upward: each nucleon `N` sits on strands `1..3` as `N↑¹`, its incoming bond
+    `V³` on `σ₀ σ₁`, and the rest of the chain three strands higher. -/
+noncomputable def ggTail : List (HeckeTower R h) → HeckeTower R h
+  | [] => 1
+  | N :: Ns => shift h 1 N * vertexCube h * shift h 3 (ggTail Ns)
+
+/-- The γγ chain on the nucleons `N₀ :: Ns`. -/
+noncomputable def ggChain (N₀ : HeckeTower R h) (Ns : List (HeckeTower R h)) :
+    HeckeTower R h :=
+  N₀ * shift h 2 (ggTail h Ns)
+
+/-- The free word: the nucleon blocks side by side, no bond. -/
+noncomputable def freeTail : List (HeckeTower R h) → HeckeTower R h
+  | [] => 1
+  | N :: Ns => N * shift h 3 (freeTail Ns)
+
+/-- The bond factor of the nucleon on the right of a γγ bond, `tr(V³ · N↑¹)`. -/
+noncomputable def ggBondFactor (N : HeckeTower R h) : R :=
+  towerTr z h (vertexCube h * shift h 1 N)
+
+theorem towerTr_ggTail (Ns : List (HeckeTower R h)) (hNs : ∀ N ∈ Ns, N ∈ twH h 2) :
+    towerTr z h (ggTail h Ns) = (Ns.map (ggBondFactor z h)).prod := by
+  induction Ns with
+  | nil => simp [ggTail, towerTr_one]
+  | cons N Ns ih =>
+    have hN : N ∈ twH h 2 := hNs N (by simp)
+    have hrest : ∀ M ∈ Ns, M ∈ twH h 2 := fun M hM => hNs M (List.mem_cons_of_mem _ hM)
+    have h1 : shift h 1 N ∈ twH h 3 := by
+      simpa using shift_mem_twH h 1 2 hN
+    have h2 : vertexCube h ∈ twH h 3 := twH_mono h (by norm_num) (vertexCube_mem h)
+    have hX : shift h 1 N * vertexCube h ∈ twH h 3 := Subalgebra.mul_mem _ h1 h2
+    simp only [ggTail, List.map_cons, List.prod_cons]
+    rw [towerTr_disjoint z h 3 hX, ih hrest, towerTr_mul_comm, ggBondFactor]
+
+/-- **The γγ chain law**: `tr(W_chain) = tr N₀ · ∏ tr(V³ · N_j↑¹)`. -/
+theorem towerTr_ggChain (N₀ : HeckeTower R h) (hN₀ : N₀ ∈ twH h 2)
+    (Ns : List (HeckeTower R h)) (hNs : ∀ N ∈ Ns, N ∈ twH h 2) :
+    towerTr z h (ggChain h N₀ Ns) = towerTr z h N₀ * (Ns.map (ggBondFactor z h)).prod := by
+  rw [ggChain, towerTr_disjoint z h 2 hN₀, towerTr_ggTail z h Ns hNs]
+
+/-- **The free word is the product of the block traces.** -/
+theorem towerTr_freeTail (Ns : List (HeckeTower R h)) (hNs : ∀ N ∈ Ns, N ∈ twH h 2) :
+    towerTr z h (freeTail h Ns) = (Ns.map (towerTr z h)).prod := by
+  induction Ns with
+  | nil => simp [freeTail, towerTr_one]
+  | cons N Ns ih =>
+    have hN : N ∈ twH h 2 := hNs N (by simp)
+    have hrest : ∀ M ∈ Ns, M ∈ twH h 2 := fun M hM => hNs M (List.mem_cons_of_mem _ hM)
+    simp only [freeTail, List.map_cons, List.prod_cons]
+    rw [towerTr_disjoint z h 3 (twH_mono h (by norm_num) hN), ih hrest]
+
+/-! ## ⁴He, written out in the probe order -/
+
+/-- The ⁴He γγ-chain word of the probe, `N₀ N₁ G₀₁ N₂ G₁₂ N₃ G₂₃` with `N_j` on strands
+    `3j..3j+2` and `G_{j-1,j} = V³↑(3j-1)`, is the chain `ggChain N₀ [N₁, N₂, N₃]`. -/
+theorem he4_ggChain_word_eq (N₀ N₁ N₂ N₃ : HeckeTower R h) :
+    N₀ * shift h 3 N₁ * shift h 2 (vertexCube h) * shift h 6 N₂ * shift h 5 (vertexCube h)
+        * shift h 9 N₃ * shift h 8 (vertexCube h)
+      = ggChain h N₀ [N₁, N₂, N₃] := by
+  simp only [ggChain, ggTail, map_mul, map_one, mul_one, shift_shift]
+  simp only [mul_assoc]
+
+theorem he4_free_word_eq (N₀ N₁ N₂ N₃ : HeckeTower R h) :
+    N₀ * shift h 3 N₁ * shift h 6 N₂ * shift h 9 N₃ = freeTail h [N₀, N₁, N₂, N₃] := by
+  simp only [freeTail, map_mul, map_one, mul_one, shift_shift]
+  simp only [mul_assoc]
+
+/-- **⁴He γγ chain, closed form**: only the first nucleon enters through its own trace;
+    each of the other three enters through its bond factor `tr(V³ · N↑¹)`. -/
+theorem towerTr_he4_ggChain_word (N₀ N₁ N₂ N₃ : HeckeTower R h)
+    (h₀ : N₀ ∈ twH h 2) (h₁ : N₁ ∈ twH h 2) (h₂ : N₂ ∈ twH h 2) (h₃ : N₃ ∈ twH h 2) :
+    towerTr z h (N₀ * shift h 3 N₁ * shift h 2 (vertexCube h) * shift h 6 N₂
+        * shift h 5 (vertexCube h) * shift h 9 N₃ * shift h 8 (vertexCube h))
+      = towerTr z h N₀ * ggBondFactor z h N₁ * ggBondFactor z h N₂ * ggBondFactor z h N₃ := by
+  rw [he4_ggChain_word_eq, towerTr_ggChain z h N₀ h₀ [N₁, N₂, N₃]]
+  · simp only [List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one]
+    ring
+  · intro N hN
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hN
+    rcases hN with rfl | rfl | rfl <;> assumption
+
+theorem towerTr_he4_free_word (N₀ N₁ N₂ N₃ : HeckeTower R h)
+    (h₀ : N₀ ∈ twH h 2) (h₁ : N₁ ∈ twH h 2) (h₂ : N₂ ∈ twH h 2) (h₃ : N₃ ∈ twH h 2) :
+    towerTr z h (N₀ * shift h 3 N₁ * shift h 6 N₂ * shift h 9 N₃)
+      = towerTr z h N₀ * towerTr z h N₁ * towerTr z h N₂ * towerTr z h N₃ := by
+  rw [he4_free_word_eq, towerTr_freeTail z h [N₀, N₁, N₂, N₃]]
+  · simp only [List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one]
+    ring
+  · intro N hN
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hN
+    rcases hN with rfl | rfl | rfl | rfl <;> assumption
+
+/-- **The ⁴He γγ-chain trace difference** `tr W_free − tr W_chain` (the quantity the
+    probe multiplies by `E₀` to report `B_diff`), in single-nucleon factors. -/
+theorem he4_ggChain_trace_difference (N₀ N₁ N₂ N₃ : HeckeTower R h)
+    (h₀ : N₀ ∈ twH h 2) (h₁ : N₁ ∈ twH h 2) (h₂ : N₂ ∈ twH h 2) (h₃ : N₃ ∈ twH h 2) :
+    towerTr z h (N₀ * shift h 3 N₁ * shift h 6 N₂ * shift h 9 N₃)
+        - towerTr z h (N₀ * shift h 3 N₁ * shift h 2 (vertexCube h) * shift h 6 N₂
+            * shift h 5 (vertexCube h) * shift h 9 N₃ * shift h 8 (vertexCube h))
+      = towerTr z h N₀ * (towerTr z h N₁ * towerTr z h N₂ * towerTr z h N₃
+          - ggBondFactor z h N₁ * ggBondFactor z h N₂ * ggBondFactor z h N₃) := by
+  rw [towerTr_he4_free_word z h N₀ N₁ N₂ N₃ h₀ h₁ h₂ h₃,
+    towerTr_he4_ggChain_word z h N₀ N₁ N₂ N₃ h₀ h₁ h₂ h₃]
+  ring
+
+end GammaGammaChain
+
+end QOU.BraidKnot.HeckeFunctional
+
+
+/-!
+# The binding half of `conj:knot-factor-frobenius-pairing`, read through the knot factor
+
+The braid half is a theorem: every cyclic trace `t` on `H_n(q)`, `q ≠ 0`, is the
+Frobenius pairing `t x = τ(x κ)` with a unique central knot factor `κ = Σ_λ y_λ s_λ e_λ`
+(`QOU.Hecke.KnotFactor`; Markov instance `markov_trace_eq_tau_mul_knotFactor`).
+
+The binding half of the block is `B = E₀ (|tr(W_free)| − |tr(W_atom)|)`.  This file tests
+the reading "binding = free trace minus convolved trace = `τ(x (κ_free − κ_atom))`" in
+the three forms that make sense, and records what each gives.
+
+* **R1 (linearity).** `t a − t c = τ((a − c) κ)` for any two elements: the trace
+  difference is the pairing of the *word difference* with the one knot factor
+  (`binding_eq_pair_wordDifference`).  No second knot factor appears.
+* **R2 (free = product of constituent traces).**  On the free word
+  `x ⊔ y = incl x · shift_m y`, the pairing with the atom-level knot factor `κ_n` equals
+  the product of the constituent pairings `τ_m(x κ_m) · τ_p(y κ_p)`
+  (`markov_free_pairing`).  So "free minus atom" evaluated on the free word is zero: the
+  binding is carried entirely by `W_free − W_atom`, never by a difference of knot
+  factors (`markov_binding_eq_free_minus_atom_pair`).
+* **R3 (bond-convolved functional).**  `x ↦ t(x b)` is paired by `b κ`
+  (`convolve_eq_pair`), and it is a trace **iff `b κ` is central**
+  (`convolve_isTrace_iff`, generic; `hecke_convolve_isTrace_iff` in `H_n(q)`).  So a
+  bond-convolved "atom trace" has a central knot factor only when the bond is central
+  on the support of `κ`.  The symbolic probe
+  `computations/probes/knot_factor_binding_half/` finds that the γγ bond
+  `(σ_iσ_{i+1}⁻¹)³` is not (blocks `(2,1)` of `H_3`, `(5,1)`, `(4,2)`, `(3,3)` of `H_6`
+  at `z_D`): that is a computation, not a theorem in this file.
+
+## What this is not
+
+Nothing here is about measured binding energies.  The absolute values `|tr|` of the
+block are not linear; R1 and R2 are statements about the signed traces.  The comparison
+against AME2020 is still the open part of the conjecture.
+
+Generic over `[Field K]` / `[Ring A]`; no ordering, no archimedean structure (§7c).
+
+## References
+
+- [geckpfeiffer2000] §7.2, §8.1 (symmetrizing trace, Schur elements)
+- [jones1987] Ocneanu trace and its multiplicativity on split braids
+-/
+
+namespace QOU.BraidKnot.BindingHalf
+
+open QOU.Hecke.KnotFactor
+
+section General
+
+variable {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A]
+
+/-- **R1.** The difference of two pairings with one knot factor is the pairing of the
+    difference. -/
+theorem binding_eq_pair_wordDifference (τ : A →ₗ[K] K) (κ a c : A) :
+    τ (a * κ) - τ (c * κ) = τ ((a - c) * κ) := by
+  rw [sub_mul, map_sub]
+
+/-- **A pairing functional is a trace iff its element is central**, for a cyclic and
+    nondegenerate pairing trace `τ`. -/
+theorem pair_isTrace_iff_central (τ : A →ₗ[K] K) (hτ : ∀ x y : A, τ (x * y) = τ (y * x))
+    (hnd : ∀ z : A, (∀ y : A, τ (z * y) = 0) → z = 0) (k : A) :
+    (∀ x y : A, τ (x * y * k) = τ (y * x * k)) ↔ ∀ y : A, k * y = y * k := by
+  constructor
+  · intro H y
+    have hz : k * y - y * k = 0 := by
+      refine hnd _ fun x => ?_
+      have e1 : τ (k * y * x) = τ (y * x * k) := by
+        rw [mul_assoc, hτ k (y * x)]
+      have e2 : τ (y * k * x) = τ (x * y * k) := by
+        rw [mul_assoc, hτ y (k * x), mul_assoc, hτ k (x * y)]
+      rw [sub_mul, map_sub, e1, e2, H y x, sub_self]
+    exact sub_eq_zero.mp hz
+  · intro H x y
+    calc τ (x * y * k) = τ (x * (y * k)) := by rw [mul_assoc]
+      _ = τ (x * (k * y)) := by rw [H y]
+      _ = τ ((x * k) * y) := by rw [mul_assoc]
+      _ = τ (y * (x * k)) := hτ _ _
+      _ = τ (y * x * k) := by rw [mul_assoc]
+
+/-- The bond-convolved functional `x ↦ t(x b)`. -/
+noncomputable def convolve (t : A →ₗ[K] K) (b : A) : A →ₗ[K] K :=
+  t.comp (LinearMap.mulRight K b)
+
+theorem convolve_apply (t : A →ₗ[K] K) (b x : A) : convolve t b x = t (x * b) := rfl
+
+/-- **R3, pairing element.** If `t = τ(· κ)`, then `x ↦ t(x b)` is paired by `b κ`. -/
+theorem convolve_eq_pair (t τ : A →ₗ[K] K) (κ b : A) (hk : ∀ x, t x = τ (x * κ)) (x : A) :
+    convolve t b x = τ (x * (b * κ)) := by
+  rw [convolve_apply, hk, mul_assoc]
+
+/-- **R3.** The bond-convolved functional is a trace iff `b κ` is central. -/
+theorem convolve_isTrace_iff (t τ : A →ₗ[K] K) (hτ : ∀ x y : A, τ (x * y) = τ (y * x))
+    (hnd : ∀ z : A, (∀ y : A, τ (z * y) = 0) → z = 0)
+    (κ b : A) (hk : ∀ x, t x = τ (x * κ)) :
+    (∀ x y : A, convolve t b (x * y) = convolve t b (y * x))
+      ↔ ∀ y : A, (b * κ) * y = y * (b * κ) := by
+  rw [← pair_isTrace_iff_central τ hτ hnd (b * κ)]
+  simp only [convolve_eq_pair t τ κ b hk]
+
+/-- **R2, abstract form.** If `κ'` pairs to the same functional as `κ` on a subspace
+    `P`, the pairing with `κ' − κ` vanishes on `P`. -/
+theorem pair_sub_vanishes_on (t τ : A →ₗ[K] K) (κ κ' : A) (P : Submodule K A)
+    (hk : ∀ x, t x = τ (x * κ)) (hk' : ∀ x ∈ P, t x = τ (x * κ')) :
+    ∀ x ∈ P, τ (x * (κ' - κ)) = 0 := by
+  intro x hx
+  rw [mul_sub, map_sub, ← hk, ← hk' x hx, sub_self]
+
+end General
+
+section Hecke
+
+open QOU.Hecke.TwBasis
+
+variable {K : Type*} [Field K] {q : K} {n : ℕ}
+variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+variable {J : ι → Type*} [∀ i, Fintype (J i)] [∀ i, DecidableEq (J i)]
+
+/-- **R3 in `H_n(q)`.**  For any trace `t`, `q ≠ 0` and any splitting, the bond-convolved
+    functional `x ↦ t(x b)` is a trace iff `b κ` is central, `κ` the knot factor of `t`. -/
+theorem hecke_convolve_isTrace_iff (hq : q ≠ 0)
+    (E : QOU.Hecke.IwahoriHecke K q n ≃ₐ[K] ∀ i, Matrix (J i) (J i) K)
+    (a : ∀ i, J i) (t : QOU.Hecke.IwahoriHecke K q n →ₗ[K] K)
+    (ht : ∀ x y, t (x * y) = t (y * x)) (b : QOU.Hecke.IwahoriHecke K q n) :
+    (∀ x y, convolve t b (x * y) = convolve t b (y * x))
+      ↔ ∀ y, (b * knotFactor E t (tau K q n) a) * y
+              = y * (b * knotFactor E t (tau K q n) a) :=
+  convolve_isTrace_iff t (tau K q n) (tau_mul_comm K q n)
+    (fun _ hz => tau_eq_zero_of_forall_mul K q n hq hz) _ b
+    (hecke_trace_eq_tau_mul_knotFactor hq E a t ht)
+
+end Hecke
+
+section Markov
+
+open QOU.Hecke QOU.Hecke.TwBasis QOU.BraidKnot.HeckeFunctional
+
+variable {K : Type*} [Field K] {q : K}
+variable {ι₁ ι₂ ι₃ : Type*} [Fintype ι₁] [DecidableEq ι₁] [Fintype ι₂] [DecidableEq ι₂]
+  [Fintype ι₃] [DecidableEq ι₃]
+variable {J₁ : ι₁ → Type*} [∀ i, Fintype (J₁ i)] [∀ i, DecidableEq (J₁ i)]
+variable {J₂ : ι₂ → Type*} [∀ i, Fintype (J₂ i)] [∀ i, DecidableEq (J₂ i)]
+variable {J₃ : ι₃ → Type*} [∀ i, Fintype (J₃ i)] [∀ i, DecidableEq (J₃ i)]
+
+/-- **R2.** On a free (split) word `incl x · shift_m y`, the pairing with the atom-level
+    Markov knot factor `κ_n` is the product of the constituents' pairings with their own
+    knot factors `κ_m`, `κ_p`. -/
+theorem markov_free_pairing (hq : q ≠ 0) (s h z : K) (hs : s * s = q) (hh : s * h = q - 1)
+    {m p n : ℕ} (hmn : m ≤ n) (hpn : p + m ≤ n)
+    (Em : IwahoriHecke K q m ≃ₐ[K] ∀ i, Matrix (J₁ i) (J₁ i) K) (am : ∀ i, J₁ i)
+    (Ep : IwahoriHecke K q p ≃ₐ[K] ∀ i, Matrix (J₂ i) (J₂ i) K) (ap : ∀ i, J₂ i)
+    (En : IwahoriHecke K q n ≃ₐ[K] ∀ i, Matrix (J₃ i) (J₃ i) K) (an : ∀ i, J₃ i)
+    (x : IwahoriHecke K q m) (y : IwahoriHecke K q p) :
+    tau K q n ((heckeIncl hmn x * heckeShift m hpn y)
+        * knotFactor En (heckeMarkovTrace s h z hs hh) (tau K q n) an)
+      = tau K q m (x * knotFactor Em (heckeMarkovTrace s h z hs hh) (tau K q m) am)
+        * tau K q p (y * knotFactor Ep (heckeMarkovTrace s h z hs hh) (tau K q p) ap) := by
+  rw [← markov_trace_eq_tau_mul_knotFactor hq En an, ← markov_trace_eq_tau_mul_knotFactor hq Em am,
+    ← markov_trace_eq_tau_mul_knotFactor hq Ep ap, heckeMarkovTrace_disjoint]
+
+/-- **R2, the binding.**  With the free word `incl x · shift_m y` and any atom word `W` in
+    `H_n`, "free trace minus atom trace", the free trace taken as the product of the
+    constituent pairings, is the pairing of `free − W` with the single knot factor `κ_n`. -/
+theorem markov_binding_eq_free_minus_atom_pair (hq : q ≠ 0) (s h z : K) (hs : s * s = q)
+    (hh : s * h = q - 1) {m p n : ℕ} (hmn : m ≤ n) (hpn : p + m ≤ n)
+    (Em : IwahoriHecke K q m ≃ₐ[K] ∀ i, Matrix (J₁ i) (J₁ i) K) (am : ∀ i, J₁ i)
+    (Ep : IwahoriHecke K q p ≃ₐ[K] ∀ i, Matrix (J₂ i) (J₂ i) K) (ap : ∀ i, J₂ i)
+    (En : IwahoriHecke K q n ≃ₐ[K] ∀ i, Matrix (J₃ i) (J₃ i) K) (an : ∀ i, J₃ i)
+    (x : IwahoriHecke K q m) (y : IwahoriHecke K q p) (W : IwahoriHecke K q n) :
+    tau K q m (x * knotFactor Em (heckeMarkovTrace s h z hs hh) (tau K q m) am)
+        * tau K q p (y * knotFactor Ep (heckeMarkovTrace s h z hs hh) (tau K q p) ap)
+      - tau K q n (W * knotFactor En (heckeMarkovTrace s h z hs hh) (tau K q n) an)
+      = tau K q n ((heckeIncl hmn x * heckeShift m hpn y - W)
+          * knotFactor En (heckeMarkovTrace s h z hs hh) (tau K q n) an) := by
+  rw [← markov_free_pairing hq s h z hs hh hmn hpn Em am Ep ap En an x y,
+    binding_eq_pair_wordDifference]
+
+end Markov
+
+end QOU.BraidKnot.BindingHalf

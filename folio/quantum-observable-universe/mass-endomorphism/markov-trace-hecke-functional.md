@@ -47,3 +47,23 @@ $$
 $$
 
 and the same holds with the bond placed after $y^{\uparrow (m+1)}$. The bond ratio $\mathrm{tr}_M\bigl(x\,B^{\uparrow m}\,y^{\uparrow (m+1)}\bigr) / \mathrm{tr}_M\bigl(x\,y^{\uparrow (m+1)}\bigr) = \mathrm{tr}_M\bigl(B\,y^{\uparrow 1}\bigr)/\mathrm{tr}_M(y)$, where defined, is therefore a function of the second cluster alone.
+
+## Remark on bonds that enter both clusters
+
+Let $x, A \in H_m$ and let $Y, C$ be arbitrary. A bond $A\,C^{\uparrow (m+1)}$ that uses generators of both clusters but not $\sigma_m$ gives
+$$
+  \mathrm{tr}_M\bigl(x\,Y^{\uparrow (m+1)}\,A\,C^{\uparrow (m+1)}\bigr) = \mathrm{tr}_M(xA)\,\mathrm{tr}_M(YC).
+$$
+With one interface letter $a + b\,\sigma_m$ between two such pieces, the factor $a + bz$ appears in front. In both cases the bond ratio of a pair $(x, y)$ is a product $f(x)\,g(y)$, so the four ratios satisfy $\mu_{pp}\,\mu_{nn} = \mu_{pn}\,\mu_{np}$. When all four are positive, $\mu_{pn} < 1$ and $\mu_{np} < 1$ together with $\mu_{pp} > 1$ and $\mu_{nn} > 1$ is impossible.
+
+## Remark on the bond chain
+
+For a chain of clusters $N_0, N_1, \ldots, N_k$ in which a bond $V^3$ is placed after each cluster and overlaps the next one,
+$$
+  \mathrm{tr}_M = \mathrm{tr}_M(N_0)\,\prod_{j=1}^{k} \mathrm{tr}_M\bigl(V^3\,N_j^{\uparrow 1}\bigr).
+$$
+The difference between the trace of the chain without bonds and the trace with bonds is therefore a polynomial in the single-cluster quantities $\mathrm{tr}_M(N_j)$ and $\mathrm{tr}_M(V^3 N_j^{\uparrow 1})$.
+
+## Remark on the knot factor and trace differences
+
+For any trace $t(x) = \tau(x\kappa)$ and any two elements $a, c$, linearity gives $t(a) - t(c) = \tau\bigl((a - c)\,\kappa\bigr)$, so a difference of traces is the pairing of a difference of elements with one knot factor. On a split element $x \cdot y^{\uparrow m}$ the pairing with the knot factor of $H_n$ equals the product of the pairings with the knot factors of the two smaller algebras. The functional $x \mapsto t(x\,b)$ is paired by $b\kappa$, and it is a trace exactly when $b\kappa$ is central.
