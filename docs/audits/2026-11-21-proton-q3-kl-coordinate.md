@@ -328,3 +328,49 @@ now?"* Exact sympy at generic `q`, except where marked numerical.
    (bean `qou-az9l`, `FlipSymmetryAtOne`). A rule "particle words are norms `γ·γ̄`" would be a
    non-census way to select words (`qou-ales`). It is a hypothesis only, and point 3 shows it
    does not cover the electron as a two-photon word.
+
+## Round 9 (2026-11-22): the electron from photons, in Lean and with three factors
+
+Owner: *"Both. What does Breit–Wheeler / Feynman diagram say about producing electrons from
+constituents, particularly photons?"*
+
+1. **Two photons: proved in Lean.**
+   [`QOU/MassTheory/ElectronNotTwoPhoton.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/ElectronNotTwoPhoton.lean),
+   generic field `R` with `q ≠ 0`, `q² + 1 ≠ 0`, `q² ± q + 1 ≠ 0`, no `sorry`, lean-direct
+   exit 0. `electron_not_two_photon` says: if `γ(a,b,c)·γ(a',b',c') = λ·σ₀σ₁σ₀` holds on the
+   2-dim block (where `σ₀σ₁σ₀` is the antidiagonal `−1`, `electronMat_eq`) and under the
+   trivial (`↦ q³`) and sign (`↦ −q⁻³`) characters, then `λ = 0`. The proof is a polynomial
+   certificate: `λ·det γ` and `det γ·det γ' + λ²` are explicit combinations of the six block
+   equations, so `λ³ = 0`. The same file proves that `S0, S1` satisfy the Hecke and braid
+   relations and that `V³ = 1 + h²(V − V²)` on the 2-dim block (`vertex_cube`). **Not
+   formalised:** the Wedderburn step "an identity in `H₃(q)` holds iff it holds in the three
+   blocks". It is taken as the hypothesis shape.
+2. **Three photons: yes, numerically.**
+   [`electron_three_photon_probe.py`](../../computations/probes/proton_q3_photon_factorisation/electron_three_photon_probe.py),
+   mpmath 60 dps at the sample point `q = 11/10` (a value of the formal variable, not an
+   anchor). With `γ₃ = γ(3/10, −7/10, 9/20)` fixed and `λ = 1`, Newton converges to residual
+   below `10⁻⁵⁰`, the Jacobian is nonsingular (`det J ≈ 453`) and all three photons are
+   invertible in every block. So `σ₀σ₁σ₀ = γ₁γ₂γ₃` has an isolated solution there. This is
+   numerical evidence, not a proof. An exact solution was not found.
+3. **Any `n ≥ 3` photons then work**, by padding with the bare photon `γ(0,0,0) = 1`. One photon
+   fails because `σ₀σ₁σ₀` is not in `span{1, σ₀, σ₁, σ₀σ₁⁻¹}`. So the count is: 1 and 2 fail,
+   3 and more succeed.
+4. **Correction to Round 8 point 3.** Round 8 called the two-photon negative "the algebra-level
+   counterpart of `gammaGamma_length_even`". That overstates it. `H₃(q)` has no parity grading
+   at generic `q`: `σ² = hσ + 1` mixes word lengths 2 and 1. And point 3 shows three photons
+   succeed, which a parity law would also allow, while four also succeed, which it would forbid.
+   The two-photon obstruction is a statement about two factors, not about even length. Nothing
+   else cites the Round 8 wording.
+5. **Breit–Wheeler and Feynman diagrams (comparison only; no proof uses this).**
+   In QED, `γγ → e⁺e⁻` (Breit–Wheeler, 1934) has two tree diagrams, electron exchange in the
+   `t` and `u` channels, and a threshold `s ≥ (2m_e)²`. It was seen with many laser photons
+   plus one high-energy photon at SLAC E144 (1997). Photons are neutral and a vertex conserves
+   charge, so **no number of photons makes a single electron**: they make pairs. Furry's
+   theorem (odd-photon closed loops vanish by C-parity) concerns loops, not this.
+   Set against the model: products in `H₃(q)` carry no charge bookkeeping, so the algebra lets
+   three photons multiply to the electron word, which physics forbids as a process. If photon
+   products are meant to model production, the model needs a charge (or lepton-number)
+   grading that photons do not carry and `σ₀σ₁σ₀` does. If the products are only a way to
+   **select** words (`qou-ales`), Breit–Wheeler says the natural two-photon target is a
+   particle–antiparticle pair (for example an electron word times its mirror), not the
+   electron alone. Both readings are open. Neither changes a computed number.
