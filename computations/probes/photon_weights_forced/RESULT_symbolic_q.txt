@@ -1,0 +1,20 @@
+common factor of the two c-resultants: (1, [(q, 12), (a + b, 1), (q^2 - q + 1, 5), (q^2 + q + 1, 5), (q*b + 1, 1), (q - b, 1), (q^2*a + q^2*b + q - b, 1), (q^2*b + q - a - b, 1)])
+eliminant in a, irreducible factors over Z[q, a] (degrees are (q, a, b, c)):
+  degrees (1, 0, 0, 0), multiplicity 57: q
+  degrees (0, 1, 0, 0), multiplicity 4: a
+  degrees (1, 0, 0, 0), multiplicity 1: q - 1
+  degrees (1, 0, 0, 0), multiplicity 1: q + 1
+  degrees (4, 0, 0, 0), multiplicity 1: q^4 - q^2 + 1
+  degrees (3, 0, 0, 0), multiplicity 1: q^3 - q^2 + 1
+  degrees (3, 0, 0, 0), multiplicity 1: q^3 + q^2 - 1
+  degrees (4, 0, 0, 0), multiplicity 4: q^4 + 1
+  degrees (2, 0, 0, 0), multiplicity 6: q^2 - q + 1
+  degrees (2, 0, 0, 0), multiplicity 6: q^2 + q + 1
+  degrees (2, 0, 0, 0), multiplicity 18: q^2 + 1
+  degrees (1, 1, 0, 0), multiplicity 1: q + a
+  degrees (1, 1, 0, 0), multiplicity 1: q - a
+  degrees (8, 1, 0, 0), multiplicity 1: q^8 - 2*q^6 - q^5*a + 2*q^4 + q^3*a - 2*q^2 - q*a + 1
+  degrees (1, 1, 0, 0), multiplicity 1: q*a - 1
+  degrees (115, 10, 0, 0), multiplicity 1: <a-degree 10, q-degree 115, 562 terms>
+  degrees (64, 6, 0, 0), multiplicity 1: <a-degree 6, q-degree 64, 176 terms>
+a-degree-6 factor present and irreducible over Z[q, a]: True
