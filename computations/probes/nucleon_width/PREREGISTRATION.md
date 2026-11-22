@@ -33,3 +33,32 @@ neutron is the mirror braid, and its closure is the mirror link.
 Claim 1 holds whatever the value of CS. So a closure-only reading cannot be the width, and this is
 reported as a scope-(a) negative for that reading. If the CS value can be computed, it is recorded
 as a side result.
+
+## Addendum 1 (2026-11-22): the hydrogen capture braid, both electron placements (owner: "Compute CS for the capture-braid closure in both electron placements, preregistered first")
+
+Written and committed before any number for this addendum is computed.
+
+**Objects (from #8804 §43, as Lean-registered in `claude/hydrogen-capture-lean-2026-11-22`).**
+- Proton left: `W_L = (σ₀σ₁⁻¹)³ · (σ₂σ₁σ₀σ₀σ₁σ₂)⁻¹`, proton strands 0–2, electron strand 3.
+- Proton right: `W_R = (σ₁σ₂⁻¹)³ · (σ₀σ₁σ₂σ₂σ₁σ₀)⁻¹`, proton strands 1–3, electron strand 0.
+- The closure of each (no braid axis), and for comparison the closure together with its axis.
+
+**Predictions derived in advance (no compute).**
+- **P1.** Both words are pure braids, so each closure has 4 components: the three Borromean
+  components and one electron circle.
+- **P2.** The capture factor `σ₂σ₁σ₀²σ₁σ₂` (resp. `σ₀σ₁σ₂²σ₁σ₀`) makes the electron strand wind
+  once around the bundle of the three proton strands. Its closed component is then a (1, ±1) curve
+  on the boundary torus of the bundle, which is isotopic in the bundle's complement to the braid
+  axis. So each closure is expected to be the Borromean rings plus their braid axis, the 4-cusp
+  manifold already computed (CS ≈ 0).
+- **P3.** `W_R` is the strand-reversed image of `W_L` with the core mirrored; strand reversal is
+  conjugation by the half twist, so the two closures are expected to be isometric up to
+  orientation. Then CS(W_R) = ±CS(W_L), and with P2 both are 0.
+
+**Verdict rule, fixed now.** If the two placements give equal |CS| (including both 0), the capture
+braid's closure gives no p/n width difference: scope-(a) negative, as for the bare core. Only a
+nonzero difference |CS(W_L)| ≠ |CS(W_R)| mod ½ would be a closure-level p/n asymmetry, and even
+then no CS → width map is derived, so no width in MeV or s⁻¹ is quoted.
+
+**Method.** SnapPy high precision, `snappy.Link(braid_closure=…)` for the bare closure and
+`Braid:` for closure plus axis; `is_isometric_to` between placements; `identify()`.
