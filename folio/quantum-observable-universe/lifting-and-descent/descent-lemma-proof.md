@@ -26,12 +26,13 @@ vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is
 unchanged since one recovers $A$.
 
 *Step 4: The :refterm[descent]{#descent} homomorphism.*
-Applying $\tau$ to $r_n$ yields
-$\mathfrak{d}_n\colon \Gamma(J^1 \mathcal{S}_n, \mathrm{SU}_{q_n}(2)) \to \Gamma(J^1 \mathcal{S}_{n-1}, \mathrm{SU}_{q_{n-1}}(2))$,
-a $*$-homomorphism because $r_n$ preserves multiplication and antipode.
-Surjectivity follows from the injectivity of the ascent map $\ell_n$
-(it embeds $A$ into $J^1(A)$ as a direct summand), so its categorical
-adjoint $r_n$ is surjective.
+Since $r_n \circ \ell_n = \mathrm{id}$, the map $e_n = \ell_n \circ r_n$ is an idempotent on $A_n$. For any $\psi \in \mathrm{End}_{\mathbf{C}}(A_{n-1})$ one has
+$\mathfrak{d}_n(\ell_n \circ \psi \circ r_n) = \psi$, so $\mathfrak{d}_n$ is surjective, and $\ell_n \circ \psi \circ r_n$ commutes with $e_n$.
+If $\varphi$ and $\varphi'$ commute with $e_n$, then
+$\mathfrak{d}_n(\varphi \circ \varphi') = r_n \circ \varphi \circ \varphi' \circ \ell_n = r_n \circ \varphi \circ e_n \circ \varphi' \circ \ell_n = \mathfrak{d}_n(\varphi) \circ \mathfrak{d}_n(\varphi')$,
+where the middle step uses $\varphi' \circ \ell_n = \varphi' \circ e_n \circ \ell_n = e_n \circ \varphi' \circ \ell_n$. Also $\mathfrak{d}_n(\mathrm{id}) = \mathrm{id}$. Hence $\mathfrak{d}_n$ restricted to $\mathrm{End}_{\mathbf{C}}(A_n)^{e_n}$ is a surjective algebra homomorphism.
+Without the commutation hypothesis, multiplicativity fails: for $A_n = \mathbf{1}^{\oplus 2}$, $A_{n-1} = \mathbf{1}$ with $\ell_n$ and $r_n$ the first inclusion and projection, the off-diagonal matrix units $E_{12}$ and $E_{21}$ satisfy $\mathfrak{d}_n(E_{12} E_{21}) = 1$ while $\mathfrak{d}_n(E_{12})\,\mathfrak{d}_n(E_{21}) = 0$.
+Applying $\tau$ gives the archimedean map on sections; that it is a $*$-homomorphism on the block-diagonal sections because $r_n$ preserves the antipode is argued here and not formalised.
 
 *Step 5: Equivariance.*
 The $\mathrm{SU}(2)$-action on sections at level $n$ is the adjoint
