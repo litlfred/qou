@@ -688,6 +688,7 @@ import QOU.Archimedean.BlochWignerPositive
 import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.HyperbolicVolumeInversion
 import QOU.Archimedean.HyperbolicQuotient
+import QOU.Archimedean.HopfLinkComplexVolume
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
 import QOU.Archimedean.OrthoschemePolarReduction
