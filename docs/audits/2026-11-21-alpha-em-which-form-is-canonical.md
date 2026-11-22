@@ -417,3 +417,26 @@ identity therefore holds in `H₃(q)`. The full twist acts as `1` on the hook bl
   It also fixes no value, and nothing in it was chosen against a target.
 - At `q = 1` the writhe is 10, which is even, so `τ(T35) = 0`. The linchpin's content is
   off `q = 1`, which matches §15: on `|q| = 1` its α_em part is imaginary.
+
+## 17. Why the cube? The torus family T(3, 3m+2) (2026-11-22)
+
+Lean: `QOU/AlphaEM/TorusFamilyTrace.lean` (sorry-free, standard axioms only). Probe 43/43.
+
+- `(σ₀σ₁)²` is literally the list `electron ++ [σ₁]` (`trefoil_eq_electron_letter`). Its
+  closure is a knot, the trefoil `T(3,2)`. The electron word alone closes to a 2-component
+  link, since its permutation is a transposition. So one photon letter turns the electron's
+  Hopf-link closure into a trefoil, which is the backup electron of the owner ruling.
+- With `m` full twists, `Δ² = electron²` gives `(σ₀σ₁)^(3m+2) = electron^(2m+1)·σ₁`. This is
+  `T(3, 3m+2)`, of writhe `6m + 4`. `m = 1` is the `T(3,5)` linchpin.
+- Full twists act as `1` on the hook block (`hookWord_fullTwists`). So the hook trace is `−1`
+  for every `m` (`torusWord_hook_trace`), and `τ = q^(6m+4) − q^-(6m+4)` (`torusWord_tau`).
+  The trace of `T(3,5)` is `y₃q¹⁰ − y₂₁`. Unlike the electron's trace, this is not a single phase.
+- At `q = 1` the ι-odd part of `γ·electron³` is `(1 + φ₀₁)/2`. That is the same value as for
+  `γ·electron`, because the extra full twist is invisible there.
+
+**Answer to "why k = 3".** The braid group does not force it. Every odd power
+`electron^(2m+1)·σ₁` is a 3-strand torus knot, and `k = 3` is `m = 1`: one full twist on
+top of the trefoil. In this algebra the family members differ only in which power of `q`
+`τ` reads. So choosing `m = 1` needs a reason from outside, which is the `[10]_q` value
+itself. Using that value to choose `m` would be selection against the target. Scope (a):
+nothing here excludes a reason for `m = 1` that comes from somewhere else.
