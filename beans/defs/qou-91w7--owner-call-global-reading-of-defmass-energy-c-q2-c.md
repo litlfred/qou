@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-22T11:16:10Z
+updated_at: 2026-11-22T11:21:01Z
 parent: qou-wxhi
 ---
 
@@ -30,3 +30,6 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 
 
 2026-11-22 OWNER: '\frakE is categorical energy.  Needs scaling (coming form CAL123 hopefully)'. Recorded in docs/coordination/owner-rulings.md. Reading A (c_q^2 converts to physical energy) is not adopted. Now OPEN (this bean, retitled in spirit): derive the map from categorical energy E to MeV from CAL-1/2/3 alone. Sub-tasks: (1) is E0 = m_e c_q^2 hbar_q that map, i.e. does m_e (CAL-1) fix the categorical MASS unit and what fixes the energy unit; (2) the step-9 binding uses B = m_e*rho*[...] without c_q^2, so the corpus uses two different scales; one is wrong or they need a derived relation; (3) every E0-scaled row (Q_beta, log binding, n-p cell, vertex budgets) is conditional on the answer.
+
+
+2026-11-22 (Addendum 20, commit 4fc56e3342b): E₀'s c_q² shown to be the muon pin's c_q². Lean QOU/QBeta/E0MuonUnit.lean (sorry-free): 1/ℏ_q² = q²c_q²; E₀ = m_e c_q² ℏ_q; under the muon pin E₀ = m_μ ℏ_q/(q² Vol(4₁)); E₀ = m_e(ℏ_q/q²)/ℏ_q². Agrees to 1.8e-50 at muon q₀; 2.1e-7 at proton q₀ = μ–p tension. Implication: the MeV scale is m_e/ℏ_q² (CAL-1 + CAL-2), not m_e/𝔈_e; the −99 % reading used the wrong unit. n–p cell weight 2ℏ_q ln q/q² → 0 at q=1, consistent with closure mass. STILL OPEN: derive weight ℏ_q/q² from Hecke structure; 1/ℏ_q² is the CAL-2 pin, not derived.
