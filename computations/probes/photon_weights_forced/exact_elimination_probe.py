@@ -8,7 +8,10 @@ Q. Eliminating c, then b, gives a univariate polynomial in a, factored over Q.
 
 All arithmetic is exact (sympy Rational). Roots are printed with mpmath only for display.
 Every candidate is checked against t, s, det G != 0, so solutions created by clearing
-denominators are discarded. Bean qou-99qc.
+denominators are discarded. The rational roots, the sextic and the branches are handled exactly.
+The roots of the remaining degree-10 factor are checked numerically (80-digit mpmath), so the
+total count of eight genuine solutions is exact except for that one numerical step.
+Usage: python3 -I exact_elimination_probe.py [q]   (default q = 11/10). Bean qou-99qc.
 """
 import sys, sympy as sp, mpmath as mp
 q = sp.Rational(sys.argv[1]) if len(sys.argv) > 1 else sp.Rational(11, 10)
@@ -64,3 +67,30 @@ for f, m in sp.factor_list(R.as_expr())[1]:
         av = sp.solve(f, a)[0]
         S = sp.solve([sp.expand(x.subs(a, av)) for x in eqs], [b, c], dict=True)
         print(f"  a = {av}: genuine", [z for z in S if nondeg({a: av, **z})], f"(of {len(S)} candidates)")
+
+# Irrational factors of the eliminant other than the sextic: are their roots genuine?
+# Not exact: 80-digit mpmath. For each root a of the factor, find the b where both
+# c-resultants vanish, then the c that best solves all three equations. A genuine solution
+# has residual ~1e-80; a resultant artefact has residual of order 1e-2 or larger.
+mp.mp.dps = 80
+r1q, r2q = sp.cancel(r1/g), sp.cancel(r2/g)
+mpc = lambda e, *v: sp.lambdify((a, b, c)[:len(v)], e, 'mpmath')(*v)
+Ef = [sp.lambdify((a, b, c), e, 'mpmath') for e in eqs]
+for f, m in sp.factor_list(R.as_expr())[1]:
+    P1 = sp.Poly(f, a)
+    if P1.degree() in (1, 6):
+        continue
+    worst_genuine = 0
+    for al in mp.polyroots([mp.mpf(sp.Rational(x).p)/sp.Rational(x).q
+                            for x in P1.all_coeffs()], maxsteps=400, extraprec=400):
+        cb = [sp.lambdify(a, x, 'mpmath')(al) for x in sp.Poly(r1q, b).all_coeffs()]
+        for be in mp.polyroots(cb, maxsteps=400, extraprec=400):
+            if abs(mpc(r2q, al, be))/max(1, abs(be))**12 > mp.mpf(10)**-20:
+                continue
+            cc = [sp.lambdify((a, b), x, 'mpmath')(al, be) for x in sp.Poly(e1, c).all_coeffs()]
+            best = min(max(abs(F(al, be, ce)) for F in Ef[1:])
+                       for ce in mp.polyroots(cc, maxsteps=400, extraprec=400))
+            if best < mp.mpf(10)**-40:
+                worst_genuine += 1
+    print(f"factor degree {P1.degree()}: genuine solutions found at 80 digits: {worst_genuine}"
+          " (numerical, not exact)")

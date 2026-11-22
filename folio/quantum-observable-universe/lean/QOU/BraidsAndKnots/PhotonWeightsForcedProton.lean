@@ -11,9 +11,12 @@ Bean `qou-99qc`. Owner 2026-11-22: "Try independence first".
 `V = σ₀σ₁⁻¹` is `borromeanVA q`. Three matrix entries suffice: `(0,0)`, `(0,1)` and `(1,0)`.
 Their coefficient matrix is triangular with determinant `1`, so the only hypothesis is `q ≠ 0`.
 
-Consequence (`borromeanVA_photon_weights_forced`): on the proton weight space, a factorisation
-`V³ = (c + eV)(d + fV)` forces `cd = 1`, and for norm-1 photons `{e, f} = {qh, −q⁻¹h}`, with no
-hypothesis beyond `q ≠ 0`.
+Consequence (`borromeanVA_photon_weights_forced`): on the proton weight space, *inside the V-only
+ansatz* (each photon of the shape `c + eV`, i.e. `φ₀ = φ₁ = 0`), a factorisation
+`V³ = (c + eV)(d + fV)` forces `cd = 1`, and if moreover `c = d = 1` then `{e, f} = {qh, −q⁻¹h}`.
+The independence hypothesis is discharged here, so `q ≠ 0` is the only one left *besides the
+ansatz and `c = d = 1`*. The owner ruling of 2026-11-21 does not supply the V-only shape, so the
+weights `qh, −q⁻¹h` remain ruled, not derived (see `QOU.PhotonWeightsForced`).
 -/
 
 namespace QOU.BraidsAndKnots.PhotonWeightsForcedProton
@@ -50,7 +53,8 @@ theorem linearIndependent_one_V_Vsq (q : R) (hq : q ≠ 0) :
   have h0 : g 0 = 0 := by simpa using e00
   intro i; fin_cases i <;> simp [h0, h1, h2]
 
-/-- **The V-only factorisation of the proton `V³` is forced, for every `q ≠ 0`.** -/
+/-- **Inside the V-only ansatz, the factorisation of the proton `V³` is forced, for every `q ≠ 0`.**
+`cd = 1` is derived; `c = d = 1` is assumed. -/
 theorem borromeanVA_photon_weights_forced (q : R) (hq : q ≠ 0) (c d e f : R)
     (hprod : (c • (1 : Matrix (Fin 3) (Fin 3) R) + e • borromeanVA q) *
         (d • (1 : Matrix (Fin 3) (Fin 3) R) + f • borromeanVA q) = borromeanV3A q) :

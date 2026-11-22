@@ -7,6 +7,26 @@ import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Tactic.Abel
 import Mathlib.Tactic.Ring
 
+/-!
+# Inside the V-only ansatz, `V³ = (c + eV)(d + fV)` forces `cd = 1` and, at `c = d = 1`, the weights
+
+Bean `qou-99qc`. The ruled photon is `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` (owner ruling
+2026-11-20); write `V = σ₀σ₁⁻¹`.
+
+**This file works inside an ansatz.** It assumes each photon has the *V-only* shape `c + eV`, that
+is `φ₀ = φ₁ = 0`. The owner ruling of 2026-11-21 selects the *word* `V³` by whole-word neutrality
+plus reading 3, and says the V-only letter cut is no longer a premise. So the ruling does not
+supply this shape, and the weights `qh, −q⁻¹h` remain **ruled, not derived**. Once the shape is
+dropped, the six-weight equation has further solutions
+(`computations/probes/photon_weights_forced/`).
+
+**What is proved, given the ansatz.** If `1, V, V²` are linearly independent and
+`V³ = 1 + h²V − h²V²` (`h = q − q⁻¹`), then `(c + eV)(d + fV) = V³` forces `cd = 1`
+(`vOnly_factorisation_forced`). The further assumption `c = d = 1` (each photon has
+`1`-coefficient `1`) then forces `{e, f} = {qh, −q⁻¹h}`. Only `cd = 1` is derived. `c = d = 1` is a
+hypothesis.
+-/
+
 namespace QOU.PhotonWeightsForced
 
 variable {K A : Type*} [Field K] [Ring A] [Algebra K A]
@@ -58,10 +78,11 @@ theorem weights_of_sum_prod (q e f : K) (hq : q ≠ 0)
     refine ⟨he, ?_⟩
     linear_combination hs - he
 
-/-- **The V-only factorisation of `V³` is forced.** Suppose `1, V, V²` are linearly independent
+/-- **Inside the V-only ansatz, the factorisation of `V³` is forced.** Suppose `1, V, V²` are linearly independent
 and `V³ = 1 + h²V − h²V²` (the cubic `vertex_cube` / `borromeanV3A_eq_one_add_h_sq_V_sub_V_sq`).
-If `V³` is a product of two V-only photons `(c + eV)(d + fV)`, then `cd = 1`; and for photons of
-norm `1` (`c = d = 1`) the weights are `{q h, −q⁻¹ h}` up to order. -/
+If `V³` is a product of two V-only photons `(c + eV)(d + fV)` (an ansatz: `φ₀ = φ₁ = 0`, which the
+2026-11-21 ruling no longer supplies), then `cd = 1`; and if moreover `c = d = 1` (assumed, not
+derived) the weights are `{q h, −q⁻¹ h}` up to order. -/
 theorem vOnly_factorisation_forced (V : A) (q : K) (hq : q ≠ 0)
     (hind : LinearIndependent K ![(1 : A), V, V * V])
     (hcube : V * V * V = (1 : A) + (q - q⁻¹) ^ 2 • V + (-(q - q⁻¹) ^ 2) • (V * V))
