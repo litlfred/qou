@@ -869,3 +869,36 @@ Two candidates, both preregistered before any number was computed. Each lets the
 quark strands does not supply the vertex energy at the weight-space level. It drops out entirely (D1)
 or barely changes the Young-channel split (D2). Not excluded: a weight that couples β_Bor to the
 lepton strand, i.e. a braid word crossing strands 3 and 4. Bean `qou-sgav` stays open.
+
+## §32 E₀'s c_q² is the muon pin's c_q² (Addendum 20, owner 2026-11-22)
+
+**Result (identity, Lean sorry-free).** `QOU/QBeta/E0MuonUnit.lean`, over a generic field:
+
+- `one_div_hbar_sq`: 1/ℏ_q² = q²c_q². So every model mass m(K) = m_e·Vol(K)ρ(K)/ℏ_q² is a
+  multiple of 𝔈_e := m_e·c_q², the electron's categorical energy under def:mass-energy.
+- `E0_eq_me_cq_sq_hbar`: E₀ = m_e·c_q²·ℏ_q = 𝔈_e·ℏ_q.
+- `E0_eq_muon_fraction`: under the muon pin m_μ = m_e·Vol/ℏ_q², E₀ = m_μ·ℏ_q/(q²·Vol(4₁)).
+- `E0_eq_model_mass`: E₀ = m_e·(ℏ_q/q²)/ℏ_q², the model mass of categorical weight ℏ_q/q².
+
+Axioms: propext, Classical.choice, Quot.sound. lean-direct exit 0 with -DautoImplicit=false.
+
+**Numeric check (mpmath, 50 dps).** At the muon-pinned q₀ = 1.109978595642739 the two sides of
+`E0_eq_muon_fraction` agree to 1.8e-50. At the proton-pinned q₀ = 1.1099785827513808 they differ
+by 2.11e-7, which is the μ–p substrate tension (the dashboard's 211 ppb m_μ residual), not a
+failure of the identity. E₀ = 4.18598136 MeV; the unit 𝔈_e = 42.2478 MeV.
+
+**What this shows.** The c_q² in E₀ is the same c_q² the CAL-2 pin already puts in every model
+mass. So the scale to MeV that the 2026-11-22 ruling asks for is supplied by CAL-1 and CAL-2
+together: MeV values are m_e·(weight)/ℏ_q². Scaling by the electron's own 𝔈 instead (the reading
+that sent E₀ rows to about −99 %) uses the wrong unit, because m_e is the CAL-1 input, not a
+model mass of the form m_e·w/ℏ_q². 𝔈_e = 42.25 MeV is the mass unit, not the electron's rest
+energy: m_μ = 𝔈_e·q²·Vol(4₁).
+
+**Consequence for the n–p cell.** 2E₀ ln q = m_e·w/ℏ_q² with w = 2ℏ_q ln q/q² = 0.016782 at q₀.
+The weight w → 0 at q = 1, so the categorical n–p difference vanishes there, consistent with the
+closure-mass theorem (mass 2^components at q = 1). The MeV value tends to 2m_e only because the
+unit m_e/ℏ_q² diverges at q = 1. The cell is then a muon-anchored energy, like the canonical
+nucleon mass 2(m_μF_Bor − 6m_e): 2E₀ ln q = m_μ·2ℏ_q ln q/(q²·Vol(4₁)).
+
+**Not shown (scope fixed in the prereg).** Why the weight is ℏ_q/q² is not derived from Hecke
+structure, and 1/ℏ_q² is the CAL-2 pin itself, not derived. Both stay open in qou-91w7.
