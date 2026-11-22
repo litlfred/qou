@@ -690,3 +690,34 @@ p < n through these couplings. The missing ingredient is still the U(1)_em gradi
 
 **Scope.** Scope-(a) for M under the mirror (exact symbolic computation, not Lean). The tensor-route
 statement is the scalar-cancellation argument above. Tower status: n = 6 only. No empirical input.
+
+## §31 Where the U(1)_em lines can sit (2026-11-22, owner: "Both" — labelled input now, derivation open)
+
+**Not on the strands.** Put the most general strand-symmetric charge phase on the Jimbo braiding,
+Ř′ = Ř·diag(a, b, b, c) on uu, ud, du, dd. Yang–Baxter on three strands has exactly two nonzero
+defect entries, −b(a − b)(q² − 1)(aq² + b)/q and the same with c (`u1_em_twist_ybe_probe.py`, exact
+sympy). So a and c must each equal b or −b/q². The em charge line t^{9QQ′} has (a, b, c) = (t⁴, t⁻², t).
+Its only solutions are t a cube root of unity, where the phase is the scalar Z₃ centre and invisible.
+Over the reals with q > 1 it is t = 1, zero coupling (`ChargePhaseYangBaxterObstruction.lean`:
+`ybe_entry`, `ybe_forces`, `charge_phase_trivial`, sorry-free). The cause is the Hecke term h: it
+sends du to itself, which a braiding of two different U(1) objects cannot do. With h removed the
+phase works for every t. The same argument applies to the gl₃ colour Jimbo braiding. And p and n
+share the colour singlet ε, so a charge read off the colour factor cannot tell them apart either
+(checked against PR #9107: its Lean carries no charge, and its Furey gl₈ route fails at q ≠ 1).
+
+**On whole hadrons.** Tensor each nucleon block with one U(1) line L_Q, Q = n − 1, so p and n are
+distinct charged objects. Lines braid by t^{QQ′}·swap, which satisfies Yang–Baxter for every t
+(`lineBraid_ybe`). Passing A once round B gives t^{2Q_AQ_B} (`monodromy_eq`). Its log is
+2 log t · Q_AQ_B: the Coulomb shape with κ = 2 log t, zero whenever a neutron is involved
+(`em_coulombOnNucleons`). Added to the isospin-symmetric flavour readout (§28), the pair split is
+pp − nn = 2 log t, nonzero iff t ≠ 1 (`total_pp_sub_nn`, `split_ne_zero_iff`;
+`HadronChargeLineCoulomb.lean`, sorry-free).
+
+**What this commits to.** Charge is a hadron-level label, an input (Gell-Mann–Nishijima), not a
+derived feature of the strand braid. That is consistent with physics: U(1)_em appears only after
+the electroweak symmetry is broken, and the strand-level Hecke braiding is the unbroken stage.
+The coupling t is open, to come from the corpus α_EM, and is not fitted. The derivation route
+(sin²θ_W, Z scale; §29) stays open.
+
+**Scope.** Scope-(b) for the strand-level exclusion (Lean invariant: the Yang–Baxter entry). The
+hadron-level construction is a labelled input. Tower status: two blocks, n = 6. No empirical input.
