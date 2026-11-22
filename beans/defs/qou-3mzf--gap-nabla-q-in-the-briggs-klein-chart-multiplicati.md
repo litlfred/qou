@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-22T10:14:02Z
+updated_at: 2026-11-22T10:20:11Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -82,3 +82,5 @@ A Steinberg/Rogers route on complex factors (1-ζ^k X) does not integrate direct
 2026-11-22 (b): Numerically I_n(1)=pi^2/(4n) holds for n=3,5,7,9 to 18 digits (gn.py). For even n the branch construction does not apply. Equivalent forms: (i) since pi^2/(4n) = int_0^1 log((1+u^n)/(1-u^n)) du/u, the claim is int_0^1 [log y(t) - log((1+t^n)/(1-t^n))] dt/t = 0. (ii) Separable area: in a=-log t, b=log y, I = area{(a,b)>0 : A1(b) < A2(a)}, where A1(b)=log((1+e^{nb})/(1+e^b)) and A2(a)=log((1-e^{-na})/(1-e^{-a})). The target is (1/n) area{a < -log tanh(b/2)}. Since the result holds for every odd n, the per-n K2/Bloch route (n=5: an elliptic curve plus a cubic-field identity) is probably the wrong level. A uniform argument on form (ii) is the better bet.
 
 2026-11-22 (c): KEY. In the separable-area form, I(n) = area{A1(b)<A2(a)} = pi^2/(4n) holds for ALL REAL n>1, not just odd integers. Checked n=2, 2.5, 3, 4, 5, 6.3 to ~1e-9 (rn.py). n=2 is a rational curve, t = y(y-1)/(y+1), and gives pi^2/8 to 30 digits. Suggested proof: show d/dn [n*area(n)] = 0 uniformly (Euler-operator / boundary-variation argument), with n=2 or n->1+ as the base case. Partial: n*area'(n) = -2*area + int_Gamma (E Phi)/|grad F| ds, where Phi(a,b) = log((1-e^{-a})/(1+e^b)), E = a d_a + b d_b, F = Phi(n p) - Phi(p). So the claim is equivalent to int_Gamma (E Phi)/|grad F| ds = area(n).
+
+2026-11-22 (d) uniform route, no proof yet. (1) Log-scale form: with f(x)=x/(e^x-1) (Bose) and g(x)=x/(1+e^{-x}), the claim n*area(n) = pi^2/4 is the statement area{(a,b)>0 : (g*k_w)(b) < (f*k_w)(a)} = pi^2/4 for every w = log n >= 0. Here k_w is the symmetric box kernel of width w in log scale (Mellin convolution). (2) The w->0 case is a single transcendental identity, still unproved: area{a/(e^a-1) > b/(1+e^{-b})} = pi^2/4 (numerically 2.46740 incl. tail). (3) A Gaussian log-kernel in place of the box BREAKS invariance (sigma=0.3: 0.9984; sigma=0.7: 0.950 x pi^2/4; ker.py), so the box/geometric-sum structure is essential, not a generic smoothing invariance. (4) The off-diagonal family (1+y^m)/(1+y) = (1-t^n)/(1-t) is not pi^2-rational in general: (3,2)=pi^2/15, (2,3)=0.15520 pi^2, (5,2)=0.034697 pi^2 (mn.py).
