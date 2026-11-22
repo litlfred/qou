@@ -115,3 +115,34 @@ No q-deformed octonion algebra; no U_q(g₂) on 1⊕7 (non-commutative 15-dim co
 U_q(so₇)/U_q(so₈) (BMW, three eigenvalues, not Hecke by the same eigenvalue count); no coideal /
 QSP colour (another agent, `PREREGISTRATION-coideal-colour.md` on #9059); no spin; no numbers at
 q₀ (nothing here is a comparison with measurement).
+
+## Addendum A (written before any S2 number; pushed alone)
+
+**Correction to the S2 setup, found while coding, before computing.** The map
+f = (ι₃ ⊗ ι₃̄∘θ)∘Δ is an algebra map but **not** a Hopf map: Δ is a coalgebra map only for a
+cocommutative Hopf algebra. So S2 has no a-priori guarantee, and Q2c is a genuine test. It is
+sharpened to two sub-tests on ℂ⁸⊗ℂ⁸:
+
+- **Q2c-Levi (control):** Δ_{gl₈} of the Levi elements ι₃(x) and ι₃̄(θx) separately commute with
+  Ř (expected, Jimbo). This is colour as **two independent** quantum gl₃'s on 3 and 3̄.
+- **Q2c-diag (the test):** one U_q(sl₃) acting on 3 ⊕ 3̄ through its own coproduct,
+  E_c ↦ ρ(E_c)⊗ρ(K_c) + 1⊗ρ(E_c) (and the three other standard coproduct conventions), with
+  ρ(K_c) acting on **both** blocks. PASS iff the commutator with Ř vanishes at generic q. If it
+  vanishes only at q² = 1 (or q = 1), that is the octonionic form of the known obstruction.
+
+**Added candidate S5 (post-hoc in the sense that it was added after S1–S4 were registered, but
+before any computation):** the **oriented** colour strand. 3̄ is not a separate fibre: it is the
+U_q(gl₃) strand ℂ³ with reversed orientation, so Im 𝕆 = 1 ⊕ 3 ⊕ 3̄ is read as "one coloured strand,
+two orientations, plus a colour-neutral line". The orientation bit is the corpus's charge-conjugation
+bit (`2026-11-15-colour-stabilizer-bridge.md` §0 item 2: su3(e) = su3(−e), L_{−e} = −L_e). Mixed
+crossings use R_{V,V*} = (id ⊗ t)(R⁻¹) from Jimbo's R; the algebra is the quantised walled Brauer
+algebra (Kosuda–Murakami; Leduc), Schur–Weyl dual to U_q(gl₃) on V^{⊗r}⊗V*^{⊗s}.
+
+- **Q5a:** R_{V,V*} intertwines the genuine U_q(gl₃) coproduct action on V⊗V* (V* via the antipode),
+  exactly over ℚ(q). PASS = colour moves with the strand at generic q.
+- **Q5b:** mixed braid (Yang–Baxter) relations on V⊗V*⊗V and V*⊗V⊗V, exactly.
+- **Q5c:** the monodromy M = Ř_{V*,V}Ř_{V,V*} on V⊗V* has exactly two eigenvalues, on 1 and 8;
+  report them and the octet projector P₈ as an element of span(1, e) (e the q-contraction).
+  This names a colour-adjoint **channel**; it does not select a gluon.
+- **Q5d:** the photon letters live on same-orientation strands, H_r(q) ⊂ walled Brauer; check that
+  σ₀σ₁⁻¹ on V⊗V⊗V commutes with colour (it must; Jimbo) — no colour-octet braid word.
