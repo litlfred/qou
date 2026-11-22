@@ -246,7 +246,14 @@ Follow-up (bean `qou-7t1n`): to state Schrijver honestly, `OperatorSelectionLP`
 needs its constraint data plus feasibility/boundedness/optimality predicates,
 and the duality result should be conditional on those. That is a genuine
 modelling task, not a transcription fix, and is deliberately not attempted
-inside an unsoundness repair. -/
+inside an unsoundness repair.
+
+**Done 2026-11-22** in `QOU.BraidKnot.LpDualityOperatorSelection`: with the
+constraint data now in `OperatorSelectionLP`, every feasible LP has an
+optimal pair with zero gap (`OperatorSelectionLP.exists_optimal_pair`, from
+compactness and the Farkas alternative), and `HasFiniteLPDuality.ofFeasible`
+builds the instance. That module imports the analytic Farkas development, so
+it is kept separate from this file. -/
 
 /-- Theorem 3 of `prop:confinement-nf-partial-proof`: the certified optimal
     pair has zero duality gap (a projection: this *is* the hypothesis). -/
