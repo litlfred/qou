@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:07Z
-updated_at: 2026-10-04T15:23:32Z
+updated_at: 2026-11-22T21:16:34Z
 parent: qou-aqfj
 ---
 
@@ -28,3 +28,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   On the number of hyperbolic 3-manifolds of a given volume
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [hodgson2012] as the citation key when you do it.
+
+
+## 2026-11-22 — remark drafted, PR #9127
+
+Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

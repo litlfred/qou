@@ -1,13 +1,13 @@
 ---
 # qou-fiaf
 title: Remark interpreting 2018SORUS020.pdf at computations/whitehead_c_sigma_torsion.py
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:26Z
-updated_at: 2026-10-04T15:23:36Z
+updated_at: 2026-11-22T21:16:34Z
 parent: qou-vva9
 ---
 
@@ -28,3 +28,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Reidemeister torsion on character varieties
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [benard2018] as the citation key when you do it.
+
+
+## 2026-11-22 — skipped
+
+Not done in PR #9127. The per-cusp factor 2^{(c-1)/2} this remark targets was retracted (see prop:one-loop-prefactor-provenance), so there is no live claim for it to interpret.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

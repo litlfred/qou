@@ -65,3 +65,10 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 ## 2026-11-21T13:00:00Z expo-remarks drain
 
 Not worked. Stays open per AGENTS 13a: its subject (Stokes data for Q_beta) is an open conjecture; a remark does not close it.
+
+
+## 2026-11-22 — no new block needed
+
+Checked during the library re-ingest (issue #9121): the remark this bean asks for is already in stokes-dt-bps-bridge.md, citing [murakami-y2022]. Status left as is; re-close only when the bean body says its work is done.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

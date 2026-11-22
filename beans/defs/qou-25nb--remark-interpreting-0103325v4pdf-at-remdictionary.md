@@ -1,13 +1,13 @@
 ---
 # qou-25nb
 title: Remark interpreting 0103325v4.pdf at rem:dictionary-flavor-layer
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:43Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-22T21:16:34Z
 parent: qou-aqfj
 ---
 
@@ -36,3 +36,10 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8439, closed o
 ## 2026-11-21T13:00:00Z expo-remarks drain
 
 Not worked. Superseded premise found: the bean asks to interpret the source at rem:dictionary via the 'trefoil electron / T(2,2k+1) leptons' reading. The owner ruling makes the electron sigma0 sigma1 sigma0 with Hopf closure (trefoil is backup only), so the remark as specified would restate a superseded identification. Needs re-scoping before anyone writes it.
+
+
+## 2026-11-22 — remark drafted, PR #9127
+
+Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

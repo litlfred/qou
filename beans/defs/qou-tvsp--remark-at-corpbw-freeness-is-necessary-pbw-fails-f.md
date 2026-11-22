@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T18:29:19Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-22T21:16:34Z
 parent: qou-q4oa
 ---
 
@@ -39,3 +39,10 @@ Waits on qou-pwd4. Remark to be phrased as reported by bokutchen2015pbw §3.7, p
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
 
 Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.
+
+
+## 2026-11-22 — deferred
+
+Not done in PR #9127. Waits on qou-pwd4, which changes the hypotheses of cor:pbw; the remark should land with or after that fix.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

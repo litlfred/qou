@@ -1,14 +1,14 @@
 ---
 # qou-20eh
 title: Remark interpreting 2507.13873v1.pdf at rem:lqg-adm-ashtekar-comparison
-status: todo
+status: in-progress
 pr: 8449
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:14Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:16:34Z
 parent: qou-aqfj
 ---
 
@@ -29,3 +29,10 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8449, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-22 — remark drafted, PR #9127
+
+Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
