@@ -176,3 +176,11 @@ cell.
    would be a selection unless it is derived.
 
 Default if nothing is decided: reading (ii) stays in force, as it is today in every producer.
+
+**Corroboration (sibling thread, bean `qou-91w7`, 2026-11-22).** That thread traced the canonical
+mass pipeline. Steps 1–8 lie in ℚ(q) and contain no c_q. c_q is defined as q⁻¹/ℏ_q, a ratio of two
+coupling weights, so it is dimensionless whenever ℏ_q is; and the CAL-2 pin needs ℏ_q to be a pure
+number. This makes the reading (i) conflict sharper. It also records a second issue, separate from the
+reading: the corpus attaches MeV to energies in two ways. E₀ = m_e·c_q²·ℏ_q is used for Q_β, the log
+binding and the n–p cell. The cheat-sheet's step-9 binding B = m_e·ρ·[…] carries no c_q². The two
+differ by c_q²ℏ_q; no ruling yet says which is canonical.
