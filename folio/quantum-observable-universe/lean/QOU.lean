@@ -326,6 +326,7 @@ import QOU.MathlibExt.PLPlanarCorner
 import QOU.MathlibExt.PLPlanarLexCorner
 import QOU.MathlibExt.PLPlanarCornerEar
 import QOU.MathlibExt.PLPlanarTwoEars
+import QOU.MathlibExt.PLPlanarEarRemoval
 import QOU.MathlibExt.PLSubdivide
 import QOU.MathlibExt.PLC1Estimates
 import QOU.MathlibExt.PLInscribed
