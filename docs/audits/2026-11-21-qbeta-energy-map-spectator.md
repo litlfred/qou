@@ -810,3 +810,22 @@ Neither target is within 10 %, so there is no near-match to flag.
 this weight family would need a free factor of about 2.1, which would be a fit. Not excluded: a
 vertex weight that is not a function of the Young channel alone, for example one that uses β_Bor on
 the quark strands (premise G) together with the lepton.
+
+## 30. Check against the owner working assumption m_p = m_n at q = 1 (2026-11-22)
+
+The owner working assumption (recorded on the m_n branch, PR #8804) is that m_p = m_n at q = 1, and
+that this should fall out of upstream work. Lean `QOneFlipSymmetry` / `FlipSymmetryAtOne` proves
+n − p = 0 at q = 1 for every braid-built functional. Here is how this PR's results stand against it.
+
+- **The dimensionless cell agrees.** Under premise G the two weights are q^{±1}·T
+  (`WeightSpaceNucleon.np_eq_cell`). Their log-ratio is 2 ln q, which is 0 at q = 1. The same holds
+  for the two vertex splits (§28, §29): both are O(h²) and vanish at q = 1.
+- **The MeV map does not settle it.** E₀ = m_e/(q(q − 1)) has a pole at q = 1, and the MeV cell
+  2E₀ ln q tends to 2m_e as q → 1, not to 0. So "m_p = m_n at q = 1" holds for the braid functional
+  in E₀ units, while the MeV statement at q = 1 is a statement about a singular unit. That gap is a
+  property of the CAL-1 map, not of the nucleon weights. It is recorded here and not resolved.
+- **Charge terms.** `NucleonChargeTerms.mirror_even_energy_cancels` (mirror-odd charges) gives 0 at
+  every q, so it is consistent. The adopted-SM self-energy c·Q² of `adopted_selfenergy_sign`
+  survives at q = 1 because q_u² ≠ q_d². It conflicts with the working assumption, and it was
+  already not adopted (wrong sign, §26). It is conditional on the SM charges, which the owner has
+  ruled must be derived.
