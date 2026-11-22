@@ -597,6 +597,12 @@ Why this is not evidence, stated plainly:
   why the pair word's trace should be Q_β/E₀.
 - The ruled z_D base on the ruled element stays at −43 %; this does not change it.
 
+**Owner ruling 2026-11-22 (decision card, option A "Record as coincidence"):** the
+0.7769 MeV value is recorded as a coincidence. It is not wired to any dashboard, ladder or
+content block, and no derivation route for "pair-word trace = Q_β/E₀" is opened on its
+strength. It may be revisited only if a derivation independently produces the pair word as
+the decay element.
+
 **12.7 Sibling checks (2026-11-22).** The ⁴He thread: no conflict. Its bond letter is
 Vᵢ³ = γ(0,0,qh)·γ(0,0,−q⁻¹h), the lone single-crossing interface letters were retired on
 2026-11-15, and the γ₃ factor should be traced with right-hand closure (#8800). The ε / Q_β
