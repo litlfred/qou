@@ -1,8 +1,9 @@
-The rigid structure $(\mathrm{ev}_A, \mathrm{coev}_A)$ is part of the
-QOU datum and is unique up to canonical isomorphism.  Given fixed
-$\Phi$, the composite
-$\mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A$
-is therefore uniquely determined as a morphism
-$\mathbf{1} \to \mathbf{1}$.  This composite is, by definition, the
-categorical trace $\mathrm{tr}(\Phi)$; hence
-$\mathfrak{S}_\Phi = \mathrm{tr}(\Phi)$ is unique.
+The canonical isomorphism $\varphi \colon D_1 \to D_2$ is the right
+adjoint mate of $\mathrm{id}_A$. Passing a mate through the
+coevaluation and the evaluation gives
+$(\mathrm{id}_A \otimes \varphi) \circ \mathrm{coev}_1 = \mathrm{coev}_2$ and
+$\mathrm{ev}_2 \circ (\varphi \otimes \mathrm{id}_A) = \mathrm{ev}_1$.
+Substitute both into the action computed with $D_2$. The factors
+$\mathrm{id}_A \otimes \varphi$ and $\Phi \otimes \mathrm{id}$ commute by
+the interchange law, and $\varphi^{-1} \circ \varphi = \mathrm{id}$
+cancels. What remains is the action computed with $D_1$.
