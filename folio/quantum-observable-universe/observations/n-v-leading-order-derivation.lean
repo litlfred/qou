@@ -86,6 +86,16 @@ noncomputable def N_v : ℝ := 3 * v_ew_real / m_e_real
          `conj:n-v-bring-action`,
          `conj:n-v-tower-depth-ninety`.
 
+    ## Comparison point, not a derived result (owner card 2026-11-22)
+
+    This theorem compares a model expression with MEASURED values: `v_ew_real`
+    and `m_e_real` are experimental inputs. It is kept in Lean as a labelled
+    comparison point (owner choice "Keep it in Lean, labelled", 2026-11-22).
+    The integers `40` and `90` were found by matching this measured ratio and
+    are NOT yet derived. Until bean `qou-5lib` derives them, they are a
+    selection against the target, and nothing downstream may cite this
+    theorem as a prediction.
+
     ## This was an `axiom` until 2026-09-03, and should never have been one
 
     `q_0_real`, `m_e_real` and `v_ew_real` are concrete decimal literals, so
