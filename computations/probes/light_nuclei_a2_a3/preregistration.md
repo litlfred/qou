@@ -45,3 +45,26 @@ as comparison fields only, never Lean and never any choice.
 
 All-pairs bonding at A = 3 (non-neighbour transport): on record in §6c (mpmath), not
 re-derived here. Many-body γγ vertices. A non-trace energy map.
+
+## Addendum, 2026-11-22: all-pairs bonds at A = 3
+
+Owner choice (thread, 2026-11-22): extend the result to all-pairs bonds at A = 3 on the same branch.
+
+**Disclosure.** Before this addendum was written, one cell was computed, ³H in order p n n with
+over transport, as a timing test. In it `tr_atom/tr_free − 1 = −y⁵(q⁴+q²+1)·P₃₆(q)/(q¹⁰(q²+1)²Dn²)`
+with `P₃₆(1) = −6`, and the exact trace is negative at `q = 2`. So the chain theorem does
+**not** carry over unchanged, and nothing below predicts a sign at every q.
+
+Objects: bonds on pairs (0,1), (1,2), (0,2), each `V³` placed as in the chain. The
+non-neighbour bond (0,2) is transported by `σ₂σ₃σ₄ · V³ · (σ₄σ₃σ₂)⁻¹` ("over") or by the
+reverse crossing signs ("under"), as in `he4_gg_all_pairs_probe.py`. Exact ℚ(q) on 9 strands.
+
+- **P5 (control).** At the proton pin, ³H p n n and ³He p p n in both variants reproduce the
+  all-pairs rows of `he4-gg-all-pairs.witness.json` (mpmath) to its printed digits, and unbind.
+- **P6 (no prediction).** For every order (³H: pnn, npn, nnp; ³He: ppn, pnp, npp) and both
+  variants, the factored closed form, the real roots of its sign-determining factor in
+  `q > 1`, and the q-intervals where `tr_atom < tr_free` (binding) are all reported. None is selected.
+- **P7 (control).** "Appended" and "arranged" placements give the same trace exactly
+  (in the mpmath witness they agree to 0 and 1.9e−62).
+
+No fit, no choice of order or variant, and AME is still comparison only.
