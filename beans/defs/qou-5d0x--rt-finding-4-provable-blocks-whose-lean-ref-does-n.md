@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-22T09:20:44Z
 parent: qou-ncxf
 ---
 
@@ -26,3 +26,6 @@ Next step: a full scan of all 435 sampled-population refs for this class.
 - Regex classifier over source, no elaboration: a candidate list, not verdicts. Per-block readings and any ref change wait for an owner yes (it is a sweep).
 - The 4 pass-1 cases are all still in the list on main.
 - Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md on main 2ae54ab40; list: L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, single-term trace, trefoil-primary electron, 'c_2 = −1 PROVED', χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean's premises or in the files it names.
+
+
+2026-11-22: centered-hecke-variance-positive is still unresolved on main; the repoint to centeredVariance_pos is now qou-g7nn (epic qou-uwyf, docs/audits/2026-11-22-lean-audit-snapshot-gaps.md §3).

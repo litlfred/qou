@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-11-20T09:10:00Z
+updated_at: 2026-11-22T09:20:44Z
 parent: qou-6qbv
 ---
 
@@ -268,3 +268,6 @@ re-work item 1. The file is also candid about it in its own docstring
 ## W8 note 2026-11-20 (PR #8533)
 
 `LevelSufficiency` is still a self-assuming projection on main. It cannot be fixed by a cited sorry: `markovTrace` is free `HasMarkovTrace.value` data, so `markovTrace P q = markovTrace P' q` is false for arbitrary instances. The only honest fix is to define the trace from the Hecke character tower (Jones' Markov property). Ledger verdict: genuine, disposition gap-needs-real-markov-trace.
+
+
+2026-11-22 (triviality snapshot regenerated on main, PR #8937): mass_tower_coefficient_stratification is NOT closed by the ladder any more, but its statement is unchanged and its proof is still `cases term <;> decide`. Plain simp does not unfold stratumDepth, so the ladder now misses a known vacuous declaration. The snapshot's closed count is therefore not a vacuity count. Possible fix: a `cases <;> decide` rung, or simp with the decl's own defs unfolded. Record: docs/audits/2026-11-22-lean-audit-snapshot-gaps.md §2. Epic qou-uwyf.
