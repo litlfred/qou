@@ -72,10 +72,22 @@ inert on `Delta_bind`. The part that can carry the shortfall is the INTERFACE
 SUBALGEBRA, which is a large narrowing of the open question — and it is the
 subalgebra the corpus's own `include_inter` switch already names.
 
-*** 🛑 THE DECIDING TEST IS BLOCKED, AND NO CONCLUSION IS DRAWN FROM ONE ATOM ***
+*** UPDATE 2026-11-22: THE DECIDING TEST NOW RUNS ***
 
-Whether an interface-supported `w` supplies the shortfall CONSISTENTLY is not
-answered here. `tr_m_atomic_mpfr` raises
+The block described below is gone. PR #8940 implemented Case C exactly in
+`hecke-engine`, and PR #8930 (which edited this witness) has merged, so the
+interface candidate is evaluated at every prepared atom (2H, 3H, 3He, 4He at
+the default `QOU_MAX_TERMS`). Read its spread from the committed witness, not
+from this docstring. The numbers quoted above are from the 2026-09-05 run and
+do NOT match the current run (for example the 2H `dtr_pred` and the sigma_1
+ratio both moved); they are kept as a record and are not re-derived here. The
+witness is authoritative. The anti-fit rule is unchanged: a spread is a target for a
+future derivation, never a derivation.
+
+*** (HISTORICAL) THE DECIDING TEST WAS BLOCKED ***
+
+Whether an interface-supported `w` supplied the shortfall CONSISTENTLY was not
+answered here. `tr_m_atomic_mpfr` raised
 
     RuntimeError: tr_m_word_lq: Case C (multiple top-1 in segment) not
     implemented
@@ -389,7 +401,7 @@ def main() -> int:
         print(f"    {r['w']:<22} ratio tr(D.w)/tr(D) = {vals[0] if vals else '—'}"
               f"   atom-independent: {same}")
     if blocked:
-        print(f"\n  🛑 BLOCKED (tr_m_word_lq Case C), so NOT decided here:")
+        print(f"\n  🛑 BLOCKED (tr_m_word_lq Case C regression), so NOT decided here:")
         for k, v in blocked.items():
             print(f"    {k}: {v}")
 
@@ -401,9 +413,16 @@ def main() -> int:
     ok &= chk("inert_ratios_are_atom_independent",
               all(len({v[:12] for v in (r["ratio_to_w1"] or {}).values()}) == 1
                   for r in inert), True)
-    ok &= chk("deciding_interface_test_is_recorded_as_blocked_not_passed",
-              bool(blocked), True,
-              "one atom is fitted by construction; the n=9 evaluation is needed")
+    # Until 2026-11-22 this asserted the interface test was BLOCKED (Case C
+    # raised at n = 9). PR #8940 implemented Case C exactly in hecke-engine and
+    # PR #8930 (which edited this witness) has merged, so the test now runs at
+    # every prepared atom. A Case C RuntimeError reappearing is a regression,
+    # and the assertion fails on it rather than recording it as expected.
+    ok &= chk("deciding_interface_test_evaluated_at_every_atom",
+              not blocked, True,
+              "Case C is implemented (PR #8940), so the interface candidate is "
+              "evaluated at every prepared atom; its spread is the verdict, and "
+              "no candidate is promoted on it")
     ok &= chk("shortfall_measured_at_every_prepared_atom",
               sorted(shortfall) == sorted(atoms), True)
     ok &= chk("framework_supplies_well_under_half_of_binding",
