@@ -215,3 +215,24 @@ representation alone. The sign alternates on the hook, so it does not zero `(2,1
 Lean: lean-direct exit 0, axioms `propext, Classical.choice, Quot.sound`. Still open:
 a construction that zeros the hook block and gives the two one-dimensional blocks
 opposite signs.
+
+## 10. The Young projector trace (owner picked option 3, 2026-11-22)
+
+`τ = χ_(3) − χ_(1³)` has weights `(1, 0, −1)` by definition. The question is whether
+anything natural produces it. Three results, the probe now 13/13:
+
+1. **`τ` is not a Markov trace.** `τ(1) = 0` but `τ(σ₂) = [2]_q`, so no `z` gives
+   `τ(xσ₂) = z·τ(x)` on `H₂`. It cannot come from the usual normalised link trace.
+2. **`τ` is the `gl(1|1)` supertrace on the two extremal sectors.** `Ř` preserves
+   the number `k` of odd tensor factors in `V^{⊗3}`. The supertrace of sector `k` has
+   weights `(1,0,0)`, `(−1,−1,0)`, `(0,1,1)`, `(0,0,−1)` for `k = 0, 1, 2, 3`. So the
+   all-even plus all-odd sectors give exactly `τ`, and the mixed sectors give `−τ`,
+   which is why the full supertrace is zero (§9).
+3. **No single super vector space gives `τ`**
+   (`QOU/AlphaEM/YoungTraceNoSuperDimension.lean`,
+   `no_superdim_gives_young_trace`, lean-direct exit 0, standard axioms). At `q = 1`
+   the Schur-functor dimensions `d(d+1)(d+2)/6`, `d(d−1)(d+1)/3`, `d(d−1)(d−2)/6`
+   are never `c·(1, 0, −1)` with `c ≠ 0`.
+
+Still open: why the photon would select the extremal sectors. Nothing above ties the
+two; Finding A (§9) only shows that `τ(γ) = (φ₀ + φ₁)[2]_q`.
