@@ -74,7 +74,7 @@ stated in the source and was not re-checked here.
 | C5 | Δ_pp mirror split ³H/³He | two carriers give opposite signs of log(1−h) | bond writhe | open, bean `qou-fi1p` | bean |
 | E1 | Mayer b₃ | b₃ < 0 for every bond triple in (0,1) | needs a pn bond above 1 | **closed (b)** for bonds in (0,1) | `UrsellPartitionFunctionB3` |
 | E2 | fusion Q (D+T) | −0.3 vs +17.6 MeV | follows C4, E1 | open | scorecard |
-| F1 | GMO, Σ isospin split | sign follows u, d, s order | flavour order | order not derived | #8957 |
+| F1 | GMO, Σ isospin split | sign follows u, d, s order | flavour order = letter order (measured, below) | order not derived; one convention with C1–C5 | #8957; `flavour_order_letter_order_probe.py` |
 
 Not sign issues but they rescale MeV rows: the c_q² reading (bean `qou-91w7`, a factor 82.68)
 and the −12 m_e coefficient.
@@ -84,8 +84,12 @@ and the −12 m_e coefficient.
 - **One letter order (rows C1, C2, C3, C4, C5).** Chirality, side and reflection are the same
   choice by §1. The ι map that separates the two α_em sectors (C3) is the same map that
   separates the two bond chiralities. With the photon ruling read as "invert the larger letter"
-  and the tower reading for the side, all five are fixed together. Hypothesis, untested: the
-  flavour order F1 is the same letter order on more strands.
+  and the tower reading for the side, all five are fixed together. The flavour order F1 is the
+  same convention, measured exactly on the octet operator of #8957: building the Jucys–Murphy
+  elements from the other end of the strand line (strand reflection) gives the same five masses
+  as reversing the flavour order u<d<s → s<d<u, for isospin-symmetric weights, and it flips the
+  GMO sign (+0.01854 → −0.01839 of Ξ − N at q₀). Λ stays above Σ in both, so the wrong Σ–Λ
+  order is not a sign convention (`flavour_order_letter_order_probe.py`).
 - **One p/n bit (rows A1–A6).** A single bit decides every n − p sign. The corpus contradicts
   itself on whether it is derived (A4). PR #8800 §21 reports (exact sympy) that the order of the basis
   vectors e₁, e₂ of V is the same choice as the letter order on the Hecke side, so the p/n bit
@@ -100,4 +104,5 @@ and the −12 m_e coefficient.
 2. Decide whether the photon ruling `σ₀σ₁⁻¹` is meant as "invert the larger letter". If yes,
    C1 and C4 are fixed and the ⁴He chain unbinds by −0.862 keV.
 3. A4 is reconciled by PR #8800 §21, modulo the definition "u passes over".
-4. Test the flavour-order hypothesis in §4 (F1) the same way.
+4. F1 is now measured to be the same convention (§4). What is left is a derivation of the
+   letter order itself, plus the two definitions it rests on.

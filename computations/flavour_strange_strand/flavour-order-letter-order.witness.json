@@ -1,0 +1,27 @@
+{
+  "q0Anchor": "proton",
+  "q0AnchorReason": "evaluation at the proton 50-digit pin only; all algebra exact in Q(q)",
+  "hypothesis": "flavour order = letter order (sign table row F1)",
+  "runs": {
+    "u<d<s": {
+      "gmo_over_xi_minus_n": "(q - 1)**2*(q + 1)**2*(2*q**2 + 3)/((q**2 + 3)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "at_q0": "0.0185399428230609",
+      "Sigma_minus_N_over_xi_minus_N_at_q0": "0.421932210576944",
+      "Lambda_minus_N_over_xi_minus_N_at_q0": "0.519842615533332"
+    },
+    "s<d<u (flavour order reversed)": {
+      "gmo_over_xi_minus_n": "-(q - 1)**2*(q + 1)**2*(3*q**4 + q**2 + 1)/(2*q**8 + 4*q**6 + 3*q**4 + q**2 + 2)",
+      "at_q0": "-0.0183853514056944",
+      "Sigma_minus_N_over_xi_minus_N_at_q0": "0.431301207586489",
+      "Lambda_minus_N_over_xi_minus_N_at_q0": "0.529028047939735"
+    },
+    "u<d<s, strands reflected": {
+      "gmo_over_xi_minus_n": "-(q - 1)**2*(q + 1)**2*(3*q**4 + q**2 + 1)/(2*q**8 + 4*q**6 + 3*q**4 + q**2 + 2)",
+      "at_q0": "-0.0183853514056944",
+      "Sigma_minus_N_over_xi_minus_N_at_q0": "0.431301207586489",
+      "Lambda_minus_N_over_xi_minus_N_at_q0": "0.529028047939735"
+    }
+  },
+  "reflected_strands_equal_reversed_flavour_order": true,
+  "reversal_flips_gmo_sign": true
+}
