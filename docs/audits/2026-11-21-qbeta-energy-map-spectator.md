@@ -815,7 +815,9 @@ the quark strands (premise G) together with the lepton.
 
 The owner working assumption (recorded on the m_n branch, PR #8804) is that m_p = m_n at q = 1, and
 that this should fall out of upstream work. Lean `QOneFlipSymmetry` / `FlipSymmetryAtOne` proves
-n − p = 0 at q = 1 for every braid-built functional. Here is how this PR's results stand against it.
+n − p = 0 at q = 1 for every braid-built functional (sorry-free; tracked as bean `qou-az9l`).
+α_EM terms fall outside that theorem and do not vanish at q = 1 (PR #8804 §40). Here is how this
+PR's results stand against it.
 
 - **The dimensionless cell agrees.** Under premise G the two weights are q^{±1}·T
   (`WeightSpaceNucleon.np_eq_cell`). Their log-ratio is 2 ln q, which is 0 at q = 1. The same holds
