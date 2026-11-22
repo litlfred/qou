@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T17:17:11Z
-updated_at: 2026-11-22T21:20:33Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-9nnz
 ---
 
@@ -22,3 +22,9 @@ parent: qou-9nnz
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `7bdbcf1724` ("port #8186: ..."), which names this bean. Verified on main: `bond_edge_set_selection_probe.py:71` `_dp` now serializes through `_precision.fmt` at full precision, and `bond-edge-set-selection.witness.json` holds 0 JSON floats.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE, with a scope flag.** The fix (verdicts computed from mpf, not rounded float64) stands. The bond edge set it selects among rests on the pre-2026-11-15 interface letters, now superseded by the γγ rule, so its verdicts are records of that model.

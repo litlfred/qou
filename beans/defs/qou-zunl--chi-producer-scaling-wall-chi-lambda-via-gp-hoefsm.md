@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:25:54Z
-updated_at: 2026-11-22T21:21:50Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-5vkl
 ---
 
@@ -28,3 +28,9 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 This bean's own 2026-09-08 entry says `qou-s7ld` is the live carrier and this bean its twin. The work it records is on main: `e0c4820d21` (the wall is the GP minimal-length reduction; dim-free path-sum route), `07d6584d94` and `80102e6cec` (caches regenerated on the borromean word), `43e3e1b305` (audit). What is still open (reduction complexity class; the four stale deltalambda consumers; level-locality, answered negatively in `8801d04bd2`) lives on `qou-s7ld` and `qou-sv7h`, which are in the L2 binding area and were not touched here. Scrapped, not completed, so the open items are read from the live carrier only.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: SUPERSEDED-BY qou-s7ld** (same finding). Scrap stands.

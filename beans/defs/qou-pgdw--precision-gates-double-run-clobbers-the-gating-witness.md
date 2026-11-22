@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T21:10:00Z
-updated_at: 2026-11-22T21:19:32Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-9nnz
 ---
 
@@ -78,3 +78,9 @@ https://github.com/litlfred/qou/pull/5123#issuecomment-5304213117
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 Re-checked: `computations/witness_raw_float64_audit.py:131` `_output_name(scan_root)` and `:76` `_baseline_path(scan_root)` give every non-default `--scan-root` its own witness and baseline, so the advisory runs at `scripts/precision-gates.sh:399` and `:430` no longer write the gating run's file (`:78`). The 2026-11-15 entry verified the same and kept the bean open only for owner review; nothing in the body names remaining work. Not one of the six reds PR #9105 is fixing.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (closure stands).** The bean is about tooling or arithmetic precision (gates, audits, float64 paths, provenance, tracker structure). Its premises name no physics object, convention, anchor or particle assignment, so none of the retired premises (σ₀σ₁ photon, trefoil electron, convention C, the z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges) or today's rulings (strand colour states, b = −qX, the fixed constant term 1 of the photon, the block U(1)_em charge) bear on it. What landed still answers its question.

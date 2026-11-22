@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T09:21:45Z
-updated_at: 2026-11-22T21:20:33Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-9nnz
 ---
 
@@ -76,3 +76,9 @@ warning is not the fix.
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `2eb92b6a36` ("port #8178: ..."), which names this bean. Verified on main: `computations/y_lambda_wenzl_bridge.py` has 9 `workdps` scopes and 0 bare `mp.mp.dps = dps` assignments, so callers keep their precision.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (closure stands).** The bean is about tooling or arithmetic precision (gates, audits, float64 paths, provenance, tracker structure). Its premises name no physics object, convention, anchor or particle assignment, so none of the retired premises (σ₀σ₁ photon, trefoil electron, convention C, the z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges) or today's rulings (strand colour states, b = −qX, the fixed constant term 1 of the photon, the block U(1)_em charge) bear on it. What landed still answers its question.

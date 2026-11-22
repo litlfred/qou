@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-11-20T08:00:00Z
-updated_at: 2026-11-22T21:22:54Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-c20n
 pr: 8110
 ---
@@ -25,3 +25,9 @@ Created by W6, https://claude.ai/code/session_01VQDpPgX3UVCddvq75ab4EV
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The triage subject, PR #8110, was closed 2026-11-21 as superseded. Its content reached main via port commit \`9915906cf67\`. Nothing left to triage.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (PR verdict given).** PR #8110 was superseded by port `9915906cf67`. The co-Casimir content itself belongs to the L2 program tree; its applicability under today's rulings is for those owners.

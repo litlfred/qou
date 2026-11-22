@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T20:01:42Z
-updated_at: 2026-11-22T21:18:22Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-wp3h
 ---
 
@@ -112,3 +112,9 @@ manuscript sees the other.**
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The 2026-08-30 resolution (keep both declarations, document the collision) is on main: `folio/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean:123-138` names the content-block sibling and `eaebcc286c4`, and `folio/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean:120-127` names the compiled module. The bean asked for no other action. The conjecture inside the file (`fits_AME`) is not this bean's subject; this bean tracked the duplicate declaration only.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE for the declaration collision, NEEDS-OWNER flag on the object.** The collision is documented in both files as the bean's resolution asked. Separately, the class carries a `fits_AME` field: a conjecture that a q-integer formula fits AME atomic masses. Under the absolute-mass excision (2026-08-11, qou-exam) and the no-fitting rule, whether that conjecture should still exist is open. Not acted on; flagged for the mass-theory owners.

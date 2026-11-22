@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T13:08:55Z
-updated_at: 2026-11-22T21:19:32Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-9nnz
 ---
 
@@ -82,3 +82,9 @@ local regeneration rather than commit it.
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The Round 51 work (PR #8186) reached main as `7bdbcf1724` "port #8186: Fix raw float64 ... (qou-wc9f, qou-f2pf, qou-5k8x, qou-4pmk, qou-ah1m)" on 2026-11-21. Measured today: `computations/he-nu-sdp-saturation-obstruction.witness.json` holds **0** JSON float values (walked the whole document), against the 11 this bean recorded.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (closure stands).** The bean is about tooling or arithmetic precision (gates, audits, float64 paths, provenance, tracker structure). Its premises name no physics object, convention, anchor or particle assignment, so none of the retired premises (σ₀σ₁ photon, trefoil electron, convention C, the z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges) or today's rulings (strand colour states, b = −qX, the fixed constant term 1 of the photon, the block U(1)_em charge) bear on it. What landed still answers its question.

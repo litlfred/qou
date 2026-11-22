@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-11-22T21:18:22Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-5vkl
 ---
 
@@ -1059,3 +1059,9 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF.
 
 Owner ruling 2026-11-22, recorded in AGENTS.md (line 1288, rule 7, and line 1493, Phase 1b): *"co-pilot review is no longer required. We are using audit checks."* This bean measured whether Copilot review arrives because it was "AGENTS.md rule 10's last surviving Phase-4 gate". With the gate removed, nothing waits on the answer. The measurements above stay as history of why the gate was dropped. Scrapped rather than completed: the arrival mechanism was never settled.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: SUPERSEDED-BY the owner ruling of 2026-11-22** (Copilot review no longer required; audit checks replace it). Scrap stands.

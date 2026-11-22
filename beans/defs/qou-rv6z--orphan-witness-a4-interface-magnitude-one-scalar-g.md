@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T11:21:24Z
-updated_at: 2026-11-22T21:18:22Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-5vkl
 ---
 
@@ -66,3 +66,9 @@ Was in-progress with no bean update since 2026-08-30 and no main commit naming i
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The orphan this bean names now has a producer: `computations/deltalambda/a4_interface_magnitude_one_scalar_gate.py` sits beside `a4-interface-magnitude-one-scalar-gate.witness.json` on main, as the "RESOLVED 2026-08-30" entry says. Nothing in the body names further work; the status was left in-progress by the 2026-10-04 claim reset.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE.** The witness it fixed carried a stale convention-C z; removing that is consistent with the convention D ruling.

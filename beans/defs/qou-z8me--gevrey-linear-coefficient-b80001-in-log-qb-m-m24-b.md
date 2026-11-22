@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-11-22T21:18:45Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-frzo
 ---
 
@@ -77,3 +77,9 @@ Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against
 
 The question (is the linear coefficient exactly 8?) is answered on main by `ffbd9f4dbe` (PR #8857): `folio/quantum-observable-universe/lean/QOU/Mathlib/C1GevreyLinearCoeff.lean`, `linear_coeff_tendsto` (line 386) and `c1_linear_coeff_of_nonneg_init` (line 478), no `sorry` in the file. B = (1 − log_q(q − q⁻¹))/2; the 8 was a coincidence of evaluation at the probe q.
 The proof's stated scope (positive solutions; sign-changing or complex data not proved) is a narrower open question, not this bean's. File it separately if wanted.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE.** The question is pure mathematics about the C1 recurrence `[m+2]_q b_{m+2} = b_{m+1} + b_m`, and `C1GevreyLinearCoeff.lean` answers it sorry-free for positive solutions. Caveat: the recurrence came from the c₃ ladder work, which is convention-C frame and must be re-derived under D (qou-cds1). That does not affect the theorem, but it does mean this result is not evidence for any c_k value under convention D.

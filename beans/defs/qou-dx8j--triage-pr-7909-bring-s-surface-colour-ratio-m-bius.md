@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-11-20T08:00:00Z
-updated_at: 2026-11-22T21:22:54Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-c20n
 pr: 7909
 ---
@@ -25,3 +25,9 @@ Created by W6, https://claude.ai/code/session_01VQDpPgX3UVCddvq75ab4EV
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The triage subject, PR #7909, merged 2026-11-21 (07:45Z). Nothing left to triage.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (PR verdict given by merge), with a flag.** PR #7909 merged 2026-11-21 and added `colour-ratio-branch-point` and `colour-ratio-mobius-matrix` under brings-surface. Their "colour" is the root of the colour tube cubic on Bring's surface. They predate today's working assumption that the three strand states are the three colours (2026-11-22) and today's colour braiding ruling. Whether the two readings of colour agree is for the strand-colour work (#9107) to check; flagged there, not reopened here.

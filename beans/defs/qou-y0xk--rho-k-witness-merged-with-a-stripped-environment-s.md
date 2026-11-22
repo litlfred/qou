@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:53:31Z
-updated_at: 2026-11-22T21:19:02Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-5vkl
 ---
 
@@ -44,3 +44,9 @@ both this and the derivation-chain case at write time.
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 `2a06df4f53` (2026-08-19) "fix(rho-k): restore the environment I stripped off this witness" is the re-run this bean asks for. The witness was re-run again on 2026-10-05 under the ruled β_Bor word (`b23b96cdfe`, owner-approved), so the merged-in stripped block is gone from main. The WitnessBuilder.save() preflight is named as "worth doing", not as this bean's task; file it on its own if wanted.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (closure stands).** The bean is about tooling or arithmetic precision (gates, audits, float64 paths, provenance, tracker structure). Its premises name no physics object, convention, anchor or particle assignment, so none of the retired premises (σ₀σ₁ photon, trefoil electron, convention C, the z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges) or today's rulings (strand colour states, b = −qX, the fixed constant term 1 of the photon, the block U(1)_em charge) bear on it. What landed still answers its question.

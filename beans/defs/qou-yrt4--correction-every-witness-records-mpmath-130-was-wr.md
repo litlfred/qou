@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T20:20:48Z
-updated_at: 2026-11-22T21:19:02Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-5vkl
 ---
 
@@ -64,3 +64,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8510, closed o
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 This bean exists to correct a claim in commit `6b6f823381` where a reviewer can find it. That is done (the body above). It names no further task: the mpmath 1.4.1 migration it points to is tracked by `computations/audits/regen-mpmath141-ledger.json`, and the branch it warned is long merged or closed. The "Round 96" entry cites batch PR #8510, closed on 2026-11-20; nothing here rests on it.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (closure stands).** The bean is about tooling or arithmetic precision (gates, audits, float64 paths, provenance, tracker structure). Its premises name no physics object, convention, anchor or particle assignment, so none of the retired premises (σ₀σ₁ photon, trefoil electron, convention C, the z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges) or today's rulings (strand colour states, b = −qX, the fixed constant term 1 of the photon, the block U(1)_em charge) bear on it. What landed still answers its question.

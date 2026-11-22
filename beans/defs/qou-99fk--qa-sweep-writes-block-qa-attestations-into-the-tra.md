@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-10-10T07:37:59Z
-updated_at: 2026-11-22T21:18:22Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-5vkl
 ---
 
@@ -178,3 +178,9 @@ In-progress in Round 98 PR litlfred/qou#8442.
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF.
 
 The question this bean raised (should `test/attestations/` hold qa-sweep output, tracked and unignored) was decided by the owner on 2026-10-10, recorded in the section above: decision 6a (ofri), "leave `test/attestations/` and the in-tree `.qa.json` sidecars as they are". Nothing is left for an agent to do. The optional grep of the platform's write path is named as the step if the owner reopens the question; reopen this bean then.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (closure stands).** The bean is about tooling or arithmetic precision (gates, audits, float64 paths, provenance, tracker structure). Its premises name no physics object, convention, anchor or particle assignment, so none of the retired premises (σ₀σ₁ photon, trefoil electron, convention C, the z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges) or today's rulings (strand colour states, b = −qX, the fixed constant term 1 of the photon, the block U(1)_em charge) bear on it. What landed still answers its question.

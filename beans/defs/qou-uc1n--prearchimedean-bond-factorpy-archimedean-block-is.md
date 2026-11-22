@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T07:55:29Z
-updated_at: 2026-11-22T21:20:33Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-9nnz
 ---
 
@@ -47,3 +47,9 @@ energies to move in the last digits when it lands.
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `2eb92b6a36` ("port #8178: ..."), which names this bean. Verified on main: `prearchimedean-bond-factor.witness.json` holds 0 JSON floats; the archimedean block runs in mpf.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE, with a scope flag.** The precision fix stands. The bond factor this producer evaluates is on the single-crossing interface letters superseded 2026-11-15, so its outputs are records, not canonical numbers.

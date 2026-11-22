@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T14:56:24Z
-updated_at: 2026-11-22T21:20:33Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-9nnz
 ---
 
@@ -32,3 +32,9 @@ FIX (one producer): carry mp.mpf end to end — L = mp.log(tf/ta) with tf, ta as
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `ca6b5d6dd9` ("port #8170: ..."), which names this bean. Verified on main: `_bond_type_L` in `computations/binding_single_pipeline_comparison.py` has no `math.log`/`float(` left and uses `mp.log`.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE, with a scope flag.** The precision fix (float64 removed from `_bond_type_L`) stands and is what the bean asked for. But the object it computes, the pp/pn/nn log-suppression of the single-crossing interface letters of `atom_braid_word_3A`, is on a word the owner superseded on 2026-11-15 (γγ rule covers the nuclear bond letters; `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`). So the numbers this producer prints are records, not canonical. No reopening: a precision fix to a superseded producer is still correct.

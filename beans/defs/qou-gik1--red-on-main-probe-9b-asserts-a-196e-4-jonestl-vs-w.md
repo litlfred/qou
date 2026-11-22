@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T06:21:19Z
-updated_at: 2026-11-22T21:20:33Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-9nnz
 ---
 
@@ -114,3 +114,9 @@ witness itself).
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `adb97b5d36` ("port #8226: ..."), which names this bean. Verified on main: `probe_9b_perlambda_brane_tower.py:507-510` asserts `trace_convention_gap_recorded` with `expected="0", tolerance="1e-40"`, matching the convention-D result this bean measured.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE.** The fix enforces convention D (the gap closed to zero under D), consistent with current rulings.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T20:16:11Z
-updated_at: 2026-11-22T21:19:02Z
+updated_at: 2026-11-22T21:33:06Z
 parent: qou-5vkl
 ---
 
@@ -439,3 +439,9 @@ unverified.
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 This bean's census reached "0 outstanding" (the tally above). The 2026-09-13 entry records that the class refills, and hands the refill to `qou-lz8f` (in-progress, with the static detector `computations/audits/mpf_json_encoder_audit.py`). Keeping two open beans on one live class splits the record; the live one is `qou-lz8f`.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (closure stands).** The bean is about tooling or arithmetic precision (gates, audits, float64 paths, provenance, tracker structure). Its premises name no physics object, convention, anchor or particle assignment, so none of the retired premises (σ₀σ₁ photon, trefoil electron, convention C, the z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges) or today's rulings (strand colour states, b = −qX, the fixed constant term 1 of the photon, the block U(1)_em charge) bear on it. What landed still answers its question.

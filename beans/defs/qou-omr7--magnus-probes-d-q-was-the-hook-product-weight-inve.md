@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:40:28Z
-updated_at: 2026-11-22T21:18:21Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-m6dn
 ---
 
@@ -289,3 +289,9 @@ This bean's subject is mechanical (a weight inverted in four probes), so rule 13
 
 The "Round 91" entry above cites batch PR #8343, closed as vacuous on 2026-11-20; nothing here rests on it.
 The Magnus-sign mathematics (A2/A3/A4 sign, Delta_lambda gate) is NOT this bean's subject and stays with qou-x631 / qou-za3q.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE (closure stands).** The bean is about tooling or arithmetic precision (gates, audits, float64 paths, provenance, tracker structure). Its premises name no physics object, convention, anchor or particle assignment, so none of the retired premises (σ₀σ₁ photon, trefoil electron, convention C, the z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges) or today's rulings (strand colour states, b = −qX, the fixed constant term 1 of the photon, the block U(1)_em charge) bear on it. What landed still answers its question.

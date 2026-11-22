@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:55:41Z
-updated_at: 2026-11-22T21:18:22Z
+updated_at: 2026-11-22T21:33:07Z
 parent: qou-10v9
 ---
 
@@ -74,3 +74,9 @@ Was in-progress with no bean update since 2026-09-05 and no main commit naming i
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 This bean's task is the sweep, and the section above records it done: 22 producers, 8 fixed, 3 deliberately unchanged with reasons, 10 unaffected, 1 excluded. The audit `docs/audits/2026-09-05-plancherel-weight-sweep.md` is on main. The 3 "deliberately unchanged" are stated decisions, not unfinished work. The bean was left in-progress only by the 2026-10-04 claim reset.
+
+## 2026-11-22 — Applicability review (owner instruction 2026-11-22, bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Retroactive review of this pass's closure against `docs/coordination/owner-rulings.md` on main `3c4c98fccf3`.
+
+**Verdict: ALREADY-DONE, with a scope flag.** The sweep finished. Note the owner ruling of 2026-09-05 (re-affirmed 2026-09-08): the canonical Φ_k weight is Molien, with d_q²/D² as a labelled comparison arm. The sweep's self-normalised fixes are fine outside Φ_k, where the family is a declared choice, but any of its 8 fixed producers that feeds Φ_k must declare Molien. Not re-checked here; that belongs to the L2 / Φ_k owners (qou-oots).
