@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-11-18T08:59:30Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-o9ge
 ---
 
@@ -55,3 +55,9 @@ stand, and the `PresentedGroup` construction is the right one.
 Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F6, §U3.
 
 - Round 76 (`lane-e667`): Formalized `qou-gmfz`, `qou-img9`, `qou-phir`, `qou-siin`, `qou-l25z` in `QOU.Foundations.TriangularBarInvolutionLengthTwoQuadraticDefectRightMultiplicationDichotomyRootParameterRescalingWritheHomomorphism` with 80-dps `mpmath` 2-commit witness stamp (`1d514d8cc14cab86cdbfe50f0bca4313a91a6db7` -> `8fbc40e0a853ba6aa21eab5cf4d1947155a2d115`, `scriptHash=b5b4b562fbd04cd73aa5a68e31eebc858e55abd805cb24915d3a249d657d689c`) in PR `litlfred/qou#8409` (`status: in-progress`).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Corpus-derived comment fix.
+
+Fixed on `claude/qft-math-cores-2026-11-22` (ec47dde8f): BraidGroup.lean now says 0 files match `BraidGroup` and names the four `*braid*` category files. Re-measured 2026-11-22. Completes when merged.

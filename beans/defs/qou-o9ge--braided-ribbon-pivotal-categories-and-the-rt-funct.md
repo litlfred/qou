@@ -6,7 +6,7 @@ type: epic
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:08Z
-updated_at: 2026-11-18T10:57:30Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-rtxm
 ---
 
@@ -24,3 +24,9 @@ Sub-epic P3.CAT of Lean / Mathlib foundations (work-plan reorganisation 2026-10-
 - Round 80 (`lane-e667`): Formalized `bwrt`, `bwse`, `rtkb`, `rtqd`, `rtrb` in `QOU.Foundations.CategoricalQuantumDimensionVacuumRowModularPartitionSumSurgerySlideInvariancePivotalDualTraceRibbonBalancing` with 80-dps `mpmath` 2-commit witness stamp (`9665213be334ca01449913d997dcaa05341cba29` -> `bbf00cfbf597a3ca40051aee20f1eda6cf87da89`, `scriptHash=7b699b4f4747b371a7a9fb79fd09f0b495a31a2b2d536d50c421ec2b24457967`) in PR `litlfred/qou#8433` (`status: in-progress`).
 
 - Round 81 (`lane-e667`): Formalized `rttg`, `qou-50vf`, `qou-aezg`, `qou-dcvv`, `qou-fwah` in `QOU.Foundations.FramedTangleSnakeCoherenceFourTermChordRelationSingularResolutionAlternationFiltrationProfileShiftCubePairBoundaryLift` with 80-dps `mpmath` 2-commit witness stamp (`202f38f5def66efc61fb7c2f38594348be909ef6` -> `8be6d39b672d7e4c20d56580366adaf778190be7`, `scriptHash=08594954abfff6ef5f50f03f78c3a5e07152d5280835430790282602d58a4a45`) in PR `litlfred/qou#8437` (`status: in-progress`).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Epic; rtrb completed this pass.
+
+The 'Round N (lane-e667)' notes above cite batch PRs that are not merged (#8283, #8298 closed unmerged; #8300, #8382, #8409, #8433, #8437, #8487 open, part of the W4 batch triage, PR #8531) and whose modules are not on main, so they are not evidence of progress.

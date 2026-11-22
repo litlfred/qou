@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: critical
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-21T12:15:00Z
+updated_at: 2026-11-22T22:05:00Z
 ---
 
 Master epic proving why continuum Feynman perturbation theory arises as the IR effective limit (Q^2 << E_Pl^2, u = m^2 T_min ~ 10^-45) of QOU's ribbon-braid worldlines, and reproducing momentum-dependent QFT observables ((g-2)_e, LHC alpha_s(Q^2), unpolarized & polarized DIS) with zero fitting.
@@ -23,3 +23,9 @@ Superseded basis found: Feynman perturbation theory relies on virtual quanta, ex
 Previous title: 'EPIC: Perturbative QFT Subsumption & Worldline-Schwinger-Feynman Functor ((g-2)_e, alpha_s(Q^2), DIS, Cutkosky Unitarity)'
 
 Owner chose re-scope. Scope now: pure-mathematics statements that a Feynman/QFT reading uses, stated over generic rings where possible. Out of scope: any comparison with CODATA/PDG/LHC/DIS data inside a formal statement; any construction that needs virtual quanta (owner ruling 2026-11-21: no virtual photons); transcribing other people's loop coefficients. Each child carries its math target below. The QOU-specific step (that the framework produces a given structure) is stated as a conjecture, not assumed.
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Epic re-scoped to math only on 2026-11-21; consistent with the no-virtual-quanta ruling.
+
+Wave-2 drain: five of seven children have Lean on `claude/qft-math-cores-2026-11-22` (df504460b); txc1 not started (charge boundary), qou-bgq9 partial.

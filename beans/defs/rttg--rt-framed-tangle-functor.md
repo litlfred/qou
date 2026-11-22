@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-11-18T10:57:30Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-o9ge
 ---
 
@@ -67,3 +67,9 @@ Does NOT close `bwse` or `rttg`. Nothing wired to production; L2 unchanged (2/7)
 Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
 
 - Round 81 (`lane-e667`): Formalized `rttg`, `qou-50vf`, `qou-aezg`, `qou-dcvv`, `qou-fwah` in `QOU.Foundations.FramedTangleSnakeCoherenceFourTermChordRelationSingularResolutionAlternationFiltrationProfileShiftCubePairBoundaryLift` with 80-dps `mpmath` 2-commit witness stamp (`202f38f5def66efc61fb7c2f38594348be909ef6` -> `8be6d39b672d7e4c20d56580366adaf778190be7`, `scriptHash=08594954abfff6ef5f50f03f78c3a5e07152d5280835430790282602d58a4a45`) in PR `litlfred/qou#8437` (`status: in-progress`).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Scaffold (`KeystoneFramedTangleScaffold.lean`) is on main; the RT functor itself is multi-month Mathlib work.
+
+The 'Round N (lane-e667)' notes above cite batch PRs that are not merged (#8283, #8298 closed unmerged; #8300, #8382, #8409, #8433, #8437, #8487 open, part of the W4 batch triage, PR #8531) and whose modules are not on main, so they are not evidence of progress.

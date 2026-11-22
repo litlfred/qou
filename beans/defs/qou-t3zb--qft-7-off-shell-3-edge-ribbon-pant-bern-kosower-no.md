@@ -1,11 +1,11 @@
 ---
 # qou-t3zb
 title: 'QFT-7 (math): su(3) structure constants — Gell-Mann Fierz completeness, Jacobi identity, total antisymmetry of f^{abc}'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-19T16:48:45Z
-updated_at: 2026-11-21T12:15:00Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-3fjn
 ---
 
@@ -27,3 +27,9 @@ Superseded basis found: Feynman perturbation theory relies on virtual quanta, ex
 Previous title: 'QFT-7: Off-Shell 3-Edge Ribbon Pant / Bern-Kosower Non-Abelian Gluon Worldline Vertex V_3(T_1,T_2,T_3)'
 
 Target: Lie-algebra facts about su(3) in the Gell-Mann basis (Fierz completeness of λ^a, Jacobi for f^{abc}, S₃ antisymmetry, d^{abc} symmetry). Dropped: the off-shell Bern–Kosower gluon vertex and the Slavnov–Taylor identity as QFT objects (virtual gluons).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Re-scoped target is Lie algebra. Fierz completeness was already on main (`ColourStructureConstantCommutator.fierz`, strand-colour arc); reused read-only.
+
+Worked: `QOU/QFTMath/Su3StructureConstants.lean` on `claude/qft-math-cores-2026-11-22` (df504460b): orthonormality, f totally antisymmetric, d totally symmetric, completeness X = 2Σ tr(XTᵉ)Tᵉ derived from `fierz`, `[Tᵃ,Tᵇ] = iΣ fᵃᵇᵉTᵉ`, and the Jacobi identity `jacobi_f`. Standard axioms only.

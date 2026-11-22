@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-10-04T15:46:32Z
+updated_at: 2026-11-22T22:05:00Z
 parent: b9cj
 ---
 
@@ -28,3 +28,9 @@ Was in-progress with no bean update since 2026-08-02 and no main commit naming i
 
 
 Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: bwse full closure — RT ribbon-functor+Kirby calculus AND BW=Hecke MTC identification
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Umbrella for rtrb/rttg/rtkb/hkmt/bwhk; rtrb now done.
+
+

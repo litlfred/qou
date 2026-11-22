@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-11-16T18:35:00Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-rtxm
 ---
 
@@ -24,3 +24,9 @@ the identification bwhk becomes "BW output = THIS explicit MTC". Does NOT close 
   - `sl2z_modular_relations` and `ising_su2_level2_S_sq_eq_D_sq_id`: exact `SL₂(ℤ)` relations `S² = -I`, `S⁴ = I`, `(ST)³ = S²` and rank-3 `SU(2)₂` / Ising `(2S)² = 4I = D² C` (`D² = 1² + 1² + (√2)² = 4`).
   - `one_sub_mul_qIntegerPoly`, `qIntegerPoly_at_one`, and `qIntegerPoly_at_two_positive`: proves the telescoping identity `(1 - q)[k]_q = 1 - q^k` separating roots of unity (`q^k = 1`, `[k]_q = 0`, finite-rank `MTC_k` truncation) from `q ≥ 1` (`[k]_1 = k > 0`, `[k]_2 = 2^k - 1 > 0`, infinite-rank non-truncation at generic real `q₀ > 1`).
 - **50-dps / Exact Probe + Witness:** `computations/probes/bring_lifting_obstruction_routes_z2_vs_z_probe.py` and `.witness.json` (12/12 assertions passed, including 50-dps verification of `(ST)³ = p₊ S²`, `S² = C`, and `S_{0,a} = d_a / D` for `SU(2)₂` and `SU(2)₃`).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: NEEDS-OWNER.** Critical point: a modular tensor category has finitely many simples; at generic real q₀ > 1 the Hecke category has infinitely many ([k]_q > 0 for all k, the bean's own Part III note), so it is not modular there. Only a root-of-unity semisimplified quotient can be. The bean should be restated as "the semisimplified quotient at q = e^{2πi/ℓ} is modular, with S, T from the Markov trace", or scrapped if the root-of-unity side is off the derivation chain. The Part III module it cites (`Brings/BringLiftingObstructionRoutes.lean`) is not on main.
+
+Not worked.

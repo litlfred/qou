@@ -8,7 +8,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-27T00:30:00Z
-updated_at: 2026-11-17T10:22:30Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-o9ge
 ---
 
@@ -58,3 +58,9 @@ Landed in `QOU/BraidKnot/KeystoneN5LevelSixSuffices.lean`: `lean`-direct exit 0 
 
 ### Progress (Round 71 — PR litlfred/qou#8300)
 - Formalized in PR `litlfred/qou#8300` (`feat/round71-deltalambda-idempotent-ajtrefoil-n5-gbdepth-43c1`, Commit 1 `a2b0ac0a51416e015d2c71b026de5cf8836daab0`, Head `432940fd4ad329afd23f7d920528ba787ac8691a`, `scriptHash: 06c965f4587d`).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Level-6 reduction on main; the WRT = modular-data agreement itself remains open.
+
+The 'Round N (lane-e667)' notes above cite batch PRs that are not merged (#8283, #8298 closed unmerged; #8300, #8382, #8409, #8433, #8437, #8487 open, part of the W4 batch triage, PR #8531) and whose modules are not on main, so they are not evidence of progress.

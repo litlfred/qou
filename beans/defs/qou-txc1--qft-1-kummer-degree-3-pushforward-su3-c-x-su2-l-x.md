@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-21T12:15:00Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-3fjn
 ---
 
@@ -27,3 +27,9 @@ Superseded basis found: Feynman perturbation theory relies on virtual quanta, ex
 Previous title: 'QFT-1: Kummer Degree-3 Pushforward SU(3)_c x SU(2)_L x U(1)_Y / Z_6 & UV sin^2(theta_W) = 3/8'
 
 Target: (a) the group isomorphism S(U(3)×U(2)) ≅ (SU(3)×SU(2)×U(1))/Z₆; (b) for the standard embedding in SU(5), the trace ratio Tr(T₃²)/Tr(Q²) = 3/8 on the 5̄ ⊕ 10, as representation theory. (c) 'the Kummer degree-3 pushforward on Bring's surface yields this embedding' is the QOU content and is stated as a conjecture. No running, no comparison with measured sin²θ_W.
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: RESCOPE / NEEDS-OWNER.** Part (b), the 3/8 trace ratio on 5̄⊕10, fixes the hypercharge normalisation by the SM charge assignment; under the 2026-11-22 ruling (quark charges derived, not adopted) and with U(1)_em grading owned by PR #9123, it should be restated as a statement about the commutant of su(3)⊕su(2) in su(5) with the normalisation left as a parameter. Part (a) (S(U(3)×U(2)) ≅ (SU(3)×SU(2)×U(1))/Z₆) is pure group theory and APPLIES.
+
+Not worked this pass (boundary with the charge threads). Part (a) is the next math-only step.

@@ -1,11 +1,11 @@
 ---
 # qou-bgq9
 title: 'QFT-2 (math): 4T relations and the braid-to-chord-diagram jet (Drinfeld–Kohno / Kontsevich)'
-status: todo
+status: in-progress
 type: task
 priority: critical
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-21T12:15:00Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-3fjn
 ---
 
@@ -27,3 +27,9 @@ Superseded basis found: Feynman perturbation theory relies on virtual quanta, ex
 Previous title: 'QFT-2: 4T Braid-to-Chord Jet, SM 1-Loop Beta Multiplicities (7, 19/6, -41/10), (g-2)_e Pin Audit & DIS Valence Moments'
 
 Target: the 4T relations among chord diagrams and the associated graded of the braid group algebra (pure braids, Drinfeld–Kohno) as the target of the braid-to-chord jet. Dropped: SM 1-loop β multiplicities (defined by loops), (g−2)_e pin audit (CODATA comparison, virtual photons), DIS valence moments.
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Math-only target, no retired premise.
+
+Partial: `QOU/QFTMath/InfinitesimalPureBraid.lean` on `claude/qft-math-cores-2026-11-22` (df504460b) proves the Drinfeld–Kohno relations for transpositions in k[Sₙ] for every n (hence for every permutation representation). Still open: Kohno's theorem (𝔱ₙ = associated graded of ℤ[PBₙ]) and the link from the near relation to `QOU.KnotTheory.Vassiliev.FourTermRelation`.

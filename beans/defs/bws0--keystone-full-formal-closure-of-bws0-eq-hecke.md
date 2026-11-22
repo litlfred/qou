@@ -8,7 +8,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-27T00:30:00Z
-updated_at: 2026-10-04T15:10:39Z
+updated_at: 2026-11-22T22:05:00Z
 parent: b9cj
 ---
 
@@ -69,3 +69,9 @@ Was in-progress with no bean update since 2026-09-03 and no main commit naming i
 - **PR:** https://github.com/litlfred/qou/pull/8283 (head `f53a095b5ee34373c44ef4b0b400e85b12af4c1c`, Commit 1 `0e2f86d58bac8f2f07854f3515aabf15d9779cd3`)
 - **Lean 4 Module & Theorems:** `QOU/AlphaEM/MellorMelvinModDeltaAndBws0DegreeFourClosure.lean` (`bws0_mark6_a5_split_degree_four_vs_degree_five`)
 - **80-dps Witness:** `computations/probes/round56-mellor-melvin-bws0-stokes-dt-qholonomic.witness.json` (`scriptHash: d98411981e4d`, `allPassed: true`, `0` raw `float64`)
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: RESCOPE.** The Round-56 note on closed-unmerged PR #8283 is void. Closure condition as recorded: bwsc at level 6 (KeystoneN5LevelSixSuffices.lean is on main) plus bwse.
+
+The 'Round N (lane-e667)' notes above cite batch PRs that are not merged (#8283, #8298 closed unmerged; #8300, #8382, #8409, #8433, #8437, #8487 open, part of the W4 batch triage, PR #8531) and whose modules are not on main, so they are not evidence of progress.

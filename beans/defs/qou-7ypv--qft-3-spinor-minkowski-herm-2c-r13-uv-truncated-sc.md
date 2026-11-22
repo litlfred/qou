@@ -1,11 +1,11 @@
 ---
 # qou-7ypv
 title: 'QFT-3 (math): Herm₂(ℂ) ≅ ℝ^{1,3} with det the Minkowski form; SL₂(ℂ) acts by isometries (double cover of SO⁺(1,3))'
-status: todo
+status: in-progress
 type: task
 priority: critical
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-21T12:15:00Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-3fjn
 ---
 
@@ -31,3 +31,9 @@ Superseded basis found: Feynman perturbation theory relies on virtual quanta, ex
 Previous title: 'QFT-3: Spinor-Minkowski Herm_2(C) ~= R^{1,3}, UV-Truncated Schwinger Propagator & Pius-Sen Cutkosky Unitarity'
 
 Target: the real-linear isomorphism Herm₂(ℂ) ≅ ℝ⁴ under which det is the Minkowski quadratic form, and X ↦ AXA* for A ∈ SL₂(ℂ) preserves it, kernel ±1. Dropped: UV-truncated Schwinger propagator, worldline bubble and Cutkosky threshold (virtual loops).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Re-scoped target is pure linear algebra.
+
+Worked: `QOU/QFTMath/SpinorMinkowski.lean` on `claude/qft-math-cores-2026-11-22` (df504460b): `toHerm` is a real-linear bijection ℝ⁴ → Herm₂(ℂ), `det_toHerm` (det = Minkowski form), `det_conj`/`minkowski_conj` (SL₂(ℂ) isometries), `conj_mul` (left action), `conj_trivial_iff` (kernel exactly ±1). NOT proved: image = SO⁺(1,3) (surjectivity of the double cover). Standard axioms only.

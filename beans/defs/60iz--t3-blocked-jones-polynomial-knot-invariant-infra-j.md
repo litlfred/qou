@@ -9,7 +9,7 @@ tags:
     - tier3
     - reorg-2026-10-04
 created_at: 2026-06-25T17:06:54Z
-updated_at: 2026-10-04T15:14:04Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-rtxm
 ---
 
@@ -38,3 +38,9 @@ Was in-progress with no bean update since 2026-06-26 and no main commit naming i
 - Commit 1 (code + probe): `ac300d2c8e5f49854ec28ab33d09e033225201c1`
 - Commit 2 (`.witness.json`): `e92637de21c829df89a2f80bfc1da64dc805a438`
 - PR: https://github.com/litlfred/qou/pull/8487
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** `BraidKnot/JonesViaMarkovTrace.lean` is on main; `KnotTheory/JonesPolynomial.lean` still has `opaque jonesAt`. The Round-91 note cites open batch PR #8487, not evidence.
+
+

@@ -1,11 +1,11 @@
 ---
 # qou-qssg
 title: 'QFT-5 (math): Clifford algebra Cl(1,3) — Weyl/Dirac trace identities'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-19T16:48:45Z
-updated_at: 2026-11-21T12:15:00Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-3fjn
 ---
 
@@ -31,3 +31,9 @@ Superseded basis found: Feynman perturbation theory relies on virtual quanta, ex
 Previous title: 'QFT-5: Chiral Weyl-Dirac Clifford Algebra, Callan-Gross F_2 = 2x F_1, 1-Loop F_L Moments & Worldline DIS Cross-Section'
 
 Target: Cl(1,3) presentation, γ⁵ and the chiral projectors, and the standard trace identities (traces of products of 2 and 4 gamma matrices, odd traces vanish). Dropped: Callan–Gross, F_L moments, DGLAP kernels and the DIS cross-section (parton-model phenomenology and loop coefficients).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: APPLIES.** Re-scoped target is pure algebra; no retired premise.
+
+Worked: `QOU/QFTMath/CliffordTraces.lean` on `claude/qft-math-cores-2026-11-22` (df504460b). Proves the 2- and 4-gamma traces and odd-trace vanishing for any cyclic trace from the Clifford relation alone, the Weyl representation over any ring with i²=−1 (Kronecker form), γ⁵ properties, tr γ⁵ = tr γ⁵γ^μγ^ν = 0, chiral projectors. lean-direct exit 0; `#print axioms` standard only. Not done: tr(γ⁵γγγγ) = −4iε. Stays in-progress until the PR merges.

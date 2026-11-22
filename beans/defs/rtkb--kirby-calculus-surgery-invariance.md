@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-11-18T10:47:00Z
+updated_at: 2026-11-22T22:05:00Z
 parent: qou-o9ge
 ---
 
@@ -21,3 +21,9 @@ not achievable without first building a large 3-manifold-topology library. Candi
 (Reshetikhin-Turaev 1991; Turaev 1994) rather than formalize. Owner decision needed on ambition.
 
 - Round 80 (`lane-e667`): Formalized `bwrt`, `bwse`, `rtkb`, `rtqd`, `rtrb` in `QOU.Foundations.CategoricalQuantumDimensionVacuumRowModularPartitionSumSurgerySlideInvariancePivotalDualTraceRibbonBalancing` with 80-dps `mpmath` 2-commit witness stamp (`9665213be334ca01449913d997dcaa05341cba29` -> `bbf00cfbf597a3ca40051aee20f1eda6cf87da89`, `scriptHash=7b699b4f4747b371a7a9fb79fd09f0b495a31a2b2d536d50c421ec2b24457967`) in PR `litlfred/qou#8433` (`status: in-progress`).
+
+## 2026-11-22 — wave-2 applicability review (thread "Build ribbon categories and QFT math cores")
+
+**Verdict: NEEDS-OWNER.** Ambition question unchanged: build 3-manifold surgery + Kirby calculus or cite RT/Turaev. The 2026-11-21 ruling (knot theory built in Lean down to PL topology) covers knots, not Kirby calculus on 3-manifolds, so it does not settle this.
+
+The 'Round N (lane-e667)' notes above cite batch PRs that are not merged (#8283, #8298 closed unmerged; #8300, #8382, #8409, #8433, #8437, #8487 open, part of the W4 batch triage, PR #8531) and whose modules are not on main, so they are not evidence of progress.
