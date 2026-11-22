@@ -721,3 +721,32 @@ The coupling t is open, to come from the corpus α_EM, and is not fitted. The de
 
 **Scope.** Scope-(b) for the strand-level exclusion (Lean invariant: the Yang–Baxter entry). The
 hadron-level construction is a labelled input. Tower status: two blocks, n = 6. No empirical input.
+
+## §32 The block-data hypotheses of §28, discharged (2026-11-22, owner: "Fill gaps")
+
+§28's generic-q theorem (`QCasimirPairGenericQ.lean`) took two hypotheses about one nucleon block:
+its K-weighted core trace is k·τ and its Casimir-inserted trace is k·(μ − (qk + (qk)⁻¹)·τ), with the
+same τ and μ on the proton sector (two u) and the neutron sector (one u). Those are now proved, for
+any word in σ₀^{±1}, σ₁^{±1} on the block's three strands, over any field with q ≠ 0
+(`BlockChargeSectorTrace.lean`, sorry-free, axioms propext / Classical.choice / Quot.sound only).
+
+- **The sector matrices.** On the one-u sector (udd, dud, ddu) the Jimbo braiding gives σ₀ ↦ A0,
+  σ₁ ↦ A1, with A0 = [[0,1,0],[1,h,0],[0,0,q]] and A1 = [[q,0,0],[0,0,1],[0,1,h]]. On the two-u
+  sector the roles swap: σ₀ ↦ A1, σ₁ ↦ A0 (`block_sector_matrices_probe.py`, exact sympy).
+- **Why the traces agree.** Δ = A0·A1·A0 intertwines the two letters, A1·Δ = Δ·A0 and A0·Δ = Δ·A1,
+  and det Δ = −q³ ≠ 0. So every word on the two-u sector is Δ times the same word on the one-u
+  sector times Δ⁻¹, and the traces are equal (`intertwine`, `det_Δ`, `sectorTrace_eq`). This is the
+  braid-group Garside element acting as the u ↔ d swap.
+- **The Casimir.** h²C restricted to either sector is one 3×3 matrix G, checked against the 6-site
+  Casimir of the §28 probe (`block_sector_matrices_probe.py`). G commutes with A0 and A1, hence with
+  Δ, so the Casimir-inserted traces agree too (`G_comm_A0`, `G_comm_A1`, `G_comm_Δ`,
+  `casimirTrace_eq`). With fe inserted, h²fe = G − (qk + (qk)⁻¹) on the sector of K-value k, which is
+  the second hypothesis with μ = tr(ρ(w)·G) (`feTrace_eq`).
+
+**What is still outside Lean.** The step from the 64-dimensional two-block readout to these per-block
+3×3 traces (the block tensor factorisation and the K-weighting of §28) is checked by exact computation
+in `np_gaudin_generic_q_probe.py`, not proved. So §28's pp = nn is now Lean-proved from the block
+level up, and computed below it.
+
+**Scope.** Exact identities, no empirical input, no fitting. Tower status: one block, n = 3; the pair
+statement is n = 6.
