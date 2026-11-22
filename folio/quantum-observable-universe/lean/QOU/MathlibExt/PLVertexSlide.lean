@@ -22,8 +22,8 @@ The proof is two Δ-moves and two re-indexings: insert `c` on `[b, d]`, then del
 `a, b, c`.
 
 Every ambient PL isotopy of a link can be cut into small steps that move one vertex at a time;
-this lemma is the combinatorial step those pieces reduce to. That reduction itself is **not**
-proved here.
+this lemma is the combinatorial step those pieces reduce to (Reidemeister's reduction; see
+Lickorish 1997, Ch. 1 \[lickorish1997\]). That reduction itself is **not** proved here.
 
 ## What is a DEFINITION here
 

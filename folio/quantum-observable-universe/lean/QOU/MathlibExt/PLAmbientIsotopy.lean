@@ -42,13 +42,14 @@ first; a PL version and the proof that the two agree come later.
 * `AmbientIsotopic.refl`, `.symm`, `.trans` — ambient isotopy is an equivalence relation.
   Transitivity runs both isotopies at once, `t ↦ K t ∘ H t`; symmetry uses `t ↦ H (1 - t) ∘ (H 1)⁻¹`.
 * `Polygon.param_rotate`, `Polygon.param_rotateBy` — re-indexing shifts the parameter by `r / N`.
-* `AmbientIsotopic.of_relabel` — **a `relabel` move is an ambient isotopy** (with `H t = id`).
+* `AmbientIsotopy.ofRelabel`, `AmbientIsotopic.of_relabel` — **a `relabel` move is an ambient
+  isotopy** (with `H t = id`).
 
 ## What is NOT proved here
 
-* That a `delta` move is an ambient isotopy. That needs a compactly supported homeomorphism
-  pushing an edge across the triangle and missing the rest of the link; it is the next step.
-* That ambient isotopic links are Δ-equivalent (stage 2d).
+* That a `delta` move is an ambient isotopy: proved in `PLDeltaMove.lean`
+  (`DeltaEquiv.ambientIsotopic`), and as a PL ambient isotopy in `PLDeltaPoly.lean`.
+* That ambient isotopic links are Δ-equivalent (the converse; open in this PR).
 -/
 
 namespace QOU.MathlibExt.PL
@@ -440,19 +441,26 @@ theorem AmbientIsotopic.trans {L L' L'' : PolygonalLink E} (h : AmbientIsotopic 
   let ⟨I⟩ := h; let ⟨J⟩ := h'; ⟨I.trans J⟩
 
 omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
-/-- **A relabelling is an ambient isotopy**, with `H t = id`: re-indexing a polygon only shifts
-its parameter. -/
+/-- **The ambient isotopy of a relabelling**: `H t = id`; re-indexing a polygon only shifts its
+parameter. -/
+def AmbientIsotopy.ofRelabel {L L' : PolygonalLink E} (e : Fin L.k ≃ Fin L'.k)
+    (r : Fin L.k → ℕ) (h : ∀ i, L'.comp (e i) = (L.comp i).rotateBy (r i)) :
+    AmbientIsotopy L L' :=
+  { H := fun _ => Homeomorph.refl E
+    continuous := continuous_snd
+    continuous_symm := continuous_snd
+    start := fun _ => rfl
+    e := e
+    finish := fun i => ⟨fun t => t + -((r i : ℝ) / ((L.comp i).n + 1)),
+      OrientedReparam.add_const _, fun t => by
+        rw [h i, Polygon.param_rotateBy]
+        simp⟩ }
+
+omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- **A relabelling is an ambient isotopy**, with `H t = id`. -/
 theorem AmbientIsotopic.of_relabel {L L' : PolygonalLink E} (e : Fin L.k ≃ Fin L'.k)
     (r : Fin L.k → ℕ) (h : ∀ i, L'.comp (e i) = (L.comp i).rotateBy (r i)) :
     AmbientIsotopic L L' :=
-  ⟨{ H := fun _ => Homeomorph.refl E
-     continuous := continuous_snd
-     continuous_symm := continuous_snd
-     start := fun _ => rfl
-     e := e
-     finish := fun i => ⟨fun t => t + -((r i : ℝ) / ((L.comp i).n + 1)),
-       OrientedReparam.add_const _, fun t => by
-         rw [h i, Polygon.param_rotateBy]
-         simp⟩ }⟩
+  ⟨AmbientIsotopy.ofRelabel e r h⟩
 
 end QOU.MathlibExt.PL

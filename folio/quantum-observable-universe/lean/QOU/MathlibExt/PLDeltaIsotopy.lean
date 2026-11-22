@@ -11,18 +11,21 @@ set_option autoImplicit false
 /-!
 # A Δ-move is an ambient isotopy (issue #8902, stage 2, part 5)
 
-Work in progress. This file builds the convex body around the Δ-triangle on which the push of
-`PLPush.lean` is applied.
+This file builds the convex body around the Δ-triangle on which the push of `PLPush.lean` is
+applied (the isotopy itself is assembled in `PLDeltaMove.lean`).
 
 ## What is a THEOREM here
 
 * `cone_stable` — if `w` is outside the cone spanned by `u₁, u₂` and `0 ∉ [u₁, u₂]`, then for
   some `ρ > 0` it stays outside the cone spanned by the closed `ρ`-balls around `u₁` and `u₂`.
   This is what keeps the edges at the apexes `a`, `b` of the triangle out of the body.
+* `exists_deltaBody` — **the body exists**: for some `ρ > 0`, the convex hull `deltaBody` of
+  `a`, `b` and the closed `ρ`-balls around `midpoint a b` and `c` misses the edge rays at `a`, `b`
+  and a given compact set disjoint from the triangle.
 
-## What is NOT proved here (yet)
+## What is NOT proved here
 
-* The choice of the body and the assembly of the isotopy for `Move.delta`.
+* The isotopy built on the body (`PLDeltaMove.lean`), and its PL version (`PLDeltaPoly.lean`).
 -/
 
 namespace QOU.MathlibExt.PL
