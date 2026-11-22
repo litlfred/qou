@@ -260,3 +260,31 @@ N₁₆ = q¹⁶ − 3q¹⁴ + 3q¹² − 7q¹⁰ + 6q⁸ − 7q⁶ + 3q⁴ − 
    of bare V³, it moves from 0.3254 MeV to 0.193–0.298 MeV.
 5. Not formalised in Lean. The left-placement q⁻² ratio would follow from a K-weighted version of the
    sibling's intertwiner (`HydrogenCaptureWeightSpace.lean`). That is the natural next lemma.
+
+## §21 Reconciling "u = e₁ is derived" with #8804 §40 "nothing fixes which bit is u"
+
+Both statements are true, about different things. Exact sympy check (scratch, 2026-11-22):
+
+| R-matrix | weight on factor 2 | partial trace |
+|---|---|---|
+| Ř (h on e₂e₁, σᵢ = strand i over i+1) | K = (q, q⁻¹) | q²·1, Markov |
+| Ř | K⁻¹ | not scalar |
+| XŘX (letter order reversed, h on e₁e₂) | K | not scalar |
+| XŘX | K⁻¹ | q²·1, Markov |
+
+So the Markov weight moves with the letter order. In either order, the over strand that keeps its
+label is the K = q vector (`over_e1_iff_pure`, `ptr_markov`, `ptr_other_not_scalar`, #7971).
+
+- What is derived (#8800): u is the K = q vector. This follows from def:down-quark (u passes over)
+  and convention D, and it does not depend on the basis labels. A full relabel (X on R, K and the
+  sectors together) leaves every ε unchanged.
+- What #8804 §40 shows: if you swap which bit is u while keeping Ř and K, every E_n − E_p changes
+  sign. That swap pairs u with the K = q⁻¹ vector. With Ř that weight is not a Markov trace, and
+  under the over/under rule u would not be the over strand. So the swap is a coherent relabel only
+  if Ř is conjugated too, and then nothing changes.
+- What is still an input: the definition "u passes over". The photon form and the Borromean core
+  do not fix it. §40 is right that nothing derived from those alone fixes the bit.
+
+This confirms the sign table's idea (PR #8969): the e₁/e₂ order and the flavour order are one
+letter-order convention. They cannot be flipped independently without breaking the Markov trace
+or the over/under rule.
