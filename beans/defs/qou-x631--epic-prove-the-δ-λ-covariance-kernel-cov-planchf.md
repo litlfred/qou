@@ -156,7 +156,7 @@ Why it gives nothing new: the first term closes back on D(k+1) by the co-transit
 So the kernel at level k+1 is equivalent to E_{(f)³, level k}[ Cov_{p_λ}(p_□, c_□²) ] ≤ 0: the atoms of the transition measure that carry more mass sit at smaller |content|, on average under the dimension-cubed measure.
 
 Two checks on whether this form helps:
-- Pointwise Q(λ) ≤ 0 is false. First failure λ = (2,1) at k = 3; staircase-like shapes fail at every k ≤ 15 ((3,2,1), (4,3,2,1), (5,4,3,2), …; 18 shapes at k = 15).
+- Pointwise Q(λ) ≤ 0 is false. First failure λ = (2,1) at k = 3; there are failures at every k from 6 to 15 (none at k = 4, 5), led by staircase-like shapes ((3,2,1), (4,3,2,1), (5,4,3,2); 18 shapes at k = 15).
 - No first-order (limit-shape) sign. A semicircle heuristic (p_□ ∝ density) would give E_{p²}[c²] ≈ (4/5)k, a sign at leading order. Measured: E₃[Q]/E₃[s]/k = −0.085, −0.071, −0.058, −0.061 at k = 10, 14, 18, 22, decaying like k^{-1/2}, which is the fluctuation scale again. The transition-measure atoms are close to equal mass along the boundary, so the p²-tilt is a second-order effect, the same wall as every route in the epic synthesis.
 
 Not formalised (it eliminates a route; formalising the co-transition identity is a sizeable Young-diagram build). Probe script kept outside the repo; rerun is a 60-line exact enumeration.
