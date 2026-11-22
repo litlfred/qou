@@ -86,14 +86,15 @@ only. "Closure of `β_Bor` is not the unlink" also needs a link invariant
   not enumerate `B₃` conjugacy classes, and it does not say a longer word is never
   conjugate to `β_Bor` (many are).
 * That `χ` separates `β_Bor`'s conjugacy class, **in Lean**. Surjectivity and the
-  lifting step are proved above; the kernel fact and the class list are not. The companion
+  lifting step are proved above; the rest is in `QOU.Mass.BorromeanSL2ZFibre`. The companion
   `computations/probes/borromean_word_forcing/result.md` gives an all-length argument.
   It reduces to SL(2,ℤ) via Burau at `t = −1`, and it cites two facts: that this map is
   onto SL(2,ℤ) with kernel `⟨Δ⁴⟩`, and that hyperbolic classes are cyclic positive
   `R/L` words. A finite list of the 8 trace-18 classes then shows that a writhe-0 word
   with `χ = χ(β_Bor)` is conjugate to `β_Bor` at any length. Brute-force searches to
-  length 16 agree. Surjectivity is now proved; the kernel fact (a hypothesis of
-  `isConj_of_burauNeg_isConj`), the positive-representative fact and the class list are not formalised.
+  length 16 agree. Surjectivity is now proved, and `QOU.Mass.BorromeanSL2ZFibre.fibre` formalises the
+  whole argument, including the class list, conditional only on the kernel fact and the
+  positive-representative fact (named hypotheses).
   The same probe shows the general statement is false: a braid and its reverse share
   `χ`, and `σ₀σ₁⁻¹σ₀²σ₁⁻²` is not conjugate to its reverse.
 * **Brunnian alone does not force `β_Bor`.** The same probe finds twenty pure,

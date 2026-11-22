@@ -21,6 +21,7 @@ No measured value is used anywhere.
 | `burauNeg_surjective` | Burau at t = −1 maps B₃ onto SL(2,ℤ) (Mathlib `SL2Z_generators`; σ₀ ↦ T, Δ ↦ S⁻¹). |
 | `burauNeg_delta_four`, `exponentSum_delta_four` | Δ⁴ is in the kernel and has writhe 12. |
 | `isConj_of_burauNeg_isConj` | **Conditional on `KernelIsDeltaFour`** (kernel = ⟨Δ⁴⟩, cited): writhe-0 braids with SL(2,ℤ)-conjugate images are conjugate in B₃. Proof steps 1–2 of the all-lengths argument below. |
+| `BorromeanSL2ZFibre.fibre` | **Conditional on `KernelIsDeltaFour` and `PositiveRepresentatives`** (both cited, named hypotheses): a writhe-0 three-strand word with χ₍₂,₁₎ = χ(β_Bor) for all q ≠ 0 is conjugate to β_Bor, at any length. Structural route: trace bound tr ≥ 2 + r·l (`ptr_ge`), writhe forces r ≡ l mod 12, so r = l ≤ 4; then a 340-word `decide` (`trace18_small`) leaves (RL)³ and R⁴L⁴, and χ at q = 2 removes R⁴L⁴. χ is a class function on B₃ (`chi21_conj`); at q = i it is the SL(2,ℤ) trace (`chi21_I`). |
 
 Topological reading (cited, not formalised): for a pure 3-braid, removing a strand
 leaves σ^{2k} with k the remaining pair's linking number, so the closure is Brunnian
