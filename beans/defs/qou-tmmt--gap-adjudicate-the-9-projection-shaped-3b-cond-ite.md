@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-11-22T09:27:55Z
+updated_at: 2026-11-22T10:33:31Z
 parent: qou-5p7n
 ---
 
@@ -378,3 +378,6 @@ markovTrace_disjointProduct proves DisjointProductLaw from the restricted IsMark
 2026-11-22: #8972 merged (rebase). Shift invariance (markovTrace_shift) and split product law (markovTrace_disjointProduct_split) proved for every Markov trace; PR #8989. Remaining: complexity bound; link to markov_trace_recursive.py output.
 
 2026-11-22: #8989 (shift invariance + split product law) rebase-merged as 850349a4590.
+
+
+2026-11-22 (Lean backlog thread, session_01Qmmkt8ZNqpSFQQHuWejKfe, branch claude/project-thread-tcbklh commit 9981046df): vacuous markovTraceRecursiveReducer_terminates (constant tracer) and FueledTracer removed. trWord_expansion_length_le: a word of length l expands to at most 2^l Hecke-basis terms (sorry-free). Kernel-checked examples tie trWord to markov_trace_recursive.py's witness: short words over any CommRing; sigma1^7 sigma2^4 and sigma1^6 sigma2^4 sigma1^-1 exactly in Q at q = 2, 3, 1/2. Not formalised: the Python reducer's O(l n!) memoised bound (different algorithm). With this, the remaining item of this bean is the sigma-shell block (convention-D question).
