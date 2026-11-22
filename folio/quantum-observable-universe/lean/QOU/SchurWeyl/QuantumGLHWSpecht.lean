@@ -90,6 +90,12 @@ theorem eq_zero_or_one_of_isIdempotentElem_of_comm {V : Type*} [AddCommGroup V] 
   simp only [Module.End.mul_apply, hPP, hf] at h
   rw [h]; rfl
 
+/-- **The trace of an idempotent is its rank.** -/
+theorem trace_eq_finrank_range_of_isIdempotentElem {V : Type*} [AddCommGroup V] [Module K V]
+    [FiniteDimensional K V] (P : Module.End K V) (h : IsIdempotentElem P) :
+    LinearMap.trace K V P = (Module.finrank K (LinearMap.range P) : K) :=
+  (LinearMap.IsIdempotentElem.isProj_range P h).trace
+
 end Abstract
 
 section Action
@@ -143,15 +149,20 @@ theorem hwAct_surjective (q : L) (hq : q ≠ 0) (hgen : GenericParameter.NotRoot
   obtain ⟨x, hx, -⟩ := exists_jimbo_restrict_eq q hq hgen m ⟨μ, hμ⟩ f
   exact ⟨x, LinearMap.ext fun v => Subtype.ext (hx v.1 v.2 v.2)⟩
 
-/-- **A nonzero `HW_μ` carries a single seminormal character**, up to a scalar:
-`tr(z | HW_μ) = c · χ^π(z)` for one partition `π ⊢ m + 1` and one `c`. -/
-theorem exists_hwTrace_eq_mul_trace (q : L) (hq : q ≠ 0)
+/-- **A nonzero `HW_μ` sees exactly one Wedderburn block.**  There is a partition `π ⊢ m + 1`
+and a scalar `c` such that the block map `A ↦ ρ(W⁻¹(A_π))` is onto `End(HW_μ)`, its trace is
+`c · tr A`, and `tr(z | HW_μ) = c · χ^π(z)`. -/
+theorem exists_hwBlock (q : L) (hq : q ≠ 0)
     (hgen : GenericParameter.NotRootOfUnity q) (m : ℕ) (μ : Fin d → ℕ)
     (hne : hwSpace q m μ ≠ ⊥) :
-    ∃ (π : Partition (m + 1)) (c : L), ∀ z : Hecke L q q⁻¹ m,
-      hwTrace q hq m μ z
-        = c * (seminormalRep q hq hgen m (partitionShape_card_succ π) z).trace := by
-  classical
+    ∃ (π : Partition (m + 1)) (c : L),
+      (∀ z : Hecke L q q⁻¹ m, hwTrace q hq m μ z
+        = c * (seminormalRep q hq hgen m (partitionShape_card_succ π) z).trace) ∧
+      (∀ A, LinearMap.trace L _
+          (hwAct (d := d) q hq m μ ((heckeWedderburn q hq hgen m).symm (Pi.single π A)))
+        = c * A.trace) ∧
+      Function.Surjective (fun A => hwAct (d := d) q hq m μ
+        ((heckeWedderburn q hq hgen m).symm (Pi.single π A))) := by
   set W := heckeWedderburn q hq hgen m with hW
   set ρ := hwAct (d := d) q hq m μ with hρ
   have hsurj := hwAct_surjective q hq hgen m (mem_occWeights_of_ne_bot hne)
@@ -195,16 +206,91 @@ theorem exists_hwTrace_eq_mul_trace (q : L) (hq : q ≠ 0)
   obtain ⟨c, hc⟩ := exists_eq_mul_trace_of_comm τ fun A B => by
     rw [hτ, hτ, Pi.single_mul, map_mul, map_mul, LinearMap.trace_mul_comm,
       ← map_mul, ← map_mul, ← Pi.single_mul]
-  refine ⟨π, c, fun z => ?_⟩
-  have hez : e π * z = W.symm (Pi.single π (W z π)) := W.injective (by
+  have hez : ∀ z, e π * z = W.symm (Pi.single π (W z π)) := fun z => W.injective (by
     rw [map_mul, hWe, W.apply_symm_apply]; funext lam
     simp only [Pi.mul_apply]
     by_cases h : lam = π
     · subst h; simp
     · simp [Pi.single_eq_of_ne h])
-  have hρz : ρ z = ρ (e π * z) := by rw [map_mul, hπ, one_mul]
-  rw [hwTrace_eq_trace_hwAct, ← hρ, hρz, hez, ← hτ, hc]
-  rfl
+  have hρz : ∀ z, ρ z = ρ (e π * z) := fun z => by rw [map_mul, hπ, one_mul]
+  refine ⟨π, c, fun z => ?_, fun A => by rw [← hτ, hc], fun f => ?_⟩
+  · rw [hwTrace_eq_trace_hwAct, ← hρ, hρz, hez, ← hτ, hc]
+    rfl
+  · obtain ⟨x, rfl⟩ := hsurj f
+    exact ⟨W x π, by show ρ _ = ρ x; rw [hρz x, hez]⟩
+
+/-- **A nonzero `HW_μ` carries a single seminormal character**, up to a scalar:
+`tr(z | HW_μ) = c · χ^π(z)` for one partition `π ⊢ m + 1` and one `c`. -/
+theorem exists_hwTrace_eq_mul_trace (q : L) (hq : q ≠ 0)
+    (hgen : GenericParameter.NotRootOfUnity q) (m : ℕ) (μ : Fin d → ℕ)
+    (hne : hwSpace q m μ ≠ ⊥) :
+    ∃ (π : Partition (m + 1)) (c : L), ∀ z : Hecke L q q⁻¹ m,
+      hwTrace q hq m μ z
+        = c * (seminormalRep q hq hgen m (partitionShape_card_succ π) z).trace := by
+  obtain ⟨π, c, h, -⟩ := exists_hwBlock q hq hgen m μ hne
+  exact ⟨π, c, h⟩
+
+/-- **The scalar is `1`: a nonzero `HW_μ` carries exactly one seminormal character.**
+`tr(z | HW_μ) = χ^π(z)` for one partition `π ⊢ m + 1`.
+
+The trace of the block map on a matrix unit `E_{TT}` is the rank `k` of an idempotent, so
+`c = k ∈ ℕ`.  Evaluating at `z = 1` gives `dim HW_μ = k · f^π`, and surjectivity of the block
+map gives `(dim HW_μ)² ≤ (f^π)²`; since `dim HW_μ > 0`, `k = 1`. -/
+theorem exists_hwTrace_eq_trace (q : L) (hq : q ≠ 0)
+    (hgen : GenericParameter.NotRootOfUnity q) (m : ℕ) (μ : Fin d → ℕ)
+    (hne : hwSpace q m μ ≠ ⊥) :
+    ∃ π : Partition (m + 1), ∀ z : Hecke L q q⁻¹ m,
+      hwTrace q hq m μ z
+        = (seminormalRep q hq hgen m (partitionShape_card_succ π) z).trace := by
+  obtain ⟨π, c, hz, hblock, hsurj⟩ := exists_hwBlock q hq hgen m μ hne
+  set W := heckeWedderburn q hq hgen m
+  set ρ := hwAct (d := d) q hq m μ
+  set S := StandardYoungTableau (partitionShape π)
+  have hf0 : 0 < Fintype.card S := by
+    rw [← Nat.card_eq_fintype_card]; exact QOU.Mathlib.numStandardYoungTableaux_pos _
+  obtain ⟨T0⟩ := Fintype.card_pos_iff.mp hf0
+  -- `c` is the rank of an idempotent
+  set E : Matrix S S L := Matrix.single T0 T0 1
+  set P := ρ (W.symm (Pi.single π E))
+  have hP : IsIdempotentElem P := by
+    show P * P = P
+    rw [← map_mul, ← map_mul, ← Pi.single_mul, single_mul_single_same, one_mul]
+  have hk : c = (Module.finrank L (LinearMap.range P) : L) := by
+    have h1 := hblock E
+    rw [trace_single_eq_same, mul_one] at h1
+    rw [← h1]
+    exact trace_eq_finrank_range_of_isIdempotentElem P hP
+  set k := Module.finrank L (LinearMap.range P)
+  set n := Module.finrank L (hwSpace q m μ)
+  set f := Fintype.card S
+  -- `n = k · f`
+  have hnkf : n = k * f := by
+    have h1 := hz 1
+    rw [hwTrace_eq_trace_hwAct, map_one, LinearMap.trace_one, map_one, Matrix.trace_one,
+      hk] at h1
+    exact_mod_cast h1
+  -- `n² ≤ f²`
+  have hle : n * n ≤ f * f := by
+    let B : Matrix S S L →ₗ[L] Module.End L (hwSpace q m μ) :=
+      ρ.toLinearMap ∘ₗ W.symm.toLinearMap ∘ₗ
+        LinearMap.single L (fun lam : Partition (m + 1) =>
+          Matrix (StandardYoungTableau (partitionShape lam))
+            (StandardYoungTableau (partitionShape lam)) L) π
+    have hB : Function.Surjective B := hsurj
+    have := LinearMap.finrank_range_le B
+    rw [LinearMap.range_eq_top.mpr hB, finrank_top, Module.finrank_linearMap,
+      Module.finrank_matrix, Module.finrank_self, mul_one] at this
+    exact this
+  have hn0 : 0 < n := Nat.pos_of_ne_zero fun h => hne (Submodule.finrank_eq_zero.mp h)
+  have hk1 : k = 1 := by
+    rw [hnkf] at hle hn0
+    have hk0 : 0 < k := Nat.pos_of_mul_pos_right hn0
+    by_contra hne1
+    have : 2 ≤ k := by omega
+    have : 2 * f ≤ k * f := Nat.mul_le_mul_right f this
+    nlinarith
+  refine ⟨π, fun z => ?_⟩
+  rw [hz, hk, hk1, Nat.cast_one, one_mul]
 
 end Specht
 
