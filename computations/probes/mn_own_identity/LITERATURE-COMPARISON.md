@@ -1352,3 +1352,19 @@ S. Read with the ruling, +S in ℒ means like charges attract.
 Recommendation (agent's judgement): (A). It keeps the ruling, agrees with Coulomb and with
 `NeutronProtonEMSign`, and replaces an adopted coefficient (+1) by the derived α. Not enacted;
 owner decision.
+
+**Hydrogen-neutrality orientation (sibling agent, `PREREGISTRATION-hydrogen-orientation.md`,
+`mn_hydrogen_orientation_probe.py`).** Pre-registration written 09:22:39 UTC, probe run after
+(file times; committed together). Four charge functionals applied to both 𝓑₃ = V³ and the electron
+σ₀σ₁σ₀ on C²⊗³: tr log(word)/2πi (and phase-only), ½(n₊ − n₋), sign of tr(K·w), tr(T³·w). In none
+does Q_p + Q_e = 0 hold on exactly one block, at q₀ or q → 1: neither block is neutral with the
+electron. The reason is structural and checked exactly: X·e·X = P·e·P (the ruled electron is
+relabel-invariant up to a block-preserving conjugation), so every T³-odd electron charge is 0, and
+V³ has the same spectrum on both blocks. Orientation not found in the searched class (scope (a),
+n = 3, four functionals). Neutrality could fix it only if the electron is placed in a weight
+block, which is itself a label.
+
+**EM scale (sibling agent, `PREREGISTRATION-em-scale.md`).** The corpus states no derived unit for
+the matter-Coulomb term: E₀ = m_e/(q(q−1)) is a definition and the Gap-5 lemmas are identities;
+E₀ on this term (≈ −0.93 MeV) is already recorded in the corpus as a selection against the target.
+The 3000× gap of §40 EM-1 stays open.
