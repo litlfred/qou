@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:mass-identity-exists",
+    "def:mass-identity",
     "prop:frobenius-pairing-unique",
   ],
   proofs: ["prf:mass-identity-unique"],
