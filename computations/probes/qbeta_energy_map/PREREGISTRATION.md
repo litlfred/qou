@@ -488,3 +488,38 @@ reported as such, not as a Lean proof.
 **Expected verdict.** Probably another scope-(a) negative of order h², but this is not yet
 measured. If |ΔE₄| lands within 10 % of either target, that is a near-match only and is not
 adopted without a derivation of the channel weight.
+
+## Addendum 19 (2026-11-22): a β_Bor-dressed vertex weight (owner "Do all", item 2)
+
+Written before any number for these candidates has been computed.
+
+**Why.** §28 and §29 weight the vertex by Young channels alone, and their sign is set by the tensor
+order. The nucleon here is the Borromean braid β_Bor = (σ₁σ₂⁻¹)³ on the three quark strands, so the
+next test lets that braid weight the vertex states. Constraints from bean `qou-az9l`, the working
+assumption: a braid-built term must vanish at q = 1, and the sign must be derived, not chosen.
+
+**Space and states.** As in Addendum 18: the weight-zero subspace of V^{⊗4}, quark strands at
+positions 1–3 and the lepton at 4. Jimbo Ř as before. Initial set {uddu, dudu, dduu}; final set
+{uudd, udud, duud}.
+
+**Candidate D1 (bare β_Bor).** W(s) = (β_Bor ⊗ 1)_{ss}. The lepton strand is a spectator, so
+Σ_init W and Σ_final W are the traces of β_Bor on the one-u and two-u weight spaces of V^{⊗3}.
+ΔE = E₀·ln(Σ_init W / Σ_final W).
+
+**Candidate D2 (β_Bor-dressed Young channels).** W(s) = (Σ_λ q^{c(λ)} P_λ · (β_Bor ⊗ 1))_{ss}, with the
+P_λ of Addendum 18. Same ΔE.
+
+**Claims to check, preregistered:**
+1. At q = 1 both ratios equal 1, so ΔE = 0. This is what the working assumption requires: at q = 1
+   β_Bor is the identity permutation, since (s₁s₂)³ = 1 in S₃.
+2. The sign of ΔE under mirroring (β_Bor ↦ its mirror, σ ↦ σ⁻¹), and under reversing the tensor order.
+   If either flips the sign, the sign is a convention again.
+3. Whether D1 is identically 1. That would mean the bare braid gives no split at the weight-space level,
+   consistent with the closure result of issue #9002 (m_p = m_n at every q).
+4. Size at the proton q₀, in E₀ units first. MeV is quoted under the pure-number reading of
+   def:mass-energy (the current default, bean `qou-91w7`) against 0.41979 MeV (placement B) and
+   0.78233 MeV (placement C).
+
+**Expected verdict.** D1 is identically 1, or of order h², and D2 is of order h² with a sign set by
+convention: scope-(a) negatives. A value within 10 % of either budget would be reported as a
+near-match only.
