@@ -2898,6 +2898,14 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "silver2006knotorigins" },
   { id: "przytycki2007knothistory" },
   { id: "faddeevniemi1997" },
+  // ── Braid-preon and quantum-symmetric-pair prior art (owner chat upload, 2026-11-22) ──
+  // Metadata read off page 1 of each PDF; journal references are added only
+  // where page 1 prints one (none of the five does).
+  { id: "gresnigt2017" },
+  { id: "gresnigt2018" },
+  { id: "chester-arsiwalla-kauffman-2025" },
+  { id: "letzter2001" },
+  { id: "balagovic-kolb-2015" },
 ];
 
 export const references: Reference[] = assemble(ORDER);
