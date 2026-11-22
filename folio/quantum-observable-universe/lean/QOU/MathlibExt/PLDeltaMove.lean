@@ -318,7 +318,7 @@ lemma subdivideLast_facts (c : E) (hQ : (P.subdivideLast c).IsSimple) :
     exact h3.le
 
 /-- The parametrization on a piece, inside the first period. -/
-lemma param_piece (i : Fin (P.n + 1)) {u : ℝ} (h0 : 0 ≤ u) (h1 : u ≤ 1)
+lemma param_piece_first (i : Fin (P.n + 1)) {u : ℝ} (h0 : 0 ≤ u) (h1 : u ≤ 1)
     (hlt : ((i : ℝ) + u) / (P.n + 1) < 1) :
     P.param (((i : ℝ) + u) / (P.n + 1)) = (1 - u) • P.v i + u • P.v (P.next i) := by
   rw [param, Int.fract_eq_self.mpr ⟨by positivity, hlt⟩, P.pathRaw_piece i h0 h1]
@@ -502,7 +502,7 @@ theorem exists_ambientIsotopy_of_delta (Q : (unitInterval → E ≃ₜ E) → Pr
         have hlt : ((P.n : ℝ) + 2 * u) / (P.n + 2) < 1 := by
           rw [div_lt_one (by positivity)]; linarith
         rw [hx] at hlt ⊢
-        rw [(P.subdivideLast c).param_piece _ (by linarith) (by linarith) hlt,
+        rw [(P.subdivideLast c).param_piece_first _ (by linarith) (by linarith) hlt,
           Polygon.subdivideLast_v_castSucc, Polygon.subdivideLast_next_castSucc_last,
           Polygon.subdivideLast_v_last]
       · rw [hright u hu hu1.le]
@@ -514,7 +514,7 @@ theorem exists_ambientIsotopy_of_delta (Q : (unitInterval → E ≃ₜ E) → Pr
           rw [div_lt_one (by positivity)]; linarith
         rw [hx] at hlt ⊢
         have h0 : (0 : Fin (P.n + 1 + 1)) = (0 : Fin (P.n + 1)).castSucc := rfl
-        rw [(P.subdivideLast c).param_piece _ (by linarith) (by linarith) hlt,
+        rw [(P.subdivideLast c).param_piece_first _ (by linarith) (by linarith) hlt,
           Polygon.subdivideLast_v_last, Polygon.subdivideLast_next_last, h0,
           Polygon.subdivideLast_v_castSucc]
         module
@@ -531,7 +531,7 @@ theorem exists_ambientIsotopy_of_delta (Q : (unitInterval → E ≃ₜ E) → Pr
       have hlt : ((k : ℝ) + u) / (P.n + 2) < 1 := by
         rw [div_lt_one (by positivity)]; linarith
       rw [hx] at hlt ⊢
-      rw [(P.subdivideLast c).param_piece _ hu0 hu1.le hlt, Polygon.subdivideLast_v_castSucc,
+      rw [(P.subdivideLast c).param_piece_first _ hu0 hu1.le hlt, Polygon.subdivideLast_v_castSucc,
         Polygon.subdivideLast_next_castSucc _ _ (Fin.castSucc_lt_last k).ne,
         Polygon.subdivideLast_v_castSucc]
   refine ⟨{ H := H
