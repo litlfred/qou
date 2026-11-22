@@ -2,13 +2,24 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:jet-prolongation-categorical-jet",
-  lean: { ref: "qou:QOU.LiftingDescent.kahlerOmega_isCompl" },
-  title: "The jet object $J^1(A)$ is built from a direct summand of $A \\otimes A$",
+  lean: { ref: "qou:QOU.LiftingDescent.jetRetract_comp_jetSection" },
+  title: "The base object is a direct summand of the jet object $J^1(S)$",
   tags: ["kahler-differential", "jet-bundle", "direct-summand"],
-  uses: [],
+  uses: ["def:categorical-jet"],
   examples: ["rem:jet-comul-does-not-restrict"],
   proofs: ["prf:jet-prolongation-categorical-jet"],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-22",
+      body:
+        "Restated on the owner ruling of 2026-11-22 (card \"Switch to (S⊗S)/I²\"): the jet object is " +
+        "$(S \\otimes S)/I^2$. Lean: `QOU.LiftingDescent.jetRetract_comp_jetSection` ($r \\circ \\ell = \\mathrm{id}$) " +
+        "and `ker_jetRetract` ($\\ker r = I/I^2$), file `QOU/LiftingDescent/JetModuleSplitting.lean`, sorry-free. " +
+        "The failure of the old object is `not_injective_into_naiveJet_self`. The previous statement (the " +
+        "complement of $\\ker m$ in $A \\otimes A$, `kahlerOmega_isCompl`) stays true and proved, but no " +
+        "longer describes the jet object.",
+    },
     {
       kind: "status",
       date: "2026-11-21",
