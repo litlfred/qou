@@ -1,0 +1,100 @@
+### L6 q=111/100 (K-weighted readout)
+[    0.4s] L6 q=111/100: 720 words, ΔE span dim 10 of 16 sectors
+[    0.4s]   P1 closed under the sector involution: True
+[    0.4s]   rank 2: unique ray, α = 110609758363583325280842433359/168580562532130253503343223359, β = 57970804168546928222500790000/168580562532130253503343223359, α + β = 1
+[    0.4s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[    0.4s] summary:
+[    0.4s]   L6 q=111/100: dim 10, involution-closed True, rank 2, Coulomb False, α + β = 1
+[    0.4s] done
+### L6 q=7/5 (K-weighted readout)
+[    0.2s] L6 q=7/5: 720 words, ΔE span dim 10 of 16 sectors
+[    0.2s]   P1 closed under the sector involution: True
+[    0.2s]   rank 2: unique ray, α = 132690808369/125930290394, β = -6760517975/125930290394, α + β = 1
+[    0.2s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[    0.2s] summary:
+[    0.2s]   L6 q=7/5: dim 10, involution-closed True, rank 2, Coulomb False, α + β = 1
+[    0.2s] done
+### L7s q=111/100 (K-weighted readout)
+[    5.2s] L7s q=111/100: 5040 words, ΔE span dim 14 of 16 sectors
+[    5.2s]   P1 closed under the sector involution: False
+[    5.2s]   rank 1 (3: no κ ≠ 0 term; ≤ 1: a family)
+[    5.2s]     relation on (κ, κα, κβ): 1·κ + -168580562532130253503343223359/110609758363583325280842433359·κα + 0·κβ = 0
+[    5.2s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[    5.2s] summary:
+[    5.2s]   L7s q=111/100: dim 14, involution-closed False, rank 1, Coulomb False
+[    5.2s] done
+### L7s q=7/5 (K-weighted readout)
+[    3.8s] L7s q=7/5: 5040 words, ΔE span dim 14 of 16 sectors
+[    3.8s]   P1 closed under the sector involution: False
+[    3.8s]   rank 1 (3: no κ ≠ 0 term; ≤ 1: a family)
+[    3.8s]     relation on (κ, κα, κβ): 1·κ + -125930290394/132690808369·κα + 0·κβ = 0
+[    3.8s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[    3.8s] summary:
+[    3.8s]   L7s q=7/5: dim 14, involution-closed False, rank 1, Coulomb False
+[    3.8s] done
+### L7e q=111/100 (K-weighted readout)
+[    6.0s] L7e q=111/100: 5040 words, ΔE span dim 10 of 16 sectors
+[    6.0s]   P1 closed under the sector involution: True
+[    6.0s]   rank 2: unique ray, α = 110609758363583325280842433359/168580562532130253503343223359, β = 57970804168546928222500790000/168580562532130253503343223359, α + β = 1
+[    6.0s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[    6.0s] summary:
+[    6.0s]   L7e q=111/100: dim 10, involution-closed True, rank 2, Coulomb False, α + β = 1
+[    6.0s] done
+### L7e q=7/5 (K-weighted readout)
+[    3.7s] L7e q=7/5: 5040 words, ΔE span dim 10 of 16 sectors
+[    3.7s]   P1 closed under the sector involution: True
+[    3.7s]   rank 2: unique ray, α = 132690808369/125930290394, β = -6760517975/125930290394, α + β = 1
+[    3.7s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[    3.7s] summary:
+[    3.7s]   L7e q=7/5: dim 10, involution-closed True, rank 2, Coulomb False, α + β = 1
+[    3.7s] done
+### L8s q=111/100 (K-weighted readout)
+[   95.8s] L8s q=111/100: 40320 words, ΔE span dim 14 of 16 sectors
+[   95.8s]   P1 closed under the sector involution: False
+[   95.8s]   rank 1 (3: no κ ≠ 0 term; ≤ 1: a family)
+[   95.8s]     relation on (κ, κα, κβ): 1·κ + -168580562532130253503343223359/110609758363583325280842433359·κα + 0·κβ = 0
+[   95.8s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[   95.8s] summary:
+[   95.8s]   L8s q=111/100: dim 14, involution-closed False, rank 1, Coulomb False
+[   95.8s] done
+### L8s q=7/5 (K-weighted readout)
+[   63.8s] L8s q=7/5: 40320 words, ΔE span dim 14 of 16 sectors
+[   63.8s]   P1 closed under the sector involution: False
+[   63.8s]   rank 1 (3: no κ ≠ 0 term; ≤ 1: a family)
+[   63.8s]     relation on (κ, κα, κβ): 1·κ + -125930290394/132690808369·κα + 0·κβ = 0
+[   63.8s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[   63.8s] summary:
+[   63.8s]   L8s q=7/5: dim 14, involution-closed False, rank 1, Coulomb False
+[   63.8s] done
+### DIAGNOSTIC L6 q=111/100, QOU_NO_K=1 (plain trace)
+[    0.3s] L6 q=111/100: 720 words, ΔE span dim 10 of 16 sectors
+[    0.3s]   P1 closed under the sector involution: True
+[    0.3s]   rank 2: unique ray, α = 110609758363583325280842433359/168580562532130253503343223359, β = 57970804168546928222500790000/168580562532130253503343223359, α + β = 1
+[    0.3s]   P4 Coulomb form (Q_A Q_B alone) reachable: False
+[    0.3s] summary:
+[    0.3s]   L6 q=111/100: dim 10, involution-closed True, rank 2, Coulomb False, α + β = 1
+[    0.3s] done
+### DIAGNOSTIC L7s q=111/100, QOU_NO_K=1 (plain trace)
+[    4.9s] L7s q=111/100: 5040 words, ΔE span dim 16 of 16 sectors
+[    4.9s]   P1 closed under the sector involution: True
+[    4.9s]   rank 0 (3: no κ ≠ 0 term; ≤ 1: a family)
+[    4.9s]   P4 Coulomb form (Q_A Q_B alone) reachable: True
+[    4.9s] summary:
+[    4.9s]   L7s q=111/100: dim 16, involution-closed True, rank 0, Coulomb True
+[    4.9s] done
+### DIAGNOSTIC L7e q=111/100, QOU_NO_K=1 (plain trace)
+[    5.1s] L7e q=111/100: 5040 words, ΔE span dim 16 of 16 sectors
+[    5.1s]   P1 closed under the sector involution: True
+[    5.1s]   rank 0 (3: no κ ≠ 0 term; ≤ 1: a family)
+[    5.1s]   P4 Coulomb form (Q_A Q_B alone) reachable: True
+[    5.1s] summary:
+[    5.1s]   L7e q=111/100: dim 16, involution-closed True, rank 0, Coulomb True
+[    5.1s] done
+### DIAGNOSTIC L8s q=111/100, QOU_NO_K=1 (plain trace)
+[  101.5s] L8s q=111/100: 40320 words, ΔE span dim 16 of 16 sectors
+[  101.5s]   P1 closed under the sector involution: True
+[  101.5s]   rank 0 (3: no κ ≠ 0 term; ≤ 1: a family)
+[  101.5s]   P4 Coulomb form (Q_A Q_B alone) reachable: True
+[  101.5s] summary:
+[  101.5s]   L8s q=111/100: dim 16, involution-closed True, rank 0, Coulomb True
+[  101.5s] done

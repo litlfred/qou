@@ -12,7 +12,10 @@ import Mathlib.Tactic.NoncommRing
 Two nucleon blocks on six strands carry the core `C = V_A³ V_B³`, `V = σ_lo σ_{lo+1}⁻¹`. For an
 insertion `X` from the Hecke image `H`, the sector response is
 `T_X(s) = tr(Π_s · C · X)` and the pair shift is `ΔE_X(s) = T_X(s) / T_1(s)`. The `K^{⊗6}`
-weight is a scalar on each sector and cancels in `ΔE`, so it is left out here.
+weight is a scalar on each sector and cancels in `ΔE`, so it is left out here. That uses
+that the six strands are all in the blocks: with spectator strands between the blocks `K` is not
+a scalar on a sector, `θ` sends it to `K⁻¹`, and the symmetry fails
+(`np_more_strands_probe.py`).
 
 **The symmetry.** Flipping every strand (`u ↔ d`) and reversing the strand order is conjugation
 `θ` by a permutation matrix. It sends `σ_i` to `σ_{4−i}`, so it sends the core to its inverse
