@@ -63,3 +63,43 @@ ord₁(w) = 1. An object with ord₁ ≠ 1 cannot be w.
 - **Excluded by design.** Linear combinations of traces with free coefficients, over ℤ, ℚ or
   ℤ[q^±]. Over ℤ[q^±] the trivial combination w·τ(1) already equals w, so solving for
   coefficients is selection against the target. It is not run.
+
+---
+
+# Addendum 2: the exact factor beyond h/2 (owner via coordinator 2026-11-22; written before any number)
+
+Task: start from the first-order result w ≈ h/2 and look for the exact factor from first principles, with no fitting.
+
+## Disclosed before computing (these are rewrites, not findings)
+- The corpus already derives w algebraically. From `rem:energy-scale-planck`, c_q = 1/(q−1) and ℏ_q = (q−1)/q, so
+  E₀ = m_e c_q² ℏ_q. The muon pin gives m_e = m_μ ℏ_q²/Vol(4₁). Together: w = ℏ_q·(ℏ_q c_q)² = ℏ_q·q⁻²
+  (Lean `E0MuonUnit.E0_eq_muon_fraction`).
+- ℏ_q = h/(1+q). So "w ≈ h/2" says only that 1 + q = 2 at q = 1. The exact factor relative to h is
+  1/(q²(q+1)), and the pole at q = −1 already excludes single word traces (Addendum 1).
+- **Route R1 has no content.** In the symmetric Young channel, σ acts as the scalar q, so every function
+  f(q) is the channel value of f(σ). In particular w = χ_(2)(σ⁻² − σ⁻³). This holds for any target
+  at all, so it is not tested as evidence.
+
+## The invariant that has content: framed link invariants and their order at q = 1
+The mass of a braid class is the framed form 𝔪(β) = (1+q²)ⁿ q^{−n−2·wr(β)} τ_D(β) (`def:mass-identity`).
+It is constant on link types, it lies in ℤ[q^±], and 𝔪(1) = 2^{c} > 0.
+- **Prediction, stated now.** For a knot K, the excess 𝔪(K)/𝔪(O) − 1 vanishes to order ≥ 2 at q = 1,
+  because a Jones-type knot polynomial has value 1 and first derivative 0 at the classical point.
+  So no knot excess can equal w, which has order 1.
+- **Prediction, stated now.** For a two-component link L, the excess over the 2-unlink vanishes to
+  order 1 exactly when lk(L) ≠ 0. Its first-order coefficient is proportional to lk.
+
+## Routes, fixed now (no others)
+- R2, knot excess, in two normalisations: 𝔪(K)/𝔪(O) − 1 and 𝔪(K) − 𝔪(O).
+  - K = 3₁ = closure of σ₁³ (n = 2).
+  - K = 4₁ = closure of (σ₁σ₂⁻¹)² (n = 3); this is the muon knot.
+- R3, linked-pair excess, in two normalisations: 𝔪(L)/𝔪(O⊔O) − 1 and 𝔪(L) − 𝔪(O⊔O).
+  - L = Hopf⁺, closure of σ₁²; L = Hopf⁻, closure of σ₁⁻²; both with n = 2.
+  - L = closure of the electron word σ₁σ₂σ₁ (n = 3; owner ruling: Hopf-link closure).
+
+## Verdict rule
+- **Derived** only if a route equals w exactly, with no extra factor.
+- **First-order match only** if ord₁ = 1 and the leading coefficient is 1.
+- **Excluded** if ord₁ ≠ 1 or the leading coefficient is not 1. Scope (a) for the listed objects. For
+  knots, the order-≥2 statement is scope (b), by the invariant above.
+- No rescaling, no powers of q, no combinations of routes. Any of those would be fitting.
