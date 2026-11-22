@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:46Z
-updated_at: 2026-11-22T11:07:23Z
+updated_at: 2026-11-22T12:08:27Z
 parent: qou-wxhi
 ---
 
@@ -24,3 +24,6 @@ Not started.
 
 
 2026-11-22 RESULT (computations/probes/nucleon_width/, prereg then RESULT.md, PR #8955): CS(L6a4) = -1.5e-65 (SnapPy high precision), so CS = 0 (amphichiral => CS in {0, 1/2}). Proton and neutron closures isometric. Under width = Im Vol_C = CS the closure gives width 0 for BOTH nucleons: derives proton stability but predicts a stable neutron. Scope-(a) negative for the closure-only reading; a width difference must come from braid decorations. Claim 1 not Lean-proved (standard 3-manifold topology + SnapPy isometry). Bean stays open: no derived width for the neutron, no CS-to-width unit map.
+
+
+2026-11-22 (PR #9013, merged with this tranche): the CS of the hydrogen capture-braid closure was computed for both electron placements, preregistered first. W_L and W_R both close to L12n2208, the Borromean rings plus the braid axis: Vol 12.17929927691584…, CS 0, and W_L ≅ W_R. So the placement is invisible to the closure, a scope-(a) negative. A capture-braid CS cannot supply a p/n or placement-dependent width term. Audit 2026-11-21-qbeta-energy-map-spectator §33.

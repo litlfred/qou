@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-22T11:21:01Z
+updated_at: 2026-11-22T12:08:27Z
 parent: qou-wxhi
 ---
 
@@ -33,3 +33,6 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 
 
 2026-11-22 (Addendum 20, commit 4fc56e3342b): E₀'s c_q² shown to be the muon pin's c_q². Lean QOU/QBeta/E0MuonUnit.lean (sorry-free): 1/ℏ_q² = q²c_q²; E₀ = m_e c_q² ℏ_q; under the muon pin E₀ = m_μ ℏ_q/(q² Vol(4₁)); E₀ = m_e(ℏ_q/q²)/ℏ_q². Agrees to 1.8e-50 at muon q₀; 2.1e-7 at proton q₀ = μ–p tension. Implication: the MeV scale is m_e/ℏ_q² (CAL-1 + CAL-2), not m_e/𝔈_e; the −99 % reading used the wrong unit. n–p cell weight 2ℏ_q ln q/q² → 0 at q=1, consistent with closure mass. STILL OPEN: derive weight ℏ_q/q² from Hecke structure; 1/ℏ_q² is the CAL-2 pin, not derived.
+
+
+2026-11-22 (PR #9013): is E₀'s weight w = ℏ_q/q² a convention-D Markov trace? None of the six preregistered candidates equals w. All six are certified ≠ w in Lean (QOU/QBeta/E0WeightCandidates.lean, sorry-free). The general obstruction is not in Lean: at q=1 every braid-word trace is 2^{c−n} > 0, while w(1) = 0, so no single braid word's trace can be w. Combinations and tower sums were deliberately not searched (that would be fitting). Scope (a). Audit §34; Lean coverage ledger §35.
