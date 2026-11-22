@@ -60,41 +60,76 @@ the prop:categorical-mass-markov explicit values table.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import sys
-import math
+from fractions import Fraction
 from pathlib import Path
 
 import sympy as sp
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
+from qou_substrate.precision import COMPUTE_DPS  # noqa: E402
 
+
+# PRECISION (owner approval 2026-11-22, branch-cache item P9).  This module was
+# float64 end to end: numpy seminormal matrices, `scipy.linalg.solve`, and a
+# `float()` on every trace, with an in-memory cache keyed on `n` alone (so a
+# second q in one process was served the first q's weights) and a disk cache
+# keyed on `q:.10f`.  It now carries `mpmath.mpf` end to end: exact-q sparse
+# seminormal matrices, the symbolic tr_M evaluated by mpmath, and
+# `mp.lu_solve`.  Both caches key on the exact q (its decimal string at the
+# working precision) and on that precision.  Default precision is
+# `qou_substrate.precision.COMPUTE_DPS`; a caller may pass `dps=`.
+#
+# `Q0` and `z_num` are `mpf` at COMPUTE_DPS (they were float64).  `Q0` is the
+# q_parameter anchor string, i.e. the same anchor the float `Q` named before.
+with mp.workdps(COMPUTE_DPS):
+    Q0 = mp.mpf(Q_50_DIGIT_STR)
+    z_num = Q0 ** 3 / (Q0 ** 2 + 1)
 
 # Symbolic q and z for derivation
 q = sp.Symbol('q', positive=True)
 z = sp.Symbol('z', positive=True)
-z_num = Q0**3 / (Q0**2 + 1)
 z_sym = q**3 / (q**2 + 1)
 
 
+def _as_mpf(x):
+    """Exact conversion of a q value to mpf at the current precision.
+
+    str / mpf / int / Fraction / sympy Rational go through exactly.  A float
+    is taken at its exact binary value (mpf(float) is exact): the float64
+    rounding is then the caller's, not this module's.
+    """
+    if isinstance(x, mp.mpf):
+        return +x
+    if isinstance(x, Fraction):
+        return mp.mpf(x.numerator) / x.denominator
+    if isinstance(x, sp.Rational):
+        return mp.mpf(int(x.p)) / int(x.q)
+    if isinstance(x, sp.Basic):
+        return mp.mpf(str(sp.N(x, mp.dps + 10)))
+    return mp.mpf(x)
+
+
 def omega_lambda_formula_guess(shape: tuple[int, ...], *,
-                                 q_val: float = None, z_val: float = None):
+                                 q_val=None, z_val=None):
     """FAILED GUESS: hook-content formula Π(z q^c − q^{−c})/(q^h − q^{−h}).
 
     Does NOT satisfy Σ ω = 1 at q ≠ 1.  Retained for reference; see
     omega_lambda_via_inversion below for the correct approach.
     """
-    if q_val is None:
-        q_val = Q0
-    if z_val is None:
-        z_val = z_num
-    num = 1.0
-    den = 1.0
+    qv = Q0 if q_val is None else _as_mpf(q_val)
+    zv = z_num if z_val is None else _as_mpf(z_val)
+    num = mp.mpf(1)
+    den = mp.mpf(1)
     for (i, j, h) in hook_lengths(shape):
         c = j - i
-        num *= z_val * q_val ** c - q_val ** (-c)
-        den *= q_val ** h - q_val ** (-h)
+        num *= zv * qv ** c - qv ** (-c)
+        den *= qv ** h - qv ** (-h)
     return num / den
 
 
@@ -109,78 +144,51 @@ def omega_lambda_formula_guess(shape: tuple[int, ...], *,
 # This is a p(n) × p(n) linear system with unique solution ω_λ.
 # Works at ANY convention — no need to guess the formula.
 
-_OMEGA_CACHE: dict[int, dict[tuple, float]] = {}
+_OMEGA_CACHE: dict[tuple, dict[tuple, "mp.mpf"]] = {}
 _OMEGA_DISK_DIR = Path(__file__).parent / ".cache" / "ocneanu"
+# Bump when the computation changes in a way that moves values.
+_OMEGA_DISK_VERSION = "v3-mpf"
 
 
-def _load_omega_disk(n: int, q_val: float) -> dict | None:
-    """Legacy v1 disk loader.  Deprecated — use _load_omega_disk_v2.
+def _q_key(qv, dps: int) -> str:
+    """Exact cache tag for q at precision dps: its full decimal string."""
+    return mp.nstr(qv, dps + 5, strip_zeros=False)
 
-    Key format: comma-separated integer partition string → float.
-    Returns dict keyed by tuple[int, ...] → float matching the
-    in-memory _OMEGA_CACHE signature.
-    """
-    _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
-    f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}.json"
+
+def _omega_disk_path(n: int, q_key: str, dps: int) -> Path:
+    h = hashlib.sha256(f"{_OMEGA_DISK_VERSION}|{n}|{dps}|{q_key}".encode()
+                       ).hexdigest()[:20]
+    return _OMEGA_DISK_DIR / f"n{n}_dps{dps}_{h}.json"
+
+
+def _load_omega_disk(n: int, q_key: str, dps: int):
+    f = _omega_disk_path(n, q_key, dps)
     if not f.exists():
         return None
     try:
-        import json as _json
-        raw = _json.loads(f.read_text())
+        raw = json.loads(f.read_text())
+        if raw.get("q") != q_key or raw.get("dps") != dps \
+                or raw.get("version") != _OMEGA_DISK_VERSION:
+            return None
         out = {}
-        for k, v in raw.items():
-            if not k:
-                out[()] = float(v)
-            else:
-                out[tuple(int(x) for x in k.split(","))] = float(v)
+        for key_str, v in raw["omega"].items():
+            shape = tuple(int(x) for x in key_str.split(",")) if key_str else ()
+            out[shape] = mp.mpf(v)
         return out
     except Exception:
         return None
 
 
-def _save_omega_disk(n: int, q_val: float, omegas: dict):
-    import json as _json
-    _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
-    f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}.json"
-    payload = {",".join(str(x) for x in shape) if shape else "":
-                v for shape, v in omegas.items()}
+def _save_omega_disk(n: int, q_key: str, dps: int, omegas: dict):
     try:
-        f.write_text(_json.dumps(payload))
-    except Exception:
-        pass
-
-
-def _load_omega_disk_v2(n: int, q_val: float):
-    """Simpler json dump: keys are shape tuples stringified."""
-    _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
-    f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}_v2.json"
-    if not f.exists():
-        return None
-    try:
-        import json as _json
-        raw = _json.loads(f.read_text())
-        out = {}
-        for key_str, v in raw.items():
-            if not key_str:
-                out[()] = v
-            else:
-                parts = key_str.split(",")
-                out[tuple(int(x) for x in parts)] = v
-        return out
-    except Exception:
-        return None
-
-
-def _save_omega_disk_v2(n: int, q_val: float, omegas: dict):
-    import json as _json
-    _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
-    f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}_v2.json"
-    payload = {}
-    for shape, v in omegas.items():
-        key = ",".join(str(x) for x in shape) if shape else ""
-        payload[key] = v
-    try:
-        f.write_text(_json.dumps(payload))
+        _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
+        payload = {
+            "version": _OMEGA_DISK_VERSION, "n": n, "dps": dps, "q": q_key,
+            "omega": {",".join(str(x) for x in s): mp.nstr(v, dps + 5,
+                                                           strip_zeros=False)
+                      for s, v in omegas.items()},
+        }
+        _omega_disk_path(n, q_key, dps).write_text(json.dumps(payload))
     except Exception:
         pass
 
@@ -195,14 +203,9 @@ def _reduced_words_for_basis(n: int) -> list[tuple[int, ...]]:
     from hecke_characters import partitions_of
     words = []
     for shape in partitions_of(n):
-        # Build a reduced word whose image in S_n has cycle type shape.
-        # For shape = (n_1, n_2, ..., n_k) with n_1 ≥ n_2 ≥ …:
-        # Each cycle of length n_j contributes (n_j − 1) transpositions.
-        # Arrange cycles back-to-back in disjoint ranges.
         word = []
         offset = 0
         for part in shape:
-            # Cycle on {offset, …, offset+part-1}: s_{offset} s_{offset+1} …
             for t in range(part - 1):
                 word.append(offset + t)
             offset += part
@@ -210,403 +213,359 @@ def _reduced_words_for_basis(n: int) -> list[tuple[int, ...]]:
     return words
 
 
+# ── Exact sparse seminormal representation (mpf) ──
+#
+# Same entries as `hecke_characters.build_seminormal_matrices_mp` (a, a', b
+# with a = h/(1 − q^{−2ρ}), a' = h/(1 − q^{2ρ}), b = sqrt|a a' + 1|), stored
+# row-sparse ({row: {col: value}}) so that n beyond ~8 does not need O(d²)
+# dense mp matrices.  `_check_sparse_matches_dense` cross-checks the two.
+
+def _sparse_seminormal_mp(shape, qv):
+    from hecke_characters import standard_young_tableaux
+    n = sum(shape)
+    syts, cells, contents = standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], 0
+    exact_one = (qv == 1)
+    h_local = None if exact_one else qv - 1 / qv
+    syt_index = {tuple(sorted(t.items())): idx for idx, t in enumerate(syts)}
+    sigmas = []
+    for k in range(1, n):
+        rows: dict[int, dict[int, "mp.mpf"]] = {}
+        processed = set()
+        for i in range(dim):
+            if i in processed:
+                continue
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+            if exact_one:
+                a = mp.mpf(1) / rho
+                a_prime = -a
+            else:
+                a = h_local / (1 - qv ** (-2 * rho))
+                a_prime = h_local / (1 - qv ** (2 * rho))
+            swap_map = dict(syts[i])
+            swap_map[k] = ci_k1
+            swap_map[k + 1] = ci_k
+            j = syt_index.get(tuple(sorted(swap_map.items())))
+            if j == i:
+                j = None
+            if j is None:
+                rows[i] = {i: a}
+                processed.add(i)
+            else:
+                b = mp.sqrt(abs(a * a_prime + 1))
+                rows[i] = {i: a, j: b}
+                rows[j] = {j: a_prime, i: b}
+                processed.add(i)
+                processed.add(j)
+        sigmas.append(rows)
+    return sigmas, dim
+
+
+def _trace_factors(sigmas, dim, factors):
+    """tr Π_k (c_k σ_{g_k} + d_k I) in a sparse mp irrep.
+
+    ``factors`` is a sequence of (c, d, g).  Returns None if some g is out of
+    range for this irrep (matches the old dense helpers' convention).
+    """
+    if dim == 0:
+        return mp.mpf(0)
+    total = mp.mpf(0)
+    # Row-by-row: row i of the product, then its diagonal entry.
+    for g in (f[2] for f in factors):
+        if not (0 <= g < len(sigmas)):
+            return None
+    for i in range(dim):
+        row = {i: mp.mpf(1)}
+        for (c, d, g) in factors:
+            sg = sigmas[g]
+            new: dict[int, "mp.mpf"] = {}
+            for kk, v in row.items():
+                if d != 0:
+                    new[kk] = new.get(kk, 0) + v * d
+                if c != 0:
+                    for jj, s in sg[kk].items():
+                        new[jj] = new.get(jj, 0) + v * c * s
+            row = new
+        total += row.get(i, 0)
+    return total
+
+
+def _check_sparse_matches_dense(shape, qv) -> "mp.mpf":
+    """Max |sparse − dense| entry against build_seminormal_matrices_mp."""
+    from hecke_characters import build_seminormal_matrices_mp
+    dense, ddim, _ = build_seminormal_matrices_mp(shape, qv)
+    sparse, sdim = _sparse_seminormal_mp(shape, qv)
+    assert ddim == sdim
+    worst = mp.mpf(0)
+    for M, rows in zip(dense, sparse):
+        for i in range(ddim):
+            for j in range(ddim):
+                worst = max(worst, abs(M[i, j] - rows.get(i, {}).get(j, 0)))
+    return worst
+
+
 def tr_M_via_ocneanu_word(Z: int, N: int, *,
                             include_inter: bool = True,
                             m_pp: int = 1, m_pn: int = 1,
                             m_nn: int = 1,
-                            q_val: float = None,
-                            z_val: float = None) -> float:
-    """FAST tr_M(W_atom) via raw braid-word multiplication + ω_λ weights.
+                            q_val=None,
+                            z_val=None,
+                            dps: int | None = None):
+    """tr_M(W_atom) via braid-word multiplication + ω_λ weights, in mpf.
 
-    Bypasses SymbolicHeckeElement / Hecke reduction entirely: multiplies
-    the (c, d, gen) factors directly in each seminormal irrep, then
-    sums Σ_λ ω_λ · χ_λ(W) / d_λ with Ocneanu weights.
+    Multiplies the (c, d, gen) factors directly in each exact sparse
+    seminormal irrep at q, then sums Σ_λ ω_λ · χ_λ(W) / d_λ with Ocneanu
+    weights.  Bypasses Gröbner–Shirshov reduction.
 
-    Use for atom binding calculations — 100s of times faster than the
-    reduce-then-Ocneanu path since it avoids the O(N²)–O(N³) Gröbner–
-    Shirshov reduction cost.
+    Until 2026-11-22 the characters came from the float64 kernel
+    `mass_at_3A_proper.chi_lambda_of_word` built at the PROTON pin regardless
+    of ``q_val``; they are now built at ``q_val`` (default `Q0`).
     """
-    from mass_at_3A_proper import (atom_braid_word_3A,
-                                     chi_lambda_of_word,
-                                     _cached_seminormal, Q0_PROTON)
+    from mass_at_3A_proper import atom_braid_word_3A
     from hecke_characters import partitions_of
-    if q_val is None:
-        q_val = Q0
-    if z_val is None:
-        z_val = z_num
+    dps = COMPUTE_DPS if dps is None else int(dps)
     A = Z + N
     if A < 1:
-        return 1.0
-    n_strands = 3 * A
-    word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
-                                include_inter=include_inter)
-    omegas_by_shape = omega_lambda_via_inversion(n_strands,
-                                                    q_val=q_val,
-                                                    z_val=z_val)
-    total = 0.0
-    for shape in partitions_of(n_strands):
-        sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
-        if dim == 0:
-            continue
-        chi = chi_lambda_of_word(sigmas, dim, word, n_strands - 1)
-        omega = omegas_by_shape.get(shape, 0.0)
-        total += omega * chi / dim
-    return total
+        return mp.mpf(1)
+    with mp.workdps(dps):
+        qv = Q0 if q_val is None else _as_mpf(q_val)
+        n_strands = 3 * A
+        word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                                    include_inter=include_inter)
+        factors = [(_as_mpf(c), _as_mpf(d), g) for (c, d, g) in word]
+        omegas_by_shape = omega_lambda_via_inversion(n_strands, q_val=qv,
+                                                     dps=dps)
+        total = mp.mpf(0)
+        for shape in partitions_of(n_strands):
+            sigmas, dim = _sparse_seminormal_mp(shape, qv)
+            if dim == 0:
+                continue
+            chi = _trace_factors(sigmas, dim, factors)
+            if chi is None:
+                continue
+            total += omegas_by_shape.get(shape, 0) * chi / dim
+        return +total
 
 
 def omega_lambda_via_inversion(n: int, *,
-                                 q_val: float = None,
-                                 z_val: float = None,
-                                 use_conjugate_symmetry: bool = True
-                                 ) -> dict[tuple, float]:
-    """Compute ω_λ for all λ ⊢ n by inverting the canonical tr_M system.
+                                 q_val=None,
+                                 z_val=None,
+                                 use_conjugate_symmetry: bool = True,
+                                 dps: int | None = None
+                                 ) -> dict[tuple, "mp.mpf"]:
+    """Compute ω_λ for all λ ⊢ n by inverting the canonical tr_M system, in mpf.
 
     Uses:
-      • markov_trace_canonical.tr_M_element as ground truth for tr_M(T_w).
-      • hecke_characters seminormal matrices for χ_λ(T_w).
-      • scipy.linalg.solve for the linear inversion.
+      • markov_trace_canonical.tr_M_element as ground truth for tr_M(T_w),
+        a rational function of q evaluated by mpmath at the exact q;
+      • exact sparse seminormal matrices at q for χ_λ(T_w);
+      • `mp.lu_solve` for the p(n) × p(n) inversion, with the solve's
+        residual checked.
 
-    When ``use_conjugate_symmetry=True`` (default), for each
-    non-self-conjugate pair (λ, λ') only ONE set of Hoefsmit matrices
-    is built; χ^{λ'}(T_w) is derived from χ^λ(T_w) via the Track-2
-    formula χ^{λ'}(T_w) = (-1)^{ℓ(w)} · χ^λ(T_w) |_{q → q^{-1}}.
-    The matrix rebuild at q^{-1} is cheap compared to repeated
-    character matmul, halving the dominant cost for non-self-conj
-    partitions.  At n=12: 9 self-conj + 34 pairs = 43 distinct
-    matrix-builds instead of 77.
+    ``q_val`` may be an mpf, a decimal string, an int, a Fraction or a sympy
+    Rational (all exact); a float is taken at its exact binary value.
+    ``z_val`` is accepted for signature compatibility and is NOT used: z is
+    fixed by convention D inside `tr_M_element` (it always was).
+    ``use_conjugate_symmetry`` is accepted and ignored: every irrep is now
+    built directly at q (the q→q⁻¹ derivation was a float64-cost shortcut).
+    ``dps`` defaults to `qou_substrate.precision.COMPUTE_DPS`.
 
-    Cached per n (disk cache is shared across symmetry modes).
+    Returns {shape: mpf}.  Cached in memory and on disk, keyed on
+    (n, dps, exact q string).
     """
-    import numpy as np
-    from scipy.linalg import solve
-    from hecke_characters import (partitions_of, build_seminormal_matrices)
+    from hecke_characters import partitions_of
     from markov_trace_canonical import tr_M_element
     from hecke_symbolic import SymbolicHeckeElement, q as q_sym_hs
-    from conjugate_symmetry import (is_self_conjugate,
-                                       conjugate_partition,
-                                       conjugate_pair_representatives)
-    from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
-    if q_val is None:
-        q_val = Q0
+    dps = COMPUTE_DPS if dps is None else int(dps)
+    with mp.workdps(dps):
+        qv = Q0 if q_val is None else _as_mpf(q_val)
+        q_key = _q_key(qv, dps)
+        cache_key = (n, dps, q_key)
+        if cache_key in _OMEGA_CACHE:
+            return _OMEGA_CACHE[cache_key]
+        disk = _load_omega_disk(n, q_key, dps)
+        if disk is not None:
+            _OMEGA_CACHE[cache_key] = disk
+            return disk
 
-    cache_key = n
-    if cache_key in _OMEGA_CACHE:
-        return _OMEGA_CACHE[cache_key]
-    # Try disk cache first
-    disk_omegas = _load_omega_disk_v2(n, q_val)
-    if disk_omegas is not None:
-        _OMEGA_CACHE[cache_key] = disk_omegas
-        return disk_omegas
+        shapes = list(partitions_of(n))
+        words = _reduced_words_for_basis(n)
+        assert len(shapes) == len(words), \
+            f"p({n}) = {len(shapes)} partitions, {len(words)} words"
 
-    shapes = list(partitions_of(n))
-    shape_index = {s: j for j, s in enumerate(shapes)}
-    words = _reduced_words_for_basis(n)
-    assert len(shapes) == len(words), \
-        f"p({n}) = {len(shapes)} partitions, {len(words)} words"
-
-    # Decide which shapes to evaluate directly vs derive via conjugate.
-    if use_conjugate_symmetry:
-        self_conj, pairs = conjugate_pair_representatives(n)
-        direct_shapes = list(self_conj) + [rep for rep, _ in pairs]
-        derived_map = {other: rep for rep, other in pairs}
-    else:
-        direct_shapes = shapes
-        derived_map = {}
-
-    from scipy.sparse import issparse, eye as speye
-    from conjugate_symmetry import _build_seminormal_at_q
-
-    def _eval_chi(sigmas, dim, w):
-        if dim == 0:
-            return 0.0
-        is_sparse = issparse(sigmas[0]) if sigmas else False
-        if is_sparse:
-            prod = speye(dim, format='csr')
-        else:
-            prod = np.eye(dim)
-        for g in w:
-            if 0 <= g < len(sigmas):
-                prod = prod @ sigmas[g]
-            else:
-                return None
-        if is_sparse:
-            return float(prod.diagonal().sum())
-        return float(np.trace(prod))
-
-    # Build coefficient matrix M[k, λ] = χ_λ(T_w_k) / d_λ.
-    # Conjugate symmetry: build each Hoefsmit matrix set at q ONCE per
-    # direct shape, and (if it has a conjugate partner) also at q^{-1}
-    # ONCE per representative.  For non-symmetry mode, fall back to the
-    # original per-(k,shape) rebuild (matches legacy behaviour).
-    M = np.zeros((len(shapes), len(shapes)))
-    rhs = np.zeros(len(shapes))
-
-    sigmas_at_q_cache: dict[tuple, tuple] = {}
-    sigmas_at_qinv_cache: dict[tuple, tuple] = {}
-    # Shared Hoefsmit BlockCache across all shapes — Track 1.
-    # Key ρ = content distance; entry (a_ρ, a'_ρ, b_ρ).  Reused across
-    # every partition at this n; eliminates the O(d_λ²) swap-partner
-    # scan in legacy build_seminormal_matrices.
-    from q_parameter import HA as _HA
-    block_cache = BlockCache(q_val, q_val - 1.0 / q_val)
-    block_cache_qinv = BlockCache(1.0 / q_val, 1.0 / q_val - q_val)
-    if use_conjugate_symmetry:
-        for shape in direct_shapes:
-            s, d, _ = build_seminormal_matrices_cached(
-                shape, cache=block_cache)
-            sigmas_at_q_cache[shape] = (s, d)
-        reps_needing_qinv = set(derived_map.values())
-        for shape in reps_needing_qinv:
-            s, d, _ = build_seminormal_matrices_cached(
-                shape, cache=block_cache_qinv,
-                q_val=1.0 / q_val)
-            sigmas_at_qinv_cache[shape] = (s, d)
-
-    for k, w in enumerate(words):
-        elem = (SymbolicHeckeElement({w: 1}) if w
-                else SymbolicHeckeElement({(): 1}))
-        tr_sym = tr_M_element(elem, n)
-        tr_num = float(sp.N(tr_sym.subs(q_sym_hs, q_val)))
-        rhs[k] = tr_num
-        for shape in direct_shapes:
-            if use_conjugate_symmetry:
-                sigmas, d_lam = sigmas_at_q_cache[shape]
-            else:
-                # Legacy path: share BlockCache but not per-shape cache.
-                sigmas, d_lam, _ = build_seminormal_matrices_cached(
-                    shape, cache=block_cache)
-            chi = _eval_chi(sigmas, d_lam, w)
-            if chi is None or d_lam == 0:
-                continue
-            j = shape_index[shape]
-            M[k, j] = chi / d_lam
-        if use_conjugate_symmetry:
-            for lp, rep in derived_map.items():
-                sigmas_qi, dim = sigmas_at_qinv_cache[rep]
-                chi_qi = _eval_chi(sigmas_qi, dim, w)
-                if chi_qi is None or dim == 0:
+        reps = {s: _sparse_seminormal_mp(s, qv) for s in shapes}
+        P = len(shapes)
+        M = mp.zeros(P, P)
+        rhs = mp.zeros(P, 1)
+        for k, w in enumerate(words):
+            elem = (SymbolicHeckeElement({w: 1}) if w
+                    else SymbolicHeckeElement({(): 1}))
+            tr_sym = sp.sympify(tr_M_element(elem, n))
+            f = sp.lambdify(q_sym_hs, tr_sym, "mpmath")
+            rhs[k] = mp.mpf(f(qv)) if tr_sym.free_symbols else _as_mpf(tr_sym)
+            factors = [(1, 0, g) for g in w]
+            for j, shape in enumerate(shapes):
+                sigmas, d_lam = reps[shape]
+                if d_lam == 0:
                     continue
-                chi_lp = ((-1) ** len(w)) * chi_qi
-                j = shape_index[lp]
-                M[k, j] = chi_lp / dim
+                chi = _trace_factors(sigmas, d_lam, factors)
+                if chi is None:
+                    continue
+                M[k, j] = chi / d_lam
 
-    # Solve M · ω = rhs
-    omega = solve(M, rhs)
-    omega_dict = {shape: float(omega[j])
-                   for j, shape in enumerate(shapes)}
+        omega = mp.lu_solve(M, rhs)
+        resid = mp.norm(M * omega - rhs, mp.inf)
+        scale = max(mp.norm(rhs, mp.inf), mp.mpf(1))
+        if resid > scale * mp.mpf(10) ** (-(dps - 10)):
+            raise ArithmeticError(
+                f"omega_lambda_via_inversion(n={n}): solve residual "
+                f"{mp.nstr(resid, 5)} exceeds 10^-{dps - 10}; system "
+                f"ill-conditioned at this precision")
+        omega_dict = {shape: +omega[j] for j, shape in enumerate(shapes)}
     _OMEGA_CACHE[cache_key] = omega_dict
-    _save_omega_disk_v2(n, q_val, omega_dict)
+    _save_omega_disk(n, q_key, dps, omega_dict)
     return omega_dict
 
 
-def verify_sum(n: int, *, q_val: float = None, z_val: float = None) -> dict:
-    """Verify Σ_λ ω_λ = 1 at H_n."""
-    if q_val is None:
-        q_val = Q0
-    if z_val is None:
-        z_val = z_num
-    total = 0.0
-    entries = []
+def verify_sum(n: int, *, q_val=None, z_val=None) -> dict:
+    """Verify Σ_λ ω_λ = 1 at H_n (mpf)."""
     from hecke_characters import partitions_of
-    omegas = omega_lambda_via_inversion(n, q_val=q_val, z_val=z_val)
+    omegas = omega_lambda_via_inversion(n, q_val=q_val)
+    total = mp.mpf(0)
+    entries = []
     for shape in partitions_of(n):
-        omega = omegas.get(shape, 0.0)
+        omega = omegas.get(shape, mp.mpf(0))
         total += omega
         entries.append({"shape": shape, "omega": omega})
     return {"n": n, "total": total,
-             "deviation_from_1": abs(total - 1.0),
+             "deviation_from_1": abs(total - 1),
              "entries": entries}
 
 
-def verify_trace_of_T0(n: int, *, q_val: float = None,
-                        z_val: float = None) -> dict:
-    """Verify Σ_λ (ω_λ / d_λ) · χ_λ(T_0) = z at H_n.
+def verify_trace_of_T0(n: int, *, q_val=None, z_val=None) -> dict:
+    """Verify Σ_λ (ω_λ / d_λ) · χ_λ(T_0) = z at H_n (mpf).
 
-    χ_λ(T_0) = (# cells in row 1 that contain entry 2 is first next
-    to entry 1) · q - (# cells in col 1 same) · q⁻¹ ...
-    More precisely: χ_λ(T_0) counts same-row and same-col SYTs:
-    χ_λ(T_0) = m_+(λ, 0) · q + m_-(λ, 0) · (−q⁻¹)
-    where m_+(λ, 0) and m_-(λ, 0) are computed via
-    canonical_tower.eigen_multiplicities.
+    χ_λ(T_0) = m_+(λ, 0) · q + m_-(λ, 0) · (−q⁻¹), with the multiplicities
+    from canonical_tower.eigen_multiplicities (integers).
     """
     from canonical_tower import eigen_multiplicities
     from hecke_characters import partitions_of
-    if q_val is None:
-        q_val = Q0
-    if z_val is None:
-        z_val = z_num
-    qi = 1.0 / q_val
-    total = 0.0
-    entries = []
-    omegas = omega_lambda_via_inversion(n, q_val=q_val, z_val=z_val)
-    for shape in partitions_of(n):
-        omega = omegas.get(shape, 0.0)
-        mp, mm = eigen_multiplicities(shape, 0)
-        d_lam = mp + mm
-        if d_lam == 0:
-            continue
-        chi = mp * q_val + mm * (-qi)
-        contrib = omega * chi / d_lam
-        total += contrib
-        entries.append({"shape": shape, "omega": omega, "chi": chi,
-                          "d_lam": d_lam, "contrib": contrib})
-    return {"n": n, "total_tr": total, "expected_z": z_val,
-             "deviation": abs(total - z_val), "entries": entries}
+    with mp.workdps(COMPUTE_DPS):
+        qv = Q0 if q_val is None else _as_mpf(q_val)
+        zv = qv ** 3 / (qv ** 2 + 1) if z_val is None else _as_mpf(z_val)
+        qi = 1 / qv
+        total = mp.mpf(0)
+        entries = []
+        omegas = omega_lambda_via_inversion(n, q_val=qv)
+        for shape in partitions_of(n):
+            omega = omegas.get(shape, mp.mpf(0))
+            mpl, mmi = eigen_multiplicities(shape, 0)
+            d_lam = mpl + mmi
+            if d_lam == 0:
+                continue
+            chi = mpl * qv + mmi * (-qi)
+            contrib = omega * chi / d_lam
+            total += contrib
+            entries.append({"shape": shape, "omega": omega, "chi": chi,
+                              "d_lam": d_lam, "contrib": contrib})
+        return {"n": n, "total_tr": total, "expected_z": zv,
+                 "deviation": abs(total - zv), "entries": entries}
 
 
-def canonical_markov_trace_via_ocneanu(elem, n: int, *,
-                                         q_val: float = None,
-                                         z_val: float = None) -> float:
-    """tr_M(elem) via ω_λ weights + seminormal characters.
+def canonical_markov_trace_via_ocneanu(elem, n: int, *, q_val=None,
+                                         z_val=None, dps: int | None = None):
+    """tr_M(elem) via ω_λ weights + exact seminormal characters (mpf).
 
     FAST alternative to markov_trace_canonical.tr_M_element (via
-    Hecke reduction): uses seminormal matrices from hecke_characters
-    directly with Ocneanu weights (derived by inversion).
-
-    elem: SymbolicHeckeElement OR a dict word → coefficient.
+    Hecke reduction).  elem: SymbolicHeckeElement OR a dict word → coeff.
+    Sympy coefficients are evaluated at q by mpmath; negative generator
+    indices (formal variables) are skipped; a word with a generator beyond
+    H_n is dropped (both as before).  Returns an mpf.
     """
-    from hecke_characters import (build_seminormal_matrices,
-                                    partitions_of)
-    import numpy as np
-    if q_val is None:
-        q_val = Q0
-    if z_val is None:
-        z_val = z_num
-    if hasattr(elem, "terms"):
-        terms = elem.terms
-    else:
-        terms = elem
-    # Precompute ω_λ for this n (cached)
-    omegas_by_shape = omega_lambda_via_inversion(n, q_val=q_val,
-                                                    z_val=z_val)
-    total = 0.0
-    for shape in partitions_of(n):
-        sigmas, dim, _syts = build_seminormal_matrices(shape)
-        if dim == 0:
-            continue
-        omega = omegas_by_shape.get(shape, 0.0)
-        # Compute χ_λ(elem) = Σ_{word, coeff} coeff · tr(word in λ)
-        chi_lam = 0.0
+    from hecke_characters import partitions_of
+    dps = COMPUTE_DPS if dps is None else int(dps)
+    terms = elem.terms if hasattr(elem, "terms") else elem
+    with mp.workdps(dps):
+        qv = Q0 if q_val is None else _as_mpf(q_val)
+        omegas_by_shape = omega_lambda_via_inversion(n, q_val=qv, dps=dps)
+        q_s = sp.Symbol('q', positive=True)
+        coeffs = {}
         for word, coeff in terms.items():
-            # Build M_word in irrep λ
-            try:
-                from scipy.sparse import issparse, eye as speye
-                is_sparse = issparse(sigmas[0]) if sigmas else False
-            except ImportError:
-                is_sparse = False
-            if is_sparse:
-                from scipy.sparse import eye as speye
-                prod = speye(dim, format='csr')
+            if isinstance(coeff, sp.Basic) and coeff.free_symbols:
+                coeffs[word] = mp.mpf(sp.lambdify(q_s, coeff, "mpmath")(qv))
             else:
-                prod = np.eye(dim)
-            for g in word:
-                if 0 <= g < len(sigmas):
-                    prod = prod @ sigmas[g]
-                elif g < 0:
-                    pass  # formal variable; skip
-                else:
-                    # gen out of range — element has generators beyond H_n
-                    prod = None
-                    break
-            if prod is None:
+                coeffs[word] = _as_mpf(coeff) if isinstance(
+                    coeff, (sp.Basic, Fraction, int, str)) else mp.mpf(coeff)
+        total = mp.mpf(0)
+        for shape in partitions_of(n):
+            sigmas, dim = _sparse_seminormal_mp(shape, qv)
+            if dim == 0:
                 continue
-            if is_sparse:
-                tr_w = float(prod.diagonal().sum())
-            else:
-                tr_w = float(np.trace(prod))
-            # Handle sympy coefficients: substitute q and evaluate
-            if hasattr(coeff, "subs"):
-                coeff_num = float(sp.N(
-                    coeff.subs(sp.Symbol('q', positive=True), q_val)))
-            else:
-                coeff_num = float(coeff)
-            chi_lam += coeff_num * tr_w
-        total += omega * chi_lam / dim
-    return total
+            chi_lam = mp.mpf(0)
+            for word, c in coeffs.items():
+                factors = [(1, 0, g) for g in word if g >= 0]
+                tr_w = _trace_factors(sigmas, dim, factors)
+                if tr_w is None:
+                    continue
+                chi_lam += c * tr_w
+            total += omegas_by_shape.get(shape, 0) * chi_lam / dim
+        return +total
 
 
 if __name__ == "__main__":
+    import time as _time
     from hecke_characters import partitions_of
+    mp.dps = COMPUTE_DPS
     print("=" * 80)
-    print("OCNEANU WEIGHTS ω_λ(q, z) — symmetric Hecke convention")
-    # The label here was `z = 1/(q^½+q^{-½})` — convention C — while `z_num` it
-    # formats has always been `Q0**3/(Q0**2+1)`, convention D. A mislabelled
-    # RUNTIME BANNER is worse than a mislabelled docstring: it is printed
-    # alongside the number it misnames, so a reader copying the pair out of a
-    # terminal carries the wrong attribution with the right value (bean qou-pc7l).
-    print(f"q₀ = {Q0:.6f},  z = q³/(q²+1) = {z_num:.6f}")
+    print("OCNEANU WEIGHTS ω_λ(q, z) — symmetric Hecke convention (mpf)")
+    # Convention-D banner (bean qou-pc7l): z_num has always been q³/(q²+1).
+    print(f"q₀ = {mp.nstr(Q0, 16)},  z = q³/(q²+1) = {mp.nstr(z_num, 16)},"
+          f"  dps = {COMPUTE_DPS}")
     print("=" * 80)
 
-    # Hand-derived at H_2 (closed form from Markov-axiom system)
+    print("\nSparse vs dense mp seminormal entries (max |Δ|):")
+    for s in [(2, 1), (3, 2), (2, 2, 1), (3, 2, 1)]:
+        print(f"  {s}: {mp.nstr(_check_sparse_matches_dense(s, Q0), 3)}")
+
     print("\nHand derivation at H_2 (from (W1),(W2) linear system):")
-    qi = 1.0 / Q0
+    qi = 1 / Q0
     two_q = Q0 + qi
-    ω_2 = (z_num + qi) / two_q
-    ω_11 = (Q0 - z_num) / two_q
-    print(f"  ω_(2)    = (z + q⁻¹) / [2]_q = {ω_2:.8f}")
-    print(f"  ω_(1,1)  = (q − z)   / [2]_q = {ω_11:.8f}")
-    print(f"  Σ = {ω_2 + ω_11:.8f}  (should be 1)")
+    w_2 = (z_num + qi) / two_q
+    w_11 = (Q0 - z_num) / two_q
+    print(f"  ω_(2)    = (z + q⁻¹) / [2]_q = {mp.nstr(w_2, 30)}")
+    print(f"  ω_(1,1)  = (q − z)   / [2]_q = {mp.nstr(w_11, 30)}")
 
-    # Inversion-based derivation, verified against tr_M_element
     print("\nBy inversion of Markov axiom system:")
-    print(f"  {'n':>3} {'p(n)':>6} {'Σω':>12} {'dev 1':>12}")
-    for n in [2, 3, 4, 5]:
-        import time as _time
+    print(f"  {'n':>3} {'p(n)':>6} {'|Σω − 1|':>12}")
+    for n in [2, 3, 4, 5, 6]:
         t0 = _time.time()
         omegas = omega_lambda_via_inversion(n)
         dt = _time.time() - t0
         total = sum(omegas.values())
-        print(f"  {n:>3} {len(omegas):>6} {total:>12.8f} "
-              f"{abs(total - 1):>12.3e}  ({dt:.1f}s)")
+        print(f"  {n:>3} {len(omegas):>6} {mp.nstr(abs(total - 1), 3):>12}"
+              f"  ({dt:.1f}s)")
         if n == 2:
             for s, o in omegas.items():
-                print(f"    ω_{s} = {o:.8f}")
+                print(f"    ω_{s} = {mp.nstr(o, 30)}")
+            print(f"    |ω_(2) − hand| = {mp.nstr(abs(omegas[(2,)] - w_2), 3)}")
 
-    # Test: compare Ocneanu-derived ω-based trace vs canonical on prop table
     print("\nVerify Ocneanu-weights-based tr_M against prop's explicit table:")
-    from hecke_symbolic import SymbolicHeckeElement
-    h_num = Q0 - 1.0/Q0
+    h_num = Q0 - 1 / Q0
     TESTS = [
-        ("𝟏 (photon)",           (),                1.0),
-        ("σ_0 (polarization)",    (0,),              z_num),
-        ("σ_0σ_1 (gluon)",         (0, 1),           z_num ** 2),
-        ("σ_0σ_1σ_0 (electron)",  (0, 1, 0),        h_num * z_num ** 2 + z_num),
-        ("σ_1σ_0σ_1 (braid)",     (1, 0, 1),        h_num * z_num ** 2 + z_num),
+        ("𝟏 (photon)",            (),          mp.mpf(1)),
+        ("σ_0 (polarization)",    (0,),        z_num),
+        ("σ_0σ_1 (gluon)",        (0, 1),      z_num ** 2),
+        ("σ_0σ_1σ_0 (electron)",  (0, 1, 0),   h_num * z_num ** 2 + z_num),
+        ("σ_1σ_0σ_1 (braid)",     (1, 0, 1),   h_num * z_num ** 2 + z_num),
     ]
-    # Use inversion-derived ω (correct); adapt to n = max(word) + 2
-    print(f"\n  {'Word':>24} {'Via ω (inversion)':>20} "
-          f"{'Expected':>14} {'match':>6}")
-    print("  " + "-" * 68)
     for name, word, expected in TESTS:
         n = max(word) + 2 if word else 1
-        if n == 1:
-            via = 1.0
-        else:
-            omegas = omega_lambda_via_inversion(n)
-            from hecke_characters import (build_seminormal_matrices,
-                                            partitions_of)
-            import numpy as np
-            total = 0.0
-            for shape in partitions_of(n):
-                sigmas, d_lam, _ = build_seminormal_matrices(shape)
-                if d_lam == 0:
-                    continue
-                try:
-                    from scipy.sparse import issparse, eye as speye
-                    is_sparse = issparse(sigmas[0]) if sigmas else False
-                except ImportError:
-                    is_sparse = False
-                if is_sparse:
-                    from scipy.sparse import eye as speye
-                    prod = speye(d_lam, format='csr')
-                else:
-                    prod = np.eye(d_lam)
-                for g in word:
-                    prod = prod @ sigmas[g]
-                chi = (float(prod.diagonal().sum()) if is_sparse
-                        else float(np.trace(prod)))
-                total += omegas[shape] * chi / d_lam
-            via = total
-        match = "✓" if abs(via - expected) < 1e-6 else "✗"
-        print(f"  {name:>24} {via:>+20.10f} {expected:>+14.8f} {match:>6}")
+        via = (mp.mpf(1) if n == 1 else
+               canonical_markov_trace_via_ocneanu({word: 1}, n))
+        print(f"  {name:>24} {mp.nstr(via, 20):>26} |Δ| = "
+              f"{mp.nstr(abs(via - expected), 3)}")
