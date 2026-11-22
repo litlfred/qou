@@ -33,6 +33,8 @@ Failure modes classified:
                                  declare the named identifier
   - `grep_no_match`            — neither (1) nor (2) hit; full-repo
                                  grep also returns 0 hits
+  - `grep_other_namespace`     — (1) and (2) missed, and the grep found
+                                 the short name only in another namespace
   - `ok`                       — at least one resolution route hit
 
 Note: this is a STATIC text check; it does not run `lake build` or
@@ -172,6 +174,45 @@ class _DeclOrFieldMatcher:
             self._field_rx.search(text) if self._field_rx else None)
 
 
+_BLOCK_COMMENT_RX = re.compile(r"/-.*?-/", re.DOTALL)
+_LINE_COMMENT_RX = re.compile(r"--[^\n]*")
+_SCOPE_OR_DECL_RX = re.compile(
+    r"^[ \t]*(?:(namespace|section|end)\b[ \t]*([^\s]*)"
+    r"|(?:@\[[^\]]*\][ \t]*)*"
+    r"(?:(?:noncomputable|private|protected|partial|unsafe)\s+)*"
+    r"(?:" + "|".join(DECL_KEYWORDS) + r")\s+([A-Za-z_][A-Za-z0-9_'.!?]*))",
+    re.MULTILINE,
+)
+
+
+def _qualified_names(text: str) -> set[str]:
+    """Fully qualified name of every declaration in a .lean file: the
+    enclosing `namespace` blocks joined to the spelled name. `section`
+    opens no namespace; `_root_.` discards the enclosing one. Comments
+    are removed first (nested block comments are not handled; none of
+    the declarations this audit reads sits inside one)."""
+    text = _LINE_COMMENT_RX.sub("", _BLOCK_COMMENT_RX.sub("", text))
+    stack: list[tuple[bool, str]] = []
+    out: set[str] = set()
+    for m in _SCOPE_OR_DECL_RX.finditer(text):
+        kw, scope_name, decl = m.group(1), m.group(2) or "", m.group(3)
+        if kw == "namespace":
+            stack.append((True, scope_name))
+        elif kw == "section":
+            stack.append((False, scope_name))
+        elif kw == "end":
+            for i in range(len(stack) - 1, -1, -1):
+                if stack[i][1] == scope_name:
+                    del stack[i:]
+                    break
+        elif decl:
+            if decl.startswith("_root_."):
+                out.add(decl[len("_root_."):])
+            else:
+                out.add(".".join([n for is_ns, n in stack if is_ns and n] + [decl]))
+    return out
+
+
 def _classify_one(ts_path: Path) -> dict[str, Any]:
     """Audit one `.ts` content-block file for lean.ref resolution."""
     try:
@@ -258,6 +299,7 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
     # catch `theorem Foo.bar` declared inside `namespace QOU`.
     grep_hit = False
     grep_hit_under_lake_root = False
+    grep_hit_other_namespace = False
     grep_suffixes = ['.'.join(decl_path.split(".")[i:])
                      for i in range(len(decl_path.split(".")))]
     grep_suffixes.sort(key=len, reverse=True)
@@ -293,11 +335,24 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
             # the common CamelCase-file-with-snake_case-leaf pattern
             # (e.g. `QOU.MassEndomorphism.delta_max_uniform_bound`
             # actually living in `QOU/MassEndomorphism/DeltaMaxUniformBound.lean`).
+            # The grep matches any dotted SUFFIX of the ref, down to the
+            # bare short name, in any namespace. `QOU.q_jacobiator` matched
+            # `QOU.Elaboration.q_jacobiator` that way and was counted `ok`
+            # (2026-11-22, qou-5n04). A grep hit now resolves only if that
+            # file declares the ref's fully qualified name; a hit that does
+            # not is `grep_other_namespace`.
             lake_root_abs = str((REPO_ROOT / pkg_meta["lakeRoot"]).resolve())
             for hp in hit_paths:
-                if str(Path(hp).resolve()).startswith(lake_root_abs):
+                if not str(Path(hp).resolve()).startswith(lake_root_abs):
+                    continue
+                try:
+                    hp_text = Path(hp).read_text(encoding="utf-8")
+                except (OSError, UnicodeDecodeError):
+                    continue
+                if decl_path in _qualified_names(hp_text):
                     grep_hit_under_lake_root = True
                     break
+                grep_hit_other_namespace = True
     except (subprocess.SubprocessError, OSError):
         pass
     row["grep_hit"] = grep_hit
@@ -318,6 +373,10 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
         # the decl IS reachable.  Lake build will resolve it.
         row["result"] = "ok"
         row["resolved_via"] = "grep_under_lake_root"
+    elif grep_hit_other_namespace:
+        # A lake-tree file declares the short name, but in another
+        # namespace: the ref names a declaration that does not exist.
+        row["result"] = "grep_other_namespace"
     elif sibling_exists and not sibling_declares:
         row["result"] = "sibling_no_decl"
     elif kind == "definition" and not sibling_exists:
