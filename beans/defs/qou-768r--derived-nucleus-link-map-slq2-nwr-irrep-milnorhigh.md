@@ -1,13 +1,13 @@
 ---
 # qou-768r
 title: 'Derived nucleus->link map: SLq(2) (N,w,r)->irrep + Milnor/higher-helicity energy bound — held-lit survey and fetch list'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-11-15T11:48:07Z
+updated_at: 2026-11-22T21:54:16Z
 parent: qou-10v9
 ---
 
@@ -1039,3 +1039,8 @@ claim. Linking NUMBERS are genuinely branch-dependent (-1 vs -2 per bond) and
 are not load-bearing for the vanishing result.
 
 - **Round 56 Progress (`2026-11-16T21:20:58Z`)**: Opened [`litlfred/qou#8207`](https://github.com/litlfred/qou/pull/8207) (`cfc03c4131df1ea758c17554768f2274e708f38b`, Commit 1 `0a9d3f269d6c23f614dc40aac55d5f0a7b2baafd`). Keeping bean at `status: in-progress` pending owner review.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

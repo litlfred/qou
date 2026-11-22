@@ -1,14 +1,13 @@
 ---
 # qou-4qno
 title: 'Staircase EW-residual: every testable case is in the TL kernel — rho_k has k rows, so only k=2 is physical at N=2, and the block calls that case untestable'
-status: in-progress
-pr: 8193
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-01T07:53:25Z
-updated_at: 2026-11-16T20:41:00Z
+updated_at: 2026-11-22T21:54:22Z
 parent: qou-10v9
 ---
 
@@ -318,3 +317,8 @@ proximity search is not derivation while the proof block called the same hook
 - [x] Added `staircaseList_length`, `staircasePartition_rows`, `staircase_in_tl_kernel_iff_three_le`, `staircase_physical_at_su2_iff_le_two`, `staircase_unique_physical_ge_two`, and `staircaseStrands_small_values` to `folio/quantum-observable-universe/lean/QOU/Hecke/Staircase.lean` (`0 sorry`, `0` vacuity hits).
 - [x] Verified staircase row counts and `N = 2` TL-kernel threshold in `computations/probes/route89_staircase_wpdb_stargram_probe.py` (`computations/probes/route89-staircase-wpdb-stargram.witness.json`).
 - [ ] Await CI verification and Merge Manager merge of PR #8193 (`9d88b10b75877699bcfe0134c2f9a3d95a32edf4`).
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

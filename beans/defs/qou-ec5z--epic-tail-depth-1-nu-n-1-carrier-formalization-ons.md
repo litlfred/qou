@@ -1,13 +1,13 @@
 ---
 # qou-ec5z
 title: (TAIL) depth-1 — nu_{n-1} carrier formalization + onset n1=8
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T00:44:56Z
-updated_at: 2026-10-04T15:46:33Z
+updated_at: 2026-11-22T21:54:24Z
 parent: qou-10v9
 ---
 
@@ -18,3 +18,8 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 - Completed the D6 assembly (`nuDepthOneClosedForm`, `depthOneCubicFactor_decomp`, `nuDepthOneClosedForm_pos_of_ge_eight`) in `QOU/BraidsAndKnots/YoungDiagramTailFirstInstance.lean` (`0` `sorry`), joining D1–D5 from PR #8143 and PR #8153.
 - Verified against exact `Fraction` enumeration and 3-carrier reduction in `computations/probes/tail_d6_lp_dual_altchar_vlevel_probe.py`.
 - Opened PR `litlfred/qou#8179` (`bf3902040cf206123f8aa0b5dc2b79c176dd9ce1`). Keeping status `in-progress` pending owner review.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

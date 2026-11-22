@@ -1,14 +1,14 @@
 ---
 # qou-adwi
 title: Corpus has TWO incompatible Planck lengths (factor t_P ~ 10.1); the Lean hardened a prose '~' into '='
-status: in-progress
+status: todo
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-09T11:10:54Z
-updated_at: 2026-10-04T15:15:38Z
+updated_at: 2026-11-22T21:54:26Z
 parent: qou-10v9
 ---
 
@@ -66,3 +66,8 @@ forbids.
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
 - **Summary**: Added `unit_product_vs_bare_step_ratio`, `deep_quantum_field_gt_one`, and `deep_quantum_contradicts_classical` in `QOU/InformationTheory.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

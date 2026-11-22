@@ -1,14 +1,13 @@
 ---
 # qou-7zob
 title: 'NN sector: open the ell/space index -- a flavour-only interface CANNOT split 3S1 from 1S0, proved degenerate'
-status: in-progress
-pr: 8198
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T03:11:32Z
-updated_at: 2026-11-16T20:55:00Z
+updated_at: 2026-11-22T21:54:14Z
 parent: qou-10v9
 ---
 
@@ -89,3 +88,8 @@ Lean: QOU/QBeta/InterfaceScalar.lean, sections IsospinOrdering + ChannelSelectio
 - [x] Added `additive_separable_interface_degenerate`, `coupled_spin_space_splitting_identity`, and `coupled_spin_space_splitting_of_singlet_zero` to `folio/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean` (`0 sorry`, `0` vacuity hits).
 - [x] Verified 80-dps separable degeneracy and spin–space tensor coupling splitting in `computations/probes/boxcontent_ward_nv_interface_binding_probe.py` (`computations/probes/boxcontent-ward-nv-interface-binding.witness.json`).
 - [ ] Await CI verification and Merge Manager merge of PR #8198 (`1f80984f96ba3e6334bf43a2df76dd82a90eba3e`).
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

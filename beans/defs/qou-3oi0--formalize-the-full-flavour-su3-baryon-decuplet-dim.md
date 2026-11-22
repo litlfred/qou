@@ -1,7 +1,7 @@
 ---
 # qou-3oi0
 title: Formalize the FULL flavour-SU(3) baryon decuplet (dim Sym^3 = 10, needs N = 3) -- blocked by qou-j3w6 (split from nmib)
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -9,11 +9,10 @@ tags:
     - reorg-2026-10-04
     - split-from-nmib
 created_at: 2026-10-10T08:27:45Z
-updated_at: 2026-10-10T08:28:05Z
+updated_at: 2026-11-22T21:54:33Z
 parent: qou-8lxd
 blocked_by:
     - qou-j3w6
-pr: 8229
 ---
 
 Split out of `qou-nmib` on 2026-10-10. **Blocked by `qou-j3w6`, and the block is
@@ -76,3 +75,8 @@ parked.** That is the safe no-op.
 
 ## Implementation Note (PR #8229)
 - Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/SkeinResolutionQuarkWritheBalanceWorpitzkyDecupletOrderedContentAndGenerationFilters.lean` and `computations/probes/skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py` (witness `computations/probes/skein-resolution-quark-writhe-balance-worpitzky-decuplet-ordered-content-and-generation-filters.witness.json`, `f1cdc284e299c69db7b5cdefc55f5ba3d747a9ab`).
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

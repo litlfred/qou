@@ -1,13 +1,13 @@
 ---
 # qou-efqx
 title: 'GAP: the gamma-gamma character exclusion does not reach the colour-weighted letter (four-letter alphabet)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T11:46:21Z
-updated_at: 2026-10-04T15:20:25Z
+updated_at: 2026-11-22T21:54:11Z
 parent: qou-10v9
 ---
 
@@ -90,3 +90,8 @@ no vector to test, so it is an authoring gap rather than a mathematical one.
 - Formalized the fourth (`averaged_weighted`) letter character `altCharCw` and `flavorSplitLeading` in `QOU/Mass/AltCharShiftMultiset.lean`, proving `altCharCw_sextic_closed_form`, `altCharCw_sub_ud`, `uu_sub_altCharCw`, and `altCharCw_strict_sandwich` (`letterChar q .ud < altCharCw q < letterChar q .uu < 0` on $1 < q$ with $0 < \delta(q) < 2$, `0` `sorry`).
 - Verified at 80 dps at $q_0$ in `computations/probes/tail_d6_lp_dual_altchar_vlevel_probe.py`.
 - Opened PR `litlfred/qou#8179` (`bf3902040cf206123f8aa0b5dc2b79c176dd9ce1`). Keeping status `in-progress` pending owner review.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

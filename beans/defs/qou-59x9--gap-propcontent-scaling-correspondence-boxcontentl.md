@@ -1,14 +1,13 @@
 ---
 # qou-59x9
 title: 'GAP: prop:content-scaling-correspondence — BoxContent.lean has no theorem; the content ↦ m_j claim is unformalised'
-status: in-progress
-pr: 8198
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T06:21:23Z
-updated_at: 2026-11-16T20:55:00Z
+updated_at: 2026-11-22T21:54:21Z
 parent: qou-10v9
 ---
 
@@ -28,3 +27,8 @@ Was in-progress with no bean update since 2026-09-04 and no main commit naming i
 - [x] Added `twoRow_all_weights_forces_two_zero` (complete classification showing `(2,0)` is the unique non-empty two-row shape whose box contents all lie in the `SU(2)` weight set of `V_(a,b)`), `boxContent_transpose_neg`, `axialDistance`, and `axialDistance_shift_invariant` to `folio/quantum-observable-universe/lean/QOU/BraidKnot/BoxContent.lean` (`0 sorry`, `0` new vacuity hits).
 - [x] Verified two-row shape classification and axial-distance shift invariance in `computations/probes/boxcontent_ward_nv_interface_binding_probe.py` (`computations/probes/boxcontent-ward-nv-interface-binding.witness.json`, Commit 1 `f173f5c66fdcbc0069dcbfce2da8a154bd52f3e4`).
 - [ ] Await CI verification and Merge Manager merge of PR #8198 (`1f80984f96ba3e6334bf43a2df76dd82a90eba3e`).
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

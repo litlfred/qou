@@ -1,15 +1,14 @@
 ---
 # qou-37y0
 title: 'GAP: m_d - m_u extraction claimed ''no new inputs'' — needs the underived EM coupling k, and does not cite the existing substrate split'
-status: in-progress
-pr: 8185
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-08-08T08:11:57Z
-updated_at: 2026-10-10T07:15:51Z
+updated_at: 2026-11-22T21:54:35Z
 parent: qou-8lxd
 ---
 
@@ -99,3 +98,8 @@ precision target.
 - [x] Formalized non-vacuous Lean 4 theorems (`0` `sorry`, `0` vacuity advisories across all 6 static audits) in `folio/quantum-observable-universe/lean/QOU/Eightfold/ColourConjugationGMODeviationAndAsymmetry.lean` and wired into `QOU.lean`.
 - [x] Added 50-dps `mpmath` probe `computations/probes/colour_conjugation_gmo_deviation_and_asymmetry_probe.py` and 2-commit stamped witness `computations/probes/colour-conjugation-gmo-deviation-and-asymmetry.witness.json` (`scriptCommitSha: dc490df3193b70802e4608a98cc9402380f4dbcd`, `HEAD: ea791bb906663eb37105b3486abd6e07818699ed`).
 - [x] Opened `litlfred/qou#8185` (status kept at `in-progress` per no-unilateral-closure policy).
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

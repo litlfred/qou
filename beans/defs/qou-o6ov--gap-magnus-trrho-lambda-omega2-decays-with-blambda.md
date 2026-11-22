@@ -1,13 +1,13 @@
 ---
 # qou-o6ov
 title: 'RESEARCH: does |tr(rho_lambda Omega2^P)|/dim decay in b across the <=2-row column? (NOT a truncation blocker)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-11-15T17:10:00Z
+updated_at: 2026-11-22T21:54:16Z
 parent: qou-10v9
 ---
 
@@ -626,3 +626,8 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 
 ## Progress (Round 57)
 - Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `commutator_mul_three`, `commutator_mul_of_right_commute`, and `commutator_mul_of_left_commute` in `MagnusOmega2LocalDecomposition.lean` plus 80-dps mpmath witness.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

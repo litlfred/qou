@@ -1,14 +1,14 @@
 ---
 # qou-9l0d
 title: 120 tritangent planes + HC plane model — unexplored Bring structures from Braden-DH 2024
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-04T17:32:49Z
-updated_at: 2026-10-10T07:15:48Z
+updated_at: 2026-11-22T21:54:34Z
 parent: qou-8lxd
 ---
 
@@ -52,3 +52,8 @@ TWO unexplored structures from the Braden-DH paper:
 
 ## Progress Note (2026-11-16)
 - Formalized Bring curve genus g=4 theta characteristics (256 = 136 even + 120 odd) and 120 tritangent planes S_5-orbit decomposition (36 even + 60 odd + 24 C_3 bitangents) in `QOU/Eightfold/BringThetaBruhatAndMesonH3.lean` (`bring_tritangent_120_and_theta_256_certificate`) + 50-dps probe `bring_theta_bruhat_and_meson_h3_probe.py` (PR `litlfred/qou#8163`, head `bc5c91877bf9516be8cbcc8cd12c1a6501a5e983`).
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

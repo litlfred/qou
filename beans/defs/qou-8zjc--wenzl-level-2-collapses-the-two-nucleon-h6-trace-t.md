@@ -1,14 +1,13 @@
 ---
 # qou-8zjc
 title: 'Wenzl level-2 collapses the two-nucleon H6 trace to 4 blocks: 3 unbind, (3,3) sign-flips, and NO conjugate pair survives at n=6'
-status: in-progress
-pr: 8187
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T12:43:11Z
-updated_at: 2026-11-16T20:22:00Z
+updated_at: 2026-11-22T21:54:19Z
 parent: qou-10v9
 ---
 
@@ -75,3 +74,8 @@ observation is yet an explanation.
 
 - [x] Added `conjugate_pair_survives_at_n_two`, `three_le_first_row_of_two_rows_of_five_le`, `conjugate_weight_eq_zero_of_two_lt_colLen_transpose`, and `n_six_three_three_survives_but_conjugate_dies` in `QOU/QBeta/WenzlWeightVanishing.lean` + 80-dps `mpmath` probe (`litlfred/qou#8187`, `28237151a70df9ecb11495b374e141771a7b4a76`).
 - [ ] Await review and merge of `litlfred/qou#8187`.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

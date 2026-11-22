@@ -1,14 +1,13 @@
 ---
 # qou-niah
 title: Third live z spelling 1/[2]_q sits at no Wenzl level
-status: in-progress
-pr: 8187
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T12:54:36Z
-updated_at: 2026-11-16T20:22:00Z
+updated_at: 2026-11-22T21:54:20Z
 parent: qou-10v9
 ---
 
@@ -40,3 +39,8 @@ Found while mapping the Wenzl level family, PR #5229.
 
 - [x] Added `pow_level_mul_golden_of_inv_two_bracket`, `inv_two_bracket_not_wenzl_level_one`, `inv_two_bracket_not_wenzl_level_two`, and `inv_two_bracket_no_wenzl_level_of_sq_gt_add_one` in `QOU/QBeta/WenzlWeightVanishing.lean` + 80-dps `mpmath` probe (`litlfred/qou#8187`, `28237151a70df9ecb11495b374e141771a7b4a76`).
 - [ ] Await review and merge of `litlfred/qou#8187`.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

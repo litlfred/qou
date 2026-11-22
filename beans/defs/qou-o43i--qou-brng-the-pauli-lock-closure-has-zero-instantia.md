@@ -1,13 +1,13 @@
 ---
 # qou-o43i
 title: 'qou-brng: the Pauli-lock closure has ZERO instantiation sites — its equal-scalars hypothesis is not a corpus claim a D9 witness could settle'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T20:22:33Z
-updated_at: 2026-10-04T15:13:38Z
+updated_at: 2026-11-22T21:54:26Z
 parent: qou-10v9
 ---
 
@@ -265,3 +265,8 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 
 ## Progress (Round 57)
 - Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `reciprocal_rescale_preserves_product`, `unit_sum_product_deficit_eq_sq_diff`, and `channel_product_diff_factor` in `SeparableInterfaceHypothesesHaveContent.lean` plus 80-dps mpmath witness.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

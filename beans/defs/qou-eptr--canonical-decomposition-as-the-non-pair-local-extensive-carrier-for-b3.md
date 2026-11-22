@@ -1,13 +1,13 @@
 ---
 # qou-eptr
 title: EP/canonical decomposition as the non-pair-local extensive carrier for b_3 — aim, and the hard blocker at the light end
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-11-16T18:04:00Z
+updated_at: 2026-11-22T21:54:17Z
 parent: qou-10v9
 ---
 
@@ -184,3 +184,8 @@ Was in-progress with no bean update since 2026-09-07 and no main commit naming i
 - Re-verified `computations/probes/atom_canonical_crossings_not_a_braid_probe.py` on `main` (12/12 checks pass, `computations/probes/atom-canonical-crossings-not-a-braid-probe.witness.json`), confirming that every atom carries non-braid `averaged` letters (`2*A` per atom) and every bound atom (`A >= 2`) carries `1` `averaged_weighted` letter, while tritium and helium-3 differ at 4 of 35 positions (`[11, 18, 20, 23]`).
 - Cross-verified in `computations/probes/chi_matrix_m_isospin_degeneracy_diagnostic_probe.py` (`qou-sgv5`, PR #8145 at `ed78b60a0ffe233f132df45a37bb1456ec237832`) how dropping the `d` field in `(c, d, gen) -> (sign, gen)` collapses the 4 differing tritium/helium-3 positions and all `averaged`/`averaged_weighted` letters to `+1`, whereas the exact-triple Hoefsmit / closed-form Wenzl bridge routes preserve them.
 - Status stays `in-progress` per §"THE BEAN STAYS OPEN (AGENTS.md 13a)".
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

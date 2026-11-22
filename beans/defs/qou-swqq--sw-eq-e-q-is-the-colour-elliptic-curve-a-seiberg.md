@@ -1,14 +1,14 @@
 ---
 # qou-swqq
 title: 'SW = E_q: is the colour elliptic curve a Seiberg-Witten curve? (NOT new — the 2026-06-08 audit already names it; disc(E_q) is degree 12, irreducible, 0 real roots)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-08-30T02:45:00Z
-updated_at: 2026-11-16T17:50:00Z
+updated_at: 2026-11-22T21:54:32Z
 parent: qou-8lxd
 ---
 
@@ -133,3 +133,8 @@ INCIDENTALLY ESTABLISHED AND STILL TRUE: SW period != Q_q under the literal read
 since Q_q -> 0 as q -> 1 while a_D^(n)|_{q=1} = I(n)/n >= 1 is positive and grows at
 least factorially (QOU.Mass.SWPeriodSuperExponential, PR #6052). Also corpus-grepped:
 SW and Q_q meet NOWHERE in the corpus. Recorded in case anyone proposes that reading.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

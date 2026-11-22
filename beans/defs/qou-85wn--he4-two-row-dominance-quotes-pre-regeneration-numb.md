@@ -1,13 +1,13 @@
 ---
 # qou-85wn
 title: he4-two-row-dominance quotes pre-regeneration numbers — thesis survives, every table value is stale, one contribution flips sign
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T12:44:43Z
-updated_at: 2026-10-04T15:20:44Z
+updated_at: 2026-11-22T21:54:18Z
 parent: qou-10v9
 ---
 
@@ -316,3 +316,8 @@ fail**.
 untouched.
 
 - **Round 55 Progress (`2026-11-16T21:09:27Z`)**: Opened [`litlfred/qou#8202`](https://github.com/litlfred/qou/pull/8202) (`61d4706edbc97c195108082e38b072c982ba2984`, Commit 1 `842a8da69cdb997861cc48f6f16593cc33e1e707`). Keeping bean at `status: in-progress` pending owner review.
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.

@@ -1,12 +1,13 @@
 ---
 # qou-wp3h
 title: Step-9a chosen joints (m_p/m_e chain)
-status: in-progress
+status: todo
 type: epic
+priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:58Z
-updated_at: 2026-11-16T19:19:00Z
+updated_at: 2026-11-22T21:54:31Z
 parent: qou-10v9
 ---
 
@@ -28,3 +29,8 @@ Sub-epic P1.9A of PROGRAM: L2 at 1 ppQ (mass and binding accuracy) (work-plan re
 - **PR #8143 fix:** Stamped `scriptCommitSha: "7df80d1c2e228518b2ca15ec1d314be46da8e524"` in `computations/probes/yekutieli-multiplicative-integral-curvature.witness.json` (`4340428cced694b249ca48316cbb5096751b5f64`).
 - **PR #8164:** Opened [`litlfred/qou#8164`](https://github.com/litlfred/qou/pull/8164) (`47da262e4f487a8f51de58f3577a63d5b17e6d6a`) for `qou-ch8w`, `qou-quv8`, `qou-yczy`, `qou-h5aw`, and `qou-n4u6` (`0` `sorry`, `0` self-assuming audit hits, 50+ dps witness `na-stokes-bar-parity-local-bond.witness.json`).
 - **Batch 5 (2026-11-16, PR #8171, head `1c72739193707fef67fbebe3aa153f994c73933e`)**: Addressed `qou-nbx7`, `qou-mrel`, `qou-n04i`, `qou-ncgk`, and `qou-3fqa` across `ProtonBorromeanAssembly.lean`, `YekutieliIntegration.lean`, and 50+ dps probe `delta_split_mrel_four_phi_resummation_probe.py` + witness `delta-split-mrel-four-phi-resummation.witness.json` (all kept `in-progress`).
+
+
+
+## Claim reset 2026-11-22
+In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
