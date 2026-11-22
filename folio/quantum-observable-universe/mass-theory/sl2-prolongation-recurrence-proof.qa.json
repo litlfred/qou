@@ -938,6 +938,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "sl2-prolongation-recurrence.md:18-21 recurrence claimed vs md:30-60 table failing from n=5; proof.md:22-23",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "e911738fe97f",
+          "ts": "296085b887cf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:59.758Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: cross-ref label and the Lean theorem/tactic string replaced by plain names; argument unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: sl2-prolongation-recurrence.md:18-21 recurrence claimed vs md:30-60 table failing from n=5; proof.md:22-23"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1562,6 +1577,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:36.077Z",
+  "updated_at": "2026-11-21T08:17:59.758Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

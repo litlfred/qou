@@ -88,7 +88,7 @@ noncomputable def markovZ (q : R) : R := q ^ 3 / (q ^ 2 + 1)
 noncomputable def hq (q : R) : R := q - q⁻¹
 
 /-- The leading flavour split `f = (q-1)²(1 - q⁻⁴)/3` — `Δm/M_N`, the
-    proton-neutron mass split (`prop:flavor-split-substrate`). -/
+    proton-neutron mass split (`conj:flavor-split-substrate-mass`). -/
 noncomputable def flavorSplit (q : R) : R := (q - 1) ^ 2 * (1 - q⁻¹ ^ 4) / 3
 
 /-- The coefficient of the single proton-neutron interface letter,

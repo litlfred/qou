@@ -1,0 +1,8 @@
+strand 1: placement-independent: False
+  Tp/Tn at q=1 (general photons): (2*p0*r0 + p0 + p01*r0 + p01*r1 + p1*r01 + 2*p1*r1 + r0 + 2)/(p0*r0 + p0*r01 + p1*r1 + p1 + r1 + 1)
+  Tp at q=1: (x + y)*(2*p0*r0 + p0 + p01*r0 + p01*r1 + p1*r01 + 2*p1*r1 + r0 + 2)   Tn at q=1: (x + y)*(p0*r0 + p0*r01 + p1*r1 + p1 + r1 + 1)
+  V3 specialisation: -q**6*(q**6 - 3*q**4 + 3*q**2 - 3)/(q**6 - 2*q**4 + 3*q**2 - 1)
+strand 3: placement-independent: False
+  Tp/Tn at q=1 (general photons): (p0*r0 + p0 + p01*r1 + p1*r1 + r0 + 1)/(2*p0*r0 + p0*r01 + p01*r0 + p1*r01 + 2*p1*r1 + p1 + r1 + 2)
+  Tp at q=1: (x + y)*(p0*r0 + p0 + p01*r1 + p1*r1 + r0 + 1)   Tn at q=1: (x + y)*(2*p0*r0 + p0*r01 + p01*r0 + p1*r01 + 2*p1*r1 + p1 + r1 + 2)
+  V3 specialisation: q**8*(q**2 - 2)*(q**4 - q**2 + 1)/(q**12 - 4*q**10 + 6*q**8 - 7*q**6 + 4*q**4 - 3*q**2 + 1)

@@ -206,7 +206,7 @@ third is the observable.
 |---|---|---|---|
 | **mass endomorphism** | $\mathcal{M}(K)$ (complex-volume block, $\mathfrak{V}$ entry) | $\mathrm{End}_{\mathbf{C}}(X_K)$ | **$\mathcal{M}$** (keep) |
 | **mass functional** | Skein-module map $\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$ (evaluates a knot class to its mass) | functional | **$\mathfrak{m}$** (migrate ← $\mathcal{M}$) |
-| **scattering amplitude** | transition matrix element $\lvert\mathcal{M}_q\rvert^2$ (e.g. [`trace-ratio-observable`](../observations/trace-ratio-observable.md)) | scalar amplitude | **$\mathcal{M}_q$** (distinct; unaffected) |
+| **scattering amplitude** | transition matrix element $\lvert\mathcal{M}_q\rvert^2$ (e.g. [`trace-ratio-observable`](../predicted-spectra/trace-ratio-observable.md)) | scalar amplitude | **$\mathcal{M}_q$** (distinct; unaffected) |
 
 Convention: reserve $\mathcal{M}$ (calligraphic operator) for the **endomorphism**; the Skein **functional** becomes $\mathfrak{m}\colon\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$ (fraktur observable register, matching the mass scalar $\mathfrak{m}$ it outputs); the QFT **amplitude** $\mathcal{M}_q$ keeps its subscripted glyph. The Skein-module entry above is updated to $\mathfrak{m}$ accordingly.
 

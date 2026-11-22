@@ -10,7 +10,7 @@ distinct regimes. L₊ ≠ L₋ is proved symbolically.
 
 ## Proved theorems
 
-- Uses `hopf_ne` from BorromeanUnique.lean: L₊ ≠ L₋
+- Uses `lPlus_ne_lMinus` from BorromeanUnique.lean: L₊ ≠ L₋
 
 ## References
 
@@ -27,7 +27,7 @@ open QOU.Archimedean
 /-- The three nuclear binding regimes. -/
 inductive BindingRegime where
   | shellFilling  : BindingRegime  -- the braid (σ₀σ₁)²σ₀, closure T(2,4)
-  | magicClosure  : BindingRegime  -- Hopf link L₊ or L₋
+  | magicClosure  : BindingRegime  -- L₊ or L₋ (closure in B₃: the unknot)
   | openShell     : BindingRegime  -- Bare typed crossing
   deriving DecidableEq, Repr
 
@@ -44,9 +44,9 @@ noncomputable def electronWordMatrix : TMatrix :=
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem electronWord_eq_hopfPlus_gen0 :
-    electronWordMatrix = hopfPlus * stdRep3_gen0 := by
-  unfold electronWordMatrix hopfPlus
+theorem electronWord_eq_lPlus_gen0 :
+    electronWordMatrix = lPlus * stdRep3_gen0 := by
+  unfold electronWordMatrix lPlus
   rw [Matrix.mul_assoc]
 
 /-- The electron word also equals σ₀ · L₋ = σ₀ · σ₁σ₀ (by braid relation). -/
@@ -54,9 +54,9 @@ theorem electronWord_eq_hopfPlus_gen0 :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem electronWord_eq_gen0_hopfMinus :
-    electronWordMatrix = stdRep3_gen0 * hopfMinus := by
-  unfold electronWordMatrix hopfMinus
+theorem electronWord_eq_gen0_lMinus :
+    electronWordMatrix = stdRep3_gen0 * lMinus := by
+  unfold electronWordMatrix lMinus
   rw [Matrix.mul_assoc]
 
 /-! ## §3  L₊ and L₋ are distinct operators -/
@@ -70,8 +70,8 @@ theorem electronWord_eq_gen0_hopfMinus :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
-  hopf_ne
+theorem lPlus_lMinus_distinct : lPlus ≠ lMinus :=
+  lPlus_ne_lMinus
 
 /-! ## §4  L₊ and L₋ are related by the braid relation -/
 
@@ -82,9 +82,9 @@ theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem yang_baxter_hopf :
-    hopfPlus * stdRep3_gen0 = hopfMinus * stdRep3_gen1 := by
-  unfold hopfPlus hopfMinus
+theorem yang_baxter_lPlus_lMinus :
+    lPlus * stdRep3_gen0 = lMinus * stdRep3_gen1 := by
+  unfold lPlus lMinus
   exact stdRep3_braid
 
 /-! ## §5  B₃ is quark-level only (statement) -/
@@ -101,10 +101,10 @@ theorem yang_baxter_hopf :
 -- Computational witness: nuclear-binding-lp.witness.json
 theorem borromean3_not_nuclear_level :
     -- B₃ operates at the quark level, not nuclear. At the nuclear level,
-    -- the distinct operators L₊ and L₋ (proved distinct by hopf_ne)
+    -- the distinct operators L₊ and L₋ (proved distinct by lPlus_ne_lMinus)
     -- are the binding operators.
-    hopfPlus ≠ hopfMinus :=
-  hopf_ne
+    lPlus ≠ lMinus :=
+  lPlus_ne_lMinus
 
 /-! ## §6  Regime transitions at magic numbers (statement) -/
 

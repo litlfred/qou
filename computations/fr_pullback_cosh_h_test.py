@@ -96,9 +96,13 @@ def alpha_k_base(k: int) -> mp.mpf:
     return mp.mpf(str(M_E_MEV)) * 8 * G
 
 
-def chi_lambda_braid_via_rust(shape, braid_word_signed, q_f64):
+def chi_lambda_braid_via_rust(shape, braid_word_signed, q_mp):
+    """chi_lambda(beta) via the MPFR native entry (2026-11-21); was the f64
+    `chi_lambda_braid` at float(q), which capped every B_MeV at ~1e-16."""
     word = [(int(s), int(g)) for (s, g) in braid_word_signed]
-    return pyhecke_native.chi_lambda_braid(list(shape), word, float(q_f64))
+    dps = mp.mp.dps
+    return mp.mpf(pyhecke_native.chi_lambda_braid_mpfr(
+        list(shape), word, mp.nstr(q_mp, dps + 5), dps))
 
 
 def fr_pullback_weights_k3(by_partition, n_strands, q_f64,
@@ -106,7 +110,7 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64,
                             h_val=None):
     """K_3* = 4_1 FR pullback at depth 3 only, with optional cosh(h)
     multiplier on the dim_q² weight (Variant 6)."""
-    qfact = qfac(n_strands, Q0_PROTON)
+    qfact = qfac(n_strands, Q0)
     eps = vanishing_threshold()
     weights = {}
     chi_at_3 = {}
@@ -116,8 +120,8 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64,
     for p in by_partition:
         shape = tuple(p["partition"])
         depth = len(shape) - 1
-        dq = dim_q(shape, Q0_PROTON)
-        dq_sq = mp.mpf(str(dq * dq))
+        dq = dim_q(shape, Q0)
+        dq_sq = (dq * dq)
         if per_partition_cosh_multiplier:
             dq_sq = dq_sq * cosh_h
         if depth != 3:
@@ -127,19 +131,19 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64,
         try:
             chi_K = chi_lambda_braid_via_rust(list(shape), K_3_STAR_WORD, q_f64)
         except (ValueError, RuntimeError, OverflowError):
-            chi_K = 0.0
+            chi_K = mp.mpf(0)
         chi_at_3[shape] = chi_K
         z_norm += dq_sq * mp.fabs(chi_K)
     if z_norm < eps:
         for shape in chi_at_3:
-            dq = dim_q(shape, Q0_PROTON)
-            dq_sq = mp.mpf(str(dq * dq)) * cosh_h
+            dq = dim_q(shape, Q0)
+            dq_sq = (dq * dq) * cosh_h
             weights[shape] = dq_sq / qfact
     else:
         scale = s_uniform / z_norm
         for shape, chi_K in chi_at_3.items():
-            dq = dim_q(shape, Q0_PROTON)
-            dq_sq = mp.mpf(str(dq * dq)) * cosh_h
+            dq = dim_q(shape, Q0)
+            dq_sq = (dq * dq) * cosh_h
             weights[shape] = dq_sq * mp.fabs(chi_K) * scale
     return weights
 
@@ -152,7 +156,7 @@ def phi_k_with_weights(by_partition, k, weights):
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape, Q0_PROTON)
+        dq = dim_q(shape, Q0)
         magnitude = mp.fabs(chi) * dq
         if magnitude < eps:
             continue
@@ -172,7 +176,7 @@ def compute_B_with_variant(atom, variant):
     w = json.loads(w_path.read_text())
     atom_data = w["data"]["atom"]
     free_data = w["data"]["free"]
-    q_f64 = float(Q0)
+    q_f64 = Q0   # name kept for the call sites; it is the mpf proton pin now
 
     q_mp = mp.mpf(str(Q0))
     h_val = q_mp - 1 / q_mp
@@ -210,14 +214,10 @@ def compute_B_with_variant(atom, variant):
     B_MeV = B_dim
     B_ame = B_AME[atom]
     return {
-        # B_MeV traces to `q_f64 = float(Q0)`, which feeds
-        # pyhecke_native.chi_lambda_braid -- a Rust binding that takes a double
-        # BY DESIGN (see chi_lambda_braid_via_rust above, which casts
-        # explicitly). The character is computed in f64 by the kernel, so there
-        # is no exact route to widen here.
-        # float64-intentional: the Rust kernel is the limiting arithmetic.
+        # Full precision end to end since 2026-11-21: the characters come
+        # from chi_lambda_braid_mpfr and dim_q/qfac take the mpf q.
         "B_MeV": fmt(B_MeV), "B_AME_MeV": fmt(B_ame),
-        "ratio_pred_over_AME": float(B_MeV / B_ame),
+        "ratio_pred_over_AME": B_MeV / B_ame,
     }
 
 
@@ -265,6 +265,13 @@ def main() -> int:
         pos = [x for x in ratios if x > 0]
         var = max(pos) / min(pos) if len(pos) >= 2 else float("inf")
         results[variant] = {"per_atom": per_atom, "variance_max_min": var}
+    # serialise the mpf ratios/variances with fmt only at the witness edge
+    def _ser(o):
+        if isinstance(o, mp.mpf):
+            return fmt(o)
+        if isinstance(o, dict):
+            return {k: _ser(v) for k, v in o.items()}
+        return o
 
     baseline_var = results["baseline"]["variance_max_min"]
     print(f"=== Variant comparison (vs K_3*=4_1 baseline, variance {baseline_var:.4f}×) ===\n")
@@ -292,17 +299,17 @@ def main() -> int:
         verdict = (f"cosh(h)-injection REGRESSES at every tested variant; "
                    f"best is still {best_variant} at {delta_pct:+.1f}%")
     builder.add_data("verdict", verdict)
-    builder.add_data("results", results)
+    builder.add_data("results", _ser(results))
     builder.add_data("best_variant", best_variant)
-    builder.add_data("best_variance", float(best_var))
-    builder.add_data("improvement_pct_vs_baseline", float(delta_pct))
+    builder.add_data("best_variance", fmt(best_var))
+    builder.add_data("improvement_pct_vs_baseline", fmt(delta_pct))
     print(f"\n  Verdict: {verdict}")
 
     builder.add_assertion(
         "best_variance_finite",
-        computed=float(best_var) if best_var != float("inf") else 1e9,
-        expected=0.0,
-        tolerance=10.0,
+        computed=best_var if best_var != float("inf") else mp.mpf(10) ** 9,
+        expected=mp.mpf(0),
+        tolerance=mp.mpf(10),
         unit="variance",
         source=(
             f"cosh(h) injection probe — all 6 variants completed; "

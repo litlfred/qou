@@ -32,12 +32,12 @@ import { join, resolve } from "path";
 // The platform (content pipeline + this tool) lives in the sibling
 // folio-assistant repo, wired in via the in-repo `folio-assistant/` symlink
 // (scripts/setup-folio-assistant.sh). Run that once if this import fails.
-import { computeStats } from "../folio-assistant/cat-harness-tools/scripts/lean-coverage";
+import { computeStats } from "../folio-assistant/folio-assistant-sci/scripts/lean-coverage";
 
 const REPO_ROOT = resolve(import.meta.dir, "..");
 const PAPER = "quantum-observable-universe";
 const CONTENT_ROOT = join(REPO_ROOT, "folio");
-const NOTE = join(CONTENT_ROOT, PAPER, "introduction", "authors-note.md");
+const NOTE = join(CONTENT_ROOT, PAPER, "appendix-formalisation-notes", "formalisation-coverage.md");
 const WITNESS = join(CONTENT_ROOT, PAPER, "introduction", "lean-coverage.json");
 
 /** Each rule locates a numeric span in the note and supplies its live value. */

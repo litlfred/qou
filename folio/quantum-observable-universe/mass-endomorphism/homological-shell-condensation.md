@@ -42,6 +42,5 @@ $$
 
 *Equivalently, the :refterm[descent]{#descent}-graded trace
 $\mathrm{tr}_{M, \ell}$ on $J^\ell / J^{\ell+1}$
-([prop:graded-trace-residue-split](#prop:graded-trace-residue-split))
 is supported entirely on the diagonal at saturated $n$, and the
 brane-tower :refterm[descent]{#descent} residues vanish for $\ell \geq 2$.*

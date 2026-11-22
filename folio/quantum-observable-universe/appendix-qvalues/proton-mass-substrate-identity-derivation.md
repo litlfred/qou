@@ -39,7 +39,7 @@ The series converges to $0.017\,\mathrm{ppm}$ accuracy at order $h^9$.
 
 ## Combined with the canonical flavor-split
 
-[Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md)
+[Substrate-pure derivation of the $u$--$d$ flavor split](../mass-theory/flavor-split-substrate.md)
 gives the canonical Hecke-skein derivation
 
 $$
@@ -161,5 +161,5 @@ numerically verified rather than symbolically derived.
 
 - [Borromean categorical observable](../braids-and-knots/f-bor-borromean-observable.md)
   — categorical observable $F_{\mathrm{Bor}}$ (closed form, $h$-expansion, structural integers)
-- [Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md)
+- [Substrate-pure derivation of the $u$--$d$ flavor split](../mass-theory/flavor-split-substrate.md)
   — canonical Hecke-skein $\Delta m / M_N$ derivation

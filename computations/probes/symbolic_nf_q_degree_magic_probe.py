@@ -405,8 +405,8 @@ def main() -> int:
                          computed="True", expected="True")
         for A, v in verdicts.items():
             wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{v['n_magic']}/{v['n_non_magic']}",
-                             expected=f"{v['n_magic']}/{v['n_non_magic']}")
+                             computed=str(v["n_magic"] > 0 and v["n_non_magic"] > 0),
+                             expected="True")
         out = wb.save(extra={
             "auditOnly": True,
             "q0Anchor": "independent",

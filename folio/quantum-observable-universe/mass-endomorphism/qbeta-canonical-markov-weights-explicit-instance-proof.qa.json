@@ -263,6 +263,21 @@
         },
         "reviewed_at": "2026-11-15T21:56:03.226Z",
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf"
+      },
+      {
+        "field_hash": {
+          "md": "2d47108ff1b0",
+          "ts": "67dce9bb63f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:04:23.463Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: Lean names replaced by prose and the comparison paragraph between the explicit and canonical weights rewritten; the facts stated (the (1^3) weight vanishes for the canonical choice, 1.2 percent gap on the symmetric block) are the same. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1870,6 +1885,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:03.226Z",
+  "updated_at": "2026-11-21T08:04:23.463Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

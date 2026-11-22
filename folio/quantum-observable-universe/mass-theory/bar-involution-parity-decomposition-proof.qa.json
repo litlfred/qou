@@ -17,8 +17,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "proof:1-5 checked by hand",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
+      },
+      {
+        "field_hash": {
+          "md": "bc5eb1f00318",
+          "ts": "dabe1251a99f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:22.694Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: three Lean lemma names removed from parentheticals. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: proof:1-5 checked by hand"
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:33.168Z"
+  "updated_at": "2026-11-21T08:18:22.694Z"
 }

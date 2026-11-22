@@ -100,7 +100,7 @@ PARTICLE_KNOT = {
     (1,):       ("σ₁", "σ₁",     "virtual (ℓ=1)"),
     (0, 1):     ("L₊", "σ₀σ₁",   "Hopf link"),
     (1, 0):     ("L₋", "σ₁σ₀",   "Hopf link"),
-    (0, 1, 0):  ("e⁻", "σ₀σ₁σ₀", "trefoil (3₁)"),
+    (0, 1, 0):  ("e⁻", "σ₀σ₁σ₀", "Hopf link (closure in B₃)"),
 }
 
 def ws(w):

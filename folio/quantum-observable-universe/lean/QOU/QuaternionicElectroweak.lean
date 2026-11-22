@@ -30,7 +30,7 @@ which uses `Real.cos`/`Real.sin`, specializes to `ℝ`.
 
 The *identification* of this algebraic structure with the physical electroweak
 sector is interpretive — see `rem:tetraplectic-su2-gauge-reading` and
-`mass-theory/hoefsmit-ew-cell-content.md` (Morita 1982; Cederwall–Preitschopf).
+`knots-particles-confinement/hoefsmit-ew-cell-content.md` (Morita 1982; Cederwall–Preitschopf).
 No physical claim beyond the group-action content is asserted by this file.
 -/
 

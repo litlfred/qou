@@ -23,11 +23,11 @@ namespace QOU.Torsion
 structure CategoricalMeson where
   /-- The underlying type of knot invariants. -/
   InvariantType : Type*
-  /-- Quark crossing pair T₀₁ = σ₀σ₁ (positive Hopf link L₊). -/
+  /-- Quark crossing pair T₀₁ = σ₀σ₁ (L₊; closure in B₃: unknot). -/
   T01 : InvariantType
-  /-- Antiquark crossing pair T₁₀ = σ₁σ₀ (negative Hopf link L₋). -/
+  /-- Antiquark crossing pair T₁₀ = σ₁σ₀ (L₋; closure in B₃: unknot). -/
   T10 : InvariantType
-  /-- Hopf link binding L_H = σ₀σ₁. -/
+  /-- Binding word L_H = σ₀σ₁ (closure in B₃: unknot). -/
   hopfBinding : InvariantType
   /-- The meson is the composite T₀₁ · L_H · T₁₀. -/
   composite : InvariantType

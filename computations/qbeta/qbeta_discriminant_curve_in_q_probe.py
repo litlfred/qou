@@ -99,10 +99,10 @@ and T_1 T_0 is the 3-cycle of S_3, whose eigenvalues in the standard 2-dim rep
 are the primitive cube roots of unity. Hence eigenvalues -exp(+-i pi/3), modulus
 1, and eigenphase EXACTLY 2 pi / 3 = 2.0943951... as q -> 1+.
 
-Note where the trefoil is in that expansion: e^- — the longest element
+Note where the electron word is in that expansion: e^- — the longest element
 T_0 T_1 T_0, the corpus's electron word — enters only at SECOND order, while the
 leading decay direction is 1 + L_-. The operator that does the decay is not the
-trefoil at leading order; the trefoil is its first correction.
+electron word at leading order; e^- is its first correction.
 
 ======================================================================
 5. THE ELLIPTICITY WINDOW, AND THE CLOSURE BY MEASUREMENT

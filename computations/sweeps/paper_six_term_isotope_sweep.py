@@ -663,11 +663,13 @@ def paper_six_term_mass(Z, N, include_inter=True,
             term2_canonical, term3_canonical,
         )
         from mass_at_3A_proper import atom_braid_word_3A
-        word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+        word = atom_braid_word_3A(Z, N, include_inter=include_inter, q=Q_MP)
         n_strands_canonical = 3 * (Z + N)
         n_gens_canonical = n_strands_canonical - 1
-        t2 = term2_canonical(word, n_gens_canonical, float(Q0_FLOAT))
-        t3 = term3_canonical(word, n_gens_canonical, float(Q0_FLOAT))
+        # Q_MP, not float(Q0_FLOAT): the brane tower is mpf end to end now
+        # and refuses a float q (2026-11-21).
+        t2 = term2_canonical(word, n_gens_canonical, Q_MP)
+        t3 = term3_canonical(word, n_gens_canonical, Q_MP)
     elif tower_mode == "li2q":
         # CORRECTED Kashaev limit per `prop:mass-endomorphism-tower`
         # (proof: a43d7f1fa).  T2 = -Σ Li_2^q(-|V_i|),
@@ -1563,7 +1565,7 @@ if __name__ == "__main__":
             "upstream_witness_hashes": _upstream_hashes,
         },
         # The Phase-3 substrate-Δm benchmark (PR #696 D3 lift) lives
-        # entirely in the sibling probe `probe_flavor_dressed_mass_split.py`
+        # entirely in the sibling probe `probe_flavor_dressed_mass_from_substrate_split.py`
         # / `flavor-dressed-mass-from-substrate-split.witness.json`.
         # This sweep does NOT consume the substrate-Δm witness — it is
         # an independent end-to-end test — so the substrate-Δm blocks

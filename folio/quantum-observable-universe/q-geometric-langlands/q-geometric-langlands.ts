@@ -138,6 +138,7 @@ export default chapter({
         // swap makes it a backward ref, no new cascade.
         "unitary-stability",
         "geometric-rh-exposition",
+        "adelic-critical-line-persistence",
       ],
     }),
     section({

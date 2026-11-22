@@ -198,7 +198,7 @@ def selftest() -> int:
 
 
 def main() -> int:
-    if "--selftest" in sys.argv:
+    if "--selftest" in sys.argv or "--self-test" in sys.argv:
         return selftest()
     hits, scanned, total = scan()
     measured = [h for h in hits if h["kind"] == "MEASURED"]

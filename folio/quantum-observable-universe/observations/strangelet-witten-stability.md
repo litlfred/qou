@@ -13,7 +13,7 @@ Replacing down quarks (lepton partner $T_{2,3}^{\sigma}$, $3$ negative crossings
 **Jones polynomial obstruction.**
 If crossing energy dominated, strange matter would be the ground state. However, all torus knots have zero hyperbolic volume. The mass of a baryon derives entirely from the Borromean linking, not the constituent knots ([building block knots](#rem:building-block-knots)). The strange quark is heavier because of its Jones polynomial.
 
-The terminal resolution ([terminal resolution](#prop:terminal-resolution)) decomposes each hadronic link into a sum of unknots and Hopf links. These are weighted by coefficients dependent on the constituent Jones polynomials. At $q = q_0$:
+The skein resolution ([skein generation](#prop:skein-generation)), read through fundamental knots and the Hopf link ([hadron reading of skein generation](#rem:skein-generation-hadron-reading)), writes each hadronic link in terms of unknots and Hopf links. These are weighted by coefficients dependent on the constituent Jones polynomials. At $q = q_0$:
 
 | Quark | Lepton partner | Jones polynomial | $\lvert J(q_0)\rvert$ |
 |-------|------|-----------------|:-------------:|

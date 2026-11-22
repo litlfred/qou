@@ -1191,6 +1191,24 @@
         "severity": "major",
         "evidence": "Lean ref `toffoli_lp_stable` is about the retired convention-C diagonal q + √q − 1 (its own docstring says it \"must not be cited\"). Statement keeps item 3's bound with κ = λ_max/\\|λ_min\\|while saying the Gram is singular, so the claim is undefined; the proof states its reduction step is open. Exact checks (sympy): (G t)₅ = z² + 2hz + 3h²z² + h³z + h⁴z² ✓; the degree-4 relation ✓; the alternative representative ✓; P₆,₇ + P₇,₆ = q(q−1)²(q+1)²/(2(q²+1)) ✓; positive root of the numerator 0.894480292911 ✓. Warn: the block is a long research log (probe scripts, measurements) inside a proposition",
         "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "4b4a540f1975",
+          "ts": "a31a6187bfde",
+          "lean": "b66a79f0d780",
+          "lean_statement": "81bda0b8b13c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:51:52.808Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: probe script names, Lean declaration names and the Lean theorem table removed from the prose; the mathematics is unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean ref `toffoli_lp_stable` is about the retired convention-C diagonal q + √q − 1 (its own docstring says it \"must not be cited\"). Statement keeps item 3's bound with κ = λ_max/\\|λ_min\\|while saying the Gram is singular, so the claim is undefined; the proof states its reduction step is open. Exact checks (sympy): (G t)₅ = z² + 2hz + 3h²z² + h³z + h⁴z² ✓; the degree-4 relation ✓; the alternative representative ✓; P₆,₇ + P₇,₆ = q(q−1)²(q+1)²/(2(q²+1)) ✓; positive root of the numerator 0.894480292911 ✓. Warn: the block is a long research log (probe scripts, measurements) inside a proposition"
       }
     ],
     "proof-statement-integrity": [
@@ -2362,6 +2380,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:09.897Z",
+  "updated_at": "2026-11-21T07:51:52.808Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

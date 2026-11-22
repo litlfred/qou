@@ -19,6 +19,7 @@ export default conjecture({
     "ivanov-olshanski2003",
     "feray-meliot2012",
     "kerov1996",
+    "fulman2003",
   ],
   authorNotes: [
     {

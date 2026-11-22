@@ -167,9 +167,8 @@ noncomputable def farCommRelation {n : ℕ}
     (`gs_basis_of_empty_lm` below proves the collapse). With `0 < n` the Hecke
     relation for `σ₀` supplies the non-emptiness instead, and every leading
     monomial is a genuine word. `n = 0` is no loss: `H_0(q)` has no generators. -/
-noncomputable def heckeRewritingSystem (n : ℕ) (hn : 0 < n) (hp : HeckeParams) :
-    RewritingSystem (HeckeGen n) ℝ where
-  rules :=
+noncomputable def heckeRules (n : ℕ) (hp : HeckeParams) :
+    List (ReductionRule (HeckeGen n) ℝ) :=
     -- Hecke relations: σᵢ² → (q-q⁻¹)σᵢ + 1 for each i
     (List.finRange n).map (fun i => heckeRelation i hp) ++
     -- Yang–Baxter: σᵢσᵢ₊₁σᵢ → σᵢ₊₁σᵢσᵢ₊₁ for adjacent pairs
@@ -180,13 +179,21 @@ noncomputable def heckeRewritingSystem (n : ℕ) (hn : 0 < n) (hp : HeckeParams)
     ((List.finRange n).flatMap (fun i =>
       (List.finRange n).filterMap (fun j =>
         if i.val > j.val + 1 then some (farCommRelation i j) else none)))
-  nonempty := by
+
+theorem heckeRules_ne_nil (n : ℕ) (hn : 0 < n) (hp : HeckeParams) :
+    heckeRules n hp ≠ [] := by
     -- `0 < n` makes `finRange n` non-empty, so the Hecke-relation block is too.
     intro h
     have h1 := (List.append_eq_nil_iff.mp h).1
     have h2 := (List.append_eq_nil_iff.mp h1).1
     rw [List.map_eq_nil_iff] at h2
     exact absurd h2 (List.ne_nil_of_length_pos (by rw [List.length_finRange]; exact hn))
+
+/-- The Hecke rewriting system: the finite rule list `heckeRules` as a
+    `RewritingSystem`. Requires `0 < n` (see `heckeRules`). -/
+noncomputable def heckeRewritingSystem (n : ℕ) (hn : 0 < n) (hp : HeckeParams) :
+    RewritingSystem (HeckeGen n) ℝ :=
+  .ofList (heckeRules n hp) (heckeRules_ne_nil n hn hp)
 
 /-! ### Why there is no sentinel rule
 
@@ -289,7 +296,7 @@ theorem mem_heckeRewritingSystem_rules {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
     (∃ i : Fin n, r = heckeRelation i hp)
     ∨ (∃ i j : Fin n, j.val = i.val + 1 ∧ r = yangBaxterRelation i j)
     ∨ (∃ i j : Fin n, j.val + 1 < i.val ∧ r = farCommRelation i j) := by
-  simp only [heckeRewritingSystem, List.mem_append, List.mem_map,
+  simp only [heckeRewritingSystem, RewritingSystem.mem_ofList_rules, heckeRules, List.mem_append, List.mem_map,
     List.mem_flatMap, List.mem_filterMap, List.mem_finRange, true_and] at hr
   rcases hr with (⟨i, hi⟩ | ⟨i, j, hj⟩) | ⟨i, j, hj⟩
   · exact Or.inl ⟨i, hi.symm⟩

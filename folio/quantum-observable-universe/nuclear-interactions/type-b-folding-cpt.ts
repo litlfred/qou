@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:type-b-folding-cpt",
   title:
-    "Type-B Cartan folding realises CPT via symmetric-crystal $\\mathbb{Z}/2$ fixed points",
+    "Type-B Coxeter folding realises CPT via Hecke-algebra $\\mathbb{Z}/2$ fixed points",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.TypeBFoldingCpt",
     validation: "not_checked",
@@ -14,12 +14,15 @@ export default conjecture({
     "conj:p-from-braid-mirror",
     "conj:t-from-trace-cyclicity",
     "rem:breit-wheeler-vertex",
+    "conj:symmetric-crystal-pair-production",
   ],
   cites: [
     "kashiwara1991",
     "khovanovlauda2009",
     "brundankleshchev2009",
     "lecouvey2007",
+    "geck-lambropoulou-2004",
+    "lusztig2003",
   ],
   authorNotes: [
     {

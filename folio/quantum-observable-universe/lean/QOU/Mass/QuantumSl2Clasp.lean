@@ -357,8 +357,10 @@ theorem qfact_mul_prod_one_sub (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (c n : ℕ) :
       show c + (n + 1) = (c + n) + 1 by omega, qfact_succ, show c + n + 1 = c + n + 1 from rfl]
     ring
 
-/-- van der Veen's `k`-th summand of `C(n, t)` (2008, Lemma 1), with `N = m + 1`,
-`m = k + a + n`, `t = q² = s⁴`, and `t^{N(N−1)/2}` written `s^{2N(N−1)}`. -/
+/-- `(−1)^{N−1}` times van der Veen's `k`-th summand of `C(n, t)` (2008, Lemma 1), with
+`N = m + 1`, `m = k + a + n`, `t = q² = s⁴`, and `t^{N(N−1)/2}` written `s^{2N(N−1)}`. The sign
+comes from the cup and cap of `V_N` (`capCoefQ`); it is absent from the printed formula and does
+not affect `|J_N|`. -/
 def vdvTerm (k a n : ℕ) : 𝕜 :=
   (-1) ^ (k + a + n) * s ^ (2 * ((k + a + n + 1) * (k + a + n)))
     / s ^ (4 * ((k + a + n + 1) * (n + k)))

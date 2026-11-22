@@ -10,7 +10,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:ilp-covalent-bond",
   lean: { ref: "qou:QOU.Molecular.inverse_trefoil_not_gammaGamma" },
-  title: "The $H_2$ bond word is $V^3$ under the $\\gamma\\gamma$ rule",
+  title: "The $H_2$ bond word among the powers of $V_s$ is $V_s^3$",
   tags: [
     "covalent-bond",
     "gamma-gamma",
@@ -23,7 +23,8 @@ export default proposition({
     engine: "python",
     script: "computations/probes/h2_gg_electron/h2_gg_electron_probe.py",
     witness: [
-      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json"
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+      "computations/probes/h2_ruled_electron/h2-ruled-electron.witness.json",
     ],
     status: "experimental",
   },
@@ -50,6 +51,20 @@ export default proposition({
         "in the statement, 2026-11-15). The Lean ref `inverse_trefoil_not_gammaGamma` " +
         "encodes only the side remark that the inverse trefoil has odd length and so is " +
         "not a gamma-gamma word; the selection result itself is not formalized.",
+    },
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "Rescoped on owner instruction (issue #8821). Under the ruled electron " +
+        "sigma0 sigma1 sigma0 (2026-11-21) and the ruled photon " +
+        "1 + phi0 sigma0 + phi1 sigma1 + phi01 sigma0 sigma1^-1, the pre-registered probe " +
+        "`computations/probes/h2_ruled_electron/` finds that V^3 is unique only among the " +
+        "powers of V_s; with the photon's full term alphabet 37 (pe) / 32 (ep) of 155 bonds " +
+        "pass, the cheapest being sigma5^2. The statement is narrowed to the V-power family " +
+        "and the wider result is a remark. Which bond the full alphabet selects is an open " +
+        "owner question. The two-term statement rests on the derived insertion of PR #8743, " +
+        "not yet merged. Lean: `QOU/Molecular/H2RuledElectronBond.lean` (no sorry).",
     },
   ],
 });

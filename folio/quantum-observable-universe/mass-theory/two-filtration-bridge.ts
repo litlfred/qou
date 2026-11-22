@@ -17,6 +17,7 @@ export default conjecture({
     "open-problem",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated by the reading-order drain (qou-d4kh, owner ruling: every chapter strict), from text main added concurrently: (this conjecture **presupposes** a word-to-partition step that is unestablished)," },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): (attributed to\n  [curvature-rank GB stratification](#prop:curvature-rank-gb-stratification),\n  [stratified $\\Phi_q$](#conj:quantum-dilogarithm-stratified) — but the\n  first stratifies by the curvature rank of **words** and supplies no\n  partition-indexed filtration, so this conjecture **presupposes** the very\n  word-to-partition step that is unestablished)," },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([depth correspondence](#conj:gb-depth-period-correspondence))" },
     { kind: "status", date: "2026-11-16", body: "2026-11-16: the max-hook statistic used here is renamed max-hook depth; GB-depth now means Lusztig's a-function (owner choice). The empty 'otherwise' branch is noted, the (4) row is corrected (it is half of the chiral pair {(4),(1^4)}, so the formula gives 3), and the period column is marked as comparison. Proved core: prop:cellular-depth-filtration." },

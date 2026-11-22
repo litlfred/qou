@@ -37,8 +37,6 @@ export default chapter({
       label: "sec:particle-conjectures",
       blocks: [
         "particle-conjectures-intro",
-        "borromean-quark",
-        "borromean-quark-table-data",
         "higgs-t28",
         "s5-equivariant-torus-knots",
         "s5-equivariant-torus-knots-table-data",
@@ -98,6 +96,7 @@ export default chapter({
       blocks: [
         "mass-predictions-intro",
         "neutron-prediction-comparison",
+        "elliptic-stability-locus",
         "neutron-prediction-comparison-interpretation",
         "neutron-prediction-comparison-table-data",
         "stability-cubic-plot",
@@ -144,34 +143,19 @@ export default chapter({
       label: "sec:mass-predictions-derivations",
       blocks: [
         "mass-predictions-derivations-intro",
-        "nucleon-borromean-topology",
-        "nucleon-borromean-topology-proof",
-        "pair-skein-mass-formula",
-        "pair-skein-mass-formula-proof",
-        "flavor-split-substrate",
-        "flavor-split-substrate-proof",
-        "flavor-split-substrate-interpretation",
         "dressed-quark-numerology-at-q0",
         // Phase 7 orphan reconnection (2026-05-25):
         "m-tau-knot-prediction",
       ],
     }),
     section({
-      title: "Terminal resolution and the $W$-boson discrepancy",
+      title: "Terminal resolution",
       label: "sec:mass-predictions-derivations-terminal-resolution-proof",
       blocks: [
         "mass-predictions-derivations-terminal-resolution-proof-intro",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
-        "w-boson-mass-discrepancy",
 
-        "w-boson-mass-discrepancy-table1-data",
-        "w-boson-mass-discrepancy-table2-data",
-        "w-boson-mass-discrepancy-table3-data",
-        "w-boson-mass-discrepancy-table4-data",
-        "w-boson-mass-discrepancy-table5-data",
-        "w-boson-mass-discrepancy-table6-data",
-        "w-boson-mass-discrepancy-table7-data",
       ],
     }),
 
@@ -224,8 +208,6 @@ export default chapter({
       blocks: [
         "beta-decay-magic-shells-intro",
         "nitrogen-14-threading",
-        "trace-ratio-observable",
-        "trace-ratio-observable-proof",
         "trace-ratio-interpretation",
         // Detangler R3 (2026-05-23): 6-row verification-nuclei
         // trace-ratio table extracted from
@@ -278,7 +260,6 @@ export default chapter({
         "gravity-spectral-prefactor",
         "gravity-spectral-prefactor-proof",
         "gravity-spectral-prefactor-interpretation",
-        "g-q-closed-form",
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",
@@ -295,7 +276,6 @@ export default chapter({
         // Detangler R3 (2026-05-23): 7-row representative-isotopes
         // table extracted from valley-table.md.
         "valley-table-data",
-        "golden-ratio-degeneration",
         "hydrogen-knot-structure",
 
         "hydrogen-knot-structure-table1-data",
@@ -369,7 +349,7 @@ export default chapter({
 
     // ── Proton radius and gravity ─────────────────────────────────────
     section({
-      title: "Proton Radius and Gravity Tests",
+      title: "Proton Radius, Gravity Tests and the $W$-Boson Mass",
       label: "sec:proton-gravity-tests",
       blocks: [
         "proton-gravity-tests-intro",
@@ -379,6 +359,14 @@ export default chapter({
         "entropic-gravity-data",
         "local-substrate-q",
         "local-substrate-q-proof",
+        "w-boson-mass-discrepancy",
+        "w-boson-mass-discrepancy-table1-data",
+        "w-boson-mass-discrepancy-table2-data",
+        "w-boson-mass-discrepancy-table3-data",
+        "w-boson-mass-discrepancy-table4-data",
+        "w-boson-mass-discrepancy-table5-data",
+        "w-boson-mass-discrepancy-table6-data",
+        "w-boson-mass-discrepancy-table7-data",
       ],
     }),
 
@@ -422,6 +410,7 @@ export default chapter({
         "trefoil-vortex-chirality-flip",
         "crossing-energy-pair-cancellation",
         "crossing-energy-interpretation",
+        "einstein-nonsymmetric-metric-comparison",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
         "virtual-subword",

@@ -2,7 +2,7 @@
   "engine": "python+fractions",
   "engineVersion": "python 3.11.15",
   "computedAt": "2026-08-30T21:30:57.241216+00:00",
-  "commitSha": "9d6ff880b70ef8333f3c57ea963442c385ef216a",
+  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "assertions": [
     {
       "name": "exact_agreement_with_build_atom_nf_sym",
@@ -12,116 +12,116 @@
     },
     {
       "name": "both_groups_non_empty_at_A2",
-      "computed": "2/1",
-      "expected": "2/1",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A3",
-      "computed": "2/2",
-      "expected": "2/2",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A4",
-      "computed": "1/4",
-      "expected": "1/4",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A5",
-      "computed": "2/4",
-      "expected": "2/4",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A6",
-      "computed": "2/5",
-      "expected": "2/5",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A7",
-      "computed": "2/6",
-      "expected": "2/6",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A8",
-      "computed": "4/5",
-      "expected": "4/5",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A9",
-      "computed": "4/6",
-      "expected": "4/6",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A10",
-      "computed": "2/9",
-      "expected": "2/9",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A11",
-      "computed": "4/8",
-      "expected": "4/8",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A12",
-      "computed": "4/9",
-      "expected": "4/9",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A13",
-      "computed": "4/10",
-      "expected": "4/10",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A14",
-      "computed": "4/11",
-      "expected": "4/11",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A15",
-      "computed": "4/12",
-      "expected": "4/12",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A16",
-      "computed": "3/14",
-      "expected": "3/14",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A17",
-      "computed": "4/14",
-      "expected": "4/14",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A18",
-      "computed": "4/15",
-      "expected": "4/15",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A19",
-      "computed": "4/16",
-      "expected": "4/16",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A20",
-      "computed": "6/15",
-      "expected": "6/15",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     }
   ],
@@ -129,8 +129,8 @@
   "durationMs": 5494048,
   "computation": "symbolic-nf-q-degree-magic",
   "scriptFile": "symbolic_nf_q_degree_magic_probe.py",
-  "scriptHash": "a78548b7fcd0",
-  "scriptCommitSha": "a091389d9adb50fbda57ad5ded19112da266e561",
+  "scriptHash": "6afb2b0e3349",
+  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

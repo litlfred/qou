@@ -7,7 +7,7 @@ Does NOT assert B₃ — instead explores candidates and shows which
 one the Gram matrix inverse / minimum-action principle selects.
 
 Phase 0a: NF of 3 unconfined quarks (should be unstable)
-Phase 0b: Candidate operators compared (B₃, Hopf chains, trefoil, G⁻¹ action)
+Phase 0b: Candidate operators compared (B₃, Hopf chains, electron word, G⁻¹ action)
 Phase 0c: Full G⁻¹ action on demand profile
 Phase 1:  Verify selected operator reproduces known proton/neutron NFs
 
@@ -322,7 +322,9 @@ dh_raw = hecke_mul({(0, 1): 1.0}, {(0, 1): 1.0})
 dh_nf = reduce_nf(dh_raw)
 candidates["(σ₀σ₁)² (double Hopf)"] = dh_nf
 
-# 4. Trefoil: e⁻ = σ₀σ₁σ₀
+# 4. Electron word: e⁻ = σ₀σ₁σ₀ (closure: Hopf link)
+# Key kept as the committed witness label; renaming it needs a regen that
+# moves float64 gram_inverse digits. The closure of σ₀σ₁σ₀ is the Hopf link.
 candidates["e⁻ = σ₀σ₁σ₀ (trefoil)"] = {(0, 1, 0): 1.0}
 
 # 5. Identity (no confinement)
@@ -444,7 +446,7 @@ for nucleon_name, quark_types in [("PROTON (u,u,d)", ['u', 'u', 'd']),
             if name == 'γ':
                 print(f"    {name} = {val:+.4f}  → vacuum energy deficit (mass via Borromean volume)")
             elif name == 'e⁻':
-                print(f"    {name} = {val:+.4f}  → trefoil demand = BETA DECAY CHANNEL")
+                print(f"    {name} = {val:+.4f}  → e⁻ demand = BETA DECAY CHANNEL")
             elif name == 'L₊':
                 print(f"    {name} = {val:+.4f}  → Hopf link deficit (gluon field deficit)")
             else:

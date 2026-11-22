@@ -36,8 +36,25 @@
         "reviewed_at": "2026-11-18T04:05:50.194Z",
         "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
         "evidence": "Item 7 now states that the H_3(q) matrix presentation is checked by hand, not in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "36eef037a169",
+          "ts": "f758c4481b29",
+          "lean": "d17a5617c0ed",
+          "lean_statement": "33892f77740b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:24.756Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-18 review: 'Classical, not formalised' reworded to 'Classical; cited, not proved here', a label replaced by its title, 'not in Lean' dropped from the by-hand note, and an interpretive clause about conj:mass-categorical-descent removed. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Item 7 now states that the H_3(q) matrix presentation is checked by hand, not in Lean."
       }
     ]
   },
-  "updated_at": "2026-11-18T04:05:50.194Z"
+  "updated_at": "2026-11-21T08:18:24.756Z"
 }

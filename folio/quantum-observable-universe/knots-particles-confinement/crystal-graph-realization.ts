@@ -12,8 +12,6 @@ export default conjecture({
     "brundankleshchev2009",
     "kashiwara1991",
     "lecouvey2007",
-    "khovanovlauda2009",
-    "marsh2000",
   ],
   tags: [
     "tier:S",

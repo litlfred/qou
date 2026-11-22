@@ -1156,6 +1156,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "minor",
         "evidence": "Ref (sibling only) names `complexLiTwo`, a `def`, not a proposition. The three claimed items exist in the sibling: (A) `complexLiTwo` (:45) with a proved summability on ‖z‖≤1; (B) `blochWigner` (:63); (C) `Cl_2_neg` (:84), a genuine unconditional theorem. Defect in (B): the docstring says D is \"defined for z ∈ ℂ∖{0,1}\", but `complexLiTwo` is a `tsum` that Mathlib sets to 0 off the closed unit disk, so `blochWigner` is not the Bloch–Wigner function for \\ | z\\ | >1; calling it an upstream candidate overstates. `blochWigner_unit_circle_eq_Cl_2` (:246) is conditional on a class carrying Im Li₂(e^{iθ}) = Cl₂(θ)"
+      },
+      {
+        "field_hash": {
+          "md": "fe5664ef3455",
+          "ts": "111493311a64",
+          "lean": "86974cbd005e",
+          "lean_statement": "a888b907e223"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:58:16.068Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the block was moved into this appendix (ed536fcc31a), so the word diff shows the whole file; the content matches the earlier review, and the blochWigner docstring still says 'defined for z in C minus {0,1}' while complexLiTwo is a tsum set to 0 off the closed unit disk. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Ref (sibling only) names `complexLiTwo`, a `def`, not a proposition. The three claimed items exist in the sibling: (A) `complexLiTwo` (:45) with a proved summability on ‖z‖≤1; (B) `blochWigner` (:63); (C) `Cl_2_neg` (:84), a genuine unconditional theorem. Defect in (B): the docstring says D is \"defined for z ∈ ℂ∖{0,1}\", but `complexLiTwo` is a `tsum` that Mathlib sets to 0 off the closed unit disk, so `blochWigner` is not the Bloch–Wigner function for \\ | z\\ | >1; calling it an upstream candidate overstates. `blochWigner_unit_circle_eq_Cl_2` (:246) is conditional on a class carrying Im Li₂(e^{iθ}) = Cl₂(θ)"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2308,6 +2326,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:59.783Z",
+  "updated_at": "2026-11-21T07:58:16.068Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

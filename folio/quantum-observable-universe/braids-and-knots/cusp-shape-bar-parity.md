@@ -1,4 +1,4 @@
-The cusp shape of the figure-eight knot $4_1$ is $\omega = e^{i\pi/3}$, a primitive sixth root of unity — the root of the cyclotomic polynomial $\Phi_6(z) = z^2 - z + 1$ in the upper half-plane, with trace field $\mathbb{Q}(\sqrt{-3})$. Split $\omega$ along the bar-involution $\sigma\colon x \mapsto x^{-1}$ into its symmetric and antisymmetric shapes:
+The cusp shape of the figure-eight knot $4_1$ is $\omega = e^{i\pi/3}$, a primitive sixth root of unity — the root of the cyclotomic polynomial $\Phi_6(z) = z^2 - z + 1$ in the upper half-plane, with trace field $\mathbb{Q}(\sqrt{-3})$ \cite{neumann-reid}. Split $\omega$ along the bar-involution $\sigma\colon x \mapsto x^{-1}$ into its symmetric and antisymmetric shapes:
 $$
   \mathrm{barEven}(x) = x + x^{-1}, \qquad \mathrm{barOdd}(x) = x - x^{-1}.
 $$
@@ -15,3 +15,5 @@ $$
   \mathrm{barOdd}(\omega) = 2\omega - 1,
 $$
 and $(2\omega - 1)^2 = 4\omega^2 - 4\omega + 1 = -3$ using $\omega^2 = \omega - 1$. The computation uses only field operations over a generic field (no archimedean structure).
+
+**On the name "cusp shape".** In the literature the cusp shape of a hyperbolic $3$-manifold with one torus cusp is the similarity class of the Euclidean structure induced on a horospherical cross-section of the cusp, that is a point of the Teichmüller space of the torus \cite[\S1, \S3]{dang-purcell}. In the holonomy normalisation $\mu \mapsto \begin{pmatrix}1&1\\0&1\end{pmatrix}$, $\lambda \mapsto \begin{pmatrix}-1&c\\0&-1\end{pmatrix}$ it is the ratio $c$ of the longitude and meridian translations, which depends on the chosen basis of $\pi_1(T^2)$ up to an integral Möbius transformation \cite[\S3.3]{dubois2007}. The number $\omega = e^{i\pi/3}$ used above is a different object: it is the shape parameter of each of the two regular ideal tetrahedra into which the figure-eight complement decomposes. The identities $\mathrm{barEven}(\omega) = 1$ and $\mathrm{barOdd}(\omega)^2 = -3$ are statements about that primitive sixth root of unity and hold as stated; the phrase "cusp shape of $4_1$" in this block refers to the tetrahedral shape parameter, not to the cusp-torus modulus $c$, and the two should not be identified when either is cited.

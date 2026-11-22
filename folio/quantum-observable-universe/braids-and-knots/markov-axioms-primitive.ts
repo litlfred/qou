@@ -15,6 +15,8 @@ export default remark({
     "convergence-mechanism",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): So the loop value is a **consequence** of the fibre being two-dimensional, not a stipulation." },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The selection is forced by the dimension of the mass fibre:  - The [eigenbasis decomposition for the Feynman amplitude](#lem:feynman-eigenbasis-decomposition) already writes the row cap   $\\ell(\\lambda) \\leq 2$ into the mass channel's own decomposition — $V$ is the   fundamental of $\\mathrm{SU}_q(2)$, and the summand count $\\lfloor n/2 \\rfloor + 1$   is the two-row count and no other. So $y_{(1^3)} = 0$ is a restatement of the   decomposition the mass chapter uses, not an extra assumption. -" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - `lem:feynman-eigenbasis-decomposition` already writes the row cap\n\n- Given $y_{(1^3)} = 0$, `markovWeights_eq_jones_of_threeRow_eq_zero`\n  ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean))\n  shows the faithful" },
     {
       kind: "refined-framing",

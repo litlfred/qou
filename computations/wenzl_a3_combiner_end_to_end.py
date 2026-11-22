@@ -11,8 +11,8 @@ braid at the production 50-dps floor:
         = Σ_{ξ⊢6, ν⊢3} Tr[ A^λ_{ξν}(I_pn) · (ρ_ξ(β_inner) ⊗ ρ_ν(β_outer)) ]
 
 ³He (Z=2,N=1 = p,p,n) is the clean wiring target: its 2nd inter-nucleon interface
-I_23 is the p-n averaged crossing σ_5 − h/2 — EXACTLY the interface the combiner
-bakes in — so no interface generalization is needed (tritium's n-n σ_5 − h is the
+I_23 is the colour-weighted p-n crossing σ_5 − h(1/2 − δ/4) — EXACTLY the
+interface the combiner bakes in — so no interface generalization is needed (tritium's n-n σ_5 − h is the
 linear-in-interface follow-up).
 
 This extends the sibling's H_9 universality demo (abstract panel words, λ∈{(9),(8,1)})
@@ -44,7 +44,7 @@ from q_parameter import Q as Q0  # noqa: E402
 CANONICAL_TRM_3HE = 0.2065408170207396
 DPS = 50
 PER_LAMBDA_CAP_S = 90.0  # skip a λ whose combiner SVD exceeds this
-DIM_CAP = 28  # Python-feasible frontier: dim(V_λ)≤28 ≈ ≤8 min/λ; dim-42 (5,4) took
+DIM_CAP = int(__import__("os").environ.get("WENZL_DIM_CAP", 28))  # Python-feasible frontier: dim(V_λ)≤28 ≈ ≤8 min/λ; dim-42 (5,4) took
               # 2.4 h (O(r^6) mpmath null-space SVD). dim>28 → Rust-kernel follow-up.
 
 
@@ -89,7 +89,7 @@ def main() -> int:
         f"³He interface must be pn-averaged, got {iface_ops}"
     inner_fac = ops_to_factors(inner_ops, h)            # H_6 gens 0..4
     outer_fac = ops_to_factors(outer_ops, h, gen_shift=-6)  # H_3 gens 0..1
-    print(f"  split: |inner|={len(inner_ops)} (H_6) · I_pn(σ_5−h/2) · "
+    print(f"  split: |inner|={len(inner_ops)} (H_6) · I_pn(σ_5−h(1/2−δ/4)) · "
           f"|outer|={len(outer_ops)} (H_3)\n")
 
     p6, p3, p9 = partitions_of(6), partitions_of(3), partitions_of(9)
@@ -99,8 +99,11 @@ def main() -> int:
     rmu = {m: word_matrix(rho6[m], inner_fac) for m in p6}
     rnu = {n: word_matrix(rho3[n], outer_fac) for n in p3}
 
+    # y_λ at the same 50-dps q as the matrices. It was y_lambda_at(9,
+    # float(Q0)): every other factor here is 50 dps, so the float64 y_λ capped
+    # tr_M at ~1e-16 (f64_into_mpmath_audit F64_CAST, 2026-11-21).
     y_dict = {tuple(k): mp.mpf(mp.nstr(v, DPS)) if not isinstance(v, complex)
-              else mp.mpc(v) for k, v in y_lambda_at(9, float(Q0)).items()}
+              else mp.mpc(v) for k, v in y_lambda_at(9, q).items()}
 
     # Residual print precision is tied to the working precision (Gemini #2371):
     # never silently truncate below the configured dps.
@@ -137,7 +140,11 @@ def main() -> int:
                 chi_comb = mp.fsum(
                     aoa._trace(info["A"] * _kron(rmu[mu], rnu[nu]))
                     for (mu, nu), info in Ac.items() if "A" in info)
-                full_fac = (inner_fac + [(mp.mpf(1), -h / 2, 5)]
+                # The interface factor comes from the word's own ctype. It was
+                # hardcoded `-h / 2` (colour-blind) while the combiner bakes in
+                # the colour-weighted p-n shift -h(1/2 - delta/4) (qou-gdtb), so
+                # every lambda missed by ~1e-4 against a 1e-25 tolerance.
+                full_fac = (inner_fac + ops_to_factors(iface_ops, h)
                             + ops_to_factors(outer_ops, h))
                 chi_true = aoa._trace(word_matrix(mats9, full_fac))
                 resid = abs(chi_comb - chi_true)

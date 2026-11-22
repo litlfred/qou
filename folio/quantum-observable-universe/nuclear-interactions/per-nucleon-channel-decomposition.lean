@@ -48,7 +48,7 @@ noncomputable def gN_alt (q : ℝ) : ℝ := (-q) * (qBracket2 q / 2)^2
 /-- **Proton channel sum** `a = Σ_c G_P(c) = −h/2` (`h = q − q⁻¹`),
     stated conditionally on the standard-channel summed expectation
     `stdP = ⟨v₁|Δ₃|v₁⟩ + ⟨v₂|Δ₃|v₂⟩`.  The two standard-channel values
-    are the quadratic-root eigendata of `T_{2,3} = σ₀σ₁σ₀` in the 2-dim
+    are the quadratic-root eigendata of `e⁻ = σ₀σ₁σ₀` in the 2-dim
     standard representation — not elementary in `q` — and are computed in
     `def:typed-crossing-operator`; this lemma verifies that, summed with
     the explicit symmetric/alternating factors, they give `−h/2`

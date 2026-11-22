@@ -31,7 +31,12 @@
 
   Archimedean (ℝ).
 
-  -- Ref: [garoufalidis-le-2011] https://doi.org/10.2140/gt.2011.15.2135
+  -- Ref: [garoufalidis-le-2011] https://doi.org/10.2140/gt.2011.15.2135 — App. A,
+  --      Thm A.1: lim (1/n) log|J_{B,n}(e^{2πi/n})| = vol(S³ − B)/(2π) for the
+  --      Borromean rings B, proved from Habiro's cyclotomic formula.
+  -- Ref: [vanderveen2008] Main theorem: the volume conjecture for the Whitehead
+  --      chains W_{a,b,c,d}; the Borromean rings are W_{0,1,1,1} (§1), an
+  --      independent proof of the same limit.
   -- Ref: [habiro2000] RIMS Kokyuroku 1172 (2000) 34-43
   -- Ref: [leitner2026] binding-scale-catalan
 -/

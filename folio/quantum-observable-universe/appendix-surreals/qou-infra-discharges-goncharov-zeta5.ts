@@ -9,7 +9,7 @@ export default conjecture({
     "prop:depth-2-identification-bloch-suslin",
     "rem:conway-kt-vol-injectivity-test",
   ],
-  cites: ["deligne-goncharov2005", "bloch2000", "kontsevich1995", "zagier1986"],
+  cites: ["deligne-goncharov2005", "bloch2000", "kontsevich1995", "zagier1986", "malkin2021"],
   tags: [
     "tier:famous",
     "goncharov-conjecture",

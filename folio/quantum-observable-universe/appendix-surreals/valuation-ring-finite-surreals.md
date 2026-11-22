@@ -1,4 +1,4 @@
-The [standard-part map](#def:standard-part-functor) $\mathrm{st} : \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$ admits a clean ring-theoretic reading: it is the quotient map of a valuation ring.
+The standard-part map $\mathrm{st} : \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$, which sends each finite surreal $x$ (one with $|x| \leq n$ for some $n \in \mathbb{N}$) to the unique real $r \in \mathbb{R}$ with $x - r$ infinitesimal ($|x - r| < 1/n$ for every $n \in \mathbb{N}$), admits a clean ring-theoretic reading: it is the quotient map of a valuation ring.
 
 The finite surreals form a convex subring of $\mathbf{No}$:
 

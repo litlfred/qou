@@ -10,6 +10,7 @@ export default remark({
     "def:brings-surface",
     "thm:qu-to-qou",
   ],
+  cites: ["woronowicz1987-twisted-su2", "braden-disney-hogg-2022"],
   authorNotes: [
     {
       kind: "status",

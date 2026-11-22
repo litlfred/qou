@@ -2,7 +2,7 @@
 """
 g_A from confinement Frobenius reciprocity — instance of the master
 formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i* (G^{-1})_{ij} ⟨O, b_j⟩
-(prop:confinement-frobenius-reciprocity).
+(conj:confinement-frobenius-reciprocity).
 
 This script REPLACES the prior conjugation-pattern computation
 ``g_A = (5/3) · |tr(β·σ₁·β⁻¹) / tr(σ₁)|``, which was structurally
@@ -280,13 +280,13 @@ w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this 
 w.set_description(
     "Axial coupling g_A as an instance of the master formula "
     "⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ "
-    "(prop:confinement-frobenius-reciprocity). "
+    "(conj:confinement-frobenius-reciprocity). "
     "Replaces the prior cyclic-trivial conjugation-pattern computation "
     "tr(β·σ₁·β⁻¹)/tr(σ₁) — see "
     "docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. "
     "Bound-state observable: g_A (axial coupling, Gamow-Teller form factor)."
 )
-w.set_content_block("prop:confinement-frobenius-reciprocity")
+w.set_content_block("conj:confinement-frobenius-reciprocity")
 
 w.add_parameter("q", q0)
 w.add_parameter("q_inv", qi0)
@@ -397,7 +397,7 @@ w.add_assertion(
     computed=bool(len(active_set) >= 1),
     expected=True,
     tolerance=0,
-    source="prop:confinement-frobenius-reciprocity § master formula; "
+    source="conj:confinement-frobenius-reciprocity § master formula; "
            "boolean so an EMPTY active set fails (the numeric form with "
            "tolerance 10 passed on len=0)",
 )

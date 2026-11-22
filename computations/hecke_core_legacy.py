@@ -50,13 +50,13 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 # now. All unconditional — function-call-time NameError if a function
 # is called without the import being available (caught by PR #1085
 # review).
-import math
+import math  # float64-ok: integer math.factorial and legacy boundary helpers
 import json as _json
 import os as _os
 import sys as _sys
 from pathlib import Path as _Path
 from fractions import Fraction
-import numpy as np
+import numpy as np  # float64-ok: object-dtype arrays and Clarabel/scipy SDP interface
 
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 # EXACT twins of q0/qi/h.  The float64 names above stay for the many
@@ -422,15 +422,23 @@ def lp_shadow_price(partition):
     """
     k = sum(partition)
     if k == 0:
-        return 0.0
-    w = wedderburn_weight(partition)
+        return _mp.mpf(0)
     d = partition_dimension(partition)
+    if d == 1:
+        # For the two one-dimensional blocks (k,) and (1^k) of H_k(q),
+        # H_q(λ) == [k]_q! identically, so d_q(λ) == 1 and w_λ / d_λ == 1/[k]_q! == y_0
+        # is an exact algebraic identity (bean qou-f2pf). Evaluating
+        # (q_factorial(k)/q_hook_product(λ))**2 / q_factorial(k) - 1/q_factorial(k)
+        # left a ~4.3e-19 1-ulp residue on 6 of the 20 one-dimensional blocks
+        # (k = 6, 7, 9) where q_hook_product multiplied [k]_q..[1]_q in reverse order.
+        return _mp.mpf(0)
+    w = wedderburn_weight(partition)
     # y_0 is the smallest of w_λ/d_λ across all partitions of k.
     # For the trivial (n) partition (sym): w = 1/[n]_q!, d = 1.
     # So y_0 = 1/[n]_q!.  NOT the LP normalisation dual — that one is
     # identically 0 (see this function's docstring).  It is a weight
     # normalisation whose measured effect is to zero (k) and (1^k).
-    y_0 = 1.0 / q_factorial(k)
+    y_0 = _mp.mpf(1) / q_factorial(k)
     return w / d - y_0
 
 
@@ -2520,7 +2528,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             per_step[-1]['n_tight_final'] = n_tight
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
-        return float(cumul_total), per_step
+        return float(cumul_total), per_step  # float64-ok: public return boundary after mpf accumulation
     # float, as this function has always returned -- the cast is at the public
     # boundary, and NOW that is true.  The note that stood here said the
     # accumulation "keeps its precision ... because math.log already narrows
@@ -2528,7 +2536,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # conclusion from it: a log that narrows inside the loop is exactly what
     # stops the accumulation keeping anything.  Every log on this path goes
     # through `_exact_log` as of 2026-09-07.
-    return float(cumul_total)
+    return float(cumul_total)  # float64-ok: public return boundary after mpf accumulation
 
 
 def _jet_witness_path(Z, N, jet, witness_dir):
@@ -2570,7 +2578,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
     """
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
-        return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))
+        return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))  # float64-ok: legacy public tuple contract
 
     ordering = []
     pc, nc = 0, 0
@@ -2595,7 +2603,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
         for _k in range(A)])
     if _ks:
         _tr, _ln = _ks[-1]
-        return (float(_tr), float(_ln), int(dim))
+        return (float(_tr), float(_ln), int(dim))  # float64-ok: legacy public tuple contract after MPFR kernel
     for kkk in range(A):
         nuc = ordering[kkk]
         prev_types = ordering[:kkk]
@@ -2655,7 +2663,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
                           for i in range(dim))
             log_norm += _exact_log(m_max)
     chi = _trace_dim(M, dim)
-    return (float(chi), float(log_norm), int(dim))
+    return (float(chi), float(log_norm), int(dim))  # float64-ok: legacy public tuple contract after mpf accumulation
 
 
 def _contrib_single_partition(Z, N, entry):
@@ -3318,7 +3326,7 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     pair_couplings = []
     self_conj_indices = []
     seen = set()
-    h_val = float(h)
+    h_val = float(h)  # float64-ok: Clarabel SDP solver float64 input
     name_to_idx = {tuple(e['partition']): i for i, e in enumerate(active)}
     for i, e in enumerate(active):
         lam = tuple(e['partition'])
@@ -3415,7 +3423,7 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     # narrowing on the path, and it costs whatever the accumulation carried,
     # which is measured in the hundreds of significand bits rather than 53.
     # It stays because the public contract is a float (bean `qou-sv7h`).
-    return float(B)
+    return float(B)  # float64-ok: public return boundary after mpf accumulation
 
 
 def q_value_beta(Z_parent, N_parent):

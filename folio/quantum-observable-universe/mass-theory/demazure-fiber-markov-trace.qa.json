@@ -85,6 +85,24 @@
         "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
         "severity": "major",
         "evidence": "lean.ref demazure_fiber_markov_trace names no declaration (the def is demazureFiberMarkovTrace). Lean defines the functional and proves saturation at w0 (= y_lambda, with y_lambda opaque). The claim that it bounds the LP/SDP costs is not encoded; the functional is over R though principal specialisation is algebraic."
+      },
+      {
+        "field_hash": {
+          "md": "eacf24d6ab83",
+          "ts": "b2626b509e37",
+          "lean": "75ffad8bb038",
+          "lean_statement": "316da74c4554"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:24.880Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-16 review: 'We define' reworded to 'Define'. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: lean.ref demazure_fiber_markov_trace names no declaration (the def is demazureFiberMarkovTrace). Lean defines the functional and proves saturation at w0 (= y_lambda, with y_lambda opaque). The claim that it bounds the LP/SDP costs is not encoded; the functional is over R though principal specialisation is algebraic."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2156,6 +2174,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:07:16.874Z",
+  "updated_at": "2026-11-21T08:18:24.880Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,4 +1,4 @@
-The **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is defined categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
+The **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is defined categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\mathbf{1}, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
 
 ## Scope: convenience target, not load-bearing
 
@@ -11,8 +11,7 @@ The scope of this conjecture is as follows:
     \;=\;
     \bigl|\mathrm{tr}_M(\rho(\beta))\bigr|
     \;+\; \sum_{n \ge 0}\!\Bigl(
-      \textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|)
-      + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)
+      \textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|) + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)
     \Bigr).
   $$
 
@@ -33,8 +32,7 @@ $$
   =
   \sum_{i=1}^{N} \Phi_q(z_i)
   =
-  \frac{\mathrm{Vol}(K_\beta)}{\hbar_q^2}
-  -
+  \frac{\mathrm{Vol}(K_\beta)}{\hbar_q^2} -
   \bigl|\mathrm{tr}_M\!\bigl(\rho(\beta)\bigr)\bigr|,
 $$
 
@@ -55,11 +53,7 @@ The tower converges in $\sim 20$ terms. This rate is consistent with $t_P = 1/\h
 
 ## Established results
 
-**Step 1 (Categorical $\to$ Markov, proved).** One has $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$. This is [categorical mass as Markov trace](#prop:categorical-mass-markov). The Nakayama automorphism is $S^2 = \mathrm{id}$, so the mass reduces to the Markov trace of the braid word.
-
-**Step 2 (Tower sum $\to$ Vol, archimedean).** Then $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$. This is the [archimedean mass formula](#conj:topological-mass-formula). The descended trace gives $\mathrm{Vol}(K)$, each transient trace gives $\Phi_q(z_i)$, and their sum is $\mathrm{Vol}(K)/\hbar_q^2$.
-
-**Step 3 (Markov trace $\neq$ Vol, the gap).** The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is the Jones polynomial $J(K; q)$—a Laurent polynomial in $q^{1/2}$. The hyperbolic volume $\mathrm{Vol}(K)$ is a transcendental number. They are different knot invariants: $J(\text{trefoil}; q) = -q^{-4} + q^{-3} + q^{-1}$ while $\mathrm{Vol}(\text{trefoil}) = 0$.
+**Markov trace $\neq$ Vol (the gap).** The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is the Jones polynomial $J(K; q)$—a Laurent polynomial in $q^{1/2}$. The hyperbolic volume $\mathrm{Vol}(K)$ is a transcendental number. They are different knot invariants: $J(\text{trefoil}; q) = -q^{-4} + q^{-3} + q^{-1}$ while $\mathrm{Vol}(\text{trefoil}) = 0$.
 
 The bridge between them is the **Volume Conjecture** \cite{kashaev1997, murakami-murakami2001}:
 
@@ -73,7 +67,7 @@ $$
 
 where $J_N$ is the $N$-colored Jones polynomial. This limit involves evaluating at roots of unity ($q = e^{2\pi i/N}$, not generic $q$), the $N$-dimensional representation (not the fundamental), and an asymptotic limit ($N \to \infty$). Each step departs from the Hecke algebra at generic $q$.
 
-The Habiro ring ([Habiro ring](#def:habiro-ring)) partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume ([algebraic quantum volume](#def:algebraic-quantum-volume)) $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. One evaluates directly at the substrate parameter, rather than passing through roots of unity.
+The Habiro ring partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. One evaluates directly at the substrate parameter, rather than passing through roots of unity.
 
 ## Encoding requirements for $\Phi_{\mathrm{mass}}$
 
@@ -89,14 +83,14 @@ $$
   \sum_{i=1}^{N} \Phi_q(z_i)
 $$
 
-*form a Cauchy sequence in the $(q;q)_n$-adic topology on $\widehat{\mathbb{Z}[q]}$ ([Habiro ring](#def:habiro-ring)). Each factor $\Phi_q(z_i)$ has cyclotomic-denominator structure (the $[k]_q$ in $\Phi_q$ are cyclotomic), making successive partial sums agree modulo $((q;q)_n)$ for $n$ growing with $N$. Therefore the limit*
+*form a Cauchy sequence in the $(q;q)_n$-adic topology on $\widehat{\mathbb{Z}[q]}$. Each factor $\Phi_q(z_i)$ has cyclotomic-denominator structure (the $[k]_q$ in $\Phi_q$ are cyclotomic), making successive partial sums agree modulo $((q;q)_n)$ for $n$ growing with $N$. Therefore the limit*
 
 $$
   \Phi_{\mathrm{mass}}^{(\infty)}(\beta)
   \;\in\;\widehat{\mathbb{Z}[q]}
 $$
 
-*exists as an element of the Habiro completion. It is well-defined purely algebraically, without analytic convergence. This limit object is the motive of the mass: it carries the combinatorial data mapping to $\mathrm{Vol}(K)/\hbar_q^2$ only when the archimedean realization [$\rho_\infty$](#def:archimedean-realization-functor) of the [motivic substrate](#def:motivic-substrate) is applied at $q_0 \in \mathbb{R}$. The non-archimedean realizations $\{\rho_p\}$ recover the colored-Jones data via cyclotomic projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$ without any complex-analytic limit.*
+*exists as an element of the Habiro completion. It is well-defined purely algebraically, without analytic convergence. The non-archimedean realizations $\{\rho_p\}$ recover the colored-Jones data via cyclotomic projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$ without any complex-analytic limit.*
 
 The conjecture regarding a "closed-form expression in $H_n(R, q)$" asks a question in the finite-rank Hecke algebra. The $N \to \infty$ tower limit asks a question in the Habiro completion $\widehat{\mathbb{Z}[q]}$. Both are algebraic.
 
@@ -118,7 +112,7 @@ The Hecke mass element splits as $\Phi_{\mathrm{mass}} = \Phi^{\mathrm{desc}} + 
 
 | Particle | $\mathrm{tr}_M(\Phi^{\mathrm{desc}})$ | $\mathrm{tr}_M(\Phi^{\mathrm{trans}})$ | Ratio trans/desc |
 |:---:|:---:|:---:|:---:|
-| $e^-$ (trefoil) | $0.551$ | $111.86$ | $203\times$ |
+| $e^-$ (braid word not recorded) | $0.551$ | $111.86$ | $203\times$ |
 | $4_1$ (figure-eight) | $0.182$ | $207.40$ | $1137\times$ |
 
 The single-level (descended) Markov trace contributes less than $0.5\%$ of the total mass. The mass is almost entirely a brane tower effect—the accumulated quantum dilogarithm across exceptional divisors.
@@ -133,12 +127,12 @@ One tested three single-level approaches for the proton ($uud$) and neutron ($ud
 | $\Phi_q/\hbar_q^2$ | $-89.8$ | $-125.2$ | $1.395$ | $1.001$ |
 | GS energy | $0.852$ | $1.184$ | $1.390$ | $1.001$ |
 
-None of these single-level computations reproduce the neutron-to-proton mass ratio. The quantum dilogarithm $\Phi_q = \sum \log \lvert\hat{V}_i\rvert$ gives the correct binding energy differences between nuclei (Q-values at Level 0), but not single-nucleon absolute masses.
+None of these single-level computations reproduce the neutron-to-proton mass ratio. The quantum dilogarithm $\Phi_q = \sum \log \lvert\hat{V}_i\rvert$ is the candidate for binding-energy differences between nuclei (Q-values at Level 0); it does not give single-nucleon absolute masses, and the binding magnitude remains open.
 
-The proton mass $938.272$ MeV in this paper derives from the pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$. This requires the dressed quark mass $\mu_\mathfrak{u} \approx 311$ MeV as input, calibrated from CODATA $m_p$. The structural content (pair formula, splitting isolation, binding energy) is categorically derived; the absolute scale is calibrated — consistent with absolute mass in MeV not being a framework prediction, the predictive content residing in the dimensionless ratios, with $m_e$ (CAL-1) setting the MeV scale by fiat.
+The framework does not predict the proton mass in MeV. The pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$ reaches the CODATA value only with the dressed quark mass $\mu_\mathfrak{u} \approx 311$ MeV as an input fitted to CODATA $m_p$, so the MeV value is a fit. The structural content (pair formula, splitting isolation) is categorically derived. The predictive content lies in dimensionless ratios, with $m_e$ (CAL-1) setting the MeV scale.
 
 ## Candidate structures
 
-**(a) Figure-eight $4_1$ as Higgs coupling.** The figure-eight knot $4_1 = (\sigma_0\sigma_1^{-1})^2$ is the gluon unit squared. Its NF is $h^2\gamma + h^3\sigma_0 - h\sigma_1 - h^2 L_+ + L_-$ with zero electron content. As a mass operator, the pairing $\mathrm{tr}_M(e^- \cdot 4_1) = hz^2 + z = \mathrm{tr}_M(e^-)$ does not produce the correct mass ratios. The figure-eight encodes the mass mechanism (amphichiral, hyperbolic, $\mathrm{Vol} = 2.0299$) but acts as the identity on the trefoil in $H_3(R, q)$.
+**(a) Figure-eight $4_1$ as Higgs coupling.** The figure-eight knot $4_1 = (\sigma_0\sigma_1^{-1})^2$ is the gluon unit squared. Its NF is $h^2\,\mathbf{1} + h^3\sigma_0 - h\sigma_1 - h^2 L_+ + L_-$ with zero electron content. As a mass operator, the pairing $\mathrm{tr}_M(e^- \cdot 4_1) = hz^2 + z = \mathrm{tr}_M(e^-)$ does not produce the correct mass ratios. The figure-eight encodes the mass mechanism (amphichiral, hyperbolic, $\mathrm{Vol} = 2.0299$) but leaves the Markov trace of $e^- = \sigma_0\sigma_1\sigma_0$ unchanged in $H_3(R, q)$.
 
 **(b) Tower-accumulated operator.** The mass endomorphism may equal the product $\Phi_{\mathrm{mass}} = \prod_{n=0}^{N} (1 + \Phi_q(z_n))$ of Hecke elements at each brane level, composed via the comultiplication. This forms an element of $H_n(R, q)$ growing with $N$—a categorically defined object, but not a fixed element independent of the knot.

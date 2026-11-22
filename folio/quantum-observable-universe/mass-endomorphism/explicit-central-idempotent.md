@@ -38,24 +38,6 @@ $$
 | $3$ | $(2,1)$ | self-conjugate | standard 2D representation idempotent |
 | $4$ | $(2,2)$ | self-conjugate | bar-fixed; witnesses $\mathrm{Vol}(4_1)$ via depth-2 pairing with $\mathrm{Li}_2^q(\zeta_6)$ |
 
-## Significance
-
-The element $e_\lambda$ serves as the explicit, computable generator of the period class assigned to cell $\lambda$. Under [GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) and [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic), the class
-
-$$
-  \tau_{\mathrm{arch}}\bigl( e_\lambda \cdot \mathrm{Li}_2^q(z) \bigr)
-  \;\in\;
-  \mathcal{P}_2 / \mathcal{P}_1
-$$
-
-forms a Bloch-regulator period computable to arbitrary precision. For the figure-$8$ knot ($\lambda = (2,2)$, $z = \zeta_6$):
-
-$$
-  \tau_{\mathrm{arch}}\bigl( e_{(2,2)} \cdot \mathrm{Li}_2^q(\zeta_6) \bigr)
-  \;=\; 2\,\mathrm{Cl}_2(\pi/3)
-  \;=\; \mathrm{Vol}(S^3 \setminus 4_1).
-$$
-
 ## Provenance
 
 The Murphy-element diagonalization of $Z(H_n(q))$ originates with Murphy (1981, symmetric group) and Dipper–James (1986, Hecke algebra). The Lagrange-interpolation form offers the cleanest computable expression. It is standard in computer-algebra implementations of Hecke algebras.

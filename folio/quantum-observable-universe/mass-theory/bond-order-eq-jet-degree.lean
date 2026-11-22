@@ -15,7 +15,7 @@ packaged as the structure hypothesis (`prop:gb-spectral-sequence`,
 `conj:jet-prefix-gb-filtration`), so the series identity is extracted
 sorry-free.
 
-LaTeX label: `lem:bond-order-eq-jet-degree`.
+LaTeX label: `conj:bond-order-eq-jet-degree`.
 
 ## References
 

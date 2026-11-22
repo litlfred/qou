@@ -22,7 +22,7 @@ the identity **at the three roots**, so this file
 
 Nothing is assumed: no `sorry`, no axiom, no hypothesis left on `Li`.
 
--- Ref: [manuscript] beans qou-ph1k, qou-gkco, qou-0yqu
+-- Ref: [leitner2026] beans qou-ph1k, qou-gkco, qou-0yqu
 -/
 import QOU.Archimedean.ComplexDilogReflectionExt
 import QOU.QBeta.FiveTwoComplexPentagon

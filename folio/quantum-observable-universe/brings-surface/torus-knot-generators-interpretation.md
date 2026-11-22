@@ -1,6 +1,6 @@
 1. **Lepton generations.** Charged leptons correspond to $T_{2,3}$ (electron), $T_{2,5}$ (muon), and $T_{2,7}$ (tau) at Reeb degrees $1, 2, 3$. Only the first two are $S_5$-equivariant; the tau embeds topologically but breaks its $\mathbb{Z}_7$ symmetry. $T_{2,9}$ saturates $g = 4$ (symmetry-broken), and $T_{2,11}$ is genus-excluded, precluding a fourth generation.
 2. **Quark sector.** The $(3,n)$-family generators $T_{3,4}$ and $T_{3,5}$ act as $H^{0,1}$ force carriers. $T_{3,4}$ encodes Hopf-squared color binding, while $T_{3,5}$ mediates the weak interaction. The three-strand meridional winding resonantly threads the three color tubes.
-3. **Saturation.** The seventh generator $T_{2,9}$ at genus $4$ exactly saturates Bring's surface. New particle types would require composite construction via linking operations.
+3. **Saturation.** The seventh generator $T_{2,9}$ at genus $4$ exactly saturates Bring's surface. New particle types would require composite construction by linking existing knots.
 4. **Hyperbolic knots.** The figure-eight $4_1$ and three-twist $5_2$ are not generators. They arise from Skein crossing changes applied to linked torus-knot configurations, inheriting nonzero hyperbolic volume and bare mass from the linking process.
 
 The bound $N(\chi) = 1 - \chi = 7$ on the number of generators equals the number of handles ($g = 4$) plus the three independent Seifert genus values available within them. The recursive brane tower does not increase the genus, making the generator count stable across all levels.

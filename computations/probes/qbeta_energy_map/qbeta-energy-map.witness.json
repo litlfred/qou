@@ -1,0 +1,151 @@
+{
+  "preregistration": "PREREGISTRATION.md",
+  "checks": [
+    {
+      "name": "ratio eps_n/eps_p = q^-2",
+      "ok": true,
+      "note": "every word with equal traces"
+    },
+    {
+      "name": "log map is spectator invariant",
+      "ok": true,
+      "note": "Phi(lam x) - Phi(lam y) = Phi(x) - Phi(y)"
+    },
+    {
+      "name": "log cell = -2c log q",
+      "ok": true,
+      "note": "t, D drop out"
+    },
+    {
+      "name": "linear map fails S (lam=2, x=1, y=2)",
+      "ok": true,
+      "note": "c*(-2) != c*(-1) for c != 0"
+    },
+    {
+      "name": "tower ratio = q^2/(2q-1)",
+      "ok": true,
+      "note": "exact"
+    },
+    {
+      "name": "eps_p matches the coordinator's 0.408718179341",
+      "ok": true,
+      "note": "0.40871817934113"
+    },
+    {
+      "name": "eps_n matches 0.331737644740",
+      "ok": true,
+      "note": "0.33173764473976"
+    },
+    {
+      "name": "Lean bound 2/q^2 < 2 e0 log q < 2/q at q0",
+      "ok": true,
+      "note": "1.6233075 < 1.709468523 < 1.8018366"
+    },
+    {
+      "name": "route T: m_e c_q^2 hbar_q = E0",
+      "ok": true,
+      "note": "4.1859813632945"
+    },
+    {
+      "name": "route D: -ln(eps_n)/ln q + ln(eps_p)/ln q = 2",
+      "ok": true,
+      "note": "exact 2"
+    },
+    {
+      "name": "two inverse temperatures differ: ln q < 1/hbar_q",
+      "ok": true,
+      "note": "0.10434072 vs 10.092679"
+    },
+    {
+      "name": "addendum 2: dictionary unit = E0 ln q",
+      "ok": true,
+      "note": "0.43676831069023"
+    },
+    {
+      "name": "addendum 2: route D converted = route T",
+      "ok": true,
+      "note": "0.87353662138046"
+    },
+    {
+      "name": "shared factor: log cell unchanged",
+      "ok": true,
+      "note": "0.88219731693023"
+    },
+    {
+      "name": "shared factor: linear cell scales by f",
+      "ok": true,
+      "note": "0.24407544655102"
+    }
+  ],
+  "numbers": {
+    "q0": "1.10997858275138080759166909561",
+    "m_e_MeV": "0.51099895069",
+    "eps_p": "0.408718179341128",
+    "eps_n": "0.331737644739763",
+    "eps_flavour": "-0.0769805346013642",
+    "tau_V3": "2.99418581297996",
+    "log_q0": "0.10434072031951951232",
+    "E0_MeV": "4.18598136329448",
+    "E0full_MeV": "4.22748335562903",
+    "tower_ratio": "1.00991451913725",
+    "rows_MeV": {
+      "linear_E0": "0.322239083178",
+      "linear_E0full": "0.325433928735",
+      "L0_log_E0": "0.87353662138",
+      "LT_log_E0full": "0.88219731693",
+      "S0_perstep_E0": "8.37196272659",
+      "ST_perstep_E0full": "8.45496671126",
+      "D_unit_me_cq2": "84.4955362183",
+      "D_unit_me": "1.02199790138"
+    },
+    "rows_over_me": {
+      "linear_E0": "0.630606154362",
+      "linear_E0full": "0.636858311148",
+      "L0_log_E0": "1.70946852278",
+      "LT_log_E0full": "1.72641708117",
+      "S0_perstep_E0": "16.3835223444",
+      "ST_perstep_E0full": "16.5459570902",
+      "D_unit_me_cq2": "165.353639385",
+      "D_unit_me": "2.0"
+    }
+  },
+  "comparison": {
+    "Q_beta_MeV": "0.78233340931",
+    "mn_minus_mp_MeV": "1.29333236",
+    "rows": {
+      "linear_E0": {
+        "vs_Q_beta_pct": "-58.8105",
+        "vs_mn_minus_mp_pct": "-75.0846"
+      },
+      "linear_E0full": {
+        "vs_Q_beta_pct": "-58.4021",
+        "vs_mn_minus_mp_pct": "-74.8376"
+      },
+      "L0_log_E0": {
+        "vs_Q_beta_pct": "11.6578",
+        "vs_mn_minus_mp_pct": "-32.4585"
+      },
+      "LT_log_E0full": {
+        "vs_Q_beta_pct": "12.7649",
+        "vs_mn_minus_mp_pct": "-31.7888"
+      },
+      "S0_perstep_E0": {
+        "vs_Q_beta_pct": "970.127",
+        "vs_mn_minus_mp_pct": "547.317"
+      },
+      "ST_perstep_E0full": {
+        "vs_Q_beta_pct": "980.737",
+        "vs_mn_minus_mp_pct": "553.735"
+      },
+      "D_unit_me_cq2": {
+        "vs_Q_beta_pct": "10700.5",
+        "vs_mn_minus_mp_pct": "6433.16"
+      },
+      "D_unit_me": {
+        "vs_Q_beta_pct": "30.6346",
+        "vs_mn_minus_mp_pct": "-20.9795"
+      }
+    }
+  },
+  "ok": true
+}

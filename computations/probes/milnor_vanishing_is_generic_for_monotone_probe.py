@@ -222,10 +222,10 @@ def main() -> int:
     )
     b.add_assertion(
         name="monotone_triples_scanned",
-        computed=str(mono["triples"]), expected=str(mono["triples"]), tolerance="0",
-        unit="triples",
-        source=("the size of the null result, recorded so it is visible in the witness: a "
-                "vanishing over few triples would establish nothing."),
+        computed="1" if mono["triples"] > 0 else "0", expected="1", tolerance="0",
+        unit="bool",
+        source=("the size of the null result, recorded so it is visible in the witness "
+                f"({mono['triples']} triples): a vanishing over few triples would establish nothing."),
     )
 
     out = b.save({

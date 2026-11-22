@@ -9,5 +9,5 @@ export default lemma({
   tags: ["crossed-module", "central-extension", "peiffer-identity", "gerbe-band"],
   uses: [],
   proofs: ["prf:ccg-crossed-module-structure"],
-  cites: ["yekutieli2010"],
+  cites: ["yekutieli2014-descent"],
 });

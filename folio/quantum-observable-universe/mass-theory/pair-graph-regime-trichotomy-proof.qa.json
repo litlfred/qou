@@ -16,8 +16,23 @@
         "reviewed_at": "2026-11-17T00:43:10.688Z",
         "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
         "evidence": "Case split on the three regimes is exhaustive and each case follows from the pair-count identity."
+      },
+      {
+        "field_hash": {
+          "md": "1e4f092490e4",
+          "ts": "26ea4470bc5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:22.297Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-17 review: the trailing line listing the sibling Lean declarations removed; the case split and pair-count identity are unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Case split on the three regimes is exhaustive and each case follows from the pair-count identity."
       }
     ]
   },
-  "updated_at": "2026-11-17T00:43:10.688Z"
+  "updated_at": "2026-11-21T08:18:22.297Z"
 }

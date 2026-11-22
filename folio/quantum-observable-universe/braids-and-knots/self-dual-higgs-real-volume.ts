@@ -9,6 +9,7 @@ export default proposition({
     "koelink-stokman-2003",
     "kashaev1997",
     "murakami-murakami2001",
+    "witten2011",
   ],
   lean: {
     ref: "qou:QOU.Knot.SelfDuality.higgs_complex_volume_real",

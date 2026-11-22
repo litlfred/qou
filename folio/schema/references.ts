@@ -334,6 +334,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "garoufalidis-le-2005" },
 
   // ── Lê 2006 — AJ conjecture proved for a large class of 2-bridge knots ──
+  { id: "le2000" },
   { id: "le2006" },
 
   // ── Garoufalidis–Lê 2011 — asymptotics; Borromean VC via Habiro expansion ──
@@ -410,6 +411,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Fred 2005 (dissertation) ──────────────────────────────────
   { id: "fred2005" },
+  { id: "leitner2006" },
+  { id: "luweinstein1990" },
 
   // ── Schrijver 1986 ────────────────────────────────────────────
   { id: "schrijver1986theory" },
@@ -440,6 +443,7 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Lusztig 1993 ──────────────────────────────────────────────
   { id: "lusztig1993" },
+  { id: "lusztig2003" },
 
   // ── Atiyah 1988 ───────────────────────────────────────────────
   { id: "atiyah1988" },
@@ -645,6 +649,11 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "necas-ruzicka-sverak1996" },
 
   { id: "tsai1998" },
+  { id: "leray1934" },
+  { id: "seregin2012" },
+  { id: "chae2013adss" },
+  { id: "chae-wolf2016dss" },
+  { id: "bradshaw-tsai2018survey" },
 
   { id: "leitner-2018" },
 
@@ -1586,6 +1595,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "horn-johnson-2013" },
 
   { id: "kassel2008" },
+  { id: "polyak2010" },
 
   { id: "murphy1981" },
 
@@ -2251,6 +2261,8 @@ const ORDER: Array<FileSlot | Reference> = [
   // -- Registered 2026-08-15, batch 3 ---------------------------
 
   { id: "reshetikhin-turaev1990" },
+
+  { id: "turaev1988" },
 
   { id: "faddeev-kashaev-volkov2000" },
 

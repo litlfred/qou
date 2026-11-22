@@ -2,6 +2,9 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:blowup-yekutieli",
+  authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The [regularity breakdown](#conj:regularity-breakdown) at $q = 1$ is a **cohomological obstruction** in the [Yekutieli lifting](#prop:yekutieli-lifting) framework." },
+  ],
   lean: { ref: "qou:QOU.FluidDynamics.BlowupYekutieli" },
   title:
     "Blowup mechanism as Yekutieli lifting obstruction in the brane tower",

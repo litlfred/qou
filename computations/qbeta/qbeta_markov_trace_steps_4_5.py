@@ -153,19 +153,18 @@ def _w_taylor_of_S(N: int = 8):
     return None
 
 
-def main() -> None:
+def main() -> int:
     import sys
     from pathlib import Path
     here = Path(__file__).resolve().parent
     sys.path.insert(0, str(here.parent))
+    sys.path.insert(0, str(here.parent / "substrate"))
     import _path_bridge as _pb  # noqa: F401
 
-    import json
     import sympy as sp
+    from witness_base import WitnessBuilder, record_upstream
 
-    sys.path.insert(0, str(Path(__file__).resolve().parents[3]
-                           / "tools" / "qou-substrate" / "python"))
-    from qou_substrate.witness import WitnessBuilder
+    _upstream_records: list = []
 
     print("=" * 78)
     print("Q_β Markov-trace — Steps 4+5")
@@ -214,11 +213,13 @@ def main() -> None:
     print("=" * 78)
     print("Step 4: w-Taylor of S(q) = Q_β(q) / E_0(q)")
     print("=" * 78)
-    # Load q_0 + the existing per-anchor c_k witness if available
-    q_0_str = json.load(open(
+    # Load q_0 + the existing per-anchor c_k witness via record_upstream
+    # so upstream_witness_hashes are recorded (bean qou-5k8x).
+    q_pin_doc = record_upstream(
         _pb.witness_path("q-pinning-50-digit.witness.json", here),
-        encoding="utf-8",
-    ))["derived_50_digit"]["q"]
+        _upstream_records,
+    )
+    q_0_str = q_pin_doc["derived_50_digit"]["q"]
     q_0 = sp.Float(q_0_str, 50)
     print(f"  q_0 = {sp.N(q_0, 12)} (50-dps)")
 
@@ -230,12 +231,12 @@ def main() -> None:
     #       comparison with the L2-projection c_k.
     #   (c) The structural observation that under Markov, c_k = Taylor
     #       coefficients of S(q) directly (no 6-channel projection).
-    sdp = json.load(open(
+    sdp = record_upstream(
         _pb.witness_path("qbeta-decay-sdp-knot-operator.witness.json", here),
-        encoding="utf-8",
-    ))
-    S_at_q0 = sp.Float(sdp["data"]["tau_M_at_q0"], 50)
-    print(f"  S(q_0) = τ_M(T_β)(q_0) = {sp.N(S_at_q0, 20)}")
+        _upstream_records,
+    )
+    S_at_q0_str = str(sdp["data"]["tau_M_at_q0"])
+    print(f"  S(q_0) = τ_M(T_β)(q_0) = {S_at_q0_str}")
     print()
     print("  Under the Markov collapse, T_β = S · I, so the q-dependence")
     print("  of Q_β(q) flows ENTIRELY through the single scalar S(q).")
@@ -257,6 +258,7 @@ def main() -> None:
         engine="sympy",
         output_dir=here,
     )
+    wb.add_upstream_records(_upstream_records)
     wb.set_description(
         "Steps 4+5 of the Markov-trace probe (PR #1750 follow-up). "
         "Step 5: symbolic verification of A^T G^{-1} A = 1 via the "
@@ -267,9 +269,9 @@ def main() -> None:
     )
     wb.add_assertion(
         name="column-identity-symbolic",
-        computed=float(0 if max_residue_norm == 0 else 1),
-        expected=0.0,
-        tolerance=1e-50,
+        computed="0" if max_residue_norm == 0 else "1",
+        expected="0",
+        tolerance="1e-50",
         source="max |G[:,0] - A| as polynomial in (q, b, y_3, y_21, y_111) — must be 0",
     )
     # DEMOTED, not fixed (bean qou-3e5m). The name promised a check against
@@ -291,14 +293,7 @@ def main() -> None:
     wb.add_data(
         "step_4_pointer",
         {
-            # Recorded at the width it ACTUALLY has, not at the 50 the
-            # `sp.Float(..., 50)` above asks for. The upstream
-            # `tau_M_at_q0` is a JSON float carrying 16 significant
-            # digits, so `str(S_at_q0)` wrote 50 and the float64-padding
-            # audit flagged it: a 53-bit value serialized at full width
-            # reads as precision that was never computed (bean qou-3e5m,
-            # AGENTS.md §"never report a float64 agreement to N digits").
-            "S_at_q0": str(sdp["data"]["tau_M_at_q0"]),
+            "S_at_q0": S_at_q0_str,
             "structural_note": (
                 "Under Markov collapse T_β = S · I, the c_k Taylor "
                 "coefficients of Q_β(q)/E_0(q) are the w-Taylor "
@@ -309,9 +304,24 @@ def main() -> None:
             ),
         },
     )
-    out_path = wb.save()
+    out_path = wb.save({"q0Anchor": "proton", "q0Value": q_0_str})
     print(f"  Witness: {out_path.name}")
+    return 0
+
+
+def _selftest() -> int:
+    import sympy as sp
+    q = sp.Symbol("q", positive=True)
+    r = sp.Symbol("r", positive=True)
+    b = sp.Symbol("b", positive=True)
+    residue, _, _ = _column_identity_check(q, r, b)
+    assert all(sp.expand(c) == 0 for c in residue)
+    print("self-test: ok (symbolic column identity G*e_gamma == A holds for all 6 entries)")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    import sys as _sys
+    if "--self-test" in _sys.argv[1:] or "--selftest" in _sys.argv[1:]:
+        raise SystemExit(_selftest())
+    raise SystemExit(main())

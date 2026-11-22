@@ -13,7 +13,7 @@ export default proposition({
   cites: [
     "kassel1995",
     "geckpfeiffer2000",
-    "habiro2002",
+    "habiro2004",
   ],
   tags: [
     "residue",
