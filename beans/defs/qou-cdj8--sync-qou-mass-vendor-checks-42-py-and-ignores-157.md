@@ -1,13 +1,13 @@
 ---
 # qou-cdj8
 title: sync-qou-mass-vendor checks 42 .py and ignores 157 .witness.json — 122 disagree with source on the q0 pin
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:44:29Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-22T21:43:09Z
 parent: qou-5vkl
 ---
 
@@ -228,3 +228,16 @@ Two facts for whoever picks up step 3:
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
 
 In-progress in Round 102 PR litlfred/qou#8453.
+
+## 2026-11-22 — CLOSED: all four plan steps landed; the one live drift is qou-wpp2's (bean-hygiene wave 2, pass 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `9f883a2d02`.
+
+**Applicability:** packaging/staleness tooling. The mirror copies whatever its sources hold, so the current pin rulings (proton default, CODATA 2022 muon) carry through without this bean taking a position. No retired premise.
+
+- Step 1 (compare witness JSONs): landed (PR #5750; the 2026-08-25 section).
+- Step 2 (it fires): it fires on main today. `python3 scripts/sync-qou-mass-vendor.py --check` reports `DRIFTED from source (1): data/canonical-mass-table-extended.witness.json`, exiting non-zero.
+- Step 3 (re-sync): done in `c8661cc6edd` (the 2026-08-22 section). The 2026-08-25 backlog of 3 missing + 23 drifted is gone; only the one file above remains, and its source was re-run today (`b3d9e750da`).
+- Wired blocking into `scripts/staleness-gates.sh` (same section).
+
+The single remaining drift is the same item **qou-wpp2** now carries (noted there today), so closing this one avoids two carriers for one `--apply`. The "Round 102" line above (PR #8453) is a vacuous batch PR.
