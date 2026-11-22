@@ -5,7 +5,7 @@
   "perInstance": true,
   "renderable": false,
   "holds": "derived",
-  "validatorNotApplicable": "a member branch holds `manifest.json` (`trace-cache-member/v1`: function, engine source key and trees, q0 string, dps, and a list of shards with sha256) and content-addressed JSONL shards of (n, signed word) -> exact decimal string, not graph nodes. `scripts/trace-cache.sh restore` checks every shard's sha256 against the manifest and the manifest's member against the key it asked for, and `computations/trace_cache.py` then re-evaluates a sample of the loaded entries with the installed binary and refuses the cache on any mismatch, so a bad member is a miss or a refusal, never a served value.",
+  "validatorNotApplicable": "a member branch holds `manifest.json` (`trace-cache-member/v1`: function, engine source key and trees, q0 string, dps, and a list of shards with sha256) and content-addressed JSONL shards of (n, signed word, suffix) -> exact decimal string, not graph nodes. `scripts/trace-cache.sh restore` checks every shard's sha256 against the manifest and the manifest's member against the key it asked for, and `computations/trace_cache.py` then re-evaluates a sample of the loaded entries with the installed binary and refuses the cache on any mismatch, so a bad member is a miss or a refusal, never a served value.",
   "summary": "Exact results of qou's native Markov-trace producer, one branch per producer function, engine source tree, q0 and precision, so a long probe run resumes after a container restart and a re-run recomputes nothing.",
   "avatar": {
     "glyph": "M4 5h16v4H4zM4 10h16v4H4zM4 15h16v4H4zM7 7h2M7 12h2M7 17h2",

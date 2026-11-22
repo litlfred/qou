@@ -15,8 +15,12 @@
 # `typologies/`. The prefix is READ from qou.json, never written here.
 #
 # A MEMBER is `<function>-<engine-key>-q<q-key>-dps<dps>`:
-#   function    the producer function whose values are stored, today only
-#               `tr-m-atomic-mpfr`
+#   function    the producer function whose values are stored:
+#               `tr-m-atomic-mpfr`          pyhecke_native.tr_m_atomic_mpfr(w)
+#               `tr-m-atomic-mpfr-suffixes` pyhecke_native.tr_m_atomic_mpfr_suffixes,
+#                                           one value per (w, positive suffix s)
+#               Two routes to the same exact number may round its last MPFR
+#               digits differently, so each route is its own member.
 #   engine-key  first 12 hex of sha256 over the git TREE ids of
 #               tools/pyhecke-native and tools/hecke-engine at HEAD — the same
 #               key wheel-cache uses, so a trace member and the wheel that
@@ -24,7 +28,7 @@
 #               (`undetermined`): it never restores and never seeds.
 #   q-key       first 12 hex of sha256 over the q0 decimal STRING as passed
 #   dps         the decimal precision passed to the producer
-# Within a member an entry is keyed by (n, signed word); see
+# Within a member an entry is keyed by (n, signed word w, suffix s); see
 # computations/trace_cache.py. Values are the producer's exact decimal strings.
 #
 # A member branch holds:
@@ -40,9 +44,9 @@
 # `<git-common-dir>/trace-cache.git`, never in the checkout's object store.
 #
 # USAGE
-#   scripts/trace-cache.sh key     <q0> <dps>
-#   scripts/trace-cache.sh restore <q0> <dps> <outdir>  # writes <outdir>/shards/*.jsonl
-#   scripts/trace-cache.sh seed    <q0> <dps> <shard.jsonl>
+#   scripts/trace-cache.sh key     <function> <q0> <dps>
+#   scripts/trace-cache.sh restore <function> <q0> <dps> <outdir>  # writes <outdir>/shards/*.jsonl
+#   scripts/trace-cache.sh seed    <function> <q0> <dps> <shard.jsonl>
 #   scripts/trace-cache.sh list
 #
 # EXIT CODES
@@ -58,7 +62,12 @@ cd "$ROOT" || exit 2
 
 die() { echo "trace-cache: $*" >&2; exit "${2:-2}"; }
 
-FUNC="tr-m-atomic-mpfr"
+set_func() {
+  case "$1" in
+    tr-m-atomic-mpfr|tr-m-atomic-mpfr-suffixes) FUNC="$1" ;;
+    *) die "unknown function: $1 (tr-m-atomic-mpfr | tr-m-atomic-mpfr-suffixes)" ;;
+  esac
+}
 SRCS="tools/pyhecke-native tools/hecke-engine"   # same order as wheel-cache.sh, so the keys agree
 
 PREFIX="$(python3 - "$ROOT/qou.json" <<'PY' 2>/dev/null
@@ -112,7 +121,8 @@ fetch_member() {
 cmd="${1:-}"; shift || true
 case "$cmd" in
   key)
-    [ $# -eq 2 ] || die "usage: key <q0> <dps>"
+    [ $# -eq 3 ] || die "usage: key <function> <q0> <dps>"
+    set_func "$1"; shift
     member_key "$1" "$2"; exit $?
     ;;
 
@@ -121,7 +131,8 @@ case "$cmd" in
     ;;
 
   restore)
-    [ $# -eq 3 ] || die "usage: restore <q0> <dps> <outdir>"
+    [ $# -eq 4 ] || die "usage: restore <function> <q0> <dps> <outdir>"
+    set_func "$1"; shift
     m="$(member_key "$1" "$2")"; rc=$?
     [ $rc -eq 0 ] || { echo "trace-cache: $m" >&2; exit 3; }
     out="$3"; br="$PREFIX$m"
@@ -155,7 +166,8 @@ PY
     ;;
 
   seed)
-    [ $# -eq 3 ] || die "usage: seed <q0> <dps> <shard.jsonl>"
+    [ $# -eq 4 ] || die "usage: seed <function> <q0> <dps> <shard.jsonl>"
+    set_func "$1"; shift
     q="$1"; dps="$2"; shard="$(realpath -- "$3" 2>/dev/null || echo "$3")"
     [ -f "$shard" ] || die "no such shard: $shard"
     m="$(member_key "$q" "$dps")"; rc=$?
@@ -190,8 +202,8 @@ PY
       readme="# $m
 
 One member of qou's \`trace-cache\` family (declared in qou.json; kind in
-\`typologies/trace-cache.json\`). Exact \`tr_m_atomic_mpfr\` decimal strings at
-q0 = $q, dps = $dps, keyed by (n, signed word). Read by
+\`typologies/trace-cache.json\`). Exact \`$FUNC\` decimal strings at
+q0 = $q, dps = $dps, keyed by (n, signed word, suffix). Read by
 \`computations/trace_cache.py\`; written by \`scripts/trace-cache.sh seed\`.
 Never edit by hand."
       hm="$(printf '%s\n' "$man" | git -C "$B" hash-object -w --stdin)" || exit 2
