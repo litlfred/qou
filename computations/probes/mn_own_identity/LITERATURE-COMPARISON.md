@@ -1320,3 +1320,35 @@ the swap the 𝒟² leading term would be +(9/4)·m_e·Vol(4₁)·ε and every c
 Quot.sound: the generator at q = 1, h = 0 is the strand-swap permutation matrix (both letters), 𝒟 at
 q = 1 is hol − 1, and `blockTr_jetD_pow_word_at_one` gives tr_m(𝒟ᵏ) = tr_{n−m}(𝒟ᵏ) for every braid word,
 n, k. Not proved: that the generator and its inverse letter are inverse for general q.
+
+## §41 The sign conflict between the Coulomb term and the potential reading (corpus trace, no new numbers)
+
+Owner, 2026-11-22: *"3"* then *"All"*. Question: §35 enters S = QPair·hol in the energy as −S
+(degree-0 term of ℒ read as −V, owner-confirmed), while the §40 EM term enters as +α·S (Coulomb).
+
+**What the corpus says.**
+- `QDifferentialGeometry.CategoricalLagrangian.lagrangian_formula`: ℒ = 𝒟² + ψ*·ψ·𝒟.
+- `CategoricalLagrangianTwoTermBridge.trace_matter_diff_coulomb_specialization`: the pairwise
+  Coulomb factor Σqᵢqⱼ sits **inside ℒ**, in the matter-Reeb piece, with coefficient (1 − q⁻¹)·k, and
+  k is a free hypothesis (unsigned).
+- `NeutronProtonEMSign.em_correction_neg`: the **energy** is +k·Σqᵢqⱼ with k > 0 (Coulomb, PDG
+  sign), so E_n − E_p < 0.
+- Under the owner ruling (degree 0 in ℒ is −V), a Coulomb energy +α·S requires ℒ ⊃ −α·S.
+
+**So the conflict is in the corpus, not only in the probes.** §31 and §35 took ℒ′ = 𝒟² + S with
+coefficient +1, a sign chosen "same as the other terms" (§32), not derived. The weights of S are
+the electric quark charges, so S is the Coulomb term; there is no separately defined strong-sector
+S. Read with the ruling, +S in ℒ means like charges attract.
+
+**The three consistent readings.**
+- (A) Keep the ruling; fix the sign of S inside ℒ from Coulomb: ℒ ⊃ −α·S, E ⊃ +α·S. The bridge's k is
+  then negative, which no theorem forbids. Every unit-coefficient −S arm of §35/§36/§38/§39 is
+  retired as a double count of the Coulomb term with the wrong coefficient and sign. What remains
+  is §40 EM-1 (−0.358 keV) and the 𝒟² arms.
+- (B) Keep ℒ′ = 𝒟² + S and the ruling: V = −S, like charges attract. Consistent only if S is not
+  electromagnetic, which its weights contradict.
+- (C) Withdraw the potential reading for degree-0 terms. That reopens the owner's 2026-11-22 ruling.
+
+Recommendation (agent's judgement): (A). It keeps the ruling, agrees with Coulomb and with
+`NeutronProtonEMSign`, and replaces an adopted coefficient (+1) by the derived α. Not enacted;
+owner decision.
