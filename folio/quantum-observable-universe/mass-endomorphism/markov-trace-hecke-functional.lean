@@ -2067,4 +2067,178 @@ theorem towerTr_rho2_vertexCube (N : HeckeTower R h) :
 
 end GammaGammaAllPairs
 
+/-! ## Strand reflection: the trace is invariant under `σ_a ↦ σ_{n-1-a}`
+
+The Garside half-twist `Δ_n = Q_n Q_{n-1} ⋯ Q_1`, with `Q_k = σ_0 σ_1 ⋯ σ_{k-1}`, is a
+product of invertible generators and conjugates `σ_a` to `σ_{n-1-a}` for `a < n`.  The
+conjugation uses only the braid and far-commutation relations; cyclicity of `towerTr`
+then gives invariance of the trace of any word in `σ_0, …, σ_{n-1}` under reflection. -/
+
+section StrandReflection
+
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- `Q_k = σ_0 σ_1 ⋯ σ_{k-1}`. -/
+noncomputable def rangeWord (k : ℕ) : HeckeTower R h := twWord h (List.range k)
+
+theorem rangeWord_succ (k : ℕ) :
+    rangeWord (R := R) h (k + 1) = rangeWord h k * twGen h k := by
+  simp [rangeWord, List.range_succ, twWord]
+
+/-- A generator commutes with a word all of whose letters are at least two below it. -/
+theorem twGen_comm_twWord_low (k : ℕ) (l : List ℕ) (hl : ∀ b ∈ l, b + 1 < k) :
+    twGen h k * twWord (R := R) h l = twWord h l * twGen h k := by
+  induction l with
+  | nil => simp [twWord]
+  | cons b l ih =>
+    have ih' := ih (fun c hc => hl c (List.mem_cons_of_mem _ hc))
+    have e : twWord (R := R) h (b :: l) = twGen h b * twWord h l := by simp [twWord]
+    rw [e, ← mul_assoc, twGen_far h k b (hl b (by simp)), mul_assoc, ih', ← mul_assoc]
+
+/-- **`Q_k` shifts the generators up by one**: `Q_k σ_b = σ_{b+1} Q_k` for `b + 2 ≤ k`. -/
+theorem rangeWord_mul_twGen (k b : ℕ) (hb : b + 2 ≤ k) :
+    rangeWord (R := R) h k * twGen h b = twGen h (b + 1) * rangeWord h k := by
+  induction k with
+  | zero => omega
+  | succ k ih =>
+    rw [rangeWord_succ]
+    rcases Nat.lt_or_ge (b + 2) (k + 1) with hlt | hge
+    · rw [mul_assoc, twGen_far h k b (by omega), ← mul_assoc, ih (by omega), mul_assoc]
+    · obtain rfl : k = b + 1 := by omega
+      have hc : twGen h (b + 1) * rangeWord (R := R) h b = rangeWord h b * twGen h (b + 1) :=
+        twGen_comm_twWord_low h (b + 1) (List.range b) (fun c hc => by
+          simp only [List.mem_range] at hc; omega)
+      rw [rangeWord_succ]
+      calc rangeWord h b * twGen h b * twGen h (b + 1) * twGen h b
+          = rangeWord h b * (twGen h b * twGen h (b + 1) * twGen h b) := by
+            simp only [mul_assoc]
+        _ = rangeWord h b * (twGen h (b + 1) * twGen h b * twGen h (b + 1)) := by
+            rw [twGen_braid]
+        _ = (twGen h (b + 1) * rangeWord h b) * twGen h b * twGen h (b + 1) := by
+            rw [hc]; simp only [mul_assoc]
+        _ = twGen h (b + 1) * (rangeWord h b * twGen h b * twGen h (b + 1)) := by
+            simp only [mul_assoc]
+
+/-- The word form of `rangeWord_mul_twGen`: `Q_k w = (w↑¹) Q_k` when every letter `b`
+of `w` has `b + 2 ≤ k`. -/
+theorem rangeWord_mul_twWord (k : ℕ) (l : List ℕ) (hl : ∀ b ∈ l, b + 2 ≤ k) :
+    rangeWord (R := R) h k * twWord h l
+      = twWord h (l.map (· + 1)) * rangeWord h k := by
+  induction l with
+  | nil => simp [twWord]
+  | cons b l ih =>
+    have ih' := ih (fun c hc => hl c (List.mem_cons_of_mem _ hc))
+    have e : ∀ m (l' : List ℕ), twWord (R := R) h (m :: l') = twGen h m * twWord h l' := by
+      intro m l'; simp [twWord]
+    rw [e, List.map_cons, e, ← mul_assoc, rangeWord_mul_twGen h k b (hl b (by simp)),
+      mul_assoc, ih', mul_assoc]
+
+/-- `Q_{n+1} Q_n σ_n = σ_0 Q_{n+1} Q_n`. -/
+theorem rangeWord_pair_mul_twGen (n : ℕ) :
+    rangeWord (R := R) h (n + 1) * rangeWord h n * twGen h n
+      = twGen h 0 * (rangeWord h (n + 1) * rangeWord h n) := by
+  -- `Q_{n+1} Q_n = S Q_{n+1}` with `S = σ_1 ⋯ σ_n`, and `Q_{n+1} = σ_0 S`.
+  have hS : rangeWord (R := R) h (n + 1) * rangeWord h n
+      = twWord h ((List.range n).map (· + 1)) * rangeWord h (n + 1) :=
+    rangeWord_mul_twWord h (n + 1) (List.range n) (fun b hb => by
+      simp only [List.mem_range] at hb; omega)
+  have hQ : rangeWord (R := R) h (n + 1)
+      = twGen h 0 * twWord h ((List.range n).map (· + 1)) := by
+    simp [rangeWord, List.range_succ_eq_map, twWord]
+  rw [mul_assoc, ← rangeWord_succ, hS]
+  conv_lhs => arg 1; rw [hQ]
+  rw [mul_assoc]
+
+/-- The Garside letter list: `dl 0 = []`, `dl (n+1) = [0, …, n] ++ dl n`. -/
+def garsideList : ℕ → List ℕ
+  | 0 => []
+  | n + 1 => List.range (n + 1) ++ garsideList n
+
+theorem garsideList_lt (n : ℕ) : ∀ b ∈ garsideList n, b < n := by
+  induction n with
+  | zero => simp [garsideList]
+  | succ n ih =>
+    intro b hb
+    simp only [garsideList, List.mem_append, List.mem_range] at hb
+    rcases hb with hb | hb
+    · exact hb
+    · exact Nat.lt_succ_of_lt (ih b hb)
+
+/-- **The Garside half-twist** `Δ_n` on the generators `σ_0, …, σ_{n-1}`. -/
+noncomputable def garsideWord (n : ℕ) : HeckeTower R h := twWord h (garsideList n)
+
+theorem garsideWord_succ (n : ℕ) :
+    garsideWord (R := R) h (n + 1) = rangeWord h (n + 1) * garsideWord h n := by
+  simp [garsideWord, garsideList, rangeWord, twWord_append]
+
+theorem twWord_isUnit (l : List ℕ) : IsUnit (twWord (R := R) h l) := by
+  induction l with
+  | nil => simp [twWord]
+  | cons a l ih =>
+    have e : twWord (R := R) h (a :: l) = twGen h a * twWord h l := by simp [twWord]
+    rw [e]
+    exact IsUnit.mul ⟨⟨twGen h a, twGenInv h a, mul_twGenInv h a, twGenInv_mul h a⟩, rfl⟩ ih
+
+/-- **The Garside relation**: `Δ_n σ_a = σ_{n-1-a} Δ_n` for `a < n`. -/
+theorem garsideWord_mul_twGen (n a : ℕ) (ha : a < n) :
+    garsideWord (R := R) h n * twGen h a = twGen h (n - 1 - a) * garsideWord h n := by
+  induction n generalizing a with
+  | zero => omega
+  | succ n ih =>
+    rw [garsideWord_succ]
+    rcases Nat.lt_or_ge a n with hlt | hge
+    · rw [mul_assoc, ih a hlt, ← mul_assoc,
+        rangeWord_mul_twGen h (n + 1) (n - 1 - a) (by omega), mul_assoc]
+      congr 2
+      omega
+    · obtain rfl : a = n := by omega
+      rw [show a + 1 - 1 - a = 0 by omega]
+      cases a with
+      | zero =>
+        simp [garsideWord, garsideList, twWord, rangeWord]
+      | succ m =>
+        have hc : twGen h (m + 1) * garsideWord (R := R) h m
+            = garsideWord h m * twGen h (m + 1) :=
+          twGen_comm_twWord_low h (m + 1) (garsideList m) (fun c hc => by
+            have := garsideList_lt m c hc; omega)
+        rw [garsideWord_succ]
+        calc rangeWord h (m + 1 + 1) * (rangeWord h (m + 1) * garsideWord h m)
+              * twGen h (m + 1)
+            = rangeWord h (m + 1 + 1) * rangeWord h (m + 1) * twGen h (m + 1)
+              * garsideWord h m := by
+              rw [mul_assoc, mul_assoc, ← hc]; simp only [mul_assoc]
+          _ = twGen h 0 * (rangeWord h (m + 1 + 1) * (rangeWord h (m + 1)
+              * garsideWord h m)) := by
+              rw [rangeWord_pair_mul_twGen]; simp only [mul_assoc]
+
+/-- The word form: `Δ_n w = refl(w) Δ_n` for a word `w` in `σ_0, …, σ_{n-1}`. -/
+theorem garsideWord_mul_twWord (n : ℕ) (l : List ℕ) (hl : ∀ a ∈ l, a < n) :
+    garsideWord (R := R) h n * twWord h l
+      = twWord h (l.map (fun a => n - 1 - a)) * garsideWord h n := by
+  induction l with
+  | nil => simp [twWord]
+  | cons a l ih =>
+    have ih' := ih (fun c hc => hl c (List.mem_cons_of_mem _ hc))
+    have e : ∀ m (l' : List ℕ), twWord (R := R) h (m :: l') = twGen h m * twWord h l' := by
+      intro m l'; simp [twWord]
+    rw [e, List.map_cons, e, ← mul_assoc, garsideWord_mul_twGen h n a (hl a (by simp)),
+      mul_assoc, ih', mul_assoc]
+
+/-- **Strand reflection invariance of the Markov trace.** For a word in
+`σ_0, …, σ_{n-1}`, relabelling every letter `a ↦ n - 1 - a` leaves `towerTr` unchanged. -/
+theorem towerTr_reflect (n : ℕ) (l : List ℕ) (hl : ∀ a ∈ l, a < n) :
+    towerTr z h (twWord h (l.map (fun a => n - 1 - a))) = towerTr z h (twWord h l) := by
+  obtain ⟨u, hu⟩ := twWord_isUnit h (garsideList n)
+  have key : twWord h (l.map (fun a => n - 1 - a)) * (u : HeckeTower R h)
+      = (u : HeckeTower R h) * twWord h l := by
+    rw [hu]; exact (garsideWord_mul_twWord h n l hl).symm
+  set r := twWord h (l.map (fun a => n - 1 - a))
+  set w := twWord (R := R) h l
+  calc towerTr z h r = towerTr z h (r * (u * ↑u⁻¹)) := by rw [Units.mul_inv, mul_one]
+    _ = towerTr z h ((u * w) * ↑u⁻¹) := by rw [← mul_assoc, key]
+    _ = towerTr z h ((w * ↑u⁻¹) * u) := by rw [mul_assoc, towerTr_mul_comm]
+    _ = towerTr z h w := by rw [mul_assoc, Units.inv_mul, mul_one]
+
+end StrandReflection
+
 end QOU.BraidKnot.HeckeFunctional

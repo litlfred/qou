@@ -23,7 +23,8 @@ The Gröbner–Shirshov normal form (`appendix-transfer-matrices/tm-gs-normal-fo
 2. **Strand reflection reverses the letter order.** `P: σ_i ↦ σ_{n−2−i}` sends
    `σ_iσ_{i+1}⁻¹` to `σ_{j+1}σ_j⁻¹`, a cyclic rotation of the ι image. The Markov trace at
    `z_D` is invariant under `P`: checked exactly on every bond word below
-   (`he4_sign_conventions_probe.py`, check `reflection_invariance`). Not proved in Lean.
+   (`he4_sign_conventions_probe.py`, check `reflection_invariance`), and proved in Lean for
+   every word: `towerTr_reflect` (half-twist conjugation plus cyclicity, sorry-free).
 3. **The Markov property is one-sided.** `tr(xσ_m) = z·tr(x)` holds at the top generator, and the
    brane tower adds strands at the top (`ordering-jet-compatibility`: `ℓ_n` extends `≺_n`
    without changing old elements).
@@ -100,7 +101,7 @@ and the −12 m_e coefficient.
 
 ## 5. What would settle it
 
-1. Prove `P`-invariance of `towerTr` in Lean (fact 2). Cheap.
+1. Done: `towerTr_reflect` proves `P`-invariance of `towerTr` (fact 2).
 2. Decide whether the photon ruling `σ₀σ₁⁻¹` is meant as "invert the larger letter". If yes,
    C1 and C4 are fixed and the ⁴He chain unbinds by −0.862 keV.
 3. A4 is reconciled by PR #8800 §21, modulo the definition "u passes over".

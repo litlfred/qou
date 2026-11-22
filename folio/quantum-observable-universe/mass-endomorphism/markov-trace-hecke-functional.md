@@ -75,3 +75,7 @@ With two interface letters $u = \alpha + \beta\sigma_m$ and $v = \gamma + \delta
 ## Remark on two bonds into one cluster
 
 Let $a$ be any bond and $N$ any cluster. The trace of $a^{\uparrow 1}\,(\sigma_0\,a^{\uparrow 1}\,\sigma_0^{-1})\,N^{\uparrow 2}$ is unchanged when $\sigma_0$ is replaced by $\sigma_0^{-1}$ in the transport, and when the two bonds are exchanged.
+
+## Remark on strand reflection
+
+Let $w$ be a positive word in $\sigma_0, \ldots, \sigma_{n-1}$, and let $w^{P}$ be the word obtained by replacing each $\sigma_a$ with $\sigma_{n-1-a}$. Then $\mathrm{tr}_M(w^{P}) = \mathrm{tr}_M(w)$. The half-twist $\Delta_n$ satisfies $\Delta_n \sigma_a = \sigma_{n-1-a} \Delta_n$ for $a < n$ by the braid and far-commutation relations, and it is invertible, so $w^{P} = \Delta_n w \Delta_n^{-1}$, and cyclicity gives the equality (`towerTr_reflect`). The Markov property is stated only at the top generator, but the trace still does not distinguish the two ends of the strand line.
