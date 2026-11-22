@@ -356,6 +356,7 @@ import QOU.MathlibExt.PLLipschitz
 import QOU.MathlibExt.PLLipschitzPiecewise
 import QOU.MathlibExt.PLScaling
 import QOU.MathlibExt.PLSlice
+import QOU.MathlibExt.PLSurfaceSlice
 import QOU.MathlibExt.PLCone
 import QOU.MathlibExt.PLDerived
 import QOU.MathlibExt.PLConeMap
