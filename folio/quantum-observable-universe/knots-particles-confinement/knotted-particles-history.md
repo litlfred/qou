@@ -19,8 +19,12 @@ vortex atoms needed a table of knots, and Tait set out to make one
 \cite{tait1877knots}. With Thomas Kirkman and Charles Little he
 classified knot diagrams up to ten crossings, and in doing so stated
 the conjectures on crossing number, writhe and flypes that bear his
-name. The first of these was proved a century later, in 1987, with the
-Jones polynomial \cite{jones1985} \cite{kauffman1987}.
+name. The first of these was proved a century later, in 1987,
+independently by Kauffman, Murasugi and Thistlethwaite, with the Jones
+polynomial \cite{jones1985} \cite{kauffman1987} \cite{murasugi1987}
+\cite{thistlethwaite1987}; Menasco and Thistlethwaite proved the
+flyping conjecture in 1991 \cite{menasco-thistlethwaite1991}
+\cite{menasco-thistlethwaite1993}.
 
 The vortex atom itself did not survive. The ether was given up, the
 electron was found inside the atom, and by about 1900 the theory had
@@ -47,14 +51,14 @@ of the ribbons and colour off the permutations of those twists among the
 ribbons \cite{bilson-thompson2005}. Bilson-Thompson, Markopoulou and
 Smolin then embedded these braids in the braided ribbon networks of
 quantum gravity \cite{bilsonthompson2007}. Gresnigt used the Clifford
-braiding theorem of Kauffman and Lomonaco \cite{kauffman-lomonaco-2007}
+braiding theorem of Kauffman and Lomonaco \cite{kauffman-lomonaco-2016}
 to show that the complex numbers and the quaternions carry
 representations of exactly the two braid groups of that model, the
 braid group $B_2$ of the twists and the circular braid group $B_3^c$ of
 the ribbons \cite{gresnigt2017}. He then identified the framed braids
 with the basis states of the minimal left ideals of the complex
-octonions, which, following Furey, carry one generation of leptons and
-quarks under the unbroken symmetry
+octonions, which, following Furey \cite{furey2016}, carry one
+generation of leptons and quarks under the unbroken symmetry
 $SU(3)_c \times U(1)_{\mathrm{em}}$ \cite{gresnigt2018}. Chester,
 Arsiwalla and Kauffman mapped the twists of the same states onto the
 weight lattice of $SU(3)_c \times U(1)_{\mathrm{em}}$ and the crossings
@@ -76,7 +80,7 @@ carried by the strands or an import from a division algebra. This
 chapter reads the braid word in the Iwahori–Hecke algebra $H_n(q)$ with
 $q$ a formal parameter, where every generator satisfies
 $\sigma_i - \sigma_i^{-1} = (q - q^{-1})\mathbf{1}$, and evaluates
-closures with a Markov trace. A particle can then be a linear
+closures with a Markov trace \cite{jones1987}. A particle can then be a linear
 combination of braid words rather than a single braid, as the four-term
 [photon](#def:photon) is.
 
