@@ -25,6 +25,19 @@ Result (both traces; the cut trace is the Alexander polynomial, as expected):
 So gl(1|1) does NOT supply (1, 0, -1): the sign alternates on the hook too.
 Scope (a): this representation, alone. It does not exclude other super or
 partial traces.
+
+Young projector trace tau = chi_(3) - chi_(1^3), weights (1, 0, -1)
+(added 2026-11-22):
+  * tau is not a Markov trace: tau(1) = 0 but tau(sigma_2) = [2]_q, so no z
+    satisfies tau(x sigma_2) = z tau(x) on H_2.
+  * Split V^{(x)3} by the number k of odd tensor factors (R preserves k).
+    The supertrace of sector k has weights k=0: (1,0,0), k=1: (-1,-1,0),
+    k=2: (0,1,1), k=3: (0,0,-1). So tau is exactly the supertrace on the two
+    extremal sectors (all even, all odd); the mixed sectors carry -tau, which
+    is why the full supertrace is 0.
+  * No single super vector space gives tau through its supertrace (Lean:
+    QOU.AlphaEM.YoungTrace.no_superdim_gives_young_trace, at q = 1).
+Nothing here says the photon selects the extremal sectors; that is open.
 """
 import sympy as sp
 
@@ -112,6 +125,25 @@ def main():
     vals = cut_str(word('1212121212', s1, s2, sp.eye(8)))
     checks.append(('cut value = q^2/[3] (q^10 + 1 + q^-10)',
                    sp.simplify(vals - q ** 2 / three * (q ** 10 + 1 + q ** -10)) == 0))
+    # Young projector trace tau and the gl(1|1) weight sectors.
+    import itertools
+
+    def sector_str(x, k):
+        return sp.simplify(sum((-1) ** k * x[i, i] for i, b in
+                               enumerate(itertools.product([0, 1], repeat=3))
+                               if sum(b) == k))
+    expect = {0: [1, 0, 0], 1: [-1, -1, 0], 2: [0, 1, 1], 3: [0, 0, -1]}
+    for k, ex in expect.items():
+        vals = [sector_str(word(w, s1, s2, sp.eye(8)), k) for w in words]
+        sol = sp.solve([sum(c[i] * W[i] for i in range(3)) - v
+                        for c, v in zip(chars, vals)], W, dict=True)
+        got = [sp.simplify(sol[0][x]) for x in W] if len(sol) == 1 else None
+        print(f'sector with {k} odd factors: weights {got}')
+        checks.append((f'sector k={k} weights {ex}', got == ex))
+    tau = lambda c: c[0] - c[2]
+    t1, ts2 = tau(chars[words.index('')]), tau(chars[words.index('2')])
+    checks.append(('tau(1) = 0 and tau(s2) = [2]_q, so tau is not Markov',
+                   sp.simplify(t1) == 0 and sp.simplify(ts2 - (q + 1 / q)) == 0))
     for n, c in checks:
         print(('PASS ' if c else 'FAIL ') + n)
     return 0 if all(c for _, c in checks) else 1
