@@ -22,7 +22,7 @@ triangulation, the ear triangle can be glued on along it (`unionComplex`).
 
 ## What is a DEFINITION here
 
-* `simplexComplex s hs` — the complex of all nonempty faces of one affinely independent set.
+* `fullSimplexComplex s hs` — the complex of all nonempty faces of one affinely independent set.
 * `unionComplex K L h` — the union of two complexes whose faces meet in common faces.
 
 ## What is a THEOREM here
@@ -44,7 +44,7 @@ section Complexes
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 /-- The simplicial complex of all nonempty faces of one simplex. -/
-def simplexComplex (s : Finset E) (hs : AffineIndependent ℝ ((↑) : s → E)) :
+def fullSimplexComplex (s : Finset E) (hs : AffineIndependent ℝ ((↑) : s → E)) :
     SimplicialComplex ℝ E where
   faces := {t | t.Nonempty ∧ t ⊆ s}
   empty_notMem := fun h => Finset.not_nonempty_empty h.1
@@ -52,8 +52,8 @@ def simplexComplex (s : Finset E) (hs : AffineIndependent ℝ ((↑) : s → E))
   down_closed := fun ht hut hu => ⟨Finset.nonempty_iff_ne_empty.mpr hu, hut.trans ht.2⟩
   inter_subset_convexHull := fun ht hu => (hs.convexHull_inter ht.2 hu.2).ge
 
-lemma simplexComplex_space (s : Finset E) (hs : AffineIndependent ℝ ((↑) : s → E))
-    (hne : s.Nonempty) : (simplexComplex s hs).space = convexHull ℝ (s : Set E) := by
+lemma fullSimplexComplex_space (s : Finset E) (hs : AffineIndependent ℝ ((↑) : s → E))
+    (hne : s.Nonempty) : (fullSimplexComplex s hs).space = convexHull ℝ (s : Set E) := by
   ext x
   rw [SimplicialComplex.mem_space_iff]
   constructor
@@ -185,8 +185,8 @@ theorem exists_triangulation_region [DecidableEq R2] (P : Polygon R2) (hP : P.Is
   intro P hN hP
   -- faces of a single simplex
   have hsimplex : ∀ (s0 : Finset R2) (hs : AffineIndependent ℝ ((↑) : s0 → R2)),
-      (simplexComplex s0 hs).faces.Finite ∧
-        ∀ t ∈ (simplexComplex s0 hs).faces, t ⊆ s0 := fun s0 hs =>
+      (fullSimplexComplex s0 hs).faces.Finite ∧
+        ∀ t ∈ (fullSimplexComplex s0 hs).faces, t ⊆ s0 := fun s0 hs =>
     ⟨(s0.powerset.finite_toSet).subset fun t ht =>
       Finset.mem_coe.mpr (Finset.mem_powerset.mpr ht.2), fun t ht => ht.2⟩
   by_cases h2 : P.n = 2
@@ -198,7 +198,7 @@ theorem exists_triangulation_region [DecidableEq R2] (P : Polygon R2) (hP : P.Is
       have : j % 3 < 3 := Nat.mod_lt _ (by norm_num)
       interval_cases (j % 3) <;> simp [hs0]
     obtain ⟨hfin, hsub⟩ := hsimplex s0 (affineIndependent_triangle hD)
-    refine ⟨simplexComplex s0 (affineIndependent_triangle hD), hfin, fun t ht => ?_,
+    refine ⟨fullSimplexComplex s0 (affineIndependent_triangle hD), hfin, fun t ht => ?_,
       fun t ht x hx => ?_, fun j => ?_, ?_⟩
     · exact (Finset.card_le_card (hsub t ht)).trans Finset.card_le_three
     · have := hsub t ht hx
@@ -213,7 +213,7 @@ theorem exists_triangulation_region [DecidableEq R2] (P : Polygon R2) (hP : P.Is
       rcases hx with rfl | rfl
       · exact hw _
       · exact hw _
-    · rw [simplexComplex_space _ _ ⟨P.w 0, by simp [hs0]⟩, region_eq_triPoly P h2,
+    · rw [fullSimplexComplex_space _ _ ⟨P.w 0, by simp [hs0]⟩, region_eq_triPoly P h2,
         region_triPoly hD, hs0]
       push_cast
       rfl
@@ -267,7 +267,7 @@ theorem exists_triangulation_region [DecidableEq R2] (P : Polygon R2) (hP : P.Is
   -- the ear simplex
   set se : Finset R2 := {a, c, b} with hse
   have hind := affineIndependent_triangle hD
-  set T := simplexComplex se hind with hTdef
+  set T := fullSimplexComplex se hind with hTdef
   obtain ⟨hTfin, hTsub⟩ := hsimplex se hind
   have hab : ({a, b} : Finset R2) ∈ KM.faces := by
     have := hKe M.n
@@ -329,7 +329,7 @@ theorem exists_triangulation_region [DecidableEq R2] (P : Polygon R2) (hP : P.Is
       rcases hx with rfl | rfl
       · rw [hRc]; simp [hse]
       · rw [hRb]; simp [hse]
-  · rw [unionComplex_space, hKsp, simplexComplex_space _ _ ⟨a, by simp [hse]⟩, ← hRreg, hM,
+  · rw [unionComplex_space, hKsp, fullSimplexComplex_space _ _ ⟨a, by simp [hse]⟩, ← hRreg, hM,
       region_subdivideLast M c hD hpar, hse]
     push_cast
     rfl
