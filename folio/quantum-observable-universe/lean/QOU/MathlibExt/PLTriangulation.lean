@@ -94,12 +94,14 @@ def IsDerived (K' K : SimplicialComplex ℝ E) : Prop :=
     K'.faces = {s : Finset E | ∃ C : Finset (Finset E), C.Nonempty ∧ (∀ σ ∈ C, σ ∈ K.faces) ∧
       (∀ σ ∈ C, ∀ τ ∈ C, σ ⊆ τ ∨ τ ⊆ σ) ∧ (s : Set E) = a '' (C : Set (Finset E))}
 
-/-- `N` is a **regular (second-derived) neighbourhood** of `P` in `M`. -/
+/-- `N` is a **regular (second-derived) neighbourhood** of `P` in `M`. The derived complexes are
+also required to subdivide (same space): for the barycentric choice this is a theorem
+(`subdivides_baryComplex`), and for a general choice of centres it is not proved here. -/
 def IsRegularNbhd (N P M : Set E) : Prop :=
   ∃ K K' K'' L'' : SimplicialComplex ℝ E,
     Triangulates K M ∧ (∃ L, IsSubcomplex L K ∧ L.space = P) ∧
-    IsDerived K' K ∧ IsDerived K'' K' ∧ IsSubcomplex L'' K'' ∧ L''.space = P ∧
-    N = simplicialNbhd K'' L''
+    IsDerived K' K ∧ Subdivides K' K ∧ IsDerived K'' K' ∧ Subdivides K'' K' ∧
+    IsSubcomplex L'' K'' ∧ L''.space = P ∧ N = simplicialNbhd K'' L''
 
 namespace Triangulates
 
