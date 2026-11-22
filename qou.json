@@ -110,6 +110,19 @@
       "_comment": "Declared 2026-10-04, story TOOLS T2 (bean qou-4r5m), as a plain path. Moved to the platform's `source: {kind: branch}` form 2026-10-10 on owner instruction (\"_deprecated is now branch cat/cat-harness/fsh-guts ... migrate if not\", then option 2, full cut-over), bean qou-6u3n. Same shape as the platform's own fsh-guts declaration in folio-assistant.json."
     },
     {
+      "id": "trace-cache",
+      "path": "trace-cache/",
+      "graphTypologies": [
+        "trace-cache"
+      ],
+      "storage": {
+        "branchPrefix": "cat/qou/trace-cache/",
+        "keyedBy": "family",
+        "keyFrom": "<function>-<engine-key>-q<q-key>-dps<dps>, e.g. tr-m-atomic-mpfr-<12 hex>-q<12 hex>-dps40; engine-key hashes the git trees of tools/hecke-engine and tools/pyhecke-native (the wheel-cache source key), q-key hashes the q0 decimal string"
+      },
+      "description": "Exact results of qou's native trace producer (`pyhecke_native.tr_m_atomic_mpfr`), stored so a long probe run resumes and a re-run recomputes nothing. One orphan branch per producer function, engine source key, q0 string and dps; inside it, content-addressed JSONL shards of (n, signed word) -> the producer's exact decimal string, never a float. A dirty engine tree has no key, so a stale value is never served, and `computations/trace_cache.py` re-evaluates a sample of loaded entries against the live binary before using any. Read and written by scripts/trace-cache.sh, whose git objects live in a private bare repository; a seed adds a shard on top of the tip and never forces. `trace-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/trace-cache.json`."
+    },
+    {
       "id": "beans",
       "path": "beans/",
       "scope": "repository",
