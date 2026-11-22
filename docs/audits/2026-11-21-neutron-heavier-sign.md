@@ -750,3 +750,23 @@ level up, and computed below it.
 
 **Scope.** Exact identities, no empirical input, no fitting. Tower status: one block, n = 3; the pair
 statement is n = 6.
+
+## §33 The two-block readout reduces to per-block traces (2026-11-22)
+
+`PairReadoutTensorReduction.lean` (sorry-free; axioms propext / Classical.choice / Quot.sound) proves
+the step §32 left to computation, in abstract form. Each block carries `e, f, K, K⁻¹`, a core `W` and
+a charge-sector projector `P`, with the sector conditions: `P² = P`; `P` commutes with `K`, `K⁻¹`, `W`;
+`K` and `K⁻¹` act on the sector as the scalars `k`, `k⁻¹`; `PeP = PfP = 0`. The pair operator is
+`h²·Δf·Δe + qK_AK_B + q⁻¹K_A⁻¹K_B⁻¹ − C_A ⊗ 1 − 1 ⊗ C_B` with the `Ř`-compatible coproduct. Then
+`tr((P_A ⊗ P_B)(K_A ⊗ K_B)(W_A ⊗ W_B)·X)` equals `QCasimirPairGenericQ.pairReadout` with
+`a = tr(PKW)` and `c = h²·tr(PKW·fe)` per block (`readout_eq_pairReadout`). The charge-moving terms
+`f_A ⊗ e_B` and `K_A⁻¹e_A ⊗ f_BK_B` drop out because each has a factor with `PYP = 0`
+(`trace_shift`, `shift_mul_left`, `shift_mul_right`).
+
+**Chain now.** Two-block readout → per-block `a`, `c` (§33, Lean) → equal `τ`, `μ` on the proton and
+neutron sectors of a three-strand block (§32, Lean, on 3×3 sector matrices) → pp = nn and the
+interaction `h²[2]_q` (§28, Lean). The one link still checked only by computation is that the 8×8
+block operators, restricted to the two charge sectors, are the 3×3 matrices `A0`, `A1`, `G` of §32
+(`block_sector_matrices_probe.py`, exact sympy).
+
+**Scope.** Exact algebra over any field. No empirical input. Tower status: two blocks, n = 6.
