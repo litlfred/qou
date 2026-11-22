@@ -16,7 +16,7 @@ for SDP uniqueness all live here.
 
 - `Matrix.frobeniusInner` — `tr(A^T · B)` as a real-valued
   inner product on `Matrix (Fin n) (Fin n) ℝ`.
-- `Matrix.frobeniusInner_symm` — symmetry.
+- `QOU.MathlibExt.FrobeniusInnerProduct.frobeniusInner_symm` — symmetry.
 - `Matrix.frobeniusInner_self_nonneg` — non-negativity on the
   diagonal (Mathlib via `Matrix.trace_transpose_mul_self_nonneg`).
 - `Matrix.frobeniusInner_self_eq_zero_iff` — non-degeneracy.

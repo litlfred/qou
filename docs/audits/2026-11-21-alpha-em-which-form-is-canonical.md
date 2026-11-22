@@ -215,3 +215,131 @@ representation alone. The sign alternates on the hook, so it does not zero `(2,1
 Lean: lean-direct exit 0, axioms `propext, Classical.choice, Quot.sound`. Still open:
 a construction that zeros the hook block and gives the two one-dimensional blocks
 opposite signs.
+
+## 10. The Young projector trace (owner picked option 3, 2026-11-22)
+
+`τ = χ_(3) − χ_(1³)` has weights `(1, 0, −1)` by definition. The question is whether
+anything natural produces it. Three results, the probe now 13/13:
+
+1. **`τ` is not a Markov trace.** `τ(1) = 0` but `τ(σ₂) = [2]_q`, so no `z` gives
+   `τ(xσ₂) = z·τ(x)` on `H₂`. It cannot come from the usual normalised link trace.
+2. **`τ` is the `gl(1|1)` supertrace on the two extremal sectors.** `Ř` preserves
+   the number `k` of odd tensor factors in `V^{⊗3}`. The supertrace of sector `k` has
+   weights `(1,0,0)`, `(−1,−1,0)`, `(0,1,1)`, `(0,0,−1)` for `k = 0, 1, 2, 3`. So the
+   all-even plus all-odd sectors give exactly `τ`, and the mixed sectors give `−τ`,
+   which is why the full supertrace is zero (§9).
+3. **No single super vector space gives `τ`**
+   (`QOU/AlphaEM/YoungTraceNoSuperDimension.lean`,
+   `no_superdim_gives_young_trace`, lean-direct exit 0, standard axioms). At `q = 1`
+   the Schur-functor dimensions `d(d+1)(d+2)/6`, `d(d−1)(d+1)/3`, `d(d−1)(d−2)/6`
+   are never `c·(1, 0, −1)` with `c ≠ 0`.
+
+Still open: why the photon would select the extremal sectors. Nothing above ties the
+two; Finding A (§9) only shows that `τ(γ) = (φ₀ + φ₁)[2]_q`.
+
+## 11. Can the photon select the extremal sectors? (owner picked option 3, 2026-11-22)
+
+No element of `H₃(q)` can, the photon included. Exact probe, now 18/18.
+
+- The ordinary trace of each sector gives its block multiplicities: `k = 0` is `(3)`,
+  `k = 1` is `(3) ⊕ (2,1)`, `k = 2` is `(2,1) ⊕ (1³)`, `k = 3` is `(1³)`.
+- `Ř` preserves `k`, so every element of `H₃(q)` maps each sector to itself.
+- The two mixed sectors together contain all three blocks. For `[2]_q[3]_q ≠ 0`,
+  `H₃(q)` is semisimple (`M₁ ⊕ M₂ ⊕ M₁`), so an element that acts by zero on the
+  mixed sectors is zero. No nonzero `x ∈ H₃(q)` keeps the extremal sectors and
+  removes the mixed ones.
+
+So `τ(x) = str(P_ext · x)`, where `P_ext` projects onto the weights `(3,0)` and
+`(0,3)`. `P_ext` is a Cartan element of `U_q(gl(1|1))`: it commutes with `H₃(q)`
+and sits on the other side of Schur–Weyl duality. Whatever selects the `(1,0,−1)`
+weights has to come from the gauge (gl(1|1)) side, not from the braid word or the
+photon element. Scope (b) for "an element of `H₃(q)` does the selecting", with the
+invariant being faithfulness of the mixed sectors. The semisimplicity step is quoted
+here, not proved in Lean.
+
+Coordination: the norm-one photon work (PR #8981, `PhotonBarClosure.lean`) was
+asked whether its block norms fix the sign-block to trivial-block ratio at `−1`.
+
+## 12. Which gl(1|1) Cartan insertions give `(1, 0, −1)` (owner picked options 2 and 1, 2026-11-22)
+
+Let `H = E₁₁ − E₂₂` act on `V^{⊗3}`; it equals `3 − 2k` on the sector with `k` odd
+factors. Insert a diagonal `f(H)` into the supertrace. Exact probe, now 21/21:
+
+- The block weights of `x ↦ str(f(H)·x)` are exactly
+  `(f(3) − f(1), f(−1) − f(1), f(−1) − f(−3))`.
+- So they are proportional to `(1, 0, −1)` iff `f(1) = f(−1)` and `f(3) = f(−3)`,
+  that is `f` is even under `H ↦ −H` (equivalently `K ↦ K⁻¹`, `K = q^H`), with
+  `f(3) ≠ f(1)`.
+- `K` alone fails (nonzero hook weight). `K + K⁻¹` gives `[2]_q h² · (1, 0, −1)`;
+  `K² + K⁻²` and `H²` also give the direction.
+
+What this settles: the direction `(1, 0, −1)` is forced by one structural condition,
+evenness of the Cartan insertion under `K ↦ K⁻¹`. What it does not settle: the
+overall scale `f(3) − f(1)`, which differs between `K + K⁻¹`, `K² + K⁻²` and `H²`.
+Choosing among them by the α_em value would be selection against the target. The
+link to the photon, and whether `K ↦ K⁻¹` is the bar involution on the gauge side,
+is still open; the norm-one photon thread (PR #8981) has been asked about it.
+No Lean change: the criterion is linear algebra on the sector weights, which are
+computed exactly in the probe, not formalised.
+
+## 13. Is the Cartan insertion derivable? (owner, 2026-11-22: work the options)
+
+**The direction, yes, from one symmetry. The reason for that symmetry and the sign, no.**
+
+1. **`(1, 0, −1)` is the same thing as oddness under `ι : σᵢ ↦ −σᵢ⁻¹`.**
+   `QOU/AlphaEM/IotaOddTrace.lean`, `iota_odd_iff` (lean-direct exit 0, axioms
+   `propext, Classical.choice, Quot.sound`): for `q ≠ 0`, `q² + 1 + q⁻² ≠ 0` and
+   characteristic 0, a block functional satisfies `τ(ι x) = −τ(x)` on every word iff
+   its weights are `w₃·(1, 0, −1)`. `ι` swaps the trivial and sign blocks;
+   `trace_iota_hook` shows it keeps the hook character, via an explicit intertwiner
+   `P` with `det P = q² + 1 + q⁻²`.
+2. **On the gl(1|1) side `ι` is the parity swap.** The trace of `ρ(ιx)` on sector `k`
+   equals that of `ρ(x)` on sector `3 − k`. Because 3 is odd, the supertrace sign
+   flips under this swap, so an insertion `f(H)` that is even under `H ↦ −H`
+   (`K ↦ K⁻¹`) gives an `ι`-odd functional. This is why §12's condition appears.
+3. **Scale, up to sign.** Among even insertions, the idempotent ones with nonzero
+   weights are `P_ext` (weights `(1, 0, −1)`) and `1 − P_ext` (`(−1, 0, 1)`).
+   `P_ext = (c − c(1))/(c(3) − c(1))` with `c = K + K⁻¹`. Asking for a projection fixes
+   the scale; the sign (keep the extremal sectors or the mixed ones) stays a choice.
+4. **Casimir route: excluded.** A central element of `U_q(gl(1|1))` acts on `V^{⊗3}`
+   by a `U`-endomorphism, hence by an element of `H₃(q)` (Schur–Weyl double
+   centraliser, Mitsuhashi; quoted, not proved here). The full supertrace vanishes on
+   all of `H₃(q)` (§9), so any central insertion gives zero. Scope (b), invariant: the
+   vanishing full supertrace. Only a non-central (torus) insertion can work.
+
+Probe `photon_gl11_supertrace_weights_probe.py` now 26/26 (`ι` Hecke and braid
+relations, the sector swap, `P_ext` as a polynomial in `K + K⁻¹`).
+
+Still open, and not derived: why the α_em functional should be `ι`-odd, and the sign.
+`ι` sends the chiral vertex `σ₀σ₁⁻¹` to `σ₀⁻¹σ₁`; the ruled photon is not `ι`-invariant.
+
+## 14. Is mass the real part and α_em the imaginary part? (owner, 2026-11-22)
+
+**Partly. The α_em functional is a definite piece of the Markov trace, and it is a
+writhe (framing) phase. That mass is the other piece is not shown.**
+
+1. **The Markov trace splits by `ι : σᵢ ↦ −σᵢ⁻¹`.** Under convention D the weights
+   are `y₃ = (q⁴+1)/(q²+1)²`, `y₂₁ = q²/(q²+1)²`, `y₁₁₁ = 0`. The `ι`-odd part of
+   `tr_M` is `(y₃ − y₁₁₁)/2 · τ = (y₃/2)·τ`, with `τ = χ_(3) − χ_(1³)` the α_em
+   functional of §10. So the α_em functional is already inside the canonical trace,
+   with its scale fixed by `z_D`. (Probe, exact, 10 words.)
+2. **`τ` reads only the exponent sum `e` (the writhe):** `τ(w) = q^e − (−q⁻¹)^e`.
+   Under `q ↦ q⁻¹` it is even for odd `e` and odd for even `e`
+   (`QOU.AlphaEM.TauExp.tau_eq`, `tau_bar`, sorry-free, generic field).
+3. **Electron `σ₀σ₁σ₀`:** `e = 3`, `τ = q³ + q⁻³` (bar-even). Linchpin `(σ₁σ₂)⁵`:
+   `e = 10`, `τ = q¹⁰ − q⁻¹⁰` (bar-odd).
+4. **Where real and imaginary appear.** On the unit circle `q = e^{iθ}`, the two
+   one-dimensional blocks give `q^e` and `(−q⁻¹)^e = (−1)^e q̄^e`. So
+   `χ_(3) ± χ_(1³)` are `2 Re q^e` and `2i Im q^e`, and which is which is swapped by
+   the parity of `e`. This is the sense in which braid words intertwine the two
+   parts: the word decides it through its writhe. At real `q₀` (`Im q₀ = 0`) there
+   is no phase, so this is a fibre-level statement, not an observable one.
+5. **Relation to the corpus.** `rem:mass-modulus-em-phase-color-grading` reads EM as
+   the framing phase `arg tr_M`, picked up as the ribbon twist `q^{2w c(λ)}` of writhe
+   `w`. Items 2 and 4 agree with that: `τ` sees the word only through its writhe.
+   That remark reads mass as the modulus (polar). `conj:binding-qbeta-complex-volume`
+   and `conj:complex-mass-constituent-functional` read additive Re/Im splits instead.
+   This section supports none of the three over the others: it locates the α_em
+   functional as the `ι`-odd part, and says nothing yet about where mass sits.
+
+**Not shown:** that mass is the `ι`-even part; why α_em should be `ι`-odd; the sign.

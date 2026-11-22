@@ -347,3 +347,201 @@ per factor q). Comparison values are already recorded in §5. No row is chosen.
 Addendum 12 (1) expected "|c| stays open". That expectation ignored this probe's own Addenda 1–2 and
 audit §8–9, which derive |c| = E₀ by route T. The reduction-step lemma stands but answers a narrower
 question. See audit §22.
+
+### Addendum 13 (owner "1": which premise gives way)
+
+Question. Under route T, a nucleon energy that is one Gibbs energy needs crossing weights with
+W = 1 (audit §22). Can the Markov trace at convention D supply per-crossing weights that sum to 1?
+Written before any Lean. The expectations below were worked by hand and are to be proved, not assumed.
+
+Setup. H₂(q), generator σ, Hecke relation σ² = hσ + 1, h = q − q⁻¹. Markov trace τ with τ(1) = 1 and
+τ(σ) = z_D = q³/(q² + 1). Then τ(σ⁻¹) = τ(σ − h) = z_D − h.
+
+To be proved (generic field, no number):
+1. τ(σ) = q²/[2]_q and τ(σ⁻¹) = q⁻²/[2]_q. So #8923's pair-Skein weights are exactly the trace values
+   of the two crossing elements: 𝒮ᴰ(a,b) = τ(σ)μ_a + τ(σ⁻¹)μ_b. If this holds, #8923's weights are
+   trace-derived, and only their assignment to strands (u takes τ(σ)) remains a reading.
+2. τ(σ) + τ(σ⁻¹) = τ(σ + σ⁻¹) = (q² + q⁻²)/[2]_q, the §19 factor.
+3. The channel weights y₍₂₎, y₍₁,₁₎ (trace of the two minimal idempotents of H₂) are [3]_q/[2]_q² and
+   1/[2]_q², and they sum to τ(1) = 1.
+
+To be proved (real q > 0, q ≠ 1):
+4. τ(σ) + τ(σ⁻¹) ≠ 1 at z_D, and also at the other admissible root z = q (where the sum is [2]_q).
+   So no admissible Markov parameter makes the crossing-element trace weights sum to 1.
+
+Expected reading (scope a). The trace gives two kinds of weight. Its values on the crossings σ, σ⁻¹
+are the #8923 weights, and they sum to τ(σ + σ⁻¹) ≠ τ(1). Its values on a partition of unity (the
+channel idempotents) sum to 1, but the channels are symmetric in the two strands, so they carry no
+over/under weight and cannot say which strand takes q². So the trace does not supply crossing weights
+with W = 1. What gives way is then a choice among: (Q); the one-temperature requirement; or reading the
+nucleon energy as a linear sum of crossing trace values. This test does not pick one. Normalising by
+τ(σ + σ⁻¹) would force W = 1, but that divisor is chosen to meet the constraint, so it is not a
+derivation and is recorded as such.
+
+### Addendum 14 (owner "Drop nucleon energy is sum")
+
+The reading "nucleon energy = linear sum of crossing trace values" is dropped. (Q) and route T
+(k_B T = E₀) are kept. Order of work, stated honestly: a sympy symbolic check of claim 2 below was run
+before this addendum was written; the Lean has not been written yet.
+
+Replacement premise (G), a premise, not derived: the nucleon's Gibbs weight is the trace of
+K^{⊗3}·β_Bor over the weight space of its flavour content in V^{⊗3}, V = ⟨u, d⟩, with u of weight
+H = +1 and d of weight H = −1 (premise L). Ř is Hecke-normalised: uu ↦ q·uu, dd ↦ q·dd, ud ↦ du,
+du ↦ ud + h·du, so σ² = hσ + 1. E_N = −E₀·ln w_N.
+
+To be proved:
+1. On each weight space K^{⊗3} acts as the scalar q^m, so w_N = q^{m_N}·T_{m_N}(β_Bor), where
+   T_m is the plain trace of β_Bor on the weight space M_m. p = (u,u,d) has m = +1, n = (u,d,d) has m = −1.
+2. (generic field, using only q² = hq + 1) T_{+1}(β_Bor) = T_{−1}(β_Bor), both equal to
+   −(q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1)/q⁶ when h = q − q⁻¹.
+3. (real, T > 0) E_n − E_p = −E₀[ln(q⁻¹T) − ln(qT)] = 2E₀ ln q, the n–p cell, with W = 1 automatically.
+   The trace T enters only as a flavour-independent additive term −E₀ ln T, which cancels in n − p.
+
+Expected outcome: the §19/§22/§23 mismatch disappears under (G), because the trace no longer weights
+the quark masses. n − p is the cell, 0.873537 MeV at the proton q₀, which is still below
+m_n − m_p (1.29333 MeV), the comparison value. So (G) settles consistency, not accuracy.
+
+### Addendum 15 (owner "Lean prove your assertions", "1y", "2y")
+
+Not a preregistration in the strict sense: it records that the claims stated in the §24 report
+(T = 3 at q = 1, T > 0 at the pin, χ₍₃₎(β_Bor) = 1, T = χ₍₃₎ + χ₍₂,₁₎) and option 1 (relate T to the
+convention-D Markov trace) were proved in `WeightSpaceMarkov.lean` after a sympy check. Option 2 (a
+derived term for the gap between the cell and m_n − m_p) starts with the corpus-grep checklist; no
+term will be added unless the corpus derives it.
+
+### Addendum 16 (owner "1": test the cell against Q_β; what must the decay vertex add?)
+
+Written before any Lean or new number. Uses premise (G) of Addendum 14 and route T (k_B T = E₀).
+Units m_e = 1 inside Lean (CAL-1).
+
+Claims to prove:
+1. Placement C (active lepton strand, premise L: ν weight +1, e⁻ weight −1), per factor under (G):
+   (E_n − E_p) + (E_ν − E_e) = 0. The lepton's weight step cancels the nucleon cell exactly.
+   So under C the whole of Q_β must come from the vertex.
+2. Placement B (lepton energy from CAL-1, E(e⁻) = m_e, E(ν̄) ≥ 0): Q_β^B = cell − m_e − E(ν̄) < m_e·(2/q − 1)
+   < m_e for every q > 1, from `log_cell_bounds`. So without a vertex term B gives Q_β < m_e at every q.
+3. Hence for any comparison value Q ≥ m_e, the vertex must add V = Q − Q_β^B > Q − m_e·(2/q − 1) > 0.
+
+Expected outcome: no derived vertex energy is produced here. The result is the size of what the vertex
+must supply under each placement (B: 0.41980 MeV at the proton q₀, which equals the m_n − m_p gap by
+construction; C: all of Q_β = 0.78233 MeV), printed after the Lean. Any corpus quantity that lands near
+either figure will be reported as a near-match only, not adopted.
+
+## Addendum 17 (2026-11-21): a vertex energy from the Young-channel split (owner "1")
+
+**Contamination disclosure.** The candidate below and its value at q₀ (about 0.0905 MeV) were
+computed in chat before this addendum was written. The claims are stated now anyway, and the
+verdict is checked against them, not tuned after.
+
+**Candidate.** The quark strand and the lepton strand that meet at the vertex form a pair in H₂(q).
+Split that pair with the Hecke idempotents P_sym = (σ + q⁻¹)/[2], P_anti = (q − σ)/[2]. In the weight
+basis, with the Jimbo Ř (ud ↦ du, du ↦ ud + h·du, h = q − q⁻¹), each basis state has diagonal
+channel entries:
+- ud: (q⁻¹/[2], q/[2]);
+- du: (q/[2], q⁻¹/[2]).
+
+Give each channel its Gibbs weight |eigenvalue| (q for sym, q⁻¹ for anti). The state weights are then
+W(du) = (q² + q⁻²)/[2] and W(ud) = 2/[2]. The vertex takes the pair from du to ud, so the candidate
+vertex energy is ΔE = E₀·ln(W(du)/W(ud)) = E₀·ln((q² + q⁻²)/2).
+
+**Claims, to be Lean-proved over a generic field / ℝ before any number is printed:**
+1. The diagonal entries above, and that each state's two entries sum to 1.
+2. W(du) and W(ud) as stated.
+3. Swapping the tensor order (lepton⊗quark instead of quark⊗lepton) swaps W(du) and W(ud), so the
+   sign of ΔE is a convention (the R2 swap), not derived.
+4. 0 < ΔE < 2E₀ ln q (the cell) for every q > 1.
+
+**Expected verdict.** A scope-(a) negative: the split exists, but its size cannot reach 0.41980 MeV
+(placement B) or 0.78233 MeV (placement C), and its sign is a convention.
+
+## Addendum 18 (2026-11-22): the full vertex in H₄ (owner "Do all", item 1)
+
+Written before any H₄ number has been computed. Nothing below has been evaluated yet.
+
+**Candidate.** §28 split only the quark–lepton strand pair. Here all four strands (three quark,
+one lepton, in that tensor order) are split at once, by the Young channels of H₄(q).
+
+- Space: the weight-zero subspace of V^{⊗4} (two u labels, two d labels), dimension 6. Ř_i acts
+  on positions i, i+1 as in §28: uu ↦ q·uu, dd ↦ q·dd, ud ↦ du, du ↦ ud + h·du.
+- Channels: λ ∈ {(4), (3,1), (2,2)}, with central idempotents P_λ of H₄ on that space. (The
+  weight-zero space has multiplicities 1, 3, 2.)
+- Channel weight: q^{c(λ)}, with c(λ) the content sum (6, 2, 0). This is the n = 4 form of the §28
+  rule: there the weights q and q⁻¹ are q^{c(λ)} for (2) and (1,1).
+- State weight: W(s) = Σ_λ q^{c(λ)}·(P_λ)_{ss}.
+- Initial set: lepton = u (ν), quarks with one u: {uddu, dudu, dduu}. Final set: lepton = d (e),
+  quarks with two u: {uudd, udud, duud}. The two sets split the six basis states.
+- Vertex energy: ΔE₄ = E₀·ln(Σ_init W / Σ_final W).
+
+**Claims to check, preregistered:**
+1. Σ over all six states of W is q⁶ + 3q² + 2 (the trace of Σ_λ q^{c(λ)} P_λ).
+2. At n = 2 the same rule reproduces §28 (W(du) = (q² + q⁻²)/[2], W(ud) = 2/[2]).
+3. Reversing the tensor order (lepton first) negates ΔE₄, so the sign is a convention again.
+4. The size of |ΔE₄| at the proton q₀, set against 0.41979 MeV (placement B) and 0.78233 MeV
+   (placement C).
+
+**Method.** The P_λ are written as Lagrange polynomials in the full twist Δ², which acts on λ by
+q^{2c(λ)}; these values are distinct for q > 1. The Hecke and braid relations of the 6×6
+generators are Lean-proved. The diagonals are computed in exact ℚ(q) arithmetic (sympy), with no
+floats. If the 6×6 symbolic proof in Lean is too slow, that step stays an exact computation and is
+reported as such, not as a Lean proof.
+
+**Expected verdict.** Probably another scope-(a) negative of order h², but this is not yet
+measured. If |ΔE₄| lands within 10 % of either target, that is a near-match only and is not
+adopted without a derivation of the channel weight.
+
+## Addendum 19 (2026-11-22): a β_Bor-dressed vertex weight (owner "Do all", item 2)
+
+Written before any number for these candidates has been computed.
+
+**Why.** §28 and §29 weight the vertex by Young channels alone, and their sign is set by the tensor
+order. The nucleon here is the Borromean braid β_Bor = (σ₁σ₂⁻¹)³ on the three quark strands, so the
+next test lets that braid weight the vertex states. Constraints from bean `qou-az9l`, the working
+assumption: a braid-built term must vanish at q = 1, and the sign must be derived, not chosen.
+
+**Space and states.** As in Addendum 18: the weight-zero subspace of V^{⊗4}, quark strands at
+positions 1–3 and the lepton at 4. Jimbo Ř as before. Initial set {uddu, dudu, dduu}; final set
+{uudd, udud, duud}.
+
+**Candidate D1 (bare β_Bor).** W(s) = (β_Bor ⊗ 1)_{ss}. The lepton strand is a spectator, so
+Σ_init W and Σ_final W are the traces of β_Bor on the one-u and two-u weight spaces of V^{⊗3}.
+ΔE = E₀·ln(Σ_init W / Σ_final W).
+
+**Candidate D2 (β_Bor-dressed Young channels).** W(s) = (Σ_λ q^{c(λ)} P_λ · (β_Bor ⊗ 1))_{ss}, with the
+P_λ of Addendum 18. Same ΔE.
+
+**Claims to check, preregistered:**
+1. At q = 1 both ratios equal 1, so ΔE = 0. This is what the working assumption requires: at q = 1
+   β_Bor is the identity permutation, since (s₁s₂)³ = 1 in S₃.
+2. The sign of ΔE under mirroring (β_Bor ↦ its mirror, σ ↦ σ⁻¹), and under reversing the tensor order.
+   If either flips the sign, the sign is a convention again.
+3. Whether D1 is identically 1. That would mean the bare braid gives no split at the weight-space level,
+   consistent with the closure result of issue #9002 (m_p = m_n at every q).
+4. Size at the proton q₀, in E₀ units first. MeV is quoted under the pure-number reading of
+   def:mass-energy (the current default, bean `qou-91w7`) against 0.41979 MeV (placement B) and
+   0.78233 MeV (placement C).
+
+**Expected verdict.** D1 is identically 1, or of order h², and D2 is of order h² with a sign set by
+convention: scope-(a) negatives. A value within 10 % of either budget would be reported as a
+near-match only.
+
+## Addendum 20 (2026-11-22): is E₀'s c_q² part of a mass? (owner: "Try and show E_0 c_q^2 part of mass")
+
+Written before any computation.
+
+**Claim to test.** The corpus mass formula is m(K) = m_e·Vol(K)·ρ(K)/ℏ_q², and the muon pin is
+its K = 4₁ case, m_μ = m_e·Vol(4₁)/ℏ_q². Since 1/ℏ_q² = q²c_q², every model mass is a
+multiple of 𝔈_e := m_e·c_q² (the electron's categorical energy under def:mass-energy).
+E₀ = m_e/(q(q−1)) = m_e·c_q²·ℏ_q = 𝔈_e·ℏ_q is a multiple of the same unit. If that holds, then
+
+  (A) E₀ = m_μ·ℏ_q/(q²·Vol(4₁)), a CAL-2 quantity times a pure element of ℚ(q, Vol(4₁)); and
+  (B) E₀ = m_e·w/ℏ_q² with categorical weight w = ℏ_q/q², so the n–p cell 2E₀ ln q has weight
+      2ℏ_q·ln q/q², which tends to 0 at q = 1 while its MeV value tends to 2m_e.
+
+**Test.** Prove (A) and (B) in Lean over a generic field (no numbers), and check (A) numerically
+at q₀ against E₀ = 4.18598 MeV with CODATA m_μ.
+
+**What would count as failure.** Any mismatch of (A) at q₀ beyond mpmath precision.
+
+**Scope, fixed now.** This is an identity-level consistency result. It shows E₀'s c_q² is the
+same c_q² the muon pin already puts in every model mass. It does not derive the extra factor
+ℏ_q/q² from Hecke structure, and it does not derive the 1/ℏ_q² itself, which is the CAL-2 pin.

@@ -303,6 +303,7 @@ import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
 import QOU.MathlibExt.ManifoldVolumeBridge
 import QOU.MathlibExt.ManifoldVolumePositive
+import QOU.MathlibExt.Bicommutant
 import QOU.MathlibExt.BraidGroup
 import QOU.MathlibExt.PLPolygonalLink
 import QOU.Knot.FiveTwoVolumeConstant
@@ -549,6 +550,8 @@ import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.ContentCasimir
 import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.SeminormalContentCasimir
+import QOU.SchurWeyl.QSchurMoves
+import QOU.SchurWeyl.QSchurUpperBound
 import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.MatRepEquiv
 import QOU.SchurWeyl.SeminormalInequivalence
@@ -1847,3 +1850,4 @@ import QOU.MathlibExt.RSZIsoformalInterfaceInstances
 import QOU.MathlibExt.WenzlSchurElementInstances
 import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
 import QOU.QBeta.RationalStateIntegralCuspTorsionBringHomologyGoldenDilogCostinTransseriesBridge
+import QOU.SchurWeyl.R2TwistTower
