@@ -27,7 +27,7 @@ Induction along the 19-link derivation chain. At each step:
   class supplies the single meson scale $m_\pi$, independent of
   $(m_e, q_0)$ (the Hopf-link complement has zero hyperbolic volume).
   $\mathfrak{Q}_\beta$, the CAL-2 proxy, is itself computed from $m_e$ and
-  the already-pinned $q_0$ via the ruled convention-D base
+  the already-pinned $q_0$ via the convention-D $\Delta$ base
   ($\varepsilon$ evaluated as the canonical Convention-D Markov trace at $z_D = q^3/(q^2+1)$)
   $$
     \mathfrak{Q}_\beta^{z_D} \;=\; \Bigl\lvert \tfrac{h^2}{2} - h\,z_D \Bigr\rvert\,\frac{m_e}{q_0(q_0-1)(1-\hbar_q^2)}
@@ -36,7 +36,7 @@ Induction along the 19-link derivation chain. At each step:
   with $h = q_0 - q_0^{-1}$ and $\hbar_q = 1 - q_0^{-1}$ (tower-summed $E_0$; the order-zero form gives $0.4447$ MeV). The earlier Form A,
   $m_e\lvert q_0^2-2q_0-1\rvert(q_0+1)/(2q_0^3) \approx 0.784$ MeV ($+0.17\%$),
   is retired as the base and kept only as a historical cross-check
-  ([cos-resummation](#prop:q-beta-cos-resummation)). The convention-D $c_k$
+  ([cos-resummation](#prop:q-beta-cos-resummation)). The scored value is not the $\Delta$ trace. It applies the $T^3$ weight split of the same $z_D$ trace to the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$ and gives $\mathfrak{Q}_\beta \approx 0.3254$ MeV ($-58.40\%$) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)). The $\Delta$ value is kept as an unscored comparison. The convention-D $c_k$
   ladder that would correct the base is not yet derived. The base uses only fixed scales,
   so the :refterm[descent]{#descent} obstruction
   class
