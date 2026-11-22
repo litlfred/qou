@@ -1285,7 +1285,8 @@ ephemeral.
 7. **ALWAYS `/prepare-merge` before merging.** Never call
    `mcp__github__merge_pull_request` directly — always run the
    `/prepare-merge` skill first (rebase, integrate, one-voice
-   review, Lean check, request Gemini + Copilot reviews). Only
+   review, Lean check; Copilot review is **no longer required**,
+   owner ruling 2026-11-22: audit checks replace it). Only
    merge after `/prepare-merge` completes AND the author gives
    **explicit** merge permission. Interpret that permission
    **strictly**: "looks good" is NOT merge permission; "merge it"
@@ -1488,7 +1489,10 @@ ephemeral.
 
     - **Phase 0:** sibling coordination (notify overlapping PRs)
     - **Phase 1:** rebase onto main, build, push
-    - **Phase 1b:** request review; wait for **Copilot** (up to 15 min)
+    - **Phase 1b:** run the audit checks (lean-direct, `scripts/precision-gates.sh`,
+      `scripts/check-sidecars.sh`, run-validate, producer re-runs). **Copilot review is
+      no longer required** (owner ruling 2026-11-22, verbatim: *"co-pilot review is no
+      longer required. We are using audit checks."*); do not request or wait for it.
     - **Phase 2:** resolve review comments
     - **Phase 3:** escalate to user if blocked
     - **Phase 4:** merge only after reviews resolved + the
@@ -3120,7 +3124,7 @@ but KL multiplicities `n^w_λ` are non-negative (KL positivity), so a
 `Σ_w n^w_λ·X_w` sum supplies at most the magnitude `|Δ_λ| = dim`,
 never the chirality sign — engine-verified at S₄ (PR #2381) and the
 mixed-sign premise Lean-proved sorry-free (PR #2416,
-`PartitionOf5.deltaSign_mixed`). Full context:
+`QOU.BraidsAndKnots.deltaSign_mixed`). Full context:
 [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](docs/audits/2026-05-18-delta-lambda-gating-context.md);
 Option-E ledger
 [`docs/coordination/option-e.md`](docs/coordination/option-e.md);

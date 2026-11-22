@@ -163,7 +163,7 @@ theorem codata_ame_offset_per_N_bound : |codata_ame_offset_per_N| < 0.000002 := 
     `|codataMass − ameMass| ≤ Z·|offset_Z| + N·|offset_N|`.  This
     single generic statement subsumes the per-element numerical checks
     (the offsets are bounded by `codata_ame_offset_per_{Z,N}_bound`). -/
-theorem ElementDatum.deviation_uniform (e : ElementDatum) :
+theorem deviation_uniform (e : ElementDatum) :
     |e.codataMass - e.ameMass|
       ≤ (e.Z : ℝ) * |codata_ame_offset_per_Z|
         + (e.N : ℝ) * |codata_ame_offset_per_N| := by
