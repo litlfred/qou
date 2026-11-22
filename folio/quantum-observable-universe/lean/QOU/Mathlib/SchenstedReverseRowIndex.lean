@@ -49,7 +49,7 @@ only bad one.
 
 Two adjacent rows. The cascade-level lift — which also needs the corner hypothesis located in
 `SchenstedUninsertInvariants`, for the `dropLast` at the target row — is the next brick of epic
-`qou-nrex`. Nothing here claims it, and `RSKBurnsideHolds` for general `n` stays open.
+`qou-nrex`. Nothing here claims it, and at the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean.
 

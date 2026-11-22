@@ -30,8 +30,7 @@ which is what we are trying to produce. One simultaneous induction resolves all 
 The reduction, and nothing beyond it. Producing `ShapeCornersAlong` from a standard recording
 tableau — reading the positions off `Q` and showing each step peels the corner carrying the largest
 remaining entry — is the next brick of epic `qou-nrex`. Nothing here claims it, nothing here claims
-`rskPair` is bijective, and `RSKBurnsideHolds` for general `n` stays open (proved for `n ≤ 12` by an
-unrelated route, `PartitionsOfBridge.rskBurnsideHolds_le12`, with no RSK correspondence in it).
+`rskPair` is bijective, and at the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean.
 

@@ -33,8 +33,7 @@ corpus has no list-level standardness predicate and I was about to write one.
 One step. Wiring this along a whole run — reading the positions off `Q`, showing each step's
 removed cell carries the largest *remaining* entry, and assembling `CornersAlong` — is the next
 brick of epic `qou-nrex`. Nothing here claims it, nothing here claims `rskPair` is bijective, and
-`RSKBurnsideHolds` for general `n` stays open (proved for `n ≤ 12` by an unrelated route,
-`PartitionsOfBridge.rskBurnsideHolds_le12`, with no RSK correspondence in it).
+At the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean.
 

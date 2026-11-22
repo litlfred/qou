@@ -32,8 +32,7 @@ unconstrained, and "the insertion tableau came out right" says nothing about `Q`
 Surjectivity of `rskPair` onto standard pairs of a common shape, at the level of this
 representation. It is **not** bijectivity: injectivity is `SchenstedRSKInjective`, and combining
 them into a bijection — with the shape and standardness conditions matched to whatever `rskPair`'s
-codomain is — is the next brick. `RSKBurnsideHolds` for general `n` remains open; it is proved only
-for `n ≤ 12`, by the unrelated `rskBurnsideHolds_le12` route with no RSK correspondence in it.
+codomain is — is the next brick. At the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 
