@@ -2,6 +2,8 @@ import Mathlib.Algebra.Group.Units.Basic
 import Mathlib.Algebra.Group.Commute.Units
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
 
 /-!
 # What the colour-singlet reduction does to braid words (working assumption, issue #9106)
@@ -97,5 +99,21 @@ theorem coideal_mul_tensor {K : Type*} [CommRing K] (q qi b : K) (hqi : q * qi =
 theorem hecke_inv {K : Type*} [CommRing K] (q qi b : K) (hqi : q * qi = 1)
     (hb : (b - q) * (b + qi) = 0) : b * (b - (q - qi)) = 1 := by
   linear_combination hb + hqi
+
+/-- **Raw-generator p–p bond factor is negative.** If bond factors are written in the raw strand
+braiding `X = −q⁻¹·b` instead of `b`, the p–p factor `E(X) = −q⁻¹·z_D` with
+`z_D = q³/(q²+1)` equals `−q²/(q²+1)`, which is negative for real `q > 0`. So the per-bond law
+`B = E₀·Σ log(1/f_bond)` has no real value on that reading; on the rescaled generator `−q·X = b`
+the factor is `z_D` unchanged. -/
+theorem raw_pp_factor {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    (q : K) (hq : 0 < q) :
+    -q⁻¹ * (q ^ 3 / (q ^ 2 + 1)) = -(q ^ 2 / (q ^ 2 + 1)) ∧
+      -q⁻¹ * (q ^ 3 / (q ^ 2 + 1)) < 0 := by
+  have hq0 : q ≠ 0 := hq.ne'
+  have h1 : -q⁻¹ * (q ^ 3 / (q ^ 2 + 1)) = -(q ^ 2 / (q ^ 2 + 1)) := by
+    field_simp
+  refine ⟨h1, ?_⟩
+  rw [h1, neg_lt_zero]
+  exact div_pos (pow_pos hq 2) (by positivity)
 
 end QOU.Braiding.ColourSingletDownstream
