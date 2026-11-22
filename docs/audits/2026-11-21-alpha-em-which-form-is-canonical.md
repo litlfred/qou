@@ -603,3 +603,33 @@ reduce this to a question about the writhe-parity sign: `ι` differs from the co
 but that rule is scoped to `T(2,n)` and is open for the electron (ruling 2026-11-21), and
 `T(3,5)` is a knot of even writhe. So the reading `ι = C·(−1)^F` is not established and
 is not used here.
+
+## 23. Is `(−1)^{writhe}` a fermion parity? No: it counts components (2026-11-22)
+
+**Pre-registered question.** §22 reduced "why `ι`-odd" to the sign `(−1)^{writhe}`, and
+noted the tempting reading `ι = C·(−1)^F`. Test: on braid words, is `(−1)^{writhe}` the
+knot/link (fermion/boson) parity of `prop:fermion-boson-knot-link`? Outcomes written down
+beforehand: "agrees on B₂ and B₃", "agrees on B₂ only", "agrees nowhere".
+
+**Result: agrees on `B₂` only.** `QOU/AlphaEM/WrithePermutationSign.lean`, lean-direct
+exit 0, `#print axioms` `[propext, Classical.choice, Quot.sound]`:
+
+- `sign_wordPerm`: `(−1)^{writhe}` is the sign of the permutation the braid word induces
+  on its strands (every letter maps to a transposition).
+- `sign_eq_neg_one_pow_numCycles`, `writhe_parity_eq_components`: so on `n` strands
+  `(−1)^{writhe} = (−1)^{n − c}`, with `c` the number of components of the closure.
+- On `B₂`: odd writhe exactly for knots (`c = 1`). This is the `T(2,n)` fermion rule.
+- On `B₃`: odd writhe exactly for two-component links. The electron `σ₀σ₁σ₀` closes to
+  the Hopf link (`electron_two_components`) and has odd sign (`electron_sign`);
+  `T(3,5) = (σ₀σ₁)⁵` is a knot (`t35_one_component`) with even sign (`t35_sign`). Every
+  `T(3,3m+2)` is a knot of even writhe `2(3m+2)`.
+
+So `(−1)^{writhe}` is the sign character of `Sₙ` pulled back to `Bₙ`, and `ι` is charge
+conjugation `C` twisted by that character. It is not a fermion parity: on three strands it
+disagrees with "knots are fermions" on both the electron and `T(3,5)`. The reading
+`ι = C·(−1)^F` is refuted for `B₃` (scope (b), invariant: `sign σ = (−1)^{n − c}`).
+
+**What is still open.** Why α_em is odd under `C ⊗ sgn`. The sign character is the
+natural partner of the transpose `λ ↦ λ'` that `ι` performs on Young diagrams, so the
+question is now: why should α_em be the part of `tr_M` that is odd under
+"crossing reversal together with transposing the Young diagram"?
