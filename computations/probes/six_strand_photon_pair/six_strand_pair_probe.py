@@ -333,6 +333,94 @@ def main() -> int:
           "q = 11/10 for several (z, A); residual < 1e-30 at 40 digits. The weights are not "
           "fixed: a two-parameter real family.")
 
+    # Part 2d (addendum 2): two photons at generic q, Groebner basis over Q(q)
+    qg = sp.Symbol("q")
+
+    def eqs_generic(word, pos, n):
+        ws = [XS[3 * k:3 * k + 3] for k in range(len(pos))]
+        eqs = set()
+        for bb in range(2 ** n):
+            v = {bb: sp.Integer(1)}
+            for k in reversed(range(len(pos))):
+                v = _photon(v, pos[k], ws[k], qg, n)
+            rhs = _act({bb: sp.Integer(1)}, word, qg, n)
+            for kk in set(v) | set(rhs):
+                e = sp.expand(sp.numer(sp.together(sp.expand(v.get(kk, 0) - MU * rhs.get(kk, 0)))))
+                if e != 0:
+                    eqs.add(e)
+        return list(eqs)
+
+    gen_pos, gen_sol = [], {}
+    targets = [r for r in m3 + m5]
+    for idx, r in enumerate(targets):
+        for i in range(4):
+            for j in range(4):
+                G = sp.groebner(eqs_generic(gg_word(r["verts"]), (i, j), N) + [MU * TT - 1],
+                                *XS[:6], MU, TT, order="grevlex", domain=sp.QQ.frac_field(qg))
+                if list(G) != [1]:
+                    gen_pos.append((r["word"], i, j))
+                    gen_sol[f"{r['word']}@{i},{j}"] = [str(g) for g in G]
+        print(f"    generic q: {idx + 1}/{len(targets)} words done", flush=True)
+    same_as_rational = sorted(gen_pos) == sorted(
+        {(x[0], x[1], x[2]) for v in two.values() for x in v})
+    check("P2_generic_q_two_photon", same_as_rational,
+          f"over Q(q) the two-photon factorisations are exactly the ones found at q = 2, 3: "
+          f"{sorted(gen_pos)}; every other (word, i, j) has Groebner basis [1], so no solution "
+          "for generic q (finitely many special q not excluded).")
+
+    # Part 3 (addendum 2): convention-D Markov trace, comparison only
+    import qbeta_e0  # noqa: E402
+    from qou_substrate.constants import q_at  # noqa: E402
+
+    def trD(word, n):
+        two_q = qg + 1 / qg
+        tot = 0
+        for bb in range(2 ** n):
+            v = _act({bb: sp.Integer(1)}, word, qg, n)
+            d = v.get(bb, 0)
+            if d != 0:
+                tot += qg ** (n - 2 * bin(bb).count("1")) * d
+        return sp.factor(sp.simplify(tot / two_q ** n))
+
+    pair = [(0, 1), (0, 1), (1, -1), (4, -1)]
+    trs = {"pair_word_s0^2 s1^-1 s4^-1 (6 strands)": trD(pair, 6),
+           "hopf_photon_s0^2 s1^-1 (3 strands)": trD(pair[:3], 3),
+           "crossing_photon_s^-1 (2 strands)": trD([(0, -1)], 2),
+           "electron_s0 s1 s0 (3 strands)": trD([(0, 1), (1, 1), (0, 1)], 3)}
+    zD = qg ** 3 / (qg ** 2 + 1)
+    mult = sp.simplify(trs["pair_word_s0^2 s1^-1 s4^-1 (6 strands)"]
+                       - trs["hopf_photon_s0^2 s1^-1 (3 strands)"]
+                       * trs["crossing_photon_s^-1 (2 strands)"]) == 0
+    zcheck = sp.simplify(trD([(0, 1)], 2) - zD) == 0
+    mp.mp.dps = 70
+    q0 = q_at(70)
+    E0 = qbeta_e0.canonical(q=q0)
+    mev = {k: mp.nstr(abs(mp.mpf(str(sp.N(v.subs(qg, sp.Float(str(q0), 70)), 70)))) * E0, 15)
+           for k, v in trs.items()}
+    check("P3_zD_trace_comparison", mult and zcheck,
+          f"Jimbo quantum trace / [2]^n is the convention-D Markov trace (tr(s) = z_D, checked); "
+          f"exact traces { {k: str(v) for k, v in trs.items()} }; tr(pair) = tr(Hopf photon) * "
+          f"tr(crossing photon) (Markov factorisation, checked). |tr| x E0 (canonical, proton q0), "
+          f"COMPARISON ONLY, not proposed as Q_beta: {mev} MeV. CODATA Q_beta = 0.78233 MeV.")
+    # same trace for every matching gamma-gamma word? (all have writhe 0)
+    qf = mp.mpf(q0)
+    by = {}
+    for r in hits:
+        w = gg_word(r["verts"])
+        tot = mp.mpf(0)
+        for bb in range(2 ** N):
+            d = _act({bb: mp.mpf(1)}, w, qf, N).get(bb, 0)
+            tot += qf ** (N - 2 * bin(bb).count("1")) * d
+        by.setdefault(r["match"], set()).add(mp.nstr(abs(tot / (qf + 1 / qf) ** N) * E0, 30))
+    check("P3_trace_same_for_every_match", all(len(v) == 1 for v in by.values()),
+          f"every one of the {len(hits)} matching gamma-gamma words gives the same |tr_D| x E0 "
+          f"per orientation (gamma-gamma words have writhe 0, so the Markov trace is a link "
+          f"invariant on them): { {k: sorted(v) for k, v in by.items()} } MeV. COMPARISON ONLY.")
+    zd_record = {"traces": {k: str(v) for k, v in trs.items()}, "abs_tr_times_E0_MeV": mev,
+                 "E0": "qbeta_e0.canonical (tower-summed, by ruling)",
+                 "status": "comparison only; the pair word is not the beta-decay element",
+                 "per_orientation_all_matches_MeV": {k: sorted(v) for k, v in by.items()}}
+
     allp = all(o for _, o, _ in RESULTS)
     print(f"  {sum(o for _, o, _ in RESULTS)}/{len(RESULTS)} checks passed")
     wb = WitnessBuilder("six-strand-photon-pair", engine="fractions+sympy+mpmath", output_dir=_HERE)
@@ -350,6 +438,8 @@ def main() -> int:
         "two_photon_solutions": two,
         "three_photon_V0V0V1": {"TL_q2": tl3, "fullH_q2": h3},
         "real_three_photon_samples": real,
+        "generic_q_two_photon": {"positions": sorted(gen_pos), "solutions": gen_sol},
+        "zD_comparison": zd_record,
         "scope": "(a): six strands, <= 6 vertices; invariant at two rational q; Groebner at "
                  "q = 2 (and 3 for the two-photon m3 test); real search at q = 2, 11/10.",
         "lean": "QOU/QBeta/GammaGammaLeptonPair.lean (parity)",
