@@ -1045,3 +1045,32 @@ neutral with electron charge −1 (`c_of_hydrogen`). With c = 0 the neutron woul
 2. One number: c = Y/2 for a quark strand. The natural candidate is Y = B = ⅓, i.e. one unit of
    baryon number per closed Borromean link shared over its three strands. That still needs
    "baryon number 1 per Borromean" and "Y = B for u, d" from the category.
+
+## §34 Does m_p = m_n at q = 1 fall out of upstream structure? (Lean)
+
+Owner working assumption 2026-11-22: *"Working assumption (it should fall out of upstream work...
+Explore)."* Lean: `QOneFlipSymmetry.lean`, generic field, lean-direct exit 0, standard axioms.
+
+**It falls out, for everything built from the braid action.** The flip u ↔ d maps the proton
+weight basis (uud, udu, duu) to the neutron basis in reverse order: the permutation matrix Flip
+reversing Fin 3.
+- At q = 1, Flip·A_i(1)·Flip = B_i(1) for both generators and both inverses
+  (`flip_A₁_one`, `flip_A₂_one`, `flip_A₁Inv_one`, `flip_A₂Inv_one`).
+- Conjugation by Flip is multiplicative (`flip_mul`), so it carries every word on W_p to the same
+  word on W_n, for example V(1) (`flip_V_one`). Traces are Flip-invariant, so every trace of every
+  word, and of any polynomial in it, is equal on n and p at q = 1 (`trace_word_flip`). That covers
+  every ∇ = F(hol) and every 𝒟-term, with the K-weighting trivial at q = 1.
+- At q ≠ 1 the flip no longer intertwines (`flip_A₁_two_ne`: fails at q = 2). The n–p
+  intertwiner there is P(q), which is not a permutation. This is where n ≠ p can come from.
+
+**What breaks it at q = 1: only inserted operators that are not flip-covariant.** For the charge
+insertions: Σqᵢ² is equal on n and p iff q_u² = q_d² (`self_charge_equal_iff`), and so is Σqᵢqⱼ
+(`pair_charge_equal_iff`). The adopted values (+⅔, −⅓) break it (`sm_charges_not_mirror`).
+
+**Consequence for deriving qᵢ (§33).** If m_p = m_n at q = 1 holds for charge-squared terms too,
+then either q_u² = q_d² (a mirror pair q_d = −q_u, which is what the corpus crossing charge
+½(n₊ − n₋) gives), or the charges enter only through a factor that vanishes at q = 1. The mirror
+pair cannot give a neutral neutron (q_u + 2q_d = −q_u; `down-quark.md`). So under this working
+assumption, the SM charges cannot be q-independent constants inside a charge-squared mass term:
+either they depend on q, or the charge-squared term does not enter the mass at q = 1. This is a
+constraint on the derivation, not a derivation.
