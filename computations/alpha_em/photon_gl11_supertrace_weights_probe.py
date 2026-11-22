@@ -285,6 +285,32 @@ def main():
     checks.append(('unit circle: electron iota-odd part is real, T35 iota-odd part is imaginary',
                    sp.simplify(sp.im(on_circle(od_e))) == 0
                    and sp.simplify(sp.re(on_circle(split('1212121212')[2]))) == 0))
+    # Photon gamma = 1 + f0 s0 + f1 s1 + f01 s0 s1^-1 on the electron (2026-11-22, audit section 16).
+    f0, f1, f01 = sp.symbols('phi0 phi1 phi01')
+    gam = [(1, ''), (f0, '1'), (f1, '2'), (f01, '1b')]
+    def lin(terms, k):
+        return sp.simplify(sum(c * split(w)[k] for c, w in terms))
+    checks.append(('photon: iota-odd part = (phi0 + phi1)(q^4+1)/(2q(q^2+1)); chiral vertex adds 0',
+                   sp.simplify(lin(gam, 2) - (f0 + f1) * (q ** 4 + 1) / (2 * q * (q ** 2 + 1))) == 0
+                   and split('1b')[2] == 0))
+    ge = [(c, w + '121') for c, w in gam]
+    checks.append(('gamma*electron at q=1: iota-odd part = (1 + phi01)/2 (phi0, phi1 terms have even writhe)',
+                   sp.simplify(sp.limit(lin(ge, 2), q, 1) - (1 + f01) / 2) == 0))
+    e2 = blocks('121121')[1]
+    checks.append(('electron^2 = full twist acts as 1 on the hook block',
+                   sp.simplify(e2[1]) == 2 and sp.simplify(
+                       (hk['1'] * hk['2'] * hk['1']) ** 2 - sp.eye(2)) == sp.zeros(2)))
+    M35 = sp.eye(2); Me3 = sp.eye(2)
+    for c in '12' * 5: M35 = M35 * hk[c]
+    for c in '121' * 3 + '2': Me3 = Me3 * hk[c]
+    checks.append(('T35 (s1 s2)^5 = electron^3 * s2 on the hook block (writhe 10 both)',
+                   sp.simplify(M35 - Me3) == sp.zeros(2)))
+    # Pre-registered: among electron^k * (photon term), k = 0..4, writhe 10 occurs only at
+    # k = 3 with a single photon letter.
+    hits = [(k, w) for k in range(5) for _, w in gam
+            if blocks('121' * k + w)[0] == 10]
+    checks.append(('writhe 10 among electron^k * photon-term (k<=4): only electron^3 * s1, electron^3 * s2',
+                   sorted(hits) == [(3, '1'), (3, '2')]))
     for n, c in checks:
         print(('PASS ' if c else 'FAIL ') + n)
     return 0 if all(c for _, c in checks) else 1
