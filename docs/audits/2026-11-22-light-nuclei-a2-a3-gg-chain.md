@@ -78,15 +78,81 @@ the full six-strand ²H word exactly. Pre-registered P1 and P2 hold; P3 every or
 Row C4 of `2026-11-22-sign-conventions-table.md` ("⁴He, ²H, ³H, ³He on the γγ bond: all
 unbind") was a measurement at `q₀`; it is now a theorem in `q` for the chain, given the
 exact trace closed forms. Within the ruled convention, binding for A ≤ 4 has to come from
-something other than the γγ chain of production blocks: all-pairs/transported bonds (measured
-unbound at `q₀`, §6c, not proved for all q), many-body vertices, different nucleon blocks, or
+something other than the γγ chain of production blocks: all-pairs/transported bonds (A = 3: one
+crossing q* ≈ 1.49–1.65, unbound at q₀, see §5), many-body vertices, different nucleon blocks, or
 the energy map. For contrast only (not the ruling): with the bond entering the older nucleon,
 `μ_p − 1 = −y³ (q⁴ + q² + 1)(4 + 21y + 47y² + …)/(…) < 0` for every q > 1, so that side binds
 through protons; `μ_n − 1` there changes sign at a finite q.
+
+## 5. All-pairs bonds at A = 3: one crossing per cell, not a fixed sign
+
+Preregistration addendum (commit `b83d7b041`), which discloses one timing cell computed before
+the addendum was written. Bonds go on (0,1), (1,2) and (0,2). The non-neighbour bond is
+transported by `σ₂σ₃σ₄ · V³ · (σ₄σ₃σ₂)⁻¹` (over) or with reversed crossing signs (under).
+The computation is exact ℚ(q) on 9 strands for every order and both variants: 12 cells.
+
+**Structure (exact).** In every cell,
+`tr_atom/tr_free − 1 = −(q−1)ᵏ(q+1)ᵏ(q⁴+q²+1)·P(q)/D(q)`.
+- `k = 5` if all three bonds enter a neutron (³H pnn), else `k = 4`.
+- `P` is irreducible over ℚ, even in q, of degree 30 to 46.
+- `D = qᵃ(q²+1)ᵇ·Dpⁱ·Dnʲ`, which is positive for q > 1 (§1).
+
+Written in `y = q² − 1`, each `P` has negative coefficients up to some degree m (10 to 13)
+and nonnegative coefficients after, with negative constant and positive leading coefficient.
+Lean `single_crossing` (sorry-free, generic ordered field, standard axioms) proves that such
+a polynomial crosses zero at most once on y > 0, from below. With `P(0) < 0` and `P → +∞`,
+each cell therefore has exactly one crossing `q*`:
+**the all-pairs nucleus unbinds on (1, q*) and has `tr_atom < tr_free` for q > q*.**
+The trace itself passes through 0 at a larger `q₀*`, so `B_log` is undefined above that,
+while `B_diff` stays positive.
+
+The ratio depends only on the sequence of nucleons the bonds enter: ³H nnp ≡ ³He pnp and
+³H npn ≡ ³He ppn, identically in q (the closed forms are equal as strings).
+
+| cell | leading term at q = 1 | q* (ratio = 1) | q₀* (tr_atom = 0) |
+|---|---|---:|---:|
+| ³H pnn over / under | (9/2) y⁵ | 1.49366 / 1.61678 | 1.59923 / 1.72759 |
+| ³H npn ≡ ³He ppn, over / under | (3/8) y⁴ | 1.54374 / 1.64633 | 1.63744 / 1.74581 |
+| ³H nnp ≡ ³He pnp, over / under | (3/4) y⁴ | 1.49321 / 1.60889 | 1.59797 / 1.70754 |
+| ³He npp over / under | (9/8) y⁴ | 1.54338 / 1.63347 | 1.63365 / 1.72227 |
+
+**Metallic means: none.** No root of any numerator factor, for either the ratio or the
+trace, is a metallic mean `(m + √(m²+4))/2` (m = 1…5) or its square root. The only small
+factors are `q ± 1` and the cyclotomic `q² ± q + 1`.
+
+**At the proton pin** (q₀ ≈ 1.110, inside (1, q*) in every cell), all 12 rows unbind. In
+keV, B_diff / B_log:
+
+| | over | under |
+|---|---|---|
+| ³H pnn | −1.117 / −7.856 | −1.134 / −7.971 |
+| ³H npn | −1.394 / −9.797 | −1.406 / −9.882 |
+| ³H nnp | −1.651 / −11.60 | −1.667 / −11.72 |
+| ³He ppn | −1.846 / −9.797 | −1.862 / −9.882 |
+| ³He pnp | −2.187 / −11.60 | −2.208 / −11.72 |
+| ³He npp | −2.553 / −13.54 | −2.568 / −13.63 |
+
+**Controls.** P5: the production orders reproduce the mpmath witness of
+`he4_gg_all_pairs` to below 1e−28. P7: appended and arranged placements give the same trace
+exactly.
+
+**What this changes.** The chain theorem (§1) has a fixed sign at every q > 1. All-pairs
+bonding does not: its sign is set by where q₀ sits relative to `q*`. Binding at some q > 1
+exists (q > q* ≈ 1.49–1.65). That is a statement about the model, not a choice: nothing here
+moves q₀, which is pinned by the proton ratio. At q₀ the all-pairs nuclei unbind, 0.1–0.3 %
+heavier than free, in every order and variant. The gap from q₀ ≈ 1.110 to q* ≈ 1.49 is large,
+so no small change of pin reaches the binding side.
+
+**Not in Lean.** That these rational functions are the traces (exact sympy), the coefficient
+lists of P (exact, recorded in the witness), and the root values (sympy isolating intervals).
+
+Reproduce: `python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_probe.py`
+(about 20 min).
 
 ## Reproduce
 
 ```
 python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a2_a3_probe.py
+python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_probe.py
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```
