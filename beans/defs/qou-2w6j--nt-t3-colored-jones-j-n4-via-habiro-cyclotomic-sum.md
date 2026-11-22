@@ -1,13 +1,13 @@
 ---
 # qou-2w6j
 title: 'NT-T3: colored Jones J_N(4₁) via Habiro cyclotomic sum in Lean + prove its order-2 inhomogeneous recurrence (q-WZ certificate identity, pure algebra)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-20T03:21:57Z
-updated_at: 2026-11-22T21:15:44Z
+updated_at: 2026-11-22T21:20:17Z
 parent: c7vs
 ---
 
@@ -20,3 +20,7 @@ parent: c7vs
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 Check against `main`: `BraidKnot/AJFigureEightAnnihilation.lean` `figureEightOperator_annihilates` proves the order-2 inhomogeneous recurrence for the whole colored Jones tower `coloredJones41` ("`N = 0` direct; `N ≥ 1` the division-free certificate telescope"). If its `#print axioms` is clean and `coloredJones41` is the Habiro cyclotomic sum, this bean is done; verification pending (Lean toolchain setup in this session). The latest note above points at batch PR #8257, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.
+
+## 2026-11-22 — verified, closed
+
+**Closed with evidence.** `BraidKnot/HabiroNewtonLadder.lean` defines `coloredJones41 q N = Σ_{k<N} habiroTerm q N k` (the Habiro cyclotomic sum), and `BraidKnot/AJFigureEightAnnihilation.lean` `figureEightOperator_annihilates` proves the order-2 inhomogeneous recurrence for every `N`. `#print axioms` → [propext, Classical.choice, Quot.sound], checked 2026-11-22 with lean-direct against the restored cache. The Round 73 batch-PR note above (#8257) is unrelated to this result.

@@ -10,7 +10,7 @@ tags:
     - reorg-2026-10-04
     - hyperbolic-volume
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-11-22T21:15:43Z
+updated_at: 2026-11-22T21:20:17Z
 parent: qou-9nnz
 ---
 
@@ -859,3 +859,5 @@ comment delimiters balance (8 `/-` / 8 `-/`), and the value is byte-identical.
 ## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
 
 **Closed with evidence.** The defect is fixed on `main`: `Encounter/MostowRigidity.lean:243` is `volume := QOU.Knot.FigureEightVolume.VOL_4_1` (exactified 2026-08-30), and `MostowTriangulationBridge.figureEight_volume_eq_triangulation_volume` is keyed on the exact constant. Five docstrings still described the old truncated literal as current (`MostowRigidity.lean` instance docstring, `MathlibExt/ManifoldVolumeBridge.lean:20`, `Encounter/MostowTriangulationBridge.lean:12`, `Archimedean/HyperbolicQuotient.lean:52`, `Encounter/FigureEightVolumeBridge.lean` header); corrected on branch `claude/volume-conjecture-bean-drain-2026-11-22` (comment-only, exemption 2: the instance line decides it). Remaining overload, documented and not a defect: `BraidKnot/QBetaKeystoneInteraction.Vol_4_1` is a 16-digit rational carrier whose docstring says so and points to the exact one.
+
+Docstring fix commit: `f3877d44d` on branch `claude/volume-conjecture-bean-drain-2026-11-22` (lean-direct exit 0 on all five files).
