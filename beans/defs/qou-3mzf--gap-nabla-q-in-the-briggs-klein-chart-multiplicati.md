@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-21T23:48:16Z
+updated_at: 2026-11-22T09:21:03Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -72,3 +72,7 @@ Scope (a): the curve provides the right pole (residue 1 over z=-1) but the class
 (1) Area form: I_n(1) = μ(R), where μ = dlog t dlog w and R = {(t,w): 0<t<1, w>1, (1+w^n)(1-t) < (1-t^n)(1+w)}. This assumes A(w)=(1+w^n)/(1+w) is increasing on w>1, which was not checked. So the claim is that this region has log-area π²/(4n).
 (2) All-branch sum, proved by hand: P(X)-P(t) = (X-t)R(X), with R monic of degree n-2 and R(0) = [n-1]_t. For odd n the residual roots multiply to -[n-1]_t, so Σ_branches log|X_i| = log[n-1]_t. Integrating over all residual branches gives (n-2)π²/(6(n-1)), which generalises the n=5 check (π²/8). The real-branch claim is therefore equivalent to: the complex branches carry (n-2)π²/(6(n-1)) - π²/(4n).
 A Steinberg/Rogers route on complex factors (1-ζ^k X) does not integrate directly, because the arg·d arg terms survive. Parametrising X = r·t gives Σ_{k=1}^{n-1} t^{k-1}[k]_r = 0 and X∧t = r∧t. For n=3 this is t = -1/(1+r), which gives the Li2 proof. For n≥5 the relation is a cubic or higher in t. Still numeric only.
+
+
+
+2026-11-22: second attempt, still not proved. Tried the symmetric quotient u=X+t, v=Xt (rational for n=5: (2u+1)v=(u+1)(u^2+1)) with r=X/t. Norm identities N(1+r)=u^2/v and N(1-r)=-D/v (D=u^2-4v) give r∧v ≡ 2 r∧u ≡ r∧D mod Steinberg, but these hold on ANY curve, so they carry no information about this one. A proof along this route needs an explicit Steinberg decomposition of r∧(u-α) over a cyclotomic field. Not done, even for n=5. For n≥7 the residual polynomial has v^2 terms, so the quotient is not visibly rational; its genus was not checked. Numeric only.
