@@ -202,11 +202,40 @@ Each crossing is isolated in an exact rational interval of width 1e−22, and ea
 Nothing here is adopted. It is a scope-(a) negative: the γγ all-pairs bond, alone, under the
 four formation routes, does not bind ⁴He at q₀.
 
+## 7. Where the y⁴ comes from: bonds into a proton (exploratory, not proved)
+
+Probe `bond_leading_order_probe.py`, witness `bond-leading-order.witness.json`. It is
+exploratory and was not preregistered. It measures the leading order of ratio − 1 at q = 1,
+exactly, for single bonds and bond sets at A = 2, 3, 4.
+
+- **Rule A** (written first): a like-proton bond gives (3/8)y⁴, and any other bond gives
+  (3/2)y⁵. It fits 24 of 28 cases and fails at np, (0,1).
+- **Rule B** (read off those 28 cases, so they cannot test it): to leading order the bonds
+  add. A bond (i, j) whose receiving block j is a **proton** gives (3/8)y⁴. A bond into a
+  **neutron** gives (3/2)y⁵. So
+
+  ratio − 1 = (3/8)·n_into_p·y⁴ + O(y⁵) when n_into_p > 0, and otherwise
+  (3/2)·n_bonds·y⁵ + O(y⁶).
+
+- Rule B was then tested on 16 holdout cells, fixed before they were run (A = 3 and A = 4,
+  orders npp, nnp, npn, nnn, pnpn, nnpp, npnp, pnnp). It holds on **16 of 16**. Rule A holds on
+  2 of 16.
+
+This explains §6: in the order p p n n, every route has exactly one bond into a proton,
+(0, 1). The other five bonds all go into a neutron. Hence the same +3/8 in every cell.
+Over and under transport never change the leading term.
+
+**Status: conjecture.** It is measured exactly on 44 cells. It is not proved, and there is no
+Lean for it. A proof would need the h-expansion of the Ocneanu trace of a word with V³
+inserted, where V³ = 1 at q = 1: first-order additivity over bonds, plus the vanishing of
+orders y¹ to y³ (y¹ to y⁴ into a neutron).
+
 ## Reproduce
 
 ```
 python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a2_a3_probe.py
 python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_probe.py
 python3 -u computations/probes/light_nuclei_a2_a3/he4_all_pairs_exact_probe.py  # about 6 min, needs python-flint
+python3 -u computations/probes/light_nuclei_a2_a3/bond_leading_order_probe.py  # about 70 s
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```
