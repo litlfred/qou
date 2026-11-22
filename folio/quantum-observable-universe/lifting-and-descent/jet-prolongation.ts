@@ -26,7 +26,11 @@ export default proposition({
         "$A \\ltimes M$ splits (`QOU/LiftingDescent/NoncommJet.lean`), and a square-zero skew-primitive " +
         "escapes the characteristic-zero obstruction (`QOU.LiftingDescent.skewPrimitive_sq`); for " +
         "$A = k[\\mathbb{Z}/2]$, $A \\ltimes \\Omega^1_u(A)$ has Sweedler's four-dimensional Hopf presentation " +
-        "(cited, not formalised).",
+        "(cited). Sweedler's algebra itself is formalised as a Hopf algebra over any commutative ring " +
+        "(`QOU.LiftingDescent.Sweedler.instHopfAlgebra`, `QOU/LiftingDescent/SweedlerJet.lean`, sorry-free), " +
+        "with an algebra map into any square-zero extension $A \\ltimes M$ from an involution $g$ and an " +
+        "element $m$ with $m g = -g m$ (`Sweedler.toJet`). That the map is an isomorphism onto " +
+        "$k[\\mathbb{Z}/2] \\ltimes \\Omega^1_u$ is not formalised.",
     },
     {
       kind: "caveat",
