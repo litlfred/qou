@@ -388,3 +388,270 @@ Comparison only: observed Q_β(³H) = 18.59 keV and Q_β(n) = 782.3 keV.
 - With `B_log` instead of `B_diff`, B(³He) − B(³H) lies between −3.8 and 0 keV. The conclusion is
   the same.
 - No A = 6 or A = 8 binding values exist yet, so ⁶He and ⁸Li are not given.
+
+## §25 The Coulomb energy, and the ³H row with it (2026-11-22, owner: "we're missing the coulomb energy")
+
+The §24 chain binds by about 1 keV and carries no electromagnetic term. The repo's Coulomb term is
+`computations/coulomb_energy.py`:
+
+E_C(Z, A) = (3/5)·Z(Z−1)·α_EM·ℏc / R,  R = λ̄_π·A^{1/3}.
+
+**Status of each input.**
+
+| input | status | why |
+|---|---|---|
+| Z(Z−1) | derived | pair count of Z discrete charges; `CoulombFromCrossingCounts` rewrites it as (n₊−n₋)(n₊−n₋−4)/16 |
+| α_EM = 1/(q[9]_q[10]_q·tower) | conditional | bare value is −0.155 %; the tower needs the Gram matrix Gq, which is a parameter with no instance of `ChernSimonsCorrectionConjecture` (beans qou-gbsa, qou-aemx) |
+| ℏc | external | unit conversion |
+| coefficient 1 on λ̄_π | selection | the data want 0.985 ± 0.069; no derivation fixes it |
+| A^{1/3} | assumption | liquid-drop scaling; the A = 3 data want exponents 0.43 (³H) and 0.53 (³He) |
+| 3/5 | imported | uniform-ball self-energy; nothing in the braid picture gives a charge density |
+
+So E_C is a standard-physics estimate with one derived-but-conditional input, not a derivation.
+At A = 3 it gives E_C(³He) = 0.847 MeV against the 0.764 MeV the masses require (+10.95 %).
+
+**³H with E_C.** B(³He) loses E_C, so every §24 row moves by −847.4 keV:
+
+| ³H order | ³He order | Q_β(³H), chain only | Q_β(³H), chain + E_C |
+|---|---|---:|---:|
+| pnn | ppn / pnp | 324.84 | −522.56 |
+| npn / nnp | ppn / pnp | 325.11 | −522.29 |
+| pnn | npp | 324.48 | −522.92 |
+| npn / nnp | npp | 324.75 | −522.65 |
+
+Comparison only: observed 18.59 keV.
+
+- The sign is now wrong: ³H would be stable and ³He would decay.
+- The cause is the neutron term, not the Coulomb term. With the observed Q_β(n) = 782.3 keV the
+  same formula gives 782.3 − 763.8 = 18.5 keV. The model's 325.43 keV is short by 457 keV, and E_C
+  is only 84 keV high. Fixing the Coulomb inputs cannot rescue this row.
+
+**What is proved in Lean about Coulomb.**
+
+- `QOU.Hecke.BoundedDegreeCoulomb`: a bounded-degree bond graph cannot carry a Z(Z−1) term. Coulomb
+  must come from a long-range pair sum, not from the nearest-neighbour bonds the γγ chain uses.
+- `QOU.MassTheory.CoulombFromCrossingCounts`: with n₊ − n₋ = 4Z, 16·Z(Z−1) = (n₊−n₋)(n₊−n₋−4).
+  This is arithmetic. That the half-writhe *is* the charge is the open identification in
+  `def:coulomb-charge`.
+- `QOU.MassTheory.NeutronProtonEMSign`: Σ_{i<j} QᵢQⱼ is 0 for uud and −1/3 for udd, so a pair
+  term ∝ QᵢQⱼ lowers m_n − m_p.
+
+**What is missing, and the next target.** No result derives a pair term ∝ Q_A·Q_B between two
+separate nucleon blocks from the ruled photon. That is the physics the formula above imports.
+§26 pre-registers the test: exchange the ruled photon between two V³ blocks and decompose the result
+by charge.
+
+## §26 Photon exchange between two nucleon blocks is not a charge–charge term (2026-11-22, owner: "Do 1 2")
+
+Pre-registration: `computations/probes/np_splitting/np_two_block_photon_exchange_preregistration.md`
+(committed before the probe). Probe and output: `np_two_block_photon_exchange_probe.py` and
+`.out.txt` in the same directory. Exact over Q(q); checked at q = 111/100 and 7/5.
+
+Six strands, ruled core V³ = (σ_iσ_{i+1}⁻¹)³ on block A (strands 0–2) and block B (3–5).
+Block charge Q = (u bits on the block) − 1. Pair shift ΔE_X(a, b) = T_X(a, b)/T_1(a, b) with
+T_X = Tr(K^{⊗6}(Π_a ⊗ Π_b)V_A³V_B³X), for the photon monomials that touch both blocks.
+
+**Result: outcome O4 for all six insertions** (σ₂, σ₂⁻¹, σ₁σ₂⁻¹, σ₂σ₃⁻¹, σ₂², σ₂⁻²), symbolically
+and at both rational checks. Over the 16 charge pairs the shift is not of the form
+c + αQ_a + βQ_b + κQ_aQ_b, so it is neither Coulomb (O1) nor isospin (O2).
+
+Nucleon pairs at the proton q₀ (display only; I = pp − pn − np + nn):
+
+| X | pp | pn | np | nn | (pp − nn)/I | (pn − np)/I |
+|---|---:|---:|---:|---:|---:|---:|
+| σ₂ | 0.66264 | 0.51652 | 0.58629 | 0.66352 | −0.0039 | −0.312 |
+| σ₂⁻¹ | 0.45358 | 0.30746 | 0.37723 | 0.45446 | −0.0039 | −0.312 |
+| σ₁σ₂⁻¹ | 0.23290 | 0.08273 | 0.15559 | 0.23156 | +0.0059 | −0.322 |
+| σ₂σ₃⁻¹ | 0.17550 | 0.05587 | 0.11494 | 0.17817 | −0.0146 | −0.323 |
+
+- The pattern is the opposite of Coulomb. Like pairs (pp, nn) agree to within 0.4–1.5 % of the
+  interaction, and unlike pairs differ from them. Coulomb would single out pp and leave
+  pn = np = nn.
+- pn ≠ np by about 31 % of the interaction: the shift depends on which block is on the left.
+- σ₂ and σ₂⁻¹ give the same I, because σ₂ − σ₂⁻¹ = h shifts every ΔE by the same constant. The
+  squares scale I by h, because σ₂² = hσ₂ + 1.
+
+**Lean.** `QOU/QBeta/TwoBlockExchangeNotCoulomb.lean` (sorry-free) computes the traces exactly in ℤ
+at q = 2, where 2Ř, 2Ř⁻¹ and 2K are integral, and proves `not_coulomb_*` and `not_isospin_*` for
+σ₂, σ₂⁻¹, σ₁σ₂⁻¹ and σ₂σ₃⁻¹. A form that held identically in q would hold at q = 2, so these refute
+both identities. They do not measure the miss at q₀; the table does that.
+
+**Scope.** This is a scope-(a) negative: single photon monomials between two V³ blocks, with the
+ruled trace and sector projectors. It does not exclude a Coulomb term from longer exchanges
+(photon ladders), other placements, a different readout of charge, or a reading in which the
+electromagnetic pair term comes from the q-deformation of the trace rather than from the braid.
+The su(2)-type braiding couples weights, and weights are nearly charge symmetric here; a Q·Q
+term needs something that tells u from d beyond the weight, which is the role the U(1) photon
+is meant to play. None of the six monomials does that.
+
+**Consequence for §25.** The import list there stands: no part of E_C is derived from the ruled
+photon yet.
+
+## §27 No braid element gives Coulomb; spectators are invisible (2026-11-22, owner: "Do both … plank length for distance")
+
+Pre-registration: `computations/probes/np_splitting/np_charge_vertex_search_preregistration.md`.
+Probe and output: `np_charge_vertex_search_probe.py` and `.out.txt`. Exact Fraction arithmetic at
+q = 111/100 and q = 7/5.
+
+**A. The whole six-strand braid image.** The image of H_6 on (C²)^{⊗6} has dimension 132 (rank modulo
+2³¹ − 1, at both q). Over all 720 reduced words, the sector vectors (T_X(a, b)) on the 16 charge pairs
+span only 10 dimensions. Because T_X is linear in X, that covers every element, and with it every
+order in φ at n = 6.
+
+- Coulomb form c + κQ_aQ_b with κ ≠ 0: **not reachable** by any element.
+- Isospin form c + κW_aW_b: not reachable either.
+- An affine-bilinear form is reachable, and on a single ray:
+  ΔE = c + κ·(Q_aQ_b − αQ_a − βQ_b) with **α + β = 1 exactly** at both q
+  (q = 111/100: α = 0.656, β = 0.344; q = 7/5: α = 1.054, β = −0.054).
+  Equivalently, ΔE = c' + κ(Q_a − β)(Q_b − α). The centres add up to one charge unit. At α = β = ½
+  this is the isospin form W_aW_b/4. Coulomb would need α = β = 0, which the constraint α + β = 1
+  forbids.
+- On the four nucleon sectors alone the span is all of R⁴, so pp, pn, np and nn can each be set
+  freely. Any pattern there, Coulomb included, is a choice of element rather than a derivation. The
+  charge structure only becomes a constraint once the Δ sectors (Q = −1, 2) are included.
+
+Reading, as a hypothesis: the braid image sees weight (T₃) and not charge. The zero of every reachable
+pair term sits between p and n, not at n. Moving it to n needs Q = T₃ + B/2, that is, a baryon-number
+(hypercharge) ingredient. The level-2 braiding has none.
+
+**B. All orders in φ for a single crossing (Lean).** `QOU/QBeta/HeckeSeriesCollapse.lean` (sorry-free)
+proves:
+- `pow_eq_affine` and `sum_pow_eq_affine`: from σ² = hσ + 1, every power of σ, and every finite
+  truncation of a series in σ, is a + bσ.
+- `coulomb_of_affine`: if a + b·ΔE_σ has a Coulomb shape and b ≠ 0, then so does ΔE_σ.
+
+With `not_coulomb_s2`, no finite order of the single-crossing photon gives a Coulomb term. Part A
+already covers every element at n = 6.
+
+**C. Distance (spectators).** With d = 0, 1, 2, 3 spectator strands between the blocks and the band
+generator joining strand 2 to strand 3 + d, all four nucleon shifts are **exactly identical** for every
+d, at both q. The braid carries no distance: an exchange across spectators is the same as an adjacent
+one. A 1/r cannot come from counting strands. It needs a metric ingredient, and the braid and trace
+supply none.
+
+On the Planck length: `planck-length-share-vs-total` normalises ℓ_P = ħ_q·t_P = 1. That is a
+dimensionless circuit, not a distance between particles, and C shows that strand counting does not
+supply one either. The length in E_C is λ̄_π, which comes from the CAL-3 calibration.
+
+**Scope.** Scope-(a) negatives. A and C are computed at n = 6 and n ≤ 9 at two rational q, not proved for
+all q or all n. The α + β = 1 identity is measured exactly at two q and is not proved. Tower status:
+A covers every element at n = 6 (all orders in φ there). The tower in n is open.
+
+## §28 Gaudin / KZ coupling on the surface: isospin, not Coulomb; what Coulomb needs (2026-11-22, owner: "Yes, go ahead" on the Bring-surface test)
+
+Pre-registration: `computations/probes/np_splitting/np_gaudin_pair_charge_preregistration.md`
+(commit `a608acfa1dd`, before the probe). Probe and output:
+`np_gaudin_pair_charge_probe.py`, `.out.txt`. Lean:
+`QOU/QBeta/WeylSymmetricPairNotCoulomb.lean` (sorry-free, lean-direct exit 0, axioms
+`propext`, `Classical.choice`, `Quot.sound`).
+
+**Set-up.** The two blocks sit at points z_A, z_B of a local chart of Bring's surface. The KZ
+connection is ħ·Ω_AB·d log(z_A − z_B) and the Gaudin term is Ω_AB/(z_A − z_B). Their coordinate
+dependence is the two-dimensional Coulomb law: on a surface the potential is log|z|, and 1/|z|
+needs three dimensions. So the only question is whether the **charge factor** Ω_AB reads Q_A·Q_B.
+Readout as §26: ΔE_X = T_X/T_1, sector projectors, V = σ₀σ₁⁻¹ on each block, K = diag(q, q⁻¹).
+Exact Fractions at q = 111/100, 7/5, 2 and at the proton q₀ (exact rational of the 50-digit pin).
+
+| X | all 16 sectors | nucleons pp, pn, np, nn | as registered |
+|---|---|---|---|
+| G-sl2: Σ(½h_ih_j + e_if_j + f_ie_j) | O2 isospin, κ_W = ½, every q | ½, −½, −½, ½ | yes (1) |
+| G-gl2: Σ P_ij | O2 isospin (+ constant 9/2) | 5, 4, 4, 5 | yes (1) |
+| G-cartan: Σ h_ih_j (trigonometric diagonal) | O2 isospin | 1, −1, −1, 1 | yes (1) |
+| G-q: U_q pair Casimir, coproduct compatible with Ř | O4 | **pp = nn exactly**, pn ≠ np, pp − pn − np + nn = q + q⁻¹ | yes (3): not O1 |
+| G-q, opposite coproduct (control; does not commute with Ř) | O4 | pp ≠ nn | control |
+| M: KZ monodromy β_AB² in H_6(q) | O4 | pp = nn exactly | yes (4) |
+| QQ: Σ q_iq_j, q = diag(2/3, −1/3) | O1 Coulomb, κ = 1 | 1, 0, 0, 0 | yes (5): the readout sees Coulomb when it is put in |
+
+Which coproduct commutes with the Jimbo Ř is decided by the probe, not assumed:
+Δe = e⊗K + 1⊗e, Δf = f⊗1 + K⁻¹⊗f does; its opposite does not. The q-Casimir is central for both.
+
+**Why every invariant coupling fails (proved).** e and f change the weight, so they have zero trace
+against the sector projectors; the Cartan part of any gl(2)-invariant symmetric form
+a·tr(XY) + b·tr X·tr Y, summed over strand pairs, is a(n_An_B + d_Ad_B) + 9b with d = 3 − n. It is
+symmetric under the Weyl reflection u ↔ d, which swaps the proton and neutron blocks, so pp = nn
+(`invCartan_pp_eq_nn`). A Coulomb shape c + κQ_AQ_B with pp = nn has κ = 0
+(`coulomb_kappa_zero_of_pp_eq_nn`, `invCartan_not_coulomb`). The u(1) of gl(2) is the identity on
+V: it is baryon number and adds the same constant for p and n. The q-deformed Casimir is not Weyl
+symmetric in its coproduct, yet the Ř-compatible one still gives pp = nn at all four q measured, and
+its interaction is the q-number [2]_q = q + q⁻¹ where the classical one gives 2. That is a q-deformed
+isospin coupling with an ordering asymmetry pn ≠ np. pp = nn for G-q and M is measured exactly at four
+q, not proved for all q.
+
+**What Coulomb needs.** The Coulomb operator is Q⊗Q with strand charge Q = T₃ + B/2, B = 1/3 per
+strand: u ↦ 2/3, d ↦ −1/3, block charge n − 1 (`blockCharge_eq`). Written in gl(2),
+Q = ½h + ⅙·1, so Q⊗Q contains the cross term (h⊗1 + 1⊗h)/12, which no invariant form has, and it
+gives pp ≠ nn (`coulombPair_pp_ne_nn`). So the missing ingredient is exactly the Gell-Mann–Nishijima
+mixing of T₃ with baryon number: a choice of which U(1) is gauged. That is electroweak symmetry
+breaking to U(1)_em. The braid, the Hecke algebra, the Markov trace and the KZ/Gaudin coupling all
+respect the Weyl reflection on the nucleon sectors, so none of them makes that choice.
+
+**The helon ribbon twist (Gresnigt, Bilson-Thompson; prior-art review on PR #9095).** In the helon
+model, electric charge is the number of ribbon twists (B₂ ≅ ℤ), assigned to the strands so the
+charges come out right. In a ribbon category the twist on a simple object is a scalar, θ_V = q^{C(V)}.
+Here u and d are two basis vectors of the one object V, so the twist cannot tell them apart. For twist
+to carry charge, u and d must be different simple objects, i.e. V must be tensored with U(1) lines
+L_k whose label is the electric charge. The double braiding of two U(1) lines is q^{2k_Ak_B}. Its log
+is exactly κ·k_A·k_B: a Coulomb charge factor with its zero at charge 0. So the helon twist does
+supply the U(1) charge factor, but only by attaching the charge label by hand, which is the same
+Gell-Mann–Nishijima input. It is a carrier for the missing ingredient, not a derivation of it. Not
+computed beyond this argument.
+
+**Scope.** Scope-(b) for the invariant classical forms: the Weyl-symmetry step is proved in
+`WeylSymmetricPairNotCoulomb.lean`, and the off-diagonal zero trace and the Cartan readout are proved
+for every q and every weight-preserving core in `WeightShiftZeroTrace.lean`
+(`sectorTrace_eq_zero_of_shift`, `sectorTrace_diag`, `gaudin_readout`; that the Jimbo Ř preserves
+the u-count entrywise is `jimbo_weight_preserving`). For M, pp = nn is proved at q = 2 in Lean
+(`dE_M_pp_eq_nn`, `M_coulomb_kappa_zero` in `TwoBlockExchangeNotCoulomb.lean`, kernel `decide`).
+Scope-(a) for G-q (exact at four q, not all q). Both G-q and M are invariant under the map
+u ↔ d together with i ↦ 5 − i (checked exactly at q = 7/5); a general proof of pp = nn from that
+symmetry is open. Tower status: n = 6 only; the tower in n is open. No empirical
+input, no fit.
+
+**Owner decision this raises (not taken).** Whether the model adds a U(1)_em grading (strand charge
+T₃ + B/2) as an explicit structural input, or looks for a mechanism inside the corpus that breaks
+the Weyl reflection. The default, if nothing is decided, is that E_C stays an import (§25).
+
+## §29 Where the U(1) charge lines come in (2026-11-22, owner: "Search for a mechanism first"; "where the U1 charge lines come in … do we need another paper?")
+
+Lean: `QOU/QBeta/NeutralExchangeSplit.lean` (sorry-free, lean-direct exit 0).
+
+**The corpus already holds the question.** `eightfold-way/flavor-charge-assignments.md` records
+the electric charge as Gell-Mann–Nishijima `Q = I₃ + Y/2`, with I₃ derived (writhe coordinate) and
+**hypercharge Y open**. Its candidate, the helon ribbon twist, is shown there to be a free label
+(the battery reduces to T = 3Q), and the canonical ribbon twist (content sum) is refuted at n ≤ 8
+because it gives only integer charges. `coulomb-charge.md` says the halved writhe is not
+established as an electric charge. `weinberg-angle-categorical` is a conjecture whose evaluated form
+misses (cot θ_W = q⁻⁴ ≈ 0.659 against 1.823). §28 is consistent with all three.
+
+**Where the U(1) lines are.** They are already in the braiding. The Jimbo Ř is the U_q(gl(2))
+R-matrix; its Cartan torus is U(1)_{T₃} × U(1)_B, and its Cartan factor
+q^{E₁₁⊗E₁₁ + E₂₂⊗E₂₂} = q^{½h⊗h + ½·1⊗1} couples T₃ to T₃ and B to B, with no cross term. That is
+the shape of the **unbroken** neutral exchange, W³ with coupling g and B with coupling g′:
+g²·T₃T₃′ + g′²·(Y/2)(Y′/2). On three-quark blocks (Y = B = 1) this is isospin, pp = nn
+(`nucleon_unbroken_isospin`), which is what §28 measured.
+
+**What turns it into Coulomb.** `neutralExchange_split` proves, over any field,
+
+    g²T₃T₃′ + g′²(Y/2)(Y′/2) = e²·QQ′ + g_Z²·(T₃ − s²Q)(T₃′ − s²Q′),
+    e² = g²g′²/(g²+g′²),  s² = g′²/(g²+g′²),  g_Z² = g²+g′²,  Q = T₃ + Y/2.
+
+The first term is the Coulomb factor, zero whenever a neutron is involved
+(`nucleon_photon_coulomb`). So Coulomb is the unbroken exchange **minus the Z exchange**, and in the
+Standard Model the Z drops out at long distance because it is massive. The §28 negative is
+therefore what the physics predicts: an invariant (unbroken) coupling cannot be Coulomb. Two things
+are needed and neither is derived in the corpus:
+1. the mixing angle s² = sin²θ_W (the corpus conjecture `weinberg-angle-categorical`, currently off);
+2. a Z mass scale that removes the second term at nuclear distance (no derivation found).
+The u ↔ d asymmetry of Q = T₃ + B/2 itself is not a third input: with B = 1/3 per strand it is fixed
+once a nucleon is a three-strand block (`blockCharge_eq`, §28).
+
+**Do we need another paper?** Not for the mathematics: the identity above is elementary, and the
+held Furey thesis (`furey2016`, `library/arxiv-1611.09182v1`) already derives U(1)_em as the
+unique unbroken symmetry, generated by Q = N/3 with N a number operator, which is the u-counting
+operator Σ E₁₁ here up to the baryon shift. The standard electroweak references (Glashow 1961,
+Weinberg 1967, Salam 1968) are not registered; only `colemanglashow1961` is. They would be cited, not
+used to derive anything. The open content is the Weinberg angle and the Z scale, which are corpus
+problems, not literature gaps.
+
+**Scope.** Algebraic identity, proved. Nothing here fixes s² or the Z mass; no number is claimed.
+Tower status: not a tower computation.

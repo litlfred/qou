@@ -1,0 +1,1 @@
+Quantizing the Chern-Simons theory in the presence of the Wilson lines should give a Hubert space J^Σ.PijRι that is canonically associated with the oriented surface Σ together with the choice of Pi and R{.

@@ -1,0 +1,1 @@
+Whether or not "counterterm" is the right word, we will have to view (2.20) as a correction that must be added to the action if one wishes to work in the gauge DtA l = 0 Quantum Field Theory and the Jones Polynomial 361 is a topological invariant, depending that is on the oriented three manifold M with a choice of trivialization of the tangent bundle, but not on the metric of M.

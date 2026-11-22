@@ -1,0 +1,56 @@
+{
+  "$schema": "folio-library-extraction/v1",
+  "doc_id": "arxiv-1607.01632v2",
+  "kinds": {
+    "contents": {
+      "state": "found",
+      "count": 13,
+      "note": "contents from outline",
+      "tool": "pdf-structure.py",
+      "version": "0b311238188a",
+      "at": "2026-11-22"
+    },
+    "sections": {
+      "state": "found",
+      "count": 14,
+      "tool": "pdf-structure.py",
+      "version": "0b311238188a",
+      "at": "2026-11-22"
+    },
+    "figures": {
+      "state": "none",
+      "count": 0,
+      "note": "2 caption(s) read off the pages",
+      "tool": "pdf-images.py+pdf-vector-figures.py",
+      "at": "2026-11-22"
+    },
+    "tables": {
+      "state": "found",
+      "count": 1,
+      "note": "drafts; backend pdfplumber 0.11.10; 3 candidate(s) dropped: under two columns or no row under the header; 5 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)",
+      "tool": "pdf-tables.py",
+      "version": "b3b9e4012c21",
+      "at": "2026-11-22"
+    },
+    "references": {
+      "state": "found",
+      "count": 39,
+      "tool": "references-extract",
+      "version": "5ba2d9d9e337",
+      "at": "2026-11-22"
+    },
+    "glossary": {
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme",
+      "tool": "glossary-from-source",
+      "at": "2026-11-22"
+    },
+    "footnotes": {
+      "state": "found",
+      "count": 5,
+      "note": "called from the text; also kept: 81 mark(s) with no note found",
+      "tool": "pdf-footnotes.py",
+      "at": "2026-11-22"
+    }
+  }
+}

@@ -1,0 +1,308 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "moffatt1969-jfm-knottedness",
+ "source": {
+  "file": "moffatt1969-jfm-knottedness.pdf",
+  "sha256": "279a07cbcbd5f86e5067a70ede472e26223fa80e9fb2bf9eb5040e7cef6991b1",
+  "bytes": 1048576,
+  "pages": 13,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-22T19:30:56Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "The degree of knottedness of tangled vortex lines",
+  "authors_raw": "By H. K. MOFFATT",
+  "title_lines": [
+   "J . Fluid Mech. (1969), vol. 35, part 1, pp. 117-129",
+   "Printed in Great Britain",
+   "The degree of knottedness of tangled vortex lines"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "The degree of knottedness of tangled vortex lines",
+   "Author": "H. K. Moffatt",
+   "Producer": "PDFlib PLOP 2.1.0p1 (SunOS)/Acrobat 4.0 Import Plug-in for Windows (via http://big.faceless.org/products/pdf?version=work-20090717T1753)",
+   "Creator": "Acrobat 5.0 Paper Capture Plug-in for Windows",
+   "CreationDate": "D:20051108152720-08'00'"
+  },
+  "title_raw": "J . Fluid Mech. (1969), vol. 35, part 1, pp. 117-129 Printed in Great Britain The degree of knottedness of tangled vortex lines",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "The degree of knottedness of tangled vortex lines",
+   "heading": "The degree of knottedness of tangled vortex lines K = $ u.dl",
+   "text": "J . Fluid Mech. (1969), vol. 35, part 1, pp. 117-129 Printed in Great Britain The degree of knottedness of tangled vortex lines",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction; discrete vortex fields",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "117"
+  },
+  {
+   "level": 1,
+   "title": "The effect of the presence of solid boundaries",
+   "page": 5,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "121"
+  },
+  {
+   "level": 1,
+   "title": "A simple consequence of the invariance of I in an incompressible",
+   "page": 6,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "122"
+  },
+  {
+   "level": 1,
+   "title": "Relation with the magnetohydrodynamic invariants of Woltjer",
+   "page": 7,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "123"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "117",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "118",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "119",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "120",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "121",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "122",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "123",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "124",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "125",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "126",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "127",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "128",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "129",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1332,
+   "n_words": 232,
+   "label_start": "117",
+   "label_end": "117"
+  },
+  {
+   "id": "sec-000-1-introduction-discrete-vortex-fields",
+   "number": "1",
+   "title": "Introduction; discrete vortex fields",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 8291,
+   "n_words": 1578,
+   "label_start": "117",
+   "label_end": "121"
+  },
+  {
+   "id": "sec-001-3-the-effect-of-the-presence-of-solid-boundaries",
+   "number": "3",
+   "title": "The effect of the presence of solid boundaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2550,
+   "n_words": 487,
+   "label_start": "121",
+   "label_end": "122"
+  },
+  {
+   "id": "sec-002-4-a-simple-consequence-of-the-invariance-of-i-in",
+   "number": "4",
+   "title": "A simple consequence of the invariance of I in an incompressible",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2045,
+   "n_words": 365,
+   "label_start": "122",
+   "label_end": "123"
+  },
+  {
+   "id": "sec-003-5-relation-with-the-magnetohydrodynamic-invarian",
+   "number": "5",
+   "title": "Relation with the magnetohydrodynamic invariants of Woltjer",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 13,
+   "n_chars": 12047,
+   "n_words": 2227,
+   "label_start": "123",
+   "label_end": "129"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 26265,
+  "furniture_lines_stripped": 0
+ }
+}

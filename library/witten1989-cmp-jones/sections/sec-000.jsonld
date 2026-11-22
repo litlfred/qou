@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/witten1989-cmp-jones/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Chern-Simons Action",
+  "pageStart": 3,
+  "pageEnd": 15,
+  "contains": [
+    "library/witten1989-cmp-jones/blocks/prose-sec-000",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-01",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-02",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-03",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-04",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-05",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-06",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-07",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-08",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-09",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-000-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "provenance": "ingested"
+}

@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0703096v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0703096v1",
+  "contains": [
+    "library/arxiv-math-0703096v1/sections/sec-front-matter",
+    "library/arxiv-math-0703096v1/sections/sec-000",
+    "library/arxiv-math-0703096v1/sections/sec-001",
+    "library/arxiv-math-0703096v1/sections/sec-002",
+    "library/arxiv-math-0703096v1/sections/sec-003",
+    "library/arxiv-math-0703096v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0703096v1",
+    "title_source": "slug",
+    "source_file": "arxiv-math-0703096v1.pdf",
+    "source_sha256": "337c26b7164ff942d1d12242abcc0b7a27c2624b3daaf17eb3b7e4fb83d8ce61",
+    "pages": 53,
+    "arxiv": {
+      "id": "math/0703096",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "3 Mar 2007"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}
