@@ -1074,3 +1074,32 @@ pair cannot give a neutral neutron (q_u + 2q_d = −q_u; `down-quark.md`). So un
 assumption, the SM charges cannot be q-independent constants inside a charge-squared mass term:
 either they depend on q, or the charge-squared term does not enter the mass at q = 1. This is a
 constraint on the derivation, not a derivation.
+
+## §35 Muon-scale map for n − p (pre-registered 68658c687a0)
+
+Owner 2026-11-22: *"Try preregister muon scale. Degree 0 if negative is considered as a potential
+energy."* Probe: `mn_muon_scale_probe.py`, exact sympy in q, evaluated at the proton pin
+q₀ = 1.1099785827513808 at 30 dps; m_μ = m_e·Vol(4₁)/ℏ_q² = 105.658397811 MeV (CAL-2).
+Map, mirroring the production identity: E_N = 2 m_μ ([3]_q!/q³) τ_N, with
+τ_p = q·tr_{W_p}(·)/[2]³ and τ_n = q⁻¹·tr_{W_n}(·)/[2]³. Every prediction in the pre-registration held.
+
+| arm | E_n − E_p at q₀ | limit q → 1 | vs CODATA 1.29333 MeV (context only) |
+|---|---|---|---|
+| M1: 𝒟² on the muon scale | **+0.171182 MeV** | 0 (the factor (q−1)³ beats ℏ_q⁻²) | 13 %, neutron heavier |
+| M2: 𝒟² − S on the muon scale | +104.753 MeV | diverges (S is degree 0, ℏ_q⁻² is not cancelled) | 81×, S dominates |
+| E_pot, electron map, plain P | +54.444 keV | 1/8 (in units m_e) | 4.2 % |
+| E_pot, electron map, K-weighted | +49.068 keV | 1/8 | 3.8 % |
+
+Reading, with each assumption named:
+- **M1 is a scope (a) negative**: the 𝒟² term alone, on the muon scale, gives the right sign and
+  about 13 % of the splitting. It vanishes at q = 1, as §34 requires. Nothing was tuned.
+- **M2 shows S must not ride the muon scale.** A degree-0 term multiplied by ℏ_q⁻² is unbounded as
+  q → 1, which contradicts m_p = m_n at q = 1 (§34) unless the charges vanish there. So under the
+  §34 working assumption, a potential S belongs on the electron scale (or carries its own ℏ_q²).
+- **E_pot is §31 with the sign flipped** per the ruling that degree 0 enters as a potential
+  (E = T(𝒟²) − S). It gives neutron heavier, about 4 % of CODATA, with limit 1/8 at q = 1, which
+  conflicts with §34 (it should be 0). The source is S at q = 1 with the adopted SM charges, the
+  exact obstruction `sm_charges_not_mirror` names.
+- **Assumptions, not derived:** (i) reuse of the m_p identity's normalisation 2([3]_q!/q³) and the
+  K-weights for τ_n; (ii) "negative degree 0 = potential" is the agent's reading of the ruling;
+  (iii) the quark charges are adopted, not derived (§33).

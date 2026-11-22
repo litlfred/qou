@@ -152,3 +152,4 @@ in 𝒟 and is outside ℒ as written.
 ℒ′ = 𝒟² + QPair·hol, linear map fixed on the electron: m_n − m_p = −54.33 keV (plain) /
 −48.91 keV (K-weighted) at the proton pin, limit −m_e/8 at q = 1. Pre-registered and held.
 Opposite sign to CODATA and about 4 % of its size (scope (a)).
+- Muon scale (§35, pre-registered): 𝒟² alone gives E_n − E_p = +0.171 MeV (13 % of CODATA, right sign, 0 at q = 1). Adding S on the muon scale diverges as q → 1; with S as a potential on the electron scale it is +54 / +49 keV. Normalisation reuse and the potential-sign reading are assumptions.
