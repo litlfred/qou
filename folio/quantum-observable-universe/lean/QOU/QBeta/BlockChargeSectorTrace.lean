@@ -22,9 +22,9 @@ half twist `Δ = σ₀σ₁σ₀`. Hence `ρ₂(w)·Δ = Δ·ρ₁(w)` for every
 two sector traces agree for every word (`sectorTrace_eq`), over any field and generic `q`.
 
 The second hypothesis `hc` (the Casimir insertion) is discharged below by the same intertwiner.
-What stays outside Lean: the reading of the 3 × 3 sector matrices off the 8 × 8 Jimbo and Casimir
-operators (exact sympy, `block_sector_matrices_probe.py`), and the reduction of the two-block
-64 × 64 readout to block traces (§28). No empirical input.
+The reading of these 3 × 3 matrices off the 8 × 8 Jimbo and Casimir operators is proved in
+`BlockSectorRestriction` (also checked by `block_sector_matrices_probe.py`), and the reduction of the
+two-block readout to block traces in `PairReadoutTensorReduction` (§33, §34). No empirical input.
 -/
 
 namespace QOU.QBeta.BlockChargeSectorTrace

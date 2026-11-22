@@ -29,7 +29,8 @@ two lines. They are hypotheses of this file. They are proved elsewhere: the redu
 two-block trace to `a`, `c` is `PairReadoutTensorReduction.readout_eq_pairReadout`, and the equality
 of `τ`, `μ` on the two charge sectors of a three-strand block is
 `BlockChargeSectorTrace.sectorTrace_eq` / `feTrace_eq` (audit §32, §33). The link between the
-8-dimensional block space and its 3×3 sector matrices is checked by `block_sector_matrices_probe.py`.
+8-dimensional block space and its 3×3 sector matrices, and the assembled end-to-end statement, are
+in `BlockSectorRestriction` (`readout_pp_eq_nn`, audit §34).
 
 **What is proved here, over any field and for every `τ`, `μ`.** pp = nn
 (`pairReadout_pp_eq_nn_of_blockData`), and the interaction `pp − pn − np + nn = h²·[2]_q`

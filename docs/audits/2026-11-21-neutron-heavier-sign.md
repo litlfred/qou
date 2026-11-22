@@ -770,3 +770,27 @@ block operators, restricted to the two charge sectors, are the 3×3 matrices `A0
 (`block_sector_matrices_probe.py`, exact sympy).
 
 **Scope.** Exact algebra over any field. No empirical input. Tower status: two blocks, n = 6.
+
+## §34 pp = nn, end to end in Lean (2026-11-22)
+
+`BlockSectorRestriction.lean` (sorry-free; `readout_pp_eq_nn` depends only on propext /
+Classical.choice / Quot.sound) closes the last link of §33. On the 8-dimensional space of one block
+(`u = 0`) it defines the Jimbo letters σ₀^{±1}, σ₁^{±1}, the operators `e, f, K, K⁻¹` with the
+`Ř`-compatible coproduct, and the projectors onto the one-u and two-u sectors. It proves:
+
+- every letter, and so every word, preserves the u-count, and restricted to the two sectors in the
+  bases of §32 it is the 3 × 3 letter matrix (`letter_restrict`, `word_restrict`);
+- `h²·fe` restricted to either sector is `G − (qk + (qk)⁻¹)` (`cas_restrict`);
+- the sector conditions of §33 hold for these operators, any word, and `k = q⁻¹` (one u) or `k = q`
+  (two u) (`sector`).
+
+Composing §33, §32 and §28: for every three-strand core word `w` in both nucleon blocks, the
+two-nucleon q-Casimir readout divided by the identity readout is the same in the pp and nn sectors
+(`readout_pp_eq_nn`, stated cross-multiplied), over any field with `q ≠ 0`.
+
+**What it does not cover.** Cores that braid strands of one nucleon with strands of the other (the
+core here sits inside the blocks, as in the §28 probe); different core words in the two blocks; the
+tower beyond n = 6. The conclusion is the same as §28: this coupling cannot make the neutron heavier,
+and a Coulomb shape from it has κ = 0. That is now a theorem, not a computation.
+
+**Scope.** Exact algebra, no empirical input, no fitting. Scope-(b) for this coupling class.
