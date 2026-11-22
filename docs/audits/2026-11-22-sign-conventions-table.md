@@ -148,4 +148,10 @@ Under A plus that side, the ⁴He γγ chain is `−0.862` keV (it unbinds); thi
 chosen.
 
 Recommendation (judgement, not a finding): record A as the reading of the ruling, with the side
-fixed by the right-hand closure. Owner decision.
+fixed by the right-hand closure.
+
+**Ruled 2026-11-22.** The owner chose *"Yes, A plus right-hand closure"* on the decision card
+"Record reading A of the photon ruling as an owner ruling?". Reading A and the right-hand side
+are now an owner ruling (`docs/coordination/owner-rulings.md`). The side is ruled as an input;
+the argument above for it (Markov over the last strand) is support, not a derivation. The ⁴He
+γγ chain stays at `−0.862` keV under the ruling.
