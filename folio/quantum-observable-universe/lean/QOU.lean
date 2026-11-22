@@ -318,6 +318,7 @@ import QOU.MathlibExt.PLMoveVertexGlue
 import QOU.MathlibExt.PLPerturb
 import QOU.MathlibExt.PLSubdivide
 import QOU.MathlibExt.PLC1Estimates
+import QOU.MathlibExt.PLInscribed
 import QOU.MathlibExt.PLAmbientIsotopy
 import QOU.MathlibExt.PLPush
 import QOU.MathlibExt.PLDeltaIsotopy
