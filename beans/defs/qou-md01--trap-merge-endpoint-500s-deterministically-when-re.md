@@ -1,13 +1,13 @@
 ---
 # qou-md01
 title: 'TRAP: merge endpoint 500s DETERMINISTICALLY when rebase-merging a branch that carries merge commits — not the retryable 5xx of qou-4w5b'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T10:32:43Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-22T11:10:00Z
 parent: qou-nu9d
 blocking:
     - qou-4w5b
@@ -85,3 +85,8 @@ exception and say so in the PR rather than discovering it at merge time.
 Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
 
 - Recorded as a TRAP in the agent-memory files on branch `claude/agent-ops-traps-2026-11-21` (commit 64a3e7902), PR pending owner approval. Close this bean when that PR merges. Any script or producer fix named above stays open here.
+
+
+## 2026-11-22 — landed (session_01Qmmkt7b8yRZEmMY5Qwa33W)
+
+Recorded as a TRAP in `.claude/agent-memory/merge-coordinator/agent-ops-traps.md` via PR #8812 (merged f9fa0bacd9b). Nothing else to do; completed.

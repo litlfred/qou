@@ -8,7 +8,7 @@ tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:42Z
-updated_at: 2026-11-21T13:30:00Z
+updated_at: 2026-11-22T11:10:00Z
 parent: qou-k3er
 ---
 
@@ -75,3 +75,8 @@ Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked agains
 
 - `bun run scripts/gen-producer-tools.ts --check` on main `2ae54ab4010`: **stale**. Regenerating it (in scratch, then reverted) gives **229** producers, up from 221: 12 scripts added; 4 removed (3 retired scripts and one under `fsh-guts/deprecated/`); 13 with changed block or witness lists. 7 name a missing script and 14 name no witness. The generator decides the content, so a refresh is a mechanical, corpus-derived commit (`tool-defs/producers.json` only, +125/−45).
 - Parity-sample done-when: its 2 fails were cleared by the owner-approved 2026-10-05 chain re-runs (see the notes above). Not re-run today.
+
+
+## 2026-11-22 — landed (session_01Qmmkt7b8yRZEmMY5Qwa33W)
+
+`tool-defs/producers.json` regenerated and merged via PR #8812 (f9fa0bacd9b), re-run against main `f4ca81d3199` just before merge: 228 producers, 5 name a missing script, 14 name no witness; `--check` passes. Still open for the coverage and edge checks.

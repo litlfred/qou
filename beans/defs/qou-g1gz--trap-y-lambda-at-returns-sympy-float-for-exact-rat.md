@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:34:11Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-22T11:10:00Z
 parent: qou-nu9d
 ---
 
@@ -52,3 +52,8 @@ path cannot separate "exactly 0" from "1e-31", so this bean does not settle it.
 Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
 
 - Recorded as a TRAP in the agent-memory files on branch `claude/agent-ops-traps-2026-11-21` (commit 64a3e7902), PR pending owner approval. Close this bean when that PR merges. Any script or producer fix named above stays open here.
+
+
+## 2026-11-22 — landed (session_01Qmmkt7b8yRZEmMY5Qwa33W)
+
+Trap recorded in `compute-precision-auditor/MEMORY.md` via PR #8812 (merged f9fa0bacd9b), re-measured 2026-11-21. Left open: `y_lambda_at` still returns a sympy Float for exact rational q; the producer fix has not been made.

@@ -1,13 +1,13 @@
 ---
 # qou-gaoa
 title: GitHub strips bare <angle-bracket> placeholders from comment bodies, and coordinate.md's templates are full of them
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T23:05:29Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-22T11:10:00Z
 parent: qou-nu9d
 ---
 
@@ -178,3 +178,8 @@ placeholders with a syntax that survives — `#NNN`, `{one sentence}`,
 Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
 
 - Recorded as a TRAP in the agent-memory files on branch `claude/agent-ops-traps-2026-11-21` (commit 64a3e7902), PR pending owner approval. Close this bean when that PR merges. Any script or producer fix named above stays open here.
+
+
+## 2026-11-22 — landed (session_01Qmmkt7b8yRZEmMY5Qwa33W)
+
+The last bare `<...>` pair in `skills/local/coordinate.md` (§4 triage-report header) converted to `#NNN` / `{timestamp}`, and the trap recorded in `agent-ops-traps.md`, via PR #8812 (merged f9fa0bacd9b). Completed.
