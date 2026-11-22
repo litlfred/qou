@@ -831,3 +831,41 @@ PR's results stand against it.
   survives at q = 1 because q_u² ≠ q_d². It conflicts with the working assumption, and it was
   already not adopted (wrong sign, §26). It is conditional on the SM charges, which the owner has
   ruled must be derived.
+
+**Update (2026-11-22).** The E₀ pole was settled in a separate thread (issue #9002, audit
+`2026-11-22-np-gap-at-q-one-unit-map.md`). The pole is the factor c_q² that enters when an energy is
+compared with a mass. Whether that comparison is a defect depends on one global reading of
+def:mass-energy, which is an owner decision (bean `qou-91w7`). The MeV figures in §28–§31 use the
+pure-number reading, which is the current default.
+
+## 31. β_Bor-dressed vertex weight (prereg Addendum 19, 2026-11-22)
+
+Two candidates, both preregistered before any number was computed. Each lets the nucleon braid
+β_Bor = (σ₁σ₂⁻¹)³ act on the quark strands of the §29 space. Exact ℚ(q) arithmetic:
+`computations/probes/qbeta_energy_map/bbor_dressed_vertex.py`.
+
+- **D1, the bare braid: identically zero.** W(s) = (β_Bor ⊗ 1)_{ss}. The diagonal sums over the
+  initial and final sets are both −(q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1)/q⁶, so the ratio is 1
+  and ΔE = 0 at every q, not only at q = 1.
+  - The same holds for the mirror braid and for the reversed tensor order.
+  - Lean: `QOU.QBeta.BBorWeightTrace.bbor_diag_split_eq`. Over a generic field with
+    q² = hq + 1, the raw difference is 3h⁴(q² − hq − 1). Also proved there: `s2_mul_s2i`
+    (σ₂⁻¹ = σ₂ − h) and the product lemmas.
+  - This is the weight-space form of the closure result of issue #9002: the Borromean braid alone
+    gives no n–p split.
+- **D2, β_Bor-dressed Young channels: the §29 negative again.** W(s) =
+  (Σ_λ q^{c(λ)} P_λ · (β_Bor ⊗ 1))_{ss}.
+  - Ratio = (q²⁰ − 4q¹⁸ + 4q¹⁶ − 10q¹⁴ + 10q¹² − 15q¹⁰ + 9q⁸ − 10q⁶ + 5q⁴ − 3q² + 1) /
+    (2q²(q¹⁶ − 3q¹⁴ + 3q¹² − 8q¹⁰ + 6q⁸ − 7q⁶ + 4q⁴ − 3q² + 1)), which is 1 at q = 1.
+  - At the proton q₀ the log-ratio is 0.0475052842 against the cell 2 ln q₀ = 0.2086814406. That
+    is ΔE = 0.198856 MeV, against 0.198670 MeV for the undressed §29 vertex.
+  - So the dressing moves the split by 0.09 %. It is still O(h²), and 0.420 MeV (placement B) and
+    0.782 MeV (placement C) stay out of reach.
+  - Sign: unchanged under the mirror β_Bor ↦ β_Bor^mirror, as expected for an amphichiral braid.
+    Reversing the tensor order flips it, so the sign is still a convention.
+  - The rational function is an exact computation and is not proved in Lean.
+
+**Verdict.** Both are scope-(a) negatives, as preregistered (claims 1–4 checked). β_Bor on the
+quark strands does not supply the vertex energy at the weight-space level. It drops out entirely (D1)
+or barely changes the Young-channel split (D2). Not excluded: a weight that couples β_Bor to the
+lepton strand, i.e. a braid word crossing strands 3 and 4. Bean `qou-sgav` stays open.
