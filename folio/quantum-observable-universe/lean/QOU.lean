@@ -1896,3 +1896,8 @@ import QOU.MathlibExt.WenzlSchurElementInstances
 import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
 import QOU.QBeta.RationalStateIntegralCuspTorsionBringHomologyGoldenDilogCostinTransseriesBridge
 import QOU.SchurWeyl.R2TwistTower
+import QOU.QFTMath.CliffordTraces
+import QOU.QFTMath.SpinorMinkowski
+import QOU.QFTMath.Su3StructureConstants
+import QOU.QFTMath.SpinFlavourAxialCharge
+import QOU.QFTMath.InfinitesimalPureBraid
