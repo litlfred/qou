@@ -345,6 +345,7 @@ import QOU.MathlibExt.PLSlice
 import QOU.MathlibExt.PLCone
 import QOU.MathlibExt.PLDerived
 import QOU.MathlibExt.PLConeMap
+import QOU.MathlibExt.PLBarycentric
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
