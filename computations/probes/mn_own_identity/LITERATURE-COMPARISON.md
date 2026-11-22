@@ -122,7 +122,7 @@ would be selection against the target, so neither is adopted.
 constant must be q-independent to about 1 % of h²: a count or a dimension, not a trace evaluated
 at q₀. The plain K^⊗3 reading gives the proton −12q = −13.32. That moves m_p by −719 ppm, where the
 measured precision is at the ppb level. So that reading is **falsified by the proton**. This is the
-honest m_p prediction at the muon pin; it is not a choice made against n − p. The proton-normalised
+honest m_p prediction at the muon pin; it is not a choice made against n − p. **Rescoped (2026-11-22, QA).** This proton test is circular: the −12 mₑ constant was itself fixed to the proton mass, so using the proton to falsify the plain K^⊗3 reading is selection against the target and carries no evidential weight (scope a). The reading is kept for an independent reason, given in §4 below: any own-sector quantum trace gives the neutron q⁻² times the proton (`neutron_constant_ratio`), for every braid word and every κ. The proton-normalised
 reading survives: the constant is 12 mₑ on the highest-weight member (p) and 12 q⁻² mₑ on the
 lowered member (n). That is the Cartan weight measured relative to the doublet's highest weight.
 Its split is 12(1 − q⁻²) mₑ = 1.15494 MeV, 10.7 % below experiment and below the lattice totals.
