@@ -10,7 +10,12 @@ set_option autoImplicit false
 /-!
 # A Δ-move is an ambient isotopy (issue #8902, stage 2, part 6)
 
-Work in progress. This file turns the body of `PLDeltaIsotopy.lean` into an isotopy.
+This file turns the body of `PLDeltaIsotopy.lean` into an isotopy, and proves the main result
+of stage 2's first half, over any real normed space `E`:
+
+* `DeltaEquiv.ambientIsotopic` — **Δ-equivalent polygonal links are ambient isotopic.**
+  The isotopy for one Δ-move is a push of the midpoint of the closing edge to the new vertex,
+  supported in a convex body around the triangle (`ambientIsotopic_of_delta`).
 
 ## What is a THEOREM here
 
@@ -20,6 +25,12 @@ Work in progress. This file turns the body of `PLDeltaIsotopy.lean` into an isot
   `deltaIso_of_not_mem` (it fixes everything outside the interior of the body) and
   `deltaIso_one_left` / `deltaIso_one_right` (at time `1` it maps `[a, m]` onto `[a, c]` and
   `[m, b]` onto `[c, b]`, affinely).
+* `ambientIsotopic_of_delta`, `Move.ambientIsotopic`, `DeltaEquiv.ambientIsotopic`.
+
+## What is NOT proved here
+
+* The converse (ambient isotopy implies Δ-equivalence) and the PL-isotopy comparison: later
+  parts of stage 2.
 -/
 
 namespace QOU.MathlibExt.PL
@@ -353,5 +364,175 @@ lemma deltaPsi_high (n : ℕ) {u : ℝ} (hu : 0 ≤ u) :
     rw [mul_assoc, e]; ring
   unfold deltaPsi
   rw [e, e2, max_eq_right (by linarith)]
+
+/-! ### A Δ-move is an ambient isotopy -/
+
+/-- **A Δ-move is realized by an ambient isotopy** of `E`, supported in a convex body around
+the triangle. -/
+theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L'.k)
+    (m : Fin L.k) (c : E) (hother : ∀ i, i ≠ m → L'.comp (e i) = L.comp i)
+    (hm : L'.comp (e m) = (L.comp m).subdivideLast c)
+    (htri : convexHull ℝ {(L.comp m).v (Fin.last _), (L.comp m).v 0, c} ∩ L.carrier =
+      segment ℝ ((L.comp m).v (Fin.last _)) ((L.comp m).v 0)) : AmbientIsotopic L L' := by
+  set P := L.comp m with hPdef
+  set a := P.v (Fin.last P.n) with ha_def
+  set b := P.v 0 with hb_def
+  have hP : P.IsSimple := L.simple m
+  have hQ : (P.subdivideLast c).IsSimple := hm ▸ L'.simple (e m)
+  obtain ⟨hca, hcb, hseg⟩ := P.subdivideLast_facts c hQ
+  have hab : a ≠ b := fun h => P.last_ne_zero (hP.1 h)
+  have hK : ∀ x ∈ P.carrier, x ∈ convexHull ℝ {a, b, c} → x ∈ P.edge (Fin.last P.n) := by
+    intro x hx hxT
+    rw [P.edge_last, ← htri]
+    exact ⟨hxT, L.comp_carrier_subset m hx⟩
+  obtain ⟨ia, hia⟩ := P.exists_prev_last
+  -- everything of the link that misses the closing edge
+  set R' : Set E := ⋃ (j : Fin L.k) (i : Fin ((L.comp j).n + 1))
+      (_ : Disjoint ((L.comp j).edge i) (segment ℝ a b)), (L.comp j).edge i with hR'_def
+  have hR' : IsCompact R' :=
+    isCompact_iUnion fun _ => isCompact_iUnion fun _ => isCompact_iUnion fun _ =>
+      isCompact_segment' _ _
+  have hdisj : Disjoint R' (convexHull ℝ {a, b, c}) := by
+    simp only [hR'_def, Set.disjoint_iUnion_left]
+    intro j i hd
+    rw [Set.disjoint_left]
+    intro x hx hxT
+    have hxs : x ∈ segment ℝ a b := by
+      rw [← htri]
+      exact ⟨hxT, L.comp_carrier_subset j ((L.comp j).edge_subset_carrier i hx)⟩
+    exact Set.disjoint_left.mp hd hx hxs
+  have hsb : segment ℝ b c ∩ segment ℝ c a ⊆ {c} := by
+    rw [segment_symm ℝ b c, segment_symm ℝ c a, inter_comm]; exact hseg
+  obtain ⟨ρ, hρ, hA, hB, hR⟩ := exists_deltaBody (a := a) (b := b) (c := c)
+    (apex_seg_ne_zero hab hca.symm hseg) (apex_seg_ne_zero hab.symm hcb.symm hsb)
+    (fun t ht0 ht1 => P.apex_ray_not_mem hP hK hia ht0 ht1)
+    (fun t ht0 ht1 => P.base_ray_not_mem hP hK ht0 ht1) hR' hdisj
+  have haI : a ∉ interior (deltaBody a b c ρ) := not_mem_interior_of_ray hA
+  have hbI : b ∉ interior (deltaBody a b c ρ) := not_mem_interior_of_ray hB
+  have hR'I : ∀ x ∈ R', x ∉ interior (deltaBody a b c ρ) := fun x hx hxI =>
+    Set.disjoint_left.mp hR hx (interior_subset hxI)
+  -- points of the other components are fixed
+  have hfixOther : ∀ j, j ≠ m → ∀ x ∈ (L.comp j).carrier, x ∉ interior (deltaBody a b c ρ) := by
+    intro j hj x hx
+    obtain ⟨i, hi⟩ := Set.mem_iUnion.mp hx
+    apply hR'I
+    simp only [hR'_def, Set.mem_iUnion]
+    refine ⟨j, i, ?_, hi⟩
+    refine (L.disjoint hj).mono ((L.comp j).edge_subset_carrier i) ?_
+    rw [← P.edge_last]
+    exact P.edge_subset_carrier _
+  -- points of the other edges of `comp m` are fixed
+  have hfixM : ∀ i : Fin (P.n + 1), i ≠ Fin.last P.n → ∀ x ∈ P.edge i,
+      x ∉ interior (deltaBody a b c ρ) := by
+    intro i hi x hx
+    by_cases hd : Disjoint (P.edge i) (segment ℝ a b)
+    · apply hR'I
+      simp only [hR'_def, Set.mem_iUnion]
+      exact ⟨m, i, hd, hx⟩
+    · rw [Set.not_disjoint_iff_nonempty_inter, ← P.edge_last] at hd
+      rcases P.eq_of_meets_last hP hi hd with h | h
+      · have hi' : i = ia := (finRotate (P.n + 1)).injective (h.trans hia.symm)
+        subst hi'
+        rw [Polygon.edge, hia] at hx
+        obtain ⟨p, q, hp, hq, hpq, rfl⟩ := hx
+        have hx' : p • P.v i + q • a = a + p • (P.v i - a) := by
+          rw [show q = 1 - p by linarith]; module
+        rw [hx']
+        rcases hp.lt_or_eq with hp | hp
+        · exact fun h' => hA p hp (interior_subset h')
+        · rw [← hp, zero_smul, add_zero]; exact haI
+      · subst h
+        obtain ⟨p, q, hp, hq, hpq, rfl⟩ := hx
+        have hx' : p • b + q • P.v (P.next 0) = b + q • (P.v (P.next 0) - b) := by
+          rw [show p = 1 - q by linarith]; module
+        rw [hx']
+        rcases hq.lt_or_eq with hq | hq
+        · exact fun h' => hB q hq (interior_subset h')
+        · rw [← hq, zero_smul, add_zero]; exact hbI
+  -- the component `m`
+  have hQn : ((P.subdivideLast c).n : ℝ) + 1 = P.n + 2 := by
+    simp only [Polygon.subdivideLast]; push_cast; ring
+  have hN : (0 : ℝ) < P.n + 1 := by positivity
+  have hfinm : ∀ t, deltaIso a b c hρ 1 (P.param t) =
+      (P.subdivideLast c).param (t + (deltaPsi P.n (Int.fract t) - Int.fract t)) := by
+    intro t
+    have e1 : t + (deltaPsi P.n (Int.fract t) - Int.fract t) =
+        deltaPsi P.n (Int.fract t) + ((⌊t⌋ : ℤ) : ℝ) := by
+      have := Int.self_sub_fract t; linarith
+    rw [e1, Polygon.param_add_int, show P.param t = P.pathRaw (Int.fract t) from rfl]
+    obtain ⟨i, u, hu0, hu1, hs⟩ := P.exists_piece (Int.fract_nonneg t) (Int.fract_lt_one t)
+    rw [hs, P.pathRaw_piece i hu0 hu1.le]
+    induction i using Fin.lastCases with
+    | last =>
+      rw [P.next_last, Fin.val_last, deltaPsi_high _ hu0]
+      rcases le_total u (1 / 2) with hu | hu
+      · rw [deltaIso_one_left hρ haI hu0 hu]
+        have hx : ((P.n : ℝ) + 2 * u) / (P.n + 2) =
+            ((((Fin.last P.n).castSucc : Fin ((P.subdivideLast c).n + 1)) : ℕ) + 2 * u) /
+              ((P.subdivideLast c).n + 1) := by
+          rw [hQn]; simp
+        have hlt : ((P.n : ℝ) + 2 * u) / (P.n + 2) < 1 := by
+          rw [div_lt_one (by positivity)]; linarith
+        rw [hx] at hlt ⊢
+        rw [(P.subdivideLast c).param_piece _ (by linarith) (by linarith) hlt,
+          Polygon.subdivideLast_v_castSucc, Polygon.subdivideLast_next_castSucc_last,
+          Polygon.subdivideLast_v_last]
+      · rw [deltaIso_one_right hρ hbI hu hu1.le]
+        have hx : ((P.n : ℝ) + 2 * u) / (P.n + 2) =
+            (((Fin.last (P.n + 1) : Fin ((P.subdivideLast c).n + 1)) : ℕ) + (2 * u - 1)) /
+              ((P.subdivideLast c).n + 1) := by
+          rw [hQn]; simp
+        have hlt : ((P.n : ℝ) + 2 * u) / (P.n + 2) < 1 := by
+          rw [div_lt_one (by positivity)]; linarith
+        rw [hx] at hlt ⊢
+        have h0 : (0 : Fin (P.n + 1 + 1)) = (0 : Fin (P.n + 1)).castSucc := rfl
+        rw [(P.subdivideLast c).param_piece _ (by linarith) (by linarith) hlt,
+          Polygon.subdivideLast_v_last, Polygon.subdivideLast_next_last, h0,
+          Polygon.subdivideLast_v_castSucc]
+        module
+    | cast k =>
+      have hk : (k : ℝ) + 1 ≤ P.n := by exact_mod_cast k.isLt
+      have hmem : (1 - u) • P.v k.castSucc + u • P.v (P.next k.castSucc) ∈ P.edge k.castSucc :=
+        ⟨1 - u, u, by linarith, hu0, by ring, rfl⟩
+      rw [deltaIso_of_not_mem hρ 1 (hfixM _ (Fin.castSucc_lt_last k).ne _ hmem),
+        Fin.coe_castSucc, deltaPsi_low _ (by linarith)]
+      have hx : ((k : ℝ) + u) / (P.n + 2) =
+          (((k.castSucc.castSucc : Fin ((P.subdivideLast c).n + 1)) : ℕ) + u) /
+            ((P.subdivideLast c).n + 1) := by
+        rw [hQn]; simp
+      have hlt : ((k : ℝ) + u) / (P.n + 2) < 1 := by
+        rw [div_lt_one (by positivity)]; linarith
+      rw [hx] at hlt ⊢
+      rw [(P.subdivideLast c).param_piece _ hu0 hu1.le hlt, Polygon.subdivideLast_v_castSucc,
+        Polygon.subdivideLast_next_castSucc _ _ (Fin.castSucc_lt_last k).ne,
+        Polygon.subdivideLast_v_castSucc]
+  refine ⟨{ H := deltaIso a b c hρ
+            continuous := continuous_deltaIso hρ
+            continuous_symm := continuous_deltaIso_symm hρ
+            start := deltaIso_zero hρ
+            e := e
+            finish := fun i => ?_ }⟩
+  by_cases him : i = m
+  · subst him
+    exact ⟨_, deltaPsi_reparam P.n, fun t => by rw [hm]; exact hfinm t⟩
+  · refine ⟨id, OrientedReparam.id, fun t => ?_⟩
+    rw [hother i him]
+    exact deltaIso_of_not_mem hρ 1
+      (hfixOther i him _ (by rw [← Polygon.range_param]; exact ⟨t, rfl⟩))
+
+/-- **Every move is an ambient isotopy.** -/
+theorem Move.ambientIsotopic {L L' : PolygonalLink E} (h : Move L L') : AmbientIsotopic L L' := by
+  cases h with
+  | relabel e r h => exact AmbientIsotopic.of_relabel e r h
+  | delta e m c hother hm htri => exact ambientIsotopic_of_delta L L' e m c hother hm htri
+
+/-- **Δ-equivalent links are ambient isotopic.** -/
+theorem DeltaEquiv.ambientIsotopic {L L' : PolygonalLink E} (h : DeltaEquiv L L') :
+    AmbientIsotopic L L' := by
+  induction h with
+  | rel _ _ h => exact h.ambientIsotopic
+  | refl L => exact AmbientIsotopic.refl L
+  | symm _ _ _ ih => exact ih.symm
+  | trans _ _ _ _ _ ih₁ ih₂ => exact ih₁.trans ih₂
 
 end QOU.MathlibExt.PL
