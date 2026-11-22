@@ -29,8 +29,9 @@ So with the proton on strands `0–2` only the two four-dimensional weight space
 
   `F(O₊) = W_B 1 1 + W_B 2 2 + W_B 3 3`,   `F(O₋) = −(W_A 0 0 + W_A 1 1 + W_A 2 2)`.
 
-This reduction is stated in the docstring, not formalised here. The theorems below start from
-these weight-space expressions.
+This reduction is proved for any word in `F16_reduction` (last section), where `F(O₊)`, `F(O₋)`
+are defined directly on the sixteen-dimensional space; `capL_S_full` states the capture value
+there. The placement mirror (proton on strands `1–3`) is proved on the weight spaces only.
 
 **Results (generic field `R`, `q ≠ 0`, `q⁴ + q² + 1 ≠ 0`).**
 * `S_eq_entry_diff`: `S = F(O₊) + F(O₋) = W_A 3 3 − W_B 0 0` for every braid word. So the
@@ -808,5 +809,212 @@ theorem capL_S_add_capR_S (q : R) (hq : q ≠ 0) (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0) 
       + ((wordB q capR 0 0 + wordB q capR 1 1 + wordB q capR 2 2)
         - (wordA q capR 1 1 + wordA q capR 2 2 + wordA q capR 3 3)) = 0 := by
   rw [capL_S q hq h3, capR_S q hq h3]; ring
+
+
+
+/-! ### The full sixteen-dimensional space: the weight-space reduction (D1)
+
+Basis states of `(C²)^{⊗4}` are indexed by `s : Fin 16`; bit `j` of `s` is the spin on strand `j`
+(`false` = zero, `true` = one). `gen16 q i` is `Ř` on strands `i, i + 1` exactly as in the module
+docstring. The one-zero states are `idxA k` (the zero on strand `k`) and the one-one states are
+`idxB k` (the one on strand `3 - k`). -/
+
+/-- `Ř` on strands `i, i+1` of `(C²)^{⊗4}`, as a `16 × 16` matrix (column `s` is `Ř e_s`). -/
+def gen16 (q : R) (i : ℕ) : Matrix (Fin 16) (Fin 16) R := fun t s =>
+  if s.val.testBit i = s.val.testBit (i + 1) then (if t = s then q else 0)
+  else if s.val.testBit i = false then (if t.val = s.val ^^^ (3 <<< i) then 1 else 0)
+  else (if t.val = s.val ^^^ (3 <<< i) then 1 else 0) + (if t = s then q - q⁻¹ else 0)
+
+/-- A letter on the full space; the inverse crossing is `σ_i⁻¹ = σ_i − h` (Hecke relation). -/
+def g16 (q : R) : Letter → Matrix (Fin 16) (Fin 16) R
+  | (i, false) => gen16 q i.val
+  | (i, true) => gen16 q i.val - (q - q⁻¹) • 1
+
+/-- A braid word on the full space. -/
+def word16 (q : R) : List Letter → Matrix (Fin 16) (Fin 16) R
+  | [] => 1
+  | l :: w => g16 q l * word16 q w
+
+/-- The zero on strand `k`. -/
+def idxA : Fin 4 → Fin 16 := ![14, 13, 11, 7]
+/-- The one on strand `3 - k`. -/
+def idxB : Fin 4 → Fin 16 := ![8, 4, 2, 1]
+
+/-- Inclusion of the one-zero weight space. -/
+def EA : Matrix (Fin 16) (Fin 4) R := fun s k => if s = idxA k then 1 else 0
+/-- Inclusion of the one-one weight space. -/
+def EB : Matrix (Fin 16) (Fin 4) R := fun s k => if s = idxB k then 1 else 0
+
+theorem mul_EA (M : Matrix (Fin 16) (Fin 16) R) (s : Fin 16) (k : Fin 4) :
+    (M * (EA : Matrix (Fin 16) (Fin 4) R)) s k = M s (idxA k) := by simp [Matrix.mul_apply, EA]
+
+theorem mul_EB (M : Matrix (Fin 16) (Fin 16) R) (s : Fin 16) (k : Fin 4) :
+    (M * (EB : Matrix (Fin 16) (Fin 4) R)) s k = M s (idxB k) := by simp [Matrix.mul_apply, EB]
+
+theorem EA_mul_apply (M : Matrix (Fin 4) (Fin 4) R) (k : Fin 4) :
+    ((EA : Matrix (Fin 16) (Fin 4) R) * M) (idxA k) k = M k k := by
+  simp only [Matrix.mul_apply, Fin.sum_univ_four, EA]
+  fin_cases k <;> simp [idxA]
+
+theorem EB_mul_apply (M : Matrix (Fin 4) (Fin 4) R) (k : Fin 4) :
+    ((EB : Matrix (Fin 16) (Fin 4) R) * M) (idxB k) k = M k k := by
+  simp only [Matrix.mul_apply, Fin.sum_univ_four, EB]
+  fin_cases k <;> simp [idxB]
+
+theorem embA0 (q : R) : gen16 q 0 * EA = EA * A0 q := by
+  ext s k
+  rw [mul_EA]
+  simp only [Matrix.mul_apply, Fin.sum_univ_four]
+  fin_cases s <;> fin_cases k <;> simp +decide [gen16, EA, A0]
+
+theorem A0i_eq (q : R) (hq : q ≠ 0) : A0i q = A0 q - (q - q⁻¹) • 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [A0, A0i]
+
+theorem embA1 (q : R) : gen16 q 1 * EA = EA * A1 q := by
+  ext s k
+  rw [mul_EA]
+  simp only [Matrix.mul_apply, Fin.sum_univ_four]
+  fin_cases s <;> fin_cases k <;> simp +decide [gen16, EA, A1]
+
+theorem A1i_eq (q : R) (hq : q ≠ 0) : A1i q = A1 q - (q - q⁻¹) • 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [A1, A1i]
+
+theorem embA2 (q : R) : gen16 q 2 * EA = EA * A2 q := by
+  ext s k
+  rw [mul_EA]
+  simp only [Matrix.mul_apply, Fin.sum_univ_four]
+  fin_cases s <;> fin_cases k <;> simp +decide [gen16, EA, A2]
+
+theorem A2i_eq (q : R) (hq : q ≠ 0) : A2i q = A2 q - (q - q⁻¹) • 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [A2, A2i]
+
+theorem embB0 (q : R) : gen16 q 0 * EB = EB * B0 q := by
+  ext s k
+  rw [mul_EB]
+  simp only [Matrix.mul_apply, Fin.sum_univ_four]
+  fin_cases s <;> fin_cases k <;> simp +decide [gen16, EB, B0]
+
+theorem B0i_eq (q : R) (hq : q ≠ 0) : B0i q = B0 q - (q - q⁻¹) • 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [B0, B0i]
+
+theorem embB1 (q : R) : gen16 q 1 * EB = EB * B1 q := by
+  ext s k
+  rw [mul_EB]
+  simp only [Matrix.mul_apply, Fin.sum_univ_four]
+  fin_cases s <;> fin_cases k <;> simp +decide [gen16, EB, B1]
+
+theorem B1i_eq (q : R) (hq : q ≠ 0) : B1i q = B1 q - (q - q⁻¹) • 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [B1, B1i]
+
+theorem embB2 (q : R) : gen16 q 2 * EB = EB * B2 q := by
+  ext s k
+  rw [mul_EB]
+  simp only [Matrix.mul_apply, Fin.sum_univ_four]
+  fin_cases s <;> fin_cases k <;> simp +decide [gen16, EB, B2]
+
+theorem B2i_eq (q : R) (hq : q ≠ 0) : B2i q = B2 q - (q - q⁻¹) • 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [B2, B2i]
+
+theorem embA_letter (q : R) (hq : q ≠ 0) (l : Letter) :
+    g16 q l * EA = EA * gA q l := by
+  obtain ⟨i, b⟩ := l
+  fin_cases i <;> cases b <;> simp only [g16, gA]
+  · exact embA0 q
+  · rw [A0i_eq q hq, Matrix.sub_mul, Matrix.smul_mul, Matrix.one_mul, embA0 q, Matrix.mul_sub,
+      Matrix.mul_smul, Matrix.mul_one]
+  · exact embA1 q
+  · rw [A1i_eq q hq, Matrix.sub_mul, Matrix.smul_mul, Matrix.one_mul, embA1 q, Matrix.mul_sub,
+      Matrix.mul_smul, Matrix.mul_one]
+  · exact embA2 q
+  · rw [A2i_eq q hq, Matrix.sub_mul, Matrix.smul_mul, Matrix.one_mul, embA2 q, Matrix.mul_sub,
+      Matrix.mul_smul, Matrix.mul_one]
+
+theorem embA_word (q : R) (hq : q ≠ 0) (w : List Letter) :
+    word16 q w * EA = EA * wordA q w := by
+  induction w with
+  | nil => simp [word16, wordA]
+  | cons l w ih =>
+    simp only [word16, wordA]
+    rw [Matrix.mul_assoc, ih, ← Matrix.mul_assoc, embA_letter q hq l, Matrix.mul_assoc]
+
+/-- The diagonal of a word on the full space, at a weight-space state, is the weight-space diagonal. -/
+theorem diagA (q : R) (hq : q ≠ 0) (w : List Letter) (k : Fin 4) :
+    word16 q w (idxA k) (idxA k) = wordA q w k k := by
+  rw [← mul_EA (word16 q w) (idxA k) k, embA_word q hq w, EA_mul_apply]
+
+theorem embB_letter (q : R) (hq : q ≠ 0) (l : Letter) :
+    g16 q l * EB = EB * gB q l := by
+  obtain ⟨i, b⟩ := l
+  fin_cases i <;> cases b <;> simp only [g16, gB]
+  · exact embB0 q
+  · rw [B0i_eq q hq, Matrix.sub_mul, Matrix.smul_mul, Matrix.one_mul, embB0 q, Matrix.mul_sub,
+      Matrix.mul_smul, Matrix.mul_one]
+  · exact embB1 q
+  · rw [B1i_eq q hq, Matrix.sub_mul, Matrix.smul_mul, Matrix.one_mul, embB1 q, Matrix.mul_sub,
+      Matrix.mul_smul, Matrix.mul_one]
+  · exact embB2 q
+  · rw [B2i_eq q hq, Matrix.sub_mul, Matrix.smul_mul, Matrix.one_mul, embB2 q, Matrix.mul_sub,
+      Matrix.mul_smul, Matrix.mul_one]
+
+theorem embB_word (q : R) (hq : q ≠ 0) (w : List Letter) :
+    word16 q w * EB = EB * wordB q w := by
+  induction w with
+  | nil => simp [word16, wordB]
+  | cons l w ih =>
+    simp only [word16, wordB]
+    rw [Matrix.mul_assoc, ih, ← Matrix.mul_assoc, embB_letter q hq l, Matrix.mul_assoc]
+
+/-- The diagonal of a word on the full space, at a weight-space state, is the weight-space diagonal. -/
+theorem diagB (q : R) (hq : q ≠ 0) (w : List Letter) (k : Fin 4) :
+    word16 q w (idxB k) (idxB k) = wordB q w k k := by
+  rw [← mul_EB (word16 q w) (idxB k) k, embB_word q hq w, EB_mul_apply]
+
+/-! ### The functional on the full space -/
+
+/-- Number of zeros (`false` bits) among strands `0, …, n-1` of the basis state `s`. -/
+def zerosBelow (n : ℕ) (s : Fin 16) : ℕ := ((List.range n).filter (fun j => !s.val.testBit j)).length
+/-- Table of `zerosBelow 4`, checked by `decide`. -/
+def zTab : Fin 16 → ℕ := ![4, 3, 3, 2, 3, 2, 2, 1, 3, 2, 2, 1, 2, 1, 1, 0]
+/-- Table of `zerosBelow 3`. -/
+def pTab : Fin 16 → ℕ := ![3, 2, 2, 1, 2, 1, 1, 0, 3, 2, 2, 1, 2, 1, 1, 0]
+theorem zeros4_eq : ∀ s, zerosBelow 4 s = zTab s := by decide
+theorem zeros3_eq : ∀ s, zerosBelow 3 s = pTab s := by decide
+/-- `F(O₊) = tr(T³ · W · Π_{O₊})` on the full space: `O₊` = the three proton strands carry two
+zeros, `T³ = (#0 − #1)/2 = z − 2`. -/
+def Fplus16 (W : Matrix (Fin 16) (Fin 16) R) : R :=
+  ∑ s, if zerosBelow 3 s = 2 then (((zerosBelow 4 s : ℕ) : R) - 2) * W s s else 0
+/-- `F(O₋)`: the proton strands carry one zero. -/
+def Fminus16 (W : Matrix (Fin 16) (Fin 16) R) : R :=
+  ∑ s, if zerosBelow 3 s = 1 then (((zerosBelow 4 s : ℕ) : R) - 2) * W s s else 0
+theorem Fplus16_eq (W : Matrix (Fin 16) (Fin 16) R) : Fplus16 W = W 1 1 + W 2 2 + W 4 4 := by
+  simp only [Fplus16, zeros4_eq, zeros3_eq, Fin.sum_univ_succ, Fin.sum_univ_zero]
+  simp [zTab, pTab, Fin.succ]
+  norm_num; ring
+theorem Fminus16_eq (W : Matrix (Fin 16) (Fin 16) R) : Fminus16 W = -(W 14 14 + W 13 13 + W 11 11) := by
+  simp only [Fminus16, zeros4_eq, zeros3_eq, Fin.sum_univ_succ, Fin.sum_univ_zero]
+  simp [zTab, pTab, Fin.succ]
+  norm_num
+
+/-- **D1 (weight reduction), proton on strands `0–2`.** On the full sixteen-dimensional space,
+`F(O₊) + F(O₋)` of any braid word equals the weight-space expression used above. -/
+theorem F16_reduction (q : R) (hq : q ≠ 0) (w : List Letter) :
+    Fplus16 (word16 q w) + Fminus16 (word16 q w) = FplusL (wordB q w) + FminusL (wordA q w) := by
+  have b1 := diagB q hq w 3
+  have b2 := diagB q hq w 2
+  have b3 := diagB q hq w 1
+  have a0 := diagA q hq w 0
+  have a1 := diagA q hq w 1
+  have a2 := diagA q hq w 2
+  simp only [idxA, idxB, Matrix.cons_val] at b1 b2 b3 a0 a1 a2
+  rw [Fplus16_eq, Fminus16_eq, FplusL, FminusL]
+  rw [b1, b2, b3, a0, a1, a2]
+  ring
+
+/-- **The capture asymmetry on the full space:** `S(W_L) = −h²[3]_q/q²`, now with no
+weight-space step left to the docstring. -/
+theorem capL_S_full (q : R) (hq : q ≠ 0) (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0) :
+    Fplus16 (word16 q capL) + Fminus16 (word16 q capL)
+      = -((q - q⁻¹) ^ 2 * (q ^ 2 + 1 + q⁻¹ ^ 2)) / q ^ 2 := by
+  rw [F16_reduction q hq, capL_S_h q hq h3]
 
 end QOU.BraidsAndKnots.HydrogenCaptureWeightSpace
