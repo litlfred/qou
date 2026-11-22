@@ -1472,3 +1472,38 @@ Verdict: not found in the searched class as a full derivation. What is new is th
 (`scalar_insertion_shift`) already makes the scale of any degree-0 insertion. The value then
 depends on a normalisation the corpus does not fix (−2.30 or −0.76 MeV, either side of the
 target); picking one by closeness is forbidden, so neither is adopted.
+
+## §45 The insertion normalisation the corpus forces for α·S (pre-registered 620e397a918)
+
+Owner, 2026-11-22: *"1"*. `PREREGISTRATION-em-normalisation.md`, `mn_em_normalisation_check.py`.
+Both candidate values were known (§44), so this is an adjudication.
+
+**Argument.**
+1. The canonical nucleon mass is the full Markov trace through `canonical_mass.py`, not a
+   weight-block share.
+2. In it p and n carry the same word, so they differ only by strand charges.
+3. `degreeZero_values` gives k₁ on p and (2/3)k₁ − (1/3)k₂ on n.
+4. Ruling A sets k₂ = α, k₁ = 0.
+5. `scalar_insertion_shift` turns the insertion into a·M_QCD.
+
+So E_n − E_p = −(α/3)·M_QCD = **−2.30079 MeV** at q₀ (M_QCD = m_p + 12m_e = 944.40408 MeV from the
+facade, α = 0.0073087). The sector share is the §35 muon map, which is not the canonical functional,
+so the facade rule excludes it. The excluded value (−0.763) is the closer one to the lattice −1.00,
+so the choice runs against closeness, not with it.
+
+Check (P1, exact): QPair takes one value on each weight block (W₂: 0, W₁: −1/3), equal to the
+strand-charge values, so both labellings give the same insertion. P2: α(1) = 1/90, so
+E/M_QCD → −1/270 at q = 1. **This term breaks m_p = m_n at q = 1**, in ratio and in MeV, against
+the working assumption of bean `qou-az9l`.
+
+What is still not forced:
+- Step 5 as a consequence of ℒ: "ℒ ⊃ −αS acts as a scalar insertion on F_Bor" is the §S reading of
+  `QEDHigherOrderCovariance`, not a theorem.
+- k₁ = 0: S has no self-energy, while the lattice −1.00 MeV does. The comparison is between unlike
+  objects.
+- The central U(1) colouring gives k₁ = k₂ = 0 on V³ (`u1Trace_borromean`). The α·S term therefore
+  rests on ruling A, not on that invariant.
+
+Verdict: the normalisation is fixed by the corpus's mass facade (scope: conditional on the step-5
+reading), giving −2.30 MeV. As the electromagnetic part this is 2.3× the lattice value. That is a
+scope (a) miss, not a fit.
