@@ -19,6 +19,8 @@ atlas, `IsManifold 𝓘(ℂ) 1 M`). Then:
   `g ≠ 1` fixes a neighbourhood of a point pointwise. This is the hypothesis `hloc` of
   `ChartStep.isCyclic_stabilizer_of_chart`, which is therefore discharged:
   **`isCyclic_stabilizer_of_faithful`**.
+* **`isCyclic_stabilizer`**: the same with no chart hypothesis at all. A finite group acting
+  faithfully by holomorphic maps on a connected Riemann surface has cyclic point stabilisers.
 
 ## Proof
 
@@ -136,5 +138,43 @@ theorem isCyclic_stabilizer_of_faithful [T2Space M] [ConnectedSpace M] [Faithful
     IsCyclic (MulAction.stabilizer G p) :=
   ChartStep.isCyclic_stabilizer_of_chart φ p hp hφp hchart
     (fun g _ hg => local_effective_of_faithful hhol p g hg)
+
+/-- **Point stabilisers of a finite faithful holomorphic action on a connected Riemann surface
+are cyclic**, with no chart hypothesis: the chart at `p`, translated so that `p ↦ 0`, is used,
+and holomorphy of the coordinate expressions is derived from `MDifferentiable`. -/
+theorem isCyclic_stabilizer [T2Space M] [ConnectedSpace M] [FaithfulSMul G M]
+    [ContinuousConstSMul G M] [Finite G]
+    (hhol : ∀ g : G, MDifferentiable 𝓘(ℂ) 𝓘(ℂ) (fun x : M => g • x)) (p : M) :
+    IsCyclic (MulAction.stabilizer G p) := by
+  set ψ := chartAt ℂ p
+  set c : ℂ := ψ p
+  let φ : OpenPartialHomeomorph M ℂ :=
+    ψ.trans (Homeomorph.addRight (-c)).toOpenPartialHomeomorph
+  have hps : p ∈ ψ.source := mem_chart_source ℂ p
+  have hp : p ∈ φ.source := by simpa [φ] using hps
+  have hφp : φ p = 0 := by simp [φ, c]
+  refine isCyclic_stabilizer_of_faithful hhol φ p hp hφp ?_
+  intro g hg
+  have hgp : g • p = p := hg
+  have hct : c ∈ ψ.target := ψ.map_source hps
+  have hcoord : (fun z => φ (g • φ.symm z)) = fun z => ψ (g • ψ.symm (z + c)) + -c := by
+    funext z; simp [φ, Homeomorph.addRight_symm]
+  rw [hcoord]
+  have hcont : ContinuousAt (fun z : ℂ => g • ψ.symm (z + c)) 0 := by
+    refine (continuous_const_smul g).continuousAt.comp ?_
+    exact (ψ.continuousAt_symm (by simpa using hct)).comp
+      (continuous_id.add continuous_const).continuousAt
+  have hval : g • ψ.symm ((0 : ℂ) + c) = p := by rw [zero_add, ψ.left_inv hps, hgp]
+  have h1 : ∀ᶠ z in 𝓝 (0 : ℂ), g • ψ.symm (z + c) ∈ ψ.source :=
+    hcont.preimage_mem_nhds (by rw [hval]; exact ψ.open_source.mem_nhds hps)
+  have h2 : ∀ᶠ z in 𝓝 (0 : ℂ), z + c ∈ ψ.target := by
+    have hc : ContinuousAt (fun z : ℂ => z + c) 0 := (continuous_id.add continuous_const).continuousAt
+    exact hc.preimage_mem_nhds (by rw [zero_add]; exact ψ.open_target.mem_nhds hct)
+  have h3 : ∀ᶠ z in 𝓝 (0 : ℂ), ∀ᶠ w in 𝓝 z, w + c ∈ ψ.target ∧
+      g • ψ.symm (w + c) ∈ ψ.source := (h2.and h1).eventually_nhds
+  filter_upwards [h3] with z hz
+  obtain ⟨hzt, hzs⟩ := hz.self_of_nhds
+  exact ((differentiableAt_coord (hhol g) p hzt hzs).comp z
+    (differentiableAt_id.add_const c)).add_const (-c)
 
 end QOU.RiemannSurface.IdentityTheorem
