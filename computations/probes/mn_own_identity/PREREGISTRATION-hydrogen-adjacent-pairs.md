@@ -113,3 +113,16 @@ the capture cable, and the gluon-slot shift in L3 are choices, all listed. Every
 enumerated reduced word is reported. No object is chosen for a numerical outcome.
 
 **Pre-registration completed: 2026-11-22T15:14:06Z (UTC), before any computation for this probe.**
+
+## Addendum 2026-11-22 (after the first run; the text above is unchanged)
+
+Owner ruling the same day (`docs/coordination/owner-rulings.md`, PR #9019;
+`docs/audits/2026-11-22-sign-conventions-table.md` §6): **reading A plus right-hand closure is
+canonical**. The vertex at strands (i, i+1) is σ_iσ_{i+1}⁻¹ (larger letter inverted); a bond's side is
+set by closing on the right. Reading B is retired. Consequences for this probe:
+- All results are reported in reading A. Every reading-B number already computed is moved to a section
+  of the `.out.json` labelled `non_canonical_comparison (reading B retired 2026-11-22)` and is not a live
+  alternative. P4 becomes a non-canonical comparison check.
+- The disposal already closes on the right (E_{8→4} closes the rightmost strands). The ruling does not
+  decide the **over/under sign** of the gathering braid (T) or of the closure arc (S); those stay arms.
+- Nothing else in the construction, predictions or decision rule changes.
