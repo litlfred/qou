@@ -255,7 +255,12 @@ _CACHE_DIR = Path(__file__).parent / ".cache" / "hecke_3a_weights"
 
 
 def _cache_key(n: int, top_n: int | None, shape_cap: int | None) -> str:
-    raw = f"{Q0:.10f}|{n}|{top_n}|{shape_cap}".encode()
+    # q is keyed by its EXACT value, `repr(Q0)` (the shortest string that
+    # round-trips the float), not `f"{Q0:.10f}"`: ten decimals separate the
+    # proton and muon pins but not two q that agree to ten digits (issue
+    # #8996, P6, owner approval 2026-11-22). The "v2" tag retires every entry
+    # written under the old key rather than reading it under the new one.
+    raw = f"v2|{type(Q0).__name__}:{Q0!r}|{n}|{top_n}|{shape_cap}".encode()
     return hashlib.sha1(raw).hexdigest()[:16]
 
 
