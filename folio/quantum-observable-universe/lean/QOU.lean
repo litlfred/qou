@@ -310,6 +310,7 @@ import QOU.MathlibExt.PLAffineEquivariance
 import QOU.MathlibExt.PLVertexSlide
 import QOU.MathlibExt.PLAmbientIsotopy
 import QOU.MathlibExt.PLPush
+import QOU.MathlibExt.PLDeltaIsotopy
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
