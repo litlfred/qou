@@ -2,14 +2,16 @@ import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Powerset
 import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.Group.Subgroup.Lattice
+import Mathlib.Tactic.Abel
 
 /-!
 # Algebraic stratification of the Φ_q tower
 
 Narrative anchor for the Hecke-tower / GS-filtration reformulation of
 the Φ_q tower. The JSJ identification is a separate τ-image conjecture
-(see `phi-q-tower-jsj-bridge`); the algebraic stratification stands
-unconditionally.
+(see `phi-q-tower-jsj-bridge`). The algebraic stratification is
+conditional on pentagon ascension only.
 
 The mass formula sums over algebraic strata indexed by subsets
 `S ⊆ {0, …, n-2}`, computed entirely within `H_n(R, q)`:
@@ -63,8 +65,11 @@ universe u
     (no Archimedean leakage).  These witness the algebraic-side
     discipline.
 
-    This statement is **unconditional**: it does *not* depend on
-    `[VolumeConjecture q]` or any τ_arch hypothesis.  Compare
+    The statement does not depend on `[VolumeConjecture q]` or on any
+    τ_arch hypothesis. It does depend on pentagon ascension: the field
+    `pentagon_ascension` carries the vanishing form, and
+    `phi_q_tower_algebraic_stratification_of_regrouping` gives the
+    regrouping form.  Compare
     `QOU.PhiQJSJ.bridge` (the conjectural Archimedean bridge), which
     *does* depend on `[VolumeConjecture q]`. -/
 class PhiQTowerAlgebraicStratification (R : Type u) [CommRing R] where
@@ -177,6 +182,80 @@ contributes `1`, not `0`. -/
 theorem phiQTrunc_zero {R : Type u} [CommRing R] (q : R) (N : ℕ) :
     phiQTrunc q 0 N = 1 := by
   simp [phiQTrunc]
+
+/-! ### Pentagon ascension as a regrouping
+
+The narrative's ascension says that a level-3 term rewrites as factors at
+lower strata plus a residual at the next jet level. A Lean statement needs three
+pieces:
+
+* a correction `δ S` added to each stratum with `|S| ≤ 2`;
+* a submodule `J` of residuals that belong to jet level `n + 1`;
+* the hypothesis that the level-≥3 sum, minus the total correction, lies in `J`.
+
+Under that hypothesis the mass agrees, modulo `J`, with the corrected strata
+with `|S| ≤ 2`. Taking `δ = 0` and `J = ⊥` gives back the vanishing form
+`phi_q_tower_algebraic_stratification_of_pentagon`.
+
+The hypothesis alone carries no content: every sum satisfies it with `δ = 0`
+and `J = ⊤`. Its content is the choice of `δ` and `J`. Building `J` needs the
+tower across jet levels, and `δ` needs the Faddeev–Kashaev pentagon. Neither
+exists in the corpus, so the regrouping stays a hypothesis.
+-/
+
+/-- Strata with `|S| ≤ 2` sum as `g ∅ + Σ_{|S|=1} g + Σ_{|S|=2} g`. -/
+theorem sum_low_strata {R : Type u} [AddCommMonoid R] (U : Finset ℕ)
+    (g : Finset ℕ → R) :
+    ∑ S ∈ U.powerset.filter (fun S => S.card ≤ 2), g S
+      = g ∅ + ∑ S ∈ U.powersetCard 1, g S + ∑ S ∈ U.powersetCard 2, g S := by
+  classical
+  have h := phi_q_tower_algebraic_stratification_of_pentagon U
+    (fun S => if S.card ≤ 2 then g S else 0)
+    (fun S _ hS => by simp only [if_neg (by omega : ¬ S.card ≤ 2)])
+  rw [← Finset.sum_filter] at h
+  rw [h]
+  have e : ∀ k ≤ 2, ∑ S ∈ U.powersetCard k, (if S.card ≤ 2 then g S else 0)
+      = ∑ S ∈ U.powersetCard k, g S := fun k hk =>
+    Finset.sum_congr rfl fun S hS => by
+      rw [(Finset.mem_powersetCard.mp hS).2, if_pos hk]
+  rw [e 1 (by decide), e 2 (by decide)]
+  simp
+
+/-- **Algebraic stratification, given pentagon ascension as a regrouping.**
+If the level-≥3 strata sum, minus a correction `δ` on the strata with
+`|S| ≤ 2`, lies in the next-jet-level residual submodule `J`, then the full
+mass is congruent mod `J` to the corrected low strata:
+
+    Σ_{S ⊆ U} f S − ((f+δ) ∅ + Σ_{|S|=1} (f+δ) + Σ_{|S|=2} (f+δ)) ∈ J. -/
+theorem phi_q_tower_algebraic_stratification_of_regrouping
+    {R : Type u} [AddCommGroup R] (U : Finset ℕ) (f δ : Finset ℕ → R)
+    (J : AddSubgroup R)
+    (hreg : ∑ S ∈ U.powerset.filter (fun S => ¬ S.card ≤ 2), f S
+        - ∑ S ∈ U.powerset.filter (fun S => S.card ≤ 2), δ S ∈ J) :
+    ∑ S ∈ U.powerset, f S
+      - ((f ∅ + δ ∅) + ∑ S ∈ U.powersetCard 1, (f S + δ S)
+          + ∑ S ∈ U.powersetCard 2, (f S + δ S)) ∈ J := by
+  classical
+  rw [← sum_low_strata U (fun S => f S + δ S), Finset.sum_add_distrib,
+    ← Finset.sum_filter_add_sum_filter_not U.powerset (fun S => S.card ≤ 2) f]
+  convert hreg using 1
+  abel
+
+/-- The vanishing form is the case `δ = 0`, `J = ⊥` of the regrouping form. -/
+theorem stratification_vanishing_of_regrouping
+    {R : Type u} [AddCommGroup R] (U : Finset ℕ) (f : Finset ℕ → R)
+    (hpent : ∀ S ⊆ U, 3 ≤ S.card → f S = 0) :
+    ∑ S ∈ U.powerset, f S
+      - (f ∅ + ∑ S ∈ U.powersetCard 1, f S + ∑ S ∈ U.powersetCard 2, f S) ∈
+        (⊥ : AddSubgroup R) := by
+  classical
+  have h := phi_q_tower_algebraic_stratification_of_regrouping U f 0 ⊥ (by
+    rw [AddSubgroup.mem_bot]
+    simp only [Pi.zero_apply, Finset.sum_const_zero, sub_zero]
+    refine Finset.sum_eq_zero fun S hS => ?_
+    obtain ⟨hsub, hc⟩ := Finset.mem_filter.mp hS
+    exact hpent S (Finset.mem_powerset.mp hsub) (by omega))
+  simpa using h
 
 /-! ### Removed 2026-08-30 — self-assuming projections
 
