@@ -25,7 +25,10 @@ set_option autoImplicit false
   weight is the least.
 * `mem_of_pos_of_eq` — two chain representations of one point use the same faces of positive
   weight.
-* `eq_zero_of_not_subset` — a face of positive weight lies in any face whose hull contains the point.
+* `eq_zero_of_not_subset` — a face of positive weight lies in any face whose hull contains the
+  point.
+* `baryComplex K` — the barycentric subdivision is a simplicial complex: its faces are the images
+  under `bary` of the chains of faces of `K`.
 -/
 
 namespace QOU.MathlibExt.PL
@@ -230,5 +233,114 @@ theorem eq_zero_of_not_subset {T F : Finset E} (hT : AffineIndependent ℝ ((↑
   have hcard : (0 : ℝ) < σ.card := Nat.cast_pos.mpr (hC σ hσ).2.card_pos
   rw [div_le_iff₀ hcard, zero_mul] at h1
   exact le_antisymm h1 (hμ σ hσ)
+
+/-- Points of the hull of a chain's barycentres are chain combinations. -/
+theorem mem_convexHull_image_bary_iff {T : Finset E} (hT : AffineIndependent ℝ ((↑) : T → E))
+    {C : Finset (Finset E)} (hC : ∀ σ ∈ C, σ ⊆ T ∧ σ.Nonempty)
+    (hch : ∀ σ ∈ C, ∀ τ ∈ C, σ ⊆ τ ∨ τ ⊆ σ) {x : E} :
+    x ∈ convexHull ℝ ((C.image bary : Finset E) : Set E) ↔
+      ∃ μ : Finset E → ℝ, (∀ σ ∈ C, 0 ≤ μ σ) ∧ ∑ σ ∈ C, μ σ = 1 ∧
+        x = ∑ σ ∈ C, μ σ • bary σ := by
+  constructor
+  · intro hx
+    obtain ⟨w, hw0, hw1, hwx⟩ := Finset.mem_convexHull'.mp hx
+    have hinj := (affineIndependent_chain_image hT bary
+      (fun σ _ hne => bary_eq_centerMass hne) C hC hch).2
+    refine ⟨fun σ => w (bary σ), fun σ hσ => hw0 _ (mem_image_of_mem _ hσ), ?_, ?_⟩
+    · rw [← hw1, sum_image fun a ha b hb h => hinj ha hb h]
+    · rw [← hwx, sum_image fun a ha b hb h => hinj ha hb h]
+  · rintro ⟨μ, hμ, hμ1, rfl⟩
+    exact (convex_convexHull ℝ _).sum_mem hμ hμ1 fun σ hσ =>
+      subset_convexHull ℝ _ (mem_coe.mpr (mem_image_of_mem _ hσ))
+
+lemma convexHull_image_bary_subset {C : Finset (Finset E)} {M : Finset E}
+    (hC : ∀ σ ∈ C, σ ⊆ M ∧ σ.Nonempty) :
+    convexHull ℝ ((C.image bary : Finset E) : Set E) ⊆ convexHull ℝ (M : Set E) :=
+  convexHull_min (fun y hy => by
+    obtain ⟨σ, hσ, rfl⟩ := mem_image.mp (mem_coe.mp hy)
+    exact convexHull_mono (coe_subset.mpr (hC σ hσ).1) (bary_mem_convexHull (hC σ hσ).2))
+    (convex_convexHull ℝ _)
+
+/-- A **chain of faces** of `K`: nonempty, totally ordered by inclusion. -/
+def IsFaceChain (K : SimplicialComplex ℝ E) (C : Finset (Finset E)) : Prop :=
+  C.Nonempty ∧ (∀ σ ∈ C, σ ∈ K.faces) ∧ ∀ σ ∈ C, ∀ τ ∈ C, σ ⊆ τ ∨ τ ⊆ σ
+
+/-- **The barycentric subdivision** of `K`. -/
+noncomputable def baryComplex (K : SimplicialComplex ℝ E) : SimplicialComplex ℝ E where
+  faces := {s | ∃ C, IsFaceChain K C ∧ s = C.image bary}
+  empty_notMem := by
+    rintro ⟨C, ⟨hne, -, -⟩, h⟩
+    exact (hne.image bary).ne_empty h.symm
+  indep := by
+    rintro s ⟨C, ⟨hne, hK, hch⟩, rfl⟩
+    obtain ⟨M, hMC, hM⟩ := exists_max_of_chain hne hch
+    exact (affineIndependent_chain_image (K.indep (hK M hMC)) bary
+      (fun σ _ h => bary_eq_centerMass h) C
+      (fun σ hσ => ⟨hM σ hσ, K.nonempty_of_mem_faces (hK σ hσ)⟩) hch).1
+  down_closed := by
+    rintro s t ⟨C, ⟨hne, hK, hch⟩, rfl⟩ hts ht
+    refine ⟨C.filter (fun σ => bary σ ∈ t), ⟨?_, fun σ hσ => hK σ (mem_filter.mp hσ).1,
+      fun σ hσ τ hτ => hch σ (mem_filter.mp hσ).1 τ (mem_filter.mp hτ).1⟩, ?_⟩
+    · obtain ⟨y, hy⟩ := nonempty_iff_ne_empty.mpr ht
+      obtain ⟨σ, hσ, rfl⟩ := mem_image.mp (hts hy)
+      exact ⟨σ, mem_filter.mpr ⟨hσ, hy⟩⟩
+    · ext y
+      constructor
+      · intro hy
+        obtain ⟨σ, hσ, rfl⟩ := mem_image.mp (hts hy)
+        exact mem_image.mpr ⟨σ, mem_filter.mpr ⟨hσ, hy⟩, rfl⟩
+      · intro hy
+        obtain ⟨σ, hσ, rfl⟩ := mem_image.mp hy
+        exact (mem_filter.mp hσ).2
+  inter_subset_convexHull := by
+    rintro s t ⟨C, ⟨hneC, hKC, hchC⟩, rfl⟩ ⟨D, ⟨hneD, hKD, hchD⟩, rfl⟩ x ⟨hxC, hxD⟩
+    obtain ⟨M1, hM1C, hM1⟩ := exists_max_of_chain hneC hchC
+    obtain ⟨M2, hM2D, hM2⟩ := exists_max_of_chain hneD hchD
+    have hCT : ∀ σ ∈ C, σ ⊆ M1 ∧ σ.Nonempty :=
+      fun σ hσ => ⟨hM1 σ hσ, K.nonempty_of_mem_faces (hKC σ hσ)⟩
+    have hDT : ∀ σ ∈ D, σ ⊆ M2 ∧ σ.Nonempty :=
+      fun σ hσ => ⟨hM2 σ hσ, K.nonempty_of_mem_faces (hKD σ hσ)⟩
+    have hT1 := K.indep (hKC M1 hM1C)
+    have hT2 := K.indep (hKD M2 hM2D)
+    have hxF := K.inter_subset_convexHull (hKC M1 hM1C) (hKD M2 hM2D)
+      ⟨convexHull_image_bary_subset hCT hxC, convexHull_image_bary_subset hDT hxD⟩
+    rw [← coe_inter] at hxF
+    obtain ⟨μ, hμ, hμ1, rfl⟩ := (mem_convexHull_image_bary_iff hT1 hCT hchC).mp hxC
+    obtain ⟨ν, hν, hν1, hxeq⟩ := (mem_convexHull_image_bary_iff hT2 hDT hchD).mp hxD
+    have hFne : M1 ∩ M2 ≠ ∅ := by
+      rintro h
+      rw [h, coe_empty, convexHull_empty] at hxF
+      exact hxF
+    have hFK : M1 ∩ M2 ∈ K.faces := K.down_closed (hKC M1 hM1C) inter_subset_left hFne
+    have hTF := K.indep hFK
+    set C' := C.filter (fun σ => μ σ ≠ 0) with hC'def
+    set D' := D.filter (fun σ => ν σ ≠ 0) with hD'def
+    have hC'F : ∀ σ ∈ C', σ ⊆ M1 ∩ M2 ∧ σ.Nonempty := fun σ hσ => by
+      obtain ⟨hσC, hσ0⟩ := mem_filter.mp hσ
+      refine ⟨?_, (hCT σ hσC).2⟩
+      by_contra h
+      exact hσ0 (eq_zero_of_not_subset hT1 inter_subset_left hCT hμ hμ1 hxF hσC h)
+    have hD'F : ∀ σ ∈ D', σ ⊆ M1 ∩ M2 ∧ σ.Nonempty := fun σ hσ => by
+      obtain ⟨hσD, hσ0⟩ := mem_filter.mp hσ
+      refine ⟨?_, (hDT σ hσD).2⟩
+      by_contra h
+      exact hσ0 (eq_zero_of_not_subset hT2 inter_subset_right hDT hν hν1 (hxeq ▸ hxF) hσD h)
+    have hsC : ∑ σ ∈ C', μ σ • bary σ = ∑ σ ∈ C, μ σ • bary σ :=
+      sum_filter_of_ne fun σ _ h hμ0 => h (by rw [hμ0, zero_smul])
+    have hsD : ∑ σ ∈ D', ν σ • bary σ = ∑ σ ∈ D, ν σ • bary σ :=
+      sum_filter_of_ne fun σ _ h hν0 => h (by rw [hν0, zero_smul])
+    have hμ1' : ∑ σ ∈ C', μ σ = 1 := by rw [hC'def, sum_filter_ne_zero, hμ1]
+    have hν1' : ∑ σ ∈ D', ν σ = 1 := by rw [hD'def, sum_filter_ne_zero, hν1]
+    have key : ∀ σ ∈ C', σ ∈ D := fun σ hσ => by
+      obtain ⟨hσC, hσ0⟩ := mem_filter.mp hσ
+      exact (mem_filter.mp (mem_of_pos_of_eq hTF hC'F hD'F
+        (fun a ha b hb => hchC a (mem_filter.mp ha).1 b (mem_filter.mp hb).1)
+        (fun a ha b hb => hchD a (mem_filter.mp ha).1 b (mem_filter.mp hb).1)
+        (fun a ha => hμ a (mem_filter.mp ha).1) (fun a ha => hν a (mem_filter.mp ha).1)
+        hμ1' hν1' (by rw [hsC, hsD, hxeq]) hσ (lt_of_le_of_ne (hμ σ hσC) (Ne.symm hσ0)))).1
+    rw [← hsC]
+    exact (convex_convexHull ℝ _).sum_mem (fun σ hσ => hμ σ (mem_filter.mp hσ).1) hμ1'
+      fun σ hσ => subset_convexHull ℝ _ ⟨mem_coe.mpr (mem_image_of_mem _ (mem_filter.mp hσ).1),
+        mem_coe.mpr (mem_image_of_mem _ (key σ hσ))⟩
 
 end QOU.MathlibExt.PL
