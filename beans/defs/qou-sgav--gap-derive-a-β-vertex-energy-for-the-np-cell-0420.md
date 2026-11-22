@@ -3,8 +3,9 @@
 title: 'GAP: derive a β-vertex energy for the n–p cell (0.420 MeV under placement B)'
 status: todo
 type: task
+priority: normal
 created_at: 2026-11-22T09:18:20Z
-updated_at: 2026-11-22T09:18:20Z
+updated_at: 2026-11-22T09:24:24Z
 parent: qou-wxhi
 ---
 
@@ -34,3 +35,6 @@ alone, for example one built from β_Bor on the quark strands (premise G) togeth
 strand, or an O(h) vertex term. Any candidate must be preregistered
 (`computations/probes/qbeta_energy_map/PREREGISTRATION.md`) and must fix its sign by derivation,
 not by tensor-order choice.
+
+
+2026-11-22: consistent with the owner working assumption m_p = m_n at q = 1 (bean qou-az9l) in E₀ units: the cell 2 ln q and both vertex splits vanish at q = 1. Any candidate vertex term must also vanish at q = 1 unless it is an α_EM term (audit §30).
