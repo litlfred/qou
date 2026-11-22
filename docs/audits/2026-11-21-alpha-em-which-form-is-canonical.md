@@ -655,3 +655,50 @@ negative for this construction alone. Caveat stated in advance: `q₀` itself is
 a fail is still informative. Expected beforehand: each `χ_λ` of a length-6 word is a
 Laurent polynomial of degree ≤ 6 in `q`, and `q₀⁶ ≈ 1.87`, so `R` near 1836 would need
 `E(β_e)` close to a zero. A fail is the likely outcome.
+
+## 25. Results: `ι` is the transpose; the mass reading fails both tests (2026-11-22)
+
+`QOU/AlphaEM/IotaEvenMass.lean`, lean-direct exit 0, `#print axioms`
+`[propext, Classical.choice, Quot.sound]`.
+
+**Why "`ι`-odd" (the §23 question).** `tauIota_eq_tau_transpose`: on `H₃(q)`, `ι` acts on
+block weights by the transpose `λ ↦ λ'`, swapping `(3) ↔ (1³)` and fixing `(2,1)`. This is
+the Iwahori–Goldman involution of the Hecke algebra, which sends `χ_λ` to `χ_λ'` in every
+rank `[geckpfeiffer2000]`. So "α_em is `ι`-odd" says the same thing as "α_em is
+antisymmetric under transposing the Young diagram". That is a restatement, not a
+derivation: why α_em should carry that antisymmetry is still open.
+
+The restatement has one consequence worth recording. The `ι`-odd functionals are spanned by
+`χ_λ − χ_λ'` over non-self-conjugate pairs, so their dimension is
+`(p(n) − sc(n))/2` (`p` = partitions, `sc` = self-conjugate ones):
+
+| n | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|
+| dim of `ι`-odd functionals | 1 | 1 | 2 | 3 | 5 | 7 |
+
+So the uniqueness in `iota_odd_iff` (the `(1, 0, −1)` weights are forced up to scale) holds
+only for `n ≤ 3`. On `H₄` and above, "`ι`-odd" no longer picks a single functional, and a
+second condition would be needed. (Counts by direct enumeration; the transpose action in
+rank ≥ 4 is cited, not formalized here.)
+
+**Test A: equal up to the sign `(−1)^{|w|}`.** `iotaEven_flip`: any `ι`-even block
+functional satisfies `E(Cw) = (−1)^{|w|} E(w)`. The electron `σ₀σ₁σ₀` has length 3, so
+`E(positron) = −E(electron)` (`electron_iotaEven_flip`). Read literally, the positron
+would have negative mass. The reading survives only if mass is `|E|`, which is an added
+choice, not something the trace supplies. Scope (b) for the signed reading (invariant:
+`E(Cw) = (−1)^{|w|} E(w)`, proved for all words).
+
+**Test B: FAIL.** `computations/audits/mass_iota_even_ratio_probe.py`, mpmath 70 dps,
+proton `q₀ = 1.1099785827513808…`:
+
+| quantity | value |
+|---|---|
+| `E(σ₀σ₁σ₀)` | 0.160798936000410727 |
+| `E((σ₀σ₁⁻¹)³)` | 0.998562163836787266 |
+| `R = |E(β_p)|/|E(β_e)|` | 6.21000479651330933 |
+| `R / (m_p/m_e)` | 0.00338 |
+
+Off by a factor of about 296. Scope (a): this construction alone does not give the
+proton/electron ratio. It does not exclude `E` as one factor of a larger mass formula.
+The probe also re-checks Test A numerically (`E(Cβ_e) = −E(β_e)` to 60 digits). A side
+fact: the Borromean core has writhe 0, so its `ι`-odd part is exactly 0 (`O(β_p) = 0`).
