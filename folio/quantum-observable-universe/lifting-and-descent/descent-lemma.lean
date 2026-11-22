@@ -9,12 +9,13 @@ import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Algebra.Star.Subalgebra
 
 /-!
-# QOU.DescentLemma — Descent preserves the quantum observable universe
+# QOU.DescentLemma — Descent along the brane tower
 
 **Lemma** ([`lem:descent`](descent-lemma.md)).
 
-The restriction morphism `rₙ : Aₙ → A_{n-1}` yields a Frobenius–Hopf object
-such that `(C, A_{n-1}, τ)` is again a QOU. The induced descent homomorphism
+The restriction morphism `rₙ : Aₙ → A_{n-1}` is split by `ℓₙ`; at `n = 1` it
+returns the original QOU `(C, A, τ)`, and at `n ≥ 2` only the Hopf structure is
+recovered (owner ruling 2026-11-22: no Frobenius form at tower levels). The induced descent homomorphism
 `𝔡ₙ : End_C(Aₙ) → End_C(A_{n-1})` is a **surjective algebra homomorphism**,
 and it **intertwines the `G_q`-actions** across levels `n` and `n − 1`.
 
