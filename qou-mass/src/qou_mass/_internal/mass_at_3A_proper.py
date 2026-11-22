@@ -317,6 +317,21 @@ def _q_cache_key(q):
     return (type(q).__name__, repr(q))
 
 
+def _q_disk_tag(q) -> str:
+    """Exact identity of a numeric q for a disk-cache filename: 16 hex of
+    sha256 over its type and exact binary value. A float is keyed by
+    `float.hex`; an mpf by its `_mpf_` tuple and the current `mp.prec`, since
+    the matrices built at q also carry that precision."""
+    import hashlib
+    if hasattr(q, "_mpf_"):
+        from mpmath import mp as _mp
+        sign, man, exp, bc = q._mpf_
+        exact = f"mpf:{sign}:{int(man):x}:{exp}:{bc}:prec{_mp.prec}"
+    else:
+        exact = f"{type(q).__name__}:{float(q).hex()}"
+    return hashlib.sha256(exact.encode()).hexdigest()[:16]
+
+
 def _cached_seminormal(shape: tuple[int, ...], q):
     """Seminormal (Young orthogonal) matrices for `shape`, built AT `q`.
 
@@ -338,9 +353,8 @@ def _cached_seminormal(shape: tuple[int, ...], q):
     bit. A q-sweep through that path returned the q0 answer at every point
     with no error and no warning. Bean `qou-v6vp`.
 
-    The disk cache is used for NUMERIC q only. Its filename already carried
-    `q{...:.10f}`, so no cache format changes and no existing archive is
-    invalidated — the q was simply never allowed to vary. A symbolic build is
+    The disk cache is used for NUMERIC q only. Its filename carries the
+    exact q (`_q_disk_tag`, since 2026-11-22; it was `q{...:.10f}` before). A symbolic build is
     held in memory only: it is cheap (the block values depend on the content
     distance rho, of which there are only a few per shape) and it has no
     sensible npz representation.
@@ -388,8 +402,16 @@ def _cached_seminormal(shape: tuple[int, ...], q):
     # load the truncated float64 .npz and report it as full precision — the exact
     # class of error that flag exists to remove. The two are orthogonal: one names
     # WHICH q, the other names AT WHAT PRECISION.
+    #
+    # 2026-11-22 (issue #8996, P7; owner approval): the q in the stem is now
+    # the EXACT value, not `q` to 10 dp. Ten decimals separate the proton and
+    # muon pins but not two q that agree to ten digits. `_q_disk_tag` hashes
+    # the q's type and exact binary value (and, for an mpf, the working
+    # precision the build ran at). The `_mpf` tag stays: it names the build
+    # route, which the q alone does not. Entries written under the old stem
+    # are simply not read; they are regenerable.
     _prec_tag = "_mpf" if _H3A_MPF else ""
-    stem_name = f"n{n}_q{float(q):.10f}{_prec_tag}_shape{'-'.join(map(str, shape))}"
+    stem_name = f"n{n}_q{_q_disk_tag(q)}{_prec_tag}_shape{'-'.join(map(str, shape))}"
     npz_path = _SEMINORMAL_DISK / (stem_name + ".npz")
     json_path = _SEMINORMAL_DISK / (stem_name + ".json")
     if npz_path.exists() and json_path.exists():
