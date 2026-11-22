@@ -293,6 +293,7 @@ export default chapter({
             "jet-prefix-gb-filtration-evidence",
             "bond-order-eq-jet-degree",
             "binding-manybody-jet-filtration",
+            "nuclear-body-order-tjon-band-prior-art",
             "binding-genfun-qdifference",
             "binding-genfun-qdifference-proof",
             "bond-order-eq-jet-degree-context",
