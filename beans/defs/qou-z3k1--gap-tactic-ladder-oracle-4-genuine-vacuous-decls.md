@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-11-22T09:44:01Z
+updated_at: 2026-11-22T09:59:45Z
 parent: qou-6qbv
 ---
 
@@ -275,3 +275,7 @@ re-work item 1. The file is also candid about it in its own docstring
 
 
 2026-11-22: cases-decide rung (last rung, case analysis on one binder then decide) added to the probe in litlfred/folio-assistant-sci#213; Lean-backed confirmation on mass_tower_coefficient_stratification pending. Record: docs/audits/2026-11-22-triviality-decl-not-found-triage.md §4.
+
+
+
+2026-11-22 Lean-backed: mass_tower_coefficient_stratification CLOSES on the new cases-decide rung (step 7), Lean 4.24.0, restored cache. Record §6 of docs/audits/2026-11-22-triviality-decl-not-found-triage.md (PR #8994).
