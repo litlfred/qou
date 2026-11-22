@@ -64,6 +64,12 @@ convention D, which kills the (1³) block, cannot see colour singlets.
 
 ## 5. Decisions for the owner
 
+> **Owner answer, 2026-11-22:** *"D1 3, d2  1 2, d3 explore"*. D1: test (d) is
+> dropped as a colour test (option 3). D2: develop both the gl₆ coideal and the
+> oriented strand. D3: explore the triple. Recorded in
+> `docs/coordination/owner-rulings.md`. The options below are kept as the record
+> of what was offered.
+
 ### D1. Must colour singlets carry the convention-D trace (acceptance test (d))?
 
 - **Keep (d).** Meaning: hadron traces are D traces. Cost: none now. Risk:
