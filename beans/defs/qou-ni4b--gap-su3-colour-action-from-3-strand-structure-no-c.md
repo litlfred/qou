@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-11-16T17:48:00Z
+updated_at: 2026-11-22T16:37:26Z
 parent: qou-8lxd
 ---
 
@@ -35,3 +35,11 @@ Formalized the exact 3-strand Hecke vs $\mathfrak{su}(3)$ dimension, derived com
 - `h3_irrep_dim_lt_su3_fund` & `specht_end_dim_lt_su3`: every irreducible Specht module $V_\lambda$ of $H_3(q)$ has $\dim V_\lambda \le 2 < 3 = \dim_{\mathbb{C}} \mathbf{3}$ and $\dim \mathrm{End}(V_\lambda) \le 4 < 8 = \dim \mathfrak{su}(3)$.
 - `h3_commutant_derived_lie_dim_eq_three`: the derived Lie algebra $[\mathrm{End}_{H_3}(H_3), \mathrm{End}_{H_3}(H_3)] \cong 0 \oplus \mathfrak{sl}_2 \oplus 0$ of the 6D regular commutant has dimension $0 + 3 + 0 = 3 < 8 = \dim [\mathfrak{su}(3), \mathfrak{su}(3)]$.
 - `specht21_vs_su3_triplet_obstruction` & `schurWeyl_su3_three_strand_decomp`: at real $q_0 > 1$, $V_{(2,1)}$ is real self-conjugate ($C_3 = 0$), whereas $\mathbf{3}$ of $\mathfrak{su}(3)$ has non-zero cubic Casimir anomaly $C_3(\mathbf{3}) = -C_3(\bar{\mathbf{3}}) \ne 0$ ($\mathbf{3} \not\simeq \bar{\mathbf{3}}$), requiring the complexified octonion/tensor module $\mathbb{O} = \mathbb{C} \oplus \mathbb{C}^3_e$ (`OctonionColourActionBaseModule`) and $(\mathbb{C}^3)^{\otimes 3} = (10 \times 1) \oplus (8 \times 2) \oplus (1 \times 1)$ ($\dim_{\mathbb{C}} = 27$, unique 1D singlet $\Lambda^3(\mathbb{C}^3) \otimes V_{(1^3)}$). Kept `in-progress` per owner bean policy.
+
+
+## 2026-11-22 — colour action family K0–K4 (PR #9059, prereg c7a93364905, probe 72f583c6d27, result 59695ad7ecd)
+computations/probes/qcd_colour_action/RESULT.md. Exact over Q(p,q).
+- K0 (R = 1_c ⊗ Ř_f, colour as fixed-position label): (a)–(e) pass; the singlet sector is exactly the nucleon model, z = q³/(q²+1). (f) fails: colour does not move with the strand.
+- K1 gl₃ Jimbo: z₃ = q³/[3]_q ≠ z_D. K2 gl₆ Jimbo: Hecke holds, but no colour action in the searched class (classical: witness 1−q; summed q-Chevalley: [e,f] ≠ [k]); z₆ = q⁶/[6]_q. K3/K3′ not Hecke.
+- K4 (s_c⊗X + a_c⊗Y, 32 members): a transported colour⊗flavour braid holds iff p²=1 and q²=1 (Gröbner basis). This is a structural exclusion inside the class, scope (a) outside it.
+Still open. Closure needs either an owner ruling that K0 counts, or a coideal / twisted colour symmetry of gl₆ outside K4. Not formalised in Lean.
