@@ -107,3 +107,45 @@ and the −12 m_e coefficient.
 3. A4 is reconciled by PR #8800 §21, modulo the definition "u passes over".
 4. F1 is now measured to be the same convention (§4). What is left is a derivation of the
    letter order itself, plus the two definitions it rests on.
+
+## 6. Which reading of the photon ruling (2026-11-22)
+
+Owner, 2026-11-22: *"Figure out which choice works from the downstream implications and the
+other parts of the corpus. Make sure you check with all of your active siblings"*. Two readings
+of the ruled vertex `V = σ₀σ₁⁻¹` when a vertex or bond sits at strands `(i, i+1)`:
+
+- **A**: shift the vertex, `σ_iσ_{i+1}⁻¹` at every `i` (the larger letter is inverted).
+- **B**: the vertex is pinned at strands 0, 1; elsewhere the inverted letter is a free choice.
+
+**Corpus** (survey: `2026-11-22-photon-chirality-reading-survey.md`). No owner ruling and no
+Lean theorem picks A or B. Every vertex the corpus places off strands 0, 1 uses A
+(`GammaGammaWordSelection.lean` `vertex i`, `H2BondMirror.lean`, `ggTail`/`ggBondFactor`,
+`prop:pieri-photon-shift`, the production `he4_gg_all_pairs` bond, `hecke_exact.V3(k)`); B
+words occur only as labelled comparison arms. `def:photon` describes `V` geometrically as a
+positive crossing on strands `(0,1)` and a negative crossing on strands `(1,2)`; A is that
+description moved by the same shift `y ↦ y^{↑k}` that places the nucleons. That last point is a
+reading, not a theorem: nothing in the corpus states that bonds move by the nucleon shift.
+
+**Siblings** (all seven active threads that touch the convention answered):
+
+| thread | uses | depends on A vs B? | concern |
+|---|---|---|---|
+| m_n own identity (#8804) | A off 0,1 (§42 `(σ₂σ₃⁻¹)³`, `V₁³`) | core identity no; every bond-dependent `S` flips | B makes chirality a free bit; choosing it by the sign of `S` is selection against the target |
+| n–p cell E₀ / ε map (#8955, #9013) | only strands 0,1 (and the A-shifted `(σ₁σ₂⁻¹)³`) | no | none |
+| m_n capture braid (#9016) | A | no: inverting larger or smaller letter in the core gives the same `S`; the proton's side flips it | tail reflection untested |
+| photon norm 1 / 6-strand placement | A (`γ_i` sliding photon) | norm results are on 3 strands and cannot tell | B breaks `GammaGammaLeptonPair` (vertices at any `i`), the 5-strand lepton-pair probe, and the 6-strand photon option 1 |
+| neutron-heavier sign (#8800) | A | no: `ε` identical under both on 3 and 4 strands | the side matters: the K-weighted partial trace is Markov only over the last strand, so closure goes on the right |
+| α_em canonical form | strands 0,1 | no: `τ` reads only the writhe, which reflection keeps (`TauExp.tau_eq`) | none |
+| Q_β photon weights (#9014) | `V = σ₀σ₁⁻¹` on B₃ | no | uniqueness of `V³` is uniqueness given the letter order |
+
+**Result.** Nothing in the corpus uses B, and B would unpin the vertex grammar that the γγ
+selection, lepton-pair parity and the 6-strand photon need. A is consistent with every result
+on record. A alone does not fix every sign: the **side** (which nucleon a bond enters) is a
+second bit, and it flips the ⁴He sign within A. The neutron-heavier thread's finding that the
+K-weighted partial trace is Markov only over the last strand (closure on the right), together with
+the tower adding strands at the top, gives the production side: the bond enters the newer nucleon.
+Under A plus that side, the ⁴He γγ chain is `−0.862` keV (it unbinds); this is reported, not
+chosen.
+
+Recommendation (judgement, not a finding): record A as the reading of the ruling, with the side
+fixed by the right-hand closure. Owner decision.
