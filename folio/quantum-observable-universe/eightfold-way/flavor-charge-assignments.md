@@ -16,7 +16,11 @@ The writhe-to-isospin map $w \mapsto I_3$ is derived in the framework
 without fitted parameters.  Over the nucleon doublet, the proton braid
 $\mathfrak{p}$ and neutron braid $\mathfrak{n}$ carry writhes whose
 difference reproduces $\Delta I_3 = 1$ scale-free.  This identifies $I_3$
-as the *writhe coordinate* on the $A_2$ weight lattice.
+as the *writhe coordinate* on the $A_2$ weight lattice.  These writhes are those of
+the inter-nucleon arc, $w(\mathfrak{p}) = +1$ and $w(\mathfrak{n}) = -1$.
+The ruled nucleon word $(\sigma_i\sigma_{i+1}^{-1})^3$ is the same for
+both nucleons and has writhe $0$, so on the word itself the writhe does not
+separate them; there $I_3$ is the weight of the up and down strand labels.
 
 **Open quantity: hypercharge $Y$.**
 The proton and neutron share $Y = +1$ while their writhes differ. This
