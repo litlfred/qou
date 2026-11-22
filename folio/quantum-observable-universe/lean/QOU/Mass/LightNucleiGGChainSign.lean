@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
+import Mathlib.Algebra.Order.BigOperators.Ring.Finset
+import Mathlib.Order.Interval.Finset.Nat
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
@@ -28,6 +30,10 @@ What this file proves (no numerical value enters):
   `(q² − 1)^k` (`k = 4` for p, `5` for n) times a ratio of polynomials in `y = q² − 1` with
   nonnegative coefficients and positive constant term.
 * `trace_closed_forms_positive` — the closed forms of `tr p`, `tr n` are positive for `q > 1`.
+* `single_crossing` — a polynomial whose coefficients are negative up to some degree and
+  nonnegative after, with a negative constant term, crosses zero at most once on `y > 0`,
+  from below. This is the step behind "all-pairs bonds at A = 3 unbind on `(1, q*)` and bind
+  above `q*`", with the coefficients taken from the exact computation.
 
 **What is not proved here.** That these rational functions *are* the Ocneanu traces at
 `z_D = q³/(q² + 1)` of the production blocks is an exact ℚ(q) computation
@@ -178,5 +184,73 @@ theorem mu_n_sub_one_pos :
   positivity
 
 end ClosedForms
+
+/-! ## One sign change gives one crossing (all-pairs bonds at A = 3)
+
+With all three pairs bonded, `ratio − 1` is a positive factor times a polynomial `P(y)`,
+`y = q² − 1`. In every order and transport variant, `P`'s coefficients change sign exactly once:
+negative up to some degree, nonnegative after. The lemma below shows such a polynomial
+crosses zero at most once on `y > 0`, from below. The coefficients come from the exact ℚ(q)
+computation (`light_nuclei_a3_all_pairs_probe.py`), not from Lean. -/
+
+section SingleCrossing
+
+open Finset
+
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+
+/-- Low-degree part `∑_{i<m} a i · y^i` (the negated coefficients). -/
+def lowPart (a : ℕ → K) (m : ℕ) (y : K) : K := ∑ i ∈ Finset.range m, a i * y ^ i
+/-- High-degree part `∑_{m ≤ j < d} b j · y^j`. -/
+def highPart (b : ℕ → K) (m d : ℕ) (y : K) : K := ∑ j ∈ Finset.Ico m d, b j * y ^ j
+
+theorem lowPart_scale (a : ℕ → K) (m : ℕ) (ha : ∀ i, 0 ≤ a i) (h0 : 0 < a 0) (hm : 0 < m)
+    {y t : K} (hy : 0 < y) (ht : 1 < t) :
+    lowPart a m (y * t) < t ^ m * lowPart a m y := by
+  unfold lowPart
+  rw [Finset.mul_sum]
+  apply Finset.sum_lt_sum
+  · intro i hi
+    have hi' : i ≤ m := le_of_lt (Finset.mem_range.mp hi)
+    have : t ^ i ≤ t ^ m := pow_le_pow_right₀ ht.le hi'
+    rw [mul_pow]
+    have hp : 0 ≤ a i * y ^ i := mul_nonneg (ha i) (pow_nonneg hy.le i)
+    nlinarith
+  · refine ⟨0, Finset.mem_range.mpr hm, ?_⟩
+    have : 1 < t ^ m := one_lt_pow₀ ht hm.ne'
+    simp only [pow_zero, mul_one]
+    nlinarith
+
+theorem highPart_scale (b : ℕ → K) (m d : ℕ) (hb : ∀ j, 0 ≤ b j)
+    {y t : K} (hy : 0 < y) (ht : 1 < t) :
+    t ^ m * highPart b m d y ≤ highPart b m d (y * t) := by
+  unfold highPart
+  rw [Finset.mul_sum]
+  apply Finset.sum_le_sum
+  intro j hj
+  have hj' : m ≤ j := (Finset.mem_Ico.mp hj).1
+  have : t ^ m ≤ t ^ j := pow_le_pow_right₀ ht.le hj'
+  rw [mul_pow]
+  have hp : 0 ≤ b j * y ^ j := mul_nonneg (hb j) (pow_nonneg hy.le j)
+  nlinarith
+
+/-- **Single crossing.** If `P = highPart − lowPart` with nonnegative coefficient families and a
+positive constant term in `lowPart`, then once `P(y) ≥ 0` at some `y > 0`, `P > 0` at every larger
+`y`. So `P` has at most one positive root, and it changes sign there from negative to
+positive. -/
+theorem single_crossing (a b : ℕ → K) (m d : ℕ) (ha : ∀ i, 0 ≤ a i) (h0 : 0 < a 0) (hm : 0 < m)
+    (hb : ∀ j, 0 ≤ b j) {y y' : K} (hy : 0 < y) (hyy : y < y')
+    (hP : lowPart a m y ≤ highPart b m d y) :
+    lowPart a m y' < highPart b m d y' := by
+  set t := y' / y with ht_def
+  have ht : 1 < t := (one_lt_div hy).mpr hyy
+  have hy' : y' = y * t := by rw [ht_def]; field_simp
+  have htm : 0 < t ^ m := pow_pos (by linarith) m
+  rw [hy']
+  calc lowPart a m (y * t) < t ^ m * lowPart a m y := lowPart_scale a m ha h0 hm hy ht
+    _ ≤ t ^ m * highPart b m d y := mul_le_mul_of_nonneg_left hP htm.le
+    _ ≤ highPart b m d (y * t) := highPart_scale b m d hb hy ht
+
+end SingleCrossing
 
 end QOU.Mass.LightNucleiGGChainSign
