@@ -2275,6 +2275,12 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Borodin–Okounkov–Olshanski 2000 (descent DPP / discrete Bessel kernel) ──
   { id: "borodin-okounkov-olshanski2000" },
+  { id: "brundan2017" },
+  { id: "tonini2014" },
+  { id: "tonini2020" },
+  { id: "chattopadhyay-dutta-mukherjee-neetu2019" },
+  { id: "dutta-mukherjee-neetu-parihar2021" },
+  { id: "aishwarya-rotem2023" },
 
   // ── Johansson 2001 (discrete OPE ensembles / Plancherel edge + Bessel bounds) ──
   { id: "johansson2001" },
