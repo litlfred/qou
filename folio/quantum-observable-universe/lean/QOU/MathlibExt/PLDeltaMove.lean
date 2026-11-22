@@ -367,13 +367,35 @@ lemma deltaPsi_high (n : ℕ) {u : ℝ} (hu : 0 ≤ u) :
 
 /-! ### A Δ-move is an ambient isotopy -/
 
-/-- **A Δ-move is realized by an ambient isotopy** of `E`, supported in a convex body around
-the triangle. -/
-theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L'.k)
+/-- **What a push across the Δ-triangle must provide.** Given the two edge directions `wa`, `wb`
+leaving `a` and `b` and the compact rest `R'` of the link, a set `K` missing the rays and `R'`, and
+an isotopy `H` fixing the outside of `interior K` that at time `1` folds `[a, b]` onto `[a, c] ∪
+[c, b]`, at half speed. `Q` is any extra property of `H` (used for PL-ness). -/
+def DeltaPushProvider (Q : (unitInterval → E ≃ₜ E) → Prop) (a b c : E) : Prop :=
+  ∀ (wa wb : E) (R' : Set E),
+    (∀ θ ∈ Icc (0 : ℝ) 1, (1 - θ) • (midpoint ℝ a b - a) + θ • (c - a) ≠ 0) →
+    (∀ θ ∈ Icc (0 : ℝ) 1, (1 - θ) • (midpoint ℝ b a - b) + θ • (c - b) ≠ 0) →
+    (∀ t : ℝ, 0 < t → t ≤ 1 → a + t • wa ∉ convexHull ℝ {a, b, c}) →
+    (∀ t : ℝ, 0 < t → t ≤ 1 → b + t • wb ∉ convexHull ℝ {a, b, c}) →
+    IsCompact R' → Disjoint R' (convexHull ℝ {a, b, c}) →
+    ∃ (K : Set E) (H : unitInterval → E ≃ₜ E),
+      (∀ t : ℝ, 0 < t → a + t • wa ∉ K) ∧ (∀ t : ℝ, 0 < t → b + t • wb ∉ K) ∧ Disjoint R' K ∧
+      (Continuous fun p : unitInterval × E => H p.1 p.2) ∧
+      (Continuous fun p : unitInterval × E => (H p.1).symm p.2) ∧ (∀ x, H 0 x = x) ∧
+      (∀ x, x ∉ interior K → H 1 x = x) ∧
+      (∀ u : ℝ, 0 ≤ u → u ≤ 1 / 2 → H 1 ((1 - u) • a + u • b) = (1 - 2 * u) • a + (2 * u) • c) ∧
+      (∀ u : ℝ, 1 / 2 ≤ u → u ≤ 1 →
+        H 1 ((1 - u) • a + u • b) = (2 - 2 * u) • c + (2 * u - 1) • b) ∧ Q H
+
+/-- **A Δ-move is realized by any push across its triangle.** -/
+theorem exists_ambientIsotopy_of_delta (Q : (unitInterval → E ≃ₜ E) → Prop)
+    (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L'.k)
     (m : Fin L.k) (c : E) (hother : ∀ i, i ≠ m → L'.comp (e i) = L.comp i)
     (hm : L'.comp (e m) = (L.comp m).subdivideLast c)
     (htri : convexHull ℝ {(L.comp m).v (Fin.last _), (L.comp m).v 0, c} ∩ L.carrier =
-      segment ℝ ((L.comp m).v (Fin.last _)) ((L.comp m).v 0)) : AmbientIsotopic L L' := by
+      segment ℝ ((L.comp m).v (Fin.last _)) ((L.comp m).v 0))
+    (prov : DeltaPushProvider Q ((L.comp m).v (Fin.last _)) ((L.comp m).v 0) c) :
+    ∃ I : AmbientIsotopy L L', Q I.H := by
   set P := L.comp m with hPdef
   set a := P.v (Fin.last P.n) with ha_def
   set b := P.v 0 with hb_def
@@ -403,16 +425,16 @@ theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L
     exact Set.disjoint_left.mp hd hx hxs
   have hsb : segment ℝ b c ∩ segment ℝ c a ⊆ {c} := by
     rw [segment_symm ℝ b c, segment_symm ℝ c a, inter_comm]; exact hseg
-  obtain ⟨ρ, hρ, hA, hB, hR⟩ := exists_deltaBody (a := a) (b := b) (c := c)
+  obtain ⟨K, H, hA, hB, hR, hHc, hHcs, hH0, hfix, hleft, hright, hQ⟩ := prov _ _ R'
     (apex_seg_ne_zero hab hca.symm hseg) (apex_seg_ne_zero hab.symm hcb.symm hsb)
     (fun t ht0 ht1 => P.apex_ray_not_mem hP hK hia ht0 ht1)
     (fun t ht0 ht1 => P.base_ray_not_mem hP hK ht0 ht1) hR' hdisj
-  have haI : a ∉ interior (deltaBody a b c ρ) := not_mem_interior_of_ray hA
-  have hbI : b ∉ interior (deltaBody a b c ρ) := not_mem_interior_of_ray hB
-  have hR'I : ∀ x ∈ R', x ∉ interior (deltaBody a b c ρ) := fun x hx hxI =>
+  have haI : a ∉ interior K := not_mem_interior_of_ray hA
+  have hbI : b ∉ interior K := not_mem_interior_of_ray hB
+  have hR'I : ∀ x ∈ R', x ∉ interior K := fun x hx hxI =>
     Set.disjoint_left.mp hR hx (interior_subset hxI)
   -- points of the other components are fixed
-  have hfixOther : ∀ j, j ≠ m → ∀ x ∈ (L.comp j).carrier, x ∉ interior (deltaBody a b c ρ) := by
+  have hfixOther : ∀ j, j ≠ m → ∀ x ∈ (L.comp j).carrier, x ∉ interior K := by
     intro j hj x hx
     obtain ⟨i, hi⟩ := Set.mem_iUnion.mp hx
     apply hR'I
@@ -423,7 +445,7 @@ theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L
     exact P.edge_subset_carrier _
   -- points of the other edges of `comp m` are fixed
   have hfixM : ∀ i : Fin (P.n + 1), i ≠ Fin.last P.n → ∀ x ∈ P.edge i,
-      x ∉ interior (deltaBody a b c ρ) := by
+      x ∉ interior K := by
     intro i hi x hx
     by_cases hd : Disjoint (P.edge i) (segment ℝ a b)
     · apply hR'I
@@ -453,7 +475,7 @@ theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L
   have hQn : ((P.subdivideLast c).n : ℝ) + 1 = P.n + 2 := by
     simp only [Polygon.subdivideLast]; push_cast; ring
   have hN : (0 : ℝ) < P.n + 1 := by positivity
-  have hfinm : ∀ t, deltaIso a b c hρ 1 (P.param t) =
+  have hfinm : ∀ t, H 1 (P.param t) =
       (P.subdivideLast c).param (t + (deltaPsi P.n (Int.fract t) - Int.fract t)) := by
     intro t
     have e1 : t + (deltaPsi P.n (Int.fract t) - Int.fract t) =
@@ -466,7 +488,7 @@ theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L
     | last =>
       rw [P.next_last, Fin.val_last, deltaPsi_high _ hu0]
       rcases le_total u (1 / 2) with hu | hu
-      · rw [deltaIso_one_left hρ haI hu0 hu]
+      · rw [hleft u hu0 hu]
         have hx : ((P.n : ℝ) + 2 * u) / (P.n + 2) =
             ((((Fin.last P.n).castSucc : Fin ((P.subdivideLast c).n + 1)) : ℕ) + 2 * u) /
               ((P.subdivideLast c).n + 1) := by
@@ -477,7 +499,7 @@ theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L
         rw [(P.subdivideLast c).param_piece _ (by linarith) (by linarith) hlt,
           Polygon.subdivideLast_v_castSucc, Polygon.subdivideLast_next_castSucc_last,
           Polygon.subdivideLast_v_last]
-      · rw [deltaIso_one_right hρ hbI hu hu1.le]
+      · rw [hright u hu hu1.le]
         have hx : ((P.n : ℝ) + 2 * u) / (P.n + 2) =
             (((Fin.last (P.n + 1) : Fin ((P.subdivideLast c).n + 1)) : ℕ) + (2 * u - 1)) /
               ((P.subdivideLast c).n + 1) := by
@@ -494,7 +516,7 @@ theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L
       have hk : (k : ℝ) + 1 ≤ P.n := by exact_mod_cast k.isLt
       have hmem : (1 - u) • P.v k.castSucc + u • P.v (P.next k.castSucc) ∈ P.edge k.castSucc :=
         ⟨1 - u, u, by linarith, hu0, by ring, rfl⟩
-      rw [deltaIso_of_not_mem hρ 1 (hfixM _ (Fin.castSucc_lt_last k).ne _ hmem),
+      rw [hfix _ (hfixM _ (Fin.castSucc_lt_last k).ne _ hmem),
         Fin.coe_castSucc, deltaPsi_low _ (by linarith)]
       have hx : ((k : ℝ) + u) / (P.n + 2) =
           (((k.castSucc.castSucc : Fin ((P.subdivideLast c).n + 1)) : ℕ) + u) /
@@ -506,19 +528,41 @@ theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L
       rw [(P.subdivideLast c).param_piece _ hu0 hu1.le hlt, Polygon.subdivideLast_v_castSucc,
         Polygon.subdivideLast_next_castSucc _ _ (Fin.castSucc_lt_last k).ne,
         Polygon.subdivideLast_v_castSucc]
-  refine ⟨{ H := deltaIso a b c hρ
-            continuous := continuous_deltaIso hρ
-            continuous_symm := continuous_deltaIso_symm hρ
-            start := deltaIso_zero hρ
+  refine ⟨{ H := H
+            continuous := hHc
+            continuous_symm := hHcs
+            start := hH0
             e := e
-            finish := fun i => ?_ }⟩
+            finish := fun i => ?_ }, hQ⟩
   by_cases him : i = m
   · subst him
     exact ⟨_, deltaPsi_reparam P.n, fun t => by rw [hm]; exact hfinm t⟩
   · refine ⟨id, OrientedReparam.id, fun t => ?_⟩
     rw [hother i him]
-    exact deltaIso_of_not_mem hρ 1
+    exact hfix _
       (hfixOther i him _ (by rw [← Polygon.range_param]; exact ⟨t, rfl⟩))
+
+/-- **The ball-hull push is a provider** (no extra property). -/
+theorem deltaPushProvider_ball (a b c : E) : DeltaPushProvider (fun _ => True) a b c := by
+  intro wa wb R' hsa hsb hta htb hR' hdisj
+  obtain ⟨ρ, hρ, hA, hB, hR⟩ := exists_deltaBody hsa hsb hta htb hR' hdisj
+  have haI : a ∉ interior (deltaBody a b c ρ) := not_mem_interior_of_ray hA
+  have hbI : b ∉ interior (deltaBody a b c ρ) := not_mem_interior_of_ray hB
+  exact ⟨deltaBody a b c ρ, deltaIso a b c hρ, hA, hB, hR, continuous_deltaIso hρ,
+    continuous_deltaIso_symm hρ, deltaIso_zero hρ, fun x hx => deltaIso_of_not_mem hρ 1 hx,
+    fun u hu0 hu1 => deltaIso_one_left hρ haI hu0 hu1,
+    fun u hu0 hu1 => deltaIso_one_right hρ hbI hu0 hu1, trivial⟩
+
+/-- **A Δ-move is realized by an ambient isotopy** of `E`, supported in a convex body around
+the triangle. -/
+theorem ambientIsotopic_of_delta (L L' : PolygonalLink E) (e : Fin L.k ≃ Fin L'.k)
+    (m : Fin L.k) (c : E) (hother : ∀ i, i ≠ m → L'.comp (e i) = L.comp i)
+    (hm : L'.comp (e m) = (L.comp m).subdivideLast c)
+    (htri : convexHull ℝ {(L.comp m).v (Fin.last _), (L.comp m).v 0, c} ∩ L.carrier =
+      segment ℝ ((L.comp m).v (Fin.last _)) ((L.comp m).v 0)) : AmbientIsotopic L L' :=
+  let ⟨I, _⟩ := exists_ambientIsotopy_of_delta _ L L' e m c hother hm htri
+    (deltaPushProvider_ball _ _ c)
+  ⟨I⟩
 
 /-- **Every move is an ambient isotopy.** -/
 theorem Move.ambientIsotopic {L L' : PolygonalLink E} (h : Move L L') : AmbientIsotopic L L' := by
