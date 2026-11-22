@@ -1,95 +1,85 @@
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Data.Nat.Basic
+import QOU.Hecke.KnotFactor
 
 /-!
 # QOU.BraidKnot.KnotFactorFrobeniusPairing
 
-Conjectural axiomatisation of the **knot-factor / Frobenius-pairing**
-identification: the Markov trace of a closed braid factors through
-the Frobenius pairing on the Hecke algebra of the relevant level,
-giving a structural decomposition of mass and binding energy.
+The **braid-level** carrier of `conj:knot-factor-frobenius-pairing`: the Markov
+trace factors through the Frobenius pairing with a canonical knot factor,
 
-The conjecture itself is encoded as a `class` (AGENTS.md §3b-cond);
-`sorry` in any concrete instance is understood as **conjecture**, not
-missing proof.  Downstream conditional results take
-`[KnotFactorFrobeniusPairing R]` as a hypothesis and remain
-`theorem`/`proposition`.
+  `tr_M(x) = τ(x · κ)`.
+
+## Retyped 2026-11-22 (owner card "3: Both, inside reconcile work")
+
+The class used to carry the knot factor as a braid word (`ClosedBraid n`, a
+`List ℤ`) and both traces as unconstrained functions on words, with no instance.
+In that form the factorisation could not be proved or refuted: nothing tied the
+two functions to an algebra.  The knot factor is now an element of the algebra,
+the traces are linear and cyclic, and the knot factor is central.
+
+In this form the statement is **inhabited for every trace on `H_n(q)`**, every
+`q ≠ 0` and every splitting (`ofHecke`), by `QOU.Hecke.KnotFactor`: the knot
+factor is `κ = Σ_λ y_λ s_λ e_λ`, with `y_λ` the trace's block weights and `s_λ`
+the abstract Schur elements, and it is unique.
+
+What stays open on this half: the Markov (Ocneanu) trace is not yet a linear
+functional on `QOU.Hecke.IwahoriHecke K q n`, so `ofHecke` is applied to it only
+once that definition exists.  The binding half (`binding = E₀ · trace defect`)
+is re-scoped in `QOU.Conjectures.KnotFactorFrobeniusPairing`.
 
 LaTeX label: `conj:knot-factor-frobenius-pairing`
 
 ## References
 
-- [leitner2026] §Knot-factor Frobenius pairing
+- [geckpfeiffer2000] §7.2, §8.1 (symmetrizing trace, Schur elements)
 - [jones1985] https://www.jstor.org/stable/2007074
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
 namespace QOU.BraidKnot
 
-/-- A closed braid datum at strand count `n`: a braid word in
-    `B_n` recorded as a list of generator indices (positive for
-    σ_i, negative for σ_i⁻¹). -/
-structure ClosedBraid (n : ℕ) where
-  word : List ℤ
+open QOU.MathlibExt QOU.Hecke.KnotFactor
 
-/-- The empty-word closed braid is the default at every strand count
-    (the identity braid). Provides `default` for the skeleton instance
-    below. -/
-instance (n : ℕ) : Inhabited (ClosedBraid n) := ⟨⟨[]⟩⟩
+/-- **Knot-factor Frobenius pairing on a `K`-algebra `A`.**  A cyclic linear
+    trace `markovTrace`, a pairing trace `pairingTrace`, and a central element
+    `knotFactor` with `markovTrace x = pairingTrace (x · knotFactor)`. -/
+class KnotFactorFrobeniusPairing (K : Type*) [Field K] (A : Type*) [Ring A]
+    [Algebra K A] where
+  /-- The Markov trace, as a linear functional. -/
+  markovTrace : A →ₗ[K] K
+  /-- It is a trace. -/
+  markovTrace_comm : ∀ x y : A, markovTrace (x * y) = markovTrace (y * x)
+  /-- The trace defining the Frobenius pairing `⟨x, y⟩ = pairingTrace (x y)`. -/
+  pairingTrace : A →ₗ[K] K
+  /-- The knot factor, an element of the algebra. -/
+  knotFactor : A
+  /-- The knot factor is central. -/
+  knotFactor_central : ∀ x : A, knotFactor * x = x * knotFactor
+  /-- **The factorisation.**  The Markov trace is the Frobenius pairing with the
+      knot factor. -/
+  factorisation_holds : ∀ x : A, markovTrace x = pairingTrace (x * knotFactor)
 
-/-- **Conjecture class.**  An instance asserts the existence of:
-    * a Markov-trace functional `markov_trace_q` for any closed
-      braid at any strand count;
-    * a Frobenius pairing `frobenius_pairing_q` on the same Hecke
-      algebra;
-    * a structural identification `factorisation` showing the
-      Markov trace equals the Frobenius pairing of the braid with
-      a canonical "knot factor" element.
+/-- The factorisation, read off an instance. -/
+theorem markov_trace_factors {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A]
+    [inst : KnotFactorFrobeniusPairing K A] (x : A) :
+    inst.markovTrace x = inst.pairingTrace (x * inst.knotFactor) :=
+  inst.factorisation_holds x
 
-    The factorisation is the conjecture proper; a concrete instance
-    discharges `factorisation_holds` with `sorry` (the conjecture)
-    and is then usable downstream as a class hypothesis.
-
-    The Markov trace / Frobenius pairing of `H_n(q)` are q-deformation
-    combinatorics valued in the coefficient ring — no ordering, radical,
-    or analytic construct — so the base ring is a generic
-    `{R : Type*} [CommRing R]` with the parameter `q : R` (§7c); the
-    archimedean substrate `R := ℝ` is a downstream instantiation. -/
-class KnotFactorFrobeniusPairing (R : Type*) [CommRing R] where
-  /-- Markov trace at parameter `q`. -/
-  markov_trace_q : R → ∀ {n : ℕ}, ClosedBraid n → R
-  /-- Frobenius pairing on H_n(q). -/
-  frobenius_pairing_q : R → ∀ {n : ℕ}, ClosedBraid n → ClosedBraid n → R
-  /-- Canonical knot-factor element (a closed braid associated to
-      each `n`).  Acts as the "structural unit" of the Frobenius
-      pairing in the factorisation below. -/
-  knot_factor : ∀ {n : ℕ}, ClosedBraid n
-  /-- **Conjectural factorisation.**  For every braid `b`, the
-      Markov trace equals the Frobenius pairing with the knot
-      factor.  A concrete instance discharges this by `sorry` (the
-      conjecture); downstream theorems condition on it. -/
-  factorisation_holds :
-    ∀ (q : R) {n : ℕ} (b : ClosedBraid n),
-      markov_trace_q q b = frobenius_pairing_q q b knot_factor
-
-/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
-    Conditional on `[KnotFactorFrobeniusPairing R]`, the Markov trace
-    of any closed braid factors through the Frobenius pairing with
-    the knot factor.  Fully verified by Lean once an instance is
-    fixed. -/
-theorem markov_trace_factors {R : Type*} [CommRing R] [inst : KnotFactorFrobeniusPairing R]
-    (q : R) {n : ℕ} (b : ClosedBraid n) :
-    inst.markov_trace_q q b = inst.frobenius_pairing_q q b inst.knot_factor :=
-  inst.factorisation_holds q b
-
--- No instance: `conj:knot-factor-frobenius-pairing` is OPEN.  The former
--- `canonical` skeleton defined both Markov trace and Frobenius pairing as
--- constant `0` so that `factorisation_holds` closed by `rfl` — its own
--- docstring admitted it "encodes none of the conjectural content".  A
--- global vacuous instance is worse than none here: it silently discharges
--- the `[KnotFactorFrobeniusPairing R]` §3b-cond hypothesis for every
--- downstream block with the zero model (AGENTS.md §3b-tax + Anti-Laundering
--- Rule).  `markov_trace_factors` remains a valid conditional theorem —
--- it takes the class as an explicit hypothesis and needs no global instance.
+/-- **The factorisation holds in `H_n(q)`** for every trace `t`, every `q ≠ 0`
+    and every splitting, with the pairing given by the symmetrizing trace `τ`.
+    A `def`, not a global instance: the trace `t` is data the caller supplies. -/
+noncomputable def ofHecke {K : Type*} [Field K] {q : K} {n : ℕ}
+    {ι : Type*} [Fintype ι] [DecidableEq ι]
+    {J : ι → Type*} [∀ i, Fintype (J i)] [∀ i, DecidableEq (J i)]
+    (hq : q ≠ 0)
+    (E : QOU.Hecke.IwahoriHecke K q n ≃ₐ[K] ∀ i, Matrix (J i) (J i) K)
+    (a : ∀ i, J i) (t : QOU.Hecke.IwahoriHecke K q n →ₗ[K] K)
+    (ht : ∀ x y, t (x * y) = t (y * x)) :
+    KnotFactorFrobeniusPairing K (QOU.Hecke.IwahoriHecke K q n) where
+  markovTrace := t
+  markovTrace_comm := ht
+  pairingTrace := QOU.Hecke.TwBasis.tau K q n
+  knotFactor := knotFactor E t (QOU.Hecke.TwBasis.tau K q n) a
+  knotFactor_central := knotFactor_comm E t _ a
+  factorisation_holds := hecke_trace_eq_tau_mul_knotFactor hq E a t ht
 
 end QOU.BraidKnot

@@ -482,6 +482,8 @@ import QOU.Mass.LevelSelectionLogarithmic
 -- that CoordinationSaturation's complete-graph exclusion rested on.
 import QOU.Mass.EquidistantCoordinationCap
 import QOU.Mass.StrandLayoutForcesChain
+import QOU.Mass.TransportedPairBond
+import QOU.Mass.BlockRelabelConjugation
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
@@ -1199,6 +1201,8 @@ import QOU.Molecular.ShellClosureNfTermCount
 
 import QOU.Conjectures.ShellTransitionKnot
 import QOU.Conjectures.KnotFactorFrobeniusPairing
+import QOU.Hecke.KnotFactor
+import QOU.BraidKnot.KnotFactorFrobeniusPairing
 import QOU.Conjectures.WeakSpectralCompleteness
 import QOU.Conjectures.MagicNumbersBring
 import QOU.Conjectures.QuantumLanglandsDual
