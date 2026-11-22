@@ -288,3 +288,20 @@ label is the K = q vector (`over_e1_iff_pure`, `ptr_markov`, `ptr_other_not_scal
 This confirms the sign table's idea (PR #8969): the e₁/e₂ order and the flavour order are one
 letter-order convention. They cannot be flipped independently without breaking the Markov trace
 or the over/under rule.
+
+## §22 Lean: the left placement keeps q⁻² for every four-strand word
+
+`QOU/QBeta/HydrogenFlavourSplit.lean` is sorry-free; axioms are propext, Classical.choice, Quot.sound only. It is lean-direct with `-DautoImplicit=false`, about 4 min. Everything is over a generic field with `q ≠ 0` and `q² + 1 ≠ 0`. The functional is the ruled `E_c = Tr(K^{⊗4}Π_c W)/[2]⁴`.
+
+- `left_ratio`: put the nucleon on strands 0–2. Then `E_n = q⁻²·E_p` for every braid word on four strands, not only the capture words.
+  - Proof: two explicit intertwiners between the weight blocks commute with every letter, `P32 : z=3 → z=2` and `P21 : z=2 → z=1`.
+  - The functional `tn − q⁻²tp` is `Σ_z tr(M_z W_z)` with `M = (P21N21, P32N32 − N21P21, −N32P32)`. That sum cancels by trace cyclicity.
+  - Reading: the K-weighted trace over the last strand is the Markov one (`OverStrandWeight.ptr_markov`). So an extra strand on the right never changes the flavour ratio.
+- Closed forms of the ruled split:
+  - `wL_eps`: `ε = (1 − q²)·(q¹⁶ − 3q¹⁴ + 3q¹² − 7q¹⁰ + 6q⁸ − 7q⁶ + 3q⁴ − 3q² + 1)/(q⁸(q² + 1)⁴)`, which is 0.0584528858 at the proton q₀.
+  - `wAL_eps`: the corresponding closed form for the adjacent capture.
+- `wR_defect`: put the nucleon on strands 1–3 with the reflected capture `wR`. Then `E_n − q⁻²E_p = −h²q²(q² + 1)·P(q)/q¹²`, nonzero. Here `P(q) = q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1` is the polynomial in `ε(V³)`.
+  - `wR` is the strand reflection of `wL`. `towerTr_reflect` keeps the full trace, but the sector split is not reflection invariant: 0.0585 against 0.0457.
+- The letter order of the vertex, `(σ₀σ₁⁻¹)³` against `(σ₁σ₀⁻¹)³`, does not change ε at three strands or in either four-strand placement (checked in exact sympy, 2026-11-22). Only the side of the extra strand matters.
+
+The generator is in `computations/probes/np_splitting/lean_gen/`.
