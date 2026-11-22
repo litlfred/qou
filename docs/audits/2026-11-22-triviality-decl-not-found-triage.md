@@ -83,12 +83,68 @@ real Lean proof, so the rung can only add closures.
 
 - Static classification: the bun scripts used are summarised above; counts
   measured on this branch's tree, 2026-11-22.
-- `bun test pipeline/lean-triviality-probe.test.ts` (folio-assistant-sci, no
-  Lean toolchain): 15 pass, 12 Lean controls skipped, 0 fail.
+- `bun test pipeline/lean-triviality-probe.test.ts` (folio-assistant-sci):
+  with Lean 4.24.0 on `PATH`, 28 pass, 0 fail, 0 skip (after the
+  `not-a-proof` commit; 27 before it).
 - The Lean-backed run (the controls, and a re-probe of the 156 plus
   `mass_tower_coefficient_stratification` on the restored olean cache) is
-  recorded in §6 when it finishes.
+  in §6.
 
 ## 6. Lean-backed re-probe
 
-Pending.
+Run 2026-11-22, 09:46 to 09:57 UTC, with Lean 4.24.0 from
+`scripts/lean-toolchain-cache-restore.sh` and the olean cache from
+`scripts/lean-cache-restore.sh` (3697 Mathlib and 3465 QOU oleans,
+`cat/folio-assistant-sci/lake-cache/qou-v4-24-0`). No `lake` was run.
+
+- **Probe controls**: `bun test pipeline/lean-triviality-probe.test.ts` with
+  Lean on `PATH`: 27 pass, 0 fail, 0 skip. That includes the new
+  `casesDecideClosesTableCheck` control.
+- **Re-probe** of the 156 snapshot skips plus
+  `mass_tower_coefficient_stratification` (157), each through
+  `probeDeclaration` at 120 s per rung, with the file found the way the fixed
+  CLI finds it: 56 in their own `.lean`, 77 in the lake root, 24 unresolved
+  (§3). None was skipped: no `baseline-fails`, `baseline-timeout` or
+  `no-body`.
+
+| outcome | count |
+|---|---|
+| closed | 7 |
+| open | 126 |
+| unresolved ref | 24 |
+
+The seven closed, by rung:
+
+| declaration | rung (step) | file |
+|---|---|---|
+| `QOU.MassIdentity.exists` | `trivial` (1) | own |
+| `QOU.Archimedean.genus_maximal_descent` | `omega` (5) | lake root |
+| `QOU.Archimedean.torus_knot_shell_binding` | `aesop` (6) | lake root |
+| `QOU.CategoricalAction.unique` | `aesop` (6) | own |
+| `QOU.HyperellipticQuintic.minimal_z5_classification` | `aesop` (6) | lake root |
+| `QOU.MassIdentity.unique` | `aesop` (6) | own |
+| `QOU.BraidKnot.mass_tower_coefficient_stratification` | `cases-decide` (7) | own |
+
+So the new rung recovers `mass_tower_coefficient_stratification` (`qou-z3k1`),
+and six more declarations close that the snapshot never measured. A closure is
+a prompt to read the statement, not a verdict that it is vacuous (see the
+probe's own header); these seven have not been read here.
+
+No rung timed out. `aesop` was unavailable on four declarations whose files
+import neither Aesop nor Mathlib; all four stay open, so for them "open" was
+measured against a six-rung ladder. `cases-decide` was inapplicable (no named
+binder) on 35.
+
+**Caveat: many of the 126 open are not theorems.** Of the 133 found, 86 are
+theorems (7 closed, 79 open); the other 47 are structures (21), defs (18),
+classes (6) and abbrevs (2). The probe filtered a *file* by whether it holds a
+theorem, not the *declaration* by its kind, so it spliced tactics into these
+too, and their "open" means nothing. Fixed for types in
+folio-assistant-sci#213 (fourth commit): a ref naming a `structure`, `class`
+or `inductive` (27 here) is now skipped as `not-a-proof`. `def`, `abbrev` and
+`instance` are still probed, because a Prop-valued `def` is the self-assuming
+shape the probe exists for; the 18 defs and 2 abbrevs above are left as they
+are. Bean `qou-2a55`.
+
+The probe runs plain `lean`, not `lake build` with `-DautoImplicit=false`, as
+it always has; that is unchanged here.
