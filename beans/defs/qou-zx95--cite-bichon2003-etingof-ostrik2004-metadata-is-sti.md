@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:07:37Z
-updated_at: 2026-10-04T15:17:53Z
+updated_at: 2026-11-22T15:45:00Z
 parent: qou-1qhv
 ---
 
@@ -59,3 +59,9 @@ DOI shape — *unverified, do not paste it in without checking*), add a
 classification statements are greppable.
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+## 2026-11-22 — verified (branch claude/bib-verify-bichon-etingof-ostrik-2026-11-22, commit dca5214104, issue #9028)
+
+- bichon2003: the recorded arXiv id math/0207256 is WRONG. The arXiv page for math/0111114 (v1, 2001-11-09) carries this title. Comm. Algebra 31(10) (2003) 4831–4851 is confirmed by Aubriot, arXiv:math/0606147, ref [Bi1]. No DOI was found; the guessed 10.1081/AGB-120022455 was not used.
+- etingof-ostrik2004: DOI 10.4310/MRL.2004.v11.n1.a10 from the MaRDI record (zbMATH 1053.17010), confirming vol. 11, issue 1, year 2004. Pages 103–114 are still unconfirmed.
+- Open: Etingof–Ostrik pages; Bichon DOI; ingest of both arXiv preprints (arXiv is blocked from this container).
