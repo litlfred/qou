@@ -1,0 +1,331 @@
+{
+ "Q2_classical_lie_dim_B": 18,
+ "Q2_classical_lie_dim_B_unconstrained_c(2,5,11,3,7)": 36,
+ "Q2_classical_lie_dim_Bcol": 9,
+ "Q2_classical_B3": "Matrix([[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, -c3, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]])",
+ "Q3_relations": {
+  "1": {
+   "weights": true,
+   "ef": true,
+   "serre": true,
+   "mixed_q_power": {
+    "e1f2": 0,
+    "e2f1": 0
+   }
+  },
+  "2": {
+   "weights": true,
+   "ef": true,
+   "serre": true,
+   "mixed_q_power": {
+    "e1f2": 0,
+    "e2f1": 0
+   }
+  },
+  "3": {
+   "weights": true,
+   "ef": true,
+   "serre": true,
+   "mixed_q_power": {
+    "e1f2": 0,
+    "e2f1": 0
+   }
+  }
+ },
+ "Q4_commutant_B_on_V_dim": 2,
+ "Q4_commutant_Bcol_on_V_dim": 4,
+ "Q4_commutant_Bcol_on_V_basis": [
+  "Matrix([[c1**7*c2**7, 0, 0, 0, 0, 0], [0, c1**7*c2**7, 0, 0, 0, 0], [0, 0, c1**7*c2**7, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]])",
+  "Matrix([[0, 0, 0, 0, 0, c1**8*c2**8], [0, 0, 0, 0, -c1**7*c2**8, 0], [0, 0, 0, c1**7*c2**7, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]])",
+  "Matrix([[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, c1**8*c2**8, 0, 0, 0], [0, -c1**8*c2**7, 0, 0, 0, 0], [c1**7*c2**7, 0, 0, 0, 0, 0]])",
+  "Matrix([[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, c1**7*c2**7, 0, 0], [0, 0, 0, 0, c1**7*c2**7, 0], [0, 0, 0, 0, 0, c1**7*c2**7]])"
+ ],
+ "Q4_J0": "Matrix([[0, 0, 0, 0, 0, -c1**9*c2**7*c3**3*q**3], [0, 0, 0, 0, c1**8*c2**7*c3**3*q**3, 0], [0, 0, 0, -c1**8*c2**6*c3**3*q**3, 0, 0], [0, 0, c1**8*c2**6*c3**2*q**2, 0, 0, 0], [0, -c1**8*c2**5*c3**2*q**2, 0, 0, 0, 0], [c1**7*c2**5*c3**2*q**2, 0, 0, 0, 0, 0]])",
+ "Q4_RE_solutions_alpha": [
+  "{alpha: 0}"
+ ],
+ "Q4_K_matrix": "Matrix([[0, 0, 0, 0, 0, -c1**9*c2**7*c3**3*q**3], [0, 0, 0, 0, c1**8*c2**7*c3**3*q**3, 0], [0, 0, 0, -c1**8*c2**6*c3**3*q**3, 0, 0], [0, 0, c1**8*c2**6*c3**2*q**2, 0, 0, 0], [0, -c1**8*c2**5*c3**2*q**2, 0, 0, 0, 0], [c1**7*c2**5*c3**2*q**2, 0, 0, 0, 0, 0]])",
+ "Q4_K_matrix_eigen": {
+  "-c1**8*c2**6*sqrt(-c3**5*q**5)": 3,
+  "c1**8*c2**6*sqrt(-c3**5*q**5)": 3
+ },
+ "Q4_K_on_strand1_commutes_with_Delta2_B": true,
+ "K4_flavour_dependence": {
+  "B1": {
+   "strand1_commutes_1c_sz": true,
+   "V(x)V_commutes_1(x)(1c(x)sx)": false,
+   "V(x)V_commutes_1(x)(1c(x)sz)": true,
+   "V(x)V_commutes_(1c(x)sz)(x)1": true,
+   "q=1_commutator_with_1(x)sx_entries_nonzero": 12
+  },
+  "B2": {
+   "strand1_commutes_1c_sz": true,
+   "V(x)V_commutes_1(x)(1c(x)sx)": false,
+   "V(x)V_commutes_1(x)(1c(x)sz)": true,
+   "V(x)V_commutes_(1c(x)sz)(x)1": true,
+   "q=1_commutator_with_1(x)sx_entries_nonzero": 12
+  },
+  "B4": {
+   "strand1_commutes_1c_sz": true,
+   "V(x)V_commutes_1(x)(1c(x)sx)": false,
+   "V(x)V_commutes_1(x)(1c(x)sz)": true,
+   "V(x)V_commutes_(1c(x)sz)(x)1": true,
+   "q=1_commutator_with_1(x)sx_entries_nonzero": 12
+  },
+  "B5": {
+   "strand1_commutes_1c_sz": true,
+   "V(x)V_commutes_1(x)(1c(x)sx)": false,
+   "V(x)V_commutes_1(x)(1c(x)sz)": true,
+   "V(x)V_commutes_(1c(x)sz)(x)1": true,
+   "q=1_commutator_with_1(x)sx_entries_nonzero": 12
+  }
+ },
+ "Q5_singlets_V2_dim": 0,
+ "Q5_singlets_V3_dim": 8,
+ "Q5_colour_weight_zero_states_V3": 48,
+ "Q5_singlet_sector_characters": {
+  "tr1": 8,
+  "tr_s1": "2*(q**2 - 3)/q",
+  "tr_s1s2": "-2*(q**2 - 2)/q**2"
+ },
+ "Q5_singlet_sector_multiplicities": {
+  "m111": "4",
+  "m21": "2",
+  "m3": "0"
+ },
+ "Q5_flavour_model_Rf_multiplicities": {
+  "m111": "0",
+  "m21": "2",
+  "m3": "4"
+ },
+ "Q5_fermionic_model_-Rf^-1_multiplicities": {
+  "m111": "4",
+  "m21": "2",
+  "m3": "0"
+ },
+ "Q6_flavour_Rf_markov": {
+  "scalar": true,
+  "z": "q**3/(q**2 + 1)"
+ },
+ "Q6_fermionic_markov": {
+  "scalar": true,
+  "z": "-1/(q*(q**2 + 1))"
+ },
+ "Q6_trace_weights_on_singlet_sector_G=1c(x)diag(a,b)": {
+  "m111": "(a + b)*(a**2 + b**2)",
+  "m21": "a*b*(a + b)",
+  "m3": "0"
+ },
+ "Q6_selection_flag_(a,b)_with_zero_weight_on_(1^3)_SELECTION_ONLY": "[-a, -I*a, I*a]",
+ "Q6_Bcol_invariant_twists_on_V_dim": 4,
+ "Q6_B_invariant_twists_on_V_dim": 2,
+ "Q6_product_twist_T1(x)piv_z_values": [
+  "q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1))",
+  "tr=0",
+  "tr=0",
+  "q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1))"
+ ],
+ "acceptance_a_to_f": {
+  "a_Uq_sl3_relations": true,
+  "b_commutes": true,
+  "c_hecke_braid": true,
+  "d_singlet_sector_is_Rf_flavour_model_with_zD": false,
+  "e_one_colour_singlet_per_flavour_state_dim8": true,
+  "f_transport": true
+ },
+ "checks": [
+  {
+   "name": "Q0 R commutes with Delta(E_i), Delta(F_i), Delta(K_i), Delta(K_eps_j) on V(x)V (variant B)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q0/(c) Hecke (sigma-q)(sigma+q^-1)=0 on V(x)V and braid relation on V^(x)3",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1a Delta(B_i) = B_i(x)K_i^-1 + 1(x)F_i - c_i K_tau(i)K_i^-1 (x) E_tau(i)K_i^-1 on V(x)V, i=1..5",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1a first legs K_tau(i)K_i^-1 are theta-fixed (diag symmetric under j <-> 7-j), so lie in <T1,T2,T3> -- B and B^col are right coideals",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1b/(b) every Delta^n(generator of B) commutes with every sigma_i, n = 2,3 (structural: B in U_q(gl6))",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q1c/(f) transport: R|_(q=1) = P on C^6(x)C^6 = P_c (x) P_f",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2 q->1 Lie closure of B has dim 18 = dim(gl3+gl3) (c1,c2,c3 symbolic)",
+   "pass": true,
+   "detail": "dim 18",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2 with c4 != c2, c5 != c1 (rational point c=(2,5,11,3,7)) the q->1 closure is larger than 18, so Kolb's c_i = c_tau(i) is forced by the classical limit, not chosen",
+   "pass": true,
+   "detail": "dim 36",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2 q->1 Lie closure of B^col has dim 9 (gl3: colour sl3 plus colour Cartan incl. centre)",
+   "pass": true,
+   "detail": "dim 9",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2 after the d-block colour rescaling diag(1,-1/c1,1/(c1c2)) the classical B^col generators are exactly sl3/gl3 (x) 1_flavour: f_i -> E_(i+1,i)(x)1, e_i -> -c_i E_(i,i+1)(x)1",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q2 the removed node-3 generator is the only flavour-mixing one: B3|_(q=1) = E^c_33 (x) [[0,-c3],[1,0]] (u<->d at colour 3)",
+   "pass": true,
+   "detail": "Matrix([[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, -c3, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]])",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3/(a) on V^(x)n, n=1,2,3: with e_i = B_tau(i), f_i = B_i, k_1 = T1/T2, k_2 = T2/T3 the U_q(sl3) relations hold exactly with [e_i,f_i] = -c_i (k_i - k_i^-1)/(q-q^-1), q-Serre, and [e_i,f_j] = 0 (i != j)",
+   "pass": true,
+   "detail": "{1: {'weights': True, 'ef': True, 'serre': True, 'mixed_q_power': {'e1f2': 0, 'e2f1': 0}}, 2: {'weights': True, 'ef': True, 'serre': True, 'mixed_q_power': {'e1f2': 0, 'e2f1': 0}}, 3: {'weights': True, 'ef': True, 'serre': True, 'mixed_q_power': {'e1f2': 0, 'e2f1': 0}}}",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q3/(a) generators nonzero on every V^(x)n",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q4 commutant of B (full, gl3+gl3) on C^6 has dim 2: span{1, J_q}",
+   "pass": true,
+   "detail": "dim 2",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q4 commutant of B^col on C^6 has dim 4 (the flavour matrices, conjugated)",
+   "pass": true,
+   "detail": "dim 4",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q4 the reflection equation has a non-scalar solution on the B-commutant pencil (K-matrix)",
+   "pass": true,
+   "detail": "['{alpha: 0}']",
+   "kind": "prereg"
+  },
+  {
+   "name": "K4 at generic q, Delta^2(B_i) (i=1,2,4,5) does NOT commute with 1(x)(1_c(x)sigma_x): the colour action on strand 2 depends on its flavour (first leg 1 on u, K_tau(i)K_i^-1 != 1 on d), so it is not of the K4 form Delta_H(x)(x)1_flavour",
+   "pass": true,
+   "detail": "{'B1': {'strand1_commutes_1c_sz': True, 'V(x)V_commutes_1(x)(1c(x)sx)': False, 'V(x)V_commutes_1(x)(1c(x)sz)': True, 'V(x)V_commutes_(1c(x)sz)(x)1': True, 'q=1_commutator_with_1(x)sx_entries_nonzero': 12}, 'B2': {'strand1_commutes_1c_sz': True, 'V(x)V_commutes_1(x)(1c(x)sx)': False, 'V(x)V_commutes_1(x)(1c(x)sz)': True, 'V(x)V_commutes_(1c(x)sz)(x)1': True, 'q=1_commutator_with_1(x)sx_entries_nonzero': 12}, 'B4': {'strand1_commutes_1c_sz': True, 'V(x)V_commutes_1(x)(1c(x)sx)': False, 'V(x)V_commutes_1(x)(1c(x)sz)': True, 'V(x)V_commutes_(1c(x)sz)(x)1': True, 'q=1_commutator_with_1(x)sx_entries_nonzero': 12}, 'B5': {'strand1_commutes_1c_sz': True, 'V(x)V_commutes_1(x)(1c(x)sx)': False, 'V(x)V_commutes_1(x)(1c(x)sz)': True, 'V(x)V_commutes_(1c(x)sz)(x)1': True, 'q=1_commutator_with_1(x)sx_entries_nonzero': 12}}",
+   "kind": "prereg"
+  },
+  {
+   "name": "K4 at q = 1 and c = -1 the same operators commute with 1(x)(1_c(x)sigma_x) (classical colour sl3(x)1); the flavour dependence is a q != 1 effect",
+   "pass": true,
+   "detail": "{'B1': True, 'B5': True}",
+   "kind": "posthoc"
+  },
+  {
+   "name": "Q5 no B^col-invariant vector in V(x)V (no colour-weight-zero states for two strands)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q5/(e) B^col-invariants in V^(x)3 have dim 8 = 1 colour singlet x 2^3 flavour states",
+   "pass": true,
+   "detail": "dim 8",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q5 each T_j acts on the singlets by q (colour weight (1,1,1)), so k_1, k_2 act by 1",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q5 the singlet sector is an H3-module (Hecke + braid on the restriction)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q5 singlet sector = S^(1^3) x4 + S^(2,1) x2 (prediction)",
+   "pass": true,
+   "detail": "{m111: 4, m21: 2, m3: 0}",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q5/(d) the singlet sector is NOT H3-isomorphic to the flavour model sigma -> R_f (prediction)",
+   "pass": true,
+   "detail": "flavour model {m111: 0, m21: 2, m3: 4}",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q5 the singlet sector IS H3-isomorphic to the fermionic flavour model sigma -> -R_f^-1",
+   "pass": true,
+   "detail": "fermionic {m111: 4, m21: 2, m3: 0}",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q5 invariant: at q = 1, tr(sigma_1) on the singlet sector is -4, while the flavour model gives +4 (S3 sign character of the colour singlet)",
+   "pass": true,
+   "detail": "-4",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q6 calibration: R_f with K_f = gl2 pivotal is Markov with z = z_D = q^3/(q^2+1)",
+   "pass": true,
+   "detail": "q**3/(q**2 + 1)",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q6/(d) the singlet sector's (fermionic) flavour model is Markov with z = z_D(-q^-1) = -1/(q(q^2+1)), not z_D",
+   "pass": true,
+   "detail": "-1/(q*(q**2 + 1))",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q6 G^(x)3 = (1_c(x)diag(a,b))^(x)3 commutes with B^col and with sigma_1, sigma_2 on V^(x)3",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q6 the colour-blind twist puts nonzero weight on the S^(1^3) block for generic (a,b) (so it is not convention D, whose (1^3) weight is 0)",
+   "pass": true,
+   "detail": "{'m111': (a + b)*(a**2 + b**2), 'm21': a*b*(a + b), 'm3': 0}",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q6 calibration: gl6 pivotal diag(q^-10,...,1) is ad*-invariant under U_q(gl6)",
+   "pass": true,
+   "detail": "",
+   "kind": "prereg"
+  },
+  {
+   "name": "Q6(i) every B^col-invariant T1 on V (4 of them) gives T1(x)piv a Markov parameter z6 = q^6/[6]_q (Schur: partial trace over later strands is a U_q(gl6)-scalar on irreducible C^6), never z_D",
+   "pass": true,
+   "detail": "[q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)), 'tr=0', 'tr=0', q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1))]",
+   "kind": "prereg"
+  }
+ ],
+ "summary": "32/32"
+}
