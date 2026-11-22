@@ -48,4 +48,17 @@ theorem isospin_not_writhe_of_charge_writhe {S : Type*}
   exact hY (hypercharge_factors_of_charge_and_isospin_factor w (fun X => (w X : ℚ) / 2) I3 Y
     hGMN ⟨fun z => (z : ℚ) / 2, fun _ => rfl⟩ hI)
 
+/-- **Equal writhe, different charge: the charge is no function of the writhe.** If two
+states have the same writhe and different charges, no map `f : ℤ → ℚ` gives `Q = f ∘ w`. In
+particular `Q = w/2` fails. The proton and neutron are such a pair under the ruled nucleon word
+`β_Bor = (σ₀σ₁⁻¹)³`, which both carry (writhe `0`,
+`QOU.Mass.GammaGammaWordSelection.borromean_writhe`; instantiated in
+`QOU.StandardModel.NucleonWritheCharge`). -/
+theorem charge_not_writhe_of_equal_writhe {S : Type*}
+    (w : S → ℤ) (Q : S → ℚ) (p n : S)
+    (hw : w p = w n) (hQ : Q p ≠ Q n) :
+    ¬∃ f : ℤ → ℚ, ∀ X, Q X = f (w X) := by
+  rintro ⟨f, hf⟩
+  exact hQ (by rw [hf p, hf n, hw])
+
 end QOU.StandardModel.WritheChargeHypercharge
