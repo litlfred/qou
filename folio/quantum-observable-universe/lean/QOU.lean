@@ -1465,6 +1465,7 @@ import QOU.Knot.GeneratedCertifiedHigh
 -- also orphaned, so registering it here is a fix to pre-existing state rather than
 -- to this arc's additions.
 import QOU.AppendixSurreals.BirthdayFaithful
+import QOU.AppendixSurreals.DyadicBirthdayHyperreal
 import QOU.AppendixSurreals.DiophantineBirthday
 import QOU.AppendixSurreals.DiophantineBirthdayScope
 import QOU.AppendixSurreals.DiophantineBirthdayTrajectory
