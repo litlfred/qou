@@ -804,12 +804,18 @@ def blocks_with_sum_at_most(S: int) -> int:
 # (`computations/_branch_cache.py`, kind `xbot-relaxation-ckpt` in qou.json): an fsync'd local
 # journal under `~/.cache/qou/xbot-relaxation-ckpt/<member>/` plus one orphan branch per member,
 # so a run resumes in another container too.  The member is `xbot-relaxation-<key>`, where key
-# is the branch-cache source key of `computations/` AS A WHOLE (coarse but safe: any edit there
-# starts a new member), and inside it each record is still keyed by the per-stage / per-call
-# hash above.  A dirty `computations/` tree has no key, so the branch store is off and records
-# fall back to the per-file directory `REV_XBOTR_CKPT_DIR` (the pre-migration layout, still read
-# as a fallback).  `QOU_XBOT_CKPT_CACHE=0` turns the branch store off; `_PUSH=0` / `_RESTORE=0` /
-# `_DIR` as for every ShardedCache.  (The env prefix deliberately does NOT start `REV_XBOT`:
+# is the branch-cache source key of this probe's IMPORT CONE (`_BC_CONE` below: this file, the
+# committed evaluator it execs, and the `qou_substrate` package both import), and inside it
+# each record is still keyed by the per-stage / per-call hash above.  Until 2026-11-22 (post-
+# merge QA of PR #8997) the key was the tree of `computations/` as a whole, so any merge under
+# computations/ started a new member and any stray untracked file there switched the store off.
+# The cone is read off the two files' imports, and `_bc_member` refuses the store if a module
+# from this checkout outside the cone is loaded, so the narrowing cannot silently go stale.
+# Untracked files outside the cone no longer matter; a dirty file INSIDE it still has no key,
+# so the branch store is off and records fall back to the per-file directory
+# `REV_XBOTR_CKPT_DIR` (the pre-migration layout, still read as a fallback).
+# `QOU_XBOT_CKPT_CACHE=0` turns the branch store off; `_PUSH=1` (pushing to origin is OFF by
+# default) / `_RESTORE=0` / `_DIR` as for every ShardedCache.  (The env prefix deliberately does NOT start `REV_XBOT`:
 # those variables are hashed into every key.)  Values are unchanged: exact `_mpf_` tuples with a
 # hex mantissa, bit-identical on restore.
 # --------------------------------------------------------------------------------------------
@@ -831,19 +837,53 @@ _BC_KIND = "xbot-relaxation-ckpt"
 _BSTORE = None
 
 
+_BC_CONE = (
+    "computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py",
+    "computations/deltalambda/rev_e_infinity_edge_limit_probe.py",   # exec'd as `_SRC`
+    "tools/qou-substrate/python/qou_substrate",                       # Q_50_DIGIT_STR
+)
+# Loaded from this checkout but deliberately outside the key: it moves bytes, not values.
+_BC_CONE_EXEMPT = ("computations/_branch_cache.py",)
+
+
+def _bc_cone_escapes() -> list[str]:
+    """Modules loaded from this checkout that the member key does not cover."""
+    root = str(_bc.ROOT) + os.sep
+    out = []
+    for name, mod in list(sys.modules.items()):
+        f = getattr(mod, "__file__", None)
+        if not f or not os.path.abspath(f).startswith(root):
+            continue
+        rel = os.path.relpath(os.path.abspath(f), str(_bc.ROOT))
+        if rel in _BC_CONE_EXEMPT or any(rel == c or rel.startswith(c + os.sep) for c in _BC_CONE):
+            continue
+        out.append(rel)
+    # The keyed qou_substrate must be the one imported (an editable install of another
+    # checkout would put different source behind the same key).
+    qs = sys.modules.get("qou_substrate")
+    qs_file = os.path.abspath(getattr(qs, "__file__", "") or "")
+    if qs is not None and not qs_file.startswith(os.path.join(str(_bc.ROOT), _BC_CONE[2]) + os.sep):
+        out.append(f"qou_substrate from {qs_file}")
+    return sorted(out)
+
+
 def _bc_member():
-    key, why = _bc.source_key("computations/", ("computations",))
+    escapes = _bc_cone_escapes()
+    if escapes:
+        return None, ("loaded source the member key does not cover: "
+                      + ", ".join(escapes[:5]) + " (extend _BC_CONE, or run with this checkout's qou_substrate)")
+    key, why = _bc.source_key("the xbot probe's import cone", _BC_CONE)
     return (f"xbot-relaxation-{key}", "") if key else (None, why)
 
 
 def _bc_seed_argv(member, shard):
     meta = {"probe": "computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py",
             "sourceKey": member.rsplit("-", 1)[1],
-            "sourceTrees": _bc.source_trees(("computations",))}
+            "sourceTrees": _bc.source_trees(_BC_CONE)}
     readme = (f"# {member}\n\nOne member of qou's `{_BC_KIND}` family (declared in qou.json; "
               f"kind in `typologies/{_BC_KIND}.json`). Stage and call checkpoints of "
               "`computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py`, keyed by the "
-              "git tree of `computations/` (the member) and by a hash of the probe source and "
+              "git ids of the probe's import cone (the member) and by a hash of the probe source and "
               "inputs (each record). mpf values are exact `_mpf_` tuples. Never edit by hand.")
     return _bc.generic_seed_argv(_BC_KIND, meta, readme, _BSTORE.dir / "local")(member, shard)
 
