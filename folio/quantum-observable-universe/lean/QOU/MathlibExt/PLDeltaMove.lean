@@ -25,12 +25,18 @@ of stage 2's first half, over any real normed space `E`:
   `deltaIso_of_not_mem` (it fixes everything outside the interior of the body) and
   `deltaIso_one_left` / `deltaIso_one_right` (at time `1` it maps `[a, m]` onto `[a, c]` and
   `[m, b]` onto `[c, b]`, affinely).
+* `DeltaPushProvider Q a b c` — the data a Δ-move needs from an isotopy (supported in a body
+  missing the edge rays and the rest of the link, mapping `[a, b]` onto `[a, c] ∪ [c, b]`),
+  together with an extra property `Q` of the isotopy.
+* `exists_ambientIsotopy_of_delta` — **a Δ-move is realized by any push provider**, and the
+  ambient isotopy inherits `Q`.
+* `deltaPushProvider_ball` — the push of the ball hull `deltaBody` is a provider (`Q = True`).
 * `ambientIsotopic_of_delta`, `Move.ambientIsotopic`, `DeltaEquiv.ambientIsotopic`.
 
 ## What is NOT proved here
 
-* The converse (ambient isotopy implies Δ-equivalence) and the PL-isotopy comparison: later
-  parts of stage 2.
+* The converse (ambient isotopy implies Δ-equivalence). The PL version of this file's result is
+  `PLDeltaPoly.lean`.
 -/
 
 namespace QOU.MathlibExt.PL

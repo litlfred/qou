@@ -31,6 +31,12 @@ with `H 0 = id` and `H 1 = push S v`.
 * `pushData_of_polyBody` — a polyhedral body around the Δ-triangle with `a`, `b` on its
   boundary, `c` inside, missing the edge rays and the rest of the link, gives a push provider
   whose isotopy has a PL track.
+
+## What is NOT proved here
+
+* That such a polyhedral body exists: `pushData_of_polyBody` takes it as a hypothesis. Its
+  existence (a skew cross-polytope inside the ball hull) is `exists_polyBody` in
+  `PLDeltaPoly.lean`.
 -/
 
 namespace QOU.MathlibExt.PL
