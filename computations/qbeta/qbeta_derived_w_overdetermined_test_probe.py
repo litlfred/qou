@@ -212,8 +212,8 @@ def main() -> int:
     #    (hecke-engine test `suffixes_match_per_word`).
     #  * cache: computations/trace_cache.py stores each value keyed on the
     #    engine source tree, q0 string, dps, n, word and suffix, journals after
-    #    every chunk and seeds the `trace-cache` branch family, so an
-    #    interrupted run resumes.
+    #    every chunk, so an interrupted run resumes; with QOU_TRACE_CACHE_PUSH=1
+    #    (opt-in) it also seeds the `trace-cache` branch family on origin.
     from trace_cache import TraceCache
     T_START = time.monotonic_ns()
 

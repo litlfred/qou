@@ -40,8 +40,11 @@ is overnight work; the cache lets that cost amortise across runs.
     poly = get_mn_chi_q((2, 1), (3,))  # cached lookup; computes + saves on miss
 
 The store is opened on first call (restore + verification), every new
-entry is appended to the local journal at once, and the unpublished entries
-are seeded to the branch as one shard at exit (or on `force_save()`).
+entry is appended to the local journal at once, and, only when
+`QOU_MN_CHI_CACHE_PUSH=1` is set, the unpublished entries are seeded to the
+branch as one shard at exit (or on `force_save()`). Pushing to origin is off by
+default; restoring from the branch is on (`QOU_MN_CHI_CACHE_RESTORE=0` turns it
+off).
 Concurrent writers are safe: shards are content-addressed and a seed that
 loses the race refetches and re-applies.
 
