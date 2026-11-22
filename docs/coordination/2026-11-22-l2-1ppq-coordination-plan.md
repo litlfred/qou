@@ -222,3 +222,10 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - `specialise_strandBraid` and `nbody_monodromy_specialises`: one W per generic β conjugates the Jimbo-normalised n-body monodromy to the specialised `strandBraid` family over ℤ[q, q⁻¹].
   - `lagrangian_monodromy_specialises`: the same under StokesToBraiding.
   - Next: W8 to decide whether its HeckeMonodromy instance sits on this Laurent family.
+- **2026-11-22 22:24Z, W4** (draft #9160):
+  - `towerTr_shift_commutator` (the h² lemma) is sorry-free over any commutative ring, for all z and h.
+  - The A = 4 product run is done:
+    - locality 192/192;
+    - product rule 736/736;
+    - first deviation m(1−z²)h⁶, where m counts same-receiver bond pairs. This extends the A = 3 result (#9144).
+  - E_C's expected carrier is κ·Q_A·Q_B, conditional on t ↔ α_EM. No empirical E_C is imported.
