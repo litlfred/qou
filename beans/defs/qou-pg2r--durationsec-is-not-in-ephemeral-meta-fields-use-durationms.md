@@ -1,13 +1,13 @@
 ---
 # qou-pg2r
 title: durationSec is NOT in _EPHEMERAL_META_FIELDS — serializing seconds makes wall-clock substantive witness content
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T21:11:00Z
-updated_at: 2026-10-04T15:12:26Z
+updated_at: 2026-11-22T21:40:39Z
 parent: qou-5vkl
 ---
 
@@ -200,3 +200,11 @@ to the other 433, and `qou-pin5` now carries a pointer back here.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-22 — CLOSED: the mask fix landed; the remainder is qou-pin5 (bean-hygiene wave 2, pass 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `9f883a2d02`.
+
+**Applicability:** witness tooling, no physics premise.
+
+The bean's fix is on main: `e5858db3e0` (2026-08-15) added `durationSeconds` and `duration_sec` to `_EPHEMERAL_META_FIELDS`, now at `tools/qou-substrate/python/qou_substrate/witness.py:2684`, with the no-`durationSec` finding in the comment at 2542-2552. The one item left, routing the three probes through `WitnessBuilder`, is the general case owned by **qou-pin5** (todo), which this bean already cross-references and which says not to work them separately. Closing here so the work has one carrier.

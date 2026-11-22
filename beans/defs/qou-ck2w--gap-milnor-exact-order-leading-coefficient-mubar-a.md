@@ -1,13 +1,13 @@
 ---
 # qou-ck2w
 title: 'GAP: Milnor exact-order leading coefficient mubar_A != 0 (exact law order(D_A)=2(A-1)) is OPEN'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T19:16:41Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:42:09Z
 parent: b9cj
 ---
 
@@ -93,3 +93,11 @@ stays unfabricated (anti-laundering). Track the Lean side under qou-v7ro.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8294, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-31: "beans(qou-ck2w): cross-ref the recursion proof — math gap CLOSED, only Lean instance remains"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-22 — SCRAPPED: superseded by qou-v7ro (bean-hygiene wave 2, pass 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `9f883a2d02`.
+
+**Applicability review.** Premises: the convention-D deficit recursion `D_{A+1} = −h²(h²+2) D_A` on the Temperley–Lieb side. Convention D is current. No retired premise (no σ₀σ₁ photon, convention C, census selection or absolute mass). The question still matters, but it no longer lives here.
+
+**Verdict: SUPERSEDED-BY qou-v7ro.** As the 2026-08-31 section records, the nonvanishing of the leading coefficient follows from the recursion's closed form (leading coefficient `(3/4)(−2)^{A−3}`), argued in `docs/audits/2026-08-30-milnor-recursion-forall-A-PROVED.md` (on main). The Lean side is conditional: `tight_slice_of_recursion` (`QOU/MassTheory/BrunnianDeficitRecursion.lean:128`) takes `[BrunnianDeficitRecursion D]` as a class hypothesis, and that instance is not discharged (brick-3 roast, `docs/audits/2026-08-31-milnor-brick3-roast.md`). That open instance is tracked by **qou-v7ro (todo)**, which stays open per rule 13a. Scrapping this duplicate carrier does not close the conjecture. The "Round 82" note above (PR #8294) is a vacuous batch PR closed 2026-11-20.

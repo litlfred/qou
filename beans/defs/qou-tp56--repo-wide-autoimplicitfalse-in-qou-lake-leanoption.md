@@ -1,13 +1,13 @@
 ---
 # qou-tp56
 title: Repo-wide autoImplicit=false in qou Lake leanOptions (Mathlib-standard hygiene; prevents the zeta-notation auto-bound trap) — needs a FULL lake build to validate, CI or non-sandbox
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T03:14:24Z
-updated_at: 2026-10-04T15:13:47Z
+updated_at: 2026-11-22T21:40:39Z
 parent: qou-rtxm
 ---
 
@@ -52,3 +52,13 @@ Was in-progress with no bean update since 2026-08-19 and no main commit naming i
 - Formalized in `QOU.Foundations.VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene` (`folio/quantum-observable-universe/lean/QOU/Foundations/VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene.lean`).
 - 80-dps `mpmath` probe & 2-commit witness (`5ba819e89853dd16d98b7a750bedb3288386e5e6` -> `c6ba78e1f151ade6d4ae42cccb2d5eab6465b42f`, `scriptHash = scriptSha256 = af1cbee43424d4e7536db47834cc2df1049ef3dcaa3bf27b824e4d7f5424ee91`).
 - PR: https://github.com/litlfred/qou/pull/8469
+
+## 2026-11-22 — CLOSED: the flip is on main and the full build record now exists (bean-hygiene wave 2, pass 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `9f883a2d02`.
+
+**Applicability:** a Lean hygiene setting, no physics premise; still wanted (AGENTS.md requires `-DautoImplicit=false` for lean-direct to match the lakefile).
+
+The flip is on main: `autoImplicit = false` at `lakefile.toml:53` and line 5 of all three paper lakefiles. The one item left open on 2026-08-19 was a full green `lake build QOU UGB Fred2005` as the formal record. That now exists: the 2026-11-21 cache reseed (bean qou-56qy, AGENTS.md line ~5802) records `lake build QOU UGB Fred2005` at main `9428c3511c`, 7464 jobs green, and that commit's root lakefile carries `autoImplicit = false` at line 53. A separate `-autoimplicit-off` cache branch is no longer needed, because the main cache `lake-cache/qou-v4-24-0` was built with the flag on.
+
+The "Round 87" note above (PR #8469) is one of the vacuous batch PRs closed 2026-11-20 and is not evidence either way.

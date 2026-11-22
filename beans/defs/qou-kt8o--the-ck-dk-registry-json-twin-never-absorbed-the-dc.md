@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T01:22:39Z
-updated_at: 2026-10-04T15:11:40Z
+updated_at: 2026-11-22T21:42:09Z
 parent: qou-5vkl
 ---
 
@@ -271,3 +271,22 @@ under computations/. It is at docs/coordination/.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-22 — RESCOPED: original scope landed; the guard this bean added is now red on a new divergence (bean-hygiene wave 2, pass 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `9f883a2d02`.
+
+**Applicability review.** The c₃ ladder is convention-C frame and awaits re-derivation under D (qou-cds1), so every c₃ figure here is C-conditional. That does not affect this bean, which is about registry/twin consistency.
+
+**What landed (all four "Still open" items):**
+- Root cause: `qbeta_eigenphase_taylor_in_u.py:104` now reads `C3_EMP_MUON = mpf("-2.02020023502")`, not `-2.0097` (`1ee9666f7d`, 2026-08-31). Note this is the CODATA-2018-era muon extraction; AGENTS.md records the CODATA-2022 pin as `-2.0198603119`. That is a currency question for the c₃ owners, not this bean.
+- The JSON twin note now reads 3.84e6 (`docs/coordination/ck-dk-registry.json:50`).
+- AGENTS.md's site count was corrected (§Formalize-first, the 2026-08-29 block).
+- The twin validator exists (`3419cf199a`) and is wired into `scripts/check-sidecars.sh`.
+- The ~50 prose sites are deliberately preserved (qou-3nva).
+
+**New, and why this stays open.** `python3 docs/coordination/ck_dk_registry_validate.py --twin` is **FAIL** on main today:
+
+    T5 JSON: production.dashboard_{beats_100x,total} = 1/5, but the witness scores 1/6
+
+The denominator moved to 6 when the α_em⁻¹ row was added (`d626761a34`, 2026-09-07), and the JSON was not updated. The fix is corpus-derived (the witness decides it) and mechanical, but it is a repo change needing a PR. Restating this bean to that one item rather than opening a new one, since the failing check is the one this bean built.
