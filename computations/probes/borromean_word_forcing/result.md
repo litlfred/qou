@@ -24,6 +24,8 @@ No measured value is used anywhere.
 | `BorromeanSL2ZFibre.fibre` | **Conditional on `KernelIsDeltaFour` and `PositiveRepresentatives`** (both cited, named hypotheses): a writhe-0 three-strand word with χ₍₂,₁₎ = χ(β_Bor) for all q ≠ 0 is conjugate to β_Bor, at any length. Structural route: trace bound tr ≥ 2 + r·l (`ptr_ge`), writhe forces r ≡ l mod 12, so r = l ≤ 4; then a 340-word `decide` (`trace18_small`) leaves (RL)³ and R⁴L⁴, and χ at q = 2 removes R⁴L⁴. χ is a class function on B₃ (`chi21_conj`); at q = i it is the SL(2,ℤ) trace (`chi21_I`). |
 | `SL2Z.exists_conj_posProd` (`QOU/MathlibExt/SL2ZPositiveWords.lean`) | **Proved**, sorry-free, standard axioms: every SL(2,ℤ) matrix of trace > 2 is conjugate to a positive R/L product. This is `PositiveRepresentatives`, discharged as `BorromeanSL2ZFibre.positiveRepresentatives`. |
 | `BorromeanSL2ZFibre.fibre_of_kernel` | **Conditional on `KernelIsDeltaFour` alone**: the same fibre statement with the positive-representative fact proved. |
+| `kernelIsDeltaFour` (`QOU/Mass/BraidThreeSL2ZKernel.lean`) | **Proved**, sorry-free, standard axioms: ker(B₃ → SL(2,ℤ)) = ⟨Δ⁴⟩. Normal form Δ^{2m}·(alternating blocks Δσ₀σ₁, Δ(σ₀σ₁)⁻¹), then ping-pong on matrix sign patterns. |
+| `BorromeanSL2ZFibre.fibre_unconditional` | **Proved, no hypotheses**: a writhe-0 three-strand word with χ₍₂,₁₎ = χ(β_Bor) for every q ≠ 0 is conjugate to β_Bor, at any length. Standard axioms only. |
 
 Topological reading (cited, not formalised): for a pure 3-braid, removing a strand
 leaves σ^{2k} with k the remaining pair's linking number, so the closure is Brunnian
