@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-22T09:10:23.922079+00:00",
-  "commitSha": "b3b4cff72736db064f2c35effc04d6df40ff3756",
+  "computedAt": "2026-11-22T15:06:19.540051+00:00",
+  "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -18,7 +18,7 @@
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "0b9457863ae7",
-  "scriptCommitSha": "b3b4cff72736db064f2c35effc04d6df40ff3756",
+  "scriptCommitSha": "b4b480205a01fd50ebdad7e2580428b6bbcf66db",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "011771826c068199"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -277,13 +277,13 @@
           "pred_two_term_plain_MeV": "939.108190611",
           "err_two_term_plain_ppb": "4.866e+5",
           "primary_ruled_zD_score_untouched": true,
-          "substrate_identity_m_n_1term_MeV": "939.565893092",
-          "substrate_identity_m_n_1term_err_ppb": "501.5",
-          "substrate_identity_m_n_2term_scored_MeV": "939.565893092",
-          "substrate_identity_m_n_2term_scored_err_ppb": "501.5",
-          "substrate_identity_m_n_2term_derived_adjacent_err_ppb": "366.0",
-          "substrate_identity_m_n_2term_plain_MeV": "939.565561396",
-          "substrate_identity_m_n_2term_plain_err_ppb": "148.4",
+          "substrate_identity_m_n_1term_MeV": "939.108522307",
+          "substrate_identity_m_n_1term_err_ppb": "-4.863e+5",
+          "substrate_identity_m_n_2term_scored_MeV": "939.108522307",
+          "substrate_identity_m_n_2term_scored_err_ppb": "-4.863e+5",
+          "substrate_identity_m_n_2term_derived_adjacent_err_ppb": "-4.864e+5",
+          "substrate_identity_m_n_2term_plain_MeV": "939.108190611",
+          "substrate_identity_m_n_2term_plain_err_ppb": "-4.866e+5",
           "substrate_identity_residual_reduction_pct": "0.0"
         },
         "one_term": {
@@ -676,11 +676,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "a6c067d77c5a87eec3a553aec7ba24eaac6a66dde6e6a31aa6d1d4b063b5a255",
-        "size_bytes": 12056,
-        "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
-        "scriptCommitSha": "056a00fc678a0c1d03d33d77c14f59479044eb86",
-        "computedAt": "2026-11-21T04:37:58.464849+00:00"
+        "sha256": "b73a8b9c3865afb9208f2f88ae99978ed399f1e0b998da1354242d80019a0ede",
+        "size_bytes": 12675,
+        "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
+        "scriptCommitSha": "55ca73e75d5a1a020cd996effddd5a5f5c2762b2",
+        "computedAt": "2026-11-22T15:05:16.039918+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
