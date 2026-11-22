@@ -600,8 +600,11 @@ computed beyond this argument.
 `WeylSymmetricPairNotCoulomb.lean`, and the off-diagonal zero trace and the Cartan readout are proved
 for every q and every weight-preserving core in `WeightShiftZeroTrace.lean`
 (`sectorTrace_eq_zero_of_shift`, `sectorTrace_diag`, `gaudin_readout`; that the Jimbo Ř preserves
-the u-count entrywise is `jimbo_weight_preserving`). Scope-(a) for
-G-q and M (exact at four q, not all q). Tower status: n = 6 only; the tower in n is open. No empirical
+the u-count entrywise is `jimbo_weight_preserving`). For M, pp = nn is proved at q = 2 in Lean
+(`dE_M_pp_eq_nn`, `M_coulomb_kappa_zero` in `TwoBlockExchangeNotCoulomb.lean`, kernel `decide`).
+Scope-(a) for G-q (exact at four q, not all q). Both G-q and M are invariant under the map
+u ↔ d together with i ↦ 5 − i (checked exactly at q = 7/5); a general proof of pp = nn from that
+symmetry is open. Tower status: n = 6 only; the tower in n is open. No empirical
 input, no fit.
 
 **Owner decision this raises (not taken).** Whether the model adds a U(1)_em grading (strand charge
