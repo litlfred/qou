@@ -54,3 +54,34 @@ The invariant is ord₁, the order of vanishing at q = 1. For the target, ord₁
 - T1, T2, T3 and the single-word result are scope-(b) exclusions. The invariant is the order of vanishing at q = 1, and it is proved.
 - T4 is scope-(a) as computed, with a hand proof of the exact exclusion.
 - What the measurement leaves: w agrees to first order with the skein difference of a word whose closure has n − 1 components (for example h·z_D). The closest canonical tower operation is therefore σ − σ⁻¹ = h, and the missing piece is a factor that is 1/2 at q = 1 and is not a single trace. Free linear combinations of traces were not searched, by design: over ℤ[q^±] the combination w·τ(1) already equals w, so solving for coefficients would be fitting.
+
+---
+
+# Addendum 2 result: the exact factor beyond h/2 (prereg commit f27ce7f9483)
+
+**Verdict: no derivation. Neither preregistered route equals w = ℏ_q/q².** Both predictions stated in
+the prereg hold. Exact ℚ(q) (`e0_weight_framed_link_probe.py`, output in `..._result.txt`).
+
+| route | object | ord₁ | leading coeff | verdict |
+|---|---|---|---|---|
+| R2 | 3₁ excess, ratio / difference | 2 | — | excluded (order) |
+| R2 | 4₁ (muon knot) excess, ratio / difference | 2 | — | excluded (order) |
+| R3 | Hopf⁺ excess, ratio / difference | 1 | −3 / −12 | excluded (coefficient) |
+| R3 | Hopf⁻ excess, ratio / difference | 1 | +3 / +12 | excluded (coefficient) |
+| R3 | electron σ₁σ₂σ₁ closure (= Hopf⁺) | 1 | −3 / −12 | excluded (coefficient) |
+
+Closed form: Hopf⁺ ratio − 1 = −q⁻²·h·[3]/[2]. That is the same q⁻² framing as w, times a
+skein difference h, times a loop ratio [3]/[2] that is 3/2 at q = 1. The 4₁ excess is
+(q⁶ − 1)(q² − 1)/q⁴, of second order, as predicted for every knot.
+
+**What the result fixes.**
+1. Read as a link invariant, the "h/2" of Addendum 1 is a linking-number effect. It appears only
+   for linked pairs, and there with coefficient proportional to lk times 3/2, not 1/2.
+2. A knot excess, including the muon knot's, can never supply w: it is second order at q = 1.
+3. The q⁻² in w does have a framed counterpart, the q^{−2·wr} framing at writhe 1. The remaining
+   factor is ℏ_q = 1 − q⁻¹, which is h/(1 + q). That is a one-sided deficit, not a symmetric
+   skein difference. No canonical Hecke or link object tested so far produces 1/(1 + q).
+
+**Not done, by the prereg rule:** rescaling, extra powers of q, and combinations of routes.
+The match q⁻²·(something) is suggestive. But choosing the something to equal ℏ_q is exactly the
+step that would be a fit.

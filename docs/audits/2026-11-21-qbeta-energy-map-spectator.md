@@ -972,3 +972,14 @@ This closes the §35 item "the all-words q = 1 argument" for the state sum. Its 
 - The only order-1 canonical operation is the skein difference h·τ(β), h = σ − σ⁻¹. It matches w to first order when the closure has n − 1 components (`skein_first_order`). It is never equal to w, because that would need τ(β) = 1/(q²(q+1)), which has a pole at q = −1 (hand argument).
 
 **Result.** w is not a single trace and not a canonical tower object. It is first-order equal to h/2. The weight stays underived (bean `qou-91w7`). Combinations with free coefficients were not searched, because that would be fitting.
+
+## §37 E₀'s weight beyond first order: framed link invariants (prereg Addendum 2)
+
+Routes fixed in the prereg: the excess of the framed mass 𝔪 (`def:mass-identity`) over the unknot, for 3₁ and 4₁, and over the 2-unlink, for Hopf± and the electron closure.
+
+**Result: no route equals w = ℏ_q/q².**
+- The knot excesses have order 2 at q = 1, as predicted. This holds for the muon knot too.
+- The linked-pair excesses have order 1, with coefficient ±3 (ratio) or ±12 (difference), never 1.
+- Hopf⁺ excess = −q⁻²·h·[3]/[2]. It shares w's q⁻² framing. What w needs in place of h·[3]/[2] is ℏ_q = h/(1+q), a one-sided deficit with no canonical Hecke or link counterpart found.
+
+The weight stays a definition: w = ℏ_q·(ℏ_q c_q)², from the corpus's c_q and ℏ_q. Bean `qou-91w7`. Probe `computations/probes/e0_weight/e0_weight_framed_link_probe.py`.
