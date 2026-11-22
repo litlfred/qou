@@ -30,3 +30,27 @@ amphichirality) and on SnapPy's isometry check. It is not proved in Lean.
 
 **Caveat.** SnapPy's `Braid:` manifold includes the braid axis (4 cusps), so the braid-word rows are
 for the closure together with the axis. The bare closure is L6a4.
+
+## Addendum 1 result (2026-11-22): the hydrogen capture braid, both placements
+
+Output: `cs_capture_braid_result.txt` (SnapPy 3.3.2 high precision).
+
+| closure | components | identify | Vol | CS |
+|---|---|---|---|---|
+| W_L (proton left) | 4 | L12n2208 | 12.1792992769158435… | 0 |
+| W_R (proton right) | 4 | L12n2208 | 12.1792992769158435… | −8.1e-65 |
+| Borromean + braid axis (reference) | 4 | L12n2208 | same | −4.0e-65 |
+
+`is_isometric_to`: W_L ≅ W_R, and both ≅ Borromean + axis.
+
+**All three predictions hold.** P1: four components. P2: the electron circle is isotopic to the braid
+axis of the proton core, so each hydrogen closure is the Borromean rings plus their axis. P3: the two
+placements give the same manifold. CS is 0 to the precision of the computation in both.
+
+**Verdict (scope a).** The capture-braid closure gives no p/n width difference, in either placement.
+The electron's placement, which fixes the sign of the weight-space S in #8804, is invisible to the
+closure's complex volume. So the width, if it is Im of a complex volume, must again come from
+decorations of the braid (weights, cabling, the gluon), not from the closure.
+
+The closures *with* their own braid axis (5 cusps) have degenerate triangulations in SnapPy, so no
+CS is reported for them.
