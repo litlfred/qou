@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-11-22T19:02:38Z
+updated_at: 2026-11-22T19:19:44Z
 parent: qou-8lxd
 ---
 
@@ -104,3 +104,6 @@ Verification: lean-direct exit 0; #print axioms shows no sorryAx.
 - `rank_two_twist_weights_H2` / `_H3`: the moment equations force the convention-D weights. y_(1³) = 0 comes via `threeRow_eq_zero_of_jones_ocneanu`; [2]²·y_(2,1) = 1.
 
 Scope: n ≤ 3. That a trace on H₃ is fixed by its values on 1, σ₁, σ₁σ₂ (Geck–Pfeiffer / Ocneanu) is cited, not proved. The corpus has no general-n uniqueness theorem. This is a formal check of Turaev 1988 and Wenzl 1988. The bean stays open: the SU(3) colour action itself is still the gap.
+
+
+2026-11-22 (gl6 coideal probe, PR #9059, d1eba94ddc9): the (gl6, gl3+gl3) Letzter coideal contains B^col = <B1,B2,B4,B5,T1..T3>, which satisfies the U_q(sl3) relations exactly on (C^6)^n, n<=3. It is gl3(x)1 at q=1 and commutes with the transported gl6 Hecke action. It meets (a)(b)(c)(e)(f) and evades K4 (q^2=1), because its coproduct is flavour-dependent at q!=1. (d) fails: the singlet sector is S^(1^3)x4 + S^(2,1)x2, i.e. the fermionic flavour model -R_f^-1, with z = z_D(-q^-1). The reason is that at q=1 the epsilon singlet gives sigma = -P_f. So (d) and (f) are incompatible for any transported sl3(x)1 colour: scope (b), S3 sign invariant, argument not in Lean. Open: whether (d) is the right test (owner). Bean stays open.
