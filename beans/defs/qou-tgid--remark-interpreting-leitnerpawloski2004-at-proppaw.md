@@ -1,13 +1,14 @@
 ---
 # qou-tgid
 title: Remark interpreting [leitnerpawloski2004] at prop:pawlowski-leitner-inner-product
-status: todo
+status: in-progress
+pr: 9116
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:39Z
-updated_at: 2026-10-04T15:23:53Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-vva9
 ---
 
@@ -17,3 +18,7 @@ Source: `library/arxiv-math-0409565v2/0409565v2.pdf` (`leitnerpawloski2004`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-22 — fixed in PR #9116: RepresentationTheory: the PL inner product is attributed to [leitner2026]; [leitnerpawloski2004] supplies only the PBW basis.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

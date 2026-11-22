@@ -1,13 +1,14 @@
 ---
 # qou-n6ge
 title: Remark interpreting 1012.5432v4.pdf at content/bib-qa-verifications.json
-status: todo
+status: in-progress
+pr: 9116
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:29Z
-updated_at: 2026-10-04T15:23:29Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-aqfj
 ---
 
@@ -24,3 +25,7 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Towards topological quantum computation? Knotting and fusing flux tubes
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [thompson-fluxtubes] as the citation key when you do it.
+
+## 2026-11-22 — fixed in PR #9116: Join already corrected to [thompson-fluxtubes]. First-pass triage recorded in the ledger: tangential (D(H) quantum doubles; the folio uses none).
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

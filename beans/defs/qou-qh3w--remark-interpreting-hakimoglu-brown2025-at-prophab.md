@@ -2,12 +2,13 @@
 # qou-qh3w
 title: Remark interpreting [hakimoglu-brown2025] at prop:habiro-tail-archimedean-action
 status: in-progress
+pr: 9116
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:49Z
-updated_at: 2026-11-21T13:32:29Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-vva9
 ---
 
@@ -30,3 +31,7 @@ Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-pr
 Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.
 
 PR #8828 merged 2026-11-21 (content half). Still open: the Lean docstring at HabiroTailAction.lean:124-127; bean stays in-progress.
+
+## 2026-11-22 — fixed in PR #9116: HabiroTailAction docstrings: hakimoglu-brown2025 only recalls the relations (§1.1); the source named is zagier-dilogarithm Ch. I §1–§2.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

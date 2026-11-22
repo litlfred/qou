@@ -1,14 +1,14 @@
 ---
 # qou-ztha
 title: Remark interpreting 6gtx-j455.pdf at content/bib-qa-verifications.json
-status: todo
-pr: 8445
+status: in-progress
+pr: 9116
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:36Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-aqfj
 ---
 
@@ -29,3 +29,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8445, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22 — fixed in PR #9116: Join already corrected to [liu-quintin-afshordi]. The three wald1984 citation sites now say the locator is unchecked because the book is not held.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

@@ -2,12 +2,13 @@
 # qou-7srp
 title: Remark interpreting MonodromyHitchinY.pdf at qou:QOU.MassDerivation.quantum_planck_approx
 status: in-progress
+pr: 9116
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:35Z
-updated_at: 2026-10-04T15:23:59Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-aqfj
 ---
 
@@ -24,3 +25,7 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   On the monodromy of the Hitchin connection
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [laszlo-pauly-sorger] as the citation key when you do it.
+
+## 2026-11-22 — fixed in PR #9116: MassDerivation and Calculations: witten1988 removed; ħ_q = 1 − 1/q is attributed to [leitner2026] as the framework definition.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

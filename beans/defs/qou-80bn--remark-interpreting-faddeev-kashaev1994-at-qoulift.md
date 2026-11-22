@@ -1,13 +1,13 @@
 ---
 # qou-80bn
 title: Remark interpreting [faddeev_kashaev1994] at QOU.LiftingDescent.tm_dilogarithm_evaluation
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:20Z
-updated_at: 2026-10-04T15:23:46Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-vva9
 ---
 
@@ -17,3 +17,7 @@ Source: `library/arxiv-hep-th-9310070v1/9310070v1.pdf` (`faddeev_kashaev1994`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-22 — completed: checked during PR #9116. There is no 1002.0126 join row on faddeev_kashaev1994 any more, and the DOI is gone from the old lines.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

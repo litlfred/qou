@@ -1,13 +1,13 @@
 ---
 # qou-83o7
 title: Remark interpreting the-dilogarithm-function-514sniwxl7.pdf at content/quantum-observable-univers…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:07Z
-updated_at: 2026-10-04T15:24:02Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-vva9
 ---
 
@@ -28,3 +28,7 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   The dilogarithm function
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [zagier-dilogarithm] as the citation key when you do it.
+
+## 2026-11-22 — completed: kirillov1995 locators were already fixed on main in 5627c5d5774; checked during PR #9116.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:32Z
-updated_at: 2026-10-04T15:23:59Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-vva9
 ---
 
@@ -24,3 +24,7 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   On the Garoufalidis-Kashaev state-integral invariant
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [dusenbury2025] as the citation key when you do it.
+
+## 2026-11-22 — checked: the primary Andersen–Kashaev paper (arXiv:1109.6295) is not held in library/, so no reference entry can be written from its PDF. Still open until it is uploaded.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

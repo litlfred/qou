@@ -2,13 +2,13 @@
 # qou-vnct
 title: Remark interpreting [dubois-violette-todorov2018] at QOU.MathlibExt.OctonionColourActionBaseModule
 status: in-progress
-pr: 8216
+pr: 9116
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:47Z
-updated_at: 2026-10-04T15:23:45Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-2srd
 ---
 
@@ -23,3 +23,7 @@ Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-v
 - [x] Non-vacuous Lean 4 theorem proved (`0` `sorry`, `0` vacuity advisories) in `folio/quantum-observable-universe/lean/QOU/Eightfold/HyperchargeWritheRotationJordanGlobalGroupOctonionAndShellFilling.lean`
 - [x] 50-dps `mpmath` probe and witness stamped (`4e815f9543024d961ef648f5d19347ad79739059`, `scriptHash: 34801c11045c`)
 - [ ] Awaiting Merge Manager merge of `litlfred/qou#8216`
+
+## 2026-11-22 — fixed in PR #9116: Octonion files: added the Dubois-Violette–Todorov 2018 Sec. 2 citation (𝕆 = ℂ ⊕ ℂ³).
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

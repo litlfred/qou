@@ -1,13 +1,14 @@
 ---
 # qou-tp3j
 title: Remark interpreting [chlouveraki2016-hdr] at qou:QOU.MassTheory.wenzl_bridge_applicability_qou
-status: todo
+status: in-progress
+pr: 9116
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:23Z
-updated_at: 2026-10-04T15:23:43Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-aqfj
 ---
 
@@ -21,3 +22,7 @@ Source: `library/hdr/HDR.pdf` (`chlouveraki2016-hdr`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-22 — fixed in PR #9116: wenzl-bridge-applicability-qou: HDR Thm 6.20 Ref lines now say it is the Y_{d,n}(q) statement, with the d=1 Ocneanu-trace case.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu

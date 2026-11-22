@@ -1,13 +1,13 @@
 ---
 # qou-6say
 title: Remark interpreting [kirillov1995] at qou:QOU.BraidKnot.Li2qUniqueness
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:55Z
-updated_at: 2026-10-04T15:23:51Z
+updated_at: 2026-11-22T20:51:34Z
 parent: qou-vva9
 ---
 
@@ -21,3 +21,7 @@ Source: `library/arxiv-hep-th-9408113v2/9408113v2.pdf` (`kirillov1995`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-22 — completed: kirillov1995 locators were already fixed on main in 5627c5d5774; checked during PR #9116.
+
+Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
