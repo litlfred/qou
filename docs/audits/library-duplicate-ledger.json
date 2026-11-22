@@ -43,5 +43,12 @@
     "note": "Camilo Arias Abad, 'Introduction to representations of braid groups'. The arXiv preprint (arxiv-1404.0724v1, 2 Apr 2014, 32 pp, 13 sections) and the published version (Rev. Colombiana Mat. 49(1) (2015) 1-38, ariasabad2015-revcolmat, 19 sections) were uploaded together on 2026-10-10 and are ONE WORK: same single author, same title, same chapter sequence (braid groups, homological representations, KZ connection, Yang-Baxter / Drinfeld-Kohno). Identification is by author+title, checkable in the two structure.json files. The choice is a judgement, following the czechmathj-60-2010-1-4 precedent: the published version is preferred because it is the citable venue and its sectioning is finer (it carries 2.1 Artin's presentation, 2.2 Configuration spaces and 4.1 Cohomology of configuration spaces as separate sections, which the preprint's inferred TOC folds). Theorem numbering may differ between the two; cite the published copy. The preprint's text stays on disk and greppable; it gets no INDEX.md row.",
     "recorded": "2026-10-10",
     "adjudicated_by": "ingest"
+  },
+  {
+    "doc_id": "arxiv-math-0203060v10",
+    "prefer": "arxiv-math-0203060v11",
+    "note": "Etingof-Nikshych-Ostrik, On fusion categories, held as arXiv v10 and v11. Same work; v11 (28 Apr 2017) is the later revision. Two grep hits across these directories are ONE source.",
+    "recorded": "2026-11-22",
+    "adjudicated_by": "agent (bean qou-jl8h)"
   }
 ]
