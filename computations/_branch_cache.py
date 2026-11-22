@@ -15,6 +15,16 @@ VALUES ARE STORED AS GIVEN. A record is a JSON object built by the cache's
 entries by it). Exact values stay exact strings; nothing here converts a value
 to a float, and two stored values for one key that differ are a refusal.
 
+PUSHING IS OPT-IN (post-merge QA of PR #8997). Restoring from the branch store
+is on by default; seeding a shard to origin happens only when the caller sets
+`<env>_PUSH=1`. A routine producer re-run therefore never creates or extends a
+`cat/qou/*` branch on origin unless someone asked for it. With push off, new
+entries still go to the local journal and are reported as "not pushed".
+
+EXIT 3 IS NEVER A HIT. Branch shards are loaded only after a restore that
+exited 0, into a directory emptied first, so a corrupt, unreachable or partial
+restore serves nothing from the branch (local journals still load).
+
 Users: computations/trace_cache.py (kind `trace-cache`),
 computations/derived_chi_catalogue_mn_disk_cache.py (kind `mn-chi-cache`),
 computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py (kind
@@ -25,6 +35,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import time
 from pathlib import Path
@@ -40,9 +51,14 @@ def prefix(kind: str) -> str | None:
 
 
 def source_key(label: str, dirs) -> tuple[str | None, str]:
-    """(12-hex key, "") or (None, "undetermined: ...") for a dirty or unreadable tree."""
+    """(12-hex key, "") or (None, "undetermined: ...") for a dirty tree.
+
+    A path that is not in HEAD is a caller bug, not a cache miss: it raises."""
     r = subprocess.run(["bash", str(CLI), "source-key", label, *dirs],
                        capture_output=True, text=True, cwd=ROOT)
+    if r.returncode == 2:
+        raise RuntimeError(f"branch-cache source-key {label!r}: "
+                           f"{(r.stderr.strip() or r.stdout.strip())}")
     if r.returncode != 0:
         return None, (r.stdout.strip() or r.stderr.strip())
     return r.stdout.strip(), ""
@@ -62,12 +78,14 @@ class ShardedCache:
     seed_argv(m, shard)    -> argv that seeds one shard file into member m
     key_of(rec) -> tuple   rec_of(key, value) -> dict ending with "v"
     env                    environment-variable prefix: <env>=0 off,
-                           <env>_DIR local root, <env>_PUSH=0, <env>_RESTORE=0
+                           <env>_DIR local root, <env>_PUSH=1 to seed origin
+                           (off by default), <env>_RESTORE=0
     """
 
     def __init__(self, kind: str, *, member_fn, restore_argv, seed_argv,
                  key_of, rec_of, env: str, log=print):
         self.kind = kind
+        self.env = env
         self.log = log
         self._seed_argv = seed_argv
         self._key_of = key_of
@@ -78,7 +96,8 @@ class ShardedCache:
         self.hits = 0
         self.misses = 0
         self.enabled = os.environ.get(env, "1") != "0"
-        self.push = os.environ.get(f"{env}_PUSH", "1") != "0"
+        # Opt-in: only an explicit <env>_PUSH=1 writes to origin.
+        self.push = os.environ.get(f"{env}_PUSH", "0") == "1"
         self.member = None
         self.last_publish = time.monotonic_ns()
         if not self.enabled:
@@ -93,14 +112,23 @@ class ShardedCache:
         base = Path(os.environ.get(f"{env}_DIR", Path.home() / ".cache" / "qou" / kind))
         self.dir = base / self.member
         (self.dir / "local").mkdir(parents=True, exist_ok=True)
+        remote = self.dir / "remote"
+        restored = False
         if os.environ.get(f"{env}_RESTORE", "1") != "0":
+            # Empty it first: shards left by an earlier restore, or written
+            # before a later shard failed its sha256, must not be served.
+            shutil.rmtree(remote, ignore_errors=True)
             t0 = time.monotonic_ns()
-            r = subprocess.run(restore_argv(member, str(self.dir / "remote")),
+            r = subprocess.run(restore_argv(member, str(remote)),
                                capture_output=True, text=True, cwd=ROOT)
             msg = (r.stderr.strip().splitlines() or [""])[-1]
             self.log(f"  {kind}: restore exit {r.returncode} ({msg}) "
                      f"in {(time.monotonic_ns() - t0) // 10**8 / 10}s")
-        n_remote = self._load_dir(self.dir / "remote" / "shards", remote=True)
+            restored = r.returncode == 0
+            if not restored:
+                # 1 = miss, 2/3 = environment, corrupt or unreachable: none is a hit.
+                shutil.rmtree(remote, ignore_errors=True)
+        n_remote = (self._load_dir(remote / "shards", remote=True) if restored else 0)
         n_local = self._load_dir(self.dir / "local", remote=False)
         # Local journal entries the branch store does not hold yet.
         for k, v in self.values.items():
@@ -165,13 +193,20 @@ class ShardedCache:
     def publish(self) -> None:
         """Seed the unpublished entries as one content-addressed shard."""
         self.last_publish = time.monotonic_ns()
-        if not (self.enabled and self.push and self.unpublished):
+        if not (self.enabled and self.unpublished):
+            return
+        if not self.push:
+            self.log(f"  {self.kind}: {len(self.unpublished)} entries kept in the local "
+                     f"journal, not pushed to origin (set {self.env}_PUSH=1 to seed "
+                     f"{self.member})")
             return
         body = "".join(json.dumps(self._rec_of(k, v)) + "\n"
                        for k, v in sorted(self.unpublished.items()))
         sha = hashlib.sha256(body.encode()).hexdigest()
         p = self.dir / "local" / f"shard-{sha[:16]}.pending"
         p.write_text(body)
+        self.log(f"  {self.kind}: {self.env}_PUSH=1: pushing {len(self.unpublished)} "
+                 f"entries to origin as a shard of {self.member}")
         t0 = time.monotonic_ns()
         r = subprocess.run(self._seed_argv(self.member, str(p)),
                            capture_output=True, text=True, cwd=ROOT)

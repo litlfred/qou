@@ -15,7 +15,8 @@ after every chunk, so an interrupted run resumes where it stopped.
 WHERE IT LIVES. Locally under `$QOU_TRACE_CACHE_DIR` (default
 `~/.cache/qou/trace-cache/<member>/`), and durably in the `trace-cache` family
 of orphan branches declared in qou.json, through `scripts/trace-cache.sh`
-(restore at start, seed a new shard at checkpoints). See that script for the
+(restore at start; seed a new shard at checkpoints only when
+QOU_TRACE_CACHE_PUSH=1, since pushing to origin is opt-in). See that script for the
 member key.
 
 WHY A STALE VALUE CANNOT BE SERVED.
@@ -31,7 +32,8 @@ WHY A STALE VALUE CANNOT BE SERVED.
 ENVIRONMENT
   QOU_TRACE_CACHE=0          off entirely
   QOU_TRACE_CACHE_DIR=<dir>  local root
-  QOU_TRACE_CACHE_PUSH=0     never seed the branch store (restore still runs)
+  QOU_TRACE_CACHE_PUSH=1     seed the branch store on origin (default 0: never push;
+                             new entries stay in the local journal)
   QOU_TRACE_CACHE_RESTORE=0  never restore from the branch store
   QOU_TRACE_CACHE_VERIFY=<k> number of loaded entries re-checked (default 4)
 """
