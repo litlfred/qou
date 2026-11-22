@@ -1151,3 +1151,17 @@ Reading:
 - **Item 3 (the factor ~7.6):** not searched. Hunting structures for a ratio set by CODATA is
   selection against the target. The one derived change (eigenvalue charges) was run as pre-registered;
   arm 1 (+0.171 MeV) stands as a scope (a) result.
+
+### Scope of §29–§36 against the full-tower ruling (2026-09-03)
+
+Owner, 2026-11-22: *"Write up §36 first, scoping every earlier claim in this thread as order-zero."*
+The ruling asks for all n of the Hecke tower and all orders in q. Measured against that:
+- **Orders in q: covered.** Every n − p functional in §29–§36 was computed as an exact rational
+  function of q, which contains every order in h = q − 1. Values at q₀ are evaluations of it.
+- **Jet (prolongation) degree: NOT covered.** Only 𝒟⁰ (the static S), 𝒟¹ and 𝒟² entered. In the
+  corpus's jet reading (`jet-planck-particle-spectrum.md`), each application of 𝒟 is one jet order,
+  so §29–§36 are the bottom of the jet tower. "Order zero" in this thread means this.
+- **Tower in n: NOT covered.** Everything is one nucleon on H₃ (C²⊗³ weight model), except the
+  §36 H₆ eigenvalue check, which used no 𝒟 at all.
+So every negative in §29–§36 (no n − p surviving at q = 1, no reading doing both, no 2+1 split in
+the word) is scope (a): low jet degree, n = 3. None is a structural exclusion along the tower.
