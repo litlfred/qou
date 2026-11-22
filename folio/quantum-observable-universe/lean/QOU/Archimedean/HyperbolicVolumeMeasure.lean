@@ -6,12 +6,15 @@
 
       modules matching *hyperbol*            0
       modules matching *clausen* / *lobachev* 0
-      `UpperHalfPlane`                        Analysis/Complex only
 
-  and that one hit is the **2-dimensional modular-forms** upper half plane -- a
-  complex domain with an `SL₂` action, carrying no Riemannian metric, no volume
-  form, no geodesics.  It neither is, nor generalises to, a hyperbolic-geometry
-  library.  So `qou-idvt` T2 ("the ideal tetrahedron's volume IS the Λ-sum")
+  The one near hit is the **2-dimensional modular-forms** upper half plane
+  `UpperHalfPlane`.  It carries the hyperbolic **metric**
+  (`Mathlib/Analysis/Complex/UpperHalfPlane/Metric.lean`: `Dist ℍ`, `dist_eq`,
+  `isometry_real_vadd` / `isometry_pos_mul`, and `ModularGroup.S` acting by
+  isometries) and a `ChartedSpace ℂ` / `IsManifold` structure, but **no volume
+  measure and no geodesics**, and it is in dimension **two**.  That dimension is
+  what makes it not a route to `H³`.  (Corrected 2026-11-22, bean `qou-6eik`: this
+  paragraph used to say ℍ carries "no Riemannian metric", which is false.)  So `qou-idvt` T2 ("the ideal tetrahedron's volume IS the Λ-sum")
   cannot even be STATED against current Mathlib.  Bean `qou-5gai` tiers the fill
   H1-H5; this file is H1, the measure itself.
 
