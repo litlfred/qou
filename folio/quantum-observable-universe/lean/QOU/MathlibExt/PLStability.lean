@@ -270,6 +270,61 @@ theorem eventually_segment_inter_segment_subset {o w y : X → E}
   filter_upwards [this] with x hx
   rwa [convexHull_pair_dup] at hx
 
+/-- How one segment of a family meets a triangle `conv{o, y, z}` at the base configuration:
+not at all, or only at the vertex `o`, or only at the vertex `y`, which it shares. -/
+def SegClass (o y z s t : X → E) : Prop :=
+  segment ℝ (s x₀) (t x₀) ∩ convexHull ℝ {o x₀, y x₀, z x₀} = ∅ ∨
+  (s = o ∧ t x₀ ≠ o x₀ ∧ segment ℝ (o x₀) (t x₀) ∩ convexHull ℝ {o x₀, y x₀, z x₀} ⊆ {o x₀}) ∨
+  (s = y ∧ t x₀ ≠ y x₀ ∧ segment ℝ (y x₀) (t x₀) ∩ convexHull ℝ {o x₀, y x₀, z x₀} ⊆ {y x₀}) ∨
+  (t = o ∧ s x₀ ≠ o x₀ ∧ segment ℝ (o x₀) (s x₀) ∩ convexHull ℝ {o x₀, y x₀, z x₀} ⊆ {o x₀}) ∨
+  (t = y ∧ s x₀ ≠ y x₀ ∧ segment ℝ (y x₀) (s x₀) ∩ convexHull ℝ {o x₀, y x₀, z x₀} ⊆ {y x₀})
+
+/-- **A finite family of moving segments keeps meeting a moving triangle only at the vertices
+`o`, `y`** it meets there at the base configuration, provided neither of those vertices lies on
+the opposite side of the triangle. -/
+theorem eventually_iUnion_inter_convexHull_subset {J : Type*} [Finite J] {o y z : X → E}
+    (ho : Continuous o) (hy : Continuous y) (hz : Continuous z)
+    {s t : J → X → E} (hs : ∀ j, Continuous (s j)) (ht : ∀ j, Continuous (t j))
+    (hcls : ∀ j, SegClass (x₀ := x₀) o y z (s j) (t j))
+    (hno : o x₀ ∉ segment ℝ (y x₀) (z x₀)) (hny : y x₀ ∉ segment ℝ (o x₀) (z x₀)) :
+    ∀ᶠ x in 𝓝 x₀, (⋃ j, segment ℝ (s j x) (t j x)) ∩ convexHull ℝ {o x, y x, z x} ⊆
+      {o x, y x} := by
+  have hcomm : ∀ x, convexHull ℝ {o x, y x, z x} = convexHull ℝ {y x, o x, z x} := fun x => by
+    rw [Set.insert_comm]
+  -- the two touching cases, for a segment written from the shared vertex
+  have touch_o : ∀ u : X → E, Continuous u → u x₀ ≠ o x₀ →
+      segment ℝ (o x₀) (u x₀) ∩ convexHull ℝ {o x₀, y x₀, z x₀} ⊆ {o x₀} →
+      ∀ᶠ x in 𝓝 x₀, segment ℝ (o x) (u x) ∩ convexHull ℝ {o x, y x, z x} ⊆ {o x, y x} := by
+    intro u hu hu0 h
+    filter_upwards [eventually_segment_inter_convexHull_subset ho hu hy hz h hno hu0] with x hx
+    exact hx.trans (by simp)
+  have touch_y : ∀ u : X → E, Continuous u → u x₀ ≠ y x₀ →
+      segment ℝ (y x₀) (u x₀) ∩ convexHull ℝ {o x₀, y x₀, z x₀} ⊆ {y x₀} →
+      ∀ᶠ x in 𝓝 x₀, segment ℝ (y x) (u x) ∩ convexHull ℝ {o x, y x, z x} ⊆ {o x, y x} := by
+    intro u hu hu0 h
+    have h' : segment ℝ (y x₀) (u x₀) ∩ convexHull ℝ {y x₀, o x₀, z x₀} ⊆ {y x₀} := by
+      rw [← hcomm]; exact h
+    filter_upwards [eventually_segment_inter_convexHull_subset hy hu ho hz h' hny hu0] with x hx
+    rw [hcomm]
+    exact hx.trans (by simp)
+  have key : ∀ j, ∀ᶠ x in 𝓝 x₀, segment ℝ (s j x) (t j x) ∩ convexHull ℝ {o x, y x, z x} ⊆
+      {o x, y x} := by
+    intro j
+    rcases hcls j with h | ⟨hso, hto, h⟩ | ⟨hsy, hty, h⟩ | ⟨hto, hso, h⟩ | ⟨hty, hsy, h⟩
+    · filter_upwards [eventually_segment_inter_convexHull_eq_empty (hs j) (ht j) ho hy hz h]
+        with x hx
+      rw [hx]; exact empty_subset _
+    · rw [hso]; exact touch_o _ (ht j) hto h
+    · rw [hsy]; exact touch_y _ (ht j) hty h
+    · rw [hto]; filter_upwards [touch_o _ (hs j) hso h] with x hx
+      rwa [segment_symm]
+    · rw [hty]; filter_upwards [touch_y _ (hs j) hsy h] with x hx
+      rwa [segment_symm]
+  filter_upwards [Filter.eventually_all.mpr key] with x hx
+  rintro w ⟨hw1, hw2⟩
+  obtain ⟨j, hj⟩ := Set.mem_iUnion.mp hw1
+  exact hx j ⟨hj, hw2⟩
+
 namespace Polygon
 
 /-- **Simplicity is an open condition on the vertices.** -/
