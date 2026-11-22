@@ -1750,6 +1750,10 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Lickorish 1997 (knot theory textbook) ─────────────────────
   { id: "lickorish1997" },
 
+  // ── Moise 1952 / Bing 1954 — TOP vs PL comparison for tame links (#8902) ──
+  { id: "moise1952" },
+  { id: "bing1954" },
+
   // ── Washington (1997) — Introduction to Cyclotomic Fields ─────
   { id: "washington1997" },
 

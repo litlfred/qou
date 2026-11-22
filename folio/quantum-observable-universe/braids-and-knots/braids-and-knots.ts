@@ -106,6 +106,8 @@ export default chapter({
             "borromean-word-selection-remark",
             "hecke-normal-form",
             "markov-moves-brane-tower",
+            "polygonal-link-type",
+            "topological-vs-pl-link-type",
             "markov-trace-ambient-s3",
             "closure-unseen-subword",
             "braid-closure-physical-reading",
