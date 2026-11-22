@@ -23,8 +23,6 @@ identity.
 * `PLIsotopicToId h` — such an isotopy exists.
 * `IsPL.OrientationPreserving f` — `f` has a PL presentation whose linear part has positive
   determinant on every piece with nonempty interior.
-* `PLIsotopyToId E` — every orientation-preserving homeomorphism of `E` that is PL in both
-  directions is PL isotopic to the identity. **A `Prop`, stated, not proved here.**
 
 ## What is a THEOREM here
 
@@ -32,8 +30,11 @@ identity.
   `g` and to `h` give one to `h ∘ g`.
 * `PLAmbientIsotopic.of_plIsotopy` — a PL isotopy from the identity to a homeomorphism carrying
   each component of `L` onto its partner in `L'` (orientation preserved) is a PL ambient isotopy.
-* `PLAmbientIsotopic.of_plHomeo` — conditional on `PLIsotopyToId E`: an orientation-preserving
-  PL homeomorphism carrying `L` onto `L'` gives a PL ambient isotopy.
+
+Which homeomorphisms are PL isotopic to the identity is settled in `PLScaling.lean`: in finite
+dimension, exactly the PL ones at bounded distance from the identity
+(`plIsotopicToId_iff_bounded`). In particular `x ↦ 2 • x` is not, although it is linear and
+orientation preserving.
 -/
 
 namespace QOU.MathlibExt.PL
@@ -115,27 +116,5 @@ def IsPL.OrientationPreserving (f : E → E) : Prop :=
 
 lemma IsPL.OrientationPreserving.isPL {f : E → E} (h : IsPL.OrientationPreserving f) : IsPL f :=
   let ⟨ι, hι, K, A, hK, hKu, hfA, _⟩ := h; ⟨ι, hι, K, A, hK, hKu, hfA⟩
-
-variable (E) in
-/-- **PL isotopy to the identity (stated, not proved).** Every orientation-preserving
-homeomorphism of `E` that is PL in both directions is PL isotopic to the identity.
-
-For `finrank ℝ E = 3` this is classical: the scaling isotopy `t • h (t⁻¹ • x)` joins `h` to its
-cone at infinity, and the cone of an orientation-preserving PL homeomorphism of the 2-sphere is
-PL isotopic to the identity (Alexander's trick together with the PL Schoenflies theorem in the
-plane). See J. W. Alexander, *On the deformation of an n-cell*, Proc. Nat. Acad. Sci. 9 (1923)
-406–407, and E. E. Moise, *Geometric Topology in Dimensions 2 and 3*, Springer GTM 47 (1977). -/
-def PLIsotopyToId : Prop :=
-  ∀ h : E ≃ₜ E, IsPL.OrientationPreserving h → IsPL h.symm → PLIsotopicToId h
-
-/-- **An orientation-preserving PL homeomorphism carrying `L` onto `L'` gives a PL ambient
-isotopy**, conditional on `PLIsotopyToId E`. -/
-theorem PLAmbientIsotopic.of_plHomeo (hiso : PLIsotopyToId E) {L L' : PolygonalLink E}
-    (h : E ≃ₜ E) (hor : IsPL.OrientationPreserving h) (hinv : IsPL h.symm)
-    (e : Fin L.k ≃ Fin L'.k)
-    (hfin : ∀ i, ∃ φ : ℝ → ℝ, OrientedReparam φ ∧
-      ∀ t, h ((L.comp i).param t) = (L'.comp (e i)).param (φ t)) :
-    PLAmbientIsotopic L L' :=
-  PLAmbientIsotopic.of_plIsotopy (hiso h hor hinv).some e hfin
 
 end QOU.MathlibExt.PL

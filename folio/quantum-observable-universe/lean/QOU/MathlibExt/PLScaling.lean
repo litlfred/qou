@@ -23,20 +23,28 @@ meet because `f` is Lipschitz.
 * `piece φ r j`, `rcone φ r j` — `{φ j i ≤ r j i}` and its recession cone `{φ j i ≤ 0}`.
 * `coneMap φ r A hcov` — the cone map at infinity.
 * `scalFun f G s x` — `G x` at `s = 0`, else `s • f (s⁻¹ • x)`.
-* `ConePLIsotopyToId E` — every orientation-preserving PL homeomorphism of `E` that is **conical**
-  (`g (s • x) = s • g x` for `s ≥ 0`) is PL isotopic to the identity. **A `Prop`, stated, not
-  proved here.**
 
 ## What is a THEOREM here
 
 * `rcone_cover`, `coneMap_eq` — the cone map is well defined (uses `IsPL.exists_lipschitz`).
 * `isPL_scalTrack` — `(t, x) ↦ scalFun f (coneMap …) (clamp t) x` is PL.
-* `plIsotopyToId_of_cone` — in finite dimension, `ConePLIsotopyToId E → PLIsotopyToId E`. The
-  homeomorphism `h` is joined to its cone map `G` by the scaling isotopy; `G` is a conical,
-  orientation-preserving PL homeomorphism with inverse the cone map of `h⁻¹`.
+* `coneMap_eq_self_of_bounded` — at bounded distance from the identity the cone map is `id`.
+* `plIsotopicToId_of_bounded` — in finite dimension, a homeomorphism that is PL and at bounded
+  distance from the identity is PL isotopic to the identity.
+* `PLIsotopicToId.exists_bound` — conversely a PL track is Lipschitz, so the end map is at bounded
+  distance from the identity. Together: `plIsotopicToId_iff_bounded`.
+* `not_plIsotopicToId_two_smul` — `x ↦ 2 • x` is not PL isotopic to the identity.
+* `PLAmbientIsotopic.of_bounded` — a bounded-displacement PL homeomorphism carrying `L` onto `L'`
+  gives a PL ambient isotopy, with no further hypothesis.
 
-So the PL isotopy-to-identity gap of `PLHomeo.lean` reduces to conical maps, that is, to
-orientation-preserving PL homeomorphisms of the sphere.
+## Correction (2026-11-22)
+
+An earlier version of this file stated `ConePLIsotopyToId E` and `PLHomeo.lean` stated
+`PLIsotopyToId E` ("every orientation-preserving PL homeomorphism is PL isotopic to the
+identity") as named gaps. Both are **false** here: a PL track has finitely many affine pieces on
+`ℝ × E`, hence is Lipschitz, hence moves every point by a bounded amount, and `x ↦ 2 • x` does
+not (`not_plIsotopicToId_two_smul`). They have been removed. The Moise assembly needs a PL
+homeomorphism at bounded distance from the identity (for example compactly supported).
 -/
 
 namespace QOU.MathlibExt.PL
@@ -257,180 +265,110 @@ lemma IsPL.exists_pres {f : E → E} (hf : IsPL f) :
   · have := hfA j
     rwa [hKeq j] at this
 
-/-- The same, keeping the determinant condition of an orientation-preserving map. -/
-lemma IsPL.OrientationPreserving.exists_pres {f : E → E} (hf : IsPL.OrientationPreserving f) :
-    ∃ (ι : Type) (_ : Fintype ι) (κ : ι → Type) (_ : ∀ j, Fintype (κ j))
-      (φ : (j : ι) → κ j → E →L[ℝ] ℝ) (r : (j : ι) → κ j → ℝ) (A : ι → E →ᴬ[ℝ] E),
-      (∀ x, ∃ j, x ∈ piece φ r j) ∧ (∀ j, EqOn f (A j) (piece φ r j)) ∧
-      ∀ j, (interior (piece φ r j)).Nonempty →
-        0 < LinearMap.det ((A j).contLinear : E →ₗ[ℝ] E) := by
-  obtain ⟨ι, hι, K, A, hK, hKu, hfA, hdet⟩ := hf
-  choose κ hκ φ r hKeq using hK
-  refine ⟨ι, hι, κ, hκ, φ, r, A, fun x => ?_, fun j => ?_, fun j hj => hdet j ?_⟩
-  · obtain ⟨j, hj⟩ := mem_iUnion.mp (hKu ▸ mem_univ x)
-    exact ⟨j, by rw [hKeq j] at hj; exact hj⟩
-  · have := hfA j
-    rwa [hKeq j] at this
-  · rw [hKeq j]; exact hj
-
-variable (E) in
-/-- **Conical PL isotopy to the identity (stated, not proved).** Every orientation-preserving
-homeomorphism of `E`, PL in both directions and conical (`g (s • x) = s • g x` for `s ≥ 0`), is PL
-isotopic to the identity. Such a `g` is the cone on a PL homeomorphism of the unit sphere; for
-`finrank ℝ E = 3` the statement is that orientation-preserving PL homeomorphisms of the 2-sphere
-are PL isotopic to the identity, which follows from the PL Schoenflies theorem in the plane and
-the Alexander trick (Moise, *Geometric Topology in Dimensions 2 and 3*, GTM 47, 1977). -/
-def ConePLIsotopyToId : Prop :=
-  ∀ g : E ≃ₜ E, IsPL.OrientationPreserving g → IsPL g.symm →
-    (∀ s : ℝ, 0 ≤ s → ∀ x, g (s • x) = s • g x) → PLIsotopicToId g
-
 lemma clamp01_zero : (clamp01 0 : ℝ) = 0 := clamp01_of_nonpos le_rfl
 
-/-- **Reduction to conical maps.** In finite dimension, if every conical orientation-preserving
-PL homeomorphism is PL isotopic to the identity, so is every orientation-preserving PL
-homeomorphism. -/
-theorem plIsotopyToId_of_cone [FiniteDimensional ℝ E] (hcone : ConePLIsotopyToId E) :
-    PLIsotopyToId E := by
-  classical
-  intro h hor hinv
-  obtain ⟨ι, _, κ, _, φ, r, A, hcov, hfA, hdet⟩ := hor.exists_pres
-  obtain ⟨ι', _, κ', _, φ', r', A', hcov', hfA'⟩ := hinv.exists_pres
-  obtain ⟨C, -, hC⟩ := hor.isPL.exists_lipschitz
-  obtain ⟨C', -, hC'⟩ := hinv.exists_lipschitz
-  set G := coneMap A hcov with hGdef
-  set G' := coneMap A' hcov' with hG'def
-  have hT := isPL_scalTrack A hcov hfA hC
-  have hT' := isPL_scalTrack A' hcov' hfA' hC'
-  have hGpl : IsPL G := by
-    have := hT.comp ((IsPL.const (0 : ℝ)).prodMk IsPL.id)
-    convert this using 1
-    funext x
-    simp [scalFun_zero, G]
-  have hG'pl : IsPL G' := by
-    have := hT'.comp ((IsPL.const (0 : ℝ)).prodMk IsPL.id)
-    convert this using 1
-    funext x
-    simp [scalFun_zero, G']
-  have hcl : (0 : ℝ) ∈ closure (Ioc (0 : ℝ) 1) := by
-    rw [closure_Ioc zero_ne_one]; exact ⟨le_rfl, zero_le_one⟩
-  have hinv1 : ∀ x, G (G' x) = x := by
-    intro x
-    have hψc : Continuous fun t : ℝ =>
-        scalFun h G (clamp01 t) (scalFun h.symm G' (clamp01 t) x) :=
-      hT.continuous.comp (continuous_id.prodMk
-        (hT'.continuous.comp (continuous_id.prodMk continuous_const)))
-    have hsub : Ioc (0 : ℝ) 1 ⊆
-        {t | scalFun h G (clamp01 t) (scalFun h.symm G' (clamp01 t) x) = x} := by
-      intro t ht
-      simp only [mem_setOf_eq, clamp01_of_mem ht.1.le ht.2, scalFun_of_ne _ _ ht.1.ne',
-        smul_smul, inv_mul_cancel₀ ht.1.ne', one_smul, Homeomorph.apply_symm_apply,
-        mul_inv_cancel₀ ht.1.ne']
-    have := (isClosed_eq hψc continuous_const).closure_subset_iff.mpr hsub hcl
-    simpa [clamp01_zero, scalFun_zero] using this
-  have hinv2 : ∀ x, G' (G x) = x := by
-    intro x
-    have hψc : Continuous fun t : ℝ =>
-        scalFun h.symm G' (clamp01 t) (scalFun h G (clamp01 t) x) :=
-      hT'.continuous.comp (continuous_id.prodMk
-        (hT.continuous.comp (continuous_id.prodMk continuous_const)))
-    have hsub : Ioc (0 : ℝ) 1 ⊆
-        {t | scalFun h.symm G' (clamp01 t) (scalFun h G (clamp01 t) x) = x} := by
-      intro t ht
-      simp only [mem_setOf_eq, clamp01_of_mem ht.1.le ht.2, scalFun_of_ne _ _ ht.1.ne',
-        smul_smul, inv_mul_cancel₀ ht.1.ne', one_smul, Homeomorph.symm_apply_apply,
-        mul_inv_cancel₀ ht.1.ne']
-    have := (isClosed_eq hψc continuous_const).closure_subset_iff.mpr hsub hcl
-    simpa [clamp01_zero, scalFun_zero] using this
-  let gH : E ≃ₜ E :=
-    { toFun := G
-      invFun := G'
-      left_inv := hinv2
-      right_inv := hinv1
-      continuous_toFun := hGpl.continuous
-      continuous_invFun := hG'pl.continuous }
-  -- `G` is conical and orientation preserving
-  have hconic : ∀ s : ℝ, 0 ≤ s → ∀ x, gH (s • x) = s • gH x := by
-    intro s hs x
-    obtain ⟨j, hj, hx⟩ := rcone_cover hcov x
-    show G (s • x) = s • G x
-    rw [hGdef, coneMap_eq A hfA hC hcov hj (smul_mem_rcone hx hs),
-      coneMap_eq A hfA hC hcov hj hx, map_smul]
-  have hOP : IsPL.OrientationPreserving gH := by
-    refine ⟨{j // (piece φ r j).Nonempty}, inferInstance, fun j => rcone φ j.1,
-      fun j => (A j.1).contLinear.toContinuousAffineMap, fun j => ⟨κ j.1, inferInstance, φ j.1,
-      fun _ => 0, rfl⟩, ?_, fun j x hx => ?_, fun j hj => hdet j.1 ?_⟩
-    · refine eq_univ_of_forall fun x => ?_
-      obtain ⟨j, hj, hx⟩ := rcone_cover hcov x
-      exact mem_iUnion.mpr ⟨⟨j, hj⟩, hx⟩
-    · show G x = _
-      rw [hGdef, coneMap_eq A hfA hC hcov j.2 hx]
-      rfl
-    · obtain ⟨y, hy⟩ := j.2
-      obtain ⟨z, hz⟩ := hj
-      refine ⟨y + z, interior_maximal (t := (fun u => y + u) '' interior (rcone φ j.1)) ?_
-        (isOpenMap_add_left y _ isOpen_interior) ⟨z, hz, rfl⟩⟩
-      rintro _ ⟨u, hu, rfl⟩
-      simpa using add_smul_mem_piece hy (interior_subset hu) zero_le_one
-  have hGsymm : IsPL gH.symm := hG'pl
-  obtain ⟨I₁⟩ := hcone gH hOP hGsymm hconic
-  -- the scaling isotopy, precomposed with `G⁻¹`
-  let Hs : ℝ → E ≃ₜ E := fun s => if s = 0 then gH else alexH h s
-  have hHs : ∀ s x, Hs s x = scalFun h G s x := by
-    intro s x
-    by_cases hs : s = 0
-    · simp [Hs, hs, scalFun_zero, gH]
-    · simp [Hs, hs, alexH_apply, alexFun_of_ne _ hs, scalFun_of_ne _ _ hs]
-  have hHsym : ∀ s x, (Hs s).symm x = scalFun h.symm G' s x := by
-    intro s x
-    by_cases hs : s = 0
-    · simp [Hs, hs, scalFun_zero, gH]
-    · simp [Hs, hs, alexH_symm_apply, alexFun_of_ne _ hs, scalFun_of_ne _ _ hs]
-  have hval : ∀ s : unitInterval, (clamp01 (s : ℝ) : ℝ) = s := fun s =>
-    clamp01_of_mem s.2.1 s.2.2
-  have hemb : Continuous fun p : unitInterval × E => ((p.1 : ℝ), p.2) :=
-    (continuous_subtype_val.comp continuous_fst).prodMk continuous_snd
-  let I₂ : PLIsotopy (gH.symm.trans h) :=
-    { H := fun s => gH.symm.trans (Hs s)
-      continuous := by
-        have hemb' : Continuous fun p : unitInterval × E => ((p.1 : ℝ), G' p.2) :=
-          (continuous_subtype_val.comp continuous_fst).prodMk
-            (hG'pl.continuous.comp continuous_snd)
-        have := hT.continuous.comp hemb'
-        convert this using 1
-        funext p
-        simp only [Homeomorph.trans_apply, Function.comp_apply, hHs, hval]
-        rfl
-      continuous_symm := by
-        have := hGpl.continuous.comp (hT'.continuous.comp hemb)
-        convert this using 1
-        funext p
-        simp only [Homeomorph.symm_trans_apply, Function.comp_apply, hHsym, hval]
-        rfl
-      start := fun x => by
-        simp only [Homeomorph.trans_apply, hHs, Set.Icc.coe_zero, scalFun_zero]
-        exact hinv1 x
-      finish := fun x => by
-        simp only [Homeomorph.trans_apply, hHs, Set.Icc.coe_one, scalFun_one]
-      isPL := by
-        have := hT.comp (IsPL.fst.prodMk (hG'pl.comp IsPL.snd))
-        convert this using 1
-        funext p
-        simp only [Homeomorph.trans_apply, Function.comp_apply, hHs]
-        rfl }
-  have hfin : gH.trans (gH.symm.trans h) = h := by
-    ext x; simp
-  rw [← hfin]
-  exact ⟨I₁.trans I₂⟩
+/-- **At bounded distance from the identity, the cone map is the identity.** -/
+theorem coneMap_eq_self_of_bounded {ι : Type} [Fintype ι] {κ : ι → Type}
+    {φ : (j : ι) → κ j → E →L[ℝ] ℝ} {r : (j : ι) → κ j → ℝ} (A : ι → E →ᴬ[ℝ] E) {f : E → E}
+    (hcov : ∀ x, ∃ j, x ∈ piece φ r j) (hfA : ∀ j, EqOn f (A j) (piece φ r j)) {B : ℝ}
+    (hb : ∀ x, ‖f x - x‖ ≤ B) (x : E) : coneMap A hcov x = x := by
+  obtain ⟨⟨y, hy⟩, hx⟩ := (rcone_cover hcov x).choose_spec
+  set j := (rcone_cover hcov x).choose
+  show (A j).contLinear x = x
+  set d := (A j).contLinear x - x
+  have hbound : ∀ n : ℕ, (n : ℝ) * ‖d‖ ≤ B + ‖A j y - y‖ := by
+    intro n
+    have hy' := add_smul_mem_piece hy hx (Nat.cast_nonneg n)
+    have h := hb (y + (n : ℝ) • x)
+    rw [hfA j hy', affine_apply_eq (A j), map_add, map_smul] at h
+    have e : (A j).contLinear y + (n : ℝ) • (A j).contLinear x + A j 0 - (y + (n : ℝ) • x) =
+        (A j y - y) + (n : ℝ) • d := by
+      simp only [d, affine_apply_eq (A j) y, smul_sub]
+      abel
+    rw [e] at h
+    have h3 : ‖(n : ℝ) • d‖ ≤ ‖(A j y - y) + (n : ℝ) • d‖ + ‖A j y - y‖ := by
+      have := norm_sub_le ((A j y - y) + (n : ℝ) • d) (A j y - y)
+      rwa [add_sub_cancel_left] at this
+    rw [norm_smul, Real.norm_natCast] at h3
+    linarith
+  have hd : ‖d‖ = 0 := by
+    by_contra hne
+    have hpos : 0 < ‖d‖ := lt_of_le_of_ne (norm_nonneg _) (Ne.symm hne)
+    obtain ⟨n, hn⟩ := exists_nat_gt ((B + ‖A j y - y‖) / ‖d‖)
+    rw [div_lt_iff₀ hpos] at hn
+    linarith [hbound n]
+  exact sub_eq_zero.mp (norm_eq_zero.mp hd)
 
-/-- **Orientation-preserving PL homeomorphisms carrying `L` onto `L'` give PL ambient
-isotopies**, conditional on the conical statement only. -/
-theorem PLAmbientIsotopic.of_plHomeo_of_cone [FiniteDimensional ℝ E]
-    (hcone : ConePLIsotopyToId E) {L L' : PolygonalLink E} (h : E ≃ₜ E)
-    (hor : IsPL.OrientationPreserving h) (hinv : IsPL h.symm) (e : Fin L.k ≃ Fin L'.k)
+/-- **The Alexander track of a PL map at bounded distance from the identity is PL.** -/
+theorem isPL_alexTrack_of_bounded {f : E → E} (hf : IsPL f) {B : ℝ}
+    (hb : ∀ x, ‖f x - x‖ ≤ B) :
+    IsPL fun p : ℝ × E => alexFun f (clamp01 p.1 : ℝ) p.2 := by
+  obtain ⟨ι, _, κ, _, φ, r, A, hcov, hfA⟩ := hf.exists_pres
+  obtain ⟨C, -, hC⟩ := hf.exists_lipschitz
+  have hT := isPL_scalTrack A hcov hfA hC
+  convert hT using 1
+  funext p
+  by_cases hs : (clamp01 p.1 : ℝ) = 0
+  · rw [hs, alexFun_zero, scalFun_zero, coneMap_eq_self_of_bounded A hcov hfA hb]
+  · rw [alexFun_of_ne _ hs, scalFun_of_ne _ _ hs]
+
+/-- **A homeomorphism, PL and at bounded distance from the identity, is PL isotopic to the
+identity** (finite dimension), through `t • h (t⁻¹ • x)`. -/
+theorem plIsotopicToId_of_bounded [FiniteDimensional ℝ E] (h : E ≃ₜ E) (hPL : IsPL h) {B : ℝ}
+    (hb : ∀ x, ‖h x - x‖ ≤ B) : PLIsotopicToId h := by
+  have hPLs : IsPL h.symm :=
+    IsPL.of_leftInverse hPL (fun x => h.symm_apply_apply x) (fun y => h.apply_symm_apply y)
+  have hbs : ∀ y, ‖h.symm y - y‖ ≤ B := fun y => by
+    have := hb (h.symm y)
+    rwa [h.apply_symm_apply, norm_sub_rev] at this
+  exact PLIsotopicToId.of_alexTrack h (isPL_alexTrack_of_bounded hPL hb)
+    (isPL_alexTrack_of_bounded hPLs hbs)
+
+/-- **A homeomorphism PL isotopic to the identity is at bounded distance from it**: the track is
+Lipschitz on `ℝ × E`. -/
+theorem PLIsotopicToId.exists_bound {h : E ≃ₜ E} (hh : PLIsotopicToId h) :
+    ∃ B, ∀ x, ‖h x - x‖ ≤ B := by
+  obtain ⟨I⟩ := hh
+  obtain ⟨C, -, hC⟩ := I.isPL.exists_lipschitz
+  refine ⟨C, fun x => ?_⟩
+  have h1 : clamp01 1 = 1 := Subtype.ext (clamp01_of_one_le le_rfl)
+  have h0 : clamp01 0 = 0 := Subtype.ext clamp01_zero
+  have := hC ((0 : ℝ), x) ((1 : ℝ), x)
+  simp only [h1, h0, I.start, I.finish] at this
+  have hn : ‖((1 : ℝ), x) - ((0 : ℝ), x)‖ = 1 := by simp
+  rwa [hn, mul_one] at this
+
+/-- **PL isotopy to the identity is bounded displacement** (finite dimension). -/
+theorem plIsotopicToId_iff_bounded [FiniteDimensional ℝ E] (h : E ≃ₜ E) (hPL : IsPL h) :
+    PLIsotopicToId h ↔ ∃ B, ∀ x, ‖h x - x‖ ≤ B :=
+  ⟨PLIsotopicToId.exists_bound, fun ⟨_, hb⟩ => plIsotopicToId_of_bounded h hPL hb⟩
+
+/-- **`x ↦ 2 • x` is not PL isotopic to the identity**, although it is linear, PL both ways and
+orientation preserving: its displacement `‖x‖` is unbounded. So "every orientation-preserving PL
+homeomorphism is PL isotopic to the identity" is false for the finitely-many-pieces PL tracks used
+here. -/
+theorem not_plIsotopicToId_two_smul [Nontrivial E] :
+    ¬ PLIsotopicToId (Homeomorph.smulOfNeZero (2 : ℝ) two_ne_zero : E ≃ₜ E) := by
+  intro hh
+  obtain ⟨B, hB⟩ := hh.exists_bound
+  obtain ⟨v, hv⟩ := exists_ne (0 : E)
+  have hvpos : 0 < ‖v‖ := norm_pos_iff.mpr hv
+  set c : ℝ := (|B| + 1) / ‖v‖
+  have hc : 0 < c := by positivity
+  have := hB (c • v)
+  simp only [Homeomorph.smulOfNeZero_apply, smul_smul] at this
+  rw [show (2 : ℝ) * c = c + c by ring, add_smul, add_sub_cancel_right, norm_smul,
+    Real.norm_of_nonneg hc.le, div_mul_cancel₀ _ hvpos.ne'] at this
+  linarith [le_abs_self B]
+
+/-- **A PL homeomorphism at bounded distance from the identity carrying `L` onto `L'` gives a PL
+ambient isotopy.** No gap. -/
+theorem PLAmbientIsotopic.of_bounded [FiniteDimensional ℝ E] {L L' : PolygonalLink E}
+    (h : E ≃ₜ E) (hPL : IsPL h) {B : ℝ} (hb : ∀ x, ‖h x - x‖ ≤ B) (e : Fin L.k ≃ Fin L'.k)
     (hfin : ∀ i, ∃ φ : ℝ → ℝ, OrientedReparam φ ∧
       ∀ t, h ((L.comp i).param t) = (L'.comp (e i)).param (φ t)) :
     PLAmbientIsotopic L L' :=
-  PLAmbientIsotopic.of_plHomeo (plIsotopyToId_of_cone hcone) h hor hinv e hfin
+  PLAmbientIsotopic.of_plIsotopy (plIsotopicToId_of_bounded h hPL hb).some e hfin
 
 end main
 

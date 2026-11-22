@@ -288,6 +288,31 @@ end track
 
 /-! ## The Alexander trick -/
 
+/-- **From PL Alexander tracks to a PL isotopy.** If the tracks of `h` and of `h⁻¹` are PL, then
+`s ↦ alexH h s` is a PL isotopy from the identity to `h`. -/
+theorem PLIsotopicToId.of_alexTrack (h : E ≃ₜ E)
+    (hT : IsPL fun p : ℝ × E => alexFun h (clamp01 p.1 : ℝ) p.2)
+    (hTs : IsPL fun p : ℝ × E => alexFun h.symm (clamp01 p.1 : ℝ) p.2) : PLIsotopicToId h := by
+  have hval : ∀ s : unitInterval, (clamp01 (s : ℝ) : ℝ) = s := fun s => by
+    rw [clamp01_of_mem s.2.1 s.2.2]
+  have hemb : Continuous fun p : unitInterval × E => ((p.1 : ℝ), p.2) :=
+    (continuous_subtype_val.comp continuous_fst).prodMk continuous_snd
+  refine ⟨{ H := fun s => alexH h s
+            continuous := ?_
+            continuous_symm := ?_
+            start := fun x => by simp [alexH_apply, alexFun_zero]
+            finish := fun x => by simp [alexH_apply, alexFun_one]
+            isPL := ?_ }⟩
+  · convert hT.continuous.comp hemb using 1
+    funext p
+    simp only [Function.comp_apply, alexH_apply, hval]
+  · convert hTs.continuous.comp hemb using 1
+    funext p
+    simp only [Function.comp_apply, alexH_symm_apply, hval]
+  · convert hT using 1
+    funext p
+    exact alexH_apply _ _ _
+
 /-- **The PL Alexander trick.** In finite dimension, a homeomorphism that is PL and the identity
 outside a ball is PL isotopic to the identity. -/
 theorem plIsotopicToId_of_eq_outside [FiniteDimensional ℝ E] (h : E ≃ₜ E) (hPL : IsPL h)
