@@ -39,3 +39,18 @@ For each match of the smallest vertex count m:
 The smallest vertex count; every matching word at that count; the full-H₆ lower bound on the
 photon count; and every (i, j) at which a two-photon TL factorisation exists, with its
 weights. Nothing is selected or scored. No Q_β value is computed.
+
+## Addendum 1 (written after Part 2 found no two-photon factorisation, before the checks below were run in the probe)
+
+Two corrections and one extension.
+
+* Correction: a bare vertex is **not** a photon. γᵢ(0, 0, c) = 1 + c·Vᵢ always carries the
+  constant term, so Vᵢ is the c-term of γᵢ, not γᵢ(0, 0, 1).
+* Extension (three photons): for V₀V₀V₁, the smallest match, test μ·ρ(w) = γᵢγⱼγₖ at every
+  (i, j, k) ∈ {0, 1}³ on four strands (the strands the word moves), exactly at q = 2, in
+  the TL quotient and in the full Hecke algebra H₄(q).
+* Reduction used to look for real weights: H₄ is a free left H₃-module on the coset basis
+  {1, σ₂, σ₂σ₁, σ₂σ₁σ₀}. Matching the coefficients of 1 and σ₂ in γ₀γ₀γ₁ = μ⁻¹·V₀V₀V₁ forces
+  the third photon to be γ₁(0, −1/h, z), h = q − q⁻¹, and leaves the three-strand condition
+  γ₀γ₀ ∝ V₀²σ₁(zσ₁ − h⁻¹)⁻¹. Real solutions are searched for with mpmath at 40 digits,
+  at q = 2 and q = 11/10, and are accepted only if the exact residual is below 10⁻³⁰.
