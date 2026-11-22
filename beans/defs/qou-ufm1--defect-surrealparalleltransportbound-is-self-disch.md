@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T22:14:19Z
-updated_at: 2026-11-22T21:17:12Z
+updated_at: 2026-11-22T21:31:34Z
 parent: qou-6qbv
 ---
 
@@ -19,3 +19,8 @@ parent: qou-6qbv
 ## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 Done on main: `lean/QOU/Archimedean/JetOrderIndependence.lean` (~lines 400-425) records that the zero instance of `SurrealParallelTransportBound` was removed and the shadows moved out of the class into `TransportErrorData` (bean `qou-ijhk`), so an instance can no longer pick them. Nothing left to do.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.

@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-22T21:23:36Z
+updated_at: 2026-11-22T21:31:33Z
 parent: qou-uot9
 ---
 
@@ -27,3 +27,8 @@ Also known as `lpds` (its former front-matter header id; the beans CLI uses the 
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 
 `QOU/ParticleInteractions/lp_dual_stability.lean:119` is derived sorry-free: claims (1) and (4) from feasibility and the in-repo duality lemma (docstring line 114). PR #8218 is superseded.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE for claims (1) and (4), which are derived. Claims (2) and (3) concern the specific 6×6 Gram matrix at q₀ and stay unproved (lean docstring lines 39, 116). That matrix must be convention D at the proton pin to be current; this was not re-verified here, and it sits in the convention lane (qou-cdx1/cds1).

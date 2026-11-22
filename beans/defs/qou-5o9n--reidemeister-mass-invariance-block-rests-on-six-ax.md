@@ -7,7 +7,7 @@ priority: normal
 tags:
     - lean
 created_at: 2026-11-22T09:20:31Z
-updated_at: 2026-11-22T21:17:12Z
+updated_at: 2026-11-22T21:31:33Z
 parent: qou-uwyf
 ---
 
@@ -21,3 +21,8 @@ Record: docs/audits/2026-11-22-lean-audit-snapshot-gaps.md (§3). Epic qou-uwyf.
 ## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 Done on main: PR #8999 merged 2026-11-22T10:58Z (merge fc2a6fab5). `mass-theory/reidemeister-mass-invariance.lean` has 0 `axiom` declarations; the six are the class `ReidemeisterMassInvariance`, as this bean asked. The link to `conj:borromean-quark` is not encoded (types unrelated), as the previous note says; that is a separate item, not this bean's ask.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.

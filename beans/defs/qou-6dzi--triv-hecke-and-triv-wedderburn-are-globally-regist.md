@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T16:32:45Z
-updated_at: 2026-11-22T21:17:12Z
+updated_at: 2026-11-22T21:31:33Z
 parent: qou-6qbv
 ---
 
@@ -82,3 +82,8 @@ Three distinct things share the `WedderburnDecomp*` name; do not conflate them.
 ## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 Done on main: `triv_hecke` is a `def` (`lean/QOU/Mathlib/HeckeAlgebra.lean` ~line 246, docstring "A `def`, not an `instance`, since 2026-08-23"), and `triv_wedderburn` was fixed with it; `CrystalGraphRealization.lean:117` and `QIntegerMassFormula.lean:256` cite the same disposition. Nothing left to do.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.

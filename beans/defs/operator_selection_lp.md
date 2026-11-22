@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-22T21:23:36Z
+updated_at: 2026-11-22T21:31:33Z
 parent: qou-uot9
 ---
 
@@ -25,3 +25,8 @@ Also known as `opsl` (its former front-matter header id; the beans CLI uses the 
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 
 `QOU/ParticleInteractions/operator_selection_lp.lean` proves strong duality sorry-free (Disposition, lines 26-41); complementary slackness is derived from `zero_gap` via `zero_gap_iff_complementary_slackness` (line 723), which is a derivation from a stated hypothesis, not a projection of the conclusion.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.

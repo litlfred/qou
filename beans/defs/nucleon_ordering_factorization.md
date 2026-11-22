@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-22T21:23:36Z
+updated_at: 2026-11-22T21:31:33Z
 parent: qou-uot9
 ---
 
@@ -27,3 +27,8 @@ Also known as `nofa` (its former front-matter header id; the beans CLI uses the 
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 
 The self-assuming class is gone. `QOU/Interactions/nucleon_ordering_factorization.lean` now has `def nucleon_ordering_factorization` (line 142) as the honest carrier, two proved ordering-independence lemmas (lines 128, 159), and a no-go theorem `not_nucleonOrderingFactorization_of_free_data` (line 180). PR #8218 is superseded.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE for the vacuity defect. The proved lemmas (ordering independence of commuting scalar products, and the no-go theorem) are generic and stand. Critical note: the content block's model, S(π) = ∏(q + d_k) over interface letters d_k, rests on the single-crossing interface letters that the owner superseded on 2026-11-15 (γγ rule; docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md). The block itself needs RESCOPE onto a γγ-selected word, which belongs to the A=2/3 binding lane (#7876, #9120), not this drain.

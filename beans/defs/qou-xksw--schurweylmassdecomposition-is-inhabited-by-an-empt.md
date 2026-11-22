@@ -7,7 +7,7 @@ priority: normal
 tags:
     - lean
 created_at: 2026-11-22T09:20:32Z
-updated_at: 2026-11-22T21:17:12Z
+updated_at: 2026-11-22T21:31:34Z
 parent: qou-uwyf
 ---
 
@@ -21,3 +21,8 @@ Record: docs/audits/2026-11-22-lean-audit-snapshot-gaps.md (§3). Epic qou-uwyf.
 ## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 Done on main: PR #8999 merged 2026-11-22T10:58Z. `mass-theory/schur-weyl-mass-decomposition.lean:76` `class SchurWeylMassDecomposition` now sums over `Finset.univ : Finset (Nat.Partition (3*A))`, so the empty instance no longer satisfies it (line 60 docstring). The decomposition for the Ocneanu trace itself is unproved (no Specht characters in Lean); that is M4 work (`qou-ltwg`), not this bean.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.

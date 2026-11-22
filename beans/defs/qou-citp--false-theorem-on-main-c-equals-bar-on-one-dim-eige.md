@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - reorg-2026-10-04
 created_at: 2026-08-21T21:24:54Z
-updated_at: 2026-11-22T21:17:12Z
+updated_at: 2026-11-22T21:31:33Z
 parent: qou-6qbv
 ---
 
@@ -59,3 +59,8 @@ encoding) but is now superseded by the multiplicative section, and is marked as 
 ## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 Done on main: the false theorem `c_equals_bar_on_one_dim_eigenvalue_neg_q_inv` is absent from `knots-particles-confinement/c-equals-bar-iff-all-1dim.lean` (and from every `.lean` file), as is the superseded additive toy. Nothing left to do.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-11T18:41:38Z
-updated_at: 2026-11-22T21:17:11Z
+updated_at: 2026-11-22T21:31:34Z
 parent: qou-6qbv
 ---
 
@@ -32,3 +32,8 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8147, closed o
 ## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 Done on main: `quantum-observable-universes/categorical-dq-squared-proof.lean` no longer exists (the `: True` stub is gone), and `categorical-dq-squared-proof.ts:50` points at `qou:QOU.categorical_dq_squared` in `lean/QOU/CategoricalDqSquared.lean` (`validation: "leanok"`). Nothing left to do.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.

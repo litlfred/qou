@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-22T21:23:36Z
+updated_at: 2026-11-22T21:31:33Z
 parent: qou-uot9
 pr: 8189
 ---
@@ -30,3 +30,8 @@ Also known as `cnca` (its former front-matter header id; the beans CLI uses the 
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 
 `QOU/WedderburnMass/confinement_categorical.lean:177` `theorem confinement_categorical` is proved sorry-free from the Wedderburn isomorphism (docstring line 21); the old self-assuming class with unconstrained data and a `sorry` is deleted (line 33, bean qou-mtc9). The unmerged batch PR #8189 is superseded by this.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.

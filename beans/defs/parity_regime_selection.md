@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-22T21:23:36Z
+updated_at: 2026-11-22T21:31:33Z
 parent: qou-uot9
 pr: 8189
 ---
@@ -30,3 +30,8 @@ Also known as `prsm` (its former front-matter header id; the beans CLI uses the 
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 
 `QOU/ParticleInteractions/parity_regime_selection.lean:37` now states and proves the sign identity over an ordered ring with explicit hypotheses `ha : a < 0`, `hb : b < 0`; the regime reading lives in a remark. PR #8189 is superseded.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE for the vacuity defect. The Lean now proves only a generic sign identity, and the three Q-value regimes (odd A, even A, A = 1) were moved to rem:parity-regime-dispatch with no Lean claim. Critical note: that dispatch is per-case, which AGENTS.md §NO FITTING counts as a free choice per branch. The remark should say so; that is for the binding lane, not this drain.

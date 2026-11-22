@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-11-22T21:17:12Z
+updated_at: 2026-11-22T21:31:34Z
 parent: qou-6qbv
 ---
 
@@ -64,3 +64,8 @@ Parent coverage bean: `qou-8fl1`.
 ## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
 Done on main: `lean/QOU/Eightfold/Sym2Gate.lean` is deleted (no `sym2_dim_3` / `corpus_T1_fails_sym2_gate` / `octonion_3_passes_sym2_gate` anywhere). The representation-level content is in `Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three` and `Sym2GateMultiplicity.lean`; `eightfold-way/color-su3-from-g2.ts:47` points at the former. This is option 1 of this bean (encode the decomposition). Nothing left to do.
+
+## 2026-11-22 — applicability review (owner instruction 2026-11-22, retroactive)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Checked against docs/coordination/owner-rulings.md on origin/main.
+
+Verdict: ALREADY-DONE (evidence in the closing note above). Premises checked: the bean and the fixed Lean name no retired object (no σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, virtual photon or SM-adopted quark charge). The fix is structural Lean hygiene, so it is independent of the physics rulings.
