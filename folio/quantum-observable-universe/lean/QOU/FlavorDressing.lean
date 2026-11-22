@@ -1,4 +1,5 @@
 import QOU.FlavorDressing.FlavorDressingFunctor
+import QOU.FlavorDressing.FlavorSplitSubstrateMass
 import QOU.FlavorDressing.DressedMassFromSubstrateSplit
 import QOU.FlavorDressing.FlavorMassSplittingBound
 import QOU.FlavorDressing.PairProductCoefficientBound
@@ -17,9 +18,11 @@ substrate bound theorem is included.
 
 - `FlavorDressingFunctor` — typeclass with `μ : Flavor → ℝ` and
   positivity.
-- `dressed_mass_from_substrate_split` — closed-form derivation of
-  `μ_d − μ_u = M_N · substrate_split_factor q`, conditional on the
-  axiomatised Skein-side closed form.
+- `FlavorSplitSubstrateMass` — Lean class of
+  `conj:flavor-split-substrate-mass` (no instance).
+- `dressed_mass_from_substrate_split` — derivation of
+  `μ_d − μ_u = M_N · substrate_split_factor q` from that class and the
+  nucleon form of the pair Skein formula (an explicit hypothesis).
 - `flavor_mass_splitting_bound` — two-sided substrate bound
   `0 < μ_d − μ_u < M_N · ℏ_q² · h_q · [2]_q`.
 

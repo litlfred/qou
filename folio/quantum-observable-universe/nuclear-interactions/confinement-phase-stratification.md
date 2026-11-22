@@ -1,4 +1,4 @@
-*Let $P$ be a confined particle and let $\mathcal{G} \subset \mathbb{R}_{>1}$ be the generic locus of the substrate parameter $q$. Write strict feasibility of the confinement SDP as a finite system of strict inequalities $0 < g_i(q, X)$, $i \in I$, in $q$ and the decision variable $X$, with each $g_i$ continuous. (Positive definiteness of a Gram matrix is such a system, by Sylvester's criterion on its leading principal minors.) The **confinement locus** of $P$ is*
+*Let $P$ be a confined particle, and let the substrate parameter $q$ range over $\mathbb{R}_{>1}$. Write strict feasibility of the confinement SDP as a finite system of strict inequalities $0 < g_i(q, X)$, $i \in I$, in $q$ and the decision variable $X$, with each $g_i$ continuous. (Positive definiteness of a Gram matrix is such a system, by Sylvester's criterion on its leading principal minors.) The **confinement locus** of $P$ is*
 
 $$
   \Omega(P) \;:=\; \{\, q : \exists X,\ \forall i \in I,\ 0 < g_i(q, X) \,\}.

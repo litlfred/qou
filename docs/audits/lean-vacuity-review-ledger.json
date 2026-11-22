@@ -1310,18 +1310,6 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "folio/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean::dressed_mass_from_substrate_split::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 122,
-      "verdict": "needs-agent",
-      "file_sha": "53029a4a6ee8",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-30T14:38:20Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "SHA REFRESHED 2026-08-30, verdict unchanged at `genuine`. Declaration byte-identical to origin/main; the file hash moved because a different self-assuming projection was removed from it (bean `qou-z9ws`).\n\nPrior evidence: Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `split` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `split` is outside CONCLUSION_FIELD.",
-      "stale_prev_verdict": "genuine"
-    },
     "folio/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean::AcousticHorizonConditionsContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",

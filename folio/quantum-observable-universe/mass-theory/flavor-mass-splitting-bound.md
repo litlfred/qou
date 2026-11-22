@@ -1,4 +1,4 @@
-**Theorem (conditional on [the substrate flavor split conjecture](#conj:flavor-split-substrate-mass)).** The closed form for $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ enters as an explicit hypothesis.
+**Theorem (conditional on [the substrate flavor split conjecture](#conj:flavor-split-substrate-mass)).** The closed form for $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ is [derived](#prop:flavor-dressed-mass-from-substrate-split) from that conjecture and the nucleon form of the pair Skein mass formula, with $M_N = (m_{\mathfrak{p}} + m_{\mathfrak{n}})/2$.
 
 *For substrate parameter $q > 1$, the down-up splitting satisfies the two-sided bound:*
 

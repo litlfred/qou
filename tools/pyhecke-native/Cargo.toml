@@ -26,8 +26,9 @@ rug = "1.26"
 # BLAS-free: clarabel-mpfr uses the `MpfrFloat` scalar (NOT the netlib SDP
 # backend), so NO system OpenBLAS/LAPACK/gfortran is required — only system
 # GMP + MPFR, which `rug` already needs. (The heavier f64 SDP solver remains
-# opt-in as hecke-engine's `clarabel-sdp`, mutually exclusive with clarabel-mpfr
-# and the one that does require BLAS.)
+# opt-in as hecke-engine's `clarabel-sdp`, the one that does require BLAS. Since
+# fork rev 37f06c3 it combines with clarabel-mpfr as hecke-engine's
+# `clarabel-mpfr-sdp`, for MPFR SDPs at 50+ digits; that also needs gfortran.)
 #
 # Wheel-CI requirement: the wheel build now needs the litlfred clarabel fork
 # reachable + system GMP/MPFR on every target platform, plus an import test in

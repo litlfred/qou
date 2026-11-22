@@ -1,4 +1,4 @@
-import UGB.GrobnerShirshov.NormalForms
+import UGB.GrobnerShirshov.QSerreGS
 
 /-!
 # UGB.BuchbergerPBW.ugb_pbw_corollary
@@ -76,7 +76,9 @@ variable {k : Type v} [Field k]
     With `qs` the `q`-Serre data: every element reduces to a **unique** normal
     form under the `q`-Serre rewriting system. Existence is
     `normal_form_exists` (termination + monic rules, both discharged here);
-    uniqueness is `normal_form_unique` against `qSerre_is_gs_basis`.
+    uniqueness is `normal_form_unique` against `qSerre_is_gs_basis`, which is a
+    theorem (`QSerreGS.lean`, 2026-11-21; it was an axiom before). `#print axioms`
+    on this corollary now shows only `propext`, `Classical.choice`, `Quot.sound`.
 
     The former first conjunct — "every PBW monomial is in normal form" — is
     **gone, because it is false**; see the module docstring and

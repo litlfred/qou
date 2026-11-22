@@ -6,8 +6,8 @@ export default conjecture({
   lean: { ref: "qou:QOU.LiftingDescent.tm_dilogarithm_evaluation",
     validation: "not_checked",
   },
-  title: "Rogers q-dilogarithm evaluation of exceptional-divisor contributions",
-  tags: ["rogers-q-dilogarithm", "exceptional-divisor", "briggs-klein", "spectral-coordinates"],
+  title: "Symmetric q-dilogarithm evaluation of exceptional-divisor contributions",
+  tags: ["symmetric-q-dilogarithm", "exceptional-divisor", "briggs-klein", "spectral-coordinates"],
   uses: [
     "lem:topological-mass-holonomy",
     "lem:topological-mass-transient-localisation",

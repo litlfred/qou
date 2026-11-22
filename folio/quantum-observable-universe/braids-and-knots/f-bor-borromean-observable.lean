@@ -66,12 +66,15 @@ noncomputable def trM_borromean_abs {R : Type*} [Field R] [LinearOrder R]
 noncomputable def qFact_three {R : Type*} [Field R] (q : R) : R :=
   (q^2 + 1 + q^(-2 : ℤ)) * (q + q⁻¹)
 
-/-- The natural categorical observable
+/-- The Borromean categorical observable
     `F_Bor(q) := |tr_M(β_Bor, q)| · [3]_q! / q^3`.
 
     Combines the Lean-proved Borromean Markov trace with the
-    q-factorial normalisation, shifted by content q^3 (the content
-    sum of the partition (3) ⊢ 3).
+    normaliser `[3]_q!/q³`, the Schur element of the sign character
+    of `H₃(q)` (`QOU.MassTheory.ProtonQ3Schur.fBor_normaliser_eq_schurSign`).
+    The normaliser is asserted, not derived: `q^k [3]_q!` is a
+    linear-character Schur element only for `k = ±3` and bar-symmetric
+    only for `k = 0`.
 
     Inherits the linearly ordered field structure from
     `trM_borromean_abs`'s `|·|`; `qFact_three` (only `[Field R]`)

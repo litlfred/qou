@@ -16,7 +16,7 @@ export default theorem({
   lean: { ref: "qou:QOU.Archimedean.groebner_shirshov_energy",
     validation: "not_checked",
   },
-  uses: ["unital-groebner-bases:thm:main-theorem"],
+  uses: ["unital-groebner-bases:thm:ugb-main"],
   authorNotes: [
     {
       kind: "caveat",

@@ -1,111 +1,39 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic
-
+import QOU.FormalGroups.FormalGroupLaw
 
 /-!
 # QOU.WittVectorLift
 
-The Witt vector lift: given a commutative formal group H over 𝔽_p with
-skewed-Poisson structure π_<, the Witt vector lift Ĝ is the formal group
-over W(𝔽_p) ≅ ℤ_p obtained by integrating π_< in the sense of Fresse.
+Content sibling for `def:witt-vector-lift`. A lift of a formal group law `H` over `S` along a
+ring map `φ : R →+* S` is a formal group law `G` over `R` whose reduction along `φ` is `H`
+(`QOU.FormalGroups.FormalGroupLaw.IsLift`). The Witt vector lift is the case
+`φ : W(k) → k`, the reduction of the Witt vectors of a perfect field `k` of characteristic
+`p` to `k`. Mathlib's Witt vectors are not in the olean cone used here, so the declaration is
+stated for a general `φ`.
 
-The distribution algebra Dist(Ĝ) is the p-adic completion of the
-universal enveloping algebra U(Lie(H)) deformed by π_<.
+Nothing is asserted about existence. Until 2026-11-21 this file defined `WittVectorLift` as a
+structure of natural numbers (prime, height, Lie dimension) and proved arithmetic facts about
+them (`p ≠ 0`, `2 * 4 = 8`, `p < p²`) under Witt-vector names, and its docstring said the lift
+is "obtained by integrating π_< in the sense of Fresse". The integration theorem it was
+attributed to (arXiv:math/0602138, Thm. 3.7) is over a field of characteristic `p` and
+constructs no lift.
 
-LaTeX label: `def:witt-vector-lift`
-
-## References
-
-- [hazewinkel1978] https://doi.org/10.1007/978-3-642-35190-6
-- [zink2002] https://doi.org/10.1007/978-3-642-51438-2
-- [leitner2026] Chapter 6, §Witt vector lift
+-- Ref: [hazewinkel1978] M. Hazewinkel, *Formal Groups and Applications*, 1978.
 -/
 
 namespace QOU
 
-/-- **Witt vector lift**: the formal group Ĝ over W(𝔽_p) ≅ ℤ_p obtained
-    from a commutative formal group H/𝔽_p via skew-Poisson integration.
+open QOU.FormalGroups
 
-    The key data consists of:
-    - A prime p (the residue characteristic)
-    - The height of the formal group
-    - The dimension of the Lie algebra Lie(H)
-    - The deformation parameter from the skew-Poisson structure
+/-- A lift of the formal group law `H` over `S` along `φ : R →+* S`. With `φ : W(k) → k` this
+is a Witt vector lift. -/
+abbrev WittVectorLift {R S : Type*} [CommRing R] [CommRing S] (φ : R →+* S) {ι : Type*}
+    [Finite ι] (H : FormalGroupLaw S ι) : Type _ :=
+  {G : FormalGroupLaw R ι // G.IsLift φ H}
 
-    LaTeX: `\label{def:witt-vector-lift}`
-    Ref: [hazewinkel1978] https://doi.org/10.1007/978-3-642-35190-6 -/
-structure WittVectorLift where
-  /-- The prime p (residue characteristic of 𝔽_p). -/
-  p : ℕ
-  /-- p is prime. -/
-  p_prime : Nat.Prime p
-  /-- The height of the formal group (determines isogeny class over 𝔽̄_p). -/
-  height : ℕ
-  /-- Height is positive. -/
-  height_pos : 0 < height
-  /-- Dimension of the Lie algebra Lie(H). -/
-  lieDim : ℕ
-  /-- Lie dimension is positive. -/
-  lie_dim_pos : 0 < lieDim
-  /-- The Witt vector ring W(𝔽_p) is p-adically complete:
-      encoded as the property that p > 0 in the base. -/
-  p_pos : 0 < p
-
-/-- The Witt vector ring W(𝔽_p) has characteristic zero (it is ℤ_p,
-    which is a domain of characteristic 0). The reduction map
-    W(𝔽_p) → 𝔽_p has kernel (p).
-
-    We verify the fundamental identity: for any prime p,
-    p ≠ 0 in ℤ. -/
--- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
-theorem witt_char_zero (p : ℕ) (hp : Nat.Prime p) : (p : ℤ) ≠ 0 := by
-  exact_mod_cast hp.ne_zero
-
-/- The reduction-mod-p statement  Ĝ ⊗_{W(𝔽_p)} 𝔽_p ≅ H  is not formalised here.
-   Until 2026-11-21 this spot held `def reduction_preserves_dim : W.lieDim = W.lieDim := rfl`,
-   a tautology (AGENTS.md, Strict Lean Discipline item 5); it was removed. -/
-
-/-- The Lie dimension of a Witt vector lift is positive.
-
-    This is only the structure field `lie_dim_pos`. The intended statement,
-    that Dist(Ĝ) is a free ℤ_p-module of countable rank with a PBW-type basis
-    indexed by multi-indices of length `lieDim` [zink2002], is NOT formalised:
-    the structure carries no distribution algebra. (Docstring corrected
-    2026-11-21; it used to state the PBW claim as if this theorem proved it.) -/
--- Ref: [zink2002] The Display of a Formal p-Divisible Group — see folio/schema/references.ts
-theorem dist_algebra_generators (W : WittVectorLift) :
-    0 < W.lieDim := W.lie_dim_pos
-
-/-- The Witt vector lift is compatible with the Descartes condition:
-    when the Euler characteristic is -6, the genus is 4, and the
-    formal group dimension is 2g = 8.
-
-    This connects the Witt lift to the global Descartes structure. -/
--- Ref: [leitner2026] Chapter 6, §Witt vector lift
-theorem witt_lift_descartes_dim (g : ℕ) (hg : g = 4) :
-    2 * g = 8 := by
-  subst hg; norm_num
-
-/-- For the QOU application, the relevant primes are p ≥ 5
-    (so that 30 = 2 · 3 · 5 is invertible mod p for p > 5,
-    or p = 5 which divides 30 but is handled separately). -/
--- Ref: [leitner2026] Chapter 6, §Witt vector lift
-theorem relevant_primes_ge_five (p : ℕ) (hp : Nat.Prime p)
-    (h : 5 ≤ p) : 2 ≤ p := by linarith
-
-/-- W(𝔽_p) ≅ ℤ_p: the Witt vector ring of a finite field of
-    prime order is isomorphic to the p-adic integers. The key
-    property is that W(𝔽_p) is the unique complete DVR with
-    residue field 𝔽_p and uniformizer p.
-
-    We verify the basic arithmetic: p^2 > p for any prime p. -/
--- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
-theorem witt_ring_uniformizer (p : ℕ) (hp : Nat.Prime p) :
-    p < p ^ 2 := by
-  have := hp.two_le
-  nlinarith [sq_nonneg p]
+/-- A commutative lift has a commutative reduction. -/
+theorem WittVectorLift.isComm_of_isComm {R S : Type*} [CommRing R] [CommRing S] {φ : R →+* S}
+    {ι : Type*} [Finite ι] {H : FormalGroupLaw S ι} (G : WittVectorLift φ H)
+    (hG : G.1.IsComm) : H.IsComm :=
+  G.2.isComm hG
 
 end QOU

@@ -27,8 +27,11 @@ would have to touch these code paths, measured by grep on 2026-11-21:
 * direct callers of ``term4_frobenius_codim``: ``d_from_scratch.py``,
   ``build_six_term_substrate_model_b.py``, ``probes/path_b_habiro_mass_probe.py``;
 * readers of the witness table: ``mass_formula_6term.py`` (``term_4_frobenius``, also called
-  by ``r5_full_canonical_knot_solver.py``), ``unified_low_isotope_predictor.py``,
-  ``rho_k_h3a_co_casimir.py``, ``categorical_q_decay_ba_low_isotopes.py``;
+  by ``r5_full_canonical_knot_solver.py``), ``unified_low_isotope_predictor.py``;
+* downstream of those readers: ``categorical_q_decay_ba_low_isotopes.py`` reads the
+  ``mass-formula-6term`` and ``unified-low-isotope-predictor`` witnesses;
+* own recomputation of the hook dim_q: ``rho_k_h3a_co_casimir.py`` (it does not read the
+  witness table);
 * ``mass_formula_6term_mpfr_50dps.term_4_frobenius_mp``, called by
   ``derive_m_p_hecke_full_tower_50dps.py``;
 * ``audits/delta_n2_placeholder_audit.py`` reads the swept ``term4_frobenius_codim`` rows.
