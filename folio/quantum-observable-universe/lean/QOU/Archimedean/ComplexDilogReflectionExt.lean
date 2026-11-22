@@ -22,7 +22,7 @@ neighbourhood `ball(½,½)` of `½`.
 
 Sorry-free, no axioms beyond the standard three. Beans `qou-ph1k`, `qou-gkco`.
 
--- Ref: [manuscript] beans qou-ph1k, qou-gkco, qou-clx8
+-- Ref: [leitner2026] beans qou-ph1k, qou-gkco, qou-clx8
 -/
 import QOU.Archimedean.ComplexDilogBridge
 import QOU.MathlibExt.ComplexDilogarithmUnique

@@ -62,4 +62,4 @@ $$
   \right\}.
 $$
 
-For the positron ($e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$), the demand profile is $\{-0.218\gamma, -0.209 L_+, -0.209 L_-\}$. The mirror trefoil demands vacuum energy and Hopf content. The minimum-energy supply is the coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$, which provides exactly the identity and Hopf content from the rigid structure. Its cost is $\mathrm{tr}(\mathrm{id}_A) = [2]_q = q + q^{-1} \approx 2.011$.
+For the positron ($e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$), the demand profile is $\{-0.218\gamma, -0.209 L_+, -0.209 L_-\}$. The positron word demands vacuum energy and $L_\pm$ content. The minimum-energy supply is the coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$, which provides exactly the identity and Hopf content from the rigid structure. Its cost is $\mathrm{tr}(\mathrm{id}_A) = [2]_q = q + q^{-1} \approx 2.011$.

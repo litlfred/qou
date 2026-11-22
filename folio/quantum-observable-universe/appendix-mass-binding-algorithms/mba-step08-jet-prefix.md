@@ -22,13 +22,13 @@ at $q = q_0$ via the GS filtration of Step 7.*
 1. Expand P_K(q) around q = 1 as a Taylor / Laurent series in h.
 2. Retain terms up to order h^N.
 3. Match length levels ℓ to jet orders d via the GS-filtration
-   correspondence (`prop:jet-prefix-gb-filtration`).
+   correspondence (`conj:jet-prefix-gb-filtration`).
 4. Return the truncated polynomial with jet-order metadata.
 ```
 
 ### Correctness conditions
 
-1. *[Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#prop:jet-prefix-gb-filtration)
+1. *[Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#conj:jet-prefix-gb-filtration)
    gives the length $\leftrightarrow$ jet-order correspondence used in step 3.*
 2. *The standard basis splits the length filtration
    ([Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence),

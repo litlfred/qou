@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6ca58a92e61",
+          "ts": "2e66aa0d3d63",
+          "lean": "049948e694e8",
+          "lean_statement": "cea013d41c83"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:20:14.422Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. The .ts lean.ref names QOU.Archimedean.archimedean_functor_uniqueness, the REAL-slice theorem in the sibling .lean (tau_arch, D : R -> R). Its proof is hD.uniqueness ..., a projection of the BlochSuslinUniqueness class field whose statement is the conclusion (self-assuming). Worse, the same file proves (issue 7942) that PentagonCoherent is the wrong orientation of the five-term relation and that its hypotheses force tau_arch = 0 off {0,1} (archimedean_functor_hyps_force_zero, blochSuslinUniqueness_iff: the class holds iff D = 0). So the referenced theorem cannot carry the md claim about C minus {0,1}, e^{i pi/3} or Vol(4_1). The md also requires the q -> 1 limit of tau_arch(Phi_q(z)) to equal D and conditions on conj:dilogarithm-archimedean-limit; neither enters any Lean hypothesis. What improved: QOU/Archimedean/BlochSuslinComplex.lean has the corrected complex statement archimedean_functor_uniqueness_complex (Suslin orientation, conjugation and inversion symmetries), conditional on BlochSuslinRigidity, which is a cited classical theorem and is instantiated for FiveTermProof.blochD (blochSuslinRigidity_blochD); figure8_calibration_complex gives 2 tau(e^{i pi/3}) = c * 2 Cl_2(pi/3), the correct Vol(4_1) coefficient. Fix: repoint lean.ref to archimedean_functor_uniqueness_complex and either encode the q->1 limit hypothesis or drop it from the md."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2123,6 +2141,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:32:48.655Z",
+  "updated_at": "2026-11-21T08:20:14.422Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

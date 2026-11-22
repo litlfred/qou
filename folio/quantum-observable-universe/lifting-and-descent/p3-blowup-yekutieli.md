@@ -1,5 +1,3 @@
-The [regularity breakdown](#conj:regularity-breakdown) at $q = 1$ is a **cohomological obstruction** in the [Yekutieli lifting](#prop:yekutieli-lifting) framework.
-
 ## Brane tower and regularity
 
 The [recursive brane tower](#def:recursive-brane-tower) $\{A_n\}_{n \geq 0}$ with jet prolongations $A_n \hookrightarrow A_{n+1}$ produces a sequence of central extensions of gerbes:

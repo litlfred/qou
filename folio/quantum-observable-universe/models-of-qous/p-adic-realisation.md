@@ -2,6 +2,6 @@ To show that the substrate parameter and the surrounding categorical apparatus a
 
 *Key structures.*
 
-* The classical Frobenius integrability theorem constrains $q$-torsion leaves to be Legendrian. Over $\mathbb{Q}_p$, this is replaced by compatibility of the connection with the Frobenius lift. A $p$-adic instanton connection is integrable if and only if the associated $F$-crystal is unit-root.
+* The classical Frobenius integrability theorem constrains $q$-torsion leaves to be Legendrian. Over $\mathbb{Q}_p$, this is replaced by compatibility of the connection with the Frobenius lift. A connection that underlies an $F$-crystal is integrable by construction: crystals correspond to modules with integrable, topologically nilpotent connection \cite{andre-baldassarri2002}. Being unit-root is a further condition, and unit-root $F$-crystals correspond to continuous $\mathbb{Z}_p$-representations of the fundamental group (Katz; see \cite{andre-baldassarri2002}).
 * Crystal cohomology (de Rham–Witt complex) plays the role of de Rham cohomology.
 * The base-field-independent quantum universe and quantum observable universe provide the categorical framework via Tannakian reconstruction.

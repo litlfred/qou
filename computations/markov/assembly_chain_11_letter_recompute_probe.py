@@ -112,6 +112,7 @@ PINS = {
 # A copy of a file is not the file.
 _CHAIN = {"p": "markov-trace-assembly-proton.derivation.json",
           "n": "markov-trace-assembly-neutron.derivation.json"}
+_MUON_WITNESS = "atomic-tr-m-mpfr-50dps.witness.json"
 
 
 def _committed_target(label: str) -> str:
@@ -121,13 +122,31 @@ def _committed_target(label: str) -> str:
     return str(json.loads(path.read_text())["target_value"])
 
 
+def _committed_muon_target(atom_name: str) -> str:
+    """`tr_M_at_q0_50dps` from the committed muon-pinned witness (bean qou-sikd)."""
+    import json                                            # noqa: PLC0415
+    path = HERE.parent / _MUON_WITNESS
+    d = json.loads(path.read_text())
+    for row in d.get("results", []):
+        if row.get("atom") == atom_name:
+            return str(row["tr_M_at_q0_50dps"])
+    raise KeyError(f"{atom_name} not found in {_MUON_WITNESS}")
+
+
+def _committed_muon_pin() -> str:
+    import json                                            # noqa: PLC0415
+    path = HERE.parent / _MUON_WITNESS
+    d = json.loads(path.read_text())
+    return str(d.get("q0Value") or d.get("q_0_50dps"))
+
+
+PINS["muon2022"] = _committed_muon_pin()
+
 LIVE = {
     ("p", "proton"): _committed_target("p"),
     ("n", "proton"): _committed_target("n"),
-    # No muon-pinned assembly witness exists, so these stay as recorded copies
-    # and are explicitly NOT claimed to be reads. They are pre-ruling.
-    ("p", "muon2022"): "1.145759782886925318714927926598527367822020597266",
-    ("n", "muon2022"): "0.987743757144974407621841927554513967527057104869",
+    ("p", "muon2022"): _committed_muon_target("proton"),
+    ("n", "muon2022"): _committed_muon_target("neutron"),
 }
 CHAIN_REPORTS = {"p": "1.0653062285923893", "n": "0.9232332299116371"}
 
@@ -233,5 +252,14 @@ def main() -> int:
     return 0 if n_pass == len(_results) else 1
 
 
+def _selftest() -> int:
+    y = M.solve_y_lambda(3)
+    assert sp.simplify(y[(1, 1, 1)]) == 0
+    print("self-test: ok (y_(1,1,1) == 0 under Convention D)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        raise SystemExit(_selftest())
     raise SystemExit(main())

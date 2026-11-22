@@ -1308,6 +1308,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "The ref (library `NuclearGroebnerReduction.lean:125-130`) is a `def … : Prop`, never asserted; inhabited by `nf=[]`; mentions neither the word nor uniqueness. Proof step 1 (`-proof.md:5`), \"G closed under composition\", is false for A≥4: σ₃σ₂σ₁σ₃ and σ₂σ₃σ₂σ₁ are both irreducible and equal (Bokut–Shiao); the corpus's own `UGB/GrobnerShirshov/HeckeGS.lean:651` `hecke_not_gs_basis_four` proves this on main. The proof says the Lean uses `sorry`; it has none. \"NF represents the lowest-energy state\" is physical. The ε=0 \"word\" ½(σ+σ⁻¹) is not a braid word"
+      },
+      {
+        "field_hash": {
+          "md": "f0a191f5e84e",
+          "ts": "6356495bb740",
+          "lean": "37c6ac257009"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:13:37.735Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. The md mathematics is corrected: G is now the Bokut-Shiao completion (Hecke, far commutativity, and the BS family that contains Yang-Baxter), matching hecke_not_gs_basis_four and heckeCompleted_isGrobnerShirshovBasis. Remaining: the lean.ref QOU.Archimedean.nuclear_groebner_reduction is still a noncomputable def ... : Prop that is never asserted. It is inhabited by nf=[] and mentions neither the nuclear word nor uniqueness, so the Lean does not state the proposition. The statement takes R = Z[q,q^-1], but the GS-basis Lean is proved only for real q>0, q!=1 (the .ts notes this; the md does not). 'Lowest-energy state' is a physical reading inside the statement."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2409,6 +2426,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:01.885Z",
+  "updated_at": "2026-11-21T08:13:37.735Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

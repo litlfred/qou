@@ -17,7 +17,7 @@ Witness: alpha-shift-torus.witness.json
 References:
   prop:em-coupling-projection                        (1/α_EM = q[9]_q[10]_q)
   prop:alpha-em-categorical-trace-ratio              (δ_q form)
-  prop:force-carrier-intertwining-correspondence    (V_{(p,1^{n-p})} channel)
+  conj:force-carrier-intertwining-correspondence    (V_{(p,1^{n-p})} channel)
   def:delta-q-decoration
 
 The bridge claim formalised by this script:

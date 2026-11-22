@@ -8,7 +8,7 @@ export default proposition({
     ref: "qou:QOU.AlgebraicSubstrate.JointGaloisBraidDischarged.joint_action_discharged",
     validation: "not_checked",
   },
-  uses: ["prop:joint-galois-braid-figure-8-verified"],
+  uses: ["conj:joint-galois-braid-figure-8-verified"],
   cites: [],
   tags: [
     "joint-action",

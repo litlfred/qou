@@ -10,7 +10,7 @@ import Mathlib.Tactic.Ring
 §3b-cond conjecture class for the proton's Borromean mass assembly, and the
 proton-mass substrate identity *derived* from it.
 
-The proposition `prop:proton-mass-substrate-identity` states
+The proposition `conj:proton-mass-substrate-identity` states
   `m_p = 2 · m_μ · F_Bor(q₀) − 12 · m_e`
 (0.24 ppm vs CODATA, 50-dps MPFR verified). The numerics are compute-verified;
 the OPEN categorical content (block "Open work §1") is *why* the structural

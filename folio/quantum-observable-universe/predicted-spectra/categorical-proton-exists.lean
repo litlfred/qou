@@ -32,7 +32,7 @@ structure CategoricalProton where
 
 /-- **Existence of the categorical proton.**
 
-    The Borromean braid B₃(u,u,d) + LP-optimal Hopf gluon L_- yields
+    The Borromean braid B₃(u,u,d) + LP-optimal gluon L_- yields
     a canonical `CategoricalProton` term with negative crossing
     energy and Frobenius stability. -/
 -- Ref: [jones1987]

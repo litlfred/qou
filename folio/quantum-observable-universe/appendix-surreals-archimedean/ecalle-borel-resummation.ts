@@ -16,7 +16,7 @@ export default definition({
     "asymptotic-series",
     "archimedean",
   ],
-  cites: ["ecalle1981"],
+  cites: ["ecalle1981", "arxiv-2302.08363v2"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The coefficient-wise division $a_n \\mapsto a_n / n!$ is formalised as `borelCoeff` in the Lean sibling." },
     {

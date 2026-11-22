@@ -944,6 +944,41 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "jackson-q-bessel-contiguity.md:1 'closed forms are proved in QBesselContiguityRecurrence.lean' — but lean/QOU/QBeta/QBesselContiguityRecurrence.lean:123-127 takes `hrec` (the recurrence) as hypothesis and derives the product (converse); the claimed fact that Jackson coefficients satisfy it is not argued; 'recurrences in ν' should be in k. (Census lists this file under label prf:q-bessel-c-k-recurrence-cfinite.)",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "da64e03ddcb6",
+          "ts": "ed5377f83e31",
+          "lean": "4e96eb67c191",
+          "lean_statement": "7152a1eced20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:59.553Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the Lean filename removed from 'closed forms are proved in ...'; the proof content and the earlier finding are unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: jackson-q-bessel-contiguity.md:1 'closed forms are proved in QBesselContiguityRecurrence.lean' — but lean/QOU/QBeta/QBesselContiguityRecurrence.lean:123-127 takes `hrec` (the recurrence) as hypothesis and derives the product (converse); the claimed fact that Jackson coefficients satisfy it is not argued; 'recurrences in ν' should be in k. (Census lists this file under label prf:q-bessel-c-k-recurrence-cfinite.)"
+      },
+      {
+        "field_hash": {
+          "md": "da64e03ddcb6",
+          "ts": "ed5377f83e31",
+          "lean": "4e96eb67c191",
+          "lean_statement": "7152a1eced20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:22:57.412Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. The proof (prf:jackson-q-bessel-contiguity, of prop:jackson-q-bessel-contiguity-recurrence) contains no argument: four sentences stating that the coefficients satisfy first-order contiguity recurrences, that 'the closed forms are proved', and that 'computations verify the ratios symbolically and numerically'. Nothing is derived. The statement's content is that the power-series coefficients of Jackson's J^(1), J^(2) satisfy these recurrences; to prove that one must compute c_{k+1}/c_k from the series definition, which is a two-line q-Pochhammer calculation that is not given. The cited Lean (qbessel_first_kind_coeff_closed_form, and qbessel_second_kind_coeff_closed_form at QBeta/QBesselContiguityRecurrence.lean:140) runs the OTHER direction: it takes the recurrence as hypothesis hrec and concludes the product closed form, so it does not establish that Jackson's coefficients obey the recurrence. The remaining support is a sympy check for k <= 6 plus a 60-dps numeric check, i.e. verification, not proof. Further: the statement says the recurrence is 'in the order nu' but the recurrence is in the summation index k at fixed nu; and the claim that the q-weights are 'adapted to the SU_q(1,1) Casimir invariants' is neither stated precisely nor argued. No empirical physical data and no ruling conflict. Fix: write out c_k from the Jackson series and derive the ratio, or cite the standard source (Gasper-Rahman, Koelink) for the coefficient formula."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1583,6 +1618,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:31.507Z",
+  "updated_at": "2026-11-21T08:22:57.412Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

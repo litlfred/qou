@@ -1,4 +1,4 @@
-**Proposition (conditional on [proton's Borromean mass assembly](proton-borromean-assembly.md)).**
+**Conjecture (conditional on [proton's Borromean mass assembly](proton-borromean-assembly.md)).**
 
 *Let $q_0 \approx 1.10978$ be the substrate parameter, $m_e$ the
 electron mass (CAL-1), $m_\mu$ the muon mass (derived from CAL-2

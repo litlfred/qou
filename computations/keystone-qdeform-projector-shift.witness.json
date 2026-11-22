@@ -1,48 +1,107 @@
 {
-  "description": "s5-so3 keystone q-deformed closure: the E_lambda-projected H_5 Markov-trace shift between the muon home-block (3,2) and electron home-block (3,1,1), evaluating the Borromean braid embedded in B_5. Tests whether q-deformed home-block weights break the (2,1)/h^4 symmetry that the classical-multiplicity model (first-crack Model A) preserved. NOT a fit to 210 ppb.",
-  "computation": "docs/audits/scripts/keystone_qdeform_projector_shift_probe.py",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T05:40:56.664635+00:00",
+  "commitSha": "625fcc8d470be9eab0df30355369a57d55ac6e2e",
+  "assertions": [
+    {
+      "name": "branching_crosscheck_3_2_and_3_1_1",
+      "computed": "9.99999999999999999999310918999618551040038746241174476383694e-50",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "S_5 -> S_3 branching identity on Borromean braid"
+    },
+    {
+      "name": "three_row_weight_3_1_1_is_exact_zero",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "SU(2)/N=2 Wenzl two-row cap forces y_(3,1,1)^H5 == 0 (bean qou-j3u0)"
+    },
+    {
+      "name": "projected_shift_is_bar_even",
+      "computed": "2.91653767183863919655326178129910950251510539234097166180430e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-35",
+      "source": "|delta(q0) - delta(1/q0)| == 0 at working precision (bar-EVEN)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "keystone-qdeform-projector-shift",
+  "scriptFile": "keystone_qdeform_projector_shift_probe.py",
+  "scriptHash": "dc7d230402a4",
+  "scriptCommitSha": "70d3da774a04f7ce7b33e027615a29748c5b998a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
+  },
+  "invocation": {
+    "argv": [
+      "docs/audits/scripts/keystone_qdeform_projector_shift_probe.py"
+    ],
+    "reproduce": "python3 -u docs/audits/scripts/keystone_qdeform_projector_shift_probe.py"
+  },
+  "description": "s5-so3 keystone q-deformed closure: the E_lambda-projected H_5 Markov-trace shift between the muon home-block (3,2) and electron home-block (3,1,1), evaluating the Borromean braid embedded in B_5. Under the exact Wenzl bridge (Convention D, level r=2), y_(3,1,1)^H5 is EXACTLY ZERO by the two-row cap, so T_electron = 0 and the shift delta = T_muon is bar-EVEN to machine precision (bean qou-j3u0).",
   "tool": "pyhecke_native v0.9.0",
-  "q0": "1.1099785955541805",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
   "dps": 50,
   "braid": "(s1^-1 s2)^3  (Borromean, generators 1,2 on 5 strands)",
   "branching_cross_check": {
-    "chi_3_2_minus_branching_residual": "9.6e-50",
-    "chi_3_1_1_minus_branching_residual": "9.6e-50",
+    "chi_3_2_minus_branching_residual": "9.99999999999999999999310918999618551040038746241174476383694e-50",
+    "chi_3_1_1_minus_branching_residual": "9.99999999999999999994964193041781729103634368981548336328966e-51",
     "note": "validates pyhecke_native 5-strand chi^lambda against the S5->S3 branching to machine zero"
   },
   "h3_borromean_characters": {
-    "(3)": "1.0",
-    "(2,1)": "1.9941858103812",
-    "(1,1,1)": "1.0"
+    "(3)": "1.00000000000000000000000000000000000000000000000000000000000",
+    "(2,1)": "1.99418581297996408672819936801871670008913958251180000000000",
+    "(1,1,1)": "0.999999999999999999999999999999999999999999999999990000000000"
   },
   "h5_home_block_weights": {
-    "(3,2)": "0.0617237153232",
-    "(3,1,1)": "0.0167666089588"
+    "(3,2)": "0.0611562447900437462409904316004856595727131338952438310332453",
+    "(3,1,1)": "0.0"
   },
   "projected_block_characters": {
-    "chi_(3,2)": "4.9883716207624",
-    "chi_(3,1,1)": "5.9883716207624"
+    "chi_(3,2)": "4.98837162595992817345639873603743340017827916502370000000000",
+    "chi_(3,1,1)": "5.98837162595992817345639873603743340017827916502360000000000"
   },
   "projected_traces": {
-    "T_muon_3_2": "0.30790082984625",
-    "T_electron_3_1_1": "0.10040468526556",
-    "delta": "0.20749614458069",
-    "delta_over_T_muon": "0.673905766",
-    "delta_over_T_electron": "2.066598227"
+    "T_muon_3_2": "0.305070076260913908614016175634527400502386778692442134087927",
+    "T_electron_3_1_1": "0.0",
+    "delta": "0.305070076260913908614016175634527400502386778692442134087927",
+    "delta_over_T_muon": "1.00000000000000000000000000000000000000000000000000000000000",
+    "delta_over_T_electron": "UNDEFINED (T_e is exactly 0; y_(3,1,1)^H5 = 0 under two-row cap)"
   },
   "magnitude_vs_210ppb": {
-    "delta_over_T_muon_ratio": "3.21e6 too large",
-    "delta_over_T_electron_ratio": "9.84e6 too large",
+    "delta_over_T_muon_ratio": "4.7619e+6 too large",
+    "delta_over_T_electron_ratio": "UNDEFINED (T_e is 0)",
     "target_is_fit": false,
     "note": "210 ppb is a re-pin artifact, not a fit target"
   },
   "bar_parity": {
-    "delta_q0": "0.20749614458069",
-    "delta_inv_q0": "0.36549414693779",
-    "sum": "0.57299029",
-    "diff": "-0.157998",
-    "verdict": "bar-MIXED (neither even nor odd)"
+    "delta_q0": "0.305070076260913908614016175634527400502386778692442134087927",
+    "delta_inv_q0": "0.305070076260913908614016175634527400502386778692439217550255",
+    "sum": "0.610140152521827817228032351269054801004773557384881351638183",
+    "diff": "2.91653767183863919655326178129910950251510539234097166180430e-51",
+    "verdict": "bar-EVEN"
   },
-  "verdict": "Non-null mechanism (q-deformed home-block weighting breaks the (2,1) symmetry the classical model preserved), but the shift is O(1) (67% of T_mu), 6-7 orders too large to be 210 ppb, NOT the 207x generation ratio, and bar-MIXED -> fails the bar-even precondition. The q-deformed projector-weight object is REFUTED as the 210 ppb muon mechanism. Confirms anchor-shift framing.",
-  "discipline": "No fit; nothing wired; c_k/Delta_lambda cal-anchored. Owner closes bean s5bb (section 4a)."
+  "verdict": "Under the exact Wenzl bridge (bean qou-j3u0), y_(3,1,1)^H5 = 0 identically by the SU(2) two-row cap, so T_electron = 0, delta = T_muon, and the shift is bar-EVEN (|delta(q0) - delta(1/q0)| ~ 0), correcting the earlier float64-corrupted 'bar-MIXED' witness record. Magnitude remains O(1) (~4.76e6x the 210 ppb re-pin scale).",
+  "discipline": "No fit; nothing wired; c_k/Delta_lambda cal-anchored. Bean qou-j3u0.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,4 +1,4 @@
-*Proof.*
+*Argument sketch.*
 The Wedderburn-Artin decomposition of $H_n(R, q)$ assigns weight
 $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ to each irreducible
 representation $\lambda$.  The mass formula uses the Markov

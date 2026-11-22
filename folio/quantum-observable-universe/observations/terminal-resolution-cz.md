@@ -4,21 +4,21 @@ $$
   \hbar_q(p) = 1 - q(p)^{-1}.
 $$
 
-The topological mass formula ([topological mass formula](#conj:topological-mass-formula)) specialises at $q_0 \approx 1.10998$ to:
+At $q_0 \approx 1.10998$:
 
 $$
-  \hbar_{q_0} = 1 - q_0^{-1} \approx 0.09889,
+  \hbar_{q_0} \approx 0.09908,
   \qquad
-  \hbar_{q_0}^{-2} \approx 102.25.
+  \hbar_{q_0}^{-2} \approx 101.86.
 $$
 
-Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the dimensionless mass ratios $\mathfrak{m}(K)/m_e$; rendered against the $m_e$ scale they read in MeV as follows (the proton and neutron MeV entries are the ratio $\mathfrak{m}(K)/m_e$ rendered against the $m_e$ unit, not independent absolute-mass predictions):
+Evaluating over $\mathbb{C}[z]$ at $z = q_0$ gives the dimensionless lepton mass ratios:
 
-| **Particle** | $\mathrm{Vol}(K)$ | $\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
+| **Particle** | **Closure** | $\mathrm{Vol}(K)$ | $\mathfrak{m}(K)/m_e$ |
 |---|---|---|---|
-| Electron ($3_1$) | 0 (non-hyp.) | $m_e$ (baseline) | 0.511 MeV |
-| Muon ($T_{2,5}$) | 2.0299 | $2.0299 \times 102.25 \approx 207.6 m_e$ | $206.768 m_e$ |
-| Proton | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ | 938.272 MeV | 938.272 MeV |
-| Neutron | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ | 939.565 MeV | 939.565 MeV |
+| Electron | Hopf link, closure of $\sigma_0\sigma_1\sigma_0 \in B_3$ | 0 (not hyperbolic) | 1 (the unit) |
+| Muon | figure-eight knot $4_1$ | $2.0299$ | $\mathrm{Vol}(4_1)/\hbar_{q_0}^2 \approx 206.77$ |
+
+Neither row is a prediction. The electron row is the unit, and the muon row is the relation that fixes $q_0$ through the calibration CAL-2 ([three-calibration discipline](#def:three-calibration-discipline)), so it holds by construction. The proton and neutron are not listed: under the pair Skein formula their masses are an invertible function of two dressed quark masses ([nucleon masses under the pair Skein formula](#prop:terminal-resolution)), so tabulating them against CODATA would test nothing.
 
 The fibre functor $\tau$ maps the categorical Frobenius form to the Webster inner product. Specializing $z \mapsto q_0$ recovers the numerical values while preserving the algebraic structure.

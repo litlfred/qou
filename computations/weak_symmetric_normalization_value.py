@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate prop:weak-symmetric-normalization's closed form.
+"""Evaluate conj:weak-symmetric-normalization's closed form.
 
     N_sym(q) = (q^4 + q^6 + q^8) / 3 = q^4 (1 + q^2 + q^4) / 3
 
@@ -57,7 +57,7 @@ def main() -> int:
     print(f"symbolic factorisation exact: {sym_ok}")
 
     wb = WitnessBuilder("weak-symmetric-normalization-value", engine="mpmath")
-    wb.data["block"] = "prop:weak-symmetric-normalization"
+    wb.data["block"] = "conj:weak-symmetric-normalization"
     wb.data["q0_anchor"] = "proton"
     wb.data["q0"] = fmt(q0)
     wb.data["formula"] = "(q^4 + q^6 + q^8)/3"

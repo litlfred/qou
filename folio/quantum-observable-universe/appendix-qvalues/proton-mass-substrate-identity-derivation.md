@@ -1,4 +1,4 @@
-This note collects the numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier for [Substrate evaluation](#prop:proton-mass-substrate-identity).
+This note collects the numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier for [Substrate evaluation](#conj:proton-mass-substrate-identity).
 
 The predictive content throughout is the dimensionless ratio $m_p/m_e$ (equivalently $2(m_\mu/m_e)F_{\mathrm{Bor}} - 12$): since $m_e$ (CAL-1) sets the MeV scale by fiat, the absolute proton mass in MeV is not an independent framework prediction. The MeV figures below are that ratio rendered against the $m_e$ unit — a rendering that lets the ratio be read off against CODATA, not an absolute-mass claim.
 
@@ -39,7 +39,7 @@ The series converges to $0.017\,\mathrm{ppm}$ accuracy at order $h^9$.
 
 ## Combined with the canonical flavor-split
 
-[Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md)
+[Substrate-pure derivation of the $u$--$d$ flavor split](../mass-theory/flavor-split-substrate.md)
 gives the canonical Hecke-skein derivation
 
 $$
@@ -161,5 +161,5 @@ numerically verified rather than symbolically derived.
 
 - [Borromean categorical observable](../braids-and-knots/f-bor-borromean-observable.md)
   — categorical observable $F_{\mathrm{Bor}}$ (closed form, $h$-expansion, structural integers)
-- [Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md)
+- [Substrate-pure derivation of the $u$--$d$ flavor split](../mass-theory/flavor-split-substrate.md)
   — canonical Hecke-skein $\Delta m / M_N$ derivation

@@ -8,6 +8,7 @@ export default remark({
   uses: [
     "prop:phi-q-aj-machinery-identification",
   ],
+  cites: ["garoufalidis-wheeler-modular"],
   tags: [
     "aj-conjecture",
     "faddeev-dilogarithm",

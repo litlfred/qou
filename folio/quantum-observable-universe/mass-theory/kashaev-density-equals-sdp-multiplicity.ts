@@ -24,6 +24,7 @@ export default conjecture({
     "murakami-murakami2001",
     "iwahori1964",
     "wenzl1988",
+    "garoufalidis-loebl2005",
   ],
   tags: [
     "tier:E",

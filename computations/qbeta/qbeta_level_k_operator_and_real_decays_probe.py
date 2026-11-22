@@ -13,7 +13,14 @@ with the physically right objects and closes it three ways.
 `build_atom_nf(Z, N)` returns a SIX-vector in the H_3 normal-form basis
 [gamma, sigma_0, sigma_1, L+, L-, e^-] for EVERY mass number, tritium (A = 3)
 included. The atom braid words are laid out on 3A strands, but the normal form is
-H_3-valued throughout.
+H_3-valued throughout (because `build_atom_nf` folds generator indices `gi % 2`
+into `{sigma_0, sigma_1}`).
+
+Scope note (bean `qou-zgg2`): full-tower `B_{3A} -> H_{3A}(q)` atomic braid and
+Markov-trace modules DO exist in the corpus (`canonical_braid_crossings.py`,
+`markov/markov_peel.py`, `tr_m_atom_via_transfer.py`); what is H_3-collapsed is
+specifically `pyhecke.gram.build_atom_nf`, which is the representation the
+`T_beta` decay-operator candidates on this arc were wired to.
 
 So there is no genuinely level-k operator anywhere in this corpus. The avenue
 Step 24 identified as the only remaining place a different phase could come from

@@ -13,7 +13,7 @@ Beans: epic `qou-d4kh`, V1 `qou-9aar` (checkers), V3 `qou-ycjd` (drain).
 | L1 | `leak-lean-prose` | prose that talks about the formalisation: `Lean`, `Mathlib`, `## Lean …` headings, "proved formally", "formalised in", "machine-checked". The bare word "formalise" is **advisory**, see §3. |
 | L2 | `leak-lean-ident` | backticked spans in prose that are identifiers: `fqn`, `lean-file`, `repo-file`, `block-id`, `decl-name`, `typeclass` |
 | L3 | `leak-person` | we, our, us, let's, let us, you, your, "the reader". It does not match "I", because that is mostly a Roman numeral. |
-| L4 | `leak-reading-order` | (a) a `q` token (`$q$`, `[n]_q`, `\Phi_d`, `SU_q`, Hecke, "archimedean wall") before `sec:substrate-parameter`. This fails in Ch 1 and is advisory in Ch 2 §1–6. An `outro-*` block is exempt. (b) a `](#label)` link to a block later in reading order. This fails in Ch 1–2 and is advisory elsewhere. Links to back matter and to the block's own table sibling are exempt. |
+| L4 | `leak-reading-order` | (a) a `q` token (`$q$`, `[n]_q`, `\Phi_d`, `SU_q`, Hecke, "archimedean wall") before `sec:substrate-parameter`. An `outro-*` block is exempt. (b) a `](#label)` link to a block later in reading order. Links to back matter and to the block's own table sibling are exempt. **Both fail in every chapter** (owner ruling 2026-11-20, "All the chapters should be strict"). Earlier, (a) failed only in Ch 1 and (b) only in Ch 1–2; the §4 counts below were measured under that scoping. |
 
 The audit uses one reading order, built by importing the paper and chapter
 manifests. The guard is `voice-leak-audit.test.ts` (11 tests).

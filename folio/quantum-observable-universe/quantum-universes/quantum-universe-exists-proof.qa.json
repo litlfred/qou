@@ -1135,6 +1135,22 @@
         "severity": "minor",
         "evidence": "Lean `Nonempty (QuantumUniverse R)` for every CommRing R via `TrivialWitness` (stronger than the ∃ claimed; fine). Proof: \"finite-dimensional R-modules\" over a ring (should be f.g. projective or similar); \"richer witness Rep(SU(2)) with A the regular representation\" is asserted, unproved, and the regular rep of SU(2) is infinite-dimensional so is not an object of finite-dim Rep(SU(2))",
         "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "589bcdad23eb",
+          "ts": "767a54150e5a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:53:02.274Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: '(Example)' removed and a forward pointer added; the infinite-dimensional regular representation of SU(2) is still offered as an object of finite-dimensional Rep(SU(2)). No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean `Nonempty (QuantumUniverse R)` for every CommRing R via `TrivialWitness` (stronger than the ∃ claimed; fine). Proof: \"finite-dimensional R-modules\" over a ring (should be f.g. projective or similar); \"richer witness Rep(SU(2)) with A the regular representation\" is asserted, unproved, and the regular rep of SU(2) is infinite-dimensional so is not an object of finite-dim Rep(SU(2))"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1998,6 +2014,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:54:54.728Z",
+  "updated_at": "2026-11-21T07:53:02.274Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

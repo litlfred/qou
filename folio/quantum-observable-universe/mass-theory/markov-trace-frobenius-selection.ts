@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:markov-trace-frobenius-selection",
   title: "Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy",
-  cites: ["jones1987", "wenzl1988", "yekutieli2015"],
+  cites: ["jones1987", "wenzl1988", "yekutieli2015", "kimlee2018", "webster-williamson-2014-markov"],
   uses: [
     "lem:feynman-eigenbasis-decomposition",
     "prop:convention-d-kills-antisymmetriser",
@@ -30,6 +30,11 @@ export default proposition({
     status: "verified",
   },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-21",
+      body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner: fix issues): The QOU mass identity uses the Frobenius co-Casimir trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)):",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): in [Gram-matrix spectral connection](#rem:gram-matrix-spectral-connection)" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): *Formalised at $n = 3$, division-free, over a generic commutative domain: `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero` ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean)), with the fibre-side antecedent in `markovWeights_eq_jones_of_fibre_categorical` ([`FibreCategoricalTraceForcesJones.lean`](../lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean)).*" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ... and proved in Lean only as fixed-$n$ instances of the recursion ..." },

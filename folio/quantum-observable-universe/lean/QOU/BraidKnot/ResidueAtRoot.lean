@@ -15,11 +15,13 @@ projection induced by quotienting by a cyclotomic polynomial.
 **Formal-chain version.**  Lives under `lean/QOU/` and is compiled
 by `lake build`.
 
-**Conditional-class role (AGENTS.md §3b-cond).**  The class
-`ResidueAtRoot` below is the class axiomatisation of
-`conj:gs-residue-at-root-existence`: an instance supplies the
-Habiro-completion cyclotomic projection, whose existence is the
-conjectural input.  The proposition `prop:residue-at-root` is stated
+**Instance (2026-11-21).**  The class `ResidueAtRoot` below was the
+class axiomatisation of the projection-existence part of
+`conj:gs-residue-at-root-existence`.  That part is now proved: the
+Habiro ring and its cyclotomic projections are constructed in
+`QOU/BraidKnot/QHabiroCompletion.lean`, which gives the instance
+`QHabiro.instResidueAtRoot`.  The open part of the conjecture
+(membership of `Φ_q · tr_{M,ℓ}` in the Habiro ring) is not encoded here.  The proposition `prop:residue-at-root` is stated
 *conditionally* on this class (content-block sibling
 `mass-theory/residue-at-root.lean`, theorem
 `residue_isRingHom_of_residueAtRoot`).
@@ -32,7 +34,7 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- **Cyclotomic residue at a root of unity (axiomatised class).**
+/-- **Cyclotomic residue at a root of unity.**
 
     A class instance carries:
     * `target n` — the target ring `ℤ[ζ_n] ≅ ℤ[q]/Φ_n(q)`.
@@ -41,11 +43,9 @@ universe u
       homomorphism `R →+* target n` (well-definedness is carried
       by the `RingHom` type).
 
-    The conjectural input is the Habiro-completion machinery on
-    which `project` depends; concrete instances use the cyclotomic
-    quotient ring as the target.  This class is the §3b-cond
-    axiomatisation of `conj:gs-residue-at-root-existence`. -/
--- @conjecture: primary
+    The Habiro completion has an instance,
+    `QHabiro.instResidueAtRoot` (`QOU/BraidKnot/QHabiroCompletion.lean`),
+    with target `ℤ[q]/Φ_{n+1}(q)` at index `n`. -/
 class ResidueAtRoot (R : Type u) [CommRing R] where
   /-- The target ring at a given root index `n`. -/
   target : ℕ → Type u

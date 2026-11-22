@@ -27,7 +27,7 @@ export default theorem({
     "generator-volume",
     "nuclear",
   ],
-  lean: { ref: "qou:QOU.Archimedean.markov_trace_factorization",
+  lean: { ref: "qou:QOU.Hecke.markov_trace_product",
     validation: "not_checked",
   },
   uses: ["prop:generator-volume-decomposition"],

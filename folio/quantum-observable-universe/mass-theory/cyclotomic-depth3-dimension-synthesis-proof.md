@@ -1,4 +1,4 @@
-**Proof.**
+**Sketch.**
 
 *Step 1 (count starting generators).* The cyclotomic Galois orbit
 of $\zeta_K$ consists of $\varphi(K) = K - 1$ primitive $K$th roots

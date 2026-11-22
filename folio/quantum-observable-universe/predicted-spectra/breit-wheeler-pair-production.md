@@ -11,8 +11,8 @@ $$
 The electron and positron are the braid words
 
 $$
-  e^- = \sigma_0\sigma_1\sigma_0  \text{ (trefoil)}, \qquad
-  e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}  \text{ (mirror trefoil)}.
+  e^- = \sigma_0\sigma_1\sigma_0  \text{ (closure: Hopf link)}, \qquad
+  e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}  \text{ (closure: mirror Hopf link)}.
 $$
 
 The $e^-$ channel of the product is its coefficient on $\sigma_0\sigma_1\sigma_0$, which is $\varphi_{01}\psi_0 + \varphi_1\psi_{01}$: it needs the vertex term $\sigma_0\sigma_1^{-1}$ of one photon and a single-crossing term of the other. A single crossing $\sigma_i$ is a term of a photon, not a photon, and two bare photons fuse to $\gamma(0)\gamma(0) = \mathbf{1}$.

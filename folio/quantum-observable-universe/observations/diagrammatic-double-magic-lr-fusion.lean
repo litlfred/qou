@@ -2,6 +2,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
 import QOU.Common.MagicNumbers
 import Mathlib.Combinatorics.Young.YoungDiagram
+import QOU.Mathlib.LittlewoodRichardson
 
 
 /-!
@@ -66,6 +67,27 @@ free:** the LR coefficient `lr` — neither Mathlib nor the corpus defines
 Littlewood–Richardson coefficients, so it is constrained only by `lr_conj`,
 and an instance may still set `lr` to the Kronecker delta at a self-conjugate
 `ν`. Encoding the rigidity claim needs `lr` defined (LR tableaux count).
+
+## 2026-11-21 — `lr` is now the Littlewood–Richardson coefficient, and the
+## conjecture is FALSE
+
+`lr` is no longer instance data: it is `QOU.Mathlib.lrCoeff`, the number of
+LR tableaux (bean `qou-k7ra` item 6). With it the class is **empty at every
+`(Z, N)`** — `not_doubleMagicConjecture`. The reason is elementary LR theory:
+for nonempty `λ`, `μ` the row sum `λ + μ` always occurs
+(`QOU.Mathlib.lrCoeff_rowSum_pos`, via the highest-weight tableau), so
+rigidity forces `ν_{ZN} = λ + μ`; but `λ + μ` is not self-conjugate when `λ`
+and `μ` are (first row `λ₁ + μ₁` against first column `max(λ₁, μ₁)`,
+`QOU.Mathlib.rowSum_transpose_ne`), contradicting `nu_selfConjugate`. Every
+magic number is positive, so this covers every double-magic pair.
+
+**What the refutation rests on.** `nu_selfConjugate` uses `lr_conj`, the
+conjugation symmetry `c^{ν'}_{λ'μ'} = c^ν_{λμ}`. It is a standard theorem of
+LR theory but is **not formalised** here; it stays a hypothesis field of
+`LRFusionData`. So in Lean the class is empty outright (any instance must
+supply `lr_conj`), and the *mathematical* refutation of the `.md` statement is
+conditional on that symmetry. A refutation free of it needs a second LR
+tableau (for `λ ∪ μ = (λ + μ)'`), which is not built here.
 
 -- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 -- Ref: [ariki1996] Ariki, "On the decomposition numbers of the Hecke algebra of G(m, 1, n)," J. Math. Kyoto Univ. 36 (1996)
@@ -136,24 +158,29 @@ theorem not_selfConjugate_two (l : Partition 2) : ¬ SelfConjugate l := by
   rw [hcard] at this
   simp at this
 
-/-- Abstract data of an LR-fusion outcome at level `Z + N`.
+/-- The **Littlewood–Richardson coefficient** `c^ν_{λ μ}` of genuine
+    partitions: `QOU.Mathlib.lrCoeff`, the number of LR tableaux of shape
+    `ν / λ` and content `μ` (defined 2026-11-21, bean `qou-k7ra`; until then
+    `lr` was a free field of `LRFusionData`). -/
+def lr {a b c : ℕ} (l : Partition a) (m : Partition b) (n : Partition c) : ℕ :=
+  QOU.Mathlib.lrCoeff l.1 m.1 n.1
 
-    `lrFusion λ μ ν` records the LR-coefficient `c^ν_{λ μ}` of genuine
-    partitions.  **Still free** (GAP): neither Mathlib nor the corpus defines
-    Littlewood–Richardson coefficients, so `lr` is instance data constrained
-    only by the conjugation symmetry `lr_conj`.  `Specht` is an uninterpreted
-    label for the Specht module and is used by nothing. -/
+/-- Data of an LR-fusion outcome at level `Z + N`.
+
+    `lr` is now the defined coefficient above; this class carries only the
+    conjugation symmetry `lr_conj`, a hypothesis about that definition.
+    `Specht` is an uninterpreted label for the Specht module and is used by
+    nothing. -/
 class LRFusionData (Z N : ℕ) where
   /-- The Specht module attached to a partition (abstract carrier). -/
   Specht : ∀ {n : ℕ}, Partition n → Type*
-  /-- The LR coefficient `c^ν_{λ μ}` as a natural number. -/
-  lr : Partition Z → Partition N → Partition (Z + N) → ℕ
   /-- **LR conjugation symmetry**, `c^ν_{λ μ} = c^{ν'}_{λ' μ'}`.
 
-      A theorem of Littlewood–Richardson theory, not part of the conjecture:
-      it holds for the actual LR coefficients and is recorded here because
-      this carrier abstracts them. It is what makes `nu_selfConjugate`
-      derivable instead of assumed. -/
+      A theorem of Littlewood–Richardson theory (Macdonald I.5, the
+      involution `ω`), not part of the conjecture. **GAP:** it is not yet
+      proved for `QOU.Mathlib.lrCoeff`, so it stays a hypothesis here. It is
+      what makes `nu_selfConjugate` derivable instead of assumed. -/
+  -- Ref: [macdonald1995] Macdonald, Symmetric Functions and Hall Polynomials, 2nd ed., OUP 1995, I.5
   -- Ref: [geckpfeiffer2000] Geck & Pfeiffer, LMS Monographs 21, OUP 2000
   lr_conj : ∀ (l : Partition Z) (m : Partition N) (n : Partition (Z + N)),
     lr (conj l) (conj m) (conj n) = lr l m n
@@ -204,7 +231,7 @@ open scoped Classical in
 theorem lr_concentrated
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
     (ν : Partition (Z + N)) :
-    c.lr c.lambdaZ c.muN ν = if ν = c.nuZN then 1 else 0 := by
+    lr c.lambdaZ c.muN ν = if ν = c.nuZN then 1 else 0 := by
   by_cases h : ν = c.nuZN
   · simp [h, c.lr_unique_at_nu]
   · simp [h, c.lr_vanishes_off ν h]
@@ -215,7 +242,7 @@ theorem lr_concentrated
 -- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem nu_unique
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
-    (ν : Partition (Z + N)) (hν : c.lr c.lambdaZ c.muN ν ≠ 0) :
+    (ν : Partition (Z + N)) (hν : lr c.lambdaZ c.muN ν ≠ 0) :
     ν = c.nuZN := by
   by_contra h
   exact hν (c.lr_vanishes_off ν h)
@@ -227,7 +254,7 @@ theorem nu_unique
 theorem nu_iff_lr_nonzero
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
     (ν : Partition (Z + N)) :
-    ν = c.nuZN ↔ c.lr c.lambdaZ c.muN ν ≠ 0 := by
+    ν = c.nuZN ↔ lr c.lambdaZ c.muN ν ≠ 0 := by
   refine ⟨?_, nu_unique Z N ν⟩
   intro h
   rw [h, c.lr_unique_at_nu]
@@ -242,7 +269,7 @@ open scoped Classical in
 theorem lr_kronecker
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
     (ν : Partition (Z + N)) :
-    c.lr c.lambdaZ c.muN ν = if ν = c.nuZN then 1 else 0 :=
+    lr c.lambdaZ c.muN ν = if ν = c.nuZN then 1 else 0 :=
   lr_concentrated Z N ν
 
 /-- **Self-conjugacy of the fused partition is preserved by the LR rigidity**
@@ -265,5 +292,41 @@ theorem nu_selfConjugate
   have hsym := c.lr_conj c.lambdaZ c.muN c.nuZN
   rw [c.lambdaZ_selfConj, c.muN_selfConj, c.lr_unique_at_nu] at hsym
   exact nu_unique Z N (conj c.nuZN) (by rw [hsym]; exact one_ne_zero)
+
+/-- Every magic number is positive. -/
+theorem pos_of_mem_magicSet {n : ℕ} (h : n ∈ magicSet) : 0 < n := by
+  have : ∀ m ∈ magicSet, 0 < m := by decide
+  exact this n h
+
+/-- **The conjecture is false at every `(Z, N)`** (with `lr` the real
+    Littlewood–Richardson coefficient).
+
+    `λ + μ` (rows added) has `c^{λ+μ}_{λ μ} ≥ 1`
+    (`QOU.Mathlib.lrCoeff_rowSum_pos`), so rigidity forces
+    `ν_{ZN} = λ + μ`; `nu_selfConjugate` then makes `λ + μ` self-conjugate,
+    which fails for nonempty self-conjugate `λ`, `μ`
+    (`QOU.Mathlib.rowSum_transpose_ne`). Both are nonempty because magic
+    numbers are positive.
+
+    Scope: in Lean this is unconditional (the class supplies `lr_conj`); as a
+    statement about the `.md` conjecture it is conditional on the LR
+    conjugation symmetry, which is a known theorem not formalised here. -/
+-- Ref: [macdonald1995] Macdonald, Symmetric Functions and Hall Polynomials, 2nd ed., OUP 1995, I.9
+theorem not_doubleMagicConjecture (Z N : ℕ) (c : DoubleMagicConjecture Z N) : False := by
+  have hZ : 0 < Z := pos_of_mem_magicSet c.doubleMagic.1
+  have hN : 0 < N := pos_of_mem_magicSet c.doubleMagic.2
+  let ν₁ : Partition (Z + N) :=
+    ⟨QOU.Mathlib.rowSum c.lambdaZ.1 c.muN.1, by
+      rw [QOU.Mathlib.card_rowSum, c.lambdaZ.2, c.muN.2]⟩
+  have hne : lr c.lambdaZ c.muN ν₁ ≠ 0 :=
+    (QOU.Mathlib.lrCoeff_rowSum_pos c.lambdaZ.1 c.muN.1).ne'
+  have hν : ν₁ = c.nuZN := nu_unique Z N ν₁ hne
+  have hsc : conj c.nuZN = c.nuZN := nu_selfConjugate Z N
+  rw [← hν] at hsc
+  have hT : (QOU.Mathlib.rowSum c.lambdaZ.1 c.muN.1).transpose =
+      QOU.Mathlib.rowSum c.lambdaZ.1 c.muN.1 := congrArg Subtype.val hsc
+  exact QOU.Mathlib.rowSum_transpose_ne
+    (congrArg Subtype.val c.lambdaZ_selfConj) (congrArg Subtype.val c.muN_selfConj)
+    (by rw [c.lambdaZ.2]; exact hZ) (by rw [c.muN.2]; exact hN) hT
 
 end QOU.LRFusion

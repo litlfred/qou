@@ -5,7 +5,7 @@ import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 # QOU.QuantumObservableUniverses.HiggsVacuumResidual — the vacuum idempotent and its residual
 
 Content block: `prop:higgs-vacuum-residual-idempotent`
-(`quantum-observable-universes/higgs-vacuum-residual-idempotent.md`).
+(`knots-particles-confinement/higgs-vacuum-residual-idempotent.md`).
 
 Constraint (G-4) of `conj:g-action-on-substrate` defines the Higgs idempotent
 `e_H = ϱ_Φ ϱ_Φ^* / tr(ϱ_Φ^* ϱ_Φ)` from a vacuum morphism `ϱ_Φ : 𝟙 → A^{(H)}`.

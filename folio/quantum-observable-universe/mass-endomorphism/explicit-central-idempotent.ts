@@ -35,6 +35,11 @@ export default proposition({
     status: "verified",
   },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-21",
+      body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner: fix issues): The \"Significance\" section, which stated a claim conditional on a later conjecture, was removed whole: ## Significance\n\nThe element $e_\\lambda$ serves as the explicit, computable generator of the period class assigned to cell $\\lambda$. Under [GS-depth $\\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) and [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic), the class\n\n$$\n  \\tau_{\\mathrm{arch}}\\bigl( e_\\lambda \\cdot \\mathrm{Li}_2^q(z) \\bigr)\n  \\;\\in\\;\n  \\mathcal{P}_2 / \\mathcal{P}_1\n$$\n\nforms a Bloch-regulator period computable to arbitrary precision. For the figure-$8$ knot ($\\lambda = (2,2)$, $z = \\zeta_6$):\n\n$$\n  \\tau_{\\mathrm{arch}}\\bigl( e_{(2,2)} \\cdot \\mathrm{Li}_2^q(\\zeta_6) \\bigr)\n  \\;=\\; 2\\,\\mathrm{Cl}_2(\\pi/3)\n  \\;=\\; \\mathrm{Vol}(S^3 \\setminus 4_1).\n$$",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Proposition (conditional on [`conj:explicit-central-idempotent`](#conj:explicit-central-idempotent)).**\n\nThe statement below is proved in Lean *conditionally* on the\nLagrange-interpolation cross-checks, which are axiomatised as the class\n`ExplicitCentralIdempotentConjecture q` and are **open**: no instance of\nthat class exists anywhere in the corpus. The four cross-checks\n(sum-to-identity, orthogonality, self-adjointness, bar-pairing) are the\nconjectural input; everything downstream of them is machine-checked.\n\n([`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou))\n\nIt is standard in implementations like SageMath's `IwahoriHeckeAlgebra` and the local `pyhecke-native` module." },
     {
       kind: "status",

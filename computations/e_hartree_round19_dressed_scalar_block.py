@@ -67,7 +67,7 @@ WHAT THIS DOES NOT CLOSE (honest): the alpha_EM^2 MAGNITUDE chain
   standing transports: the m_e c^2 unit and the LP-kink smoothness).
 
 Refs: conj:e-hartree-categorical-derivation (rounds 11-18);
-prop:force-carrier-intertwining-correspondence; thm:em-spectral-completeness;
+conj:force-carrier-intertwining-correspondence; thm:em-spectral-completeness;
 prop:torus-knot-delta-q-writhe.  Classical hook-support / q-Murnaghan-
 Nakayama: A. Ram, "A Frobenius formula for the characters of the Hecke
 algebras", Invent. Math. 106 (1991) 461-488.

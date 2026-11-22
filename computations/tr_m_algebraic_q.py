@@ -18,9 +18,10 @@ The atom word uses only:
 so every factor is `σ_g + d·I` with d a symbolic element of ℚ(q): no q₀ bake.
 
 Verified (see __main__ / witness): `tr_M_algebraic(Z,N).subs(q, q₀)` reproduces
-the canonical transfer value `tr_m_atom_zn(Z,N)` to ~1e-13 for D/T/³He — the
-algebra is exact, the residual is float64 cancellation in evaluating the
-degree-O(100) rational at q₀ (the transfer is 50-dps).
+the canonical transfer value `tr_m_atom_zn(Z,N)` to ~1e-50 for D/T —
+the algebra is exact and is now evaluated as an exact rational at the 70-digit
+q₀. (Until 2026-11-21 q₀ entered as float(Q) and the residual was the ~1e-13
+float64 cancellation floor of the degree-O(100) rational.)
 
 THE "~1e-8" IN THE LINE ABOVE USED TO READ AS THE FLOOR, AND IT WAS THE
 GROUPED ORDERING (bean `qou-4383`). `build_atom_symbolic_q` laid its intra
@@ -192,32 +193,47 @@ def main() -> int:
     from canonical_trm_reference import _canonical_ordering
     frame = _canonical_ordering()
 
+    import mpmath as mp
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
+    from _precision import set_compute_dps, fmt
+    set_compute_dps()
+
     q = sp.Symbol("q", positive=True)
-    q0 = float(Q0)
+    # Evaluate the exact ℚ(q) form at q₀ as an exact rational, then convert at
+    # full precision. Until 2026-11-21 this read `q0 = float(Q0)`, so the
+    # cross-check below resolved only to the float64 cancellation floor
+    # (~1e-13) of a degree-O(100) rational, not to the 50-dps transfer it is
+    # compared with (f64_into_mpmath_audit, F64_CAST).
+    q0 = sp.Rational(Q_50_DIGIT_STR)
+
+    def _at_q0(expr):
+        return mp.mpf(str(sp.sympify(expr.subs(q, q0)).evalf(mp.mp.dps)))
     atoms = [("D", 1, 1), ("T", 1, 2)] + ([("3He", 2, 1)] if args.full else [])
 
     rows = []
-    print(f"algebraic tr_M(q) ∈ ℚ(q)  — q₀ cross-check vs transfer  (q₀={q0:.6f})")
+    print(f"algebraic tr_M(q) ∈ ℚ(q)  — q₀ cross-check vs transfer  (q₀={float(q0):.6f})")
     print(f"  intra-nucleon ordering frame: {frame}")
     for nm, Z, N in atoms:
         ta_q = tr_M_algebraic(Z, N, q, include_inter=True)
         tf_q = tr_M_algebraic(Z, N, q, include_inter=False)
-        ta0, tf0 = float(ta_q.subs(q, q0)), float(tf_q.subs(q, q0))
+        ta0, tf0 = _at_q0(ta_q), _at_q0(tf_q)
         ta_ref, tf_ref, _, _ = tr_m_atom_zn(Z, N, dps=50)
-        ta_ref, tf_ref = float(ta_ref), float(tf_ref)
+        ta_ref, tf_ref = mp.mpf(ta_ref), mp.mpf(tf_ref)
         d_atom, d_free = abs(ta0 - ta_ref), abs(tf0 - tf_ref)
         rows.append({"atom": nm, "Z": Z, "N": N,
-                     "tr_atom_q0_algebraic": ta0, "tr_atom_transfer": ta_ref,
-                     "tr_free_q0_algebraic": tf0, "tr_free_transfer": tf_ref,
-                     "abs_diff_atom": d_atom, "abs_diff_free": d_free})
-        print(f"  {nm:>4}: tr_atom {ta0:.9f} vs {ta_ref:.9f} (Δ={d_atom:.1e})  "
-              f"tr_free {tf0:.9f} vs {tf_ref:.9f} (Δ={d_free:.1e})")
+                     "tr_atom_q0_algebraic": fmt(ta0), "tr_atom_transfer": fmt(ta_ref),
+                     "tr_free_q0_algebraic": fmt(tf0), "tr_free_transfer": fmt(tf_ref),
+                     "abs_diff_atom": fmt(d_atom), "abs_diff_free": fmt(d_free)})
+        diffs_atom_free = (d_atom, d_free)
+        rows[-1]["_d"] = diffs_atom_free
+        print(f"  {nm:>4}: tr_atom {float(ta0):.9f} vs {float(ta_ref):.9f} (Δ={mp.nstr(d_atom, 3)})  "
+              f"tr_free {float(tf0):.9f} vs {float(tf_ref):.9f} (Δ={mp.nstr(d_free, 3)})")
 
     # δ symbolic matches the production helper at q0
     from _li_2_q_util import flavor_split_leading
-    d_delta = abs(float(flavor_split_leading_sym(q).subs(q, q0))
-                  - float(flavor_split_leading(Q0)))
-    print(f"  δ(q₀): symbolic vs _li_2_q_util  Δ={d_delta:.1e}")
+    d_delta = abs(_at_q0(flavor_split_leading_sym(q))
+                  - mp.mpf(flavor_split_leading(Q_MP)))
+    print(f"  δ(q₀): symbolic vs _li_2_q_util  Δ={mp.nstr(d_delta, 3)}")
 
     # FALSIFICATION: the legacy grouped word must NOT reproduce the transfer.
     # Without this leg the check above passes for two reasons that look alike —
@@ -227,12 +243,12 @@ def main() -> int:
     # regression back to the `_PROTON_G0`+`_PROTON_G1` concatenation fails here
     # instead of quietly re-widening the match test.
     gz, gn = atoms[0][1], atoms[0][2]
-    g_atom = float(tr_M_algebraic(gz, gn, q, include_inter=True,
-                                  intra_order="grouped").subs(q, q0))
-    _ta_ref = rows[0]["tr_atom_transfer"]
+    g_atom = _at_q0(tr_M_algebraic(gz, gn, q, include_inter=True,
+                                   intra_order="grouped"))
+    _ta_ref = mp.mpf(rows[0]["tr_atom_transfer"])
     grouped_gap = abs(g_atom - _ta_ref)
-    print(f"  falsification: grouped {atoms[0][0]} tr_atom {g_atom:.9f} "
-          f"vs transfer {_ta_ref:.9f} (Δ={grouped_gap:.1e}, must be ≫ 0)")
+    print(f"  falsification: grouped {atoms[0][0]} tr_atom {float(g_atom):.9f} "
+          f"vs transfer {float(_ta_ref):.9f} (Δ={mp.nstr(grouped_gap, 3)}, must be ≫ 0)")
 
     if WitnessBuilder is not None:
         w = WitnessBuilder("tr-m-algebraic-q", engine="sympy")
@@ -241,19 +257,19 @@ def main() -> int:
             "braid word with the colour split flavor_split_leading(q) kept "
             "SYMBOLIC (vs the production q₀-baked float), so the trace is a clean "
             "Laurent object. Cross-checked: tr_M_algebraic(Z,N).subs(q,q₀) == the "
-            "canonical transfer value tr_m_atom_zn(Z,N) to ~1e-13 for D/T(/³He) "
-            "(float64-eval floor of the exact form), in the canonical "
+            "canonical transfer value tr_m_atom_zn(Z,N) to ~1e-50 for D/T(/³He) "
+            "(exact-rational evaluation at the 70-digit q₀ vs the 50-dps "
+            "transfer; ~1e-13 before 2026-11-21, a float64 floor), in the canonical "
             "intra-nucleon ordering, with the legacy grouped word carried as an "
             "explicit falsification."
         )
-        w.add_parameter("q0", q0)
+        w.add_parameter("q0", fmt(Q_MP))
         w.add_parameter("intra_ordering_frame", frame)
         w.add_data("intra_ordering_frame", frame)
+        worst = max(d for r in rows for d in r.pop("_d"))
         w.add_data("rows", rows)
-        worst = max([r["abs_diff_atom"] for r in rows]
-                    + [r["abs_diff_free"] for r in rows])
         w.add_assertion(name="algebraic_q0_matches_transfer",
-                        computed=worst, expected=0.0, tolerance=1e-9,
+                        computed=worst, expected=mp.mpf(0), tolerance=mp.mpf("1e-9"),
                         source="max |tr_M_algebraic(q₀) − tr_m_atom_zn| over D/T(/³He), "
                                "atom & free words")
         # TOLERANCE WAS 1e-7, AND ITS `source` EXPLAINED AWAY A REAL DEFECT.
@@ -268,9 +284,12 @@ def main() -> int:
         # tolerance chosen to fit an unexplained gap converts a detector into a
         # rationalisation. Bean `qou-4e5k`.
         w.add_assertion(name="symbolic_delta_matches_li2q",
-                        computed=d_delta, expected=0.0, tolerance=1e-12,
+                        computed=d_delta, expected=mp.mpf(0), tolerance=mp.mpf("1e-12"),
                         source="flavor_split_leading_sym(q₀) vs _li_2_q_util")
-        # THE TOLERANCE ABOVE STAYS AT 1e-9 THOUGH THE MEASUREMENT IS ~1e-13.
+        # THE TOLERANCE ABOVE STAYS AT 1e-9 THOUGH THE MEASUREMENT IS ~1e-50.
+        # (It was ~1e-13 until 2026-11-21, when q₀ entered as float(Q); the
+        # evaluation is now exact-rational, so the float64 rationale below is
+        # history and the 1e-9 is a loose bound, not a fitted one.)
         # That is deliberate and is not the mistake the comment above records:
         # 1e-9 is derived (catastrophic cancellation evaluating a degree-O(100)
         # rational in float64 at q₀ ≈ 1.11, with headroom for the larger atoms),
@@ -279,10 +298,10 @@ def main() -> int:
         # regression the match test alone would keep passing.
         w.add_assertion(
             name="grouped_ordering_is_falsified",
-            computed=1.0 if grouped_gap > 1e-3 else 0.0, expected=1.0,
-            tolerance=0.0,
+            computed=mp.mpf(1) if grouped_gap > mp.mpf("1e-3") else mp.mpf(0),
+            expected=mp.mpf(1), tolerance=mp.mpf(0),
             source=f"|tr_M_algebraic({atoms[0][0]}, grouped) − transfer| = "
-                   f"{grouped_gap:.6e} must exceed 1e-3; the two intra-nucleon "
+                   f"{mp.nstr(grouped_gap, 7)} must exceed 1e-3; the two intra-nucleon "
                    f"orderings are different elements of H_3(q) (bean qou-hu1f)")
         out = w.save()
         print(f"  witness: {out}")

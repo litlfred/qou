@@ -5,7 +5,7 @@ export default remark({
   title:
     "Skein-Collatz interpretation: the $(p_1^{k_1}, p_2^{k_2})$ family and uniqueness of $(2,3)$",
   interprets: "conj:q-collatz",
-  uses: ["prop:collatz-contact-boundary"],
+  uses: ["conj:collatz-contact-boundary"],
   tags: [
     "collatz",
     "skein-module",

@@ -5,16 +5,16 @@ Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at
 
    $$
      A\big|_{\mathcal{S}_c}
-       = A^0 \otimes H
-       + A^+ \otimes E_+
-       + A^- \otimes E_-,
+       = A^0 \otimes H \;+\;
+         A^+ \otimes E_+ \;+\;
+         A^- \otimes E_-,
    $$
 
-   with $H, E_\pm$ the standard generators of $\mathfrak{su}(2)$ and $A^0$ a $\mathrm{U}(1)$-valued $1$-form.
+   with $H, E_\pm$ the standard generators of $\mathfrak{sl}_2(\mathbb{C}) = \mathfrak{su}(2) \otimes_{\mathbb{R}} \mathbb{C}$ (the decomposition uses the complexified form) and $A^0$ a $\mathrm{U}(1)$-valued $1$-form.
 3. The Cartan component provides the Seiberg--Witten differential:
 
    $$
      A^0 = X\, dz = \lambda_{\mathrm{SW}}.
    $$
 
-   Here $X$ is the color coordinate cut out as the Higgs-field eigenvalue on the single sheet to which the spectral curve ([color bundles](#rem:color-bundles)) restricts over $\mathcal{S}_c$.
+   Here $X$ is the color coordinate cut out as the Higgs-field eigenvalue on the single sheet to which the spectral curve ([color bundles](#rem:color-bundles)) restricts over $\mathcal{S}_c$. The identity holds in the trivialising gauge of item 1; the Cartan component of a connection form is not gauge-invariant.

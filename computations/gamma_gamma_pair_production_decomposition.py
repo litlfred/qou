@@ -22,8 +22,8 @@ Each factor (σ₀ σ₁⁻¹) is a γγ̄ pair-production element:
 
 The product σ₀·σ₁⁻¹ creates a γγ̄ pair on overlapping strand pairs,
 exactly the categorical analogue of a γγ → e⁺e⁻ QED vertex (with the
-σ₀σ₁σ₀ = trefoil = e⁻ identification of the existing
-`knot-operator-table.py`).  β_Bor is therefore THREE sequential γγ̄
+σ₀σ₁σ₀ = e⁻ identification of the existing
+`knot-operator-table.py`; its closure is the Hopf link, owner ruling 2026-11-21).  β_Bor is therefore THREE sequential γγ̄
 pair-production events whose linking pattern is the Borromean
 3-component link.
 

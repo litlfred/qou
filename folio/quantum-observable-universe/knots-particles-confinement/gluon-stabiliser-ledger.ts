@@ -24,6 +24,7 @@ export default remark({
     "rem:categorical-proton-properties",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): **Lepton number is not the reason.** It would be a tidy story — $e^-$ is the lepton channel, so admitting it changes lepton number — but the framework's own definition refuses it. [Categorical lepton number](#def:lepton-number-categorical) counts Skein smoothings, and [its properties](#rem:lepton-number-categorical-properties) state that the Iwahori–Hecke algebra contains no mechanism to change it: violation \"requires a process that changes crossing type without passing through the Skein relation\". Gluon stabilisation is Hecke multiplication followed by Gröbner–Shirshov reduction. It smooths nothing, so $\\Delta L = 0$ for every candidate, $e^-$ among them. The [conservation table](#rem:nucleon-from-photons-summary) agrees by construction: it carries no row for step 4 at all, and it assigns $L = 0$ to a nucleon whose normal form is dominated by $e^-\\approx +1.02$ — a coefficient the same block calls the beta-decay channel, not a lepton. An $e^-$ weight in a Hecke normal form is an amplitude. Reading it as a lepton would forbid the output the proton block already asserts." },
     {
       kind: "note",
       date: "2026-08-24",

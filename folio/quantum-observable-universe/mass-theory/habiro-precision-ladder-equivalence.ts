@@ -11,7 +11,7 @@ export default proposition({
     "thm:jones-markov-trace",
   ],
   cites: [
-    "habiro2000",
+    "habiro2004",
     "jones1987",
     "wenzl1988",
   ],

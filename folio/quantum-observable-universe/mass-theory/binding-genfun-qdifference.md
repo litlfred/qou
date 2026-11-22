@@ -86,3 +86,22 @@ the binding series.
 > scalar kernel does exist on the double cover, relating half-shifts — that is,
 > even and odd body orders separately. That ramification is the missing
 > structure, not a gap in the argument.
+
+**Geometric target of the kernel module (literature).** Fix $q\in\mathbb{C}$
+with $0<|q|<1$ and let $K=\mathbb{C}(\{z\})$ be the field of germs of
+meromorphic functions at $0$, with $\varphi(z)=qz$. Van der Put and Reversat
+show that a $q$-difference module $M$ over $K$ induces functorially a vector
+bundle $v(M)$ on the Tate curve $\mathbb{C}^{*}/q^{\mathbb{Z}}$, for all slopes,
+and recover Atiyah's classification of indecomposable bundles on that curve as
+a corollary \cite[Introduction, \S2]{vanderput-reversat2007}. Two points of
+convention apply before this is used here. First, the kernel module
+$\mathcal{K}$ above is stated over $K(x)$ with $q$ an indeterminate and its
+slope is read at $x=\infty$, so the functor applies only after $q$ is
+specialised to a complex number with $|q|\neq 1$ and the module is passed to
+germs at a point; for $|q|>1$, as at the substrate value $q_0$, one replaces
+$(q,\Phi)$ by $(q^{-1},\Phi^{-1})$, which leaves the lattice $q^{\mathbb{Z}}$,
+and so the curve, unchanged. Second, the Tate curve $\mathbb{C}^{*}/q^{\mathbb{Z}}$
+is not the Descartes elliptic curve $\mathcal{E}_q$ of
+[the Descartes elliptic curve](#prop:descartes-elliptic-curve); the symbol
+$\mathcal{E}_q$ keeps that meaning, and the bundle $v(\mathcal{K})$ itself is
+not constructed in this paper.

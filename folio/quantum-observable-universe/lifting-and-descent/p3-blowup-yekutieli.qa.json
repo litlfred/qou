@@ -1165,6 +1165,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "576a73bf1c06",
+          "ts": "4bd25950fa0a",
+          "lean": "9e870a6cfad5",
+          "lean_statement": "295fa0de8e63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:50:33.121Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[first real review 2026-11-21; no hashed entry existed] lean.ref points at the class QOU.FluidDynamics.BlowupYekutieli, not at the theorem blowup_yekutieli. The class takes 'smooth iff every obstruction vanishes' as an input field, and the theorem derives 'not smooth iff some obstruction is nonzero' from it by not_forall. That is pure logic. Also the obstruction is typed N -> N, not as classes in H^2(S,B). The md's mathematical content is not encoded: that kappa_n(v) is nonzero for n > s when v is in H^s, the obstruction level n* = floor(s*) + 1, and that the n-th jet needs n derivatives. The md does not derive these either: 'the n-th jet is undefined for n > s' is asserted, while an H^s field has weak derivatives up to order s, so the exact level formula needs an argument. Fix: point lean.ref at the theorem, and either encode the Sobolev-level claim or move it to a remark."
       }
     ],
     "proof-statement-integrity": [
@@ -2128,6 +2146,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-21T07:50:33.121Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

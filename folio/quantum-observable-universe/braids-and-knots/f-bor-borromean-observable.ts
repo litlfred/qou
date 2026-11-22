@@ -1,11 +1,16 @@
 import { definition } from "../../schema/builders";
 
 /**
- * The Borromean categorical observable F_Bor(q) — the natural
- * Wedderburn-content-shifted combination
+ * The Borromean categorical observable
  *
  *   F_Bor(q) := |tr_M(β_Bor, q)| · [3]_q! / q^3
- *             = |tr_M(β_Bor, q)| / y_(3)(q)
+ *             = |tr_M(β_Bor, q)| · c_sign(q)
+ *
+ * where [3]_q!/q^3 is the Schur element of the sign character of H_3.
+ * The normaliser is ASSERTED, not derived: q^k [3]_q! is a linear-
+ * character Schur element only for k = ±3 and bar-symmetric only for
+ * k = 0 (owner card 2026-11-21, option "PR plus F_Bor text").
+ * Lean: QOU/MassTheory/ProtonQ3SchurElement.lean.
  *
  * built from two Lean-proved closed forms:
  *
@@ -30,7 +35,7 @@ import { definition } from "../../schema/builders";
  * over any base ring.
  *
  * Authoring history: factored out 2026-06-01 from the previously-
- * combined prop:proton-mass-substrate-identity block (see q-usage
+ * combined conj:proton-mass-substrate-identity block (see q-usage
  * audit, docs/audits/2026-06-01-q-usage-dispensation-plan.md, Policy
  * C/1 split).
  */
@@ -51,6 +56,8 @@ export default definition({
     "categorical-observable",
     "wedderburn",
     "content-shift",
+    "schur-element",
+    "asserted-normaliser",
     "lean-proved-building-blocks",
     "h-expansion-rational",
   ],

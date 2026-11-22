@@ -40,4 +40,4 @@ Proved results:
 - $(3, 4)$ gap positive for $q > 0$
 - $(3, 8)$ gap fails for $q > 2$
 
-The orbit structure provides the two halvings. The $[2]_q$-adic valuation of $\mathcal{C}_q(P)$ must average to at least $2$ ([contact boundary](#prop:collatz-contact-boundary)). At $q = 1$, this average is exactly $2$. The conjecture asserts this holds for all $q > 1$.
+The orbit structure provides the two halvings. The $[2]_q$-adic valuation of $\mathcal{C}_q(P)$ must average to at least $2$ ([contact boundary](#conj:collatz-contact-boundary)). At $q = 1$, this average is exactly $2$. The conjecture asserts this holds for all $q > 1$.

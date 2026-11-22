@@ -16,8 +16,23 @@
         "reviewed_at": "2026-11-17T00:43:10.917Z",
         "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
         "evidence": "Steps follow; the not_screen_pow_of_le argument is the stated monotonicity bound."
+      },
+      {
+        "field_hash": {
+          "md": "f4095de46592",
+          "ts": "81249e4ee36e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:57.390Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-17 review: the Lean declaration list removed and its hypotheses restated in prose (field; Archimedean for item 5); argument unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Steps follow; the not_screen_pow_of_le argument is the stated monotonicity bound."
       }
     ]
   },
-  "updated_at": "2026-11-17T00:43:10.917Z"
+  "updated_at": "2026-11-21T08:17:57.390Z"
 }

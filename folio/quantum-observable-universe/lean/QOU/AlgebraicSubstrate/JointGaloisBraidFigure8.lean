@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # Joint Galois × braid action on the figure-8 cell
 
 Honest §3b-cond conditional formalisation of
-`prop:joint-galois-braid-figure-8-verified`.
+`conj:joint-galois-braid-figure-8-verified`.
 
 The block claims: on the self-conjugate bi-filtration cell of the
 figure-8 knot `4_1` (dominant cell `λ_K = (2,2)` in `H_4(q)`), the
@@ -37,7 +37,7 @@ self-assuming projection.
 
 namespace QOU.AlgebraicSubstrate.JointGaloisBraidFigure8
 
-/-- Conditional class for `prop:joint-galois-braid-figure-8-verified`
+/-- Conditional class for `conj:joint-galois-braid-figure-8-verified`
     (§3b-cond).  Fields are the GENUINE hypotheses of the direct
     computation on the self-conjugate `(2,2)` Hoefsmit cell, NOT the
     block's conclusion.  Base ring stays implicit: the commutation is a
@@ -83,7 +83,7 @@ def braidAction [ctx : Figure8SelfConjugateCell]
     (w : List ctx.BraidGen) (x : ctx.Cell) : ctx.Cell :=
   w.foldr (fun s acc => ctx.rho s acc) x
 
-/-- **Proposition (`prop:joint-galois-braid-figure-8-verified`).**  On the
+/-- **Proposition (`conj:joint-galois-braid-figure-8-verified`).**  On the
     self-conjugate `(2,2)` cell of the figure-8 knot, the motivic-Galois
     action (`bar`) commutes with the braid-group action (`braidAction`).
 

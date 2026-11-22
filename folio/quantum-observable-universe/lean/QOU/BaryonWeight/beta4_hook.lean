@@ -7,7 +7,7 @@ import Mathlib.Tactic.Linarith
 # QOU.BaryonWeight.beta4_hook
 
 Canonical Lean declaration for content block
-[`prop:hook-weight-derivation`](../../../quantum-observable-universe/braids-and-knots/hook-weight-derivation.md): *QOU.BaryonWeight.beta4_hook*.
+[`conj:hook-weight-derivation`](../../../quantum-observable-universe/braids-and-knots/hook-weight-derivation.md): *QOU.BaryonWeight.beta4_hook*.
 
 The hook coefficient identity `β₄ = −½·w_{[2,2]}(4)` is a genuine
 algebraic relation: `β₄` is *defined* as `−½·w_{[2,2]}` (pattern A of

@@ -36,8 +36,25 @@
         "reviewed_at": "2026-11-18T04:05:50.268Z",
         "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
         "evidence": "Statement now names the two cited inputs (c_lambda d_lambda scalar action; associativity of the 6-dim model)."
+      },
+      {
+        "field_hash": {
+          "md": "3bdcf0611b28",
+          "ts": "d286eb9da319",
+          "lean": "c3a2569f24df",
+          "lean_statement": "12d4d217aada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:24.450Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-18 review: a label replaced by its title, 'formalised' reworded to 'proved here', a downstream-use pointer removed; the two cited inputs are still named as cited, not proved. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Statement now names the two cited inputs (c_lambda d_lambda scalar action; associativity of the 6-dim model)."
       }
     ]
   },
-  "updated_at": "2026-11-18T04:05:50.268Z"
+  "updated_at": "2026-11-21T08:18:24.450Z"
 }

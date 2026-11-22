@@ -18,6 +18,7 @@ export default remark({
     "thurston1978",
     "neumann-zagier1985",
     "kashaev1997",
+    "zhao2008-mpl-roots-of-unity",
   ],
   tags: [
     "transcendental-accounting",

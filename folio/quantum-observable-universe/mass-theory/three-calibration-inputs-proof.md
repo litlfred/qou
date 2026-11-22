@@ -25,7 +25,7 @@ constrained by:
 
 3. **Naturality.** The electron is the simplest charged lepton; the
    $m_\mu/m_e$ ratio dimensionalises to $\mathrm{Vol}(4_1)$, the
-   simplest hyperbolic knot invariant; the free-neutron decay is the
+   simplest hyperbolic knot invariant \cite{kegel2024}; the free-neutron decay is the
    simplest hadronic decay (one crossing change, no nuclear
    environment).
 

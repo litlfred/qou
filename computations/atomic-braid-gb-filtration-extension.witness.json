@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-05T11:22:06.282852+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "computedAt": "2026-11-21T04:37:57.334421+00:00",
+  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
   "assertions": [
     {
       "name": "ell_K_q_eq_n_strands_disjoint",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 14,
   "computation": "atomic-braid-gb-filtration-extension",
   "scriptFile": "atomic_braid_gb_filtration_extension.py",
-  "scriptHash": "1665afacfc8c",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "5684e6dfb3b3",
+  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,16 +34,25 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/atomic_braid_gb_filtration_extension.py"
+    ],
+    "reproduce": "python3 -u computations/atomic_braid_gb_filtration_extension.py"
   },
   "description": "v3 #5: gb_filtration_jet_tracker extension to atomic braid words at n ∈ {6, 9, 12}. Per-atom filtration certificate + max-grade ℓ(K, q) + reduction-step counts. Multi-nucleon counterpart of the existing H_3 test cases on main.",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "data": {
-    "narrative_block": "prop:jet-prefix-gb-filtration",
+    "narrative_block": "conj:jet-prefix-gb-filtration",
     "downstream_consumers": [
       "prop:atomic-mass-gb-nf",
       "thm:wedderburn-mass-formula"

@@ -158,6 +158,10 @@ Numerically all of the above is checked in the witness
 
 -- Ref: [leitner2026] computations/qbeta/c3_w2_c1_connection_matrix.py
 -- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
+-- Ref: [lin2024] explicit connection formula and q-Stokes matrix for the
+--      confluent basic hypergeometric nφn−1 (a zero parameter; §2–§3, q → 1 in §4). A
+--      worked explicit q-Stokes computation; whether its equation class
+--      covers the C1 module is not checked here.
 -/
 
 namespace QOU.QBeta.C1Poles

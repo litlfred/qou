@@ -1223,6 +1223,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "71a5338b8b72",
+          "ts": "51fe1c209247",
+          "lean": "3cb77a7395e1",
+          "lean_statement": "ef326b0b6c70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:08:22.874Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[first hashed review 2026-11-21] The statement: R_q(s) is the unique morphism with (s + Delta_q) o R_q(s) = id, a right inverse. lean.ref QOU.QResolvent.unique proves that two QResolvent records with the same delta_q have the same R, given that delta_q is surjective. It uses inverse_witness : R (delta_q x) = x, so R o delta_q = id, a left inverse, with no s anywhere. The side is flipped and s is absent. Uniqueness of a right inverse of s + Delta_q needs injectivity of s + Delta_q, which the Lean does not use. The surjectivity hypothesis is also not in the statement."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2398,6 +2416,6 @@
       }
     ]
   },
-  "updated_at": "2026-10-10T12:00:00.000Z",
+  "updated_at": "2026-11-21T08:08:22.874Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

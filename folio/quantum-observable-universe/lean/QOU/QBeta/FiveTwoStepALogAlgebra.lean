@@ -20,7 +20,7 @@ Step A is the identity
 algebra over `ℂ` plus the branch relation. Nothing about the dilogarithm is
 used.
 
--- Ref: [manuscript] 5₂ saddle sum rule (QOU/QBeta/FiveTwoSaddleSumRule.lean)
+-- Ref: [leitner2026] 5₂ saddle sum rule (QOU/QBeta/FiveTwoSaddleSumRule.lean)
 -/
 
 namespace QOU.QBeta.FiveTwo

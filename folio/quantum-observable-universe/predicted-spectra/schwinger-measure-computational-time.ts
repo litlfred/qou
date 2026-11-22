@@ -45,6 +45,7 @@ export default conjecture({
     "prop:em-coupling-fixed-point",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): ([Boltzmann constant in QOU natural units](#def:boltzmann-constant))" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean-proved identity $n \\cdot N(n) = n!$\n\n(an exact distinguisher, proved unconditionally in the sibling Lean)\n\nand the binding side's is Lean-forced;\n\ntightness is Lean-proved from the second-moment confluence\n\ntheorems, carried as instance-free Lean classes)\n\nthe bar-fixed classes are Lean-proved to be exactly\n\n— Lean-proved at general order\n\nBoth ratio identities and the vanishing are Lean-proved." },
     {
       kind: "status",

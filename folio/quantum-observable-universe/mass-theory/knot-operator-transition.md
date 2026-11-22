@@ -3,15 +3,15 @@
 | Transition | Operator | Dominant NF | Knot type |
 |:----------:|:--------:|:-----------:|:---------:|
 | $p \to D$ | $\sigma_0 - h/2$ | $\sigma_0$ | single crossing |
-| $D \to {}^3\!H$ | $\sigma_1^{-1}(\sigma_0{-}h/2)$ | $L_-$ | Hopf link |
-| $D \to {}^3\!\mathrm{He}$ | $(\sigma_1{-}h/2)\sigma_0$ | $L_-$ | Hopf link |
+| $D \to {}^3\!H$ | $\sigma_1^{-1}(\sigma_0{-}h/2)$ | $L_-$ | unknot (closure in $B_3$) |
+| $D \to {}^3\!\mathrm{He}$ | $(\sigma_1{-}h/2)\sigma_0$ | $L_-$ | unknot (closure in $B_3$) |
 | ${}^3\!H \to {}^4\!\mathrm{He}$ | $(\sigma_0{-}h/2)(\sigma_1{-}h/2)\sigma_0$ | $e^-$ | trefoil |
 | ${}^3\!\mathrm{He} \to {}^4\!\mathrm{He}$ | $(\sigma_0{-}h/2)\sigma_1^{-1}(\sigma_0{-}h/2)$ | $e^-$ | trefoil |
 
 The p-n factors are written $\sigma - h/2$, the $\delta = 0$ convention; the
 canonical colour-tube-weighted form is $\sigma - h(1/2 - \delta/4)$, with
 $\delta$ the substrate flavour split of
-[Substrate-pure derivation of the $u$--$d$ flavor split](#prop:flavor-split-substrate). **The Dominant NF
+[the substrate flavor split conjecture](#conj:flavor-split-substrate-mass). **The Dominant NF
 and Knot type columns are unaffected.** Recomputing the $H_3$ normal form of all
 five operators under both conventions returns the same dominant basis element in
 every case, with dominance margins of $4.7\times$ to $9.6\times$ against a

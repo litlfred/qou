@@ -1244,6 +1244,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "Same pattern: sibling `.lean:39` `Nonempty CategoricalProton` witnessed by zeros (degenerate proton). Proof (prf:2): \"LP-dual feasibility verifies Gx[γ] ≥ 0 at every intermediate step\" is asserted, not shown; Frobenius stability, the actual content of the statement (md:7), is never argued"
+      },
+      {
+        "field_hash": {
+          "md": "30eda8e2a59f",
+          "ts": "66a28c441cc9",
+          "lean": "416cf357d2d7",
+          "lean_statement": "69f2217ae359"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:10:15.978Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: a sentence pointing to the uniqueness proposition removed, and the word 'Hopf' removed from a Lean comment. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Same pattern: sibling `.lean:39` `Nonempty CategoricalProton` witnessed by zeros (degenerate proton). Proof (prf:2): \"LP-dual feasibility verifies Gx[γ] ≥ 0 at every intermediate step\" is asserted, not shown; Frobenius stability, the actual content of the statement (md:7), is never argued"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2480,6 +2498,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:00.002Z",
+  "updated_at": "2026-11-21T08:10:15.978Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

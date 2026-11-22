@@ -182,7 +182,7 @@ A dispensed block's sidecar looks like:
     "reviewer": { "kind": "human", "id": "litlfred" },
     "reviewed_at": "2026-06-02",
     "reviewed_sha": "<sha at dispensation time>",
-    "notes": "Acknowledged archimedean specialisation. This block is the substrate-evaluation companion of `prop:proton-mass-substrate-identity` (which keeps the generic-q categorical statement). Dispensation kind: archimedean-specialisation. Re-grant after any change to the .md / .ts."
+    "notes": "Acknowledged archimedean specialisation. This block is the substrate-evaluation companion of `conj:proton-mass-substrate-identity` (which keeps the generic-q categorical statement). Dispensation kind: archimedean-specialisation. Re-grant after any change to the .md / .ts."
   }
 ]
 ```

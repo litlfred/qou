@@ -11,10 +11,10 @@ Key results:
   - γ (identity): 19/36 pairs produce e⁻
   - σ₀, σ₁ (single crossing): 24/36 pairs produce e⁻
   - L₊, L₋ (Hopf link): 32/36 pairs produce e⁻
-  - e⁻ (trefoil): 36/36 pairs produce e⁻ (universal)
+  - e⁻ (σ₀σ₁σ₀, closure Hopf link): 36/36 pairs produce e⁻ (universal)
 
 The progression 19 → 24 → 32 → 36 shows that higher-crossing
-knots progressively open more channels, with the trefoil being
+knots progressively open more channels, with σ₀σ₁σ₀ being
 the unique minimum-crossing universal pair-production operator.
 
 Usage:
@@ -119,7 +119,7 @@ BASIS_KNOTS = [
     ("σ₁", (1,),     "single crossing (color channel)"),
     ("L₊", (0, 1),   "Hopf link (gluon +)"),
     ("L₋", (1, 0),   "Hopf link (gluon −)"),
-    ("e⁻", (0, 1, 0), "trefoil (electron)"),
+    ("e⁻", (0, 1, 0), "Hopf link (closure in B₃; electron)"),
 ]
 
 
@@ -174,7 +174,7 @@ w.set_description(
     "Complete multiplication tables for all 6 basis knots of H₃(q). "
     "Each table is a 6×6 matrix of 6-element NF vectors showing "
     "b_i · K · b_j for basis knot K. The e⁻ channel count progression "
-    "19 → 24 → 24 → 32 → 32 → 36 demonstrates that the trefoil "
+    "19 → 24 → 24 → 32 → 32 → 36 demonstrates that σ₀σ₁σ₀ "
     "is the unique minimum-crossing universal pair-production operator."
 )
 w.set_content_block("rem:hecke-operations")
@@ -205,7 +205,7 @@ EXPECTED_E_MINUS_PAIRS = {
     "σ₁": 24,   # single crossing (color channel)
     "L₊": 32,   # Hopf link (gluon +)
     "L₋": 32,   # Hopf link (gluon −)
-    "e⁻": 36,   # trefoil (electron) — universally opens the channel
+    "e⁻": 36,   # σ₀σ₁σ₀ (electron) — universally opens the channel
 }
 
 for op_name, _, _ in BASIS_KNOTS:
@@ -219,7 +219,7 @@ for op_name, _, _ in BASIS_KNOTS:
 
 # The key result
 w.add_assertion(
-    "e⁻ (trefoil) universally produces e⁻ channel",
+    "e⁻ (σ₀σ₁σ₀) universally produces e⁻ channel",
     computed=all_tables["e⁻"]["e_minus_pairs"],
     expected=36,
     tolerance=0,

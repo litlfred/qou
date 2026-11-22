@@ -220,7 +220,7 @@ export default chapter({
             "two-q-adic-valuation",
             "collatz-contact-boundary-defn",
             // Swapped 2026-08-15: `collatz-parity-to-divisor` declares
-            // `interprets: "prop:collatz-contact-boundary"` and was listed
+            // `interprets: "conj:collatz-contact-boundary"` and was listed
             // immediately BEFORE it, so the remark interpreted a result the
             // reader had not met yet. Adjacent, one section — a listing-order
             // slip rather than a structural question.

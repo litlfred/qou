@@ -217,7 +217,16 @@ def main() -> int:
     E0 = qbeta_e0.canonical()
     REF_DTR = _find("computations/qbeta/qbeta-qbeta-scores-a-difference.witness.json", "recorded_tr_conv_D")
     REF_E0 = _find("computations/qbeta/qbeta-e0-is-derived.witness.json", "E_0_tower_summed")
-    REF_QB = _find("computations/per-observable-100x-status.witness.json", "Q_beta_MeV")
+    # nuc11_interleaved was the scored Q_beta cell until the owner ruling D1 = A
+    # (2026-11-20, bean qou-99qc); the scorecard now keeps it as an unscored history
+    # cell. Calibrate against that cell, not against the first Q_beta_MeV, which is
+    # now |eps_flavour(V^3)|*E0 (a different element and functional).
+    with open(os.path.join(ROOT, "computations/per-observable-100x-status.witness.json")) as fh:
+        _hist = json.load(fh)["data"]["qbeta_ruled_base"]["unscored_history_cells"]
+    _nuc11 = [v for k, v in _hist.items() if k.startswith("nuc11_interleaved")]
+    if len(_nuc11) != 1:
+        raise KeyError("nuc11_interleaved history cell not found exactly once")
+    REF_QB = mp.mpf(str(_nuc11[0]["Q_beta_MeV"]))
 
     print("C1  rerun the bar-parity-split probe")
     r = subprocess.run([sys.executable, os.path.join(ROOT, "computations/qbeta/qbeta_bar_parity_split_gap_probe.py")],
@@ -233,7 +242,7 @@ def main() -> int:
     check("C3_delta_tr", abs(ref["delta_tr_q0"] - REF_DTR) < mp.mpf("1e-24"),
           s(ref["delta_tr_q0"], 25))
     check("C3_E0_canonical", abs(E0 - REF_E0) < mp.mpf("1e-18"), s(E0, 15))
-    check("C3_Q_beta_scored_cell", abs(ref["Q_beta_MeV"] - REF_QB) < mp.mpf("1e-18"),
+    check("C3_Q_beta_nuc11_history_cell", abs(ref["Q_beta_MeV"] - REF_QB) < mp.mpf("1e-18"),
           s(ref["Q_beta_MeV"], 12))
     check("C4_y_normalisation", zero(Y3 + 2*Y21 - 1))
     check("C4_y21_value", abs(at_q0(Y21) - mp.mpf("0.2473")) < mp.mpf("5e-5"), s(at_q0(Y21), 10))

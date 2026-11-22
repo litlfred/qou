@@ -1,4 +1,4 @@
-The standard representation $V_{(2,1)}$ of $H_3(q)$ restricts to $H_2(q)$ as the direct sum of the two lepton irreps:
+The standard representation $V_{(2,1)}$ of $H_3(q)$ restricts to $H_2(q)$ as the direct sum of its two one-dimensional irreducible representations:
 $$
   V_{(2,1)} \big\downarrow_{H_2}
   = V_{(2)} \oplus V_{(1,1)}.
@@ -17,4 +17,4 @@ $$
   = \langle V_{(2,1)}, \mathrm{Ind}(V_{(2)}) \rangle_{H_3}
   = 1.
 $$
-Each lepton irrep appears exactly once in the restriction.
+Each one-dimensional irreducible representation of $H_2(q)$ appears exactly once in the restriction.

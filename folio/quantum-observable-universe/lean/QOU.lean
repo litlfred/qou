@@ -47,6 +47,9 @@ import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.MathlibExt.MarkovTrace
 import QOU.MathlibExt.HeckeToTemperleyLieb
 import QOU.MathlibExt.TraceRadicalNondegenerate
+import QOU.MathlibExt.LocalCocycleTransport
+import QOU.MathlibExt.LocalCocycleGenerated
+import QOU.MathlibExt.PathLebesgue
 import QOU.MathlibExt.TemperleyLiebSpanning
 import QOU.MathlibExt.TemperleyLiebWedderburn
 import QOU.MathlibExt.TemperleyLiebNormalForm
@@ -106,6 +109,9 @@ import QOU.Mathlib.BorelCaratheodory
 -- factor vanishes at an explicit point for every b /= 0, so it is not entire and
 -- IsEntireOfOrderLE cannot be assumed for it. Sorry-free.
 import QOU.Mathlib.HadamardApplicability
+-- Littlewood-Richardson coefficients c^nu_{lambda mu} as a count of LR tableaux
+-- (decidable; small values by kernel `decide`). Sorry-free.
+import QOU.Mathlib.LittlewoodRichardson
 -- Faddeev rigidity: the ratio of two FaddeevPhi solutions is ib- and i/b-periodic
 -- (the prefactor cancels), and given an entire ratio that extends from the dense
 -- complement of the prefactor zeros to everywhere. Collapses the open input
@@ -298,6 +304,7 @@ import QOU.MathlibExt.IdealTriangulation
 import QOU.MathlibExt.ManifoldVolumeBridge
 import QOU.MathlibExt.ManifoldVolumePositive
 import QOU.MathlibExt.BraidGroup
+import QOU.MathlibExt.PLPolygonalLink
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
@@ -347,6 +354,7 @@ import QOU.MassTheory.BondFactorClassicalFloor
 import QOU.MassTheory.TwoRowTwoColumnCollision
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
+import QOU.MassTheory.PhotonClaspChargeForm
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
@@ -668,7 +676,12 @@ import QOU.BraidKnot
 -- hidden outside it.
 import QOU.BraidKnot.MesonFusionIndexSelection
 import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.WeakVertexElectronFactor
+import QOU.QBeta.WeakVertexTwoTerm
+import QOU.BraidKnot.ElectronPositronWrithe
+import QOU.BraidKnot.ElectronLevelWord
 import QOU.BraidKnot.LongestWordNotTwoPhoton
+import QOU.BraidKnot.LongestWordNotTwoPhotonHecke
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.GBRewriteDifferential
@@ -854,6 +867,8 @@ import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.FluidDynamics.LambCalculus
 import QOU.FluidDynamics.LambCalculusArchimedean
+import QOU.FluidDynamics.DSSObstructions
+import QOU.FluidDynamics.IntegerSpin
 import QOU.QBeta.BarOddLadderShape
 -- Anchor-followups cluster (beans qou-o3ta / qou-4g4a): the interface scalar,
 -- the Markov-Gram signature, and the Temperley-Lieb tower. Added to the root
@@ -1199,6 +1214,7 @@ import QOU.Mathlib.HadamardFactorization
 import QOU.Mathlib.JensenZeroCounting
 import QOU.Mathlib.ExponentOfConvergence
 import QOU.Mathlib.HadamardZeroFree
+import QOU.Mathlib.C1GevreyLinearCoeff
 import QOU.Mathlib.CanonicalProductGrowth
 import QOU.Mathlib.HadamardQuotient
 import QOU.Mathlib.HadamardMinimumModulus
@@ -1786,11 +1802,22 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.Mass.BridgeADeligneGauge
 import QOU.Mass.BridgeADeligneKZ
+import QOU.Mass.KZHolonomy.FlatCocycle
+import QOU.Mass.KZHolonomy.FlatGauge
+import QOU.Mass.KZHolonomy.ODETransport
+import QOU.Mass.KZHolonomy.SmoothGauge
+import QOU.Mass.KZHolonomy.ConfConnected
+import QOU.Mass.KZHolonomy.BraidGauge
+import QOU.Mass.KZHolonomy.ConfRegions
+import QOU.Mass.KZHolonomy.ConfGeneric
+import QOU.Mass.KZHolonomy.ArtinGeneration
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
 import QOU.BraidsAndKnots.NucleonWeightSpaceQTrace
 import QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace
+import QOU.BraidsAndKnots.StrangeStrandOctet
+import QOU.BraidsAndKnots.IsospinMurphyOctet
 import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
 import QOU.MassTheory.GPMTThreeRowCumulantBridge
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation

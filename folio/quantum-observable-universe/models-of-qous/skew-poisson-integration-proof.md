@@ -1,7 +1,6 @@
+The proof of Theorem 3.7 in Leitner (arXiv:math/0602138) has two parts.
 
-This is the Main Theorem of Fresse.  Item (1) is the
-existence statement; item (2) follows from the
-Grobner--Shirshov normal-form construction for $\mathrm{Dist}(G)$;
-item (3) is the strong multiplicativity theorem, which guarantees
-that the co-multiplication is compatible with the deformed product at
-every stage of the $\pp$-adic filtration.
+1. **Bialgebra structure.** Theorem 1.9 shows that $U \cong \bigotimes_i A_i$ as $k$-modules for a fixed ordering of the index set. Its proof exhibits a Gröbner basis of the defining ideal, made of the relations $f_{i,j}$ of the $A_i$ and the elements $g_{a,b} = ab - ba - \tilde\pi(a, b)$; this step uses only that $\pi$ is strongly filtered. Proposition 1.13 then uses strong multiplicativity to show that $\Delta$ vanishes on the $g_{a,b}$, so the comultiplication descends to an algebra map $U \to U \otimes U$.
+2. **Divided-power structure.** With the bialgebra structure in hand, the proof writes $\Delta$ on ordered monomials $\delta_x^J$ using Remark 3.2 and checks that $U$ carries the DVPS structure of a distribution algebra.
+
+The Lean declaration `QOU.FormalGroups.PBW.formalGroup_of_splay` formalises both parts for one-dimensional $H_i$, over any commutative ring. Part 1 follows the Gröbner–Shirshov route: the ordered monomials are a basis of $U$ (`splay_integrationBasis`), the normal monomials are the words whose blocks strictly increase, and these are in bijection with multi-indices $J$. The coproduct and counit of the splay descend to $U$ (`quotBialgebra`). Part 2 builds a formal group law $G$ from the basis by Cartier reconstruction (`formalGroupLaw_of_pbw`), with the product of $U$ equal to the convolution of $G$. The Lean statement adds one hypothesis the paper does not list: the counit of $T$ kills $\pi$. It does not formalise that $\{H_i, G\}$ is a geometric formal group.

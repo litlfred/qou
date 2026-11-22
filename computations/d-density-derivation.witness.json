@@ -1,8 +1,8 @@
 {
   "engine": "closed-form",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:44:41.006743+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T12:11:42.057346+00:00",
+  "commitSha": "10184b9fd1c2b16cd350a13c0f70dbae7bd8a750",
   "assertions": [
     {
       "name": "ρ_F(D) from weight criterion matches paper (ρ_F = m_e)",
@@ -17,8 +17,8 @@
   "durationMs": 6,
   "computation": "d-density-derivation",
   "scriptFile": "d_density_derivation.py",
-  "scriptHash": "02a6e96c32c1",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "ce9e424193bb",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,18 +26,27 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/d_density_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/d_density_derivation.py"
   },
   "description": "Derivation of Deuterium's Frobenius packing density ρ_F(D) from n_chir(β_D), using the closed-form χ_sym/χ_alt characters from docs/chi-sym-alt-theorem.md. Both the character-criterion (I) and the Plancherel-weight-criterion (II) readings of 'alt ∈ Λ' are computed.",
   "contentBlock": "conj:mass-volume-factorization",
   "parameters": {
-    "q_0": 1.1099785827513808,
-    "H_A": 0.20906029879563937,
+    "q_0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "H_A": "0.209060298795639315430846213129674943859757495263024555381696",
     "m_e_MeV": 0.51099895069
   },
   "data": {
@@ -49,9 +58,9 @@
       "word_length": 22
     },
     "characters_closed_form": {
-      "chi_sym": 1.5513064682004778,
-      "chi_alt": 0.6732568963702135,
-      "chi_sym_times_chi_alt": 1.044427778099691
+      "chi_sym": "1.55130646820047757334000417155658386349375857262817031523450",
+      "chi_alt": "0.673256896370213551453563700938967846360700921398784704630183",
+      "chi_sym_times_chi_alt": "1.04442777809969091372988724649887085842901296724317258024332"
     },
     "reading_I_character": {
       "chi_alt_nonzero": true,
@@ -60,24 +69,24 @@
       "verdict": "alt ∈ Λ (character non-vanishing)"
     },
     "reading_II_weight": {
-      "w_sym": 0.16546138503360688,
-      "w_alt": 0.16546138503360688,
-      "contribution_sym": 0.2566813168400441,
-      "contribution_alt": 0.11139801855684306,
-      "ratio_alt_over_sym": 0.4339934823782398,
+      "w_sym": "0.165461385033606877482534663549193179234128677295896611548464",
+      "w_alt": "0.165461385033606877482534663549193179234128677295896611548464",
+      "contribution_sym": "0.256681316840044043360953171974830564823481961365099316273220",
+      "contribution_alt": "0.111398018556843068999860716402695521485967869385797016500211",
+      "ratio_alt_over_sym": "0.433993482378239907693723547213248507434654590285024184657554",
       "alt_saturated": false,
       "n_chir": 1,
       "rho_F_MeV": 0.51099895069,
       "verdict": "alt ∉ Λ (weight suppressed vs sym)"
     },
     "paper_claim": {
-      "rho_F_MeV": 0.51099895069,
+      "rho_F_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
       "n_chir": 1,
       "source": "rem:frobenius-packing-density §topological triggers"
     },
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },

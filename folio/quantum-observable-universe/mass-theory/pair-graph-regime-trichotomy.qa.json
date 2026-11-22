@@ -36,8 +36,25 @@
         "reviewed_at": "2026-11-18T04:05:49.990Z",
         "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
         "evidence": "Statement now says natural number A, matching A : N."
+      },
+      {
+        "field_hash": {
+          "md": "7e228a9c5c3e",
+          "ts": "6a9c27fa98a2",
+          "lean": "829a333b3d17",
+          "lean_statement": "d725e2b7b731"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:12.291Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-18 review: the paragraph on regime-switching selection was relocated verbatim from the prose to a .ts authorNote (the selection-against-target caveat survives there); statement and Lean untouched. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Statement now says natural number A, matching A : N."
       }
     ]
   },
-  "updated_at": "2026-11-18T04:05:49.990Z"
+  "updated_at": "2026-11-21T08:17:12.291Z"
 }
