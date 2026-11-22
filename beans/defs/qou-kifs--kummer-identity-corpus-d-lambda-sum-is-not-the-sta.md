@@ -104,3 +104,7 @@ Status left unchanged: resetting the claim and closing the PR are the owner's ca
 ## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
 
 **RESCOPE.** Kummer identity on Im z>0 is proved: blochD_eq_lob (BlochWignerFiveTermInstance.lean:546). Remaining: BlochWigner_lob is 0 below the axis, so it is D only on the upper half plane; rename or document.
+
+## 2026-11-22 — lower half plane (dilog/Bloch thread)
+
+`blochD_eq_neg_lob_conj` and `blochD_eq_lob_signed` (new `QOU/Archimedean/BlochWignerLobachevskyLowerHalf.lean`, branch `claude/archimedean-limit-endpoints-2026-11-22`, sorry-free, standard axioms): for Im z < 0, D(z) = −BlochWigner_lob(z̄), so the Λ-sum gives D on all of ℂ∖ℝ up to sign and conjugation. This closes the documentation half of the RESCOPE. Not done: renaming `BlochWigner_lob` (a rename tranche needs the owner) and the geometric H4 factor. Bean left open for the owner to close.
