@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T23:25:18.645071+00:00",
-  "commitSha": "f29bf13df98d4e8a7243689cddf7a736ca43dd90",
+  "computedAt": "2026-11-22T09:29:09.735077+00:00",
+  "commitSha": "13dbaa9f74a6738b35db81b1e8f7eee4f71ea484",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": "1317",
+      "computed": "1321",
       "expected": "1328",
       "passed": false,
       "tolerance": "0",
@@ -24,10 +24,10 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 2,
+  "durationMs": 4,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
-  "scriptHash": "71f97b560dea",
+  "scriptHash": "be41bc24294e",
   "scriptCommitSha": "f29bf13df98d4e8a7243689cddf7a736ca43dd90",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -56,9 +56,9 @@
   },
   "data": {
     "by_result": {
-      "ok": 1317,
-      "lake_root_no_decl": 4,
-      "grep_no_match": 6,
+      "ok": 1321,
+      "lake_root_no_decl": 1,
+      "grep_no_match": 5,
       "lake_root_missing_grep_hit": 1
     },
     "rows": [
@@ -10137,18 +10137,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/confined-knot-binding.ts",
-        "ref": "qou:QOU.BraidKnot.confined_knot_binding",
+        "ref": "qou:QOU.BraidKnot.confined_knot_weighted_cancellation",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.confined_knot_binding",
+        "decl_path": "QOU.BraidKnot.confined_knot_weighted_cancellation",
         "sibling_exists": false,
         "sibling_declares": false,
-        "lake_root_exists": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_no_decl"
+        "grep_hits": [
+          "folio/quantum-observable-universe/lean/QOU/BraidKnot/confined_knot_binding.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/confinement-categorical.ts",
@@ -10915,18 +10919,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/dt-spectrum-bar-eigenspace.ts",
-        "ref": "qou:QOU.QBeta.FiveTwoDTSpectrumSplit",
+        "ref": "qou:QOU.QBeta.FiveTwoDTSpectrumSplit.dtPair52_grading",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.QBeta.FiveTwoDTSpectrumSplit",
+        "decl_path": "QOU.QBeta.FiveTwoDTSpectrumSplit.dtPair52_grading",
         "sibling_exists": false,
         "sibling_declares": false,
-        "lake_root_exists": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_no_decl"
+        "lake_parent_declares": true,
+        "grep_hits": [
+          "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "lake_parent"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/e-infinity-page-identifications.ts",
@@ -11931,10 +11939,11 @@
         "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
-        "lake_parent_declares": false,
+        "lake_parent_declares": true,
         "grep_hit": false,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "lake_parent"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts",
@@ -18809,18 +18818,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/observations/centered-hecke-variance-positive.ts",
-        "ref": "qou:QOU.Observations.centered_hecke_variance_positive",
+        "ref": "qou:QOU.Observations.centeredVariance_pos",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.Observations.centered_hecke_variance_positive",
+        "decl_path": "QOU.Observations.centeredVariance_pos",
         "sibling_exists": false,
         "sibling_declares": false,
-        "lake_root_exists": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_no_decl"
+        "grep_hits": [
+          "folio/quantum-observable-universe/lean/QOU/Observations/centered_hecke_variance_positive.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts",
@@ -25568,7 +25581,8 @@
         "grep_hits": [
           "folio/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
           "folio/unital-groebner-bases/unital-groebner-bases-chapter/monomial-basis.lean",
-          "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Elem.lean"
+          "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Elem.lean",
+          "fsh-guts/deprecated/root-scratch/test.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -25645,7 +25659,9 @@
         "lake_root_declares": true,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/unital-groebner-bases/lean/UGB/UnitalGroebner/s_polynomial_decomposition.lean"
+          "folio/unital-groebner-bases/lean/UGB/UnitalGroebner/s_polynomial_decomposition.lean",
+          "fsh-guts/deprecated/root-scratch/test_s_poly.lean",
+          "fsh-guts/deprecated/root-scratch/test.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -25664,7 +25680,9 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/unital-groebner-bases/lean/UGB/UnitalGroebner/s_polynomial_decomposition.lean"
+          "folio/unital-groebner-bases/lean/UGB/UnitalGroebner/s_polynomial_decomposition.lean",
+          "fsh-guts/deprecated/root-scratch/test_s_poly.lean",
+          "fsh-guts/deprecated/root-scratch/test.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
