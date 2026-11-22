@@ -378,7 +378,7 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
         from hecke_symbolic import SymbolicHeckeElement
         sub_elem = SymbolicHeckeElement(fallback_terms)
         from ocneanu_weights import canonical_markov_trace_via_ocneanu
-        from q_parameter import Q as _Q0
+        from q_parameter import Q_50_DIGIT_STR as _Q0_STR
         # Ocneanu path wants the *substrate* parameter q, not the
         # Markov parameter z.  Determine whether z and h are purely
         # numeric; if so evaluate the fallback at the canonical q₀,
@@ -392,9 +392,13 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
                 f"_ocneanu_fallback_n{n}_" + str(len(fallback_terms)),
                 real=True)
         else:
+            # mpf since 2026-11-22 (P9): pass the exact q string, not a
+            # float, and keep the result's precision in the sympy Float.
             num = canonical_markov_trace_via_ocneanu(sub_elem, n,
-                                                        q_val=float(_Q0))
-            total += num
+                                                        q_val=_Q0_STR)
+            from mpmath import nstr as _nstr
+            from qou_substrate.precision import COMPUTE_DPS as _CD
+            total += sp.Float(_nstr(num, _CD + 5), _CD)
     if simplify and isinstance(total, sp.Basic):
         return sp.simplify(total)
     return total

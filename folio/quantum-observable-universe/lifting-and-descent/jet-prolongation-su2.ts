@@ -5,5 +5,5 @@ export default example({
   label: "ex:jet-prolongation-su2",
   title: "Jet prolongation of $\\mathcal{O}(\\mathrm{SU}(2))$",
   tags: ["su2", "jet-bundle", "frobenius-hopf", "prolongation"],
-  uses: ["prop:jet-prolongation", "lem:jet-prolongation-categorical-jet"],
+  uses: ["prop:jet-prolongation", "def:categorical-jet"],
 });

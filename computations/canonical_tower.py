@@ -238,62 +238,14 @@ def cached_jm_avg(n: int, k: int) -> float:
 
 
 _MPM_CACHE: dict[tuple[tuple, int], tuple[int, int]] = {}
-_MPM_DISK_DIR = Path(__file__).parent / ".cache" / "eigen_mult"
-
-
-def _load_mpm_disk(n: int) -> dict:
-    """Load cached (shape, i) → (m_+, m_-) for all λ ⊢ n from disk.
-
-    Keys in the JSON file follow the format "shape_csv:i" where
-    shape_csv is the comma-separated partition (no brackets) — see
-    _save_mpm_disk.  Returns dict keyed by (tuple[int, ...], int) →
-    tuple[int, int], matching the in-memory _MPM_CACHE signature.
-    """
-    _MPM_DISK_DIR.mkdir(parents=True, exist_ok=True)
-    f = _MPM_DISK_DIR / f"n{n}.json"
-    if not f.exists():
-        return {}
-    try:
-        raw = json.loads(f.read_text())
-        out = {}
-        for k, v in raw.items():
-            shape_str, i_str = k.split(":")
-            shape = (tuple(int(x) for x in shape_str.split(","))
-                      if shape_str else ())
-            out[(shape, int(i_str))] = (int(v[0]), int(v[1]))
-        return out
-    except Exception:
-        return {}
-
-
-def _save_mpm_disk(n: int):
-    """Persist all cached mults for λ ⊢ n.
-
-    Keys stored as "a,b,c:i" where a,b,c is the comma-joined shape
-    (no brackets) and i the generator index.
-    """
-    _MPM_DISK_DIR.mkdir(parents=True, exist_ok=True)
-    f = _MPM_DISK_DIR / f"n{n}.json"
-    payload = {}
-    for (shape, i), (mp, mm) in _MPM_CACHE.items():
-        if sum(shape) != n:
-            continue
-        shape_str = ",".join(str(x) for x in shape) if shape else ""
-        key = f"{shape_str}:{i}"
-        payload[key] = [int(mp), int(mm)]
-    try:
-        # Provenance stamp (bean qou-4un2): this producer writes its
-        # witness directly, so nothing else records which script made
-        # it -- and a re-run of an unstamped producer DELETES the
-        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
-        from qou_substrate.witness import WitnessBuilder as _WB
-        import os as _os  # noqa: E402 -- provenance stamp
-        payload.setdefault("scriptFile", _os.path.basename(__file__))
-        _WB.stamp_staleness_metadata(
-            payload, script_path=__file__, engine=None, q0_anchor=None)
-        f.write_text(json.dumps(payload))
-    except Exception:
-        pass
+# There was a disk layer here (`_load_mpm_disk` / `_save_mpm_disk`, under
+# computations/.cache/eigen_mult/). It never hit: `_save_mpm_disk` stamped
+# witness metadata (`scriptFile`, q0 anchor fields, ...) into the payload, the
+# loader parsed every key as `shape:i`, the first stamp key raised, and its
+# bare `except` returned `{}`. Nothing called the loader anyway. The values are
+# integer SYT counts that are cheap to recompute, so the disk layer is removed
+# rather than repaired (issue #8996, P8; owner approval 2026-11-22). The
+# in-memory `_MPM_CACHE` is unchanged.
 
 
 def eigen_multiplicities(shape: tuple[int, ...], i: int) -> tuple[int, int]:
@@ -609,7 +561,6 @@ def binding_per_irrep_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         m_f = canonical_tower_mass(V_f, pair_mode=pair_mode, term=term)
         m_atom_total += w_lam * m_a["total"]
         m_free_total += w_lam * m_f["total"]
-    _save_mpm_disk(n_strands)
     # Calibrate E_0 via proton tower (A=1, n=3) using same pipeline
     if E_0 is None:
         # CANONICAL (bean qou-0gqn): the framework's own MeV-per-categorical-

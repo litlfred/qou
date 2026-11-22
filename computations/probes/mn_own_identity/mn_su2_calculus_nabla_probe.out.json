@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "KE=q^2EK": true,
+    "KF=q^-2FK": true,
+    "[E,F]=(K-K^-1)/(q-q^-1)": true
+  },
+  "proton_W(2,1)": {
+    "T1_<E>": "0",
+    "T1_<F>": "0",
+    "T2_<xi>": "1/2",
+    "K_weight_w": "q",
+    "T3_tr(K psi phi xi)": "q/2"
+  },
+  "neutron_W(1,2)": {
+    "T1_<E>": "0",
+    "T1_<F>": "0",
+    "T2_<xi>": "-1/2",
+    "K_weight_w": "1/q",
+    "T3_tr(K psi phi xi)": "-1/(2*q)"
+  },
+  "T3_n_minus_p": "-(q**2 + 1)/(2*q)",
+  "verdict": {
+    "T1": "horizontal expectation 0 for every normalised weight state: mu = 0 under the flat connection",
+    "12": "not attainable in this class (mu = 0)"
+  }
+}

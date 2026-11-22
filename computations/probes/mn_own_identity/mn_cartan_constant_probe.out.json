@@ -1,0 +1,94 @@
+{
+ "probe": "mn_cartan_constant_probe",
+ "preregistration": "PREREGISTRATION-cartan-constant.md",
+ "checks": {
+  "K^3 = q on uud, udu, duu": true,
+  "K^3 = 1/q on udd, dud, ddu": true,
+  "split law, vol weighted=False, const weighted=False": true,
+  "split law, vol weighted=True, const weighted=False": true,
+  "split law, vol weighted=False, const weighted=True": true,
+  "split law, vol weighted=True, const weighted=True": true,
+  "K1 = 12(1 - q^-2) = (12/q) h": true,
+  "F_Bor(1) = 6": true
+ },
+ "all_pass": true,
+ "split_law": "m_n - m_p = -s (q - 1/q) * (sum of Cartan-weighted coefficients)",
+ "K1_exact": "12 - 12/q**2",
+ "K2_exact": "12*q - 12/q",
+ "values": {
+  "muon": {
+   "q0": "1.109978595642739046681795",
+   "h": "0.20906032215031674663",
+   "N0_isospin_limit": {
+    "m_p": "938.271860620094",
+    "m_p_ppm": "-0.24386306",
+    "m_n": "938.271860620094",
+    "n_minus_p": "0"
+   },
+   "K0_volume_weighted": {
+    "m_p": "938.271860620094",
+    "m_n": "760.396923676392",
+    "n_minus_p": "-177.874936944"
+   },
+   "K1_const_weighted_proton_normalised": {
+    "m_p": "938.271860620094",
+    "m_p_ppm": "-0.24386306",
+    "m_n": "939.426797542327",
+    "m_n_ppm": "-147.54097",
+    "n_minus_p": "1.15493692223",
+    "n_minus_p_pct_vs_CODATA": "-10.700697"
+   },
+   "K2_const_weighted_symmetric": {
+    "m_p": "937.597473256432",
+    "m_p_ppm": "-718.99845",
+    "m_n": "938.879428519429",
+    "m_n_ppm": "-730.11778",
+    "n_minus_p": "1.281955263",
+    "n_minus_p_pct_vs_CODATA": "-0.87968461",
+    "average": "938.23845088793",
+    "average_ppm_vs_CODATA_average": "-724.56194"
+   },
+   "K1_over_K2": "0.900918273492422"
+  },
+  "proton": {
+   "q0": "1.109978582751380807591669",
+   "h": "0.20906029879563931543",
+   "N0_isospin_limit": {
+    "m_p": "938.272089427324",
+    "m_p_ppm": "-2.8517875e-6",
+    "m_n": "938.272089427324",
+    "n_minus_p": "0"
+   },
+   "K0_volume_weighted": {
+    "m_p": "938.272089427324",
+    "m_n": "760.397127193666",
+    "n_minus_p": "-177.874962234"
+   },
+   "K1_const_weighted_proton_normalised": {
+    "m_p": "938.272089427324",
+    "m_p_ppm": "-2.8517875e-6",
+    "m_n": "939.42702623395",
+    "m_n_ppm": "-147.29757",
+    "n_minus_p": "1.15493680663",
+    "n_minus_p_pct_vs_CODATA": "-10.700706"
+   },
+   "K2_const_weighted_symmetric": {
+    "m_p": "937.597702142712",
+    "m_p_ppm": "-718.7545",
+    "m_n": "938.879657262498",
+    "m_n_ppm": "-729.87432",
+    "n_minus_p": "1.28195511979",
+    "n_minus_p_pct_vs_CODATA": "-0.87969568",
+    "average": "938.238679702605",
+    "average_ppm_vs_CODATA_average": "-724.31824"
+   },
+   "K1_over_K2": "0.900918283955741"
+  }
+ },
+ "literature_n_minus_p_MeV": {
+  "experiment (CODATA)": "1.29333251",
+  "BMW 2015 lattice QCD+QED": "1.51(16)(23)",
+  "QCDSF-UKQCD 2015 (Horsley et al.)": "1.35(18)(8)"
+ },
+ "note": "CODATA and literature in comparison fields only; m_mu/m_e (CAL-2) fixes the muon pin."
+}

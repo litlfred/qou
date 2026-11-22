@@ -2,26 +2,27 @@ The proof mirrors the ascent
 ([jet prolongation](#prop:jet-prolongation)) in reverse, working inside $\mathbf{C}$.
 
 *Step 1: Frobenius restriction.*
-The jet object $J^1(A) = (A \otimes A)/I^2$, $I = \ker m$, at level $n$
-contains $A$ as a direct summand: the section $\ell_n(a) = [a \otimes 1]$ and
-the restriction map $r_n\colon J^1(A) \to A$ induced by $m$ satisfy
-$r_n \circ \ell_n = \mathrm{id}$, with $\ker r_n = I/I^2$
-([direct-summand lemma](#lem:jet-prolongation-categorical-jet)).
-Because $A$ is Frobenius, $r_n$ is a coalgebra morphism --- $\Delta$
-commutes with restriction by the Frobenius relation, and the counit
-restricts by construction --- so the restricted object inherits a
-Frobenius--Hopf structure.
+Assume $A$ is commutative, as in the [jet prolongation](#prop:jet-prolongation). The level object $T(A) = \mathrm{Sym}_A(\Omega^1_{A/R})$
+([jet prolongation](#prop:jet-prolongation)) contains $A$ as a direct summand:
+the structure map $\ell_n\colon A \to T(A)$ and the restriction map
+$r_n\colon T(A) \to A$, which kills $\Omega^1_{A/R}$, satisfy
+$r_n \circ \ell_n = \mathrm{id}$.
+For $A = \mathcal{O}(G)$, $T(A) = \mathcal{O}(TG)$ and $r_n$ is the Hopf map given by pull-back
+along the zero section $G \to TG$, so restriction along $r_n$ returns $A$ with its own
+Frobenius--Hopf structure. For noncommutative $A$ the ideal $I^2$ is not available. The
+two-sided jet $A \ltimes \Omega^1_u(A)$ still splits over $A$, but a Hopf structure on it is not
+established in general.
 
 *Step 2: Connection restriction.*
 The connection $A_n$ on $\mathcal{S}_n$ is determined by the comultiplication
-$\Delta'$ on $J^1(A)$ (jet prolongation, Step 2).  Restricting $\Delta'$
+$\Delta'$ on $T(A)$ ([jet prolongation](#prop:jet-prolongation)).  Restricting $\Delta'$
 along $r_n$ recovers the original $\Delta$ on $A$, which corresponds to
 the connection $A_{n-1}$ on $\mathcal{S}_{n-1}$.  Hence $A_{n-1}$ satisfies the
 Hermitian Yang--Mills equations on $\mathcal{S}_{n-1}$ as it did at level $n{-}1$.
 
 *Step 3: Non-degeneracy and vanishing.*
-Non-degeneracy of the Frobenius form on the restricted object follows
-from the direct-summand inclusion $A \hookrightarrow J^1(A)$.  The
+The restricted object is $A$ itself, so the Frobenius form on it is the
+original non-degenerate form.  The
 vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is
 unchanged since one recovers $A$.
 

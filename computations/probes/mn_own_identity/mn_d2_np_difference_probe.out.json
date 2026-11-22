@@ -1,0 +1,28 @@
+{
+  "preregistration": "6f6fa5fb819",
+  "checks": {
+    "parts sum to direct": true,
+    "hecke": true
+  },
+  "Delta_factored": "2*(q - 1)**5*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/q**8",
+  "parts": {
+    "holonomy^2": {
+      "factored": "0",
+      "leading_order_h": null,
+      "coefficient": "0"
+    },
+    "reeb^2": {
+      "factored": "0",
+      "leading_order_h": null,
+      "coefficient": "0"
+    },
+    "cross": {
+      "factored": "2*(q - 1)**5*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/q**8",
+      "leading_order_h": 5,
+      "coefficient": "3"
+    }
+  },
+  "leading_order_h": 5,
+  "coefficient": "3",
+  "twelve_coincidence": false
+}

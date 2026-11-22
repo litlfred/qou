@@ -6,16 +6,16 @@ $$
 $$
 where $\omega_a$ are the left-invariant $1$-forms dual to the Lie algebra basis $\{e_1, e_2, e_3\}$ of $\mathfrak{su}(2)$.
 
-**The jet object.** By definition:
+**The tangent algebra.** By definition:
 $$
-  J^1(A) := (A \otimes A)/I^2 \cong A \oplus \Omega^1_A = A \oplus \mathrm{span}_A\{\omega_1, \omega_2, \omega_3\},
+  T(A) := \mathrm{Sym}_A(\Omega^1_A) = A[\omega_1, \omega_2, \omega_3],
 $$
-the splitting being $a \mapsto [a \otimes 1]$ with retraction induced by $m$ ([direct-summand lemma](#lem:jet-prolongation-categorical-jet)). An element of $J^1(A)$ is a function together with a $1$-form, the algebraic first jet of a function on $\mathrm{SU}(2)$. The $1$-form component matches the sections of the frame bundle $F(\mathrm{SU}(2))$.
+the polynomial algebra over $A$ in the three left-invariant forms. It is the coordinate algebra $\mathcal{O}(T\,\mathrm{SU}(2))$ of the tangent group $T\,\mathrm{SU}(2) \cong \mathrm{SU}(2) \ltimes \mathfrak{su}(2)$. The structure map $A \to T(A)$ and the augmentation $T(A) \to A$, $\omega_a \mapsto 0$, satisfy $r \circ \ell = \mathrm{id}_A$. The part of degree at most $1$ in the $\omega_a$ is the jet object $J^1(A) = A \oplus \Omega^1_A$ of [the categorical jet](#def:categorical-jet), a free $A$-module of rank $1 + 3 = 4$.
 
-**Inherited Frobenius–Hopf structure.** The comultiplication on the $1$-form component of $J^1(A)$ reads:
+**Inherited Hopf structure.** In the left trivialisation $T\,\mathrm{SU}(2) \cong \mathrm{SU}(2) \times \mathfrak{su}(2)$ the group law is $(x, X)(y, Y) = (xy, \mathrm{Ad}_{y^{-1}} X + Y)$. The comultiplication of $T(A)$ is the pullback of this law: $\Delta'$ restricts to $\Delta$ on $A$, and on the coordinate functions $\omega_a$ it reads
 $$
-  \Delta'(f \otimes \varTheta)(x, y) = f(xy) \otimes \varTheta_y,
+  \Delta'(\omega_a) = \sum_b (\mathrm{Ad}_{y^{-1}})_{ab}\, \omega_b \otimes 1 + 1 \otimes \omega_a .
 $$
-where $\varTheta_y$ denotes the left-translate of $\varTheta$ to $T_y G$. The counit $\varepsilon'(f \otimes \varTheta) = f(e)\varTheta_e$ and antipode $S'(f \otimes \varTheta)(x) = f(x^{-1}) \otimes (L_{x^{-1}})^*\varTheta$ extend similarly. The Frobenius form identically integrates the $1$-form component over $G$ via the Haar measure: $\int_{J^1 A}(f \otimes \varTheta) = \int_G f\varTheta$.
+The counit is evaluation at $(e, 0)$ and the antipode is pullback along $(x, X) \mapsto (x^{-1}, -\mathrm{Ad}_x X)$. Because $\omega_a$ is not primitive in this coproduct, the obstruction recorded for $J^1(A)$ does not apply to $T(A)$.
 
-**QOU structure.** The induced fibre functor $\tau'$ retains the $1$-form structure while forgetting the $G$-action on sections. Because $\mathrm{SU}(2)$ is $3$-dimensional, $J^1(A)$ is a free $A$-module of rank $1 + 3 = 4$. The quadruple $(\mathrm{Rep}(\mathrm{SU}(2)), J^1(A), \tau', q)$ formally constitutes a quantum observable universe.
+**QOU structure.** The induced fibre functor $\tau'$ retains the $1$-form coordinates while forgetting the $G$-action on sections. $T(A)$ is a commutative Hopf algebra, and no Frobenius form on it is required. The group $T\,\mathrm{SU}(2)$ contains the vector group $\mathfrak{su}(2)$, so $T(A)$ carries no nonzero integral in characteristic zero.

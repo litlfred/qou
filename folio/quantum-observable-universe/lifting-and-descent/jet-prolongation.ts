@@ -13,6 +13,70 @@ export default proposition({
       kind: "refined-framing",
       date: "2026-11-22",
       body:
+        "Owner ruling 2026-11-22: at tower levels $n \\ge 1$ the proposition requires only the Hopf structure " +
+        "on $T(A)$ and the splitting $r \\circ \\ell = \\mathrm{id}_A$; the Frobenius requirement is dropped and " +
+        "$(\\mathbf{C}, T(A), \\tau', q)$ is no longer claimed to be a quantum observable universe. Backup routes, " +
+        "kept on owner instruction and not pursued: (i) a non-invariant Frobenius form on $T(A)$, with no proof on " +
+        "record; (ii) a super or $q \\neq 1$ tower that escapes the characteristic-zero obstruction.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-22",
+      body:
+        "The Frobenius form on $T(A)$ cannot be a Haar integral in characteristic zero. Proved (scope b, " +
+        "invariant: a left integral kills every derivative): on the coordinate algebra $k[X]$ of the additive " +
+        "group, $\\Delta X = X \\otimes 1 + 1 \\otimes X$, a left integral satisfies $\\lambda(p') = 0$ for every " +
+        "$p$, hence $\\lambda = 0$ over a characteristic-zero domain (`QOU.LiftingDescent.additive_no_integral`, " +
+        "`QOU/LiftingDescent/TangentNoIntegral.lean`, sorry-free). Cited, not formalised: $TG = G \\ltimes " +
+        "\\mathrm{Lie}(G)$ contains the vector group $\\mathrm{Lie}(G)$, and a commutative Hopf algebra over a " +
+        "field of characteristic zero has a nonzero integral exactly when its group is linearly reductive " +
+        "(Sweedler 1969; Sullivan 1971). So $\\mathcal{O}(TG)$ has no nonzero integral, and a Frobenius form on " +
+        "$T(A)$, if any, is not the Haar integral. Not excluded: a non-invariant Frobenius form, a " +
+        "graded or super variant, and the non-commutative or $q \\neq 1$ settings.",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-11-22",
+      body:
+        "Owner ruling 2026-11-22: the prolongation object is the tangent algebra " +
+        "$T(A) = \\mathrm{Sym}_A(\\Omega^1_{A/R})$, not $J^1(A)$. The splitting $r \\circ \\ell = \\mathrm{id}_A$ " +
+        "of the structure map and the augmentation is formalised " +
+        "(`QOU.LiftingDescent.tangentRetract_comp_tangentSection`, " +
+        "`QOU/LiftingDescent/TangentAlgebraSplitting.lean`, sorry-free). Cited, not formalised: for " +
+        "$A = \\mathcal{O}(G)$, $T(A) = \\mathcal{O}(TG)$ with $TG = G \\ltimes \\mathrm{Lie}(G)$ a group, so " +
+        "$T(A)$ is a commutative Hopf algebra and both maps are Hopf maps. Still open: the Frobenius form " +
+        "and the vanishing condition on $T(A)$. The proof's step deriving them from $A$ being a direct " +
+        "summand is not a valid argument, and for compact $G$ the group $TG$ is not compact, so no " +
+        "Haar-normalised integral is available. Non-commutative case: the two-sided jet " +
+        "$A \\ltimes M$ splits (`QOU/LiftingDescent/NoncommJet.lean`), and a square-zero skew-primitive " +
+        "escapes the characteristic-zero obstruction (`QOU.LiftingDescent.skewPrimitive_sq`); for " +
+        "$A = k[\\mathbb{Z}/2]$, $A \\ltimes \\Omega^1_u(A)$ has Sweedler's four-dimensional Hopf presentation " +
+        "(cited). Sweedler's algebra itself is formalised as a Hopf algebra over any commutative ring " +
+        "(`QOU.LiftingDescent.Sweedler.instHopfAlgebra`, `QOU/LiftingDescent/SweedlerJet.lean`, sorry-free), " +
+        "with an algebra map into any square-zero extension $A \\ltimes M$ from an involution $g$ and an " +
+        "element $m$ with $m g = -g m$ (`Sweedler.toJet`). That the map is an isomorphism onto " +
+        "$k[\\mathbb{Z}/2] \\ltimes \\Omega^1_u$ is not formalised.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-22",
+      body:
+        "The Frobenius–Hopf inheritance is false for $J^1(A) = (A \\otimes A)/I^2$ in the commutative " +
+        "characteristic-zero case. Proved (scope b, invariant: a square-zero primitive vanishes in " +
+        "characteristic zero): for $A = k[X]$ with $X$ primitive, no multiplicative comultiplication on " +
+        "$J^1(A)$ makes both jet sections $a \\mapsto [a \\otimes 1]$ and $a \\mapsto [1 \\otimes a]$ " +
+        "compatible (`QOU.LiftingDescent.jet_polynomial_no_bialgebra`, " +
+        "`QOU/LiftingDescent/JetNoBialgebra.lean`, sorry-free). Cited, not formalised: by Cartier's " +
+        "theorem (Waterhouse 1979, §11.4) a commutative Hopf algebra over a field of characteristic zero " +
+        "is reduced, while $I/I^2 \\subset J^1(A)$ is a nonzero square-zero ideal whenever " +
+        "$\\Omega^1_{A/k} \\neq 0$. So for $A = \\mathcal{O}(\\mathrm{SU}(2))$ no commutative Hopf structure " +
+        "exists on $J^1(A)$ at all. Not excluded: a non-commutative or braided ($q \\neq 1$) setting, " +
+        "and a different jet object such as the tangent-bundle algebra $\\mathrm{Sym}_A(\\Omega^1_A)$.",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-11-22",
+      body:
         "On the owner ruling of 2026-11-22 the jet object is $(A \\otimes A)/I^2$, $I = \\ker m$. That " +
         "object contains $A$ as a direct summand (`lem:jet-prolongation-categorical-jet`), which the old " +
         "$A \\otimes \\Omega^1(A)$ did not. The Frobenius–Hopf inheritance is still open for the new object: " +

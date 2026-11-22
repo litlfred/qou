@@ -306,6 +306,17 @@ import QOU.MathlibExt.ManifoldVolumePositive
 import QOU.MathlibExt.Bicommutant
 import QOU.MathlibExt.BraidGroup
 import QOU.MathlibExt.PLPolygonalLink
+import QOU.MathlibExt.PLAffineEquivariance
+import QOU.MathlibExt.PLVertexSlide
+import QOU.MathlibExt.PLAmbientIsotopy
+import QOU.MathlibExt.PLPush
+import QOU.MathlibExt.PLDeltaIsotopy
+import QOU.MathlibExt.PLDeltaMove
+import QOU.MathlibExt.PLMaps
+import QOU.MathlibExt.PLIsotopy
+import QOU.MathlibExt.PLPolyPush
+import QOU.MathlibExt.PLPrismPush
+import QOU.MathlibExt.PLDeltaPoly
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower

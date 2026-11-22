@@ -1,0 +1,29 @@
+{
+  "A": {
+    "counit_solution": {
+      "e0_": "a",
+      "e1_": "b"
+    },
+    "A1_counit_equals_lambda": true,
+    "A2_counit_rescales_with_lambda": true,
+    "scale_forced": false,
+    "verdict": "lambda = epsilon holds for every (a,b) with det G != 0; no normalisation forced",
+    "gram_det": "(a + b*q)*(a*q - b)/q"
+  },
+  "B": {
+    "P_electron": "1",
+    "P_nucleon": "(q**4 - q**2 + 1)*(q**16 - 5*q**14 + 11*q**12 - 16*q**10 + 19*q**8 - 16*q**6 + 11*q**4 - 5*q**2 + 1)/q**10",
+    "ratio": "(q**4 - q**2 + 1)*(q**16 - 5*q**14 + 11*q**12 - 16*q**10 + 19*q**8 - 16*q**6 + 11*q**4 - 5*q**2 + 1)/q**10",
+    "ratio_at_q1": "1",
+    "ratio_eq_12_identically": false,
+    "checks": {
+      "hecke_relation": true,
+      "braid_relation": true,
+      "tau_symmetric_on_basis": true
+    }
+  },
+  "verdict": {
+    "A": "lambda = epsilon does not fix the scale (counit = lambda for every non-degenerate lambda)",
+    "B": "scope-(a) negative: ratio is not 12 in this class"
+  }
+}

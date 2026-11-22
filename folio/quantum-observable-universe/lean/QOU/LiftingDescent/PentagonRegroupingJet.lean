@@ -9,14 +9,16 @@ import QOU.BraidKnot.PhiQTowerAlgebraicStratification
 # The residual of pentagon ascension lives in a power of the diagonal ideal
 
 `phi_q_tower_algebraic_stratification_of_regrouping` takes the residual subgroup `J`
-as a parameter. This file fixes it using the first-order jet module adopted by
-owner ruling 2026-11-22: `J¹(S) = (S ⊗ S) ⧸ I²`, with `I = ker (m : S ⊗ S → S)`
-(`QOU.LiftingDescent.jetModule`, PR #9007). At jet order `k`, the residual
-subgroup is `I^(k+1)`. For first order, `J = I²`, and the regrouping conclusion
-says the mass equals the corrected low strata in `J¹(S)`.
+as a parameter. This file instantiates it with the jet module of order `k`,
+`(S ⊗ S) ⧸ I^(k+1)` with `I = ker (m : S ⊗ S → S)`: the residual subgroup is
+`I^(k+1)`. For `k = 1` this is the first jet module `J¹(S) = (S ⊗ S) ⧸ I²`, which is
+`QOU.LiftingDescent.jetModule R S` in `JetModuleSplitting.lean`; the quotient is
+written out here, and the two types are definitionally equal.
 
-The quotient is written out as `(S ⊗[R] S) ⧸ I ^ 2` rather than imported, so the
-file does not depend on that PR. Its type is definitionally equal to `jetModule R S`.
+**The jet order `k` is not the brane-tower level `n`.** The tower iterates first
+jets, and `J¹(J¹(S))` is not `(S ⊗ S) ⧸ I³`. So `I^(k+1)` is a residual at jet
+order `k` inside one jet module. It is not the tower-level residual `J_{n+1}` of
+`prop:phi-q-tower-algebraic-stratification`. Which submodule that is remains open.
 
 Not proved here:
 * that a stratum value lies in `S ⊗ S`, i.e. that `Φ_q(‖V̂_S‖_F)` is an element of
