@@ -1,8 +1,8 @@
 {
   "engine": "fractions+sympy+mpmath",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-22T15:53:08.998727+00:00",
-  "commitSha": "8403012b8247c88853fc24d9243079db7995a0f5",
+  "computedAt": "2026-11-22T17:37:04.938646+00:00",
+  "commitSha": "e20bd5243d200b9e2a954e8b16b282baf2a46190",
   "assertions": [
     {
       "name": "P1_parity",
@@ -91,14 +91,38 @@
       "passed": true,
       "tolerance": "exact",
       "source": "gamma_0 gamma_0 gamma_1(0, -1/h, z) = mu^-1 V0V0V1 has real solutions at q = 2 and q = 11/10 for several (z, A); residual < 1e-30 at 40 digits. The weights are not fixed: a two-parameter real family."
+    },
+    {
+      "name": "P2_generic_q_two_photon",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "over Q(q) the two-photon factorisations are exactly the ones found at q = 2, 3: [('V0V1V0', 1, 0), ('V0V1V0', 2, 0), ('V0V1V2V0V3', 0, 3), ('V0V1V2V0V3', 3, 0), ('V0V1V2V3V0', 0, 3), ('V0V1V2V3V0', 3, 0), ('V1V2V1', 2, 1), ('V1V2V1', 3, 1), ('V2V0V3V1V0', 0, 3), ('V2V0V3V1V0', 3, 0), ('V2V3V0V1V0', 0, 3), ('V2V3V0V1V0', 3, 0), ('V2V3V2', 3, 2)]; every other (word, i, j) has Groebner basis [1], so no solution for generic q (finitely many special q not excluded)."
+    },
+    {
+      "name": "P3_zD_trace_comparison",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Jimbo quantum trace / [2]^n is the convention-D Markov trace (tr(s) = z_D, checked); exact traces {'pair_word_s0^2 s1^-1 s4^-1 (6 strands)': '(q**4 + 1)/(q**2*(q**2 + 1)**3)', 'hopf_photon_s0^2 s1^-1 (3 strands)': '(q**4 + 1)/(q*(q**2 + 1)**2)', 'crossing_photon_s^-1 (2 strands)': '1/(q*(q**2 + 1))', 'electron_s0 s1 s0 (3 strands)': 'q**3*(q**4 + 1)/(q**2 + 1)**2'}; tr(pair) = tr(Hopf photon) * tr(crossing photon) (Markov factorisation, checked). |tr| x E0 (canonical, proton q0), COMPARISON ONLY, not proposed as Q_beta: {'pair_word_s0^2 s1^-1 s4^-1 (6 strands)': '0.776939463185019', 'hopf_photon_s0^2 s1^-1 (3 strands)': '1.92489115430842', 'crossing_photon_s^-1 (2 strands)': '1.70632954574831', 'electron_s0 s1 s0 (3 strands)': '2.92189478322906'} MeV. CODATA Q_beta = 0.78233 MeV."
+    },
+    {
+      "name": "P3_trace_same_for_every_match",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "every one of the 264 matching gamma-gamma words gives the same |tr_D| x E0 per orientation (gamma-gamma words have writhe 0, so the Markov trace is a link invariant on them): {'e- + nu-bar + loop': ['0.776939463185019176156914251418'], 'mirror': ['1.45303065095213411739280111889']} MeV. COMPARISON ONLY."
     }
   ],
   "allPassed": true,
   "durationMs": 9,
   "computation": "six-strand-photon-pair",
   "scriptFile": "six_strand_pair_probe.py",
-  "scriptHash": "61994054da79",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "62d9fec0b447",
+  "scriptCommitSha": "a36f3a978118e9a0b20ff2ce79be26408702ea50",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -645,6 +669,231 @@
         "lam": "-17.241671652269"
       }
     ]
+  },
+  "generic_q_two_photon": {
+    "positions": [
+      [
+        "V0V1V0",
+        1,
+        0
+      ],
+      [
+        "V0V1V0",
+        2,
+        0
+      ],
+      [
+        "V0V1V2V0V3",
+        0,
+        3
+      ],
+      [
+        "V0V1V2V0V3",
+        3,
+        0
+      ],
+      [
+        "V0V1V2V3V0",
+        0,
+        3
+      ],
+      [
+        "V0V1V2V3V0",
+        3,
+        0
+      ],
+      [
+        "V1V2V1",
+        2,
+        1
+      ],
+      [
+        "V1V2V1",
+        3,
+        1
+      ],
+      [
+        "V2V0V3V1V0",
+        0,
+        3
+      ],
+      [
+        "V2V0V3V1V0",
+        3,
+        0
+      ],
+      [
+        "V2V3V0V1V0",
+        0,
+        3
+      ],
+      [
+        "V2V3V0V1V0",
+        3,
+        0
+      ],
+      [
+        "V2V3V2",
+        3,
+        2
+      ]
+    ],
+    "solutions": {
+      "V0V1V0@1,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V0@2,0": [
+        "q/(q**2 - 1) + x0",
+        "x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V1V2V1@2,1": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V1V2V1@3,1": [
+        "q/(q**2 - 1) + x0",
+        "x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V3V2@3,2": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V2V0V3@0,3": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2 + 1",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V2V0V3@3,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V2V3V0@0,3": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2 + 1",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V2V3V0@3,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V0V3V1V0@0,3": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2 + 1",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V0V3V1V0@3,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V3V0V1V0@0,3": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2 + 1",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V3V0V1V0@3,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ]
+    }
+  },
+  "zD_comparison": {
+    "traces": {
+      "pair_word_s0^2 s1^-1 s4^-1 (6 strands)": "(q**4 + 1)/(q**2*(q**2 + 1)**3)",
+      "hopf_photon_s0^2 s1^-1 (3 strands)": "(q**4 + 1)/(q*(q**2 + 1)**2)",
+      "crossing_photon_s^-1 (2 strands)": "1/(q*(q**2 + 1))",
+      "electron_s0 s1 s0 (3 strands)": "q**3*(q**4 + 1)/(q**2 + 1)**2"
+    },
+    "abs_tr_times_E0_MeV": {
+      "pair_word_s0^2 s1^-1 s4^-1 (6 strands)": "0.776939463185019",
+      "hopf_photon_s0^2 s1^-1 (3 strands)": "1.92489115430842",
+      "crossing_photon_s^-1 (2 strands)": "1.70632954574831",
+      "electron_s0 s1 s0 (3 strands)": "2.92189478322906"
+    },
+    "E0": "qbeta_e0.canonical (tower-summed, by ruling)",
+    "status": "comparison only; the pair word is not the beta-decay element",
+    "per_orientation_all_matches_MeV": {
+      "e- + nu-bar + loop": [
+        "0.776939463185019176156914251418"
+      ],
+      "mirror": [
+        "1.45303065095213411739280111889"
+      ]
+    }
   },
   "scope": "(a): six strands, <= 6 vertices; invariant at two rational q; Groebner at q = 2 (and 3 for the two-photon m3 test); real search at q = 2, 11/10.",
   "lean": "QOU/QBeta/GammaGammaLeptonPair.lean (parity)"
