@@ -291,6 +291,7 @@ export default chapter({
         "fivefold-sheets-golden-ratio",
         "fivefold-affine-charts-generations",
         "klein-bring-icosahedral-bridge",
+        "poincare-sphere-ohtsuki-slope-prior-art",
         "trivial-knot-photon-interpretation-table5-data",
         "knot-basis-color-content",
         "trivial-knot-photon-interpretation",
