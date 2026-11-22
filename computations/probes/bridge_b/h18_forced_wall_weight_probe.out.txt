@@ -1,0 +1,28 @@
+n = 4: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) for all i True
+  3. p_0 = tr J = 4
+  orbit (1, 3), word [1, 3], ambient length L = 2: passing (L', sign of v^-L') = [(2, 1)]; 1. weight forced to L: True
+     p_0..p_3 = ['4', '49/4', '769/16', '12289/64']
+  orbit (2,), word [2], ambient length L = 1: passing (L', sign of v^-L') = [(1, -1)]; 1. weight forced to L: True
+     p_0..p_3 = ['4', '3', '17/2', '63/4']
+n = 5: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) for all i True
+  3. p_0 = tr J = 0
+  orbit (1, 4), word [1, 4], ambient length L = 2: passing (L', sign of v^-L') = [(1, -1), (1, 1), (2, -1), (2, 1), (3, -1), (3, 1), (4, -1), (4, 1)]; 1. weight forced to L: False
+     p_0..p_3 = ['0', '0', '0', '0']
+  orbit (2, 3), word [2, 3, 2], ambient length L = 3: passing (L', sign of v^-L') = [(1, -1), (1, 1), (2, -1), (2, 1), (3, -1), (3, 1), (4, -1), (4, 1)]; 1. weight forced to L: False
+     p_0..p_3 = ['0', '0', '0', '0']
+n = 6: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) for all i True
+  3. p_0 = tr J = 8
+  orbit (1, 5), word [1, 5], ambient length L = 2: passing (L', sign of v^-L') = [(2, 1)]; 1. weight forced to L: True
+     p_0..p_3 = ['8', '49/2', '769/8', '12289/32']
+  orbit (2, 4), word [2, 4], ambient length L = 2: passing (L', sign of v^-L') = [(2, 1)]; 1. weight forced to L: True
+     p_0..p_3 = ['8', '49/2', '769/8', '12289/32']
+  orbit (3,), word [3], ambient length L = 1: passing (L', sign of v^-L') = [(1, -1)]; 1. weight forced to L: True
+     p_0..p_3 = ['8', '6', '17', '63/2']
+n = 7: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) for all i True
+  3. p_0 = tr J = 0
+  orbit (1, 6), word [1, 6], ambient length L = 2: passing (L', sign of v^-L') = [(1, -1), (1, 1), (2, -1), (2, 1), (3, -1), (3, 1), (4, -1), (4, 1)]; 1. weight forced to L: False
+     p_0..p_3 = ['0', '0', '0', '0']
+  orbit (2, 5), word [2, 5], ambient length L = 2: passing (L', sign of v^-L') = [(1, -1), (1, 1), (2, -1), (2, 1), (3, -1), (3, 1), (4, -1), (4, 1)]; 1. weight forced to L: False
+     p_0..p_3 = ['0', '0', '0', '0']
+  orbit (3, 4), word [3, 4, 3], ambient length L = 3: passing (L', sign of v^-L') = [(1, -1), (1, 1), (2, -1), (2, 1), (3, -1), (3, 1), (4, -1), (4, 1)]; 1. weight forced to L: False
+     p_0..p_3 = ['0', '0', '0', '0']

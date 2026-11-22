@@ -1,21 +1,36 @@
-*Proof.*
+*Proof.* Transport everything along the Wedderburn isomorphism
+$\Phi : A \xrightarrow{\sim} \prod_\lambda \mathrm{Mat}_{f^\lambda}(K)$,
+which holds because $q$ is not a root of unity. Write $x_\lambda$ for the
+$\lambda$-block of $\Phi(x)$, so $\mathrm{tr}(\rho_\lambda x) =
+\mathrm{tr}(x_\lambda)$, and $\pi_Z(x) = \Phi^{-1}\bigl((\mathrm{tr}(x_\lambda)/f^\lambda)\,
+1_\lambda\bigr)_\lambda$ as in the statement. This uses $f^\lambda \neq 0$ in $K$.
 
-$(1)$ is [spectral sequence collapse](#prop:spectral-sequence-collapse):
-$\mathrm{HH}^k(A) = 0$ for $k \geq 1$ (Whitehead's lemma for
-semisimple algebras), so $E_\infty^{p, q} = 0$ for $p + q \geq 1$.
-Only $E_\infty^{0, 0} = \mathrm{HH}^0 = Z(A)$ remains.
+$(1)$ Each block of $\Phi(\pi_Z(x))$ is a scalar matrix, and scalar
+matrices commute with everything in their block, so $\Phi(\pi_Z(x))$ is
+central in the product and $\pi_Z(x) \in Z(A)$. It equals
+$\sum_\lambda (\mathrm{tr}(x_\lambda)/f^\lambda)\, e_\lambda$.
 
-$(2)$ Cyclicity of the Markov trace ($\int_A ab = \int_A ba$) means
-$\int_A$ vanishes on commutators $[A, A]$.  Since $A / [A, A] \cong
-Z(A)$ at the $\mathrm{HH}^0$-level, $\int_A$ descends to
-$Z(A)$.  The induced map
-$\mu : Z(A) \to R$ sends $e_\lambda \mapsto \int_A e_\lambda =
-w_\lambda$.
+$(2)$ A trace on a matrix algebra $\mathrm{Mat}_f(K)$ is a scalar multiple
+of $\mathrm{tr}$, because it vanishes on commutators and the commutators
+together with one diagonal unit span. Hence $\tau \circ \Phi^{-1}$ is a sum
+of block traces $\sum_\lambda c_\lambda\, \mathrm{tr}(x_\lambda)$, and
+evaluating at $e_\lambda$ gives $c_\lambda f^\lambda = \tau(e_\lambda) =
+\mu_\lambda$. So
+$\tau(x) = \sum_\lambda \mu_\lambda\, \mathrm{tr}(x_\lambda)/f^\lambda$.
+The same formula applied to $\pi_Z(x)$, whose $\lambda$-block has trace
+$\mathrm{tr}(x_\lambda)$, gives $\tau(\pi_Z(x)) = \tau(x)$.
 
-$(3)$ Wedderburn decomposition $A = \bigoplus_\lambda A_\lambda$ with
-$A_\lambda = e_\lambda A e_\lambda$ gives
-$\int_A a = \sum_\lambda \int_{A_\lambda} a$ for any $a \in A$.
-Apply with $a = \rho(\beta_\mathcal{K}) \cdot \mathcal{T}$. $\square$
+$(3)$ If $x$ is central, each $x_\lambda$ commutes with all of
+$\mathrm{Mat}_{f^\lambda}(K)$ and is therefore a scalar $s_\lambda\, 1$.
+Then $\mathrm{tr}(x_\lambda)/f^\lambda = s_\lambda$ and $\pi_Z(x) = x$. $\square$
+
+The Lean `confinement_categorical` follows exactly this route
+(`trace_unique`, `eq_scalar_of_commute`, `centreProj_central`,
+`trace_eq_residue_sum`). Reading $Z(A)$ as the $E_\infty^{0,0}$ page of
+the GB-filtration spectral sequence additionally uses
+$\mathrm{HH}^k(A) = 0$ for $k \geq 1$
+([spectral sequence collapse](#prop:spectral-sequence-collapse)); that
+reading is not part of the proof.
 
 **Confinement reading.**
 
@@ -24,9 +39,9 @@ in QCD:*
 
 | Clause | Algebra | QCD analogue |
 |---|---|---|
-| (1) | Non-central elements die at $E_\infty$ | Free quarks not observed |
-| (2) | $\int_A$ factors through $Z(A)$ | All observables are gauge-invariant |
-| (3) | Observables = sum of Wedderburn residues | Hadrons = sum of color-singlet projections |
+| (1) | $\pi_Z$ sends every element into the centre $Z(A)$ | Free quarks not observed |
+| (2) | every trace $\tau$ factors through $\pi_Z$ | All observables are gauge-invariant |
+| (3) | $\pi_Z$ fixes every central $x$ | Colour-singlet states are unchanged by the projection |
 
 *The curvature 2-cocycle $F$ encoding the Hecke + Yang–Baxter
 relations
@@ -40,11 +55,10 @@ extracting an isolated quark.*
 
 *The strata $J^k / J^{k+1}$ index "confinement layers": deeper $k$ =
 more commutator load = harder to extract.  At $k = 0$ (the centre)
-elements are completely free; at $k \geq 1$ extraction requires
-energy proportional to $F$.  The chirality channel $D_q^2 = 0$
+elements carry no commutator load; at $k \geq 1$ they lie in the
+$k$-th commutator stratum.  The chirality channel $D_q^2 = 0$
 (q-Dirac cell scanner witness) supplies the persistent
-gauge-invariant background analogous to the gluon condensate, with
-$\mathrm{Vol}(B_3) = 8 G$ matching $\dim \mathfrak{su}(3) = 8$.*
+gauge-invariant background analogous to the gluon condensate.*
 
 **Predictive consequence.**
 
@@ -52,7 +66,7 @@ $\mathrm{Vol}(B_3) = 8 G$ matching $\dim \mathfrak{su}(3) = 8$.*
 ([unified mass formula](#prop:unified-curvature-rank-mass-formula))
 $\mathfrak{m}_{q,\mathcal{K}} = \sum_k \alpha_k \cdot
 \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1)$
-is — read through this proposition — literally a sum over confinement
+is, read through this proposition, a sum over confinement
 layers.  Term $k$ of the formula is the contribution of the
 curvature-rank-$k$ confinement stratum.  The rank-3 chirality residue
 ($\mathrm{Vol}(6_1) \cdot |(q;q)_3|$) and the rank-$\geq 4$ universal

@@ -55,6 +55,14 @@ seminormal-form eigenvalues for n ≤ 4.
    the C_n eigenvalue without the weight-vector hypothesis. What remains is a link between the two
    Hecke presentations: the new file here is stated on `HeckeGeneratorsBelow`, while the seminormal
    theorem is on `QOU.SchurWeyl.Hecke`. The eigenvalue itself no longer depends on an assumption.
+   **That link is now built (2026-11-21, PR #8820, issue #8815).**
+   `BraidKnot/HeckePresentationBridge.lean` maps the universal `QOU.SchurWeyl.Hecke K q q⁻¹ m` onto
+   any `HeckeGeneratorsBelow` family on m+1 strands and proves `toHeckeHom_contentCasimir`: the
+   content Casimir goes to `reebLaplacianB H (m+1)`. Consequences, all sorry-free: centrality on the
+   bounded presentation (`reebLaplacianB_comm_σ`); equality of the two elements on the universal
+   algebra (`reebLaplacianB_heckeBelow`); the eigenvalue Σ_{c∈μ}(q−q⁻¹)²[c][c+1] on every seminormal
+   block and Wedderburn factor (`seminormalRep_reebLaplacianB`, `heckeWedderburn_reebLaplacianB`).
+   Pure Hecke algebra: no number moves.
 2. **The geometric reading of Hₖ.** That Δ²_k is the holonomy of the Reeb (rotation) loop of the
    cluster of the first k+1 points needs Bridge A: the n-body base with ξ = Euler field (postulate P1
    in `qou-derivation-chain/bridge-a/a2-lagrangian-kz.md`, where "the loop of the rotation is the

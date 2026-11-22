@@ -12,6 +12,9 @@ export default proposition({
     "vershik-kerov1977",
     "biane1998",
     "feray-meliot2012",
+    "dolega-feray2014",
+    "dolega-sniady2018",
+    "biane2000",
   ],
   tags: [
     "causal-fermion-systems",

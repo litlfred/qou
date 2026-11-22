@@ -2,7 +2,7 @@ Particles in this framework are identified with their knots. The notation is $\m
 
 See [Table 1](#tbl:knot-notation-convention-table1-data).
 
-For amphichiral knots like $\mathfrak{K}_H$ and $\mathfrak{K}_\gamma$, the sign is trivial since $K \cong K^{\sigma}$; these are exactly the entries whose antiparticle column reads *(self)*. The cinquefoil $\mathfrak{K}_\mu = T_{2,5}$ is **not** among them: no nontrivial torus knot is amphichiral, which is why $\mu^-$ and $\mu^+$ carry distinct knots just as $e^-$ and $e^+$ do. 
+For amphichiral knots like $\mathfrak{K}_H$, the sign is trivial since $K \cong K^{\sigma}$; these are exactly the entries whose antiparticle column reads *(self)*. The cinquefoil $\mathfrak{K}_\mu = T_{2,5}$ is **not** among them: no nontrivial torus knot is amphichiral, which is why $\mu^-$ and $\mu^+$ carry distinct knots just as $e^-$ and $e^+$ do. 
 
 While the unknot $\mathfrak{K}_\nu$ is amphichiral unoriented, the left-handed neutrino $\nu_L$ and right-handed antineutrino $\nu_R^{\sigma}$ are distinguished by framing rather than knot type.
 

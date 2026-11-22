@@ -90,9 +90,14 @@ structure QDilogData (H : Type*) [Add H] where
 
     This is the precise content of "QOU axioms → dilogarithm naturally": the
     pentagon coherence does not merely constrain `Li₂^q` — being a solution of
-    the pentagon is *equivalent* to being a q-dilogarithm potential. Sorry-free;
-    the two directions are genuine (forward packages the witness, reverse reads
-    the `five_term` field), not a self-assuming projection. -/
+    the pentagon is *equivalent* to being a q-dilogarithm potential. Sorry-free.
+
+    Scope (2026-11-21): `QDilogData` is defined as the triple
+    `(args, eval, five_term)`, so this biconditional holds by definition: the
+    forward direction packages the witness and the reverse reads the
+    `five_term` field. It carries no content beyond that definition, and does
+    not by itself show that the monoidal axioms force `Li₂^q` (that needs the
+    categorical-to-scalar descent, which is not formalised). -/
 theorem pentagon_iff_isDilog {H : Type*} [Add H] (A : DilogArgs H) (f : H → H) :
     FiveTerm A f ↔ ∃ L : QDilogData H, L.args = A ∧ L.eval = f := by
   constructor

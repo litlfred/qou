@@ -18,6 +18,7 @@ Content block
 ## Manuscript statement
 
 For a Lie algebra $\mathfrak{g}$ over a commutative ring $R$ with unity,
+which is free as an $R$-module,
 the universal enveloping algebra
 $U\mathfrak{g} = T\mathfrak{g}/J$ (with
 $J = (xy - yx - [x,y]_{\mathfrak g})$) is isomorphic as an $R$-module to

@@ -72,6 +72,7 @@ if [ "${existing:-0}" -ge 2000 ]; then
   if [ "$q" -gt 0 ]; then
     echo "lean-cache-restore: $existing mathlib + $q QOU oleans already present — skipping."
     lean_mathlib_url_fix
+    "$(dirname "$0")/lake-restore-package-git.sh" || echo "lean-cache-restore: package git checkout incomplete; do not run lake on this tree (qou-r13s)." >&2
     exit 0
   fi
   echo "lean-cache-restore: $existing mathlib oleans present but 0 QOU oleans under folio/ — re-extracting."
@@ -114,6 +115,12 @@ else
   }
 fi
 lean_mathlib_url_fix
+# The tarball has no .git in .lake/packages/*, and Lake deletes a git package
+# directory whose remote it cannot read, restored oleans and all (bean
+# qou-r13s, measured 3915 -> 2).  Give each package a checkout at its manifest
+# rev.  Non-fatal: lean-direct needs only the oleans, and works without it.
+"$(dirname "$0")/lake-restore-package-git.sh" \
+  || echo "lean-cache-restore: package git checkout incomplete; do not run lake on this tree (qou-r13s)." >&2
 
 count=$(find "$REPO_ROOT/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
 q=$(qou_oleans)

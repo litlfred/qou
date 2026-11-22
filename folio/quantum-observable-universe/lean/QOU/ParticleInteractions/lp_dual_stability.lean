@@ -1,104 +1,131 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Defs
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Fintype.Fin
+import Mathlib.Tactic
+import QOU.Optimization.MatrixFarkasInstance
 
 /-!
 # QOU.ParticleInteractions.lp_dual_stability
 
-**Proposition** ([`prop:lp-dual-stability`](../../../quantum-observable-universe/particle-interactions/lp-dual-stability.md)):
+**Proposition** ([`prop:lp-dual-stability`](../../../quantum-observable-universe/nuclear-interactions/lp-dual-stability.md)):
 *LP dual stability of confined hadrons.*
 
-Let `x*` be a confined hadron (proton or neutron, built via
-`B₃ · Φ_quarks`).  Then
+Until 2026-11-21 the block claimed four things about the confined optimum `x*` of the
+operator-selection LP
 
-1. `x*` is LP-stable: `G x* ≥ 0` in all six channels;
+    min tᵀx   s.t.   Σⱼ xⱼ = n_target,   G x ≥ 0,   x ≥ 0 :
+
+1. `x*` is LP-stable: `G x* ≥ 0` in every channel;
 2. the dual shadow prices are bounded: `|y*ᵢ| ≤ κ(G) · ‖t‖`;
-3. the `B₃` sub-braid `σ₀σ₁⁻¹` is LP-unstable: the `σ₀` channel of
-   `G · x_partial` is strictly negative (partial confinement fails);
-4. strong duality: `tr_M(x*) = y₀* · n_target`.
+3. the `B₃` sub-braid `σ₀σ₁⁻¹` is LP-unstable;
+4. strong duality: `tᵀx* = y₀* · n_target`.
 
-## Disposition (integrity)
+## What is proved here (2026-11-21)
 
-The class carries only the **LP data** — the Gram matrix `G`, the cost
-vector `t` with its norm `‖t‖`, the condition number `κ(G)`, the
-candidate primal/partial points `x*`, `x_partial`, and the dual
-variables `y*`, `y₀*`.  It does **not** carry the four conclusions as
-fields (the previous version did, then projected them — the
-self-assuming projection forbidden by AGENTS.md §3b-cond item 5).
+Until this date the file's `LpDualStabilityContext` carried all four
+conclusions as fields and `lp_dual_stability` returned them
+(`⟨ctx.primal_stable, …⟩`), the self-assuming projection of AGENTS.md
+§3b-cond item 5, while this docstring claimed the opposite.
 
-`lp_dual_stability` states the genuine four-part conjunction over that
-data and ends in `sorry` (disposition B): the per-channel
-non-negativity, the condition-number shadow-price bound, the strict
-sub-braid instability, and strong duality all require the explicit
-`6 × 6` Gram-matrix entries at `q₀`, the LP strong-duality theorem,
-and a perturbation bound `|y*| ≤ κ(G)·‖t‖` for the dual solution — none
-yet available in the `QOU` library / Mathlib. -/
+The LP is now written out in standard form (`opSelA`, `opSelRhs`,
+`opSelCost`, with one slack per channel), and **claims 1 and 4 are
+derived** from primal optimality alone:
+
+* `stable_of_feasible` — any feasible point satisfies `G x ≥ 0`;
+* `count_of_feasible` — any feasible point has `Σ xⱼ = n_target`;
+* `lp_dual_stability` — at a primal optimum there is a dual optimum `l`
+  with `y₀ = l (Fin.last k)` and `tᵀx = n_target · y₀`, via the in-repo
+  unconditional `QOU.Optimization.lp_strong_duality_uncond`.
+
+**Claims 2 and 3 are not proved.** Claim 2 is not a consequence of LP
+duality: LP shadow prices are not bounded by the Gram condition number in
+general, so it is a property of the specific `6 × 6` Gram matrix at `q₀`.
+Claim 3 is a sign condition on one explicit vector, also specific to that
+matrix. Neither is stated as a hypothesis here.
+
+LaTeX label: `prop:lp-dual-stability`.
+-/
 
 namespace QOU.ParticleInteractions
 
-/-- Data of the confined-hadron LP-stability claim. All fields are
-    *inputs*; none asserts a conclusion. -/
-class LpDualStabilityContext where
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
-  /-- The number of LP channels (6 for the standard QOU `H₃(q)` NF basis). -/
-  channels : ℕ
-  /-- The Frobenius Gram matrix `G : Fin channels → Fin channels → ℝ`. -/
-  G : Fin channels → Fin channels → ℝ
-  /-- The condition number `κ(G)` of the Gram matrix (`≈ 7.0`). -/
-  κ_G : ℝ
-  /-- The dual shadow prices `y* : Fin channels → ℝ`. -/
-  y_star : Fin channels → ℝ
-  /-- The mass-coefficient (cost) vector `t : Fin channels → ℝ`. -/
-  t : Fin channels → ℝ
-  /-- The Euclidean norm `‖t‖`. -/
-  t_norm : ℝ
-  /-- The total Markov trace `tr_M(x*) : ℝ`. -/
-  tr_M_x_star : ℝ
-  /-- The net-constraint dual variable `y₀* : ℝ`. -/
-  y_0_star : ℝ
-  /-- The target nucleon count `n_target : ℕ`. -/
-  n_target : ℕ
-  /-- The confined primal solution `x* : Fin channels → ℝ`. -/
-  x_star : Fin channels → ℝ
-  /-- The partial-confinement primal vector `x_partial : Fin channels → ℝ`. -/
-  x_partial : Fin channels → ℝ
-  /-- The `σ₀` channel index. -/
-  σ_0_idx : Fin channels
-  /-- Primal stability holds in all channels. -/
-  primal_stable : ∀ i : Fin channels, 0 ≤ (Finset.univ.sum fun j => G i j * x_star j)
-  /-- Dual shadow prices are bounded. -/
-  dual_price_bound : ∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm
-  /-- Partial-confinement sub-braid is LP-unstable. -/
-  partial_unstable : (Finset.univ.sum fun j => G σ_0_idx j * x_partial j) < 0
-  /-- Strong duality holds.
-      (Still an assumption, but not for the reason once given here: finite LP strong
-      duality IS proved in-repo, unconditionally, as
-      `QOU.Optimization.lp_strong_duality_uncond` (via Farkas from
-      `QOU.Mathlib.isClosed_coneSpan`). It cannot discharge this field because the
-      carrier records the objective values as free reals with no feasibility or
-      optimality data; discharging it needs the carrier to carry `(A, a, c, x)` with
-      `PrimalOptimal`. Bean `qou-9h4t`.) -/
-  strong_duality : tr_M_x_star = y_0_star * (n_target : ℝ)
+open QOU.Optimization
 
-/-- **LP dual stability of confined hadrons** ([`prop:lp-dual-stability`]).
+/-- Constraint matrix of the operator-selection LP in standard form, over
+    `k` channel variables followed by `k` slacks. Row `castSucc i` reads
+    `Σⱼ G i j xⱼ − sᵢ = 0`; the last row reads `Σⱼ xⱼ = n_target`. -/
+def opSelA (k : ℕ) (G : Fin k → Fin k → ℝ) : Fin (k + 1) → Fin (k + k) → ℝ :=
+  Fin.lastCases
+    (fun col => Fin.addCases (fun _ => (1 : ℝ)) (fun _ => 0) col)
+    (fun i col => Fin.addCases (fun j => G i j) (fun i' => if i' = i then -1 else 0) col)
 
-The four-part claim: (i) primal stability `G x* ≥ 0`, (ii) bounded
-dual prices `|y*ᵢ| ≤ κ(G)·‖t‖`, (iii) the partial-confinement
-sub-braid is LP-unstable (`σ₀` channel of `G x_partial` is negative),
-(iv) strong duality `tr_M(x*) = y₀* · n_target`. -/
--- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality + dual sensitivity)
--- Ref: [leitner2026] quantum-observable-universe/particle-interactions/lp-dual-stability.md
-theorem lp_dual_stability [ctx : LpDualStabilityContext] :
-    (∀ i : Fin ctx.channels,
-      0 ≤ (Finset.univ.sum fun j : Fin ctx.channels =>
-        ctx.G i j * ctx.x_star j)) ∧
-    (∀ i : Fin ctx.channels, |ctx.y_star i| ≤ ctx.κ_G * ctx.t_norm) ∧
-    (Finset.univ.sum fun j : Fin ctx.channels =>
-      ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
-    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) :=
-  ⟨ctx.primal_stable, ctx.dual_price_bound, ctx.partial_unstable, ctx.strong_duality⟩
+/-- Right-hand side: `0` on the `G` rows, `n_target` on the count row. -/
+def opSelRhs (k n : ℕ) : Fin (k + 1) → ℝ :=
+  Fin.lastCases (n : ℝ) (fun _ => 0)
 
+/-- Cost: `t` on the channel variables, `0` on the slacks. -/
+def opSelCost (k : ℕ) (t : Fin k → ℝ) : Fin (k + k) → ℝ :=
+  Fin.addCases t (fun _ => 0)
 
+/-- The channel variables of a standard-form point. -/
+def chan {k : ℕ} (z : Fin (k + k) → ℝ) (j : Fin k) : ℝ := z (Fin.castAdd k j)
+
+/-- **LP stability is feasibility.** Every feasible point of the
+    operator-selection LP satisfies `G x ≥ 0` in every channel. -/
+theorem stable_of_feasible {k n : ℕ} {G : Fin k → Fin k → ℝ} {z : Fin (k + k) → ℝ}
+    (hz : PrimalFeasible (opSelA k G) (opSelRhs k n) z) (i : Fin k) :
+    0 ≤ ∑ j, G i j * chan z j := by
+  have h := hz.eq (Fin.castSucc i)
+  simp only [opSelA, opSelRhs, Fin.lastCases_castSucc, Fin.sum_univ_add,
+    Fin.addCases_left, Fin.addCases_right] at h
+  have hs : ∑ i' : Fin k, (if i' = i then (-1 : ℝ) else 0) * z (Fin.natAdd k i')
+      = - z (Fin.natAdd k i) := by
+    simp [ite_mul, Finset.sum_ite_eq']
+  rw [hs] at h
+  have := hz.nonneg (Fin.natAdd k i)
+  simp only [chan]
+  linarith
+
+/-- Every feasible point carries `n_target` in total. -/
+theorem count_of_feasible {k n : ℕ} {G : Fin k → Fin k → ℝ} {z : Fin (k + k) → ℝ}
+    (hz : PrimalFeasible (opSelA k G) (opSelRhs k n) z) :
+    ∑ j, chan z j = n := by
+  have h := hz.eq (Fin.last k)
+  simp only [opSelA, opSelRhs, Fin.lastCases_last, Fin.sum_univ_add,
+    Fin.addCases_left, Fin.addCases_right, one_mul, zero_mul,
+    Finset.sum_const_zero, add_zero] at h
+  simpa [chan] using h
+
+/-- The primal objective of the standard form is `tᵀx` on the channels. -/
+theorem primalObj_opSelCost {k : ℕ} (t : Fin k → ℝ) (z : Fin (k + k) → ℝ) :
+    primalObj (opSelCost k t) z = ∑ j, t j * chan z j := by
+  unfold primalObj opSelCost chan
+  rw [Fin.sum_univ_add]
+  simp only [Fin.addCases_left, Fin.addCases_right, zero_mul, Finset.sum_const_zero,
+    add_zero]
+
+/-- The dual objective collapses to `n_target · y₀`. -/
+theorem dualObj_opSelRhs (k n : ℕ) (l : Fin (k + 1) → ℝ) :
+    dualObj (opSelRhs k n) l = (n : ℝ) * l (Fin.last k) := by
+  simp [dualObj, opSelRhs, Fin.sum_univ_castSucc]
+
+/-- **LP dual stability of confined hadrons, claims 1 and 4**
+    ([`prop:lp-dual-stability`]). At a primal optimum `z` of the
+    operator-selection LP, (1) `G x ≥ 0` in every channel, the total is
+    `n_target`, and (4) there is a dual optimum `l` whose net-constraint price
+    `y₀ = l (Fin.last k)` satisfies `tᵀx = n_target · y₀`.
+
+    Derived, sorry-free: (1) from feasibility, (4) from the in-repo
+    unconditional LP strong duality. Claims 2 and 3 of the block are specific
+    to the Gram matrix at `q₀` and are not proved (see the module docstring). -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality)
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/lp-dual-stability.md
+theorem lp_dual_stability {k n : ℕ} (G : Fin k → Fin k → ℝ) (t : Fin k → ℝ)
+    (z : Fin (k + k) → ℝ)
+    (hz : PrimalOptimal (opSelA k G) (opSelRhs k n) (opSelCost k t) z) :
+    (∀ i, 0 ≤ ∑ j, G i j * chan z j) ∧
+    (∑ j, chan z j = n) ∧
+    ∃ l, DualOptimal (opSelA k G) (opSelRhs k n) (opSelCost k t) l ∧
+      ∑ j, t j * chan z j = (n : ℝ) * l (Fin.last k) := by
+  refine ⟨stable_of_feasible hz.1, count_of_feasible hz.1, ?_⟩
+  obtain ⟨l, hl, hobj⟩ := lp_strong_duality_uncond hz
+  refine ⟨l, hl, ?_⟩
+  rw [← primalObj_opSelCost, ← hobj, dualObj_opSelRhs]
 
 end QOU.ParticleInteractions

@@ -1,0 +1,30 @@
+{
+  "description": "Addendum 5: window for a non-product final-state trace",
+  "q0Anchor": "proton",
+  "eps_p": "0.408718179341128",
+  "eps_n": "0.331737644739763",
+  "product": "0.027744657280321",
+  "window": [
+    "0.331737644739763",
+    "0.408718179341128"
+  ],
+  "lift_needed_min": "0.303992987459442",
+  "lift_needed_max": "0.380973522060807",
+  "lift_min_over_product": "10.95681177",
+  "maps": {
+    "-log": {
+      "E(n)-E(p)_MeV": "0.88219731693",
+      "x_for_pair_eq_me": "0.362183294115485",
+      "x_in_window": true,
+      "Q_then_MeV": "0.37119836624",
+      "cross_term_needed": "0.334438636835164"
+    },
+    "1/x": {
+      "E(n)-E(p)_MeV": "2.40018168314",
+      "x_for_pair_eq_me": "0.389476485531027",
+      "x_in_window": true,
+      "Q_then_MeV": "1.88918273245",
+      "cross_term_needed": "0.361731828250706"
+    }
+  }
+}

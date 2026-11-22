@@ -44,6 +44,12 @@ Proved: `CoeffEq` is an equivalence; `FreeAlg` with its `AddCommGroup` and
 `Module k` structure; the two-sided ideal of a rewriting system as a `Submodule`;
 the quotient `QuotAlg`.
 
+**Proved downstream (2026-11-21)**: `NFBasis.normalFormBasis_of_isGrobnerShirshovBasis`
+(`NormalFormBasisProof.lean`) proves `NormalFormBasis` for a GS basis with unit
+leading coefficients over a commutative ring, from `Diamond.reductionUnique`. It
+lives in its own file because it imports `DiamondLemma`. What follows is the
+original note.
+
 **Stated, not proved**: `NormalFormBasis` — the property that the normal-form
 monomials form a `k`-basis of `QuotAlg`. It is a definition here, so that
 `composition_lemma`'s comment becomes something a theorem can conclude and a

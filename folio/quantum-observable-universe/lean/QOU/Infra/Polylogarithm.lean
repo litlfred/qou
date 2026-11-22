@@ -144,18 +144,14 @@ instance defaultTheoremB (zeta3 : ℝ) : TheoremB where
 
 /-! ## Sample downstream theorem using `[TheoremA]` -/
 
-/-- **Sample (`prop:cyclotomic-l-value-decomposition`-style)
-    downstream theorem.**
+/-- **The predicted closed-form value at `K = 4` is `β(3) = π³ / 32`.**
 
-    Given any instance of `TheoremA`, the predicted closed-form
-    value at `K = 4` equals `β(3) = π³ / 32`.  The proof goes
-    via the class's `value_at_4` field (which the default
-    instance satisfies by the verified `beta3_from_jonquiere`).
-    This demonstrates the conditional-class pattern:
-    downstream content is **fully verified** modulo a named
-    class instance. -/
-theorem beta3_via_class [h : TheoremA] :
+    Proved directly by `beta3_from_jonquiere`, so no `TheoremA` instance is
+    needed.  Until 2026-11-21 this took `[h : TheoremA]` and returned
+    `h.value_at_4`, a field projection (lean-self-assuming-audit); the
+    statement is now unconditional. -/
+theorem beta3_via_class :
     imLi3ZetaPredicted 4 = beta3 :=
-  h.value_at_4
+  beta3_from_jonquiere
 
 end QOU.Infra.Polylogarithm

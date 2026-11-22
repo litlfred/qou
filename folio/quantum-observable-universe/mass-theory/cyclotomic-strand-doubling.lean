@@ -31,7 +31,7 @@ was wrong.
 
 ## References
 
--- Ref: [habiro2000] https://doi.org/10.2140/gt.2000.4.227
+-- Ref: [habiro2000] RIMS Kōkyūroku 1172 (2000), 34–43 (unrefereed; no DOI)
 -- Ref: [washington1997] Lawrence Washington, "Introduction to
 --      Cyclotomic Fields", Springer GTM 83, 1997. Chapter 2.
 -/

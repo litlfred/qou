@@ -63,7 +63,7 @@ convention D, which is what the producer uses and what the owner ruling of
 2026-08-15 makes canonical. Scope-(a) per AGENTS.md: this construction, as it
 stands, has no axial pairing -- not "the axial coupling cannot exist".
 
-Upstream premise note: `prop:confinement-frobenius-reciprocity`'s proof opens
+Upstream premise note: `conj:confinement-frobenius-reciprocity`'s proof opens
 "The Markov trace tr_M is a non-degenerate Frobenius form on H_n(q)", which is
 the hypothesis the master formula needs and which convention D makes false at
 n=3. That is a content-level issue, recorded on `qou-cnbm`, not patched here.

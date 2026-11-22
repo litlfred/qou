@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:markov-trace-frobenius-selection",
   title: "Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy",
-  cites: ["jones1987", "wenzl1988", "yekutieli2015"],
+  cites: ["jones1987", "wenzl1988", "yekutieli2015", "kimlee2018", "webster-williamson-2014-markov"],
   uses: [
     "lem:feynman-eigenbasis-decomposition",
     "prop:convention-d-kills-antisymmetriser",

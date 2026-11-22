@@ -17,6 +17,16 @@ export default proposition({
   uses: ["thm:parity-regime-selection"],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-21",
+      body:
+        "**The offset is a per-case choice, not derived.** δ_A = 1 for A = 1 and even A, 0 for odd A ≥ 3, is chosen so the character sum matches observed Q-values. " +
+        "Under AGENTS.md §NO FITTING a formula that branches on A with a different term per branch is a fit. " +
+        "It is also not on the ruled β-decay route: Q_β is derived from γγ pair production (owner ruling 2026-11-20), " +
+        "and all β-decay routes use the two-term Lagrangian trace (2026-11-21), `docs/coordination/owner-rulings.md`. " +
+        "The statement records the offset as used; it is not evidence for the framework.",
+    },
+    {
       kind: "note",
       date: "2026-09-03",
       body:

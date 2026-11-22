@@ -18,6 +18,10 @@ export default proposition({
     "kashaev1997",
     "murakami-murakami2001",
     "champanerkar2003",
+    "arxiv-hep-th-0306165v1",
+    "dimofte-gukov2010",
+    "hikami2006",
+    "takata2004",
   ],
   tags: [
     "aj-conjecture",

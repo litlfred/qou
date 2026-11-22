@@ -44,6 +44,10 @@
 
   -- Ref: [dimofte-garoufalidis-2013] arXiv:1202.6268, Defn 1.2, Defn 2.1, Sec 1.9
   -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds, Topology 24
+  -- Ref: [porti2015] §5.1, prop:change (change-of-curve law: the ratio of the
+  --      torsions for two peripheral curves is ± the Jacobian of the change of
+  --      local parameter; the cusp-shape form at the holonomy is the corollary
+  --      that follows it)
 -/
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
