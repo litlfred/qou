@@ -54,3 +54,14 @@ Two corrections and one extension.
   the third photon to be γ₁(0, −1/h, z), h = q − q⁻¹, and leaves the three-strand condition
   γ₀γ₀ ∝ V₀²σ₁(zσ₁ − h⁻¹)⁻¹. Real solutions are searched for with mpmath at 40 digits,
   at q = 2 and q = 11/10, and are accepted only if the exact residual is below 10⁻³⁰.
+
+## Addendum 2 (owner "All", 2026-11-22; written before the runs below)
+
+* Generic q: repeat the two-photon test (all 3-vertex matches and all 5-vertex footprint
+  matches, every ordered pair (i, j)) with q a symbol, computing the Gröbner basis over the
+  fraction field ℚ(q). A basis equal to [1] means no solution for generic q. Finitely many
+  special q may still be excluded; this test does not identify them.
+* z_D comparison (owner approval: "All" on an option that said the Q_β number needs the
+  owner's OK as a comparison): the convention-D Markov trace, z_D = q³/(q²+1), of the
+  two-photon pair word σ₀²σ₁⁻¹σ₄⁻¹ and of its two photon factors, exactly in ℚ(q) and at the
+  proton q₀. Any MeV figure is reported as a comparison only and is not proposed as Q_β.
