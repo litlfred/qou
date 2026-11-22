@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-22T22:10:00Z
+updated_at: 2026-11-22T21:18:00Z
 parent: qou-ncxf
 ---
 

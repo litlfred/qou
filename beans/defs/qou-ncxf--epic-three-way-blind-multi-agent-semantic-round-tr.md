@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-22T22:10:00Z
+updated_at: 2026-11-22T21:18:00Z
 ---
 
 End-to-end blind multi-agent round-trip audit architecture across all 741 provable claims (and definitions/conjectures) in QOU, using strictly isolated, tool-free blind agents at every leg plus deterministic comment/spoiler scrubbing (`folio/pipeline/roundtrip-blind-packets.ts`).
