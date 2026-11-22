@@ -1,0 +1,134 @@
+
+========== q = 111/100 ==========
+coproduct op=False: commutes with Ř on sites 0,1: True
+coproduct op=True: commutes with Ř on sites 0,1: False
+  C_AB central (op=False): True
+  C_AB central (op=True): True
+
+-- X = G-sl2: O2 isospin, κ_W=1/2
+   pp=0.5 pn=-0.5 np=-0.5 nn=0.5  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 2
+
+-- X = G-cartan: O2 isospin, κ_W=1
+   pp=1 pn=-1 np=-1 nn=1  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 4
+
+-- X = G-gl2: O2 isospin, κ_W=1/2
+   pp=5 pn=4 np=4 nn=5  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 2
+
+-- X = QQ: O1 Coulomb, κ=1
+   pp=1 pn=0 np=0 nn=0  (display only)
+   exact: pp-nn = 1;  pp-pn-np+nn = 1
+
+-- X = G-q(op=False): O4 (not affine-bilinear in Q)
+   pp=-45.47180561 pn=-46.79436441 np=-46.16014771 nn=-45.47180561  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 22321/11100
+
+-- X = G-q(op=True): O4 (not affine-bilinear in Q)
+   pp=-45.47180684 pn=-46.16016627 np=-46.79434769 nn=-45.47180622  (display only)
+   exact: pp-nn = -4763257749362942759883501805081/7659226744384534349831310102849000000;  pp-pn-np+nn = 22321/11100
+
+-- X = M: O4 (not affine-bilinear in Q)
+   pp=3.045970016 pn=2.373126078 np=2.729215017 nn=3.045970016  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 3103781930784534142111119500727510463253645483478655363377208983995841/3136403865876557982666713810442150683856716508624100000000000000000000
+
+========== q = 7/5 ==========
+coproduct op=False: commutes with Ř on sites 0,1: True
+coproduct op=True: commutes with Ř on sites 0,1: False
+  C_AB central (op=False): True
+  C_AB central (op=True): True
+
+-- X = G-sl2: O2 isospin, κ_W=1/2
+   pp=0.5 pn=-0.5 np=-0.5 nn=0.5  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 2
+
+-- X = G-cartan: O2 isospin, κ_W=1
+   pp=1 pn=-1 np=-1 nn=1  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 4
+
+-- X = G-gl2: O2 isospin, κ_W=1/2
+   pp=5 pn=4 np=4 nn=5  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 2
+
+-- X = QQ: O1 Coulomb, κ=1
+   pp=1 pn=0 np=0 nn=0  (display only)
+   exact: pp-nn = 1;  pp-pn-np+nn = 1
+
+-- X = G-q(op=False): O4 (not affine-bilinear in Q)
+   pp=-3.718506095 pn=-6.184255237 np=-3.367042668 nn=-3.718506095  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 74/35
+
+-- X = G-q(op=True): O4 (not affine-bilinear in Q)
+   pp=-3.742292854 pn=-3.487544579 np=-6.098182444 nn=-3.729148454  (display only)
+   exact: pp-nn = -771036807168/58658961039875;  pp-pn-np+nn = 74/35
+
+-- X = M: O4 (not affine-bilinear in Q)
+   pp=56.47284868 pn=19.12126141 np=78.00550563 nn=56.47284868  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 289159605493786474161271536/18279339976739991103515625
+
+========== q = 2 ==========
+coproduct op=False: commutes with Ř on sites 0,1: True
+coproduct op=True: commutes with Ř on sites 0,1: False
+  C_AB central (op=False): True
+  C_AB central (op=True): True
+
+-- X = G-sl2: O2 isospin, κ_W=1/2
+   pp=0.5 pn=-0.5 np=-0.5 nn=0.5  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 2
+
+-- X = G-cartan: O2 isospin, κ_W=1
+   pp=1 pn=-1 np=-1 nn=1  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 4
+
+-- X = G-gl2: O2 isospin, κ_W=1/2
+   pp=5 pn=4 np=4 nn=5  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 2
+
+-- X = QQ: O1 Coulomb, κ=1
+   pp=1 pn=0 np=0 nn=0  (display only)
+   exact: pp-nn = 1;  pp-pn-np+nn = 1
+
+-- X = G-q(op=False): O4 (not affine-bilinear in Q)
+   pp=-0.2779986746 pn=-1.944002651 np=-1.111994698 nn=-0.2779986746  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 5/2
+
+-- X = G-q(op=True): O4 (not affine-bilinear in Q)
+   pp=1.231693174 pn=2.873591783 np=-3.936795891 nn=0.205102717  (display only)
+   exact: pp-nn = 4131/4024;  pp-pn-np+nn = 5/2
+
+-- X = M: O4 (not affine-bilinear in Q)
+   pp=924.3031829 pn=257.7848535 np=704.4467193 nn=924.3031829  (display only)
+   exact: pp-nn = 0;  pp-pn-np+nn = 224260800/253009
+
+========== proton q0 (exact rational of the 50-digit pin) ==========
+coproduct op=False: commutes with Ř on sites 0,1: True
+coproduct op=True: commutes with Ř on sites 0,1: False
+
+-- X = G-sl2: O2 isospin, κ_W=1/2
+   pp=0.5 pn=-0.5 np=-0.5 nn=0.5  (display only)
+   exact: pp-nn == 0: True;  pp-pn-np+nn == q+1/q: False
+
+-- X = G-cartan: O2 isospin, κ_W=1
+   pp=1 pn=-1 np=-1 nn=1  (display only)
+   exact: pp-nn == 0: True;  pp-pn-np+nn == q+1/q: False
+
+-- X = G-gl2: O2 isospin, κ_W=1/2
+   pp=5 pn=4 np=4 nn=5  (display only)
+   exact: pp-nn == 0: True;  pp-pn-np+nn == q+1/q: False
+
+-- X = QQ: O1 Coulomb, κ=1
+   pp=1 pn=0 np=0 nn=0  (display only)
+   exact: pp-nn == 0: False;  pp-pn-np+nn == q+1/q: False
+
+-- X = G-q(op=False): O4 (not affine-bilinear in Q)
+   pp=-45.48879442 pn=-46.81129092 np=-46.17719479 nn=-45.48879442  (display only)
+   exact: pp-nn == 0: True;  pp-pn-np+nn == q+1/q: True
+
+-- X = G-q(op=True): O4 (not affine-bilinear in Q)
+   pp=-45.48879565 pn=-46.17721333 np=-46.81127423 nn=-45.48879503  (display only)
+   exact: pp-nn == 0: False;  pp-pn-np+nn == q+1/q: True
+
+-- X = M: O4 (not affine-bilinear in Q)
+   pp=3.045311581 pn=2.372738704 np=2.728628173 nn=3.045311581  (display only)
+   exact: pp-nn == 0: True;  pp-pn-np+nn == q+1/q: False

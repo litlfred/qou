@@ -536,3 +536,71 @@ supply one either. The length in E_C is λ̄_π, which comes from the CAL-3 cali
 **Scope.** Scope-(a) negatives. A and C are computed at n = 6 and n ≤ 9 at two rational q, not proved for
 all q or all n. The α + β = 1 identity is measured exactly at two q and is not proved. Tower status:
 A covers every element at n = 6 (all orders in φ there). The tower in n is open.
+
+## §28 Gaudin / KZ coupling on the surface: isospin, not Coulomb; what Coulomb needs (2026-11-22, owner: "Yes, go ahead" on the Bring-surface test)
+
+Pre-registration: `computations/probes/np_splitting/np_gaudin_pair_charge_preregistration.md`
+(commit `a608acfa1dd`, before the probe). Probe and output:
+`np_gaudin_pair_charge_probe.py`, `.out.txt`. Lean:
+`QOU/QBeta/WeylSymmetricPairNotCoulomb.lean` (sorry-free, lean-direct exit 0, axioms
+`propext`, `Classical.choice`, `Quot.sound`).
+
+**Set-up.** The two blocks sit at points z_A, z_B of a local chart of Bring's surface. The KZ
+connection is ħ·Ω_AB·d log(z_A − z_B) and the Gaudin term is Ω_AB/(z_A − z_B). Their coordinate
+dependence is the two-dimensional Coulomb law: on a surface the potential is log|z|, and 1/|z|
+needs three dimensions. So the only question is whether the **charge factor** Ω_AB reads Q_A·Q_B.
+Readout as §26: ΔE_X = T_X/T_1, sector projectors, V = σ₀σ₁⁻¹ on each block, K = diag(q, q⁻¹).
+Exact Fractions at q = 111/100, 7/5, 2 and at the proton q₀ (exact rational of the 50-digit pin).
+
+| X | all 16 sectors | nucleons pp, pn, np, nn | as registered |
+|---|---|---|---|
+| G-sl2: Σ(½h_ih_j + e_if_j + f_ie_j) | O2 isospin, κ_W = ½, every q | ½, −½, −½, ½ | yes (1) |
+| G-gl2: Σ P_ij | O2 isospin (+ constant 9/2) | 5, 4, 4, 5 | yes (1) |
+| G-cartan: Σ h_ih_j (trigonometric diagonal) | O2 isospin | 1, −1, −1, 1 | yes (1) |
+| G-q: U_q pair Casimir, coproduct compatible with Ř | O4 | **pp = nn exactly**, pn ≠ np, pp − pn − np + nn = q + q⁻¹ | yes (3): not O1 |
+| G-q, opposite coproduct (control; does not commute with Ř) | O4 | pp ≠ nn | control |
+| M: KZ monodromy β_AB² in H_6(q) | O4 | pp = nn exactly | yes (4) |
+| QQ: Σ q_iq_j, q = diag(2/3, −1/3) | O1 Coulomb, κ = 1 | 1, 0, 0, 0 | yes (5): the readout sees Coulomb when it is put in |
+
+Which coproduct commutes with the Jimbo Ř is decided by the probe, not assumed:
+Δe = e⊗K + 1⊗e, Δf = f⊗1 + K⁻¹⊗f does; its opposite does not. The q-Casimir is central for both.
+
+**Why every invariant coupling fails (proved).** e and f change the weight, so they have zero trace
+against the sector projectors; the Cartan part of any gl(2)-invariant symmetric form
+a·tr(XY) + b·tr X·tr Y, summed over strand pairs, is a(n_An_B + d_Ad_B) + 9b with d = 3 − n. It is
+symmetric under the Weyl reflection u ↔ d, which swaps the proton and neutron blocks, so pp = nn
+(`invCartan_pp_eq_nn`). A Coulomb shape c + κQ_AQ_B with pp = nn has κ = 0
+(`coulomb_kappa_zero_of_pp_eq_nn`, `invCartan_not_coulomb`). The u(1) of gl(2) is the identity on
+V: it is baryon number and adds the same constant for p and n. The q-deformed Casimir is not Weyl
+symmetric in its coproduct, yet the Ř-compatible one still gives pp = nn at all four q measured, and
+its interaction is the q-number [2]_q = q + q⁻¹ where the classical one gives 2. That is a q-deformed
+isospin coupling with an ordering asymmetry pn ≠ np. pp = nn for G-q and M is measured exactly at four
+q, not proved for all q.
+
+**What Coulomb needs.** The Coulomb operator is Q⊗Q with strand charge Q = T₃ + B/2, B = 1/3 per
+strand: u ↦ 2/3, d ↦ −1/3, block charge n − 1 (`blockCharge_eq`). Written in gl(2),
+Q = ½h + ⅙·1, so Q⊗Q contains the cross term (h⊗1 + 1⊗h)/12, which no invariant form has, and it
+gives pp ≠ nn (`coulombPair_pp_ne_nn`). So the missing ingredient is exactly the Gell-Mann–Nishijima
+mixing of T₃ with baryon number: a choice of which U(1) is gauged. That is electroweak symmetry
+breaking to U(1)_em. The braid, the Hecke algebra, the Markov trace and the KZ/Gaudin coupling all
+respect the Weyl reflection on the nucleon sectors, so none of them makes that choice.
+
+**The helon ribbon twist (Gresnigt, Bilson-Thompson; prior-art review on PR #9095).** In the helon
+model, electric charge is the number of ribbon twists (B₂ ≅ ℤ), assigned to the strands so the
+charges come out right. In a ribbon category the twist on a simple object is a scalar, θ_V = q^{C(V)}.
+Here u and d are two basis vectors of the one object V, so the twist cannot tell them apart. For twist
+to carry charge, u and d must be different simple objects, i.e. V must be tensored with U(1) lines
+L_k whose label is the electric charge. The double braiding of two U(1) lines is q^{2k_Ak_B}. Its log
+is exactly κ·k_A·k_B: a Coulomb charge factor with its zero at charge 0. So the helon twist does
+supply the U(1) charge factor, but only by attaching the charge label by hand, which is the same
+Gell-Mann–Nishijima input. It is a carrier for the missing ingredient, not a derivation of it. Not
+computed beyond this argument.
+
+**Scope.** Scope-(b) for the invariant classical forms (proved in Lean from the weight argument, with
+the off-diagonal zero trace measured exactly in the probe rather than proved in Lean). Scope-(a) for
+G-q and M (exact at four q, not all q). Tower status: n = 6 only; the tower in n is open. No empirical
+input, no fit.
+
+**Owner decision this raises (not taken).** Whether the model adds a U(1)_em grading (strand charge
+T₃ + B/2) as an explicit structural input, or looks for a mechanism inside the corpus that breaks
+the Weyl reflection. The default, if nothing is decided, is that E_C stays an import (§25).
