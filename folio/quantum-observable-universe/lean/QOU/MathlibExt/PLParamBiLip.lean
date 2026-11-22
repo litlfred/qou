@@ -21,6 +21,7 @@ some `c > 0` has
 * `exists_pos_forall_le_of_finite` — a finite family of positive reals has a positive lower bound.
 * `Polygon.IsSimple.not_sameRay` — at each vertex the two incident edges do not point the same
   way.
+* `Polygon.IsSimple.exists_param_sep` — times `γ ≤ t - s ≤ 1 - γ` give points `c γ` apart.
 * `Polygon.IsSimple.exists_param_lower` — **the lower bound above.** The proof splits on the
   pieces containing `s` and `t`: the same piece (the edge length), consecutive pieces (the angle
   bound `exists_pos_mul_le_norm_smul_sub` at the shared vertex), and non-consecutive pieces
@@ -245,6 +246,44 @@ theorem IsSimple.exists_param_lower (hQ : Q.IsSimple) :
     rwa [abs_of_nonneg (by linarith), sub_sub_cancel, min_comm]
   · simp only [sub_self, abs_zero, sub_zero]
     rw [min_eq_left zero_le_one, mul_zero]; exact norm_nonneg _
+
+lemma param_fract (x : ℝ) : Q.param (Int.fract x) = Q.param x := by
+  simp [param, Int.fract_fract]
+
+lemma param_sub_int (x : ℝ) (k : ℤ) : Q.param (x - k) = Q.param x := by
+  simp [param, Int.fract_sub_intCast]
+
+/-- **Separation in time gives separation in space.** Two times whose difference lies in
+`[γ, 1 - γ]` (with `0 ≤ γ`) are sent at least `c * γ` apart. -/
+theorem IsSimple.exists_param_sep (hQ : Q.IsSimple) :
+    ∃ c > 0, ∀ γ s t : ℝ, 0 ≤ γ → γ ≤ t - s → t - s ≤ 1 - γ → c * γ ≤ ‖Q.param s - Q.param t‖ := by
+  obtain ⟨c, hc0, hc⟩ := hQ.exists_param_lower
+  refine ⟨c, hc0, fun γ s t hγ h1 h2 => ?_⟩
+  have key : ∀ z : ℝ, γ ≤ z → z ≤ 1 - γ → γ ≤ min |z| (1 - |z|) := by
+    intro z hz1 hz2
+    rcases le_total 0 z with hz | hz
+    · rw [abs_of_nonneg hz]; exact le_min hz1 (by linarith)
+    · rw [abs_of_nonpos hz]; exact le_min (by linarith) (by linarith)
+  set s' := Int.fract s
+  set t' := t - ⌊s⌋
+  have hs0 : 0 ≤ s' := Int.fract_nonneg s
+  have hs1 : s' < 1 := Int.fract_lt_one s
+  have hts : t' - s' = t - s := by simp only [t', s', Int.fract]; ring
+  have hps : Q.param s = Q.param s' := (Q.param_fract s).symm
+  have hpt : Q.param t = Q.param t' := (Q.param_sub_int t ⌊s⌋).symm
+  rw [hps, hpt]
+  rcases lt_or_ge t' 1 with ht | ht
+  · have h := hc s' t' hs0 hs1.le (by linarith) ht.le
+    refine le_trans ?_ h
+    refine mul_le_mul_of_nonneg_left ?_ hc0.le
+    rw [abs_sub_comm]; exact key _ (by linarith) (by linarith)
+  · have hpt' : Q.param t' = Q.param (t' - 1) := by
+      have := Q.param_sub_int t' 1; push_cast at this; exact this.symm
+    rw [hpt']
+    have h := hc s' (t' - 1) hs0 hs1.le (by linarith) (by linarith)
+    refine le_trans ?_ h
+    refine mul_le_mul_of_nonneg_left ?_ hc0.le
+    exact key _ (by linarith) (by linarith)
 
 end Polygon
 
