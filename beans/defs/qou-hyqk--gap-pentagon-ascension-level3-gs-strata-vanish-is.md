@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:15Z
-updated_at: 2026-11-22T15:25:39Z
+updated_at: 2026-11-22T15:30:01Z
 parent: qou-uwyf
 ---
 
@@ -24,3 +24,5 @@ Follow-up to qou-02q4 (PR #9001, merged). Owner 2026-11-22: 'Fill the gaps ... M
 2026-11-22 owner 'Both': #9018 merged. J fixed as I^(k+1) in the jet module, first order J1(S)=(S⊗S)/I^2 (stratification_in_first_jet), PR #9025. Still hypotheses: residual in I^2 (ascension), strata as elements of S⊗S. Stays open.
 
 2026-11-22 #9025 merged; #9027 merged: scalar strata (algebraMap of ground-ring values) lie in I only if zero when R->S injective, so for scalar strata residual-in-I^(k+1) <=> residual=0 (scalar_regrouping_iff). Next real step: define non-scalar strata (jets of V_S in S⊗S, not its Frobenius norm). Stays open.
+
+2026-11-22 owner ruling (via coordinator): jet object switches from (S⊗S)/I^2 to Sym_A(Ω¹_A), PR #9030 on the descent thread. To align after #9030 lands: residual subgroup becomes the degree >= k+1 part Sym^{>=k+1}; scalar result transfers (scalars sit in Sym^0, a direct summand). For smooth A, gr_I(S⊗S) ≅ Sym(Ω¹) so the I-adic and degree filtrations correspond.
