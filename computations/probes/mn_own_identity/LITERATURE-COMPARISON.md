@@ -1443,3 +1443,32 @@ What the table shows:
   capture, too, ties the asymmetry to placement and does not fix the label.
 - The capture puts a charge share on the electron strand at O(h) (−0.336 under O₊, left). In the
   6-strand bond words it was O(h³).
+
+## §44 Electromagnetic scale from corpus multipliers (sibling agent, pre-registered be98c91fbf6)
+
+`PREREGISTRATION-em-scale-derivation.md`, `mn_em_scale_derivation_probe.py` (f3cd246da5b). Honesty
+clause as written there: the target −1.00 MeV and EM-2 = −0.764 MeV were known in advance.
+Corpus surfaces excluded as not derived: the Breit–Wheeler threshold (φ-dependent, its weights are
+called fits), the γγ atom (φ not derived, no energy unit), φ₀₁ (no value), the pion Compton length
+(from an empirical r₀, bean `qou-bn8e`), E₀ (already recorded as a selection).
+
+- **C1, Coulomb channel of the crossing energy** (`def:coulomb-charge`). Both nucleons carry V³ with
+  n₊ = n₋ = 3: Δ = 0 exactly, at every q. A word-level channel cannot see the weight block. Derived,
+  structural zero.
+- **C2, tanh(ln q) × the 𝒟² arm.** +0.0178 MeV at q₀ (neutron heavier, wrong sign for QED), → 0 as
+  q → 1. Moving the tanh mechanism from an inter-nucleon bond to n − p is a choice: selected.
+- **C3, α·S as a degree-0 insertion on the canonical nucleon functional.** By
+  `scalar_insertion_shift` (sorry-free), a scalar insertion (1 + a) on the F_Bor term shifts the
+  mass by a·M_QCD, M_QCD = 2m_μ|tr_M(β_Bor)|[3]_q!/q³ = 944.404 MeV at q₀. New exact fact: QPair
+  is constant on each weight block (−1/3 on W_n, 0 on W_p, with charges ⅔, −⅓), so the per-block
+  relative insertion is a_n = −α/3, a_p = 0 at every q, and the braid drops out.
+  E_C3 = −(α/3)·M_QCD = **−2.3008 MeV** at q₀ (QED sign, 2.3× the lattice −1.00). As q → 1,
+  E_C3/M_QCD → −1/270; it diverges with M_QCD. The sector-share normalisation gives −0.7633 MeV
+  instead. Two links are choices: the per-block relative normalisation, and the proton's M_QCD used
+  for the neutron.
+
+Verdict: not found in the searched class as a full derivation. What is new is the location of the
+3000× gap of EM-1: it is the ratio between m_e and the QCD multiplier M_QCD, which the corpus
+(`scalar_insertion_shift`) already makes the scale of any degree-0 insertion. The value then
+depends on a normalisation the corpus does not fix (−2.30 or −0.76 MeV, either side of the
+target); picking one by closeness is forbidden, so neither is adopted.
