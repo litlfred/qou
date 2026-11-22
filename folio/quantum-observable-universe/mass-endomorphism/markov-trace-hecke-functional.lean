@@ -490,6 +490,20 @@ theorem towerTr_disjoint (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)
   | add a b _ _ ha hb => rw [add_mul, map_add, map_add, ha, hb, add_mul]
   | smul r a _ ha => rw [smul_mul_assoc, map_smul, map_smul, ha, smul_eq_mul, smul_eq_mul]; ring
 
+/-- **Shift invariance**: raising every generator index by `m` does not change the trace.
+    This is the hypothesis the split form of the product law needs. -/
+theorem towerTr_shift (m : ℕ) (Y : HeckeTower R h) :
+    towerTr z h (shift h m Y) = towerTr z h Y := by
+  have := towerTr_disjoint z h m (Subalgebra.one_mem (twH h m)) Y
+  rwa [one_mul, towerTr_one, one_mul] at this
+
+/-- **The split product law**: clusters on disjoint strands, separated by the unused
+    generator `σ_m`, `tr(x · y↑ᵐ⁺¹) = tr x · tr y` for `x ∈ H_m`. -/
+theorem towerTr_split (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m) (Y : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y) = towerTr z h X * towerTr z h Y := by
+  have hX1 : X ∈ twH h (m + 1) := twH_mono h (Nat.le_succ m) hX
+  exact towerTr_disjoint z h (m + 1) hX1 Y
+
 /-- **The connected-sum rule**: one crossing `σ_m` joining a cluster on `σ_0, …, σ_{m-1}`
     to a cluster shifted above it, `tr(x · σ_m · y↑ᵐ⁺¹) = z · tr x · tr y`. -/
 theorem towerTr_connectedSum (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)

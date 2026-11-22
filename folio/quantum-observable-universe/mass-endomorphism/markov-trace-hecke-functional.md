@@ -4,7 +4,7 @@
 
 1. *$\mathrm{tr}_M(1) = 1$ and $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$;*
 2. *$\mathrm{tr}_M(x\,\sigma_m) = z\,\mathrm{tr}_M(x)$ for $x \in H_m$;*
-3. *$\mathrm{tr}_M(x\,y^{\uparrow m}) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$ and any $y$;*
+3. *$\mathrm{tr}_M(x\,y^{\uparrow m}) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$ and any $y$;* *in particular $\mathrm{tr}_M(y^{\uparrow m}) = \mathrm{tr}_M(y)$, and $\mathrm{tr}_M(x\,y^{\uparrow (m+1)}) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$;*
 4. *(connected-sum rule) $\mathrm{tr}_M(x\,\sigma_m\,y^{\uparrow (m+1)}) = z\,\mathrm{tr}_M(x)\,\mathrm{tr}_M(y)$ for $x \in H_m$ and any $y$;*
 5. *for an interface letter $a + b\,\sigma_m$ with $a, b \in R$,*
 $$
@@ -15,7 +15,7 @@ $$
 
 ## Proof
 
-The word trace satisfies the Hecke, braid and far-commutation relations inside any two-sided context of words. Extended linearly to the free algebra, it therefore vanishes on the two-sided ideal of the defining relations and descends to $H_\infty$. Cyclicity passes from words to the algebra by linearity. Every element of $H_m$ is a linear combination of words in $\sigma_0, \ldots, \sigma_{m-1}$, so the Markov property and the shared-strand product law of the reducer extend linearly to (2) and (3). Then (4) is (3) applied to $x\,\sigma_m \in H_{m+1}$, followed by (2). For (5), expand the interface letter and apply (3) and (4).
+The word trace satisfies the Hecke, braid and far-commutation relations inside any two-sided context of words. Extended linearly to the free algebra, it therefore vanishes on the two-sided ideal of the defining relations and descends to $H_\infty$. Cyclicity passes from words to the algebra by linearity. Every element of $H_m$ is a linear combination of words in $\sigma_0, \ldots, \sigma_{m-1}$, so the Markov property and the shared-strand product law of the reducer extend linearly to (2) and (3). Shift invariance is (3) with $x = 1$; the split form is (3) for $x \in H_m \subset H_{m+1}$. Then (4) is (3) applied to $x\,\sigma_m \in H_{m+1}$, followed by (2). For (5), expand the interface letter and apply (3) and (4).
 
 For $H_n(q)$, $(s\sigma)^2 = q(h\sigma + 1) = (q-1)(s\sigma) + q$, because $q h = s(sh) = s(q-1)$. The braid and far-commutation relations are homogeneous, so the rescaling respects them. The knot-factor statement is the general result for any trace on a split semisimple algebra whose pairing trace has nonzero block weights, applied to this trace.
 
