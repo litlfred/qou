@@ -82,9 +82,9 @@ The same ratio 2ℏ_q ln q comes out if CAL-1 is instead read as the electron's 
 reading has the pole.
 
 **So the unit map that keeps m_p = m_n at q = 1 is: compare masses with masses, converting
-the cell energy by `def:mass-energy`.** Nothing is fitted. **Correction (§5): this is derived only
-under one reading of `c_q²`, and that reading conflicts with the CAL-2 pin. It is an owner decision,
-not a derivation.**
+the cell energy by `def:mass-energy`.** Nothing is fitted. **Superseded (§5 resolution): dividing by c_q² used the wrong unit. The consistent unit is
+m_e/ℏ_q² (`E0MuonUnit.lean`), under which the cell weight 2ℏ_q ln q/q² vanishes at q = 1 with no
+change to the MeV value.**
 
 The cost, at the comparison boundary only (proton q₀ = 1.10997858275138, Part B):
 
@@ -125,6 +125,22 @@ from a factor c_q² ≈ 82.68 that mixes two kinds of quantity.
 
 ## 5. The pole audit: which MeV comparisons mix energy and mass (owner: "Also investigate the pole")
 
+> **Resolution (2026-11-22, after PR #8955 merged `QOU/QBeta/E0MuonUnit.lean`). The −99 % column below
+> is withdrawn.** E₀'s c_q² is the same c_q² the muon pin puts into every model mass: 1/ℏ_q² = q²c_q²
+> (`one_div_hbar_sq`) and E₀ = m_μ·ℏ_q/(q²·Vol(4₁)) (`E0_eq_muon_fraction`, `E0_eq_model_mass`). So the
+> model's MeV unit is U = m_e/ℏ_q² = 52.0514663819 MeV at q₀. Dividing an E₀ figure by c_q² measured it
+> against the electron's own 𝔈 in place of that unit, which was the wrong unit. No comparison is
+> mixed, and none of the E₀ rows moves. In units of U the n–p cell is
+>
+>   2E₀ ln q / U = **2ℏ_q ln q / q²** (= 0.0167821712259 at q₀, ×U = 0.8735366 MeV, as before),
+>
+> which tends to 0 at q = 1, because ℏ_q → 0 and ln q → 0. Nucleon masses are also of order U:
+> m_p/U = 2Vol·F_Bor − 12ℏ_q², which is finite at q = 1. So (m_n − m_p)/m_p → 0 at q = 1, and the
+> working assumption holds for the MeV cell read against the nucleon scale. This agrees with §1. The
+> MeV value at q₀ is unchanged (−32.46 % against CODATA). The "pole" is U, the common mass unit, which
+> diverges at q = 1 for every model mass alike. It is not a defect of the cell. The two readings and the
+> decision list below are kept only as the record of how this was reached.
+
 **Result: there is no row-by-row answer. Either every E₀-scaled comparison is mixed, or none is.**
 Experimental tables use c = 1, so a measured energy (Q_β, AME B) and a measured mass (m_n − m_p) are
 in the same MeV. The model has c_q = 1/(q − 1) ≈ 9.093 at q₀. So the question is one global fact about
@@ -164,7 +180,7 @@ and is corrected above. Under reading (ii), the pole of the MeV n–p cell at q 
 the closure mass, and the working assumption m_p = m_n at q = 1 holds for the closure mass but not for this
 cell.
 
-**Owner decision (nothing is changed until it is made).**
+**~~Owner decision~~ (superseded by the resolution at the top of §5; kept as record).**
 
 1. Reading (ii), c_q² is a pure number (my recommendation, as judgement). Costs nothing: no number moves.
    It keeps CAL-2 and the q₀ pin. It commits to: `def:mass-energy` is a model definition and not the c = 1
