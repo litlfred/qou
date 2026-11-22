@@ -1,15 +1,15 @@
 # Triviality probe: the 156 `decl-not-found` skips, triaged
 
 Bean `qou-y1qu` (epic `qou-uwyf`). Follows §4 of
-[`2026-11-22-lean-audit-snapshot-gaps.md`](2026-11-22-lean-audit-snapshot-gaps.md).
+`2026-11-22-lean-audit-snapshot-gaps.md` (added by PR #8977, not yet on `main` when this record merged).
 The probe fix is litlfred/folio-assistant-sci#213 (issue #212).
 
 ## 1. Result
 
 The 2026-11-21 snapshot (`docs/audits/lean-triviality.json`) skipped 156
 declarations as `decl-not-found`. Each was classified statically, with the
-lexer and namespace logic of the fixed probe, against this branch's tree
-(the head of PR #8977). Per-declaration rows:
+lexer and namespace logic of the fixed probe, against the tree at PR #8977's head
+(`642d84bd0`), whose ref repoints the counts below assume. Per-declaration rows:
 [`2026-11-22-triviality-decl-not-found-triage.json`](2026-11-22-triviality-decl-not-found-triage.json).
 
 | cause | count | what it is |
@@ -82,7 +82,7 @@ real Lean proof, so the rung can only add closures.
 ## 5. Verification
 
 - Static classification: the bun scripts used are summarised above; counts
-  measured on this branch's tree, 2026-11-22.
+  measured on PR #8977's head (`642d84bd0`), 2026-11-22.
 - `bun test pipeline/lean-triviality-probe.test.ts` (folio-assistant-sci):
   with Lean 4.24.0 on `PATH`, 28 pass, 0 fail, 0 skip (after the
   `not-a-proof` commit; 27 before it).
