@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T08:02:37.286799+00:00",
-  "commitSha": "845e2f8200142fec69a10571d6695218dce8525e",
+  "computedAt": "2026-11-22T15:06:18.804564+00:00",
+  "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
   "assertions": [
     {
       "name": "borromean_v3_connected_diff_matches_closed_form",
@@ -84,11 +84,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 12,
   "computation": "two-term-qed-isotope-and-nucleon-compute",
   "scriptFile": "two_term_qed_isotope_and_nucleon_compute.py",
   "scriptHash": "940e75034bcc",
-  "scriptCommitSha": "845e2f8200142fec69a10571d6695218dce8525e",
+  "scriptCommitSha": "5a054e59ea4d38fc439684e216e45c6d39b33d81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -400,11 +400,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "47edec9fca110b8adef03e4b3540b1fa3fb3b64c4aa3ea6a2dab041e86868596",
+        "sha256": "b73a8b9c3865afb9208f2f88ae99978ed399f1e0b998da1354242d80019a0ede",
         "size_bytes": 12675,
-        "commitSha": "845e2f8200142fec69a10571d6695218dce8525e",
-        "scriptCommitSha": "845e2f8200142fec69a10571d6695218dce8525e",
-        "computedAt": "2026-11-21T07:56:45.443604+00:00"
+        "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
+        "scriptCommitSha": "55ca73e75d5a1a020cd996effddd5a5f5c2762b2",
+        "computedAt": "2026-11-22T15:05:16.039918+00:00"
       },
       {
         "path": "codata-2022-validation-masses.witness.json",
