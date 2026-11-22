@@ -5,9 +5,12 @@ set_option autoImplicit false
 /-!
 # QOU.MathlibExt.BraidGroup — Artin braid groups (a genuine Mathlib gap)
 
-**Mathlib has no braid groups.** Verified by search: no file matching `*braid*`
-anywhere in `Mathlib/`, and `Mathlib/GroupTheory/` carries `Coxeter` but not the
-braid group itself. This module supplies the minimum the MFW programme
+**Mathlib has no braid groups.** Verified by search against the pinned Mathlib
+(2026-11-22): `grep -rl BraidGroup Mathlib/` returns 0 files, and `Mathlib/GroupTheory/`
+carries `Coxeter` but not the Artin braid group. (`find Mathlib -iname '*braid*'` does
+return four paths, all about braided monoidal *categories*: `CategoryTheory/GradedObject/
+Braiding.lean`, `Monoidal/DayConvolution/Braided.lean`, the directory `Monoidal/Braided/`
+and `Monoidal/Rigid/Braided.lean`. None defines a braid group.) This module supplies the minimum the MFW programme
 (`QOU/Knot/MortonFranksWilliams.lean`, bean `qou-dr8m`) actually needs, built on
 Mathlib's `PresentedGroup`.
 

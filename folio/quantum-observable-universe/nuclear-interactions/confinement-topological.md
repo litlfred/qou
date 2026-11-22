@@ -1,17 +1,17 @@
-*Let $G \in \mathbb{R}^{6 \times 6}$ be the Gram matrix of $H_3(q)$ at $q = q_0$. Consider the linear program:*
+*Let $\rho$ be the standard two-dimensional representation of $H_3(q)$ over the Laurent ring $\mathbb{Z}[t^{\pm 1}]$, with $q = t^2$,*
 
 $$
-  \min_{x \in \mathbb{R}^6} \;
-  \sum_{i=1}^{6} t_i x_i
+  \rho(\sigma_0) = \begin{pmatrix} q & 1 \\ 0 & -q^{-1} \end{pmatrix},
   \qquad
-  \text{s.t.} \quad
-  \mathbf{1}^\top x = n_{\mathrm{target}},
-  \quad
-  Gx \geq 0
+  \rho(\sigma_1) = \begin{pmatrix} -q^{-1} & 0 \\ 1 & q \end{pmatrix},
 $$
 
-*where $t_i = \mathrm{tr}_M(b_i)$ are the Markov traces of the NF basis elements. Then:*
+*and put $L_+ = \rho(\sigma_0\sigma_1)$, $L_- = \rho(\sigma_1\sigma_0)$. Then*
 
-1. *The LP has optimal value $\mathrm{tr}_M^* = 0$, achieved by exploiting the negative eigenvalue $\lambda_{\min}(G) < 0$.*
-2. *The LP optimum $x^*$ has $|x_i^*| \gg 1$ for some components. It is not in the image of the braid group representation $\rho \colon B_3 \to H_3(q)$.*
-3. *Among all elements $\Phi \in H_3(q)$ that are images of braid group elements of length $\leq 6$, $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is the unique element with $|\mathrm{net}(\Phi \cdot \mathrm{crossings}) - n_{\mathrm{target}}| = 0$ for both proton and neutron typed crossings.*
+$$
+  L_+^2 + L_-^2 \;\neq\; 2\,L_+ L_- ,
+$$
+
+*since the $(0,0)$ entries differ: $-1$ on the left and $2q^2$ on the right.*
+
+*This inequality is the only part proved. It is offered as evidence for the confinement linear program of [prop:confinement-lp](#prop:confinement-lp); the claims that the program over the Gram matrix of $H_3(q)$ at $q_0$ has optimal value $0$, that its optimum lies outside the image of $B_3$, and that $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is the unique braid of length $\le 6$ hitting $n_{\mathrm{target}}$ for both nucleons, are not part of this statement.*

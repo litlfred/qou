@@ -50,7 +50,7 @@ where `cuspModulus = √3/4` is the proved geometric datum and
   Carried as the hypothesis `hV`.
 
 -- Ref: [leitner2026] docs/coordination/delta-lambda-magnitude-derivation.md — T5
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062
 -/
 
 open QOU.Knot.FigureEightComplexVolume

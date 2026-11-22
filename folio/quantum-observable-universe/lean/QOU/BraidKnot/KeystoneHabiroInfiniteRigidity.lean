@@ -7,8 +7,11 @@ Strengthens the finite interpolation rigidity
 (`KeystoneGaugeRowRigidity.eq_of_eval_agree_card`,
 `KeystoneHabiroRootFamily.eq_of_root_family_agreement`) to the **infinite-root**
 form that matches the actual Habiro rigidity: a unified WRT invariant is an element
-of the Habiro ring `Ẑ[q]` determined by its values at **all** roots of unity
-(`habiro2004`).  If the gauge-row polynomial agrees with the value-map polynomial at
+of the Habiro ring `Ẑ[q]`, and Habiro proves such an element is determined by its
+Taylor expansion at any one root of unity, and by its values at infinitely many roots
+of unity of prime-power order (`habiro2004`, abstract and §1). Those are complex roots;
+the theorems below interpolate real fold values, so they mirror that rigidity rather
+than use it as a premise.  If the gauge-row polynomial agrees with the value-map polynomial at
 *infinitely many* fibre roots, they are equal — **with no degree hypothesis**
 (bwsd's bounded-degree assumption is dissolved by using the full root family).
 
@@ -26,7 +29,8 @@ modular-data), of which `KeystoneLRAmplitudeReal` (#4365) is the `Σ(2,3,5)` sli
 No fit; nothing wired; L2 unchanged.
 
 -- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
--- Ref: [habiro2004] https://doi.org/10.1007/s00222-007-0071-0
+-- Ref: [habiro2004] https://doi.org/10.1007/s00222-007-0071-0 (abstract; §1: determination by
+--      one Taylor expansion, or by infinitely many prime-power-order roots)
 -/
 import QOU.BraidKnot.KeystoneHabiroRootFamily
 

@@ -33,7 +33,7 @@
 
   Ref: [leitner2026] prop:em-coupling-bring-zero-mode
   Ref: [leitner2026] prop:archimedean-functor-uniqueness
-  Ref: filler at content/.../predicted-spectra/bloch-wigner-mathlib-filler.lean
+  Ref: lemmas in QOU/Archimedean/BlochWignerMathlibFiller.lean (block appendix-formalisation-notes/bloch-wigner-mathlib-filler.md)
   Ref: [suslin1991], [bloch2000] for the Bloch-Suslin K-theory framework
 -/
 import QOU.Archimedean.ClausenFunctionMathlibFiller

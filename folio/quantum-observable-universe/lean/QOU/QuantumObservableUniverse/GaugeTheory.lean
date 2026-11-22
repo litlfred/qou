@@ -222,7 +222,7 @@ instance hasCategoricalEOM_of_facts {C : Type u}
     Use this lemma — backed by `HasCategoricalEOM` — instead of the
     deprecated universal axiom. -/
 -- Ref: [leitner2026] §1-quantum-observable-universe
--- Ref: [wald1984] General Relativity — see folio/schema/references.ts
+-- Ref: [wald1984] General Relativity (not held in library/; no locator checked)
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)

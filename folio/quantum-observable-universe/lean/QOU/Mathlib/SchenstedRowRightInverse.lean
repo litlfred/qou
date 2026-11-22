@@ -26,7 +26,7 @@ composite is the identity and not merely close to it.
 
 One row, one step. The cascade-level right inverse (`insert ∘ uninsert = id` under a corner
 condition) and the word-level surjectivity are later bricks of epic `qou-nrex`; nothing here
-claims them, and `RSKBurnsideHolds` for general `n` remains open.
+claims them, and at the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean.
 

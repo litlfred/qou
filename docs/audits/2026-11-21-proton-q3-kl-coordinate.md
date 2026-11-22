@@ -611,3 +611,29 @@ thread: no conflict, different word. Its Borromean V³ has one factorisation wit
 sextic. The pair here is not bar-paired: bar sends (0,−h⁻¹,−1) to (0,h⁻¹,−1), not to the
 partner (0,−h⁻¹,0). No general bar-pairing rule for γγ factors is on record, so this neither
 supports nor contradicts either result.
+
+**12.8 Correction and completion: the idle-strand words (2026-11-22).** Sections 12.4–12.5
+are about 68 words: the 18 three-vertex matches and the 50 five-vertex matches with no idle
+strand. The Lean generator behind `PhotonPairNoFactor.lean` used 88 words. The other 20 are
+five-vertex matches that leave one strand idle, and the probe's two-photon search never
+included them. The note in that Lean file said the 25 cells it could not block were excluded
+by the probe's Gröbner check. That was wrong: the check never covered them. Two of those
+words ARE two-photon products, in 6 cells (exact; Lean `PhotonPairIdleFactor.lean`):
+
+- γ(h, 0, 0) = σ₀² and γ(0, h, 0) = σ₁² (a full twist); γ(0, −h⁻¹, h⁻²) = h⁻²·σ₀⁻¹σ₁⁻¹.
+- V₀V₁V₀V₁V₂ = σ₀²σ₂⁻¹σ₃⁻¹ = h²·γ₀(h,0,0)·γ₂(0,−h⁻¹,h⁻²), in either order: cells (0,2), (2,0).
+- V₁V₂V₁V₂V₃ = σ₁²σ₃⁻¹σ₄⁻¹ = h²·γ₀(0,h,0)·γ₃(0,−h⁻¹,h⁻²) = h²·γ₁(h,0,0)·γ₃(0,−h⁻¹,h⁻²),
+  in either order: cells (0,3), (1,3), (3,0), (3,1).
+
+The scalar is again μ = h⁻² and the weights are unique (zero-dimensional Gröbner basis in the
+one-marked-strand sector). This is a second pattern next to 12.3's "Hopf photon × single
+crossing": "full twist × two negative crossings". Section 12.3's statement that the pair
+factorises only by the Hopf × crossing pattern is true for the 68 words and false for the 88.
+
+The remaining 19 cells are not two-photon products for any q with q ≠ 0, ±1, over any field
+(Lean `PhotonPairNoFactorSector.lean`: a Nullstellensatz certificate per cell, found with
+Singular `lift`, checked exactly in sympy, and re-checked by `linear_combination`). With
+`PhotonPairNoFactor.lean` (1370 cells), all 1408 cells of the 88 words are now settled in
+Lean: 19 factorise and 1389 do not. One link in this chain is still prose: that an equation
+in the abstract H₆(q) would hold on the sector, which follows from the Hecke relations proved
+in `PhotonPairReachability.lean`.

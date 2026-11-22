@@ -52,6 +52,8 @@ machinery.
 | `1101.0956v3.pdf` | DGKMSV, generalized Gauss maps | Arcuş (Lie algebroids, unrelated) ×2 + orphaned tail pages (§48–56) of DeTurck–Gluck |
 | `0510388v1.pdf` | DeTurck–Gluck electrodynamics | mixed/corrupted; only tail pages recovered |
 
+> **Corrected 2026-11-22 (bean `qou-ut4e`).** The `0510388v1.pdf` row above is wrong. The file reads cleanly with `pdftotext` (poppler) from page 1 to the end: it is the full paper *Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space*, DeTurck–Gluck, September 2005 (`[deturck-gluck-electrodynamics2008]`). Its p. 1 names math.GT/0406276 as the short announcement, so 0510388 is the right source, not a wrong one. Thm 1(3) (p. 8), Thm 2(3) (p. 11) and §5 (pp. 14–15) can all be checked in the repo, and DeTurck–Gluck does not need re-uploading. The ledger row records the same finding.
+
 **Re-upload list** (verified IDs): DeTurck–Gluck is
 **arXiv:math/0406276** (not 0510388); the generalized-Gauss-maps pair
 is **arXiv:0901.1612** (announcement) + **arXiv:1207.1793** (Part 2,

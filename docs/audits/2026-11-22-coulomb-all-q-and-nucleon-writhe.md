@@ -47,16 +47,46 @@ the ray fails; there the reachable term has no Q_aQ_b part at all, which is stil
 says nothing about n ≠ 6. Lean already covers the parts with a structural reason: the Weyl-symmetric
 classical forms (`WeylSymmetricPairNotCoulomb.lean`), the zero sector trace of weight-shifting
 insertions and the Cartan readout for every q (`WeightShiftZeroTrace.lean`), and the single crossing
-to all orders (`HeckeSeriesCollapse.lean`). A structural Lean proof of the two Q(q) identities would
-need the u↔d-plus-strand-reversal symmetry below, which is open.
+to all orders (`HeckeSeriesCollapse.lean`). The symmetry behind α + β = 1 is now in Lean as well; see
+the next paragraph.
 
-**A structural reading (not proved).** Flipping every strand (u ↔ d) and reversing the strand order
-is an automorphism of the Jimbo braiding: it sends σ_i to σ_{4−i}. It sends sector (a, b) to
-(3 − b, 3 − a), that is, Q_A ↦ 1 − Q_B and Q_B ↦ 1 − Q_A, and it fixes pn and np while swapping
-pp and nn. K^{⊗6} is a scalar on each sector, so it cancels in ΔE. If the reachable ray were mapped
-to itself, α + β = 1 would follow at once. The obstruction is the core: the map sends V_A³V_B³ to
-V_B⁻³V_A⁻³, the inverse core, so it does not act on the readout as it stands. Closing that gap is
-what a structural proof needs.
+**The structural reason for α + β = 1 (added the same day, issue #9124).** Flipping every strand
+(u ↔ d) and reversing the strand order is conjugation by a permutation matrix J with
+J Ř_i J = Ř_{4−i}. It sends the core to its inverse, J C J = C⁻¹, and sector (a, b) to
+(3 − b, 3 − a), that is Q_A ↦ 1 − Q_B, Q_B ↦ 1 − Q_A. The earlier draft of this section stopped
+there and called the inverse core an obstruction. It is not one: the half twist Δ = σ_lo σ_{lo+1} σ_lo
+satisfies Δ V Δ⁻¹ = V⁻¹ by the braid relation, so D = Δ_A Δ_B gives D C D⁻¹ = C⁻¹, and D acts inside
+each block, so it commutes with the sector projectors. Hence
+
+    T_X(Q_A, Q_B) = T_{X'}(1 − Q_B, 1 − Q_A),   X' = D⁻¹ J X J D,
+
+and the set of reachable pair shifts is closed under the sector involution. That involution sends
+c + κ(Q_A − β)(Q_B − α) to c + κ(Q_A − (1 − α))(Q_B − (1 − β)). Since the reachable terms with κ ≠ 0
+form one ray, (1 − α, 1 − β) = (β, α), which is α + β = 1.
+
+- Lean, sorry-free (axioms propext, Quot.sound, Classical.choice):
+  `QOU.QBeta.PairTermSectorSymmetry` —
+  - `halfTwist_conj_core_pow` (the braid identity, in any group);
+  - `readout_sectorSymm` (the readout symmetry, for any ring with a trace and an automorphism with
+    the stated relations);
+  - `alpha_add_beta_eq_one_of_unique_ray`;
+  - `not_coulomb_of_unique_ray`.
+- The 64 × 64 instances of the relations (J Ř_i J = Ř_{4−i}, J C J = C⁻¹, D C D⁻¹ = C⁻¹, D preserves
+  sectors) are checked exactly over Q(q) by `np_pair_term_sector_symmetry_check.py` (output in
+  `.out.txt`), not in Lean.
+- The uniqueness of the ray (rank 2) stays a computer-algebra fact over Q(q) at n = 6, and is a
+  named hypothesis of the Lean theorems.
+
+The same symmetry explains §28. The Ř-compatible pair Casimir and the KZ monodromy M = β_AB² are
+fixed by X ↦ D⁻¹ J X J D (check 6), and the sector involution sends the proton pair (1, 1) to the
+neutron pair (0, 0), so pp = nn for both (`readout_eq_of_fixed`). The opposite-coproduct Casimir
+is not fixed, which is why the control gives pp ≠ nn.
+
+So of the two inputs to the Coulomb exclusion, the symmetry is now structural and the rank is
+computed. The symmetry argument uses the braid relation, the shape of the Jimbo Ř-matrix, and
+one more fact: K^{⊗6} is a scalar on each sector, so it cancels in ΔE. That last fact needs every
+strand to sit in a block. With spectator strands between the blocks it fails, and so does the
+symmetry (§3).
 
 ## 2. The nucleon writhe under the ruled word is 0, for both nucleons
 
@@ -96,6 +126,39 @@ equal writhe (above). Blocks carrying the old premise:
 `eightfold-way/flavor-charge-assignments.md`, `eightfold-way/eightfold-open-problems.md`,
 `appendix-standard-model/sm-gauge-truncation.md`, `appendix-standard-model/sm-hypercharge-invariant.md`,
 `appendix-standard-model/sm-lagrangian-selection-rules.md`.
+
+## 3. More strands: spectators (issue #9124, item 3)
+
+Pre-registration: `computations/probes/np_splitting/np_more_strands_preregistration.md` (commit
+`e3c781b9f0e`, before the probe). Probe and output: `np_more_strands_probe.py`, `.out.txt`. Same
+readout, with X over the whole N-strand Hecke image and the spectator strands summed over in the
+sector projector. Exact rationals (python-flint fmpq) at q = 111/100 and q = 7/5. These are exact at
+those q, not identities in q.
+
+| layout | N | spectators | ΔE span | rank of (κ, κα, κβ) | reachable pair terms | Coulomb |
+|---|---|---|---|---|---|---|
+| L6 | 6 | none | 10 / 16 | 2 | one ray, α + β = 1 | no |
+| L7e | 7 | one, after block B | 10 / 16 | 2 | the same ray as L6 | no |
+| L7s | 7 | one, between the blocks | 14 / 16 | 1 | α = α₆(q), β free | no |
+| L8s | 8 | two, between the blocks | 14 / 16 | 1 | α = α₆(q), β free | no |
+
+α₆(q) is the six-strand value (111/100: 0.656124…, 7/5: 1.053685…). The Coulomb form needs α = 0,
+so it is excluded in every layout at both q.
+
+**P1 failed, and why.** The prediction was that the symmetric layouts (L7s, L8s) keep the sector
+involution. They do not. The argument of §1 needs K^{⊗N} to be a scalar on each sector, so that it
+cancels in ΔE. A spectator between the blocks carries its own K factor, which varies inside a sector,
+and the flip-and-reverse map sends K to K⁻¹. With the spectator at the end (L7e) nothing changes
+from N = 6.
+
+**The K weight is what excludes Coulomb.** A diagnostic run with the plain trace (no K^{⊗N},
+`QOU_NO_K=1`) gives the same result as the K-weighted run at N = 6, where K cancels. With any
+spectator (L7s, L7e, L8s) the plain trace reaches all 16 sectors, and the Coulomb form becomes
+reachable. The readout of §26 is the K-weighted (quantum) trace. So the exclusion with spectators
+rests on that weighting, not on the braid alone.
+
+**Scope.** Two values of q and N ≤ 8 with two blocks. Not an identity in q, and not a statement
+about three or more blocks.
 
 ## Scope
 
