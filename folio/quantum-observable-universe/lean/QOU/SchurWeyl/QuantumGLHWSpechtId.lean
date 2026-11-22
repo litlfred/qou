@@ -15,6 +15,11 @@ pins `π` to the row diagram `λ(μ)`, by induction on the size, comparing the t
 rules (`hwTrace_heckeIncl` and `trace_seminormalRep_heckeIncl`) through the Wedderburn
 test elements `W⁻¹(1_ν)`.
 
+* `hwCharStatement_all`: `tr(z | HW_μ) = χ^{λ(μ)}(z)` for every dominant `μ`.
+* `exists_linearEquiv_of_trace_eq`: two surjective representations with equal traces and equal
+  nonzero dimension are isomorphic.
+* `exists_hwSpace_equiv_specht`: `HW_μ ≅ S_{λ(μ)}` as `H_{m+1}(q)`-modules.
+
 ## Base ring (§7c)
 
 A linearly ordered field, `q` not a root of unity.
@@ -668,5 +673,134 @@ theorem hwCharStatement_all (q : L) (hq : q ≠ 0) (hgen : GenericParameter.NotR
     · exact hwCharStatement_succ q hq hgen k hk ih
 
 end Ident
+
+section AbstractIso
+
+variable {L A V W : Type*} [Field L] [Ring A] [Algebra L A]
+  [AddCommGroup V] [Module L V] [FiniteDimensional L V]
+  [AddCommGroup W] [Module L W] [FiniteDimensional L W]
+
+/-- A nonzero vector has a functional taking it to `1`. -/
+theorem exists_dual_eq_one {v : V} (hv : v ≠ 0) : ∃ f : Module.Dual L V, f v = 1 := by
+  obtain ⟨f, hf⟩ : ∃ f : Module.Dual L V, f v ≠ 0 := by
+    by_contra h; push_neg at h; exact hv ((Module.forall_dual_apply_eq_zero_iff L v).1 h)
+  exact ⟨(f v)⁻¹ • f, by simp [hf]⟩
+
+/-- The trace form on `End W` is nondegenerate. -/
+theorem eq_zero_of_trace_mul_eq_zero (X : Module.End L W)
+    (h : ∀ M : Module.End L W, LinearMap.trace L W (X * M) = 0) : X = 0 := by
+  ext w
+  by_contra hw
+  obtain ⟨f, hf⟩ := exists_dual_eq_one (L := L) hw
+  have := h (f.smulRight w)
+  rw [show X * f.smulRight w = f.smulRight (X w) by ext; simp, LinearMap.trace_smulRight] at this
+  simp [this] at hf
+
+/-- **Two surjective representations with equal traces are isomorphic.**  If
+`ρ₁ : A → End V` and `ρ₂ : A → End W` are onto, `dim V = dim W > 0`, and
+`tr ρ₁(z) = tr ρ₂(z)` for every `z`, then there is a linear isomorphism `V ≃ W` intertwining
+them. -/
+theorem exists_linearEquiv_of_trace_eq (ρ₁ : A →ₐ[L] Module.End L V)
+    (ρ₂ : A →ₐ[L] Module.End L W) (h₁ : Function.Surjective ρ₁) (h₂ : Function.Surjective ρ₂)
+    (hdim : Module.finrank L V = Module.finrank L W) (hV : 0 < Module.finrank L V)
+    (htr : ∀ z, LinearMap.trace L V (ρ₁ z) = LinearMap.trace L W (ρ₂ z)) :
+    ∃ e : V ≃ₗ[L] W, ∀ z v, e (ρ₁ z v) = ρ₂ z (e v) := by
+  classical
+  haveI := Module.nontrivial_of_finrank_pos hV
+  have hker : ∀ z, ρ₁ z = 0 → ρ₂ z = 0 := by
+    intro z hz
+    apply eq_zero_of_trace_mul_eq_zero
+    intro M
+    obtain ⟨y, rfl⟩ := h₂ M
+    rw [← map_mul, ← htr, map_mul, hz, zero_mul, map_zero]
+  obtain ⟨s, hs⟩ := LinearMap.exists_rightInverse_of_surjective ρ₁.toLinearMap
+    (LinearMap.range_eq_top.2 h₁)
+  have hs' : ∀ X, ρ₁ (s X) = X := fun X => LinearMap.congr_fun hs X
+  have hψ : ∀ z, ρ₂ (s (ρ₁ z)) = ρ₂ z := by
+    intro z
+    have h0 := hker (s (ρ₁ z) - z) (by rw [map_sub, hs', sub_self])
+    rwa [map_sub, sub_eq_zero] at h0
+  obtain ⟨v₀, hv₀⟩ := exists_ne (0 : V)
+  obtain ⟨f₀, hf₀⟩ := exists_dual_eq_one (L := L) hv₀
+  have hP : ρ₂ (s (f₀.smulRight v₀)) ≠ 0 := by
+    intro h0
+    have := htr (s (f₀.smulRight v₀))
+    rw [hs', h0, LinearMap.trace_smulRight, hf₀, map_zero] at this
+    exact one_ne_zero this
+  obtain ⟨w₀, hw₀⟩ : ∃ w, ρ₂ (s (f₀.smulRight v₀)) w ≠ 0 := by
+    by_contra h; push_neg at h; exact hP (LinearMap.ext h)
+  have hR_add : ∀ v v' : V, f₀.smulRight (v + v') = f₀.smulRight v + f₀.smulRight v' := by
+    intro v v'; ext; simp [smul_add]
+  have hR_smul : ∀ (c : L) (v : V), f₀.smulRight (c • v) = c • f₀.smulRight v := by
+    intro c v; ext; simp [smul_comm c]
+  let φ : V →ₗ[L] W :=
+    { toFun := fun v => ρ₂ (s (f₀.smulRight v)) w₀
+      map_add' := fun v v' => by simp [hR_add]
+      map_smul' := fun c v => by simp [hR_smul] }
+  have hφ : ∀ z v, φ (ρ₁ z v) = ρ₂ z (φ v) := by
+    intro z v
+    have : f₀.smulRight (ρ₁ z v) = ρ₁ (z * s (f₀.smulRight v)) := by
+      rw [map_mul, hs']; ext; simp
+    show ρ₂ (s (f₀.smulRight (ρ₁ z v))) w₀ = ρ₂ z (ρ₂ (s (f₀.smulRight v)) w₀)
+    rw [this, hψ, map_mul, Module.End.mul_apply]
+  have hsurj : Function.Surjective φ := by
+    intro w
+    obtain ⟨g, hg⟩ := exists_dual_eq_one (L := L) (show φ v₀ ≠ 0 from hw₀)
+    obtain ⟨z, hz⟩ := h₂ (g.smulRight w)
+    exact ⟨ρ₁ z v₀, by rw [hφ, hz]; simp [hg]⟩
+  have hinj : Function.Injective φ :=
+    (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hdim).2 hsurj
+  exact ⟨LinearEquiv.ofBijective φ ⟨hinj, hsurj⟩, fun z v => hφ z v⟩
+
+end AbstractIso
+
+section ModuleIso
+
+open QOU.Mathlib QOU.SchurWeyl.SeminormalRep
+open scoped Matrix
+
+variable {L : Type*} [Field L] [LinearOrder L] [IsStrictOrderedRing L] {d : ℕ} [NeZero d]
+
+/-- **`HW_μ ≅ S_{λ(μ)}` as `H_{m+1}(q)`-modules.**  For a dominant weight `μ` of total weight
+`m + 1`, the highest-weight space `HW_μ` is isomorphic, as a module over the Hecke algebra, to the
+seminormal (Specht) representation of the row diagram `λ(μ)`. -/
+theorem exists_hwSpace_equiv_specht (q : L) (hq : q ≠ 0)
+    (hgen : GenericParameter.NotRootOfUnity q) (m : ℕ) (μ : Fin d → ℕ) (hμ : IsDom μ)
+    (hs : ∑ y, μ y = m + 1) :
+    ∃ e : hwSpace q m μ ≃ₗ[L] (StandardYoungTableau (rowDiagram μ hμ) → L),
+      ∀ (z : Hecke L q q⁻¹ m) (v : hwSpace q m μ),
+        e (hwAct q hq m μ z v)
+          = seminormalRep q hq hgen m ((card_rowDiagram μ hμ).trans hs) z *ᵥ e v := by
+  classical
+  set ρ := seminormalRep q hq hgen m ((card_rowDiagram μ hμ).trans hs)
+  let ρ₂ := (Matrix.toLinAlgEquiv' (R := L)
+    (n := StandardYoungTableau (rowDiagram μ hμ))).toAlgHom.comp ρ
+  have hocc := mem_occWeights_of_ne_bot (hwSpace_ne_bot_of_dom q hq hgen m hμ hs)
+  have hdim : Module.finrank L (hwSpace q m μ)
+      = Module.finrank L (StandardYoungTableau (rowDiagram μ hμ) → L) := by
+    rw [finrank_hwSpace_eq_numSYT q hq hgen m μ hμ hs, Module.finrank_fintype_fun_eq_card,
+      numStandardYoungTableaux, Nat.card_eq_fintype_card]
+  have h₂ : Function.Surjective ρ₂ := by
+    intro M
+    have : LinearMap.toMatrix' M ∈ ρ.range := by
+      rw [seminormalRep_range_eq_top]; trivial
+    obtain ⟨z, hz⟩ := this
+    refine ⟨z, ?_⟩
+    change Matrix.toLin' (ρ z) = M
+    rw [show ρ z = LinearMap.toMatrix' M from hz, Matrix.toLin'_toMatrix']
+  have htr : ∀ z, LinearMap.trace L _ (hwAct q hq m μ z) = LinearMap.trace L _ (ρ₂ z) := by
+    intro z
+    rw [← hwTrace_eq_trace_hwAct, hwCharStatement_all q hq hgen m μ hμ hs z]
+    simp only [ρ₂, LinearMap.trace_eq_matrix_trace L (Pi.basisFun L _),
+      LinearMap.toMatrix_eq_toMatrix']
+    change _ = (LinearMap.toMatrix' (Matrix.toLin' (ρ z))).trace
+    rw [LinearMap.toMatrix'_toLin']
+  obtain ⟨e, he⟩ := exists_linearEquiv_of_trace_eq (hwAct q hq m μ) ρ₂
+    (hwAct_surjective q hq hgen m hocc) h₂ hdim
+    (by rw [finrank_hwSpace_eq_numSYT q hq hgen m μ hμ hs]; exact numStandardYoungTableaux_pos _)
+    htr
+  exact ⟨e, fun z v => by rw [he]; simp [ρ₂]⟩
+
+end ModuleIso
 
 end QOU.SchurWeyl.QuantumGL
