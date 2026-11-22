@@ -633,3 +633,25 @@ disagrees with "knots are fermions" on both the electron and `T(3,5)`. The readi
 natural partner of the transpose `λ ↦ λ'` that `ι` performs on Young diagrams, so the
 question is now: why should α_em be the part of `tr_M` that is odd under
 "crossing reversal together with transposing the Young diagram"?
+
+## 24. Mass as the `ι`-even part of `tr_M`: pre-registration (2026-11-22)
+
+Written and pushed **before** any number below §25 was computed.
+
+**Reading under test.** `tr_M = E + O` with `O = (y₃/2)·τ` the `ι`-odd part (§21) and
+`E = y₂₁·χ₂₁ + (y₃/2)(χ₃ + χ₁₁₁)` the `ι`-even part, convention D
+(`y₃ = (q⁴+1)/(q²+1)²`, `y₂₁ = q²/(q²+1)²`, `y₁₁₁ = 0`). The reading: the mass of a
+braid word is read off `E`.
+
+**Test A (structural, no numbers).** Charge conjugation `C` (σ ↦ σ⁻¹) maps the electron
+word to the positron word. Question: does `E(Cw) = E(w)`? Outcomes fixed in advance:
+"equal for all words", "equal up to the sign `(−1)^{|w|}`", "neither".
+
+**Test B (one number).** `R = |E(β_p)| / |E(β_e)|` at the proton `q₀`, with
+`β_e = σ₀σ₁σ₀` (owner ruling, electron) and `β_p = (σ₀σ₁⁻¹)³` (Borromean core). Compare to
+`m_p/m_e = 1836.15267343` (CODATA 2022). Pass: within 1 %. Anything else is a scope-(a)
+negative for this construction alone. Caveat stated in advance: `q₀` itself is pinned on
+`m_p/m_e` through a different formula, so a pass would not be independent of the input;
+a fail is still informative. Expected beforehand: each `χ_λ` of a length-6 word is a
+Laurent polynomial of degree ≤ 6 in `q`, and `q₀⁶ ≈ 1.87`, so `R` near 1836 would need
+`E(β_e)` close to a zero. A fail is the likely outcome.
