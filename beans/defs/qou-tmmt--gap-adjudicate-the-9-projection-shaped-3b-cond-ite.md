@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-11-21T23:45:59Z
+updated_at: 2026-11-22T09:19:57Z
 parent: qou-5p7n
 ---
 
@@ -372,3 +372,7 @@ markovTrace_disjointProduct proves DisjointProductLaw from the restricted IsMark
 
 
 2026-11-21: CYCLICITY PROVED (commit f6c33e00f04, PR #8972). trWord satisfies all IsMarkovTrace axioms (trWord_isMarkovTrace); exists_isMarkovTrace (Ocneanu existence, any CommRing, any z h); isMarkovTrace_eq_trWord. Sorry-free. Remaining for this bean: shift invariance (split form of the product law), complexity bound, link to markov_trace_recursive.py output.
+
+
+
+2026-11-22: #8972 merged (rebase). Shift invariance (markovTrace_shift) and split product law (markovTrace_disjointProduct_split) proved for every Markov trace; PR #8989. Remaining: complexity bound; link to markov_trace_recursive.py output.
