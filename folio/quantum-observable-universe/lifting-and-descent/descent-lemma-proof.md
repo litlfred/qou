@@ -2,11 +2,11 @@ The proof mirrors the ascent
 ([jet prolongation](#prop:jet-prolongation)) in reverse, working inside $\mathbf{C}$.
 
 *Step 1: Frobenius restriction.*
-The jet object $J^1(A) = (A \otimes A)/I^2$, $I = \ker m$, at level $n$
-contains $A$ as a direct summand: the section $\ell_n(a) = [a \otimes 1]$ and
-the restriction map $r_n\colon J^1(A) \to A$ induced by $m$ satisfy
-$r_n \circ \ell_n = \mathrm{id}$, with $\ker r_n = I/I^2$
-([direct-summand lemma](#lem:jet-prolongation-categorical-jet)).
+The level object $T(A) = \mathrm{Sym}_A(\Omega^1_{A/R})$
+([jet prolongation](#prop:jet-prolongation)) contains $A$ as a direct summand:
+the structure map $\ell_n\colon A \to T(A)$ and the restriction map
+$r_n\colon T(A) \to A$, which kills $\Omega^1_{A/R}$, satisfy
+$r_n \circ \ell_n = \mathrm{id}$.
 Because $A$ is Frobenius, $r_n$ is a coalgebra morphism --- $\Delta$
 commutes with restriction by the Frobenius relation, and the counit
 restricts by construction --- so the restricted object inherits a
