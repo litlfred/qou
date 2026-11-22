@@ -1,13 +1,13 @@
 ---
 # qou-qspc
 title: 'q-RH: the spectral coordinate map alpha_i = q^rho_i has no carrier'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T17:00:00Z
-updated_at: 2026-10-04T15:15:01Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-4fqg
 ---
 
@@ -530,3 +530,9 @@ explicitly to (1) and names the other two.
 That is the exact failure AGENTS.md flags — *"attributes do not transfer across
 overloaded symbols … distinct objects sharing a glyph is a recurring root
 cause"*.
+
+## Claim reset and applicability review 2026-11-22T21:40:00Z
+
+Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
+
+Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies. The missing carrier is a CategoricalReebDerivation instance; it uses no particle word, Markov parameter or photon form, so none of those rulings move it.

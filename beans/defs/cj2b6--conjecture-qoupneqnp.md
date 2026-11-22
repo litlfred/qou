@@ -1,13 +1,13 @@
 ---
 # cj2b6
 title: 'Conjecture carrier: QouPNeqNp (QouPNeqNp.lean) — §3b, framework/substrate §3b carrier'
-status: in-progress
+status: todo
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-10-04T15:25:53Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-b1je
 ---
 
@@ -46,3 +46,9 @@ Also worth recording for whoever picks this up: the `res ≠ 0` half of the impl
 The entire open content is the `faithful` transfer — consistent with the content block,
 which says so explicitly and notes that a concrete non-vanishing is Zariski-open (hence
 generically true) and so cannot discharge the conjecture on its own.
+
+## Claim reset and applicability review 2026-11-22T21:40:00Z
+
+Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
+
+Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies. The open content is the `faithful` transfer; the `res != 0` leg is definitional (chiResidual = -6). It does not use the photon, electron or Markov-parameter forms.

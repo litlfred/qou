@@ -1,13 +1,13 @@
 ---
 # cj118
 title: 'Conjecture carrier: QBirchSwinnertonDyer (QBirchSwinnertonDyer.lean) — §3b, famous-open (aspirational §3b encoding)'
-status: in-progress
+status: todo
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-10-04T15:14:30Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-d1td
 ---
 
@@ -22,3 +22,9 @@ parent: qou-d1td
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Claim reset and applicability review 2026-11-22T21:40:00Z
+
+Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
+
+Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies. The body's `instance := sorry` is stale: on main `class QBirchSwinnertonDyer` has no instance, plus four proved consequences (ord_zero_iff_rank_zero etc.). Pure arithmetic geometry.

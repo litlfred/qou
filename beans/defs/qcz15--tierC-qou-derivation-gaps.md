@@ -1,13 +1,13 @@
 ---
 # qcz15
 title: 'TIER C: q-Collatz-on-QOU derivation gaps (map from QOU, obstruction, Kummer)'
-status: in-progress
+status: todo
 type: feature
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-11-18T11:37:12Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qcz14
 ---
 
@@ -63,3 +63,9 @@ Was in-progress with no bean update since 2026-08-29 and no main commit naming i
 
 ## Round 69 Update (2026-11-18T11:37:12Z)
 - Addressed in PR `litlfred/qou#8454` (HEAD `23a754272622fa31774e4f5d1455018224c86d36`, C1 `bcdf148ad3ef8ce5d5b1c640e65680b5b11b62b6`).
+
+## Claim reset and applicability review 2026-11-22T21:40:00Z
+
+Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
+
+Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies. The cycle half of q-Collatz was closed by #8846; the convergence half (MarkovTraceConvergence, no instance) and C11 (kappa_0 = chi(A)) stay open. The Markov trace here is the q-Collatz step trace, not a particle trace, so convention D does not change it; anyone re-running its numbers should still state which z they used. The 2026-11-18 note pointing at PR #8454 is void: #8454 closed unmerged.

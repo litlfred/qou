@@ -1,13 +1,13 @@
 ---
 # cj1b7
 title: 'Conjecture carrier: DiophantineBirthday (DiophantineBirthday.lean) — §3b, famous-open (aspirational §3b encoding)'
-status: in-progress
+status: todo
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-10-04T15:25:49Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3kkl
 ---
 
@@ -19,3 +19,9 @@ parent: qou-3kkl
 Superseded-premise check (owner request 2026-11-21): this bean rests on none of the superseded premises (photon L±, virtual photons, Convention C, one-term trace, trefoil electron, T(2,n_s), fitted/CODATA values in proofs). It is pure number theory.
 
 The body's carrier description is stale. On main `2ae54ab40` there is **no** `instance : DiophantineBirthday := sorry`. `DiophantineBirthday.lean:115` declares `class DiophantineBirthday (trajectory : ℝ → ℕ → ℕ) : Prop` with one field `algebraic_logarithmic`; **no instance exists anywhere** (grep over `folio/**/*.lean`; the only hit is the commented-out history at line 128). The open state is the absence of an instance (honest §3b). The file also proves the class is data-sensitive: `nonempty_of_const_zero` (satisfiable) and `not_of_quadratic` (refutable), so it is not vacuous. Consumer: `transcendental_of_not_logarithmic`, sorry-free. Status unchanged: open, stays in-progress/todo per rule 13a.
+
+## Claim reset and applicability review 2026-11-22T21:40:00Z
+
+Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
+
+Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies. Pure number theory, no dependence on any physics ruling. Carrier is the class at DiophantineBirthday.lean (no instance), as the 2026-11-21 note says.

@@ -1,13 +1,13 @@
 ---
 # qou-g4x1
 title: 'GAP: 6 AppendixSurreals conjecture kernels formalise nothing — statement-level, not instance-level'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T19:15:44Z
-updated_at: 2026-10-04T15:19:38Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3kkl
 ---
 
@@ -128,3 +128,9 @@ checker can see. The only reliable detector is reading the pair.
 `proof-narrative-lean-equivalence` is the skill that targets exactly this
 ("lean vs narrative / do they prove the same thing"). This file is a
 high-yield target for it, and to my knowledge it has not been run here.
+
+## Claim reset and applicability review 2026-11-22T21:40:00Z
+
+Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
+
+Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies. Pure surreal/logic kernels. Not re-measured in this pass: someone picking it up should re-read the six .md/.lean pairs first, since DyadicBirthdayHyperreal.lean (PR #9135) adds a birthday model on R* that may bear on the birthday kernels.
