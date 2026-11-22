@@ -3103,7 +3103,7 @@ but KL multiplicities `n^w_λ` are non-negative (KL positivity), so a
 `Σ_w n^w_λ·X_w` sum supplies at most the magnitude `|Δ_λ| = dim`,
 never the chirality sign — engine-verified at S₄ (PR #2381) and the
 mixed-sign premise Lean-proved sorry-free (PR #2416,
-`PartitionOf5.deltaSign_mixed`). Full context:
+`QOU.BraidsAndKnots.deltaSign_mixed`). Full context:
 [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](docs/audits/2026-05-18-delta-lambda-gating-context.md);
 Option-E ledger
 [`docs/coordination/option-e.md`](docs/coordination/option-e.md);

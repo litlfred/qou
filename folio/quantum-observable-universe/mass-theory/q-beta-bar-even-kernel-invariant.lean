@@ -30,7 +30,7 @@
        symbolic substitutions; reduces to a ring identity.
 
   Sorry-free, three one-line `ring` proofs.  Complements PR #1839's
-  `CFinite.recurrence_step` engine: that engine produces the next c_k
+  `QOU.QBeta.recurrence_step` engine: that engine produces the next c_k
   from a kernel + seed; this file checks that the kernel input itself
   satisfies the structural §4(b) invariant of the refuted-class map.
 

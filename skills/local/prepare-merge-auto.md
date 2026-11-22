@@ -61,7 +61,9 @@ evicted. Library sweep is 122 s on a 74-module closure; the content sweep is
 verification gate's evidence and the distinction it turns on:
 
 - *"`lean-library-sweep.py`: N/N dirty modules rebuilt from source, exit 0"* —
-  source-verified.
+  source-verified.  Quote its `VERDICT:` line.  Exit **8** (`INCOMPLETE`) means
+  no RED but some module TIMEOUT / UNVERIFIED / BLOCKED: that is **not** a
+  green, so do not write "exit 0" for it (bean `qou-tpdg`).
 - *"`lean`-direct against the restored cache, exit 0"* — snapshot-conditional.
   Say so, and say why the sweep was not run.
 
