@@ -68,5 +68,6 @@ structural exclusion: a bond law written for `X`'s own quadratic was not attempt
 
 * ~~Owner choice between the rescaled and raw generators~~ settled: rescaled `−q·X = b`.
 * ~~Owner confirmation that "Barry" means baryon~~ confirmed.
+* Charge on colour: a per-strand U(1)_em phase is excluded by Yang–Baxter on the Jimbo braiding unless the charges are trivial (`QOU/QBeta/ChargePhaseYangBaxterObstruction.lean`, PR #9123, flavour case; the same argument applies to the gl₃ colour braiding). Since p and n share the colour singlet `ε_q`, colour cannot carry the p/n charge difference; PR #9123 builds the hadron-level label instead.
 * Leptons: under the assumption a lepton strand is coloured too; which colour sector the electron
   occupies is not fixed by anything above.
