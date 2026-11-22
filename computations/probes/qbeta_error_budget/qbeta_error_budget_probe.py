@@ -172,6 +172,8 @@ for k in range(1, 7):
     print(f"    single correction 1 + c h^{k}: |c| = {nz((F - 1) / hv**k, 8)}")
 OUT["numbers"].update({"Q_beta": nz(Qb, 20), "F_required": nz(F, 12),
                        "classical_coefficient_needed": nz(c_needed, 12)})
+from q0_stamp import stamp_q0_anchor  # noqa: E402
+stamp_q0_anchor(OUT, __file__)
 (_HERE / "qbeta-error-budget.witness.json").write_text(json.dumps(OUT, indent=2, ensure_ascii=False) + "\n")
 print(f"\n{len(OUT['checks']) - len(FAILED)}/{len(OUT['checks'])} checks pass")
 sys.exit(1 if FAILED else 0)

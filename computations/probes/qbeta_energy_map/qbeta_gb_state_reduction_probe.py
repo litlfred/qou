@@ -232,6 +232,8 @@ for k, v in ROWS.items():
     print(f"  {k:30s} {mp.nstr(v, 9):>14s} MeV  vs Q_β {mp.nstr(a, 5):>9s} %")
 print(f"  B bound (cell - m_e) = {mp.nstr(cell - ME, 9)} MeV")
 OUT["ok"] = not FAILED
+from q0_stamp import stamp_q0_anchor  # noqa: E402
+stamp_q0_anchor(OUT, __file__)
 (_HERE / "qbeta-gb-state-reduction.witness.json").write_text(json.dumps(OUT, indent=2, ensure_ascii=False) + "\n")
 print(f"{len(OUT['checks']) - len(FAILED)}/{len(OUT['checks'])} checks passed")
 sys.exit(1 if FAILED else 0)

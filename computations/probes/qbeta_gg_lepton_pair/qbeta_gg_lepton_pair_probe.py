@@ -207,6 +207,9 @@ def main() -> int:
         "candidates": cands,
         "first_match_vertex_counts": first,
         "scope": "(a): 3 and 5 strands, at most 6 vertices.",
+        "q0Anchor": "independent",
+        "q0AnchorReason": ("exact Fraction arithmetic at q = 2 and q = 3 only; the substrate "
+                           "q0 is never imported or evaluated"),
     })
     return 0 if allp else 1
 

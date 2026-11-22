@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-21T19:00:27.816399+00:00",
-  "commitSha": "94ba3eb9384fa72a6c8841142bfe0a881696b795",
+  "computedAt": "2026-11-22T19:48:09.910434+00:00",
+  "commitSha": "e1bbc9d1326b7cd2e204996aa27b71078ce0d860",
   "assertions": [
     {
       "name": "R1_ruled_cell",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 6,
   "computation": "qbeta-framed-gluon",
   "scriptFile": "qbeta_framed_gluon_probe.py",
-  "scriptHash": "ff57e49d5365",
-  "scriptCommitSha": "44587d52bc04b169d7303e86f243fcb9c2dd60dd",
+  "scriptHash": "809478cc5c1b",
+  "scriptCommitSha": "5cb3d722c081a61f18f80569f02d33bc7fd33fdb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,9 +55,8 @@
     "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "86e4feaa3cd4d3e9"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -65,6 +64,8 @@
     ],
     "reproduce": "python3 -u computations/probes/qbeta_framed_gluon/qbeta_framed_gluon_probe.py"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "Gamma-gamma words X.V0^3 on 4-6 strands binned by the gluon loop's own framing; F = eps_flavour(W)/eps_flavour(V0^3), derived normalisation; reading-3 reported. Nothing selected.",
   "q0": "1.1099785827513808075916690956107688798744991218736",
   "F_required": "2.40397",
