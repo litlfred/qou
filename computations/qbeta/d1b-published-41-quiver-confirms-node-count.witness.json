@@ -1,8 +1,8 @@
 {
   "engine": "ocr-transcription-cross-validated-plus-exact-determinant",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T08:37:24.335797+00:00",
-  "commitSha": "d92b8592151fda5920b439789976f853dc60e1c0",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-22T20:35:04.242427+00:00",
+  "commitSha": "dc423a4e6fda3a32d329a596b92f3b9edfc05f84",
   "assertions": [
     {
       "name": "published_passage_present",
@@ -38,17 +38,17 @@
     },
     {
       "name": "node_count_equals_det_at_four_knots",
-      "computed": "PASS",
+      "computed": "FAIL",
       "expected": "PASS",
-      "passed": true,
+      "passed": false,
       "tolerance": "exact",
       "source": "C_41 is 5x5 (det 5), C_61 is 9x9 (det 9), C_81 is 13x13 (det 13), and KRSS's trefoil quiver has 3 nodes (det 3). So the rule aomega_bps_sector_nondegeneracy relies on is not a coincidence at one knot -- which is the question the bean did not ask and the one that decides whether the probe is right for the right reason"
     },
     {
       "name": "node_count_is_family_formula",
-      "computed": "PASS",
+      "computed": "FAIL",
       "expected": "PASS",
-      "passed": true,
+      "passed": false,
       "tolerance": "exact",
       "source": "the node count equals 1+4pm, the determinant formula derived from the paper's eq (5) in d1b_52_charge_lattice_source_exclusion_probe -- so the node count, the determinant and the Alexander polynomial are three faces of one parameter"
     },
@@ -61,12 +61,12 @@
       "source": "5 is still not in the GGM DT spectrum {3,4}. The bean asked to firm up a number the probe used to reach a NEGATIVE; firming it up strengthens the negative. Recorded explicitly because 'count confirmed' is the kind of headline a later reader could mistake for the bridge being repaired"
     }
   ],
-  "allPassed": true,
-  "durationMs": 42,
+  "allPassed": false,
+  "durationMs": 17,
   "computation": "d1b-published-41-quiver-confirms-node-count",
   "scriptFile": "d1b_published_41_quiver_confirms_node_count_probe.py",
-  "scriptHash": "8168d26a3ede",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "bb9b663ddaf6",
+  "scriptCommitSha": "619bf86767da7208e60bc834c992620ead90a557",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -94,7 +95,7 @@
     "source": {
       "doc_id": "physrevd108106023",
       "citation": "Singh et al., Knot-quiver correspondence for double twist knots, Phys. Rev. D 108, 106023 (2023)",
-      "section_file": "sections/sec-005-1-u2-r2.md",
+      "section_file": "sections/sec-004-iii-knot-quiver-correspondence.md",
       "already_cited_at": "conj:stokes-dt-bps-bridge (beans qou-bk77, qou-qu53)"
     },
     "c41_matrix": [
@@ -212,16 +213,16 @@
     "node_counts": {
       "printed_widths": {
         "C41": {
-          "width": 5,
-          "n_rows": 5
+          "width": null,
+          "n_rows": 0
         },
         "C61": {
-          "width": 9,
-          "n_rows": 9
+          "width": null,
+          "n_rows": 0
         },
         "C81": {
-          "width": 13,
-          "n_rows": 13
+          "width": 4,
+          "n_rows": 4
         }
       },
       "determinants": {
@@ -254,5 +255,7 @@
       "wired": false,
       "fit": false
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "node count of a published 4_1 quiver checked over exact Fractions and a text scan; q0 is never read"
 }
