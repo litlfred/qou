@@ -11,7 +11,7 @@ tags:
     - conjecture-discharge
     - reorg-2026-10-04
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-11-22T22:20:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-3kkl
 ---
 
@@ -196,3 +196,7 @@ Commit `4793cf6f7` on `claude/analytic-conjectures-drain-2026-11-22`: `QOU/Appen
 ## 2026-11-22T21:42:00Z: PR opened
 
 Draft PR litlfred/qou#9135 (issue #9134) carries this work. Not merged; the owner merges.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Pure surreal/hyperreal logic; no physics premise. DyadicBirthdayHyperreal.lean (PR #9135) gives a BirthdayFaithful SurrealField on R* that is not ConwaySimple; conj:surreal-limit-transfer itself stays open.

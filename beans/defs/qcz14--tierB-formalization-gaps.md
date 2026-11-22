@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: medium
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-11-18T12:11:25Z
+updated_at: 2026-11-22T21:58:00Z
 parent: b9cj
 ---
 
@@ -48,3 +48,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 
 ## Round 70 Update (2026-11-18T12:11:25Z)
 - Addressed in PR `litlfred/qou#8466` (HEAD `57eaba11f749480e8b98e9c5a6020b79b2d5a529`, C1 `ac0018f69fff5e2dec418784b19d5c431d4ed5f3`).
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Tier-B parent. B1/B2 are subsumed by #8846 (see qcz19). "Census" here is the Collatz cycle census, used as negative evidence only, not the retired knot-census selection. #8466 open, unmerged.

@@ -11,7 +11,7 @@ tags:
     - cited-sorry
     - paper-qou
 created_at: 2026-08-01T23:31:05Z
-updated_at: 2026-11-22T21:40:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-gdcu
 ---
 
@@ -63,3 +63,7 @@ only the Next-step verdict is being corrected.
 Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
 
 Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies, RESTATED in scope: well-posedness at a fixed q > 1 only. Per the 2026-11-21 ruling it says nothing about classical NS and is not a Clay route; Part A (Omega(q) -> infinity as q -> 1+) means any regularity bound must degenerate as q -> 1.
+
+## 2026-11-22T21:58:00Z: applicability review — RESCOPE
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. See the reset note: well-posedness at a fixed q > 1 only; not a Clay route.

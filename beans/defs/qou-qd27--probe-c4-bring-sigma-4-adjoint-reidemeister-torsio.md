@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:21:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-b1je
 ---
 
@@ -20,3 +20,7 @@ The wall's non-algebraic clause. Does the adjoint Reidemeister torsion of Bring 
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8348, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Never run as an attack; gated on Clausen infra. #8348 closed.

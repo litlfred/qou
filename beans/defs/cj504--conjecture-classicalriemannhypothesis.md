@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-18T09:14:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-4fqg
 ---
 
@@ -16,3 +16,7 @@ parent: qou-4fqg
 ## Progress Update (2026-11-18 — Round 66, PR #8415)
 
 - Added conditional critical-line consumer theorems (`two_mul_re_eq_one`, `re_pos_of_nontrivial_zero`, `re_lt_one_of_nontrivial_zero`, `one_sub_re_eq_re_of_nontrivial_zero`) in `QOU/BraidKnot/ClassicalRiemannHypothesis.lean` (PR litlfred/qou#8415).
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Classical RH, famous-open, no physics premise. #8415 open, unmerged.

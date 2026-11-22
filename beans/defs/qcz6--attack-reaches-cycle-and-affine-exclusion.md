@@ -7,7 +7,7 @@ priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-11-18T12:11:25Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qcz14
 ---
 
@@ -48,3 +48,7 @@ Branch `claude/qcollatz-cycle-classification-2026-11-21` (commit `532c188f3`) ad
 Scope: the formal ring ℤ[q^{±1}] only; says nothing about `reaches_cycle` or about classical Collatz. The PR awaits owner approval (math-repo rule). Mark completed when it merges.
 
 **For this bean:** the affine-exclusion half (child qcz8) is closed by the above. The convergence half (qcz7, `reaches_cycle`) stays open. Note also the vacuity banner on the `QCollatz` class (bean qou-dx7g): `pos` is a free field.
+
+## 2026-11-22T21:58:00Z: applicability review — RESCOPE
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. The affine (A != 1) cycle-exclusion half is done by #8846 (qcz8 completed). Corrected question: reaches_cycle convergence only. #8466 open, unmerged.

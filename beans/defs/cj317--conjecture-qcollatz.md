@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-18T10:36:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qcz14
 ---
 
@@ -28,3 +28,7 @@ Superseded-premise check (owner request 2026-11-21): rests on none of the supers
 The body's carrier description is stale. On main `2ae54ab40` there is **no** `instance : QCollatz := sorry`. `AppendixSurreals/QCollatz.lean:84` declares `class QCollatz (Skein : Type u) [CommRing Skein]`, and no instance exists. **Read its docstring's vacuity banner (bean `qou-dx7g`, 2026-11-20):** `pos` is a free field, so `pos := fun _ => False` satisfies the class; as written the class does not state the conjecture. Pinning it needs `Skein := LaurentPolynomial ℤ` and `pos` defined as the actual cone. That refactor touches ~15 consumers and is owner-gated.
 
 Related progress this session: a sorry-free classification of **all** periodic orbits of the Skein–Collatz map on ℤ[q^{±1}] is in progress (`AppendixSurreals/collatz_cycle_classification.lean`, bean `qcz8`). It addresses the cycle half of the conjecture, not `reaches_cycle`.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. QCollatz famous-open. The cycle classification (#8846, merged 2026-11-21) settles cycles on Z[q^+-1] only; convergence stays open.

@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-22T21:40:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-b1je
 ---
 
@@ -52,3 +52,7 @@ generically true) and so cannot discharge the conjecture on its own.
 Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
 
 Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies. The open content is the `faithful` transfer; the `res != 0` leg is definitional (chiResidual = -6). It does not use the photon, electron or Markov-parameter forms.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. The open content is the `faithful` transfer; the `res != 0` leg is definitional. No particle or Markov-convention premise.

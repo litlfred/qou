@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T06:30:00Z
-updated_at: 2026-10-04T15:11:05Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-4fqg
 ---
 
@@ -176,3 +176,7 @@ Proved, sorry-free (`[propext, Classical.choice, Quot.sound]`, lean-direct exit 
 
 Still open: whether `QExplicitFormulaSeq` has any instance (needs the Mellin/contour
 route the docstring names). Bean stays open.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Pure analytic number theory; no retired premise. Whether QExplicitFormulaSeq is inhabited for a nonempty spectrum is still unresolved.

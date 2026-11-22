@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-20T08:32:31Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-m9o4
 ---
 
@@ -15,3 +15,7 @@ parent: qou-m9o4
 
 
 **2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Generic q_gl_kummer_filtration carrier. The Lean file has no q0/proton/photon mention (grep on main).

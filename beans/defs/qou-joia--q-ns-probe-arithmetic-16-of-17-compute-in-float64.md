@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T08:11:29Z
-updated_at: 2026-10-04T15:22:53Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-a3n3
 ---
 
@@ -101,3 +101,7 @@ ask-the-owner rule exists to stop.
 
 ## Round 74 Progress (PR #8509)
 - De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8509` (C1 `ffa6f4009ea1d8bfb9fcdb4c0721e486e42a5dca`, C2 `521dae553af743d7b8435ff34bef6f8099a8afcf`, 80-dps mpmath witness verified, 0 static audit findings).
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Still live. #8509 merged and names this bean, but it touched only Lean files, not the q-NS probe arithmetic, so the float64 finding is unaddressed.

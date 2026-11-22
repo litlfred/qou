@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-20T08:32:31Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-j5ch
 ---
 
@@ -25,3 +25,7 @@ Was in-progress with no bean update since 2026-08-01 and no main commit naming i
 
 
 **2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. jet_convergence_classical_limit carrier, no physics mention on main.

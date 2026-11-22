@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T10:28:35Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-b1je
 ---
 
@@ -26,3 +26,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8312, closed o
 
 Superseded-premise check (owner request 2026-11-21): none used; pure complexity / growth-order mathematics.
 The counting-lower-bound side is on main: `PhysicalIntractability.lean` (`qou_physical_intractability_unconditional`, 3^{3n} tree ⇒ super-poly steps), `SkeinInfoLowerBound` and `SkeinHorizonLowerBound` (see finding bean qou-4hbq; main commit 77f886747a). The remaining clause, a **VNP / arithmetic-circuit lower bound for the Jones polynomial**, is an unconditional algebraic-complexity lower bound of famous-open strength (VP vs VNP class). It is not attempted here, and no claim is made. Stays todo.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Counting lower bound, pure complexity. #8312 closed unmerged.

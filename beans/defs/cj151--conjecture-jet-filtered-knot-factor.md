@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-18T09:14:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-j5ch
 ---
 
@@ -16,3 +16,7 @@ parent: qou-j5ch
 ## Progress Update (2026-11-18 — Round 66, PR #8415)
 
 - Added unconditional q-Plancherel weight consequences (`jetWeight_eq_zero_of_dq_zero`, `jetWeight_mul_partitionFunction`), conditional `jet_filtered_knot_factor` consumer theorems (`factor_sub_eq_zero`, `weighted_factor_eq`, `factor_diff_eq`), and falsifiability witness `not_of_mismatch` in `QOU/BraidKnot/jet_filtered_knot_factor.lean` (PR litlfred/qou#8415).
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. jet_filtered_knot_factor carrier has no physics mention on main. The cited batch PR #8415 is still open and unmerged, so it is not evidence of progress.

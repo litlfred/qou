@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-18T17:09:31Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-j5ch
 ---
 
@@ -37,3 +37,7 @@ Corpus-derived (source block `habiro-residue-sum-equivalence.md:30-31` decides t
 ## 2026-11-22T21:42:00Z: PR opened
 
 Draft PR litlfred/qou#9135 (issue #9134) carries this work. Not merged; the owner merges.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Worked this pass: wording fixed in two blocks (PR #9135); the identity itself stays open.

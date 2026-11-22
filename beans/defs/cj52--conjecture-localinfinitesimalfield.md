@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-20T08:32:31Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-3kkl
 ---
 
@@ -22,3 +22,7 @@ parent: qou-3kkl
 Superseded-premise check (owner request 2026-11-21): rests on none of the superseded premises; pure surreal/standard-part mathematics.
 
 The body's carrier description is stale. On main `2ae54ab40` there is **no** `instance : LocalInfinitesimalField := sorry`. `LocalInfinitesimalField.lean:102` declares `class LocalInfinitesimalField (X : Type v) (K : Type u) [SurrealField K] …`; **no instance exists anywhere** (the only grep hit, line 119, is commented-out history of a removed `axiom`). Sorry-free consumers in the file: `standardPart_eq_zero`, `standardPart_const`, `leadingCoeff_eq`, `exists_distinct_points`, `sub_infinitesimal`, `not_forall_eq_const`, plus `not_of_subsingleton` (refutes it on a subsingleton `X`, so it is not trivially inhabited). Caveat inherited from bean `hypr` §CORRECTION: `SurrealField`'s birthday axioms admit a two-valued birthday, so any `SurrealField`-generic statement is weaker than its prose. Status unchanged: open.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. q0 enters as a parameter, not a pinned literal (LocalInfinitesimalField.lean:99-114), so the pin rulings do not move it.

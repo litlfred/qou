@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:20:59Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-b1je
 ---
 
@@ -26,3 +26,7 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 ## 2026-11-15 — moved to E7 (open-problem leftovers)
 
 Re-parented `qou-avtq` → `qou-b1je` (EPIC P≠NP-in-QOU), as the 2026-10-10 re-check recommended, beside its sibling `qou-qd27` (PROBE C4). Status stays `todo`: the probe has never been run and it bears on an open conjecture (§13a).
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Probe never run. Its `res` is the P!=NP-wall HH_1 residue (2026-10-10 re-check), not a mass or c_3, so no physics ruling bears on it.

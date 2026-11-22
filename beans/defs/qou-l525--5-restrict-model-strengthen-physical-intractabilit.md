@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T10:28:35Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-b1je
 ---
 
@@ -24,3 +24,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8334, closed o
 
 Superseded-premise check (owner request 2026-11-21): none used; pure complexity / growth-order mathematics.
 The restricted (bandwidth) model is on main: `PhysicalIntractability.lean`. Strengthening it to monotone, bounded-depth or communication models means importing those models' known lower bounds (e.g. Razborov monotone, Håstad depth), and none of them is in Mathlib. This is open research scope with no quick chip, and it stays todo. Finding bean qou-4hbq (main commit 77f886747a) records that this is substantially formalized for the bandwidth model.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Restricted-model strengthening, pure complexity. #8334 closed unmerged.

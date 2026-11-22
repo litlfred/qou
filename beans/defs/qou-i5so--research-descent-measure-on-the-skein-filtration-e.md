@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T21:16:08Z
-updated_at: 2026-11-22T21:40:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qcz14
 ---
 
@@ -21,3 +21,7 @@ parent: qcz14
 Reset in-progress -> todo on owner card 2026-11-22 ("Do all three", analytic-conjectures drain thread). No bean update or main commit was carrying this claim. Re-claim with `bun run beans:claim` if you pick it up.
 
 Applicability check against the rulings in force on 2026-11-22 (docs/coordination/owner-rulings.md): strand colour states, the rescaled generator b = -qX, convention D, photon norm 1, block-level U(1)_em charge, the photon/electron words. Verdict: Still applies, RESTATED: 'q-NS regularity' means fixed q > 1 only, per the 2026-11-21 ruling; the title's 'one lemma buys ... q-NS regularity' does not extend to classical NS. The 2026-11-18 note citing PR #8454 is void: it closed unmerged.
+
+## 2026-11-22T21:58:00Z: applicability review — RESCOPE
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. See the reset note: "q-NS regularity" is fixed q > 1 only; #8454 note void.

@@ -7,7 +7,7 @@ priority: deferred
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:21:00Z
-updated_at: 2026-10-04T15:26:05Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-b1je
 ---
 
@@ -15,3 +15,7 @@ res!=0's non-algebraic requirement IS the P vs NP wall (Aaronson-Wigderson: any 
 
 ## Round 74 Progress (PR #8509)
 - De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8509` (C1 `ffa6f4009ea1d8bfb9fcdb4c0721e486e42a5dca`, C2 `521dae553af743d7b8435ff34bef6f8099a8afcf`, 80-dps mpmath witness verified, 0 static audit findings).
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Algebrization barrier, pure complexity theory. #8509 merged but de-vacuified other theorems; it did not touch this barrier.

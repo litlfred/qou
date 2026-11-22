@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-07-25T03:32:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: b9cj
 ---
 
@@ -302,3 +302,7 @@ Now the epic for P2.QNS under UMBRELLA: open conjectures (formal mathematics onl
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Consistent with the 2026-11-21 Part A (the energy-small class diverges as q -> 1+). "Leray" here is the Leray energy inequality, not the DSS profile, so the 2026-11-22 Galerkin dead end does not touch it.

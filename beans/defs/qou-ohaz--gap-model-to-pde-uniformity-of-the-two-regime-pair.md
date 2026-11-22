@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:06:54Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qou-a3n3
 ---
 
@@ -64,3 +64,7 @@ Was in-progress with no bean update since 2026-09-03 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8343, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22T21:58:00Z: applicability review — APPLIES
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Model-to-PDE uniformity for the pair-collision model. It is a different object from the DSS Leray profile, so the Galerkin dead end does not touch it; any statement must be at fixed q > 1 (Part A). #8343 closed.

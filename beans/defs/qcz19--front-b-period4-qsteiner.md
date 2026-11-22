@@ -1,13 +1,13 @@
 ---
 # qcz19
 title: 'Front B (cycle exclusion): period-4 word-elimination + q-Steiner bound'
-status: in-progress
+status: completed
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-31T20:00:00Z
-updated_at: 2026-11-21T13:17:00Z
+updated_at: 2026-11-22T21:58:00Z
 parent: qcz14
 ---
 
@@ -41,3 +41,7 @@ Scope: the formal ring ℤ[q^{±1}] only; says nothing about `reaches_cycle` or 
 **For this bean:** B2 (the general-word q-Steiner bound) is no longer needed as a separate result. The general-word statement is proved by a different invariant (end coefficients, not the q=1 height).
 
 2026-11-21: PR #8846 MERGED. QOU.AppendixSurreals.CollatzCycleClassification.laurent_cycle_classification (sorry-free, standard axioms) classifies every cycle of the Skein-Collatz map on Z[q^±1]: only 0, -q^-2 and the fundamental cycle {q^-1, 1+q^-1}. Convergence/divergence stays open (not claimed). Part B2 closed by it; rest of qcz19 stays open.
+
+## 2026-11-22T21:58:00Z: applicability review — ALREADY-DONE
+
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. #8846 merged 2026-11-21: laurent_cycle_classification classifies every Skein-Collatz cycle on Z[q^+-1], covering period 4 and the general-word bound by another invariant. The bean's own 2026-11-21 note says to complete it on merge. Cycle exclusion is now a theorem, not an open conjecture, so rule 13a allows completing it.
