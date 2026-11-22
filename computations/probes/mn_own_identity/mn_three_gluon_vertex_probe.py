@@ -507,9 +507,10 @@ try:
     from qou_substrate.constants import Q_50_DIGIT_STR as _Q0S
     q0 = mpm.mpf(_Q0S)
     q0_src = "qou_substrate.constants.Q_50_DIGIT_STR (proton pin)"
-except Exception:  # pragma: no cover
-    q0 = mpm.mpf("1.1099785827513808")
-    q0_src = "literal proton pin (qou_substrate unavailable)"
+except ImportError as _e:  # pragma: no cover
+    # No typed fallback: a 17-digit copy of the pin would publish a different
+    # number silently (reference-literal ratchet, issue #9104).
+    raise SystemExit(f"qou_substrate is required for the proton pin: {_e}")
 Q0_RAT = sp.Rational(mpm.nstr(q0, 40))
 
 
