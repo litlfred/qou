@@ -4,7 +4,7 @@ title: The six-path corpus-grep checklist cannot see .qa.json agent verdicts —
 status: todo
 type: task
 created_at: 2026-09-19T07:18:29Z
-updated_at: 2026-11-20T09:55:00Z
+updated_at: 2026-11-22T21:23:26Z
 ---
 
 
@@ -125,3 +125,24 @@ substantive analysis -- now has to be run against that branch.
 
 **Stays open** per rule 13a. It still deliberately does NOT propose a seventh
 checklist path: that is an AGENTS.md STRICT-section change and the owner's call.
+
+## 2026-11-22 — Open item 1 measured: it is common (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Measured on main `3c4c98fccf3`, committed tree only (`folio/**/*.qa.json`, 3,667 sidecars). The `cat/cat-harness/qa-reports` branch (tip `5529d0fe098`) was not scanned, so this is a lower bound for the derived corpus.
+
+Method: the LATEST entry per criterion per sidecar (history entries ignored); `reviewer.kind == "agent"`; `evidence` longer than 400 characters.
+
+| quantity | count |
+|---|---:|
+| latest criterion entries | 287,743 |
+| of those, agent-reviewed | 98,140 |
+| agent with evidence > 400 chars | **5,471** |
+| blocks carrying at least one | **1,224** |
+| distinct evidence texts | 1,590 |
+| distinct texts used exactly once (block-specific, not boilerplate) | **1,149** |
+
+Top criteria among the long ones are the voice traps (`trap-superlative` 525, `trap-thesis-restatement` 472, `trap-closing-aphorism` 440, `trap-nonspeakable` 440, ...). Some long texts are shared boilerplate (e.g. a 423-char `voice-branch-jargon` text repeated across blocks), which is why the "used once" row is the one to quote.
+
+Answer to item 1: **this is a checklist gap, not a curiosity.** About a third of the paper's blocks carry at least one substantive agent verdict that none of the six corpus-grep paths reaches.
+
+Items 2 and 3 are unchanged: whether to add a seventh path is an AGENTS.md STRICT-section edit and the owner's call. Not done here. **Stays open** (rule 13a / owner decision).
