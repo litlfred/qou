@@ -557,3 +557,13 @@ and audit `2026-06-02-lepton-t2n-torus-tower.md` §2 call `T(2,n)` `S₅`-equiva
 `ℤ_n ↪ S₅`. The monodromy of `T(2,n)` has order `2n`, not `n`. Under a monodromy-order
 criterion the verdicts change: `T(2,3)` (order 6) passes, `T(2,5)` (order 10) fails. Which
 cyclic group the corpus criterion means is an owner question. Nothing here edits that block.
+
+## 21. Both equivariance tests stated (owner card, 2026-11-22)
+
+Following the owner's choice on the discrepancy flagged in §20, `prop:s5-equivariant-torus-knots`
+now states both tests. The ℤₙ test (`S₅` has an element of order `n`) holds for `n ∈ {3, 5}`;
+the monodromy test (order `2n`, i.e. `ℤ₂ × ℤₙ`) holds only for `n = 3`. New sorry-free Lean in
+`observations/s5-equivariant-torus-knots.lean`, proved from cycle types rather than from the
+hand-entered order table: `s5_order_dvd_sixty`, `s5_five_dvd_order`, `s5_has_order_iff`,
+`s5_has_order_two_mul_iff`. No other block was changed; blocks citing the proposition keep the
+ℤₙ reading unless they say otherwise.
