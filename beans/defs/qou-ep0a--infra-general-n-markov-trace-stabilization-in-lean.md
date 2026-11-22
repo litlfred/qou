@@ -1,13 +1,13 @@
 ---
 # qou-ep0a
 title: 'Infra: general-n Markov trace stabilization in Lean — τ-functor F3 (trace realization)'
-status: in-progress
+status: completed
 type: feature
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T23:52:24Z
-updated_at: 2026-11-22T21:30:50Z
+updated_at: 2026-11-22T22:18:50Z
 parent: qou-rtxm
 ---
 
@@ -26,3 +26,6 @@ parent: qou-rtxm
 Still applies, but the 2026-11-16 note overstates what PR #8148 does. That PR is open, not merged, and its file is not on main. Its MarkovTraceTower structure takes stabilization (M1), Markov reduction (M2) and cyclicity (M3) as fields, so tr_iterated_inclusion and tr_stabilized_word iterate an assumption; they do not prove general-n stabilization for H_n(q). The real general-n statement needs the Ocneanu trace constructed on SchurWeyl.Hecke (e.g. via heckeWedderburn + seminormal characters, tr = sum_lambda y_lambda chi_lambda with y_lambda at convention D) and M1 derived from branching. Main now has the Wedderburn iso, which this bean's 2026-07 text predates. Not closed.
 
 ## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): RESCOPE. Premise 'PR #8148 formalized it' is wrong (open PR; stabilization assumed as a field). Restated target: Ocneanu trace on SchurWeyl.Hecke via heckeWedderburn, y_lambda at convention D, M1 derived from branching.
+
+## 2026-11-22: closed completed, verdict ALREADY-DONE (hecke-schur-weyl-lean drain)
+General-n stabilization is proved on the concrete H_n(q), not via the PR #8148 carrier. Evidence on main 3c4c98fcc (pointed out by the W8 Hecke-axioms thread, re-verified here with lean-direct exit 0, #print axioms = propext, Classical.choice, Quot.sound): QOU/SchurWeyl/MarkovTraceInstance.lean. wtrace = sum_nu W_nu * tr rho_nu over seminormal reps; ocneanuMarkovTrace : HeckeCoset.MarkovTraceFamily K q q^-1 (q^3/(q^2+1)) for every n, with tr_one, tr_cyclic, tr_incl (stabilization) and tr_markov all proved (wtrace_cyclic, wtrace_incl, wtrace_markov); eq_wtrace_of_markov gives uniqueness. Hypotheses: field K, q != 0, q not a root of unity, q^2+1 != 0 (generic q, convention D). Not covered: roots of unity; identification with heckeWedderburn's block form (not needed for this bean).

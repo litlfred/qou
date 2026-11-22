@@ -1,13 +1,13 @@
 ---
 # qou-bhrx
 title: 'F4-opt1: abstract Ocneanu cyclic-trace lemma on MarkovStabilization (light permanent closure, all-n)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-11-22T21:30:51Z
+updated_at: 2026-11-22T22:18:50Z
 parent: qou-rtxm
 ---
 
@@ -76,3 +76,6 @@ Was in-progress with no bean update since 2026-08-22 and no main commit naming i
 Still applies at general n. H_4 cyclicity is proved (QOU.Machinery.H4.trM_cyclic, axioms clean, re-checked today). The general-n route is now the Wedderburn one: main has SchurWeyl.heckeWedderburn, so a trace written as sum_lambda y_lambda chi_lambda is cyclic block by block (Matrix.trace_mul_comm). Cyclicity is independent of z; convention D only fixes y_lambda.
 
 ## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): APPLIES, rescoped to the Wedderburn route (H_4 done; general n via block-wise trace_mul_comm).
+
+## 2026-11-22: closed completed, verdict ALREADY-DONE (hecke-schur-weyl-lean drain)
+All-n Ocneanu cyclicity is proved directly (wtrace_cyclic), which is the closure this bean asked for. Evidence on main 3c4c98fcc (pointed out by the W8 Hecke-axioms thread, re-verified here with lean-direct exit 0, #print axioms = propext, Classical.choice, Quot.sound): QOU/SchurWeyl/MarkovTraceInstance.lean. wtrace = sum_nu W_nu * tr rho_nu over seminormal reps; ocneanuMarkovTrace : HeckeCoset.MarkovTraceFamily K q q^-1 (q^3/(q^2+1)) for every n, with tr_one, tr_cyclic, tr_incl (stabilization) and tr_markov all proved (wtrace_cyclic, wtrace_incl, wtrace_markov); eq_wtrace_of_markov gives uniqueness. Hypotheses: field K, q != 0, q not a root of unity, q^2+1 != 0 (generic q, convention D). Not covered: roots of unity; identification with heckeWedderburn's block form (not needed for this bean).

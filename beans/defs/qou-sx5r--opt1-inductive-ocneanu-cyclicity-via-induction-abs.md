@@ -1,13 +1,13 @@
 ---
 # qou-sx5r
 title: 'opt1-inductive: Ocneanu cyclicity via induction — abstract bricks (gen-trace-commute, one-g coset); two-g core residual'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T18:09:26Z
-updated_at: 2026-11-22T21:30:51Z
+updated_at: 2026-11-22T22:18:51Z
 parent: qou-59vq
 ---
 
@@ -60,3 +60,6 @@ CORRECTION to my own framing in PR #5820: I called MarkovInductiveCyclicity 'an 
 Still applies but is likely superseded in practice by the Wedderburn route (see qou-bhrx note today), which gives general-n cyclicity without the coset induction. The inductive bricks remain conditional on HeckeConditionalExpectation, which has no instance. Recommend re-scoping to 'scrap if the Wedderburn route lands'; not scrapped now because it is not yet landed.
 
 ## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): SUPERSEDED-BY (pending) the Wedderburn route under qou-bhrx; conditional on HeckeConditionalExpectation with no instance. Scrap once that route lands.
+
+## 2026-11-22: scrapped, verdict SUPERSEDED-BY QOU/SchurWeyl/MarkovTraceInstance.lean (hecke-schur-weyl-lean drain)
+The inductive coset route is no longer needed: all-n cyclicity is proved unconditionally there. The orphan MarkovInductiveCyclicity / MarkovCosetLift modules stay as they are (deleting them is an owner call). Evidence on main 3c4c98fcc (pointed out by the W8 Hecke-axioms thread, re-verified here with lean-direct exit 0, #print axioms = propext, Classical.choice, Quot.sound): QOU/SchurWeyl/MarkovTraceInstance.lean. wtrace = sum_nu W_nu * tr rho_nu over seminormal reps; ocneanuMarkovTrace : HeckeCoset.MarkovTraceFamily K q q^-1 (q^3/(q^2+1)) for every n, with tr_one, tr_cyclic, tr_incl (stabilization) and tr_markov all proved (wtrace_cyclic, wtrace_incl, wtrace_markov); eq_wtrace_of_markov gives uniqueness. Hypotheses: field K, q != 0, q not a root of unity, q^2+1 != 0 (generic q, convention D). Not covered: roots of unity; identification with heckeWedderburn's block form (not needed for this bean).
