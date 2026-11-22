@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import QOU.SchurWeyl.MarkovTraceInstance
+import QOU.SchurWeyl.OcneanuWeightWenzl
 
 /-!
 # Partition-sum form of tr_M agrees with canonical Markov-axiom reducer
@@ -63,6 +64,35 @@ theorem character_closure {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0)
     T.tr n x = ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
       ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 * (seminormalRep q hq0 hq2 n ν.2 x).trace := by
   rw [eq_wtrace_of_markov q hq0 hq2 hq21 hgen T n x, wtrace_apply]
+
+/-! ### The weight is Wenzl's `y_λ`
+
+`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_schurPrincipal` proves that the
+convention-D Ocneanu weight is Wenzl's level-2 weight, for every Young diagram:
+`ocneanuWeight q z_D λ = schurPrincipal 2 (q²) λ / (q²+1)^{|λ|}`.  Substituting
+it into `character_closure` gives the closure with the Wenzl weight that the
+block prose names.  That `schurPrincipal 2 Q λ` is the weight in Wenzl's paper
+is the citation recorded in `QOU.QBeta.WenzlWeightVanishing`; the identity used
+here is proved.
+-/
+
+open QOU.SchurWeyl QOU.SchurWeyl.SeminormalRep QOU.QBeta.WenzlWeight in
+/-- **Character closure with the Wenzl weight**
+([`prop:q-hecke-seminormal-character-closure`]).  Under the hypotheses of
+`character_closure`,
+
+    T.tr n x = Σ_{|λ| = n+1} (schurPrincipal 2 (q²) λ / (q²+1)^{n+1}) · tr(ρ_λ(x)). -/
+theorem character_closure_wenzl {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1)
+    (T : HeckeCoset.MarkovTraceFamily K q q⁻¹ (q ^ 3 / (q ^ 2 + 1)))
+    (n : ℕ) (x : Hecke K q q⁻¹ n) :
+    T.tr n x = ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
+      schurPrincipal 2 (q ^ 2) ν.1 / (q ^ 2 + 1) ^ (n + 1)
+        * (seminormalRep q hq0 hq2 n ν.2 x).trace := by
+  rw [character_closure q hq0 hq2 hq21 hgen T n x]
+  refine Finset.sum_congr rfl fun ν _ => ?_
+  rw [ocneanuWeight_conventionD_eq_schurPrincipal q hq0 hq21, ν.2]
 
 /-! ### Removed 2026-08-30 — self-assuming projections
 
