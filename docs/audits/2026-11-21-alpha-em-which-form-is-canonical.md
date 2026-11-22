@@ -343,3 +343,40 @@ writhe (framing) phase. That mass is the other piece is not shown.**
    functional as the `ι`-odd part, and says nothing yet about where mass sits.
 
 **Not shown:** that mass is the `ι`-even part; why α_em should be `ι`-odd; the sign.
+
+## 15. The electron and α_em, and the three follow-ups (owner, 2026-11-22: "do all three")
+
+Weights are convention D, `y₃ = (q⁴+1)/(q²+1)²`, `y₂₁ = q²/(q²+1)²`, `y₁₁₁ = 0`.
+`τ = χ_(3) − χ_(1³)` is the α_em functional; the `ι`-odd part of `tr_M` is `(y₃/2)·τ` (§14).
+
+1. **The electron word is one phase on one block.** In the hook representation
+   `σ₀σ₁σ₀` has trace `0` (`QOU.AlphaEM.ElectronWord.electron_hook_trace`, sorry-free).
+   So for any weights its block trace is `w₃q³ + w₁₁₁(−q⁻¹)³`
+   (`electron_block_trace`), and under convention D
+   `tr_M(σ₀σ₁σ₀) = y₃·q³`. Polar form: modulus `y₃`, phase `q³`, the exponent being
+   the writhe `3`.
+2. **Its α_em part and its other part.** `tr_M(e) = y₃(q³+q⁻³)/2 + y₃(q³−q⁻³)/2`. The
+   first summand is the `ι`-odd (α_em) part, the second the `ι`-even part. With
+   `q = e^λ` they are `y₃ cosh 3λ` and `y₃ sinh 3λ`. On `|q| = 1` (`y₃` is real there)
+   they are `y₃ cos 3θ` (real) and `i y₃ sin 3θ` (imaginary). So **for the electron the
+   α_em part is the real part**, not the imaginary one. For the linchpin `(σ₁σ₂)⁵`
+   (writhe 10) the α_em part is imaginary. At `q = 1`, `tr_M(e) = 1/2` and all of it
+   is the α_em part.
+3. **Option 1, the mass formula.** The canonical nucleon mass uses
+   `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³` with `β_Bor = (σ₀σ₁⁻¹)³`, and the muon anchor uses
+   the volume of the figure-eight knot, whose braid word `(σ₀σ₁⁻¹)²` we test. Both words
+   have writhe `0`, so `τ` vanishes on them for every
+   `q` (`borromean_tau`, `figureEight_tau`): their `tr_M` is entirely `ι`-even. So the
+   mass formula does read only the `ι`-even part, **but only because its words have
+   writhe 0**. That is not a selection rule: it says nothing about a word of nonzero
+   writhe, the electron included.
+4. **Option 2, `q = 1`.** `τ(w)(1) = 1 − (−1)^e`: zero on even writhe, `2` on odd. The
+   only `ι`-odd object in α_em, `τ(T35) = (q − q⁻¹)[10]_q`, vanishes at `q = 1`; the
+   coupling `α = q⁻¹/([9]_q[10]_q)` survives there only after dividing by `h`. The
+   n − p term `−m_e/720` (n–p thread, PR #8804, `PREREGISTRATION-em-term.md`) is
+   `α(1)·S` with `S = QPair·hol`, `hol = V³` of writhe 0, and the adopted quark charges.
+   So it is not an `ι`-odd trace effect: the `ι` split does not explain why that term
+   survives `q = 1`. (Scope (a).)
+
+**Not shown:** that mass is the `ι`-even part as a principle; any link between the
+electron's writhe 3 and the linchpin's 10; why α_em is `ι`-odd; the sign.
