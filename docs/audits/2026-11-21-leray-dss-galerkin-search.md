@@ -64,6 +64,17 @@ every accepted point.
   collapsed to a steady solution, so nothing was refined.
 - **Scope.** All of this is scope (a).
 
+**Phase 5 (§12).** Damped least-squares Newton directly at `θ = 1`, seeded from the last phase-4
+shapes:
+- C at L2N3K4 with 7 values of `S₀` from 0.6 to 1.2;
+- B at L2N2K4 with `S₀` = 2.0, 2.16, 2.3, at amplitude scales 0.5, 1 and 2.
+
+None of the 22 runs converged: final `|F|` ranged from 11 to 1.4e6.
+- **C.** Most C seeds found no descent step at all. The full Newton step is about 10 times the seed,
+  and `|F|` is strongly nonlinear along it.
+- **B.** The B runs stalled. The ones with the lowest `|F|` were shrinking toward `A = 0`.
+- **Scope.** No refinement ran. All of this is scope (a).
+
 ## 1. Literature: which classes are already excluded
 
 The library holds no source on self-similar Navier–Stokes. `grep -ai` over `library/INDEX.md`,
@@ -774,4 +785,108 @@ All of it is scope (a): this continuation, of these two truncations, within a 3 
 
 `scripts/precision-gates.sh --changed` on `f8d2ddac0d5` shows the same five red gates as §10.7,
 all pre-existing on `origin/main` at `b17e0551c53`. None of the gate output names a file from this
+branch. The seven tree-measuring witnesses the script rewrote were reverted.
+
+## 12. Phase 5: direct Newton solves at θ = 1 seeded from the phase-4 shapes (arbitrary precision)
+
+The owner chose to seed Newton at θ = 1 from C. Same probe, mode `seed1`. Arb at 60 dps.
+Budget: about 2 h of compute. Three or four processes ran in parallel.
+
+### 12.1 Method
+
+- **Seeds.** Each seed is the last accepted point (`state.y1`) of the phase-4 witness:
+  - C: L2N3K4, `θ = 0.0594`, `S = 0.855`, `|A| = 229.7`;
+  - B: L2N2K4, `θ = 0.0515`, `S = 2.159`, `|A| = 48.5`.
+- **Seed parameters.** The amplitudes are scaled by `amp_scale`, `ω` is reset to `2π/S₀`, and `θ` is
+  set to 1. That is the admissible tail `|y|^{−1−2imω}`.
+- **Solver (`damped_newton`).** Least-squares Gauss–Newton: normal equations with a relative
+  Tikhonov shift of 1e-45, and `∂F/∂ω` by finite difference with `h = 1e-30`. A backtracking line
+  search accepts the largest `λ = 2^{−k}` that lowers `|F|` while keeping `ω > 0`.
+- **Stop reasons.**
+  - `converged`: `|F| < 1e-40(1+|A|)`.
+  - `no_descent_step`: no admissible `λ` lowered `|F|`.
+  - `stalled`: `|F|` fell by less than a factor 10 over the stall window.
+  - `omega_to_zero`: `S > 1e3`.
+  - `escape_amplitude`: `|A| > 1e6`.
+  - `maxit` (20) or `time_limit`.
+- **Witnesses.** The probe writes `leray-dss-logphase-seed1-{B,C1,C2,B2,C3,C4}.witness.json` itself,
+  checkpointed after every iteration. Each holds the full per-iteration history.
+- **Line-search settings by batch.** The first batches (B, C1, C2) used a stall window of 4 and 7
+  halvings (`λ ≥ 1/64`). Those processes started before the setting was configurable, so their
+  witnesses do not carry the field. The later batches (B2, C3, C4) used a stall window of 8 and
+  13 halvings (`λ ≥ 2^{−12}`).
+
+### 12.2 Results
+
+**No run converged.** In every run the final `|F|` stayed between 11 and 1.4e6. No run hit
+`omega_to_zero`, and no run escaped. Because nothing converged, the refinement chain (K → 5, N → 4,
+L → 3) did not run.
+
+**C at L2N3K4, amplitude scale 1:**
+
+| S₀ | batch | stop | final \|F\| | final S | final \|A\| |
+|---|---|---|---|---|---|
+| 0.6 | C1, C3 | no_descent_step | 1.39e6 | 0.600 | 229.7 |
+| 0.7 | C1, C3 | no_descent_step | 1.02e6 | 0.700 | 229.7 |
+| 0.8 | C1, C3 | no_descent_step | 7.77e5 | 0.800 | 229.7 |
+| 0.855 | C1, C3 | no_descent_step | 6.79e5 | 0.855 | 229.7 |
+| 0.9 | C2 | no_descent_step | 6.12e5 | 0.900 | 229.7 |
+| 1.0 | C2 / C4 | no_descent_step / stalled | 3.56e5 / 3.54e5 | 1.004 | 218.3 / 215.4 |
+| 1.2 | C2 / C4 | no_descent_step / time_limit | 3.40e5 / 3.40e5 | 1.19 | 230.0 / 229.8 |
+
+C4 reached its time limit before it could rerun S₀ = 0.9 with 13 halvings.
+
+**B at L2N2K4:**
+
+| S₀ | amp scale | stop | final \|F\| | final S | final \|A\| |
+|---|---|---|---|---|---|
+| 2.0 | 1 | stalled | 1.12e5 | 1.901 | 68.6 |
+| 2.16 | 1 | stalled | 8.10e4 | 2.176 | 83.6 |
+| 2.3 | 1 | stalled | 1.21e4 | 2.195 | 26.1 |
+| 2.0 | 0.5 | stalled | 113 | 1.920 | 0.97 |
+| 2.0 | 2 | stalled | 6.29e4 | 1.957 | 53.4 |
+| 2.16 | 0.5 | stalled | 3.85e3 | 2.126 | 11.7 |
+| 2.16 | 2 | maxit | 11.3 | 2.260 | 1.32 |
+| 2.3 | 0.5 | stalled | 158 | 2.109 | 2.60 |
+| 2.3 | 2 | stalled | 5.40e3 | 2.214 | 10.5 |
+
+The B runs whose `|F|` went lowest are the ones whose amplitude shrank toward `|A| ≈ 1`. They
+appear to be heading for the trivial solution `A = 0`, not for a nonzero orbit. That reading is not
+confirmed, because none of them converged.
+
+### 12.3 Why the C seeds make no progress: a diagnostic
+
+The diagnostic was run at C, S₀ = 0.855, with a one-off script that was not committed. Its
+measurements:
+- **The solver itself works.** The linearised residual `|F − J·dx| = 3.1e-26`, so the linear solve
+  is accurate. A second finite difference of the `ω` column with `h = 1e-20` agrees with the
+  Jacobian's column to 4e-16, against a column norm of 1.9e5.
+- **The full Newton step is far too large.** `|dx| = 2545` against `|A| = 230`, and it moves `ω`
+  from 7.35 by 8.9.
+- **The residual is strongly nonlinear along that step.** Starting from `|F| = 6.79e5`:
+
+  | λ | \|F\| along the step |
+  |---|---|
+  | 1/2 | 2.6e10 |
+  | 2^{−6} | 1.1e7 |
+  | 2^{−12} | 6.81e5 |
+  | 2^{−20} | 679141.16 (start 679141.77) |
+
+So the θ = 1 system is far from its linearisation at these seeds. The `no_descent_step` stops are
+dead ends of this seed and solver, not a coding defect. This does **not** show that a local minimum
+of `|F|` sits at the seed.
+
+### 12.4 What this does and does not show
+
+All of it is scope (a): these seeds, this solver, these two truncations, within about 2 h.
+- No nonzero orbit at θ = 1 was found.
+- The shape of C at `θ ≈ 0.06` is not in the Newton basin of any θ = 1 solution, for any S₀ tried.
+- This says nothing about whether the B or C branch, continued in θ, reaches θ = 1.
+- Nothing identifies `S` with any `q`-quantity. No content block was edited.
+
+### 12.5 Precision gates (phase 5)
+
+`scripts/precision-gates.sh --changed` on `5f8c58ffccc` shows the same five red gates as §10.7 and
+§11.5. They were confirmed pre-existing on `origin/main` at `b17e0551c53` in phase 3; the gates
+were not re-run against the current `origin/main`. None of the gate output names a file from this
 branch. The seven tree-measuring witnesses the script rewrote were reverted.
