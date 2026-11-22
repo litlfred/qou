@@ -1,13 +1,13 @@
 ---
 # qou-uoad
 title: 'GAP: beans CLI slug drift creates duplicate bean files on --body-append'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T13:22:41Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:42:32Z
 parent: qou-5vkl
 ---
 
@@ -54,3 +54,15 @@ and re-landing a duplicate can *undo* a hand fix, as it nearly did here.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8505, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22 — CLOSED: the guard exists and the store holds no duplicates (bean-hygiene wave 2, pass 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `9f883a2d02` and the beans branch as of this pass.
+
+**Applicability:** tracker tooling, no physics premise. Partly moot since 2026-10-10: beans now live on the `cat/cat-harness/beans` branch, and writes go through `branch-store.ts push --id beans`, which splices with `expect` and reports `conflict` rather than landing a second file silently.
+
+The bean's "honest next step" was a guard that resolves by **id** rather than by filename, or a reconcile pass. Both are effectively done:
+- `scripts/check-beans.sh:144-151` reports `duplicate id '<id>' — also claimed by <file>` keyed on the front-matter id (`c65facf831`, 2026-08-23, qou-xqno).
+- Measured now: `ls beans/defs | sed 's/--.*//' | sort | uniq -d` returns **0** duplicate ids across the store.
+
+Not established: whether the beans CLI itself still renames a file on a title change. If a duplicate reappears, the check above fires. The "Round 95" note (PR #8505) is a vacuous batch PR closed 2026-11-20.
