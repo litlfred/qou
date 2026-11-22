@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T09:23:07Z
-updated_at: 2026-11-22T09:23:50Z
+updated_at: 2026-11-22T09:29:31Z
 ---
 
 Owner 2026-11-22 (thread, PR #8804): siblings work under this working assumption and track this bean for proving and formalising it.
@@ -30,3 +30,6 @@ Refs: PR #8804 LITERATURE-COMPARISON.md s37-s41.
 
 
 Prior art: QOU/MassTheory/QOneFlipSymmetry.lean (s34) proves the n = 3 weight-space version (flip_A_i_one, trace_word_flip) and the charge condition q_u^2 = q_d^2 (self/pair_charge_equal_iff). FlipSymmetryAtOne(Bridge) generalise it to all n on C2^n.
+
+
+2026-11-22, from the n-p cell thread (PR #8955, via coordinator): the assumption holds in E0 units. The cell term 2 ln q and both vertex splits vanish at q = 1. Caveat: E0 = m_e/(q(q-1)) has a pole at q = 1, so the MeV cell term 2 E0 ln q tends to 2 m_e, not 0. This is the same class as item 4 (unit maps with poles turn O(h) terms into nonzero or divergent limits); the defect is in the unit map, not in the braid functional. Gap bean qou-sgav.
