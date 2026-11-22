@@ -18,6 +18,25 @@ three loops linked so that no two are directly joined, the Borromean
 rings, is the proton or neutron. The same objects can be read as
 vortex lines in a fluid, and the later chapters use both pictures.
 
+The idea that particles are knots has a history. Helmholtz proved in
+1858 that in an ideal fluid a vortex tube moves with the flow and keeps
+its strength \cite{helmholtz1858}, so a knotted vortex ring keeps its
+knot type. In 1867 William Thomson, later Lord Kelvin, proposed that
+atoms are knotted and linked vortex rings in the ether, one knot type
+for each element \cite{thomson1867vortexatoms}. Maxwell took the idea
+seriously and recorded Gauss's integral for the linking number of two
+closed curves \cite{maxwell1873treatise2}, and Tait's tables of knots,
+begun to give the vortex atoms a periodic table, started knot theory as
+a subject \cite{tait1877knots}. The vortex atom was abandoned by about
+1900 \cite{kragh2002vortexatom}, but knotted particles have returned,
+as knotted solitons in field theory \cite{faddeevniemi1997} and in
+Avrin's model, where the unknot and the trefoil bound the bands that
+model the elementary fermions \cite{avrin-2012}. This paper keeps the
+combinatorics of that lineage, knot and braid types and the algebra of
+their crossings, and not the ether or its mechanics; the chapter on
+knots and particles gives a fuller account
+([Knots, Particles, and Confinement](#chap:knots-particles-confinement)).
+
 The algebra that describes how such strands cross is the
 Iwahori–Hecke algebra $H_n(q)$. Its generator $\sigma_i$ crosses
 strand $i$ over strand $i+1$, and the only rule beyond the braid
