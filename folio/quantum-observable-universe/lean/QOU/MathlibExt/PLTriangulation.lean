@@ -44,9 +44,10 @@ common faces).
 
 ## What is NOT proved here
 
-Existence of triangulations of compact PL sets and the uniqueness of regular neighbourhoods
-(existence of derived subdivisions is `exists_derived` in `PLBarycentric.lean`). These are classical (Rourke–Sanderson Ch. 2–3) and are not used by the
-Alexander trick (`PLAlexander.lean`).
+Existence of triangulations of compact PL sets and the uniqueness of regular neighbourhoods.
+These are classical (Rourke–Sanderson Ch. 2–3) and are not used by the Alexander trick
+(`PLAlexander.lean`). Existence of derived subdivisions is `exists_derived` in
+`PLBarycentric.lean`.
 -/
 
 namespace QOU.MathlibExt.PL
