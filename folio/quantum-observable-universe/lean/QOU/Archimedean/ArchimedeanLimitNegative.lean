@@ -21,8 +21,10 @@ With `x ∈ (0,1)`, both `x` and `x²` lie in `(0,1)`, where the limit is known;
 scaling `q → 1`, `n(1-q) → ∞` implies the same for `q²`, and
 `(1-q)/(1-q²) = 1/(1+q) → ½`.
 
-The endpoint `x = -1` would need the limit at `x² = 1`, which is not proved; it stays
-open, as do `x = 1` and the restatement for `x > 1` that the bean records.
+The endpoint `x = -1` cannot go through duplication, since `x² = 1` is where the class
+fails as stated. It is proved directly in `ArchimedeanLimitEndpoints.lean`
+(`archimedeanLimit_neg_one`), which also refutes the stated class at `x = 1`. The
+restatement for `x > 1` that the bean records stays open.
 
 -- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -/
