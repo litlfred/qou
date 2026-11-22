@@ -827,3 +827,51 @@ changes sign in that window.
 was fixed in advance and was not chosen for the sign. Whether a cross-nucleon linking is physically the
 right core is not decided here: it would be the first coupling on record with pp ≠ nn at generic q from the
 braid alone. Tower status: n = 6.
+
+## §36 The full-twist control of §35, proved at generic q (2026-11-22, owner: "Do all three")
+
+`QOU/QBeta/PairMonodromySymmetry.lean` (sorry-free, lean-direct exit 0, axioms `propext`,
+`Classical.choice`, `Quot.sound` only) proves row (e) of §35 for every nonzero `q` in any field, and
+for every in-block word `w`:
+
+```
+fullTwist_pp_eq_nn :  T_X[pp]·T_1[nn] = T_X[nn]·T_1[pp]     (core = w in each block, then β_AB²)
+```
+
+**How.** Two symmetries of the six-strand space do the work.
+
+1. *Strand reversal with all strands flipped* (`Θ`). It sends `σ_i ↦ σ_{4−i}`, swaps the blocks,
+   and on one block sends `e ↦ f`, `K ↦ K⁻¹`, `P_pp ↦ P_nn`. The full twist `β² = (σ₂σ₃σ₄σ₁σ₂σ₃σ₀σ₁σ₂)²`
+   is fixed by it (`Θ_Mt`), and so is the pair operator `X = h²(C_AB − C_A − C_B)` (`Θ_X`, using
+   `h(ef − fe) = K − K⁻¹` on the coproduct).
+2. *The half twist on each block* (`Δ = σ₀σ₁σ₀`). It conjugates every in-block letter to its mirror
+   (`Δ_letter`), commutes with the block's `e, f, K` and Casimir (`Δ_cas`), and commutes with `β²`
+   because `β²` is central in the six-strand braid group (`M_σ0…M_σ4`, proved from the braid
+   relations and far commutations only).
+
+Together they give `rd_sym`: for any `Y` fixed by `Θ` and commuting with `Δ⊗Δ`,
+`T_Y[pp](w_A, w_B) = q⁴·T_Y[nn](w_B, w_A)`. With `w_A = w_B` the factor `q⁴` cancels in the
+cross product, which is the statement above.
+
+**What it tells us.** §35's split between rows (c) and (e) is now structural, not numerical: any core
+fixed by the reversal-and-flip symmetry and by the per-block half twist keeps pp = nn at every `q`.
+σ₂² is fixed by `Θ` but is not central, and the theorem's second hypothesis (commuting with `Δ⊗Δ`)
+is what it lacks; §35 measured that it does split pp from nn. (That σ₂² fails the hypothesis is read
+off the probe result, not proved here.) So a cross-nucleon core can only split pp from nn by breaking
+centrality. Tower status: `n = 6` (two three-strand blocks), all orders in `q` (exact in the field).
+
+**On the planning thread's question (L2 W1): can the hadron-line term κ·Q_A·Q_B give a `q = 1`
+term for Q_β?** What is proved (`HadronChargeLineCoulomb`) is that the line monodromy contributes
+`κ·Q_A·Q_B` with `κ = 2 log t`, and that `t` is a parameter of its own, not a function of `q`. So the
+term is `q`-independent by construction and survives at `q = 1` exactly when `t ≠ 1` there. Two
+limits on reading more into it:
+
+* It is a *pair* term. In `n → p e ν̄` the only charged pair in the final state is `(p, e)`, with
+  `Q_p Q_e = −1`; the initial state has none. So it could enter Q_β only if the proton and electron
+  lines are counted as linked in the final state, which nothing in the corpus establishes.
+* For `m_n − m_p` on one nucleon there is no partner line at all. A single-line contribution would
+  have to come from the ribbon twist `θ_Q = t^{Q²}`, which is not formalised here and would make the
+  proton heavier for `t > 1`, i.e. the wrong sign if it stood alone.
+
+So: possible in form, not established, and its size waits on `t`, i.e. on α_EM (open). Scope-(a).
+No empirical input, no fitting.
