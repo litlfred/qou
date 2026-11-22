@@ -60,6 +60,9 @@ Sorry-free. No fit; nothing wired.
 --      Thm 3.9: a θ^{−δ} factor carries them to the alien-derivation invariants). §2.3
 --      "one level" assumes two integral slopes, so this gives the kernel's meaning, not
 --      C1 Stokes data (C1 at ∞ is isoclinic).
+-- Ref: [morita2014] https://arxiv.org/abs/1404.2541 (§7, Thm 7.1: q-Borel–Laplace connection
+--      formula for the divergent series 2φ0(0,0;−;q,x) solving the Ramanujan equation; a
+--      second explicit connection-formula precedent, with two slopes, not C1's single one)
 -- Ref: [leitner2026] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
 -/
 import Mathlib.Data.Nat.Choose.Basic
