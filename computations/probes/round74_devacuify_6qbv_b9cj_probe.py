@@ -167,6 +167,10 @@ def main() -> None:
     assert all_passed, "One or more probe checks failed!"
 
     witness = {
+        "q0Anchor": "independent",
+        "q0AnchorReason": "mpmath checks of Lean lemmas (Euler characteristic, CAL-1 m_e/m_mu mass "
+                          "deficit identity, cluster ordering, truth table, polynomial growth); no "
+                          "q appears and q0 is never read",
         "probe": "round74_devacuify_6qbv_b9cj_probe",
         "scriptPath": script_rel,
         "scriptCommitSha": commit_sha,

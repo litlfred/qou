@@ -86,6 +86,9 @@ for kind, cases in (("cases", CASES), ("holdout", HOLDOUT)):
 tally = {k: f"{v[0]}/{v[1]}" for k, v in tally.items()}
 print(tally)
 with open(os.path.join(HERE, "bond-leading-order.witness.json"), "w") as fh:
-    json.dump({"description": __doc__.strip(), "engine": "python-flint exact Q(q)",
+    json.dump({"q0Anchor": "independent",
+               "q0AnchorReason": "exact fmpq_poly arithmetic in Q(q), leading order read off at q = 1 "
+                                 "(y = q^2 - 1); q0 is never read",
+               "description": __doc__.strip(), "engine": "python-flint exact Q(q)",
                "exploratory": True, "tally_agreeing_over_total": tally, "rows": rows},
               fh, indent=1)
