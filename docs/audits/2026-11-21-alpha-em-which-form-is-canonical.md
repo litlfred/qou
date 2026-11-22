@@ -380,3 +380,40 @@ Weights are convention D, `y₃ = (q⁴+1)/(q²+1)²`, `y₂₁ = q²/(q²+1)²`
 
 **Not shown:** that mass is the `ι`-even part as a principle; any link between the
 electron's writhe 3 and the linchpin's 10; why α_em is `ι`-odd; the sign.
+
+## 16. The photon on the electron, and T(3,5) as the electron cubed (2026-11-22)
+
+Lean: `QOU/AlphaEM/PhotonElectronTrace.lean` (sorry-free, standard axioms only).
+Probe: `computations/alpha_em/photon_gl11_supertrace_weights_probe.py`, 40/40.
+
+**Photon.** `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`. The trace is linear, so each term is read
+by its writhe. The chiral vertex `σ₀σ₁⁻¹` has writhe 0, and `τ` vanishes on it
+(`chiralVertex_tau`). Each single letter gives `τ = q + q⁻¹` (`letter_tau`). The ι-odd
+part of the convention-D trace of `γ` is therefore
+`(φ₀ + φ₁)(q⁴+1) / (2q(q²+1))`, which is `(φ₀ + φ₁)/2` at `q = 1`.
+
+**Photon on the electron.** `γ·e` has terms of writhe 3, 4, 4, 3. At `q = 1`, `τ` is
+`1 − (−1)^e`, so the writhe-4 terms drop and the ι-odd part is `(1 + φ₀₁)/2`. On the
+electron, only the chiral vertex carries `α_em` at `q = 1`. The single letters, which
+carry it on the bare photon, do not.
+
+**Writhe 3 and writhe 10.** The braid identity `(σ₀σ₁)⁵ = Δ²·Δ·σ₁` with `Δ = σ₀σ₁σ₀`
+(the electron word) and `Δ² = (σ₀σ₁)³` (the full twist) gives
+
+    T(3,5) = electron³ · σ₁.
+
+Lean proves it on all three blocks of `H₃(q)`: on the hook block (`t35_hook`) and on the two
+one-dimensional blocks (`t35_sym_alt`). Since `H₃(q)` is semisimple at generic `q`, the
+identity therefore holds in `H₃(q)`. The full twist acts as `1` on the hook block
+(`electron_sq_hook`). The test was registered before it was run: among
+`electron^k · (photon term)` for `k ≤ 4`, writhe 10 occurs only as `electron³·σ₀` and
+`electron³·σ₁`. These two have the same trace.
+
+**What this shows, and what it does not.**
+
+- It shows that the `[10]_q` linchpin word is reachable from the electron word and one
+  photon letter. It is the `φ₁` term (or the `φ₀` term) of `γ·e³`.
+- It does not show why the electron enters cubed, or why `α_em` should read this term.
+  It also fixes no value, and nothing in it was chosen against a target.
+- At `q = 1` the writhe is 10, which is even, so `τ(T35) = 0`. The linchpin's content is
+  off `q = 1`, which matches §15: on `|q| = 1` its α_em part is imaginary.
