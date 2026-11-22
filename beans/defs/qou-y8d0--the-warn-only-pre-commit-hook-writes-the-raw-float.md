@@ -1,13 +1,13 @@
 ---
 # qou-y8d0
 title: The warn-only pre-commit hook WRITES the raw-float64 ratchet witness on every computations commit
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T09:19:43Z
-updated_at: 2026-11-16T19:56:39Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -60,3 +60,9 @@ warn-only hook has no business mutating the tree at all.
 
 - Added `--no-write` flag to `computations/witness_raw_float64_audit.py` and passed `--no-write` from `scripts/precommit-precision-warn.sh` so the warn-only `PreToolUse` hook runs the ratchet in read-only mode without rewriting `computations/witness-raw-float64-audit.witness.json`.
 - PR: https://github.com/litlfred/qou/pull/8178 (`6465362ef2e7902778c4f8796f81286e3aeb81bc`)
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8178 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `2eb92b6a36` ("port #8178: ..."), which names this bean. Verified on main: `scripts/precommit-precision-warn.sh` passes `--no-write` (2 sites), so the warn-only hook no longer rewrites the ratchet witness.

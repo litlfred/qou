@@ -1,12 +1,12 @@
 ---
 # qou-f2pf
 title: lp_shadow_price leaves float64 residue on 6 of 20 blocks its docstring says it zeroes
-status: in-progress
+status: completed
 pr: 8186
 type: task
 priority: normal
 created_at: 2026-09-12T20:16:18Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -75,3 +75,9 @@ Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bea
 
 ## Round 51 Progress
 - [x] PR https://github.com/litlfred/qou/pull/8186 (`fb4f6926d3f96fd99209ef3cb58128ff0ce2701b`): updated `lp_shadow_price(partition)` in `computations/hecke_core_legacy.py` to return exact `_mp.mpf(0)` whenever `k == 0 or d == 1` (covering all 20 of 20 one-dimensional blocks `(k,)` and `(1^k)` for k=2..11).
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8186 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `7bdbcf1724` ("port #8186: ..."), which names this bean. Verified on main: `lp_shadow_price` (`computations/hecke_core_legacy.py:376`) returns `_mp.mpf(0)` for `k == 0` and has the `d == 1` branch for the one-dimensional blocks.

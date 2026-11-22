@@ -1,13 +1,13 @@
 ---
 # qou-uc1n
 title: prearchimedean_bond_factor.py archimedean block is float64 end-to-end
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T07:55:29Z
-updated_at: 2026-11-16T19:56:39Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -41,3 +41,9 @@ energies to move in the last digits when it lands.
 
 - Lifted the archimedean evaluation block in `computations/prearchimedean_bond_factor.py` from `float64` to `mpmath.mpf` at `compute_dps=70` (`set_compute_dps()`, `Q_50_DIGIT_STR`), serialized via `_precision.fmt`, added `--self-test`, and regenerated `computations/prearchimedean-bond-factor.witness.json` (`10 -> 0` raw float64 fields).
 - PR: https://github.com/litlfred/qou/pull/8178 (`6465362ef2e7902778c4f8796f81286e3aeb81bc`)
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8178 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `2eb92b6a36` ("port #8178: ..."), which names this bean. Verified on main: `prearchimedean-bond-factor.witness.json` holds 0 JSON floats; the archimedean block runs in mpf.

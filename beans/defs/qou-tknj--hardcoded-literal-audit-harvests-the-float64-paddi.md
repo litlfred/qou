@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T10:09:44Z
-updated_at: 2026-11-17T10:37:00Z
+updated_at: 2026-11-22T21:19:32Z
 parent: qou-9nnz
 ---
 
@@ -67,3 +67,9 @@ its producer until this is fixed.
 ## Round 55 Update (2026-11-17, PR #8307)
 
 Excluded `witness_float64_padding_audit.py` and `strip_float64_padding.py` in `computations/audits/hardcoded_literal_audit.py` so the audit does not harvest the float64-padding audit's own documentation/test fixture strings (PR #8307, commit `cf8ca11962518083f27bc0a2ce60447359b28381`).
+
+## 2026-11-22 — note (bean-hygiene wave 2): the fix is NOT on main
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The Round 55 entry cites PR #8307 (commit `cf8ca11962`), a batch PR. `computations/audits/hardcoded_literal_audit.py` on main does not mention `witness_float64_padding_audit.py` or `strip_float64_padding.py`, so the exclusion did not land. Left open.

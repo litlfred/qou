@@ -1,13 +1,13 @@
 ---
 # qou-geqa
 title: '24 producers on main cannot complete: 14 crash, 10 exceed 240s'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T20:16:11Z
-updated_at: 2026-10-04T15:16:01Z
+updated_at: 2026-11-22T21:19:02Z
 parent: qou-5vkl
 ---
 
@@ -433,3 +433,9 @@ Fixed and tracked as `qou-lz8f`, with a **static** detector
 screen for this one by running the candidates, since running them is what does
 the damage. 38 candidates from the regression vector; 1 confirmed, 37
 unverified.
+
+## 2026-11-22 — CLOSED: census drained to 0; the refill is tracked by qou-lz8f (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+This bean's census reached "0 outstanding" (the tally above). The 2026-09-13 entry records that the class refills, and hands the refill to `qou-lz8f` (in-progress, with the static detector `computations/audits/mpf_json_encoder_audit.py`). Keeping two open beans on one live class splits the record; the live one is `qou-lz8f`.

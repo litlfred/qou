@@ -1,11 +1,11 @@
 ---
 # qou-0p2h
 title: never_raises_dps_audit is blind to a file that never NAMES mpmath — 5 live, 1 fixed, all computing at dps=15
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-14T15:57:17Z
-updated_at: 2026-11-16T19:29:47Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -238,3 +238,9 @@ Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bea
 - Extended `mp_value_calls(tree)` in `computations/never_raises_dps_audit.py` with `MPF_CONST_MODULES` so scripts that never name `mpmath` directly but import an `mpf` constant (`HBAR_MEV_S`, `M_E_MEV`, etc.) without importing a float64 `Q` (`qou-840k` lane) and perform `ast.BinOp` arithmetic on it are detected by the audit.
 - Added `.claude`, `.git`, `.lake`, `node_modules` to `SKIP_DIRS` and added 2 new self-test cases (15 total).
 - PR: https://github.com/litlfred/qou/pull/8170 (`8b83507c7e14547848b5b991bdd3396fc7f3a703`)
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8170 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `ca6b5d6dd9` ("port #8170: ..."), which names this bean. Verified on main: `computations/never_raises_dps_audit.py` carries `MPF_CONST_MODULES` (3 sites), so a file that only imports an mpf constant is now seen.

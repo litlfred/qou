@@ -1,14 +1,14 @@
 ---
 # qou-gik1
 title: 'RED on main: probe_9b asserts a 1.96e-4 Jones/TL-vs-Wenzl trace gap that convention D closed to EXACTLY zero'
-status: in-progress
+status: completed
 pr: 8226
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T06:21:19Z
-updated_at: 2026-10-04T15:23:17Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -108,3 +108,9 @@ witness itself).
 
 ## Round 52 Progress
 - [x] PR https://github.com/litlfred/qou/pull/8226 (`523155d5604cc384f307eb1cb22785f1fded85da`): updated `trace_convention_gap_recorded` in `probe_9b_perlambda_brane_tower.py` to `expected="0", tolerance="1e-40"` (`allPassed: true`, 0 raw float64) and tightened `wedderburn_lift_consistent_to_2em4` tolerance in `borromean_per_lambda_fr_probe.py` to `1e-40`.
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8226 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `adb97b5d36` ("port #8226: ..."), which names this bean. Verified on main: `probe_9b_perlambda_brane_tower.py:507-510` asserts `trace_convention_gap_recorded` with `expected="0", tolerance="1e-40"`, matching the convention-D result this bean measured.

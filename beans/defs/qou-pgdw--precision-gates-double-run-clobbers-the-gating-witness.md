@@ -1,13 +1,13 @@
 ---
 # qou-pgdw
 title: precision-gates.sh runs the raw-float64 audit twice and the advisory run overwrites the gating run's committed witness
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T21:10:00Z
-updated_at: 2026-10-04T15:15:00Z
+updated_at: 2026-11-22T21:19:32Z
 parent: qou-9nnz
 ---
 
@@ -72,3 +72,9 @@ https://github.com/litlfred/qou/pull/5123#issuecomment-5304213117
 - **Status:** Kept `in-progress` per owner review policy.
 - **Verified on `main`:**
   - `computations/witness_raw_float64_audit.py` derives both `_output_name(scan_root)` (line 131, landed in `7083509439` / `7668b998e9` on `2026-08-15`) and `_baseline_path(scan_root)` (line 76, landed in `8ba73cc915` on `2026-08-21`), emitting `witness-raw-float64--<slug>-audit.witness.json` and `raw-float64-baseline--<slug>.json` for non-default `--scan-root` values without clobbering `computations/witness-raw-float64-audit.witness.json`.
+
+## 2026-11-22 — CLOSED: fixed on main, as the 2026-11-15 verification already found (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+Re-checked: `computations/witness_raw_float64_audit.py:131` `_output_name(scan_root)` and `:76` `_baseline_path(scan_root)` give every non-default `--scan-root` its own witness and baseline, so the advisory runs at `scripts/precision-gates.sh:399` and `:430` no longer write the gating run's file (`:78`). The 2026-11-15 entry verified the same and kept the bean open only for owner review; nothing in the body names remaining work. Not one of the six reds PR #9105 is fixing.

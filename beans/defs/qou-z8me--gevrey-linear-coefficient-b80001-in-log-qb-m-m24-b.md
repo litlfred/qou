@@ -1,14 +1,14 @@
 ---
 # qou-z8me
 title: Gevrey linear coefficient B=8.0001 in -log_q|b_m| = m^2/4 + Bm + C — exactly 8, or a log-correction artifact? (do NOT read as the self-linking 8 until derived)
-status: todo
+status: completed
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-22T21:18:45Z
 parent: qou-frzo
 ---
 
@@ -70,3 +70,10 @@ Probe pre-registered: docs/audits/2026-11-21-c1-gevrey-linear-coefficient.md; co
 Scope: positive solutions only; sign-changing / complex data not proved. Superseded-premise check (owner 2026-11-21): none — pure q-difference object, q free, no photon/convention/trace/fit input.
 
 2026-11-21: draft PR #8857 (issue #8854) carries the Lean proof, audit and probe.
+
+## 2026-11-22 — CLOSED: answered and merged (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The question (is the linear coefficient exactly 8?) is answered on main by `ffbd9f4dbe` (PR #8857): `folio/quantum-observable-universe/lean/QOU/Mathlib/C1GevreyLinearCoeff.lean`, `linear_coeff_tendsto` (line 386) and `c1_linear_coeff_of_nonneg_init` (line 478), no `sorry` in the file. B = (1 − log_q(q − q⁻¹))/2; the 8 was a coincidence of evaluation at the probe q.
+The proof's stated scope (positive solutions; sign-changing or complex data not proved) is a narrower open question, not this bean's. File it separately if wanted.

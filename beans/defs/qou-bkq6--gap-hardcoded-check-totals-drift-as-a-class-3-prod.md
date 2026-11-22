@@ -1,14 +1,14 @@
 ---
 # qou-bkq6
 title: 'GAP: hardcoded check totals drift as a class — 3 producers print N/N while N+1 checks execute'
-status: in-progress
+status: completed
 pr: 8248
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:35:10Z
-updated_at: 2026-11-17T07:18:00Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-5vkl
 ---
 
@@ -59,3 +59,9 @@ kind of small wrongness that gets quoted later.
 
 - [x] Derive check totals dynamically from `len(_CHECKS)` in `qbeta_delta_bar_parity_probe.py` (16/16), `qbeta_nucleon_selection_rule_probe.py` (5/5), and `growing_width_cut_shape_exclusion_probe.py` (9/9) and regenerate all 3 witnesses (PR #8248, Commit 1 `d3dcd4c4757a988299ad0246ed502bd2358a90e4`, Commit 2 `b4185f1dac70a76b08299e291f3137fb9b60fe3c`).
 - [ ] Merge PR #8248 (`claude/round53-trd0-9nnz-fixes`, HEAD `b4185f1dac70a76b08299e291f3137fb9b60fe3c`)
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8248 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `d226f1ed95` ("port #8248: ..."), which names this bean. Verified on main: all three producers named (`qbeta_delta_bar_parity_probe.py`, `qbeta_nucleon_selection_rule_probe.py`, `growing_width_cut_shape_exclusion_probe.py`) derive the total from `len(_CHECKS)`.

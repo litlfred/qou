@@ -1,13 +1,13 @@
 ---
 # qou-y0xk
 title: rho-k witness merged with a STRIPPED environment — scipy/clarabel dropped, mpmath downgraded
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:53:31Z
-updated_at: 2026-10-04T15:24:11Z
+updated_at: 2026-11-22T21:19:02Z
 parent: qou-5vkl
 ---
 
@@ -38,3 +38,9 @@ FOLLOW-UP WORTH DOING: a preflight in WitnessBuilder.save() that warns when
 the environment block LOSES a key or DOWNGRADES a version relative to the
 witness already on disk. That is a mechanical check and it would have caught
 both this and the derivation-chain case at write time.
+
+## 2026-11-22 — CLOSED: the stripped environment was restored by its author (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+`2a06df4f53` (2026-08-19) "fix(rho-k): restore the environment I stripped off this witness" is the re-run this bean asks for. The witness was re-run again on 2026-10-05 under the ruled β_Bor word (`b23b96cdfe`, owner-approved), so the merged-in stripped block is gone from main. The WitnessBuilder.save() preflight is named as "worth doing", not as this bean's task; file it on its own if wanted.

@@ -1,13 +1,13 @@
 ---
 # qou-qpj5
 title: mpf_import_time_dps_audit never scans tools/pyhecke, where _PROTON_G0 is frozen — and test_nucleon_gen_chains_q_param fails on main because of it
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T06:42:55Z
-updated_at: 2026-11-16T19:56:39Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -71,3 +71,9 @@ an adjacent test I did not have to run.
 - Raised the import-time `workdps` floor in `tools/pyhecke/python/pyhecke/atom.py::nucleon_gen_chains` from `60` to `70` (`COMPUTE_DPS`), so `_PROTON_G0` / `_PROTON_G1` / `_NEUTRON_G0` / `_NEUTRON_G1` match `nucleon_gen_chains` called after `set_compute_dps()` (fixing `computations/test_nucleon_gen_chains_q_param.py` on `main`).
 - Added `--include-tools` to `computations/mpf_import_time_dps_audit.py` to scan `tools/pyhecke` alongside `computations/`.
 - PR: https://github.com/litlfred/qou/pull/8178 (`6465362ef2e7902778c4f8796f81286e3aeb81bc`)
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8178 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `2eb92b6a36` ("port #8178: ..."), which names this bean. Verified on main: `tools/pyhecke/python/pyhecke/atom.py:514` builds under `workdps(max(mp.dps, 70))`, `mpf_import_time_dps_audit.py` has `--include-tools`, and `computations/test_nucleon_gen_chains_q_param.py` PASSES today (run with `PYTHONPATH=computations:tools/pyhecke/python`).

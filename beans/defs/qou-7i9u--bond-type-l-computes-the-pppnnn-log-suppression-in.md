@@ -1,13 +1,13 @@
 ---
 # qou-7i9u
 title: _bond_type_L computes the pp/pn/nn log-suppression in float64 inside a witness-emitting producer
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T14:56:24Z
-updated_at: 2026-11-16T19:29:47Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -26,3 +26,9 @@ FIX (one producer): carry mp.mpf end to end — L = mp.log(tf/ta) with tf, ta as
 - Lifted `_bond_type_L()`, `_constants()`, `_load_canonical_traces()`, `_transfer_traces()`, and `_forms()` in `computations/binding_single_pipeline_comparison.py` from `float` / `math.log` to `mpmath.mpf` / `mp.log` at `compute_dps=70` (`set_compute_dps()`).
 - Regenerated `computations/binding-single-pipeline-comparison.witness.json` via `_precision.fmt` with `0` raw float64 values.
 - PR: https://github.com/litlfred/qou/pull/8170 (`8b83507c7e14547848b5b991bdd3396fc7f3a703`)
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8170 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `ca6b5d6dd9` ("port #8170: ..."), which names this bean. Verified on main: `_bond_type_L` in `computations/binding_single_pipeline_comparison.py` has no `math.log`/`float(` left and uses `mp.log`.

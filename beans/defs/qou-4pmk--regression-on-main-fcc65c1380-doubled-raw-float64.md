@@ -1,14 +1,14 @@
 ---
 # qou-4pmk
 title: 'REGRESSION on main: fcc65c1380 doubled raw float64 in he-nu-sdp-saturation-obstruction (5->11) and the ratchet cannot see it'
-status: in-progress
+status: completed
 pr: 8186
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T13:08:55Z
-updated_at: 2026-10-04T15:15:50Z
+updated_at: 2026-11-22T21:19:32Z
 parent: qou-9nnz
 ---
 
@@ -76,3 +76,9 @@ local regeneration rather than commit it.
 
 ## Round 51 Progress
 - [x] PR https://github.com/litlfred/qou/pull/8186 (`fb4f6926d3f96fd99209ef3cb58128ff0ce2701b`): serialized `q0` via `Q_50_DIGIT_STR` and LP support weights as strings in `computations/probes/he_nu_sdp_saturation_obstruction.py`, wrapped witness emission via `WitnessBuilder.wrap_legacy` with checkable assertions, and regenerated `he-nu-sdp-saturation-obstruction.witness.json` (0 raw float64).
+
+## 2026-11-22 — CLOSED: the regression is drained on main (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The Round 51 work (PR #8186) reached main as `7bdbcf1724` "port #8186: Fix raw float64 ... (qou-wc9f, qou-f2pf, qou-5k8x, qou-4pmk, qou-ah1m)" on 2026-11-21. Measured today: `computations/he-nu-sdp-saturation-obstruction.witness.json` holds **0** JSON float values (walked the whole document), against the 11 this bean recorded.

@@ -1,14 +1,14 @@
 ---
 # qou-ah1m
 title: main regressed 2 witnesses on the raw-float64 ratchet (phase-transition-q-ideal-gas, seifert-volume-meson-n7-extension)
-status: in-progress
+status: completed
 pr: 8186
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T09:54:37Z
-updated_at: 2026-10-04T15:21:25Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -115,3 +115,9 @@ baseline and the auditor are untouched, and the drift is main's.
 
 ## Round 51 Progress
 - [x] PR https://github.com/litlfred/qou/pull/8186 (`fb4f6926d3f96fd99209ef3cb58128ff0ce2701b`): updated `computations/phase_transition_q_ideal_gas.py` and `computations/seifert_volume_meson_n7_extension.py` to use `set_compute_dps()`, explicit `_precision.fmt` serialization, and `mpf` `R_gas`, and regenerated both witnesses (0 raw float64).
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8186 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `7bdbcf1724` ("port #8186: ..."), which names this bean. Verified on main: `phase-transition-q-ideal-gas.witness.json` and `seifert-volume-meson-n7-extension.witness.json` both hold 0 JSON floats (walked the whole document).

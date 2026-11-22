@@ -1,13 +1,13 @@
 ---
 # qou-p4fr
 title: y_lambda_wenzl_bridge_numeric lowers global mpmath precision and never restores it
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T09:21:45Z
-updated_at: 2026-11-16T19:56:39Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -70,3 +70,9 @@ warning is not the fix.
 
 - Wrapped `_wenzl_norm_numeric_cached`, `_y_lambda_wenzl_bridge_numeric_impl`, `chi_lambda_mpmath`, `markov_m3_sum_numeric`, `markov_trace_lhs_numeric`, and `markov_trace_target_numeric` in `computations/y_lambda_wenzl_bridge.py` with `with mp.workdps(dps):` so calling them at a lower `dps` restores the caller's ambient working precision on exit; added `--self-test`.
 - PR: https://github.com/litlfred/qou/pull/8178 (`6465362ef2e7902778c4f8796f81286e3aeb81bc`)
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8178 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `2eb92b6a36` ("port #8178: ..."), which names this bean. Verified on main: `computations/y_lambda_wenzl_bridge.py` has 9 `workdps` scopes and 0 bare `mp.mp.dps = dps` assignments, so callers keep their precision.

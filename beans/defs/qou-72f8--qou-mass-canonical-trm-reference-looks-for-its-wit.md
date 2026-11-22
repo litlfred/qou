@@ -1,14 +1,14 @@
 ---
 # qou-72f8
 title: qou_mass canonical_trm_reference looks for its witness in _internal/ where none exists
-status: in-progress
+status: completed
 pr: 8248
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T11:12:49Z
-updated_at: 2026-11-17T07:18:00Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-5vkl
 ---
 
@@ -71,3 +71,9 @@ ordering, which is the deeper version of this. `qou-4383` — where it surfaced.
 
 - [x] Update `_rows_for_pin()` in `computations/canonical_trm_reference.py` and `qou-mass/src/qou_mass/_internal/canonical_trm_reference.py` to search `(_HERE, _HERE.parent)` so the vendored `qou_mass/_internal/` module locates `atomic-tr-m-mpfr-50dps*.witness.json` in `qou_mass/` (PR #8248, Commit 1 `d3dcd4c4757a988299ad0246ed502bd2358a90e4`).
 - [ ] Merge PR #8248 (`claude/round53-trd0-9nnz-fixes`, HEAD `b4185f1dac70a76b08299e291f3137fb9b60fe3c`)
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8248 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `d226f1ed95` ("port #8248: ..."), which names this bean. Verified on main: `qou-mass/src/qou_mass/_internal/canonical_trm_reference.py` searches `_HERE.parent` as well as `_HERE`.

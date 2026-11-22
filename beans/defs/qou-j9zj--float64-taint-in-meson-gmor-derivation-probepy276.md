@@ -1,14 +1,14 @@
 ---
 # qou-j9zj
 title: float64 taint in meson_gmor_derivation_probe.py:276 (winner_vs_fusion via abs(best_a[1]-fusion_sum))
-status: in-progress
+status: completed
 pr: 8226
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:24:34Z
-updated_at: 2026-10-04T15:19:12Z
+updated_at: 2026-11-22T21:20:33Z
 parent: qou-9nnz
 ---
 
@@ -29,3 +29,9 @@ Not this arc's domain (meson GMOR, not Magnus) — hence a bean, not an inline f
 
 ## Round 52 Progress
 - [x] PR https://github.com/litlfred/qou/pull/8226 (`523155d5604cc384f307eb1cb22785f1fded85da`): carried `miss` and PDG quark masses as `mpmath.mpf`, serialized all 6 numeric `add_data` fields via `_precision.fmt`, and regenerated `meson-gmor-derivation-probe.witness.json` (0 raw float64).
+
+## 2026-11-22 — CLOSED: the fix is on main via port #8226 (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The "Progress" entry above records the fix on a batch PR that never merged. It reached main as `adb97b5d36` ("port #8226: ..."), which names this bean. Verified on main: `meson-gmor-derivation-probe.witness.json` holds 0 JSON floats; the producer carries `miss` and the PDG masses as mpf.
