@@ -62,4 +62,27 @@ theorem AmbientIsotopic.deltaEquiv_of_moiseBing (hMB : MoiseBing E)
     {L L' : PolygonalLink E} (h : AmbientIsotopic L L') : DeltaEquiv L L' :=
   hPL L L' (hMB L L' h)
 
+/-- **Link type** (the definition used throughout QOU): the Δ-equivalence class of a polygonal
+link, i.e. its PL ambient-isotopy class. A *topological* link enters only through a polygonal
+representative; that two topologically ambient isotopic tame links have the same link type is the
+Moise–Bing comparison `MoiseBing`, which is cited, not proved here. This type is unrelated to the
+two-element toy `QOU.BraidKnot.Link` of `BraidLinkTypes.lean`. -/
+abbrev PolygonalLinkType (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E] : Type _ :=
+  Quotient (deltaSetoid (E := E))
+
+/-- The link type of a polygonal link. -/
+abbrev PolygonalLink.linkType (L : PolygonalLink E) : PolygonalLinkType E :=
+  Quotient.mk _ L
+
+theorem PolygonalLink.linkType_eq_iff {L L' : PolygonalLink E} :
+    L.linkType = L'.linkType ↔ DeltaEquiv L L' :=
+  Quotient.eq (r := deltaSetoid)
+
+/-- **Topologically ambient isotopic links have the same link type**, conditional on `MoiseBing E`
+and on PL ⇒ Δ. -/
+theorem AmbientIsotopic.linkType_eq_of_moiseBing (hMB : MoiseBing E)
+    (hPL : ∀ L L' : PolygonalLink E, PLAmbientIsotopic L L' → DeltaEquiv L L')
+    {L L' : PolygonalLink E} (h : AmbientIsotopic L L') : L.linkType = L'.linkType :=
+  PolygonalLink.linkType_eq_iff.2 (h.deltaEquiv_of_moiseBing hMB hPL)
+
 end QOU.MathlibExt.PL

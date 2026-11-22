@@ -336,10 +336,13 @@ import QOU.MathlibExt.PLIsotopy
 import QOU.MathlibExt.PLPolyPush
 import QOU.MathlibExt.PLPrismPush
 import QOU.MathlibExt.PLDeltaPoly
+import QOU.MathlibExt.PLGenericSlide
+import QOU.MathlibExt.PLRegularProjection
 import QOU.MathlibExt.PLHomeo
 import QOU.MathlibExt.PLAlexander
 import QOU.MathlibExt.PLTriangulation
 import QOU.MathlibExt.PLLipschitz
+import QOU.MathlibExt.PLLipschitzPiecewise
 import QOU.MathlibExt.PLScaling
 import QOU.MathlibExt.PLSlice
 import QOU.MathlibExt.PLCone
@@ -347,6 +350,7 @@ import QOU.MathlibExt.PLDerived
 import QOU.MathlibExt.PLConeMap
 import QOU.MathlibExt.PLBarycentric
 import QOU.MathlibExt.PLRegularNbhd
+import QOU.MathlibExt.PLMoiseAssembly
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower

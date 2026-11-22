@@ -3,7 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import QOU.MathlibExt.PLAlexander
-import QOU.MathlibExt.PLLipschitz
+import QOU.MathlibExt.PLLipschitzPiecewise
 import Mathlib.Data.Fintype.Pigeonhole
 
 set_option autoImplicit false
