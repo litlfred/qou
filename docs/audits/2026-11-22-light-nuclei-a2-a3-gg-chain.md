@@ -299,10 +299,47 @@ new evidence.
 
 **Lean: still open.** The A = 2 proof evaluates a 4-strand tail and takes about 10 minutes.
 At A = 3 the tail has 7 strands and twice as many letters, so the same brute-force evaluation
-will not fit. A structural proof needs an argument that is not yet available. V³ − 1 is only
-O(h) as an algebra element, since (s₀s₁)³ = 1 in S₃, so the h⁴ comes from cancellation in the
-trace. Cross terms between two bonds are therefore not obviously of higher order. Leading-order
+will not fit. §10 gives the structure a real proof would follow (locality plus a product rule
+with an h⁶ correction). Leading-order
 additivity stays a conjecture, backed by the 288 exact cells above.
+
+## 10. Why orders h¹ to h³ vanish, and the next order (exploratory, A = 3)
+
+Probe `bond_structure_probe.py`, witness `bond-structure.witness.json`. Exact over ℚ[h, z],
+z free, runs in about 1 s. Not preregistered.
+
+**h¹.** As an element of H₃, V³ − 1 = h²(c − c⁻¹) + h³(T₀₂₁ − T₁₀₂) + O(h⁴), where c and c⁻¹ are
+the two 3-cycles. There is no h¹ term. V³ = (σ₀σ₁⁻¹)³ is the Borromean braid, a pure braid
+with all linking numbers zero, and the h¹ term of a pure braid is weighted by those linking
+numbers. This corrects the version of §9 merged in #9137, which said V³ − 1 is only O(h).
+
+**h².** At h = 0 the trace of a permutation w is z^(n − #cycles(w)). The bond's strand 0 is
+touched by nothing else. For every permutation w fixing strand 0, w·c and w·c⁻¹ have the same
+number of cycles (checked by enumeration for n = 3 to 8; not yet a written proof). So the h²
+term dies for **every** receiving word, not just the production blocks.
+
+**h³.** This one depends on the word. On all 15 basis words of length ≤ 3 on the receiving
+strands, the h³ term survives exactly when the two strands the bond shares with the receiving
+nucleon lie in one cycle of the word's h = 0 permutation. Both production blocks reduce at h = 0
+to the transposition s₂: the V³ part is 1, and the five-letter tails give s₁s₁s₂s₁s₁ = s₂.
+That separates the two shared strands, so h³ dies too. The proton and neutron differ only from
+h⁴ on, through the h¹ parts (b = −h, −h/2) of their letters.
+
+**Next orders.** Two exact statements at A = 3, at all orders in h:
+
+1. *Locality.* A single bond (i, j) placed in the A = 3 word gives exactly the A = 2 ratio for
+   the type of nucleon j, at every order: 48 of 48 cells (8 orders, 3 bonds, over and under).
+2. *Product rule.* With several bonds, the ratio is exactly the product of the single-bond
+   ratios, for the chain {01, 12} and for {01, 02}. It fails only when two bonds go into the
+   same nucleon ({02, 12} and the all-pairs set). There the first deviation is at h⁶, with
+   relative coefficient (1 − z²), the same in all 8 orders and both variants.
+
+So log(ratio), and hence the log binding, is additive over bonds exactly, except for a
+correction from pairs of bonds into the same nucleon that starts at h⁶. This explains §9: at
+leading order (h⁴, h⁵) that correction is invisible, so the per-bond terms just add. It also
+locates where §6's higher-order behaviour can come from in the all-pairs routes. This is
+measured at A = 3 only. The A = 4 version (pairs into the same nucleon, and triples) has not
+been run; at the A = 4 cell cost of §9 it would take several hours.
 
 ## Reproduce
 
@@ -314,6 +351,7 @@ python3 -u computations/probes/light_nuclei_a2_a3/bond_leading_order_probe.py  #
 python3 -u computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py  # about 1 s
 python3 -u computations/probes/light_nuclei_a2_a3/a3_bonds_generic_z_probe.py  # about 1 s, needs python-flint
 python3 -u computations/probes/light_nuclei_a2_a3/a4_bonds_generic_z_probe.py  # about 20 min on 4 cores
+python3 -u computations/probes/light_nuclei_a2_a3/bond_structure_probe.py  # about 1 s
 lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-endomorphism/light-nuclei-a2-bond-tail.lean  # about 9 min; needs the reducer olean on LEAN_PATH
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```
