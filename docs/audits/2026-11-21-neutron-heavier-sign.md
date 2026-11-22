@@ -596,8 +596,11 @@ supply the U(1) charge factor, but only by attaching the charge label by hand, w
 Gell-Mann–Nishijima input. It is a carrier for the missing ingredient, not a derivation of it. Not
 computed beyond this argument.
 
-**Scope.** Scope-(b) for the invariant classical forms (proved in Lean from the weight argument, with
-the off-diagonal zero trace measured exactly in the probe rather than proved in Lean). Scope-(a) for
+**Scope.** Scope-(b) for the invariant classical forms: the Weyl-symmetry step is proved in
+`WeylSymmetricPairNotCoulomb.lean`, and the off-diagonal zero trace and the Cartan readout are proved
+for every q and every weight-preserving core in `WeightShiftZeroTrace.lean`
+(`sectorTrace_eq_zero_of_shift`, `sectorTrace_diag`, `gaudin_readout`; that the Jimbo Ř preserves
+the u-count entrywise is `jimbo_weight_preserving`). Scope-(a) for
 G-q and M (exact at four q, not all q). Tower status: n = 6 only; the tower in n is open. No empirical
 input, no fit.
 
