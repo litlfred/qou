@@ -11,7 +11,7 @@ tags:
     - conjecture-discharge
     - reorg-2026-10-04
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-11-22T21:50:00Z
+updated_at: 2026-11-22T22:20:00Z
 parent: qou-3kkl
 ---
 
@@ -188,3 +188,6 @@ Read-only reconciliation; status left `todo` (rule 13a: the conjecture is open f
 3. **Sketch, not proved: such a structure exists, and it separates the two mixins.** On ℝ* put b(x) = Conway's birthday if x is a standard dyadic rational (⌊|x|⌋ + k + 1 for x = m/2^k reduced with k ≥ 1; |n| for an integer n), and b(x) = ω otherwise. Checks: b ≤ ω everywhere, so any case of `birthday_add_le` / `birthday_avg_le` with a non-dyadic input has RHS ≥ ω and holds; on dyadics `add_le` is Conway's and `avg_le` follows from b(z/2) ≤ b(z) + 1 (halving raises k by at most 1 and does not raise ⌊|z|⌋; for odd integer n, ⌊|n|/2⌋ + 2 ≤ |n| + 1). `birthday_natCast = n` holds by construction, so the model is `BirthdayFaithful`. It **fails `ConwaySimplicity`**: take x = ω_ℝ*, z = ω_ℝ* + 1; both have b = ω, every older element is a standard dyadic and lies below both, yet b(x) < b(z) fails. So `BirthdayFaithful` does not imply `ConwaySimplicity`, and a theorem that uses only `BirthdayFaithful` is still not specific to Conway on infinite elements. Lean cost estimate: a few hours (2-adic valuation of a standard rational inside ℝ*, floor bounds, four case splits). Not started.
 4. **What would let this bean close honestly:** either (a) the owner accepts "ℝ* instance with every field a Mathlib theorem" as the discharge of `conj:surreal-limit-transfer` *for ℝ** while the 𝐍𝐨 statement stays open in a separate bean, or (b) item 3 is formalised so the ℝ* instance sits on a `BirthdayFaithful` structure. Put to the owner on a card in the wave-2 thread.
 
+## 2026-11-22 (later) — item 3 above is now proved in Lean
+
+Commit `4793cf6f7` on `claude/analytic-conjectures-drain-2026-11-22`: `QOU/AppendixSurreals/DyadicBirthdayHyperreal.lean`. `surrealFieldHyperrealDyadic` (a `def`) puts on ℝ* the birthday ⌈|r|⌉₊ + e(r) at a standard dyadic r (e(r) = least k with r·2^k ∈ ℤ) and ω elsewhere. Sorry-free, `#print axioms` standard: all six axioms; `BirthdayFaithful` (`birthdayFaithfulDyadic`); fails `ConwaySimplicity` at ω, ω+1; `birthdayFaithful_not_imp_conwaySimplicity`. This birthday is Conway's on the dyadics (remark only). The ℝ* limit transfer can now sit on a faithful structure; re-basing `surrealLimitTransferHyperreal` onto it is not done (one-line change, waits for the PR). PR waits for the owner card.

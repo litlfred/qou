@@ -11,7 +11,7 @@ tags:
     - stale-claim-corrected
     - reorg-2026-10-04
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-11-16T18:28:22Z
+updated_at: 2026-11-22T22:20:00Z
 parent: qou-6qbv
 ---
 
@@ -958,3 +958,7 @@ Was in-progress with no bean update since 2026-09-04 and no main commit naming i
   - `birthday_unbounded_of_faithful [BirthdayFaithful K] (N : ℕ) : ∃ x : K, (N : Ordinal) ≤ birthday x`
   - `no_finite_birthday_bound_of_faithful [BirthdayFaithful K] (B : ℕ) : ¬ (∀ x : K, birthday x ≤ (B : Ordinal))` (proving that `[BirthdayFaithful K]` rules out not only the 2-valued `flatBirthday ≤ 1` model, but every finite `B`-bounded birthday model).
 - Kept at `status: in-progress` pending PR #8147 merge and owner verification.
+
+## 2026-11-22 — the two mixins are independent of each other (wave-2 analytic sibling)
+
+Commit `4793cf6f7` (branch `claude/analytic-conjectures-drain-2026-11-22`), `QOU/AppendixSurreals/DyadicBirthdayHyperreal.lean`: one `SurrealField` structure on ℝ* that is `BirthdayFaithful` and fails `ConwaySimplicity` (`birthdayFaithful_not_imp_conwaySimplicity`, sorry-free). Also: the Round 47 note above cites PR #8147 for `StrictBirthdayHierarchy`; #8147 closed unmerged and that section is not on main.
