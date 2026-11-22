@@ -236,3 +236,26 @@ anything natural produces it. Three results, the probe now 13/13:
 
 Still open: why the photon would select the extremal sectors. Nothing above ties the
 two; Finding A (§9) only shows that `τ(γ) = (φ₀ + φ₁)[2]_q`.
+
+## 11. Can the photon select the extremal sectors? (owner picked option 3, 2026-11-22)
+
+No element of `H₃(q)` can, the photon included. Exact probe, now 18/18.
+
+- The ordinary trace of each sector gives its block multiplicities: `k = 0` is `(3)`,
+  `k = 1` is `(3) ⊕ (2,1)`, `k = 2` is `(2,1) ⊕ (1³)`, `k = 3` is `(1³)`.
+- `Ř` preserves `k`, so every element of `H₃(q)` maps each sector to itself.
+- The two mixed sectors together contain all three blocks. For `[2]_q[3]_q ≠ 0`,
+  `H₃(q)` is semisimple (`M₁ ⊕ M₂ ⊕ M₁`), so an element that acts by zero on the
+  mixed sectors is zero. No nonzero `x ∈ H₃(q)` keeps the extremal sectors and
+  removes the mixed ones.
+
+So `τ(x) = str(P_ext · x)`, where `P_ext` projects onto the weights `(3,0)` and
+`(0,3)`. `P_ext` is a Cartan element of `U_q(gl(1|1))`: it commutes with `H₃(q)`
+and sits on the other side of Schur–Weyl duality. Whatever selects the `(1,0,−1)`
+weights has to come from the gauge (gl(1|1)) side, not from the braid word or the
+photon element. Scope (b) for "an element of `H₃(q)` does the selecting", with the
+invariant being faithfulness of the mixed sectors. The semisimplicity step is quoted
+here, not proved in Lean.
+
+Coordination: the norm-one photon work (PR #8981, `PhotonBarClosure.lean`) was
+asked whether its block norms fix the sign-block to trivial-block ratio at `−1`.
