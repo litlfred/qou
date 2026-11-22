@@ -193,3 +193,6 @@ Its `want_criteria` list carries watcher criteria the reactive sweep never popul
 
 ## TRAP — pushing a clean merge-from-main makes GitHub refuse "rebase" (405)
 Verify a clean PR against main LOCALLY and do not push the merge commit: once a merge commit is on the head, GitHub answers `405 This branch can't be rebased` (or `rebaseable: false`) and only the merge-commit method remains. Push the merge only when there is a real conflict, and say in the PR comment why it went in as a merge commit. Measured on #7583 / #7734, 2026-10-12.
+
+## TRAP — shallow behind-count, deterministic rebase-merge 500, stripped `<placeholders>` (2026-11-21)
+Three agent-ops traps from beans `qou-lww5`, `qou-md01` and `qou-gaoa`, with the checks that separate each from its look-alike: [`agent-ops-traps.md`](agent-ops-traps.md). Read it before reacting to a huge behind-count, retrying a merge 500, or posting a template.
