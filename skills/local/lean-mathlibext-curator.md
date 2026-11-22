@@ -37,7 +37,7 @@ module so future sweeps can submit them.
 | `9b423397`, `2af27258` | §1 List/sort plumbing — `sum_insertionSort_eq`, `sum_eq_finsetSum_getD` | `Mathlib.Algebra.BigOperators.Group.List`, `Mathlib.Data.List.Sort` |
 | `51f93e53` | §2-3 Foldl/foldr at `Monoid` level + `Pairwise Commute` form | `Mathlib.Algebra.BigOperators.Group.List` |
 | `78d28acf` | §4a `Real.lt_sqrt_of_sq_lt`, `Real.sqrt_lt_of_lt_sq` | `Mathlib.Analysis.SpecialFunctions.Pow.Real` |
-| `1f34de8c` | §4b `Real.rpow_half_eq_sqrt`, `Real.rpow_neg_half_eq`, `Real.q_half_denom` | `Mathlib.Analysis.SpecialFunctions.Pow.Real` |
+| `1f34de8c` | §4b `Real.rpow_half_eq_sqrt`, `Real.rpow_neg_half_eq`, `QOU.MathlibExt.q_half_denom` | `Mathlib.Analysis.SpecialFunctions.Pow.Real` |
 
 ## Stratification (what goes in which section)
 
@@ -108,7 +108,7 @@ the local name as a one-line alias if the file uses it heavily):
 
     TODO upstream: `Mathlib.Algebra.BigOperators.Group.List` —
     standard permutation-invariance of list sums. -/
-theorem List.sum_insertionSort_eq {α} [AddCommMonoid α]
+theorem sum_insertionSort_eq {α} [AddCommMonoid α]
     (xs : List α) (r : α → α → Bool) :
     (xs.insertionSort r).sum = xs.sum :=
   (xs.perm_insertionSort r).symm.sum_eq
@@ -120,7 +120,7 @@ import QOU.MathlibExt
 -- alias preserves the original local name
 theorem sum_insertionSort_eq (xs : List ℕ) (r : ℕ → ℕ → Bool) :
     (xs.insertionSort r).sum = xs.sum :=
-  QOU.MathlibExt.List.sum_insertionSort_eq xs r
+  QOU.MathlibExt.sum_insertionSort_eq xs r
 ```
 
 ### Generalising before promotion

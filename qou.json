@@ -96,6 +96,27 @@
       "description": "Lean build caches, one orphan branch per package and toolchain, restored so a build starts warm. Declared here, on the folio that builds the Lean packages, rather than as a row in folio-assistant's special-branches.json (owner, 2026-10-03). MIGRATED 2026-10-05 (owner: \"migratez qou\") from the legacy `lake-cache/<member>` names: scripts/lib/lake-cache-family.sh writes the declared name and reads it first, falling back to `lake-cache/<member>`, whose branches are kept and never deleted (AGENTS.md rule 9). `lake-cache/` is where a member is mounted; the restore scripts untar into `.lake/`, which the dot-prefix guard forbids declaring."
     },
     {
+      "id": "wheel-cache",
+      "path": "wheel-cache/",
+      "graphTypologies": [
+        "wheel-cache"
+      ],
+      "storage": {
+        "branchPrefix": "cat/qou/wheel-cache/",
+        "keyedBy": "family",
+        "keyFrom": "<package>-<version>-<cpython-tag>-<platform>-<source-key>, e.g. pyhecke-native-0.9.0-cp313-linux_x86_64-<12 hex>"
+      },
+      "description": "Built wheels of qou's native Python extensions, today only `pyhecke-native` (not on PyPI; a maturin build takes about 2.5 min per container). One orphan branch per package, version, CPython tag, platform and source key, where the source key hashes the git trees of `tools/pyhecke-native` and `tools/hecke-engine`. Read and written by scripts/wheel-cache.sh, which keeps its git objects in a private bare repository rather than the checkout; scripts/build-pyhecke-native.sh restores before it builds and seeds after a clean build passes its convention gate. `wheel-cache/` is where a member is mounted; nothing is tracked there. Bean qou-dgkf."
+    },
+    {
+      "id": "qou-typologies",
+      "path": "typologies/",
+      "graphTypologies": [
+        "typologies"
+      ],
+      "description": "The graph typologies qou owns, one folio-graph-typology/v1 node per file. There is no central registry for subgraph types (owner, 2026-10-04): a harness declares its own. Today it holds `wheel-cache`, the kind of the directory above."
+    },
+    {
       "id": "fsh-guts",
       "path": "fsh-guts/",
       "source": {

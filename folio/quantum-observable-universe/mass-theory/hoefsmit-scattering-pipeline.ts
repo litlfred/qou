@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:hoefsmit-scattering-pipeline",
   title:
     "From Hoefsmit scattering weights to physical mass via the observation frame",
-  lean: { ref: "qou:QOU.BraidKnot.hoefsmit_scattering_pipeline",
+  lean: { ref: "qou:QOU.BraidKnot.hoefsmit_pipeline_conditional",
     validation: "not_checked",
   },
   uses: ["conj:geom-yekutieli-alignment"],

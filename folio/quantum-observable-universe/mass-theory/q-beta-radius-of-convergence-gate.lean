@@ -25,7 +25,7 @@
      `tilde_c_{k+1}/tilde_c_k → 1/u_0 ≠ 1/u_substrate`), then the
      candidate is structurally REFUTED.
 
-  Sorry-free. Composes with PR #1839's `CFinite.recurrence_step` (the
+  Sorry-free. Composes with PR #1839's `QOU.QBeta.recurrence_step` (the
   engine that generates `tilde_c_k` from a candidate kernel) and
   PR #1875's `bar_even_test_n2` (the §4(b) invariant gate).
 

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Schur–Weyl decomposition of the atomic mass trace",
   lean: {
-    ref: "qou:QOU.BraidKnot.schur_weyl_mass_decomposition",
+    ref: "qou:QOU.BraidKnot.SchurWeylMassDecomposition",
     validation: "not_checked",
   },
   uses: [

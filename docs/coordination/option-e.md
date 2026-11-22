@@ -175,8 +175,8 @@ near-match. Do NOT wire as a derivation.
     `docs/audits/2026-06-16-option-e-probe4-kl-positivity-prune.md`.
   - **(2026-06-17, PR #2416) PRUNE PREMISE NOW LEAN-PROVED.** The
     mixed-sign premise behind the positivity prune is machine-checked
-    sorry-free: `PartitionOf5.deltaSign_mixed` (both ±1 occur) +
-    `PartitionOf5.binding_magnitude_eq_dim` (|Δ_λ|² = dim²) in
+    sorry-free: `QOU.BraidsAndKnots.deltaSign_mixed` (both ±1 occur) +
+    `QOU.BraidsAndKnots.binding_magnitude_eq_dim` (|Δ_λ|² = dim²) in
     `QOU/BraidsAndKnots/S5SO3FiberAction.lean`. So the prune now rests on a
     Lean fact, not just a Python check: a non-negative (KL) weight sum can
     supply the magnitude |Δ_λ|=dim but never the mixed chirality sign. The

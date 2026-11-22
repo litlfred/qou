@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T20:06:28.473877+00:00",
-  "commitSha": "f67bc83e0266bc95fee4ee0018d39a779564a648",
+  "computedAt": "2026-11-22T09:29:09.735077+00:00",
+  "commitSha": "13dbaa9f74a6738b35db81b1e8f7eee4f71ea484",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,8 +15,8 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": "1302",
-      "expected": "1327",
+      "computed": "1321",
+      "expected": "1328",
       "passed": false,
       "tolerance": "0",
       "unit": "count (gates only at full closure)",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
-  "scriptHash": "3fd7261456a0",
-  "scriptCommitSha": "f67bc83e0266bc95fee4ee0018d39a779564a648",
+  "scriptHash": "be41bc24294e",
+  "scriptCommitSha": "f29bf13df98d4e8a7243689cddf7a736ca43dd90",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,14 +52,13 @@
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_blocks_with_lean_ref": 1327
+    "total_blocks_with_lean_ref": 1328
   },
   "data": {
     "by_result": {
-      "ok": 1302,
-      "lake_root_no_decl": 4,
-      "grep_no_match": 7,
-      "sibling_no_decl": 13,
+      "ok": 1321,
+      "lake_root_no_decl": 1,
+      "grep_no_match": 5,
       "lake_root_missing_grep_hit": 1
     },
     "rows": [
@@ -637,9 +636,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": true,
         "grep_hits": [
-          "folio/quantum-observable-universe/lean/QOU/MathlibExt/CechPLComplex.lean",
-          "folio/quantum-observable-universe/lean/QOU/MathlibExt/CechGenus4Space.lean",
-          "folio/quantum-observable-universe/lean/QOU/QBeta/HabiroTailStar.lean"
+          ".lake/packages/mathlib/Counterexamples/GameMultiplication.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Star/Pointwise.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Star/RingQuot.lean",
+          ".lake/packages/mathlib/Mathlib/Combinatorics/SimpleGraph/Regularity/Chunk.lean",
+          ".lake/packages/mathlib/Mathlib/Combinatorics/Quiver/SingleObj.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -1965,6 +1966,7 @@
         "lake_parent_declares": false,
         "grep_hits": [
           "folio/quantum-observable-universe/braids-and-knots/hecke-normal-form.lean",
+          "folio/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean",
           "folio/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean"
         ],
         "grep_hit": true,
@@ -3552,11 +3554,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -5056,10 +5058,14 @@
         "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "lake_parent_declares": true,
+        "grep_hits": [
+          "folio/quantum-observable-universe/lean/QOU/Archimedean/WeierstrassProjection.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "lake_parent"
       },
       {
         "path": "folio/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.ts",
@@ -5563,6 +5569,7 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
+          ".lake/packages/mathlib/Mathlib/Combinatorics/SimpleGraph/Regularity/Energy.lean",
           "folio/quantum-observable-universe/information-theory/mass-energy-equivalence.lean",
           "folio/quantum-observable-universe/lean/QOU/Braiding/CrossingAdditiveWrithe.lean",
           "folio/quantum-observable-universe/lean/QOU/MassTheory/WeightedDirichletPoincare.lean",
@@ -6140,11 +6147,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-exists.lean",
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -6478,7 +6485,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": true,
         "grep_hits": [
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Module/Submodule/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Equiv/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Combinatorics/Additive/ApproximateSubgroup.lean",
+          ".lake/packages/mathlib/Mathlib/Combinatorics/SimpleGraph/Ends/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Topology/Sets/Compacts.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -6497,9 +6508,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": true,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -6761,18 +6774,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.ts",
-        "ref": "qou:QOU.Braiding.fermion_boson_knot_link",
+        "ref": "qou:fermion_iff_odd",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.Braiding.fermion_boson_knot_link",
+        "decl_path": "fermion_iff_odd",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon.ts",
@@ -6843,11 +6860,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/knots-particles-confinement/hadron-exists.lean",
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -6979,13 +6996,17 @@
         "pkg": "qou",
         "decl_path": "QOU.Interactions.SectorTaxonomy.Sector",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/knots-particles-confinement/interaction-sector-taxonomy.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot-equivalence.ts",
@@ -6999,7 +7020,11 @@
         "lake_root_declares": true,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/IsotopeKnot/equivalence.lean"
+          ".lake/packages/mathlib/Mathlib/Condensed/Equivalence.lean",
+          ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Path.lean",
+          ".lake/packages/mathlib/Mathlib/GroupTheory/Commensurable.lean",
+          ".lake/packages/mathlib/Mathlib/CategoryTheory/Discrete/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -7108,13 +7133,17 @@
         "pkg": "qou",
         "decl_path": "QOU.Torsion.LinkingOperation",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/knots-particles-confinement/linking-operations.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/knots-particles-confinement/localized-hadron.ts",
@@ -7340,6 +7369,8 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/IsConjRoot.lean",
+          ".lake/packages/mathlib/Mathlib/Dynamics/FixedPoints/Basic.lean",
           "folio/quantum-observable-universe/knots-particles-confinement/stable-atom-decidable.lean"
         ],
         "grep_hit": true,
@@ -7699,18 +7730,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/lifting-and-descent/descent-lemma.ts",
-        "ref": "qou:QOU.DescentLemma",
+        "ref": "qou:QOU.descent_surjective",
         "kind": "lemma",
         "pkg": "qou",
-        "decl_path": "QOU.DescentLemma",
+        "decl_path": "QOU.descent_surjective",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/lifting-and-descent/descent-lemma.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.ts",
@@ -7982,11 +8017,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -8005,9 +8040,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -8498,22 +8535,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.ts",
-        "ref": "qou:QOU.BraidKnot.markovTraceRecursiveReducer",
+        "ref": "qou:QOU.BraidKnot.markovTrace_disjointProduct",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.markovTraceRecursiveReducer",
+        "decl_path": "QOU.BraidKnot.markovTrace_disjointProduct",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
-        "lake_root_declares": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
+        "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/markovTraceRecursiveReducer.lean"
+          "folio/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": true,
+        "grep_hit_under_lake_root": false,
         "result": "ok",
-        "resolved_via": "lake_root"
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.ts",
@@ -8566,11 +8603,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean",
-          "folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -8589,9 +8626,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean",
-          "folio/quantum-observable-universe/mass-endomorphism/mass-identity-unique.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -8845,7 +8884,7 @@
       {
         "path": "folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts",
         "ref": "qou:QOU.LiftingDescent.tm_dilogarithm_evaluation",
-        "kind": "lemma",
+        "kind": "conjecture",
         "pkg": "qou",
         "decl_path": "QOU.LiftingDescent.tm_dilogarithm_evaluation",
         "sibling_exists": false,
@@ -10098,18 +10137,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/confined-knot-binding.ts",
-        "ref": "qou:QOU.BraidKnot.confined_knot_binding",
+        "ref": "qou:QOU.BraidKnot.confined_knot_weighted_cancellation",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.confined_knot_binding",
+        "decl_path": "QOU.BraidKnot.confined_knot_weighted_cancellation",
         "sibling_exists": false,
         "sibling_declares": false,
-        "lake_root_exists": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_no_decl"
+        "grep_hits": [
+          "folio/quantum-observable-universe/lean/QOU/BraidKnot/confined_knot_binding.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/confinement-categorical.ts",
@@ -10876,18 +10919,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/dt-spectrum-bar-eigenspace.ts",
-        "ref": "qou:QOU.QBeta.FiveTwoDTSpectrumSplit",
+        "ref": "qou:QOU.QBeta.FiveTwoDTSpectrumSplit.dtPair52_grading",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.QBeta.FiveTwoDTSpectrumSplit",
+        "decl_path": "QOU.QBeta.FiveTwoDTSpectrumSplit.dtPair52_grading",
         "sibling_exists": false,
         "sibling_declares": false,
-        "lake_root_exists": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_no_decl"
+        "lake_parent_declares": true,
+        "grep_hits": [
+          "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "lake_parent"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/e-infinity-page-identifications.ts",
@@ -11295,19 +11342,18 @@
         "kind": "theorem",
         "pkg": "qou",
         "decl_path": "QOU.FlavorDressing.flavor_mass_splitting_bound",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/mass-theory/flavor-mass-splitting-bound.lean",
           "folio/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorMassSplittingBound.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/flavor-split-habiro-derivation.ts",
@@ -11327,6 +11373,25 @@
         "grep_hit_under_lake_root": false,
         "result": "ok",
         "resolved_via": "sibling"
+      },
+      {
+        "path": "folio/quantum-observable-universe/mass-theory/flavor-split-substrate-mass.ts",
+        "ref": "qou:QOU.FlavorDressing.FlavorSplitSubstrateMass",
+        "kind": "conjecture",
+        "pkg": "qou",
+        "decl_path": "QOU.FlavorDressing.FlavorSplitSubstrateMass",
+        "sibling_exists": false,
+        "sibling_declares": false,
+        "lake_root_exists": true,
+        "lake_root_declares": true,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorSplitSubstrateMass.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "lake_root"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/flavor-split-substrate.ts",
@@ -11874,10 +11939,11 @@
         "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
-        "lake_parent_declares": false,
+        "lake_parent_declares": true,
         "grep_hit": false,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "lake_parent"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts",
@@ -12262,18 +12328,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.ts",
-        "ref": "qou:QOU.BraidKnot.hoefsmit_scattering_pipeline",
+        "ref": "qou:QOU.BraidKnot.hoefsmit_pipeline_conditional",
         "kind": "conjecture",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.hoefsmit_scattering_pipeline",
+        "decl_path": "QOU.BraidKnot.hoefsmit_pipeline_conditional",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.ts",
@@ -12320,17 +12390,18 @@
         "pkg": "qou",
         "decl_path": "QOU.AlgebraicSubstrate.HqBiFiltration.BiFiltration",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": true,
         "lake_root_declares": true,
         "lake_parent_declares": false,
         "grep_hits": [
+          "folio/quantum-observable-universe/mass-theory/hq-bi-filtration.lean",
           "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/HqBiFiltration/BiFiltration.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "lake_root"
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/hyperbolic-knot-shape-fields.ts",
@@ -12815,18 +12886,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.ts",
-        "ref": "qou:QOU.BraidKnot.KnotIndexedConvolutionGrid.grid_placement",
+        "ref": "qou:QOU.BraidKnot.KnotIndexedConvolutionGrid.placement_depth",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.KnotIndexedConvolutionGrid.grid_placement",
+        "decl_path": "QOU.BraidKnot.KnotIndexedConvolutionGrid.placement_depth",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts",
@@ -13384,18 +13459,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/mass-formula-regime-switching.ts",
-        "ref": "qou:QOU.BraidKnot.mass_formula_regime_switching",
+        "ref": "qou:QOU.BraidKnot.regimeSwitchedBinding",
         "kind": "conjecture",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.mass_formula_regime_switching",
+        "decl_path": "QOU.BraidKnot.regimeSwitchedBinding",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/mass-theory/mass-formula-regime-switching.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification.ts",
@@ -14792,18 +14871,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts",
-        "ref": "qou:QOU.Braiding.reidemeister_mass_invariance",
+        "ref": "qou:identity_preserved_by_shell_transition",
         "kind": "conjecture",
         "pkg": "qou",
-        "decl_path": "QOU.Braiding.reidemeister_mass_invariance",
+        "decl_path": "identity_preserved_by_shell_transition",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/residue-at-root.ts",
@@ -14902,18 +14985,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts",
-        "ref": "qou:QOU.BraidKnot.schur_weyl_mass_decomposition",
+        "ref": "qou:QOU.BraidKnot.SchurWeylMassDecomposition",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.schur_weyl_mass_decomposition",
+        "decl_path": "QOU.BraidKnot.SchurWeylMassDecomposition",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.ts",
@@ -15918,6 +16005,7 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
+          ".lake/packages/mathlib/Mathlib/Algebra/Vertex/VertexOperator.lean",
           "folio/quantum-observable-universe/mass-theory/vertex-operator.lean"
         ],
         "grep_hit": true,
@@ -16119,18 +16207,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts",
-        "ref": "qou:QOU.BraidKnot.wedderburnWeightCanonical",
+        "ref": "qou:QOU.BraidKnot.WedderburnWeightCanonical",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.wedderburnWeightCanonical",
+        "decl_path": "QOU.BraidKnot.WedderburnWeightCanonical",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/wenzl-A-operator.ts",
@@ -16192,18 +16284,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/wigner-2-coefficient.ts",
-        "ref": "qou:QOU.BraidKnot.wigner2_coefficient",
+        "ref": "qou:QOU.BraidKnot.self_conjugate_trace",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.wigner2_coefficient",
+        "decl_path": "QOU.BraidKnot.self_conjugate_trace",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/mass-theory/wigner-2-coefficient.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.ts",
@@ -17421,18 +17517,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/nuclear-interactions/beta-stability.ts",
-        "ref": "qou:QOU.Braiding.beta_stability",
+        "ref": "qou:QOU.Braiding.betaStabilityLine",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.Braiding.beta_stability",
+        "decl_path": "QOU.Braiding.betaStabilityLine",
         "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "folio/quantum-observable-universe/nuclear-interactions/beta-stability.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/quantum-observable-universe/nuclear-interactions/binding-functional-is-the-log.ts",
@@ -17513,7 +17613,7 @@
       {
         "path": "folio/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity.ts",
         "ref": "qou:QOU.ParticleInteractions.confinement_frobenius_reciprocity",
-        "kind": "proposition",
+        "kind": "conjecture",
         "pkg": "qou",
         "decl_path": "QOU.ParticleInteractions.confinement_frobenius_reciprocity",
         "sibling_exists": false,
@@ -18212,6 +18312,8 @@
         "lake_root_declares": false,
         "lake_parent_declares": true,
         "grep_hits": [
+          ".lake/packages/mathlib/Mathlib/Tactic/MkIffOfInductiveProp.lean",
+          ".lake/packages/mathlib/Mathlib/RingTheory/WittVector/InitTail.lean",
           "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/ColorFlavorIsospinSelection.lean"
         ],
         "grep_hit": true,
@@ -18716,18 +18818,22 @@
       },
       {
         "path": "folio/quantum-observable-universe/observations/centered-hecke-variance-positive.ts",
-        "ref": "qou:QOU.Observations.centered_hecke_variance_positive",
+        "ref": "qou:QOU.Observations.centeredVariance_pos",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.Observations.centered_hecke_variance_positive",
+        "decl_path": "QOU.Observations.centeredVariance_pos",
         "sibling_exists": false,
         "sibling_declares": false,
-        "lake_root_exists": true,
+        "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_no_decl"
+        "grep_hits": [
+          "folio/quantum-observable-universe/lean/QOU/Observations/centered_hecke_variance_positive.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts",
@@ -19781,11 +19887,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean",
-          "folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -19823,11 +19929,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean",
-          "folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -20534,7 +20640,10 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
+          ".lake/packages/mathlib/Mathlib/Topology/Germ.lean",
+          ".lake/packages/mathlib/Archive/Arithcc.lean",
           "folio/quantum-observable-universe/lean/QOU/FrobeniusHopfData/PairingVariationalDerivative.lean",
+          "folio/quantum-observable-universe/lean/QOU/Hecke/TauStructureConstants.lean",
           "folio/quantum-observable-universe/predicted-spectra/q-value-transition.lean"
         ],
         "grep_hit": true,
@@ -20631,6 +20740,7 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
+          ".lake/packages/mathlib/Mathlib/Probability/Kernel/Disintegration/Density.lean",
           "folio/quantum-observable-universe/lean/QOU/Torsion/MassTraceIdentity.lean",
           "folio/quantum-observable-universe/predicted-spectra/schwinger-measure-unit.lean"
         ],
@@ -21615,11 +21725,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-action-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -21638,9 +21748,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -21701,11 +21813,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -21724,9 +21836,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -21805,11 +21919,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -21828,9 +21942,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -21871,11 +21987,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -21975,11 +22091,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -21998,9 +22114,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -22041,11 +22159,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -22064,9 +22182,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -22145,11 +22265,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -22168,9 +22288,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -22211,11 +22333,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -22234,9 +22356,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-unique.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -23456,11 +23580,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/q-resolvent-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -23479,9 +23603,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/quantum-observable-universes/q-resolvent-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -24006,8 +24132,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -24222,11 +24351,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-universes/categorical-connection-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -24287,11 +24416,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
-          "folio/quantum-observable-universe/quantum-universes/categorical-hodge-star-exists.lean",
-          "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean"
+          ".lake/packages/mathlib/Mathlib/Algebra/Homology/Embedding/AreComplementary.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/Lie/Weights/Chain.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/CharP/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Logic/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/Data/Prod/PProd.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -24310,9 +24439,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
-          "folio/quantum-observable-universe/quantum-universes/categorical-hodge-star-unique.lean",
-          "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean"
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Basic.lean",
+          ".lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean",
+          ".lake/packages/mathlib/Mathlib/NumberTheory/Cyclotomic/CyclotomicCharacter.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/MonoidAlgebra/Defs.lean",
+          ".lake/packages/mathlib/Mathlib/Algebra/DirectSum/Basic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -25311,8 +25442,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_cycle_classification.lean",
-          "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean"
+          ".lake/packages/mathlib/Mathlib/GroupTheory/FreeGroup/Reduce.lean",
+          ".lake/packages/mathlib/Mathlib/Data/PNat/Xgcd.lean",
+          ".lake/packages/mathlib/Mathlib/RingTheory/MvPolynomial/Groebner.lean",
+          ".lake/packages/mathlib/Mathlib/LinearAlgebra/Matrix/FixedDetMatrices.lean",
+          "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_cycle_classification.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -25359,21 +25493,22 @@
       },
       {
         "path": "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-term-data.ts",
-        "ref": "ugb:UGB.UnitalGroebner.LeadingTerm",
+        "ref": "ugb:QOU.GrobnerShirshov.ContentBlock.LeadingTermData",
         "kind": "definition",
         "pkg": "ugb",
-        "decl_path": "UGB.UnitalGroebner.LeadingTerm",
+        "decl_path": "QOU.GrobnerShirshov.ContentBlock.LeadingTermData",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-terms.lean"
+          "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-term-data.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-terms.ts",
@@ -25446,7 +25581,8 @@
         "grep_hits": [
           "folio/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
           "folio/unital-groebner-bases/unital-groebner-bases-chapter/monomial-basis.lean",
-          "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Elem.lean"
+          "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Elem.lean",
+          "fsh-guts/deprecated/root-scratch/test.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -25523,7 +25659,9 @@
         "lake_root_declares": true,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/unital-groebner-bases/lean/UGB/UnitalGroebner/s_polynomial_decomposition.lean"
+          "folio/unital-groebner-bases/lean/UGB/UnitalGroebner/s_polynomial_decomposition.lean",
+          "fsh-guts/deprecated/root-scratch/test_s_poly.lean",
+          "fsh-guts/deprecated/root-scratch/test.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -25542,7 +25680,9 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "folio/unital-groebner-bases/lean/UGB/UnitalGroebner/s_polynomial_decomposition.lean"
+          "folio/unital-groebner-bases/lean/UGB/UnitalGroebner/s_polynomial_decomposition.lean",
+          "fsh-guts/deprecated/root-scratch/test_s_poly.lean",
+          "fsh-guts/deprecated/root-scratch/test.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
