@@ -1,4 +1,4 @@
-**1321** indexed entries across 7 categories.
+**1320** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -561,7 +561,6 @@
 | [prop:categorical-proton-exists](#prop:categorical-proton-exists) | Existence of the categorical proton | Ch 14 |
 | [prop:confinement-level-exists](#prop:confinement-level-exists) | Existence of the confinement level | Ch 7 |
 | [prop:frobenius-pairing-exists](#prop:frobenius-pairing-exists) | Existence of the Frobenius pairing | Ch 1 |
-| [prop:mass-identity-exists](#prop:mass-identity-exists) | Existence of the inertial mass identity | Ch 9 |
 | [prop:knot-operator-energy-exists](#prop:knot-operator-energy-exists) | Existence of the knot operator energy | Ch 10 |
 | [prop:assembly-projector-exists](#prop:assembly-projector-exists) | Existence of the symmetric-block assembly projector | Ch 16 |
 | [prop:qbeta-canonical-markov-weights-explicit-instance](#prop:qbeta-canonical-markov-weights-explicit-instance) | Explicit $\sqrt q$-bearing instance of $\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable) | Ch 9 |
