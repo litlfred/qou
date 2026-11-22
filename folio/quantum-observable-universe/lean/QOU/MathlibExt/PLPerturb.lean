@@ -21,6 +21,8 @@ segments.
 * `PolygonalLink.rest_eq_iUnion_segment` — the rest of a link of `polyOf` components is the
   union of the edges of the other components.
 * `PolygonalLink.eventually_deltaEquiv` — **small vertex perturbations are Δ-equivalences.**
+* `PolygonalLink.deltaEquiv_of_preconnected` — **a path of polygonal links with fixed vertex
+  counts is a Δ-equivalence** (any preconnected parameter space, e.g. `[0, 1]`).
 -/
 
 namespace QOU.MathlibExt.PL
@@ -148,6 +150,60 @@ theorem eventually_deltaEquiv (V : X → (i : Fin L₀.k) → Fin (N i + 3) → 
     rw [hcomp, Fin.cast_cast, hc]
     simp [hybridL]
   exact this ▸ hd
+
+/-- `L` is a polygonal link with components `polyOf (W i)`. -/
+def Realizes {k : ℕ} {N : Fin k → ℕ} (W : (i : Fin k) → Fin (N i + 3) → E)
+    (L : PolygonalLink E) : Prop :=
+  ∃ hk : k = L.k, ∀ i, L.comp (Fin.cast hk i) = polyOf (W i)
+
+/-- **Local form with a fixed index type.** -/
+theorem eventually_deltaEquiv_realizes {k : ℕ} {N : Fin k → ℕ}
+    (V : X → (i : Fin k) → Fin (N i + 3) → E) (hV : ∀ i, Continuous fun x => V x i)
+    {L₀ : PolygonalLink E} (h₀ : Realizes (V x₀) L₀) :
+    ∀ᶠ x in 𝓝 x₀, ∀ L, Realizes (V x) L → DeltaEquiv L₀ L := by
+  obtain ⟨hk, hc⟩ := h₀
+  have h₀' : ∀ i : Fin L₀.k, L₀.comp i = polyOf (V x₀ (Fin.cast hk.symm i)) := fun i => by
+    have := hc (Fin.cast hk.symm i)
+    rwa [Fin.cast_cast] at this
+  filter_upwards [eventually_deltaEquiv (N := fun i => N (Fin.cast hk.symm i))
+    (fun x i => V x (Fin.cast hk.symm i)) (fun i => hV _) h₀'] with x hx
+  rintro L ⟨hk2, hc2⟩
+  refine hx L (hk.symm.trans hk2) fun i => ?_
+  have := hc2 (Fin.cast hk.symm i)
+  rwa [Fin.cast_cast] at this
+
+/-- **Polygonal links joined by a path of polygonal links are Δ-equivalent.** Let the vertex
+lists `V x i` depend continuously on `x` in a preconnected space, with a polygonal link
+realizing them at every `x`. Then any two such links are Δ-equivalent. With `X = [0, 1]` this
+is the classical statement that an isotopy through polygonal links with a fixed number of
+vertices is a sequence of Δ-moves. -/
+theorem deltaEquiv_of_preconnected [PreconnectedSpace X] {k : ℕ} {N : Fin k → ℕ}
+    (V : X → (i : Fin k) → Fin (N i + 3) → E) (hV : ∀ i, Continuous fun x => V x i)
+    (hreal : ∀ x, ∃ L, Realizes (V x) L) (x y : X) {L L' : PolygonalLink E}
+    (hL : Realizes (V x) L) (hL' : Realizes (V y) L') : DeltaEquiv L L' := by
+  let P : X → X → Prop := fun x y =>
+    ∀ L L' : PolygonalLink E, Realizes (V x) L → Realizes (V y) L' → DeltaEquiv L L'
+  have hloc : ∀ x, ∀ᶠ y in 𝓝 x, P x y := fun x => by
+    obtain ⟨L₀, h₀⟩ := hreal x
+    filter_upwards [eventually_deltaEquiv_realizes V hV h₀] with y hy
+    intro L L' hL hL'
+    have hLL : DeltaEquiv L₀ L := by
+      -- two realizations of the same vertex data are equal
+      obtain ⟨hk, hc⟩ := h₀
+      obtain ⟨hk', hc'⟩ := hL
+      have : L₀ = L := ext' (hk.symm.trans hk') fun i => by
+        have := hc' (Fin.cast hk.symm i)
+        rw [Fin.cast_cast] at this
+        rw [this, ← hc (Fin.cast hk.symm i), Fin.cast_cast]
+        simp
+      exact this ▸ Relation.EqvGen.refl _
+    exact Relation.EqvGen.trans _ _ _ (Relation.EqvGen.symm _ _ hLL) (hy L' hL')
+  have htrans : Transitive P := fun x y z hxy hyz L L'' hL hL'' => by
+    obtain ⟨L', hL'⟩ := hreal y
+    exact Relation.EqvGen.trans _ _ _ (hxy L L' hL hL') (hyz L' L'' hL' hL'')
+  have hsymm : Symmetric P := fun x y hxy L L' hL hL' =>
+    Relation.EqvGen.symm _ _ (hxy L' L hL' hL)
+  exact PreconnectedSpace.induction₂ P hloc htrans hsymm x y L L' hL hL'
 
 end PolygonalLink
 
