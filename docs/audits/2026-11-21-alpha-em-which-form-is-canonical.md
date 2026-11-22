@@ -312,3 +312,34 @@ relations, the sector swap, `P_ext` as a polynomial in `K + K⁻¹`).
 
 Still open, and not derived: why the α_em functional should be `ι`-odd, and the sign.
 `ι` sends the chiral vertex `σ₀σ₁⁻¹` to `σ₀⁻¹σ₁`; the ruled photon is not `ι`-invariant.
+
+## 14. Is mass the real part and α_em the imaginary part? (owner, 2026-11-22)
+
+**Partly. The α_em functional is a definite piece of the Markov trace, and it is a
+writhe (framing) phase. That mass is the other piece is not shown.**
+
+1. **The Markov trace splits by `ι : σᵢ ↦ −σᵢ⁻¹`.** Under convention D the weights
+   are `y₃ = (q⁴+1)/(q²+1)²`, `y₂₁ = q²/(q²+1)²`, `y₁₁₁ = 0`. The `ι`-odd part of
+   `tr_M` is `(y₃ − y₁₁₁)/2 · τ = (y₃/2)·τ`, with `τ = χ_(3) − χ_(1³)` the α_em
+   functional of §10. So the α_em functional is already inside the canonical trace,
+   with its scale fixed by `z_D`. (Probe, exact, 10 words.)
+2. **`τ` reads only the exponent sum `e` (the writhe):** `τ(w) = q^e − (−q⁻¹)^e`.
+   Under `q ↦ q⁻¹` it is even for odd `e` and odd for even `e`
+   (`QOU.AlphaEM.TauExp.tau_eq`, `tau_bar`, sorry-free, generic field).
+3. **Electron `σ₀σ₁σ₀`:** `e = 3`, `τ = q³ + q⁻³` (bar-even). Linchpin `(σ₁σ₂)⁵`:
+   `e = 10`, `τ = q¹⁰ − q⁻¹⁰` (bar-odd).
+4. **Where real and imaginary appear.** On the unit circle `q = e^{iθ}`, the two
+   one-dimensional blocks give `q^e` and `(−q⁻¹)^e = (−1)^e q̄^e`. So
+   `χ_(3) ± χ_(1³)` are `2 Re q^e` and `2i Im q^e`, and which is which is swapped by
+   the parity of `e`. This is the sense in which braid words intertwine the two
+   parts: the word decides it through its writhe. At real `q₀` (`Im q₀ = 0`) there
+   is no phase, so this is a fibre-level statement, not an observable one.
+5. **Relation to the corpus.** `rem:mass-modulus-em-phase-color-grading` reads EM as
+   the framing phase `arg tr_M`, picked up as the ribbon twist `q^{2w c(λ)}` of writhe
+   `w`. Items 2 and 4 agree with that: `τ` sees the word only through its writhe.
+   That remark reads mass as the modulus (polar). `conj:binding-qbeta-complex-volume`
+   and `conj:complex-mass-constituent-functional` read additive Re/Im splits instead.
+   This section supports none of the three over the others: it locates the α_em
+   functional as the `ι`-odd part, and says nothing yet about where mass sits.
+
+**Not shown:** that mass is the `ι`-even part; why α_em should be `ι`-odd; the sign.

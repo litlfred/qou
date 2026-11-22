@@ -233,6 +233,36 @@ def main():
     checks.append(('P_ext = (c - c(1))/(c(3) - c(1)) is the extremal projector',
                    pext == [1 if abs(x) == 3 else 0 for x in hval]))
     checks.append(('P_ext insertion weights (1,0,-1)', ins_weights(pext) == [1, 0, -1]))
+    # Markov trace split by iota, and the exponent-sum form of tau (2026-11-22).
+    hk1 = sp.Matrix([[q, 1], [0, -1 / q]]); hk2 = sp.Matrix([[-1 / q, 0], [1, q]])
+    sgn = {'1': 1, '2': 1, 'a': -1, 'b': -1}
+    hk = {'1': hk1, '2': hk2, 'a': hk1.inv(), 'b': hk2.inv()}
+    def blocks(w):
+        M = sp.eye(2)
+        for c in w:
+            M = M * hk[c]
+        e = sum(sgn[c] for c in w)
+        return e, [q ** e, sp.simplify(M.trace()), (-1 / q) ** e]
+    zD = q ** 3 / (q ** 2 + 1)
+    y3 = (q ** 4 + 1) / (q ** 2 + 1) ** 2; y21 = q ** 2 / (q ** 2 + 1) ** 2; y111 = 0
+    checks.append(('convention D weights solve the three Markov moments',
+                   all(sp.simplify(v) == 0 for v in [y3 + 2 * y21 + y111 - 1,
+                       y3 * q + y21 * (q - 1 / q) - y111 / q - zD,
+                       y3 * q ** 2 - y21 + y111 / q ** 2 - zD ** 2])))
+    mwords = ['', '1', '2', '12', '121', 'a', '1b', '1212121212', '12a2b', 'ab1']
+    ok_split = ok_exp = True
+    for w in mwords:
+        e, c = blocks(w)
+        tr = y3 * c[0] + y21 * c[1] + y111 * c[2]
+        iw = blocks(w.translate(str.maketrans('12ab', 'ab12')))[1]  # iota: s -> -s^-1
+        iw = [(-1) ** len(w) * x for x in iw]
+        tri = y3 * iw[0] + y21 * iw[1] + y111 * iw[2]
+        ok_split &= sp.simplify((tr - tri) / 2 - (y3 - y111) / 2 * (c[0] - c[2])) == 0
+        ok_exp &= sp.simplify(c[0] - c[2] - (q ** e - (-1 / q) ** e)) == 0
+    checks.append(('iota-odd part of tr_M (conv D) = (y3 - y111)/2 * tau', ok_split))
+    checks.append(('tau(w) = q^e - (-q^-1)^e, e = exponent sum (writhe)', ok_exp))
+    checks.append(('electron s1 s2 s1: tau = q^3 + q^-3',
+                   sp.simplify(blocks('121')[1][0] - blocks('121')[1][2] - (q ** 3 + q ** -3)) == 0))
     for n, c in checks:
         print(('PASS ' if c else 'FAIL ') + n)
     return 0 if all(c for _, c in checks) else 1
