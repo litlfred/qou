@@ -324,6 +324,7 @@ import QOU.MathlibExt.PLPlanarEarTransfer
 import QOU.MathlibExt.PLPlanarChord
 import QOU.MathlibExt.PLPlanarCorner
 import QOU.MathlibExt.PLPlanarLexCorner
+import QOU.MathlibExt.PLPlanarCornerEar
 import QOU.MathlibExt.PLSubdivide
 import QOU.MathlibExt.PLC1Estimates
 import QOU.MathlibExt.PLInscribed
