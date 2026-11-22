@@ -314,6 +314,7 @@ import QOU.MathlibExt.PLListPolygon
 import QOU.MathlibExt.PLStability
 import QOU.MathlibExt.PLMoveVertex
 import QOU.MathlibExt.PLMoveVertexNear
+import QOU.MathlibExt.PLMoveVertexGlue
 import QOU.MathlibExt.PLAmbientIsotopy
 import QOU.MathlibExt.PLPush
 import QOU.MathlibExt.PLDeltaIsotopy
