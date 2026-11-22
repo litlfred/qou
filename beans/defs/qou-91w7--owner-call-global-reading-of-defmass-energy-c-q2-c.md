@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-22T15:14:48Z
+updated_at: 2026-11-22T15:37:08Z
 parent: qou-wxhi
 ---
 
@@ -44,3 +44,10 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
   - Brane tower: order ≥ 2. Markov stabilisation tower and Σq⁻ᵏ: order 0. Both excluded in Lean.
   - Skein difference h·τ(β): order 1. It matches w to first order when the closure has n−1 components, but is never equal to w (hand argument, pole at q = −1).
 - Conclusion: w ≈ h/2 to first order, where h = σ−σ⁻¹. The weight is still not derived. Free-coefficient combinations were not searched, because that would be fitting.
+
+
+2026-11-22, prereg Addendum 2: tested the exact factor beyond h/2 using framed link invariants 𝔪 (def:mass-identity).
+- Knot excess, 3₁ and 4₁: order 2 at q = 1, as predicted. So the muon knot cannot supply w.
+- Linked-pair excess, Hopf± and the electron closure: order 1, with coefficient ±3 or ±12, never 1. The Hopf⁺ excess is −q⁻²·h·[3]/[2].
+- No equality with w. The weight stays a definition: w = ℏ_q·(ℏ_q c_q)².
+- The missing piece is a canonical object giving the one-sided deficit ℏ_q = h/(1+q).
