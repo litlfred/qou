@@ -1507,3 +1507,16 @@ What is still not forced:
 Verdict: the normalisation is fixed by the corpus's mass facade (scope: conditional on the step-5
 reading), giving −2.30 MeV. As the electromagnetic part this is 2.3× the lattice value. That is a
 scope (a) miss, not a fit.
+
+**§45 cross-check against the sibling thread "Make the n–p gap vanish at q = 1"** (issue #9002,
+`CategoricalMassAtOne.lean`, relayed by the coordinator; not re-verified here). That thread proves
+that the undecorated categorical mass at q = 1 is 2^c, so m_p = m_n = 8, and that the Borromean
+closure gives m_p = m_n at every q. Any n − p split must therefore come from decorations.
+- α·S is such a decoration: it is a charge-dependent, degree-0 insertion, not a change of the
+  closure. So §45 is consistent with that theorem.
+- §45 P2 breaks m_p = m_n at q = 1 only through this decoration: a_n(1) = −1/270, a_p(1) = 0. The
+  undecorated equality is untouched. The working assumption of `qou-az9l` therefore needs a
+  scope: undecorated mass, or also decorations. That is an owner question.
+- The MeV figure −2.30 carries M_QCD, which contains m_μ = m_e·Vol(4₁)/ℏ_q², i.e. the c_q² factor.
+  If the open decision on whether c_q² converts mass to energy (bean `qou-91w7`) goes the other
+  way, the MeV value moves. The ratio E/M_QCD = −α/3 does not depend on it.
