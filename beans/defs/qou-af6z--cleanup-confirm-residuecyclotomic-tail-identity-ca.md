@@ -1,7 +1,7 @@
 ---
 # qou-af6z
 title: 'Cleanup: confirm residue↔cyclotomic-tail identity carries OPEN banner (not ''proved'') in all siblings; add missing where absent'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-18T17:09:31Z
-updated_at: 2026-11-21T12:35:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-j5ch
 ---
 
@@ -25,3 +25,10 @@ Also worth an owner look: the block's label kind is `prop:` while its own body s
 Not edited: both are `.md` content edits (sidecar refresh + render-QA, and the label change is a rename). The fix is corpus-derived (the source block itself says open), so it qualifies for the ask-first exemption 2, but I left it for whoever owns the mass-theory prose. Left `todo` with the flags above.
 
 Premise check vs `docs/coordination/owner-rulings.md` (main 2ae54ab40, 2026-11-21, owner request to drop old results): no superseded premise in the flagged text. The Borromean context block it touches already uses χ^{(2,1)} = 2 − 3h⁴ − h⁶ (current).
+
+## 2026-11-22 — both flagged sites fixed on a branch (wave-2 analytic-conjectures sibling, https://claude.ai/code/session_01Qmmkt5rPwPCUZEWjjQzvyw)
+
+Commit `33a0545dd` on `claude/analytic-conjectures-drain-2026-11-22` (pushed; PR waits for the owner's card, math-repo rule):
+1. `mass-theory/phi-q-markov-residue-habiro-intro.md`: "establishes the equivalence" → "states the equivalence …; the analytic identification of the residue contributions with the cyclotomic tail remains open, and machine-precision agreement on the available atomic Markov traces is the evidence for it."
+2. `mass-endomorphism/tau-M-asymptotic-rep-theory-interpretation.md`: the N=1 coupling b is reproduced "through the residue-sum equivalence, conditional on that equivalence, whose analytic identification … remains open."
+Corpus-derived (source block `habiro-residue-sum-equivalence.md:30-31` decides the wording). Not done: the `prop:` → `conj:` label question flagged above (a rename, owner-gated). Mark completed when the PR merges.

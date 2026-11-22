@@ -11,7 +11,7 @@ tags:
     - conjecture-discharge
     - reorg-2026-10-04
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-11-20T08:32:31Z
+updated_at: 2026-11-22T21:50:00Z
 parent: qou-3kkl
 ---
 
@@ -178,3 +178,13 @@ Was in-progress with no bean update since 2026-08-09 and no main commit naming i
 
 
 **2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).
+
+## 2026-11-22 — where this bean stands now (wave-2 analytic-conjectures sibling, https://claude.ai/code/session_01Qmmkt5rPwPCUZEWjjQzvyw)
+
+Read-only reconciliation; status left `todo` (rule 13a: the conjecture is open for its intended carrier, Conway's 𝐍𝐨).
+
+1. **What §5's follow-on asked for has partly landed, by another route.** `SurrealField` was not split; instead `AppendixSurreals/BirthdayFaithful.lean` (bean `bday` / `qou-dx7g`) adds two opt-in mixins, `BirthdayFaithful` (`birthday n = n`) and `ConwaySimplicity`, each proved independent of the six axioms by the flat model. The `Basic.lean` class docstring now says the six axioms are upper bounds only. Note: `bday`'s Round 47 note cites PR #8147 for a §4 `StrictBirthdayHierarchy`; that PR **closed unmerged** and `StrictBirthdayHierarchy` is not on main (grep count 0, main `3c4c98fcc`).
+2. **The ℝ* discharge is still over the flat birthday.** `surrealLimitTransferHyperreal` sits on `surrealFieldHyperreal` (flat). Nothing on main gives ℝ* a `SurrealField` structure that satisfies `BirthdayFaithful`.
+3. **Sketch, not proved: such a structure exists, and it separates the two mixins.** On ℝ* put b(x) = Conway's birthday if x is a standard dyadic rational (⌊|x|⌋ + k + 1 for x = m/2^k reduced with k ≥ 1; |n| for an integer n), and b(x) = ω otherwise. Checks: b ≤ ω everywhere, so any case of `birthday_add_le` / `birthday_avg_le` with a non-dyadic input has RHS ≥ ω and holds; on dyadics `add_le` is Conway's and `avg_le` follows from b(z/2) ≤ b(z) + 1 (halving raises k by at most 1 and does not raise ⌊|z|⌋; for odd integer n, ⌊|n|/2⌋ + 2 ≤ |n| + 1). `birthday_natCast = n` holds by construction, so the model is `BirthdayFaithful`. It **fails `ConwaySimplicity`**: take x = ω_ℝ*, z = ω_ℝ* + 1; both have b = ω, every older element is a standard dyadic and lies below both, yet b(x) < b(z) fails. So `BirthdayFaithful` does not imply `ConwaySimplicity`, and a theorem that uses only `BirthdayFaithful` is still not specific to Conway on infinite elements. Lean cost estimate: a few hours (2-adic valuation of a standard rational inside ℝ*, floor bounds, four case splits). Not started.
+4. **What would let this bean close honestly:** either (a) the owner accepts "ℝ* instance with every field a Mathlib theorem" as the discharge of `conj:surreal-limit-transfer` *for ℝ** while the 𝐍𝐨 statement stays open in a separate bean, or (b) item 3 is formalised so the ℝ* instance sits on a `BirthdayFaithful` structure. Put to the owner on a card in the wave-2 thread.
+
