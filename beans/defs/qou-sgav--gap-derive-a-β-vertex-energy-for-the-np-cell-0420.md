@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T09:18:20Z
-updated_at: 2026-11-22T09:24:24Z
+updated_at: 2026-11-22T10:47:51Z
 parent: qou-wxhi
 ---
 
@@ -38,3 +38,7 @@ not by tensor-order choice.
 
 
 2026-11-22: consistent with the owner working assumption m_p = m_n at q = 1 (bean qou-az9l) in E₀ units: the cell 2 ln q and both vertex splits vanish at q = 1. Any candidate vertex term must also vanish at q = 1 unless it is an α_EM term (audit §30).
+
+
+
+2026-11-22: the 0.41979 (placement B) / 0.78233 (placement C) MeV budgets hold under the pure-number reading of def:mass-energy (the current default). Under the conversion reading they become 0.00508 / 0.00946 MeV. Owner call tracked in qou-91w7. Complex-view issues from the same session: qou-t1n8, qou-gg4e, qou-bf19, qou-zslg.
