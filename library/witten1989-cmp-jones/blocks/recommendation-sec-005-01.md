@@ -1,0 +1,1 @@
+Equations (4.11) can be used in many different ways to obtain the expectation value of a given link, and one must show that one does not run into 10 This is the only point at which (4.7) has to be used.

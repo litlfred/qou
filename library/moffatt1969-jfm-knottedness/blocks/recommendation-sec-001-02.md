@@ -1,0 +1,1 @@
+The explanation lies in the fact that, if n. o + 0 on S, and if 8, is at rest, then there exists a vortex sheet on S, and the vortex lines of the fluid interior must be imagined to be continued and completed within this sheet.

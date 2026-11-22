@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/silver2006-knot-theory-odd-origins/blocks/table-001",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "kind": "table",
+  "label": "Table 1",
+  "file": "../tables/table-1.csv",
+  "headers": [
+    "Knot The The modern stud physicists to appl Daniel S. Silver",
+    "ory’s Odd Origins y of knots grew out an attempt by three 19th-century Scottish y knot theory to fundamental questions about the universe"
+  ],
+  "pageStart": 1,
+  "pageEnd": 1,
+  "derivedFrom": "library/silver2006-knot-theory-odd-origins/sections/sec-front-matter",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/silver2006-knot-theory-odd-origins",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1 @@
+According to Segal [16], Jfj in fact has a canonical projective Hubert space structure Quantum Field Theory and the Jones Polynomial 367 Actually, the general situation that must be studied is that in which possible Wilson lines on M are "cut" by Σ, as in the figure.

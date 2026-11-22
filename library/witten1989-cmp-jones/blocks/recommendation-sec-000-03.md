@@ -1,0 +1,1 @@
+It is no accident that the reasoning which shows that k must be quantized in (1.3) has a 1 + 1 dimensional analogue [26] which leads to quantization of the central charge in the represent- ation theory of affine algebras.
