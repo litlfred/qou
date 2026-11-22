@@ -967,3 +967,8 @@ Commit `4793cf6f7` (branch `claude/analytic-conjectures-drain-2026-11-22`), `QOU
 ## 2026-11-22T21:42:00Z: PR opened
 
 Draft PR litlfred/qou#9135 (issue #9134) carries this work. Not merged; the owner merges.
+
+
+## 2026-11-22T22:05:00Z: PR #9135 merged
+
+Merged by rebase on the owner instruction "Merge those that are ready" (main 5167911a6).

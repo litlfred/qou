@@ -200,3 +200,8 @@ Draft PR litlfred/qou#9135 (issue #9134) carries this work. Not merged; the owne
 ## 2026-11-22T21:58:00Z: applicability review — APPLIES
 
 Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. Pure surreal/hyperreal logic; no physics premise. DyadicBirthdayHyperreal.lean (PR #9135) gives a BirthdayFaithful SurrealField on R* that is not ConwaySimple; conj:surreal-limit-transfer itself stays open.
+
+
+## 2026-11-22T22:05:00Z: PR #9135 merged
+
+Merged by rebase on the owner instruction "Merge those that are ready" (main 5167911a6).
