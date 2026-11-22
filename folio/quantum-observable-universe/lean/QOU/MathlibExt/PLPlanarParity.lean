@@ -368,6 +368,279 @@ theorem parity_const_of_isPreconnected {s : Set R2} (hs : IsPreconnected s)
     exact P.parity_eventually_eq hzP
   exact hs.constant hcont hx hy
 
+/-! ### Far away, and across an edge -/
+
+/-- The unit vectors of the plane. -/
+def e0 : R2 := ![1, 0]
+
+/-- The vertical unit vector. -/
+def e1 : R2 := ![0, 1]
+
+@[simp] lemma e0_zero : e0 0 = 1 := rfl
+@[simp] lemma e0_one : e0 1 = 0 := rfl
+@[simp] lemma e1_zero : e1 0 = 0 := rfl
+@[simp] lemma e1_one : e1 1 = 1 := rfl
+
+lemma decomp (z : R2) : z = z 0 • e0 + z 1 • e1 := by
+  funext k; fin_cases k <;> simp [e0, e1]
+
+lemma isCompact_segment_R2 (x y : R2) : IsCompact (segment ℝ x y) := by
+  rw [segment_eq_image]
+  exact isCompact_Icc.image (((continuous_const.sub continuous_id).smul continuous_const).add
+    (continuous_id.smul continuous_const))
+
+lemma carrier_subset_convexHull : P.carrier ⊆ convexHull ℝ (range P.v) :=
+  iUnion_subset fun _ => segment_subset_convexHull (mem_range_self _) (mem_range_self _)
+
+/-- Left of every vertex, the parity is `0`. -/
+theorem parity_eq_zero_of_forall_lt {x : R2} (hx : ∀ i, x 0 < P.v i 0) : P.parity x = 0 := by
+  unfold parity
+  refine Finset.sum_eq_zero fun i _ => ?_
+  unfold crossInd
+  rw [if_neg]
+  rintro ⟨h, -⟩
+  have h1 := hx i
+  have h2 := hx (P.next i)
+  rcases h with ⟨h, -⟩ | ⟨h, -⟩ <;> linarith
+
+/-- Right of (or level with) every vertex, the parity is `0`. -/
+theorem parity_eq_zero_of_forall_le {x : R2} (hx : ∀ i, P.v i 0 ≤ x 0) : P.parity x = 0 := by
+  unfold parity
+  refine Finset.sum_eq_zero fun i _ => ?_
+  unfold crossInd
+  rw [if_neg]
+  rintro ⟨h, -⟩
+  rcases h with ⟨-, h⟩ | ⟨-, h⟩ <;> exact h (hx _)
+
+/-- **Outside the convex hull of the vertices, the parity is `0`.** A separating half-plane
+contains the point and points beyond every vertex abscissa. -/
+theorem parity_eq_zero_of_not_mem_convexHull {x : R2} (hx : x ∉ convexHull ℝ (range P.v)) :
+    P.parity x = 0 := by
+  obtain ⟨f, u, hfx, hfb⟩ := geometric_hahn_banach_point_closed (convex_convexHull ℝ _)
+    (Set.finite_range P.v).isCompact_convexHull.isClosed hx
+  have hf0 : f e0 ≠ 0 ∨ f e1 ≠ 0 := by
+    by_contra h
+    push_neg at h
+    have hz : ∀ z, f z = 0 := fun z => by
+      rw [decomp z, map_add, map_smul, map_smul, h.1, h.2]; simp
+    have := hfb (P.v 0) (subset_convexHull ℝ _ (mem_range_self 0))
+    rw [hz] at this hfx
+    linarith
+  obtain ⟨d, hd, hd0⟩ : ∃ d : R2, f d < 0 ∧ d 0 ≠ 0 := by
+    rcases lt_trichotomy (f e0) 0 with h | h | h
+    · exact ⟨e0, h, by simp⟩
+    · rcases lt_or_gt_of_ne (hf0.resolve_left (by simp [h])) with h1 | h1
+      · exact ⟨e0 + e1, by rw [map_add, h]; simpa using h1, by simp⟩
+      · exact ⟨e0 - e1, by rw [map_sub, h]; linarith, by simp⟩
+    · exact ⟨-e0, by rw [map_neg]; linarith, by simp⟩
+  set H := {z : R2 | f z < u} with hHdef
+  have hH : Convex ℝ H := convex_halfSpace_lt f.isLinear u
+  have hdisj : Disjoint H P.carrier := disjoint_left.mpr fun z hz hzP =>
+    lt_asymm hz (hfb z (P.carrier_subset_convexHull hzP))
+  have hmem : ∀ s : ℝ, 0 ≤ s → x + s • d ∈ H := fun s hs => by
+    simp only [hHdef, mem_setOf_eq, map_add, map_smul, smul_eq_mul]
+    nlinarith
+  set M := ∑ i, |P.v i 0| with hM
+  have hMi : ∀ i, |P.v i 0| ≤ M := fun i =>
+    Finset.single_le_sum (f := fun i => |P.v i 0|) (fun _ _ => abs_nonneg _) (Finset.mem_univ i)
+  set s := (M + |x 0| + 1) / |d 0| with hs
+  have hd0' : 0 < |d 0| := abs_pos.mpr hd0
+  have hs0 : 0 ≤ s := div_nonneg (by positivity) hd0'.le
+  have hsd : s * |d 0| = M + |x 0| + 1 := div_mul_cancel₀ _ hd0'.ne'
+  have hxs := hmem s hs0
+  rw [P.parity_const_of_isPreconnected hH.isPreconnected hdisj (x := x) (y := x + s • d)
+    hfx hxs]
+  have hcoord : (x + s • d) 0 = x 0 + s * d 0 := by simp
+  rcases lt_or_gt_of_ne hd0 with hneg | hpos
+  · apply parity_eq_zero_of_forall_lt
+    intro i
+    rw [hcoord]
+    rw [abs_of_neg hneg] at hsd
+    have := hMi i
+    have := neg_abs_le (P.v i 0)
+    have := le_abs_self (x 0)
+    nlinarith
+  · apply parity_eq_zero_of_forall_le
+    intro i
+    rw [hcoord]
+    rw [abs_of_pos hpos] at hsd
+    have := hMi i
+    have := le_abs_self (P.v i 0)
+    have := neg_abs_le (x 0)
+    nlinarith
+
+lemma cross_add_smul_e1 (a b m : R2) (u : ℝ) :
+    cross a b (m + u • e1) = cross a b m + (b 0 - a 0) * u := by
+  unfold cross; simp; ring
+
+lemma cross_of_mem_segment {a b m : R2} (hm : m ∈ segment ℝ a b) : cross a b m = 0 := by
+  obtain ⟨s, t, -, -, hst, rfl⟩ := hm
+  unfold cross
+  simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul]
+  have : s = 1 - t := by linarith
+  subst this
+  ring
+
+/-- **Crossing a non-vertical edge flips the parity.** Just below an interior point of a
+non-vertical edge of a simple polygon the parity is one more than just above it. -/
+theorem parity_flip (hP : P.IsSimple) (i : Fin (P.n + 1)) (h0 : P.v i 0 ≠ P.v (P.next i) 0)
+    {m : R2} (hm : m ∈ openSegment ℝ (P.v i) (P.v (P.next i))) :
+    ∃ r > 0, ∀ s : ℝ, 0 < s → s < r → m + s • e1 ∉ P.carrier ∧ m - s • e1 ∉ P.carrier ∧
+      P.parity (m - s • e1) = P.parity (m + s • e1) + 1 := by
+  classical
+  set a := P.v i
+  set b := P.v (P.next i)
+  have hab : a ≠ b := fun h => h0 (by rw [h])
+  have hma : m ≠ a := fun h => hab (left_mem_openSegment_iff.mp (h ▸ hm))
+  have hmb : m ≠ b := fun h => hab (right_mem_openSegment_iff.mp (h ▸ hm))
+  have hmseg : m ∈ segment ℝ a b := openSegment_subset_segment ℝ a b hm
+  -- `m` misses every other edge
+  have hmK : ∀ j, j ≠ i → m ∉ P.edge j := by
+    intro j hj hmj
+    have := hP.2 i j hj.symm
+    have hmem : m ∈ P.edge i ∩ P.edge j := ⟨hmseg, hmj⟩
+    rw [this] at hmem
+    split_ifs at hmem with h1 h2
+    · exact hmb (by rw [mem_singleton_iff.mp hmem, h1])
+    · exact hma (mem_singleton_iff.mp hmem)
+    · exact hmem
+  set K := ⋃ j ∈ ({i}ᶜ : Finset (Fin (P.n + 1))), P.edge j with hK
+  have hKc : IsClosed K := by
+    refine Set.Finite.isClosed_biUnion (Finset.finite_toSet _) fun j _ => ?_
+    exact (isCompact_segment_R2 _ _).isClosed
+  have hmK' : m ∉ K := by
+    simp only [hK, mem_iUnion, not_exists]
+    intro j hj
+    exact hmK j (by simpa using hj)
+  obtain ⟨r, hr, hball⟩ := Metric.isOpen_iff.mp hKc.isOpen_compl m hmK'
+  have hnorm : ∀ u : ℝ, ‖u • e1‖ ≤ |u| := by
+    intro u
+    refine (pi_norm_le_iff_of_nonneg (abs_nonneg u)).mpr fun k => ?_
+    fin_cases k <;> simp [e1]
+  have hinball : ∀ u : ℝ, |u| < r → m + u • e1 ∈ Metric.ball m r := by
+    intro u hu
+    rw [Metric.mem_ball, dist_eq_norm, add_sub_cancel_left]
+    exact (hnorm u).trans_lt hu
+  have hoffK : ∀ u : ℝ, |u| < r → ∀ j, j ≠ i → m + u • e1 ∉ P.edge j := by
+    intro u hu j hj hmem
+    have := hball (hinball u hu)
+    apply this
+    simp only [hK, mem_iUnion]
+    exact ⟨j, by simpa using hj, hmem⟩
+  -- the edge itself is met only at `m` on the vertical through `m`
+  obtain ⟨tm, htm0, htm1, hmeq⟩ : ∃ t : ℝ, 0 < t ∧ t < 1 ∧ m = a + t • (b - a) := by
+    obtain ⟨s', t', hs', ht', hst, rfl⟩ := hm
+    refine ⟨t', ht', by linarith, ?_⟩
+    have : s' = 1 - t' := by linarith
+    subst this
+    funext k; simp; ring
+  have hoffi : ∀ u : ℝ, u ≠ 0 → m + u • e1 ∉ P.edge i := by
+    intro u hu hmem
+    obtain ⟨s', t', -, -, hst, heq⟩ := hmem
+    have h0' := congrFun heq 0
+    have h1' := congrFun heq 1
+    have hm0 := congrFun hmeq 0
+    have hm1 := congrFun hmeq 1
+    simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul, e1_zero, e1_one, Pi.sub_apply,
+      mul_zero, add_zero, mul_one] at h0' h1' hm0 hm1
+    have hs' : s' = 1 - t' := by linarith
+    subst hs'
+    change (1 - t') * a 0 + t' * b 0 = m 0 at h0'
+    change (1 - t') * a 1 + t' * b 1 = m 1 + u at h1'
+    have hd : b 0 - a 0 ≠ 0 := sub_ne_zero.mpr (Ne.symm h0)
+    have ht : t' = tm := by
+      have : (t' - tm) * (b 0 - a 0) = 0 := by linear_combination h0' + hm0
+      rcases mul_eq_zero.mp this with h | h
+      · linarith
+      · exact absurd h hd
+    subst ht
+    apply hu
+    linear_combination -h1' - hm1
+  refine ⟨r, hr, fun s hs hsr => ⟨?_, ?_, ?_⟩⟩
+  · intro hmem
+    obtain ⟨j, hj⟩ := mem_iUnion.mp hmem
+    by_cases hji : j = i
+    · exact hoffi s hs.ne' (hji ▸ hj)
+    · exact hoffK s (by rw [abs_of_pos hs]; exact hsr) j hji hj
+  · intro hmem
+    obtain ⟨j, hj⟩ := mem_iUnion.mp hmem
+    have hneg : m - s • e1 = m + (-s) • e1 := by rw [neg_smul, sub_eq_add_neg]
+    rw [hneg] at hj
+    by_cases hji : j = i
+    · exact hoffi (-s) (by linarith) (hji ▸ hj)
+    · exact hoffK (-s) (by rw [abs_neg, abs_of_pos hs]; exact hsr) j hji hj
+  · -- termwise comparison
+    have hneg : m - s • e1 = m + (-s) • e1 := by rw [neg_smul, sub_eq_add_neg]
+    have hterm : ∀ j, crossInd (P.v j) (P.v (P.next j)) (m - s • e1) =
+        crossInd (P.v j) (P.v (P.next j)) (m + s • e1) + if j = i then 1 else 0 := by
+      intro j
+      rw [hneg]
+      set p := P.v j
+      set q := P.v (P.next j)
+      have hx0 : ∀ u : ℝ, (m + u • e1) 0 = m 0 := by intro u; simp
+      unfold crossInd
+      simp only [hx0, cross_add_smul_e1]
+      by_cases hji : j = i
+      · subst hji
+        rw [if_pos rfl]
+        have hcm : cross p q m = 0 := cross_of_mem_segment hmseg
+        have hd : q 0 - p 0 ≠ 0 := sub_ne_zero.mpr (Ne.symm h0)
+        have hsq : 0 < (q 0 - p 0) ^ 2 := by positivity
+        have hxor : Xor' (p 0 ≤ m 0) (q 0 ≤ m 0) := by
+          have hm0 := congrFun hmeq 0
+          simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul, Pi.sub_apply] at hm0
+          rcases lt_or_gt_of_ne h0 with hlt | hgt
+          · left
+            exact ⟨by nlinarith, by nlinarith⟩
+          · right
+            exact ⟨by nlinarith, by nlinarith⟩
+        rw [if_pos ⟨hxor, by rw [hcm]; nlinarith⟩, if_neg (fun h => by
+          have := h.2; rw [hcm] at this; nlinarith)]
+        decide
+      · rw [if_neg hji, add_zero]
+        by_cases hxor : Xor' (p 0 ≤ m 0) (q 0 ≤ m 0)
+        · have hd : q 0 - p 0 ≠ 0 := by
+            intro h; rcases hxor with ⟨h1, h2⟩ | ⟨h1, h2⟩ <;> exact h2 (by linarith)
+          -- the sign cannot change between `-s` and `s`
+          have hiff : (cross p q m + (q 0 - p 0) * -s) * (q 0 - p 0) < 0 ↔
+              (cross p q m + (q 0 - p 0) * s) * (q 0 - p 0) < 0 := by
+            constructor
+            · intro hlo
+              by_contra hhi
+              push_neg at hhi
+              set u := -(cross p q m) / (q 0 - p 0)
+              have hcu : cross p q m + (q 0 - p 0) * u = 0 := by
+                simp only [u]; field_simp; ring
+              have hsq : 0 < (q 0 - p 0) ^ 2 := by positivity
+              have hlo' : (q 0 - p 0) ^ 2 * (-s - u) < 0 := by
+                have : (cross p q m + (q 0 - p 0) * -s) * (q 0 - p 0) =
+                    (q 0 - p 0) ^ 2 * (-s - u) := by
+                  linear_combination (q 0 - p 0) * hcu
+                linarith
+              have hhi' : 0 ≤ (q 0 - p 0) ^ 2 * (s - u) := by
+                have : (cross p q m + (q 0 - p 0) * s) * (q 0 - p 0) =
+                    (q 0 - p 0) ^ 2 * (s - u) := by
+                  linear_combination (q 0 - p 0) * hcu
+                linarith
+              have hu1 : -s < u := by nlinarith
+              have hu2 : u ≤ s := by nlinarith
+              have hmem : m + u • e1 ∈ P.edge j := by
+                refine mem_segment_of_cross_eq_zero (fun h => hd (sub_eq_zero.mpr h.symm)) ?_ ?_
+                · simp only [hx0]
+                  rcases hxor with ⟨h1, h2⟩ | ⟨h1, h2⟩
+                  · exact Or.inl ⟨h1, (not_le.mp h2).le⟩
+                  · exact Or.inr ⟨h1, (not_le.mp h2).le⟩
+                · rw [cross_add_smul_e1]; exact hcu
+              exact hoffK u (abs_lt.mpr ⟨by linarith, by linarith⟩) j hji hmem
+            · intro hhi
+              have hsq : 0 ≤ (q 0 - p 0) ^ 2 := sq_nonneg _
+              nlinarith
+          simp only [hxor, true_and, hiff]
+        · simp only [hxor, false_and, if_false]
+    unfold parity
+    rw [Finset.sum_congr rfl fun j _ => hterm j, Finset.sum_add_distrib, Finset.sum_ite_eq']
+    simp
+
 end Polygon
 
 end QOU.MathlibExt.PL
