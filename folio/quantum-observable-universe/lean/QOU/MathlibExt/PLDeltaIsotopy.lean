@@ -225,4 +225,88 @@ lemma mem_interior_deltaBody (hρ : 0 < ρ) : c ∈ interior (deltaBody a b c ρ
 
 lemma left_mem_deltaBody : a ∈ deltaBody a b c ρ := subset_convexHull ℝ _ (by simp)
 
+/-- If no point `a + t • w` (`0 < t ≤ 1`) is in the triangle, `w` is outside the cone of the
+triangle at `a`. -/
+lemma not_mem_cone_of_apex {w : E}
+    (hta : ∀ t : ℝ, 0 < t → t ≤ 1 → a + t • w ∉ convexHull ℝ {a, b, c}) :
+    ∀ l₁ l₂ : ℝ, 0 ≤ l₁ → 0 ≤ l₂ → w ≠ l₁ • (midpoint ℝ a b - a) + l₂ • (c - a) := by
+  intro l₁ l₂ hl₁ hl₂ hw
+  set T := convexHull ℝ ({a, b, c} : Set E)
+  have hT : Convex ℝ T := convex_convexHull ℝ _
+  have ha : a ∈ T := subset_convexHull ℝ _ (by simp)
+  have hc : c ∈ T := subset_convexHull ℝ _ (by simp)
+  have hm : midpoint ℝ a b ∈ T :=
+    segment_subset_convexHull (by simp) (by simp) (midpoint_mem_segment a b)
+  set L := l₁ + l₂
+  rcases (add_nonneg hl₁ hl₂).lt_or_eq with hL | hL
+  · set θ := l₂ / L
+    have hθ : θ ∈ Icc (0 : ℝ) 1 := ⟨div_nonneg hl₂ hL.le, (div_le_one hL).mpr (by linarith)⟩
+    set y := midpoint ℝ a b + θ • (c - midpoint ℝ a b)
+    have hy : y ∈ T := hT.add_smul_sub_mem hm hc hθ
+    have hLy : L • (y - a) = w := by
+      rw [hw]
+      simp only [y, θ, L, smul_sub, smul_add, smul_smul]
+      rw [mul_div_cancel₀ _ hL.ne']
+      module
+    set s := 1 / (1 + L)
+    have hs0 : 0 < s := by positivity
+    have hsL : s * L ∈ Icc (0 : ℝ) 1 := ⟨by positivity, by
+      simp only [s]; rw [div_mul_eq_mul_div, one_mul, div_le_one (by linarith)]; linarith⟩
+    apply hta s hs0 (by simp only [s]; rw [div_le_one (by linarith)]; linarith)
+    have := hT.add_smul_sub_mem ha hy hsL
+    rwa [mul_smul, hLy] at this
+  · have hw0 : w = 0 := by
+      have e1 : l₁ = 0 := by linarith
+      have e2 : l₂ = 0 := by linarith
+      rw [hw, e1, e2]; simp
+    exact hta 1 one_pos le_rfl (by rw [hw0, smul_zero, add_zero]; exact ha)
+
+/-- **Choice of the body.** Given the two apex conditions and a compact set `R'` missing the
+triangle, some `ρ > 0` makes the body miss `R'` and every `a + t • wa`, `b + t • wb`
+(`t > 0`). -/
+theorem exists_deltaBody {wa wb : E} {R' : Set E}
+    (hsa : ∀ θ ∈ Icc (0 : ℝ) 1, (1 - θ) • (midpoint ℝ a b - a) + θ • (c - a) ≠ 0)
+    (hsb : ∀ θ ∈ Icc (0 : ℝ) 1, (1 - θ) • (midpoint ℝ b a - b) + θ • (c - b) ≠ 0)
+    (hta : ∀ t : ℝ, 0 < t → t ≤ 1 → a + t • wa ∉ convexHull ℝ {a, b, c})
+    (htb : ∀ t : ℝ, 0 < t → t ≤ 1 → b + t • wb ∉ convexHull ℝ {a, b, c})
+    (hR' : IsCompact R') (hdisj : Disjoint R' (convexHull ℝ {a, b, c})) :
+    ∃ ρ > 0, (∀ t : ℝ, 0 < t → a + t • wa ∉ deltaBody a b c ρ) ∧
+      (∀ t : ℝ, 0 < t → b + t • wb ∉ deltaBody a b c ρ) ∧ Disjoint R' (deltaBody a b c ρ) := by
+  obtain ⟨ρa, hρa, hca⟩ := cone_stable hsa (not_mem_cone_of_apex hta)
+  have htb' : ∀ t : ℝ, 0 < t → t ≤ 1 → b + t • wb ∉ convexHull ℝ {b, a, c} := by
+    intro t ht ht1; rw [insert_comm]; exact htb t ht ht1
+  obtain ⟨ρb, hρb, hcb⟩ := cone_stable hsb (not_mem_cone_of_apex htb')
+  have hTc : IsClosed (convexHull ℝ ({a, b, c} : Set E)) :=
+    ((toFinite _).isCompact_convexHull).isClosed
+  obtain ⟨δ, hδ, hδd⟩ := hdisj.exists_thickenings hR' hTc
+  set ρ := min (min ρa ρb) (δ / 2)
+  have hρ : 0 < ρ := by positivity
+  have h1 : ρ ≤ ρa := (min_le_left _ _).trans (min_le_left _ _)
+  have h2 : ρ ≤ ρb := (min_le_left _ _).trans (min_le_right _ _)
+  have h3 : ρ ≤ δ / 2 := min_le_right _ _
+  refine ⟨ρ, hρ, fun t ht => ?_, fun t ht => ?_, ?_⟩
+  · refine not_mem_deltaBody_of_cone hρ.le (fun l₁ l₂ hl₁ hl₂ q₁ hq₁ q₂ hq₂ => ?_) ht
+    exact hca l₁ l₂ hl₁ hl₂ q₁ (closedBall_subset_closedBall h1 hq₁) q₂
+      (closedBall_subset_closedBall h1 hq₂)
+  · rw [deltaBody_comm]
+    refine not_mem_deltaBody_of_cone hρ.le (fun l₁ l₂ hl₁ hl₂ q₁ hq₁ q₂ hq₂ => ?_) ht
+    exact hcb l₁ l₂ hl₁ hl₂ q₁ (closedBall_subset_closedBall h2 hq₁) q₂
+      (closedBall_subset_closedBall h2 hq₂)
+  · refine Disjoint.mono (self_subset_thickening hδ _) ?_ hδd
+    exact (deltaBody_subset_cthickening).trans
+      (cthickening_subset_thickening' hδ (by linarith) _)
+
+/-- A point is not interior to the body if a ray leaves it immediately. -/
+lemma not_mem_interior_of_ray {K : Set E} {x w : E} (h : ∀ t : ℝ, 0 < t → x + t • w ∉ K) :
+    x ∉ interior K := by
+  intro hx
+  obtain ⟨ε, hε, hball⟩ := Metric.isOpen_iff.mp isOpen_interior x hx
+  set t := ε / (2 * (‖w‖ + 1))
+  have ht : 0 < t := by positivity
+  apply h t ht (interior_subset (hball _))
+  rw [mem_ball, dist_eq_norm, add_sub_cancel_left, norm_smul, Real.norm_of_nonneg ht.le]
+  calc t * ‖w‖ ≤ t * (‖w‖ + 1) := by nlinarith [norm_nonneg w]
+    _ = ε / 2 := by simp only [t]; field_simp
+    _ < ε := half_lt_self hε
+
 end QOU.MathlibExt.PL
