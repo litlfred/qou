@@ -161,6 +161,47 @@ a swap the conjugated bond joins a different pair of strands (the first strand
 of the left block to the last strand of the right block). That choice, and the
 over/under path, are what a γγ formation word has to fix.
 
+## 6c. γγ bonds on every pair (step 3, pre-registered)
+
+`computations/probes/he4_gg_all_pairs/` (pre-registered in commit `dfd63dc26` before any
+number; one amendment, control tolerance 1e−40 → 1e−28 because the reference is stored to 30
+digits). The bond is `G³ = (σ_{3j−1}σ_{3j}⁻¹)³`. Non-neighbours are reached by over/under
+transport. Control: ²H reproduces μ_pn(G³) of the pair witness to 2.5e−30.
+
+| atom | word | transport | tr_atom/tr_free | B_log (keV) | B_diff (keV) |
+|---|---|---|---:|---:|---:|
+| ²H | γγ chain | – | 1.000611191 | −2.58 | −0.77 |
+| ³H | γγ chain | – | 1.001222756 | −5.17 | −0.73 |
+| ³H | all pairs | over | 1.001859943 | −7.86 | −1.12 |
+| ³H | all pairs | under | 1.001887312 | −7.97 | −1.13 |
+| ³He | γγ chain | – | 1.001669590 | −7.05 | −1.33 |
+| ³He | all pairs | over | 1.002320257 | −9.80 | −1.85 |
+| ³He | all pairs | under | 1.002340253 | −9.88 | −1.86 |
+| ⁴He | γγ chain | – | 1.002281802 | −9.64 | −0.86 |
+| ⁴He | D+D pairing a | over | 1.004251410 | −17.93 | −1.61 |
+| ⁴He | D+D pairing a | under | 1.004344026 | −18.32 | −1.64 |
+| ⁴He | D+D pairing b | over | 1.004251413 | −17.93 | −1.61 |
+| ⁴He | D+D pairing b | under | 1.004344027 | −18.32 | −1.64 |
+| ⁴He | ³H + p | over | 1.004249549 | −17.93 | −1.61 |
+| ⁴He | ³H + p | under | 1.004345915 | −18.33 | −1.64 |
+| ⁴He | ³He + n | over | 1.004251523 | −17.94 | −1.61 |
+| ⁴He | ³He + n | under | 1.004344077 | −18.32 | −1.64 |
+
+AME for comparison: 2224.6, 8481.8, 7718.0 and 28295.7 keV.
+
+Results (measured):
+- **Every γγ row unbinds.** All-pairs ⁴He comes out at −17.9 to −18.3 keV, against +28.3 MeV
+  observed. Under the ruled γγ bond, the trace forms carry no binding at all: they are
+  wrong in sign and about 1500× wrong in size.
+- Routes and transports agree to within 0.4 keV. The formation route is not where the
+  binding lives.
+- All of the 8.77 MeV in `B_sym` came from the superseded single-crossing letters
+  (`z + d < 1`).
+
+Scope (a): this is the γγ interface bond `G³`, alone and pairwise, read through these two
+trace forms. It does not exclude many-body γγ vertices, other strand pairings, or a
+non-trace energy map.
+
 ## 7. Diagnostic: adding the GPMT ≥3-row cumulant
 
 The only Lean-backed many-body quantity on main is the GPMT ≥3-row cumulant

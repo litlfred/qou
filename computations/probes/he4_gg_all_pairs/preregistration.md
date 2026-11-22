@@ -46,3 +46,9 @@ No route, transport or strand choice is selected. A negative B (unbinding) is a 
 - Gröbner–Shirshov normal forms. GS reduction names an element and does not change its trace,
   so no number here depends on it. Computing the normal forms is a separate step if wanted.
 - Many-body γγ vertices (a γγ event touching three nucleons).
+
+## Amendment (before any ⁴He number)
+
+Control 1 tolerance is relaxed from 1e−40 to 1e−28. The reference μ_pn in the pair witness
+is stored to 30 significant digits, and the first run matched it to 2.5e−30. Nothing else
+changes.
