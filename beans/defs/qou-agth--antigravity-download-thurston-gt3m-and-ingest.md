@@ -11,7 +11,7 @@ parent: qou-1qhv
 blocking:
     - qou-2hc7
 created_at: 2026-11-22T11:00:00Z
-updated_at: 2026-11-22T11:00:00Z
+updated_at: 2026-11-22T12:00:00Z
 ---
 
 Owner request 2026-11-22 (thread "cite-intake"): put the Thurston download as a
@@ -42,3 +42,10 @@ cannot be checked against the held excerpt. The `thurston1978` entry in
    `python3 scripts/summarize-library.py --apply`.
 3. Hand back to bean `qou-2hc7`: verify each Ch. 4 / Ch. 7 locator, fix the
    `note` field, and confirm or drop the DOI.
+
+## Also ingest (owner OK 2026-11-22)
+- McPhail-Snyder 2025, *A quantization of the SL2(C) Chern-Simons invariant of
+  tangle exteriors*, arXiv:2509.02365 (v3): https://arxiv.org/abs/2509.02365 ,
+  PDF https://arxiv.org/pdf/2509.02365v3 . Registered as `mcphail-snyder-2025`
+  (PR #8861); cited by `QOU/QBeta/McPhailSnyderBridgeExclusion.lean`. After
+  ingesting, add a `library` block to `folio/references/mcphail-snyder-2025.json`.
