@@ -23,7 +23,7 @@ which is asserted there as "the natural categorical observable", carries 37 % of
 so `q^{−ℓ(w₀)}` is the canonical *centering* of it. Converting to the
 **balanced** convention carries exactly that factor:
 
-    [n]_q!^balanced = q^{−n(n−1)/2} · [n]_{q²}!^unbal      (checked n = 1..6)
+    [n]_q!^balanced = q^{−n(n−1)/2} · [n]_{q²}!^unbal      (all n: `QOU.Mass.QIntegerHomogeneous.qFactBal_eq_centering`)
 
 For `n = 3` this is `q^{−3}` — the exponent in question. So the factor has a
 canonical name after all: it is `ℓ(w₀)`, the length of the longest element of
