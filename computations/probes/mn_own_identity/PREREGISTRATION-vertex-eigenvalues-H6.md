@@ -26,3 +26,9 @@ q₀ = 1.1099785827513808076 and at q = 1 + 10⁻²⁵. Phases reported as θ/2�
 
 **Readings.** Phase multisets per irrep; at q = 1 note which are thirds. No experimental number is
 used; SM charges appear only as context. A negative: W5/W6 giving nothing beyond sums of H₃ phases.
+
+**Addendum before any W5 result (2026-11-22).** W5 = V₀V₂V₄ is ill-formed in H₆: V₄ = σ₄σ₅⁻¹ needs
+seven strands. Found when the code raised an index error; no phase of any word had been printed.
+Also noted: adjacent vertices telescope, V_iV_{i+1} = σ_iσ_{i+2}⁻¹, so a chain of adjacent vertices
+is not new. W5 is replaced by the two staggered words W5a = V₀V₂ and W5b = V₁V₃, still with no
+prediction. W1–W4 and W6 are unchanged.
