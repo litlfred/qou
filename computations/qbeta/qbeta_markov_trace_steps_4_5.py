@@ -213,13 +213,13 @@ def main() -> int:
     print("=" * 78)
     print("Step 4: w-Taylor of S(q) = Q_β(q) / E_0(q)")
     print("=" * 78)
-    # Load q_0 + the existing per-anchor c_k witness via record_upstream
-    # so upstream_witness_hashes are recorded (bean qou-5k8x).
-    q_pin_doc = record_upstream(
-        _pb.witness_path("q-pinning-50-digit.witness.json", here),
-        _upstream_records,
-    )
-    q_0_str = q_pin_doc["derived_50_digit"]["q"]
+    # q_0 at the proton (experimental) pin, which is what this witness is
+    # stamped with. It previously read q-pinning-50-digit.witness.json, the
+    # MUON anchor-defining witness, while stamping q0Anchor="proton" -- a
+    # Q0_FLIP in q0_anchor_consistency_audit. q_0 is only recorded here; the
+    # S(q_0) value below comes from the SDP witness unchanged.
+    from q_parameter import Q_50_DIGIT_STR
+    q_0_str = Q_50_DIGIT_STR
     q_0 = sp.Float(q_0_str, 50)
     print(f"  q_0 = {sp.N(q_0, 12)} (50-dps)")
 
