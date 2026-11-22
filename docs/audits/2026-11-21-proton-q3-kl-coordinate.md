@@ -250,3 +250,53 @@ basis `{1, σ₀, σ₁, σ₀σ₁}`, with `h = q − q⁻¹` and `f̄(q) = f(q
    pairs each photon with a mirror photon (matter with antimatter, per AGENTS.md §7b). The
    identity-coefficient-1 normalisation is not bar-stable. This matches Round 2:
    `bar(x₋) = q⁶x₋`, and the bar-stable normaliser is `[3]_q!`, not `[3]_q!/q³`.
+
+### Round 6, formalised (2026-11-22)
+
+All Round 6 assertions are proved in
+[`QOU/MassTheory/PhotonBarClosure.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/PhotonBarClosure.lean).
+lean-direct (`-DautoImplicit=false -s 65536`) exits 0. The file has no `sorry`, and every
+declaration depends only on `propext`, `Quot.sound` and `Classical.choice`. The setting is an
+`R`-algebra with units `σ₀, σ₁`, `σᵢ⁻¹ = σᵢ − h`, and a `θ`-semilinear ring map `b` with
+`b σᵢ = σᵢ⁻¹`. No other relation of `H₃(q)` is assumed.
+
+| claim | declaration |
+|---|---|
+| `b γ(φ) = γ(barColour φ) + (s − 1)·1`, with `s = 1 − h(θφ₀ + θφ₁)` | `bar_photon` |
+| closure up to scale: `b γ = s • γ(s⁻¹ • barColour φ)` | `bar_photon_eq_smul` |
+| `b γ(0,0,c) = γ(hθc, −hθc, θc)` | `bar_chiral` |
+| `b(σ₀σ₁⁻¹) = σ₀σ₁⁻¹ + hσ₀ − hσ₁` | `bar_vertex` |
+| strict invariance forces `φ₀ + φ₁ = 0` (independence, `h` a non-zero-divisor) | `phi_sum_zero_of_bar_fixed` |
+| a chiral photon is bar-fixed iff `c = 0` | `chiral_bar_fixed_iff` |
+| the vertex is not bar-fixed | `vertex_not_bar_fixed` |
+| characters with `χσ₀ = χσ₁` agree on products of `φ₀+φ₁=0` photons, so no such product is `λx` with `λ ≠ 0` when `χ₁x = 0 ≠ χ₂x` | `chars_agree_on_products`, `no_multiple_of_split` |
+| trivial and sign characters intertwine bar with `θ` on photons | `char_bar_photon` |
+| `(σ₀⁻¹σ₁)³ ≠ (σ₀σ₁⁻¹)³` on the 3-dim weight space (`q² ≠ 1`, `q⁴ ≠ −1`) | `bar_borromean_ne` |
+
+## Round 7 (2026-11-22): a norm instead of a fixed 1
+
+Owner: *"maybe … the photon have Norm one? So there isn't a fixed 1? But photon lives on a
+sphere? Then maybe we can see more symmetries?"* This round is an exact sympy computation at
+generic `q`; it is not formalised.
+
+Replace the fixed identity coefficient 1 by homogeneous coordinates `(e, φ₀, φ₁, φ₀₁)`. The
+natural norms on `H₃(q)` are the block norms `N = (χ_triv, χ_sign, det ρ₂)`. Their product,
+`χ_triv · χ_sign · det ρ₂`, is the reduced norm, a quartic form.
+
+1. **All three block norms are bar-equivariant on photons:** `N(b γ) = θ N(γ)`, checked
+   symbolically for each component. They are multiplicative, so "norm one" is a condition
+   that bar preserves and products preserve. The identity coefficient is preserved by
+   neither.
+2. **Norm-one photons cannot produce the proton's projector.** `x₋` and every block
+   idempotent are zero divisors, with norm `0`. So no product of norm-one photons, nor of
+   any units, is a nonzero multiple of `x₋`. The scale of `x₋` is fixed instead by
+   idempotency: `e₋ = x₋ / c_sign` with `c_sign = q⁻³[3]_q!`. `e₋` is bar-invariant, since
+   `b x₋ = q⁶ x₋` and `θ c_sign = q³[3]_q!`. Its identity coefficient is `q³/[3]_q!`. So
+   `F_Bor`'s normaliser `[3]_q!/q³` is `1/(identity coefficient of e₋)`, the Schur element
+   already identified (`ProtonQ3SchurElement`). A norm adds nothing new on `/q³`.
+3. **The Borromean photons are a conjugate pair.** The two chiral factors of
+   `V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)` have block norms `(q², q², q⁻²)` and `(q⁻², q⁻², q²)`.
+   Their weights are related by `θ(qh) = −q⁻¹h`, so `V³ = γ(0,0,c)·γ(0,0,θc)` with
+   `c = qh`, a norm-like product `γ·γ^θ`, where `θ` acts on coefficients only. `V` itself
+   has block norm `(1,1,1)`. This is an observation; whether other γγ particle words have
+   the form `γ·γ^θ` is untested.
