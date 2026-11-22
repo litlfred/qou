@@ -103,6 +103,7 @@ export default chapter({
             "proton-normaliser-kl-coordinate",
             "borromean-word-minimal",
             "borromean-character-fibre",
+            "burau-invariant-form-prior-art",
             "borromean-word-selection-remark",
             "hecke-normal-form",
             "markov-moves-brane-tower",
