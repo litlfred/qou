@@ -3,7 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import QOU.MathlibExt.PLRegularNbhd
-import QOU.MathlibExt.PLCone
+import QOU.MathlibExt.PLConeMap
 
 set_option autoImplicit false
 
@@ -219,5 +219,29 @@ theorem IsRegularNbhd.eq_cone {N M : Set E} {p : E} (h : IsRegularNbhd N {p} M) 
     ?_, notMem_linkComplex_space, raysMeetOnce_linkComplex, by rw [heq, vertexStar_eq hv]⟩
   rw [← hK.2, ← hK'.1, ← hK''.1]
   exact (isSubcomplex_linkComplex).space_subset
+
+/-- **The cone of a simplicial-linear homeomorphism is a homeomorphism of the cones.** -/
+noncomputable def coneHomeomorph [DecidableEq E] [FiniteDimensional ℝ E]
+    {K K' : SimplicialComplex ℝ E} {p q : E} (hp : p ∉ K.space) (hray : RaysMeetOnce p K.space)
+    (hq : q ∉ K'.space) (hray' : RaysMeetOnce q K'.space) (hK : K.faces.Finite)
+    (hK' : K'.faces.Finite) {f g : E → E} (hfl : IsLinearOn K f) (hgl : IsLinearOn K' g)
+    (hf : MapsTo f K.space K'.space) (hg : MapsTo g K'.space K.space)
+    (hinv : InvOn g f K.space K'.space) :
+    pointCone p K.space ≃ₜ pointCone q K'.space where
+  toFun := (coneFun_mapsTo hray hp hf).restrict _ _ _
+  invFun := (coneFun_mapsTo hray' hq hg).restrict _ _ _
+  left_inv x := Subtype.ext ((coneFun_invOn hray hp hray' hq hf hg hinv).1 x.2)
+  right_inv y := Subtype.ext ((coneFun_invOn hray hp hray' hq hf hg hinv).2 y.2)
+  continuous_toFun := (continuousOn_coneFun hp hray hfl hK).mapsToRestrict _
+  continuous_invFun := (continuousOn_coneFun hq hray' hgl hK').mapsToRestrict _
+
+lemma coneHomeomorph_apply [DecidableEq E] [FiniteDimensional ℝ E]
+    {K K' : SimplicialComplex ℝ E} {p q : E} (hp : p ∉ K.space) (hray : RaysMeetOnce p K.space)
+    (hq : q ∉ K'.space) (hray' : RaysMeetOnce q K'.space) (hK : K.faces.Finite)
+    (hK' : K'.faces.Finite) {f g : E → E} (hfl : IsLinearOn K f) (hgl : IsLinearOn K' g)
+    (hf : MapsTo f K.space K'.space) (hg : MapsTo g K'.space K.space)
+    (hinv : InvOn g f K.space K'.space) (x : pointCone p K.space) :
+    (coneHomeomorph hp hray hq hray' hK hK' hfl hgl hf hg hinv x : E) =
+      coneFun p q K.space f x := rfl
 
 end QOU.MathlibExt.PL
