@@ -966,7 +966,7 @@
 | [lem:ccg-crossed-module-structure](#lem:ccg-crossed-module-structure) | Crossed-module structure on $(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ | Ch 4 |
 | [lem:topological-mass-cat-descended](#lem:topological-mass-cat-descended) | Descended term equals the base-level mass | Ch 9 |
 | [lem:topological-mass-holonomy](#lem:topological-mass-holonomy) | Descended term is the unknot-core holonomy | Ch 9 |
-| [lem:descent](#lem:descent) | Descent preserves the quantum observable universe | Ch 4 |
+| [lem:descent](#lem:descent) | Descent along the brane tower | Ch 4 |
 | [lem:feynman-eigenbasis-decomposition](#lem:feynman-eigenbasis-decomposition) | Eigenbasis decomposition for the Feynman amplitude | Ch 11 |
 | [lem:topological-mass-cat-eigenspace](#lem:topological-mass-cat-eigenspace) | Eigenspace decomposition of the categorical mass integrand | Ch 9 |
 | [lem:topological-mass-eigenspace-decomp](#lem:topological-mass-eigenspace-decomp) | Eigenspace decomposition of the mass integrand (descent involution) | Ch 9 |
