@@ -73,13 +73,22 @@ bc_bare() {
   echo "$b"
 }
 
-# bc_source_key <label> <dir>... -> 12 hex, or "undetermined: <label> differ
-# from HEAD" and return 3.
+# bc_source_key <label> <path>... -> 12 hex, or "undetermined: <label> differ
+# from HEAD" and return 3. A path that is not in HEAD is a caller error: it is
+# reported on stderr and returns 2 (it would otherwise hash as an empty id).
+# A path may be a directory (its tree id) or a file (its blob id).
 bc_source_key() {
-  local label="$1" dirty d trees=""; shift
+  local label="$1" dirty d id trees=""; shift
+  for d in "$@"; do
+    git rev-parse -q --verify "HEAD:$d" >/dev/null \
+      || { echo "branch-cache: source-key $label: '$d' is not in HEAD" >&2; return 2; }
+  done
   dirty="$(git status --porcelain -- "$@")"
   if [ -n "$dirty" ]; then echo "undetermined: $label differ from HEAD"; return 3; fi
-  for d in "$@"; do trees+="$d $(git rev-parse "HEAD:$d")"$'\n'; done
+  for d in "$@"; do
+    id="$(git rev-parse -q --verify "HEAD:$d")" || return 2
+    trees+="$d $id"$'\n'
+  done
   printf '%s' "$trees" | sha256sum | cut -c1-12
 }
 
@@ -110,9 +119,23 @@ bc_fetch_member() {
   [ $rc -eq 3 ] && { echo "$BC_KIND: could not reach origin (unknown, not a miss)" >&2; return 3; }
   [ $rc -eq 0 ] || return 1
   B="$(bc_bare)" || return 2
-  git -C "$B" fetch -q --depth=1 "$(bc_remote_url)" "refs/heads/$br" 2>/dev/null \
-    || { echo "$BC_KIND: fetch of $br failed (unknown, not a miss)" >&2; return 3; }
-  git -C "$B" rev-parse FETCH_HEAD
+  # Fetch into a ref unique to this call, not FETCH_HEAD: the bare repo is
+  # shared by every process of this kind, and FETCH_HEAD is one file in it.
+  # A shallow fetch also takes the repo's shallow.lock, so concurrent fetches
+  # can fail on the lock; retry a few times before calling it unreachable.
+  local tmp C a ok=""
+  tmp="refs/bc-fetch/$$-${RANDOM}${RANDOM}-$(date +%s%N)"
+  for a in 1 2 3 4 5 6; do
+    if git -C "$B" fetch -q --no-write-fetch-head --depth=1 "$(bc_remote_url)" "refs/heads/$br:$tmp" 2>/dev/null; then
+      ok=1; break
+    fi
+    sleep "0.$((RANDOM % 9 + 1))"
+  done
+  [ -n "$ok" ] || { echo "$BC_KIND: fetch of $br failed (unknown, not a miss)" >&2; return 3; }
+  C="$(git -C "$B" rev-parse -q --verify "$tmp^{commit}")" \
+    || { echo "$BC_KIND: fetched $br but cannot read it (unknown, not a miss)" >&2; return 3; }
+  git -C "$B" update-ref -d "$tmp" 2>/dev/null   # a local scratch ref in the private bare repo
+  echo "$C"
 }
 
 bc_commit_tree() {   # bc_commit_tree <tree> <subject> <body> [parent]
