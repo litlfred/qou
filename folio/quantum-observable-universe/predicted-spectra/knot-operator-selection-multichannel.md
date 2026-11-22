@@ -13,7 +13,7 @@ $$
   +
   \underbrace{d_{\Box\Box}(q) \cdot P_{T_{2,2}}}_{\text{Hopf link (gluon)}}
   +
-  \underbrace{d_{\yng(2,1)}(q) \cdot P_{T_{2,3}}}_{\text{trefoil (electron)}}
+  \underbrace{d_{\yng(2,1)}(q) \cdot P_{T_{2,3}}}_{\text{trefoil}}
   +  \cdots
 $$
 
@@ -21,8 +21,8 @@ All channels fire simultaneously. Two incoming photons can:
 
 * change polarisation (trivial operator, no pair created),
 * exchange a gluon ($T_{2,2}$, Hopf link),
-* create $e^-e^+$ ($T_{2,3}$, trefoil),
-* create $\mu^-\mu^+$ ($T_{2,5}$, cinquefoil, suppressed by higher crossing energy).
+* pass through the trefoil operator $T_{2,3}$; under the electron ruling ([electron](#def:electron-knot)) the $e^-e^+$ pair is read from the $\sigma_0\sigma_1\sigma_0$ coefficient ([Breit--Wheeler pair production](#def:breit-wheeler-pair-production)), not from this channel,
+* pass through the cinquefoil operator $T_{2,5}$, suppressed by higher crossing energy; the muon word is not ruled, so this is not yet a $\mu^-\mu^+$ channel.
 
 These events occur in a single interaction. The quantum dimension $d_\lambda(q)$ weights each channel. The branching ratios depend entirely on $q$ and the incoming photon polarisation content $\varphi_0, \varphi_1$.
 

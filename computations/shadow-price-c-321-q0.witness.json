@@ -1,24 +1,31 @@
 {
-  "scriptFile": "shadow_price_c_321_q0.py",
+  "computation": "shadow-price-c-321-q0",
   "engine": "python",
   "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
-  "computation": "shadow-price-c-321-q0",
   "description": "Numerical evaluation of the BW shadow-price coefficient C_{[3,2,1]} at q_0 via the closed form from prop:wigner-2-coefficient.  Uses [n]_q \u00b7 h / [3]_q^3 \u00b7 [5]_q closed form; cross-checks via Wigner-2 corollary C = w \u00b7 h/2.",
   "reference_blocks": [
     "prop:wigner-2-coefficient",
     "prop:mass-coefficient-shadow-price",
     "conj:shell-correction-term-seven"
   ],
-  "timestamp": "2026-08-23T21:17:43.299044+00:00",
+  "timestamp": "2026-11-21T12:03:26.050477+00:00",
   "parameters": {
-    "q_0": 1.1099785827513808
+    "q_0": "1.10997858275138080759166909561076887987449912187357873607281"
   },
   "results": {
-    "C_321_at_q0": 0.03748823722039044,
-    "w_321_at_q0": 0.3586356418349517,
-    "h_at_q0": 0.2090602987956393,
-    "trace_per_dim_at_q0": 0.10453014939781965,
+    "C_321_at_q0": "0.0374882372203904442950499681876329172101146165783635902258904",
+    "w_321_at_q0": "0.358635641834951713459419271670692018756490758528154812290358",
+    "h_at_q0": "0.209060298795639315430846213129674943859757495263024555381696",
+    "trace_per_dim_at_q0": "0.104530149397819657715423106564837471929878747631512277690848",
     "wigner_2_identity_check": true
   },
-  "scope_note": "C_{[3,2,1]} is the SINGLE-PARTITION shadow price at k=6 (A=2 only).  The empirical \u03b1_5 fit from the higher-A shell diagnostic aggregates over ALL height-6 partitions across A=1..4.  Direct numerical comparison requires per-partition decomposition (see paper_six_term_isotope_sweep refactor)."
+  "scope_note": "C_{[3,2,1]} is the SINGLE-PARTITION shadow price at k=6 (A=2 only).  The empirical \u03b1_5 fit from the higher-A shell diagnostic aggregates over ALL height-6 partitions across A=1..4.  Direct numerical comparison requires per-partition decomposition (see paper_six_term_isotope_sweep refactor).",
+  "scriptFile": "shadow_price_c_321_q0.py",
+  "scriptHash": "bb05fb796239",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
+  "commitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
+  "computedAt": "2026-11-21T12:03:26.203093+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

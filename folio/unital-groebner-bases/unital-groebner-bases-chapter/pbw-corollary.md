@@ -1,5 +1,5 @@
 Let $\mathfrak{g}$ be a Lie algebra over $R$, a commutative ring with
-unity, with Lie bracket $[\,{,}\,]_{\mathfrak{g}}$. Then the universal
+unity, which is free as an $R$-module, with Lie bracket $[\,{,}\,]_{\mathfrak{g}}$. Then the universal
 enveloping algebra
 
 $$

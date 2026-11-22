@@ -1,0 +1,4 @@
+k=1: plain=(q - 1)**2*(q + 1)**2/q**2  twisted=(q**4 + 1)/q**2  lusztig=(q - 1)*(q + 1)*(q**2 + 1)/q**2  twisted==lusztig: False
+k=2: plain=(q**4 + 1)**2/q**4  twisted=(q**8 + 1)/q**4  lusztig=(q**8 + 1)/q**4  twisted==lusztig: True
+k=3: plain=(q - 1)**2*(q + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2/q**6  twisted=(q**4 + 1)*(q**8 - q**4 + 1)/q**6  lusztig=(q - 1)*(q + 1)*(q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/q**6  twisted==lusztig: False
+eigenvalues of sigma(x)sigma: {q**2: 1, -1: 2, q**(-2): 1}

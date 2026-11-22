@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/turaev1988/sections/page-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 22",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "contains": [
+    "library/turaev1988/blocks/prose-page-022",
+    "library/turaev1988/blocks/recommendation-page-022-01",
+    "library/turaev1988/blocks/recommendation-page-022-02",
+    "library/turaev1988/blocks/recommendation-page-022-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/turaev1988",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/turaev1988",
+  "provenance": "ingested"
+}

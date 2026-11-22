@@ -12,7 +12,7 @@ green while the publication and the producer drift apart.
 Three defects found on 2026-09-05 are all that shape:
 
   * `tbl:q-beta-spectral-bridge-table-data` and the witness declaring
-    `prop:q-beta-spectral-bridge` compute a different `z` under the same name and
+    `conj:q-beta-spectral-bridge` compute a different `z` under the same name and
     differ by **21 %**, with both witness assertions passing.
   * `thm:markov-trace-factorization` published a transfer-matrix readout copied
     from deprecated code, wrong on every bond, while a merged probe recorded that
@@ -181,7 +181,7 @@ LABEL = re.compile(r'label:\s*"([^"]+)"')
 #: The known positive. A detector with no known positive can report a whole class
 #: clean and mean nothing by it, so this pair must stay live.
 #:
-#: It was `prop:q-beta-spectral-bridge` on `0.4993203340335613`, the convention-C
+#: It was `conj:q-beta-spectral-bridge` on `0.4993203340335613`, the convention-C
 #: `z` that diverged 21 % from its own producer. That defect was FIXED on
 #: 2026-09-05 (the qbeta channel migrated C -> D), and fixing it turned the
 #: selftest red -- the third time in one day that "assert the defect" produced a

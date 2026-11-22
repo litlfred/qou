@@ -1,21 +1,14 @@
-*Let $P$ be a confined particle. Let $\mathcal{G} \subset \mathbb{R}_{>1}$ be the generic locus of the substrate parameter $q$. The **confinement locus** of $P$ is*
+*Let $P$ be a confined particle, and let the substrate parameter $q$ range over $\mathbb{R}_{>1}$. Write strict feasibility of the confinement SDP as a finite system of strict inequalities $0 < g_i(q, X)$, $i \in I$, in $q$ and the decision variable $X$, with each $g_i$ continuous. (Positive definiteness of a Gram matrix is such a system, by Sylvester's criterion on its leading principal minors.) The **confinement locus** of $P$ is*
 
 $$
-  \Omega(P) \;:=\; \{\, q \in \mathcal{G} : \mathrm{confined}(P, q) \,\},
+  \Omega(P) \;:=\; \{\, q : \exists X,\ \forall i \in I,\ 0 < g_i(q, X) \,\}.
 $$
 
-*where $\mathrm{confined}(P, q)$ is the strict feasibility predicate of the confinement SDP. Then:*
+*Let $u^*_\lambda(q)$ be the dual variables of the SDP and $s_\lambda(q)$ the matching primal slacks. The **active support** is $\mathcal{S}^*(P, q) := \{\lambda : u^*_\lambda(q) > 0\}$ and the **binding multiplicity** is $\mu(P, q) := |\mathcal{S}^*(P, q)|$. Then:*
 
-1. ***Openness.** $\Omega(P)$ is open in $\mathcal{G}$.*
-2. ***Stratification.** The complement $\mathcal{G} \setminus \Omega(P)$ decomposes into a real-algebraic stratification. The strata have codimension $\ge 1$ and form the **phase boundaries** of $P$. Each stratum is the zero locus of a principal minor of the SDP Gram matrix.*
-3. ***Local constancy.** Let $\Omega_\alpha \subset \Omega(P)$ be a connected component (a **confinement phase**). On $\Omega_\alpha$:*
-   - *the active support $\mathcal{S}^*(P, q)$ is constant;*
-   - *the binding multiplicity $\mu(P, q) = |\mathcal{S}^*(P, q)|$ is constant;*
-   - *the Frobenius stability index $\sigma_F(P, q)$ is real-analytic.*
-4. ***Scope.** The statements of level sufficiency and shell-closure stability, and the Markov-trace preservation of the confinement category functor, hold pointwise in each $\Omega_\alpha$ and fail on $\partial\Omega(P)$.*
-5. ***Phase transitions.** If a continuous deformation $q: [0, 1] \to \mathcal{G}$ crosses a phase boundary at $q_0 \in \partial\Omega(P)$, then at $q_0$ one of the following holds:*
-   - ***Deconfinement.** $P$ is not realisable as a closed-braid bound state at $q_0$.*
-   - ***Regime switch.** $\mu$ jumps discretely across $q_0$; the active support gains or loses a Wedderburn block; $\sigma_F$ has a non-smooth point.*
-   - ***Both.***
+1. ***Openness.** $\Omega(P)$ is open.*
+2. ***Constancy on a phase.** Let $C \subseteq \Omega(P)$ be connected. Suppose $u^*_\lambda$ and $s_\lambda$ are continuous in $q$, complementary ($u^*_\lambda s_\lambda = 0$) and strictly complementary ($u^*_\lambda > 0$ or $s_\lambda > 0$) at every $q \in C$. Then $\mathcal{S}^*(P, q)$ and $\mu(P, q)$ are constant on $C$.*
 
-**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.
+*The remaining structure of the phases (the boundary stratification, analyticity of the Frobenius stability index, scope and phase transitions) is stated separately as [conj:confinement-phase-boundaries](#conj:confinement-phase-boundaries).*
+
+**Archimedean specialisation.** Both parts sit on the archimedean side of the substrate wall: the locus is a subset of $\mathbb{R}$, and openness and connectedness are statements about the real topology.

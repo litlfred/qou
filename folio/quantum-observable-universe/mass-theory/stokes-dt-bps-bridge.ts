@@ -26,6 +26,8 @@ export default conjecture({
     "gukov-stosic2012",
     "kucharski-reineke-stosic-sulkowski2017",
     "singh-physrevd108106023",
+    "garoufalidis-kashaev2015",
+    "mario2023",
   ],
   tags: [
     "tier:famous",

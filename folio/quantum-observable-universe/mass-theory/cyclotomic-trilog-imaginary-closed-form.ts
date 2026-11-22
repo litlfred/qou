@@ -3,6 +3,11 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-11-21",
+      body: "Lean proof added (owner card, 2026-11-21): `imLi3_zeta_hasSum` proves the closed form for every n >= 1, with Im Li3(zeta_n) read as the series sum over m of sin(2 pi m/n)/m^3. The Lean route is the Fourier series of the Bernoulli polynomial B_3 at x = 1/n, not the Kummer reflection used in the prose proof; both give the same identity.",
+    },
+    {
       kind: "note",
       date: "2026-08-08",
       body:
@@ -31,7 +36,7 @@ export default proposition({
   title:
     "Trilogarithm imaginary part at $\\zeta_n$: closed form $(n - 1)(n - 2)\\pi^3 / (3 n^3)$ for every root of unity",
   lean: {
-    ref: "qou:QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds",
+    ref: "qou:QOU.BraidKnot.CyclotomicTrilogImaginary.imLi3_zeta_hasSum",
     validation: "not_checked",
   },
   computation: {

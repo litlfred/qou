@@ -1,0 +1,156 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "turaev1988",
+ "source_sha256": "3ccc9e1ee4f95480",
+ "brief": "Turaev, The Yang–Baxter equation and invariants of links (Invent. Math. 92, 527–553, 1988) — enhanced Yang–Baxter operators give link invariants via braid closure; the HOMFLY (P) and Kauffman (F) polynomials arise this way, with state models.",
+ "extended": "**The Yang–Baxter equation and invariants of links** — V. G. Turaev. Inventiones mathematicae 92, 527–553 (1988).\n\n§2 recalls Yang–Baxter operators R on V⊗V (V free of rank m over a commutative ring K) and introduces enhanced YB-operators (EYB): a quadruple S = (R, μ, α, β) of a YB-operator R, an endomorphism μ of V and invertible scalars α, β satisfying the compatibility conditions needed for Markov invariance. §3 attaches to each EYB-operator S an isotopy invariant T_S of links, computed on a braid presentation as the trace of the braid's image composed with μ^{⊗n}, normalised by α and β so that it is invariant under both Markov moves; T_S is annihilated by the characteristic polynomial of R (Theorem 3.2.1). §4 studies special EYB-operators (from the R-matrices of the fundamental vector representations for the series A^(1), and B^(1), C^(1), D^(1), A^(2)) and shows the resulting invariants are equivalent to the two-variable polynomials P (HOMFLY) and F (Kauffman). §5 gives a state model for T_S under restrictions on S, and §6 a non-oriented version used to prove Theorem 4.3.4.\n\n**Why it may bear here.** The direct braid-closure route from an R-matrix to a link invariant, with no von Neumann or Hecke algebra in between (the paper says so). A companion to wenzl1988 in the same volume. No bib entry existed before this ingest.",
+ "tokens": {
+  "brief": 21,
+  "extended": 59
+ },
+ "sections": [
+  {
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
+  },
+  {
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
+  },
+  {
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
+  },
+  {
+   "id": "page-004",
+   "title": "Page 4",
+   "pages": "4-4"
+  },
+  {
+   "id": "page-005",
+   "title": "Page 5",
+   "pages": "5-5"
+  },
+  {
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
+  },
+  {
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
+  },
+  {
+   "id": "page-008",
+   "title": "Page 8",
+   "pages": "8-8"
+  },
+  {
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
+  },
+  {
+   "id": "page-010",
+   "title": "Page 10",
+   "pages": "10-10"
+  },
+  {
+   "id": "page-011",
+   "title": "Page 11",
+   "pages": "11-11"
+  },
+  {
+   "id": "page-012",
+   "title": "Page 12",
+   "pages": "12-12"
+  },
+  {
+   "id": "page-013",
+   "title": "Page 13",
+   "pages": "13-13"
+  },
+  {
+   "id": "page-014",
+   "title": "Page 14",
+   "pages": "14-14"
+  },
+  {
+   "id": "page-015",
+   "title": "Page 15",
+   "pages": "15-15"
+  },
+  {
+   "id": "page-016",
+   "title": "Page 16",
+   "pages": "16-16"
+  },
+  {
+   "id": "page-017",
+   "title": "Page 17",
+   "pages": "17-17"
+  },
+  {
+   "id": "page-018",
+   "title": "Page 18",
+   "pages": "18-18"
+  },
+  {
+   "id": "page-019",
+   "title": "Page 19",
+   "pages": "19-19"
+  },
+  {
+   "id": "page-020",
+   "title": "Page 20",
+   "pages": "20-20"
+  },
+  {
+   "id": "page-021",
+   "title": "Page 21",
+   "pages": "21-21"
+  },
+  {
+   "id": "page-022",
+   "title": "Page 22",
+   "pages": "22-22"
+  },
+  {
+   "id": "page-023",
+   "title": "Page 23",
+   "pages": "23-23"
+  },
+  {
+   "id": "page-024",
+   "title": "Page 24",
+   "pages": "24-24"
+  },
+  {
+   "id": "page-025",
+   "title": "Page 25",
+   "pages": "25-25"
+  },
+  {
+   "id": "page-026",
+   "title": "Page 26",
+   "pages": "26-26"
+  },
+  {
+   "id": "page-027",
+   "title": "Page 27",
+   "pages": "27-27"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "opening-text"
+  ],
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

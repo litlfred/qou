@@ -3,20 +3,21 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-topological-mass-dilogarithm",
+  "@id": "papers/quantum-observable-universe/blocks/rem-topological-mass-dilogarithm-sketch",
   "@type": [
-    "folio-assistant-sci:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:topological-mass-dilogarithm",
-  "kind": "proof",
-  "title": "Proof of the quantum dilogarithm evaluation",
+  "label": "rem:topological-mass-dilogarithm-sketch",
+  "kind": "remark",
+  "title": "Argument sketch for the quantum dilogarithm evaluation",
   "uses": [
-    "papers/quantum-observable-universe/blocks/lem-topological-mass-dilogarithm"
+    "papers/quantum-observable-universe/blocks/conj-topological-mass-dilogarithm"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-topological-mass-dilogarithm",
   "text": "topological-mass-dilogarithm-proof.md",
   "provenance": "authored"
 }

@@ -1,12 +1,19 @@
-*Let $c_5(q)$ be the precision-ladder coefficient at rung $N=5$ in the $\mathfrak{Q}_\beta$ categorical formula ([$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)). Then $c_5$ admits the categorical decomposition:*
+*For $q \neq 0$ define the Hoefsmit off-diagonal coupling squared on $V_{(2,1)}$,*
 
 $$
-\boxed{\;
-c_5(q) \;=\; \underbrace{-b(q)^2}_{\text{pure-}\sigma\text{ Kashiwara}}
-\;-\; \underbrace{\tfrac{1}{2}}_{\substack{\text{averaged-crossing}\\\text{involution fingerprint}}}
-\;}
+b(q)^2 \;=\; \frac{q^4+q^2+1}{(q^2+1)^2},
 $$
 
-*where $b(q)^2 = (q^4+q^2+1)/(q^2+1)^2$ is the Hoefsmit off-diagonal coupling squared on $V_{(2,1)}$. The $-1/2$ summand is the fingerprint of the bar-invariant averaged-crossing operator $\sigma_{\text{avg}} = (\sigma + \sigma^{-1})/2$ used at specific positions in the typed-$\mathbf{B}_3$ braid recipe ([Symbolic $Q$-value of free neutron decay](#prop:neutron-qvalue-symbolic)).*
+*and the decomposition quantity*
 
-*The decomposition resolves the Pell-Lucas outlier status of $c_5$ at the silver ratio ([**Silver-ratio trace degeneracy**](#prop:silver-ratio-beta-decay-null)). The pure-$\sigma$ part $-b^2$ evaluates to $-7/8$, and the involution fingerprint $-1/2$ is the non-Hecke correction.*
+$$
+c_5^{\mathrm{dec}}(q) \;:=\; \underbrace{-b(q)^2}_{\text{pure-}\sigma\text{ Kashiwara}} \;-\; \underbrace{\tfrac{1}{2}}_{\text{averaged-crossing fingerprint}} .
+$$
+
+*Then $b(q)^2 = 1 - 1/[2]_q^2$ with $[2]_q = q + q^{-1}$, and hence*
+
+$$
+c_5^{\mathrm{dec}}(q) \;=\; -\tfrac{3}{2} + \frac{1}{[2]_q^{2}} .
+$$
+
+*This statement does not identify $c_5^{\mathrm{dec}}$ with the rung-5 coefficient $c_5$ of the [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder); that identification is a separate, unproved claim, and the ladder itself is to be re-derived under convention D. At the silver ratio $q = 1+\sqrt2$ the pure-$\sigma$ part evaluates to $-b^2 = -7/8$ ([**Silver-ratio trace degeneracy**](#prop:silver-ratio-beta-decay-null)).*

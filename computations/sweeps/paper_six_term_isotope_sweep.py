@@ -596,7 +596,22 @@ def paper_six_term_mass(Z, N, include_inter=True,
             "produces ~10⁵× isospin pathologies — it has been "
             "removed."
         )
-    t1 = canonical_t1(isotope_label)
+    # T1 FREE vs BOUND (2026-11-21, issue #8960). `canonical_t1(label)` is
+    # keyed on the isotope label alone, so it returned the BOUND atom trace
+    # for both the `include_inter=True` and `include_inter=False` calls, and
+    # `assemble_per_derivation_weights`' binding_T1 = E0·(T1_free − T1_atom)
+    # was identically 0 for every isotope. Its ⁴He entry was also a stale
+    # inline literal (0.0553483…, pre-2026-09-05 ordering) where the live
+    # trace is 0.0112374…. The corpus fixes both values: `tr_m_atom_zn`
+    # (manifest `physical_proton`) returns (tr_atom, tr_free) from the same
+    # canonical word, and reproduces the witness entries for p, n, D, T, ³He
+    # bit-for-bit. Use it for A >= 2; A = 1 keeps the witness (free = atom).
+    if Z + N >= 2:
+        from tr_m_atom_via_transfer import tr_m_atom_zn
+        _tr_atom, _tr_free = tr_m_atom_zn(Z, N)[:2]
+        t1 = abs(mp.mpf(_tr_atom if include_inter else _tr_free))
+    else:
+        t1 = canonical_t1(isotope_label)
 
     # T2, T3 evaluation per `tower_mode`:
     if tower_mode in ("brane-legacy", "brane"):
@@ -663,11 +678,13 @@ def paper_six_term_mass(Z, N, include_inter=True,
             term2_canonical, term3_canonical,
         )
         from mass_at_3A_proper import atom_braid_word_3A
-        word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+        word = atom_braid_word_3A(Z, N, include_inter=include_inter, q=Q_MP)
         n_strands_canonical = 3 * (Z + N)
         n_gens_canonical = n_strands_canonical - 1
-        t2 = term2_canonical(word, n_gens_canonical, float(Q0_FLOAT))
-        t3 = term3_canonical(word, n_gens_canonical, float(Q0_FLOAT))
+        # Q_MP, not float(Q0_FLOAT): the brane tower is mpf end to end now
+        # and refuses a float q (2026-11-21).
+        t2 = term2_canonical(word, n_gens_canonical, Q_MP)
+        t3 = term3_canonical(word, n_gens_canonical, Q_MP)
     elif tower_mode == "li2q":
         # CORRECTED Kashaev limit per `prop:mass-endomorphism-tower`
         # (proof: a43d7f1fa).  T2 = -Σ Li_2^q(-|V_i|),
@@ -1563,7 +1580,7 @@ if __name__ == "__main__":
             "upstream_witness_hashes": _upstream_hashes,
         },
         # The Phase-3 substrate-Δm benchmark (PR #696 D3 lift) lives
-        # entirely in the sibling probe `probe_flavor_dressed_mass_split.py`
+        # entirely in the sibling probe `probe_flavor_dressed_mass_from_substrate_split.py`
         # / `flavor-dressed-mass-from-substrate-split.witness.json`.
         # This sweep does NOT consume the substrate-Δm witness — it is
         # an independent end-to-end test — so the substrate-Δm blocks

@@ -13,12 +13,10 @@
   ],
   "label": "prop:confinement-phase-stratification",
   "kind": "proposition",
-  "title": "Confinement phases are open strata of the generic $q$-locus",
+  "title": "The confinement locus is open, and the active support is constant on a strictly complementary phase",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-level-sufficiency",
-    "papers/quantum-observable-universe/blocks/prop-shell-closure-stability",
-    "papers/quantum-observable-universe/blocks/thm-parity-regime-selection",
-    "papers/quantum-observable-universe/blocks/rem-deconfinement-golden-threshold"
+    "papers/quantum-observable-universe/blocks/def-confined-particle",
+    "papers/quantum-observable-universe/blocks/prop-confinement-sdp"
   ],
   "tags": [
     "phase",

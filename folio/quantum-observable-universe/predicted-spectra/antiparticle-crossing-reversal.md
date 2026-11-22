@@ -1,4 +1,4 @@
-The left trefoil $T_{2,3}$ represents the electron generator. Its mirror image $T_{2,3}^{\sigma}$ has all crossings reversed.
+The electron is the word $e^- = \sigma_0\sigma_1\sigma_0$ ([electron](#def:electron-knot)). Its mirror image, the positron $e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ ([positron](#def:positron-knot)), has all crossings reversed.
 
 **Statement.**
 

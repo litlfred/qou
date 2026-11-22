@@ -1012,6 +1012,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] \"A double application of the Skein relation yields 𝒮_ab = (qμ_a + q⁻¹μ_b)/(q^{1/2}+q^{−1/2})\" with no computation. The prf itself says the denominator \"is not derived\" and holds in the excised convention-C frame only. Honest, but it means the lemma is unproved."
+      },
+      {
+        "field_hash": {
+          "md": "6d591c87dc82",
+          "ts": "9a6ac3f9b883"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:35.861Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. Current prf is 3 sentences: 'a double application of the Skein relation yields S_ab = (q mu_a + q^-1 mu_b)/(q^1/2 + q^-1/2)' with no computation shown, then m_N = S_12 + S_13 + S_23. The prf itself says the denominator 'is not derived' and is the reciprocal of the excised convention-C weight, so the argument holds only in the convention-C frame. Further gaps: the decomposition of the Borromean braid into three crossing pairs each contributing additively is asserted, not derived from the Hecke/Markov structure; mu_a ('dressed quark Skein mass ... strong-field dressing from the Hopf-link interaction') is undefined in the proof; additivity of mass over crossing pairs is a physical premise. The lemma is therefore unproved; the diff since the last review only reflowed the text. No direct ruling conflict, but the 'quark strand' masses mu_a are not tied to the owner-ruled up-quark-as-unknot-strand form."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1717,6 +1733,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:14.271Z",
+  "updated_at": "2026-11-21T08:17:35.861Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,0 +1,10 @@
+W_L link components 4
+W_L closure: cusps 4, identify [L12n2208(0,0)(0,0)(0,0)(0,0), otet12_00009(0,0)(0,0)(0,0)(0,0)], Vol 12.179299276915843500254430651294243431300271690363597504209869281, CS 0
+W_L closure+axis: cusps 5, identify [], Vol 12.179299276915843500254430651294243431300271690370593600677396858, CS not computed (b'Shapes for (filled) triangulation are not given or degenerate'); solution type contains degenerate tetrahedra
+W_R link components 4
+W_R closure: cusps 4, identify [L12n2208(0,0)(0,0)(0,0)(0,0), otet12_00009(0,0)(0,0)(0,0)(0,0)], Vol 12.179299276915843500254430651294243431300271690363597504209869281, CS -8.08165817219365808566976348666817356925397244418794771371 E-65
+W_R closure+axis: cusps 5, identify [], Vol 12.179299276915843500254430651773785963362808358389287376086040676, CS not computed (b'Shapes for (filled) triangulation are not given or degenerate'); solution type contains degenerate tetrahedra
+Borromean closure+axis (reference): cusps 4, identify [L12n2208(0,0)(0,0)(0,0)(0,0), otet12_00009(0,0)(0,0)(0,0)(0,0)], Vol 12.179299276915843500254430651294243431300271690363597504209869281, CS -4.04082908609682904283488174333408678462698622209397385686 E-65
+W_L closure ~ W_R closure: True
+W_L closure ~ Borromean+axis: True
+W_R closure ~ Borromean+axis: True

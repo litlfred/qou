@@ -910,7 +910,24 @@
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f",
         "notes": "criterion applies to dak; block kind \"proof\" is paper"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "851a7940d6e5",
+          "ts": "de9bf5d33f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:21:27.657Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "Full review 2026-11-21. Checked every step by hand. (L1) colLen(s) = r+1 follows from weak decrease and row r+1 shorter. (L2) h(r,j) = (s+1-j)+(colLen(j)-r)-1 = (s-j)+(colLen(j)-r): correct. (L3) h(i,s) = (lambda_i - s)+(r+1-i)-1: correct. (L4) sum_{j<s} gives s(s+1)+2C-2rs-s = 2C+s^2-2rs: correct. (L5) sum_{i<r} gives 2R-2sr+2r^2-r(r-1)-r = 2R+r^2-2sr: correct. (L6) inclusion-exclusion n = R + C - rs + 1 is right (rows below r have length <= s so lie in the column region; the overlap is the full r x s rectangle since lambda_i >= s+1 for i <= r). Assembly to (s-r)^2 + 2n - 1 is correct algebra. No gaps, no empirical input, no ruling relevance. One remark only: the statement's gloss that the LHS is the change in the hook-square sum and that these are the only cells whose hook changes is asserted in the statement, not proved here; the proof establishes the displayed identity, which is the formal claim."
+      }
     ]
   },
-  "updated_at": "2026-08-29T19:40:19.111Z"
+  "updated_at": "2026-11-21T08:21:27.657Z"
 }

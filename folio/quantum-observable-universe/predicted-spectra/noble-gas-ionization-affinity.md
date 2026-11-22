@@ -4,4 +4,4 @@ The crossing energy of a closed sub-link represents a local maximum across each 
 
 ## Electron affinity
 
-A noble gas exhibits near-zero electron affinity. Attaching a new trefoil requires initiating a fresh sub-link at level $n_k+1$. This trefoil weakly Hopf-links to the outermost closed shell. The minimal linking number yields a binding energy negligible compared to thermal fluctuations.
+A noble gas exhibits near-zero electron affinity. Attaching a new electron requires initiating a fresh sub-link at level $n_k+1$. This electron weakly Hopf-links to the outermost closed shell. The minimal linking number yields a binding energy negligible compared to thermal fluctuations.

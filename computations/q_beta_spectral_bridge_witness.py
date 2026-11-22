@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: numerical verification of an algebraic
 # bridge identity; no symbolic-q output.
-"""Numerical witness for `prop:q-beta-spectral-bridge`.
+"""Numerical witness for `conj:q-beta-spectral-bridge`.
 
 Verifies, at 50-dps mpmath precision, the leading-order bridge
 identity between Form A (NF-counit basis) and Form B (transfer-
@@ -127,11 +127,11 @@ def main() -> int:
     print(f"  Q_β^B (MeV)  ln(1+zh)·E_0/z   = {mp.nstr(q_beta_form_b_mev, 12)}")
     print(f"  |Q_β^A − Q_β^B| (MeV)         = {mp.nstr(q_beta_agreement_mev, 6)}")
 
-    w.set_content_block("prop:q-beta-spectral-bridge")
+    w.set_content_block("conj:q-beta-spectral-bridge")
     w.set_description(
         "Numerical witness for the leading-order bridge identity "
         "Form A / Form B = 1/z + (z-1) h / (2 z) + O(h²) of "
-        "prop:q-beta-spectral-bridge. Form A is the NF-counit |Δ(net)| "
+        "conj:q-beta-spectral-bridge. Form A is the NF-counit |Δ(net)| "
         "= |h(2-h)/2|; Form B is the eigenfunction-basis log-ratio "
         "ln(V_pp/V_nn), which at single wrap reduces to ln(1 + z h) "
         "via the Markov-traced volume identity in "

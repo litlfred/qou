@@ -1,16 +1,16 @@
 {
   "$schema": "block-qa/v1",
-  "label": "thm:strong-multiplicativity",
-  "kind": "theorem",
+  "label": "def:strong-multiplicativity",
+  "kind": "definition",
   "paths": {
     "ts": "folio/fred2005-formal-groups/formal-groups-chapter/strong-multiplicativity.ts",
     "md": "folio/fred2005-formal-groups/formal-groups-chapter/strong-multiplicativity.md",
     "lean": "folio/fred2005-formal-groups/formal-groups-chapter/strong-multiplicativity.lean"
   },
   "source_hashes": {
-    "md": "f16f6aca0da8",
-    "ts": "d95ff7b8dace",
-    "lean": "9f098a0b5f31"
+    "md": "99dd11f232a4",
+    "ts": "81fdcfe42490",
+    "lean": "986592b695f3"
   },
   "criteria": {
     "proof-narrative-lean-equiv": [
@@ -26,6 +26,57 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "severity": "major",
+        "evidence": "Re-read at 7e202a6abc2. The definition block's lean.ref is fred2005:Fred2005.SkewedPoissonStructure, i.e. def:skewed-poisson-structure's declaration. Nothing in Lean formalises Def 1.11; the sibling .lean is comment-only. The lean-ref-owns-decl script check fails on the shared ref. A definition block needs its own declaration (or an honest placeholder), not another block's."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "severity": "major",
+        "evidence": "NEW reason (the shared-ref failure is resolved). Re-read at d44c45e6066. lean.ref Fred2005.StrongMult.IsStronglyMultiplicative resolves (lean-ref-owns-decl passes, 1 claimant) and compiles sorry-free (propext, Quot.sound). But it is not Def. 1.11. The Lean `smOp` takes `.` to be the product of A (`LinearMap.mul' R A`), i.e. the product of T, and its docstring says this is 'as in the paper'. It is not: Def. 1.11 (library sec-000 lines 397-406) defines `.` as the multiplication of S = (x)_i A_i, 'the map induced on T_X by X x X -> S_X (ordered embedding) T_X', i.e. the ORDERED product, and the block .md says exactly this ('the multiplication of S ... transported to T through a choice of ordering'). On generators x in X_j, y in X_i with j > i the two differ (y'x' versus the sorted x'.y'), and Prop. 1.13's proof uses y'x' = x'.y' + pi(y',x') precisely because `.` is the ordered product. So IsStronglyMultiplicative is a different condition from the one the block defines. The Remark 1.12 lemmas (prim_of_isStronglyMultiplicative, strongMult_prim_iff) are unaffected, since at primitives only products with 1 occur. Also stale: the sibling strong-multiplicativity.lean still says the condition is not formalised and that the ref names Fred2005.SkewedPoissonStructure."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "severity": "minor",
+        "evidence": "Re-read at 1a9810bb97d. RESOLVED from fail/major. IsStronglyMultiplicative now takes the product as a parameter mu : A ->l A ->l A, used in both '. (x) pi' and 'pi (x) .' of smOp. It no longer uses LinearMap.mul' (T's product). The docstring states that . is the ordered product of S = (x) A_i transported to T (Def. 1.11, library sec-000 lines 397-406), and that it differs from T's product on letters from different A_i. With mu set to the ordered product, the Lean equation is the block's displayed formula. The Remark 1.12 lemmas now carry unit laws mu a 1 = a and mu 1 a = a, which the ordered product satisfies. The sibling .lean is no longer stale. Remaining, minor: mu is an unconstrained bilinear map on a single algebra A that stands for T. The ordered product of S, and its transport through the ordering, are not constructed, so the Lean does not determine mu. The docstring says this ('nothing ties it to the multiplication of A'), so it is disclosed."
       }
     ],
     "voice-status-leak": [
@@ -45,6 +96,60 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "voice-emoji-content": [
@@ -64,6 +169,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "voice-first-person-work": [
@@ -83,6 +224,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "voice-time-stamped-notes": [
@@ -102,6 +279,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "voice-unicode-crash": [
@@ -121,6 +334,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "voice-editorializing": [
@@ -140,6 +389,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "voice-scholarly-default": [
@@ -175,6 +460,108 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -194,6 +581,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "voice-ai-slop": [
@@ -229,6 +652,90 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -248,6 +755,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "framework-canonical": [
@@ -267,6 +810,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "wall-side-correct": [
@@ -286,6 +865,60 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "wall-base-ring-minimal": [
@@ -305,6 +938,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "q-usage-regime-detected": [
@@ -444,6 +1113,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "proof-no-axiom-growth": [
@@ -482,6 +1187,63 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-substantive": [
@@ -541,6 +1303,44 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "proof-conditional-class-banner": [
@@ -581,6 +1381,63 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "canonical-calibration-count": [
@@ -600,6 +1457,60 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "canonical-no-numerology": [
@@ -638,6 +1549,60 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -657,6 +1622,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -676,6 +1677,60 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -695,6 +1750,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -752,6 +1843,60 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "compute-prop-has-probe": [
@@ -809,6 +1954,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "compute-lp-dual-present": [
@@ -828,6 +2009,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "detangler-no-forward-ref": [
@@ -848,6 +2065,44 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "detangler-section-band": [
@@ -868,6 +2123,44 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -888,6 +2181,46 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -908,6 +2241,46 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-block-tanglement": [
@@ -936,9 +2309,73 @@
           "in_degree": 0,
           "cone_size": 3,
           "depth": 3,
-          "pagerank": 0.000075,
+          "pagerank": 7.5e-05,
           "edge_span_max": 5,
           "edge_span_mean": 3.5,
+          "worst_target": ""
+        }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 2,
+          "cone_size": 2,
+          "depth": 2,
+          "pagerank": 0.000123,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 2,
+          "cone_size": 2,
+          "depth": 2,
+          "pagerank": 0.000123,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
           "worst_target": ""
         }
       }
@@ -966,6 +2403,54 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "detangler-topic-coherence": [
@@ -986,6 +2471,44 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1006,6 +2529,44 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "bib-cite-resolves": [
@@ -1026,6 +2587,63 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1046,6 +2664,63 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1066,6 +2741,63 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1086,6 +2818,63 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "proof-statement-integrity": [
@@ -1101,6 +2890,56 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "severity": "major",
+        "evidence": "Re-read at 7e202a6abc2. The referenced declaration (SplayPoisson) does not state strong multiplicativity; the Lean and the definition are different objects."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "severity": "major",
+        "evidence": "NEW reason (the shared-ref failure is resolved). Re-read at d44c45e6066. lean.ref Fred2005.StrongMult.IsStronglyMultiplicative resolves (lean-ref-owns-decl passes, 1 claimant) and compiles sorry-free (propext, Quot.sound). But it is not Def. 1.11. The Lean `smOp` takes `.` to be the product of A (`LinearMap.mul' R A`), i.e. the product of T, and its docstring says this is 'as in the paper'. It is not: Def. 1.11 (library sec-000 lines 397-406) defines `.` as the multiplication of S = (x)_i A_i, 'the map induced on T_X by X x X -> S_X (ordered embedding) T_X', i.e. the ORDERED product, and the block .md says exactly this ('the multiplication of S ... transported to T through a choice of ordering'). On generators x in X_j, y in X_i with j > i the two differ (y'x' versus the sorted x'.y'), and Prop. 1.13's proof uses y'x' = x'.y' + pi(y',x') precisely because `.` is the ordered product. So IsStronglyMultiplicative is a different condition from the one the block defines. The Remark 1.12 lemmas (prim_of_isStronglyMultiplicative, strongMult_prim_iff) are unaffected, since at primitives only products with 1 occur. Also stale: the sibling strong-multiplicativity.lean still says the condition is not formalised and that the ref names Fred2005.SkewedPoissonStructure."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d. RESOLVED from fail/major. IsStronglyMultiplicative now takes the product as a parameter mu : A ->l A ->l A, used in both '. (x) pi' and 'pi (x) .' of smOp. It no longer uses LinearMap.mul' (T's product). The docstring states that . is the ordered product of S = (x) A_i transported to T (Def. 1.11, library sec-000 lines 397-406), and that it differs from T's product on letters from different A_i. With mu set to the ordered product, the Lean equation is the block's displayed formula. The Remark 1.12 lemmas now carry unit laws mu a 1 = a and mu 1 a = a, which the ordered product satisfies. The sibling .lean is no longer stale."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1116,6 +2955,54 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1131,6 +3018,54 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "proof-no-false-premise": [
@@ -1146,6 +3081,54 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "proof-no-decide-masking": [
@@ -1161,6 +3144,54 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1176,6 +3207,54 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1194,6 +3273,54 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1212,6 +3339,54 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "proof-rater-novelty": [
@@ -1230,6 +3405,54 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "voice-status-section": [
@@ -1249,6 +3472,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "trap-negation-contrast": [
@@ -1284,6 +3543,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1319,6 +3626,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -1354,6 +3709,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -1389,6 +3792,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -1424,6 +3875,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -1459,6 +3958,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -1494,6 +4041,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -1529,6 +4124,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -1565,6 +4208,54 @@
         "severity": "minor",
         "evidence": "Block-final sentence read 'This is the critical result ensuring that the comultiplication ... survives the passage from characteristic p to characteristic 0.' 'the critical result' is a maximum-strength qualifier attached without qualification, and it is attached to a claim the resolved Lean explicitly disclaims.",
         "notes": "FIX APPLIED (pure register, no meaning change): 'This is / the critical result ensuring that the comultiplication' -> 'This / ensures that the comultiplication'; paragraph rewrapped to the file's ~72-col style. Math delimiters re-checked and balanced."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2. Resolved from fail/minor: the rewritten block has no superlative."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -1600,6 +4291,54 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
         "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (8c79befddc4..7e202a6abc2). Rewritten from thm: to def:strong-multiplicativity, to Def 1.11 and Prop 1.13 of arXiv:math/0602138; the formula matches the library text (sec-000 lines 395-430). ed44e40752 moved the Rmk 1.12 sentence out to rem:strong-multiplicativity-poisson-lie. Lean: not formalised; lean.ref points at Fred2005.SkewedPoissonStructure. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "evidence": "Re-read at d44c45e6066 (f5d7342e18..d44c45e6066, 5dd0379c1b7). renamedFrom: [thm:strong-multiplicativity] added; lean.ref is now fred2005:Fred2005.StrongMult.IsStronglyMultiplicative (lean/Fred2005/StrongMultiplicativity.lean, lean-direct -DautoImplicit=false -s 65536 exit 0, axioms propext, Quot.sound). The .md adds that pi is read as T (x) T -> T and the rightmost Delta as Delta (x) Delta. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d (d44c45e6066..1a9810bb97d, fix 34585ec8e15). The .md is unchanged. The .ts status authorNote now says that mu is the ordered product of S transported to T, not T's product. The sibling .lean is comment-only and now names the library ref correctly (no shadowing declaration). The library Fred2005/StrongMultiplicativity.lean was checked with lean-direct -DautoImplicit=false -s 65536, exit 0, axioms propext and Quot.sound. No instance of this criterion."
       }
     ],
     "voice-probe-narrative": [
@@ -1619,6 +4358,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "cite-named-theorem": [
@@ -1638,6 +4413,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "voice-agent-speak": [
@@ -1657,6 +4468,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "render-math-mode-envelope": [
@@ -1676,6 +4523,42 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
       }
     ],
     "proof-not-machine-trivial": [
@@ -1718,6 +4601,66 @@
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e",
         "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "proof-no-cost-regression": [
@@ -1759,6 +4702,44 @@
         },
         "reviewed_at": "2026-09-07T09:00:21.401Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3",
+          "graph": "58433815dae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
       }
     ],
     "uses-editorial-hygiene": [
@@ -1784,6 +4765,54 @@
           "broken_edges": 0,
           "redundant_edges": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
       }
     ],
     "uses-formal-coverage": [
@@ -1808,6 +4837,52 @@
           "formal_only_count": 0,
           "editorial_only_count": 2
         }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 1
+        }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 1
+        }
       }
     ],
     "lean-ref-owns-decl": [
@@ -1831,9 +4906,580 @@
         "metrics": {
           "decl_claimants": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "6bb0cb8a3ffdfcf7888cb934d42e0254c25f0844",
+        "metrics": {
+          "decl_claimants": 2
+        },
+        "severity": "major",
+        "evidence": "folio/fred2005-formal-groups/formal-groups-chapter/strong-multiplicativity.ts:1: lean.ref \"fred2005:Fred2005.SkewedPoissonStructure\" is also claimed by \"def:skewed-poisson-structure\". A declaration can be owned by only ONE statement-bearing block — the formal graph attaches it to one, and the other silently loses its formal edges. (A prop/proof pair sharing a decl is fine and is not reported.)"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "298396aefd76",
+          "ts": "acc6a0fd0838",
+          "lean": "d2e4146b8122"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6bb0cb8a3ffdfcf7888cb934d42e0254c25f0844",
+        "severity": "major",
+        "evidence": "folio/fred2005-formal-groups/formal-groups-chapter/strong-multiplicativity.ts:4: label changed from \"thm:strong-multiplicativity\" (at origin/main) to \"def:strong-multiplicativity\" without renamedFrom: [\"thm:strong-multiplicativity\"] — a diff reads this as a removal plus an addition, and review comments on \"thm:strong-multiplicativity\" are orphaned"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "renamed from \"thm:strong-multiplicativity\" (declared in renamedFrom)"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "notes": "renamed from \"thm:strong-multiplicativity\" (declared in renamedFrom)"
+      }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
+      }
+    ],
+    "lean-no-vacuous-instance-data": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d86b94a3a99c",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d86b94a3a99c",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
+      }
+    ],
+    "lean-no-definitional-laundering": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f2d0ac51567e",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "metrics": {
+          "constant_prop_defs": 0,
+          "lambda_constant_fields": 0,
+          "definitional_identities": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f2d0ac51567e",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "metrics": {
+          "constant_prop_defs": 0,
+          "lambda_constant_fields": 0,
+          "definitional_identities": 0
+        }
+      }
+    ],
+    "lean-docstring-honesty": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f16e4db88c07",
+          "script_commit_sha": "unknown",
+          "def_hash": "e9d9f6de595f"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f16e4db88c07",
+          "script_commit_sha": "unknown",
+          "def_hash": "e9d9f6de595f"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e"
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "478942a7b638ce93eaf5507988c5f257951bb35c"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "498606eb5107",
+          "lean": "d2e4146b8122"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T22:00:00.000Z",
+        "reviewed_sha": "d44c45e60661dbc5a794a9151d9b47a300bb57b2",
+        "severity": "major",
+        "evidence": "Re-read at d44c45e6066. lean.ref Fred2005.StrongMult.IsStronglyMultiplicative resolves (lean-ref-owns-decl passes, 1 claimant) and compiles sorry-free (propext, Quot.sound). But it is not Def. 1.11. The Lean `smOp` takes `.` to be the product of A (`LinearMap.mul' R A`), i.e. the product of T, and its docstring says this is 'as in the paper'. It is not: Def. 1.11 (library sec-000 lines 397-406) defines `.` as the multiplication of S = (x)_i A_i, 'the map induced on T_X by X x X -> S_X (ordered embedding) T_X', i.e. the ORDERED product, and the block .md says exactly this ('the multiplication of S ... transported to T through a choice of ordering'). On generators x in X_j, y in X_i with j > i the two differ (y'x' versus the sorted x'.y'), and Prop. 1.13's proof uses y'x' = x'.y' + pi(y',x') precisely because `.` is the ordered product. So IsStronglyMultiplicative is a different condition from the one the block defines. The Remark 1.12 lemmas (prim_of_isStronglyMultiplicative, strongMult_prim_iff) are unaffected, since at primitives only products with 1 occur. Also stale: the sibling strong-multiplicativity.lean still says the condition is not formalised and that the ref names Fred2005.SkewedPoissonStructure."
+      },
+      {
+        "field_hash": {
+          "md": "99dd11f232a4",
+          "ts": "81fdcfe42490",
+          "lean": "986592b695f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:30:00.000Z",
+        "reviewed_sha": "1a9810bb97de70d7c965c60da7f2f97257321eee",
+        "evidence": "Re-read at 1a9810bb97d. RESOLVED from fail/major. IsStronglyMultiplicative now takes the product as a parameter mu : A ->l A ->l A, used in both '. (x) pi' and 'pi (x) .' of smOp. It no longer uses LinearMap.mul' (T's product). The docstring states that . is the ordered product of S = (x) A_i transported to T (Def. 1.11, library sec-000 lines 397-406), and that it differs from T's product on letters from different A_i. With mu set to the ordered product, the Lean equation is the block's displayed formula. The Remark 1.12 lemmas now carry unit laws mu a 1 = a and mu 1 a = a, which the ordered product satisfies. The sibling .lean is no longer stale."
       }
     ]
   },
-  "updated_at": "2026-09-07T09:00:21.401Z",
+  "updated_at": "2026-11-21T23:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

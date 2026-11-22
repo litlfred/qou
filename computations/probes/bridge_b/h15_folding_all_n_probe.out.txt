@@ -1,0 +1,5 @@
+n=3: generators ['s1s2s1'] weights [3]; |W| = 2, predicted 2, centraliser of w0 = 2; B parity True, bound True over 3 pairs, differing 0 (negative 0); C control equal weights passes B: False  [0.0s]
+n=4: generators ['s1s3', 's2'] weights [2, 1]; |W| = 8, predicted 8, centraliser of w0 = 8; B parity True, bound True over 33 pairs, differing 2 (negative 2); C control equal weights passes B: False  [0.0s]
+n=5: generators ['s1s4', 's2s3s2'] weights [2, 3]; |W| = 8, predicted 8, centraliser of w0 = 8; B parity True, bound True over 33 pairs, differing 4 (negative 2); C control equal weights passes B: False  [0.0s]
+n=6: generators ['s1s5', 's2s4', 's3'] weights [2, 2, 1]; |W| = 48, predicted 48, centraliser of w0 = 48; B parity True, bound True over 847 pairs, differing 188 (negative 90); C control equal weights passes B: False  [0.4s]
+n=7: generators ['s1s6', 's2s5', 's3s4s3'] weights [2, 2, 3]; |W| = 48, predicted 48, centraliser of w0 = 48; B parity True, bound True over 847 pairs, differing 364 (negative 100); C control equal weights passes B: False  [14.6s]

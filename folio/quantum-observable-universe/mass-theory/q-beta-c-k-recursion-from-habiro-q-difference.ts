@@ -14,7 +14,7 @@ export default proposition({
     "prop:alpha-em-habiro-bar-involution",
     "rem:markov-trace-inductive-limit",
   ],
-  cites: ["jones1987", "wenzl1988", "habiro2004", "koelink1994"],
+  cites: ["jones1987", "wenzl1988", "habiro2004", "koelink1994", "garoufalidis-le-2005"],
   computation: {
     engine: "sympy",
     script:

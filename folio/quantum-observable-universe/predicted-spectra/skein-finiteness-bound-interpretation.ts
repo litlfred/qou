@@ -9,4 +9,7 @@ export default remark({
     "prop:beta-stability",
     "prop:shell-closure-normal-form",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Owner rulings 2026-11-21 (electron sigma_0 sigma_1 sigma_0, Hopf closure) and 2026-11-20 (up quark an unknot strand): the six embeddable torus knots are no longer said to be exactly the quarks, leptons and force carriers." },
+  ],
 });

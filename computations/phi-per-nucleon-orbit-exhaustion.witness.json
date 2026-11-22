@@ -163,7 +163,7 @@
           ]
         ]
       ],
-      "elapsed_seconds": 2558.5
+      "elapsed_seconds": 943.1
     },
     "neutron": {
       "orbit_size": 6930,
@@ -326,8 +326,10 @@
           ]
         ]
       ],
-      "elapsed_seconds": 1934.5
+      "elapsed_seconds": 699.2
     }
   },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "phi = f1/f0 is the exact first-order log-derivative of tr_M at q = 1, computed in Fraction from the q-series of the braid word; no substrate pin q0 is read",
   "scriptFile": "phi_per_nucleon_orbit_exhaustion_probe.py"
 }

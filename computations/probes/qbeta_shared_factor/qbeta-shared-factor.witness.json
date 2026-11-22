@@ -1,0 +1,82 @@
+{
+  "engine": "fractions",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T17:54:59.815744+00:00",
+  "commitSha": "d63ec87a8f6717eca85d2b426cc59bf5f42879d5",
+  "assertions": [
+    {
+      "name": "S1_R_commutes_with_coproduct",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "q=2 F(x)K+1(x)F: commutes; q=2 F(x)1+K^-1(x)F: commutes; q=2 F(x)K^-1+1(x)F: does not; q=2 F(x)1+K(x)F: does not; q=3/2 F(x)K+1(x)F: commutes; q=3/2 F(x)1+K^-1(x)F: commutes; q=3/2 F(x)K^-1+1(x)F: does not; q=3/2 F(x)1+K(x)F: does not. Used: F(x)K+1(x)F."
+    },
+    {
+      "name": "S2_partial_trace_intertwines",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "79 words x 2 values of q: Y = Tr_g(K^g rho(W)) commutes with Delta^3(F) exactly. Counterexamples: []"
+    },
+    {
+      "name": "S3_eps_p_eq_q2_eps_n",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "eps_p = q^2 eps_n exactly in all 79 words at q = 2, 3/2."
+    },
+    {
+      "name": "S4_negative_words",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "37 words with eps_p < 0 at q = 2 obey the same relation."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-shared-factor",
+  "scriptFile": "qbeta_shared_factor_probe.py",
+  "scriptHash": "6d2c5b2af5c9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_shared_factor/qbeta_shared_factor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_shared_factor/qbeta_shared_factor_probe.py"
+  },
+  "description": "U_q(sl2) intertwining explains why every gluon word multiplies eps_p and eps_n by one factor: exact checks at q = 2, 3/2.",
+  "q_values": [
+    "2",
+    "3/2"
+  ],
+  "family": [
+    [
+      4,
+      6
+    ],
+    [
+      5,
+      5
+    ]
+  ],
+  "words": 79,
+  "counterexamples": []
+}

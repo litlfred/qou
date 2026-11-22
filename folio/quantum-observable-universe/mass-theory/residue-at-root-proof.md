@@ -13,4 +13,4 @@ defines a ring homomorphism $\pi_n : \widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\
 
 By hypothesis, $\Phi_q \cdot \mathrm{tr}_{M, \ell}(T_w)$ is an element of $\widehat{\mathbb{Z}[q]}$. Applying $\pi_{n_\ell}$ and identifying $\mathbb{Z}[q]/\Phi_{n_\ell}(q)$ with $\mathbb{Z}[\zeta_\ell]$ gives the residue, an element of the cyclotomic ring. Because $\pi_{n_\ell}$ is a ring homomorphism, the residue of a sum or product is the sum or product of the residues. $\blacksquare$
 
-The construction does not use analytic continuation. Habiro shows that, for elements of $\widehat{\mathbb{Z}[q]}$, these projections agree with evaluation at roots of unity \cite{habiro2002}; that comparison is not needed for the statement.
+The construction does not use analytic continuation. Habiro shows that, for elements of $\widehat{\mathbb{Z}[q]}$, these projections agree with evaluation at roots of unity \cite[\S1.2]{habiro2004}; that comparison is not needed for the statement.

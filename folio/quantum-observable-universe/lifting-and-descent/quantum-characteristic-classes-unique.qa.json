@@ -1223,6 +1223,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "99e358a652f7",
+          "ts": "2ef414d405e5",
+          "lean": "446ce783e781",
+          "lean_statement": "22c3e33421ba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:50:33.088Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[first real review 2026-11-21; the earlier entry was an unhashed heuristic pass] The md claims kappa_n is unique as a cohomology class: cocycles from different local lifts are cohomologous. The Lean QuantumCharClasses.unique is structure extensionality: two terms with equal level, obstruction space, group instance and kappa are equal. No cocycle, coboundary or quotient appears, so the cohomologous-cocycles claim is not encoded. The Lean docstring says this honestly and records that the earlier Subsingleton axiom was false."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2445,6 +2463,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-21T07:50:33.088Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

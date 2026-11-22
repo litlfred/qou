@@ -109,7 +109,7 @@ A stale or schema-violating witness is rejected, not consumed.*
 ### Notes
 
 *Cross-language sibling: the
-[`witness-schema`](../../../tools/witness-schema/) PyPI + npm
+[`witness-schema`](../../../schemas/witness-schema/) PyPI + npm
 package provides Zod / Pydantic / TypeScript types for every
 canonical witness shape, so Pyodide / Node / TS callers see the
 same contract.*

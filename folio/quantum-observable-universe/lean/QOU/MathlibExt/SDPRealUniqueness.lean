@@ -473,8 +473,8 @@ zero-cost counterexample the identity is positive-definite with nothing to
 violate, so `IsStrictlyFeasible` holds, and the complementarity-difference
 hypotheses are vacuous because the dual slack is the zero matrix.
 
-Use `SDPSlaterUniqueness.ofDualSlackPosDef` or
-`SDPSlaterUniqueness.ofActiveEmptyAndCostPosDef` — both proven, both axiom-free.
+Use `QOU.MathlibExt.SDPRealUniqueness.ofDualSlackPosDef` or
+`QOU.MathlibExt.SDPRealUniqueness.ofActiveEmptyAndCostPosDef` — both proven, both axiom-free.
 
 Tracked in bean `qou-i6u4`.
 -/

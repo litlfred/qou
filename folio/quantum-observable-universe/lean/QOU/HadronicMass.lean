@@ -182,11 +182,22 @@ noncomputable def topological_mass (vol : ℝ) (q : ℝ) : ℝ :=
 noncomputable def muon_mass_topological : ℝ :=
   topological_mass vol_figure_eight substrate_q
 
-/-! ## Section 5: Row-by-Row Formalization
+/-! ## Section 5: CODATA-pinned record of the former table
 
-Each row of the Terminal Resolution table is formalized as:
-1. A `noncomputable def` computing the QOU result from the topological formula
-2. An approximation lemma showing agreement with CODATA -/
+**Not a derivation.** Each `*_topological` value below is defined as the
+CODATA constant (or, for the deuteron, the mass-deficit identity with the
+experimental binding energy). The lemmas that compared these values with
+CODATA held by construction and were removed (owner decision, PR #8897),
+together with their bundle `terminal_resolution_hadronic_mass`, the splitting
+`proton_neutron_mass_difference` and `row3_deuteron_value` (follow-up PR).
+The content
+block `prop:terminal-resolution` now states the pair Skein nucleon identities,
+proved in `QOU.MassTheory.PairSkeinNucleon` (content sibling
+`mass-theory/terminal-resolution.lean`). Under that map any `(m_p, m_n)` is
+reproduced by exactly one pair of dressed quark masses, so a CODATA match
+carries no content. The definitions are kept because Section 5a and the
+remaining identities use them. The per-row docstrings below describe the
+former reading. -/
 
 /-! ### Row 1: Proton (m_p) — Q(q) 𝓜(ℒ_Hopf)_uud -/
 
@@ -209,11 +220,6 @@ noncomputable def proton_quarks : QuarkFlavorFactor where
     Ref: Manuscript Table "Terminal Resolution of Hadronic Mass", Row 1. -/
 noncomputable def proton_topological : ℝ := proton_quarks.value
 
-theorem row1_proton_matches_CODATA :
-    |proton_topological - proton_mass_MeV| < 1e-3 := by
-  unfold proton_topological proton_quarks proton_mass_MeV
-  norm_num
-
 /-! ### Row 2: Neutron (m_n) — Q(q) 𝓜(ℒ_Hopf)_udd -/
 
 /-- Neutron quark content: 1 up quark, 2 down quarks. -/
@@ -235,21 +241,6 @@ noncomputable def neutron_quarks : QuarkFlavorFactor where
     Ref: Manuscript Table "Terminal Resolution of Hadronic Mass", Row 2. -/
 noncomputable def neutron_topological : ℝ := neutron_quarks.value
 
-theorem row2_neutron_matches_CODATA :
-    |neutron_topological - neutron_mass_MeV| < 1e-3 := by
-  unfold neutron_topological neutron_quarks neutron_mass_MeV
-  norm_num
-
-/-- The proton-neutron mass difference is 1.29333251 MeV, arising from
-    the u ↔ d flavor exchange in the Skein functional.
-    NIST CODATA 2022 value: 1.293 332 51(56) MeV. -/
-theorem proton_neutron_mass_difference :
-    neutron_topological - proton_topological = 1.29333251 := by
-  unfold neutron_topological proton_topological
-  unfold neutron_quarks proton_quarks
-  unfold neutron_mass_MeV proton_mass_MeV
-  norm_num
-
 /-! ### Row 3: Deuteron (m_D) — 𝓜(L₆) − Binding -/
 
 /-- **Row 3 — Deuteron**: The deuteron mass is the sum of proton and
@@ -264,7 +255,7 @@ theorem proton_neutron_mass_difference :
 
     Honesty note (2026-06-17): the binding term `binding_energy_QOU`
     here is the *experimental* mass deficit rounded to 4 sig figs (see
-    its docstring), so `row3_deuteron_matches_CODATA` below is a
+    its docstring), so the former CODATA comparison of this row was a
     mass-deficit consistency identity `m_p + m_n − B_exp ≈ m_D`, **not**
     an independent topological prediction of the deuteron mass.
 
@@ -277,20 +268,6 @@ theorem row3_deuteron_formula :
   unfold deuteron_topological proton_topological neutron_topological
   unfold proton_quarks neutron_quarks
   rfl
-
-theorem row3_deuteron_value :
-    deuteron_topological = 1875.61351137 := by  -- noqa: P31 - COMPUTED topological value, not CODATA (302 ppb off, deliberately)
-  unfold deuteron_topological proton_topological neutron_topological
-  unfold proton_quarks neutron_quarks
-  unfold proton_mass_MeV neutron_mass_MeV binding_energy_QOU
-  norm_num
-
-theorem row3_deuteron_matches_CODATA :
-    |deuteron_topological - deuteron_mass_MeV| < 1e-3 := by
-  unfold deuteron_topological proton_topological neutron_topological
-  unfold proton_quarks neutron_quarks
-  unfold proton_mass_MeV neutron_mass_MeV binding_energy_QOU deuteron_mass_MeV
-  norm_num
 
 /-! ### Row 4: Binding Energy — Δ Skein Polynomial -/
 
@@ -317,18 +294,6 @@ theorem row4_binding_from_skein :
       = binding_energy_QOU := by
   unfold deuteron_topological
   ring
-
-theorem row4_binding_CODATA_comparison :
-    |binding_energy_QOU - binding_energy_CODATA| < 0.001 := by
-  unfold binding_energy_QOU binding_energy_CODATA
-  norm_num
-
-/-- The QOU binding energy prediction (2.224 MeV) is within 0.567 keV
-    of the NIST-derived CODATA value (2.22456637 MeV). -/
-theorem row4_binding_precision :
-    |binding_energy_QOU - binding_energy_CODATA| = 0.00056637 := by
-  unfold binding_energy_QOU binding_energy_CODATA
-  norm_num
 
 /-! ## Section 5a: Pair Skein Mass Decomposition
 
@@ -401,49 +366,13 @@ theorem pair_skein_splitting_formula :
   unfold S_dd S_uu pair_skein_mass
   ring
 
-/-- The dressed quark mass difference `μ_d − μ_u = 1.29 MeV` is consistent
-    with the CODATA neutron-proton splitting of `1.293 MeV` to within
-    the precision of the dressed-mass determination. -/
-theorem dressed_quark_mass_difference :
-    dressed_mass_down - dressed_mass_up = 1.29 := by
-  unfold dressed_mass_down dressed_mass_up
-  norm_num
+/-! ### The former pair-Skein agreement bounds
 
-/-! ### Pair-Skein agreement — PROVED, and the classes it needed are gone
-
-**History (2026-08-31).**  These two bounds were carried by
-`ProtonPairSkeinApprox` / `NeutronPairSkeinApprox`, a pair of context classes
-whose single field was the bound itself, handed back by projection — §3b-cond
-item 5, and two entries in the self-assuming-projection ledger.  The stated
-reason was that *"the full proof reduces to a numerical evaluation of
-`Real.rpow` at `(substrate_q, 1/2)`, which `norm_num` cannot yet discharge"*.
-That is true of `norm_num` alone and is not a reason the bound cannot be proved.
-
-`q^{1/2}` is eliminated rather than evaluated.  Writing `s = q^{1/2}`, the only
-facts needed are `s > 0` and `s * s = q`; the denominator collapses to
-`s + s⁻¹ = (q + 1)/s`, so every `pair_skein_mass` is *linear* in `s`, and
-`s ∈ (1.0534, 1.0535)` follows from `s * s = 1.1097` by `nlinarith`.  Both
-bounds then close by `field_simp; nlinarith`.  The classes are deleted; nothing
-outside this file referenced them.
-
-**The side hypothesis both classes bound was FALSE**, and is recorded below as
-`pair_skein_denom_hypothesis_false`.  `q^{1/2} + q^{-1/2} = 2.0027092783…`, so
-`|denom − 2.00228| = 4.293e-4` — **4.3× the 1e-4 tolerance the hypothesis
-asserted**.  Since that hypothesis was an explicit argument of both theorems,
-neither could ever be invoked: no proof of it exists to supply.  So the two
-declarations were not merely conditional on nothing, they were unreachable.
-
-**Corrected numbers** (mpmath, 50 dps; the docstrings previously here did not
-reproduce).  `√1.1097 = 1.0534230…`, not `1.05341`; denom `2.0027093`, not
-`2.00228`; `S_uu = 312.3637`, `S_ud = 312.9442` (was stated `312.89`),
-`S_dd = 313.6590`.  Hence `proton_from_pair_skein = 938.25205` (was stated
-`938.15`) and `neutron_from_pair_skein = 939.54729` (was stated `939.46`).  The
-agreements are **better** than claimed, not worse: `0.0200 MeV` and
-`0.0181 MeV` against the stated `0.12` and `0.10`.
-
-Ref: NIST CODATA 2022 — proton 938.272 089 43(29), neutron 939.565 421 94(48)
-MeV/c². -/
--- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
+`proton_pair_skein_approx` and `neutron_pair_skein_approx` bounded the pair-Skein
+proton and neutron values against the CODATA masses.  They were removed (owner
+decision, PR #8917): this file states no comparison with measured values.  The
+lemma below, about the side hypothesis those bounds once carried, makes no
+such comparison and is kept. -/
 
 /-- **The denominator hypothesis the two former context classes bound is false.**
 `q^{1/2} + q^{-1/2} = 2.0027092783…` at `q = 1.1097`, so its distance from
@@ -468,48 +397,6 @@ theorem pair_skein_denom_hypothesis_false :
   intro _
   nlinarith [hinv, hs0, hub, hlb, hs2]
 
-/-- **Proton pair-Skein agreement — proved.**
-`|proton_from_pair_skein − proton_topological| = 0.0200 MeV < 0.5`. -/
-theorem proton_pair_skein_approx :
-    |proton_from_pair_skein - proton_topological| < 0.5 := by
-  have hxp : (0:ℝ) < 11097/10000 := by norm_num
-  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
-  have hq : substrate_q = 11097/10000 := by unfold substrate_q; norm_num
-  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
-  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
-  have hs2 : s * s = 11097/10000 := by rw [hsdef, ← Real.rpow_add hxp]; norm_num
-  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
-    rw [hsdef, ← Real.rpow_neg hx]
-  have hsne : s ≠ 0 := ne_of_gt hs0
-  have hub : s < 10535/10000 := by nlinarith
-  have hlb : 10534/10000 < s := by nlinarith
-  have hD : s + s⁻¹ = (21097/10000) / s := by field_simp; nlinarith [hs2]
-  unfold proton_from_pair_skein S_uu S_ud pair_skein_mass proton_topological
-    proton_quarks proton_mass_MeV dressed_mass_up dressed_mass_down
-  rw [hq, hneg, hD, abs_lt]
-  constructor <;> · rw [div_div_eq_mul_div]; field_simp; nlinarith [hlb, hub, hs0]
-
-/-- **Neutron pair-Skein agreement — proved.**
-`|neutron_from_pair_skein − neutron_topological| = 0.0181 MeV < 0.5`. -/
-theorem neutron_pair_skein_approx :
-    |neutron_from_pair_skein - neutron_topological| < 0.5 := by
-  have hxp : (0:ℝ) < 11097/10000 := by norm_num
-  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
-  have hq : substrate_q = 11097/10000 := by unfold substrate_q; norm_num
-  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
-  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
-  have hs2 : s * s = 11097/10000 := by rw [hsdef, ← Real.rpow_add hxp]; norm_num
-  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
-    rw [hsdef, ← Real.rpow_neg hx]
-  have hsne : s ≠ 0 := ne_of_gt hs0
-  have hub : s < 10535/10000 := by nlinarith
-  have hlb : 10534/10000 < s := by nlinarith
-  have hD : s + s⁻¹ = (21097/10000) / s := by field_simp; nlinarith [hs2]
-  unfold neutron_from_pair_skein S_ud S_dd pair_skein_mass neutron_topological
-    neutron_quarks neutron_mass_MeV dressed_mass_up dressed_mass_down
-  rw [hq, hneg, hD, abs_lt]
-  constructor <;> · rw [div_div_eq_mul_div]; field_simp; nlinarith [hlb, hub, hs0]
-
 /-! ## Section 6: Cross-Row Consistency Checks -/
 
 /-- **Mass sum rule**: `m_D + ΔE = m_p + m_n`.
@@ -520,22 +407,6 @@ theorem mass_sum_rule :
       proton_topological + neutron_topological := by
   unfold deuteron_topological
   ring
-
-/-- **Nucleon mass ratio**: `m_n / m_p ≈ 1.0013784`.
-    This ratio is determined by the Skein functional evaluated
-    on the udd vs uud color-exchange configurations.
-    NIST CODATA 2022: m_n/m_p = 1.001 378 419 31(49). -/
-theorem nucleon_mass_ratio_approx :
-    |neutron_mass_MeV / proton_mass_MeV - 1.0013784| < 1e-6 := by  -- noqa: P31 - deliberate 8-digit round of CODATA-2022 1.00137841931; 1.9e-8 in, tolerance 1e-6
-  unfold neutron_mass_MeV proton_mass_MeV
-  norm_num
-
-/-- **Binding fraction**: The binding energy is ≈ 0.11857% of the
-    deuteron mass, consistent with nuclear physics. -/
-theorem binding_fraction_approx :
-    |binding_energy_QOU / deuteron_mass_MeV - 0.0011857| < 1e-5 := by
-  unfold binding_energy_QOU deuteron_mass_MeV
-  norm_num
 
 /-! ## Section 7: Connection to Substrate Parameter
 
@@ -600,12 +471,7 @@ noncomputable def borromean_mass_ratio : ℝ :=
 
 ### Cross-checks proved:
 - `mass_sum_rule`: m_D + ΔE = m_p + m_n  ✓
-- `proton_neutron_mass_difference`: m_n − m_p = 1.29333251 MeV  ✓
 - `pair_skein_mass_splitting`: m_n − m_p = S_dd − S_uu  ✓
-- `dressed_quark_mass_difference`: μ_d − μ_u = 1.29 MeV  ✓
-- `nucleon_mass_ratio_approx`: m_n/m_p ≈ 1.0013784  ✓
-- `binding_fraction_approx`: ΔE/m_D ≈ 0.11857%  ✓
-- `row4_binding_precision`: |QOU − CODATA| = 0.00056637 MeV  ✓
 -/
 
 /-! ## Section 9: Named Propositions
@@ -647,7 +513,7 @@ constants this file defines (mpmath, 40 dps):
 | RHS `(√q − 1/√q)·m_d` | **195.320153** |
 | difference | **0.8038 MeV**, rel **0.41 %** |
 
-For scale: this file's own `row1_proton_matches_CODATA` treats `1e-3 MeV` as
+For scale: the former CODATA-row lemmas of Section 5 treated `1e-3 MeV` as
 agreement, so the gap is ~800× that.
 
 **It is not a tolerance problem.** Two independent checks say the failure is
@@ -706,25 +572,6 @@ theorem skein_pnd_identity_false :
   field_simp at h
   nlinarith [hs2, hs0, h, sq_nonneg s, sq_nonneg (s - 1)]
 
-/-- **Proposition (Terminal Resolution of Hadronic Mass).**
-    Using the derived substrate parameter `q = 1.1097`, all four rows
-    of the hadronic mass table match NIST CODATA 2022 values:
-    1. Proton:  `|m_p^{QOU} − 938.27208943| < 0.001`
-    2. Neutron: `|m_n^{QOU} − 939.56542194| < 0.001`
-    3. Deuteron: `|m_D^{QOU} − 1875.61294500| < 0.001`
-    4. Binding: `|ΔE^{QOU} − 2.22456637| < 0.001`
-
-    LaTeX: `\label{prop:terminal-resolution}` -/
-theorem terminal_resolution_hadronic_mass :
-    |proton_topological - proton_mass_MeV| < 1e-3 ∧
-    |neutron_topological - neutron_mass_MeV| < 1e-3 ∧
-    |deuteron_topological - deuteron_mass_MeV| < 1e-3 ∧
-    |binding_energy_QOU - binding_energy_CODATA| < 0.001 :=
-  ⟨row1_proton_matches_CODATA,
-   row2_neutron_matches_CODATA,
-   row3_deuteron_matches_CODATA,
-   row4_binding_CODATA_comparison⟩
-
 /-! ## Section 10: Substrate-pure Flavor Split
 
 The proton-neutron mass splitting `Δm = m_n - m_p` admits a closed-form
@@ -741,9 +588,9 @@ in factored Hecke-atom form,
 where `ℏ_q = (q-1)/q`, `h_q = q - q⁻¹` is the Hecke crossing scale, and
 `[2]_q = q + q⁻¹` is the doublet quantum integer.
 
-These two forms are algebraically identical (proven via `ring`).  The
-numerical evaluation at `q = substrate_q` matches CODATA `Δm / M_N`
-to better than 0.1 %.
+These two forms are algebraically identical (proven via `ring`).  This
+section proves only that identity; it makes no comparison with measured
+masses (owner decision, PR #8917).
 
 Companion content blocks:
   - `prop:flavor-split-substrate` — the proposition
@@ -753,27 +600,27 @@ Companion content blocks:
     integration -/
 
 /-- The Hecke crossing scale `h_q = q - q⁻¹`. -/
-noncomputable def h_q_substrate (q : ℝ) : ℝ := q - q⁻¹
+def h_q_substrate {K : Type*} [Field K] (q : K) : K := q - q⁻¹
 
 /-- The doublet quantum integer `[2]_q = q + q⁻¹`. -/
-noncomputable def bracket_2_q (q : ℝ) : ℝ := q + q⁻¹
+def bracket_2_q {K : Type*} [Field K] (q : K) : K := q + q⁻¹
 
 /-- The substrate Planck constant `ℏ_q = (q - 1)/q`. -/
-noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
+def hbarQ {K : Type*} [Field K] (q : K) : K := 1 - q⁻¹
 
 /-- The substrate-pure formula for `Δm / M_N`, in closed polynomial form. -/
-noncomputable def delta_m_over_M_N_substrate (q : ℝ) : ℝ :=
+def delta_m_over_M_N_substrate {K : Type*} [Field K] (q : K) : K :=
   (q - 1)^2 * (q^4 - 1) / (3 * q^4)
 
 /-- The substrate-pure formula for `Δm / μ_avg`, in factored Hecke-atom form. -/
-noncomputable def delta_m_over_mu_avg_factored (q : ℝ) : ℝ :=
+def delta_m_over_mu_avg_factored {K : Type*} [Field K] (q : K) : K :=
   hbarQ q ^ 2 * h_q_substrate q * bracket_2_q q
 
 /-- **Algebraic identity**: the factored Hecke-atom form for `Δm / μ_avg`
     coincides with `(q - 1)² · (q⁴ - 1) / q⁴` (the closed polynomial form).
 
     Proven by `field_simp` + `ring` after clearing the inverse. -/
-theorem delta_m_factored_eq_closed (q : ℝ) (hq : q ≠ 0) :
+theorem delta_m_factored_eq_closed {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
     delta_m_over_mu_avg_factored q = (q - 1)^2 * (q^4 - 1) / q^4 := by
   unfold delta_m_over_mu_avg_factored hbarQ h_q_substrate bracket_2_q
   field_simp
@@ -781,53 +628,24 @@ theorem delta_m_factored_eq_closed (q : ℝ) (hq : q ≠ 0) :
 
 /-- **Closed-to-factored identity**: the per-nucleon split is `1/3` of the
     per-quark factored form. -/
-theorem delta_m_over_M_N_eq_factored_over_3 (q : ℝ) (hq : q ≠ 0) :
+theorem delta_m_over_M_N_eq_factored_over_3 {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
     delta_m_over_M_N_substrate q = delta_m_over_mu_avg_factored q / 3 := by
   unfold delta_m_over_M_N_substrate
   rw [delta_m_factored_eq_closed q hq]
   ring
 
-/-- The substrate-pure formula evaluated at `q = substrate_q` matches the
-    CODATA `Δm / M_N = 1.293/938.92 ≈ 0.001377` to within 0.1 %. -/
-theorem delta_m_over_M_N_matches_codata :
-    |delta_m_over_M_N_substrate substrate_q - 0.001376| < 0.0001 := by
-  unfold delta_m_over_M_N_substrate substrate_q
-  norm_num
+/-- **Substrate-pure flavor split** — the closed polynomial form of
+    `Δm / M_N` is one third of the factored Hecke-atom form, for every
+    nonzero `q` in any field.
 
-/-- The substrate-pure prediction for `Δm` (in MeV), obtained by
-    multiplying the substrate ratio by the CODATA nucleon mass average
-    `M_N = 938.92 MeV`. -/
-noncomputable def delta_m_substrate_pred_MeV : ℝ :=
-  delta_m_over_M_N_substrate substrate_q * 938.92
-
-/-- The substrate-pure `Δm` prediction matches CODATA `Δm = 1.293 MeV`
-    to within 0.02 MeV.
-
-    Note: the 0.01-MeV residual is dominated by the 4-digit truncation
-    of `substrate_q = 1.1097`.  At the higher-precision substrate value
-    `q = 1.10998` (PR #663 50-dps pinning), the residual tightens to
-    ≈ 0.002 MeV. -/
-theorem delta_m_substrate_matches_codata_MeV :
-    |delta_m_substrate_pred_MeV - 1.293| < 0.02 := by
-  unfold delta_m_substrate_pred_MeV delta_m_over_M_N_substrate substrate_q
-  norm_num
-
-/-- **Substrate-pure flavor split** — `Δm / M_N` is a polynomial in `q`
-    with no calibration to `μ_u` or `μ_d`.
-
-    The hypothesis is that the per-quark split `(μ_d - μ_u)/μ_avg` is
-    given by `h_q² · ℏ_q / √q`, which combined with the pair-Skein
-    decomposition `Δm = (μ_d - μ_u) · [2]_q · z_mkv` and the identity
-    `h_q · z_mkv = z_0 = ℏ_q · √q` yields the factored form
-    `Δm / μ_avg = ℏ_q² · h_q · [2]_q` and the polynomial form
-    `Δm / M_N = (q-1)²(q⁴-1)/(3q⁴)`.
+    The pair-Skein ansatz behind the formula (per-quark split
+    `h_q² · ℏ_q / √q`, decomposition `Δm = (μ_d - μ_u) · [2]_q · z_mkv`)
+    is stated in the content block; this theorem proves only the algebraic
+    identity between the two forms.
 
     LaTeX: `\label{prop:flavor-split-substrate}` -/
-theorem flavor_split_substrate :
-    delta_m_over_M_N_substrate substrate_q =
-        delta_m_over_mu_avg_factored substrate_q / 3 ∧
-    |delta_m_substrate_pred_MeV - 1.293| < 0.02 :=
-  ⟨delta_m_over_M_N_eq_factored_over_3 substrate_q (by unfold substrate_q; norm_num),
-   delta_m_substrate_matches_codata_MeV⟩
+theorem flavor_split_substrate {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
+    delta_m_over_M_N_substrate q = delta_m_over_mu_avg_factored q / 3 :=
+  delta_m_over_M_N_eq_factored_over_3 q hq
 
 end QOU.HadronicMass

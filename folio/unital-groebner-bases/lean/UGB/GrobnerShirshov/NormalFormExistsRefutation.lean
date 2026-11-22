@@ -70,7 +70,7 @@ theorem rel_support_nonempty : rel.support.Nonempty := by
 noncomputable def rule : ReductionRule SU2Gen ℤ := ⟨rel, rel_support_nonempty⟩
 
 /-- The one-rule system. -/
-noncomputable def sys : RewritingSystem SU2Gen ℤ := ⟨[rule], by simp⟩
+noncomputable def sys : RewritingSystem SU2Gen ℤ := .ofList [rule] (by simp)
 
 /-- Its leading monomial is the single letter `K`: the support is a singleton, so
 maximality is vacuous. -/

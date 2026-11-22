@@ -3,12 +3,13 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:spectral-sequence-collapse",
   title: "Limit page of the GB spectral sequence for semisimple $H_n(R, q)$",
-  lean: {
-    ref: "qou:QOU.WedderburnMass.centralIdempotent_idem",
-    validation: "not_checked",
-  },
   uses: ["prop:gb-spectral-sequence"],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-21",
+      body: "`lean.ref` removed. It pointed at `QOU.WedderburnMass.centralIdempotent_idem` (`e * e = e`), which does not state this block's claim (sidecar review, PR #8106). The Lean sibling keeps that lemma and its GAP comment; no Lean declaration states the limit-page claim yet.",
+    },
     {
       kind: "note",
       date: "2026-11-20",

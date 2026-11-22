@@ -1,27 +1,32 @@
-import Mathlib.Tactic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
-# QOU.Conjectures.KnotFactorFrobeniusPairing — binding as Markov-trace defect
+# QOU.Conjectures.KnotFactorFrobeniusPairing — binding as a Markov-trace defect
 
-Conjectural axiomatisation of `conj:knot-factor-frobenius-pairing`
-(`folio/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.md`).
+The **binding** carrier of `conj:knot-factor-frobenius-pairing`
+(`folio/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.md`):
 
-The categorical mass of a braid `β` equals the absolute value of its
-Jones–Markov trace, and the **bulk binding energy** of an atom `(Z, N)`
-is the mass defect
+  `B_bulk(Z, N) = E₀ · (|tr_M(W_free)| − |tr_M(W_atom)|)`.
 
-  `B_bulk(Z, N) = E₀ · (|tr_M(W_free)| − |tr_M(W_atom)|)`
+## Re-scoped 2026-11-22 (owner card "3: Both, inside reconcile work")
 
-with a single archimedean calibration constant `E₀` (the fibre functor
-`τ : R → ℝ`) fixed by one reference experiment.
+This carrier used to be a class whose one field, `binding_eq_defect`, asserted
+`binding = E₀ · (traceMag wFree − traceMag wAtom)` for an abstract `binding`
+function.  That is not a conjecture a proof could close: `binding` had no other
+definition, so the field *was* its definition, and the trivial model satisfied
+it by `ring`.  The model term is now a `def`, and what remains is a comparison
+claim — whether `bindingDefect` matches the AME2020 binding energies — which is
+made in the mass-binding dashboard (`B_can⁰` in `mass_binding_dashboard.py`),
+not in Lean.
 
-The conjecture is encoded as a `class` (AGENTS.md §3b / §3b-tax); its
-fields carry the genuine binding-defect identity, not a bare `True`.
-An unproved primary conjecture is honestly represented by a
-content-bearing class with **no instance**.  The richer
-braid-level axiomatisation lives in
-`QOU/BraidKnot/KnotFactorFrobeniusPairing.lean`; this carrier records
-the mass-defect form of the claim.
+Recorded beside it is the log form `bindingLog`, which the dashboard also scores
+(`B_sym`), with the one structural fact that separates the two: when the free
+word is a connected sum its trace multiplies (`tr(W₁ # W₂) = tr W₁ · tr W₂` for a
+multiplicative trace), the log form is additive over the summands
+(`bindingLog_mul`), and the difference form is not.
+
+The braid-level half (Markov trace = pairing with a central knot factor) is a
+theorem: `QOU.BraidKnot.KnotFactorFrobeniusPairing`, `QOU.Hecke.KnotFactor`.
 
 LaTeX label: `conj:knot-factor-frobenius-pairing`
 
@@ -29,49 +34,37 @@ LaTeX label: `conj:knot-factor-frobenius-pairing`
 
 - [leitner2026] §"Knot-factor Frobenius pairing"
 - [jones1985] https://www.jstor.org/stable/2007074
-- [yekutieli2015]
 -/
 
 namespace QOU.Conjectures
 
-/-- **Conjecture class** (`conj:knot-factor-frobenius-pairing`).
+/-- **The difference form of the binding model term**:
+    `E₀ · (|tr(W_free)| − |tr(W_atom)|)`.  A definition; its agreement with
+    measured binding energies is a comparison point, not a Lean statement. -/
+noncomputable def bindingDefect (E0 trFree trAtom : ℝ) : ℝ :=
+  E0 * (|trFree| - |trAtom|)
 
-An instance supplies a Markov-trace magnitude `traceMag` on closed
-braids (the `|tr_M(·)|` of the categorical mass identity) and the
-single calibration constant `E₀`, and asserts that the bulk binding
-energy `binding` of an atom is the calibrated Markov-trace defect
-between the free-nucleon braid `wFree` and the bound atomic braid
-`wAtom`.
+/-- **The log form of the binding model term**: `E₀ · log(|tr(W_free)| / |tr(W_atom)|)`. -/
+noncomputable def bindingLog (E0 trFree trAtom : ℝ) : ℝ :=
+  E0 * Real.log (|trFree| / |trAtom|)
 
-The field `binding_eq_defect` carries the conjecture's genuine content
-(the mass-defect factorisation), not a bare `True`.  This is a
-**primary** conjecture (no other conjecture class in its signature). -/
-class KnotFactorFrobeniusPairing where
-  /-- Magnitude of the Jones–Markov trace `|tr_M(W)|` of a closed braid,
-      indexed abstractly by a braid identifier.  Real-valued because the
-      absolute value is the archimedean realisation. -/
-  traceMag : ℕ → ℝ
-  /-- The single archimedean calibration constant `E₀` (fibre functor
-      `τ : R → ℝ`), fixed by one reference experiment; positive. -/
-  E0 : ℝ
-  /-- `E₀` is a positive energy scale. -/
-  E0_pos : 0 < E0
-  /-- The bulk binding energy of an atom, as a function of its
-      free-nucleon braid `wFree` and bound atomic braid `wAtom`. -/
-  binding : ℕ → ℕ → ℝ
-  /-- **Conjectural mass-defect factorisation.**  The bulk binding
-      energy is `E₀` times the Markov-trace defect between the free and
-      the bound braid:
-      `binding wFree wAtom = E₀ · (|tr_M(W_free)| − |tr_M(W_atom)|)`. -/
-  binding_eq_defect :
-    ∀ wFree wAtom : ℕ,
-      binding wFree wAtom = E0 * (traceMag wFree - traceMag wAtom)
+/-- **The log form is additive over a connected-sum free word.**  If the free
+    trace is a product `a · b` of nonzero factor traces, the log binding splits
+    as the two factors' log masses minus the atom's. -/
+theorem bindingLog_mul (E0 a b trAtom : ℝ) (ha : a ≠ 0) (hb : b ≠ 0) (hc : trAtom ≠ 0) :
+    bindingLog E0 (a * b) trAtom
+      = E0 * (Real.log |a| + Real.log |b| - Real.log |trAtom|) := by
+  unfold bindingLog
+  rw [abs_mul, Real.log_div (mul_ne_zero (abs_ne_zero.mpr ha) (abs_ne_zero.mpr hb))
+    (abs_ne_zero.mpr hc), Real.log_mul (abs_ne_zero.mpr ha) (abs_ne_zero.mpr hb)]
 
--- No instance: this is an OPEN primary conjecture (AGENTS.md §3b-tax:
--- "An unproved primary is honestly represented by a content-bearing
--- class with no instance; do not fabricate a trivial instance to
--- 'close' it").  A trivial model (`traceMag ≡ 0`, `binding ≡ 0`)
--- satisfies `binding_eq_defect` by `ring` but establishes nothing about
--- the Markov-trace defect — it proves consistency, not the conjecture.
+/-- **The difference form is not additive over a connected sum.**  At factor
+    traces `a = b = 1/2` and atom trace `1/8`, the difference binding of the
+    product is not the sum of the factors' differences against half the atom. -/
+theorem bindingDefect_not_additive :
+    bindingDefect 1 ((1/2) * (1/2)) (1/8)
+      ≠ bindingDefect 1 (1/2) (1/16) + bindingDefect 1 (1/2) (1/16) := by
+  unfold bindingDefect
+  norm_num [abs_of_pos]
 
 end QOU.Conjectures

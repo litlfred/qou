@@ -84,7 +84,7 @@ def PartitionWithCells.transpose (P : PartitionWithCells) :
 /-- **Folding cancellation theorem (sorry-free).** The content sum
     of a partition plus the content sum of its transpose is zero.
 
-    This is the partition-level lift of `Cell.content_plus_transpose_content_eq_zero`:
+    This is the partition-level lift of `QOU.Archimedean.TypeBCrystal.content_plus_transpose_content_eq_zero`:
     every cell's content cancels with the transpose-image cell's
     content, so the two list-sums sum to zero. -/
 -- Ref: [leitner2026] AGENTS.md §7b "Type B folding ⇒ symmetric crystal,

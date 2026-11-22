@@ -10,7 +10,7 @@ the β-decay Q-value decays exponentially in the truncation depth.
 For a fixed free-neutron sector `K ⊂ H₃(q)` evaluated at the substrate
 `q = q₀`, let `R N` be the depth-`N` truncation remainder
 `R N = Q_β^(N) − Q_β^exact` (Form A or Form B,
-`prop:q-beta-spectral-bridge`).  The conjecture asserts there exist
+`conj:q-beta-spectral-bridge`).  The conjecture asserts there exist
 constants `C, c > 0`, depending only on the sector data, with
 
   |R N| ≤ C · exp(−c · N)   for all N.

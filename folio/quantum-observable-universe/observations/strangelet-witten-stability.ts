@@ -14,6 +14,8 @@ export default remark({
     "genus",
   ],
   uses: [
+    "prop:skein-generation",
+    "rem:skein-generation-hadron-reading",
     "prop:strangelet-crossing-energy",
     "rem:golden-ratio-degeneration",
   ],

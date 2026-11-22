@@ -125,6 +125,7 @@
   named knot complement.
 
   -- Ref: [thurston1978] Ch. 4 (hyperbolisation; the gluing-equation solution)
+  -- Ref: [futer-gueritaud-angled] Def 2.4, Prop 2.5 (gluing equations give the hyperbolic metric); Thm 1.2 (complete structure = critical point of volume on angle structures) — held copy
   -- Ref: [neumann-zagier1985] §2 (the volume of a triangulation, and its invariance)
 -/
 import QOU.MathlibExt.IdealTriangulation

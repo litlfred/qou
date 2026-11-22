@@ -1,0 +1,48 @@
+import { conjecture } from "../../schema/builders";
+
+/**
+ * Retired working conjecture for the proton's /q^3 (kept as a negative record).
+ *
+ * The factor q^{-3} in the normaliser c_sign = [3]_q! q^{-3} of F_Bor is the
+ * derivative of the sign-block Markov trace tr_z(x_-) at the convention-D
+ * point z_D, read in a coordinate tr(b), b = u sigma + v, that spans H_2 with
+ * 1 over Z[q, q^{-1}] and is bar-invariant.
+ *
+ * Proved (Lean, sorry-free): such coordinates are exactly b = +-(sigma - q) + c
+ * with c bar-invariant, so the derivative is +-q^{-3}; each condition is needed;
+ * the same rule gives the trivial block's q^3 (not independent: both linear
+ * Ocneanu weights have slope +-1/[3]_q!). Against it: bar(x_-) = q^6 x_-, so
+ * the bar-invariant generator is q^3 x_-, whose derivative is -1 and whose
+ * square constant is [3]_q! (k = 0); the reflection block fails the rule.
+ * Lean: QOU/MassTheory/ProtonQ3OcneanuSlopes.lean. Not proved: that the
+ * observable must be read in such a coordinate. Audit:
+ * docs/audits/2026-11-21-proton-q3-kl-coordinate.md (PR #8964).
+ */
+export default conjecture({
+  label: "conj:proton-normaliser-kl-coordinate",
+  title:
+    "The proton normaliser $q^{-3}$ as a derivative in an integral, bar-invariant coordinate",
+  uses: ["def:f-bor-borromean-observable", "def:bar-involution"],
+  cites: ["kazhdan-lusztig1979", "geer-patureau-mirand-turaev-2009"],
+  authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "**Kept as a conjecture that does not derive the normaliser** (owner: " +
+        "\"All\", picking retire-as-derivation-route, restate and ready). The block " +
+        "stays kind conjecture to record the negative result. The derivative reading returns the chosen element's " +
+        "square constant over $[3]_q!$, so the $q^{-3}$ comes from scaling $x_-$ by " +
+        "its identity coefficient. The same criterion applied to the element selects " +
+        "$k = 0$. Audit: docs/audits/2026-11-21-proton-q3-kl-coordinate.md.",
+    },
+  ],
+  tags: [
+    "negative-result",
+    "proton",
+    "schur-element",
+    "kazhdan-lusztig",
+    "bar-involution",
+    "modified-trace",
+  ],
+});

@@ -97,6 +97,18 @@ unity. This identifies the second row's content with a standard
 resurgence construction; it does not touch the third row, which
 remains the genuine geometric input.
 
+The resummation step of the second row is proved for two families. For
+a Habiro element $\Phi_K$ with formal series
+$F_K(x) = \Phi_K(e^{-1/x})$, the Costin--Garoufalidis conjecture asks
+that the Borel transform be resurgent and that the median resummation
+$S^{\mathrm{med}}_K$ have radial limits recovering $\Phi_K$ at roots of
+unity \cite[\S1, Conj.~1.1]{crew2023}; it is proved for the torus knots
+$T(2,2u+1)$ and $T(3,2^k)$, which include the trefoil
+\cite[Cor.~1.5, via Thm.~1.4 and eq.~(1.22)]{crew2023}. Torus knots have
+zero hyperbolic volume, so these cases bear on the second row only and
+say nothing about the $\mathrm{Vol}$-identity of the third row; $4_1$
+is outside the proved class.
+
 Kashaev thus becomes one transseries reduction plus one
 $\mathrm{Vol}$-identity, instead of an analytic limit plus a
 $\mathrm{Vol}$-identity.

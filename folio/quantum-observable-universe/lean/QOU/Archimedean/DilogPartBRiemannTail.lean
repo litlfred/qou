@@ -13,7 +13,7 @@ restates them exactly as the beans `qou-e86p` / `qou-8f2p` phrase them, with
 * **B3.4** `|∫₀^{qⁿ} h| ≤ qⁿ/(1−x)`, `qⁿ ≤ e^{−n(1−q)}`, and `qⁿ → 0` along any
   family with `n(1−q) → ∞`.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -/
 
 namespace QOU.Archimedean

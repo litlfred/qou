@@ -1,0 +1,52 @@
+528 V.G. Turaey
+
+problem of understanding the polynomials from the viewpoint of algebraic topol-
+ogy. In particular, it is by no means clear how to extend the definition of
+the polynomials P, F given below to links in homology 3-spheres. (It is curious
+to note that a related invariant — the multivariable Conway polynomial can
+be defined for links in homology spheres, see [10].)
+
+Though I do not consider von Neumann and Hecke algebras in this paper, it would be of
+great importance to comprehend the algebraic nature of the invariants.
+
+I am indebted to O.Ja. Viro and W.B.R. Lickorish for helpful remarks. I am especially thankful
+to N.Yu. Reshetikhin for valuable discussions.
+
+Organization of the paper. In §2 the Yang-Baxter equation is recalled and the
+so-called EYB-operators are introduced. In §3 with each EYB-operator S I
+associate an isotopy invariant of links T;. In §4 some special EYB-operators
+are considered, and the corresponding link invariants are studied. These invar-
+iants are shown to be equivalent to the polynomials P, F mentioned above.
+In §5 under some restrictions on the EYB-operator S a state model for the
+invariant Ts is presented. In §6 a nonoriented version of this state model is
+discussed; this model is used to prove Theorem 4.3.4 formulated in § 4.
+
+Notation and agreements. In the whole paper the symbol K denotes a fixed
+commutative ring with 1 and V denotes a fixed finitely generated free K-module
+of rank m21. For a natural n the n-times tensor product V@xV@...@xV
+is denoted by V®". In particular, V@'=V and V®?=V@,V. Each basis
+V1, .--, Um in V gives rise to a basis in V®” which consists of vectors v;,@...@ %,
+with i,,...,i,¢{1, 2, ...,m}. Having this basis, each (K-linear) endomorphism
+f of V®" determines the multiindexed matrix (f{!7-7}"), 1Siy, jy, -.-5 ins inSm
+defined by the equation
+
+S(0;,@ ... @v;,) = XY
+1
+
+Sit,--sjnSm
+
+The symbol K* will denote the set of invertible elements of K.
+By a link we shall mean a tame link in R°.
+
+§ 2. The Yang-Baxter operators
+
+2.1. Let R:V®?— V®? be a (K-linear) isomorphism. For natural n, i with n—1
+2iz1 denote by R;(n) the isomorphism
+
+Id?"-Y @R@de* iY; yer. yer,
+Thus for any 0, ...,0,EV
+R,(n)(v, @... @v,)=0, ©... @v;_- 1 @ R(Y;, 044 1) @ Vj42@... OM-
+
+The isomorphism R: V@? + V®? is called a Yang-Baxter operator (or, briefly.
+a YB-operator) if the automorphisms R,=R,(3) and R,=R,(3) of V®? satisfy
+the equality

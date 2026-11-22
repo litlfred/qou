@@ -7,6 +7,7 @@ export default remark({
   uses: [
     "def:bar-involution",
   ],
+  cites: ["arxiv-1504.07260v3"],
   tags: [
     "bar-invariance",
     "geometric-reading",

@@ -22,6 +22,16 @@ C1's slope ½, the `d`-th roots `B₁,B₂`, and the actual Stokes matrices
 §7c: generic `Monoid` (commutativity unused). Sorry-free. No fit; nothing wired.
 
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, q-Borel transform)
+-- Ref: [ramis-sauloy2006] https://arxiv.org/abs/math/0611521 (§3.2, Thm 3.8: the level-δ
+--      q-Borel values B_q^{(δ)}U(jL) vanish iff the one-level equation has a convergent
+--      solution, and form a complete set of analytic invariants in the formal class;
+--      Thm 3.9: a θ^{−δ} factor carries them to the alien-derivation invariants). §2.3
+--      "one level" assumes two integral slopes, so this gives the kernel's meaning, not
+--      C1 Stokes data (C1 at ∞ is isoclinic).
+-- Ref: [morita2012b] https://arxiv.org/abs/1205.1453 (§3.2, Thm 1 and the q-elliptic
+--      connection coefficient C(x;q) after it): a worked first-kind q-Borel–Laplace
+--      resummation of the divergent bilateral ₁ψ₀ whose dependence on the direction λ
+--      sits entirely in a theta quotient. Precedent only; not used by the proofs here.
 -/
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Algebra.Group.Basic

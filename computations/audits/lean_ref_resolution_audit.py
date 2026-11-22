@@ -119,6 +119,7 @@ KIND_LEGACY_RX = re.compile(r'kind:\s*"([a-z]+)"')
 DECL_KEYWORDS = (
     "def", "theorem", "lemma", "proposition", "corollary",
     "class", "structure", "instance", "axiom", "abbrev",
+    "inductive", "opaque",
 )
 
 
@@ -145,6 +146,30 @@ def _decl_rx(decl_path: str) -> re.Pattern:
         rf'(?:{kws})\s+(?:{alt})\b',
         re.MULTILINE,
     )
+
+
+class _DeclOrFieldMatcher:
+    """`_decl_rx` plus structure/class fields: a ref `...Parent.field`
+    also resolves when the file declares `structure Parent` or
+    `class Parent` and, below it, an indented line `field :`. Lean names
+    the projection `Parent.field`, so the ref is a real declaration even
+    though no `def`/`theorem` line carries it."""
+
+    def __init__(self, decl_path: str):
+        self._rx = _decl_rx(decl_path)
+        parts = decl_path.split(".")
+        self._field_rx = None
+        if len(parts) >= 2:
+            parent, field = re.escape(parts[-2]), re.escape(parts[-1])
+            self._field_rx = re.compile(
+                rf'^\s*(?:@\[[^\]]*\]\s*)*(?:structure|class)\s+{parent}\b'
+                rf'.*?^[ \t]+{field}\s*:',
+                re.MULTILINE | re.DOTALL,
+            )
+
+    def search(self, text: str):
+        return self._rx.search(text) or (
+            self._field_rx.search(text) if self._field_rx else None)
 
 
 def _classify_one(ts_path: Path) -> dict[str, Any]:
@@ -181,7 +206,7 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
     # The sibling-decl and grep-fallback regexes both accept any
     # suffix of the dotted decl_path (handles `namespace QOU` +
     # `theorem QExponential.unique` style declarations).
-    decl_rx = _decl_rx(decl_path)
+    decl_rx = _DeclOrFieldMatcher(decl_path)
 
     # (1) Sibling lookup — same directory, same basename, .lean
     # extension.  The sibling root name is the .ts basename (e.g.
@@ -253,7 +278,14 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
         if rg.returncode == 0 and rg.stdout.strip():
             grep_hit = True
             hit_paths = rg.stdout.strip().splitlines()
-            row["grep_hits"] = hit_paths[:5]
+            # Repo-relative, so the witness does not record the
+            # checkout location (the 2026-06-02 run carried
+            # /home/runner/work/qou/qou/... in every row).
+            row["grep_hits"] = [
+                str(Path(h).resolve().relative_to(REPO_ROOT))
+                if Path(h).resolve().is_relative_to(REPO_ROOT) else h
+                for h in hit_paths[:5]
+            ]
             # If grep finds the decl under the package's Lake root
             # (and the file is part of the Lake build), the URI is
             # resolvable — the lean.ref's purpose is to identify the
@@ -358,17 +390,19 @@ def main() -> int:
         .add_data("rows", rows)
         .add_assertion(
             name="no_unregistered_package_prefixes",
-            computed=1.0 if "unregistered_package" not in buckets else 0.0,
-            expected=1.0, tolerance=0.0,
+            # Strings keep these exact values out of float64 (the
+            # drained convention, qou-t0rf; see WitnessBuilder.add_assertion).
+            computed="1" if "unregistered_package" not in buckets else "0",
+            expected="1", tolerance="0",
             unit="boolean",
             source="Every lean.ref prefix must appear in LEAN_PACKAGES "
                    "(folio-assistant/cat-harness/schemas/lean-packages.ts).",
         )
         .add_assertion(
             name="ok_count_matches_total_minus_failures",
-            computed=float(len(buckets.get("ok", []))),
-            expected=float(len(rows)),
-            tolerance=0.0,
+            computed=str(len(buckets.get("ok", []))),
+            expected=str(len(rows)),
+            tolerance="0",
             unit="count (gates only at full closure)",
             source="Closure gate: when this passes, every content-block "
                    "lean.ref resolves to an actual declaration.  Currently "

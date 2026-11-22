@@ -13,20 +13,31 @@
   ],
   "label": "conj:regularity-breakdown",
   "kind": "conjecture",
-  "title": "Regularity breakdown at $q = 1$: the classical limit as a phase transition",
+  "title": "Regularity breakdown at $q = 1$ and a discretely self-similar blow-up scenario",
   "uses": [
     "papers/quantum-observable-universe/blocks/thm-q-ns-wellposedness",
     "papers/quantum-observable-universe/blocks/prop-q-turbulence-spectrum",
-    "papers/quantum-observable-universe/blocks/rem-hamilton-jacobi-phase"
+    "papers/quantum-observable-universe/blocks/rem-hamilton-jacobi-phase",
+    "papers/quantum-observable-universe/blocks/def-leray-profile",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "cites": [
+    "references/leray1934",
+    "references/necas-ruzicka-sverak1996",
+    "references/tsai1998",
+    "references/seregin2012",
+    "references/chae2013adss",
+    "references/chae-wolf2016dss",
+    "references/bradshaw-tsai2018survey"
   ],
   "tags": [
     "tier:famous",
     "navier-stokes",
     "millennium-problem",
     "regularity",
-    "phase-transition",
     "critical-exponent",
-    "blowup"
+    "blowup",
+    "discretely-self-similar"
   ],
   "leanRef": "qou:QOU.FluidDynamics.RegularityBreakdown",
   "text": "regularity-breakdown.md",
