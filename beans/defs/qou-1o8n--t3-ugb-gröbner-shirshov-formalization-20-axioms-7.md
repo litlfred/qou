@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-03T15:06:36Z
-updated_at: 2026-11-22T21:29:08Z
+updated_at: 2026-11-22T21:33:43Z
 parent: qou-rtxm
 ---
 
@@ -27,3 +27,6 @@ Now the epic for P3.GS under Lean / Mathlib foundations.
 
 ## 2026-11-22: input from the GS-citation review thread (recorded by hecke-schur-weyl-lean drain)
 Not yet verified in Lean here. Exact sympy check (see /mnt/project-files/gs-braid-citations/review.md, h_n_gs_check.py): in convention D with deg-lex s1<s2, heckeRewritingSystem 3 is already a GS basis (5 overlaps reduce to 0 over Q(q); 6 standard words), so a sorry-free n=3 GS theorem is a small target. At n=4 the uncompleted system has one bad composition (on s3 s2 s3 s1), matching hecke_not_gs_basis_four; with the Bokut-Shiao family added all compositions close at n=4,5. Citation gap: the q-deformed type-A completion is Kang-Lee 2000 (J. Algebra 232) Ex. 1.11, not Bokut-Shiao 2001 (q=1); neither is held, upload requested by that thread.
+
+## 2026-11-22 correction to the note above (relayed from the GS-citation thread, not re-verified here)
+General-n completeness is already on main: UGB/GrobnerShirshov/HeckeCompletion.lean states heckeCompleted_isGrobnerShirshovBasis for every n. What is missing is the primary-source citation (Kang-Lee 2000 / Kang-Lee-Lee-Oh 2002). The GS-citation thread is adding UGB/GrobnerShirshov/HeckeGSThree.lean (transfer lemma, uncompleted system GS at n=3, six irreducible words) on branch claude/hecke-gs-three-2026-11-22.
