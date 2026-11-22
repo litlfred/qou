@@ -1,6 +1,6 @@
 ## Statement
 
-*Let $\beta \in B_n$ be any braid word. There is a terminating algorithm (termination proved in prose below) that returns a closed-form symbolic expression for $\mathrm{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
+*Let $\beta \in B_n$ be any braid word. There is a terminating algorithm (implemented in Lean as the total function `trWord`) that returns a closed-form symbolic expression for $\mathrm{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
 - *the Hecke quadratic $\sigma_i^2 = h \sigma_i + 1$ (with $h = q - q^{-1}$);*
 - *the Markov axiom $\mathrm{tr}_M(\alpha \sigma_n) = z \mathrm{tr}_M(\alpha)$ for $\alpha \in H_n \subset H_{n+1}$, for the Markov parameter $z$;*
 - *cyclicity $\mathrm{tr}_M(\alpha\beta) = \mathrm{tr}_M(\beta\alpha)$;*
@@ -14,7 +14,7 @@ $$
 
 *If, in addition, $\mathrm{tr}_M$ is invariant under a uniform shift of generator indices, the split form also holds: $\mathrm{tr}_M(\alpha \otimes \beta) = \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)$ for $\alpha \in H_k(q)$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}(q)$ on strands $\{k+2, \ldots, n\}$, separated by the unused generator $\sigma_{k+1}$.*
 
-The shared-strand law is formalised in Lean (`markovTrace_disjointProduct`). Correctness is formalised as uniqueness (`markovTrace_unique`): two traces satisfying the axioms with the same $z$ and $h$ agree on every positive word, so any procedure that uses only these axioms, the reducer included, returns the trace. Since $\sigma_i^{-1} = \sigma_i - h$, positive words suffice. Termination of the algorithm itself is proved below in prose and is not formalised. Shift invariance is not proved here, so the split form is stated only under that hypothesis.
+The shared-strand law is formalised in Lean (`markovTrace_disjointProduct`). Correctness is formalised as uniqueness (`markovTrace_unique`): two traces satisfying the axioms with the same $z$ and $h$ agree on every positive word, so any procedure that uses only these axioms, the reducer included, returns the trace. Since $\sigma_i^{-1} = \sigma_i - h$, positive words suffice. The algorithm itself is implemented in Lean as `trWord`, a structurally recursive and therefore terminating function. It is proved that `trWord` is normalised (`trWord_nil`), stable under adding a strand (`trWord_stable`), and satisfies the Hecke relation (`trWord_hecke`), far commutation (`trWord_far_comm`), the braid relation (`trWord_braid`) and Markov stabilisation (`trWord_strip`). The disjoint-embedding axiom concerns only the shift map, which is satisfied by `β ↦ β.map (· + j)`. Cyclicity is proved too (`trWord_cyclic`), by Ocneanu's induction on the level, so `trWord` satisfies every axiom (`trWord_isMarkovTrace`). This gives existence of the trace for every $z$ and $h$ (Ocneanu), and with uniqueness every trace satisfying the axioms equals `trWord` (`isMarkovTrace_eq_trWord`). Shift invariance is not proved here, so the split form is stated only under that hypothesis.
 
 The algorithm and its correctness are **parametric in $z$**: no step below
 evaluates the Markov parameter, so the statement holds for whatever value the
