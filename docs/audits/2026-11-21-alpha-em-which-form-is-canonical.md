@@ -567,3 +567,39 @@ the monodromy test (order `2n`, i.e. `ℤ₂ × ℤₙ`) holds only for `n = 3`.
 hand-entered order table: `s5_order_dvd_sixty`, `s5_five_dvd_order`, `s5_has_order_iff`,
 `s5_has_order_two_mul_iff`. No other block was changed; blocks citing the proposition keep the
 ℤₙ reading unless they say otherwise.
+
+## 22. Why `ι`-odd, and the sign: `ι` is charge conjugation times the writhe-parity sign (2026-11-22)
+
+**Pre-registered questions.** (i) How does `ι : σᵢ ↦ −σᵢ⁻¹` relate to the corpus's own
+charge conjugation `C : σᵢ ↦ σᵢ⁻¹` (crossing reversal; `knot-notation-convention`,
+`c-equals-bar-iff-all-1dim`)? (ii) Could `C` alone select the α_em functional? (iii) Is
+the sign of the α_em functional a choice, or fixed?
+
+**Results** (`QOU/AlphaEM/ChargeConjugationTrace.lean`, lean-direct exit 0, `#print axioms`
+on all four theorems `[propext, Classical.choice, Quot.sound]`, generic field):
+
+1. **`ι = (−1)^{length} · C`** (`tauIota_eq_sign_tau_flip`). The sign `(−1)^{length}` is
+   the writhe parity. So `τ = χ_(3) − χ_(1³)` obeys `τ(Cw) = −(−1)^{|w|}τ(w)`: it is
+   `C`-even on odd-writhe words and `C`-odd on even-writhe words. The electron
+   `σ₀σ₁σ₀` (writhe 3) and its mirror have the same `τ`, as a coupling should; the
+   linchpin `(σ₀σ₁)⁵` (writhe 10) is `C`-odd.
+2. **`C` alone selects nothing** (`C_odd_iff`, scope (b), invariant: the three
+   evaluations on the words `∅`, `σ₀`, `σ₀σ₁⁻¹` for `q + q⁻¹ ≠ 0`,
+   `q² + 1 + q⁻² ≠ 0`, characteristic 0). The only block functional that is `C`-odd on
+   every word is zero. So `ι`-oddness is not charge-conjugation oddness: it needs the
+   writhe-parity sign as well.
+3. **The sign is fixed once α_em is the `ι`-odd part of `tr_M`** (`tau_iota_split`,
+   `iotaOdd_coeff_pos`). Every block functional splits uniquely as
+   `((w₃ − w₁₁₁)/2)·τ` plus an `ι`-even part. Under convention D the coefficient is
+   `y₃/2 = (q⁴+1)/(2(q²+1)²) > 0` for every real `q`. So the `ι`-odd part of the
+   Markov trace is `+τ`, not `−τ`. §13 item 3 left the sign as a choice between `P_ext`
+   and `1 − P_ext`; that choice disappears when α_em is read off `tr_M` itself, because
+   the trace's own weights fix it.
+
+**What is still open.** Why α_em should be the `ι`-odd part of `tr_M` at all. Items 1–2
+reduce this to a question about the writhe-parity sign: `ι` differs from the corpus's
+`C` exactly by `(−1)^{writhe}`. On the `T(2,n)` family that sign is `(−1)^F` under
+`prop:fermion-boson-knot-link` (knots are fermions), which would make `ι = C·(−1)^F`;
+but that rule is scoped to `T(2,n)` and is open for the electron (ruling 2026-11-21), and
+`T(3,5)` is a knot of even writhe. So the reading `ι = C·(−1)^F` is not established and
+is not used here.
