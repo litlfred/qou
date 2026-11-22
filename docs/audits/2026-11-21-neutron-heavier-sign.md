@@ -875,3 +875,14 @@ limits on reading more into it:
 
 So: possible in form, not established, and its size waits on `t`, i.e. on α_EM (open). Scope-(a).
 No empirical input, no fitting.
+
+## §37 A unitary line braiding gives no real pair energy (2026-11-22)
+
+`QOU/QBeta/UnitaryLineNoEnergy.lean` (sorry-free, lean-direct exit 0): if the hadron-line coupling
+`t` of §31 is a unitary phase, `|t| = 1`, as a U(1) Chern–Simons braiding would give, then the line
+monodromy `t^{2Q_AQ_B}` has modulus one for every pair of charges and `Re log` of it is zero
+(`re_log_monodromy_of_unitary`). So the Coulomb-shaped pair term `κ·Q_A·Q_B` of §31 is real and
+nonzero only for a non-unitary `t` (`|t| ≠ 1`). This constrains how `t` can be tied to α_EM: the
+naive U(1)_k phase `t = e^{iπ/k}` supplies no real energy, and a real `κ` needs a modulus, e.g.
+from the q-deformation. Which non-unitary `t` is right stays open. Scope-(b) for the unitary case
+(the invariant is `|t| = 1`); no empirical input.
