@@ -486,3 +486,53 @@ is meant to play. None of the six monomials does that.
 
 **Consequence for §25.** The import list there stands: no part of E_C is derived from the ruled
 photon yet.
+
+## §27 No braid element gives Coulomb; spectators are invisible (2026-11-22, owner: "Do both … plank length for distance")
+
+Pre-registration: `computations/probes/np_splitting/np_charge_vertex_search_preregistration.md`.
+Probe and output: `np_charge_vertex_search_probe.py` and `.out.txt`. Exact Fraction arithmetic at
+q = 111/100 and q = 7/5.
+
+**A. The whole six-strand braid image.** The image of H_6 on (C²)^{⊗6} has dimension 132 (rank modulo
+2³¹ − 1, at both q). Over all 720 reduced words, the sector vectors (T_X(a, b)) on the 16 charge pairs
+span only 10 dimensions. Because T_X is linear in X, that covers every element, and with it every
+order in φ at n = 6.
+
+- Coulomb form c + κQ_aQ_b with κ ≠ 0: **not reachable** by any element.
+- Isospin form c + κW_aW_b: not reachable either.
+- An affine-bilinear form is reachable, and on a single ray:
+  ΔE = c + κ·(Q_aQ_b − αQ_a − βQ_b) with **α + β = 1 exactly** at both q
+  (q = 111/100: α = 0.656, β = 0.344; q = 7/5: α = 1.054, β = −0.054).
+  Equivalently, ΔE = c' + κ(Q_a − β)(Q_b − α). The centres add up to one charge unit. At α = β = ½
+  this is the isospin form W_aW_b/4. Coulomb would need α = β = 0, which the constraint α + β = 1
+  forbids.
+- On the four nucleon sectors alone the span is all of R⁴, so pp, pn, np and nn can each be set
+  freely. Any pattern there, Coulomb included, is a choice of element rather than a derivation. The
+  charge structure only becomes a constraint once the Δ sectors (Q = −1, 2) are included.
+
+Reading, as a hypothesis: the braid image sees weight (T₃) and not charge. The zero of every reachable
+pair term sits between p and n, not at n. Moving it to n needs Q = T₃ + B/2, that is, a baryon-number
+(hypercharge) ingredient. The level-2 braiding has none.
+
+**B. All orders in φ for a single crossing (Lean).** `QOU/QBeta/HeckeSeriesCollapse.lean` (sorry-free)
+proves:
+- `pow_eq_affine` and `sum_pow_eq_affine`: from σ² = hσ + 1, every power of σ, and every finite
+  truncation of a series in σ, is a + bσ.
+- `coulomb_of_affine`: if a + b·ΔE_σ has a Coulomb shape and b ≠ 0, then so does ΔE_σ.
+
+With `not_coulomb_s2`, no finite order of the single-crossing photon gives a Coulomb term. Part A
+already covers every element at n = 6.
+
+**C. Distance (spectators).** With d = 0, 1, 2, 3 spectator strands between the blocks and the band
+generator joining strand 2 to strand 3 + d, all four nucleon shifts are **exactly identical** for every
+d, at both q. The braid carries no distance: an exchange across spectators is the same as an adjacent
+one. A 1/r cannot come from counting strands. It needs a metric ingredient, and the braid and trace
+supply none.
+
+On the Planck length: `planck-length-share-vs-total` normalises ℓ_P = ħ_q·t_P = 1. That is a
+dimensionless circuit, not a distance between particles, and C shows that strand counting does not
+supply one either. The length in E_C is λ̄_π, which comes from the CAL-3 calibration.
+
+**Scope.** Scope-(a) negatives. A and C are computed at n = 6 and n ≤ 9 at two rational q, not proved for
+all q or all n. The α + β = 1 identity is measured exactly at two q and is not proved. Tower status:
+A covers every element at n = 6 (all orders in φ there). The tower in n is open.
