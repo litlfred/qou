@@ -81,8 +81,10 @@ The same ratio 2ℏ_q ln q comes out if CAL-1 is instead read as the electron's 
 (𝔈_e = m_e c_q² = 0.511 MeV): both consistent readings give Δ/m_e = 2ℏ_q ln q. Only the mixed
 reading has the pole.
 
-**So the unit map that keeps m_p = m_n at q = 1 is derived: compare masses with masses, converting
-the cell energy by `def:mass-energy`.** Nothing is fitted; the three definitions are on record.
+**So the unit map that keeps m_p = m_n at q = 1 is: compare masses with masses, converting
+the cell energy by `def:mass-energy`.** Nothing is fitted. **Correction (§5): this is derived only
+under one reading of `c_q²`, and that reading conflicts with the CAL-2 pin. It is an owner decision,
+not a derivation.**
 
 The cost, at the comparison boundary only (proton q₀ = 1.10997858275138, Part B):
 
@@ -101,8 +103,10 @@ from a factor c_q² ≈ 82.68 that mixes two kinds of quantity.
   settled. The pole is the c_q² of a mixed energy/mass comparison, not a property of CAL-1 itself.
 - Every MeV figure that multiplies a dimensionless *energy* by E₀ and compares it to a *mass*
   difference carries the same c_q² ≈ 82.68. This includes the n–p cell rows of §3 and §8–9 of the
-  spectator audit. Binding energies compared to AME B (an energy) are not affected by this argument,
-  provided B is compared as an energy. Which other comparisons are mixed has not been audited.
+  spectator audit. ~~Binding energies compared to AME B (an energy) are not affected by this argument,
+  provided B is compared as an energy.~~ [Edit 2026-11-22: wrong. Experiment uses c = 1, so an
+  experimental energy and an experimental mass are the same MeV. If c_q² converts mass to energy, every
+  E₀-scaled row is off by c_q², binding included. See §5.]
 - Bean `qou-az9l` item 4 (unit maps with poles): the E₀ case is the c_q² factor, and it disappears
   under `def:mass-energy`.
 
@@ -118,3 +122,57 @@ from a factor c_q² ≈ 82.68 that mixes two kinds of quantity.
 | cell / c_q² = 2m_e ℏ_q ln q, bounded by 2m_e(q − 1)² | proved (Lean) |
 | the cell is an energy and m_n − m_p a mass | reading of `def:mass-energy` and route T |
 | the mass reading gives m_n − m_p | refuted at the comparison boundary, scope (a): this cell, alone, −99.18 % |
+
+## 5. The pole audit: which MeV comparisons mix energy and mass (owner: "Also investigate the pole")
+
+**Result: there is no row-by-row answer. Either every E₀-scaled comparison is mixed, or none is.**
+Experimental tables use c = 1, so a measured energy (Q_β, AME B) and a measured mass (m_n − m_p) are
+in the same MeV. The model has c_q = 1/(q − 1) ≈ 9.093 at q₀. So the question is one global fact about
+`def:mass-energy`, 𝔈 = 𝔪·c_q²:
+
+- **Reading (i): c_q² converts mass to energy.** CAL-1 fixes 𝔪_e = 0.511 MeV. Then E₀ = 𝔪_e c_q² ℏ_q is
+  an energy in model units, and to meet a c = 1 table it must be divided by c_q² = 82.6768196923.
+- **Reading (ii): c_q² is a pure number inside the formula.** Model energy and mass share the MeV, as in
+  experiment. Nothing is mixed.
+
+Measured at the proton pin q₀ = 1.10997858275138 (40 dps, `tools/qou-substrate` constants):
+
+| scored comparison | value now (reading ii) | ÷ c_q² (reading i) | vs target, reading i |
+|---|---|---|---|
+| Q_β dashboard row, \|ε_n − ε_p\|·E₀ on V³ | 0.325433928735 MeV | 0.003936217309 MeV | −99.497 % |
+| Q_β ruled z_D cell, \|tr\|·E₀ | 0.4447004085 MeV | 0.00537877981 MeV | −99.312 % |
+| vertex budget, placement B (PR #8955 §27–29) | 0.420 MeV | 0.005080021239 MeV | −99.351 % |
+| vertex budget, placement C | 0.782 MeV | 0.009458515735 MeV | −98.791 % |
+| n–p cell 2E₀ ln q | 0.8735366214 MeV | 0.01056567759 MeV | −99.183 % |
+| binding at α = E₀ (every isotope) | as on the dashboards | value / 82.68 | ≈ −99 % for all |
+
+Targets: CODATA Q_β = 0.782333559310 MeV, m_n − m_p = 1.29333236 MeV.
+
+The `m_n` and `Δ_pn` dashboard rows are m_p + Q_β + m_e. They add the E₀-scaled Q_β to two masses, so
+they are mixed under reading (i) and consistent under reading (ii).
+
+**Why reading (i) cannot be adopted alone: the q₀ pin uses c_q² as a pure number.** CAL-2 is
+m_μ/m_e = Vol(4₁)/ℏ_q², and 1/ℏ_q² = q²·c_q². The proton pin m_p/m_e = 2(Vol/ℏ_q²)F_Bor − 12 has the
+same factor. Both are mass ratios with c_q² inside. Under reading (i) the muon relation would read as an
+energy over a mass; the mass-over-mass version would be m_μ/m_e = Vol·q², which needs q = 10.09267839,
+not 1.10998. So reading (i) breaks the calibration that fixes q₀. That is a measured conflict, not a
+proof that reading (ii) is right.
+
+**What this changes in §1–§4.** The theorem of §1 (mass at q = 1 is 2^components, so m_p = m_n there)
+does not depend on either reading and stands. §2's "the unit map is derived" holds only under reading (i)
+and is corrected above. Under reading (ii), the pole of the MeV n–p cell at q = 1 is real: the cell is not
+the closure mass, and the working assumption m_p = m_n at q = 1 holds for the closure mass but not for this
+cell.
+
+**Owner decision (nothing is changed until it is made).**
+
+1. Reading (ii), c_q² is a pure number (my recommendation, as judgement). Costs nothing: no number moves.
+   It keeps CAL-2 and the q₀ pin. It commits to: `def:mass-energy` is a model definition and not the c = 1
+   conversion, and the n–p cell's pole at q = 1 is a real property of that cell.
+2. Reading (i), c_q² converts. Every E₀ row in the table above falls by 82.68 (all near −99 %), and CAL-2
+   and the proton pin must be re-derived, which moves q₀ itself. Large blast radius: every witness that
+   reads q₀.
+3. A split reading (c_q² converts only for some objects). Needs a rule saying which objects, and that rule
+   would be a selection unless it is derived.
+
+Default if nothing is decided: reading (ii) stays in force, as it is today in every producer.
