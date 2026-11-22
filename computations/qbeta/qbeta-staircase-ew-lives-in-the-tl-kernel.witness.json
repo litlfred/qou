@@ -17,7 +17,7 @@
     {
       "name": "the_k3_block_is_in_the_TL_kernel_measured",
       "passed": true,
-      "detail": "|omega_(3,2,1)| = 1.868e-16 against a minimum of 0.07562 over the <=2-row shapes, and the dimension arithmetic confirms the split independently (720 = 6! total, 132 = Catalan(6) = dim TL_6 visible). (3,2,1) is in the kernel of H_6(q) -> TL_6(q) = End_{U_q(sl2)}(V^(x)6), so it contributes nothing to any trace the framework computes"
+      "detail": "|omega_(3,2,1)| = 1.405e-71 against a minimum of 0.07562 over the <=2-row shapes, and the dimension arithmetic confirms the split independently (720 = 6! total, 132 = Catalan(6) = dim TL_6 visible). (3,2,1) is in the kernel of H_6(q) -> TL_6(q) = End_{U_q(sl2)}(V^(x)6), so it contributes nothing to any trace the framework computes"
     },
     {
       "name": "this_does_not_refute_the_conjecture_and_downstream_lean_is_unaffected",
@@ -111,7 +111,7 @@
         "physical_at_N2": false
       }
     ],
-    "omega_321_abs": "1.8678421e-16",
+    "omega_321_abs": "1.404516e-71",
     "min_omega_two_row": "0.07561905",
     "dim_H6": 720,
     "dim_TL6": 132,
@@ -123,14 +123,14 @@
     "answer": "No. rho_k has exactly k rows, so only k = 2 is physical at N = 2, and the block itself calls that case untestable. Both empirically-loaded cases (k = 3, 4) are in the TL kernel.",
     "scope": "Scope-(a). The conjecture is NOT refuted and no content block is edited here."
   },
-  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "gitCommit": "8e8e409f5ecd6795fee188907aa8ce7d015b2c62",
   "durationMs": 0,
   "scriptFile": "qbeta_staircase_ew_lives_in_the_tl_kernel_probe.py",
-  "scriptHash": "e7284b676fd7",
-  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
-  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
-  "computedAt": "2026-09-04T12:40:18.664112+00:00",
-  "engineVersion": "mpmath 1.4.1",
+  "scriptHash": "616b7a16dc8b",
+  "scriptCommitSha": "615b5553363a7e159ec40fa99bb156e48be9b1c6",
+  "commitSha": "8e8e409f5ecd6795fee188907aa8ce7d015b2c62",
+  "computedAt": "2026-11-22T11:57:38.974379+00:00",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561",
   "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
