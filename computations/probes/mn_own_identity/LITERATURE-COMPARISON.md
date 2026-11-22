@@ -1202,3 +1202,37 @@ phases k/5 at q = 1. Its closure is the **unknot**: σ₃ occurs once, so Markov
 removes it, then σ₂, then σ₁⁻¹, leaving σ₀ in B₂, whose closure is the unknot. V₁V₃ is the same
 up to shift. So the fifths are a permutation-cycle fact of a word that closes to the unknot; they
 are not the cinquefoil T(2,5) and not the k = 5 generation.
+
+## §38 Charge as an operator; two nucleons on H₆ (pre-registered 47a826e424d)
+
+Owner, 2026-11-22: *"1 and 2 was what I was going to suggest..... Charge is an operator and those
+are eigenvalues?"* Probe `mn_charge_operator_probe.py`. All predictions held.
+
+**Part A — Q̂ := log(V)/2πi, V = σ₀σ₁⁻¹, on the weight blocks of C²⊗³.**
+- PA1: on W_p and on W_n the spectrum of V is {1, e^{±iθ}}, so Q̂ has eigenvalues {0, ±t}:
+  t = 1/3 at q = 1, 0.3373795454 at q₀, identical on both blocks at every q tested.
+- PA2: tr Q̂ = 0 on both blocks, tr Q̂² = 2t² (0.2276499 at q₀, 2/9 at q = 1). So the block trace of
+  Q̂ is **not** the nucleon charge: V's eigenvectors are not the u/d weight states, and Q̂ is a
+  collective (H₃-irrep) charge, not a per-quark one.
+- PA3: with S_op = Q̂²·hol, E = T(𝒟²) − S_op on the electron map gives E_n − E_p = +0.0566 keV
+  (plain; it equals the §36 mirror reading R1 exactly, since only tr Q̂² enters) and +2.666 keV
+  (K-weighted), neutron heavier, both **0 at q = 1**. So the operator charge keeps m_p = m_n at q = 1,
+  which the adopted numbers +2/3, −1/3 did not.
+- What the operator does not give: a proton charge of 1. In this model the weight operator T³
+  (eigenvalue +½ on W_p, −½ on W_n) commutes with V; the SM operator Q = T³ + B/2 would give 1 and 0,
+  but B/2 is the imported Gell-Mann–Nishijima step (§33), not derived here.
+
+**Part B — two nucleons on H₆: β₂ = V₀³V₃³V₂³ (two Borromean nucleons, then the γγ bond G).**
+Exact rational arithmetic at q = 1, 1 + 10⁻³, 1 + 10⁻⁴; blocks by the number w of u states.
+- PB1 held: Δᵏ = tr_w(𝒟ᵏ) − tr_{6−w}(𝒟ᵏ) is exactly **0 at q = 1** for k = 1, 2 and w = 4, 5, 6.
+  The general reason (derived in the pre-registration): at q = 1 every braid word is a strand
+  permutation, which commutes with the global flip X^{⊗n}, and the T³ term has coefficient 0. This
+  holds for **every n**, so the n-direction of the tower cannot give n − p at q = 1 either.
+- Orders: k = 1 at h¹ (e.g. w4 − w2 = 30(1 − q⁻¹) exactly: the T³ term alone);
+  k = 2 at h⁵ (w4 − w2 and w5 − w1 negative, w6 − w0 exactly 0).
+
+**Consequence.** With the potential reading, the only q = 1 obstruction in §29–§38 was the adopted
+numerical charges. Treating charge as the vertex operator removes it: every braid-built term,
+including the charge operator, gives m_p = m_n at q = 1, at every jet order and every n tested.
+The size of n − p then has to come from the O(h) terms; at q₀ they give +0.171 MeV (muon scale, 𝒟²,
+§35) plus keV-level operator-charge corrections.
