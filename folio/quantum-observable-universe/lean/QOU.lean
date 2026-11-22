@@ -160,6 +160,8 @@ import QOU.MathlibExt.QPlancherelPartitionInstance
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.FrobeniusHopfData.PairingGaugeFluctuation
 import QOU.MathlibExt.QGaussianBinomialPascal
+import QOU.MathlibExt.GaussBinomSymm
+import QOU.MathlibExt.SymmetricGroupPoincare
 import QOU.MathlibExt.DerivationRankNullity
 import QOU.MathlibExt.Dolbeault
 import QOU.MathlibExt.OctonionDerivations
