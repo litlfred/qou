@@ -1,13 +1,13 @@
 ---
 # qou-8jjo
 title: 'Standing: 1089 Lean modules never built; use --targets ranking, not another --all sweep'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T03:33:19Z
-updated_at: 2026-11-21T19:30:00Z
+updated_at: 2026-11-22T10:54:56Z
 parent: qou-5vkl
 ---
 
@@ -220,3 +220,5 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 ## 2026-11-21 (thread "Fix Lean tooling beans")
 
 Triaged 2026-11-21 in docs/audits/2026-11-21-lean-tooling-beans.md (PR #8928): 104-file delta since the last full sweep (55 added, 49 modified). Delta-sweep marker proposed, not built (changes the shared gate; owner call).
+
+Merged in PR #8928 (merge commit e27118d347, 2026-11-22). Audit checks: precision-gates red set identical to main (pre-existing), nothing introduced by this PR.

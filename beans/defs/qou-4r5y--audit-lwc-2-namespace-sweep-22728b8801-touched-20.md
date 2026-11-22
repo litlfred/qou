@@ -1,13 +1,13 @@
 ---
 # qou-4r5y
 title: 'AUDIT: LWC-2 namespace sweep (22728b8801) touched 20+ Lean files; 2 confirmed breaks (ext_toSsyt, Partition.*) — audit the rest for stripped type-name prefixes'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:38:02Z
-updated_at: 2026-11-21T19:30:00Z
+updated_at: 2026-11-22T10:54:55Z
 parent: qou-5vkl
 ---
 
@@ -143,3 +143,5 @@ report both phantom sorries and phantom cleanliness.
 ## 2026-11-21 (thread "Fix Lean tooling beans")
 
 Owner card 2026-11-21: "Fix references, close bean". PR #8928 commit cf9c86db5f rewrites 35 lines / 24 living files to the current names; witnesses, six commented producers (scriptHash) and dated records left. Also fixed gen_atomic_mass.py drift (template name + ame_u CODATA 2018 value under a 2022 label). Audit: docs/audits/2026-11-21-lean-tooling-beans.md. Close when #8928 merges.
+
+Merged in PR #8928 (merge commit e27118d347, 2026-11-22). Audit checks: precision-gates red set identical to main (pre-existing), nothing introduced by this PR.

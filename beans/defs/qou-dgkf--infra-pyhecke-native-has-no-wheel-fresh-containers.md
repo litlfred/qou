@@ -1,13 +1,13 @@
 ---
 # qou-dgkf
 title: 'INFRA: pyhecke_native has no wheel — fresh containers cannot run any deltalambda probe without a 3.5-min maturin build'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T00:45:42Z
-updated_at: 2026-11-21T19:30:00Z
+updated_at: 2026-11-22T10:54:55Z
 parent: qou-5vkl
 ---
 
@@ -71,3 +71,5 @@ with existing Mathlib (`Finset.exists_lt_of_sum_lt`, `Finset.sum_nonneg`,
 ## 2026-11-21 (thread "Fix Lean tooling beans")
 
 Owner 2026-11-21: "Cache wheel on a branch", then "Use cat-harness infra for repo branch cache". Done on PR #8928 (commit 7f4614f82c): qou.json `wheel-cache` family (cat/qou/wheel-cache/, keyedBy family), kind in qou typologies/, scripts/wheel-cache.sh, build-pyhecke-native.sh restores first (1.9 s vs ~2.5 min) and seeds after a gated build. Seeded pyhecke-native-0.9.0-cp313-linux_x86_64-e4aa6f046952. Close when #8928 merges.
+
+Merged in PR #8928 (merge commit e27118d347, 2026-11-22). Audit checks: precision-gates red set identical to main (pre-existing), nothing introduced by this PR.

@@ -1,13 +1,13 @@
 ---
 # qou-tpdg
 title: The library sweep points at the wrong Mathlib tree — 22 false REDs, and the 2.3GB shadow is redundant
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-11-21T19:30:00Z
+updated_at: 2026-11-22T10:54:55Z
 parent: qou-5vkl
 ---
 
@@ -393,3 +393,5 @@ Was in-progress with no bean update since 2026-09-13 and no main commit naming i
 ## 2026-11-21 (thread "Fix Lean tooling beans")
 
 Label/cascade half done on PR #8928 (draft), commit b7b78c6e36: skipped split into SKIPPED (behind RED) and BLOCKED (not judged), VERDICT line, exit 8 = INCOMPLETE. Tested with a fake lean (RED / INCOMPLETE / GREEN). Owner-authorised via the coordinator dispatch "Both - dispatch siblings". Close when #8928 merges.
+
+Merged in PR #8928 (merge commit e27118d347, 2026-11-22). Audit checks: precision-gates red set identical to main (pre-existing), nothing introduced by this PR.
