@@ -1,5 +1,6 @@
 import Mathlib.Tactic
 import Mathlib.Algebra.Ring.GeomSum
+import QOU.Mass.ColourCubicHomogeneous
 
 /-!
 # Homogeneous-coordinate lemmas
@@ -28,9 +29,10 @@ namespace QOU.Mass.HomogeneousCoordinates
 section Bring
 variable {R : Type*} [CommRing R]
 
-/-- The complete homogeneous symmetric cubic in three variables. -/
-def h3 (X z w : R) : R :=
-  X^3 + X^2*z + X^2*w + X*z^2 + X*z*w + X*w^2 + z^3 + z^2*w + z*w^2 + w^3
+/-- The complete homogeneous symmetric cubic in three variables. It is the corpus
+colour cubic `ColourCubicHomogeneous.colourCubicHom` (see
+`ColourCubicHomogeneous.colourCubicHom_eq_completeHom`). -/
+def h3 (X z w : R) : R := ColourCubicHomogeneous.colourCubicHom X z w
 
 /-- Power sum of five coordinates. -/
 def p (x₀ x₁ x₂ x₃ x₄ : R) (n : ℕ) : R := x₀^n + x₁^n + x₂^n + x₃^n + x₄^n
@@ -42,7 +44,7 @@ theorem bring_h3_certificate (x₀ x₁ x₂ x₃ x₄ : R) :
           + x₂^2 - x₂*x₃ - x₂*x₄ - 2*x₃^2 + 2*x₃*x₄ - 2*x₄^2) * p x₀ x₁ x₂ x₃ x₄ 1
       + 3 * (x₀ + x₁ + x₂) * p x₀ x₁ x₂ x₃ x₄ 2
       + 2 * p x₀ x₁ x₂ x₃ x₄ 3 := by
-  unfold h3 p; ring
+  unfold h3 ColourCubicHomogeneous.colourCubicHom p; ring
 
 /-- On Bring's curve, the colour cubic holds in homogeneous form. -/
 theorem h3_of_bring {K : Type*} [Field K] [CharZero K] {x₀ x₁ x₂ x₃ x₄ : K}
@@ -56,7 +58,7 @@ theorem h3_of_bring {K : Type*} [Field K] [CharZero K] {x₀ x₁ x₂ x₃ x₄
 /-- Dehomogenisation: `h₃(X, z, 1)` is the corpus colour cubic. -/
 theorem h3_dehom (X z : R) :
     h3 X z 1 = X^3 + (z+1)*X^2 + (z^2+z+1)*X + (z^3+z^2+z+1) := by
-  unfold h3; ring
+  unfold h3 ColourCubicHomogeneous.colourCubicHom; ring
 
 end Bring
 
