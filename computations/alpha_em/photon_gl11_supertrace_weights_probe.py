@@ -49,6 +49,16 @@ sectors while removing the mixed ones. The selection has to come from the
 weight projector onto the extremal sectors, which is a Cartan element of
 U_q(gl(1|1)) (it commutes with H_3(q)), not from the Hecke side:
 tau(x) = str(P_ext x).
+
+Which Cartan insertions give (1, 0, -1)? (added 2026-11-22.) Let H act on
+V^{(x)3} by E11 - E22 (value 3 - 2k on sector k) and insert a diagonal f(H)
+into the supertrace. The weights are exactly
+  (f(3) - f(1), f(-1) - f(1), f(-1) - f(-3)).
+So str(f(H) x) is proportional to (1, 0, -1) iff f(1) = f(-1) and
+f(3) = f(-3) (f even in H on V^{(x)3}) with f(3) != f(1). K = q^H alone
+fails; K + K^-1 gives [2]_q h^2 (1, 0, -1), K^2 + K^-2 and H^2 also work.
+The direction is forced by evenness under K -> K^-1; the overall scale
+f(3) - f(1) is not fixed by this.
 """
 import sympy as sp
 
@@ -170,6 +180,31 @@ def main():
         checks.append((f'sector k={k} multiplicities {ex}', got == ex))
     checks.append(('mixed sectors contain every block (faithful)',
                    all(mult[1][i] + mult[2][i] > 0 for i in range(3))))
+    # Cartan insertions f(H), H = E11 - E22.
+    hval = [sum(1 if bit == 0 else -1 for bit in bb)
+            for bb in itertools.product([0, 1], repeat=3)]
+    gsign = sp.diag(*[(-1) ** sum(bb) for bb in itertools.product([0, 1], repeat=3)])
+
+    def ins_weights(fdiag):
+        F = sp.diag(*fdiag)
+        vals = [sp.simplify((gsign * F * word(w, s1, s2, sp.eye(8))).trace())
+                for w in words]
+        sol = sp.solve([sum(c[i] * W[i] for i in range(3)) - v
+                        for c, v in zip(chars, vals)], W, dict=True)
+        return [sp.simplify(sol[0][x]) for x in W] if len(sol) == 1 else None
+    fv = sp.symbols('f3 f1 fm1 fm3')
+    fmap = {3: fv[0], 1: fv[1], -1: fv[2], -3: fv[3]}
+    gen = ins_weights([fmap[x] for x in hval])
+    checks.append(('general f(H) weights (f3-f1, fm1-f1, fm1-fm3)',
+                   gen is not None and all(sp.simplify(g - e) == 0 for g, e in
+                   zip(gen, [fv[0] - fv[1], fv[2] - fv[1], fv[2] - fv[3]]))))
+    kk = ins_weights([q ** x + q ** -x for x in hval])
+    print(f'K + K^-1 weights {[sp.factor(x) for x in kk]}')
+    checks.append(('K + K^-1 gives [2]_q h^2 (1,0,-1)',
+                   all(sp.simplify(g - (q + 1 / q) * h ** 2 * e) == 0
+                       for g, e in zip(kk, [1, 0, -1]))))
+    k1 = ins_weights([q ** x for x in hval])
+    checks.append(('K alone has a nonzero hook weight', sp.simplify(k1[1]) != 0))
     for n, c in checks:
         print(('PASS ' if c else 'FAIL ') + n)
     return 0 if all(c for _, c in checks) else 1
