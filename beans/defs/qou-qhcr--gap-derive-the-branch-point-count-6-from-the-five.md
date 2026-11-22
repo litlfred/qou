@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-21T07:40:00Z
+updated_at: 2026-11-22T22:00:00Z
 parent: qou-6qbv
 ---
 
@@ -544,3 +544,8 @@ The 6 is still not derived. W9 is parked.
 G2 and G3 are open research. Not attempted: no derivation route was found that does not read the answer off Bring, and choosing one because it gives 4 is fitting.
 
 The 6 is still not derived; bean stays open.
+
+
+## 2026-11-22 — wave-2 sibling bring-riemann-gerbes (session_01Qmmkt7Jw9nSDCzSdsd8hLX)
+
+The M2 chart step is now hypothesis-free for the stabiliser statement: branch `claude/riemann-identity-theorem-2026-11-22` (on top of PR #8750) proves the identity theorem on a connected Riemann surface (GAP qou-4xht) and `IdentityTheorem.isCyclic_stabilizer`: point stabilisers of a finite faithful holomorphic action are cyclic, from `MDifferentiable` alone, sorry-free, standard axioms. So `hcyc` of the genus-4 chain follows from holomorphy + faithfulness. Still open for χ = −6: the equivariant triangulation (qou-yslf / qou-m3tr step 3) and G2/G3 (qou-khmu, qou-w8es). The 6 is still not derived; this bean stays open.
