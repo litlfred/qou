@@ -221,3 +221,7 @@ Bloch-torsion side belongs to the sibling thread "Work dilogarithm and Bloch bea
 ## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
 
 **Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.
+
+## 2026-11-22 — port of the #8193 Lean (dilog/Bloch thread)
+
+The `FiveTwoCyclotomicBloch.lean` additions of #8193 (unit inverses, Vieta norms, Route 8 identities) are ported verbatim to branch `claude/archimedean-limit-endpoints-2026-11-22` and check with lean-direct on current main. #8193's `Hecke/Staircase.lean` part still fails and belongs with the Hecke work; the probe and witness were not ported. Still open: the three level-7 ladder numerators (17, 5, −1). Bean stays open.
