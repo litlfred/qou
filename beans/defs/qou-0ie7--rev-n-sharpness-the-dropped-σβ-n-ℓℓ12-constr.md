@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3e6w
 ---
 
@@ -115,3 +115,6 @@ decide. The two are siblings, not sequential.
 
 ## 2026-11-22: landed part (session_01Qmmkt8qREoAzcE1YKVx5nz)
 six_mul_hminClosed and hminClosed_step_continuity are on main (HookSumRowTangentBound.lean:257, :270), via commit 6d4a4df62a "port #8263 (Lean only)"; #8263 itself was closed unmerged. The sharpness question (is the 3/4 exponent sharp?) is untouched. Status unchanged.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES as mathematics (REV_n / M_n combinatorics, proton-pinned eps_m, no z, no word, no colour; hok7's 2026-09 discipline check already verified this cone). Its priority follows the NEEDS-OWNER verdict on qou-3e6w: the arc's stated purpose (q-Borel gate for qou-v2om) is stale because that resummation is already a scope-(a) negative. Open; not closed.

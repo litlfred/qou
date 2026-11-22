@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-11T08:20:00Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3e6w
 ---
 
@@ -35,3 +35,6 @@ is cited, not formalised.
 
 ## 2026-11-22: where the work is (session_01Qmmkt8qREoAzcE1YKVx5nz)
 The Round 47 Lean (rowBracket, frame_tail_never_helps, frame_tail_move_lt_zero, …) is NOT on main: main's XbotBottomEdgeLemmas.lean is still the 2026-10-11 version (commit 9bab779ee9; tail_never_helps / tail_move_lt_zero still take hrow as a hypothesis). It sits in open PR #8153 (labels ready-to-merge, release; a 6-bean batch also carrying qou-ckyw/x3u6/q621/amf8/g937). Merging is the coordinator's call; not re-verified here. Status unchanged.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES as mathematics (REV_n / M_n combinatorics, proton-pinned eps_m, no z, no word, no colour; hok7's 2026-09 discipline check already verified this cone). Its priority follows the NEEDS-OWNER verdict on qou-3e6w: the arc's stated purpose (q-Borel gate for qou-v2om) is stale because that resummation is already a scope-(a) negative. Open; not closed.

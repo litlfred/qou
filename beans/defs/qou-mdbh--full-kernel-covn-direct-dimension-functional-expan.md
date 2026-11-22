@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T16:37:35Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-m6dn
 ---
 
@@ -25,3 +25,6 @@ No physics premise in this bean is affected by the rulings in docs/coordination/
 
 ## 2026-11-22: cross-ref (session_01Qmmkt8qREoAzcE1YKVx5nz)
 The one-step dim³ branching recursion is recorded on qou-x631 (2026-11-22 note): it is tautological, and it gives the exact form D(k+1) = ((k+1)³/3)·Σ_{λ⊢k} (f^λ)³ Cov_{p_λ}(p, c²). That form is no easier: pointwise false, and its sign is again at fluctuation order. Status unchanged.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES. dim^2 -> dim^3 obstruction stated directly; pure combinatorics.

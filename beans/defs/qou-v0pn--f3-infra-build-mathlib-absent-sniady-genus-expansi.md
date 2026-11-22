@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: b9cj
 ---
 
@@ -23,3 +23,6 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8272, closed o
 
 ## 2026-11-22: premise check (session_01Qmmkt8qREoAzcE1YKVx5nz)
 The Round 78 entry cites PR #8272, which is not merged, and its Lean file (QOU/QBeta/FiveTwoAdjointTorsionAndSniadyGenusCovarianceBrick.lean) is absent on main 3c4c98fcc. Do not build on it. Note also that the route this infrastructure serves (Śniady genus expansion for the kernel) was eliminated as route #11 (docs/audits/2026-07-25-covariance-kernel-A5-genus-eliminated-A4-lean.md; sibling qou-t5m1 scrapped 2026-11-22). Left todo, not scrapped: the machinery could still serve the k5r5 / M_1 work, which lives inside A. Owner's call.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: RESCOPE (unchanged from the earlier note today). The kernel route it was built for is eliminated (route #11). Corrected question: build the genus machinery only if qou-k5r5 / qou-h315 (M_1 > 0, which lives inside A) needs it. Owner may scrap; not scrapped here.

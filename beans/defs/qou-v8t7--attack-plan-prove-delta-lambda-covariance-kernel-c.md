@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T03:29:34Z
-updated_at: 2026-10-04T15:10:45Z
+updated_at: 2026-11-22T21:40:00Z
 parent: b9cj
 ---
 
@@ -37,3 +37,6 @@ Okounkov-Olshanski 9608020. lean-lsp available (A4). arXiv-search MCP network-bl
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: RESCOPE. The target is x631 and still applies. The plan's child A5 (Sniady genus expansion) was eliminated as route #11 on 2026-07-25 (docs/audits/2026-07-25-covariance-kernel-A5-genus-eliminated-A4-lean.md; qou-t5m1 scrapped), and the recursion route was eliminated at scope (a) on 2026-11-22 (note on qou-x631). Corrected plan: legs A2 (qou-ogrk) and A3 (qou-4wl1) only, plus A1/DPP (qou-g0n2). Left todo.

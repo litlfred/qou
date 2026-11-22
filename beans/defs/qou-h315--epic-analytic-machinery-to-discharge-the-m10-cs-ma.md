@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T01:33:54Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-m6dn
 ---
 
@@ -44,3 +44,6 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 
 ## 2026-11-22: premise check (session_01Qmmkt8qREoAzcE1YKVx5nz)
 The newest Round entries here cite a PR that is open and unmerged (#8483); its Lean is not on main 3c4c98fcc. Do not build on it until merged. Status unchanged.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES. CS-margin machinery for M_1 > 0; reduction skeleton YoungDiagramKernelCSMargin.m1_pos_all_of_cs_inputs is on main. PR #8483 (open, ready-to-merge label, mergeable_state dirty) is not on main; do not cite it until merged.

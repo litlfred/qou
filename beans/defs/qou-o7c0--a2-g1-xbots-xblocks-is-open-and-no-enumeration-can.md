@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:49Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3e6w
 ---
 
@@ -85,3 +85,6 @@ machinery, pointed at the inequality instead of at the window.  Which is why thi
 
 ## 2026-11-22: premise check (session_01Qmmkt8qREoAzcE1YKVx5nz)
 The newest Round entries here cite a PR that is open and unmerged (#8393); its Lean is not on main 3c4c98fcc. Do not build on it until merged. Status unchanged.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES as mathematics (REV_n / M_n combinatorics, proton-pinned eps_m, no z, no word, no colour; hok7's 2026-09 discipline check already verified this cone). Its priority follows the NEEDS-OWNER verdict on qou-3e6w: the arc's stated purpose (q-Borel gate for qou-v2om) is stale because that resummation is already a scope-(a) negative. Open; not closed.

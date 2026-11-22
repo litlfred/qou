@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T19:55:42Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: b9cj
 ---
 
@@ -160,3 +160,6 @@ Two checks on whether this form helps:
 - No first-order (limit-shape) sign. A semicircle heuristic (p_□ ∝ density) would give E_{p²}[c²] ≈ (4/5)k, a sign at leading order. Measured: E₃[Q]/E₃[s]/k = −0.085, −0.071, −0.058, −0.061 at k = 10, 14, 18, 22, decaying like k^{-1/2}, which is the fluctuation scale again. The transition-measure atoms are close to equal mass along the boundary, so the p²-tilt is a second-order effect, the same wall as every route in the epic synthesis.
 
 Not formalised (it eliminates a route; formalising the co-transition identity is a sizeable Young-diagram build). Probe script kept outside the repo; rerun is a 60-line exact enumeration.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES. Premises: Plancherel measure f^2/k!, contents c, the 3-cycle character. No anchor, no z, no word, no colour. Checked against owner-rulings.md rows 2026-11-15..22 (gamma-gamma rule, convention D, b = -qX on colour singlets, strand colour, photon norm, block U(1)_em charge, jet-prolongation Frobenius drop): none touches it. Consumer still on main: WstdSuperExpBound.lean and DeltaLambdaDReduction.lean (D_of_T3_nonpos); the 2026-11-22 jet-prolongation ruling (row 104) is about T(A) in prop:jet-prolongation, not the GAP-A-3 tower weight. Open conjecture; stays open (rule 13a).

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-11-21T14:00:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-m6dn
 ---
 
@@ -60,3 +60,6 @@ Synthesis (scope a, method): log lies in two natural test-function classes and A
 - increasing concave φ: fails from n = 13 (this probe);
 - Bernstein φ (φ' completely monotone): fails from n = 29 (the pointwise P(e^{-s}) ≤ 0 falsification, 2026-07-25 audit).
 Plus: moment signs alone cannot give it (main, YoungDiagramKernelA2MomentSkeleton.lean). So a proof of A2 must use structure of log beyond increasing concavity, and for n ≥ 29 beyond the Bernstein property (QA correction on #8882: for 13 ≤ n ≤ 28 the Bernstein route is not excluded). Candidate: the exact Frullani integral with the Plancherel moment identities. A2 remains open. Merged as PR #8882; QA independently reproduced the result, with the explicit witness Σ ν min(v,4) = −229247/544320 at n = 13. The M_2 and A2>0 validation was run out of tree (not in the committed probe).
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES. Pure Plancherel combinatorics (Cov(ln f, omega3)); no ruling of 2026-11-15..22 touches a premise. Live sufficient leg of qou-x631.

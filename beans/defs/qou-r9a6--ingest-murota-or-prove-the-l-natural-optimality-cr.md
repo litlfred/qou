@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-10-11T08:35:32Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3e6w
 ---
 
@@ -119,3 +119,6 @@ Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-fi
 
 ## 2026-11-22: completed (wave-2 covariance-kernel-revn, session_01Qmmkt8qREoAzcE1YKVx5nz)
 The bean asks to ingest Murota OR prove the L-natural optimality criterion. The second is on main: folio/quantum-observable-universe/lean/QOU/BraidKnot/LNaturalOptimality.lean, global_of_local (commit 808d3c76ef: local ±χ_S optimality ⇒ global, from discrete midpoint concavity, by strong induction on coordinate distance) and boxDiffDomain_midpoint_closed / global_of_local_boxDiffDomain (commit 704fca1db0, PR #8044 merged). Read: the proof is a genuine induction, not a restated hypothesis. Murota is still not in library/; ingesting it is optional now and can be a new bean if the owner wants the citation as well.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: ALREADY-DONE (completed earlier today: L-natural optimality is proved on main in LNaturalOptimality.global_of_local). No physics premise.

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:49Z
-updated_at: 2026-11-15T22:20:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3e6w
 ---
 
@@ -350,3 +350,6 @@ Per owner ruling `Q-3E6W-2 = 1` (session `session_012EE90758AE4945AC814D43`), cr
 - **(c) Explicit rounded water-fill `q_i = max(w_i, c_i)` admissibility:** `roundedWaterfill`, `roundedWaterfill_monotone`, `shiftDiff_roundedWaterfill_nonpos`, `shiftDiff_le_of_roundedWaterfill`, `roundedWaterfill_ge_floor`, `roundedWaterfill_le_of_lt`, and `roundedWaterfill_pythagoras` — discharges both order hypotheses of `RoundedWaterfillExchange.rounded_pythagoras` from `w ≤ t` and `a ≤ c ≤ a + 1`.
 - **(d) Two-sided `O(1)` excess assembly:** `coord_tradeoff_sum_le`, `rev_upper_bound_assembly`, `rev_lower_bound_assembly`, and `rev_two_sided_excess_bracket` — combines `int_tradeoff` + `extra_rows_tradeoff` into `Ψ ≤ A√(2n) + K₂` and the row-deleted staircase decomposition (`rowDeleted_hookSum_ge` + `rem ≥ 0` + `F(n) ≤ C`) into `Ψ(λ_{k,r}) ≥ A√(2n) − K₃`, yielding `−K₃ ≤ M_n − A√(2n) ≤ K₂`.
 - **Bean stays `in-progress` (not closed):** convergence `e_n → κ` and concrete series evaluation past the archimedean wall remain open.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES as mathematics (REV_n / M_n combinatorics, proton-pinned eps_m, no z, no word, no colour; hok7's 2026-09 discipline check already verified this cone). Its priority follows the NEEDS-OWNER verdict on qou-3e6w: the arc's stated purpose (q-Borel gate for qou-v2om) is stale because that resummation is already a scope-(a) negative. Open; not closed.

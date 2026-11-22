@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
-updated_at: 2026-10-12T19:30:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-x631
 ---
 
@@ -598,3 +598,6 @@ Status set back to `todo` per the ruling.
 
 ## Round 71 Update (PR #8483)
 - De-vacuified and extended in PR `litlfred/qou#8483` (`claude/round71-devacuify-6qbv-b9cj`, HEAD `ccf4b5dbe70005deb5de8ba21a4dcf809c5178db`, C1 `7580772c921dba1792c7df67cfdeb7db65a5b8f8`), compiled with Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all 6 directory-mode static audit scripts) and verified with 80-dps `mpmath` witness `computations/probes/round71-devacuify-6qbv-b9cj.witness.json`.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: RESCOPE. Decision 1 (ADOPT WENZL, 2026-09-13) stands. But all three sign tables (deuteron/triton/He4, both arms) come from atom_braid_word_3A(1,1)/(1,2)/(2,2) (deuteron_magnus_omega2_sign_probe.py:27, triton_...:28, he4_...:54), whose single-crossing interface letters were superseded by the gamma-gamma rule on 2026-11-15; the re-scope audit names exactly this sign map (docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md line 17). So 'no sign change at the production weight in A = 2,3,4' is a record of the old word, not a current result. Corrected question: redo P_total (Wenzl, faithful-window scan per qou-uir6) on a gamma-gamma-selected word per nucleus once #7876 lands. Today's colour rulings (b = -qX on singlets) leave flavour trace values unchanged, so they do not add a further correction. The surviving word-independent statement is sign-indefiniteness at A=2 (commutator trace pairing). Status left as is; the convention-D/faithful-window part belongs to the qou-uir6 thread.

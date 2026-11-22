@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:01:20Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-10v9
 blocking:
     - qou-v2om
@@ -95,3 +95,6 @@ it, splitting on an asserted banner rather than a line number, so the object und
 
 ## 2026-11-22: premise check (session_01Qmmkt8qREoAzcE1YKVx5nz)
 The newest Round entries here cite a PR that is open and unmerged (#8393); its Lean is not on main 3c4c98fcc. Do not build on it until merged. Status unchanged.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: NEEDS-OWNER. The mathematics (REV_n = O(sqrt n), M_n upper bound) is anchor-free except eps_m at the proton q0, and uses no z, word or colour, so no ruling invalidates it. What is stale is its stated purpose, 'the deuteron-wall q-Borel gate' with blocking edge to qou-v2om: (1) the q-Borel-Laplace resummation of Z_n(q0) was already run and is a scope-(a) negative (best 2.745 % of B_D, reaching B_D only through the Borel singularity, a fit; recorded in qou-hok7, correction of 2026-09-07); an M_n bound can only certify that resummation, not enlarge it. (2) qou-v2om's body does not mention qou-hok7, qou-3e6w, REV_n or the wall; the edge exists only on this side. (3) v2om's current deuteron work is the log-bond B_sym route. So the arc gates nothing on the current derivation chain. Options for the owner: keep it as standalone combinatorics at low priority and drop the blocking edge (recommended); keep it as is; or park it with a reminder. Default if no answer: nothing changes. Open conjecture; not closed.

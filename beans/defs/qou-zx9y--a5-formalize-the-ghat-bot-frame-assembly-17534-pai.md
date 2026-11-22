@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:50Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3e6w
 ---
 
@@ -70,3 +70,6 @@ consuming claim.**
 
 ## 2026-11-22: main debt discharged on main; one small item left (session_01Qmmkt8qREoAzcE1YKVx5nz)
 The open debt named above (the Ghat_bot per-row assembly: one-body slope + rows below − rows above) is proved on main: SearchCoercivity.lean ghatBot_frame_bound and sum_ghatBot_frame_bound (commit 59133917a9, PR #8000 merged), composed into SupergradientCertificate.sup_ghatBot_frame_certificate (commit 704fca1db0, PR #8044 merged). The negative "rows above" block is kept, as asked. Caveat for whoever closes this: sum_ghatBot_frame_bound sums single-row bounds with every other row at b0, so it does not bound interactions between two simultaneously displaced rows; check that the consuming claim only needs single-row moves. Still not in Lean: the geometric tail bound on cap_sum (_TAIL_C), the "second item, smaller" (grep of QOU/BraidKnot finds no counterpart). Status unchanged.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: APPLIES as mathematics (REV_n / M_n combinatorics, proton-pinned eps_m, no z, no word, no colour; hok7's 2026-09 discipline check already verified this cone). Its priority follows the NEEDS-OWNER verdict on qou-3e6w: the arc's stated purpose (q-Borel gate for qou-v2om) is stale because that resummation is already a scope-(a) negative. Open; not closed.

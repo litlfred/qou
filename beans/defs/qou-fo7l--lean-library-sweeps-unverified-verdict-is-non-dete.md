@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-10-10T13:04:28Z
-updated_at: 2026-11-22T21:15:00Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-3e6w
 ---
 
@@ -81,3 +81,6 @@ link or the path order, and the fix is in `lean-shadow-verify.sh` /
 
 ## 2026-11-22: completed (wave-2 covariance-kernel-revn, session_01Qmmkt8qREoAzcE1YKVx5nz)
 Evidence: PR #8000 merged; commit 59133917a9 on main ("deterministic olean roots and Ghat_bot frame assembly") changes scripts/lean-library-sweep.py find_oleans() (line 135 on main 3c4c98fcc) to choose by non-empty .olean count with sorted roots and sorted missing-module reporting. The bean's own 2026-11-15 entry records 5/5 identical runs after the fix. Not re-run here (no Lean cache restored in this session).
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: ALREADY-DONE (completed earlier today with evidence). Tooling bean; no math premise.

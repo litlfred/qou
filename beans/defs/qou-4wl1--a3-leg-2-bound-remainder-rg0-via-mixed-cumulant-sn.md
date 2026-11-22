@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-10-04T15:10:48Z
+updated_at: 2026-11-22T21:40:00Z
 parent: qou-m6dn
 ---
 
@@ -28,3 +28,6 @@ Audit: 2026-07-25-covariance-kernel-complete-monotonicity-target.md.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
+Verdict: RESCOPE. The target |R| < |g'(0)| still applies. The stated next step (Sniady genus grading as an effective bound on mixed cumulants kappa(ln f; omega3)) rests on the method eliminated as route #11: the genus grading lives on the algebra A of polynomial functions on Young diagrams, and ln f is no more in A than f is (docs/audits/2026-07-25-covariance-kernel-A5-genus-eliminated-A4-lean.md). Corrected question: bound the remainder by a route that does not expand ln f in A, e.g. Kerov-CLT with an explicit error, or the DPP kernel of qou-g0n2. Left todo; no live route yet.
