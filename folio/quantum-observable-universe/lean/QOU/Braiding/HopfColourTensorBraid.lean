@@ -24,9 +24,12 @@ numerical input:
   the recovered generator `−q·X = b`, has the same Ocneanu weights as the flavour trace, and
   under convention D its `(1³)` weight is zero.
 
-**Not proved here.** That Jimbo's `Ř` for `gl₃` acts on `ε` by `−qi`, and that the colour
-`U_q(gl₃)` action commutes with `Ř_c` (both standard: Jimbo 1986, Kassel §VIII). These are the
-two citations the colour-singlet statement rests on.
+**Inputs, now proved concretely** in `QOU.Braiding.JimboGl3Singlet` (over any field, `q ≠ 0`):
+Jimbo's `Ř` for `gl₃` acts on `ε_q` by `−q⁻¹` in both positions (`R12_eps`, `R23_eps`); `Ř`
+commutes with the coproducts of the `U_q(gl₃)` generators (`comm_E`, `comm_F`, `comm_L`); `ε_q`
+spans the `q`-determinant line (`E_eps`, `F_eps`, `L_eps`); and when `q² + 1 ≠ 0` that line is the
+whole joint `−q⁻¹`-eigenspace (`singlet_unique`). So the hypothesis "`a` acts as `−qi`" in
+`singlet_hecke` holds on the colour singlet with `qi = q⁻¹`; it is no longer a citation.
 -/
 
 namespace QOU.Braiding.HopfColourTensorBraid
