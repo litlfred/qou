@@ -149,10 +149,64 @@ lists of P (exact, recorded in the witness), and the root values (sympy isolatin
 Reproduce: `python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_probe.py`
 (about 20 min).
 
+## 6. ⁴He all-pairs, exactly in q: the A = 3 pattern does not carry over
+
+Probe `he4_all_pairs_exact_probe.py`, engine `hecke_flint.py`, witness
+`he4-all-pairs-exact.witness.json`, preregistered as addendum 2 (P8–P10). The routes and
+the order p p n n are those of `he4_gg_all_pairs`. By `towerTr_disjoint` (proved) the first
+nucleon factors out, so each cell is a 10-strand trace, exact in ℚ(q).
+
+**Controls.**
+
+- P8: all 9 cells reproduce the mpmath rows of `he4-gg-all-pairs.witness.json` to below 1e−28.
+  The chain gives −0.862 keV.
+- P9: at A = 3, tr N₀ · tr(tail) equals the full trace exactly in all 12 cells.
+
+The first run failed P8 on 6 of 8 cells. It placed each bond after its own block j, while
+the reference places it after the running maximum of j along the route. The preregistration
+records the fix, and the rows below are from the corrected run.
+
+**Structure.** In every cell `ratio − 1 = tr_atom/tr_free − 1` has the factor (q − 1)⁴(q + 1)⁴,
+so it vanishes to order y⁴ at q = 1 (y = q² − 1), with leading coefficient +3/8. All the
+other small factors are positive for q > 1. The sign is carried by one big factor per cell.
+
+| cell | big factor degree in q | sign changes in y | crossings q* > 1 | B_diff at the pin (keV) |
+|---|---:|---:|---|---:|
+| γγ chain (control) | 46 | 0 | none | −0.862 |
+| D+D a, over | 88 | 4 | **1.5394, 1.6880** | −1.607 |
+| D+D a, under | 84 | 3 | 1.9755 | −1.642 |
+| D+D b, over | 90 | 2 | **none** | −1.607 |
+| D+D b, under | 84 | 3 | 1.9271 | −1.642 |
+| ³H+p, over | 84 | 3 | 1.5486 | −1.606 |
+| ³H+p, under | 78 | 1 | 1.7474 | −1.643 |
+| ³He+n, over | 90 | 1 | 1.6482 | −1.607 |
+| ³He+n, under | 84 | 1 | 1.6275 | −1.642 |
+
+Each crossing is isolated in an exact rational interval of width 1e−22, and each is a simple root.
+
+**What this says.**
+
+1. Every cell unbinds near q = 1, since ratio − 1 is positive there. Every cell also unbinds at
+   the proton pin q₀ ≈ 1.110, by about 1.6 keV (B_log about −18 keV), against AME 28 296 keV
+   (comparison only).
+2. Six cells have exactly one crossing, as at A = 3, so they bind for q above q*.
+3. D+D a over has two crossings. It binds only on the window 1.539 < q < 1.688 and unbinds
+   again above it.
+4. D+D b over never binds for q > 1. Its factor has two sign changes in y but no positive root
+   (Sturm count 0).
+5. So the A = 3 pattern of one crossing per cell is **not** structural at A = 4. The single
+   crossing theorem (`single_crossing`, Lean) applies only where the y-coefficients change sign
+   once. Here they change sign 1 to 4 times.
+6. Every crossing lies at q ≥ 1.539, far above q₀. Within this model no cell binds at the pin.
+
+Nothing here is adopted. It is a scope-(a) negative: the γγ all-pairs bond, alone, under the
+four formation routes, does not bind ⁴He at q₀.
+
 ## Reproduce
 
 ```
 python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a2_a3_probe.py
 python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_probe.py
+python3 -u computations/probes/light_nuclei_a2_a3/he4_all_pairs_exact_probe.py  # about 6 min, needs python-flint
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```

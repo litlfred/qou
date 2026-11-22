@@ -92,3 +92,11 @@ runs on 10 strands.
   A = 3 pattern (exactly one crossing) is **not** assumed.
 
 No fit, no choice of route or variant, and AME is comparison only.
+
+**Note added after the first run (2026-11-22), before any result was used.** The first run
+placed each bond after block j of that bond. P8 then failed on 6 of 8 cells (³He+n and the
+chain passed). `he4_gg_all_pairs.build` places each bond after the running maximum of j over
+the route so far, and that is what "in route order" above was meant to copy. The engine was
+changed to the running maximum and the run repeated. The per-bond placement makes ³H+p and
+³He+n the same word in the order p p n n; its rows are kept in the audit as a record, not as
+a result.
