@@ -33,6 +33,8 @@ Failure modes classified:
                                  declare the named identifier
   - `grep_no_match`            — neither (1) nor (2) hit; full-repo
                                  grep also returns 0 hits
+  - `grep_other_namespace`     — (1) and (2) missed, and the grep found
+                                 the short name only in another namespace
   - `ok`                       — at least one resolution route hit
 
 Note: this is a STATIC text check; it does not run `lake build` or
@@ -119,6 +121,7 @@ KIND_LEGACY_RX = re.compile(r'kind:\s*"([a-z]+)"')
 DECL_KEYWORDS = (
     "def", "theorem", "lemma", "proposition", "corollary",
     "class", "structure", "instance", "axiom", "abbrev",
+    "inductive", "opaque",
 )
 
 
@@ -145,6 +148,69 @@ def _decl_rx(decl_path: str) -> re.Pattern:
         rf'(?:{kws})\s+(?:{alt})\b',
         re.MULTILINE,
     )
+
+
+class _DeclOrFieldMatcher:
+    """`_decl_rx` plus structure/class fields: a ref `...Parent.field`
+    also resolves when the file declares `structure Parent` or
+    `class Parent` and, below it, an indented line `field :`. Lean names
+    the projection `Parent.field`, so the ref is a real declaration even
+    though no `def`/`theorem` line carries it."""
+
+    def __init__(self, decl_path: str):
+        self._rx = _decl_rx(decl_path)
+        parts = decl_path.split(".")
+        self._field_rx = None
+        if len(parts) >= 2:
+            parent, field = re.escape(parts[-2]), re.escape(parts[-1])
+            self._field_rx = re.compile(
+                rf'^\s*(?:@\[[^\]]*\]\s*)*(?:structure|class)\s+{parent}\b'
+                rf'.*?^[ \t]+{field}\s*:',
+                re.MULTILINE | re.DOTALL,
+            )
+
+    def search(self, text: str):
+        return self._rx.search(text) or (
+            self._field_rx.search(text) if self._field_rx else None)
+
+
+_BLOCK_COMMENT_RX = re.compile(r"/-.*?-/", re.DOTALL)
+_LINE_COMMENT_RX = re.compile(r"--[^\n]*")
+_SCOPE_OR_DECL_RX = re.compile(
+    r"^[ \t]*(?:(namespace|section|end)\b[ \t]*([^\s]*)"
+    r"|(?:@\[[^\]]*\][ \t]*)*"
+    r"(?:(?:noncomputable|private|protected|partial|unsafe)\s+)*"
+    r"(?:" + "|".join(DECL_KEYWORDS) + r")\s+([A-Za-z_][A-Za-z0-9_'.!?]*))",
+    re.MULTILINE,
+)
+
+
+def _qualified_names(text: str) -> set[str]:
+    """Fully qualified name of every declaration in a .lean file: the
+    enclosing `namespace` blocks joined to the spelled name. `section`
+    opens no namespace; `_root_.` discards the enclosing one. Comments
+    are removed first (nested block comments are not handled; none of
+    the declarations this audit reads sits inside one)."""
+    text = _LINE_COMMENT_RX.sub("", _BLOCK_COMMENT_RX.sub("", text))
+    stack: list[tuple[bool, str]] = []
+    out: set[str] = set()
+    for m in _SCOPE_OR_DECL_RX.finditer(text):
+        kw, scope_name, decl = m.group(1), m.group(2) or "", m.group(3)
+        if kw == "namespace":
+            stack.append((True, scope_name))
+        elif kw == "section":
+            stack.append((False, scope_name))
+        elif kw == "end":
+            for i in range(len(stack) - 1, -1, -1):
+                if stack[i][1] == scope_name:
+                    del stack[i:]
+                    break
+        elif decl:
+            if decl.startswith("_root_."):
+                out.add(decl[len("_root_."):])
+            else:
+                out.add(".".join([n for is_ns, n in stack if is_ns and n] + [decl]))
+    return out
 
 
 def _classify_one(ts_path: Path) -> dict[str, Any]:
@@ -181,7 +247,7 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
     # The sibling-decl and grep-fallback regexes both accept any
     # suffix of the dotted decl_path (handles `namespace QOU` +
     # `theorem QExponential.unique` style declarations).
-    decl_rx = _decl_rx(decl_path)
+    decl_rx = _DeclOrFieldMatcher(decl_path)
 
     # (1) Sibling lookup — same directory, same basename, .lean
     # extension.  The sibling root name is the .ts basename (e.g.
@@ -233,6 +299,7 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
     # catch `theorem Foo.bar` declared inside `namespace QOU`.
     grep_hit = False
     grep_hit_under_lake_root = False
+    grep_hit_other_namespace = False
     grep_suffixes = ['.'.join(decl_path.split(".")[i:])
                      for i in range(len(decl_path.split(".")))]
     grep_suffixes.sort(key=len, reverse=True)
@@ -253,7 +320,14 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
         if rg.returncode == 0 and rg.stdout.strip():
             grep_hit = True
             hit_paths = rg.stdout.strip().splitlines()
-            row["grep_hits"] = hit_paths[:5]
+            # Repo-relative, so the witness does not record the
+            # checkout location (the 2026-06-02 run carried
+            # /home/runner/work/qou/qou/... in every row).
+            row["grep_hits"] = [
+                str(Path(h).resolve().relative_to(REPO_ROOT))
+                if Path(h).resolve().is_relative_to(REPO_ROOT) else h
+                for h in hit_paths[:5]
+            ]
             # If grep finds the decl under the package's Lake root
             # (and the file is part of the Lake build), the URI is
             # resolvable — the lean.ref's purpose is to identify the
@@ -261,11 +335,24 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
             # the common CamelCase-file-with-snake_case-leaf pattern
             # (e.g. `QOU.MassEndomorphism.delta_max_uniform_bound`
             # actually living in `QOU/MassEndomorphism/DeltaMaxUniformBound.lean`).
+            # The grep matches any dotted SUFFIX of the ref, down to the
+            # bare short name, in any namespace. `QOU.q_jacobiator` matched
+            # `QOU.Elaboration.q_jacobiator` that way and was counted `ok`
+            # (2026-11-22, qou-5n04). A grep hit now resolves only if that
+            # file declares the ref's fully qualified name; a hit that does
+            # not is `grep_other_namespace`.
             lake_root_abs = str((REPO_ROOT / pkg_meta["lakeRoot"]).resolve())
             for hp in hit_paths:
-                if str(Path(hp).resolve()).startswith(lake_root_abs):
+                if not str(Path(hp).resolve()).startswith(lake_root_abs):
+                    continue
+                try:
+                    hp_text = Path(hp).read_text(encoding="utf-8")
+                except (OSError, UnicodeDecodeError):
+                    continue
+                if decl_path in _qualified_names(hp_text):
                     grep_hit_under_lake_root = True
                     break
+                grep_hit_other_namespace = True
     except (subprocess.SubprocessError, OSError):
         pass
     row["grep_hit"] = grep_hit
@@ -286,6 +373,10 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
         # the decl IS reachable.  Lake build will resolve it.
         row["result"] = "ok"
         row["resolved_via"] = "grep_under_lake_root"
+    elif grep_hit_other_namespace:
+        # A lake-tree file declares the short name, but in another
+        # namespace: the ref names a declaration that does not exist.
+        row["result"] = "grep_other_namespace"
     elif sibling_exists and not sibling_declares:
         row["result"] = "sibling_no_decl"
     elif kind == "definition" and not sibling_exists:
@@ -358,17 +449,19 @@ def main() -> int:
         .add_data("rows", rows)
         .add_assertion(
             name="no_unregistered_package_prefixes",
-            computed=1.0 if "unregistered_package" not in buckets else 0.0,
-            expected=1.0, tolerance=0.0,
+            # Strings keep these exact values out of float64 (the
+            # drained convention, qou-t0rf; see WitnessBuilder.add_assertion).
+            computed="1" if "unregistered_package" not in buckets else "0",
+            expected="1", tolerance="0",
             unit="boolean",
             source="Every lean.ref prefix must appear in LEAN_PACKAGES "
                    "(folio-assistant/cat-harness/schemas/lean-packages.ts).",
         )
         .add_assertion(
             name="ok_count_matches_total_minus_failures",
-            computed=float(len(buckets.get("ok", []))),
-            expected=float(len(rows)),
-            tolerance=0.0,
+            computed=str(len(buckets.get("ok", []))),
+            expected=str(len(rows)),
+            tolerance="0",
             unit="count (gates only at full closure)",
             source="Closure gate: when this passes, every content-block "
                    "lean.ref resolves to an actual declaration.  Currently "

@@ -747,6 +747,61 @@ theorem below_spoly_inc (ic : InclusionComposition G k ord) :
     · exact absurd h hmw
     · exact h
 
+variable (ord sys) in
+/-- **Compositions trivial modulo their word** (Shirshov's form of the
+    composition condition). Every overlap S-polynomial lies in the `k`-span of
+    the `a·rel·b` whose word is strictly below the ambient word of the overlap,
+    and every inclusion S-polynomial in the span below the outer leading
+    monomial.
+
+    This is weaker-looking than `IsGrobnerShirshovBasis`, which asks for an
+    explicit reduction of each S-polynomial to zero, and is the form a hand
+    verification actually produces: one rewrites the S-polynomial with rules
+    whose words lie below the composition word, in any order, without having to
+    reach a normal form. `isGrobnerShirshovBasis_iff_compositionsTrivial` (end of
+    file) shows the two conditions agree when every leading coefficient is a
+    unit. Shirshov 1962; Bokut–Chen 2014, Theorem 2.3 (i) ⇔ (ii). -/
+structure CompositionsTrivial : Prop where
+  /-- Every overlap S-polynomial is trivial modulo the overlap word. -/
+  overlap : ∀ oc : OverlapComposition G k ord, oc.rule₁ ∈ sys.rules →
+    oc.rule₂ ∈ sys.rules → JM ord sys oc.word (toMA oc.spoly)
+  /-- Every inclusion S-polynomial is trivial modulo the outer leading monomial. -/
+  inclusion : ∀ ic : InclusionComposition G k ord, ic.inner ∈ sys.rules →
+    ic.outer ∈ sys.rules → JM ord sys (ic.outer.lm ord) (toMA ic.spoly)
+
+/-- A Gröbner–Shirshov basis has trivial compositions: the reduction of each
+    S-polynomial to zero is itself the required expression below the word. -/
+theorem CompositionsTrivial.of_isGrobnerShirshovBasis
+    (hgs : IsGrobnerShirshovBasis G k ord sys) : CompositionsTrivial ord sys where
+  overlap oc h₁ h₂ := by
+    obtain ⟨nf, hred, hz⟩ := hgs.overlap_resolves oc h₁ h₂
+    have hJ := (JM_of_multistep (ord := ord) (sys := sys) (u := oc.word) (v := oc.word)
+      [] [] (fun m hm => by simpa using hm) hred.reduces (below_spoly_ov oc)).2
+    rwa [toMA_of_isZero hz, sub_zero, ofW_nil, one_mul, mul_one] at hJ
+  inclusion ic h₁ h₂ := by
+    obtain ⟨nf, hred, hz⟩ := hgs.inclusion_resolves ic h₁ h₂
+    have hJ := (JM_of_multistep (ord := ord) (sys := sys) (u := ic.outer.lm ord)
+      (v := ic.outer.lm ord) [] [] (fun m hm => by simpa using hm) hred.reduces
+      (below_spoly_inc ic)).2
+    rwa [toMA_of_isZero hz, sub_zero, ofW_nil, one_mul, mul_one] at hJ
+
+/-- `JM` is stable under two-sided context: if `F` lies in the span below `v`,
+    then `a·F·b` lies in the span below `a·v·b`. -/
+theorem JM.ctx {v : Monomial G} (a b : Monomial G) {F : MA G k} (h : JM ord sys v F) :
+    JM ord sys (a ++ v ++ b) (ofW a * F * ofW b) := by
+  induction h with
+  | gen s hs hlt =>
+    have e : ofW a * (ofW s.a * toMA s.r.relation * ofW s.b) * ofW b =
+        ofW (a ++ s.a) * toMA s.r.relation * ofW (s.b ++ b) := by
+      simp only [ofW_append, mul_assoc]
+    rw [e]
+    refine JM.gen ⟨s.r, a ++ s.a, s.b ++ b⟩ hs ?_
+    have := compat (ord := ord) a b hlt
+    simpa [Site.word, List.append_assoc] using this
+  | zero => simpa using (JM.zero : JM ord sys (a ++ v ++ b) 0)
+  | add _ _ ihF ihH => rw [mul_add, add_mul]; exact ihF.add ihH
+  | smul c _ ih => rw [mul_smul_comm, smul_mul_assoc]; exact ih.smul c
+
 /-- Disjoint occurrences. -/
 theorem JM_disjoint {s₁ s₂ : Site G k} (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (hr₁ : s₁.r ∈ sys.rules) (hr₂ : s₂.r ∈ sys.rules) (m : Monomial G)
@@ -780,18 +835,15 @@ theorem inv_inv_lc_right {c₁ c₂ : k} (h₂ : IsUnit c₂) :
   rw [mul_assoc, Ring.inverse_mul_cancel _ h₂, mul_one]
 
 /-- One occurrence inside the other (`lm₂` inside `lm₁`): an inclusion composition. -/
-theorem JM_inclusion {s₁ s₂ : Site G k} (hgs : IsGrobnerShirshovBasis G k ord sys)
+theorem JM_inclusion {s₁ s₂ : Site G k} (ht : CompositionsTrivial ord sys)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (hr₁ : s₁.r ∈ sys.rules) (hr₂ : s₂.r ∈ sys.rules) (x y : Monomial G)
     (hW : s₁.r.lm ord = x ++ s₂.r.lm ord ++ y) (ha : s₂.a = s₁.a ++ x)
     (hb : s₂.b = y ++ s₁.b) :
     JM ord sys (s₁.word ord) (D ord s₁ s₂) := by
   let ic : InclusionComposition G k ord := ⟨s₂.r, s₁.r, x, y, hW⟩
-  obtain ⟨nf, hred, hz⟩ := hgs.inclusion_resolves ic hr₂ hr₁
-  have hJ := (JM_of_multistep (ord := ord) (sys := sys) (u := s₁.r.lm ord)
-    (v := s₁.word ord) s₁.a s₁.b (fun m hm => compat s₁.a s₁.b hm) hred.reduces
-    (below_spoly_inc ic)).2
-  rw [toMA_of_isZero hz, sub_zero] at hJ
+  have hJ : JM ord sys (s₁.word ord) (ofW s₁.a * toMA ic.spoly * ofW s₁.b) :=
+    (ht.inclusion ic hr₂ hr₁).ctx s₁.a s₁.b
   have e : D ord s₁ s₂ = -((Ring.inverse (s₁.r.lc ord) * Ring.inverse (s₂.r.lc ord)) •
       (ofW s₁.a * toMA ic.spoly * ofW s₁.b)) := by
     rw [toMA_spoly_inc]
@@ -807,20 +859,17 @@ theorem JM_inclusion {s₁ s₂ : Site G k} (hgs : IsGrobnerShirshovBasis G k or
   rw [e]; exact (JM.smul _ hJ).neg
 
 /-- A proper overlap: an overlap composition. -/
-theorem JM_overlap {s₁ s₂ : Site G k} (hgs : IsGrobnerShirshovBasis G k ord sys)
+theorem JM_overlap {s₁ s₂ : Site G k} (ht : CompositionsTrivial ord sys)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (hr₁ : s₁.r ∈ sys.rules) (hr₂ : s₂.r ∈ sys.rules) (A B C : Monomial G) (hB : B ≠ [])
     (h₁ : s₁.r.lm ord = A ++ B) (h₂ : s₂.r.lm ord = B ++ C) (ha : s₂.a = s₁.a ++ A)
     (hb : s₁.b = C ++ s₂.b) :
     JM ord sys (s₁.word ord) (D ord s₁ s₂) := by
   let oc : OverlapComposition G k ord := ⟨s₁.r, s₂.r, A, B, C, h₁, h₂, hB⟩
-  obtain ⟨nf, hred, hz⟩ := hgs.overlap_resolves oc hr₁ hr₂
   have hv : s₁.word ord = s₁.a ++ oc.word ++ s₂.b := by
     simp [Site.word, OverlapComposition.word, oc, h₁, hb, List.append_assoc]
-  have hJ := (JM_of_multistep (ord := ord) (sys := sys) (u := oc.word)
-    (v := s₁.word ord) s₁.a s₂.b (fun m hm => hv ▸ compat s₁.a s₂.b hm) hred.reduces
-    (below_spoly_ov oc)).2
-  rw [toMA_of_isZero hz, sub_zero] at hJ
+  have hJ : JM ord sys (s₁.word ord) (ofW s₁.a * toMA oc.spoly * ofW s₂.b) := by
+    rw [hv]; exact (ht.overlap oc hr₁ hr₂).ctx s₁.a s₂.b
   have e : D ord s₁ s₂ = -((Ring.inverse (s₁.r.lc ord) * Ring.inverse (s₂.r.lc ord)) •
       (ofW s₁.a * toMA oc.spoly * ofW s₂.b)) := by
     rw [toMA_spoly_ov]
@@ -859,7 +908,7 @@ theorem word_half {a₁ W₁ b₁ a₂ W₂ b₂ a' : Monomial G} (ha : a₂ = a
       · exact Or.inr (Or.inr ⟨a', e, f, he, hW, hW₂, ha, hb₁⟩)
 
 /-- Every two reductions of one word differ by an element of the ideal below it. -/
-theorem JM_D (hgs : IsGrobnerShirshovBasis G k ord sys)
+theorem JM_D (ht : CompositionsTrivial ord sys)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) {s₁ s₂ : Site G k}
     (hr₁ : s₁.r ∈ sys.rules) (hr₂ : s₂.r ∈ sys.rules)
     (hw : s₁.word ord = s₂.word ord) :
@@ -870,14 +919,14 @@ theorem JM_D (hgs : IsGrobnerShirshovBasis G k ord sys)
   · rcases word_half ha h' with ⟨m, ha₂, hb₁⟩ | ⟨x, y, hW, ha₂, hb₂⟩ |
         ⟨A, B, C, hB, h₁, h₂, ha₂, hb₁⟩
     · exact JM_disjoint hlc hr₁ hr₂ m ha₂ hb₁
-    · exact JM_inclusion hgs hlc hr₁ hr₂ x y hW ha₂ hb₂
-    · exact JM_overlap hgs hlc hr₁ hr₂ A B C hB h₁ h₂ ha₂ hb₁
+    · exact JM_inclusion ht hlc hr₁ hr₂ x y hW ha₂ hb₂
+    · exact JM_overlap ht hlc hr₁ hr₂ A B C hB h₁ h₂ ha₂ hb₁
   · have key : JM ord sys (s₂.word ord) (D ord s₂ s₁) := by
       rcases word_half ha h' with ⟨m, ha₂, hb₁⟩ | ⟨x, y, hW, ha₂, hb₂⟩ |
           ⟨A, B, C, hB, h₁, h₂, ha₂, hb₁⟩
       · exact JM_disjoint hlc hr₂ hr₁ m ha₂ hb₁
-      · exact JM_inclusion hgs hlc hr₂ hr₁ x y hW ha₂ hb₂
-      · exact JM_overlap hgs hlc hr₂ hr₁ A B C hB h₁ h₂ ha₂ hb₁
+      · exact JM_inclusion ht hlc hr₂ hr₁ x y hW ha₂ hb₂
+      · exact JM_overlap ht hlc hr₂ hr₁ A B C hB h₁ h₂ ha₂ hb₁
     rw [hw, ← neg_neg (D ord s₁ s₂), ← D_swap]
     exact key.neg
 
@@ -921,7 +970,7 @@ theorem toMA_op_single [DecidableEq k] {v : Monomial G} (s : Site G k) (hw : s.w
 /-- **The crux.** If everything strictly below `v` is reduction-unique, so is the
     monomial `v`: two first steps from `v` differ by an element of the ideal
     below `v`, which reduces to zero. -/
-theorem RU_single [DecidableEq k] (hgs : IsGrobnerShirshovBasis G k ord sys)
+theorem RU_single [DecidableEq k] (ht : CompositionsTrivial ord sys)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) {v : Monomial G}
     (hbelow : ∀ f, Below ord v f → RU ord sys f) : RU ord sys (single v (1 : k)) := by
   intro n₁ n₂ h₁ h₂
@@ -943,7 +992,7 @@ theorem RU_single [DecidableEq k] (hgs : IsGrobnerShirshovBasis G k ord sys)
     rw [toMA_ofMA, toMA_sub, toMA_eq_of_ceq hg₁, toMA_eq_of_ceq hg₂,
       toMA_op_single s₁ hw₁, toMA_op_single s₂ hw₂]
     unfold D; abel
-  have hJ := JM_D hgs hlc hs₁ hs₂ (hw₁.trans hw₂.symm)
+  have hJ := JM_D ht hlc hs₁ hs₂ (hw₁.trans hw₂.symm)
   rw [hw₁] at hJ
   obtain ⟨nΔ, hnΔ, hzΔ⟩ := zeroNF_congr hlc hΔ (hJ.zeroNF hlc hbelow)
   have hbΔ : Below ord v (sub g₁ g₂) := by
@@ -960,10 +1009,10 @@ theorem RU_single [DecidableEq k] (hgs : IsGrobnerShirshovBasis G k ord sys)
   rw [← e₁ m, this m, add_coeff, hzΔ m, add_zero]
 
 variable (ord sys) in
-/-- **Bergman's Diamond Lemma, in this framework.** For a Gröbner–Shirshov basis
-    with unit leading coefficients over a commutative ring, every element has a
+/-- **Bergman's Diamond Lemma, triviality form.** If every composition is trivial
+    modulo its word and every leading coefficient is a unit, every element has a
     unique normal form, up to `CoeffEq`. -/
-theorem reductionUnique (hgs : IsGrobnerShirshovBasis G k ord sys)
+theorem reductionUnique_of_trivial (ht : CompositionsTrivial ord sys)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) (f : AlgElement G k) : RU ord sys f := by
   classical
   have H : ∀ v : Monomial G, ∀ f : AlgElement G k,
@@ -1000,7 +1049,7 @@ theorem reductionUnique (hgs : IsGrobnerShirshovBasis G k ord sys)
       by_cases hmv : m = v
       · subst hmv; rw [single_coeff_self, eraseCoeff_self, mul_one, add_zero]
       · rw [single_coeff_of_ne _ hmv, eraseCoeff_of_ne hmv, mul_zero, zero_add]
-    exact RU_congr hlc hce (RU_add hlc (RU_smul hlc _ (RU_single hgs hlc hbelow))
+    exact RU_congr hlc hce (RU_add hlc (RU_smul hlc _ (RU_single ht hlc hbelow))
       (hbelow _ hrest))
   by_cases hz : ∀ m, f.coeff m = 0
   · exact RU_of_isNormalForm (isNormalForm_of_isZero hz)
@@ -1014,5 +1063,33 @@ theorem reductionUnique (hgs : IsGrobnerShirshovBasis G k ord sys)
   · exact Or.inr h
   · exact absurd h (hmax m ((mem_liveSupport f m).mpr hm))
 
+variable (ord sys) in
+/-- **Bergman's Diamond Lemma, in this framework.** For a Gröbner–Shirshov basis
+    with unit leading coefficients over a commutative ring, every element has a
+    unique normal form, up to `CoeffEq`. -/
+theorem reductionUnique (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) (f : AlgElement G k) : RU ord sys f :=
+  reductionUnique_of_trivial ord sys (CompositionsTrivial.of_isGrobnerShirshovBasis hgs) hlc f
+
+/-- **The converse.** Trivial compositions make every S-polynomial reduce to
+    zero: an element of the span below a word reduces to zero once everything
+    below that word is reduction-unique (`JM.zeroNF`), and here everything is. -/
+theorem isGrobnerShirshovBasis_of_compositionsTrivial (ht : CompositionsTrivial ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) : IsGrobnerShirshovBasis G k ord sys where
+  overlap_resolves oc h₁ h₂ :=
+    zeroNF_congr hlc (ceq_ofMA_toMA oc.spoly)
+      ((ht.overlap oc h₁ h₂).zeroNF hlc (fun f _ => reductionUnique_of_trivial ord sys ht hlc f))
+  inclusion_resolves ic h₁ h₂ :=
+    zeroNF_congr hlc (ceq_ofMA_toMA ic.spoly)
+      ((ht.inclusion ic h₁ h₂).zeroNF hlc (fun f _ => reductionUnique_of_trivial ord sys ht hlc f))
+
+/-- **Composition lemma, Shirshov's form.** With unit leading coefficients over a
+    commutative ring, a rewriting system is a Gröbner–Shirshov basis exactly when
+    every composition is trivial modulo its word. -/
+theorem isGrobnerShirshovBasis_iff_compositionsTrivial
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) :
+    IsGrobnerShirshovBasis G k ord sys ↔ CompositionsTrivial ord sys :=
+  ⟨CompositionsTrivial.of_isGrobnerShirshovBasis,
+    fun ht => isGrobnerShirshovBasis_of_compositionsTrivial ht hlc⟩
 
 end UGB.GrobnerShirshov.Diamond

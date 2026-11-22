@@ -1,0 +1,20 @@
+rep(Delta^4) = [[{0: 1}, {}], [{}, {0: 1}]]
+E6: 8 SL(2,Z) classes of trace 18 (positive RL words, up to rotation)
+   R^1L^1 R^1L^1 R^1L^1 ((13, 8), (8, 5)) writhe 0 writhe-0 lift | chi == chi(Bor)
+   R^1L^2 R^1L^3 ((15, 4), (11, 3)) writhe -3 no writhe-0 lift 
+   R^1L^16 ((17, 1), (16, 1)) writhe -15 no writhe-0 lift 
+   R^2L^1 R^3L^1 ((14, 11), (5, 4)) writhe 3 no writhe-0 lift 
+   R^2L^8 ((17, 2), (8, 1)) writhe -6 no writhe-0 lift 
+   R^4L^4 ((17, 4), (4, 1)) writhe 0 writhe-0 lift | chi differs
+   R^8L^2 ((17, 8), (2, 1)) writhe 6 no writhe-0 lift 
+   R^16L^1 ((17, 16), (1, 1)) writhe 15 no writhe-0 lift 
+E6 classes with chi = chi(Bor): 1 ['R^1L^1 R^1L^1 R^1L^1']
+E7: traces 3..40, groups of >1 writhe-0 classes sharing chi: 8
+   {'trace': 15, 'classes': ['R^1L^1 R^2L^2', 'R^1L^2 R^2L^1']}
+   {'trace': 15, 'classes': ['R^1L^13', 'R^13L^1']}
+   {'trace': 27, 'classes': ['R^1L^1 R^3L^3', 'R^1L^3 R^3L^1']}
+   {'trace': 27, 'classes': ['R^1L^25', 'R^25L^1']}
+   {'trace': 30, 'classes': ['R^1L^2 R^3L^2', 'R^2L^1 R^2L^3']}
+   {'trace': 30, 'classes': ['R^2L^14', 'R^14L^2']}
+   {'trace': 39, 'classes': ['R^1L^1 R^1L^1 R^2L^2', 'R^1L^1 R^1L^2 R^2L^1']}
+   {'trace': 39, 'classes': ['R^1L^37', 'R^37L^1']}

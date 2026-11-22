@@ -1,11 +1,12 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-10-11T07:02:25.271230+00:00",
+  "computedAt": "2026-11-21T19:48:06.471998+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_xbot_lnatural_probe.py"
   },
   "bean": "qou-as81",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "The bottom edge's integer program is L-natural-concave (separable concave plus concave functions of pairwise differences, over a box-and-difference domain), so a point that no +-chi_S move improves is the global integer maximum (Murota 2003, Ch. 7), and the best move is an s-t minimum cut.  This replaces the concave relaxation's 1.563x bound with the exact integer maximum for every certified (pe, N).",
   "params": {

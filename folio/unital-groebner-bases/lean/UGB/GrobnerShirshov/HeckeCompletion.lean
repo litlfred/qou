@@ -117,18 +117,21 @@ noncomputable def bokutShiaoRelation {n : ℕ} (i' i j : Fin n) :
 Every rule of `heckeRewritingSystem` is kept, so every membership and
 leading-monomial fact proved there still applies verbatim; the new block adds
 `bokutShiaoRelation i' i j` for each `i' + 1 = i` and `j ≤ i'`. -/
-noncomputable def heckeCompletedRewritingSystem
-    (n : ℕ) (hn : 0 < n) (hp : HeckeParams) : RewritingSystem (HeckeGen n) ℝ where
-  rules :=
-    (heckeRewritingSystem n hn hp).rules ++
+noncomputable def heckeCompletedRules (n : ℕ) (hp : HeckeParams) :
+    List (ReductionRule (HeckeGen n) ℝ) :=
+    heckeRules n hp ++
     ((List.finRange n).flatMap (fun i =>
       (List.finRange n).flatMap (fun i' =>
         (List.finRange n).filterMap (fun j =>
           if i'.val + 1 = i.val ∧ j.val ≤ i'.val then
             some (bokutShiaoRelation i' i j) else none))))
-  nonempty := by
-    intro h
-    exact (heckeRewritingSystem n hn hp).nonempty (List.append_eq_nil_iff.mp h).1
+
+/-- The completed Hecke rewriting system: `heckeCompletedRules` as a
+`RewritingSystem`. -/
+noncomputable def heckeCompletedRewritingSystem
+    (n : ℕ) (hn : 0 < n) (hp : HeckeParams) : RewritingSystem (HeckeGen n) ℝ :=
+  .ofList (heckeCompletedRules n hp) fun h =>
+    heckeRules_ne_nil n hn hp (List.append_eq_nil_iff.mp h).1
 
 /-! ## §4g  The refuting overlap, against the completed system
 
@@ -478,7 +481,7 @@ theorem mem_heckeCompletedRewritingSystem_rules {n : ℕ} (hn : 0 < n) (hp : Hec
     ∨ (∃ i j : Fin n, j.val + 1 < i.val ∧ r = farCommRelation i j)
     ∨ (∃ i' i j : Fin n, i'.val + 1 = i.val ∧ j.val ≤ i'.val
         ∧ r = bokutShiaoRelation i' i j) := by
-  simp only [heckeCompletedRewritingSystem, List.mem_append] at hr
+  simp only [heckeCompletedRewritingSystem, RewritingSystem.mem_ofList_rules, heckeCompletedRules, List.mem_append] at hr
   rcases hr with hbase | hbs
   · rcases mem_heckeRewritingSystem_rules hn hp hbase with h | h | h
     · exact Or.inl h

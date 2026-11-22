@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "conj:proton-mass-substrate-identity",
     "def:f-bor-borromean-observable",
-    "prop:flavor-split-substrate",
+    "conj:flavor-split-substrate-mass",
   ],
   tags: [
     "proton-mass",

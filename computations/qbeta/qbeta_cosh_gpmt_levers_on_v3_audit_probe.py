@@ -44,7 +44,16 @@ from codata_2022_source import M_E_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from qbeta_e0 import canonical as e0_canonical  # noqa: E402
 
-RECORDED_V3_MEV = mpf("0.325433928735")   # dashboard Q_beta row, pred_MeV
+def _recorded_v3_mev():
+    """The dashboard's Q_beta pred_MeV, read from the witness rather than typed in."""
+    import json
+    with open(os.path.join(ROOT, "computations", "per-observable-100x-status.witness.json")) as fh:
+        dash = json.load(fh)
+    rows = dash["data"]["rows"] if "data" in dash else dash["rows"]
+    return mpf(next(r for r in rows if r.get("obs") == "Q_beta")["pred_MeV"])
+
+
+RECORDED_V3_MEV = _recorded_v3_mev()   # dashboard Q_beta row, pred_MeV
 Q_CODATA_MEV = mpf("0.78233355931")       # CODATA 2022 registry value (owner ruling 2026-11-20)
 
 

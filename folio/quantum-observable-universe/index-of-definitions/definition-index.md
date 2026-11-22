@@ -478,10 +478,10 @@
 | [prop:confinement-categorical](#prop:confinement-categorical) | Confinement = spectral-sequence collapse (only Wedderburn-central observables survive) | Ch 11 |
 | [prop:confinement-lp](#prop:confinement-lp) | Confinement as linear program over the Hecke normal form basis | Ch 12 |
 | [prop:confinement-sdp](#prop:confinement-sdp) | Confinement as semidefinite program with matrix Frobenius positivity | Ch 11 |
-| [prop:confinement-frobenius-reciprocity](#prop:confinement-frobenius-reciprocity) | Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings | Ch 12 |
+| [conj:confinement-frobenius-reciprocity](#conj:confinement-frobenius-reciprocity) | Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings | Ch 12 |
 | [prop:confinement-topological](#prop:confinement-topological) | Confinement is topological (LP proof) | Ch 12 |
 | [prop:confinement-operator-selection](#prop:confinement-operator-selection) | Confinement operator selection via topological Brunnian minimality | Ch 12 |
-| [prop:confinement-phase-stratification](#prop:confinement-phase-stratification) | Confinement phases are open strata of the generic $q$-locus | Ch 7 |
+| [prop:confinement-phase-stratification](#prop:confinement-phase-stratification) | The confinement locus is open, and the active support is constant on a strictly complementary phase | Ch 7 |
 | [prop:confinement-universality](#prop:confinement-universality) | Confinement universality: the confinement stage depends only on the flavours | Ch 7 |
 | [prop:horizon-conformal-invariance](#prop:horizon-conformal-invariance) | Conformal invariance at the jet horizon | Ch 20 |
 | [prop:topological-decomposition-mass](#prop:topological-decomposition-mass) | Conjectural Topological Decomposition of Mass | Ch 9 |
@@ -561,7 +561,6 @@
 | [prop:categorical-proton-exists](#prop:categorical-proton-exists) | Existence of the categorical proton | Ch 14 |
 | [prop:confinement-level-exists](#prop:confinement-level-exists) | Existence of the confinement level | Ch 7 |
 | [prop:frobenius-pairing-exists](#prop:frobenius-pairing-exists) | Existence of the Frobenius pairing | Ch 1 |
-| [prop:mass-identity-exists](#prop:mass-identity-exists) | Existence of the inertial mass identity | Ch 9 |
 | [prop:knot-operator-energy-exists](#prop:knot-operator-energy-exists) | Existence of the knot operator energy | Ch 10 |
 | [prop:assembly-projector-exists](#prop:assembly-projector-exists) | Existence of the symmetric-block assembly projector | Ch 16 |
 | [prop:qbeta-canonical-markov-weights-explicit-instance](#prop:qbeta-canonical-markov-weights-explicit-instance) | Explicit $\sqrt q$-bearing instance of $\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable) | Ch 9 |
@@ -658,7 +657,7 @@
 | [prop:co-lp-dual-binding](#prop:co-lp-dual-binding) | LP dual for $CO$: covalent active-set $2$ ($+$ dative $=$ triple) | Ch 16 |
 | [prop:h2-lp-dual-binding](#prop:h2-lp-dual-binding) | LP dual gives optimal $H_2$ binding | Ch 16 |
 | [prop:co2-lp-dual-binding](#prop:co2-lp-dual-binding) | LP dual selects linear $O{=}C{=}O$ geometry | Ch 16 |
-| [prop:lp-dual-stability](#prop:lp-dual-stability) | LP dual stability: confined hadrons have bounded shadow prices | Ch 12 |
+| [prop:lp-dual-stability](#prop:lp-dual-stability) | LP dual stability: the confined optimum is LP-stable and strongly dual | Ch 12 |
 | [prop:atomic-lp-stability](#prop:atomic-lp-stability) | LP stability of the atomic braid | Ch 12 |
 | [prop:toffoli-lp-stability](#prop:toffoli-lp-stability) | LP-dual stability of the $q$-Toffoli braid and the golden-ratio threshold | Ch 20 |
 | [prop:lusztig-vs-hermitian-bar](#prop:lusztig-vs-hermitian-bar) | Lusztig bar ($q \mapsto q^{-1}$) vs Hermitian-$\ast$ ($q \mapsto \overline{q}^{-1}$) on the complex Hecke algebra: the two anti-involutions coincide on the parameter iff $q \in \mathbb{R}$. On the unit circle $|q| = 1$, Lusztig coincides with complex conjugation ($\overline{q} = q^{-1}$) while Hermitian becomes the identity on $q$; on general $|q| > 1$ with $\mathrm{Im}(q) \neq 0$ the three involutions (Lusztig, Hermitian, complex conjugation) are pairwise distinct. The split is the categorical home for any future $\mathrm{Im}(q_0)$ contribution. | Ch 11 |
@@ -785,7 +784,7 @@
 | [conj:proton-mass-substrate-identity](#conj:proton-mass-substrate-identity) | Substrate evaluation: $m_p = 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) - 12 \cdot m_e$ to $0.24\,\mathrm{ppm}$ at $q = q_0$ | Ch 24 |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 |
 | [prop:bar-t-duality-substrate](#prop:bar-t-duality-substrate) | Substrate-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ | Ch 14 |
-| [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Substrate-pure derivation of the $u$--$d$ flavor split | Ch 15 |
+| [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Closed and factored forms of the substrate flavor split | Ch 15 |
 | [prop:flavor-dressed-mass-from-substrate-split](#prop:flavor-dressed-mass-from-substrate-split) | Substrate-pure derivation of the dressed-quark mass splitting | Ch 11 |
 | [prop:surreal-rate-calculus](#prop:surreal-rate-calculus) | Surreal rate calculus for the classical-limit scaling laws | Ch 25 |
 | [prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic) | Symbolic $Q$-value of free neutron decay | Ch 12 |
@@ -957,7 +956,7 @@
 | [conj:bond-order-eq-jet-degree](#conj:bond-order-eq-jet-degree) | Body order equals jet degree: the n-nucleon cluster sits at jet vertical degree n | Ch 11 |
 | [lem:degree-one-braid-trivial-volume](#lem:degree-one-braid-trivial-volume) | Braid words of a degree-one element have non-hyperbolic closures | Ch 11 |
 | [lem:mi-sw-abelianisation-cartan](#lem:mi-sw-abelianisation-cartan) | Cartan reduction recovers the SW differential | Ch 6 |
-| [lem:jet-prolongation-categorical-jet](#lem:jet-prolongation-categorical-jet) | Categorical jet object $J^1(A)$ inherits the Frobenius--Hopf structure | Ch 4 |
+| [lem:jet-prolongation-categorical-jet](#lem:jet-prolongation-categorical-jet) | The jet object $J^1(A)$ is built from a direct summand of $A \otimes A$ | Ch 4 |
 | [lem:chebyshev-degree-genus](#lem:chebyshev-degree-genus) | Chebyshev degree equals Seifert genus for $T_{2,p}$ | Ch 6 |
 | [lem:mobius-energy-frobenius-kernel](#lem:mobius-energy-frobenius-kernel) | Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$ | Ch 10 |
 | [lem:crossing-application-chains](#lem:crossing-application-chains) | Closed chains of crossing applications on words and on states | Ch 2 |
@@ -988,7 +987,6 @@
 | [lem:tower-pair-equality-fixed-level](#lem:tower-pair-equality-fixed-level) | Pair-contribution equality at a fixed jet level: $z^2 \sum_{(i,j) \in \mathcal{P}_n} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)$ is an exact identity | Ch 11 |
 | [lem:feynman-trace-collapse](#lem:feynman-trace-collapse) | Path integral collapses to a finite sum on the eigenbasis | Ch 11 |
 | [lem:piece-a-hook-content-identity](#lem:piece-a-hook-content-identity) | Piece A — the hook–content identity $\sum_{\square} h(\square)^2 = \sum_{\square} c(\square)^2 + n^2$ | Ch 11 |
-| [lem:topological-mass-dilogarithm](#lem:topological-mass-dilogarithm) | Quantum dilogarithm evaluation of exceptional-divisor contributions | Ch 9 |
 | [lem:fai-projector-coadjoint-orbit](#lem:fai-projector-coadjoint-orbit) | Rank-1 projectors embed $\mathbb{P}(V)$ as a coadjoint orbit in $\mathrm{Ad}(A)$ | Ch 2 |
 | [lem:bring-cone-reeb-quaternionic-twist](#lem:bring-cone-reeb-quaternionic-twist) | Reeb quaternionic twist on the Bring-cone model: $[M_i, M_j] = 2M_k$ and cyclic | Ch 6 |
 | [lem:brings-riemann-hurwitz](#lem:brings-riemann-hurwitz) | Riemann--Hurwitz count for the canonical map $\Sigma_4 \to \mathbb{P}(V)$ | Ch 6 |
@@ -1031,6 +1029,7 @@
 | [conj:dilogarithm-archimedean-limit](#conj:dilogarithm-archimedean-limit) | $(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$ | Ch 11 |
 | [conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet) | $(W^\pm, Z, H) \leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet | Ch 7 |
 | [conj:cp-violation-spectral-form](#conj:cp-violation-spectral-form) | $\delta_{\mathrm{CP}}$ as imaginary part of the alternating-block character | Ch 15 |
+| [conj:flavor-split-substrate-mass](#conj:flavor-split-substrate-mass) | The nucleon mass split equals the substrate flavor-split formula | Ch 15 |
 | [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{substrate}}$ (convention-C frame) | Ch 11 |
 | [conj:p-vs-np-boundary](#conj:p-vs-np-boundary) | $\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity | Ch 20 |
 | [conj:qou-p-neq-np](#conj:qou-p-neq-np) | $\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$ | Ch 20 |
@@ -1088,6 +1087,8 @@
 | [conj:schwinger-measure-computational-time](#conj:schwinger-measure-computational-time) | Computational-time identification: the binding Borel variable is the loop proper time | Ch 14 |
 | [conj:confinement-nf-structure-forcing](#conj:confinement-nf-structure-forcing) | Confinement → NF-structure forcing: $\mathrm{shift}_{\mathrm{NF}}(\beta_1 \star I \star \beta_2) = \alpha_{\mathrm{shift}}(I) + \Delta$ with $|\Delta|$ bounded by the LP duality gap | Ch 11 |
 | [conj:confinement-grading-correspondence](#conj:confinement-grading-correspondence) | Confinement levels coincide with KLR $\mathbb{Z}$-grading shifts | Ch 7 |
+| [conj:confinement-phase-boundaries](#conj:confinement-phase-boundaries) | Phase boundaries of the confinement locus | Ch 7 |
+| [conj:topological-mass-dilogarithm](#conj:topological-mass-dilogarithm) | Quantum dilogarithm evaluation of exceptional-divisor contributions | Ch 9 |
 | [conj:rho-k-pair-gen-canonical-form](#conj:rho-k-pair-gen-canonical-form) | Conjectural canonical form of the pair-gen piece $\rho_K^{\text{pair-gen}}$ in the graded $\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \hat V_i, \hat V_j)$ such that $\rho_K^{\text{pair-gen}} = \sum_{i<j} f_2(q, \hat V_i^{\text{full}}, \hat V_j^{\text{full}})$ recovering the six-term theorem's Kashaev limit at sub-percent accuracy. | Ch 9 |
 | [conj:diagrammatic-double-magic-lr-fusion](#conj:diagrammatic-double-magic-lr-fusion) | Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$ | Ch 15 |
 | [conj:double-magic-delta-i-bound](#conj:double-magic-delta-i-bound) | Conjecture: Empirical double-magic isotopes satisfy $|\Delta i| \leq 1$ across Bring shell indices | Ch 15 |

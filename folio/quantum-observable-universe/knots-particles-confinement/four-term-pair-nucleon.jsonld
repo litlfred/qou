@@ -6,13 +6,13 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-four-term-pair-nucleon",
+  "@id": "papers/quantum-observable-universe/blocks/conj-four-term-pair-nucleon",
   "@type": [
-    "folio-assistant-sci:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:four-term-pair-nucleon",
-  "kind": "proposition",
+  "kind": "conjecture",
   "title": "Nucleon derivation from 4-term photon pair production",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-quark-antiquark-production",

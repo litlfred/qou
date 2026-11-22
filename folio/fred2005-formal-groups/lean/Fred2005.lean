@@ -1,1 +1,2 @@
 import Fred2005.FormalGroups
+import Fred2005.StrongMultiplicativity

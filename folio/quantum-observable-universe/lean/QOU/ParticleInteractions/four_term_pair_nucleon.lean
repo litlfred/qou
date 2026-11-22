@@ -5,7 +5,7 @@ import QOU.MathlibExt.MarkovTrace
 /-!
 # QOU.ParticleInteractions.four_term_pair_nucleon
 
-**Proposition** for content block
+**Conjecture** for content block
 [`conj:four-term-pair-nucleon`](../../../quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md):
 *The proton and neutron are **derived** — not asserted — from three
 independent `γγ` pair productions using the full 4-term photon color content,

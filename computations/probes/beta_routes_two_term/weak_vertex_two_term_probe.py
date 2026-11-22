@@ -7,6 +7,11 @@ and prints t₂ and 2t₂/t₁ at the proton q₀ (70 dps). No witness; nothing 
 
     PYTHONPATH=computations python3 -u computations/probes/beta_routes_two_term/weak_vertex_two_term_probe.py
 """
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2]))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
 import itertools
 import os
 import sys
@@ -17,7 +22,9 @@ from sympy import Rational, factor, simplify, symbols, sympify  # noqa: E402
 import mpmath as mp  # noqa: E402
 
 mp.mp.dps = 70
-Q0 = mp.mpf("1.1099785827513808")  # proton pin, qou_substrate.constants.Q (display/evaluation only)
+from q_parameter import Q_MP  # noqa: E402
+
+Q0 = mp.mpf(Q_MP)  # proton pin, read from the registry (was a truncated 17-digit literal)
 qs = symbols("q")
 
 

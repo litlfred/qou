@@ -1,6 +1,5 @@
 | $\mathfrak{K}$ | Knot | Alexander–Briggs | Particle ($+$) | Antiparticle ($-$) |
 |:-:|------|:-:|:-:|:-:|
-| $\mathfrak{K}_\gamma$ | $\varnothing$ (empty) | — | photon $\gamma$ | (self) |
 | $\mathfrak{K}_\nu$ | unknot $0_1$ | $0_1$ | neutrino $\nu$ | $\nu^{\sigma}$ |
 | $\mathfrak{K}_g$ | Hopf link | $L2a1$ | gluon | (self) |
 | $\mathfrak{K}_e$ | trefoil | $3_1$ | $e^-$ | $e^+$ |

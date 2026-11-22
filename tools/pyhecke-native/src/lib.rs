@@ -939,18 +939,92 @@ fn seminormal_matrices_mpfr(
 #[pyfunction]
 #[pyo3(signature = (shape, steps, q_str, dps=50))]
 fn lp_accumulator_step_traces_mpfr(
+    py: Python<'_>,
     shape: Vec<usize>,
     steps: Vec<Vec<(String, String, usize)>>,
     q_str: String,
     dps: u32,
 ) -> PyResult<Vec<(String, String)>> {
     let prec = seminormal_mpfr::dps_to_bits(dps);
-    let sparse = seminormal_mpfr::seminormal_matrices_mpfr(&shape, &q_str, dps);
+    // Parse every coefficient up front, under the GIL, so the hot loop below
+    // can run with the GIL released and never touches a Python string.
+    let mut parsed: Vec<Vec<(Float, Float, usize)>> = Vec::with_capacity(steps.len());
+    for chain in &steps {
+        let mut pc = Vec::with_capacity(chain.len());
+        for (c_str, d_str, gen) in chain {
+            let c = Float::with_val(prec, Float::parse(c_str).map_err(|e| {
+                pyo3::exceptions::PyValueError::new_err(format!("bad c coefficient: {e}"))
+            })?);
+            let d = Float::with_val(prec, Float::parse(d_str).map_err(|e| {
+                pyo3::exceptions::PyValueError::new_err(format!("bad d coefficient: {e}"))
+            })?);
+            pc.push((c, d, *gen));
+        }
+        parsed.push(pc);
+    }
+    let res = py.allow_threads(|| lp_accumulator_core(&shape, &parsed, &q_str, dps));
+    res.map_err(pyo3::exceptions::PyValueError::new_err)
+}
+
+/// Row update `row <- c*(row @ sigma) + d*row`, in place.
+///
+/// Rows of M are independent under right multiplication, so each row can be
+/// processed on its own thread. The arithmetic is the SAME sequence of MPFR
+/// operations, in the same order, as the original whole-matrix loop: for a
+/// fixed row `a`, the products `m[a][i]*v` are added into `msig[a][j]` in the
+/// order (i ascending, then sigma-row order), then `m[a][b] = c*msig + d*m`
+/// with each product rounded to `prec` before the sum. So the output is
+/// bit-identical to the single-threaded version; only buffer reuse and the
+/// thread split are new.
+fn lp_row_update(
+    row: &mut [Float],
+    scratch: &mut [Float],
+    tmp: &mut Float,
+    lhs: &mut Float,
+    sigma: &[Vec<(usize, Float)>],
+    c: &Float,
+    d: &Float,
+) {
+    use rug::Assign;
+    for s in scratch.iter_mut() {
+        s.assign(0);
+    }
+    for (i, srow) in sigma.iter().enumerate() {
+        for (j, v) in srow.iter() {
+            tmp.assign(&row[i] * v);
+            scratch[*j] += &*tmp;
+        }
+    }
+    for b in 0..row.len() {
+        lhs.assign(c * &scratch[b]);
+        tmp.assign(d * &row[b]);
+        row[b].assign(&*lhs + &*tmp);
+    }
+}
+
+fn lp_accumulator_core(
+    shape: &[usize],
+    steps: &[Vec<(Float, Float, usize)>],
+    q_str: &str,
+    dps: u32,
+) -> Result<Vec<(String, String)>, String> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    let sparse = seminormal_mpfr::seminormal_matrices_mpfr(shape, q_str, dps);
     if sparse.is_empty() {
         return Ok(Vec::new());
     }
     let dim = sparse[0].len();
     let n_gens = sparse.len();
+    for chain in steps {
+        for (_, _, gen) in chain {
+            if *gen >= n_gens {
+                return Err(format!(
+                    "generator index {} out of range (n_gens = {})",
+                    gen, n_gens
+                ));
+            }
+        }
+    }
 
     // M starts as the identity, in MPFR -- never np.eye float64.
     let mut m: Vec<Vec<Float>> = (0..dim)
@@ -961,46 +1035,55 @@ fn lp_accumulator_step_traces_mpfr(
         })
         .collect();
 
+    // Below this size the thread start-up costs more than it saves.
+    let n_threads = if dim < 64 {
+        1
+    } else {
+        std::thread::available_parallelism()
+            .map(|n| n.get())
+            .unwrap_or(1)
+            .min(dim)
+    };
+    let rows_per = (dim + n_threads - 1) / n_threads;
+
     let mut log_norm = Float::with_val(prec, 0);
     let threshold = Float::with_val(prec, 1e80);
     let mut out: Vec<(String, String)> = Vec::with_capacity(steps.len());
 
-    for chain in &steps {
-        for (c_str, d_str, gen) in chain {
-            if *gen >= n_gens {
-                return Err(pyo3::exceptions::PyValueError::new_err(format!(
-                    "generator index {} out of range (n_gens = {})",
-                    gen, n_gens
-                )));
-            }
-            let c = Float::with_val(prec, Float::parse(c_str).map_err(|e| {
-                pyo3::exceptions::PyValueError::new_err(format!("bad c coefficient: {e}"))
-            })?);
-            let d = Float::with_val(prec, Float::parse(d_str).map_err(|e| {
-                pyo3::exceptions::PyValueError::new_err(format!("bad d coefficient: {e}"))
-            })?);
-
-            // Msig = M @ sigma_gen, accumulated over sigma's nonzeros:
-            // O(dim*nnz), the same complexity scipy's sparse BLAS would give.
-            let mut msig: Vec<Vec<Float>> = (0..dim)
-                .map(|_| (0..dim).map(|_| Float::with_val(prec, 0)).collect())
-                .collect();
-            for (i, row) in sparse[*gen].iter().enumerate() {
-                for (j, v) in row.iter() {
-                    for a in 0..dim {
-                        let t = Float::with_val(prec, &m[a][i] * v);
-                        msig[a][*j] += t;
-                    }
+    for chain in steps {
+        if n_threads == 1 {
+            let mut scratch: Vec<Float> = (0..dim).map(|_| Float::new(prec)).collect();
+            let mut tmp = Float::new(prec);
+            let mut lhs = Float::new(prec);
+            for (c, d, gen) in chain {
+                let sigma = &sparse[*gen];
+                for row in m.iter_mut() {
+                    lp_row_update(row, &mut scratch, &mut tmp, &mut lhs, sigma, c, d);
                 }
             }
-            // M <- c*Msig + d*M
-            for a in 0..dim {
-                for b in 0..dim {
-                    let lhs = Float::with_val(prec, &c * &msig[a][b]);
-                    let rhs = Float::with_val(prec, &d * &m[a][b]);
-                    m[a][b] = lhs + rhs;
+        } else {
+            // Each thread owns a block of rows for the whole chain: a row's
+            // update depends only on that row, so no synchronisation is needed
+            // between letters.
+            std::thread::scope(|sc| {
+                for block in m.chunks_mut(rows_per) {
+                    let sparse = &sparse;
+                    sc.spawn(move || {
+                        let mut scratch: Vec<Float> =
+                            (0..dim).map(|_| Float::new(prec)).collect();
+                        let mut tmp = Float::new(prec);
+                        let mut lhs = Float::new(prec);
+                        for (c, d, gen) in chain {
+                            let sigma = &sparse[*gen];
+                            for row in block.iter_mut() {
+                                lp_row_update(
+                                    row, &mut scratch, &mut tmp, &mut lhs, sigma, c, d,
+                                );
+                            }
+                        }
+                    });
                 }
-            }
+            });
         }
 
         // Rescale exactly as the Python loop does.

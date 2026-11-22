@@ -17,6 +17,12 @@ export default proposition({
       body:
         "Lean pointers moved out of the prose (voice drain, epic `qou-d4kh`): the biconditional is `QOU.QuantumObservableUniverses.DilogPentagonAssociator.pentagon_iff_isDilog` (generic carrier `[Add H]`); the cochain guise is `QOU.BringsSurface.PentagonTwist.assoc_pentagon`.",
     },
-    { kind: "status", date: "2026-10-11", body: "Formalisation status relocated from the block prose by the paper-voice commentary audit: `PentagonTwist.assoc_pentagon` is sorry-free; `DilogPentagonAssociator.pentagon_iff_isDilog` is sorry-free and axiom-free (`#print axioms` reports no dependency), a genuine equivalence rather than a self-assuming projection. The categorical → scalar descent is not formalised, pending shuffle-Hopf infrastructure absent from Mathlib; the analytic q ≠ 1 five-term relation is carried by the conjecture class `QRogersAnalyticContinuation`." },
+    { kind: "status", date: "2026-10-11", body: "Formalisation status relocated from the block prose by the paper-voice commentary audit: `PentagonTwist.assoc_pentagon` is sorry-free; `DilogPentagonAssociator.pentagon_iff_isDilog` is sorry-free and axiom-free (`#print axioms` reports no dependency), The categorical → scalar descent is not formalised, pending shuffle-Hopf infrastructure absent from Mathlib; the analytic q ≠ 1 five-term relation is carried by the conjecture class `QRogersAnalyticContinuation`." },
+    {
+      kind: "caveat",
+      date: "2026-11-21",
+      body:
+        "**The biconditional holds by definition.** `QDilogData` is the triple (argument operations, potential, proof of `FiveTerm`), so `pentagon_iff_isDilog` says only that `FiveTerm A f` holds iff there is a record whose third field proves it. The 2026-10-11 status note called this \"a genuine equivalence rather than a self-assuming projection\"; that wording is withdrawn. The proof is honest and sorry-free, but it carries no content beyond the definition of `QDilogData`. In particular it does not show that the rigid-monoidal axioms force `Li₂^q`: that needs the categorical-to-scalar descent the Scope boundary section already marks as not formalised.",
+    },
   ],
 });

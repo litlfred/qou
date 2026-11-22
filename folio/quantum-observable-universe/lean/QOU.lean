@@ -303,6 +303,7 @@ import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
 import QOU.MathlibExt.ManifoldVolumeBridge
 import QOU.MathlibExt.ManifoldVolumePositive
+import QOU.MathlibExt.Bicommutant
 import QOU.MathlibExt.BraidGroup
 import QOU.MathlibExt.PLPolygonalLink
 import QOU.Knot.FiveTwoVolumeConstant
@@ -481,6 +482,8 @@ import QOU.Mass.LevelSelectionLogarithmic
 -- that CoordinationSaturation's complete-graph exclusion rested on.
 import QOU.Mass.EquidistantCoordinationCap
 import QOU.Mass.StrandLayoutForcesChain
+import QOU.Mass.TransportedPairBond
+import QOU.Mass.BlockRelabelConjugation
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
@@ -547,6 +550,8 @@ import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.ContentCasimir
 import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.SeminormalContentCasimir
+import QOU.SchurWeyl.QSchurMoves
+import QOU.SchurWeyl.QSchurUpperBound
 import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.MatRepEquiv
 import QOU.SchurWeyl.SeminormalInequivalence
@@ -1196,6 +1201,8 @@ import QOU.Molecular.ShellClosureNfTermCount
 
 import QOU.Conjectures.ShellTransitionKnot
 import QOU.Conjectures.KnotFactorFrobeniusPairing
+import QOU.Hecke.KnotFactor
+import QOU.BraidKnot.KnotFactorFrobeniusPairing
 import QOU.Conjectures.WeakSpectralCompleteness
 import QOU.Conjectures.MagicNumbersBring
 import QOU.Conjectures.QuantumLanglandsDual
@@ -1843,3 +1850,4 @@ import QOU.MathlibExt.RSZIsoformalInterfaceInstances
 import QOU.MathlibExt.WenzlSchurElementInstances
 import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
 import QOU.QBeta.RationalStateIntegralCuspTorsionBringHomologyGoldenDilogCostinTransseriesBridge
+import QOU.SchurWeyl.R2TwistTower

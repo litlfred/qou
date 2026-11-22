@@ -74,6 +74,20 @@ as bar-anti-symmetric, consistent: bar reverses writhe via the
 composite $P \cdot C \cdot T$, of which P is the writhe-acting
 factor.
 
+## Scope at the Hecke-letter level
+
+**$P$ as written is a map on braid words, not on $H_n(q)$.** The conjecture defines $P$ by $\sigma_i \mapsto \sigma_i^{-1}$ with $q$ held fixed. On the braid group $B_n$ this is an involution. It does not descend to the Hecke algebra: an algebra map of $H_n(q)$ that is linear over the scalars and sends a generator to its inverse forces $2(q - q^{-1}) = 0$, so it exists only when $q^2 = 1$ in characteristic other than $2$. The reason is that $\sigma_i^{-1}$ satisfies the Hecke relation at the parameter $q^{-1}$, not at $q$.
+
+**What does descend.** Let $P_+$ and $P_-$ be the idempotents of $\sigma_i$ for its eigenvalues $q$ and $-q^{-1}$, and let $e^- = \sigma_0\sigma_1\sigma_0$ with mirror $e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$, as in the [Breit–Wheeler vertex](#rem:breit-wheeler-vertex). Three involutions send a letter to a letter, and they form a Klein four-group.
+
+- **The mirror $\sigma_i \mapsto \sigma_i^{-1}$ together with $q \mapsto q^{-1}$** is the bar involution on a letter. It keeps $P_+$ and $P_-$ and sends $e^-$ to $e^+$. Its profile is that of $C$, or of $CT$ if $q \mapsto q^{-1}$ is read as antilinear.
+- **The map $\sigma_i \mapsto -\sigma_i^{-1}$** keeps $q$, exchanges $P_+$ and $P_-$, and sends $e^-$ to $-e^+$. Its profile is that of $CP$.
+- **The map $\sigma_i \mapsto -\sigma_i$ together with $q \mapsto q^{-1}$** exchanges $P_+$ and $P_-$ and sends $e^-$ to $-e^-$. It is the only one of the three with the profile of $P$. It is not linear over the scalars unless $q^2 = 1$, and $q \mapsto q^{-1}$ has no counterpart at the real substrate value $q_0$.
+
+**The bar involution as composite $CPT$.** At the letter level the bar involution keeps both eigenlines. A map with the profile of $CPT$ would exchange them, as $P$ does. So the factorisation bar $= P \cdot C \cdot T$ in the summary below is not supported at the letter level, where bar has the profile of $C$ (or $CT$).
+
+**Item 1 below.** Multiplying $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ by $\sigma_i^{-2}$ gives $(\sigma_i^{-1})^2 = (q^{-1} - q)\,\sigma_i^{-1} + 1$, which is the Hecke relation at $q^{-1}$. The quadratic at $q$ is therefore not preserved by $P$ with $q$ fixed.
+
 ## The hypothesis in summary
 
 The conjecture asserts an involution $P$ on braid-group elements ($P^2 = \mathrm{id}$) sending each Hecke generator $\sigma_i$ to $\sigma_i^{-1}$, fixing $q$, and such that the bar-involution factors as $P \circ C \circ T$.

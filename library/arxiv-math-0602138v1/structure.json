@@ -1,0 +1,317 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0602138v1",
+ "source": {
+  "file": "0602138v1.pdf",
+  "sha256": "ed9ade66a774c93eda90044c46a7b3fb40f436ccc1424e548aaef4846c1fd40e",
+  "bytes": 260050,
+  "pages": 24,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-21T17:43:40Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0602138",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "7 Feb 2006"
+  },
+  "doi": null,
+  "title": "Non-Commutative Formal Groups in Positive Characteristic",
+  "authors_raw": "Frederick Leitner",
+  "title_lines": [
+   "Non-Commutative Formal Groups in Positive",
+   "Characteristic"
+  ],
+  "abstract": "We describe geometric non-commutative formal groups in ter ms of a ge- ometric commutative formal group with a Poisson structure o n its splay algebra. We describe certain natural properties of such Poi sson structures and show that any such Poisson structure gives rise to a non-c ommutative formal group. We describe geometric non-commutative formal groups in terms of a geometric commutative formal group with a Poisson structure on its splay alge bra. We describe certain natural properties of such Poisson structures and show that any such Poisson structure gives rise to a non-commutative formal gr oup. In characterizing non-commutative formal groups G, it is natural to consider their distribution algebras, Dist(G). Although we are interested mainly in the characteristic p > 0 setting, we make an e\ufb00ort to work by analogy to the charac- teristic zero version of our problem. Let G be a formal group with Lie algebra g. We recall that, in characteristic zero, we have a canonical isomorp hism between Dist(G) and the universal enveloping algebra Ug. Then our problem reduces to describing the algebraic relationship between the symmetric Sg, Ug, and the tensor algebra Tg as in the following diagram: Tg Sg \u223c\u2212 PBW \u2732\u271b Ug. \u2732 (1) Here, the diagonal arrows are algebra maps and the horizontal ar row is a vector space isomorphism given by the Poincar\u00b4 e-Birkho\ufb00-Witt (PBW) theo rem. In the positive characteristic setting, there are a few features t hat present di\ufb03culties which are absent in the zero characteristic setting. In a s ense made precise below, the problem is non-linear and, unlike in the zero charac teristic setting, the algebras of importance are not quadratic. Let us recall that in characteristic zero, the PBW theorem gives an identi\ufb01- cation between Sg and the associated graded algebra of Ug. We may regard Sg as the universal enveloping algebra for the trivial Lie algebra struc ture on g, so 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181107120534-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_raw": "Non-Commutative Formal Groups in Positive Characteristic",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Poisson Algebras with Internal Symmetry",
+   "text": "Non-Commutative Formal Groups in Positive Characteristic",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Poisson Algebras with Internal Symmetry",
+   "page": 2,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Formal Groups and Distribution Algebras",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Geometric Formal Groups",
+   "page": 16,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4509,
+   "n_words": 790,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-poisson-algebras-with-internal-symmetry",
+   "number": null,
+   "title": "Poisson Algebras with Internal Symmetry",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 12,
+   "n_chars": 18254,
+   "n_words": 4295,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-formal-groups-and-distribution-algebras",
+   "number": null,
+   "title": "Formal Groups and Distribution Algebras",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 7740,
+   "n_words": 1681,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-geometric-formal-groups",
+   "number": null,
+   "title": "Geometric Formal Groups",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 24,
+   "n_chars": 14790,
+   "n_words": 3018,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 45293,
+  "furniture_lines_stripped": 0
+ }
+}

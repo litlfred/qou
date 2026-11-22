@@ -2,6 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:four-term-pair-nucleon",
+  renamedFrom: ["prop:four-term-pair-nucleon"],
   lean: { ref: "qou:QOU.ParticleInteractions.four_term_pair_nucleon", validation: "not_checked" },
   title: "Nucleon derivation from 4-term photon pair production",
   tags: [
