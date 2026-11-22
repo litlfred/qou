@@ -16,7 +16,8 @@ Bp = q*(Smu/q + (1 - 1/q)*sp.Rational(3, 2))
 Bn = (1/q)*(Smu/q - (1 - 1/q)*sp.Rational(3, 2))
 d2 = sp.factor(sp.simplify(Bn - Bp))
 check2 = sp.simplify(d2 - ((q**-2 - 1)*Smu - 3*(1 - 1/q)*br2/2)) == 0
-q0 = mpf('1.1099785956427390466817951294')
+from qou_substrate.constants import q_muon_at  # live muon pin (CODATA 2022), not a typed copy
+q0 = q_muon_at(mp.dps)
 c1 = (q0**12 - 3*q0**10 + 3*q0**8 - 4*q0**6 + 3*q0**4 - 3*q0**2 + 1)/q0**6
 th = acos(-c1/2); muc = mpc(-c1/2, msqrt(1 - (c1/2)**2)) - 1
 hv = q0 - 1/q0; b2 = q0 + 1/q0; b3 = q0**2 + 1 + q0**-2
