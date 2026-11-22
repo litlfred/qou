@@ -259,3 +259,25 @@ here, not proved in Lean.
 
 Coordination: the norm-one photon work (PR #8981, `PhotonBarClosure.lean`) was
 asked whether its block norms fix the sign-block to trivial-block ratio at `−1`.
+
+## 12. Which gl(1|1) Cartan insertions give `(1, 0, −1)` (owner picked options 2 and 1, 2026-11-22)
+
+Let `H = E₁₁ − E₂₂` act on `V^{⊗3}`; it equals `3 − 2k` on the sector with `k` odd
+factors. Insert a diagonal `f(H)` into the supertrace. Exact probe, now 21/21:
+
+- The block weights of `x ↦ str(f(H)·x)` are exactly
+  `(f(3) − f(1), f(−1) − f(1), f(−1) − f(−3))`.
+- So they are proportional to `(1, 0, −1)` iff `f(1) = f(−1)` and `f(3) = f(−3)`,
+  that is `f` is even under `H ↦ −H` (equivalently `K ↦ K⁻¹`, `K = q^H`), with
+  `f(3) ≠ f(1)`.
+- `K` alone fails (nonzero hook weight). `K + K⁻¹` gives `[2]_q h² · (1, 0, −1)`;
+  `K² + K⁻²` and `H²` also give the direction.
+
+What this settles: the direction `(1, 0, −1)` is forced by one structural condition,
+evenness of the Cartan insertion under `K ↦ K⁻¹`. What it does not settle: the
+overall scale `f(3) − f(1)`, which differs between `K + K⁻¹`, `K² + K⁻²` and `H²`.
+Choosing among them by the α_em value would be selection against the target. The
+link to the photon, and whether `K ↦ K⁻¹` is the bar involution on the gauge side,
+is still open; the norm-one photon thread (PR #8981) has been asked about it.
+No Lean change: the criterion is linear algebra on the sector weights, which are
+computed exactly in the probe, not formalised.
