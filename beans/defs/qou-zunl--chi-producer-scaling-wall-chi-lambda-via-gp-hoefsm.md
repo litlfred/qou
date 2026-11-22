@@ -1,13 +1,13 @@
 ---
 # qou-zunl
 title: 'chi producer scaling wall: chi_lambda_via_gp_hoefsmit / matrix_m_mpfr explode with strand count n (214x / 679x per +3 strands) — profile, exploit symmetry + symbolic forms, unblock the ⁵Li/⁶Li chi caches (takes over #7083 qou-k54t / qou-d9wf)'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:25:54Z
-updated_at: 2026-10-04T15:12:06Z
+updated_at: 2026-11-22T21:21:50Z
 parent: qou-5vkl
 ---
 
@@ -22,3 +22,9 @@ Verdict: the wall is the minimal-length reduction inside chi_q_via_gp (>99 % at 
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-22 — SCRAPPED as the ledger twin of qou-s7ld; the work is on main (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+This bean's own 2026-09-08 entry says `qou-s7ld` is the live carrier and this bean its twin. The work it records is on main: `e0c4820d21` (the wall is the GP minimal-length reduction; dim-free path-sum route), `07d6584d94` and `80102e6cec` (caches regenerated on the borromean word), `43e3e1b305` (audit). What is still open (reduction complexity class; the four stale deltalambda consumers; level-locality, answered negatively in `8801d04bd2`) lives on `qou-s7ld` and `qou-sv7h`, which are in the L2 binding area and were not touched here. Scrapped, not completed, so the open items are read from the live carrier only.

@@ -1,11 +1,11 @@
 ---
 # qou-5jhf
 title: 'Triage PR #8110: Term 4: surviving-block co-Casimir C° on the radical quotient (Lean)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-20T08:00:00Z
-updated_at: 2026-11-20T08:00:00Z
+updated_at: 2026-11-22T21:22:54Z
 parent: qou-c20n
 pr: 8110
 ---
@@ -19,3 +19,9 @@ Found by the W6 session review (`docs/coordination/2026-11-20-session-review.md`
 - Nothing has been decided about its content.
 
 Created by W6, https://claude.ai/code/session_01VQDpPgX3UVCddvq75ab4EV
+
+## 2026-11-22 — CLOSED: work landed (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The triage subject, PR #8110, was closed 2026-11-21 as superseded. Its content reached main via port commit \`9915906cf67\`. Nothing left to triage.

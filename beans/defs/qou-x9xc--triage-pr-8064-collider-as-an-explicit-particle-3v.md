@@ -1,11 +1,11 @@
 ---
 # qou-x9xc
 title: 'Triage PR #8064: Collider as an explicit particle: 3V energy quanta and reachable products'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-20T08:00:00Z
-updated_at: 2026-11-20T08:00:00Z
+updated_at: 2026-11-22T21:22:54Z
 parent: qou-c20n
 pr: 8064
 ---
@@ -19,3 +19,9 @@ Found by the W6 session review (`docs/coordination/2026-11-20-session-review.md`
 - Nothing has been decided about its content.
 
 Created by W6, https://claude.ai/code/session_01VQDpPgX3UVCddvq75ab4EV
+
+## 2026-11-22 — CLOSED: work landed (bean-hygiene wave 2)
+
+Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
+
+The triage subject, PR #8064, was closed as superseded on 2026-11-21 with the owner approving the close. Its probe and witness landed on main unchanged via #8543 (commit \`cc055a9d880\`, merged 2026-11-20). Nothing left to triage.
