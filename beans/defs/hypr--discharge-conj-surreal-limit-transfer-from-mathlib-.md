@@ -191,3 +191,8 @@ Read-only reconciliation; status left `todo` (rule 13a: the conjecture is open f
 ## 2026-11-22 (later) — item 3 above is now proved in Lean
 
 Commit `4793cf6f7` on `claude/analytic-conjectures-drain-2026-11-22`: `QOU/AppendixSurreals/DyadicBirthdayHyperreal.lean`. `surrealFieldHyperrealDyadic` (a `def`) puts on ℝ* the birthday ⌈|r|⌉₊ + e(r) at a standard dyadic r (e(r) = least k with r·2^k ∈ ℤ) and ω elsewhere. Sorry-free, `#print axioms` standard: all six axioms; `BirthdayFaithful` (`birthdayFaithfulDyadic`); fails `ConwaySimplicity` at ω, ω+1; `birthdayFaithful_not_imp_conwaySimplicity`. This birthday is Conway's on the dyadics (remark only). The ℝ* limit transfer can now sit on a faithful structure; re-basing `surrealLimitTransferHyperreal` onto it is not done (one-line change, waits for the PR). PR waits for the owner card.
+
+
+## 2026-11-22T21:42:00Z: PR opened
+
+Draft PR litlfred/qou#9135 (issue #9134) carries this work. Not merged; the owner merges.

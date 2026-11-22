@@ -32,3 +32,8 @@ Commit `33a0545dd` on `claude/analytic-conjectures-drain-2026-11-22` (pushed; PR
 1. `mass-theory/phi-q-markov-residue-habiro-intro.md`: "establishes the equivalence" → "states the equivalence …; the analytic identification of the residue contributions with the cyclotomic tail remains open, and machine-precision agreement on the available atomic Markov traces is the evidence for it."
 2. `mass-endomorphism/tau-M-asymptotic-rep-theory-interpretation.md`: the N=1 coupling b is reproduced "through the residue-sum equivalence, conditional on that equivalence, whose analytic identification … remains open."
 Corpus-derived (source block `habiro-residue-sum-equivalence.md:30-31` decides the wording). Not done: the `prop:` → `conj:` label question flagged above (a rename, owner-gated). Mark completed when the PR merges.
+
+
+## 2026-11-22T21:42:00Z: PR opened
+
+Draft PR litlfred/qou#9135 (issue #9134) carries this work. Not merged; the owner merges.

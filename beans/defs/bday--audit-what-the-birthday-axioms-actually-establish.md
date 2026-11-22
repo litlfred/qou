@@ -962,3 +962,8 @@ Was in-progress with no bean update since 2026-09-04 and no main commit naming i
 ## 2026-11-22 — the two mixins are independent of each other (wave-2 analytic sibling)
 
 Commit `4793cf6f7` (branch `claude/analytic-conjectures-drain-2026-11-22`), `QOU/AppendixSurreals/DyadicBirthdayHyperreal.lean`: one `SurrealField` structure on ℝ* that is `BirthdayFaithful` and fails `ConwaySimplicity` (`birthdayFaithful_not_imp_conwaySimplicity`, sorry-free). Also: the Round 47 note above cites PR #8147 for `StrictBirthdayHierarchy`; #8147 closed unmerged and that section is not on main.
+
+
+## 2026-11-22T21:42:00Z: PR opened
+
+Draft PR litlfred/qou#9135 (issue #9134) carries this work. Not merged; the owner merges.
