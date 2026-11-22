@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T19:55:42Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T22:00:00Z
 parent: b9cj
 ---
 
@@ -138,3 +138,25 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8294, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-07-25: "attack(deltalambda covariance qou-x631): PROVED even hook-power moment positivity"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-22: one-step branching recursion is tautological; an exact level-shift reformulation (wave-2 covariance-kernel-revn, session_01Qmmkt8qREoAzcE1YKVx5nz)
+
+Scope (a): a method elimination plus an equivalent form. No status change; the kernel stays open.
+
+Write D(m) = Σ_{Λ⊢m} (f^Λ)³ X(Λ), X = Σ_□c² − C(m,2) (so D(m) ≤ 0 is the kernel). Split one factor of (f^Λ)³ by f^Λ = Σ_{λ↗Λ} f^λ and the other two by the transition measure p_λ(□) = f^{λ+□}/((k+1)f^λ), k = m−1:
+
+    D(k+1) = (k+1)² Σ_{λ⊢k} (f^λ)³ [ s(λ)·X(λ) + Q(λ) ],   s = Σ_□ p_□²,   Q = Σ_□ p_□²(c_□² − k) = Cov_{p_λ}(p, c²)
+
+(uses only Kerov's E_{p_λ}[c²] = k, exact for every λ). Checked as an exact integer identity (Fraction arithmetic) for 2 ≤ k ≤ 15.
+
+Why it gives nothing new: the first term closes back on D(k+1) by the co-transition identity Σ_{□ removable} f^{Λ∖□} c(□)² = f^Λ (3Σc²(Λ) − C(m,2))/m, which gives Σ_λ f^λ X(λ) over λ↗Λ = ((m−3)/m)·f^Λ X(Λ). Hence Σ_λ (f^λ)³ s X = ((m−3)/m³) D(m), and the recursion collapses to the identity
+
+    D(k+1) = ((k+1)³/3) · Σ_{λ⊢k} (f^λ)³ Q(λ).
+
+So the kernel at level k+1 is equivalent to E_{(f)³, level k}[ Cov_{p_λ}(p_□, c_□²) ] ≤ 0: the atoms of the transition measure that carry more mass sit at smaller |content|, on average under the dimension-cubed measure.
+
+Two checks on whether this form helps:
+- Pointwise Q(λ) ≤ 0 is false. First failure λ = (2,1) at k = 3; staircase-like shapes fail at every k ≤ 15 ((3,2,1), (4,3,2,1), (5,4,3,2), …; 18 shapes at k = 15).
+- No first-order (limit-shape) sign. A semicircle heuristic (p_□ ∝ density) would give E_{p²}[c²] ≈ (4/5)k, a sign at leading order. Measured: E₃[Q]/E₃[s]/k = −0.085, −0.071, −0.058, −0.061 at k = 10, 14, 18, 22, decaying like k^{-1/2}, which is the fluctuation scale again. The transition-measure atoms are close to equal mass along the boundary, so the p²-tilt is a second-order effect, the same wall as every route in the epic synthesis.
+
+Not formalised (it eliminates a route; formalising the co-transition identity is a sizeable Young-diagram build). Probe script kept outside the repo; rerun is a 60-line exact enumeration.

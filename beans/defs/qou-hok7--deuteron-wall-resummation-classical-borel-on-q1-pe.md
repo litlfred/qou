@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-11-15T22:20:00Z
+updated_at: 2026-11-22T22:00:00Z
 parent: qou-3e6w
 ---
 
@@ -2179,3 +2179,6 @@ Discharged the prose-only caveat above: `QOU/BraidKnot/SupergradientCertificate.
 **Do not close this bean.**
 
 - **Round 89 (`https://github.com/litlfred/qou/pull/8408`, head `10a16c52a2f1ad211bfb233927428389e8e4dd3e`)**: Formalized theorem + 80-dps witness (`status: in-progress`).
+
+## 2026-11-22: premise check (session_01Qmmkt8qREoAzcE1YKVx5nz)
+The newest Round entries here cite a PR that is open and unmerged (#8408); its Lean is not on main 3c4c98fcc. Do not build on it until merged. Status unchanged.

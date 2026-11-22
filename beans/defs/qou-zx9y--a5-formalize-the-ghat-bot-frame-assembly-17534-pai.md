@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:50Z
-updated_at: 2026-11-15T20:59:00Z
+updated_at: 2026-11-22T22:00:00Z
 parent: qou-3e6w
 ---
 
@@ -67,3 +67,6 @@ consuming claim.**
 - PR: https://github.com/litlfred/qou/pull/8000 (`claude/qou-fo7l-zx9y-2026-11-15`, head `59133917a93a808efb21853b8dfef6b8cd35880e`)
 - Formalised `one_body_sub_le_mul_of_antitone`, `ghatBot`, `ghatBot_frame_bound`, and `sum_ghatBot_frame_bound` sorry-free in `folio/quantum-observable-universe/lean/QOU/BraidKnot/SearchCoercivity.lean`.
 - Verified with `lean -DautoImplicit=false -s 65536` (`0` warnings, `0` `sorry`, `#print axioms` -> `[propext, Classical.choice, Quot.sound]`).
+
+## 2026-11-22: main debt discharged on main; one small item left (session_01Qmmkt8qREoAzcE1YKVx5nz)
+The open debt named above (the Ghat_bot per-row assembly: one-body slope + rows below − rows above) is proved on main: SearchCoercivity.lean ghatBot_frame_bound and sum_ghatBot_frame_bound (commit 59133917a9, PR #8000 merged), composed into SupergradientCertificate.sup_ghatBot_frame_certificate (commit 704fca1db0, PR #8044 merged). The negative "rows above" block is kept, as asked. Caveat for whoever closes this: sum_ghatBot_frame_bound sums single-row bounds with every other row at b0, so it does not bound interactions between two simultaneously displaced rows; check that the consuming claim only needs single-row moves. Still not in Lean: the geometric tail bound on cap_sum (_TAIL_C), the "second item, smaller" (grep of QOU/BraidKnot finds no counterpart). Status unchanged.

@@ -1,11 +1,11 @@
 ---
 # qou-r9a6
 title: 'Ingest Murota (or prove the L-natural optimality criterion): the Xbot arc''s one load-bearing citation resolves to nothing in the corpus'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-11T08:35:32Z
-updated_at: 2026-11-17T23:08:23Z
+updated_at: 2026-11-22T22:00:00Z
 parent: qou-3e6w
 ---
 
@@ -116,3 +116,6 @@ Per owner ruling `Q-3E6W-2 = 1` (session `session_012EE90758AE4945AC814D43`), ex
 ## 2026-11-17 sibling sweep
 Sibling session that worked this was archived; no new leftover beyond what this bean holds.
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+## 2026-11-22: completed (wave-2 covariance-kernel-revn, session_01Qmmkt8qREoAzcE1YKVx5nz)
+The bean asks to ingest Murota OR prove the L-natural optimality criterion. The second is on main: folio/quantum-observable-universe/lean/QOU/BraidKnot/LNaturalOptimality.lean, global_of_local (commit 808d3c76ef: local ±χ_S optimality ⇒ global, from discrete midpoint concavity, by strong induction on coordinate distance) and boxDiffDomain_midpoint_closed / global_of_local_boxDiffDomain (commit 704fca1db0, PR #8044 merged). Read: the proof is a genuine induction, not a restated hypothesis. Murota is still not in library/; ingesting it is optional now and can be a new bean if the owner wants the citation as well.

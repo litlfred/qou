@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-11T08:20:00Z
-updated_at: 2026-10-11T08:20:00Z
+updated_at: 2026-11-22T22:00:00Z
 parent: qou-3e6w
 ---
 
@@ -32,3 +32,6 @@ is cited, not formalised.
   - **(iii) Monotonicity in `j ≥ N` and discharging `hrow`**: `rowBase_of_ge`, `rowBase_mono`, `rowBase_strictMono_of_ge`, `cbarAt_antitone`, `rowBracket_antitone`, `rowGain_le_rowBracket_N`, `frame_tail_never_helps`, and `frame_tail_move_lt_zero` prove that row `N` is the worst case (`rowBracket eps pe w c N j ≤ rowBracket eps pe w c N N`) and discharge `hrow` in `tail_never_helps` / `tail_move_lt_zero`.
 - **L♮ optimality criterion**: proved in `QOU/BraidKnot/LNaturalOptimality.lean` (`global_of_local_boxDiffDomain`, PR #8044, bean `qou-r9a6`).
 - **PR**: https://github.com/litlfred/qou/pull/8153 (`95e28f261d9c08b118bd02c63a82c44dafe6174c`).
+
+## 2026-11-22: where the work is (session_01Qmmkt8qREoAzcE1YKVx5nz)
+The Round 47 Lean (rowBracket, frame_tail_never_helps, frame_tail_move_lt_zero, …) is NOT on main: main's XbotBottomEdgeLemmas.lean is still the 2026-10-11 version (commit 9bab779ee9; tail_never_helps / tail_move_lt_zero still take hrow as a hypothesis). It sits in open PR #8153 (labels ready-to-merge, release; a 6-bean batch also carrying qou-ckyw/x3u6/q621/amf8/g937). Merging is the coordinator's call; not re-verified here. Status unchanged.

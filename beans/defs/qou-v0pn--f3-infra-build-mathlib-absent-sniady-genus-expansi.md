@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T22:00:00Z
 parent: b9cj
 ---
 
@@ -20,3 +20,6 @@ parent: b9cj
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8272, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22: premise check (session_01Qmmkt8qREoAzcE1YKVx5nz)
+The Round 78 entry cites PR #8272, which is not merged, and its Lean file (QOU/QBeta/FiveTwoAdjointTorsionAndSniadyGenusCovarianceBrick.lean) is absent on main 3c4c98fcc. Do not build on it. Note also that the route this infrastructure serves (Śniady genus expansion for the kernel) was eliminated as route #11 (docs/audits/2026-07-25-covariance-kernel-A5-genus-eliminated-A4-lean.md; sibling qou-t5m1 scrapped 2026-11-22). Left todo, not scrapped: the machinery could still serve the k5r5 / M_1 work, which lives inside A. Owner's call.

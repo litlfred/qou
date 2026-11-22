@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T16:37:35Z
-updated_at: 2026-11-21T14:00:00Z
+updated_at: 2026-11-22T22:00:00Z
 parent: qou-m6dn
 ---
 
@@ -22,3 +22,6 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8339, closed o
 ## 2026-11-21: premise check (hecke-gs-conj sibling, session_01Qmmkt5sJX34MCerjRMERJN; owner: nothing rests on replaced results)
 The "Round NN progress" entries above cite batch PRs closed on 2026-11-20 as vacuous or superseded. Their Lean/probe/witness paths are ABSENT on main (checked against main 2ae54ab40 file list). Do not build on them or cite them. Open; this is the dim^2 -> dim^3 obstruction that every route in the epic synthesis hits.
 No physics premise in this bean is affected by the rulings in docs/coordination/owner-rulings.md (pure Plancherel combinatorics). Kernel proved for 3<=k<=20 (YoungDiagramKernel.lean:200, kernelValue_nonpos_of_le_twenty); general k open. Status unchanged: an open conjecture stays open.
+
+## 2026-11-22: cross-ref (session_01Qmmkt8qREoAzcE1YKVx5nz)
+The one-step dim³ branching recursion is recorded on qou-x631 (2026-11-22 note): it is tautological, and it gives the exact form D(k+1) = ((k+1)³/3)·Σ_{λ⊢k} (f^λ)³ Cov_{p_λ}(p, c²). That form is no easier: pointwise false, and its sign is again at fluctuation order. Status unchanged.
