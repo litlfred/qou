@@ -212,4 +212,113 @@ lemma cone_facts {a v b z : R2} (hD : cross a v b ≠ 0) (hMa : 0 < cross v b z 
   · rw [h, zero_mul] at hMa; exact lt_irrefl _ hMa
   · rw [cross_rot] at h; rw [h, zero_mul] at hMb; exact lt_irrefl _ hMb
 
+/-- **The deepest inner vertex gives an interior chord.** If some vertex other than the three
+corner vertices lies in the triangle `w n, w 0, w 1`, take the one with the largest weight of
+`w 0`. The segment from `w 0` to it meets `P` only at its ends, and it lies strictly inside the
+angle at `w 0`. -/
+theorem exists_chord {P : Polygon R2} (hP : P.IsSimple) (hn : 3 ≤ P.n)
+    (hD : cross (P.w P.n) (P.w 0) (P.w 1) ≠ 0)
+    (hz : ∃ j, 2 ≤ j ∧ j ≤ P.n - 1 ∧ P.w j ∈ convexHull ℝ {P.w P.n, P.w 0, P.w 1}) :
+    ∃ β, 2 ≤ β ∧ β ≤ P.n - 1 ∧
+      segment ℝ (P.w 0) (P.w β) ∩ P.carrier ⊆ {P.w 0, P.w β} ∧
+      cross (P.w 0) (P.w 1) (P.w β) ≠ 0 ∧
+      (∀ s t : ℝ, 0 ≤ s → 0 ≤ t →
+        P.w P.n - P.w 0 ≠ s • (P.w 1 - P.w 0) + t • (P.w β - P.w 0)) ∧
+      cross (P.w 0) (P.w β) (P.w P.n) ≠ 0 ∧
+      (∀ s t : ℝ, 0 ≤ s → 0 ≤ t →
+        P.w 1 - P.w 0 ≠ s • (P.w β - P.w 0) + t • (P.w P.n - P.w 0)) := by
+  classical
+  have hD2 : 0 < cross (P.w P.n) (P.w 0) (P.w 1) * cross (P.w P.n) (P.w 0) (P.w 1) :=
+    mul_self_pos.mpr hD
+  let S := (Finset.Icc 2 (P.n - 1)).filter
+    (fun j => P.w j ∈ convexHull ℝ {P.w P.n, P.w 0, P.w 1})
+  obtain ⟨j0, hj0a, hj0b, hj0T⟩ := hz
+  have hSne : S.Nonempty := ⟨j0, by simp [S, hj0a, hj0b, hj0T]⟩
+  obtain ⟨β, hβS, hmax⟩ := Finset.exists_max_image S
+    (fun j => cross (P.w 1) (P.w P.n) (P.w j) * cross (P.w P.n) (P.w 0) (P.w 1)) hSne
+  simp only [S, Finset.mem_filter, Finset.mem_Icc] at hβS
+  obtain ⟨⟨hβ2, hβn⟩, hzT⟩ := hβS
+  obtain ⟨hza, hzv, hzb⟩ := (mem_convexHull_triple_iff hD).mp hzT
+  -- the weights of `w n` and `w 1` at the chosen vertex are positive
+  have hMa : 0 < cross (P.w 0) (P.w 1) (P.w β) * cross (P.w P.n) (P.w 0) (P.w 1) := by
+    rcases hza.lt_or_eq with h | h
+    · exact h
+    exfalso
+    have h0 : cross (P.w 0) (P.w 1) (P.w β) = 0 := (mul_eq_zero.mp h.symm).resolve_right hD
+    have hD' : cross (P.w 0) (P.w 1) (P.w P.n) ≠ 0 := by rw [cross_rot]; exact hD
+    have hT' : P.w β ∈ convexHull ℝ {P.w 0, P.w 1, P.w P.n} := by rwa [triple_rot]
+    have hm : P.w β ∈ P.seg 0 := mem_segment_of_mem_convexHull_of_cross hD' hT' h0
+    rcases hP.w_mem_seg (by omega) (Nat.zero_le _) hm with h | h
+    · omega
+    · rw [Nat.mod_eq_of_lt (by omega)] at h; omega
+  have hMb : 0 < cross (P.w P.n) (P.w 0) (P.w β) * cross (P.w P.n) (P.w 0) (P.w 1) := by
+    rcases hzb.lt_or_eq with h | h
+    · exact h
+    exfalso
+    have h0 : cross (P.w P.n) (P.w 0) (P.w β) = 0 := (mul_eq_zero.mp h.symm).resolve_right hD
+    have hm : P.w β ∈ P.seg P.n := by
+      have := mem_segment_of_mem_convexHull_of_cross hD hzT h0
+      unfold seg; rwa [P.w_period]
+    rcases hP.w_mem_seg (by omega) le_rfl hm with h | h
+    · omega
+    · rw [Nat.mod_self] at h; omega
+  obtain ⟨hA, hB, hD1, hD3⟩ := cone_facts hD hMa hMb
+  refine ⟨β, hβ2, hβn, ?_, hD1, hA, hD3, hB⟩
+  -- the chord meets `P` only at its ends
+  rintro y ⟨⟨s, t, hs, ht, hst, rfl⟩, hycar⟩
+  by_contra hy
+  simp only [mem_insert_iff, mem_singleton_iff, not_or] at hy
+  obtain ⟨hy0, hyβ⟩ := hy
+  have hs0 : 0 < s := by
+    rcases hs.lt_or_eq with h | h
+    · exact h
+    · exfalso; apply hyβ; rw [← h, show t = 1 by linarith]; simp
+  have ht0 : 0 < t := by
+    rcases ht.lt_or_eq with h | h
+    · exact h
+    · exfalso; apply hy0; rw [← h, show s = 1 by linarith]; simp
+  have lin : ∀ X Y : R2, cross X Y (s • P.w 0 + t • P.w β) =
+      s * cross X Y (P.w 0) + t * cross X Y (P.w β) :=
+    fun X Y => cross_lineMap X Y _ _ s t hst
+  rw [carrier_eq_biUnion] at hycar
+  simp only [mem_iUnion, Finset.mem_range] at hycar
+  obtain ⟨k, hk, hyk⟩ := hycar
+  have hseg0 : ∀ {p q x : R2}, x ∈ segment ℝ p q → cross p q x = 0 := by
+    rintro p q x ⟨s', t', -, -, hst', rfl⟩
+    rw [cross_lineMap p q p q s' t' hst', cross_left, cross_right]; ring
+  by_cases hk0 : k = 0
+  · subst hk0
+    have hyk' : s • P.w 0 + t • P.w β ∈ segment ℝ (P.w 0) (P.w 1) := hyk
+    have h0 := hseg0 hyk'
+    rw [lin, cross_left, mul_zero, zero_add] at h0
+    rw [(mul_eq_zero.mp h0).resolve_left ht0.ne', zero_mul] at hMa
+    exact lt_irrefl _ hMa
+  by_cases hkn : k = P.n
+  · subst hkn
+    have hyk' : s • P.w 0 + t • P.w β ∈ segment ℝ (P.w P.n) (P.w 0) := by
+      have := hyk; unfold seg at this; rwa [P.w_period] at this
+    have h0 := hseg0 hyk'
+    rw [lin, cross_right, mul_zero, zero_add] at h0
+    rw [(mul_eq_zero.mp h0).resolve_left ht0.ne', zero_mul] at hMb
+    exact lt_irrefl _ hMb
+  -- an edge away from `w 0`: compare weights of `w 0`
+  have hvT : P.w 0 ∈ convexHull ℝ {P.w P.n, P.w 0, P.w 1} :=
+    subset_convexHull ℝ _ (by simp)
+  have hyT : s • P.w 0 + t • P.w β ∈ convexHull ℝ {P.w P.n, P.w 0, P.w 1} :=
+    (convex_convexHull ℝ _) hvT hzT hs ht hst
+  have hle := edge_weight_le hP hn hD hzv (fun j hj2 hjn hjT => hmax j (by
+      simp only [S, Finset.mem_filter, Finset.mem_Icc]; exact ⟨⟨hj2, hjn⟩, hjT⟩))
+    (k := k) (by omega) (by omega) hyk hyT
+  rw [lin, cross_rot2] at hle
+  have hsum := cross_cyclic_sum (P.w P.n) (P.w 0) (P.w 1) (P.w β)
+  have hsumD : cross (P.w 0) (P.w 1) (P.w β) * cross (P.w P.n) (P.w 0) (P.w 1) +
+      cross (P.w 1) (P.w P.n) (P.w β) * cross (P.w P.n) (P.w 0) (P.w 1) +
+      cross (P.w P.n) (P.w 0) (P.w β) * cross (P.w P.n) (P.w 0) (P.w 1) =
+      cross (P.w P.n) (P.w 0) (P.w 1) * cross (P.w P.n) (P.w 0) (P.w 1) := by
+    rw [← hsum]; ring
+  have ht1 : t = 1 - s := by linarith
+  subst ht1
+  nlinarith [mul_pos hs0 (show 0 < cross (P.w P.n) (P.w 0) (P.w 1) * cross (P.w P.n) (P.w 0) (P.w 1)
+    - cross (P.w 1) (P.w P.n) (P.w β) * cross (P.w P.n) (P.w 0) (P.w 1) by linarith)]
+
 end QOU.MathlibExt.PL
