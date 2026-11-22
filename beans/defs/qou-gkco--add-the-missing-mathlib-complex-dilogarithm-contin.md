@@ -3,13 +3,13 @@
 title: 'Add the missing Mathlib: complex dilogarithm (continuation + reflection + inversion), upstreamable'
 status: in-progress
 pr: 8233
-updated_at: 2026-11-17T06:46:41Z
+updated_at: 2026-11-22T21:45:00Z
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-06T22:48:21Z
-updated_at: 2026-10-04T15:16:17Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-r9ih
 ---
 
@@ -367,3 +367,9 @@ before picking the next step here.
 - **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8233` at `0df1f54777395f7641371a1bd56d61fa352927af`).
 - **Lean Formalization**: `QOU.QBeta.DilogCuspCancellationAndBorelProperTimeBrick.complex_dilog_reflection_and_inversion_compatibility` (Compatibility of Euler's dilogarithm reflection and inversion functional equations and self-inverse evaluation L(-1) = -pi^2/12.)
 - **80-dps Witness**: `computations/probes/dilog-cusp-cancellation-and-borel-proper-time-brick.witness.json` (`scriptHash: 3bb3c88effd9`, `scriptCommitSha: 162d2914798b1189f0082f4e029eb8fed83ca8ee`).
+
+## 2026-11-22 — wave-2 review of the claiming PR (thread "Work dilogarithm and Bloch beans")
+
+The claim on this bean comes from PR #8233 (`QOU/QBeta/DilogCuspCancellationAndBorelProperTimeBrick.lean`, opened 2026-11-16/17, still open, `mergeable_state: dirty`). I read every theorem in that file. Each one is an identity in scalar variables over `ℚ` or `ℝ` (`ring` / `linarith` / `field_simp`), and where the bean's claim appears it appears as a hypothesis (for example `#8224` proves `A_ω = 3` from the hypothesis `a_omega_phi = 3`). No theorem touches the bean's actual objects (no `LiTwo`, `blochD`, `Φ_b`, state integral, measure or limit). **So PR #8233 does not discharge this bean.** The W4 triage (PR #8531, `docs/coordination/2026-11-20-batch-pr-triage.md` on that branch) listed it as NEEDS-REWORK for conflicts only, because its scan deliberately does not flag real- or rational-typed one-liners.
+
+Status left unchanged: resetting the claim and closing the PR are the owner's call, and the recommendation went to the coordinator. The work this bean describes is still open, as stated above this note.

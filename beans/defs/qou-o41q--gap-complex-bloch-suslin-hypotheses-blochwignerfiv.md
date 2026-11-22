@@ -1,13 +1,13 @@
 ---
 # qou-o41q
 title: 'GAP: complex Bloch-Suslin hypotheses (BlochWignerFiveTerm, BlochSuslinRigidity) have no instance'
-status: in-progress
+status: completed
 pr: 8235
-updated_at: 2026-11-17T06:55:36Z
+updated_at: 2026-11-22T21:45:00Z
 type: task
 priority: normal
 created_at: 2026-11-15T18:12:20Z
-updated_at: 2026-11-15T21:20:33Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-r9ih
 ---
 
@@ -34,3 +34,7 @@ STILL OPEN: BlochSuslinRigidity has no instance (Bloch 1978 / Suslin 1991 rigidi
 - **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8235` at `83fd5b4cb41e61d75f72ddd82bda505e34bd92f4`).
 - **Lean Formalization**: `QOU.QBeta.ThimbleDecompositionAndSymmetricPolytopeBrick.bloch_suslin_antisymmetric_duplication_and_inversion_annihilation` (Dichotomy for the Bloch-Suslin duplication relation D(x^2) = 2*D(x) - 2*D(-x) between odd parity D(x^2) = 4*D(x) and even real-orientation degeneracy D(x^2) = 0.)
 - **80-dps Witness**: `computations/probes/thimble-decomposition-and-symmetric-polytope-brick.witness.json` (`scriptHash: e55db77fb2bb`, `scriptCommitSha: 6020aea5785046b552772c9a42fc52ac2db9f3a2`).
+
+## 2026-11-22 — completed (wave-2, thread "Work dilogarithm and Bloch beans")
+
+Both open items are proved on main: `QOU.Archimedean.blochWignerFiveTerm_blochD` (`BlochWignerFiveTermInstance.lean:557`) and `QOU.Archimedean.blochSuslinRigidity_blochD` (`BlochRigidity/Instance.lean:98`), plus the Dolbeault layer (`BlochRigidity/Abstract.lean`, `Smooth.lean`, `blochSuslinRigidity_blochD_via_dolbeault`). PR #7946 merged 2026-11-15. Re-checked today: `lean-verify` exit 0, `#print axioms` on both instances gives `[propext, Classical.choice, Quot.sound]`. The later PR #8235 note above is not needed for this: its theorem is scalar algebra over `ℝ` and proves nothing about `D`.

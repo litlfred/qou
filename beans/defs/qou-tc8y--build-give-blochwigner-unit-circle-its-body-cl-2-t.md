@@ -1,13 +1,13 @@
 ---
 # qou-tc8y
 title: 'BUILD: give BlochWigner_unit_circle its body (Cl_2) — the opaque seal is stale and collides with the proved def'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:07:54Z
-updated_at: 2026-11-16T18:38:00Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-rtxm
 ---
 
@@ -52,3 +52,7 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §B1, §F5.
 - `QOU/Archimedean/BlochWignerUnitCircle.lean` already carries the concrete body `noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ` (since issue #7942); updated its module header docstring to retire the stale `noncomputable opaque` note.
 - `QOU/Archimedean/BlochWignerMathlibFiller.lean` now imports `QOU.Archimedean.BlochWignerUnitCircle` instead of redeclaring a duplicate `BlochWigner_unit_circle` in `namespace QOU.Archimedean`, and exposes `@[simp] theorem BlochWigner_unit_circle_eq_Cl_2 (θ : ℝ) : BlochWigner_unit_circle θ = Cl_2 θ := rfl`.
 - Re-enabled `import QOU.Archimedean.BlochWignerMathlibFiller` in both `QOU/Archimedean.lean` and `QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean`.
+
+## 2026-11-22 — completed (wave-2, thread "Work dilogarithm and Bloch beans")
+
+PR #8151 was closed unmerged, but its change was ported to main as `cecac49f8e` (2026-11-20, "port #8151"). On main now: `BlochWignerUnitCircle.lean:55` is `noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`; `BlochWignerMathlibFiller.lean` imports it and states `BlochWigner_unit_circle_eq_Cl_2` as a theorem (no second declaration); `QOU/Archimedean.lean:36` imports the filler (no longer commented out). `lean-verify` exit 0; `#print axioms BlochWigner_unit_circle_eq_Cl_2` = `[propext, Classical.choice, Quot.sound]`.

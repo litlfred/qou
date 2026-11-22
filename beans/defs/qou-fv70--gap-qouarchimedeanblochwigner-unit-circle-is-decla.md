@@ -1,15 +1,15 @@
 ---
 # qou-fv70
 title: 'GAP: QOU.Archimedean.BlochWigner_unit_circle is declared TWICE in one namespace — opaque vs defined, masked by a commented-out import, and it decides qou-006b''s epistemic status'
-status: in-progress
+status: completed
 pr: 8240
-updated_at: 2026-11-17T07:03:07Z
+updated_at: 2026-11-22T21:45:00Z
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T02:22:50Z
-updated_at: 2026-11-15T18:12:08Z
+updated_at: 2026-11-22T21:45:00Z
 parent: qou-r9ih
 ---
 
@@ -73,3 +73,7 @@ class as the `substrate-anchor-alternatives.md` pointer AGENTS.md records.
 - **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8240` at `cb076a625e5995208490115a8926f02d958314a7`).
 - **Lean Formalization**: `QOU.QBeta.AnglePolytopeFeasibilityAndClausenUnitCircleBrick.bloch_wigner_unit_circle_clausen_odd_reflection_and_triplication` (Unit-circle Clausen / Bloch-Wigner oddness at 0 and pi plus Kubert duplication at pi/3 locking D(2*pi/3) = (2/3)*D(pi/3) and D(pi/3) + D(2*pi/3) = (5/3)*D(pi/3).)
 - **80-dps Witness**: `computations/probes/angle-polytope-feasibility-and-clausen-unit-circle-brick.witness.json` (`scriptHash: 2cbc25827af3`, `scriptCommitSha: ec2c1b177f9eff729f315a26ddbb5ea7edbf540d`).
+
+## 2026-11-22 — completed (wave-2, thread "Work dilogarithm and Bloch beans")
+
+The duplicate declaration is gone on main (`cecac49f8e`, see `qou-tc8y`): one `def` in `BlochWignerUnitCircle.lean`, a theorem in the filler, and both imports live. The dead citations of `predicted-spectra/bloch-wigner-mathlib-filler.lean` (two docstrings, `BlochWignerUnitCircle.lean:36` and `EmCouplingBringZeroMode.lean:250`) are fixed in commit `b4f95d67bf` on branch `claude/bloch-group-complex-2026-11-22`; the PR waits on the owner's go. The PR #8240 note above does not bear on this bean: its theorem takes `D(0) = −D(0)` etc. as hypotheses over `ℝ`.
