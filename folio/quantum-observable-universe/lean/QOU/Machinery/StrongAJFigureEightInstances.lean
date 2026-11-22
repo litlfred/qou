@@ -1,12 +1,13 @@
 import QOU.Machinery.StrongAJFigureEight
 
 /-!
-# `TransferLemmas` is unsatisfiable over any nontrivial coefficient ring
+# `TransferLemmasTopDeg` is unsatisfiable over any nontrivial coefficient ring
 
-**What is proved (sorry-free).** `not_transferLemmas`: for every nontrivial
+**What is proved (sorry-free).** `not_transferLemmasTopDeg`: for every nontrivial
 coefficient ring `A`, every left ideal `I` of the quantum torus
 `QuantumTorus A = A⟨L^±⟩` and every `Aop`, the class
-`QOU.Machinery.StrongAJFigureEight.TransferLemmas I Aop` has **no** instance.
+`QOU.Machinery.StrongAJFigureEight.TransferLemmasTopDeg I Aop` (the `topDeg`
+encoding, which was `TransferLemmas` until 2026-11-22) has **no** instance.
 
 **Why.** `L` is a unit of the torus (`Lgen_mul_Linv`). If `Aop ≠ 0` lies in
 the left ideal `I`, then `L⁻¹ · Aop` also lies in `I`, is nonzero, and has
@@ -19,9 +20,9 @@ uninhabitable hypothesis, so it is vacuous as stated. The defect is in the
 `minimality` field: on a Laurent ring in `L`, `topDeg` is not a well-founded
 measure of "order" on a left ideal (multiplying by `L⁻¹` lowers it forever).
 Nguyen–Tran's minimality is about the *L-order* (the length
-`topDeg − bottomDeg` of the L-support), or equivalently about the ideal of the
-non-localized ring `A⟨L⟩`. Restating the field that way is a refactor of the
-source class and needs owner approval; it is NOT done here.
+`topDeg − bottomDeg` of the L-support). The old class is kept as
+`TransferLemmasTopDeg`, and `TransferLemmas` was restated with the L-length
+on 2026-11-22 (owner card "Restate with L-length").
 
 **What is not proved.** Nothing about the strong AJ conjecture for `4₁`
 itself; only that this encoding of its transfer inputs cannot be instantiated.
@@ -74,9 +75,9 @@ theorem Linv_mul_ne_zero (f : QuantumTorus A) (hf : f ≠ 0) : Linv * f ≠ 0 :=
   apply hf
   rw [← one_mul f, ← Lgen_mul_Linv (A := A), mul_assoc, h, mul_zero]
 
-/-- **`TransferLemmas` has no instance over a nontrivial coefficient ring.** -/
-theorem not_transferLemmas [Nontrivial A] (I : Ideal (QuantumTorus A))
-    (Aop : QuantumTorus A) : ¬ TransferLemmas I Aop := by
+/-- **`TransferLemmasTopDeg` has no instance over a nontrivial coefficient ring.** -/
+theorem not_transferLemmasTopDeg [Nontrivial A] (I : Ideal (QuantumTorus A))
+    (Aop : QuantumTorus A) : ¬ TransferLemmasTopDeg I Aop := by
   intro h
   by_cases h0 : Aop = 0
   · obtain ⟨q, r, hqr, hr⟩ := h.division 1
@@ -91,8 +92,8 @@ theorem not_transferLemmas [Nontrivial A] (I : Ideal (QuantumTorus A))
 
 /-- Hence the conditional strong-AJ theorem is vacuous: its class hypothesis
 can never be supplied when `A` is nontrivial. -/
-theorem transferLemmas_isEmpty [Nontrivial A] (I : Ideal (QuantumTorus A))
-    (Aop : QuantumTorus A) : IsEmpty (TransferLemmas I Aop) :=
-  ⟨not_transferLemmas I Aop⟩
+theorem transferLemmasTopDeg_isEmpty [Nontrivial A] (I : Ideal (QuantumTorus A))
+    (Aop : QuantumTorus A) : IsEmpty (TransferLemmasTopDeg I Aop) :=
+  ⟨not_transferLemmasTopDeg I Aop⟩
 
 end QOU.Machinery.StrongAJFigureEight.Instances
