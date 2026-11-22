@@ -41,10 +41,14 @@ first; a PL version and the proof that the two agree come later.
   onto, and have oriented inverses.
 * `AmbientIsotopic.refl`, `.symm`, `.trans` — ambient isotopy is an equivalence relation.
   Transitivity runs both isotopies at once, `t ↦ K t ∘ H t`; symmetry uses `t ↦ H (1 - t) ∘ (H 1)⁻¹`.
+* `Polygon.param_rotate`, `Polygon.param_rotateBy` — re-indexing shifts the parameter by `r / N`.
+* `AmbientIsotopic.of_relabel` — **a `relabel` move is an ambient isotopy** (with `H t = id`).
 
 ## What is NOT proved here
 
-* Either direction of "Δ-equivalent ↔ ambient isotopic". These are the next steps of stage 2.
+* That a `delta` move is an ambient isotopy. That needs a compactly supported homeomorphism
+  pushing an edge across the triangle and missing the rest of the link; it is the next step.
+* That ambient isotopic links are Δ-equivalent (stage 2d).
 -/
 
 namespace QOU.MathlibExt.PL
@@ -210,6 +214,77 @@ theorem range_param : Set.range P.param = P.carrier := by
         linarith
       rw [← hpiece, h1, param, fract_zero, pathRaw_zero, pathRaw_one]
 
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- Every `s ∈ [0, 1)` lies on a piece: `s = (i + u) / N` with `0 ≤ u < 1`. -/
+lemma exists_piece {s : ℝ} (hs0 : 0 ≤ s) (hs1 : s < 1) :
+    ∃ (i : Fin (P.n + 1)) (u : ℝ), 0 ≤ u ∧ u < 1 ∧ s = ((i : ℝ) + u) / (P.n + 1) := by
+  have hN : (0 : ℝ) < P.n + 1 := by positivity
+  set k := ⌊(P.n + 1 : ℝ) * s⌋₊
+  have hk : (k : ℝ) ≤ (P.n + 1) * s := Nat.floor_le (by positivity)
+  have hk' : (P.n + 1) * s < k + 1 := Nat.lt_floor_add_one _
+  have hkn : k < P.n + 1 := by
+    have : (k : ℝ) < P.n + 1 := by nlinarith
+    exact_mod_cast this
+  refine ⟨⟨k, hkn⟩, (P.n + 1) * s - k, by linarith, by linarith, ?_⟩
+  simp only
+  field_simp
+  ring
+
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+lemma param_add_int (t : ℝ) (z : ℤ) : P.param (t + z) = P.param t := by
+  simp [param]
+
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- **Re-indexing shifts the parameter by one step**, `1 / N`. -/
+theorem param_rotate (t : ℝ) : P.rotate.param t = P.param (t + 1 / (P.n + 1)) := by
+  have hN : (0 : ℝ) < P.n + 1 := by positivity
+  have key : ∀ s, 0 ≤ s → s < 1 → P.rotate.pathRaw s = P.param (s + 1 / (P.n + 1)) := by
+    intro s hs0 hs1
+    obtain ⟨i, u, hu0, hu1, rfl⟩ := P.exists_piece hs0 hs1
+    have hl : P.rotate.pathRaw (((i : ℝ) + u) / (P.n + 1)) =
+        (1 - u) • P.v (P.next i) + u • P.v (P.next (P.next i)) :=
+      P.rotate.pathRaw_piece i hu0 hu1.le
+    rw [hl]
+    rcases Fin.eq_castSucc_or_eq_last i with ⟨k, rfl⟩ | rfl
+    · have hnext : ((P.next k.castSucc : Fin (P.n + 1)) : ℝ) = (k : ℝ) + 1 := by
+        rw [P.next_castSucc_lt k]; simp
+      have hk : (k : ℝ) + 1 ≤ P.n := by exact_mod_cast k.isLt
+      have he : ((k.castSucc : Fin (P.n + 1)) : ℝ) = k := by simp
+      have hlt : ((P.next k.castSucc : ℝ) + u) / (P.n + 1) < 1 := by
+        rw [div_lt_one hN, hnext]; linarith
+      rw [show (((k.castSucc : Fin (P.n + 1)) : ℝ) + u) / (P.n + 1) + 1 / (P.n + 1) =
+          ((P.next k.castSucc : ℝ) + u) / (P.n + 1) by rw [hnext, he]; ring]
+      rw [param, fract_eq_self.mpr ⟨by positivity, hlt⟩, P.pathRaw_piece _ hu0 hu1.le]
+    · have he : ((Fin.last P.n : Fin (P.n + 1)) : ℝ) = P.n := by simp
+      rw [show (((Fin.last P.n : Fin (P.n + 1)) : ℝ) + u) / (P.n + 1) + 1 / (P.n + 1) =
+          (((0 : Fin (P.n + 1)) : ℝ) + u) / (P.n + 1) + ((1 : ℤ) : ℝ) by
+            rw [he]; simp; field_simp; ring]
+      have hlt : (((0 : Fin (P.n + 1)) : ℝ) + u) / (P.n + 1) < 1 := by
+        rw [div_lt_one hN]; simp; linarith
+      rw [param_add_int, param, fract_eq_self.mpr ⟨by simp; positivity, hlt⟩,
+        P.pathRaw_piece _ hu0 hu1.le, P.next_last]
+  have hfl : t + 1 / (P.n + 1) = (fract t + 1 / (P.n + 1)) + (⌊t⌋ : ℝ) := by
+    linarith [Int.fract_add_floor t]
+  rw [hfl, param_add_int]
+  exact key _ (fract_nonneg t) (fract_lt_one t)
+
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+lemma rotateBy_n (r : ℕ) : (P.rotateBy r).n = P.n := by
+  induction r with
+  | zero => rfl
+  | succ r ih => exact ih
+
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+theorem param_rotateBy (r : ℕ) (t : ℝ) :
+    (P.rotateBy r).param t = P.param (t + r / (P.n + 1)) := by
+  induction r generalizing t with
+  | zero => simp [rotateBy]
+  | succ r ih =>
+    show (P.rotateBy r).rotate.param t = _
+    rw [param_rotate, ih, rotateBy_n]
+    push_cast
+    ring_nf
+
 end Polygon
 
 /-- The lift of an orientation-preserving homeomorphism of the circle `ℝ / ℤ`. -/
@@ -227,6 +302,9 @@ theorem comp {φ ψ : ℝ → ℝ} (hψ : OrientedReparam ψ) (hφ : OrientedRep
     OrientedReparam (ψ ∘ φ) :=
   ⟨hψ.continuous.comp hφ.continuous, hψ.strictMono.comp hφ.strictMono,
     fun t => by simp [hφ.add_one, hψ.add_one]⟩
+
+theorem add_const (c : ℝ) : OrientedReparam (fun t => t + c) :=
+  ⟨continuous_id.add continuous_const, fun _ _ h => by simpa using h, fun t => by ring⟩
 
 variable {φ : ℝ → ℝ} (h : OrientedReparam φ)
 include h
@@ -346,5 +424,21 @@ theorem AmbientIsotopic.trans {L L' L'' : PolygonalLink E} (h : AmbientIsotopic 
     obtain ⟨ψ, hψ, hK⟩ := J.finish (I.e i)
     exact ⟨ψ ∘ φ, hψ.comp hφ, fun t => by
       simp only [Homeomorph.trans_apply, hH, hK, Equiv.trans_apply, Function.comp]⟩
+
+omit [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- **A relabelling is an ambient isotopy**, with `H t = id`: re-indexing a polygon only shifts
+its parameter. -/
+theorem AmbientIsotopic.of_relabel {L L' : PolygonalLink E} (e : Fin L.k ≃ Fin L'.k)
+    (r : Fin L.k → ℕ) (h : ∀ i, L'.comp (e i) = (L.comp i).rotateBy (r i)) :
+    AmbientIsotopic L L' :=
+  ⟨{ H := fun _ => Homeomorph.refl E
+     continuous := continuous_snd
+     continuous_symm := continuous_snd
+     start := fun _ => rfl
+     e := e
+     finish := fun i => ⟨fun t => t + -((r i : ℝ) / ((L.comp i).n + 1)),
+       OrientedReparam.add_const _, fun t => by
+         rw [h i, Polygon.param_rotateBy]
+         simp⟩ }⟩
 
 end QOU.MathlibExt.PL
