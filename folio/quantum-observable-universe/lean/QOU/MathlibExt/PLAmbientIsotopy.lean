@@ -35,6 +35,8 @@ first; a PL version and the proof that the two agree come later.
 
 * `continuous_hat`, `Polygon.continuous_param` — the parametrization is continuous.
 * `Polygon.param_add_one`, `Polygon.param_zero` — it has period `1` and starts at `v 0`.
+* `Polygon.pathRaw_piece`, `Polygon.range_param` — on `[i/N, (i+1)/N]` it is the segment from
+  `v i` to `v (i+1)`, and its image is exactly the polygon's point set.
 * `OrientedReparam.comp`, `.surjective`, `.symm` — oriented reparametrizations compose, are
   onto, and have oriented inverses.
 * `AmbientIsotopic.refl`, `.symm`, `.trans` — ambient isotopy is an equivalence relation.
@@ -42,7 +44,6 @@ first; a PL version and the proof that the two agree come later.
 
 ## What is NOT proved here
 
-* That the image of `param` is the polygon's point set.
 * Either direction of "Δ-equivalent ↔ ambient isotopic". These are the next steps of stage 2.
 -/
 
@@ -61,6 +62,15 @@ lemma hat_zero : hat 0 = 1 := by simp [hat]
 lemma hat_of_one_le_abs {x : ℝ} (h : 1 ≤ |x|) : hat x = 0 := by
   simp only [hat]
   exact max_eq_left (by linarith)
+
+lemma hat_of_mem_Icc {u : ℝ} (h0 : 0 ≤ u) (h1 : u ≤ 1) : hat u = 1 - u := by
+  simp only [hat, abs_of_nonneg h0]
+  exact max_eq_right (by linarith)
+
+lemma hat_sub_one_of_mem_Icc {u : ℝ} (h0 : 0 ≤ u) (h1 : u ≤ 1) : hat (u - 1) = u := by
+  simp only [hat, abs_of_nonpos (by linarith : u - 1 ≤ 0)]
+  rw [max_eq_right (by linarith)]
+  ring
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [TopologicalSpace E]
   [IsTopologicalAddGroup E] [ContinuousSMul ℝ E]
@@ -122,6 +132,83 @@ theorem param_add_one (t : ℝ) : P.param (t + 1) = P.param t := by
 omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
 theorem param_zero : P.param 0 = P.v 0 := by
   simp [param, pathRaw_zero]
+
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+lemma closedV_castSucc (i : Fin (P.n + 1)) : P.closedV i.castSucc = P.v i := by
+  simp [closedV]
+
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+lemma closedV_succ (i : Fin (P.n + 1)) : P.closedV i.succ = P.v (P.next i) := by
+  rcases Fin.eq_castSucc_or_eq_last i with ⟨k, rfl⟩ | rfl
+  · rw [P.next_castSucc_lt k, closedV, Fin.succ_castSucc, Fin.snoc_castSucc]
+  · rw [P.next_last, Fin.succ_last]
+    simp [closedV]
+
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- **On its `i`-th piece the path is the straight segment from `v i` to `v (i+1)`.** -/
+theorem pathRaw_piece (i : Fin (P.n + 1)) {u : ℝ} (h0 : 0 ≤ u) (h1 : u ≤ 1) :
+    P.pathRaw (((i : ℝ) + u) / (P.n + 1)) = (1 - u) • P.v i + u • P.v (P.next i) := by
+  have hN : ((P.n : ℝ) + 1) ≠ 0 := by positivity
+  have hs : ∀ k : Fin (P.n + 2),
+      (P.n + 1 : ℝ) * (((i : ℝ) + u) / (P.n + 1)) - k = (i : ℝ) + u - k := by
+    intro k; field_simp
+  simp only [pathRaw, hs]
+  rw [Finset.sum_eq_add (i.castSucc) (i.succ)]
+  · rw [closedV_castSucc, closedV_succ]
+    simp only [Fin.coe_castSucc, Fin.val_succ, Nat.cast_add, Nat.cast_one]
+    rw [show (i : ℝ) + u - i = u by ring, show (i : ℝ) + u - (i + 1) = u - 1 by ring,
+      hat_of_mem_Icc h0 h1, hat_sub_one_of_mem_Icc h0 h1]
+  · exact fun h => by simpa [Fin.ext_iff] using congrArg Fin.val h
+  · intro c _ ⟨hc1, hc2⟩
+    have hv1 : c.val ≠ i.val := fun h => hc1 (Fin.ext (by simpa using h))
+    have hv2 : c.val ≠ i.val + 1 := fun h => hc2 (Fin.ext (by simpa using h))
+    rw [hat_of_one_le_abs, zero_smul]
+    rcases Nat.lt_or_gt_of_ne hv1 with h | h
+    · have : (c.val : ℝ) + 1 ≤ i.val := by exact_mod_cast h
+      exact le_abs.mpr (Or.inl (by linarith))
+    · have : (i.val : ℝ) + 2 ≤ c.val := by exact_mod_cast (by omega : i.val + 2 ≤ c.val)
+      exact le_abs.mpr (Or.inr (by linarith))
+  · simp
+  · simp
+
+omit [TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] in
+/-- **The parametrization traces exactly the polygon.** -/
+theorem range_param : Set.range P.param = P.carrier := by
+  have hN : (0 : ℝ) < P.n + 1 := by positivity
+  apply Set.Subset.antisymm
+  · rintro _ ⟨t, rfl⟩
+    set s := fract t
+    have hs0 : 0 ≤ s := fract_nonneg t
+    have hs1 : s < 1 := fract_lt_one t
+    set k := ⌊(P.n + 1 : ℝ) * s⌋₊
+    have hk : (k : ℝ) ≤ (P.n + 1) * s := Nat.floor_le (by positivity)
+    have hk' : (P.n + 1) * s < k + 1 := Nat.lt_floor_add_one _
+    have hkn : k < P.n + 1 := by
+      have : (k : ℝ) < P.n + 1 := by nlinarith
+      exact_mod_cast this
+    set i : Fin (P.n + 1) := ⟨k, hkn⟩
+    set u := (P.n + 1) * s - k
+    have he : s = ((i : ℝ) + u) / (P.n + 1) := by
+      simp only [i, u]; field_simp; ring
+    show P.pathRaw s ∈ P.carrier
+    rw [he, P.pathRaw_piece i (by simp only [u]; linarith) (by simp only [u]; linarith)]
+    refine Set.mem_iUnion.mpr ⟨i, ?_⟩
+    exact ⟨1 - u, u, by simp only [u]; linarith, by simp only [u]; linarith, by ring, rfl⟩
+  · intro x hx
+    obtain ⟨i, a, b, ha, hb, hab, rfl⟩ := Set.mem_iUnion.mp hx
+    have ha' : a = 1 - b := by linarith
+    subst ha'
+    have hpiece := P.pathRaw_piece i hb (by linarith)
+    by_cases hlt : ((i : ℝ) + b) / (P.n + 1) < 1
+    · refine ⟨((i : ℝ) + b) / (P.n + 1), ?_⟩
+      rw [param, fract_eq_self.mpr ⟨by positivity, hlt⟩, hpiece]
+    · refine ⟨0, ?_⟩
+      have h1 : ((i : ℝ) + b) / (P.n + 1) = 1 := by
+        have : (i : ℝ) ≤ P.n := by exact_mod_cast Nat.lt_succ_iff.mp i.isLt
+        rw [div_lt_one hN] at hlt
+        rw [div_eq_one_iff_eq hN.ne']
+        linarith
+      rw [← hpiece, h1, param, fract_zero, pathRaw_zero, pathRaw_one]
 
 end Polygon
 
