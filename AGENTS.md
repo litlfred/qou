@@ -9,6 +9,23 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 **Required Action:** Before executing any multi-step task or slash command, run `ls .claude/skills/local/` and `view_file` on the relevant `.md` file. Follow its instructions exactly. NEVER guess.
 
+## FIRST: did the session-start hook run?
+
+The hooks in `.claude/settings.json` run only when the session **starts inside
+this checkout**. If qou was attached or cloned partway through the session, or
+the session opened in another directory, none of them ran: the platform clone
+(`folio-assistant/`), the beans mount and the Lean cache are all missing, and
+nothing says so. Run each command from the repo root, in order:
+
+```bash
+jq -r '.hooks.SessionStart[].hooks[].command' .claude/settings.json
+```
+
+Never report qa-sweep, the validator, beans or Lean as unavailable before doing
+this. Rule: cat-harness skill `remote-mount`, section "When the session-start
+hook did not run"; requirement `req:session-start` statement
+`session-start-hook-ran`.
+
 ## 🟥 THE PHOTON IS `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹` (owner ruling 2026-11-20) — STRICT
 
 **The fourth term is the chiral vertex `σ₀σ₁⁻¹`. The form with `σ₀σ₁` (`L₊`) as the
