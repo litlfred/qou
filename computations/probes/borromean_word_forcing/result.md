@@ -158,6 +158,9 @@ For 5- and 6-strand candidates the link-level reading is not checked here.
   U(1)-neutral cut (owner ruling of 2026-11-21 on whole-word U(1) neutrality, `QOU/PhotonU1NeutralCut.lean`, PR #8835,
   which selects V³ = β_Bor up to 10 crossings by enumeration), so these routes rest
   on the same cost axiom, reached from different premises.
+  On this family the cost equals the corpus crossing energy (`borromean_minimises_energy`),
+  and the owner ruled on 2026-11-22 that energy minimisation is an acceptable selection
+  rule (`docs/coordination/owner-rulings.md`). It remains a ruled input, not a derivation.
 * The γγ route (already in the corpus, sorry-free) selects β_Bor among all γγ words
   of H₃, conditional on the vertex σᵢσᵢ₊₁⁻¹, reading 3 (Frobenius positivity, owner's
   provisional choice) and 1 < q ≤ 23/20. This file's route uses none of those.
