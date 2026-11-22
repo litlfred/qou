@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-11-22T16:47:11Z
+updated_at: 2026-11-22T17:14:32Z
 parent: qou-8lxd
 ---
 
@@ -45,3 +45,5 @@ computations/probes/qcd_colour_action/RESULT.md. Exact over Q(p,q).
 Still open. Closure needs either an owner ruling that K0 counts, or a coideal / twisted colour symmetry of gl₆ outside K4. Not formalised in Lean.
 
 2026-11-22 (spin/background-field probe, PR #9059, computations/probes/qcd_spin_background/, prereg 0415291e97a, probe 4a21dae23ee 39/39, RESULT aa514549e55): scope-(a) MISS. Background colour holonomy K^{(x)n} on (C^N)^{(x)n} (exact Q(q), N=2,3,4): susceptibility at q=1 is sum l_i^2 N^(#cyc-1) (strand winding squared, not spin); Hecke-sign (S2) ratio 2/N; full-twist (S1) expansion 2N+8hbar+4N hbar^2, all positive, only negative constant the -1/N sl-framing. N=3 coincidences 2/N=1-1/N=2/3=(2*1/2)^2-1/3 are N-dependent traps, do not cite. Post-hoc: photon s0s1^-1 alone has negative hbar^2 coefficient -4(N^2-3). No paramagnetic/diamagnetic split exists in colour-only data; the 11/3:-1/3 structure needs a non-colour spin factor = the un-derived theta_I=1 hypothesis of TwistedChannelSplitting.lean. Heat-kernel per-state susceptibility 1 -> 12/17; its RG sign is convention-set. No gluon selected.
+
+2026-11-22 spin-factor probe (PR #9059; 2abaa8ed425 prereg, c3f1b05557a probe, 18dfa1a27e4 result). P1: no transported member of the 16-member commutant class (Jimbo R for colour (x) spin, eigenvalues q, -1/q) braids at real q>1; elim ideal contains q^2(q^2-1)^2(q^2+1)^3(q^4+q^2+1). Scope (b) within the class only. P2: theta_I=1 derived in D/F; no (2s)^2-1/3 split. P3 MISS; -1/3 at N=2 for Lambda^2 W is a post-hoc coincidence. Gluon stays open.
