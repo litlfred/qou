@@ -40,6 +40,46 @@ this chapter, Avrin modelled the elementary fermions by twisted bands
 whose boundaries are the unknot and the trefoil, an independent
 knot-to-particle dictionary \cite{avrin-2012}.
 
+A second lineage replaces knots by braids. Bilson-Thompson represented
+the first-generation fermions and the electroweak bosons by braids of
+three ribbons with two crossings, reading electric charge off the twists
+of the ribbons and colour off the permutations of those twists among the
+ribbons \cite{bilson-thompson2005}. Bilson-Thompson, Markopoulou and
+Smolin then embedded these braids in the braided ribbon networks of
+quantum gravity \cite{bilsonthompson2007}. Gresnigt used the Clifford
+braiding theorem of Kauffman and Lomonaco \cite{kauffman-lomonaco-2007}
+to show that the complex numbers and the quaternions carry
+representations of exactly the two braid groups of that model, the
+braid group $B_2$ of the twists and the circular braid group $B_3^c$ of
+the ribbons \cite{gresnigt2017}. He then identified the framed braids
+with the basis states of the minimal left ideals of the complex
+octonions, which, following Furey, carry one generation of leptons and
+quarks under the unbroken symmetry
+$SU(3)_c \times U(1)_{\mathrm{em}}$ \cite{gresnigt2018}. Chester,
+Arsiwalla and Kauffman mapped the twists of the same states onto the
+weight lattice of $SU(3)_c \times U(1)_{\mathrm{em}}$ and the crossings
+onto chirality through the homomorphism $B_3 \to PSL(2,\mathbb{Z})$, and
+observed that the model captures only that unbroken sector
+\cite{chester-arsiwalla-kauffman-2025}. Finkelstein kept a deformation
+parameter: he matched the four classes of first-generation fermions with
+the four trefoils, read as irreducible representations of the quantum
+group $SL_q(2)$ \cite{finkelstein2008}.
+
+In these programmes the braid acts through a group, the classical braid
+group $B_3$ or its circular version with the framing carried by $B_2$,
+and a deformation parameter, where one appears, sits beside the braiding
+rather than in it. In Gresnigt's review the quantum group $SU_q(3)$ is a
+flavour symmetry, with $q$ a root of unity chosen to fit the octet and
+decuplet baryon masses \cite{gresnigt2017}; in Finkelstein's model $q$
+deforms $SL(2)$, the symmetry of the knot. Colour is either a label
+carried by the strands or an import from a division algebra. This
+chapter reads the braid word in the Iwahori–Hecke algebra $H_n(q)$ with
+$q$ a formal parameter, where every generator satisfies
+$\sigma_i - \sigma_i^{-1} = (q - q^{-1})\mathbf{1}$, and evaluates
+closures with a Markov trace. A particle can then be a linear
+combination of braid words rather than a single braid, as the four-term
+[photon](#def:photon) is.
+
 This chapter keeps the combinatorial half of that lineage and drops the
 mechanical half. The vortex atom tried to derive the stability of matter
 from the dynamics of a medium. Here a knot or link type is the label of
