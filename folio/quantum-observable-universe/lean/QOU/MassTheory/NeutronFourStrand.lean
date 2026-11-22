@@ -84,14 +84,13 @@ theorem s3_mul_s3Inv (q : R) (hq : q ≠ 0) : s3 q * s3Inv q = 1 := by
   ext i j
   rcases i with i | i <;> rcases j with j | j <;> fin_cases i <;> fin_cases j <;>
     simp [s3, s3Inv, E, Et, Matrix.mul_apply, Fintype.sum_sum_type, Fin.sum_univ_three,
-      fromBlocks, Matrix.one_apply, hq] <;>
-    first | done | ring1 | (field_simp; ring1)
+      fromBlocks, hq]
 
 /-- `σ₃⁻¹ = σ₃ − h`. -/
 theorem s3Inv_eq (q : R) : s3Inv q = s3 q - (q - q⁻¹) • (1 : Matrix Ix Ix R) := by
   ext i j
   rcases i with i | i <;> rcases j with j | j <;> fin_cases i <;> fin_cases j <;>
-    simp [s3, s3Inv, E, Et, fromBlocks, Matrix.one_apply] <;> ring
+    simp [s3, s3Inv, E, Et, fromBlocks]
 
 /-- Hecke relation for `σ₃`: `σ₃² = h σ₃ + 1`. -/
 theorem s3_hecke (q : R) (hq : q ≠ 0) : s3 q * s3 q = (q - q⁻¹) • s3 q + 1 := by
