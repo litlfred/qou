@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/predicted-spectra/knot-formula-table.md"
   },
   "source_hashes": {
-    "md": "f300952cde89",
+    "md": "0850e7b4cc0d",
     "ts": "7e9f61c27178"
   },
   "criteria": {
@@ -42,7 +42,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -55,7 +55,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "e7148867194b"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-emoji-content": [
@@ -77,7 +77,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -90,7 +90,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-first-person-work": [
@@ -112,7 +112,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -125,7 +125,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -147,7 +147,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -160,7 +160,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-unicode-crash": [
@@ -182,7 +182,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -195,7 +195,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "63a6e57fead9"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-editorializing": [
@@ -217,7 +217,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -230,7 +230,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-scholarly-default": [
@@ -267,7 +267,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -280,22 +280,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "90af5388e1e9"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
-      },
-      {
-        "field_hash": {
-          "md": "f300952cde89",
-          "ts": "7e9f61c27178"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:qa-refresh-2026-11-21",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-11-21T13:26:17.000Z",
-        "reviewed_sha": "ca4c804db158cc31c138a65314042e15be25a5f5",
-        "evidence": "Full read of the block after #8861. The only edit adds two sentences to the opening paragraph citing Avrin, Symmetry 4 (2012) 39-115 (avrin-2012) as prior art for a particle-to-knot dictionary. Declarative, third person; 'this paper's' is the standard scholarly attribution form."
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-title-scholarly": [
@@ -317,7 +302,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -330,7 +315,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "a88562c76c07"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-ai-slop": [
@@ -367,7 +352,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -380,7 +365,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "440226b73b33"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-author-notes-pollution": [
@@ -402,7 +387,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -415,7 +400,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-status-section": [
@@ -437,7 +422,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -450,7 +435,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "framework-canonical": [
@@ -472,7 +457,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -485,23 +470,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
-      },
-      {
-        "field_hash": {
-          "md": "f300952cde89",
-          "ts": "7e9f61c27178"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:qa-refresh-2026-11-21",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-11-21T13:26:17.000Z",
-        "reviewed_sha": "ca4c804db158cc31c138a65314042e15be25a5f5",
-        "severity": "major",
-        "evidence": "Full read of the block after #8861. The only edit adds two sentences to the opening paragraph citing Avrin, Symmetry 4 (2012) 39-115 (avrin-2012) as prior art for a particle-to-knot dictionary. Pre-existing, not introduced by #8861: the block still writes the electron as the trefoil, 'A neutral atom appends Z electrons: ... Z . T_{2,3}' and 'Z p (+) N n (+) Z T_{2,3}'. Owner ruling 2026-11-21: the electron is sigma0 sigma1 sigma0 in B_3 with Hopf-link closure; the trefoil is a backup only. The new Avrin sentence (unknot and trefoil) sits next to this and does not resolve it."
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "wall-side-correct": [
@@ -524,7 +493,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -537,7 +506,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2ff53167ead5"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -673,7 +642,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -686,7 +655,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "e7148867194b"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-no-numerology": [
@@ -708,7 +677,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -721,7 +690,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "bfbb93c220cc"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-witness-pinned": [
@@ -743,7 +712,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -756,7 +725,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "5d8325c49fea"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -778,7 +747,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -791,7 +760,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -813,7 +782,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -826,7 +795,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "5d8325c49fea"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -848,7 +817,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -861,7 +830,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -883,7 +852,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -896,7 +865,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "c8836d721722"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -918,7 +887,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -931,7 +900,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "791b80875ca1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "compute-witness-exists": [
@@ -953,7 +922,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -966,7 +935,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "compute-lp-dual-present": [
@@ -988,7 +957,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -1001,7 +970,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1023,7 +992,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -1037,7 +1006,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "detangler-section-band": [
@@ -1059,7 +1028,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -1073,7 +1042,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "a88562c76c07"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1095,7 +1064,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -1109,7 +1078,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1133,7 +1102,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -1147,7 +1116,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "19a5005a8bb6"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1183,7 +1152,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -1197,7 +1166,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 1,
@@ -1237,7 +1206,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -1251,7 +1220,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1278,7 +1247,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -1292,7 +1261,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1314,7 +1283,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -1328,7 +1297,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "bib-cite-resolves": [
@@ -1352,7 +1321,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1366,7 +1335,7 @@
           "deps_hash": "3b50a96e80ae",
           "def_hash": "e703243fe06f"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1391,7 +1360,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1405,7 +1374,7 @@
           "deps_hash": "3b50a96e80ae",
           "def_hash": "e08cc9c741f6"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1430,7 +1399,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1444,7 +1413,7 @@
           "deps_hash": "3b50a96e80ae",
           "def_hash": "e08cc9c741f6"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1469,7 +1438,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1483,7 +1452,7 @@
           "deps_hash": "3b50a96e80ae",
           "def_hash": "17f40a4ba0f4"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1508,7 +1477,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1522,7 +1491,7 @@
           "deps_hash": "21d9ff417741",
           "def_hash": "83422bec2bb4"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1582,7 +1551,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1592,7 +1561,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1625,7 +1594,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1635,7 +1604,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1668,7 +1637,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1678,7 +1647,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1711,7 +1680,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1721,7 +1690,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1754,7 +1723,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1764,7 +1733,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1797,7 +1766,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1807,7 +1776,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1840,7 +1809,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1850,7 +1819,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1883,7 +1852,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -1893,23 +1862,8 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "f300952cde89",
-          "ts": "7e9f61c27178"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:qa-refresh-2026-11-21",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-11-21T13:26:17.000Z",
-        "reviewed_sha": "ca4c804db158cc31c138a65314042e15be25a5f5",
-        "evidence": "Full read of the block after #8861. The only edit adds two sentences to the opening paragraph citing Avrin, Symmetry 4 (2012) 39-115 (avrin-2012) as prior art for a particle-to-knot dictionary. Checked against the library copy (library/symmetry-04-00039-v3, abstract): 'Two knots; just two rudimentary knots, the unknot and the trefoil ... fermions and bosons, hadrons and leptons'. The block's paraphrase is accurate, and the attribution is scoped to the idea of a dictionary only. Key resolves in references.bib and folio/references/avrin-2012.json."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1994,7 +1948,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2004,23 +1958,8 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "f300952cde89",
-          "ts": "7e9f61c27178"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:qa-refresh-2026-11-21",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-11-21T13:26:17.000Z",
-        "reviewed_sha": "ca4c804db158cc31c138a65314042e15be25a5f5",
-        "evidence": "Full read of the block after #8861. The only edit adds two sentences to the opening paragraph citing Avrin, Symmetry 4 (2012) 39-115 (avrin-2012) as prior art for a particle-to-knot dictionary. The new sentences define nothing; the compact notation and the quark shorthand that follow are unchanged and unambiguous as before."
       }
     ],
     "da-empirical-fragility": [
@@ -2052,7 +1991,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2062,7 +2001,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2095,7 +2034,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2105,7 +2044,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2138,7 +2077,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2148,7 +2087,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2181,7 +2120,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2191,7 +2130,7 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2214,7 +2153,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -2227,7 +2166,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "cite-named-theorem": [
@@ -2249,7 +2188,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -2262,7 +2201,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-agent-speak": [
@@ -2284,7 +2223,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -2297,7 +2236,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "expo-milnor-clarity": [
@@ -2350,7 +2289,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -2364,7 +2303,7 @@
           "deps_hash": "34af1d8a2365",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "metrics": {
           "uses_count": 1,
           "broken_edges": 0,
@@ -2393,7 +2332,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2407,7 +2346,7 @@
           "deps_hash": "794eb6c16a59",
           "def_hash": "ce2b8102b97f"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2431,7 +2370,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2445,7 +2384,7 @@
           "deps_hash": "c378066449c5",
           "def_hash": "d292915cbf8a"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "trap-negation-contrast": [
@@ -2656,21 +2595,6 @@
         "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
         "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
         "notes": "no trap of this class; full-context read"
-      },
-      {
-        "field_hash": {
-          "md": "f300952cde89",
-          "ts": "7e9f61c27178"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:qa-refresh-2026-11-21",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-11-21T13:26:17.000Z",
-        "reviewed_sha": "ca4c804db158cc31c138a65314042e15be25a5f5",
-        "evidence": "Full read of the block after #8861. The only edit adds two sentences to the opening paragraph citing Avrin, Symmetry 4 (2012) 39-115 (avrin-2012) as prior art for a particle-to-knot dictionary. 'The notation below takes only the idea of such a dictionary from that work' is a priority statement, not narration about the text."
       }
     ],
     "trap-thesis-restatement": [
@@ -2833,7 +2757,7 @@
       },
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2846,14 +2770,14 @@
           "script_commit_sha": "unknown",
           "def_hash": "10db4d17cd96"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
     "render-math-mode-envelope": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -2866,13 +2790,13 @@
           "script_commit_sha": "unknown",
           "def_hash": "440226b73b33"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "acronym-in-glossary": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "warn",
@@ -2885,14 +2809,14 @@
           "script_commit_sha": "unknown",
           "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "1 acronym(s) are candidates for the glossary: GeV. Run glossary:acronyms for the folio-wide list with expansions."
       }
     ],
     "foreshadows-point-forward": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178",
           "graph": "0beb7af586c3"
         },
@@ -2906,13 +2830,13 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "da-arity-conflation": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2922,14 +2846,14 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
     "dak-companion-present": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2939,14 +2863,14 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],
     "dak-bpmn-has-process": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2956,14 +2880,14 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],
     "dak-dmn-has-decision-table": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2973,14 +2897,14 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],
     "dak-fsh-declares-kind": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -2990,14 +2914,14 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],
     "dak-label-prefix-matches-kind": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "n/a",
@@ -3007,14 +2931,14 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],
     "id-unique": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -3027,13 +2951,13 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8"
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "id-stable": [
       {
         "field_hash": {
-          "md": "f300952cde89",
+          "md": "0850e7b4cc0d",
           "ts": "7e9f61c27178"
         },
         "result": "pass",
@@ -3046,11 +2970,11 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "61bfe90d4a9d6f78415062b889b168d3d9749ce8",
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "unchanged since origin/main"
       }
     ]
   },
-  "updated_at": "2026-11-21T13:26:17.000Z",
+  "updated_at": "2026-11-21T12:53:07.377Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

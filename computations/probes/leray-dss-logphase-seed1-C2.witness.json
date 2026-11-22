@@ -1,0 +1,118 @@
+{
+ "description": "Leray DSS search in a log-phase trial basis (arbitrary precision; numerical exploration, NOT a proof).",
+ "dps": 60,
+ "radial_rule": {
+  "QN": 24,
+  "phase_per_panel": "12.00"
+ },
+ "trial_tail": "(1+rho)^-(p + i theta m w); theta=1: mode m decays like |y|^(-1-2imw)",
+ "mode": "seed1",
+ "L": 2,
+ "N": 3,
+ "K": 4,
+ "theta": 1,
+ "seed_source": "arcC witness state.y1 (last accepted point)",
+ "seed_theta": "0.0593593005828",
+ "seed_S": "0.8551179100165760",
+ "seed_amp": "229.7456350622867",
+ "phase_condition_index": 0,
+ "method": "least-squares Gauss-Newton (normal equations, 1e-45 Tikhonov shift) with backtracking line search on |F|; d/domega by FD (h=1e-30)",
+ "runs": [
+  {
+   "S0": "0.9",
+   "amp_scale": "1",
+   "status": "no_descent_step",
+   "iters": 1,
+   "history": [
+    {
+     "it": 0,
+     "res": "6.1202e+5",
+     "amp": "229.74564",
+     "S": "0.9000000000000000"
+    }
+   ],
+   "final_residual": "6.12016e+5",
+   "final_S": "0.9000000000000000000000000000000000000000",
+   "final_amp": "229.7456350622867",
+   "cls": "periodic",
+   "mode_norms": [
+    "203.29987629122236169",
+    "102.29928758269778958",
+    "21.018995805067899838",
+    "16.271192330716393164",
+    "16.748821024268059465"
+   ],
+   "omega_to_zero": false,
+   "wall_s": 302
+  },
+  {
+   "S0": "1.0",
+   "amp_scale": "1",
+   "status": "no_descent_step",
+   "iters": 2,
+   "history": [
+    {
+     "it": 0,
+     "res": "4.9402e+5",
+     "amp": "229.74564",
+     "S": "1.000000000000000",
+     "lam": "0.06250"
+    },
+    {
+     "it": 1,
+     "res": "3.5615e+5",
+     "amp": "218.28275",
+     "S": "1.004378210608117"
+    }
+   ],
+   "final_residual": "3.56147e+5",
+   "final_S": "1.004378210608117141156704379087714210804",
+   "final_amp": "218.2827513456563",
+   "cls": "periodic",
+   "mode_norms": [
+    "191.28829344965189266",
+    "97.822103250482393661",
+    "22.879716239419905787",
+    "26.903704898899637166",
+    "15.482044029068138093"
+   ],
+   "omega_to_zero": false,
+   "wall_s": 694
+  },
+  {
+   "S0": "1.2",
+   "amp_scale": "1",
+   "status": "no_descent_step",
+   "iters": 2,
+   "history": [
+    {
+     "it": 0,
+     "res": "3.4123e+5",
+     "amp": "229.74564",
+     "S": "1.200000000000000",
+     "lam": "0.03125"
+    },
+    {
+     "it": 1,
+     "res": "3.4001e+5",
+     "amp": "229.98040",
+     "S": "1.191098227157427"
+    }
+   ],
+   "final_residual": "3.40015e+5",
+   "final_S": "1.191098227157426654699800523213718233540",
+   "final_amp": "229.9803986968387",
+   "cls": "periodic",
+   "mode_norms": [
+    "206.66183752949818863",
+    "95.272825557232553937",
+    "19.307334193069137702",
+    "19.782396008114404476",
+    "18.461881230377910265"
+   ],
+   "omega_to_zero": false,
+   "wall_s": 707
+  }
+ ],
+ "verdict": "completed"
+}

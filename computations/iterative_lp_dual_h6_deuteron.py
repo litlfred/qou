@@ -49,12 +49,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 import numpy as np
 import mpmath as mp
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, HA_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
@@ -133,17 +133,12 @@ def chi_lambda_numerical(shape, crossings_cd, q_val: float, h_val: float):
       averaged ½(σ+σ⁻¹):      (1, -h/2, gen)      → step = σ_i − (h/2)·I
       generic c·σ + d·I:                          → step = c·σ_i + d·I
     """
-    del q_val, h_val   # q_val/h_val pinned to q_0 inside build_seminormal_matrices
-    from hecke_characters import build_seminormal_matrices
-    sigmas, dim, _ = build_seminormal_matrices(tuple(shape))
-    if dim == 0:
-        return 0.0
-    M = np.eye(dim, dtype=complex)
-    for c, d, gen in crossings_cd:
-        s_i = sigmas[gen]
-        step = c * s_i + d * np.eye(dim, dtype=complex)
-        M = M @ step
-    return float(np.real(np.trace(M)))
+    # Exact MPFR character (2026-11-21). This traced numpy float64 seminormal
+    # matrices, which capped every chi^lambda at ~1e-16 while the y_lambda it
+    # is paired with are 50-digit (f64_into_mpmath_audit F64_CAST).
+    del h_val
+    from mass_at_3A_proper import chi_lambda_of_word_mpfr
+    return chi_lambda_of_word_mpfr(tuple(shape), crossings_cd, q_val)
 
 
 def main() -> int:
@@ -166,19 +161,18 @@ def main() -> int:
 
     # Build deuteron braid word
     from mass_at_3A_proper import atom_braid_word_3A
-    from hecke_core import h as h_num
-    h_val = float(h_num)
-    q_val = float(Q0_FLOAT)
-    word = atom_braid_word_3A(1, 1)
-    print(f"\n  Deuteron braid word: {len(word)} crossings, q_0 = {q_val:.6f}")
+    h_val = HA_MP
+    q_val = Q_MP
+    word = atom_braid_word_3A(1, 1, q=Q_MP)
+    print(f"\n  Deuteron braid word: {len(word)} crossings, q_0 = {mp.nstr(q_val, 12)}")
 
     # Compute χ^λ(β_D) numerically for each partition
     print("\n  Computing χ^λ(β_D) numerically at q_0 (this may take a moment)...")
     chi_at_q0 = {}
     for p in parts_6:
         chi = chi_lambda_numerical(p, word, q_val, h_val)
-        chi_at_q0[p] = mp.mpf(chi)
-        print(f"    χ^{p}(β_D) = {chi:+.10f}")
+        chi_at_q0[p] = chi
+        print(f"    χ^{p}(β_D) = {mp.nstr(chi, 20)}")
 
     # Cross-validate Σ_λ y_λ · χ^λ(β_D) against the canonical deuteron
     # Markov trace |tr_M(β_D)| loaded from markov-peel-atomic-tr-m.witness.json
@@ -278,30 +272,30 @@ def main() -> int:
         "and compares to CODATA M_D, Z·m_p+N·m_n, AME B(D)."
     )
     w.set_content_block("prop:mass-formula-iterative-lp-dual")
-    w.add_parameter("q_0", q_val)
-    w.add_parameter("h", h_val)
+    w.add_parameter("q_0", fmt(q_val))
+    w.add_parameter("h", fmt(h_val))
     w.add_parameter("hecke_level_n", 6)
     w.add_parameter("M_D_codata_atomic_MeV", M_D_codata)
     w.add_parameter("Z_M_p_plus_N_M_n_MeV", Z_M_p_plus_N_M_n)
     w.add_parameter("M_e_codata", M_E_MEV)
     w.add_data("y_lambda_at_q0",
-               {str(k): float(v) for k, v in y_at_q0.items()})
+               {str(k): fmt(v) for k, v in y_at_q0.items()})
     w.add_data("chi_lambda_beta_D_at_q0",
-               {str(k): float(v) for k, v in chi_at_q0.items()})
+               {str(k): fmt(v) for k, v in chi_at_q0.items()})
     w.add_data("c_ell_at_q0",
-               {str(k): {str(ell): float(v) for ell, v in d.items()}
+               {str(k): {str(ell): fmt(v) for ell, v in d.items()}
                 for k, d in c_ell_at_q0.items()})
     w.add_data("u_levels_deuteron_MeV",
-               {str(ell): float(v) for ell, v in u_levels.items()})
-    w.add_data("sum_u_levels_MeV", float(sum_u))
-    w.add_data("tr_M_check_at_q0", float(tr_M_check))
-    w.add_data("tr_M_check_rel_err", float(err_rel))
+               {str(ell): fmt(v) for ell, v in u_levels.items()})
+    w.add_data("sum_u_levels_MeV", fmt(sum_u))
+    w.add_data("tr_M_check_at_q0", fmt(tr_M_check))
+    w.add_data("tr_M_check_rel_err", fmt(err_rel))
 
     w.add_assertion(
         "tr_M_cross_validation_within_1e-6",
         computed=err_rel,
-        expected=0.0,
-        tolerance=1e-6,
+        expected=mp.mpf(0),
+        tolerance=mp.mpf("1e-6"),
     )
     w.add_assertion(
         "u_levels_computed_for_deuteron",

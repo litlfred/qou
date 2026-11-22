@@ -1,0 +1,55 @@
+trace solved; free symbols left: {z, x, q}
+Y1 automorphism: failures 0 of 2304 PASS
+Y2 trace phi-invariant at x=0: failures 0 /48;  tr(phi b)(x)=tr(b)(-x): failures 0 /48 PASS
+== V3=(g1 g2^-1)^3
+   p=uud n=ddu: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=udu n=dud: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=duu n=udd: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+== photon gamma(0,0,q h)
+   p=uud n=ddu: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=udu n=dud: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=duu n=udd: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+== photon gamma(0,0,-h/q)
+   p=uud n=ddu: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=udu n=dud: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=duu n=udd: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+== product of the two photons
+   product == V3 : False
+   p=uud n=ddu: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=udu n=dud: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=duu n=udd: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+== generic photon
+   p=uud n=ddu: tr_p(x=0, z=zD)= (2*phi0*q**3 + q**2 + 1)/(8*(q**2 + 1)) | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=udu n=dud: tr_p(x=0, z=zD)= 1/8 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=duu n=udd: tr_p(x=0, z=zD)= (2*phi1*q**3 + q**2 + 1)/(8*(q**2 + 1)) | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+== half twist g1g2g1
+   p=uud n=ddu: tr_p(x=0, z=zD)= 0 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = 0
+   p=udu n=dud: tr_p(x=0, z=zD)= q**3/(4*(q**2 + 1)) | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = 0
+   p=duu n=udd: tr_p(x=0, z=zD)= 0 | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = 0
+== full twist (g1g2g1)^2
+   p=uud n=ddu: tr_p(x=0, z=zD)= (2*q**4 - q**2 + 1)/(8*(q**2 + 1)) | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=udu n=dud: tr_p(x=0, z=zD)= (2*q**4 - q**2 + 1)/(8*(q**2 + 1)) | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+   p=duu n=udd: tr_p(x=0, z=zD)= (2*q**4 - q**2 + 1)/(8*(q**2 + 1)) | n-p at x=0 is 0: True | tr_n(x)=tr_p(-x): True
+      n-p (symbolic x, z=zD) = x*(x - 1)*(x + 1)/4
+Y3: failures 0 of 21 PASS
+Y4: failures 0 of 21 PASS

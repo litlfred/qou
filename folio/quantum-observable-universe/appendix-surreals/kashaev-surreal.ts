@@ -40,6 +40,7 @@ export default conjecture({
     "garoufalidis-zagier-2024",
     "garoufalidis-gu-marino2021",
     "fantini-rella2024",
+    "crew2023",
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): \"provenance and the Lean axiomatisation live in that block\"; \"Lean `c_pow_four_eq_third`\"; step 5: \"Use `QOU.AppendixSurreals.gonshorIn` and `omegaSurreal` to express the surreal evaluations.\"; **Required infrastructure**:\n- Coloured Jones polynomial in Lean (does not exist in mathlib).\n- Berarducci–Mantova exponential/logarithm on $\\mathbf{No}$\n (partial in mathlib).\n- Hyperbolic-volume formalisation (does not exist in mathlib). ; \"provable in Lean (transfer principle)\"." },

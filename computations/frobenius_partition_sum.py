@@ -86,10 +86,14 @@ from witness_polynomial import expose_polynomial  # noqa: F401
 
 sys.path.insert(0, str(Path(__file__).parent))
 from murnaghan_nakayama import partitions_of, dim_specht, hook_lengths
-from q_parameter import Q as _Q_CANONICAL
+from q_parameter import Q as _Q_CANONICAL, Q_50_DIGIT_STR
 
 q = sp.Symbol('q', positive=True, real=True)
-q0 = sp.Rational(int(_Q_CANONICAL * 10**16), 10**16)
+# The full-precision q₀ as an exact rational. Until 2026-11-21 this was
+# Rational(int(Q * 10**16), 10**16): the float64 q₀ truncated to 16 digits,
+# so every "at q_0" value below was evaluated at a point ~1e-17 away from q₀
+# while being printed to 50 digits (f64_into_mpmath_audit F64_CAST).
+q0 = sp.Rational(Q_50_DIGIT_STR)
 
 
 def q_int_sym(k):
@@ -178,7 +182,7 @@ if __name__ == "__main__":
                 # Keep at mp.mpf precision (flagged by
                 # compute_no_mpf_to_float_cast — sympy evalf -> float64
                 # was the textbook L1 destroyer).
-                "inv_at_q0": mp.mpf(str(inv.subs(q, q0).evalf(50))),
+                "inv_at_q0": mp.mpf(str(inv.subs(q, q0).evalf(60))),
                 "inv_at_q0_polynomial_q": expose_polynomial(inv, q),
                 "conjugate": conj,
                 "self_dual": self_dual,
@@ -187,7 +191,7 @@ if __name__ == "__main__":
             level_totals[level] += inv
 
         total_simpl = sp.simplify(total_symbolic)
-        total_q0 = mp.mpf(str(total_simpl.subs(q, q0).evalf(50)))
+        total_q0 = mp.mpf(str(total_simpl.subs(q, q0).evalf(60)))
         total_q0_polynomial_q = expose_polynomial(total_simpl, q)
 
         # Classical check (q → 1)
@@ -199,7 +203,7 @@ if __name__ == "__main__":
         print(f"\n  Filtration decomposition (level = height − 1):")
         for level in sorted(by_level.keys()):
             level_sum = sp.simplify(level_totals[level])
-            level_q0 = mp.mpf(str(level_sum.subs(q, q0).evalf(50)))
+            level_q0 = mp.mpf(str(level_sum.subs(q, q0).evalf(60)))
             level_q0_polynomial_q = expose_polynomial(level_sum, q)
             print(f"    level {level}: Σ = {sp.nsimplify(level_sum)} "
                   f"(at q_0: {float(level_q0):.6f})")
@@ -261,7 +265,7 @@ if __name__ == "__main__":
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": str(float(_Q_CANONICAL)),
+            "q_0": Q_50_DIGIT_STR,
             "engine": "sympy symbolic",
         },
         "results_by_n": results_all,

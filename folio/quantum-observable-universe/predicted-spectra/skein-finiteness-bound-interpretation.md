@@ -27,4 +27,4 @@ The identical argument restricts elementary particles. A knot $K$ on the Bring s
 1. **Embeddability**: The torus knot $T_{m,n}$ embeds in genus $g$ only if $(m-1)(n-1)/2 \leq g$. For $g = 4$, this forces $(m-1)(n-1) \leq 8$.
 2. **Positive Skein polynomial**: Necessarily $P_K(q) > 0$ at the physical $q$.
 
-The embeddability constraint immediately produces a finite list of allowed torus knots: $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{2,9}$, $T_{3,4}$, $T_{3,5}$. These correspond exactly to the quarks, leptons, and force carriers. No other torus knot fits on the Bring surface.
+The embeddability constraint immediately produces a finite list of allowed torus knots: $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{2,9}$, $T_{3,4}$, $T_{3,5}$. No other torus knot fits on the Bring surface. The backup trefoil-electron model read this list as the leptons and force carriers. Under the electron ruling ([electron](#def:electron-knot)) the electron is the word $\sigma_0\sigma_1\sigma_0$, whose closure is the Hopf link and is not on this list; the muon and tau words are not ruled; and the quarks are unknot strands, not torus knots.

@@ -1,0 +1,253 @@
+/-
+Closure cannot see a commutator difference.
+
+A closure (braid closure, or any closing of a word by cups and caps) evaluates an element of an
+algebra through a *trace*: a linear map `t` with `t (x * y) = t (y * x)`. This file proves:
+
+* `unseen_iff`: two elements `a b` have the same value under **every** trace iff their
+  difference lies in the commutator span `[A, A]`. The universal trace is the quotient map
+  `A → A ⧸ [A, A]` (the zeroth Hochschild homology `HH₀`).
+* `unseen_conj`: an emitted-and-reabsorbed subword `u * w * u⁻¹` is unseen against `w`.
+* `trace_factors`: every trace factors through `HH₀` (closure = annular step, then read-out).
+* `isTrace_sum`: a weighted average of traces is a trace (the Markov step averages sectors).
+* `trace_conserved_of_conj`: under conjugation dynamics every closure invariant is conserved.
+* `crossing_change_jump`: a crossing change moves any linear functional by `h` times the smoothed value.
+* `val_along_path`: along a path of Markov moves (conjugation, stabilisation and their inverses) a
+  Markov trace changes exactly by the recorded factors, so the normalised trace is a link invariant.
+* `kron_one_mulVec_bell`, `ricochet`, `bell_pairing`: with the maximally entangled vector
+  `Ω = Σᵢ eᵢ ⊗ eᵢ` (the coevaluation), `(X ⊗ 1) Ω = (1 ⊗ Xᵀ) Ω` and `⟨Ω, (X ⊗ 1) Ω⟩ = tr X`.
+  So a closure is "prepare pairs, act on one half, project back onto the pairs".
+
+Everything is over a generic commutative ring (§7c); no archimedean input.
+-/
+import Mathlib.LinearAlgebra.Quotient.Basic
+import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.LinearAlgebra.Matrix.Kronecker
+import Mathlib.LinearAlgebra.Matrix.Trace
+
+namespace QOU.BraidsAndKnots.ClosureUnseen
+
+universe u v
+
+section Trace
+
+variable {R : Type u} [CommRing R] {A : Type v} [Ring A] [Algebra R A]
+
+/-- A linear map is a trace if it is invariant under cyclic rotation of a product. -/
+def IsTrace {M : Type*} [AddCommGroup M] [Module R M] (t : A →ₗ[R] M) : Prop :=
+  ∀ x y : A, t (x * y) = t (y * x)
+
+variable (R A) in
+/-- The commutator span `[A, A]`: the `R`-span of all `x * y - y * x`. -/
+def commSpan : Submodule R A :=
+  Submodule.span R {z | ∃ x y : A, z = x * y - y * x}
+
+/-- The universal trace `A → A ⧸ [A, A]` (zeroth Hochschild homology). -/
+def univTrace : A →ₗ[R] A ⧸ commSpan R A := (commSpan R A).mkQ
+
+theorem univTrace_isTrace : IsTrace (univTrace (R := R) (A := A)) := by
+  intro x y
+  unfold univTrace
+  rw [Submodule.mkQ_apply, Submodule.mkQ_apply, Submodule.Quotient.eq]
+  exact Submodule.subset_span ⟨x, y, rfl⟩
+
+/-- Every trace kills the commutator span. -/
+theorem trace_vanishes_on_commSpan {M : Type*} [AddCommGroup M] [Module R M]
+    {t : A →ₗ[R] M} (ht : IsTrace t) {z : A} (hz : z ∈ commSpan R A) : t z = 0 := by
+  induction hz using Submodule.span_induction with
+  | mem z hz =>
+      obtain ⟨x, y, rfl⟩ := hz
+      rw [map_sub, ht x y, sub_self]
+  | zero => exact map_zero t
+  | add a b _ _ ha hb => rw [map_add, ha, hb, add_zero]
+  | smul r a _ ha => rw [map_smul, ha, smul_zero]
+
+/-- `a` and `b` are *unseen-equivalent*: no trace (no closure) distinguishes them. -/
+def Unseen (a b : A) : Prop :=
+  ∀ (M : Type v) [AddCommGroup M] [Module R M] (t : A →ₗ[R] M), IsTrace t → t a = t b
+
+/-- **No closure distinguishes `a` from `b` iff `a - b` lies in the commutator span.** -/
+theorem unseen_iff (a b : A) : Unseen (R := R) a b ↔ a - b ∈ commSpan R A := by
+  constructor
+  · intro h
+    have hab := h (A ⧸ commSpan R A) univTrace univTrace_isTrace
+    unfold univTrace at hab
+    rwa [Submodule.mkQ_apply, Submodule.mkQ_apply, Submodule.Quotient.eq] at hab
+  · intro hab M _ _ t ht
+    have h0 := trace_vanishes_on_commSpan ht hab
+    rwa [map_sub, sub_eq_zero] at h0
+
+/-- Conjugating by a unit changes an element by a commutator. -/
+theorem conj_sub_mem (u : Aˣ) (w : A) :
+    (u : A) * w * (↑u⁻¹ : A) - w ∈ commSpan R A := by
+  refine Submodule.subset_span ⟨(u : A) * w, (↑u⁻¹ : A), ?_⟩
+  rw [← mul_assoc (↑u⁻¹ : A), Units.inv_mul, one_mul, mul_assoc]
+
+/-- **An emitted-and-reabsorbed subword is unseen**: `u * w * u⁻¹` and `w` agree under every
+trace. -/
+theorem unseen_conj (u : Aˣ) (w : A) :
+    Unseen (R := R) ((u : A) * w * (↑u⁻¹ : A)) w :=
+  (unseen_iff _ _).2 (conj_sub_mem u w)
+
+/-- **Every closure factors through the annular step.** A trace `t` is the universal trace
+`A → A ⧸ [A, A]` followed by a unique linear map: closure = annular closure (`HH₀`), then a
+read-out. -/
+theorem trace_factors {M : Type*} [AddCommGroup M] [Module R M] {t : A →ₗ[R] M}
+    (ht : IsTrace t) :
+    t = ((commSpan R A).liftQ t
+        (fun _ hz => (LinearMap.mem_ker).2 (trace_vanishes_on_commSpan ht hz)))
+      ∘ₗ univTrace := by
+  ext x
+  rfl
+
+/-- **Averaging traces gives a trace.** A weighted sum `Σᵢ cᵢ • tᵢ` of traces (for example the
+Markov trace as a weighted sum of sector characters) is again a trace. -/
+theorem isTrace_sum {ι : Type*} (s : Finset ι) (c : ι → R) (tr : ι → A →ₗ[R] R)
+    (h : ∀ i ∈ s, IsTrace (tr i)) : IsTrace (∑ i ∈ s, c i • tr i) := by
+  intro x y
+  simp only [LinearMap.coeFn_sum, Finset.sum_apply, LinearMap.smul_apply]
+  exact Finset.sum_congr rfl (fun i hi => by rw [h i hi x y])
+
+/-- **A closure invariant is conserved along conjugation dynamics.** If a word evolves in
+discrete time by conjugation by units, `β (s+1) = g s * β s * (g s)⁻¹`, then every trace takes
+the same value at every time. -/
+theorem trace_conserved_of_conj {M : Type*} [AddCommGroup M] [Module R M]
+    {t : A →ₗ[R] M} (ht : IsTrace t) (β : ℕ → A) (g : ℕ → Aˣ)
+    (hstep : ∀ s, β (s + 1) = (g s : A) * β s * (↑(g s)⁻¹ : A)) :
+    ∀ s, t (β s) = t (β 0) := by
+  intro s
+  induction s with
+  | zero => rfl
+  | succ s ih =>
+      rw [hstep s, ← ih]
+      have h0 := trace_vanishes_on_commSpan ht (conj_sub_mem (g s) (β s))
+      rwa [map_sub, sub_eq_zero] at h0
+
+end Trace
+
+section Reconnection
+
+variable {R : Type u} [CommRing R] {A : Type v} [Ring A] [Algebra R A]
+
+/-- **A crossing change moves every linear functional by the smoothing term.** If `s` satisfies
+the skein form of the Hecke relation, `s - s⁻¹ = h • 1`, then for every linear map `t` and every
+context `u ⋯ v`, flipping the crossing changes `t` by exactly `h` times its value on the smoothed
+word: `t (u s v) - t (u s⁻¹ v) = h • t (u v)`. In the fluid reading this is the exact jump of a
+closure invariant across one reconnection. -/
+theorem crossing_change_jump {M : Type*} [AddCommGroup M] [Module R M] (t : A →ₗ[R] M)
+    (s : Aˣ) (h : R) (hskein : (s : A) - (↑s⁻¹ : A) = algebraMap R A h) (u v : A) :
+    t (u * s * v) - t (u * (↑s⁻¹ : A) * v) = h • t (u * v) := by
+  rw [← map_sub, ← sub_mul, ← mul_sub, hskein, Algebra.algebraMap_eq_smul_one, mul_smul_comm,
+    mul_one, smul_mul_assoc, map_smul]
+
+end Reconnection
+
+section Tower
+
+variable {R : Type u} [Field R] (A : ℕ → Type v) [∀ n, Ring (A n)] [∀ n, Algebra R (A n)]
+
+/-- A tower of braid algebras: inclusions `A n → A (n+1)` and the new generator
+`s n = σₙ ∈ A (n+1)`. -/
+structure BraidTower where
+  ι : ∀ n, A n →ₐ[R] A (n + 1)
+  s : ∀ n, (A (n + 1))ˣ
+
+variable {A}
+
+/-- A Markov trace on a braid tower: a trace at each level, with the two stabilisation rules
+`τ (x σₙ) = z τ x` and `τ (x σₙ⁻¹) = z' τ x` (for example `tr_M` at `z_D`). -/
+structure MarkovTraceOn (T : BraidTower (R := R) A) where
+  τ : ∀ n, A n →ₗ[R] R
+  isTrace : ∀ n, IsTrace (τ n)
+  z : R
+  z' : R
+  stab_pos : ∀ n (x : A n), τ (n + 1) (T.ι n x * (T.s n : A (n + 1))) = z * τ n x
+  stab_neg : ∀ n (x : A n), τ (n + 1) (T.ι n x * (↑(T.s n)⁻¹ : A (n + 1))) = z' * τ n x
+
+variable {T : BraidTower (R := R) A} (M : MarkovTraceOn T)
+
+/-- The trace on a word of any width. -/
+def MarkovTraceOn.val (p : Σ n, A n) : R := M.τ p.1 p.2
+
+/-- One Markov move, carrying the factor by which it multiplies the trace: conjugation (factor
+`1`), positive stabilisation (`z`), negative stabilisation (`z'`). -/
+inductive MarkovMove : (Σ n, A n) → (Σ n, A n) → R → Prop
+  | conj (n : ℕ) (u : (A n)ˣ) (x : A n) :
+      MarkovMove ⟨n, x⟩ ⟨n, (u : A n) * x * (↑u⁻¹ : A n)⟩ 1
+  | stabPos (n : ℕ) (x : A n) :
+      MarkovMove ⟨n, x⟩ ⟨n + 1, T.ι n x * (T.s n : A (n + 1))⟩ M.z
+  | stabNeg (n : ℕ) (x : A n) :
+      MarkovMove ⟨n, x⟩ ⟨n + 1, T.ι n x * (↑(T.s n)⁻¹ : A (n + 1))⟩ M.z'
+
+/-- Each Markov move multiplies the trace by its recorded factor. -/
+theorem MarkovMove.val_eq {p q : Σ n, A n} {c : R} (hm : MarkovMove M p q c) :
+    M.val q = c * M.val p := by
+  cases hm with
+  | conj n u x =>
+      have h0 := trace_vanishes_on_commSpan (M.isTrace n) (conj_sub_mem u x)
+      rw [map_sub, sub_eq_zero] at h0
+      simp only [MarkovTraceOn.val, one_mul]
+      exact h0
+  | stabPos n x => exact M.stab_pos n x
+  | stabNeg n x => exact M.stab_neg n x
+
+/-- A step of a Markov path: a move taken forwards (factor `c`) or backwards, i.e. a
+destabilisation (factor `c⁻¹`). -/
+def PathStep (p q : Σ n, A n) (e : R) : Prop :=
+  (∃ c, MarkovMove M p q c ∧ e = c) ∨ (∃ c, c ≠ 0 ∧ MarkovMove M q p c ∧ e = c⁻¹)
+
+theorem PathStep.val_eq {p q : Σ n, A n} {e : R} (h : PathStep M p q e) :
+    M.val q = e * M.val p := by
+  rcases h with ⟨c, hm, rfl⟩ | ⟨c, hc, hm, rfl⟩
+  · exact hm.val_eq M
+  · rw [hm.val_eq M, ← mul_assoc, inv_mul_cancel₀ hc, one_mul]
+
+/-- **Along any Markov path the trace changes exactly by the product of the recorded factors.**
+If `p 0, p 1, …` are braid words with each consecutive pair related by a Markov move or its
+inverse, then `val (p k) = (∏ᵢ<ₖ eᵢ) · val (p 0)`. So the trace divided by these factors is the
+same for every word on the path: it is an invariant of the closed link. -/
+theorem val_along_path (p : ℕ → Σ n, A n) (e : ℕ → R)
+    (hstep : ∀ k, PathStep M (p k) (p (k + 1)) (e k)) :
+    ∀ k, M.val (p k) = (∏ i ∈ Finset.range k, e i) * M.val (p 0) := by
+  intro k
+  induction k with
+  | zero => simp
+  | succ k ih =>
+      rw [(hstep k).val_eq M, ih, Finset.prod_range_succ]
+      ring
+
+end Tower
+
+section Bell
+
+open Matrix
+open scoped Kronecker
+
+variable {R : Type u} [CommRing R] {n : Type v} [Fintype n] [DecidableEq n]
+
+/-- The maximally entangled vector `Ω = Σᵢ eᵢ ⊗ eᵢ` (the coevaluation of `Rⁿ`). -/
+def bell : n × n → R := fun p => if p.1 = p.2 then 1 else 0
+
+/-- Acting on one half of the pairs turns `Ω` into the matrix entries of `X`. -/
+theorem kron_one_mulVec_bell (X : Matrix n n R) :
+    (X ⊗ₖ (1 : Matrix n n R)) *ᵥ bell = fun p => X p.1 p.2 := by
+  funext ⟨i, j⟩
+  simp [mulVec, dotProduct, kroneckerMap_apply, Fintype.sum_prod_type, one_apply, bell]
+
+/-- **Ricochet**: an operator on one half of `Ω` equals its transpose on the other half. -/
+theorem ricochet (X : Matrix n n R) :
+    (X ⊗ₖ (1 : Matrix n n R)) *ᵥ bell = ((1 : Matrix n n R) ⊗ₖ Xᵀ) *ᵥ bell := by
+  rw [kron_one_mulVec_bell]
+  funext ⟨i, j⟩
+  simp [mulVec, dotProduct, kroneckerMap_apply, Fintype.sum_prod_type, one_apply, bell]
+
+/-- **Closure as a Bell pairing**: preparing `Ω`, acting with `X` on one half and projecting
+back onto `Ω` gives the trace of `X`. -/
+theorem bell_pairing (X : Matrix n n R) :
+    bell ⬝ᵥ ((X ⊗ₖ (1 : Matrix n n R)) *ᵥ bell) = trace X := by
+  rw [kron_one_mulVec_bell]
+  simp [dotProduct, Fintype.sum_prod_type, bell, trace, diag]
+
+end Bell
+
+end QOU.BraidsAndKnots.ClosureUnseen

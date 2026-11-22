@@ -174,6 +174,7 @@ export default chapter({
         "qns-shell-tail-collapse",
         "qns-shell-tail-collapse-interpretation",
         "leray-profile",
+        "leray-profile-exclusions",
         "leray-profile-construction",
         "regularity-breakdown",
         "regularity-breakdown-table-data",

@@ -3,6 +3,11 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-11-21",
+      body: "Lean proof added (owner card, 2026-11-21): `cl3_orbit_sum` proves the identity for every N >= 1, with Cl_3(theta) the series sum over m of cos(m theta)/m^3 and zeta(3) the series sum of 1/m^3. The Lean route is the roots-of-unity character sum (sum over k of cos(2 pi k m/N) is N or 0) plus summing over multiples of N, the same content as the multiplication formula in the prose proof.",
+    },
+    {
       kind: "note",
       date: "2026-08-08",
       body:
@@ -30,7 +35,7 @@ export default proposition({
   title:
     "General orbit-sum identity: $\\sum_k \\mathrm{Cl}_3(2\\pi k/N) = -(N^2-1)/N^2 \\cdot \\zeta(3)$ at every $N \\geq 2$",
   lean: {
-    ref: "qou:QOU.BraidKnot.CyclotomicCl3OrbitSum.orbit_sum_general",
+    ref: "qou:QOU.BraidKnot.CyclotomicCl3OrbitSum.cl3_orbit_sum",
     validation: "not_checked",
   },
   computation: {

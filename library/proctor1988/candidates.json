@@ -1,0 +1,161 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "proctor1988",
+ "source": {
+  "structure_sha256": "6604537cf1556c055dc17ae8304e8acd1763bca3684235f813a00c55831c6218",
+  "file": "proctor1988.pdf"
+ },
+ "provenance": {
+  "title": "Odd symplectic groups",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "recommendation": 9
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Recall that one of the four axioms which must be satisfied in order for a finite set of vectors in Euclidean space to be a root system is that no multiple of a root can occur except \u20141 times the root.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Now symplectic groups exist on odd dimensional vector spaces; i.e. it is no longer a necessary consequence of the definition that the vector space V must be even dimensional.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "A useful psycho- logical device is to believe that there should have been simple Lie groups Span-1+ but that something went wrong along the way.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-006.md",
+   "section_title": "Page 6",
+   "pages": "6-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "So the notion of \u201cirreducible\u201d should be replaced by the notion of \u201cindecomposable\u201d for the non-reductive group Sp2,,1.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-015.md",
+   "section_title": "Page 15",
+   "pages": "15-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "So the manifold must be even dimensional; let the dimension be 2n.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-017.md",
+   "section_title": "Page 17",
+   "pages": "17-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(Note that v should be v\u20141 in Theorem VIII).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-018.md",
+   "section_title": "Page 18",
+   "pages": "18-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "But by the famous double centralizer theorem we must have \u00a5%eCS,CCS,.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-021.md",
+   "section_title": "Page 21",
+   "pages": "21-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must confirm that the given formula is equal to the sum of the Sp,,-2\u00a2Sp,,-1 characters described in Corollary 8.1, ignoring the GL, factor since z was set to 1.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-022.md",
+   "section_title": "Page 22",
+   "pages": "22-22",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The Lie algebra pb,,,, is the same as above, except the upper left and lower right corner 0\u2019s should be replaced by \u2014z and z respectively.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-024.md",
+   "section_title": "Page 24",
+   "pages": "24-24",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

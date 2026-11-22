@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Mass formula regime switch: an $A$-uniform evaluation whose dominant term changes at the pair-graph regime boundaries $A = 2 \\mid 3$ and $4 \\mid 5$",
   lean: {
-    ref: "qou:QOU.BraidKnot.mass_formula_regime_switching",
+    ref: "qou:QOU.BraidKnot.regimeSwitchedBinding",
     validation: "not_checked",
   },
   uses: [

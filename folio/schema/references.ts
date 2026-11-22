@@ -334,6 +334,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "garoufalidis-le-2005" },
 
   // ── Lê 2006 — AJ conjecture proved for a large class of 2-bridge knots ──
+  { id: "le2000" },
   { id: "le2006" },
 
   // ── Garoufalidis–Lê 2011 — asymptotics; Borromean VC via Habiro expansion ──
@@ -410,6 +411,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Fred 2005 (dissertation) ──────────────────────────────────
   { id: "fred2005" },
+  { id: "leitner2006" },
+  { id: "luweinstein1990" },
 
   // ── Schrijver 1986 ────────────────────────────────────────────
   { id: "schrijver1986theory" },
@@ -440,6 +443,7 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Lusztig 1993 ──────────────────────────────────────────────
   { id: "lusztig1993" },
+  { id: "lusztig2003" },
 
   // ── Atiyah 1988 ───────────────────────────────────────────────
   { id: "atiyah1988" },
@@ -645,6 +649,11 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "necas-ruzicka-sverak1996" },
 
   { id: "tsai1998" },
+  { id: "leray1934" },
+  { id: "seregin2012" },
+  { id: "chae2013adss" },
+  { id: "chae-wolf2016dss" },
+  { id: "bradshaw-tsai2018survey" },
 
   { id: "leitner-2018" },
 
@@ -1168,6 +1177,9 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Mathas 1999 (Iwahori–Hecke Algebras and Schur Algebras) ──
   { id: "mathas1999" },
 
+  // ── q-Schur generation (G3.4 Dipper–James route, stream 16) ──
+  { id: "doty2006" },
+
   // ── Mathas 2004 (Mackey filtration for cyclotomic Hecke) ────
   { id: "mathas2004mackey" },
 
@@ -1586,6 +1598,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "horn-johnson-2013" },
 
   { id: "kassel2008" },
+  { id: "polyak2010" },
 
   { id: "murphy1981" },
 
@@ -2252,6 +2265,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   { id: "reshetikhin-turaev1990" },
 
+  { id: "turaev1988" },
+
   { id: "faddeev-kashaev-volkov2000" },
 
   { id: "andersen-mistegard2020" },
@@ -2786,6 +2801,8 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "fukuda2012" },
   { id: "melnikov2025" },
   { id: "tarabunga2025" },
+  // 2026-11-15: Proctor 1988, from the GDZ scan of Invent. Math. 92, ingested as library/proctor1988/.
+  { id: "proctor1988" },
   // 2026-11-15: held library document registered (bean qou-mzv5).
   { id: "murakami2008-acta-vietnam" },
   // 2026-11-15: owner uploads (commit 947381c) ingested into library/ (epic qou-s4ws).

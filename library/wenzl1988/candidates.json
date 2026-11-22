@@ -1,0 +1,71 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "wenzl1988",
+ "source": {
+  "structure_sha256": "5e62357250683cd69a5fd40cad7310b84458800d1dd769f1cacc89e479dfeb92",
+  "file": "wenzl1988.pdf"
+ },
+ "provenance": {
+  "title": "Hecke algebras of type A_n and subfactors",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall use our results so far for the computation of additional, finer invat- iants of subfactors.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-006.md",
+   "section_title": "Page 6",
+   "pages": "6-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall write w<A if u is obtained from 4 by removing appropriate boxes.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-014.md",
+   "section_title": "Page 14",
+   "pages": "14-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "So if q is n-regular, our computation above always makes sense even if some of the tableaux occurring there should no longer be standard tableaux.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-016.md",
+   "section_title": "Page 16",
+   "pages": "16-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+   first failures (letter, word index): [(1, 2), (1, 3), (1, 5), (1, 6), (1, 7)] of 61
+   first failures (letter, word index): [(1, 2), (1, 3), (1, 5), (1, 6), (1, 7)] of 61
+b1 b2 b1 = b2 b1 b2 as operators: False
+tau b1 tau b1 = b1 tau b1 tau as operators: False
+sig: tau s1 tau s1 = s1 tau s1 tau as operators: True
+T(F*quad(b1)) for F = 1: 0
+T(F*quad(b1)) for F = b1: 0
+T(F*quad(b1)) for F = b2: 91105/19773
+T(F*quad(b1)) for F = tau: -10/3
+T(F*quad(b1)) for F = b2 b2: 16625/4212
+T(F*quad(b1)) for F = tau tau: -25/9

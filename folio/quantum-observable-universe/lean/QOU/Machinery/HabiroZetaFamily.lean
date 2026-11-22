@@ -18,7 +18,7 @@ one Galois edge, complex conjugation, and this file packages it:
   automatically satisfies the bar edge `F(z⁻¹) = conj (F z)` at EVERY
   unit-circle fibre — the family-level form of the ζ₄ bar edge that
   `rho_compat` realizes for the τ-assignment.
-* **`ZetaFamily.conj_fixed_of_bar_fixed`** — bar-even values at
+* **`QOU.Machinery.CoxeterParabolic.conj_fixed_of_bar_fixed`** — bar-even values at
   unit-circle fibres are conjugation-fixed (real): the abstract form
   of the fibre-reality check exercised on the binding-tail data in
   `habiro_tail_membership_gate_probe.py`.

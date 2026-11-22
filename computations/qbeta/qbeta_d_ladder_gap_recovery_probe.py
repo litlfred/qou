@@ -57,6 +57,7 @@ from qbeta_e0 import canonical as e0_tower, order_zero as e0_order_zero  # noqa:
 
 CENSUS = HERE / "qbeta-option-e-required-level.witness.json"
 DASHBOARD = HERE.parent / "per-observable-100x-status.witness.json"
+GG_SEGMENT = HERE.parent / "probes" / "gg_gluon_segment" / "gg-gluon-segment.witness.json"
 
 
 def fmt(x, n=30):
@@ -123,8 +124,10 @@ def main() -> int:
     # Calibration: the base is a recorded corpus number. F itself moved when
     # Q_beta switched to the CODATA-2022 registry (owner ruling 2026-11-20),
     # so F is not pinned here; the base is.
-    checks.append(("nuc11_interleaved|tower base reproduces the recorded 0.65185631006 MeV",
-                   abs(mpf(live["Q_base_MeV"]) - mpf("0.65185631006")) < mpf(10)**-10))
+    gg = json.loads(GG_SEGMENT.read_text())
+    recorded_base = mpf(gg["reference_nuc11_interleaved"]["Q_beta_MeV"])
+    checks.append((f"nuc11_interleaved|tower base reproduces the recorded {recorded_base} MeV",
+                   abs(mpf(live["Q_base_MeV"]) - recorded_base) < mpf(10)**-10))
     checks.append(("every D cell needs F > 1",
                    all(mpf(c["F_required"]) > 1 for c in cells.values())))
     checks.append(("the derived rung moves every cell AWAY (recovery < 0)",

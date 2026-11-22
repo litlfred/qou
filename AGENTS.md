@@ -9,6 +9,23 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 **Required Action:** Before executing any multi-step task or slash command, run `ls .claude/skills/local/` and `view_file` on the relevant `.md` file. Follow its instructions exactly. NEVER guess.
 
+## FIRST: did the session-start hook run?
+
+The hooks in `.claude/settings.json` run only when the session **starts inside
+this checkout**. If qou was attached or cloned partway through the session, or
+the session opened in another directory, none of them ran: the platform clone
+(`folio-assistant/`), the beans mount and the Lean cache are all missing, and
+nothing says so. Run each command from the repo root, in order:
+
+```bash
+jq -r '.hooks.SessionStart[].hooks[].command' .claude/settings.json
+```
+
+Never report qa-sweep, the validator, beans or Lean as unavailable before doing
+this. Rule: cat-harness skill `remote-mount`, section "When the session-start
+hook did not run"; requirement `req:session-start` statement
+`session-start-hook-ran`.
+
 ## 🟥 THE PHOTON IS `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹` (owner ruling 2026-11-20) — STRICT
 
 **The fourth term is the chiral vertex `σ₀σ₁⁻¹`. The form with `σ₀σ₁` (`L₊`) as the
@@ -22,7 +39,7 @@ same day: *"That was already decided. Why did it get changed back to the wrong f
   2026-11-18 as "a working assumption, not a ruling to edit def:photon"; that
   classification was the recording agent's, and it is why the wrong form kept
   coming back (bean `qou-99qc`, entry 2026-11-20T14:50:40Z).
-- **`def:photon` (`knots-particles-confinement/photon.md`) and `QOU/Photon.lean` state the
+- **`def:photon` (`brings-surface/photon.md`) and `QOU/Photon.lean` state the
   correct form as of PR #8583 (merged 2026-11-20).** Copies of the old `σ₀σ₁` form
   survive in older branches, beans, audits and probes: do not copy from them, and do
   not quote, compute, formalise or propose anything on the `σ₀σ₁` form. Do not call
@@ -1268,7 +1285,8 @@ ephemeral.
 7. **ALWAYS `/prepare-merge` before merging.** Never call
    `mcp__github__merge_pull_request` directly — always run the
    `/prepare-merge` skill first (rebase, integrate, one-voice
-   review, Lean check, request Gemini + Copilot reviews). Only
+   review, Lean check; Copilot review is **no longer required**,
+   owner ruling 2026-11-22: audit checks replace it). Only
    merge after `/prepare-merge` completes AND the author gives
    **explicit** merge permission. Interpret that permission
    **strictly**: "looks good" is NOT merge permission; "merge it"
@@ -1471,7 +1489,10 @@ ephemeral.
 
     - **Phase 0:** sibling coordination (notify overlapping PRs)
     - **Phase 1:** rebase onto main, build, push
-    - **Phase 1b:** request review; wait for **Copilot** (up to 15 min)
+    - **Phase 1b:** run the audit checks (lean-direct, `scripts/precision-gates.sh`,
+      `scripts/check-sidecars.sh`, run-validate, producer re-runs). **Copilot review is
+      no longer required** (owner ruling 2026-11-22, verbatim: *"co-pilot review is no
+      longer required. We are using audit checks."*); do not request or wait for it.
     - **Phase 2:** resolve review comments
     - **Phase 3:** escalate to user if blocked
     - **Phase 4:** merge only after reviews resolved + the
@@ -3103,7 +3124,7 @@ but KL multiplicities `n^w_λ` are non-negative (KL positivity), so a
 `Σ_w n^w_λ·X_w` sum supplies at most the magnitude `|Δ_λ| = dim`,
 never the chirality sign — engine-verified at S₄ (PR #2381) and the
 mixed-sign premise Lean-proved sorry-free (PR #2416,
-`PartitionOf5.deltaSign_mixed`). Full context:
+`QOU.BraidsAndKnots.deltaSign_mixed`). Full context:
 [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](docs/audits/2026-05-18-delta-lambda-gating-context.md);
 Option-E ledger
 [`docs/coordination/option-e.md`](docs/coordination/option-e.md);
@@ -5777,6 +5798,14 @@ git fetch --depth=1 origin "$BR" \
 # Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
 # used, because the real limit is a per-session quota near 38G.
 
+# 🟩 RESEEDED 2026-11-21, head `7c61a1ba876` (bean qou-56qy): an incremental
+# `lake build QOU UGB Fred2005` at main 9428c3511c, 7464 jobs green. 24 parts,
+# 2.1 GB, 61436 tar entries: 7478 oleans / 7479 traces (mathlib 3697, QOU 3466,
+# UGB 35, Fred2005 2). Paper paths are stored as `folio/...`, so the
+# content->folio transform below is a no-op on this seed. Checked: a clean
+# restore plus scripts/lake-restore-package-git.sh, then `lake build`, rebuilds
+# 0 modules. The figures below (a792c46d01b, 2026-09-06) are history.
+#
 # 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
 # flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
 # is now FALSE for this branch: `lake-cache/qou-v4-24-0` was RESEEDED AGAIN
@@ -6027,6 +6056,23 @@ re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 > **A source-change count is the wrong population.** Six of those 74 have no
 > olean at all — a *new* file inherits its dependencies' staleness without ever
 > appearing in a drift count keyed on changed sources. Use the closure.
+>
+> **Check your own module before you trust a `lean`-direct green on it (owner
+> approval 2026-11-21, bean `qou-56qy` item 3).** The census is cheap and
+> prints whether the module you touched sits in the dirty closure:
+>
+> ```bash
+> scripts/lean-library-sweep.py --report --only-exact QOU.Your.Module   # one module
+> scripts/lean-library-sweep.py --report --only QOU.Your.Chapter        # a prefix
+> ```
+>
+> It exits 0 and builds nothing. Its last line reads `selection <X>: N of them
+> are dirty`. Measured on `QOU.BringConeGauge` after the 2026-11-21 reseed:
+> 35 modules in its graph, 0 dirty, about 30 s. If N is above 0, rebuild that
+> module's cone with `scripts/lean-direct-cone.sh QOU.Your.Module` (it never
+> calls `lake`, so the restored cache survives), then re-run `lean`-direct. A
+> green from a module with N above 0 is a claim about the snapshot, not about
+> your source.
 >
 > This block is an owner-reviewable wording change to the repo's primary
 > verification guidance, added on the evidence above; revert the wording if you

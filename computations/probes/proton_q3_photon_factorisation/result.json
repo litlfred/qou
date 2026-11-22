@@ -1,0 +1,15 @@
+{
+  "description": "Photon factorisation of x_- in H_3(q): does the photon form fix the scale (and so /q^3)?",
+  "method": "exact sympy, generic q; irreps triv/sign/refl",
+  "checks": {
+    "A_chiral_triv_eq_sign": true,
+    "B_family_nonempty": true,
+    "B_lambda_not_constant": true
+  },
+  "lambda_samples_q_11_10": {
+    "(0, 1/3)": "0.138321466806808059577544492185",
+    "(-1/5, 0)": "0.114672525805354134325339656031",
+    "(1/7, 2/9)": "0.0313532909517513392449656113790"
+  },
+  "verdict": "scope (a) negative: chiral-photon products are never nonzero multiples of x_-; two-photon products give x_- at a continuously varying scale. The photon definition does not derive the /q^3 normaliser."
+}

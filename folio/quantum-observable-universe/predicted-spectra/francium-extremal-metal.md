@@ -21,7 +21,7 @@ Francium minimises the outermost crossing energy in two ways:
 2. **Maximal shell depth**: $n = 7$. The crossing energy scales as $\mathfrak{E}_{\mathrm{cross}} \propto 1/n^2$. The $n = 7$ electron is the most weakly bound alkali electron.
 
 Consequently, francium exhibits:
-- The lowest ionization energy ($E_{\mathrm{ion}} \approx 4.07 \mathrm{eV}$).
+- A low ionization energy ($E_{\mathrm{ion}} \approx 4.07 \mathrm{eV}$), though caesium is lower (see the table).
 - The highest electropositive character. It donates its lone electron readily.
 - The strongest metallic bonding tendency. Its single open linking site couples to neighbours with negligible crossing cost.
 
@@ -33,7 +33,7 @@ See [Table](#tbl:francium-extremal-metal-table-data).
 Each atom has one loose electron. The crossing energy decreases monotonically with $n$. The slight ionization-energy uptick for francium reflects relativistic contraction of the $7s$ orbital. This corresponds to a tightening of the Hopf linking to the Borromean core at high $p$.
 
 **Dual extremum: fluorine.**
-Fluorine ($p = 9$) anchors the opposite end of the spectrum. It holds $|R| = 7$ electrons out of a shell-$2$ capacity of $8$. The residual sub-link sits one electron short of closure. This empty linking site makes fluorine the most electronegative element. It pulls a electron from any neighbour to close its sub-link. This action is the topological dual to francium donating an electron.
+Fluorine ($p = 9$) anchors the opposite end of the spectrum. It holds $|R| = 7$ electrons out of a shell-$2$ capacity of $8$. The residual sub-link sits one electron short of closure. This empty linking site makes fluorine the most electronegative element. It pulls an electron from any neighbour to close its sub-link. This action is the topological dual to francium donating an electron.
 
 $$
   \underbrace{\text{Fr}: |R| = 1}_{\text{most metallic}}

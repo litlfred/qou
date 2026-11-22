@@ -14,14 +14,13 @@
   "label": "prop:skew-poisson-integration",
   "kind": "proposition",
   "title": "Integration of skewed-Poisson structures",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/def-witt-vector-lift"
-  ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-skew-poisson-integration"
   ],
-  "leanRef": "qou:QOU.Archimedean.skew_poisson_integration",
+  "cites": [
+    "references/leitner2006"
+  ],
+  "leanRef": "qou:QOU.FormalGroups.integrationMk_commutator",
   "text": "skew-poisson-integration.md",
-  "leanSource": "skew-poisson-integration.lean",
   "provenance": "authored"
 }

@@ -5,13 +5,22 @@ import Mathlib.Data.Fintype.Basic
 /-!
 # QOU.FluidDynamics.leray_profile — finite-dimensional Leray profile
 
-**Proposition** ([`prop:leray-profile`](../../../quantum-observable-universe/fluid-dynamics/leray-profile.md)).
+**Galerkin reconstruction identity** for a finite truncation of a Leray profile
+(see [`def:leray-profile`](../../../fluid-dynamics/leray-profile.md) and
+`rem:leray-profile-construction`).
 
-*Near the blowup time `T*`, the singular NS solution approaches a
-self-similar Leray profile `V(ξ)` on the rescaled coordinate
-`ξ = (x − x₀)/√(T* − t)`.  QOU representation theory constrains `V` to a
-finite-dimensional ansatz: a sum of weight-`j` matrix entries of
-`SU_q(2)` representations; in particular `V(0) = Σ_n V_n`.*
+*If a profile `V` is written as a finite sum `Σ_n V_n · b_n` of basis functions
+normalised to `1` at the origin, then `V(0) = Σ_n V_n`.*
+
+**Re-scoped 2026-11-21 (issue #8864).** This file used to be the Lean sibling
+of `prop:leray-profile` and described the basis as "weight-`j` matrix entries
+of `SU_q(2)`". That description is withdrawn: a velocity field on `ℝ³` carries
+only integer-degree vector spherical harmonics (half-integer spins cannot
+occur, `IntegerSpin.even_of_neg_one_pow_eq_one`), and a finite truncation is
+a Galerkin approximation, not an exact reduction. The theorem below is a
+finite-sum evaluation; it says nothing about existence of a profile. The block
+is now a definition (`def:leray-profile`) whose Lean sibling is
+`fluid-dynamics/leray-profile.lean`.
 
 ## Formalisation notes
 - **Base ring (§7c).** Generic `{R : Type*} [CommRing R]` — no `ℝ`.  The
@@ -22,7 +31,7 @@ finite-dimensional ansatz: a sum of weight-`j` matrix entries of
   `Mathlib.Algebra.BigOperators.Basic` and so never compiled; the current
   path is `Mathlib.Algebra.BigOperators.Group.Finset.Basic`.
 - **Non-degenerate conditional (§3b-cond cond. 5).** The class carries the
-  genuine ansatz hypotheses — a weight-component *expansion* of `V` with
+  genuine ansatz hypotheses — a finite *expansion* of `V` with
   basis entries normalised at `0` — and the theorem *derives* the
   reconstruction `V 0 = Σ_n V_coeff n` by evaluating the expansion
   (previously the identity itself was a class field). -/
@@ -32,33 +41,29 @@ namespace QOU.FluidDynamics
 open Finset
 
 /-- Hypotheses for the finite-dimensional Leray profile (§7c: generic
-    `CommRing`, no `ℝ`).  `basis n` are the weight-`n` matrix entries of
-    the `SU_q(2)` ansatz, normalised to `1` at the origin of the rescaled
-    coordinate; `profile_expansion` is the finite ansatz itself. -/
+    `CommRing`, no `ℝ`).  `basis n` are the basis functions of a finite
+    (Galerkin) truncation, normalised to `1` at the origin of the rescaled
+    coordinate; `profile_expansion` is the truncated expansion itself. -/
 class LerayProfileContext (R : Type*) [CommRing R] where
   /-- The Leray profile `V` on the rescaled coordinate. -/
   V : R → R
-  /-- Maximum spin level `j_max` in the finite-dimensional ansatz. -/
+  /-- Number of retained basis functions minus one (truncation order). -/
   j_max : ℕ
-  /-- Ansatz coefficients, fixed by the singular gerbe data
-      `(Σ, n*, κ_{n*})`. -/
+  /-- Coefficients of the truncated expansion. -/
   V_coeff : Fin (j_max + 1) → R
-  /-- Weight-`n` matrix-entry basis functions of the ansatz. -/
+  /-- Basis functions of the truncation. -/
   basis : Fin (j_max + 1) → R → R
   /-- **Normalisation:** each basis entry equals `1` at the origin. -/
   basis_at_zero : ∀ n, basis n 0 = 1
-  /-- **Finite ansatz (the representation-theoretic input):** `V` is the
-      finite sum of its weight components. -/
+  /-- **Truncated expansion:** `V` is the finite sum of its components. -/
   profile_expansion : ∀ x : R, V x = ∑ n : Fin (j_max + 1), V_coeff n * basis n x
 
-/-- **Leray-profile reconstruction** ([`prop:leray-profile`]).
+/-- **Galerkin reconstruction at the origin.**
 
     `V(0) = Σ_n V_coeff n` — *derived* by evaluating the finite ansatz
     `profile_expansion` at `0` and applying the basis normalisation
-    (`mul_one` per component).
-
-    LaTeX: `\label{prop:leray-profile}` -/
--- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/leray-profile.ts
+    (`mul_one` per component). -/
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/leray-profile-construction.md
 theorem leray_profile {R : Type*} [CommRing R] [ctx : LerayProfileContext R] :
     ctx.V 0 = ∑ n : Fin (ctx.j_max + 1), ctx.V_coeff n := by
   rw [ctx.profile_expansion 0]

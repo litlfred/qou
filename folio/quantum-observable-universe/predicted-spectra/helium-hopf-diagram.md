@@ -28,7 +28,7 @@ $$
   L =  \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
 $$
 
-This matrix has rank $1$. Adding a third component $e_3$ requires $\mathrm{lk}(e_3, e_1) \geq 1$ and $\mathrm{lk}(e_3, e_2) \geq 1$. This increases the total linking number from $1$ to at least $3$. The crossing energy cost of these extra links exceeds the binding energy gain. The atom expels the third electron to a higher shell.
+This matrix has rank $2$. Adding a third component $e_3$ requires $\mathrm{lk}(e_3, e_1) \geq 1$ and $\mathrm{lk}(e_3, e_2) \geq 1$. This increases the total linking number from $1$ to at least $3$. The crossing energy cost of these extra links exceeds the binding energy gain. The atom expels the third electron to a higher shell.
 
 **Comparison: lithium ($p = 3$, $n = 4$).**
 

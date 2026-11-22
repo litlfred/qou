@@ -69,7 +69,6 @@ export default chapter({
         "down-quark",
         "up-quark-properties",
         "down-quark-properties",
-        "photon",
         "quark-antiquark-production",
         "quark-antiquark-production-reduction",
         "four-term-pair-nucleon",

@@ -7,6 +7,8 @@ import Mathlib.Tactic.Positivity
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Combinatorics.Enumerative.Catalan
 
+-- Ref: [jones1987] (Markov trace factors through the Temperley–Lieb quotient)
+-- Ref: [kimlee2018] (dim TL_n = Catalan(n), standard-monomial count)
 /-!
 # Convention D *is* Temperley–Lieb, and that is what `H₄` buys
 

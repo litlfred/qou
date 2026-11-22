@@ -54,7 +54,7 @@ import sympy as sp
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as _Q_CANONICAL
+from q_parameter import Q as _Q_CANONICAL, Q_MP as _Q_CANONICAL_MP, Q_50_DIGIT_STR as _Q_STR
 from hecke_character_symbolic import standard_young_tableaux
 from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
@@ -310,7 +310,9 @@ def run_validation(Z, N, include_inter, label):
     """Compare interpolation pointwise values against symbolic reference."""
     print(f"\n── {label} (Z={Z}, N={N}) ──")
     # Validation at q_0: numerical tr_M should match symbolic to 40+ digits.
-    q0 = float(_Q_CANONICAL)
+    # Full-precision q₀. It was float(Q), so the "60-digit" value below was
+    # computed at a q₀ with 16 correct digits (F64_CAST, 2026-11-21).
+    q0 = _Q_CANONICAL_MP
     t0 = time.time()
     tr_num = markov_trace_numerical(Z, N, q0, include_inter=include_inter)
     dt = time.time() - t0
@@ -357,7 +359,7 @@ if __name__ == "__main__":
             print(f"\n── DEMO: A=3 ({label}) — tr_M @ q_0 numerically ──")
             try:
                 t0 = time.time()
-                tr_val = markov_trace_numerical(Z, N, float(_Q_CANONICAL),
+                tr_val = markov_trace_numerical(Z, N, _Q_CANONICAL_MP,
                                                  include_inter=inter)
                 dt = time.time() - t0
                 print(f"  tr_M = {mp.nstr(tr_val.real, 18)}  ({dt:.2f}s)")
@@ -421,7 +423,7 @@ if __name__ == "__main__":
         # exposure does not apply to this witness.
         "polynomial_q_not_applicable": True,
         "parameters": {
-            "q_0": float(_Q_CANONICAL),
+            "q_0": _Q_STR,
             "engine": "mpmath 60-digit; Hoefsmit numerical",
         },
         "results": results,

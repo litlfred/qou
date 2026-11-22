@@ -6,6 +6,7 @@ export default remark({
   title:
     "Bar-parity of the Ohtsuki tower at the imaginary substrate: even rungs are $\\mathrm{Re}\\,\\mathfrak{V}$ (mass), odd rungs are $\\mathrm{Im}\\,\\mathfrak{V}$ (the bar-odd $S$)",
   uses: ["conj:im-q-physical-role", "rem:c3-s-imq-decay-projection"],
+  cites: ["andersen-mistegard2020"],
   tags: [
     "im-q",
     "ohtsuki-tower",
