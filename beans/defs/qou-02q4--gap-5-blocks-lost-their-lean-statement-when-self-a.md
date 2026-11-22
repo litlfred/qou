@@ -7,7 +7,7 @@ priority: high
 tags:
     - lean
 created_at: 2026-11-22T09:20:30Z
-updated_at: 2026-11-22T09:34:24Z
+updated_at: 2026-11-22T09:50:54Z
 parent: qou-uwyf
 ---
 
@@ -17,3 +17,6 @@ Record: docs/audits/2026-11-22-lean-audit-snapshot-gaps.md (§3). Epic qou-uwyf.
 
 
 2026-11-22T09:45Z claimed by thread 'Restore Lean statements lost with projections' (session https://claude.ai/code/session_01Qmmkt5ngCVGxt8cKmAnoR2). Plan: one real theorem per block, no projection restored.
+
+
+2026-11-22T10:20Z five theorems on branch claude/restore-lean-statements-2026-11-22 (commits 1e4f4b610..83bdda216), each lean-direct exit 0, #print axioms = propext/Classical.choice/Quot.sound only. character_closure (from eq_wtrace_of_markov); cl3_diff_eq_sqrt5_L3_chi5 (X = sqrt5/2 L(3,chi5)); graded_trace_residue_split_of_section (one filtration step); phi_q_tower_algebraic_stratification_of_pentagon (pentagon = hypothesis); markov_gns_null_ideal (quotient step only). Ref audit needs-fix 25 -> 20. No projection restored. PR waits on owner.
