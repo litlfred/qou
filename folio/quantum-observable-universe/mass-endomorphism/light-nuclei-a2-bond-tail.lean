@@ -1,5 +1,6 @@
 import MassEndomorphism.MarkovTraceRecursiveReducer
 import Mathlib.Tactic.FieldSimp
+import MassEndomorphism.MarkovTraceHeckeFunctional
 
 /-!
 # The A = 2 γγ bond on the four-strand tail
@@ -19,6 +20,11 @@ Main results, all exact identities in `z` and `h`:
 * `bond_into_neutron`: by `h⁵ (h² + 1)(h² + 4)(h z - h² - 1)(z² - h z - 1) / 4`.
 * `bond_into_proton_vanishes`, `bond_into_neutron_vanishes`: both changes vanish when
   `z² - h z - 1 = 0`.
+* `a2_reduce`: on the Hecke tower, the full A = 2 γγ chain `ggChain N₀ [N]` and the free
+  product `freeTail [N₀, N]` have traces `tr N₀ · tail(N↑¹ V³)` and `tr N₀ · tail(N↑¹)`, for
+  any first nucleon `N₀ ∈ H₃` and any receiving word `N` on `σ_0, σ_1`.
+* `a2_bond_into_proton`, `a2_bond_into_neutron`: the two bond identities above, stated on
+  the full A = 2 words (`ggChain` minus `freeTail`), times `tr N₀`.
 
 Method: `ME` is a merging evaluator (it collects like basis terms after each letter);
 `ME_eq_P` proves it equals the plain expansion `P`, and `tail_eq_trWord` writes `P` as a sum of
@@ -275,4 +281,167 @@ theorem bond_into_neutron_vanishes (h2 : (2 : K) ≠ 0) (hz : z ^ 2 - h * z - 1 
   exact sub_eq_zero.mp ((mul_eq_zero.mp e).resolve_left (four_ne_zero_of_two h2))
 
 end Tail
+end QOU.LightNucleiBond
+
+open QOU.BraidKnot QOU.BraidKnot.HeckeFunctional QOU.MathlibExt.HeckeTowerWitness
+
+namespace QOU.LightNucleiBond
+
+section Bridge
+
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- The letter `σ_i + b` as an element of the Hecke tower. -/
+noncomputable def letterEl (bi : R × ℕ) : HeckeTower R h := twGen h bi.2 + bi.1 • 1
+
+/-- A word of letters `σ_i + b` as an element of the Hecke tower. -/
+noncomputable def wordEl (L : List (R × ℕ)) : HeckeTower R h := (L.map (letterEl h)).prod
+
+theorem wordEl_append (L M : List (R × ℕ)) :
+    wordEl h (L ++ M) = wordEl h L * wordEl h M := by
+  simp [wordEl, List.prod_append]
+
+theorem twWord_mul_letter (pre : List ℕ) (b : R) (i : ℕ) (Y : HeckeTower R h) :
+    twWord h pre * (letterEl h (b, i) * Y) = twWord h (pre ++ [i]) * Y + b • (twWord h pre * Y) := by
+  rw [twWord_append]
+  simp only [letterEl, twWord, List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one,
+    add_mul, mul_add, smul_mul_assoc, one_mul, mul_smul_comm, mul_assoc]
+
+theorem towerTr_twWord_mul_wordEl : ∀ (L : List (R × ℕ)) (pre : List ℕ),
+    towerTr z h (twWord h pre * wordEl h L) =
+      ((subwords L).map fun p => p.1 * G z h (pre ++ p.2)).sum
+  | [], pre => by simp [wordEl, subwords]
+  | (b, i) :: L, pre => by
+    have e : twWord h pre * wordEl h ((b, i) :: L) =
+        twWord h (pre ++ [i]) * wordEl h L + b • (twWord h pre * wordEl h L) := by
+      rw [wordEl, List.map_cons, List.prod_cons, ← wordEl, twWord_mul_letter]
+    rw [e, map_add, map_smul, towerTr_twWord_mul_wordEl L (pre ++ [i]),
+      towerTr_twWord_mul_wordEl L pre, subwords, sum_map_append', smul_eq_mul]
+    simp only [List.map_map, Function.comp_def, List.append_assoc, List.singleton_append]
+    rw [← sum_map_mul']
+    congr 1
+    apply congrArg; apply List.map_congr_left; intro p _; ring
+
+theorem subwords_letters : ∀ (L : List (R × ℕ)) (p : R × List ℕ), p ∈ subwords L →
+    ∀ a ∈ p.2, ∃ x ∈ L, x.2 = a
+  | [], p, hp, a, ha => by simp [subwords] at hp; subst hp; simp at ha
+  | (b, i) :: L, p, hp, a, ha => by
+    simp only [subwords, List.mem_append, List.mem_map] at hp
+    rcases hp with ⟨q, hq, rfl⟩ | ⟨q, hq, rfl⟩
+    · rcases List.mem_cons.mp ha with rfl | ha'
+      · exact ⟨(b, a), by simp, rfl⟩
+      · obtain ⟨x, hx, hxa⟩ := subwords_letters L q hq a ha'
+        exact ⟨x, List.mem_cons_of_mem _ hx, hxa⟩
+    · obtain ⟨x, hx, hxa⟩ := subwords_letters L q hq a ha
+      exact ⟨x, List.mem_cons_of_mem _ hx, hxa⟩
+
+theorem shift_wordEl (k : ℕ) (L : List (R × ℕ)) :
+    shift h k (wordEl h L) = wordEl h (L.map fun x => (x.1, x.2 + k)) := by
+  induction L with
+  | nil => simp [wordEl]
+  | cons x L ih =>
+    simp only [wordEl, List.map_cons, List.prod_cons, map_mul] at ih ⊢
+    rw [ih]; simp [letterEl, shift_twGen]
+
+theorem wordEl_mem (n : ℕ) : ∀ L : List (R × ℕ), (∀ x ∈ L, x.2 < n) → wordEl h L ∈ twH h n
+  | [], _ => by simp [wordEl]
+  | x :: L, hL => by
+    rw [wordEl, List.map_cons, List.prod_cons, ← wordEl]
+    refine Subalgebra.mul_mem _ (Subalgebra.add_mem _ ?_ ?_) (wordEl_mem n L fun y hy => hL y (by simp [hy]))
+    · exact twH_mono h (hL x (by simp)) (twGen_mem h x.2)
+    · exact Subalgebra.smul_mem _ (Subalgebra.one_mem _) _
+
+end Bridge
+
+section A2
+
+theorem flatMap_single_cast (l : List ℕ) :
+    List.flatMap (fun a : ℕ => [(a : ℤ)]) l = l.map Int.ofNat := by
+  induction l with
+  | nil => rfl
+  | cons a l ih => simp [List.flatMap_cons, ih]
+
+variable {K : Type*} [Field K] (z h : K)
+
+theorem towerTr_wordEl_eq_tail (L : List (K × ℕ)) (hL : ∀ x ∈ L, x.2 < 3) :
+    towerTr z h (wordEl h L) = tail z h L := by
+  have := towerTr_twWord_mul_wordEl z h L []
+  simp only [twWord, List.map_nil, List.prod_nil, one_mul, List.nil_append] at this
+  rw [this, tail_eq_trWord]
+  congr 1; apply List.map_congr_left; intro p hp
+  have hw : ∀ a ∈ p.2, a < 3 := fun a ha => by
+    obtain ⟨x, hx, rfl⟩ := subwords_letters L p hp a ha; exact hL x hx
+  rw [G_eq z h hw]
+  simp [zw, flatMap_single_cast]
+  exact Or.inl rfl
+
+theorem letterEl_inv (i : ℕ) : letterEl h ((-h, i) : K × ℕ) = twGenInv h i := by
+  rw [letterEl, twGenInv, sub_eq_add_neg]
+  show twGen h i + (-h) • 1 = _
+  simp [Algebra.smul_def]
+
+theorem letterEl_zero (i : ℕ) : letterEl h ((0, i) : K × ℕ) = twGen h i := by
+  simp [letterEl]
+
+theorem vertexCube_eq_wordEl : vertexCube h = wordEl h (V3w h 0) := by
+  simp only [vertexCube, wordEl, V3w, lS, lI, List.map_cons, List.map_nil, List.prod_cons,
+    List.prod_nil, letterEl_inv, letterEl_zero, mul_one, zero_add, mul_assoc]
+
+theorem protonW_shift (k : ℕ) : (protonW h k).map (fun x => (x.1, x.2 + 1)) = protonW h (k + 1) := by
+  simp [protonW, V3w, lS, lI, lA]
+
+theorem neutronW_shift (k : ℕ) : (neutronW h k).map (fun x => (x.1, x.2 + 1)) = neutronW h (k + 1) := by
+  simp [neutronW, V3w, lS, lI, lA]
+
+/-- The A = 2 γγ chain reduces to the four-strand tail: bonded and free traces are
+`tr N₀ · tail(N↑¹ V³)` and `tr N₀ · tail(N↑¹)`. -/
+theorem a2_reduce (N₀ : HeckeTower K h) (hN₀ : N₀ ∈ twH h 2) (L : List (K × ℕ))
+    (hL : ∀ x ∈ L, x.2 < 2) :
+    towerTr z h (ggChain h N₀ [wordEl h L]) =
+        towerTr z h N₀ * tail z h (L.map (fun x => (x.1, x.2 + 1)) ++ V3w h 0) ∧
+      towerTr z h (freeTail h [N₀, wordEl h L]) =
+        towerTr z h N₀ * tail z h (L.map (fun x => (x.1, x.2 + 1))) := by
+  have hN : wordEl h L ∈ twH h 2 := wordEl_mem h 2 L hL
+  have hS : ∀ x ∈ L.map (fun x => (x.1, x.2 + 1)), x.2 < 3 := by
+    intro x hx; obtain ⟨y, hy, rfl⟩ := List.mem_map.mp hx; have := hL y hy; simp; omega
+  have hSV : ∀ x ∈ L.map (fun x => (x.1, x.2 + 1)) ++ V3w h 0, x.2 < 3 := by
+    intro x hx
+    rcases List.mem_append.mp hx with hx | hx
+    · exact hS x hx
+    · have hV : ∀ y ∈ V3w h 0, y.2 < 3 := by simp [V3w, lS, lI]
+      exact hV x hx
+  constructor
+  · rw [towerTr_ggChain z h N₀ hN₀ [wordEl h L] (by simpa using hN)]
+    simp only [List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one, ggBondFactor]
+    rw [towerTr_mul_comm, shift_wordEl, vertexCube_eq_wordEl, ← wordEl_append,
+      towerTr_wordEl_eq_tail z h _ hSV]
+  · simp only [freeTail, map_one, mul_one]
+    rw [towerTr_disjoint z h 3 (twH_mono h (by norm_num) hN₀), ← towerTr_shift z h 1 (wordEl h L),
+      shift_wordEl, towerTr_wordEl_eq_tail z h _ hS]
+
+/-- **A = 2, bond into a proton.** For any first nucleon `N₀ ∈ H₃`, the γγ bond into a
+production proton changes the trace by `tr N₀ · h⁴ (z² − hz − 1) P(h, z) / 4`. -/
+theorem a2_bond_into_proton (h2 : (2 : K) ≠ 0) (N₀ : HeckeTower K h) (hN₀ : N₀ ∈ twH h 2) :
+    4 * (towerTr z h (ggChain h N₀ [wordEl h (protonW h 0)])
+        - towerTr z h (freeTail h [N₀, wordEl h (protonW h 0)])) =
+      towerTr z h N₀ * (h^4*(z^2-h*z-1)*(-h^7+h^6*z-4*h^5+3*h^4*z-6*h^3+2*h^2*z-3*h-2*z)) := by
+  have hL : ∀ x ∈ protonW h 0, x.2 < 2 := by
+    simp [protonW, V3w, lS, lI, lA]
+  obtain ⟨e1, e2⟩ := a2_reduce z h N₀ hN₀ _ hL
+  rw [e1, e2, protonW_shift]
+  linear_combination (towerTr z h N₀) * bond_into_proton z h h2
+
+/-- **A = 2, bond into a neutron.** -/
+theorem a2_bond_into_neutron (h2 : (2 : K) ≠ 0) (N₀ : HeckeTower K h) (hN₀ : N₀ ∈ twH h 2) :
+    4 * (towerTr z h (ggChain h N₀ [wordEl h (neutronW h 0)])
+        - towerTr z h (freeTail h [N₀, wordEl h (neutronW h 0)])) =
+      towerTr z h N₀ * (h^5*(h^2+1)*(h^2+4)*(h*z-h^2-1)*(z^2-h*z-1)) := by
+  have hL : ∀ x ∈ neutronW h 0, x.2 < 2 := by
+    simp [neutronW, V3w, lS, lI, lA]
+  obtain ⟨e1, e2⟩ := a2_reduce z h N₀ hN₀ _ hL
+  rw [e1, e2, neutronW_shift]
+  linear_combination (towerTr z h N₀) * bond_into_neutron z h h2
+
+end A2
+
 end QOU.LightNucleiBond
