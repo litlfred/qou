@@ -5,6 +5,8 @@ import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Group
 import Mathlib.Tactic.NoncommRing
+import Mathlib.Algebra.Algebra.Hom
+import Mathlib.LinearAlgebra.Span.Basic
 
 /-!
 # The reachable pair terms are closed under `Q_A ↦ 1 − Q_B`, `Q_B ↦ 1 − Q_A`
@@ -49,7 +51,18 @@ where `β` is free and the sector involution fails. With both symmetries and a u
 `β₀ = σ α₀`, i.e. `β(q) = α(q⁻¹)` (`beta_eq_bar_alpha_of_unique_ray`). The local relations
 behind `ψ` are checked over `ℚ(q)` by `np_pair_term_bar_symmetry_check.py`; that `α` is pinned
 is the computer-algebra result of `np_more_strands_symbolic_probe.py` over `ℚ(q)` for
-`N = 6, 7, 8` and is a hypothesis here (`_of_pinned_alpha`).
+`N ≤ 10` and is a hypothesis here (`_of_pinned_alpha`).
+
+**Spectators after the pair, for any number of strands.** Put `m` spectator strands to the right
+of both blocks. The weighted partial trace `E` over them satisfies `tr_N(j y · X) = tr_6(y · E X)`
+by definition, and `E (y ⊗ 1) = (q + q⁻¹)^m y`. So every response on `N` strands is a response of
+`E X` on six (`readout_partialTrace`), and the spans of the reachable pair shifts coincide
+(`span_shift_eq`), given that `E` sends the `N`-strand Hecke image into the six-strand one. That
+last hypothesis is the statement that the right partial quantum trace is a `U_q(sl₂)`-module map,
+so it preserves commutants, which by Jimbo's Schur–Weyl duality are the Hecke images
+[jimbo1986]; it is not formalised here. It is also where the side matters: a spectator to
+the left of a block is not removed by a module map, and the probe finds the Coulomb form reachable
+with one leading spectator (`np_more_strands_symbolic_probe.py`, layouts `L7b`, `L8o`).
 
 **Scope.** The abstract readout symmetry is proved here for any ring with a trace, an
 automorphism preserving it, and the stated relations; the 64 × 64 Jimbo instances of those
@@ -314,5 +327,74 @@ theorem beta_eq_bar_alpha_of_unique_ray (Reach : Set (K → K → K)) (σ : K �
   linear_combination h1 - h2
 
 end BarPairTerm
+
+/-! ### Spectator strands outside the pair change nothing -/
+
+section PartialTrace
+
+variable {K A B ι : Type*} [Field K] [Ring A] [Algebra K A] [Ring B] [Algebra K B]
+
+/-- **The readout on more strands factors through a conditional expectation.** `B` is the
+algebra of the six block strands, `A` that of all `N` strands, `j : B → A` the embedding
+`y ↦ y ⊗ 1`, and `E : A → B` the weighted partial trace over the spectator strands, with
+`trA (j y * X) = trB (y * E X)`. Projectors and core live on the block strands. Then the
+response of `X` on `N` strands is the response of `E X` on six. -/
+theorem readout_partialTrace (trA : A →ₗ[K] K) (trB : B →ₗ[K] K) (j : B →ₐ[K] A)
+    (E : A →ₗ[K] B) (hE : ∀ y X, trA (j y * X) = trB (y * E X)) (P : ι → B) (C X : A)
+    (C₀ : B) (hC : C = j C₀) (s : ι) :
+    readout trA (fun s => j (P s)) C X s = readout trB P C₀ (E X) s := by
+  unfold readout
+  rw [hC, ← map_mul, hE]
+
+/-- The pair shifts `ΔE_X(s) = T_X(s) / T_1(s)` on `N` strands. -/
+noncomputable def shiftA (trA : A →ₗ[K] K) (P : ι → B) (j : B →ₐ[K] A) (C₀ : B) (X : A)
+    (s : ι) : K :=
+  readout trA (fun s => j (P s)) (j C₀) X s / readout trA (fun s => j (P s)) (j C₀) 1 s
+
+/-- The pair shifts on the six block strands. -/
+noncomputable def shiftB (trB : B →ₗ[K] K) (P : ι → B) (C₀ : B) (Y : B) (s : ι) : K :=
+  readout trB P C₀ Y s / readout trB P C₀ 1 s
+
+/-- **The reachable pair shifts are the same with or without outside spectators.** If the
+partial trace sends `HA` into `HB`, the embedding sends `HB` into `HA`, and
+`E (j y) = d • y` with `d ≠ 0` (for one spectator strand of `U_q(sl₂)`, `d = q + q⁻¹`), then the
+`K`-span of the pair shifts reachable on `N` strands equals the span of those reachable on six. -/
+theorem span_shift_eq (trA : A →ₗ[K] K) (trB : B →ₗ[K] K) (j : B →ₐ[K] A) (E : A →ₗ[K] B)
+    (hE : ∀ y X, trA (j y * X) = trB (y * E X)) (d : K) (hd : d ≠ 0)
+    (hEj : ∀ y, E (j y) = d • y) (P : ι → B) (C₀ : B)
+    (HA : Submodule K A) (HB : Submodule K B) (hEH : ∀ X ∈ HA, E X ∈ HB)
+    (hjH : ∀ y ∈ HB, j y ∈ HA) :
+    Submodule.span K {f | ∃ X ∈ HA, f = shiftA trA P j C₀ X} =
+      Submodule.span K {f | ∃ Y ∈ HB, f = shiftB trB P C₀ Y} := by
+  have hT : ∀ X s, readout trA (fun s => j (P s)) (j C₀) X s = readout trB P C₀ (E X) s :=
+    fun X s => readout_partialTrace trA trB j E hE P (j C₀) X C₀ rfl s
+  have h1 : ∀ s, readout trB P C₀ (E 1) s = d * readout trB P C₀ 1 s := by
+    intro s
+    rw [show (1 : A) = j 1 from (map_one j).symm, hEj]
+    unfold readout
+    rw [mul_smul_comm, map_smul, smul_eq_mul]
+  -- each shift on N strands is d⁻¹ times a shift on six, and conversely
+  have hA : ∀ X, shiftA trA P j C₀ X = d⁻¹ • shiftB trB P C₀ (E X) := by
+    intro X; funext s
+    simp only [shiftA, shiftB, hT, h1, Pi.smul_apply, smul_eq_mul]
+    by_cases h0 : readout trB P C₀ 1 s = 0
+    · simp [h0]
+    · field_simp
+  have hB : ∀ Y, shiftB trB P C₀ Y = d • shiftA trA P j C₀ (j (d⁻¹ • Y)) := by
+    intro Y
+    rw [hA, hEj, smul_smul, mul_inv_cancel₀ hd, one_smul, smul_smul, mul_inv_cancel₀ hd,
+      one_smul]
+  apply le_antisymm
+  · rw [Submodule.span_le]
+    rintro f ⟨X, hX, rfl⟩
+    rw [hA]
+    exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨E X, hEH X hX, rfl⟩)
+  · rw [Submodule.span_le]
+    rintro f ⟨Y, hY, rfl⟩
+    rw [hB]
+    exact Submodule.smul_mem _ _
+      (Submodule.subset_span ⟨j (d⁻¹ • Y), hjH _ (HB.smul_mem _ hY), rfl⟩)
+
+end PartialTrace
 
 end QOU.QBeta.PairTermSectorSymmetry

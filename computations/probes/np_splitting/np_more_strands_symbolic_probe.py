@@ -46,6 +46,15 @@ LAYOUTS = {
     "L7s": (7, (0, 1, 2), (4, 5, 6)),
     "L7e": (7, (0, 1, 2), (3, 4, 5)),
     "L8s": (8, (0, 1, 2), (5, 6, 7)),
+    # spectators outside the pair only
+    "L7b": (7, (1, 2, 3), (4, 5, 6)),
+    "L8e": (8, (0, 1, 2), (3, 4, 5)),
+    "L8o": (8, (1, 2, 3), (4, 5, 6)),
+    "L9e": (9, (0, 1, 2), (3, 4, 5)),
+    # spectators between the blocks, and mixed
+    "L9s": (9, (0, 1, 2), (6, 7, 8)),
+    "L9m": (9, (0, 1, 2), (4, 5, 6)),
+    "L10s": (10, (0, 1, 2), (7, 8, 9)),
 }
 
 QS = sp.Symbol("q")
@@ -190,6 +199,8 @@ def run(layout, all_words=False):
             T = readout(M)
             span.add([T.get(k, ZERO) for k in keys])
             count += 1
+            if count % 1000 == 0:
+                log(f"  {layout}: {count} words, span dim {len(span.rows)}")
             for i in range(N - 1):
                 l = list(p)
                 l[i], l[i + 1] = l[i + 1], l[i]
