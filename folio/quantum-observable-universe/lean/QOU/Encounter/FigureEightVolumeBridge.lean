@@ -5,6 +5,10 @@
 
   ═══ WHY THIS FILE EXISTS: A CORRECTION TO ITS OWN SIBLING ═══
 
+  (Historical as of 2026-08-30: `MostowRigidity.figureEight.volume` is now the exact
+  `VOL_4_1`, and the sibling theorem was re-keyed to it as
+  `figureEight_volume_eq_triangulation_volume`.  The account below records why.)
+
   `Encounter/MostowTriangulationBridge.lean` carries
   `figureEight_literal_eq_triangulation_volume`, whose conclusion is
 
