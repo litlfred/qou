@@ -54,8 +54,11 @@ export default proposition({
         "(cited). Sweedler's algebra itself is formalised as a Hopf algebra over any commutative ring " +
         "(`QOU.LiftingDescent.Sweedler.instHopfAlgebra`, `QOU/LiftingDescent/SweedlerJet.lean`, sorry-free), " +
         "with an algebra map into any square-zero extension $A \\ltimes M$ from an involution $g$ and an " +
-        "element $m$ with $m g = -g m$ (`Sweedler.toJet`). That the map is an isomorphism onto " +
-        "$k[\\mathbb{Z}/2] \\ltimes \\Omega^1_u$ is not formalised.",
+        "element $m$ with $m g = -g m$ (`Sweedler.toJet`). For $A = k[\\mathbb{Z}/2]$ and $m = dg$ in the universal " +
+        "differentials $\\Omega^1_u(A) = \\ker(A \\otimes A \\to A)$ the map is an isomorphism of $k$-algebras " +
+        "$H_4 \\cong k[\\mathbb{Z}/2] \\ltimes \\Omega^1_u$ over any commutative ring $k$ " +
+        "(`QOU.LiftingDescent.Sweedler.jetEquiv`, `QOU/LiftingDescent/SweedlerJetIso.lean`, sorry-free). The Hopf " +
+        "structure is transported along this algebra isomorphism; it is not derived from $A$.",
     },
     {
       kind: "caveat",
