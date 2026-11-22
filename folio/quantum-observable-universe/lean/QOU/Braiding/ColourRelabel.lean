@@ -1,4 +1,6 @@
 import QOU.Braiding.JimboGl3Singlet
+import Mathlib.Algebra.Module.LinearMap.Defs
+import Mathlib.Algebra.Module.Pi
 
 /-!
 # Relabelling colours does not preserve Jimbo's singlet at `q² ≠ 1`
@@ -55,5 +57,35 @@ theorem swap01_eps_proportional_iff (q : K) (hq : q ≠ 0) :
     (∃ c : K, swapT (eps q) = fun a b d => c * eps q a b d) ↔ q ^ 2 = 1 :=
   ⟨fun ⟨c, H⟩ => swap01_eps_proportional q hq c H,
    fun h => ⟨-q⁻¹, swap01_eps_of_sq_eq_one q h⟩⟩
+
+/-- **Any linear map compatible with the braiding keeps the singlet line.** If
+`Φ : V^{⊗3} → V^{⊗3}` is `K`-linear and commutes with both Jimbo braidings, then `Φ ε_q` is a
+multiple of `ε_q` (for `q ≠ 0`, `q² + 1 ≠ 0`). No ordering of the colours is used: this is the
+form in which a monodromy that respects the braided structure must act on the singlet. -/
+theorem braid_commuting_fixes_singlet (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
+    (Φ : T3 K →ₗ[K] T3 K)
+    (h12 : ∀ w, R12 q (Φ w) = Φ (R12 q w)) (h23 : ∀ w, R23 q (Φ w) = Φ (R23 q w)) :
+    Φ (eps q) = fun a b c => Φ (eps q) 0 1 2 * eps q a b c := by
+  have hs12 : R12 q (eps q) = (-q⁻¹) • eps q := by
+    rw [R12_eps q hq]; funext a b c; simp
+  have hs23 : R23 q (eps q) = (-q⁻¹) • eps q := by
+    rw [R23_eps q hq]; funext a b c; simp
+  apply singlet_unique q hq h2
+  · rw [h12, hs12, map_smul]; funext a b c; simp
+  · rw [h23, hs23, map_smul]; funext a b c; simp
+
+/-- The colour swap as a `K`-linear map of `V^{⊗3}`. -/
+def swapL : T3 K →ₗ[K] T3 K where
+  toFun := swapT
+  map_add' _ _ := rfl
+  map_smul' _ _ := rfl
+
+/-- **The bare swap is not compatible with the braiding at generic `q`.** If the colour swap
+commuted with both Jimbo braidings then `q² = 1`. -/
+theorem swap_braid_commuting_imp (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
+    (h12 : ∀ w, R12 q (swapT w) = swapT (R12 q w))
+    (h23 : ∀ w, R23 q (swapT w) = swapT (R23 q w)) : q ^ 2 = 1 :=
+  swap01_eps_proportional q hq _
+    (braid_commuting_fixes_singlet q hq h2 swapL h12 h23)
 
 end QOU.Braiding.ColourRelabel
