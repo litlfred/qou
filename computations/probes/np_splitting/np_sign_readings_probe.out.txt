@@ -1,0 +1,13 @@
+signed words of length 1..5: 1364
+P1 plain traces equal on W_p, W_n: 1364/1364
+P2 |eps_n|<|eps_p| at q=111/100 (words with eps_p != 0): 1364/1364
+P3 words with tr_W<0 at q=111/100 (neutron heavier under signed linear reading): 114/1364  [reported, not predicted]
+P4 reversed at q=100/111: 1364/1364
+P5 (K^-1, u=e2) gives same (eps_p, eps_n): 1364/1364
+P6 two-term Q_pair difference = (1/q - q - c/3) tr_W: 1364/1364
+V^3: plain equal=True; eps_n/eps_p=q**(-2); tr_W(111/100)>0: True
+Delta3*V^3 (electron word inserted): plain equal=True; eps_n/eps_p=q**(-2); tr_W(111/100)>0: True
+gamma(phi)gamma(psi) symbolic: plain equal=True; eps_n/eps_p=q**(-2); tr_W(111/100)>0: symbolic
+gamma(0,0,qh)gamma(0,0,-h/q): plain equal=True; eps_n/eps_p=q**(-2); tr_W(111/100)>0: True
+P7 electron Delta3 quantum trace = q**3*(q**4 + 1)/(q**2 + 1)**2; at 111/100 > 0: True
+V^3: eps_n - eps_p = (q - 1)*(q + 1)*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)

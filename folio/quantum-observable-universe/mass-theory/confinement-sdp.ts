@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:confinement-sdp",
   title:
     "Confinement as semidefinite program with matrix Frobenius positivity",
-  lean: { ref: "qou:QOU.ParticleInteractions.ConfinementSDP",
+  lean: { ref: "qou:QOU.ParticleInteractions.confinement_sdp",
     validation: "not_checked",
   },
   uses: ["prop:confinement-lp"],

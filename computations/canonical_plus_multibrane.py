@@ -76,8 +76,7 @@ from hecke_symbolic import (SymbolicHeckeDivision,
                               SymbolicHeckeElement, q as q_sym)
 from mass_at_3A_proper import atom_braid_word_3A, phi_q_safe
 from binding_canonical import build_atom_symbolic
-from canonical_tower import (per_irrep_V_hat, eigen_multiplicities,
-                               _save_mpm_disk)
+from canonical_tower import per_irrep_V_hat, eigen_multiplicities
 
 
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
@@ -119,7 +118,6 @@ def per_gen_V_hat_aggregated(Z: int, N: int, *,
                                   m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
         for i in range(n_gens):
             V_hat[i] += w_lam * V_lam[i]
-    _save_mpm_disk(n_strands)
     return V_hat
 
 

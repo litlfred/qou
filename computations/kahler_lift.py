@@ -311,7 +311,7 @@ if __name__ == "__main__":
               f"{a_lift['V2'][i]:+.6f}")
 
     # Apply tower with Kähler-lifted V̂
-    from canonical_tower import (per_irrep_V_hat, _save_mpm_disk)
+    from canonical_tower import per_irrep_V_hat
     from canonical_plus_multibrane import (tower_mass_level,
                                               per_gen_V_hat_aggregated,
                                               HBAR_Q_SQ, HBAR_Q,

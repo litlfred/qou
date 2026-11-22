@@ -150,6 +150,8 @@ computations/hecke_startup_cache.json
 
 computations/.cache/
 computations/.cache/ocneanu/
+# hecke_3a_weights.cached_weights_3a writes beside its own module (issue #8996, P6)
+computations/hecke/.cache/
 
 # Top-level computations/ regenerable caches (the repo's compute tree is
 # computations/; these auto-generated seminormal / hoefsmit / term caches are

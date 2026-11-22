@@ -24,7 +24,7 @@ export default proposition({
     },
   ],
   label: "prop:q-hecke-eigenvalue",
-  lean: { ref: "qou:QOU.q_hecke_eigenvalue", validation: "not_checked" },
+  lean: { ref: "qou:QOU.QGeometricLanglands.q_hecke_eigenvalue", validation: "not_checked" },
   title: "$q$-Hecke eigenvalues from the fibre functor",
   uses: [
     "def:q-hecke-eigensheaf",

@@ -216,11 +216,25 @@ def binding_block(shape, qq):
     return d, dim
 
 
+def eigvals(m):
+    """Eigenvalues of `m` as a flat list of mpc/mpf.
+
+    mpmath 1.3.0's `mp.eig` ignores `left=False, right=False` for a 1x1
+    matrix: its `n == 1` branch returns the tuple `([A[0]], ER, EL)`
+    unconditionally. Iterating that tuple handed a LIST to `mp.im`, which is
+    the crash at the block loop (the dim-1 blocks (6) and (1^6)). Handle the
+    1x1 case directly, so the general path stays mpmath's own solver.
+    """
+    if m.rows == 1:
+        return [m[0, 0]]
+    return mp.eig(m, left=False, right=False)
+
+
 def small_phase(shape, qq):
     """The smallest eigenphase below 1 rad, or None if the block has no such
     complex-conjugate pair at this q."""
     d, _ = binding_block(shape, qq)
-    ev = mp.eig(d, left=False, right=False)
+    ev = eigvals(d)
     ph = [abs(mp.arg(z)) for z in ev if abs(mp.im(z)) >= mp.mpf("1e-18")]
     return min([p for p in ph if p < 1], default=None)
 
@@ -348,14 +362,11 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
           f"{mp.nstr(chi_err, 4)}  (their path is float64, so ~1e-14 is the floor)")
 
     # [3] the TL kernel — what convention D annihilates -----------------------------------
-    # float64-ok: `omega_lambda_via_inversion` takes f64 by signature, and the
-    # weights are used ONLY to classify a block visible or blind at a 1e-10
-    # threshold against values that are ~1e-1 or ~1e-16 — nine orders of margin,
-    # and the dimension arithmetic (720 / 132) confirms the split independently.
-    # No spectral quantity is computed from them.
-    q_f = float(Q0)      # float64-ok: classification only, see note above
-    z_f = float(Z_D0)    # float64-ok: classification only, see note above
-    om = omega_lambda_via_inversion(6, q_val=q_f, z_val=z_f)
+    # `omega_lambda_via_inversion` is mpf since 2026-11-22 (branch-cache P9)
+    # and is solved at the exact q0; the weights are used ONLY to classify a
+    # block visible or blind, and the dimension arithmetic (720 / 132)
+    # confirms the split independently.
+    om = omega_lambda_via_inversion(6, q_val=Q0)
     dims, chis, vis = {}, {}, {}
     print(f"\n[3] the observable's blind spot — Ocneanu weights at n = 6, convention D")
     print(f"    {'lambda':>18s} {'rows':>5s} {'dim':>4s} {'|omega|':>11s} "
@@ -363,7 +374,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     for sh in SHAPES:
         d_blk, dim = binding_block(sh, Q0)
         chi = sum(d_blk[i, i] for i in range(dim))
-        w = mp.fabs(mp.mpf(str(om.get(sh, 0.0))))
+        w = mp.fabs(om.get(sh, mp.mpf(0)))
         dims[sh], chis[sh], vis[sh] = dim, chi, bool(w > BLIND_EPS)
         print(f"    {str(sh):>18s} {len(sh):>5d} {dim:>4d} {mp.nstr(w, 6):>11s} "
               f"{mp.nstr(chi, 10):>14s}  {'yes' if vis[sh] else 'NO'}")
@@ -392,7 +403,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     spectra, small = {}, {}
     for sh in SHAPES:
         d_blk, dim = binding_block(sh, Q0)
-        ev = mp.eig(d_blk, left=False, right=False)
+        ev = eigvals(d_blk)
         nreal = sum(1 for z in ev if abs(mp.im(z)) < mp.mpf("1e-18"))
         ph = sorted({mp.mpf(mp.nstr(abs(mp.arg(z)), 12))
                      for z in ev if abs(mp.im(z)) >= mp.mpf("1e-18")})
@@ -678,7 +689,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
             "dim_H6": tot_dim, "dim_TL6_visible": two_row,
             "tl_kernel_dimensions": tot_dim - vis_dim,
             "blocks": [{"partition": list(s), "rows": len(s), "dim": dims[s],
-                        "omega_abs": mp.nstr(mp.fabs(mp.mpf(str(om.get(s, 0.0)))), 8),
+                        "omega_abs": mp.nstr(mp.fabs(om.get(s, mp.mpf(0))), 8),
                         "visible": vis[s], "chi_binding": mp.nstr(chis[s], 12),
                         "eigenphases": [mp.nstr(p, 12) for p in spectra[s]]}
                        for s in SHAPES],

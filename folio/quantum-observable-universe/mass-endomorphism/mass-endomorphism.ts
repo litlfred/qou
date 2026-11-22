@@ -44,7 +44,6 @@ export default chapter({
             "pairing-gauge-fluctuation-massless-interpretation",
             "mass-identity",
             "mass-identity-exists",
-            "mass-identity-exists-proof",
             "mass-identity-unique",
             "mass-identity-unique-proof",
             "mass-identity-su2",

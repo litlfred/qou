@@ -956,3 +956,30 @@ candidates, all at convention D. Result `computations/probes/e0_weight/RESULT.md
 1. **§33, the CS invariant and volume of the capture-braid closures** (L12n2208, Vol 12.1792992769…, CS 0). These are SnapPy numerics. Mathlib has no hyperbolic-volume or Chern–Simons theory, so they stay as recorded computations. The same holds for the identification W_L ≅ W_R.
 2. **§34's general-word argument** (at q = 1 every braid-word Markov trace equals 2^{c−n} > 0, while w(1) = 0). This is a statement about all braid words. Formalising it needs the Markov trace on the full braid group, which the corpus does not have yet. Only the six preregistered words are certified.
 3. **Numeric renderings at q₀ and every comparison to CODATA or AME.** Per the owner's rule, empirical numbers stay out of formal proofs.
+
+## §36 E₀'s weight: all words, and the tower (owner 2026-11-22, "1 2")
+
+**All words (Lean).** `QOU/QBeta/E0WeightAllWords.lean` proves that no braid word, on any number of strands, has convention-D state-sum trace equal to w = ℏ_q/q². The argument:
+- At q = 1 each Jimbo letter becomes a permutation matrix, and the trace becomes `trClassical(π_β) = 2^{c−n} > 0`, the corpus's q = 1 trace (`Braiding/MarkovTraceClassicalLimit`).
+- The trace is continuous at q = 1, while w → 0 there.
+
+This closes the §35 item "the all-words q = 1 argument" for the state sum. Its identification with the Ocneanu trace for every word is the Jimbo–Turaev construction plus Jones uniqueness, which is cited.
+
+**Tower (prereg Addendum 1).** The invariant is the order of vanishing at q = 1. ord₁(w) = 1, with leading coefficient 1.
+- The brane tower, every level and its sum, has order ≥ 2.
+- The Markov stabilisation tower and the levels and partial sums of Σ q⁻ᵏ have order 0.
+- Both exclusions are proved in Lean: `hbar_sq_mul_ne_weight` and `ne_weight_of_tendsto_ne_zero`.
+- The only order-1 canonical operation is the skein difference h·τ(β), h = σ − σ⁻¹. It matches w to first order when the closure has n − 1 components (`skein_first_order`). It is never equal to w, because that would need τ(β) = 1/(q²(q+1)), which has a pole at q = −1 (hand argument).
+
+**Result.** w is not a single trace and not a canonical tower object. It is first-order equal to h/2. The weight stays underived (bean `qou-91w7`). Combinations with free coefficients were not searched, because that would be fitting.
+
+## §37 E₀'s weight beyond first order: framed link invariants (prereg Addendum 2)
+
+Routes fixed in the prereg: the excess of the framed mass 𝔪 (`def:mass-identity`) over the unknot, for 3₁ and 4₁, and over the 2-unlink, for Hopf± and the electron closure.
+
+**Result: no route equals w = ℏ_q/q².**
+- The knot excesses have order 2 at q = 1, as predicted. This holds for the muon knot too.
+- The linked-pair excesses have order 1, with coefficient ±3 (ratio) or ±12 (difference), never 1.
+- Hopf⁺ excess = −q⁻²·h·[3]/[2]. It shares w's q⁻² framing. What w needs in place of h·[3]/[2] is ℏ_q = h/(1+q), a one-sided deficit with no canonical Hecke or link counterpart found.
+
+The weight stays a definition: w = ℏ_q·(ℏ_q c_q)², from the corpus's c_q and ℏ_q. Bean `qou-91w7`. Probe `computations/probes/e0_weight/e0_weight_framed_link_probe.py`.
