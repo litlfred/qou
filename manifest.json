@@ -1,0 +1,21 @@
+{
+  "$schema": "trace-cache-member/v1",
+  "member": "tr-m-atomic-mpfr-suffixes-807d6bcdf678-q9c565cf23f90-dps40",
+  "function": "tr-m-atomic-mpfr-suffixes",
+  "engineKey": "807d6bcdf678",
+  "sourceTrees": {
+    "tools/pyhecke-native": "38074eefb1e41f97fa4062db1a623205543a7087",
+    "tools/hecke-engine": "40eb1425153ee41839965e2c7cca0e926c6b053d"
+  },
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "dps": 40,
+  "shards": [
+    {
+      "file": "ba6cffd3582c60c4406d4e898ab409ae7fb15eb7ef9fbf4dbf5decb4f4b60574.jsonl",
+      "sha256": "ba6cffd3582c60c4406d4e898ab409ae7fb15eb7ef9fbf4dbf5decb4f4b60574",
+      "entries": 4544,
+      "addedAt": "2026-11-22T09:43:26Z",
+      "addedFrom": "f705640c814d65aaec7c4d8b147ba0c5d8a324f3"
+    }
+  ]
+}
