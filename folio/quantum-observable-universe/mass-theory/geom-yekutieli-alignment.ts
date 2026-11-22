@@ -18,7 +18,7 @@ export default conjecture({
     "prop:yekutieli-lifting",
     "conj:hyperbolic-volume-transcendence",
   ],
-  cites: ["yekutieli2010", "yekutieli2015"],
+  cites: ["yekutieli2010", "yekutieli-zhang1999-auslander-dualizing"],
   tags: [
     "rigid-dualizing",
     "yekutieli",
