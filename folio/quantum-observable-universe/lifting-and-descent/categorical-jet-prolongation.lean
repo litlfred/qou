@@ -31,14 +31,16 @@ structure ProlongedConnection (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The original Frobenius–Hopf object A. -/
   fh : FrobeniusHopfData C
-  /-- The jet object J¹(A) = A ⊗ Ω¹(A). -/
+  /-- The jet object `J¹(A) = (A ⊗ A)/I²` (owner ruling 2026-11-22). -/
   jetObj : C
   /-- Kähler differentials Ω¹(A). -/
   differentials : C
-  /-- J¹(A) is the tensor product. -/
-  jet_is_tensor : jetObj = fh.obj ⊗ differentials
+  /-- The section `ℓ : A → J¹(A)`. -/
+  jetSection : fh.obj ⟶ jetObj
   /-- The jet evaluation map j¹ : J¹(A) → A. -/
   jetEval : jetObj ⟶ fh.obj
+  /-- `A` is a direct summand: `ℓ ≫ j¹ = 𝟙_A`. -/
+  section_retract : jetSection ≫ jetEval = 𝟙 fh.obj
   /-- The prolonged connection ∇' : J¹(A) → J¹(A) ⊗ Ω¹. -/
   prolongedNabla : jetObj ⟶ (jetObj ⊗ differentials)
   /-- The original connection ∇ : A → A ⊗ Ω¹. -/

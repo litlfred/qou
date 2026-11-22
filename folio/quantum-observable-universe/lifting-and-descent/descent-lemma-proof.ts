@@ -3,5 +3,5 @@ import { proof } from "../../schema/builders";
 export default proof({
   label: "prf:descent",
   title: "Proof of Descent preserves the quantum observable universe",
-  uses: ["lem:descent", "lem:jet-prolongation-categorical-jet", "prop:jet-prolongation"],
+  uses: ["lem:descent", "prop:jet-prolongation"],
 });

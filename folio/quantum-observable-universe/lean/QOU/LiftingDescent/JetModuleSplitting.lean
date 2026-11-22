@@ -10,9 +10,14 @@ import Mathlib.RingTheory.Kaehler.Basic
 Step 1 of the proof of `lem:descent` needs `A` to be a direct summand of `J¹(A)`,
 with section `ℓ` (ascent) and retraction `r` (descent), `r ∘ ℓ = id`.
 
-1. **With the corpus's `J¹(A) := A ⊗ Ω¹(A)` this fails.** For `A = R`,
-   `Ω¹(R) = ker (m : R ⊗ R → R) = 0`, so `J¹(R) = 0` and no injective linear map
-   `R → J¹(R)` exists when `R` is nontrivial (`not_injective_into_naiveJet_self`).
+1. **With the corpus's `J¹(A) := A ⊗ Ω¹(A)` it fails in one case, and has no
+   canonical section in general.** For `A = R`, `Ω¹(R) = ker (m : R ⊗ R → R) = 0`,
+   so `J¹(R) = 0` and no injective linear map `R → J¹(R)` exists when `R` is
+   nontrivial (`not_injective_into_naiveJet_self`). This case lies outside
+   `lem:descent`, whose `A` satisfies Observability. For larger `A`, such as
+   `𝒪(SU(2))`, `A` can still embed in `A ⊗ Ω¹(A)` as a non-canonical summand, so
+   this file does not show that the old object fails for the `A` of `lem:descent`.
+   What it shows is that the old object has no section natural in `A`.
 2. **With the standard first jet module `J¹(S) := (S ⊗ S) ⧸ I²`**, `I = ker m`, it
    holds for every commutative `R`-algebra `S`: `ℓ(a) = [a ⊗ 1]` and `r` induced by
    `m` satisfy `r ∘ ℓ = id` (`jetRetract_comp_jetSection`), and the complement
@@ -104,6 +109,23 @@ theorem ker_jetRetract :
       have := Ideal.sub_mem _ hz' hd
       simpa using this
     simpa [jetRetract] using (RingHom.mem_ker).mp hy
+
+/-- The image of `I` in `J¹(S)` is `I/I²` as a submodule: `Ideal.map` along the
+surjective quotient map agrees with `Submodule.map`, which is Mathlib's
+`cotangentIdeal`. -/
+theorem ker_jetRetract_eq_cotangentIdeal :
+    RingHom.ker (jetRetract R S) = (KaehlerDifferential.ideal R S).cotangentIdeal := by
+  rw [ker_jetRetract, Ideal.cotangentIdeal]
+  ext x
+  rw [Ideal.mem_map_iff_of_surjective _ Ideal.Quotient.mk_surjective, Submodule.mem_map]
+  rfl
+
+/-- **`ker r ≅ Ω[S⁄R]`.** Mathlib defines `Ω[S⁄R]` as the cotangent module `I/I²`
+of `I = ker m`, and `Ideal.cotangentEquivIdeal` identifies it with the image of `I`
+in `(S ⊗ S)/I²`, which is `ker r` by `ker_jetRetract_eq_cotangentIdeal`. -/
+noncomputable def kaehlerEquivKerJetRetract :
+    Ω[S⁄R] ≃ₗ[S ⊗[R] S] (KaehlerDifferential.ideal R S).cotangentIdeal :=
+  (KaehlerDifferential.ideal R S).cotangentEquivIdeal
 
 end Standard
 
