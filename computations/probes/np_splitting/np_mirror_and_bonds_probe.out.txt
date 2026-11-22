@@ -1,0 +1,40 @@
+trace solved; free symbols left: {q, z, x}
+=== Probe A: V^3 = (g1 g2^-1)^3, s_c = tr(pi_c W)/tr(pi_c)
+ rule 0: p=uud s_p=1 | n=ddu s_n=1
+    eps=s_n-s_p=0  at q0: 0   E0full*|eps| = 0.0 MeV
+ rule 0: p=udu s_p=1 | n=dud s_n=1
+    eps=s_n-s_p=0  at q0: 0   E0full*|eps| = 0.0 MeV
+ rule 0: p=duu s_p=1 | n=udd s_n=1
+    eps=s_n-s_p=0  at q0: 0   E0full*|eps| = 0.0 MeV
+ rule M: p=uud s_p=1 | n=ddu s_n=1
+    eps=s_n-s_p=0  at q0: 0   E0full*|eps| = 0.0 MeV
+ rule M: p=udu s_p=1 | n=dud s_n=1
+    eps=s_n-s_p=0  at q0: 0   E0full*|eps| = 0.0 MeV
+ rule M: p=duu s_p=1 | n=udd s_n=1
+    eps=s_n-s_p=0  at q0: 0   E0full*|eps| = 0.0 MeV
+ A1 (rule 0 all eps=0): True
+ A2 (rule M some eps!=0): False
+ A3 (rule M signs differ across placements): False [0, 0, 0]
+=== Probe B: bond factors mu_c = tr(pi_c W)/tr(pi_c); mu<1 binds
+ B1 g rule 0: {'pp': 2*q**3/(q**2 + 1), 'nn': 2*q**3/(q**2 + 1), 'pn': 0, 'np': 0}  at q0: {'pp': '1.225376074', 'nn': '1.225376074', 'pn': 0, 'np': 0}
+ B1 g rule M: {'pp': 2*q**3/(q**2 + 1), 'nn': (q**4 + 1)/(q*(q**2 + 1)), 'pn': 0, 'np': 0}  at q0: {'pp': '1.225376074', 'nn': '1.016315775', 'pn': 0, 'np': 0}
+ B2 g^2 rule 0: {'pp': (2*q**4 - q**2 + 1)/(q**2 + 1), 'nn': (2*q**4 - q**2 + 1)/(q**2 + 1), 'pn': 1, 'np': 1}  at q0: {'pp': '1.256177488', 'nn': '1.256177488', 'pn': '1', 'np': '1'}
+ B2 g^2 rule M: {'pp': (2*q**4 - q**2 + 1)/(q**2 + 1), 'nn': -(q**6 - 2*q**4 - 1)/(q**2*(q**2 + 1)), 'pn': 1, 'np': 1}  at q0: {'pp': '1.256177488', 'nn': '0.7875287203', 'pn': '1', 'np': '1'}
+ B3 G^3=(g1 g2^-1)^3 rule 0:
+    ppp: mu=(2*q**14 - 9*q**12 + 16*q**10 - 14*q**8 + 12*q**6 - 6*q**4 + 4*q**2 - 1)/(q**4*(q**2 + 1)**2)  at q0: 1.000468712
+    ppn: mu=1  at q0: 1
+    pnp: mu=1  at q0: 1
+    pnn: mu=1  at q0: 1
+    npp: mu=1  at q0: 1
+    npn: mu=1  at q0: 1
+    nnp: mu=1  at q0: 1
+    nnn: mu=(2*q**14 - 9*q**12 + 16*q**10 - 14*q**8 + 12*q**6 - 6*q**4 + 4*q**2 - 1)/(q**4*(q**2 + 1)**2)  at q0: 1.000468712
+ B3 G^3=(g1 g2^-1)^3 rule M:
+    ppp: mu=(2*q**14 - 9*q**12 + 16*q**10 - 14*q**8 + 12*q**6 - 6*q**4 + 4*q**2 - 1)/(q**4*(q**2 + 1)**2)  at q0: 1.000468712
+    ppn: mu=1  at q0: 1
+    pnp: mu=1  at q0: 1
+    pnn: mu=1  at q0: 1
+    npp: mu=1  at q0: 1
+    npn: mu=1  at q0: 1
+    nnp: mu=1  at q0: 1
+    nnn: mu=(2*q**14 - 9*q**12 + 16*q**10 - 14*q**8 + 12*q**6 - 6*q**4 + 4*q**2 - 1)/(q**4*(q**2 + 1)**2)  at q0: 1.000468712

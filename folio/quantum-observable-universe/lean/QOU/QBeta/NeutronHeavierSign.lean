@@ -1,4 +1,5 @@
 import QOU.QBeta.FlavourWeightSplit
+import QOU.MassTheory.UrsellPartitionFunctionB3
 
 /-!
 # Which reading of trace → mass makes the neutron heavier?
@@ -268,6 +269,20 @@ theorem colouredDiff_eSystem (x : R) (hx : x = 1 ∨ x = 0 ∨ x = -1) :
 
 end ColouredX
 
+section ColouredBonds
+
+open QOU.MassTheory.UrsellPartitionFunctionB3 in
+/-- **Coloured bonds, 2026-11-22 (`np_mirror_and_bonds_probe.py`).** With isospin as a Yokonuma
+colour, every candidate bond letter (g², the γγ bond G³, with or without the mirror rule) gives
+the unlike bond factor `μ_pn = 1` exactly (the single crossing g gives `μ_pn = 0`, no log). The
+probe's value enters as a hypothesis. Given it, an `A = 3` nucleus has the two unlike pairs at
+`f = 1`, and the connected three-body cumulant vanishes whatever the like bond is: neither sign. -/
+theorem coloured_unlike_unit_b3_zero {R : Type*} [CommRing R] (fLike : R) :
+    b3corpus 1 fLike 1 = 0 := by
+  unfold b3corpus W Z3; ring
+
+end ColouredBonds
+
 section Ruled
 
 /-- The ruled sector values on `V³` are the abstract ones with the common trace `tr(V³)`. -/
@@ -334,6 +349,7 @@ theorem word_increasing_reading_neutron_lighter {q : ℝ} (hq1 : 1 < q) (w : Lis
 #print axioms flip_sector_eq
 #print axioms coloured_no_order
 #print axioms colouredDiff_eSystem
+#print axioms coloured_unlike_unit_b3_zero
 
 end Ruled
 

@@ -161,3 +161,57 @@ Implications.
    V³. It needs a pre-registered V³ run and an owner decision on whether a mirror rule may act on a
    γγ-selected word.
 4. **O4 and O5 import a choice** (hypercharge; E/F order), so they are not derivations today.
+
+## Mirror rule on V³ and coloured bond factors (2026-11-22, owner: "Both")
+
+Pre-registered: `np_mirror_and_bonds_preregistration.md`, commit 51776331e6c. Probe
+`np_mirror_and_bonds_probe.py`, output in `.out.txt`. Exact over Q(q), x = 0, z = z_D, 20 s.
+
+**Probe A, u = trefoil and d = mirror on V³.** Rule M inverts every crossing whose two strands are
+both d.
+- A1 holds: under rule 0, ε = 0 in all three flip pairs.
+- **A2 is refuted.** Under rule M, too, s_p = s_n = 1 in all six placements. For every mixed
+  placement, V³ has normalised sector trace exactly 1 under both rules. So the mirror rule has
+  nothing to act on, and the knot assignment gives n = p on the ruled nucleon. The §12 numbers
+  (−45.8 %, +35.2 %) were on the half and full twist and do not carry over to V³.
+- A3 does not arise.
+
+**Probe B, bonds with colour = nucleon isospin** (μ < 1 binds):
+
+| letter | rule | μ_pp | μ_nn | μ_pn |
+|---|---|---|---|---|
+| g | 0 | 2q³/(q²+1) = 1.2254 | same | 0 (no log) |
+| g | M | 1.2254 | (q⁴+1)/(q(q²+1)) = 1.0163 | 0 |
+| g² | 0 | (2q⁴−q²+1)/(q²+1) = 1.2562 | same | **1** |
+| g² | M | 1.2562 | 0.7875 | **1** |
+| G³ | 0, M | 1.000469 (ppp) | 1.000469 (nnn) | **1** (every mixed colouring) |
+
+Predictions B-a, B-b and B-c hold. **B-d: no candidate is sign-mixed.** μ_pn is exactly 1 whenever
+it has a log. The reason is that a mixed-colour crossing is an involution, ((1−e)g)² = 1−e
+(`YokonumaColourSplit.mixedColour_involution`), so pure braids cancel on the unlike pair. The pn bond
+is exactly unbound: the deuteron gets B = 0. Lean (`coloured_unlike_unit_b3_zero`): with both unlike
+pairs at f = 1, b₃ = 0 whatever the like bond is. So coloured bonds give b₃ = 0, not b₃ > 0.
+
+**The full braid with electrons (siblings, not re-run here).**
+- "Derive m_n by its own identity", PR #8804 §46, builds hydrogen from photons on four strands:
+  W = γ(0,0,qh)·γ(0,0,−q⁻¹h)·g·K, with K the electron capture. The photons multiply exactly to V³ in
+  the weight-space model.
+- The p/n asymmetry factorises onto the capture braid: S(W) = χ₍₃₎(nucleon)·S(capture).
+- The mirror identity O₊(right) = −O₋(left) holds exactly, so placement fixes the sign and no photon
+  weight or gluon fixes it.
+- Lean for the capture: branch `claude/hydrogen-capture-lean-2026-11-22`, `S(W_L) = −h²[3]_q/q²`,
+  `S(W_L) + S(W_R) = 0`.
+- This is the strand-level version of the mirror option. Its mirror swaps the sign rather than
+  selecting one.
+- Separately, the "Photon norm 1" thread finds the electron itself as a two-photon product in the
+  six-strand neutral sector.
+
+**Combined reading, scope (a).** Three strand-level carriers of u ≠ d all give no derived
+ordering:
+- colour (n = p, μ_pn = 1);
+- mirror on the nucleon (n = p on V³);
+- mirror on the electron capture (the sign follows placement and cancels between the two
+  placements).
+
+Still open: a γγ-derived electron placement on the six-strand neutral sector, which would fix the
+capture's side. That belongs to the photon-norm and m_n threads.
