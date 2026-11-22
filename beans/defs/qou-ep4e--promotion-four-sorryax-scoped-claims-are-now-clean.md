@@ -1,13 +1,13 @@
 ---
 # qou-ep4e
 title: 'PROMOTION: four sorryAx-scoped claims are now clean and their scoping is stale'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T09:20:35Z
-updated_at: 2026-11-22T21:39:39Z
+updated_at: 2026-11-22T21:53:54Z
 parent: qou-6qbv
 ---
 
@@ -48,3 +48,6 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8455, closed o
 
 ## 2026-11-22 — wave-2 drain
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF. Part 2 (docstrings) is in draft PR #9143 / issue #9142, commit c570a16. Applicability: APPLIES. Complete this bean when #9143 merges.
+
+## 2026-11-22 — completed
+PR #9143 merged to main as 5c13a4c18c9 (rebase). Both parts done: axiom-guard registry (earlier) and the docstrings. Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF.
