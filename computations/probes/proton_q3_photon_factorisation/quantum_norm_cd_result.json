@@ -1,0 +1,234 @@
+{
+  "photon": "gamma(a,b,c) = 1 + a s0 + b s1 + c s0 s1^{-1}",
+  "checks": {
+    "hecke_quadratic": true,
+    "braid_relation": true,
+    "C_form_solution_space_dim_1": true,
+    "C_form_hermitian": true,
+    "C_S0_unitary": true,
+    "C_S1_unitary": true,
+    "C_adjoint_is_dagger": true,
+    "C_crosscheck_g1=gamma(0,0,qh)_trivial": true,
+    "C_crosscheck_g1=gamma(0,0,qh)_sign": true,
+    "C_crosscheck_g1=gamma(0,0,qh)_two_dim": true,
+    "C_crosscheck_g2=gamma(0,0,-h/q)_trivial": true,
+    "C_crosscheck_g2=gamma(0,0,-h/q)_sign": true,
+    "C_crosscheck_g2=gamma(0,0,-h/q)_two_dim": true,
+    "C_crosscheck_g1*g2_trivial": true,
+    "C_crosscheck_g1*g2_sign": true,
+    "C_crosscheck_g1*g2_two_dim": true,
+    "C_P_equals_V3_all_blocks": true,
+    "C_V3_not_identity_two_dim": true,
+    "C_V3_det1_two_dim": true,
+    "C_trivial_value": true,
+    "C_sign_value": true,
+    "C_chiral_cstar_unitary_two_dim": true,
+    "C_chiral_cstar_not_unitary_trivial": true,
+    "D_y111_zero_at_zD": true,
+    "D_markov_tau1": true,
+    "D_markov_s0": true,
+    "D_markov_s1": true,
+    "D_markov_s0s1": true,
+    "D_markov_s1inv_x": true,
+    "g1dag_coeff_is_g2_coeff": true
+  },
+  "C": {
+    "hermitian_form_H": [
+      [
+        "1",
+        "-q/(q**2 + 1)"
+      ],
+      [
+        "-q/(q**2 + 1)",
+        "1"
+      ]
+    ],
+    "det_H": "(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "det_H_at_q=e^{i theta}": "3/4 - tan(theta)**2/4",
+    "note_positivity": "H Hermitian; positive definite iff det_H > 0 (H22 = 1 > 0)",
+    "named_photons": {
+      "g1=gamma(0,0,qh)": {
+        "trivial": {
+          "unitary": true,
+          "defect_M*HM-H": [
+            [
+              "0"
+            ]
+          ]
+        },
+        "sign": {
+          "unitary": true,
+          "defect_M*HM-H": [
+            [
+              "0"
+            ]
+          ]
+        },
+        "two_dim": {
+          "unitary": false,
+          "defect_M*HM-H": [
+            [
+              "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**4",
+              "(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q*(q**2 + 1))"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**3*(q**2 + 1))",
+              "0"
+            ]
+          ]
+        }
+      },
+      "g2=gamma(0,0,-h/q)": {
+        "trivial": {
+          "unitary": true,
+          "defect_M*HM-H": [
+            [
+              "0"
+            ]
+          ]
+        },
+        "sign": {
+          "unitary": true,
+          "defect_M*HM-H": [
+            [
+              "0"
+            ]
+          ]
+        },
+        "two_dim": {
+          "unitary": false,
+          "defect_M*HM-H": [
+            [
+              "0",
+              "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**3*(q**2 + 1))"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q*(q**2 + 1))",
+              "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**4"
+            ]
+          ]
+        }
+      },
+      "g1*g2": {
+        "trivial": {
+          "unitary": true,
+          "defect_M*HM-H": [
+            [
+              "0"
+            ]
+          ]
+        },
+        "sign": {
+          "unitary": true,
+          "defect_M*HM-H": [
+            [
+              "0"
+            ]
+          ]
+        },
+        "two_dim": {
+          "unitary": true,
+          "defect_M*HM-H": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ]
+        }
+      }
+    },
+    "general_unitarity_defect_per_block": {
+      "trivial": [
+        [
+          "(a*ab*q + a*bb*q + a*cb*q**2 + a*q**2 + ab*b*q + ab*c + ab + b*bb*q + b*cb*q**2 + b*q**2 + bb*c + bb + c*cb*q + c*q + cb*q)/q"
+        ]
+      ],
+      "sign": [
+        [
+          "-(-a*ab*q - a*bb*q + a*cb + a - ab*b*q + ab*c*q**2 + ab*q**2 - b*bb*q + b*cb + b + bb*c*q**2 + bb*q**2 - c*cb*q - c*q - cb*q)/q"
+        ]
+      ],
+      "two_dim": [
+        [
+          "(a*ab*q**5 + a*ab*q**3 - a*bb*q**7 - a*cb*q**4 - a*cb*q**2 + a*q**6 - ab*b*q - ab*c*q**6 - ab*c*q**4 + ab*q**2 + b*bb*q**5 + b*bb*q**3 + b*cb - b*q**4 - b*q**2 + bb*c*q**8 - bb*q**6 - bb*q**4 + c*cb*q**5 + c*cb*q**3 - c*q**7 - cb*q)/(q**3*(q**2 + 1))",
+          "-(a*ab*q**3 + a*bb*q**3 - a*cb*q**2 - a*q**2 - ab*b*q**5 - ab*b*q - ab*c*q**4 - ab*q**4 + b*bb*q**3 + b*cb*q**4 + b*cb - b*q**2 + bb*c*q**6 + bb*c*q**2 - bb*q**4 + c*cb*q**3 - c*q**5 - c*q + cb*q**3)/(q**2*(q**2 + 1))"
+        ],
+        [
+          "-(a*ab*q**3 - a*bb*q**5 - a*bb*q - a*cb*q**2 - a*q**2 + ab*b*q**3 - ab*c*q**4 - ab*q**4 + b*bb*q**3 + b*cb*q**4 + b*cb - b*q**2 + bb*c*q**6 + bb*c*q**2 - bb*q**4 + c*cb*q**3 + c*q**3 - cb*q**5 - cb*q)/(q**2*(q**2 + 1))",
+          "-(-a*ab*q**5 - a*ab*q**3 + a*bb*q - a*cb*q**6 + a*q**4 + a*q**2 + ab*b*q**7 - ab*c*q**2 + ab*q**6 + ab*q**4 - b*bb*q**5 - b*bb*q**3 + b*cb*q**8 - b*cb*q**6 - b*cb*q**2 - b*q**6 - bb*c*q**6 - bb*c*q**2 + bb*c - bb*q**2 - c*cb*q**5 - c*cb*q**3 + c*q + cb*q**7)/(q**3*(q**2 + 1))"
+        ]
+      ]
+    },
+    "trivial_value": "a*q + b*q + c + 1",
+    "sign_value": "-a/q - b/q + c + 1",
+    "V=S0 S1^-1": [
+      [
+        "-q**2",
+        "q"
+      ],
+      [
+        "-q",
+        "1 - 1/q**2"
+      ]
+    ],
+    "tr_V": "-q**2 + 1 - 1/q**2",
+    "V_eigenvalues": [
+      "(-q**4 + q**2 - sqrt(q**8 - 2*q**6 - q**4 - 2*q**2 + 1) - 1)/(2*q**2)",
+      "(-q**4 + q**2 + sqrt(q**8 - 2*q**6 - q**4 - 2*q**2 + 1) - 1)/(2*q**2)"
+    ],
+    "chiral_family_note": "1+cV unitary on 2-dim block requires c*cb + c*lam + cb/lam = 0 and c*cb + c/lam + cb*lam = 0 (lam, 1/lam eigenvalues of V); subtracting gives (c - cb)(lam - 1/lam) = 0; solutions: [{c: 0, cb: 0}, {c: -(lam**2 + 1)/lam, cb: -(lam**2 + 1)/lam}]"
+  },
+  "D": {
+    "ocneanu_weights_generic_z": {
+      "y111": "q**2*(-q + z)*(-q**3 + q**2*z + z)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "y21": "-q*(-q + z)*(q*z + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+      "y3": "(q*z + 1)*(q**3*z + q*z + 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))"
+    },
+    "z_D": "q**3/(q**2 + 1)",
+    "weights_at_z_D": {
+      "y111": "0",
+      "y21": "q**2/(q**2 + 1)**2",
+      "y3": "(q**4 + 1)/(q**2 + 1)**2"
+    },
+    "named_photons": {
+      "g1=gamma(0,0,qh)": {
+        "tau_g_gdag": "-(q**8 - 2*q**6 - 2*q**4 - 2*q**2 + 1)/(q**2*(q**2 + 1)**2)",
+        "equals_1": false
+      },
+      "g2=gamma(0,0,-h/q)": {
+        "tau_g_gdag": "-(q**8 - 2*q**6 - 2*q**4 - 2*q**2 + 1)/(q**2*(q**2 + 1)**2)",
+        "equals_1": false
+      },
+      "g1*g2": {
+        "tau_g_gdag": "1",
+        "equals_1": true
+      }
+    },
+    "tau(g g^dag)-1 coefficients (bar symbols ab,bb,cb = coeff(q->1/q))": {
+      "a*ab": "1",
+      "a*bb": "q**2/(q**2 + 1)**2",
+      "a*cb": "q**3/(q**2 + 1)",
+      "a": "q**3/(q**2 + 1)",
+      "ab*b": "q**2/(q**2 + 1)**2",
+      "b*bb": "1",
+      "b*cb": "(q**4 + 1)/(q*(q**2 + 1)**2)",
+      "b": "q**3/(q**2 + 1)",
+      "ab*c": "1/(q*(q**2 + 1))",
+      "bb*c": "q*(q**4 + 1)/(q**2 + 1)**2",
+      "c*cb": "1",
+      "c": "q**2/(q**2 + 1)**2",
+      "ab": "1/(q*(q**2 + 1))",
+      "bb": "1/(q*(q**2 + 1))",
+      "cb": "q**2/(q**2 + 1)**2"
+    },
+    "tau_chiral(c)": "(c*cb*q**4 + 2*c*cb*q**2 + c*cb + c*q**2 + cb*q**2 + q**4 + 2*q**2 + 1)/(q**2 + 1)**2",
+    "tau_chiral=1 solved for cb": [
+      "-c*q**2/(c*q**4 + 2*c*q**2 + c + q**2)"
+    ]
+  },
+  "all_checks_pass": true
+}

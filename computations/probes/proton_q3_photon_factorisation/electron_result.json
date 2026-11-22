@@ -1,0 +1,10 @@
+{
+  "description": "electron s0s1s0 is not a two-photon product in H_3(q); V^3 = 1 + h^2(V - V^2)",
+  "checks": {
+    "V3_identity_2dim": true,
+    "V3_identity_1dim": true,
+    "groebner_forces_branches": true,
+    "all_solutions_degenerate": true
+  },
+  "verdict": "no gamma*gamma (any weights, complex allowed) is a nonzero multiple of s0s1s0"
+}
