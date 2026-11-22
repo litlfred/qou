@@ -606,7 +606,15 @@ for every q and every weight-preserving core in `WeightShiftZeroTrace.lean`
 the u-count entrywise is `jimbo_weight_preserving`). For M, pp = nn is proved at q = 2 in Lean
 (`dE_M_pp_eq_nn`, `M_coulomb_kappa_zero` in `TwoBlockExchangeNotCoulomb.lean`, kernel `decide`).
 For G-q and M, pp = nn at generic q is an exact symbolic computation over ℤ[q, q⁻¹] (2026-11-22),
-not a Lean proof; the Lean statement at generic q is open. Both G-q and M are invariant under the map
+and its algebraic core is proved in Lean at generic q over any field
+(`QCasimirPairGenericQ.lean`: `pairReadout_pp_eq_nn_of_blockData`, `pairDE_pp_eq_nn_of_blockData`,
+`pairDE_interaction_of_blockData`, sorry-free). The Lean takes the block data as hypotheses: the
+block traces are a(n) = k(n)·τ and h²c(n) = k(n)·(μ − (q k(n) + (q k(n))⁻¹)·τ), with k(2) = q,
+k(1) = q⁻¹. That is, the core commutes with U_q on each block and the Casimir is a scalar on each
+irreducible summand. Under them, pp = nn and pp − pn − np + nn = h²[2]_q hold for every τ and μ, so
+for every U_q-commuting core, not only V = σ₀σ₁⁻¹. The hypotheses themselves are standard U_q(sl₂)
+representation theory and are not proved in the file. For M, pp = nn at generic q is the symbolic
+computation only. Both G-q and M are invariant under the map
 u ↔ d together with i ↦ 5 − i (checked exactly at q = 7/5); a general proof of pp = nn from that
 symmetry is open. Tower status: n = 6 only; the tower in n is open. No empirical
 input, no fit.
