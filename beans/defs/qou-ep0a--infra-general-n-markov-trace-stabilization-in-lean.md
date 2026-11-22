@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T23:52:24Z
-updated_at: 2026-11-16T18:30:00Z
+updated_at: 2026-11-22T21:28:51Z
 parent: qou-rtxm
 ---
 
@@ -21,3 +21,6 @@ parent: qou-rtxm
   - Defines `observationFrame = ev ∘ tr_n` and proves `observationFrame_iterIncl` and `observationFrame_conj` (conjugation invariance).
   - Proves `wedderburn_branching_stabilizes`: the Wedderburn weight conservation law $y_\lambda = \sum_{\mu \succ \lambda} y_\mu$ under character restriction $\chi^\mu(\iota_n(x)) = \sum_{\lambda \prec \mu} \chi^\lambda(x)$ implies F3 stabilization $\operatorname{tr}_{n+1}(\iota_n(x)) = \operatorname{tr}_n(x)$, with concrete $n = 2 \to 3$ branching and non-vacuity theorems (`classical_branching_n2_to_n3_exact`, `non_vacuity_markov_tower_and_branching`).
 - Kept at `status: in-progress` pending PR merge and owner review.
+
+## 2026-11-22: applicability review (hecke-schur-weyl-lean drain)
+Still applies, but the 2026-11-16 note overstates what PR #8148 does. That PR is open, not merged, and its file is not on main. Its MarkovTraceTower structure takes stabilization (M1), Markov reduction (M2) and cyclicity (M3) as fields, so tr_iterated_inclusion and tr_stabilized_word iterate an assumption; they do not prove general-n stabilization for H_n(q). The real general-n statement needs the Ocneanu trace constructed on SchurWeyl.Hecke (e.g. via heckeWedderburn + seminormal characters, tr = sum_lambda y_lambda chi_lambda with y_lambda at convention D) and M1 derived from branching. Main now has the Wedderburn iso, which this bean's 2026-07 text predates. Not closed.

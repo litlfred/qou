@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:28:51Z
 parent: qou-59vq
 ---
 
@@ -270,3 +270,6 @@ the module's mtime, not a stale number.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8356, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22: applicability review (hecke-schur-weyl-lean drain)
+Still applies. The defect is convention-independent, so convention D and today's rulings leave it standing. computations/probes/trm5_zcubed_live_producer_audit.py records that five computations/ producers still carry z**3 and that fixing the weight alone exposes the singular D-frame Gram. That is a compute change with downstream numbers; it waits on the owner (ask-owner rule), not done here.

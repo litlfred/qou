@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T18:09:26Z
-updated_at: 2026-11-18T07:46:25Z
+updated_at: 2026-11-22T21:28:52Z
 parent: qou-59vq
 ---
 
@@ -55,3 +55,6 @@ STILL OPEN, unchanged: cyclic_two_g remains conditional. Instantiating needs a c
 CORRECTION to my own framing in PR #5820: I called MarkovInductiveCyclicity 'an ORPHAN -- 0 importers corpus-wide' as if notable. True, but the base rate guts it: 86 modules on disk under QOU/Machinery/, only 23 registered in QOU.lean. Being unregistered is the local norm, not evidence of abandonment. The new module is left unregistered for consistency.
 
 - Round 72 (`lane-e667`): Formalized `qou-sx5r`, `qou-slck`, `qou-dgsw`, `qou-jfr8`, `qou-zoyv` in `QOU.Foundations.SandwichTraceCyclicityVectorBraidingReducedWordSeparationRibbonMonodromy` with 80-dps `mpmath` 2-commit witness stamp (`c95261a9c444144dd0cc07d50ddaabb0b496a13f` -> `c3e4ad1f706f5fd2e70cbb90c8c9bd7753ec1e10`, `scriptHash=e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8`) in PR `litlfred/qou#8390` (`status: in-progress`).
+
+## 2026-11-22: applicability review (hecke-schur-weyl-lean drain)
+Still applies but is likely superseded in practice by the Wedderburn route (see qou-bhrx note today), which gives general-n cyclicity without the coset induction. The inductive bricks remain conditional on HeckeConditionalExpectation, which has no instance. Recommend re-scoping to 'scrap if the Wedderburn route lands'; not scrapped now because it is not yet landed.

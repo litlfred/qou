@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-11-16T19:15:00Z
+updated_at: 2026-11-22T21:28:51Z
 parent: qou-rtxm
 ---
 
@@ -71,3 +71,6 @@ Was in-progress with no bean update since 2026-08-22 and no main commit naming i
 ## 2026-11-16 — All-`n` Gram-Symmetry ↔ Bilinear Cyclicity & Wedderburn Sum Closure (PR #8162)
 - Formalized `gram_symm_term_comm` and `wedderburn_gram_symm_of_blocks` over generic `CommRingOps R` and arbitrary index type `ι` in `folio/quantum-observable-universe/lean/QOU/Foundations/WenzlTemperleyLiebH4Keystone.lean` (wired into `QOU.lean`, 0 `sorry`).
 - PR: https://github.com/litlfred/qou/pull/8162 (commit `f3dcbfe5fb51a67f3233319674c13a3791ba91d2`). Status kept `in-progress`.
+
+## 2026-11-22: applicability review (hecke-schur-weyl-lean drain)
+Still applies at general n. H_4 cyclicity is proved (QOU.Machinery.H4.trM_cyclic, axioms clean, re-checked today). The general-n route is now the Wedderburn one: main has SchurWeyl.heckeWedderburn, so a trace written as sum_lambda y_lambda chi_lambda is cyclic block by block (Matrix.trace_mul_comm). Cyclicity is independent of z; convention D only fixes y_lambda.

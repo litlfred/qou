@@ -1,13 +1,13 @@
 ---
 # qou-g6vb
 title: 'F4 research: prove trM_cyclic on H4 via bilinearity ⇒ 24² basis identities'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T01:52:06Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:28:50Z
 parent: qou-59vq
 ---
 
@@ -54,3 +54,6 @@ Was in-progress with no bean update since 2026-07-19 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8394, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-22: closed completed (hecke-schur-weyl-lean drain, applicability review)
+The goal is met on main by a different route than this bean planned: QOU.Machinery.H4.trM_cyclic (in H4BasisBridge, a corollary of H4Cyclicity.trM4_cyclic proved directly from the three generators). Re-verified this session at main 3c4c98fcc: lean-direct exit 0, #print axioms = propext, Classical.choice, Quot.sound. The whnf-explosion route described above is moot. Cyclicity does not depend on z, so convention D (z = q^3/(q^2+1)) does not change the result.
