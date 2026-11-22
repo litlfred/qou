@@ -40,7 +40,7 @@ The smallest vertex count; every matching word at that count; the full-H₆ lowe
 photon count; and every (i, j) at which a two-photon TL factorisation exists, with its
 weights. Nothing is selected or scored. No Q_β value is computed.
 
-## Addendum 1 (written after Part 2 found no two-photon factorisation, before the checks below were run in the probe)
+## Addendum 1 (written after scratch runs: Part 2 found no two-photon factorisation, and the three-photon checks below had already been tried in scratch. They are recorded here so that the committed probe re-runs them in full.)
 
 Two corrections and one extension.
 
