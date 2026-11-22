@@ -440,3 +440,49 @@ Comparison only: observed 18.59 keV.
 separate nucleon blocks from the ruled photon. That is the physics the formula above imports.
 §26 pre-registers the test: exchange the ruled photon between two V³ blocks and decompose the result
 by charge.
+
+## §26 Photon exchange between two nucleon blocks is not a charge–charge term (2026-11-22, owner: "Do 1 2")
+
+Pre-registration: `computations/probes/np_splitting/np_two_block_photon_exchange_preregistration.md`
+(committed before the probe). Probe and output: `np_two_block_photon_exchange_probe.py` and
+`.out.txt` in the same directory. Exact over Q(q); checked at q = 111/100 and 7/5.
+
+Six strands, ruled core V³ = (σ_iσ_{i+1}⁻¹)³ on block A (strands 0–2) and block B (3–5).
+Block charge Q = (u bits on the block) − 1. Pair shift ΔE_X(a, b) = T_X(a, b)/T_1(a, b) with
+T_X = Tr(K^{⊗6}(Π_a ⊗ Π_b)V_A³V_B³X), for the photon monomials that touch both blocks.
+
+**Result: outcome O4 for all six insertions** (σ₂, σ₂⁻¹, σ₁σ₂⁻¹, σ₂σ₃⁻¹, σ₂², σ₂⁻²), symbolically
+and at both rational checks. Over the 16 charge pairs the shift is not of the form
+c + αQ_a + βQ_b + κQ_aQ_b, so it is neither Coulomb (O1) nor isospin (O2).
+
+Nucleon pairs at the proton q₀ (display only; I = pp − pn − np + nn):
+
+| X | pp | pn | np | nn | (pp − nn)/I | (pn − np)/I |
+|---|---:|---:|---:|---:|---:|---:|
+| σ₂ | 0.66264 | 0.51652 | 0.58629 | 0.66352 | −0.0039 | −0.312 |
+| σ₂⁻¹ | 0.45358 | 0.30746 | 0.37723 | 0.45446 | −0.0039 | −0.312 |
+| σ₁σ₂⁻¹ | 0.23290 | 0.08273 | 0.15559 | 0.23156 | +0.0059 | −0.322 |
+| σ₂σ₃⁻¹ | 0.17550 | 0.05587 | 0.11494 | 0.17817 | −0.0146 | −0.323 |
+
+- The pattern is the opposite of Coulomb. Like pairs (pp, nn) agree to within 0.4–1.5 % of the
+  interaction, and unlike pairs differ from them. Coulomb would single out pp and leave
+  pn = np = nn.
+- pn ≠ np by about 31 % of the interaction: the shift depends on which block is on the left.
+- σ₂ and σ₂⁻¹ give the same I, because σ₂ − σ₂⁻¹ = h shifts every ΔE by the same constant. The
+  squares scale I by h, because σ₂² = hσ₂ + 1.
+
+**Lean.** `QOU/QBeta/TwoBlockExchangeNotCoulomb.lean` (sorry-free) computes the traces exactly in ℤ
+at q = 2, where 2Ř, 2Ř⁻¹ and 2K are integral, and proves `not_coulomb_*` and `not_isospin_*` for
+σ₂, σ₂⁻¹, σ₁σ₂⁻¹ and σ₂σ₃⁻¹. A form that held identically in q would hold at q = 2, so these refute
+both identities. They do not measure the miss at q₀; the table does that.
+
+**Scope.** This is a scope-(a) negative: single photon monomials between two V³ blocks, with the
+ruled trace and sector projectors. It does not exclude a Coulomb term from longer exchanges
+(photon ladders), other placements, a different readout of charge, or a reading in which the
+electromagnetic pair term comes from the q-deformation of the trace rather than from the braid.
+The su(2)-type braiding couples weights, and weights are nearly charge symmetric here; a Q·Q
+term needs something that tells u from d beyond the weight, which is the role the U(1) photon
+is meant to play. None of the six monomials does that.
+
+**Consequence for §25.** The import list there stands: no part of E_C is derived from the ruled
+photon yet.
