@@ -54,7 +54,7 @@ surviving the cross-knot test is the open question this file sharpens — it is
 **not** resolved here and must not be asserted (`5₂`'s block is `3×3`, different
 symmetry structure).
 
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (symmetry eq 65, eq 60)
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (symmetry eq 65, eq 60)
 -- Ref: [leitner2026] docs/audits/2026-08-02-aomega-internal-derivation-symmetry-constant-target.md
 -/
 
