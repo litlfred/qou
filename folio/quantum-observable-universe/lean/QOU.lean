@@ -318,6 +318,7 @@ import QOU.MathlibExt.PLPolyPush
 import QOU.MathlibExt.PLPrismPush
 import QOU.MathlibExt.PLDeltaPoly
 import QOU.MathlibExt.PLGenericSlide
+import QOU.MathlibExt.PLRegularProjection
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
