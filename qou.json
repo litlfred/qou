@@ -144,6 +144,19 @@
       "description": "Exact results of qou's native trace producers (`pyhecke_native.tr_m_atomic_mpfr` and `tr_m_atomic_mpfr_suffixes`), stored so a long probe run resumes and a re-run recomputes nothing. One orphan branch per producer function, engine source key, q0 string and dps; inside it, content-addressed JSONL shards of (n, signed word, suffix) -> the producer's exact decimal string, never a float. A dirty engine tree has no key, so a stale value is never served, and `computations/trace_cache.py` re-evaluates a sample of loaded entries against the live binary before using any. Read and written by scripts/trace-cache.sh, whose git objects live in a private bare repository; a seed adds a shard on top of the tip and never forces. `trace-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/trace-cache.json`."
     },
     {
+      "id": "mn-chi-cache",
+      "path": "mn-chi-cache/",
+      "graphTypologies": [
+        "mn-chi-cache"
+      ],
+      "storage": {
+        "branchPrefix": "cat/qou/mn-chi-cache/",
+        "keyedBy": "family",
+        "keyFrom": "mn-chi-q-<engine-key>, where engine-key is the wheel-cache / trace-cache source key (git trees of tools/pyhecke-native and tools/hecke-engine)"
+      },
+      "description": "Exact values of `pyhecke_native.mn_chi_q(lambda, mu)`, the q-Murnaghan-Nakayama Hecke character table, stored so a sweep that needs a heavy table (n = 24, 27) computes each entry once. One orphan branch per engine source key; inside it, content-addressed JSONL shards of (lambda, mu) -> the producer's exact [q-degree, coefficient-string] pairs, never a float. Before 2026-11-22 this was the in-tree file computations/.derived-chi-mn-cache.json, keyed by (lambda, mu) alone, so an entry from one engine build was served to every later one. Read and written by computations/derived_chi_catalogue_mn_disk_cache.py through the shared layer (scripts/lib/branch-cache.sh, computations/_branch_cache.py). A dirty engine tree has no key and nothing is served from the store; loaded entries are re-checked against the live binary first. `mn-chi-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/mn-chi-cache.json`."
+    },
+    {
       "id": "beans",
       "path": "beans/",
       "scope": "repository",

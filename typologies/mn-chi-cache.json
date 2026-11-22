@@ -1,0 +1,16 @@
+{
+  "$schema": "folio-graph-typology/v1",
+  "kind": "mn-chi-cache",
+  "title": "Hecke character table cache",
+  "perInstance": true,
+  "renderable": false,
+  "holds": "derived",
+  "validatorNotApplicable": "a member branch holds `manifest.json` (`mn-chi-cache-member/v1`: function, engine source key and trees, and a list of shards with sha256) and content-addressed JSONL shards of (lambda, mu) -> exact [q-degree, coefficient-string] pairs, not graph nodes. `scripts/branch-cache.sh shard-restore` checks every shard's sha256 against the manifest and the manifest's member against the key it asked for, and `computations/derived_chi_catalogue_mn_disk_cache.py` then recomputes a sample of the loaded entries with the installed binary and refuses the cache on any difference, so a bad member is a miss or a refusal, never a served value.",
+  "summary": "Exact entries of the q-Murnaghan-Nakayama Hecke character table computed by qou's native engine, one branch per engine source tree, so a heavy table is computed once and reused by every later session.",
+  "avatar": {
+    "glyph": "M4 4h16v16H4zM4 9h16M4 14h16M9 4v16M14 4v16",
+    "tone": 40,
+    "reads": "a grid: a character table whose entries are computed once and kept"
+  },
+  "rationale": "Owner request 2026-11-22 (issue #8996): migrate the repo's existing persistent caches onto the common branch-cache layer. This cache was the in-tree file computations/.derived-chi-mn-cache.json, keyed by (lambda, mu) only. Modelled on `trace-cache` and `wheel-cache`: declared in qou.json with `storage: { branchPrefix, keyedBy: \"family\", keyFrom }`, one orphan branch per member. `derived`: every value is recomputable from the engine source it is keyed on, and is never edited."
+}
