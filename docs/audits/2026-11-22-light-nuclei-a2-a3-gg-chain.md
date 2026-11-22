@@ -258,10 +258,88 @@ Lean status:
   the proof uses a merging evaluator `ME` that collects like basis terms after each letter;
   `ME_eq_P` proves it equals the plain expansion, and `tail_eq_trWord` writes that as a sum of
   `trWord` over subwords. `bond_into_proton_vanishes` and `bond_into_neutron_vanishes` give the
-  zero at z² − hz − 1 = 0. The full file takes about 9 minutes with lean-direct.
-- **Not in Lean:** the step from the A = 2 word to the four-strand tail (`towerTr_disjoint`
-  applied by hand), the leading coefficients read off the identities, and additivity over
-  several bonds at A ≥ 3 (§7), which is still a conjecture.
+  zero at z² − hz − 1 = 0. The full file takes about 10 minutes with lean-direct.
+- **Proved in Lean, sorry-free (same block):** the step from the full A = 2 word to the
+  four-strand tail. `a2_reduce` shows that for any first nucleon N₀ ∈ H₃ the γγ chain
+  `ggChain N₀ [N]` and the free product `freeTail [N₀, N]` have traces tr N₀ · tail(N↑¹ V³)
+  and tr N₀ · tail(N↑¹). `a2_bond_into_proton` and `a2_bond_into_neutron` then state the two
+  identities on the full A = 2 words, times tr N₀. Axioms: propext, Classical.choice,
+  Quot.sound.
+- **Not in Lean:** the leading coefficients read off the identities, and additivity over
+  several bonds at A ≥ 3 (§7, §9), which is checked exactly but not proved.
+
+## 9. A = 3 and A = 4 with z free: additivity holds for every z (exploratory, not proved)
+
+Probe `a3_bonds_generic_z_probe.py`, witness `a3-bonds-generic-z.witness.json`. The
+prediction was written in the probe's docstring before it was run, from the A = 2 identities
+of §8: bonds add at leading order in h, so
+
+- ratio − 1 = n_into_p · (1 − z²)/2 · h⁴ + O(h⁵) when at least one bond goes into a proton;
+- ratio − 1 = n_bonds · (1 − z²)/z · h⁵ + O(h⁶) otherwise.
+
+It is tested as an identity in z, exact over ℚ[h, z]: all 8 orders, four bond sets
+({01, 12}, {01, 12, 02}, {02, 12}, {02}), over and under transport. **64 of 64 cells match**,
+and the free trace at h = 0 is z² in every cell. So Rule B of §7 is not a property of z_D:
+the per-bond coefficients and their sum hold for every Markov parameter. At A = 4 the
+same rule, also written down before the run (`a4_bonds_generic_z_probe.py`, witness
+`a4-bonds-generic-z.witness.json`), holds in **224 of 224 cells**: all 16 orders, over and
+under, for the γγ chain, the four all-pairs formation routes of §6 (bond placed after the
+running maximum of j, as there), and the non-chain sets {02, 13} and {13}. The free trace at
+h = 0 is z³ in every cell. At z = 1/2 the p p n n all-pairs cells give leading coefficient
+3/8, matching §6: only the bond 01 goes into a proton.
+
+So in every cell measured at A = 3 and A = 4, the leading order is the sum of the A = 2
+per-bond terms, a bond (i, j) counting as a bond into nucleon j. The sign changes of §6 come
+from higher orders, not from the leading one.
+
+What this does not show: it is a check on finitely many words, not a proof of additivity,
+and it says nothing about the orders beyond the leading one. For chain bonds the exact
+product form already follows from `towerTr_ggChain`; the non-chain cells (bond 02) are the
+new evidence.
+
+**Lean: still open.** The A = 2 proof evaluates a 4-strand tail and takes about 10 minutes.
+At A = 3 the tail has 7 strands and twice as many letters, so the same brute-force evaluation
+will not fit. §10 gives the structure a real proof would follow (locality plus a product rule
+with an h⁶ correction). Leading-order
+additivity stays a conjecture, backed by the 288 exact cells above.
+
+## 10. Why orders h¹ to h³ vanish, and the next order (exploratory, A = 3)
+
+Probe `bond_structure_probe.py`, witness `bond-structure.witness.json`. Exact over ℚ[h, z],
+z free, runs in about 1 s. Not preregistered.
+
+**h¹.** As an element of H₃, V³ − 1 = h²(c − c⁻¹) + h³(T₀₂₁ − T₁₀₂) + O(h⁴), where c and c⁻¹ are
+the two 3-cycles. There is no h¹ term. V³ = (σ₀σ₁⁻¹)³ is the Borromean braid, a pure braid
+with all linking numbers zero, and the h¹ term of a pure braid is weighted by those linking
+numbers. This corrects the version of §9 merged in #9137, which said V³ − 1 is only O(h).
+
+**h².** At h = 0 the trace of a permutation w is z^(n − #cycles(w)). The bond's strand 0 is
+touched by nothing else. For every permutation w fixing strand 0, w·c and w·c⁻¹ have the same
+number of cycles (checked by enumeration for n = 3 to 8; not yet a written proof). So the h²
+term dies for **every** receiving word, not just the production blocks.
+
+**h³.** This one depends on the word. On all 15 basis words of length ≤ 3 on the receiving
+strands, the h³ term survives exactly when the two strands the bond shares with the receiving
+nucleon lie in one cycle of the word's h = 0 permutation. Both production blocks reduce at h = 0
+to the transposition s₂: the V³ part is 1, and the five-letter tails give s₁s₁s₂s₁s₁ = s₂.
+That separates the two shared strands, so h³ dies too. The proton and neutron differ only from
+h⁴ on, through the h¹ parts (b = −h, −h/2) of their letters.
+
+**Next orders.** Two exact statements at A = 3, at all orders in h:
+
+1. *Locality.* A single bond (i, j) placed in the A = 3 word gives exactly the A = 2 ratio for
+   the type of nucleon j, at every order: 48 of 48 cells (8 orders, 3 bonds, over and under).
+2. *Product rule.* With several bonds, the ratio is exactly the product of the single-bond
+   ratios, for the chain {01, 12} and for {01, 02}. It fails only when two bonds go into the
+   same nucleon ({02, 12} and the all-pairs set). There the first deviation is at h⁶, with
+   relative coefficient (1 − z²), the same in all 8 orders and both variants.
+
+So log(ratio), and hence the log binding, is additive over bonds exactly, except for a
+correction from pairs of bonds into the same nucleon that starts at h⁶. This explains §9: at
+leading order (h⁴, h⁵) that correction is invisible, so the per-bond terms just add. It also
+locates where §6's higher-order behaviour can come from in the all-pairs routes. This is
+measured at A = 3 only. The A = 4 version (pairs into the same nucleon, and triples) has not
+been run; at the A = 4 cell cost of §9 it would take several hours.
 
 ## Reproduce
 
@@ -271,6 +349,9 @@ python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_prob
 python3 -u computations/probes/light_nuclei_a2_a3/he4_all_pairs_exact_probe.py  # about 6 min, needs python-flint
 python3 -u computations/probes/light_nuclei_a2_a3/bond_leading_order_probe.py  # about 70 s
 python3 -u computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py  # about 1 s
+python3 -u computations/probes/light_nuclei_a2_a3/a3_bonds_generic_z_probe.py  # about 1 s, needs python-flint
+python3 -u computations/probes/light_nuclei_a2_a3/a4_bonds_generic_z_probe.py  # about 20 min on 4 cores
+python3 -u computations/probes/light_nuclei_a2_a3/bond_structure_probe.py  # about 1 s
 lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-endomorphism/light-nuclei-a2-bond-tail.lean  # about 9 min; needs the reducer olean on LEAN_PATH
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```

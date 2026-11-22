@@ -175,7 +175,8 @@ lemma mu_e_ratio_approx :
     (The exact value is 1097/11097 ≈ 0.098856; the error vs 0.09908 is ~2.3e-4.) -/
 lemma quantum_planck_approx :
     |quantum_planck substrate_q - 0.09908| < 3e-4 := by
-  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
+  -- Ref: [leitner2026] ħ_q = 1 − 1/q is the framework's own definition; this is arithmetic at
+  --      q₀, closed by norm_num (no external source; [witten1988] was cited here and is not one)
   unfold quantum_planck substrate_q
   norm_num
 

@@ -45,4 +45,7 @@ is not part of the Lean statement.
 any field with $2 \neq 0$. The trace is computed by a merging evaluator `ME`, proved equal to
 the plain expansion (`ME_eq_P`) and to a sum of the word evaluator `trWord` over the
 positive-word expansion of the letters (`tail_eq_trWord`); `trWord` equals every Markov trace
-by `isMarkovTrace_eq_trWord`.
+by `isMarkovTrace_eq_trWord`. The reduction in **Setting** is also proved (`a2_reduce`): for any
+first nucleon $N_0 \in H_3$ the full chain `ggChain` and the free product `freeTail` have traces
+$\mathrm{tr}(N_0)$ times the bonded and free tails, so `a2_bond_into_proton` and
+`a2_bond_into_neutron` state the two identities on the full $A = 2$ words.

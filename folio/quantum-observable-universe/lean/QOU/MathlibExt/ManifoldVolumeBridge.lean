@@ -17,8 +17,9 @@
 
   ⚠ **The corpus DOES carry a second "volume of M", and it is not this one.**
   `QOU.Encounter.MostowRigidity` has a class field `volume : ℝ` with *instances* --
-  `figureEight` sets it to the literal `2.02988321281930`, synced from a witness by
-  `codemod-leanval.ts`.  So `volumeInvariant FigureEight = 2.0298…` holds by `rfl`.
+  `figureEight` sets it to the exact constant `VOL_4_1 = 2·Cl₂(π/3)` (until 2026-08-30
+  it was the truncated literal `2.02988321281930`; bean `qou-f8lit`).  So
+  `volumeInvariant FigureEight = VOL_4_1` holds by `rfl`.
   That is a manifold-side number, but an ENTERED one: nothing in that module mentions a
   triangulation, and no theorem there relates it to `Σ D(zᵢ)`.  Two carriers for one
   quantity is the collision the notation discipline warns about, so read this file as

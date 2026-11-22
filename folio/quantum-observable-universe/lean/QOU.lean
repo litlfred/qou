@@ -89,6 +89,7 @@ import QOU.MathlibExt.ImplicitScalar
 import QOU.Archimedean.ConstantOffOnePoint
 import QOU.Archimedean.ClausenDoubleAngleSeries
 import QOU.Archimedean.Cl2PentagonFromBlochWigner
+import QOU.Archimedean.BlochGroupComplex
 import QOU.Archimedean.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
@@ -687,6 +688,7 @@ import QOU.Archimedean.BlochWignerPositive
 import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.HyperbolicVolumeInversion
 import QOU.Archimedean.HyperbolicQuotient
+import QOU.Archimedean.HopfLinkComplexVolume
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
 import QOU.Archimedean.OrthoschemePolarReduction
@@ -1173,6 +1175,7 @@ import QOU.Archimedean.BorromeanQuark
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringZeroModeClausenWitness
 import QOU.Archimedean.ArchimedeanLimitDomain
+import QOU.Archimedean.ArchimedeanLimitNegative
 import QOU.Archimedean.BlochSuslinComplex
 import QOU.Archimedean.BlochWignerFiveTermInstance
 import QOU.Archimedean.BlochRigidity.Algebra

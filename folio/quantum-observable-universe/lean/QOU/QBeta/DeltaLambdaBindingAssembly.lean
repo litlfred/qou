@@ -40,7 +40,7 @@
   Archimedean (ℂ/ℝ): genuinely archimedean (`Real.sqrt`, `Complex`).
 
   -- Ref: [leitner2026] docs/coordination/delta-lambda-magnitude-derivation.md
-  -- Ref: [garoufalidis-gu-marino2021] (GGM) 2012.00062, Theorem 9
+  -- Ref: [garoufalidis-gu-marino2023peacock] (GGM) 2012.00062, Theorem 9
 -/
 
 import QOU.Knot.FigureEightComplexVolume

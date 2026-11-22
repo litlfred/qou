@@ -45,7 +45,7 @@ Also here:
   `A_ω` of the base channel as its `w = 1` total.
 
 -- Ref: [dimofte-gaiotto-gukov2013] https://doi.org/10.1007/s00220-013-1863-2
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062
 -/
 
 namespace QOU.QBeta.WindingGFTransform

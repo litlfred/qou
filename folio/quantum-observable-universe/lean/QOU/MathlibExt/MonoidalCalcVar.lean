@@ -117,7 +117,7 @@ A concrete instance at a real-analytic category supplies `(R := ℝ)`.
 
 ## References
 
-- [wald1984] Wald, *General Relativity*, Theorem 4.3.1.
+- [wald1984] Wald, *General Relativity*, Theorem 4.3.1 (locator unchecked: the book is not held in `library/`).
   https://doi.org/10.7208/chicago/9780226870373.001.0001
 - [bleecker1981] Bleecker, *Gauge Theory and Variational
   Principles*, Ch VII.
@@ -249,7 +249,7 @@ instances are the conjectural input. -/
 /-- **Categorical equations of motion typeclass**: bundles the
     three on-shell variational identities.  The Einstein field is now stated
     where a rank-2 identity can live. -/
--- Ref: [wald1984] §4.3 (Einstein); [bleecker1981] Ch VII (YM)
+-- Ref: [wald1984] §4.3 (Einstein; locator unchecked, not held in library/); [bleecker1981] Ch VII (YM)
 -- Ref: [kobayashi1963] Vol I Ch II (transport)
 class HasMonoidalEOM (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [Preadditive C] {X Y : C}

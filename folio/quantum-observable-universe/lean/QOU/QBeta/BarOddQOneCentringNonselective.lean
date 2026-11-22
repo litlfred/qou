@@ -78,7 +78,7 @@ to any dashboard.  Standalone library file (like its dependency
 aggregator.
 
 -- Ref: [leitner2026] docs/audits/2026-08-02-fibre-habiro-q1-centring-verdict.md
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
 -/
 
 namespace QOU.QBeta.BarOddQOneCentringNonselective

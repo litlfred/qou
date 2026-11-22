@@ -7,7 +7,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:frobenius-hopf-substrate"],
-  cites: ["yekutieli2015",
+  cites: ["yekutieli-zhang1999-auslander-dualizing",
     "yekutieli2010",
   ],
   tags: ["dualizing-complex", "derived-category", "yekutieli", "self-duality"],
