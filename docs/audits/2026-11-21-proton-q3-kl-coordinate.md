@@ -557,5 +557,51 @@ weights are not determined.
 
 **Scope.** Section 12.1 is evidence, not isotopy proofs. Sections 12.2 and 12.3 are exact
 algebra identities, sorry-free; that their closures are the Hopf link and the pair link is
-the standard reading of the braid, not formalised. Section 12.4's negatives are at two
-rational q, not generic q. No Q_β value is computed, and nothing is selected.
+the standard reading of the braid, not formalised. Section 12.4's negatives were first
+found at two rational q; 12.5 extends them to generic q. Nothing is selected.
+
+**12.5 The two-photon negatives hold for generic q (computed, exact).** Gröbner bases over
+ℚ(q), symbolic q, for every 3- and 5-vertex match and all 16 photon placements: the
+two-photon factorisations are exactly the 13 (word, i, j) cells found at q = 2 and 3, and
+every other cell has Gröbner basis [1]. So no other match is a two-photon product for
+generic q. Finitely many special q (where a leading coefficient vanishes) are not
+excluded. Over ℚ(q) the weights are again unique: −h⁻¹ = −q/(q²−1), −1, and μ = h⁻².
+Not formalised in Lean; it is a computer-algebra result.
+
+**12.6 Convention-D trace of the pair word (COMPARISON ONLY, not a Q_β prediction).**
+Owner's request in thread, "All", covering the option "compute the β-decay trace at z_D on
+the two-photon pair word … it would need your OK as a comparison". Trace: the Jimbo quantum
+trace Tr(K^{⊗n}ρ(w))/[2]ⁿ, which is the convention-D Markov trace (tr σ = z_D = q³/(q²+1),
+checked). Exact values:
+
+| word | strands | tr_D |
+|---|---|---|
+| pair σ₀²σ₁⁻¹σ₄⁻¹ | 6 | (q⁴+1) / (q²(q²+1)³) |
+| Hopf photon σ₀²σ₁⁻¹ | 3 | (q⁴+1) / (q(q²+1)²) |
+| crossing photon σ⁻¹ | 2 | 1 / (q(q²+1)) |
+| electron σ₀σ₁σ₀ | 3 | q³(q⁴+1) / (q²+1)² |
+
+tr(pair) = tr(Hopf photon)·tr(crossing photon), as Markov factorisation over disjoint
+strands requires (checked). At the proton q₀ with the canonical tower-summed E₀,
+|tr_D(pair)|·E₀ = 0.776939463185 MeV; CODATA Q_β = 0.78233 MeV, a −0.69 % gap. All 264
+matching γγ words give this one value for the e⁻ + ν̄ + loop orientation (they have writhe
+0 and close to the same link), and 1.453031 MeV for the mirror.
+
+Why this is not evidence, stated plainly:
+- The pair word is not the decay element Δ. The β-decay functional is ε(Δ), with Δ a
+  nucleon difference (bean `qou-99qc`); nothing here derives that the pair word replaces it.
+- The number depends on choices made outside any derivation: tr(1) = 1 normalisation on six
+  strands, which E₀ form (order-zero E₀ gives 0.769312), and which orientation.
+- Closeness to CODATA, reached after choosing among those, is the selection-against-target
+  pattern the no-fitting rule names. Treat 0.7769 as a coincidence until a derivation says
+  why the pair word's trace should be Q_β/E₀.
+- The ruled z_D base on the ruled element stays at −43 %; this does not change it.
+
+**12.7 Sibling checks (2026-11-22).** The ⁴He thread: no conflict. Its bond letter is
+Vᵢ³ = γ(0,0,qh)·γ(0,0,−q⁻¹h), the lone single-crossing interface letters were retired on
+2026-11-15, and the γ₃ factor should be traced with right-hand closure (#8800). The ε / Q_β
+thread: no conflict, different word. Its Borromean V³ has one factorisation with weights in
+ℚ(q), the bar-paired (0,0,qh)·(0,0,−q⁻¹h); the other six need roots of an irreducible
+sextic. The pair here is not bar-paired: bar sends (0,−h⁻¹,−1) to (0,h⁻¹,−1), not to the
+partner (0,−h⁻¹,0). No general bar-pairing rule for γγ factors is on record, so this neither
+supports nor contradicts either result.
