@@ -427,3 +427,12 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
 - TRAP: `QOU.Mass.KohnoWeightedClass` cone (KZHolonomy) needs `Mathlib.Analysis.Calculus.Deriv.Pi` and `Mathlib.Analysis.ODE.PicardLindelof`, absent from BOTH the main cache and the `-mathlib-gap-modules` addon (95 entries). Unverifiable without a Mathlib-source gap build.
 - TRAP (authoring, v4.24): `refine ⟨…⟩ <;> · unfold A B C` fails with "failed to unfold `B`" on any goal where B does not occur; `norm_num [A, B, C]` closes the same goals (#7991).
 - CORRECTION 2026-11-21: the KohnoWeightedClass TRAP above is stale. `Mathlib.Analysis.Calculus.Deriv.Pi` and `Mathlib.Analysis.ODE.PicardLindelof` are in the main restore of `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` (traced) and also in the `-mathlib-gap-modules` addon as of fe9ce69 (288 entries). Verify with `ls .lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/ODE/PicardLindelof.olean`.
+
+## 2026-11-22 — fresh container, toolchain + restore from zero (BASELINE, re-measure)
+- Repo at `/home/claude/qou` (not `/home/user/qou`); HOME=/root; no `~/.elan`, no zstd.
+- Toolchain: GitHub asset `lean-4.24.0-linux.tar.zst` (460 MB, 17 s) + `apt-get install zstd`,
+  extracted to `/root/.elan/toolchains/leanprover--lean4---v4.24.0` (2.3 G, real dir, NOT a /tmp symlink).
+- Cache: branch `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` head `7c61a1ba876`, 24 parts;
+  throwaway-repo fetch 2m10s + streamed extract 59 s with `--transform 's,^content/,folio/,'`.
+  Result: root mathlib 3697 oleans, paper QOU build 3466; trace check cleared the marker. Disk 55G→45G free.
+- `scripts/lean-direct-env.sh` works as-is; NucleonWeightSpaceTraces.lean exit 0 in 4.2 s.
