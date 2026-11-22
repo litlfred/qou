@@ -1,11 +1,11 @@
 ---
 # qou-1iit
 title: 'RT finding: lem:su2-emergence-dagger-unitarity — Lean formalises only the linear-algebra tail; the categorical premise (G preserves a positive Hermitian pairing) is unformalised'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-22T21:18:00Z
+updated_at: 2026-11-22T21:24:39Z
 parent: qou-ncxf
 ---
 
@@ -31,3 +31,6 @@ Statement restated to what the Lean proves (owner ruling 2026-11-21, PR #8888; r
 
 ## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
 Verified on main 3c4c98fcc: the restatement from #8888 (merged 2026-11-21) is in the .ts caveat ('Statement restated 2026-11-21'). The honesty defect this bean records is fixed; what stays open is the original stronger claim. Whether to close this bean (and track the stronger claim, if wanted, elsewhere) is put to the owner on a card.
+
+## 2026-11-22 honesty-roundtrip (session_01Qmmkt63qmS4AFFfqMq2Z2e)
+Completed on owner card 2026-11-22 (Close all 9): the honesty defect is fixed on main by the #8888 restatement (verified on 3c4c98fcc). The stronger original claim stays recorded in docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md and is not tracked by a bean.

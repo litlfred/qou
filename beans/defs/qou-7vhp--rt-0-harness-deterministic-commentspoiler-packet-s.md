@@ -1,11 +1,11 @@
 ---
 # qou-7vhp
 title: 'RT-0 (Harness): Deterministic Comment/Spoiler Packet Scrubber (`folio/pipeline/roundtrip-blind-packets.ts`) & 9 Isolated Blind Agent Specs'
-status: todo
+status: completed
 type: task
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-22T21:18:00Z
+updated_at: 2026-11-22T21:24:39Z
 parent: qou-ncxf
 ---
 
@@ -29,3 +29,6 @@ W5 (2026-11-20) notes PR #8528 (merged) replaced the missing `roundtrip-blind-pa
 
 ## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
 Still absent on main 3c4c98fcc: no folio/pipeline/roundtrip-blind-packets.ts. scripts/roundtrip-blind-sample.py did pass 3 after two fixes on this branch (comment-blanked decl lookup; one proof per block by label suffix). It still writes no .qa.json verdicts. Closing as superseded by #8528 is put to the owner on a card.
+
+## 2026-11-22 honesty-roundtrip (session_01Qmmkt63qmS4AFFfqMq2Z2e)
+Completed on owner card 2026-11-22 (Close all 9): superseded by scripts/roundtrip-blind-sample.py (PR #8528, two pairing fixes on branch claude/honesty-roundtrip-pass3-2026-11-22). folio/pipeline/roundtrip-blind-packets.ts was never built; the .qa.json verdict wiring is not done and is not tracked elsewhere.
