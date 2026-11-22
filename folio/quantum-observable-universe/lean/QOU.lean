@@ -318,6 +318,7 @@ import QOU.MathlibExt.PLMoveVertexGlue
 import QOU.MathlibExt.PLPerturb
 import QOU.MathlibExt.PLPlanarParity
 import QOU.MathlibExt.PLPlanarSplit
+import QOU.MathlibExt.PLPlanarTri
 import QOU.MathlibExt.PLSubdivide
 import QOU.MathlibExt.PLC1Estimates
 import QOU.MathlibExt.PLInscribed
