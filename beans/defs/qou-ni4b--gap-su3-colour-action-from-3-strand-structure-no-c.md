@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-11-22T16:37:26Z
+updated_at: 2026-11-22T16:47:11Z
 parent: qou-8lxd
 ---
 
@@ -43,3 +43,5 @@ computations/probes/qcd_colour_action/RESULT.md. Exact over Q(p,q).
 - K1 gl₃ Jimbo: z₃ = q³/[3]_q ≠ z_D. K2 gl₆ Jimbo: Hecke holds, but no colour action in the searched class (classical: witness 1−q; summed q-Chevalley: [e,f] ≠ [k]); z₆ = q⁶/[6]_q. K3/K3′ not Hecke.
 - K4 (s_c⊗X + a_c⊗Y, 32 members): a transported colour⊗flavour braid holds iff p²=1 and q²=1 (Gröbner basis). This is a structural exclusion inside the class, scope (a) outside it.
 Still open. Closure needs either an owner ruling that K0 counts, or a coideal / twisted colour symmetry of gl₆ outside K4. Not formalised in Lean.
+
+2026-11-22 (spin/background-field probe, PR #9059, computations/probes/qcd_spin_background/, prereg 0415291e97a, probe 4a21dae23ee 39/39, RESULT aa514549e55): scope-(a) MISS. Background colour holonomy K^{(x)n} on (C^N)^{(x)n} (exact Q(q), N=2,3,4): susceptibility at q=1 is sum l_i^2 N^(#cyc-1) (strand winding squared, not spin); Hecke-sign (S2) ratio 2/N; full-twist (S1) expansion 2N+8hbar+4N hbar^2, all positive, only negative constant the -1/N sl-framing. N=3 coincidences 2/N=1-1/N=2/3=(2*1/2)^2-1/3 are N-dependent traps, do not cite. Post-hoc: photon s0s1^-1 alone has negative hbar^2 coefficient -4(N^2-3). No paramagnetic/diamagnetic split exists in colour-only data; the 11/3:-1/3 structure needs a non-colour spin factor = the un-derived theta_I=1 hypothesis of TwistedChannelSplitting.lean. Heat-kernel per-state susceptibility 1 -> 12/17; its RG sign is convention-set. No gluon selected.
