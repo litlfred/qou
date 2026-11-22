@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-10-04T15:26:49Z
+updated_at: 2026-11-22T21:23:37Z
 parent: qou-uot9
 ---
 
@@ -23,3 +23,8 @@ Also known as `qnsw` (its former front-matter header id; the beans CLI uses the 
 ## Progress (Round 53 — PR #8225)
 - Implemented sorry-free, non-vacuous Lean 4 formalization + 80-dps mpmath witness in PR https://github.com/litlfred/qou/pull/8225 (HEAD `92ab8569af5ff7399510fd92cb2505df80c41b5e`).
 - Marked `in-progress` pending PR merge.
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+
+Not closed. The Lean is now honest §3b-cond (`QOU/FluidDynamics/q_ns_wellposedness.lean`, Disposition line 22): existence and smoothness are assumed as class inputs, energy and decay are proved. The assumed part is an open problem, so per the no-close-on-open-conjecture rule this stays open.

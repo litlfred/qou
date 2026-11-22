@@ -1,14 +1,14 @@
 ---
 # lp_dual_stability
 title: lp dual stability missing hypotheses
-status: in-progress
+status: completed
 pr: 8218
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-10-04T15:26:45Z
+updated_at: 2026-11-22T21:23:36Z
 parent: qou-uot9
 ---
 
@@ -22,3 +22,8 @@ Also known as `lpds` (its former front-matter header id; the beans CLI uses the 
 
 ## Progress (Round 52 — PR #8218)
 - Resolved in PR `litlfred/qou#8218` (`claude/round52-devacuify-6qbv-uot9`, HEAD `31f749976663905d17c11fe898c73116da2e8d1b`) with 80-dps mpmath witness `computations/probes/round52-devacuify-6qbv-uot9.witness.json` (`scriptCommitSha = 5355a18ce7a60c5cabb79019663bff82e103d505`).
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+
+`QOU/ParticleInteractions/lp_dual_stability.lean:119` is derived sorry-free: claims (1) and (4) from feasibility and the in-repo duality lemma (docstring line 114). PR #8218 is superseded.

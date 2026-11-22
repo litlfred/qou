@@ -1,13 +1,13 @@
 ---
 # confinement_categorical
 title: confinement categorical missing hypotheses
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-16T20:28:25Z
+updated_at: 2026-11-22T21:23:36Z
 parent: qou-uot9
 pr: 8189
 ---
@@ -25,3 +25,8 @@ Also known as `cnca` (its former front-matter header id; the beans CLI uses the 
 - [x] Verified with Lean v4.24.0 (`lean -DautoImplicit=false -s 65536`: 0 errors, 0 warnings, 0 `sorry`) and all 6 static vacuity audits (0 findings).
 - [x] Verified with 80-dps `mpmath` probe (`computations/probes/round50_devacuify_6qbv_probe.py`) and 2-commit stamped witness (`computations/probes/round50-devacuify-6qbv.witness.json`, `scriptCommitSha: 357a63280dd6b77b067855dfd2ebaeb6340b2c28`, `scriptHash: 3ff73a87c2af`).
 - [ ] Awaiting review and merge of PR https://github.com/litlfred/qou/pull/8189 (`status: in-progress` maintained per repo rule).
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), closed on main evidence
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF, main 3c4c98fcc.
+
+`QOU/WedderburnMass/confinement_categorical.lean:177` `theorem confinement_categorical` is proved sorry-free from the Wedderburn isomorphism (docstring line 21); the old self-assuming class with unconstrained data and a `sorry` is deleted (line 33, bean qou-mtc9). The unmerged batch PR #8189 is superseded by this.
