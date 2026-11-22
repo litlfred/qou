@@ -176,3 +176,23 @@ The owner picked all three options. They are reconciled as follows:
 (criterion on the coordinate only, element scaled by its identity coefficient).
 It is **retired** as a derivation route (status note, tag `retired`), with the
 negative result kept in the block and here. PR #8964 is marked ready for review.
+
+## Round 4 (2026-11-22): the three follow-up options
+
+Owner, verbatim: *"Merge and try all"*. PR #8964 was merged (rebase) and the
+three remaining options were tried.
+
+1. **k = 0.** Already measured by the pre-registered probe
+   `computations/probes/proton_q3_normaliser/` (arm A1): with `[3]_q!` the
+   proton-pinned `q₀` moves to `1.13154` (+1.94 %), and `m_p` at the muon pin
+   is `1285.39` MeV (+37.0 %). Nothing new was computed.
+2. **The proton from the convention-D trace.** Pre-registered in
+   `computations/probes/proton_d_trace_normaliser/PREREGISTRATION.md` before
+   the run. The production `tr_M` is already the registry's convention-D value
+   (gate passes at 1e-30), so the question reduces to the normaliser. Closure
+   normalisers supplied by D, against `m_p` at the muon pin: `tr(1) = 1`
+   −78.2 %, `[2]_q²` −9.7 %, `[2]_q³` +82.2 %, `(1/z_D)²` −40.7 %. As
+   expected, none reproduces `m_p`.
+3. **Labelling.** `conj:proton-mass-substrate-identity` now states that the
+   identity is fitted in the normaliser, and that its 0.24 ppm residual is at
+   the muon pin (at the proton pin it holds exactly, by construction).
