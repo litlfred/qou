@@ -1,0 +1,63 @@
+{
+ "probe": "mn_own_identity_probe",
+ "preregistration": "PREREGISTRATION.md",
+ "checks": {
+  "tr_Wp(V3) = -P/q^6": true,
+  "tr_Wn(V3) = tr_Wp(V3)": true,
+  "S1 whole-space sector sum = tr_M closed form": true,
+  "S2 K -> K^-1 invariance": true,
+  "S3 F^(n)_N0 = F_Bor": true,
+  "S4 eps_n/eps_p = q^-2": true,
+  "S5a F_Bor(1/q)/F_Bor(q) = q^6": true,
+  "S5b [F/hbar^2](1/q) / [F/hbar^2](q) = q^4": true,
+  "F_Bor(1) = 6": true
+ },
+ "all_pass": true,
+ "values": {
+  "muon": {
+   "q0": "1.10997859564273904668179512938",
+   "F_Bor": "4.469138596906816352988651",
+   "m_p_pred_MeV": "938.271860620094",
+   "m_p_ppm_vs_CODATA": "-0.24386306",
+   "N0_m_n_MeV": "938.271860620094",
+   "N0_m_n_ppm_vs_CODATA": "-1376.7656",
+   "N0_m_n_minus_CODATA_MeV": "-1.29356132",
+   "N1_m_n_MeV": "760.396923676",
+   "N1_m_n_pct_vs_CODATA": "-19.0693",
+   "N2a_m_n_MeV": "1760.09034871",
+   "N2a_pct": "87.3303",
+   "N2b_m_n_MeV": "1427.42896945",
+   "N2b_pct": "51.9244",
+   "sector_shares_of_trM": {
+    "uuu": "0.168422190883",
+    "uud (proton)": "0.409306698487",
+    "udd (neutron)": "0.332215310797",
+    "ddd": "0.0900557998337"
+   },
+   "eps_n_over_eps_p": "0.811653735512567"
+  },
+  "proton": {
+   "q0": "1.10997858275138080759166909561",
+   "F_Bor": "4.469138735767522529389075",
+   "m_p_pred_MeV": "938.272089427324",
+   "m_p_ppm_vs_CODATA": "-2.8517875e-6",
+   "N0_m_n_MeV": "938.272089427324",
+   "N0_m_n_ppm_vs_CODATA": "-1376.522",
+   "N0_m_n_minus_CODATA_MeV": "-1.293332513",
+   "N1_m_n_MeV": "760.397127194",
+   "N1_m_n_pct_vs_CODATA": "-19.0693",
+   "N2a_m_n_MeV": "1760.09065354",
+   "N2a_pct": "87.3303",
+   "N2b_m_n_MeV": "1427.42925017",
+   "N2b_pct": "51.9244",
+   "sector_shares_of_trM": {
+    "uuu": "0.168422185516",
+    "uud (proton)": "0.409306695309",
+    "udd (neutron)": "0.332215315935",
+    "ddd": "0.0900558032396"
+   },
+   "eps_n_over_eps_p": "0.811653754365758"
+  }
+ },
+ "note": "CODATA m_p, m_n in comparison rows only; m_mu/m_e (CAL-2) fixes the muon pin."
+}

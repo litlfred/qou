@@ -1,0 +1,301 @@
+{
+  "probe": "mn_three_gluon_vertex_probe",
+  "prereg": "PREREGISTRATION-three-gluon-vertex.md",
+  "conventions": {
+    "T": "lambda/2",
+    "F": "i f^{abc} T^a T^b T^c",
+    "D": "d^{abc} T^a T^b T^c",
+    "G": "f^{abe} f^{cde} T^a T^b T^c T^d",
+    "Rc": "Rc(ii)=q ii; i<j: Rc(ij)=ji, Rc(ji)=ij+h ji; R=P Rc",
+    "perm": "P_sigma moves slot s to slot sigma(s); C = P12 P23"
+  },
+  "M1": {
+    "Omega_eq_(P-1/3)/2": true,
+    "F_in_adapted_basis": {
+      "A=C-C2": "-1/4",
+      "others": "0"
+    },
+    "D_in_adapted_basis": {
+      "1": "1/9",
+      "St": "-1/6",
+      "Sc": "1/4"
+    },
+    "[Omega12,Omega23]_over_F": "-1",
+    "[Omega12,Omega23]_D_component": "0 (D lies in span{1,St,Sc}; the commutator has only A)",
+    "reading": "[Omega12,Omega23] = c * i f^{abc} T^a T^b T^c exactly, and F = kF (C - C^2): the f-structure IS the antisymmetrised 3-cycle on V^3 (standard sl3 algebra)."
+  },
+  "M2": {
+    "YBE_R12R13R23=R23R13R12_exact": true,
+    "braid_relation_exact": true,
+    "Hecke_relation_exact": true,
+    "r_decomposition": "r = 2 Omega + r_a, r + r21 = 4 Omega, r_a antisymmetric (exact)",
+    "CYBE(2Omega)_over_F": "4",
+    "CYBE(r_a)_over_F": "-4",
+    "mixed_terms_exact_zero": true,
+    "mixed_terms_projection": "0",
+    "CYBE(r)_total": "0 exactly",
+    "reading": "The YBE at order hbar^2 is CYBE(r)=0; the Omega-Omega part is a nonzero multiple of F and is cancelled by CYBE(r_a) (modified CYBE). F appears in the braid relation only as a cancellation."
+  },
+  "M3": {
+    "hbar^0": {
+      "F_coef": "0",
+      "adapted": {
+        "1": "1",
+        "St": "0",
+        "Sc": "0",
+        "A=C-C2": "0",
+        "E1": "0",
+        "E2": "0"
+      }
+    },
+    "hbar^1": {
+      "F_coef": "0",
+      "adapted": {
+        "1": "-2/3",
+        "St": "2/3",
+        "Sc": "0",
+        "A=C-C2": "0",
+        "E1": "0",
+        "E2": "1/3"
+      }
+    },
+    "hbar^2": {
+      "F_coef": "-8/3",
+      "adapted": {
+        "1": "41/90",
+        "St": "-17/45",
+        "Sc": "13/20",
+        "A=C-C2": "2/3",
+        "E1": "0",
+        "E2": "-19/72"
+      }
+    },
+    "hbar^3": {
+      "F_coef": "23/18",
+      "adapted": {
+        "1": "-83/405",
+        "St": "161/540",
+        "Sc": "-37/120",
+        "A=C-C2": "-23/72",
+        "E1": "0",
+        "E2": "43/216"
+      }
+    },
+    "(1/2)[r12,r23]_projection": {
+      "F_coef": "-8/3",
+      "adapted": {
+        "1": "0",
+        "St": "0",
+        "Sc": "0",
+        "A=C-C2": "2/3",
+        "E1": "0",
+        "E2": "0"
+      }
+    },
+    "R12R23_exact_q_projection(unnormalised)": {
+      "F_coef": "(-11*q**4 + 6*q**3 + 16*q**2 - 6*q - 5)/(12*q**2)",
+      "adapted": {
+        "1": "(24*q**2*(q + 3) + 24*q + (q**2 - 1)**2)/(120*q**2)",
+        "St": "(3*q**4 + 17*q**3 - 5*q**2 - 13*q - 2)/(60*q**2)",
+        "Sc": "(19*q**4 - 14*q**3 - 20*q**2 + 6*q + 9)/(80*q**2)",
+        "A=C-C2": "(11*q**4 - 6*q**3 - 16*q**2 + 6*q + 5)/(48*q**2)",
+        "E1": "0",
+        "E2": "(4*q**3 - q**2 - 2*q - 1)/(24*q**2)"
+      }
+    },
+    "Rc12Rc23Rc12_exact_q_projection": {
+      "F_coef": "0",
+      "adapted": {
+        "1": "(37*q**6 - 24*q**5 + 18*q**3 - 12*q**2 - 12*q - 7)/(120*q**3)",
+        "St": "(21*q**6 + 68*q**5 - 30*q**4 - 46*q**3 + 54*q**2 + 44*q + 9)/(360*q**3)",
+        "Sc": "(2*q**6 + 6*q**5 + 45*q**4 - 12*q**3 - 27*q**2 - 12*q - 2)/(120*q**3)",
+        "A=C-C2": "0",
+        "E1": "0",
+        "E2": "q**3/24 + q**2/9 - 7*q/24 - 2/9 + 1/(36*q**2)"
+      }
+    },
+    "(1/2)[2Omega12,2Omega23]_over_F": "-2",
+    "r_a_contribution_to_hbar2_F_coef": "-2/3"
+  },
+  "M4": {
+    "q0_source": "qou_substrate.constants.Q_50_DIGIT_STR (proton pin)",
+    "sigma0_sigma1inv (photon chiral letter)": {
+      "classical_commutant_projection": {
+        "F_coef": "-q/2 - 1 - 1/(2*q)",
+        "adapted": {
+          "1": "(-19*q**4 - 3*q**3 + 44*q**2 - 3*q - 19)/(60*q**2)",
+          "St": "(q**4 + 2*q**3 - 6*q**2 + 2*q + 1)/(60*q**2)",
+          "Sc": "(2*q**4 + 9*q**3 + 38*q**2 + 9*q + 2)/(120*q**2)",
+          "A=C-C2": "(q**2 + 2*q + 1)/(8*q)",
+          "E1": "(-q**4 - 6*q**3 + 6*q + 1)/(16*q**2)",
+          "E2": "(q**4 + 2*q**3 - 6*q**2 + 2*q + 1)/(48*q**2)"
+        }
+      },
+      "F_coef_factored": "-(q + 1)**2/(2*q)",
+      "F_coef_series_hbar": "-hbar**2/2 - 2",
+      "F_coef_at_q0": "-2.0054484333535611499",
+      "H3": {
+        "coords": {
+          "1": "0",
+          "s0": "-(q - 1)*(q + 1)/q",
+          "s1": "0",
+          "s0s1": "1",
+          "s1s0": "0",
+          "s0s1s0": "0"
+        },
+        "commutator_coef_(s0s1-s1s0)": "1/2",
+        "flip_antisym_s0-s1_coef": "-(q - 1)*(q + 1)/(2*q)"
+      },
+      "H3_commutator_coef_at_q0": "1/2"
+    },
+    "sigma1inv_sigma0 (reversed order)": {
+      "classical_commutant_projection": {
+        "F_coef": "q/2 + 1 + 1/(2*q)",
+        "adapted": {
+          "1": "(-19*q**4 - 3*q**3 + 44*q**2 - 3*q - 19)/(60*q**2)",
+          "St": "(q**4 + 2*q**3 - 6*q**2 + 2*q + 1)/(60*q**2)",
+          "Sc": "(2*q**4 + 9*q**3 + 38*q**2 + 9*q + 2)/(120*q**2)",
+          "A=C-C2": "(-q**2 - 2*q - 1)/(8*q)",
+          "E1": "(-q**4 - 6*q**3 + 6*q + 1)/(16*q**2)",
+          "E2": "(q**4 + 2*q**3 - 6*q**2 + 2*q + 1)/(48*q**2)"
+        }
+      },
+      "F_coef_factored": "(q + 1)**2/(2*q)",
+      "F_coef_series_hbar": "hbar**2/2 + 2",
+      "F_coef_at_q0": "2.0054484333535611499",
+      "H3": {
+        "coords": {
+          "1": "0",
+          "s0": "-(q - 1)*(q + 1)/q",
+          "s1": "0",
+          "s0s1": "0",
+          "s1s0": "1",
+          "s0s1s0": "0"
+        },
+        "commutator_coef_(s0s1-s1s0)": "-1/2",
+        "flip_antisym_s0-s1_coef": "-(q - 1)*(q + 1)/(2*q)"
+      },
+      "H3_commutator_coef_at_q0": "-1/2"
+    },
+    "V3 = (sigma0 sigma1inv)^3 (Borromean core)": {
+      "classical_commutant_projection": {
+        "F_coef": "(-q**10 - 2*q**9 + q**8 + 4*q**7 - 4*q**5 + 4*q**3 + q**2 - 2*q - 1)/(2*q**5)",
+        "adapted": {
+          "1": "(-19*q**12 - 3*q**11 + 60*q**10 + 9*q**9 - 69*q**8 - 6*q**7 + 116*q**6 - 6*q**5 - 69*q**4 + 9*q**3 + 60*q**2 - 3*q - 19)/(60*q**6)",
+          "St": "(q**12 + 2*q**11 - 10*q**10 - 6*q**9 + 31*q**8 + 4*q**7 - 44*q**6 + 4*q**5 + 31*q**4 - 6*q**3 - 10*q**2 + 2*q + 1)/(60*q**6)",
+          "Sc": "(2*q**12 + 9*q**11 + 30*q**10 - 27*q**9 - 138*q**8 + 18*q**7 + 212*q**6 + 18*q**5 - 138*q**4 - 27*q**3 + 30*q**2 + 9*q + 2)/(120*q**6)",
+          "A=C-C2": "(q**10 + 2*q**9 - q**8 - 4*q**7 + 4*q**5 - 4*q**3 - q**2 + 2*q + 1)/(8*q**5)",
+          "E1": "(-q**12 - 6*q**11 + 2*q**10 + 18*q**9 - q**8 - 24*q**7 + 24*q**5 + q**4 - 18*q**3 - 2*q**2 + 6*q + 1)/(16*q**6)",
+          "E2": "(q**12 + 2*q**11 - 10*q**10 - 6*q**9 + 31*q**8 + 4*q**7 - 44*q**6 + 4*q**5 + 31*q**4 - 6*q**3 - 10*q**2 + 2*q + 1)/(48*q**6)"
+        }
+      },
+      "F_coef_factored": "-(q - 1)**2*(q + 1)**4*(q**4 + 1)/(2*q**5)",
+      "F_coef_series_hbar": "-16*hbar**2",
+      "F_coef_at_q0": "-0.1791319679626783073",
+      "H3": {
+        "coords": {
+          "1": "-(q**2 - q - 1)*(q**2 + q - 1)*(q**4 - q**2 + 1)/q**4",
+          "s0": "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**5",
+          "s1": "(q - 1)**3*(q + 1)**3/q**3",
+          "s0s1": "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)/q**4",
+          "s1s0": "-(q - 1)**2*(q + 1)**2/q**2",
+          "s0s1s0": "0"
+        },
+        "commutator_coef_(s0s1-s1s0)": "(q - 1)**2*(q + 1)**2*(q**4 + 1)/(2*q**4)",
+        "flip_antisym_s0-s1_coef": "-(q - 1)**3*(q + 1)**3*(q**4 + 1)/(2*q**5)"
+      },
+      "H3_commutator_coef_at_q0": "0.044661324864666138377"
+    },
+    "sigma0sigma1 (for comparison)": {
+      "classical_commutant_projection": {
+        "F_coef": "-q/2 - 1 - 1/(2*q)",
+        "adapted": {
+          "1": "(37*q**4 - 36*q**3 - 32*q**2 + 24*q + 7)/(120*q**2)",
+          "St": "(7*q**4 + 34*q**3 - 12*q**2 - 26*q - 3)/(120*q**2)",
+          "Sc": "(2*q**4 + 9*q**3 + 38*q**2 + 9*q + 2)/(120*q**2)",
+          "A=C-C2": "(q**2 + 2*q + 1)/(8*q)",
+          "E1": "0",
+          "E2": "(q**3 + 4*q**2 - 3*q - 2)/(24*q)"
+        }
+      },
+      "F_coef_factored": "-(q + 1)**2/(2*q)",
+      "F_coef_series_hbar": "-hbar**2/2 - 2",
+      "F_coef_at_q0": "-2.0054484333535611499",
+      "H3": {
+        "coords": {
+          "1": "0",
+          "s0": "0",
+          "s1": "0",
+          "s0s1": "1",
+          "s1s0": "0",
+          "s0s1s0": "0"
+        },
+        "commutator_coef_(s0s1-s1s0)": "1/2",
+        "flip_antisym_s0-s1_coef": "0"
+      },
+      "H3_commutator_coef_at_q0": "1/2"
+    }
+  },
+  "M5": {
+    "commutant_basis": "S4 minus the 4-cycle (1,2,3,0) (antisymmetriser kernel for dim V=3)",
+    "[[O12,O23],O34]_over_G": "-1",
+    "nested_is_multiple_of_G": true,
+    "G_coords_nonzero": {
+      "0123": "-1/8",
+      "0132": "1/8",
+      "0213": "1/8",
+      "0231": "-1/8",
+      "0312": "-1/8",
+      "0321": "1/8",
+      "1023": "1/8",
+      "1032": "-1/8",
+      "1203": "-1/8",
+      "1302": "1/4",
+      "1320": "-1/8",
+      "2013": "-1/8",
+      "2031": "1/4",
+      "2103": "1/8",
+      "2130": "-1/8",
+      "2301": "-1/8",
+      "2310": "1/8",
+      "3021": "-1/8",
+      "3102": "-1/8",
+      "3120": "1/8",
+      "3201": "1/8",
+      "3210": "-1/8"
+    },
+    "rank_degree<=2_Omega_span": 18,
+    "G_in_degree<=2_span": false,
+    "R12R23R34_orders": {
+      "hbar^0": {
+        "in_degree<=2_Omega_span": true,
+        "G_coef_mod_degree<=2_span": "0"
+      },
+      "hbar^1": {
+        "in_degree<=2_Omega_span": true,
+        "G_coef_mod_degree<=2_span": "0"
+      },
+      "hbar^2": {
+        "in_degree<=2_Omega_span": false,
+        "G_coef_mod_degree<=2_span": "-38/45"
+      },
+      "hbar^3": {
+        "in_degree<=2_Omega_span": false,
+        "G_coef_mod_degree<=2_span": null
+      },
+      "r_a12*r_a34_G_coef_mod_span": "-38/45",
+      "r_a12*r_a23_G_coef_mod_span": "0",
+      "r_a23*r_a34_G_coef_mod_span": "0",
+      "quotient_dim_commutant/deg<=2_span": 5,
+      "G_coef_well_defined": true
+    }
+  },
+  "verdict": {
+    "M1": "[Omega12,Omega23] = -F exactly (F = i f^{abc}T^aT^bT^c = -(1/4)(C - C^2)); d-component 0. Standard sl3 algebra.",
+    "M2": "YBE exact; order hbar^2 = CYBE(r) = 0 with CYBE(2 Omega) = +4F cancelled by CYBE(r_a) = -4F, mixed terms 0. The braid relation contains F only as a cancellation (modified CYBE).",
+    "M3": "R~12R~23 at hbar^2: F-coef -8/3 = -2 (from (1/2)[2Omega12,2Omega23]) + -2/3 (from r_a, after Haar projection). Rc12Rc23Rc12: F-coef 0 at all q (prediction held).",
+    "M4": "sigma0 sigma1^-1: F-coef -(q+1)^2/(2q) = -2 - hbar^2/2 (identical to sigma0 sigma1: the 3-cycle at q=1 carries F at hbar^0); H3 commutator coef exactly 1/2. V^3: F-coef -(q-1)^2(q+1)^4(q^4+1)/(2q^5) = -16 hbar^2 + ..., zero at q=1; H3 commutator coef (q-1)^2(q+1)^2(q^4+1)/(2q^4).",
+    "M5": "[[O12,O23],O34] = -G exactly; G not in the degree<=2 Omega span (rank 18 of 23). PREDICTION FAILED for the R~ chain: the projected hbar^2 term already leaves the span, with G-coefficient -38/45 mod span, all of it from r_a12*r_a34 (Haar average of the non-invariant antisymmetric parts of two disjoint crossings).",
+    "scope": "Projections are classical-SU(3) Haar averages; they are not U_q-covariant. No vertex, coupling or gluon is identified."
+  }
+}

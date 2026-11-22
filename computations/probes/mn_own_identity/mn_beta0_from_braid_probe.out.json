@@ -1,0 +1,178 @@
+{
+  "probe": "mn_beta0_from_braid_probe",
+  "prereg": "PREREGISTRATION-beta0-from-braid.md (78a5efe3447)",
+  "target": {
+    "beta0": "11 - (2/3) n_f = (11/3) C_A - (4/3) T_F n_f",
+    "hit_ratio_(i)": "33/2",
+    "S": [
+      "11",
+      "11/3",
+      "22/3",
+      "11/2",
+      "11/6",
+      "22",
+      "11/12"
+    ]
+  },
+  "i_ff": {
+    "word": "W4 = (s0 s1^-1 s2)^4 (permutation order of the letter = 4, W4(q=1) = 1 checked)",
+    "rank_deg<=2_Omega_span": 18,
+    "G_coef_mod_span_by_order": {
+      "hbar^1": "0",
+      "hbar^2": "0",
+      "hbar^3": "outside span+G",
+      "hbar^4": "outside span+G",
+      "hbar^5": "outside span+G"
+    },
+    "X_ff": "None",
+    "order": null,
+    "reading": "G-coefficient 0 where defined (hbar^1, hbar^2); undefined from hbar^3 (outside span+G)"
+  },
+  "i_loop": {
+    "L1_markov_weight_check": {
+      "diag(q^2,1,q^-2)": {
+        "Tr_q,2(R) scalar": true,
+        "value": "q**3"
+      },
+      "diag(q^-2,1,q^2)": {
+        "Tr_q,2(R) scalar": false,
+        "value": "not scalar"
+      }
+    },
+    "L1_weight_used": "diag(q^2,1,q^-2)",
+    "L1_closure_(a,b)_in_a*1+b*P": [
+      "-(5*q**14 - 2*q**13 - 13*q**12 + 4*q**11 - 2*q**10 - q**8 - 6*q**7 - 13*q**6 + 8*q**5 + 3*q**4 - 6*q**3 - 6*q**2 + 2*q + 3)/(8*q**6*(q**2 - q + 1)*(q**2 + q + 1))",
+      "-(q - 1)**3*(q + 1)**3*(q**2 + 6*q + 1)*(q**6 + q**4 + 1)/(8*q**6*(q**2 - q + 1)*(q**2 + q + 1))"
+    ],
+    "L1_Omega_coef": "-(q - 1)**3*(q + 1)**3*(q**2 + 6*q + 1)*(q**6 + q**4 + 1)/(4*q**6*(q**2 - q + 1)*(q**2 + q + 1))",
+    "L1_Omega_coef_series": [
+      "0",
+      "0",
+      "0",
+      "-16",
+      "32/3",
+      "-42"
+    ],
+    "L1_X_loop": "-16",
+    "L1_order": 3,
+    "V3_H3_coords": {
+      "1": "-(q**2 - q - 1)*(q**2 + q - 1)*(q**4 - q**2 + 1)/q**4",
+      "s0": "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**5",
+      "s1": "(q - 1)**3*(q + 1)**3/q**3",
+      "s0s1": "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)/q**4",
+      "s1s0": "-(q - 1)**2*(q + 1)**2/q**2",
+      "s0s1s0": "0"
+    },
+    "L2_E_D(V3)_=alpha+beta*s0": [
+      "(2*q**6 - 2*q**4 + 3*q**2 - 1)/(q**4*(q**2 + 1))",
+      "-(q - 1)**3*(q + 1)**3*(q**4 + 1)/(q**5*(q**2 + 1))"
+    ],
+    "L2_Omega_coef": "-(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**2 + 6*q + 1)/(4*q**6*(q**2 + 1))",
+    "L2_Omega_coef_series": [
+      "0",
+      "0",
+      "0",
+      "-16",
+      "16",
+      "-42"
+    ],
+    "L2_X_loop": "-16",
+    "L2_order": 3
+  },
+  "i_verdict": {
+    "L1": {
+      "r": null,
+      "hit": false,
+      "orders(ff,loop)": [
+        null,
+        3
+      ],
+      "reason": "MISS: X_ff is not defined. The G-coefficient of W4 is 0 at hbar^1, hbar^2 (where 'mod degree<=2 span' is defined) and from hbar^3 on the projection leaves span(deg<=2)+G, so the pre-registered G-coefficient does not exist; G = -[[O12,O23],O34] is itself degree 3, so taking it 'mod degree<=3' would be meaningless. X_loop is first nonzero at hbar^3; no scale-free ratio exists."
+    },
+    "L2": {
+      "r": null,
+      "hit": false,
+      "orders(ff,loop)": [
+        null,
+        3
+      ],
+      "reason": "MISS: X_ff is not defined. The G-coefficient of W4 is 0 at hbar^1, hbar^2 (where 'mod degree<=2 span' is defined) and from hbar^3 on the projection leaves span(deg<=2)+G, so the pre-registered G-coefficient does not exist; G = -[[O12,O23],O34] is itself degree 3, so taking it 'mod degree<=3' would be meaningless. X_loop is first nonzero at hbar^3; no scale-free ratio exists."
+    }
+  },
+  "ii": {
+    "c_F_series": [
+      "0",
+      "0",
+      "-16",
+      "0",
+      "-124/3",
+      "0",
+      "-1427/45"
+    ],
+    "c_F_closed_form_-16sinh^2(h)cosh^2(h/2)cosh(2h)_check": "0",
+    "H3_comm_series": [
+      "0",
+      "0",
+      "4",
+      "0",
+      "28/3",
+      "0",
+      "248/45"
+    ],
+    "values": {
+      "b": "31/12",
+      "2b": "31/6",
+      "b'": "7/3",
+      "2b'": "14/3"
+    },
+    "in_S": {
+      "b": false,
+      "2b": false,
+      "b'": false,
+      "2b'": false
+    },
+    "hit": false,
+    "disclosure": "b = 31/12 and b' = 7/3 were hand-computed before the run (prereg); recorded check, not a blind test"
+  },
+  "iii": {
+    "Haar(V3)_hbar0_S3_coords": {
+      "(0, 1, 2)": "1",
+      "(0, 2, 1)": "0",
+      "(1, 0, 2)": "0",
+      "(1, 2, 0)": "0",
+      "(2, 0, 1)": "0",
+      "(2, 1, 0)": "0"
+    },
+    "Haar(V3)_hbar2_S3_coords": {
+      "(0, 1, 2)": "0",
+      "(0, 2, 1)": "0",
+      "(1, 0, 2)": "0",
+      "(1, 2, 0)": "4",
+      "(2, 0, 1)": "-4",
+      "(2, 1, 0)": "0"
+    },
+    "eigenvalue_10_(C2=6)": "0",
+    "eigenvalue_1_(C2=0)": "0",
+    "eigenvalues_8_block_(C2=3)": [
+      "-4*sqrt(3)*I",
+      "4*sqrt(3)*I"
+    ],
+    "linear_in_C2_prediction_on_8": "0",
+    "single_Casimir_slope_consistent": false,
+    "values": {
+      "beta_C": "0",
+      "beta_C*C_A": "0"
+    },
+    "hit": false,
+    "structure": "[hbar^2] Haar(V3) = 4(C - C^2) = -16 F: the flip-odd 3-cycle difference, which is NOT central in Q[S3] (a transposition swaps C and C^2). It is 0 on the 10 and the 1 and acts on the 8 multiplicity block with eigenvalues +-4 sqrt(3) i; no function of C2 can represent it.",
+    "reason": "MISS by construction: no single Casimir slope"
+  },
+  "n_f": "No flavour count exists: the three strands are the three quarks of one baryon; the closure closes one fixed strand. n_f-dependence of beta0 has no counterpart in the searched constructions.",
+  "verdict": {
+    "i_L1": false,
+    "i_L2": false,
+    "ii": false,
+    "iii": false,
+    "overall": "MISS on all pre-registered candidates (scope a)"
+  }
+}

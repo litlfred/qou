@@ -1,0 +1,14 @@
+{
+  "n_equations": 16,
+  "solutions": [
+    {
+      "t": "[[0, t2], [t2, t3]]",
+      "eps": [
+        "-t3/t2**2",
+        "1/t2"
+      ],
+      "free_symbols": "{t2, t3}",
+      "mirror_relation_holds": true
+    }
+  ]
+}

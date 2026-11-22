@@ -1,0 +1,2341 @@
+{
+ "preregistration": "PREREGISTRATION-hydrogen-full-strand-gammagamma.md (4c6cb4ad589)",
+ "layout_F": "positions 0,1,2 = q1,q2,q3; 3 = e-; 4 = e+; 5,6,7 = qb1,qb2,qb3",
+ "tower": "H_8(q) on C^2 tensor 8",
+ "M1_full_word": {
+  "A-ann|G0": {
+   "element_word_left_to_right": "s0 s1^-1 s0 s1^-1 s0 s1^-1 s2^-1 s1^-1 s0^-1 s0^-1 s1^-1 s2^-1",
+   "letters_in_time_order": [
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "q3",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "q1",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "e-",
+      "q1"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "e-",
+      "q2"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "e-",
+      "q3"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q3",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q3",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q2",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    }
+   ],
+   "class_counts": {
+    "quark-lepton": 6,
+    "cross-pair quark-quark": 6
+   },
+   "final_permutation": [
+    "q1",
+    "q2",
+    "q3",
+    "e-",
+    "e+",
+    "qb1",
+    "qb2",
+    "qb3"
+   ]
+  },
+  "A-ann|GV": {
+   "element_word_left_to_right": "s0 s1^-1 s0 s1^-1 s0 s1^-1 s0 s1^-1 s2^-1 s1^-1 s0^-1 s0^-1 s1^-1 s2^-1",
+   "letters_in_time_order": [
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "q3",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "q1",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "e-",
+      "q1"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "e-",
+      "q2"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "e-",
+      "q3"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q3",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q3",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q2",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    }
+   ],
+   "class_counts": {
+    "quark-lepton": 6,
+    "cross-pair quark-quark": 8
+   },
+   "final_permutation": [
+    "q3",
+    "q1",
+    "q2",
+    "e-",
+    "e+",
+    "qb1",
+    "qb2",
+    "qb3"
+   ]
+  },
+  "A-ann|Gs1": {
+   "element_word_left_to_right": "s0 s1^-1 s0 s1^-1 s0 s1^-1 s1 s2^-1 s1^-1 s0^-1 s0^-1 s1^-1 s2^-1",
+   "letters_in_time_order": [
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "q3",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "q1",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "e-",
+      "q1"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "e-",
+      "q2"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "e-",
+      "q3"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q3",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q3",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    }
+   ],
+   "class_counts": {
+    "quark-lepton": 6,
+    "cross-pair quark-quark": 7
+   },
+   "final_permutation": [
+    "q1",
+    "q3",
+    "q2",
+    "e-",
+    "e+",
+    "qb1",
+    "qb2",
+    "qb3"
+   ]
+  },
+  "A-ann|GLm": {
+   "element_word_left_to_right": "s0 s1^-1 s0 s1^-1 s0 s1^-1 s1 s0 s2^-1 s1^-1 s0^-1 s0^-1 s1^-1 s2^-1",
+   "letters_in_time_order": [
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "q3",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "q1",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "e-",
+      "q1"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "e-",
+      "q2"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "e-",
+      "q3"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q3",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q2",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q3",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    }
+   ],
+   "class_counts": {
+    "quark-lepton": 6,
+    "cross-pair quark-quark": 8
+   },
+   "final_permutation": [
+    "q2",
+    "q3",
+    "q1",
+    "e-",
+    "e+",
+    "qb1",
+    "qb2",
+    "qb3"
+   ]
+  },
+  "A-bar|G0": {
+   "element_word_left_to_right": "s0 s1^-1 s0 s1^-1 s0 s1^-1 s5 s6^-1 s5 s6^-1 s5 s6^-1 s2^-1 s1^-1 s0^-1 s0^-1 s1^-1 s2^-1",
+   "letters_in_time_order": [
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "q3",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "q1",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "e-",
+      "q1"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "e-",
+      "q2"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "e-",
+      "q3"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb2",
+      "qb3"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb1",
+      "qb3"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb1",
+      "qb2"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb3",
+      "qb2"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb3",
+      "qb1"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb2",
+      "qb1"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q3",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q3",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q2",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    }
+   ],
+   "class_counts": {
+    "quark-lepton": 6,
+    "cross-pair antiquark-antiquark": 6,
+    "cross-pair quark-quark": 6
+   },
+   "final_permutation": [
+    "q1",
+    "q2",
+    "q3",
+    "e-",
+    "e+",
+    "qb1",
+    "qb2",
+    "qb3"
+   ]
+  },
+  "A-bar|GV": {
+   "element_word_left_to_right": "s0 s1^-1 s0 s1^-1 s0 s1^-1 s5 s6^-1 s5 s6^-1 s5 s6^-1 s0 s1^-1 s2^-1 s1^-1 s0^-1 s0^-1 s1^-1 s2^-1",
+   "letters_in_time_order": [
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "q3",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "q1",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "e-",
+      "q1"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "e-",
+      "q2"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "e-",
+      "q3"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb2",
+      "qb3"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb1",
+      "qb3"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb1",
+      "qb2"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb3",
+      "qb2"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb3",
+      "qb1"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb2",
+      "qb1"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q3",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q3",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q2",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    }
+   ],
+   "class_counts": {
+    "quark-lepton": 6,
+    "cross-pair quark-quark": 8,
+    "cross-pair antiquark-antiquark": 6
+   },
+   "final_permutation": [
+    "q3",
+    "q1",
+    "q2",
+    "e-",
+    "e+",
+    "qb1",
+    "qb2",
+    "qb3"
+   ]
+  },
+  "A-bar|Gs1": {
+   "element_word_left_to_right": "s0 s1^-1 s0 s1^-1 s0 s1^-1 s5 s6^-1 s5 s6^-1 s5 s6^-1 s1 s2^-1 s1^-1 s0^-1 s0^-1 s1^-1 s2^-1",
+   "letters_in_time_order": [
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "q3",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "q1",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "e-",
+      "q1"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "e-",
+      "q2"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "e-",
+      "q3"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb2",
+      "qb3"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb1",
+      "qb3"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb1",
+      "qb2"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb3",
+      "qb2"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb3",
+      "qb1"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb2",
+      "qb1"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q3",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q3",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    }
+   ],
+   "class_counts": {
+    "quark-lepton": 6,
+    "cross-pair quark-quark": 7,
+    "cross-pair antiquark-antiquark": 6
+   },
+   "final_permutation": [
+    "q1",
+    "q3",
+    "q2",
+    "e-",
+    "e+",
+    "qb1",
+    "qb2",
+    "qb3"
+   ]
+  },
+  "A-bar|GLm": {
+   "element_word_left_to_right": "s0 s1^-1 s0 s1^-1 s0 s1^-1 s5 s6^-1 s5 s6^-1 s5 s6^-1 s1 s0 s2^-1 s1^-1 s0^-1 s0^-1 s1^-1 s2^-1",
+   "letters_in_time_order": [
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "q3",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "q1",
+      "e-"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0^-1",
+     "strands": [
+      "e-",
+      "q1"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "e-",
+      "q2"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s2^-1",
+     "strands": [
+      "e-",
+      "q3"
+     ],
+     "class": "quark-lepton"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb2",
+      "qb3"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb1",
+      "qb3"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb1",
+      "qb2"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb3",
+      "qb2"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s6^-1",
+     "strands": [
+      "qb3",
+      "qb1"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s5",
+     "strands": [
+      "qb2",
+      "qb1"
+     ],
+     "class": "cross-pair antiquark-antiquark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q3",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q2",
+      "q1"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q2",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q1",
+      "q3"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s1^-1",
+     "strands": [
+      "q1",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    },
+    {
+     "letter": "s0",
+     "strands": [
+      "q3",
+      "q2"
+     ],
+     "class": "cross-pair quark-quark"
+    }
+   ],
+   "class_counts": {
+    "quark-lepton": 6,
+    "cross-pair quark-quark": 8,
+    "cross-pair antiquark-antiquark": 6
+   },
+   "final_permutation": [
+    "q2",
+    "q3",
+    "q1",
+    "e-",
+    "e+",
+    "qb1",
+    "qb2",
+    "qb3"
+   ]
+  }
+ },
+ "M2_disposal": {
+  "q0|A-ann|G0": {
+   "proportional_to_s46_element": true,
+   "c": "1.00000000000000"
+  },
+  "q0|A-ann|GV": {
+   "proportional_to_s46_element": true,
+   "c": "1.00000000000000"
+  },
+  "q0|A-ann|Gs1": {
+   "proportional_to_s46_element": true,
+   "c": "1.00000000000000"
+  },
+  "q0|A-ann|GLm": {
+   "proportional_to_s46_element": true,
+   "c": "1.00000000000000"
+  },
+  "q0|A-bar|G0": {
+   "proportional_to_s46_element": true,
+   "c": "0.99856216383678"
+  },
+  "q0|A-bar|GV": {
+   "proportional_to_s46_element": true,
+   "c": "0.99856216383678"
+  },
+  "q0|A-bar|Gs1": {
+   "proportional_to_s46_element": true,
+   "c": "0.99856216383678"
+  },
+  "q0|A-bar|GLm": {
+   "proportional_to_s46_element": true,
+   "c": "0.99856216383678"
+  },
+  "q=3|A-ann|G0": {
+   "proportional_to_s46_element": true,
+   "c": "1.00000000000000"
+  },
+  "q=3|A-ann|GV": {
+   "proportional_to_s46_element": true,
+   "c": "1.00000000000000"
+  },
+  "q=3|A-ann|Gs1": {
+   "proportional_to_s46_element": true,
+   "c": "1.00000000000000"
+  },
+  "q=3|A-ann|GLm": {
+   "proportional_to_s46_element": true,
+   "c": "1.00000000000000"
+  },
+  "q=3|A-bar|G0": {
+   "proportional_to_s46_element": true,
+   "c": "-45.01679012345679"
+  },
+  "q=3|A-bar|GV": {
+   "proportional_to_s46_element": true,
+   "c": "-45.01679012345679"
+  },
+  "q=3|A-bar|Gs1": {
+   "proportional_to_s46_element": true,
+   "c": "-45.01679012345679"
+  },
+  "q=3|A-bar|GLm": {
+   "proportional_to_s46_element": true,
+   "c": "-45.01679012345679"
+  }
+ },
+ "M3_general_collision": {
+  "words_with_coefficients": {
+   "1": "1",
+   "s0": "phi0 + psi0",
+   "s1": "phi1 + psi1",
+   "s0 s1^-1": "phi01 + psi01",
+   "s0 s0": "phi0*psi0",
+   "s0 s1": "phi0*psi1",
+   "s0 s0 s1^-1": "phi0*psi01",
+   "s1 s0": "phi1*psi0",
+   "s1 s1": "phi1*psi1",
+   "s1 s0 s1^-1": "phi1*psi01",
+   "s0 s1^-1 s0": "phi01*psi0",
+   "s0 s1^-1 s1": "phi01*psi1",
+   "s0 s1^-1 s0 s1^-1": "phi01*psi01"
+  },
+  "ledger_candidates_as_words": {
+   "s1": "phi1 + psi1",
+   "s0s0": "phi0*psi0",
+   "Lm=s1s0": "phi1*psi0",
+   "V=s0s1^-1": "phi01 + psi01"
+  },
+  "NF_general": {
+   "1": "(phi0*psi0*q**2 - phi0*psi01*q**3 + phi0*psi01*q - phi01*psi0*q**3 + phi01*psi0*q + phi01*psi01*q**4 - 2*phi01*psi01*q**2 + phi01*psi01 + phi1*psi1*q**2 + q**2)/q**2",
+   "s0": "(phi0*psi0*q**4 - phi0*psi0*q**2 - phi0*psi01*q**5 + 2*phi0*psi01*q**3 - phi0*psi01*q + phi0*q**3 - phi01*psi0*q**5 + 2*phi01*psi0*q**3 - phi01*psi0*q + phi01*psi01*q**6 - 3*phi01*psi01*q**4 + 3*phi01*psi01*q**2 - phi01*psi01 + phi01*psi1*q**3 - phi01*q**4 + phi01*q**2 + psi0*q**3 - psi01*q**4 + psi01*q**2)/q**3",
+   "s1": "-(-phi0*psi01*q + phi01*psi01*q**2 - phi01*psi01 - phi1*psi1*q**2 + phi1*psi1 - phi1*q - psi1*q)/q",
+   "s0s1": "-(-phi0*psi01*q**3 + phi0*psi01*q - phi0*psi1*q**2 + phi01*psi01*q**4 - 2*phi01*psi01*q**2 + phi01*psi01 - phi01*q**2 - psi01*q**2)/q**2",
+   "s1s0": "-(-phi01*psi01*q - phi1*psi0*q + phi1*psi01*q**2 - phi1*psi01)/q",
+   "s0s1s0": "phi01*psi0 + phi1*psi01"
+  },
+  "derived_weights_words": {
+   "1": "1",
+   "s0 s1^-1": "(q - 1)**2*(q + 1)**2/q**2",
+   "s0 s1^-1 s0 s1^-1": "-(q - 1)**2*(q + 1)**2/q**2"
+  },
+  "derived_weights_NF": {
+   "1": "-(q**2 - q - 1)*(q**2 + q - 1)*(q**4 - q**2 + 1)/q**4",
+   "s0": "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**5",
+   "s1": "(q - 1)**3*(q + 1)**3/q**3",
+   "s0s1": "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)/q**4",
+   "s1s0": "-(q - 1)**2*(q + 1)**2/q**2"
+  }
+ },
+ "M4_writhe": {
+  "s1": 1,
+  "s0s0": 2,
+  "Lm=s1s0": 2,
+  "V=s0s1^-1": 0,
+  "every gamma-gamma word": 0
+ },
+ "M5_enumeration_cap6": {
+  "H3_bare": {
+   "rows": [
+    {
+     "word": "1",
+     "crossings": 0,
+     "chi": {
+      "(3,0)": "1",
+      "(2,1)": "2"
+     },
+     "reading3_pass": true,
+     "trM": "1.00000000000000",
+     "E": "0"
+    },
+    {
+     "word": "s0 s1^-1",
+     "crossings": 2,
+     "chi": {
+      "(3,0)": "1.00000000000000",
+      "(2,1)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.24729788674803",
+     "E": "0.20906029879563"
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1",
+     "crossings": 4,
+     "chi": {
+      "(3,0)": "1.00000000000000",
+      "(2,1)": "-0.91067735027066"
+     },
+     "reading3_pass": false,
+     "trM": "0.28019564227269",
+     "E": "0.41812059759127"
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(3,0)": "1.00000000000000",
+      "(2,1)": "1.99418581297996"
+     },
+     "reading3_pass": true,
+     "trM": "0.99856216383678",
+     "E": "0.62718089638691"
+    }
+   ],
+   "picks": {
+    "admissible_nonidentity": 1,
+    "of": 3,
+    "min_crossings": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1"
+    ],
+    "min_crossings_value": 6,
+    "min_abs_trM": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1"
+    ],
+    "min_abs_trM_value": "0.99856216383678",
+    "min_E": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1"
+    ],
+    "note": "on gamma-gamma words E = crossings*h/2 (writhe 0), so min E = min crossings"
+   }
+  },
+  "H3_core_times_g": {
+   "rows": [
+    {
+     "word": "1",
+     "crossings": 0,
+     "chi": {
+      "(3,0)": "1.00000000000000",
+      "(2,1)": "1.99418581297996"
+     },
+     "reading3_pass": true,
+     "trM": "0.99856216383678",
+     "E": "0"
+    },
+    {
+     "word": "s0 s1^-1",
+     "crossings": 2,
+     "chi": {
+      "(3,0)": "1.00000000000000",
+      "(2,1)": "-1.17066676370399"
+     },
+     "reading3_pass": false,
+     "trM": "0.21590080975377",
+     "E": "0.20906029879563"
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1",
+     "crossings": 4,
+     "chi": {
+      "(3,0)": "1.00000000000000",
+      "(2,1)": "-0.77235364357942"
+     },
+     "reading3_pass": false,
+     "trM": "0.31440280262459",
+     "E": "0.41812059759127"
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(3,0)": "1.00000000000000",
+      "(2,1)": "1.97677705669056"
+     },
+     "reading3_pass": true,
+     "trM": "0.99425701519550",
+     "E": "0.62718089638691"
+    }
+   ],
+   "picks": {
+    "admissible_nonidentity": 1,
+    "of": 3,
+    "min_crossings": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1"
+    ],
+    "min_crossings_value": 6,
+    "min_abs_trM": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1"
+    ],
+    "min_abs_trM_value": "0.99425701519550",
+    "min_E": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1"
+    ],
+    "note": "on gamma-gamma words E = crossings*h/2 (writhe 0), so min E = min crossings"
+   }
+  },
+  "H3_ledger_on_core": [
+   {
+    "word": "s1",
+    "crossings": 1,
+    "chi": {
+     "(3,0)": "1.10997858275138",
+     "(2,1)": "0.23687135165230"
+    },
+    "reading3_pass": true,
+    "trM": "0.61956565174615",
+    "E": "1.10997858275138"
+   },
+   {
+    "word": "s0s0",
+    "crossings": 2,
+    "chi": {
+     "(3,0)": "1.23205245416676",
+     "(2,1)": "2.03182371842210"
+    },
+    "reading3_pass": true,
+    "trM": "1.12515022942074",
+    "E": "2.21995716550276"
+   },
+   {
+    "word": "Lm=s1s0",
+    "crossings": 2,
+    "chi": {
+     "(3,0)": "1.23205245416676",
+     "(2,1)": "-0.86115695471810"
+    },
+    "reading3_pass": false,
+    "trM": "0.40972222255026",
+    "E": "2.21995716550276"
+   },
+   {
+    "word": "V=s0s1^-1",
+    "crossings": 2,
+    "chi": {
+     "(3,0)": "1.00000000000000",
+     "(2,1)": "-1.17066676370399"
+    },
+    "reading3_pass": false,
+    "trM": "0.21590080975377",
+    "E": "0.20906029879563"
+   }
+  ],
+  "H3_core_times_g_exact": {
+   "V^3": {
+    "(3,0)": "1",
+    "(2,1)": "-(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**6"
+   },
+   "V^4": {
+    "(3,0)": "1",
+    "(2,1)": "(q**16 - 4*q**14 + 6*q**12 - 8*q**10 + 9*q**8 - 8*q**6 + 6*q**4 - 4*q**2 + 1)/q**8"
+   },
+   "V^5": {
+    "(3,0)": "1",
+    "(2,1)": "-(q**4 - q**2 + 1)*(q**16 - 4*q**14 + 5*q**12 - 6*q**10 + 9*q**8 - 6*q**6 + 5*q**4 - 4*q**2 + 1)/q**10"
+   },
+   "V^6": {
+    "(3,0)": "1",
+    "(2,1)": "(q**8 - 2*q**6 + q**4 - 2*q**2 + 1)*(q**16 - 4*q**14 + 6*q**12 - 8*q**10 + 8*q**8 - 8*q**6 + 6*q**4 - 4*q**2 + 1)/q**12"
+   }
+  },
+  "H4_bare": {
+   "rows": [
+    {
+     "word": "1",
+     "crossings": 0,
+     "chi": {
+      "(4,0)": "1",
+      "(3,1)": "3",
+      "(2,2)": "2"
+     },
+     "reading3_pass": true,
+     "trM": "1.00000000000000",
+     "E": "0"
+    },
+    {
+     "word": "s0 s1^-1",
+     "crossings": 2,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "-0.04370620853252",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.24729788674803",
+     "E": "0.20906029879563"
+    },
+    {
+     "word": "s1 s2^-1",
+     "crossings": 2,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "-0.04370620853252",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.24729788674803",
+     "E": "0.20906029879563"
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1",
+     "crossings": 4,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "0.08932264972933",
+      "(2,2)": "-0.91067735027066"
+     },
+     "reading3_pass": false,
+     "trM": "0.28019564227269",
+     "E": "0.41812059759127"
+    },
+    {
+     "word": "s0 s1^-1 s1 s2^-1",
+     "crossings": 4,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "-1.04370620853252",
+      "(2,2)": "2.00000000000000"
+     },
+     "reading3_pass": false,
+     "trM": "0.24729788674803",
+     "E": "0.41812059759127"
+    },
+    {
+     "word": "s1 s2^-1 s0 s1^-1",
+     "crossings": 4,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "-1.04370620853252",
+      "(2,2)": "2.00000000000000"
+     },
+     "reading3_pass": false,
+     "trM": "0.24729788674803",
+     "E": "0.41812059759127"
+    },
+    {
+     "word": "s1 s2^-1 s1 s2^-1",
+     "crossings": 4,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "0.08932264972933",
+      "(2,2)": "-0.91067735027066"
+     },
+     "reading3_pass": false,
+     "trM": "0.28019564227269",
+     "E": "0.41812059759127"
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "2.99418581297996",
+      "(2,2)": "1.99418581297996"
+     },
+     "reading3_pass": true,
+     "trM": "0.99856216383678",
+     "E": "0.62718089638691"
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1 s1 s2^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "-0.38492439155649",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.18378297389403",
+     "E": "0.62718089638691"
+    },
+    {
+     "word": "s0 s1^-1 s1 s2^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "-0.38492439155649",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.18378297389403",
+     "E": "0.62718089638691"
+    },
+    {
+     "word": "s0 s1^-1 s1 s2^-1 s1 s2^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "0.47424704128582",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.34371055512669",
+     "E": "0.62718089638691"
+    },
+    {
+     "word": "s1 s2^-1 s0 s1^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "-0.38492439155649",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.18378297389403",
+     "E": "0.62718089638691"
+    },
+    {
+     "word": "s1 s2^-1 s0 s1^-1 s1 s2^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "0.47424704128582",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.34371055512669",
+     "E": "0.62718089638691"
+    },
+    {
+     "word": "s1 s2^-1 s1 s2^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "0.47424704128582",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.34371055512669",
+     "E": "0.62718089638691"
+    },
+    {
+     "word": "s1 s2^-1 s1 s2^-1 s1 s2^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "1.00000000000000",
+      "(3,1)": "2.99418581297996",
+      "(2,2)": "1.99418581297996"
+     },
+     "reading3_pass": true,
+     "trM": "0.99856216383678",
+     "E": "0.62718089638691"
+    }
+   ],
+   "picks": {
+    "admissible_nonidentity": 2,
+    "of": 14,
+    "min_crossings": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "s1 s2^-1 s1 s2^-1 s1 s2^-1"
+    ],
+    "min_crossings_value": 6,
+    "min_abs_trM": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "s1 s2^-1 s1 s2^-1 s1 s2^-1"
+    ],
+    "min_abs_trM_value": "0.99856216383678",
+    "min_E": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "s1 s2^-1 s1 s2^-1 s1 s2^-1"
+    ],
+    "note": "on gamma-gamma words E = crossings*h/2 (writhe 0), so min E = min crossings"
+   }
+  },
+  "H4_hydrogen_core_g_K": {
+   "rows": [
+    {
+     "word": "1",
+     "crossings": 0,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "2.54578580742952",
+      "(2,2)": "1.99418581297996"
+     },
+     "reading3_pass": true,
+     "trM": "0.76654424316163",
+     "E": "0",
+     "touches_electron_strand": false
+    },
+    {
+     "word": "s0 s1^-1",
+     "crossings": 2,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "0.46083847650039",
+      "(2,2)": "-1.17066676370399"
+     },
+     "reading3_pass": false,
+     "trM": "0.18489822468247",
+     "E": "0.20906029879563",
+     "touches_electron_strand": false
+    },
+    {
+     "word": "s1 s2^-1",
+     "crossings": 2,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "-0.33366186076434",
+      "(2,2)": "-0.91067735027066"
+     },
+     "reading3_pass": false,
+     "trM": "0.05290860357858",
+     "E": "0.20906029879563",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1",
+     "crossings": 4,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "0.72323991750145",
+      "(2,2)": "-0.77235364357942"
+     },
+     "reading3_pass": false,
+     "trM": "0.25810139443997",
+     "E": "0.41812059759127",
+     "touches_electron_strand": false
+    },
+    {
+     "word": "s0 s1^-1 s1 s2^-1",
+     "crossings": 4,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "-0.98247108539928",
+      "(2,2)": "1.99418581297996"
+     },
+     "reading3_pass": false,
+     "trM": "0.10978871188088",
+     "E": "0.41812059759127",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s1 s2^-1 s0 s1^-1",
+     "crossings": 4,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "-0.98247108539928",
+      "(2,2)": "1.99418581297996"
+     },
+     "reading3_pass": false,
+     "trM": "0.10978871188088",
+     "E": "0.41812059759127",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s1 s2^-1 s1 s2^-1",
+     "crossings": 4,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "0.01602238990777",
+      "(2,2)": "-1.04370620853252"
+     },
+     "reading3_pass": false,
+     "trM": "0.10986385874553",
+     "E": "0.41812059759127",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "2.53431723532990",
+      "(2,2)": "1.97677705669056"
+     },
+     "reading3_pass": true,
+     "trM": "0.76334481015897",
+     "E": "0.62718089638691",
+     "touches_electron_strand": false
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1 s1 s2^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "-0.51112499444984",
+      "(2,2)": "-1.17066676370399"
+     },
+     "reading3_pass": false,
+     "trM": "0.00397534827660",
+     "E": "0.62718089638691",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s0 s1^-1 s1 s2^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "-0.51112499444984",
+      "(2,2)": "-1.17066676370399"
+     },
+     "reading3_pass": false,
+     "trM": "0.00397534827660",
+     "E": "0.62718089638691",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s0 s1^-1 s1 s2^-1 s1 s2^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "0.19136400261945",
+      "(2,2)": "-0.91067735027066"
+     },
+     "reading3_pass": false,
+     "trM": "0.15063777985925",
+     "E": "0.62718089638691",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s1 s2^-1 s0 s1^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "-0.51112499444984",
+      "(2,2)": "-1.17066676370399"
+     },
+     "reading3_pass": false,
+     "trM": "0.00397534827660",
+     "E": "0.62718089638691",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s1 s2^-1 s0 s1^-1 s1 s2^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "1.16754046062935",
+      "(2,2)": "-0.91067735027066"
+     },
+     "reading3_pass": false,
+     "trM": "0.33234486859395",
+     "E": "0.62718089638691",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s1 s2^-1 s1 s2^-1 s0 s1^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "0.19136400261945",
+      "(2,2)": "-0.91067735027066"
+     },
+     "reading3_pass": false,
+     "trM": "0.15063777985925",
+     "E": "0.62718089638691",
+     "touches_electron_strand": true
+    },
+    {
+     "word": "s1 s2^-1 s1 s2^-1 s1 s2^-1",
+     "crossings": 6,
+     "chi": {
+      "(4,0)": "0.53470273505649",
+      "(3,1)": "2.53050243464911",
+      "(2,2)": "2.00000000000000"
+     },
+     "reading3_pass": true,
+     "trM": "0.76405494490228",
+     "E": "0.62718089638691",
+     "touches_electron_strand": true
+    }
+   ],
+   "picks": {
+    "admissible_nonidentity": 2,
+    "of": 14,
+    "min_crossings": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "s1 s2^-1 s1 s2^-1 s1 s2^-1"
+    ],
+    "min_crossings_value": 6,
+    "min_abs_trM": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1"
+    ],
+    "min_abs_trM_value": "0.76334481015897",
+    "min_E": [
+     "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "s1 s2^-1 s1 s2^-1 s1 s2^-1"
+    ],
+    "note": "on gamma-gamma words E = crossings*h/2 (writhe 0), so min E = min crossings"
+   }
+  },
+  "H8_bare": {
+   "pass_count": 43,
+   "of": 258,
+   "passing_words": [
+    "s0 s1^-1 s1 s2^-1",
+    "s1 s2^-1 s0 s1^-1",
+    "s1 s2^-1 s2 s3^-1",
+    "s2 s3^-1 s1 s2^-1",
+    "s2 s3^-1 s3 s4^-1",
+    "s3 s4^-1 s2 s3^-1",
+    "s3 s4^-1 s4 s5^-1",
+    "s4 s5^-1 s3 s4^-1",
+    "s4 s5^-1 s5 s6^-1",
+    "s5 s6^-1 s4 s5^-1",
+    "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+    "s0 s1^-1 s1 s2^-1 s1 s2^-1",
+    "s0 s1^-1 s1 s2^-1 s2 s3^-1",
+    "s1 s2^-1 s0 s1^-1 s1 s2^-1",
+    "s1 s2^-1 s1 s2^-1 s0 s1^-1",
+    "s1 s2^-1 s1 s2^-1 s1 s2^-1",
+    "s1 s2^-1 s2 s3^-1 s0 s1^-1",
+    "s1 s2^-1 s2 s3^-1 s2 s3^-1",
+    "s1 s2^-1 s2 s3^-1 s3 s4^-1",
+    "s2 s3^-1 s0 s1^-1 s1 s2^-1",
+    "s2 s3^-1 s1 s2^-1 s2 s3^-1",
+    "s2 s3^-1 s2 s3^-1 s1 s2^-1",
+    "s2 s3^-1 s2 s3^-1 s2 s3^-1",
+    "s2 s3^-1 s3 s4^-1 s1 s2^-1",
+    "s2 s3^-1 s3 s4^-1 s3 s4^-1",
+    "s2 s3^-1 s3 s4^-1 s4 s5^-1",
+    "s3 s4^-1 s1 s2^-1 s2 s3^-1",
+    "s3 s4^-1 s2 s3^-1 s3 s4^-1",
+    "s3 s4^-1 s3 s4^-1 s2 s3^-1",
+    "s3 s4^-1 s3 s4^-1 s3 s4^-1",
+    "s3 s4^-1 s4 s5^-1 s2 s3^-1",
+    "s3 s4^-1 s4 s5^-1 s4 s5^-1",
+    "s3 s4^-1 s4 s5^-1 s5 s6^-1",
+    "s4 s5^-1 s2 s3^-1 s3 s4^-1",
+    "s4 s5^-1 s3 s4^-1 s4 s5^-1",
+    "s4 s5^-1 s4 s5^-1 s3 s4^-1",
+    "s4 s5^-1 s4 s5^-1 s4 s5^-1",
+    "s4 s5^-1 s5 s6^-1 s3 s4^-1",
+    "s4 s5^-1 s5 s6^-1 s5 s6^-1",
+    "s5 s6^-1 s3 s4^-1 s4 s5^-1",
+    "s5 s6^-1 s4 s5^-1 s5 s6^-1",
+    "s5 s6^-1 s5 s6^-1 s4 s5^-1",
+    "s5 s6^-1 s5 s6^-1 s5 s6^-1"
+   ],
+   "picks": {
+    "admissible_nonidentity": 43,
+    "of": 258,
+    "min_crossings": [
+     "s0 s1^-1 s1 s2^-1",
+     "s1 s2^-1 s0 s1^-1",
+     "s1 s2^-1 s2 s3^-1",
+     "s2 s3^-1 s1 s2^-1",
+     "s2 s3^-1 s3 s4^-1",
+     "s3 s4^-1 s2 s3^-1",
+     "s3 s4^-1 s4 s5^-1",
+     "s4 s5^-1 s3 s4^-1",
+     "s4 s5^-1 s5 s6^-1",
+     "s5 s6^-1 s4 s5^-1"
+    ],
+    "min_crossings_value": 4,
+    "min_abs_trM": [
+     "s0 s1^-1 s1 s2^-1",
+     "s1 s2^-1 s0 s1^-1",
+     "s1 s2^-1 s2 s3^-1",
+     "s2 s3^-1 s1 s2^-1",
+     "s2 s3^-1 s3 s4^-1",
+     "s3 s4^-1 s2 s3^-1",
+     "s3 s4^-1 s4 s5^-1",
+     "s4 s5^-1 s3 s4^-1",
+     "s4 s5^-1 s5 s6^-1",
+     "s5 s6^-1 s4 s5^-1",
+     "s0 s1^-1 s1 s2^-1 s2 s3^-1",
+     "s1 s2^-1 s2 s3^-1 s0 s1^-1",
+     "s1 s2^-1 s2 s3^-1 s3 s4^-1",
+     "s2 s3^-1 s0 s1^-1 s1 s2^-1",
+     "s2 s3^-1 s3 s4^-1 s1 s2^-1",
+     "s2 s3^-1 s3 s4^-1 s4 s5^-1",
+     "s3 s4^-1 s1 s2^-1 s2 s3^-1",
+     "s3 s4^-1 s4 s5^-1 s2 s3^-1",
+     "s3 s4^-1 s4 s5^-1 s5 s6^-1",
+     "s4 s5^-1 s2 s3^-1 s3 s4^-1",
+     "s4 s5^-1 s5 s6^-1 s3 s4^-1",
+     "s5 s6^-1 s3 s4^-1 s4 s5^-1"
+    ],
+    "min_abs_trM_value": "0.24729788674803",
+    "min_E": [
+     "s0 s1^-1 s1 s2^-1",
+     "s1 s2^-1 s0 s1^-1",
+     "s1 s2^-1 s2 s3^-1",
+     "s2 s3^-1 s1 s2^-1",
+     "s2 s3^-1 s3 s4^-1",
+     "s3 s4^-1 s2 s3^-1",
+     "s3 s4^-1 s4 s5^-1",
+     "s4 s5^-1 s3 s4^-1",
+     "s4 s5^-1 s5 s6^-1",
+     "s5 s6^-1 s4 s5^-1"
+    ],
+    "note": "on gamma-gamma words E = crossings*h/2 (writhe 0), so min E = min crossings"
+   },
+   "failing_blocks_histogram": {
+    "(4,4)": 149,
+    "(6,2)": 110,
+    "(5,3)": 77,
+    "(7,1)": 60
+   },
+   "post_hoc_free_reduction_of_passing_words": [
+    {
+     "word": "s0 s1^-1 s1 s2^-1",
+     "freely_reduced": "s0 s2^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s1 s2^-1 s0 s1^-1",
+     "freely_reduced": "s1 s2^-1 s0 s1^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s1 s2^-1 s2 s3^-1",
+     "freely_reduced": "s1 s3^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s2 s3^-1 s1 s2^-1",
+     "freely_reduced": "s2 s3^-1 s1 s2^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s2 s3^-1 s3 s4^-1",
+     "freely_reduced": "s2 s4^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s3 s4^-1 s2 s3^-1",
+     "freely_reduced": "s3 s4^-1 s2 s3^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s3 s4^-1 s4 s5^-1",
+     "freely_reduced": "s3 s5^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s4 s5^-1 s3 s4^-1",
+     "freely_reduced": "s4 s5^-1 s3 s4^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s4 s5^-1 s5 s6^-1",
+     "freely_reduced": "s4 s6^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s5 s6^-1 s4 s5^-1",
+     "freely_reduced": "s5 s6^-1 s4 s5^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "freely_reduced": "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s0 s1^-1 s1 s2^-1 s1 s2^-1",
+     "freely_reduced": "s0 s2^-1 s1 s2^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s0 s1^-1 s1 s2^-1 s2 s3^-1",
+     "freely_reduced": "s0 s3^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s1 s2^-1 s0 s1^-1 s1 s2^-1",
+     "freely_reduced": "s1 s2^-1 s0 s2^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s1 s2^-1 s1 s2^-1 s0 s1^-1",
+     "freely_reduced": "s1 s2^-1 s1 s2^-1 s0 s1^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s1 s2^-1 s1 s2^-1 s1 s2^-1",
+     "freely_reduced": "s1 s2^-1 s1 s2^-1 s1 s2^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s1 s2^-1 s2 s3^-1 s0 s1^-1",
+     "freely_reduced": "s1 s3^-1 s0 s1^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s1 s2^-1 s2 s3^-1 s2 s3^-1",
+     "freely_reduced": "s1 s3^-1 s2 s3^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s1 s2^-1 s2 s3^-1 s3 s4^-1",
+     "freely_reduced": "s1 s4^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s2 s3^-1 s0 s1^-1 s1 s2^-1",
+     "freely_reduced": "s2 s3^-1 s0 s2^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s2 s3^-1 s1 s2^-1 s2 s3^-1",
+     "freely_reduced": "s2 s3^-1 s1 s3^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s2 s3^-1 s2 s3^-1 s1 s2^-1",
+     "freely_reduced": "s2 s3^-1 s2 s3^-1 s1 s2^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s2 s3^-1 s2 s3^-1 s2 s3^-1",
+     "freely_reduced": "s2 s3^-1 s2 s3^-1 s2 s3^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s2 s3^-1 s3 s4^-1 s1 s2^-1",
+     "freely_reduced": "s2 s4^-1 s1 s2^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s2 s3^-1 s3 s4^-1 s3 s4^-1",
+     "freely_reduced": "s2 s4^-1 s3 s4^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s2 s3^-1 s3 s4^-1 s4 s5^-1",
+     "freely_reduced": "s2 s5^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s3 s4^-1 s1 s2^-1 s2 s3^-1",
+     "freely_reduced": "s3 s4^-1 s1 s3^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s3 s4^-1 s2 s3^-1 s3 s4^-1",
+     "freely_reduced": "s3 s4^-1 s2 s4^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s3 s4^-1 s3 s4^-1 s2 s3^-1",
+     "freely_reduced": "s3 s4^-1 s3 s4^-1 s2 s3^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s3 s4^-1 s3 s4^-1 s3 s4^-1",
+     "freely_reduced": "s3 s4^-1 s3 s4^-1 s3 s4^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s3 s4^-1 s4 s5^-1 s2 s3^-1",
+     "freely_reduced": "s3 s5^-1 s2 s3^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s3 s4^-1 s4 s5^-1 s4 s5^-1",
+     "freely_reduced": "s3 s5^-1 s4 s5^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s3 s4^-1 s4 s5^-1 s5 s6^-1",
+     "freely_reduced": "s3 s6^-1",
+     "reduced_crossings": 2
+    },
+    {
+     "word": "s4 s5^-1 s2 s3^-1 s3 s4^-1",
+     "freely_reduced": "s4 s5^-1 s2 s4^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s4 s5^-1 s3 s4^-1 s4 s5^-1",
+     "freely_reduced": "s4 s5^-1 s3 s5^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s4 s5^-1 s4 s5^-1 s3 s4^-1",
+     "freely_reduced": "s4 s5^-1 s4 s5^-1 s3 s4^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s4 s5^-1 s4 s5^-1 s4 s5^-1",
+     "freely_reduced": "s4 s5^-1 s4 s5^-1 s4 s5^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s4 s5^-1 s5 s6^-1 s3 s4^-1",
+     "freely_reduced": "s4 s6^-1 s3 s4^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s4 s5^-1 s5 s6^-1 s5 s6^-1",
+     "freely_reduced": "s4 s6^-1 s5 s6^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s5 s6^-1 s3 s4^-1 s4 s5^-1",
+     "freely_reduced": "s5 s6^-1 s3 s5^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s5 s6^-1 s4 s5^-1 s5 s6^-1",
+     "freely_reduced": "s5 s6^-1 s4 s6^-1",
+     "reduced_crossings": 4
+    },
+    {
+     "word": "s5 s6^-1 s5 s6^-1 s4 s5^-1",
+     "freely_reduced": "s5 s6^-1 s5 s6^-1 s4 s5^-1",
+     "reduced_crossings": 6
+    },
+    {
+     "word": "s5 s6^-1 s5 s6^-1 s5 s6^-1",
+     "freely_reduced": "s5 s6^-1 s5 s6^-1 s5 s6^-1",
+     "reduced_crossings": 6
+    }
+   ],
+   "post_hoc_passing_words_that_are_freely_reduced_already": [
+    "s1 s2^-1 s0 s1^-1",
+    "s2 s3^-1 s1 s2^-1",
+    "s3 s4^-1 s2 s3^-1",
+    "s4 s5^-1 s3 s4^-1",
+    "s5 s6^-1 s4 s5^-1",
+    "s0 s1^-1 s0 s1^-1 s0 s1^-1",
+    "s1 s2^-1 s1 s2^-1 s0 s1^-1",
+    "s1 s2^-1 s1 s2^-1 s1 s2^-1",
+    "s2 s3^-1 s2 s3^-1 s1 s2^-1",
+    "s2 s3^-1 s2 s3^-1 s2 s3^-1",
+    "s3 s4^-1 s3 s4^-1 s2 s3^-1",
+    "s3 s4^-1 s3 s4^-1 s3 s4^-1",
+    "s4 s5^-1 s4 s5^-1 s3 s4^-1",
+    "s4 s5^-1 s4 s5^-1 s4 s5^-1",
+    "s5 s6^-1 s5 s6^-1 s4 s5^-1",
+    "s5 s6^-1 s5 s6^-1 s5 s6^-1"
+   ]
+  }
+ },
+ "checks": [
+  {
+   "name": "C1 E(sigma_last) = z_D * 1 at q0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 E(1) = 1 at q0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 E(sigma_last) = z_D * 1 at q=3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 E(1) = 1 at q=3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "P1 derived arm: no intra-pair letter anywhere (pair creation and BW place no letters)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "P1 G0: cross-pair quark-quark letters = exactly the 6 core letters; the 6 capture letters are quark-lepton",
+   "pass": true,
+   "detail": "{'quark-lepton': 6, 'cross-pair quark-quark': 6}"
+  },
+  {
+   "name": "P2 disposal exact: A-ann c = 1, A-bar c = tr_M(V^3 on H_3) at q0",
+   "pass": true,
+   "detail": "tr_M(V^3) = 0.99856216383678"
+  },
+  {
+   "name": "P2 disposal exact: A-ann c = 1, A-bar c = tr_M(V^3 on H_3) at q=3",
+   "pass": true,
+   "detail": "tr_M(V^3) = -45.01679012345679"
+  },
+  {
+   "name": "P4 all four ledger words occur in gamma(phi)gamma(psi) with coefficients phi1+psi1, phi0 psi0, phi1 psi0, phi01+psi01",
+   "pass": true,
+   "detail": "{\"s1\": \"phi1 + psi1\", \"s0s0\": \"phi0*psi0\", \"Lm=s1s0\": \"phi1*psi0\", \"V=s0s1^-1\": \"phi01 + psi01\"}"
+  },
+  {
+   "name": "P4 derived weights: words = {1, V, V V} only, NF equals NF(V^3)",
+   "pass": true,
+   "detail": "{'1': '1', 's0 s1^-1': '(q - 1)**2*(q + 1)**2/q**2', 's0 s1^-1 s0 s1^-1': '-(q - 1)**2*(q + 1)**2/q**2'}"
+  },
+  {
+   "name": "P3 only V among the ledger candidates has writhe 0 (every gamma-gamma word has writhe 0)",
+   "pass": true,
+   "detail": "{\"s1\": 1, \"s0s0\": 2, \"Lm=s1s0\": 2, \"V=s0s1^-1\": 0, \"every gamma-gamma word\": 0}"
+  },
+  {
+   "name": "P5 H_3: core.V^k passes reading 3 for k in {0,3} only (k<=3)",
+   "pass": true,
+   "detail": "['1', 's0 s1^-1 s0 s1^-1 s0 s1^-1']"
+  }
+ ],
+ "checks_passed": "12/12"
+}
