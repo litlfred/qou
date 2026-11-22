@@ -98,6 +98,126 @@ theorem exists_cornerOf {μ : Fin d → ℕ} (hμ : IsDom μ) {c : ℕ × ℕ}
 end Corner
 
 
+section Reconstruct
+
+/-- Every cell lies below a corner. -/
+theorem exists_corner_ge (P : YoungDiagram) {v : ℕ × ℕ} (hv : v ∈ P) :
+    ∃ w, IsCornerCell P w ∧ v ≤ w := by
+  classical
+  obtain ⟨w, hwS, hmax⟩ := (P.cells.filter (v ≤ ·)).exists_max_image (fun w => w.1 + w.2)
+    ⟨v, Finset.mem_filter.mpr ⟨hv, le_rfl⟩⟩
+  obtain ⟨hwP, hvw⟩ := Finset.mem_filter.mp hwS
+  refine ⟨w, ⟨hwP, fun h => ?_, fun h => ?_⟩, hvw⟩
+  · have := hmax _ (Finset.mem_filter.mpr ⟨h, hvw.trans (Prod.mk_le_mk.mpr ⟨by omega, le_rfl⟩)⟩)
+    simp at this
+  · have := hmax _ (Finset.mem_filter.mpr ⟨h, hvw.trans (Prod.mk_le_mk.mpr ⟨le_rfl, by omega⟩)⟩)
+    simp at this
+
+/-- A diagram with a single corner `u` is the rectangle below `u`. -/
+theorem mem_iff_le_of_unique_corner (P : YoungDiagram) {u : ℕ × ℕ} (hu : IsCornerCell P u)
+    (huniq : ∀ w, IsCornerCell P w → w = u) (v : ℕ × ℕ) : v ∈ P ↔ v ≤ u := by
+  constructor
+  · intro hv
+    obtain ⟨w, hw, hvw⟩ := exists_corner_ge P hv
+    exact huniq w hw ▸ hvw
+  · intro hvu; exact P.isLowerSet hvu hu.1
+
+/-- The coordinate step of the rectangle comparison. -/
+theorem fst_le_of_rect_erase {a b a' b' : ℕ} (ha : 2 ≤ a + b) (ha' : 2 ≤ a' + b')
+    (hE : ∀ i j : ℕ, ((i ≤ a ∧ j ≤ b) ∧ (i, j) ≠ (a, b))
+      ↔ ((i ≤ a' ∧ j ≤ b') ∧ (i, j) ≠ (a', b'))) : a ≤ a' := by
+  by_contra hlt
+  rcases Nat.eq_zero_or_pos b with hb | hb
+  · have h1 := (hE (a - 1) 0).mp ⟨⟨by omega, by omega⟩, by simp; omega⟩
+    have h2 := (hE 0 1).mpr ⟨⟨by omega, by simp at h1; omega⟩, by simp; omega⟩
+    omega
+  · have := (hE a (b - 1)).mp ⟨⟨le_rfl, by omega⟩, by simp; omega⟩
+    omega
+
+/-- A diagram with at least three cells and one corner `u` has `u.1 + u.2 ≥ 2`. -/
+theorem two_le_of_unique_corner (P : YoungDiagram) (h3 : 3 ≤ P.cells.card) {u : ℕ × ℕ}
+    (hu : IsCornerCell P u) (huniq : ∀ w, IsCornerCell P w → w = u) : 2 ≤ u.1 + u.2 := by
+  classical
+  by_contra hlt
+  have hsub : P.cells ⊆ {(0, 0), u} := by
+    intro v hv
+    have := (mem_iff_le_of_unique_corner P hu huniq v).mp hv
+    obtain ⟨h1, h2⟩ := Prod.mk_le_mk.mp (show (v.1, v.2) ≤ (u.1, u.2) from this)
+    simp only [Finset.mem_insert, Finset.mem_singleton]
+    by_cases hv0 : v = (0, 0)
+    · exact Or.inl hv0
+    · right; refine Prod.ext ?_ ?_ <;>
+        · have : v.1 ≠ 0 ∨ v.2 ≠ 0 := by
+            by_contra hh; push_neg at hh; exact hv0 (Prod.ext hh.1 hh.2)
+          omega
+  have := (Finset.card_le_card hsub).trans (Finset.card_le_two)
+  omega
+
+/-- **Young's lattice is reconstructible from its down-sets above size two.**  Two diagrams
+with at least three cells whose corner erasures agree (in both directions) are equal. -/
+theorem eq_of_eraseCorner_iff (P Λ : YoungDiagram) (hcard : P.cells.card = Λ.cells.card)
+    (h3 : 3 ≤ P.cells.card)
+    (hPΛ : ∀ p (hp : IsCornerCell P p), ∃ c, ∃ hc : IsCornerCell Λ c,
+      eraseCorner P p hp = eraseCorner Λ c hc)
+    (hΛP : ∀ c (hc : IsCornerCell Λ c), ∃ p, ∃ hp : IsCornerCell P p,
+      eraseCorner Λ c hc = eraseCorner P p hp) : P = Λ := by
+  classical
+  -- two corners give an inclusion
+  have incl : ∀ (A B : YoungDiagram) (hAB : ∀ p (hp : IsCornerCell A p), ∃ c,
+      ∃ hc : IsCornerCell B c, eraseCorner A p hp = eraseCorner B c hc)
+      (p₁ p₂ : ℕ × ℕ), IsCornerCell A p₁ → IsCornerCell A p₂ → p₁ ≠ p₂ →
+      A.cells ⊆ B.cells := by
+    intro A B hAB p₁ p₂ h₁ h₂ hne v hv
+    by_cases hv1 : v = p₁
+    · obtain ⟨c, hc, he⟩ := hAB p₂ h₂
+      have : v ∈ eraseCorner A p₂ h₂ := (mem_eraseCorner _ _ _ _).mpr ⟨hv, hv1 ▸ hne⟩
+      rw [he, mem_eraseCorner] at this; exact this.1
+    · obtain ⟨c, hc, he⟩ := hAB p₁ h₁
+      have : v ∈ eraseCorner A p₁ h₁ := (mem_eraseCorner _ _ _ _).mpr ⟨hv, hv1⟩
+      rw [he, mem_eraseCorner] at this; exact this.1
+  have hP0 : 0 < P.cells.card := by omega
+  obtain ⟨v₀, hv₀⟩ := Finset.card_pos.mp hP0
+  obtain ⟨u, hu, -⟩ := exists_corner_ge P hv₀
+  obtain ⟨c, hc, hPu⟩ := hPΛ u hu
+  by_cases hPu2 : ∃ w, IsCornerCell P w ∧ w ≠ u
+  · obtain ⟨w, hw, hwu⟩ := hPu2
+    exact YoungDiagram.ext (Finset.eq_of_subset_of_card_le
+      (incl P Λ hPΛ w u hw hu hwu) hcard.ge)
+  push_neg at hPu2
+  by_cases hΛc2 : ∃ w, IsCornerCell Λ w ∧ w ≠ c
+  · obtain ⟨w, hw, hwc⟩ := hΛc2
+    exact (YoungDiagram.ext (Finset.eq_of_subset_of_card_le
+      (incl Λ P hΛP w c hw hc hwc) hcard.le)).symm
+  push_neg at hΛc2
+  -- both are rectangles
+  have hrP := mem_iff_le_of_unique_corner P hu hPu2
+  have hrΛ := mem_iff_le_of_unique_corner Λ hc hΛc2
+  have hE : ∀ v : ℕ × ℕ, (v ≤ u ∧ v ≠ u) ↔ (v ≤ c ∧ v ≠ c) := by
+    intro v
+    have := congrArg (fun D : YoungDiagram => v ∈ D) hPu
+    simp only [mem_eraseCorner, hrP, hrΛ, eq_iff_iff] at this
+    exact this
+  have h2u := two_le_of_unique_corner P h3 hu hPu2
+  have h2c := two_le_of_unique_corner Λ (hcard ▸ h3) hc hΛc2
+  have hE' : ∀ i j : ℕ, ((i ≤ u.1 ∧ j ≤ u.2) ∧ (i, j) ≠ (u.1, u.2))
+      ↔ ((i ≤ c.1 ∧ j ≤ c.2) ∧ (i, j) ≠ (c.1, c.2)) := fun i j => by
+    simpa [Prod.mk_le_mk] using hE (i, j)
+  have hE'' : ∀ i j : ℕ, ((i ≤ u.2 ∧ j ≤ u.1) ∧ (i, j) ≠ (u.2, u.1))
+      ↔ ((i ≤ c.2 ∧ j ≤ c.1) ∧ (i, j) ≠ (c.2, c.1)) := fun i j => by
+    have := hE' j i
+    simp only [ne_eq, Prod.mk.injEq] at this ⊢
+    tauto
+  have e1 := fst_le_of_rect_erase h2u h2c hE'
+  have e2 := fst_le_of_rect_erase h2c h2u fun i j => (hE' i j).symm
+  have e3 := fst_le_of_rect_erase (by omega) (by omega) hE''
+  have e4 := fst_le_of_rect_erase (by omega) (by omega) fun i j => (hE'' i j).symm
+  have huc : u = c := Prod.ext (by omega) (by omega)
+  ext v
+  show v ∈ P ↔ v ∈ Λ
+  rw [hrP, hrΛ, huc]
+
+end Reconstruct
+
 section Count
 
 variable {L : Type*} [Field L] [LinearOrder L] [IsStrictOrderedRing L] {d : ℕ} [NeZero d]
