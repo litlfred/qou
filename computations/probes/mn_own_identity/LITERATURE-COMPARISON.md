@@ -1405,3 +1405,41 @@ with h = q − q⁻¹. The sign of S follows the placement of the proton, so the
 left/right convention for the bond, not by the p ↔ n label. Under the pre-registered decision rule
 that disqualifies it as a fixer. B2's S is O(h) and larger (+10.49, +10.44) because K is not
 relabel-symmetric on its own, so it carries no independent information.
+
+## §43 Bond chirality, and the corpus capture braid for hydrogen (pre-registered 1184bf6f38a)
+
+Owner, 2026-11-22: *"1"*, and *"what is the braid word for an electron bound with the proton? There
+should be one coming from Breit–Wheeler pair production and γγ processes."*
+(`mn_hydrogen_capture_chirality_probe.py`, exact over ℚ(q), 12 s.)
+
+**The corpus word.** The γγ shell model (`QOU.ShellCondensation.GammaGammaAtom`,
+`docs/audits/2026-11-21-magic-shells-gamma-gamma-model.md`) is step 6 of `def:derived-atom`, whose
+steps 1–4 build the nucleon from photons: γγ pair production → quark selection → Borromean
+confinement 𝓑₃ → LP gluon. With the nucleus as one strand, capture of electron k is
+K_k = A_{0k}⁻¹, the inverse pure braid in which electron k encircles the nucleus (Hopf closure,
+negative orientation), with e–e crossings σ and one emitted photon per capture. Hydrogen is
+W₁ = σ₀⁻². §42's bond (σ₂σ₃⁻¹)³ was my choice, not this rule. Arm 2 below cables the nucleus to its
+three strands, so the electron strand encircles the whole proton: W = (σ₀σ₁⁻¹)³·(σ₂σ₁σ₀σ₀σ₁σ₂)⁻¹.
+The cabling is the one choice made; the corpus model quotients the nucleus to one strand.
+
+| word | B1 O₊ (q₀) | B1 O₋ (q₀) | S_B1 exact | S_B1 (q₀) |
+|---|---|---|---|---|
+| bond G = (σ₂σ₃⁻¹)³, proton left | +8.16444 | −8.17292 | −4q·h⁴ | −0.00848 |
+| bond G, proton right | +8.12717 | −8.11909 | +(3q²+1)h⁴/q | +0.00808 |
+| bond G′ = (σ₂⁻¹σ₃)³, proton left | +8.20264 | −8.19077 | +(q²+1)(3q⁴−2q²+1)h⁴/q | +0.01187 |
+| bond G′, proton right | +8.19115 | −8.20342 | −(3q²+1)q³h⁴ | −0.01227 |
+| capture, proton left (4 strands) | +1.97252 | −2.08049 | −h²·[3]_q | −0.10797 |
+| capture, proton right | +2.08049 | −1.97252 | +h²·[3]_q | +0.10797 |
+
+(h = q − q⁻¹, [3]_q = q² + 1 + q⁻².) Every pre-registered prediction holds: ±6 and ±3 at q = 1,
+nothing zero at q₀, S(1) = 0. **No word fixes the orientation** (not found in the searched class).
+
+What the table shows:
+- In the 6-strand words, the sign of S is the product of two conventions: the bond's chirality and
+  which side the proton is placed on. Flipping either flips S. This is the reading fixed in
+  advance for "the asymmetry is a convention".
+- The capture braid breaks the relabel symmetry already at O(h²), with the clean exact form
+  ∓h²[3]_q. Its two placements are exact mirrors: O₊ on the left equals −O₋ on the right. So the
+  capture, too, ties the asymmetry to placement and does not fix the label.
+- The capture puts a charge share on the electron strand at O(h) (−0.336 under O₊, left). In the
+  6-strand bond words it was O(h³).
