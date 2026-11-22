@@ -252,10 +252,16 @@ Lean status:
 - **Proved, sorry-free (pilot, kept in a scratch file, not committed):** σ₁²·V³ is
   trace-neutral, tr(σ₁² V³) = tr(σ₁²) for every z and h. The proof runs the repo's verified
   evaluator `trWord` (`markov-trace-recursive-reducer`) with simp and ring.
-- **Not proved in Lean:** the two identities above. Expanded naively they are 256 and 512
-  positive words, and simp ran out of memory after 12 minutes on the proton case. A proof
-  needs an evaluator that merges like terms, with a lemma that the merge preserves the
-  trace. Additivity over several bonds at A ≥ 3 (§7) is still a conjecture.
+- **Proved in Lean, sorry-free:** the two identities above, and the two free traces, over any
+  field with 2 ≠ 0 (content block `prop:light-nuclei-a2-bond-tail`, namespace
+  `QOU.LightNucleiBond`). The naive expansion (256 and 512 positive words) ran out of memory, so
+  the proof uses a merging evaluator `ME` that collects like basis terms after each letter;
+  `ME_eq_P` proves it equals the plain expansion, and `tail_eq_trWord` writes that as a sum of
+  `trWord` over subwords. `bond_into_proton_vanishes` and `bond_into_neutron_vanishes` give the
+  zero at z² − hz − 1 = 0. The full file takes about 9 minutes with lean-direct.
+- **Not in Lean:** the step from the A = 2 word to the four-strand tail (`towerTr_disjoint`
+  applied by hand), the leading coefficients read off the identities, and additivity over
+  several bonds at A ≥ 3 (§7), which is still a conjecture.
 
 ## Reproduce
 
@@ -265,5 +271,6 @@ python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_prob
 python3 -u computations/probes/light_nuclei_a2_a3/he4_all_pairs_exact_probe.py  # about 6 min, needs python-flint
 python3 -u computations/probes/light_nuclei_a2_a3/bond_leading_order_probe.py  # about 70 s
 python3 -u computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py  # about 1 s
+lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-endomorphism/light-nuclei-a2-bond-tail.lean  # about 9 min; needs the reducer olean on LEAN_PATH
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```
