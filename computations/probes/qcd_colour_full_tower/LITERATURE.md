@@ -188,7 +188,7 @@ literature. Absence of evidence, searched surface as listed.
 |---|---|---|
 | Letzter, *Coideal subalgebras and quantum symmetric pairs*, math/0103228 — <https://arxiv.org/abs/math/0103228> | located | the founding construction: a q-analogue of U(𝔨) ⊂ U(𝔤) for a symmetric pair, as a coideal (not Hopf) subalgebra |
 | Balagović–Kolb, *Universal K-matrix for quantum symmetric pairs*, arXiv:1507.06276 — <https://arxiv.org/pdf/1507.06276> | verified (abstract) | K-matrix commuting with the coideal; reflection equation; braids in a cylinder (type B) |
-| Kolb–Stokman, *Reflection equation algebras, coideal subalgebras and their centres*, (search hit) math/0512581 — <https://arxiv.org/pdf/math/0512581> | located | reflection equation ↔ coideals |
+| Kolb, *Quantum symmetric pairs and the reflection equation* (single author; corrected 2026-11-22, previously mis-attributed to Kolb–Stokman), math/0512581 — <https://arxiv.org/pdf/math/0512581> | located | reflection equation ↔ coideals |
 | *Comparison of quantizations of symmetric spaces: cyclotomic KZ and Letzter–Kolb coideals*, arXiv:2009.06018 — <https://arxiv.org/pdf/2009.06018> | located | KZ side of the same objects (relevant to the K1–K3 KZ arms) |
 
 **Guidance (judgement).** This is the one mathematically sound route that the literature offers past
