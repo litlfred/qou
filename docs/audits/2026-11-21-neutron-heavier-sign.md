@@ -362,3 +362,29 @@ Implications:
    ε₃(V³·E(C)) covers any future choice, including a gluon letter on the new strand; if E(C) is
    not central it is no longer a pure block reweighting.
 3. No number here was compared with CODATA for selection (P5).
+
+## §24 Q_β for the light isotopes under the current rulings (2026-11-22, owner: "Q_β for low isotopes")
+
+At A ≤ 4 only the free neutron and ³H → ³He are β-emitters. With atomic masses,
+Q_β(³H) = Q_β(n) + B(³He) − B(³H). The free-neutron term is the ruled cell, E₀·|ε(V³)| = 325.43 keV.
+The binding energies are the γγ-chain values of `docs/audits/2026-11-22-light-nuclei-a2-a3-gg-chain.md`
+§2 (branch `claude/project-thread-4ieh97`, proton pin, `B_diff`), reused, not recomputed. The
+nucleon order is not fixed by the rulings, so every order is reported. Values in keV.
+
+| ³H order | ³He order | B(³He) − B(³H) | Q_β(³H) |
+|---|---|---:|---:|
+| pnn | ppn / pnp | −0.594 | 324.84 |
+| npn / nnp | ppn / pnp | −0.325 | 325.11 |
+| pnn | npp | −0.950 | 324.48 |
+| npn / nnp | npp | −0.681 | 324.75 |
+
+Comparison only: observed Q_β(³H) = 18.59 keV and Q_β(n) = 782.3 keV.
+
+- The chain binds each nucleus by about 1 keV and the two differ by less than 1 keV. So the model's
+  Q_β(³H) is the free-neutron term. Experiment needs B(³H) − B(³He) = 763.8 keV, most of it the
+  Coulomb energy of ³He. Nothing in the chain is of that size, and the miss is about 17×.
+- The §23 capture factors scale the neutron term to 298.0 keV (adjacent) or 247.1 keV (cabled).
+  That shifts every row by the same amount and does not close the gap.
+- With `B_log` instead of `B_diff`, B(³He) − B(³H) lies between −3.8 and 0 keV. The conclusion is
+  the same.
+- No A = 6 or A = 8 binding values exist yet, so ⁶He and ⁸Li are not given.
