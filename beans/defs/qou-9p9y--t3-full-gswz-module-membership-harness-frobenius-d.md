@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T18:29:31Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-cv7z
 ---
 
@@ -25,3 +25,7 @@ Was in-progress with no bean update since 2026-08-01 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8309, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-01: "chore(beans): qou-9p9y touch — dilog layer complete, eps_m remains"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**APPLIES.** pure number theory / q-series; no retired premise found; claim released by W4 2026-11-20 where applicable.

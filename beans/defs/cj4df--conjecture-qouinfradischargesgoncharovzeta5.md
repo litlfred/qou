@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-18T09:14:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-cv7z
 ---
 
@@ -16,3 +16,7 @@ parent: qou-cv7z
 ## Progress Update (2026-11-18 — Round 66, PR #8415)
 
 - Added conditional non-triviality of the spanned subspace (`span_ne_bot`), non-triviality of the relation kernel (`ker_ne_bot`), and non-zero generator witness (`exists_nonzero_generator`) in `QOU/AppendixSurreals/QouInfraDischargesGoncharovZeta5.lean` (PR litlfred/qou#8415).
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**APPLIES.** §3b open-conjecture carrier; no retired premise found; never closed (rule 13a).

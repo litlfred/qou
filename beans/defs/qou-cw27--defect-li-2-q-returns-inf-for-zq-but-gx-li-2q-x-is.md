@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T22:45:51Z
-updated_at: 2026-11-22T22:30:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-r9ih
 ---
 
@@ -85,3 +85,7 @@ Status left unchanged: resetting the claim and closing the PR are the owner's ca
 ## 2026-11-22 — applicability review (wave-2, owner instruction to review older beans against current rulings)
 
 **Applies as mathematics; its physics framing needs care.** The defect is real and pure: `li_2_q` returns inf for |z| ≥ q, while Li₂^q(z) = −h Σ_m ln(1 − z q^{−1−2m}) continues it. The consumer named in the bean is the atom-word brane tower in `borromean_binding_recompute.py`. That file is still on main. Whether that tower is a live binding route after the 2026-09-05 no-knot-selection ruling and the 2026-11-22 "binding as trace difference" ruling is not settled here, so fixing the guard is a precision fix (exemption 1) but any binding number it produces is not a current result. No dependence on strand colour, b = −qX, convention D, photon norm or U(1)_em.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**APPLIES.** continuation defect in li_2_q is real (precision fix); its binding consumer’s route status is unsettled, so no binding number from it is current.

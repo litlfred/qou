@@ -3,13 +3,13 @@
 title: 'GAP: QOU.Archimedean.BlochWigner_unit_circle is declared TWICE in one namespace — opaque vs defined, masked by a commented-out import, and it decides qou-006b''s epistemic status'
 status: completed
 pr: 8240
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T22:50:00Z
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T02:22:50Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-r9ih
 ---
 
@@ -77,3 +77,7 @@ class as the `substrate-anchor-alternatives.md` pointer AGENTS.md records.
 ## 2026-11-22 — completed (wave-2, thread "Work dilogarithm and Bloch beans")
 
 The duplicate declaration is gone on main (`cecac49f8e`, see `qou-tc8y`): one `def` in `BlochWignerUnitCircle.lean`, a theorem in the filler, and both imports live. The dead citations of `predicted-spectra/bloch-wigner-mathlib-filler.lean` (two docstrings, `BlochWignerUnitCircle.lean:36` and `EmCouplingBringZeroMode.lean:250`) are fixed in commit `b4f95d67bf` on branch `claude/bloch-group-complex-2026-11-22`; the PR waits on the owner's go. The PR #8240 note above does not bear on this bean: its theorem takes `D(0) = −D(0)` etc. as hypotheses over `ℝ`.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**ALREADY-DONE.** duplicate removed in cecac49f8e; dead-citation fix b4f95d67bf on local branch (PR waits on owner).

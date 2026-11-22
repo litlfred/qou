@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:07:54Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-rtxm
 ---
 
@@ -56,3 +56,7 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §B1, §F5.
 ## 2026-11-22 — completed (wave-2, thread "Work dilogarithm and Bloch beans")
 
 PR #8151 was closed unmerged, but its change was ported to main as `cecac49f8e` (2026-11-20, "port #8151"). On main now: `BlochWignerUnitCircle.lean:55` is `noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`; `BlochWignerMathlibFiller.lean` imports it and states `BlochWigner_unit_circle_eq_Cl_2` as a theorem (no second declaration); `QOU/Archimedean.lean:36` imports the filler (no longer commented out). `lean-verify` exit 0; `#print axioms BlochWigner_unit_circle_eq_Cl_2` = `[propext, Classical.choice, Quot.sound]`.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**ALREADY-DONE.** cecac49f8e on main: BlochWignerUnitCircle.lean:55 def := Cl_2; filler import live; axioms clean (re-checked 2026-11-22).

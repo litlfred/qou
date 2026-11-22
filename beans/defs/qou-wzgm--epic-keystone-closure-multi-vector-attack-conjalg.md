@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-19T02:56:27Z
-updated_at: 2026-11-22T22:30:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-r9ih
 ---
 
@@ -25,3 +25,7 @@ Open, as read from those beans: the single-V assembly; the eta^2 test, which has
 ## 2026-11-22 — applicability review (wave-2, owner instruction to review older beans against current rulings)
 
 **Half of the target is out of date.** `conj:binding-qbeta-complex-volume` (`mass-endomorphism/binding-qbeta-complex-volume.md`) makes binding the real part and Q_β the imaginary part of one trace defect E₀·tr_M((Π_free − 1)∘M). The real part matches today's working principle (binding as a trace difference, reconcile ⊗_# with γγ bonding first; ruling 2026-11-22, PR #8969). The imaginary part conflicts with the current Q_β route: Q_β comes from γγ pair production on the two-term Lagrangian trace (AGENTS.md headline rulings; owned by the coordinator, beans qou-99qc, qou-avtq). A 2026-11-22 ruling also records the pair word's trace near Q_β/E₀ as a coincidence, wired nowhere. So the "multi-vector attack" on this keystone should not start until the owner says whether Im 𝔙 = Q_β is still a conjecture to keep, restate or drop. Already tagged needs-owner; nothing done here.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**NEEDS-OWNER.** Im 𝔙 = Q_β conflicts with the γγ pair-production Q_β route; Re 𝔙 = binding agrees with the 2026-11-22 trace-difference ruling.

@@ -10,7 +10,7 @@ tags:
     - exposition
     - hyperbolic-volume
 created_at: 2026-08-10T05:00:00Z
-updated_at: 2026-10-04T15:11:12Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-mub3
 ---
 
@@ -225,3 +225,7 @@ Verified as before: ref resolves by `#check`; baseline unchanged at 42; positive
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-10 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**APPLIES.** exposition of sorry-free Lean results that no block cites; pure mathematics; writing new blocks, so check with the owner before a large batch.

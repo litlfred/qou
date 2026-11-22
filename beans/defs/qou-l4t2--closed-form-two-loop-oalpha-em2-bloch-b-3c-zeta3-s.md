@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T06:43:03Z
-updated_at: 2026-11-22T22:30:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-3l2l
 ---
 
@@ -54,3 +54,7 @@ This bean was set to completed by local commits on `cat/cat-harness/beans` (e223
 ## 2026-11-22 — applicability review (wave-2, owner instruction to review older beans against current rulings)
 
 **Blocked by current rulings; not workable as written.** The bean presumes one fixed-point loop tower for 1/α_EM and asks for its two-loop coefficient c_2 in closed form, with an accuracy table against experiment. Since 2026-11-21 the owner has ruled that the canonical α_em form stays open (`qou-aemx`; "no form is chosen by its residual") and that the dashboard carries the CS tower and the additive (A, B) forms as labelled arms. Until a form is chosen, "the" two-loop coefficient is not one object. The accuracy table is an empirical comparison and cannot enter a proof (owner: no empirical predictions in formal proofs). The resolution recorded 2026-11-19 was reopened 2026-11-20 because its files exist nowhere. A pure-math core that survives: for each labelled arm separately, decide whether its second-order coefficient lies in the Q-span of {ζ(3), π²·log 2, π², 1} (a period / Bloch-B₃ question), as a conditional statement per arm. That belongs to the α_em thread, which owns the chain. Status left as is.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**NEEDS-OWNER.** canonical α_em form open (qou-aemx, 2026-11-21); “the” two-loop coefficient is undefined until a form is chosen; α_em chain owned elsewhere.

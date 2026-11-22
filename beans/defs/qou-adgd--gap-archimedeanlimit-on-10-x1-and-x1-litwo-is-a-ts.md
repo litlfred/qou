@@ -5,7 +5,7 @@ status: in-progress
 pr: 8212
 type: task
 created_at: 2026-11-15T18:12:20Z
-updated_at: 2026-11-22T22:05:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-r9ih
 ---
 
@@ -27,3 +27,7 @@ Status left unchanged: resetting the claim and closing the PR are the owner's ca
 `QOU.Archimedean.archimedeanLimit_neg_Ioo : y < 0 → -1 < y → ArchimedeanLimit y`, new file `QOU/Archimedean/ArchimedeanLimitNegative.lean`, commit `a5ee034a3c` on branch `claude/bloch-group-complex-2026-11-22` (PR waits on the owner's go). Route: `denomPolyLocal_mul_neg` (`D_n(x;q) D_n(-x;q) = D_n(x²;q²)`), `LiTwo_add_LiTwo_neg` (`Li₂(x) + Li₂(-x) = Li₂(x²)/2` for `|x| ≤ 1`), then the proved `(0,1)` case at `x` and at `x²` (with `q²`), and `(1-q)/(1-q²) = 1/(1+q)`. Sorry-free; axioms `[propext, Classical.choice, Quot.sound]`; `lean-verify` exit 0.
 
 Still open on this bean: the endpoint `x = -1` (the same route needs the limit at `x² = 1`), `x = 1`, and the restatement for `x > 1`. The PR #8212 note above does not bear on any of this.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**APPLIES.** pure analysis; (−1,0) proved this pass (a5ee034a3c, local); x=−1, x=1, x>1 remain.

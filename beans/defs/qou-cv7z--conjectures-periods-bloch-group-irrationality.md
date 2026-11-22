@@ -6,8 +6,12 @@ type: epic
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:00Z
-updated_at: 2026-10-04T15:10:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: b9cj
 ---
 
 Sub-epic P2.PERIOD of UMBRELLA: open conjectures (formal mathematics only) (work-plan reorganisation 2026-10-04).
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**APPLIES.** epic; children reviewed individually this pass.

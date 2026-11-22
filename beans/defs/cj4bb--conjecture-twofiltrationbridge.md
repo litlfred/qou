@@ -7,7 +7,7 @@ priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-22T22:30:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-cv7z
 ---
 
@@ -19,3 +19,7 @@ parent: qou-cv7z
 ## 2026-11-22 — applicability review (wave-2, owner instruction to review older beans against current rulings)
 
 **The carrier encodes a definition, per the 2026-11-16 demoted-conjecture review.** `/mnt/project-files/qou-demoted-conjectures/two-filtration-bridge/result.md` (summary table there): `d_II` in `conj:two-filtration-bridge` is defined by the cases the general proposition then "proves", so the statement is a tautology. The unproved content is two identifications (H-match: Goldman # on Z(H_n) intertwines with orientation reversal on periods; H-parity) plus a knot assignment. It also records an open tension with the Φ_q truncation result (max hook vs the Lusztig a-function). The honest next step is to restate the `TwoFiltrationBridge` class around H-match and H-parity, not to inhabit it. That restatement belongs with the demoted-conjecture relabel (draft PR #8088) and the owner's call. The PR #8300 note above does not change this.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**RESCOPE.** 2026-11-16 demoted-conjecture verdict: d_II is a definition; restate the carrier around H-match / H-parity (open conjecture: never closed).

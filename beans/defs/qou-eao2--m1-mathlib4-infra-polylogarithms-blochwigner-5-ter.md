@@ -10,7 +10,7 @@ tags:
     - polylogarithm
     - bloch-suslin
 created_at: 2026-11-19T08:19:49Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-dxbw
 ---
 
@@ -102,3 +102,7 @@ New file `QOU/Archimedean/BlochGroupComplex.lean`, commit `554f5a6281` on branch
 Sorry-free; axioms `[propext, Classical.choice, Quot.sound]`; `lean-verify` exit 0; self-assuming and vacuous-existential audits 0 candidates.
 
 Consequence: `HasBlochGroup`'s `kernel_torsion` should be restated on `B(ℂ) = ker δ`, where it is not decided here. The witness `[3]` is not in `B(ℂ)` (`3 ∧ (−2)` is not torsion). Remaining on this bean: that restatement (owner call) and `B₃`.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**RESCOPE.** genuine P(ℂ) and Bloch–Wigner regulator built (554f5a6281, local); HasBlochGroup.kernel_torsion proved false on P(ℂ). Corrected question: torsion kernel on B(ℂ)=ker δ, plus B₃.

@@ -3,11 +3,11 @@
 title: 'GAP: complex Bloch-Suslin hypotheses (BlochWignerFiveTerm, BlochSuslinRigidity) have no instance'
 status: completed
 pr: 8235
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T22:50:00Z
 type: task
 priority: normal
 created_at: 2026-11-15T18:12:20Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: qou-r9ih
 ---
 
@@ -38,3 +38,7 @@ STILL OPEN: BlochSuslinRigidity has no instance (Bloch 1978 / Suslin 1991 rigidi
 ## 2026-11-22 — completed (wave-2, thread "Work dilogarithm and Bloch beans")
 
 Both open items are proved on main: `QOU.Archimedean.blochWignerFiveTerm_blochD` (`BlochWignerFiveTermInstance.lean:557`) and `QOU.Archimedean.blochSuslinRigidity_blochD` (`BlochRigidity/Instance.lean:98`), plus the Dolbeault layer (`BlochRigidity/Abstract.lean`, `Smooth.lean`, `blochSuslinRigidity_blochD_via_dolbeault`). PR #7946 merged 2026-11-15. Re-checked today: `lean-verify` exit 0, `#print axioms` on both instances gives `[propext, Classical.choice, Quot.sound]`. The later PR #8235 note above is not needed for this: its theorem is scalar algebra over `ℝ` and proves nothing about `D`.
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**ALREADY-DONE.** blochWignerFiveTerm_blochD + blochSuslinRigidity_blochD on main (#7946), axioms clean.

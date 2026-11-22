@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-07-18T14:57:00Z
-updated_at: 2026-10-04T15:10:00Z
+updated_at: 2026-11-22T22:50:00Z
 parent: b9cj
 ---
 
@@ -32,3 +32,7 @@ until `ArchimedeanLimit x` is inhabited off `x=0`.
 ## Reorganisation 2026-10-04
 
 Now the epic for P2.DILOG under UMBRELLA: open conjectures (formal mathematics only).
+
+## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
+
+**APPLIES.** epic; children reviewed individually this pass.
