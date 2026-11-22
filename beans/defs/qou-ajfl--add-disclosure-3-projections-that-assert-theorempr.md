@@ -9,7 +9,7 @@ tags:
     - issue-2472
     - reorg-2026-10-04
 created_at: 2026-08-10T01:47:53Z
-updated_at: 2026-11-22T21:18:00Z
+updated_at: 2026-11-22T21:35:00Z
 parent: qou-6qbv
 ---
 
@@ -34,3 +34,6 @@ Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`
 
 ## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
 Completed, evidence: all three declarations are gone from main 3c4c98fcc, removed 2026-08-30 under bean qou-z9ws as self-assuming projections with zero references. Each file records the removal: Cl3Zeta5PslqIndependence.lean:141 (pslq_independence), KnotIndexedConvolutionGrid.lean:34 (grid_placement), QHeckeSeminormalCharacterClosure.lean:99 (character_closure_holds). No **Theorem** framing over a projection remains.
+
+## 2026-11-22 applicability review (owner instruction 2026-11-22; wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e)
+**ALREADY-DONE**: the 3 declarations were removed 2026-08-30 under qou-z9ws. Premise check against docs/coordination/owner-rulings.md on main: the bean rests on no retired premise (photon form, trefoil electron, convention C, z=1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges).

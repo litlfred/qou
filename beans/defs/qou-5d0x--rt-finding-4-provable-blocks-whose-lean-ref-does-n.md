@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-22T21:18:00Z
+updated_at: 2026-11-22T21:35:00Z
 parent: qou-ncxf
 ---
 
@@ -32,3 +32,6 @@ Next step: a full scan of all 435 sampled-population refs for this class.
 
 ## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
 Pass 3 window (offset 40) skipped five more decl-not-found refs: prop:local-substrate-q, prop:vertex-is-exceptional-divisor, prop:plancherel-term-7-formulation, prop:level-sufficiency, prop:yekutieli-lifting. Also: QOU.CategoricalQConnection.exists had resolved to a docstring line in Wedderburn.lean; the sampler now ignores comments, and the real decl is in categorical-q-connection-exists.lean.
+
+## 2026-11-22 applicability review (owner instruction 2026-11-22; wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e)
+**APPLIES**: all 4 pass-1 cases are still on main (wave-1 --ref-audit: 148 of 717 refs do not name a theorem). The repoint of centered-hecke-variance-positive is now carried by qou-g7nn; the full sweep still needs an owner yes. Premise check against docs/coordination/owner-rulings.md on main: the bean rests on no retired premise (photon form, trefoil electron, convention C, z=1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges).

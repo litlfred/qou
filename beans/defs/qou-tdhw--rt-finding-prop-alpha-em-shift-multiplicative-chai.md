@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-22T21:24:39Z
+updated_at: 2026-11-22T21:35:00Z
 parent: qou-ncxf
 ---
 
@@ -31,3 +31,6 @@ Verified on main 3c4c98fcc: the restatement from #8888 (merged 2026-11-21) is in
 
 ## 2026-11-22 honesty-roundtrip (session_01Qmmkt63qmS4AFFfqMq2Z2e)
 Completed on owner card 2026-11-22 (Close all 9): the honesty defect is fixed on main by the #8888 restatement (verified on 3c4c98fcc). The stronger original claim stays recorded in docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md and is not tracked by a bean.
+
+## 2026-11-22 applicability review (owner instruction 2026-11-22; wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e)
+**ALREADY-DONE**: statement restated to its Lean in #8888 (caveat present on main); the CODATA '=' is gone with the restatement, consistent with the no-empirical-values-in-proofs rule. Premise check against docs/coordination/owner-rulings.md on main: the bean rests on no retired premise (photon form, trefoil electron, convention C, z=1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges).

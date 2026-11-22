@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T00:15:05Z
-updated_at: 2026-11-22T21:18:00Z
+updated_at: 2026-11-22T21:35:00Z
 parent: qou-5p7n
 ---
 
@@ -47,3 +47,6 @@ confirms a genuine, already-documented instance rather than noise.
 
 ## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
 Completed, evidence: the fix described in the 2026-08-22 entry is on main 3c4c98fcc (scripts/lean-self-assuming-audit.py: BINDER_INST line 60, PROJ_APP line 114, variant class-field-is-conclusion line 663). Measured today: python3 scripts/lean-self-assuming-audit.py scans 4704 .lean files, 54 candidates, 29 of them class-field-is-conclusion. The wave-1 note that #8471/#8474/#8481 do not resolve this bean is correct but beside the point: the fix had already landed. Known limit kept in the script's own output: cross-file classes are not resolved, so counts are a lower bound.
+
+## 2026-11-22 applicability review (owner instruction 2026-11-22; wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e)
+**ALREADY-DONE**: the class-instance variant is detected on main (2026-08-22 fix); a run this session scanned 4704 files and returned 54 candidates, 29 of them class-field-is-conclusion. Old bean (2026-08-08), but nothing in it depends on physics premises. Premise check against docs/coordination/owner-rulings.md on main: the bean rests on no retired premise (photon form, trefoil electron, convention C, z=1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges).

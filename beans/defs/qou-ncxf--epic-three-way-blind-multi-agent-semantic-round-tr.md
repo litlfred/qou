@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-22T21:18:00Z
+updated_at: 2026-11-22T21:35:00Z
 ---
 
 End-to-end blind multi-agent round-trip audit architecture across all 741 provable claims (and definitions/conjectures) in QOU, using strictly isolated, tool-free blind agents at every leg plus deterministic comment/spoiler scrubbing (`folio/pipeline/roundtrip-blind-packets.ts`).
@@ -30,3 +30,6 @@ All pass-2 findings acted on in PR #8888 (§6 of the pass-2 audit doc). Self-ass
 
 ## 2026-11-22 honesty-roundtrip (bean-drain wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e; issue #8813, branch claude/honesty-roundtrip-pass3-2026-11-22)
 Pass 3 done: 20 blocks at --offset 40 (population 408), four blind legs + my adjudication, docs/audits/2026-11-22-roundtrip-blind-audit-pass3.md (commit 48b749e80). Lean: A 7, T 5, B 4, genuine 4; no sorry/axiom. Text defects in 13/20. Findings only; restatements, sorries, kind changes and disclosures are put to the owner. Sampler fixed twice (docstring taken for a decl; proof paired with every block it cites), which re-pairs pass-1 B07. Next cursor --offset 60, 348 blocks remain.
+
+## 2026-11-22 applicability review (owner instruction 2026-11-22; wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e)
+**APPLIES**: the audit is method-only; its verdicts compare Lean to text and do not depend on physics rulings. Pass 3 (#9136) restated 8 blocks on owner ruling. Premise check against docs/coordination/owner-rulings.md on main: the bean rests on no retired premise (photon form, trefoil electron, convention C, z=1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges).

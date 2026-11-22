@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-22T21:24:39Z
+updated_at: 2026-11-22T21:35:00Z
 parent: qou-ncxf
 ---
 
@@ -32,3 +32,6 @@ Still absent on main 3c4c98fcc: no folio/pipeline/roundtrip-blind-packets.ts. sc
 
 ## 2026-11-22 honesty-roundtrip (session_01Qmmkt63qmS4AFFfqMq2Z2e)
 Completed on owner card 2026-11-22 (Close all 9): superseded by scripts/roundtrip-blind-sample.py (PR #8528, two pairing fixes on branch claude/honesty-roundtrip-pass3-2026-11-22). folio/pipeline/roundtrip-blind-packets.ts was never built; the .qa.json verdict wiring is not done and is not tracked elsewhere.
+
+## 2026-11-22 applicability review (owner instruction 2026-11-22; wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e)
+**ALREADY-DONE**: RT harness landed in #8528; passes 1-3 ran on it. Premise check against docs/coordination/owner-rulings.md on main: the bean rests on no retired premise (photon form, trefoil electron, convention C, z=1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges).
