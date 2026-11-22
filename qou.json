@@ -157,6 +157,19 @@
       "description": "Exact values of `pyhecke_native.mn_chi_q(lambda, mu)`, the q-Murnaghan-Nakayama Hecke character table, stored so a sweep that needs a heavy table (n = 24, 27) computes each entry once. One orphan branch per engine source key; inside it, content-addressed JSONL shards of (lambda, mu) -> the producer's exact [q-degree, coefficient-string] pairs, never a float. Before 2026-11-22 this was the in-tree file computations/.derived-chi-mn-cache.json, keyed by (lambda, mu) alone, so an entry from one engine build was served to every later one. Read and written by computations/derived_chi_catalogue_mn_disk_cache.py through the shared layer (scripts/lib/branch-cache.sh, computations/_branch_cache.py). A dirty engine tree has no key and nothing is served from the store; loaded entries are re-checked against the live binary first. `mn-chi-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/mn-chi-cache.json`."
     },
     {
+      "id": "xbot-relaxation-ckpt",
+      "path": "xbot-relaxation-ckpt/",
+      "graphTypologies": [
+        "xbot-relaxation-ckpt"
+      ],
+      "storage": {
+        "branchPrefix": "cat/qou/xbot-relaxation-ckpt/",
+        "keyedBy": "family",
+        "keyFrom": "xbot-relaxation-<source-key>, where source-key is the branch-cache source key of the git tree of computations/ as a whole"
+      },
+      "description": "Stage and call checkpoints of computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py, a ~200-minute probe run inside a 120-minute harness window, stored so a killed run resumes in any container. One orphan branch per git tree of computations/ (coarse but safe: any edit under computations/ starts a new member); inside it, content-addressed JSONL shards of record name -> the probe's own record, where each record name carries a SHA-256 of the probe source up to that stage, the committed evaluator, the q0 string, mp.dps and every REV_XBOT* override. mpf values are exact `_mpf_` tuples (hex mantissa), never a float. Before 2026-11-22 the records were per-file JSON under ~/.cache/qou/xbot-relaxation-ckpt, which is still the fallback when computations/ is dirty (no source key, so the branch store is off). Read and written through the shared layer (scripts/lib/branch-cache.sh, computations/_branch_cache.py). `xbot-relaxation-ckpt/` is where a member is mounted; nothing is tracked there. The kind is `typologies/xbot-relaxation-ckpt.json`."
+    },
+    {
       "id": "beans",
       "path": "beans/",
       "scope": "repository",

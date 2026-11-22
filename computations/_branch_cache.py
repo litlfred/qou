@@ -16,7 +16,9 @@ entries by it). Exact values stay exact strings; nothing here converts a value
 to a float, and two stored values for one key that differ are a refusal.
 
 Users: computations/trace_cache.py (kind `trace-cache`),
-computations/derived_chi_catalogue_mn_disk_cache.py (kind `mn-chi-cache`).
+computations/derived_chi_catalogue_mn_disk_cache.py (kind `mn-chi-cache`),
+computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py (kind
+`xbot-relaxation-ckpt`).
 """
 from __future__ import annotations
 
