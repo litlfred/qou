@@ -86,3 +86,16 @@ numerical runs that drifted to `k0² = k1²`; it was never a proof, and it is fa
 - 4-label runs (`K = (1,1,−1,−1)`, `(1,1,1,−1)`) running.
 
 Status unchanged: the slide's derivability is **OPEN**. Bean stays open.
+
+## 2026-11-22 — hand proof: in the linear-rack ansatz, r1 + r3 force the slide (any label count)
+
+The 4-label Groebner runs timed out (50 min each) and are superseded by this argument.
+Suppose `K_a ≠ K_b` and `M_c[a,b] ≠ 0`. Apply r3 with `(a, b0, b) := (c, a, b)`:
+`M_c M_b = M_a M_c`. Read off entry `(a,b)`.
+- Row `a` of `M_a` is `θK_a` on the diagonal and 0 elsewhere (r1), so the right side gives `θK_a · M_c[a,b]`.
+- Column `b` of `M_b` is likewise diagonal, so the left side gives `M_c[a,b] · θK_b`.
+So `θ(K_a − K_b) M_c[a,b] = 0`. With `θ ≠ 0`, `M_c[a,b] = 0`. The case `c = a` is already
+excluded by r1. **Consequence:** no linear-rack model separates the slide. This is
+a statement about the ansatz only, so it does not settle derivability; the bean stays OPEN.
+Diagrammatic hint for route 1: the proof uses one r3 (strand c over a, b) with a kink
+at a and at b, i.e. "push a kink through a crossing with r3".
