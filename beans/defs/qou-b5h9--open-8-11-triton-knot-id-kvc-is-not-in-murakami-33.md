@@ -1,6 +1,6 @@
 ---
 # qou-b5h9
-title: 'OPEN: 8_11 (triton knot-ID) KVC is not in Murakami 3.3 - Ohtsuki machinery stops at 6 crossings, this is a paper'
+title: '8_11 Kashaev volume conjecture: pure KVC question (the triton role was ruled out 2026-09-05)'
 status: in-progress
 pr: 8245
 type: task
@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T19:18:13Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T22:30:00Z
 parent: qou-r9ih
 ---
 
@@ -265,3 +265,9 @@ Was in-progress with no bean update since 2026-08-30 and no main commit naming i
 The claim on this bean comes from PR #8246 (`QOU/QBeta/StrandNormalizationChiralityAndMagnusBridgeBrick.lean`, opened 2026-11-16/17, still open, `mergeable_state: dirty`). I read every theorem in that file. Each one is an identity in scalar variables over `ℚ` or `ℝ` (`ring` / `linarith` / `field_simp`), and where the bean's claim appears it appears as a hypothesis (for example `#8224` proves `A_ω = 3` from the hypothesis `a_omega_phi = 3`). No theorem touches the bean's actual objects (no `LiTwo`, `blochD`, `Φ_b`, state integral, measure or limit). **So PR #8246 does not discharge this bean.** The W4 triage (PR #8531, `docs/coordination/2026-11-20-batch-pr-triage.md` on that branch) listed it as NEEDS-REWORK for conflicts only, because its scan deliberately does not flag real- or rational-typed one-liners.
 
 Status left unchanged: resetting the claim and closing the PR are the owner's call, and the recommendation went to the coordinator. The work this bean describes is still open, as stated above this note.
+
+## 2026-11-22 — applicability review (wave-2, owner instruction to review older beans against current rulings)
+
+Title restated; old title: 'OPEN: 8_11 (triton knot-ID) KVC is not in Murakami 3.3 - Ohtsuki machinery stops at 6 crossings, this is a paper'
+
+**Restated: the physics motivation is obsolete; the mathematics is not.** This bean was opened for 8_11 as the triton's knot. That assignment is `ATOM_ASSIGN` in `computations/mass_table_ppb.py` (3H -> 8_11, census-assigned), which the owner ruled out on 2026-09-05 ("NO knot-selection routes allowed", `docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md`: choosing a census knot whose volume matches B_AME is fitting by selection). The bean itself already said so (2026-08-25: "QOU BARELY NEEDS IT ... circular"). What survives is a pure question: the Kashaev volume conjecture for 8_11, with the convention problem (1184 distinct values over 1200 strand/face choices at N = 7) and the generalisation of `norm_weightblock` beyond 3 strands. No current ruling (strand colour, b = −qX, convention D, photon norm 1, block-level U(1)_em) touches it. It no longer has a QOU consumer, so it belongs with the volume-conjecture work at low priority. The PR #8246 note above does not discharge it.

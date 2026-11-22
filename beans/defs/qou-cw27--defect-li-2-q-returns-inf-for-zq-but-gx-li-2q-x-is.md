@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T22:45:51Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-22T22:30:00Z
 parent: qou-r9ih
 ---
 
@@ -81,3 +81,7 @@ the Markov axiom the rest of the binding work is conditional on.
 The claim on this bean comes from PR #8208 (`QOU/QBeta/QuantumDilogContinuationAndKVCTower.lean`, opened 2026-11-16/17, still open, `mergeable_state: dirty`). I read every theorem in that file. Each one is an identity in scalar variables over `ℚ` or `ℝ` (`ring` / `linarith` / `field_simp`), and where the bean's claim appears it appears as a hypothesis (for example `#8224` proves `A_ω = 3` from the hypothesis `a_omega_phi = 3`). No theorem touches the bean's actual objects (no `LiTwo`, `blochD`, `Φ_b`, state integral, measure or limit). **So PR #8208 does not discharge this bean.** The W4 triage (PR #8531, `docs/coordination/2026-11-20-batch-pr-triage.md` on that branch) listed it as NEEDS-REWORK for conflicts only, because its scan deliberately does not flag real- or rational-typed one-liners.
 
 Status left unchanged: resetting the claim and closing the PR are the owner's call, and the recommendation went to the coordinator. The work this bean describes is still open, as stated above this note.
+
+## 2026-11-22 — applicability review (wave-2, owner instruction to review older beans against current rulings)
+
+**Applies as mathematics; its physics framing needs care.** The defect is real and pure: `li_2_q` returns inf for |z| ≥ q, while Li₂^q(z) = −h Σ_m ln(1 − z q^{−1−2m}) continues it. The consumer named in the bean is the atom-word brane tower in `borromean_binding_recompute.py`. That file is still on main. Whether that tower is a live binding route after the 2026-09-05 no-knot-selection ruling and the 2026-11-22 "binding as trace difference" ruling is not settled here, so fixing the guard is a precision fix (exemption 1) but any binding number it produces is not a current result. No dependence on strand colour, b = −qX, convention D, photon norm or U(1)_em.
