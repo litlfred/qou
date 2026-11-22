@@ -1284,3 +1284,39 @@ permutations, tr_w((hol − 1)ᵏ) = tr_{n−w}((hol − 1)ᵏ) for all n, k, w 
 3. The electromagnetic part is proportional to α, not to h, so it need not vanish at q = 1. In the
    model a term that survives q = 1 must come from outside the braid-built algebra (§34), which is
    where the adopted charges sat.
+
+## §40 Quark-mass comparison, electromagnetic term, p ↔ n orientation, Lean bridge
+
+Owner, 2026-11-22: *"Do all"*, *"Dispatch siblings"*, and *"Could we have the definitions of proton
+and neutron backwards? Essentially a sign change?"*
+
+**𝒟² arm against the quark-mass part (pre-registered 7c8ef0b86c3, `mn_d2_vs_quark_mass_probe.py`).**
+All predictions held. Exactly, E_M1/(m_e·Vol(4₁)) = −(9/4)ε + (63/8)ε² + (1653/4)ε³ + …, ε = q − 1.
+The leading coefficient −9/4 (−2.3339 MeV) was visible in §39 data before registration, so it is
+not a blind prediction. The arm has a single real zero in (1, 1.2), at q* = 1.0768350738, and is
++0.171 MeV at q₀: 6.8 % of the lattice quark-mass part (+2.52 MeV), 13.2 % of CODATA. Its sign at q₀
+is set by the ε³ term, not the leading one, so the sign is not structural.
+
+**Electromagnetic term (sibling agent, `PREREGISTRATION-em-term.md`, `mn_em_term_probe.py`).**
+α = q⁻¹/([9]_q[10]_q) (`em-coupling-projection`; Lean `isEmCoupling_iff` is the defining relation,
+not a derivation). EM-1: E = +α·S on the electron map with K-weights, adopted charges (⅔, −⅓).
+Result −0.358 keV at q₀, exactly −m_e/720 = −0.7097 keV at q = 1. Sign: proton heavier, which is the
+QED sign, and it survives q = 1 as an α-term should, but it is 3.6×10⁻⁴ of the lattice −1.00 MeV, so
+it is refuted as the electromagnetic part (scope (a)). EM-2 (same term on the muon map, stated
+alternative) gives −0.764 MeV but diverges as q → 1 (ℏ_q²E/(m_e·Vol) → −1/60); its closeness to
+−1.00 MeV was recorded as foreseen before running and carries no weight. The Coulomb sign (+α·S) is
+opposite to the potential sign §35 gave the strong-sector S; this conflict is open.
+Ordering note: the pre-registration file was written before the run (file times 09:08:14 vs 09:08:55),
+but both were committed together, so the order is not shown by git. Re-run reproduces the output exactly.
+
+**p ↔ n is a label (exact sympy).** With X the global flip and P the strand reversal,
+X·V·X = P·V⁻¹·P, and the relabel sends T³ → −T³, K → K⁻¹. Conjugation by X maps W_n onto W_p, so
+every E_n − E_p in §29–§40 changes sign exactly under the swap. The Borromean rings are amphichiral
+and the ruled photon form fixes the letter σ₀σ₁⁻¹ but not which bit is u, so nothing derived so far
+fixes the orientation. Choosing it from the n − p signs would be selection against the target. Under
+the swap the 𝒟² leading term would be +(9/4)·m_e·Vol(4₁)·ε and every charge term proton-heavier.
+
+**Lean bridge.** `FlipSymmetryAtOneBridge.lean`, sorry-free, axioms propext, Classical.choice,
+Quot.sound: the generator at q = 1, h = 0 is the strand-swap permutation matrix (both letters), 𝒟 at
+q = 1 is hol − 1, and `blockTr_jetD_pow_word_at_one` gives tr_m(𝒟ᵏ) = tr_{n−m}(𝒟ᵏ) for every braid word,
+n, k. Not proved: that the generator and its inverse letter are inverse for general q.
