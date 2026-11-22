@@ -66,3 +66,23 @@ Not yet attempted in Lean.
   Reading (evidence only): the R2 identities alone appear to force the slide identity in every
   model found. If that is a theorem about models, its proof should point to a diagrammatic
   derivation using r2anti/r2par only.
+
+## 2026-11-22 (later) — CORRECTION: R2 alone does NOT force the slide
+
+The note above ("R2 alone appears to force slide") is **retracted**. It came from
+numerical runs that drifted to `k0² = k1²`; it was never a proof, and it is false:
+
+- **Linear-rack ansatz** `X+(u,u',o,o') = δ_{oo'} M_o[u,u']`, `X- = (X+)⁻¹`:
+  r2par and r2anti hold for **every** invertible family `{M_o}` (checked by hand).
+  So R2 places no constraint linking K to the slide.
+- What constrains is **r1 + r3**:
+  - r1 forces row and column `y` of `M_y` diagonal, `M_y[y,y] = θ·K_y`, and `K_y = ±1`.
+  - r3 ⇔ `M_a M_b = M_{b0} M_a` whenever `M_a[b0,b] ≠ 0`.
+  - The slide fails iff some `M_c[a,b] ≠ 0` with `K_a ≠ K_b`.
+- **Exact (sympy Groebner, not numeric):** 3 labels, `K = (1,1,−1)`: no model with
+  r1 + r3 + invertibility and any mixing entry nonzero (basis = [1]). So within this
+  ansatz at 3 labels, r1 + r3 force the slide. Script:
+  scratchpad `slide/rack.py` (evidence only, not committed).
+- 4-label runs (`K = (1,1,−1,−1)`, `(1,1,1,−1)`) running.
+
+Status unchanged: the slide's derivability is **OPEN**. Bean stays open.
