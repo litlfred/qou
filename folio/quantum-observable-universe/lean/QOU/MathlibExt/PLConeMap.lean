@@ -17,7 +17,7 @@ Given cone points `p` (for `S`) and `q` (for `S'`) that see their sets along ray
 ## What is a DEFINITION here
 
 * `ConeRep p S x s y` — `x = p + s • (y - p)` with `y ∈ S` and `s ∈ (0, 1]`.
-* `coneSet p S` — `p` together with every `x` having such a representation.
+* `pointCone p S` — `p` together with every `x` having such a representation.
 * `coneFun p q S f` — the radial extension of `f`.
 
 ## What is a THEOREM here
@@ -25,7 +25,8 @@ Given cone points `p` (for `S`) and `q` (for `S'`) that see their sets along ray
 * `ConeRep.unique` — the representation is unique when `p ∉ S` and rays from `p` meet `S` at most
   once.
 * `coneFun_apex`, `coneFun_eq` — `p ↦ q`, and the radial formula.
-* `coneSet_eq` — `coneSet p S = insert p (convexJoin ℝ {p} S)`, the space in `coneComplex_space`.
+* `pointCone_eq` — `pointCone p S = insert p (convexJoin ℝ {p} S)`, the space in
+  `coneComplex_space`.
 * `coneFun_eq_of_eqOn`, `coneFun_lineMap_of_eqOn` — if `f = A` (affine) on `convexHull σ`, the cone
   map sends `lineMap p y s` to `lineMap q (A y) s`: it is linear on the cone face.
 * `coneFun_mapsTo`, `coneFun_leftInvOn`, `coneFun_invOn` — if `f` and `g` are mutually inverse
@@ -36,7 +37,7 @@ Given cone points `p` (for `S`) and `q` (for `S'`) that see their sets along ray
   `K`, then `coneFun p q K.space f` is linear on every face of `coneComplex K p hp hray`.
 
 * `IsLinearOn.continuousOn` — a map linear on every face of a finite complex is continuous on its
-  space; `continuousOn_coneFun` — so the cone of a PL map is continuous on `coneSet p K.space`.
+  space; `continuousOn_coneFun` — so the cone of a PL map is continuous on `pointCone p K.space`.
 
 ## What is NOT proved here
 
@@ -54,7 +55,7 @@ def ConeRep (p : E) (S : Set E) (x : E) (s : ℝ) (y : E) : Prop :=
   y ∈ S ∧ s ∈ Ioc (0 : ℝ) 1 ∧ x = p + s • (y - p)
 
 /-- The cone on `S` with apex `p`. -/
-def coneSet (p : E) (S : Set E) : Set E :=
+def pointCone (p : E) (S : Set E) : Set E :=
   insert p {x | ∃ s y, ConeRep p S x s y}
 
 lemma ConeRep.ne_apex {p : E} {S : Set E} (hp : p ∉ S) {x : E} {s : ℝ} {y : E}
@@ -108,7 +109,8 @@ lemma ConeRep.map {p q : E} {S S' : Set E} {f : E → E} (hf : MapsTo f S S') {x
   ⟨hf h.1, h.2.1, rfl⟩
 
 theorem coneFun_mapsTo {p q : E} {S S' : Set E} {f : E → E} (hray : RaysMeetOnce p S)
-    (hp : p ∉ S) (hf : MapsTo f S S') : MapsTo (coneFun p q S f) (coneSet p S) (coneSet q S') := by
+    (hp : p ∉ S) (hf : MapsTo f S S') :
+    MapsTo (coneFun p q S f) (pointCone p S) (pointCone q S') := by
   rintro x (rfl | ⟨s, y, h⟩)
   · rw [coneFun_apex hp]
     exact mem_insert _ _
@@ -117,7 +119,7 @@ theorem coneFun_mapsTo {p q : E} {S S' : Set E} {f : E → E} (hray : RaysMeetOn
 
 theorem coneFun_leftInvOn {p q : E} {S S' : Set E} {f g : E → E} (hray : RaysMeetOnce p S)
     (hp : p ∉ S) (hray' : RaysMeetOnce q S') (hq : q ∉ S') (hf : MapsTo f S S')
-    (hgf : LeftInvOn g f S) : LeftInvOn (coneFun q p S' g) (coneFun p q S f) (coneSet p S) := by
+    (hgf : LeftInvOn g f S) : LeftInvOn (coneFun q p S' g) (coneFun p q S f) (pointCone p S) := by
   rintro x (rfl | ⟨s, y, h⟩)
   · rw [coneFun_apex hp, coneFun_apex hq]
   · rw [coneFun_eq hray hp h, coneFun_eq hray' hq (h.map hf), hgf h.1, h.2.2]
@@ -126,7 +128,7 @@ theorem coneFun_leftInvOn {p q : E} {S S' : Set E} {f g : E → E} (hray : RaysM
 theorem coneFun_invOn {p q : E} {S S' : Set E} {f g : E → E} (hray : RaysMeetOnce p S)
     (hp : p ∉ S) (hray' : RaysMeetOnce q S') (hq : q ∉ S') (hf : MapsTo f S S')
     (hg : MapsTo g S' S) (hinv : InvOn g f S S') :
-    InvOn (coneFun q p S' g) (coneFun p q S f) (coneSet p S) (coneSet q S') :=
+    InvOn (coneFun q p S' g) (coneFun p q S f) (pointCone p S) (pointCone q S') :=
   ⟨coneFun_leftInvOn hray hp hray' hq hf hinv.1,
     coneFun_leftInvOn hray' hq hray hp hg hinv.2⟩
 
@@ -134,14 +136,14 @@ theorem coneFun_invOn {p q : E} {S S' : Set E} {f g : E → E} (hray : RaysMeetO
 theorem coneFun_bijOn {p q : E} {S S' : Set E} {f g : E → E} (hray : RaysMeetOnce p S)
     (hp : p ∉ S) (hray' : RaysMeetOnce q S') (hq : q ∉ S') (hf : MapsTo f S S')
     (hg : MapsTo g S' S) (hinv : InvOn g f S S') :
-    BijOn (coneFun p q S f) (coneSet p S) (coneSet q S') :=
+    BijOn (coneFun p q S f) (pointCone p S) (pointCone q S') :=
   (coneFun_invOn hray hp hray' hq hf hg hinv).bijOn (coneFun_mapsTo hray hp hf)
     (coneFun_mapsTo hray' hq hg)
 
 /-- The cone set is the cone space `insert p (convexJoin ℝ {p} S)` of `coneComplex_space`. -/
-theorem coneSet_eq (p : E) (S : Set E) : coneSet p S = insert p (convexJoin ℝ {p} S) := by
+theorem pointCone_eq (p : E) (S : Set E) : pointCone p S = insert p (convexJoin ℝ {p} S) := by
   ext x
-  rw [coneSet, mem_insert_iff, mem_insert_iff, mem_convexJoin]
+  rw [pointCone, mem_insert_iff, mem_insert_iff, mem_convexJoin]
   constructor
   · rintro (rfl | ⟨s, y, hy, hs, rfl⟩)
     · exact Or.inl rfl
@@ -274,8 +276,8 @@ theorem IsLinearOn.continuousOn {F : Type*} [NormedAddCommGroup F] [NormedSpace 
 theorem continuousOn_coneFun [DecidableEq E] [FiniteDimensional ℝ E]
     {K : Geometry.SimplicialComplex ℝ E} {p q : E} (hp : p ∉ K.space)
     (hray : RaysMeetOnce p K.space) {f : E → E} (hf : IsLinearOn K f) (hK : K.faces.Finite) :
-    ContinuousOn (coneFun p q K.space f) (coneSet p K.space) := by
-  rw [coneSet_eq, ← coneComplex_space (hp := hp) (hray := hray)]
+    ContinuousOn (coneFun p q K.space f) (pointCone p K.space) := by
+  rw [pointCone_eq, ← coneComplex_space (hp := hp) (hray := hray)]
   exact (isLinearOn_coneComplex (q := q) hp hray hf).continuousOn
     (coneComplex_faces_finite (hp := hp) (hray := hray) hK)
 
