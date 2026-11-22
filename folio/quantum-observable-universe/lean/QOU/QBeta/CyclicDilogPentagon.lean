@@ -53,6 +53,8 @@ No `c_k` is produced or wired; registry untouched; scope-(a) throughout.
 --        Mod. Phys. Lett. A 9 (1994) 427. https://doi.org/10.1142/S0217732394000447
 -- Ref: [faddeev1995] Faddeev, "Discrete Heisenberg–Weyl group and modular group",
 --        Lett. Math. Phys. 34 (1995) 249. https://doi.org/10.1007/BF01872779
+-- Ref: [kashaev1995] https://arxiv.org/abs/q-alg/9504020 (abstract: the link invariant of the
+--        cyclic quantum dilogarithm via its R-matrix, the cyclic analogue of U_q(sl₂)'s)
 -- Ref: [leitner2026] docs/workplans/2026-07-13-phib-combinatorial-fibre-lean-workplan.md (L4)
 -/
 
