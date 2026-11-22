@@ -1,0 +1,146 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "moffatt1969-jfm-knottedness",
+ "source": {
+  "structure_sha256": "279a07cbcbd5f86e5067a70ede472e26223fa80e9fb2bf9eb5040e7cef6991b1",
+  "file": "moffatt1969-jfm-knottedness.pdf"
+ },
+ "provenance": {
+  "title": "The degree of knottedness of tangled vortex lines",
+  "authors": "By H. K. MOFFATT",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "recommendation": 8
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be noted that I is determined solely by the vorticity field; this dependence may be made explicit by writing (7) u = q(x) +V$, where (a) a12 = 0 (h) aIz = -1 (c) a12 = 2 FIGVRE 1.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction-discrete-vortex-fields.md",
+   "section_title": "Introduction; discrete vortex fields",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It would therefore appear that the value of I may then change accord- ing to (171, and this is at first sight surprising in view of the interpretation given above of the invariance of I in terms of the conservation of linkages of vortex lines; vortex lines are still frozen in the fluid when rigid boundaries are present, so these should not affect the invariance of I.",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-3-the-effect-of-the-presence-of-solid-boundaries.md",
+   "section_title": "The effect of the presence of solid boundaries",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The explanation lies in the fact that, if n. o + 0 on S, and if 8, is at rest, then there exists a vortex sheet on S, and the vortex lines of the fluid interior must be imagined to be continued and completed within this sheet.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-3-the-effect-of-the-presence-of-solid-boundaries.md",
+   "section_title": "The effect of the presence of solid boundaries",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(If 8, is rotating, there is the further complication that the vortex lines actually continue into the solid.) We should therefore expect invariance of the quantity I defined in (15) 122 H .",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-3-the-effect-of-the-presence-of-solid-boundaries.md",
+   "section_title": "The effect of the presence of solid boundaries",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, we must now include viscous terms vV2u and P - ~ V V ~ C O on the right-hand sides of (12) and (13), and this leads to dl & = -2v Jv\".",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-3-the-effect-of-the-presence-of-solid-boundaries.md",
+   "section_title": "The effect of the presence of solid boundaries",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since I + 0, there must exist knots or links in the vortex lines of the blob.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-4-a-simple-consequence-of-the-invariance-of-i-in.md",
+   "section_title": "A simple consequence of the invariance of I in an incompressible",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Any advancing rotating body must likewise leave a helical vorticity distribution in its wake.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-5-relation-with-the-magnetohydrodynamic-invarian.md",
+   "section_title": "Relation with the magnetohydrodynamic invariants of Woltjer",
+   "pages": "7-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "There must exist at least one point (xo, yo) at which V$ = 0, and the line x = xo, y = yo is itself a vortex line, lying on a degenerate member of the family of surfaces q9 = const.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-5-relation-with-the-magnetohydrodynamic-invarian.md",
+   "section_title": "Relation with the magnetohydrodynamic invariants of Woltjer",
+   "pages": "7-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

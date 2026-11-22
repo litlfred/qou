@@ -1,0 +1,1 @@
+I cannot doubt but that these things, which now seem to us so mysteri- ous, will be no mysteries at all; that the scales will fall from our eyes; that we shall learn to look on things in a different way— when that which is now a difficulty will be the only common-sense and intelligible way of looking at the subject.

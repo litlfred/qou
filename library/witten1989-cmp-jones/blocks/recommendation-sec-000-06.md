@@ -1,0 +1,1 @@
+Two regularizations should differ by a local counterterm, and in this case, since the problem phase (2.19) depends on the background metric only, we want a counterterm that depends on the background metric only.

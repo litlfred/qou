@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1607.01632v2/blocks/table-001",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "kind": "table",
+  "label": "Table 1",
+  "file": "../tables/table-1.csv",
+  "headers": [
+    "[36]",
+    "Niels G Gresnigt and Adam B Gillard. Electroweak symmetries"
+  ],
+  "pageStart": 14,
+  "pageEnd": 14,
+  "derivedFrom": "library/arxiv-1607.01632v2/sections/sec-012",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1607.01632v2",
+  "provenance": "ingested"
+}

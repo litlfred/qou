@@ -515,3 +515,99 @@ Probe `quantum_norm_cd_probe.py` (exact sympy, 30/30 checks):
 
 So no quantum norm-1 option singles out the individual ruled photon weights; every
 option is satisfied by their product for the trivial reason that it is a braid word.
+
+## Round 12 — 2026-11-22: the γγ lepton pair on six strands, photon by photon
+
+Owner card: "1 Sliding photon at each i". On six strands γᵢ(a,b,c) = 1 + aσᵢ + bσᵢ₊₁ +
+cσᵢσᵢ₊₁⁻¹, i = 0…3, larger letter inverted. Target link e⁻ ⊔ ν̄ ⊔ loop (Hopf ⊔ 2 unknots,
+owner 2026-11-21). Probe `computations/probes/six_strand_photon_pair/` (pre-registration and
+addendum committed first; exact arithmetic).
+
+**12.1 Which vertex words close to the pair (Part 1, evidence by invariant at q = 2, 3).**
+264 words of at most 6 vertices match the target or its mirror. The smallest have 3 vertices:
+18 words (9 + 9 mirror), e.g. V₀V₀V₁, V₀V₁V₀. Every one moves only four strands, so two
+components are untouched strands. If every strand must lie in some vertex footprint, the
+smallest count is 5 (25 + 25 words). No candidate is whole-word linking-neutral: the Hopf
+pair has lk = 1, so the proton's neutrality rule cannot apply to the lepton pair as stated.
+The zero-charge K-sector trace of the nine minimal e⁻ words is one value pair, −61/4 (q = 2)
+and −3614/81 (q = 3).
+
+**12.2 A single photon closes to the electron's link (Lean, exact, generic ring).**
+`PhotonCrossingMonomials.photon_hopf`: γ(0, −h⁻¹, −1) = −h⁻¹·σ₀²σ₁⁻¹. On three strands
+σ₀²σ₁⁻¹ closes to the Hopf link. So the electron's *link* is the closure of one photon.
+The ruled electron *element* σ₀σ₁σ₀ is a different braid with the same closure; Round 9
+showed it is not a two-photon product in H₃(q). Also `photon_neg_crossing`:
+γ(0, −h⁻¹, 0) = −h⁻¹·σ₁⁻¹, a single negative crossing. No positive crossing is a photon
+multiple (1 + aσ is never proportional to σ).
+
+**12.3 Two photons make the whole pair (Lean, exact).** `pair_word_two_photons`:
+V₀V₁V₂V₀V₃ = σ₀²σ₁⁻¹σ₄⁻¹ = h²·γ₀(0, −h⁻¹, −1)·γ₃(0, −h⁻¹, 0). The two photons sit on
+disjoint strands (0–2 and 3–5) and commute: the first closes to the electron's Hopf link,
+the second to a kinked unknot, and strand 3 is a free loop. The 5-vertex footprint hides
+this, because after braid reduction strand 3 is untouched. The same pattern (a Hopf photon
+times a single-crossing photon) gives V₀V₁V₀ = σ₀²σ₂⁻¹σ₁⁻¹ at (1, 0) and (2, 0). The weights
+are unique at q = 2 and 3 (zero-dimensional Gröbner basis), so they are forced, not fitted.
+
+**12.4 What does not factor.** At q = 2 and 3, no other 3-vertex match and no other 5-vertex
+match is a two-photon product, in the TL quotient or (hence) in H₆(q). V₀V₀V₁ needs three
+photons. In TL this works at placements (0,0,1) and (1,0,1); in the full H₄(q) only at
+(0,0,1). The real weights form a two-parameter family (coset reduction H₄ = ⊕ H₃·T_d forces
+the third photon to γ₁(0, −h⁻¹, z); mpmath at 40 digits, q = 2 and 11/10). So V₀V₀V₁'s
+weights are not determined.
+
+**Scope.** Section 12.1 is evidence, not isotopy proofs. Sections 12.2 and 12.3 are exact
+algebra identities, sorry-free; that their closures are the Hopf link and the pair link is
+the standard reading of the braid, not formalised. Section 12.4's negatives were first
+found at two rational q; 12.5 extends them to generic q. Nothing is selected.
+
+**12.5 The two-photon negatives hold for generic q (computed, exact).** Gröbner bases over
+ℚ(q), symbolic q, for every 3- and 5-vertex match and all 16 photon placements: the
+two-photon factorisations are exactly the 13 (word, i, j) cells found at q = 2 and 3, and
+every other cell has Gröbner basis [1]. So no other match is a two-photon product for
+generic q. Finitely many special q (where a leading coefficient vanishes) are not
+excluded. Over ℚ(q) the weights are again unique: −h⁻¹ = −q/(q²−1), −1, and μ = h⁻².
+Not formalised in Lean; it is a computer-algebra result.
+
+**12.6 Convention-D trace of the pair word (COMPARISON ONLY, not a Q_β prediction).**
+Owner's request in thread, "All", covering the option "compute the β-decay trace at z_D on
+the two-photon pair word … it would need your OK as a comparison". Trace: the Jimbo quantum
+trace Tr(K^{⊗n}ρ(w))/[2]ⁿ, which is the convention-D Markov trace (tr σ = z_D = q³/(q²+1),
+checked). Exact values:
+
+| word | strands | tr_D |
+|---|---|---|
+| pair σ₀²σ₁⁻¹σ₄⁻¹ | 6 | (q⁴+1) / (q²(q²+1)³) |
+| Hopf photon σ₀²σ₁⁻¹ | 3 | (q⁴+1) / (q(q²+1)²) |
+| crossing photon σ⁻¹ | 2 | 1 / (q(q²+1)) |
+| electron σ₀σ₁σ₀ | 3 | q³(q⁴+1) / (q²+1)² |
+
+tr(pair) = tr(Hopf photon)·tr(crossing photon), as Markov factorisation over disjoint
+strands requires (checked). At the proton q₀ with the canonical tower-summed E₀,
+|tr_D(pair)|·E₀ = 0.776939463185 MeV; CODATA Q_β = 0.78233 MeV, a −0.69 % gap. All 264
+matching γγ words give this one value for the e⁻ + ν̄ + loop orientation (they have writhe
+0 and close to the same link), and 1.453031 MeV for the mirror.
+
+Why this is not evidence, stated plainly:
+- The pair word is not the decay element Δ. The β-decay functional is ε(Δ), with Δ a
+  nucleon difference (bean `qou-99qc`); nothing here derives that the pair word replaces it.
+- The number depends on choices made outside any derivation: tr(1) = 1 normalisation on six
+  strands, which E₀ form (order-zero E₀ gives 0.769312), and which orientation.
+- Closeness to CODATA, reached after choosing among those, is the selection-against-target
+  pattern the no-fitting rule names. Treat 0.7769 as a coincidence until a derivation says
+  why the pair word's trace should be Q_β/E₀.
+- The ruled z_D base on the ruled element stays at −43 %; this does not change it.
+
+**Owner ruling 2026-11-22 (decision card, option A "Record as coincidence"):** the
+0.7769 MeV value is recorded as a coincidence. It is not wired to any dashboard, ladder or
+content block, and no derivation route for "pair-word trace = Q_β/E₀" is opened on its
+strength. It may be revisited only if a derivation independently produces the pair word as
+the decay element.
+
+**12.7 Sibling checks (2026-11-22).** The ⁴He thread: no conflict. Its bond letter is
+Vᵢ³ = γ(0,0,qh)·γ(0,0,−q⁻¹h), the lone single-crossing interface letters were retired on
+2026-11-15, and the γ₃ factor should be traced with right-hand closure (#8800). The ε / Q_β
+thread: no conflict, different word. Its Borromean V³ has one factorisation with weights in
+ℚ(q), the bar-paired (0,0,qh)·(0,0,−q⁻¹h); the other six need roots of an irreducible
+sextic. The pair here is not bar-paired: bar sends (0,−h⁻¹,−1) to (0,h⁻¹,−1), not to the
+partner (0,−h⁻¹,0). No general bar-pairing rule for γγ factors is on record, so this neither
+supports nor contradicts either result.

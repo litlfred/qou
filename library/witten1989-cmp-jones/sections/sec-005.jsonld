@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/witten1989-cmp-jones/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "; C)+βZ(S",
+  "pageStart": 29,
+  "pageEnd": 35,
+  "contains": [
+    "library/witten1989-cmp-jones/blocks/prose-sec-005",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-005-01",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-005-02",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-005-03",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-005-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "provenance": "ingested"
+}
