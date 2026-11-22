@@ -1428,8 +1428,8 @@ The cabling is the one choice made; the corpus model quotients the nucleus to on
 | bond G, proton right | +8.12717 | −8.11909 | +(3q²+1)h⁴/q | +0.00808 |
 | bond G′ = (σ₂⁻¹σ₃)³, proton left | +8.20264 | −8.19077 | +(q²+1)(3q⁴−2q²+1)h⁴/q | +0.01187 |
 | bond G′, proton right | +8.19115 | −8.20342 | −(3q²+1)q³h⁴ | −0.01227 |
-| capture, proton left (4 strands) | +1.97252 | −2.08049 | −h²·[3]_q | −0.10797 |
-| capture, proton right | +2.08049 | −1.97252 | +h²·[3]_q | +0.10797 |
+| capture, proton left (4 strands) | +1.97252 | −2.08049 | −h²·[3]_q/q² | −0.10797 |
+| capture, proton right | +2.08049 | −1.97252 | +h²·[3]_q/q² | +0.10797 |
 
 (h = q − q⁻¹, [3]_q = q² + 1 + q⁻².) Every pre-registered prediction holds: ±6 and ±3 at q = 1,
 nothing zero at q₀, S(1) = 0. **No word fixes the orientation** (not found in the searched class).
@@ -1439,7 +1439,8 @@ What the table shows:
   which side the proton is placed on. Flipping either flips S. This is the reading fixed in
   advance for "the asymmetry is a convention".
 - The capture braid breaks the relabel symmetry already at O(h²), with the clean exact form
-  ∓h²[3]_q. Its two placements are exact mirrors: O₊ on the left equals −O₋ on the right. So the
+  ∓h²[3]_q/q² = ∓(q²−1)²(q⁴+q²+1)/q⁶ (corrected in §46: first written ∓h²[3]_q, off by q⁻²; the
+  numbers were right). Its two placements are exact mirrors: O₊ on the left equals −O₋ on the right. So the
   capture, too, ties the asymmetry to placement and does not fix the label.
 - The capture puts a charge share on the electron strand at O(h) (−0.336 under O₊, left). In the
   6-strand bond words it was O(h³).
@@ -1520,3 +1521,48 @@ closure gives m_p = m_n at every q. Any n − p split must therefore come from d
 - The MeV figure −2.30 carries M_QCD, which contains m_μ = m_e·Vol(4₁)/ℏ_q², i.e. the c_q² factor.
   If the open decision on whether c_q² converts mass to energy (bean `qou-91w7`) goes the other
   way, the MeV value moves. The ratio E/M_QCD = −α/3 does not depend on it.
+
+## §46 Hydrogen built from photons by the six steps of `def:derived-atom` (sibling agent, pre-registered ddf883a5d25)
+
+`PREREGISTRATION-hydrogen-from-photons.md`, `mn_hydrogen_from_photons_probe.py` (5dabc122976),
+exact over ℚ(q) and ℚ(q, φ), 7/7 checks. Element W = γ(0,0,qh)·γ(0,0,−q⁻¹h)·g·K on C²⊗⁴.
+
+| step | in the element | status |
+|---|---|---|
+| 1 pair production | one γγ collision with the derived weights qh, −q⁻¹h; it expands to 1 + h²V − h²V² | partly built: "three collisions per nucleon" has no corpus element |
+| 2 quark selection | no letters (each quark is a strand; flavour is the T³ weight) | built |
+| 3 Borromean confinement | the step-1 product equals V³ (checked on all 16 states) | built from the photons |
+| 4 gluon | owner-unresolved (`gluon-stabiliser-ledger.md`) | **blocker**; four labelled arms g ∈ {1, V, σ₁, σ₁σ₀} |
+| 5 nuclear assembly | empty (A = 1) | built |
+| 6 electron cloud | capture K = A₀₁⁻¹ with the nucleus cabled (§43), plus an adjacent-capture sensitivity arm σ₂⁻² | built, one choice |
+
+B1 at q₀, proton left (q = 1 value in brackets):
+
+| arm | O₊ | O₋ | S_B1 (q₀) |
+|---|---|---|---|
+| g = 1, cabled | +1.97252 [3] | −2.08049 [−3] | −0.10797 |
+| g = 1, adjacent | +2.61623 [3] | −2.65994 [−3] | −0.04371 |
+| g = V, cabled | −0.11243 [0] | +0.00446 [0] | −0.10797 |
+| g = σ₁, cabled | +0.88728 [1] | −1.00713 [−1] | −0.11985 |
+| g = σ₁σ₀, cabled | +0.24434 [0] | −0.37737 [0] | −0.13303 |
+
+(The adjacent-capture rows of the other arms are in the `.out.json`.) All pre-registered predictions
+hold. Nothing is zero at q₀ in any of the 8 arms or either placement, so **the orientation is not
+fixed** (not found in the searched class). S flips sign with placement in every arm.
+
+Two exact facts, observed after the computation (not pre-registered):
+- **S factorises:** S_B1(W) = χ_(3)(proton element) × S_B1(capture alone), with χ_(3) = 1, q, q² for
+  g = V, σ₁, σ₁σ₀. With a fully symbolic collision γ(φ)·γ(ψ) the factor is
+  (1 + qφ₀ + qφ₁ + φ₀₁)(1 + qψ₀ + qψ₁ + ψ₀₁). The p/n asymmetry is carried by the capture and only
+  scaled by the nucleon.
+- **Mirror identity:** for the cabled capture, O₊(right) = −O₋(left) holds exactly for every gluon arm
+  and identically in (φ, ψ). Neutrality of one orientation on one side therefore forces neutrality
+  of the other orientation on the other side, so no photon weights or gluon in this family can fix
+  the orientation under the decision rule. This was checked in the computed family, not proved in
+  general.
+
+Correction to §43: the capture's exact S_B1 is −(q²−1)²(q⁴+q²+1)/q⁶ = −h²[3]_q/q². §43 first wrote
+−h²[3]_q. The value −0.10797 was right. It was also repeated in the §43 PR comment and in one
+cross-thread note, both corrected.
+
+Step 4 (the gluon) is the one step of the six the corpus cannot yet build.
