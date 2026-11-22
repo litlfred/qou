@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-11-22T21:28:51Z
+updated_at: 2026-11-22T21:30:50Z
 parent: qou-59vq
 ---
 
@@ -273,3 +273,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8356, closed o
 
 ## 2026-11-22: applicability review (hecke-schur-weyl-lean drain)
 Still applies. The defect is convention-independent, so convention D and today's rulings leave it standing. computations/probes/trm5_zcubed_live_producer_audit.py records that five computations/ producers still carry z**3 and that fixing the weight alone exposes the singular D-frame Gram. That is a compute change with downstream numbers; it waits on the owner (ask-owner rule), not done here.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): NEEDS-OWNER. Convention-independent defect, still live in 5 producers; fixing it moves downstream numbers and exposes the singular D-frame Gram.

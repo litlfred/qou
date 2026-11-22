@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-11-22T21:18:34Z
+updated_at: 2026-11-22T21:30:47Z
 parent: qou-59vq
 ---
 
@@ -38,3 +38,5 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-22 — completed (wave-2 drain)
 
 The ribbon lemma is on main: `QOU.MathlibExt.ribbon_hecke_dimension`, `ribbon_hecke_qDim_eq_qint_two` (`MathlibExt/RibbonHeckeDimension.lean`). The open item this bean named, a nondegenerate instance, is supplied by `qou-zoyv`: `QOU.KZ.Drinfeld.ribbon` and `qDim_V_eq_qint_two` (`KZ/Drinfeld/RibbonDH.lean`, via the scaled form `ribbon_hecke_dimension_scaled`). All verified this session with lean-direct on `main` 3c4c98fcc, axioms [propext, Classical.choice, Quot.sound].
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): ALREADY-DONE. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Closed with lean-direct + #print axioms evidence (see earlier note).

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:10Z
-updated_at: 2026-11-22T21:21:36Z
+updated_at: 2026-11-22T21:30:48Z
 parent: qou-59vq
 ---
 
@@ -66,3 +66,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8399, closed o
 
 ## 2026-11-22: closed completed (hecke-schur-weyl-lean drain)
 All three owner items are on main. Re-verified this session at main 3c4c98fcc with lean-direct exit 0 and #print axioms = propext, Classical.choice, Quot.sound for: QOU.Archimedean.RossoJonesGeneral.rossoJones_torusLink (item 1), QOU.Archimedean.SchurWeylTrace.trace_gamW and markov_gam_pow_explicit (items 2 and 3, per-module trace of gamma^p for every p, which also resolves the 'general s' residue noted in the full-twist append). No open conjecture in this bean's scope.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): ALREADY-DONE. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Closed with lean-direct + #print axioms evidence (see earlier note).

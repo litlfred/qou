@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T18:09:26Z
-updated_at: 2026-11-22T21:28:52Z
+updated_at: 2026-11-22T21:30:51Z
 parent: qou-59vq
 ---
 
@@ -58,3 +58,5 @@ CORRECTION to my own framing in PR #5820: I called MarkovInductiveCyclicity 'an 
 
 ## 2026-11-22: applicability review (hecke-schur-weyl-lean drain)
 Still applies but is likely superseded in practice by the Wedderburn route (see qou-bhrx note today), which gives general-n cyclicity without the coset induction. The inductive bricks remain conditional on HeckeConditionalExpectation, which has no instance. Recommend re-scoping to 'scrap if the Wedderburn route lands'; not scrapped now because it is not yet landed.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): SUPERSEDED-BY (pending) the Wedderburn route under qou-bhrx; conditional on HeckeConditionalExpectation with no instance. Scrap once that route lands.

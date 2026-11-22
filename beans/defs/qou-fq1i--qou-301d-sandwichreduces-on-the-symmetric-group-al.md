@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-11-22T21:19:32Z
+updated_at: 2026-11-22T21:30:48Z
 parent: qou-k4oq
 ---
 
@@ -50,3 +50,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8402, closed o
 ## 2026-11-22 — completed (wave-2 drain): the body's 2026-09-07 CLOSED entry stands
 
 The task as titled (SandwichReduces on the symmetric-group algebra tower, with a non-multiplicative trace, zero sorry) is on main: `QOU.MathlibExt.SymmetricGroupTowerWitness.sandwichReduces_sym` and `disjointBlock_sym`, verified this session with lean-direct on `main` 3c4c98fcc, axioms [propext, Classical.choice, Quot.sound]. Status had only been reset by batch triage. The body's scope limit is unchanged and must travel with any citation: this is the q = 1, z = 0, h = 0 shadow, not a Hecke tower; SandwichReduces for a Hecke tower at q ≠ 1 stays open (qou-301d / qou-ss88).
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): ALREADY-DONE. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Closed with lean-direct + #print axioms evidence (see earlier note).

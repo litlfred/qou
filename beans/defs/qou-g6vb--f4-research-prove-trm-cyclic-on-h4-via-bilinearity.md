@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T01:52:06Z
-updated_at: 2026-11-22T21:28:50Z
+updated_at: 2026-11-22T21:30:49Z
 parent: qou-59vq
 ---
 
@@ -57,3 +57,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8394, closed o
 
 ## 2026-11-22: closed completed (hecke-schur-weyl-lean drain, applicability review)
 The goal is met on main by a different route than this bean planned: QOU.Machinery.H4.trM_cyclic (in H4BasisBridge, a corollary of H4Cyclicity.trM4_cyclic proved directly from the three generators). Re-verified this session at main 3c4c98fcc: lean-direct exit 0, #print axioms = propext, Classical.choice, Quot.sound. The whnf-explosion route described above is moot. Cyclicity does not depend on z, so convention D (z = q^3/(q^2+1)) does not change the result.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): ALREADY-DONE. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Closed with lean-direct + #print axioms evidence (see earlier note).

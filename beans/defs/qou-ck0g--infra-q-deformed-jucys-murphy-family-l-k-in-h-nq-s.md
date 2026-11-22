@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T19:02:23Z
-updated_at: 2026-11-22T21:18:34Z
+updated_at: 2026-11-22T21:30:46Z
 parent: qou-1oif
 ---
 
@@ -158,3 +158,5 @@ Verified this session with lean-direct against the restored cache (`main` 3c4c98
 3. Commutativity and centrality: `qJM_commute` ([propext, Quot.sound]), `qJM_sum_comm_sigma'`, `qJMInv_sum_comm_sigma`.
 4. Bar-symmetrised sum and its block eigenvalue: `barSymJMSum`, `seminormalRep_barSymJMSum`, `barSymJMSum_block_eigenvalue_of_pos`; cosh identity `cosh_eq_sq_bracket_add_two`.
 The 2026-11-20 reset concerned the lane-e667 batch claim (#8323), not this work. Downstream `qou-8vt2` can cite these.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): ALREADY-DONE. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Closed with lean-direct + #print axioms evidence (see earlier note).

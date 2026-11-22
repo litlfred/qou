@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:31:38Z
-updated_at: 2026-11-22T21:21:36Z
+updated_at: 2026-11-22T21:30:51Z
 parent: qou-59vq
 ---
 
@@ -35,3 +35,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8399, closed o
 
 ## 2026-11-22: kept open (hecke-schur-weyl-lean drain)
 Checked, not closed. kz_jimbo_intertwiner (qou-dgsw, now completed) gives one weight-preserving unit U for every non-root-of-unity kappa, but U is still existential. Still open per this bean's own body: roots of unity q != 1 (non-semisimple), an explicit U, and V != C^2 / general Drinfeld-Kohno.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): APPLIES. Open scope (roots of unity, explicit U, V != C^2) is pure KZ/Jimbo math, unaffected by today's rulings.

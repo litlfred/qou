@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-08-21T19:57:29Z
-updated_at: 2026-11-22T21:18:35Z
+updated_at: 2026-11-22T21:30:49Z
 parent: qou-1oif
 ---
 
@@ -201,3 +201,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed o
 ## 2026-11-22 — scrapped as superseded (wave-2 drain)
 
 The bean's own instruction was to check route 2 first and verify rather than re-derive. Route 2 landed unconditionally: `QOU.BraidKnot.WedderburnUnconditional.sum_numSYT_sq_eq_factorial` (no instance binder), verified this session with lean-direct on `main` 3c4c98fcc, axioms [propext, Classical.choice, Quot.sound]. The combinatorial DU − UD = I brick was not built; it would only be an independent confirmation. Reopen if that confirmation is wanted for its own sake.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): SUPERSEDED-BY the RSK-free SW-3 route already on main (WedderburnUnconditional.sum_numSYT_sq_eq_factorial). No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings.

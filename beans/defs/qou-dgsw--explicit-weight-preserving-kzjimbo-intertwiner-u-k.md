@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-10-12T20:03:36Z
-updated_at: 2026-11-22T21:21:36Z
+updated_at: 2026-11-22T21:30:48Z
 parent: qou-59vq
 ---
 
@@ -25,3 +25,5 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 
 ## 2026-11-22: closed completed (hecke-schur-weyl-lean drain)
 Both items are on main. Re-verified this session at main 3c4c98fcc with lean-direct exit 0 and #print axioms = propext, Classical.choice, Quot.sound for QOU.Mass.KohnoIntertwiner.kz_jimbo_intertwiner (item 1) and QOU.IwahoriHecke.JonesNormalForm.words_pres_linearIndependent (item 2). The residual scopes (roots of unity, V != C^2) are tracked on qou-gzsp, which stays open.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): ALREADY-DONE. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Closed with lean-direct + #print axioms evidence (see earlier note).

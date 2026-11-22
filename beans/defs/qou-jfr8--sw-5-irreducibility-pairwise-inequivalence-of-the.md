@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-11-22T21:18:34Z
+updated_at: 2026-11-22T21:30:47Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -707,3 +707,5 @@ The body's own 2026-08-23 section says SW-5 is closed on main; the status was on
 - pairwise inequivalence: `QOU.SchurWeyl.seminormalRep_not_matRepEquiv_of_ne` (`SchurWeyl/SeminormalInequivalence.lean`);
 - and the assembled Wedderburn iso they feed: `heckeProduct_bijective`, `heckeWedderburn` (`SchurWeyl/HeckeWedderburnGeneral.lean`).
 Scope as stated in those files: field of characteristic 0, `q ≠ 0`, `q` not a root of unity (`qou-4lft` tracks the root-of-unity regime).
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): ALREADY-DONE. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Closed with lean-direct + #print axioms evidence (see earlier note).

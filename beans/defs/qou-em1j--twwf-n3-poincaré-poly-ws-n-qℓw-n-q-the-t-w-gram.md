@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-31T20:00:58Z
-updated_at: 2026-11-22T21:18:48Z
+updated_at: 2026-11-22T21:30:49Z
 parent: qou-1oif
 ---
 
@@ -25,3 +25,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed o
 ## 2026-11-22 — proved for every n, on branch claude/hecke-sw-bean-drain-2026-11-22 (wave-2 drain)
 
 `QOU.MathlibExt.SymmetricGroupPoincare.sum_pow_length`: Σ_{w∈S_n} q^{ℓ(w)} = ∏_{i<n}(1+q+⋯+q^i) over any commutative semiring, ℓ = `PermutationEnumeration.coxeterLength`; `sum_pow_length_three` is this bean's n = 3 case. Proof: first-value insertion `ins p τ` is a bijection Fin(n+1)×S_n → S_{n+1} with ℓ(ins p τ) = p + ℓ(τ). lean-direct exit 0, axioms [propext, Classical.choice, Quot.sound]. Commit 4fe9541d9. Close when merged; PR waits on the owner.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): APPLIES. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Proved for every n in PR #9132 (open); close on merge.

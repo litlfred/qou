@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T23:52:24Z
-updated_at: 2026-11-22T21:28:51Z
+updated_at: 2026-11-22T21:30:50Z
 parent: qou-rtxm
 ---
 
@@ -24,3 +24,5 @@ parent: qou-rtxm
 
 ## 2026-11-22: applicability review (hecke-schur-weyl-lean drain)
 Still applies, but the 2026-11-16 note overstates what PR #8148 does. That PR is open, not merged, and its file is not on main. Its MarkovTraceTower structure takes stabilization (M1), Markov reduction (M2) and cyclicity (M3) as fields, so tr_iterated_inclusion and tr_stabilized_word iterate an assumption; they do not prove general-n stabilization for H_n(q). The real general-n statement needs the Ocneanu trace constructed on SchurWeyl.Hecke (e.g. via heckeWedderburn + seminormal characters, tr = sum_lambda y_lambda chi_lambda with y_lambda at convention D) and M1 derived from branching. Main now has the Wedderburn iso, which this bean's 2026-07 text predates. Not closed.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): RESCOPE. Premise 'PR #8148 formalized it' is wrong (open PR; stabilization assumed as a field). Restated target: Ocneanu trace on SchurWeyl.Hecke via heckeWedderburn, y_lambda at convention D, M1 derived from branching.

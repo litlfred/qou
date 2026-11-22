@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-11-22T21:18:35Z
+updated_at: 2026-11-22T21:30:47Z
 parent: qou-59vq
 ---
 
@@ -375,3 +375,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8402, closed o
 ## 2026-11-22 — completed (wave-2 drain): the "close on merge" condition is met
 
 The body says "THIS BEAN IS COMPLETE pending the merge of #5791" (JM commutativity). That work is on main: `QOU.BraidKnot.Hecke.jmRaw_comm` (`BraidKnot/HeckeTranspositionExpansion.lean`) and the dim>1 witness `stdTwoBelow3_isJMWeight` (`BraidKnot/HeckeBoundedSeminormalWeight.lean`), both verified this session with lean-direct on `main` 3c4c98fcc, axioms [propext, Classical.choice, Quot.sound]. The navigation note's correction (the cascade contradicts irreducibility, not dimension) stands and is not an open item. Successors named in the body: `qou-0o6j`, `qou-ayyi`.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): ALREADY-DONE. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Closed with lean-direct + #print axioms evidence (see earlier note).

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-24T16:34:38Z
-updated_at: 2026-11-22T21:18:49Z
+updated_at: 2026-11-22T21:30:50Z
 parent: qou-1oif
 ---
 
@@ -25,3 +25,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed o
 ## 2026-11-22 — residue proved, on branch claude/hecke-sw-bean-drain-2026-11-22 (wave-2 drain)
 
 Most of this bean was already on main: `HabiroTailStar.gaussBinom` (generic CommRing) with both Pascal rules, vanishing for k>n and [n,n]=1, and `MathlibExt.GaussianBinomial.prod_mul_gaussG` (the product formula). Added on that definition, not a new copy: `GaussBinomSymm.gaussBinom_symm` ([a+b,a] = [a+b,b]), `gaussBinom_symm'`, `gaussBinom_one` ([n,k]_1 = choose). lean-direct exit 0, axioms [propext, Quot.sound]. Commit 1391de67e. Close when merged.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): APPLIES. No retired premise (photon form, electron, convention C, z=1 base, census, absolute mass, muon pin A) appears; the content is pure Hecke/S_n algebra, independent of today's rulings. Proved in PR #9132 (open); close on merge.

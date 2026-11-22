@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-11-22T21:28:51Z
+updated_at: 2026-11-22T21:30:51Z
 parent: qou-rtxm
 ---
 
@@ -74,3 +74,5 @@ Was in-progress with no bean update since 2026-08-22 and no main commit naming i
 
 ## 2026-11-22: applicability review (hecke-schur-weyl-lean drain)
 Still applies at general n. H_4 cyclicity is proved (QOU.Machinery.H4.trM_cyclic, axioms clean, re-checked today). The general-n route is now the Wedderburn one: main has SchurWeyl.heckeWedderburn, so a trace written as sum_lambda y_lambda chi_lambda is cyclic block by block (Matrix.trace_mul_comm). Cyclicity is independent of z; convention D only fixes y_lambda.
+
+## 2026-11-22 applicability verdict (hecke-schur-weyl-lean drain): APPLIES, rescoped to the Wedderburn route (H_4 done; general n via block-wise trace_mul_comm).
