@@ -78,53 +78,6 @@ abbrev coxeterLength {n : ℕ} (w : ReducedWord n) : ℕ := w.length
 abbrev MarkovTraceReducerSig (R : Type u) : Type u :=
   ∀ (_n : ℕ), List ℤ → R
 
-/-- A fueled tracer: signature of a recursive function that returns
-    `none` when fuel is exhausted, and `some (r, fuel')` when it
-    successfully produces a result `r` with leftover fuel `fuel'`.
-
-    Used to express termination as "with fuel ≥ ℓ(β) + n, the tracer
-    always returns `some _`". -/
-abbrev FueledTracer (R : Type u) : Type u :=
-  ℕ → (n : ℕ) → List ℤ → Option R
-
-/-- **Termination of the recursive Markov-trace reducer.**
-
-    *Statement (concrete):* there exists a fueled implementation
-    `tracer` such that for every input `(n, β)` and every fuel
-    bound `fuel ≥ β.length + n`, the tracer returns `some _`.
-
-    Justification (not formalised; proved in prose in the `.md`
-    sibling, section Correctness): the recursive
-    algorithm has well-founded structure on the lex order
-    `(n, ℓ(w))`. Each peeling step removes exactly one `σ_{n-2}`
-    factor (decreasing ℓ by 1); each truncation decreases the
-    ambient algebra's index `n`. The lex order has no infinite
-    descending chain, so the algorithm halts in finitely many
-    steps. A constructive fuel bound is `β.length + n` (an
-    upper bound on the number of peel/truncate steps along any
-    branch).
-
-    Ref: [jones1987] §5 (recursive structure of the Markov trace);
-    [kassel1995] Lemma III.3.5 (well-foundedness of the Hecke-basis
-    descent).
-
-    NOTE (honest scope): this lemma asserts only the *terminating-shape*
-    property — there exists a total fueled tracer returning `some` for
-    every sufficiently-fuelled input (`(tracer fuel n β).isSome`). The
-    witness is the constant `some default` tracer, which discharges the
-    shape but is not the canonical `tr_M` reducer; the added
-    `[Inhabited R]` hypothesis only inhabits the return type. The
-    concrete tracer corresponding to `markov_trace_recursive.py`, and the
-    well-founded-recursion argument on `(n, ℓ(w))` that it terminates,
-    are given in prose in the `.md` sibling and are not formalised. -/
-theorem markovTraceRecursiveReducer_terminates {R : Type*} [Inhabited R] :
-    ∃ (tracer : FueledTracer R),
-      ∀ (n : ℕ) (β : List ℤ) (fuel : ℕ),
-        β.length + n ≤ fuel → (tracer fuel n β).isSome := by
-  refine ⟨fun _ _ _ => some default, ?_⟩
-  intro n β fuel _
-  rfl
-
 /-! ## Disjoint-product property of the Markov trace
 
     The statement is `DisjointProductLaw` below, and the proof is
@@ -2249,6 +2202,96 @@ theorem isMarkovTrace_eq_trWord {mT : ℕ → List ℤ → R} {e : List ℤ → 
   markovTrace_unique hmT (trWord_isMarkovTrace z h) n w hw
 
 end CyclicProof
+
+/-! ### Size of the expansion, and agreement with `markov_trace_recursive.py`
+
+`trWord` first expands the word in the Hecke basis (`mulGens`), then takes the
+trace of each basis element (`trBasis`). Termination of both stages is checked
+by Lean (every definition is structurally recursive). The size bound below is
+for the expansion: a word of length `ℓ` gives at most `2^ℓ` terms, because one
+generator turns each term into one or two. The evaluator does not collect like
+terms, so this is the bound that holds for it; the `O(ℓ · n!)` bound of the
+Python reducer, which memoises on the `n!` basis permutations, is a statement
+about a different algorithm and is not formalised.
+
+The `example`s compare `trWord` with the symbolic output that
+`computations/markov/markov_trace_recursive.py` records in its witness, at
+`z = q³/(q²+1)` and `h = q − q⁻¹` (the reducer's convention), for the two
+11-crossing words that have no independent closed form there. Each is an exact
+evaluation in `ℚ` at `q = 2, 3, 1/2`, checked by the kernel. Three points do
+not prove the two rational functions equal; they check that the two
+implementations agree. The short words of the witness are stated for every
+commutative ring. -/
+
+section ExpansionSize
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- One generator at most doubles the number of terms. -/
+theorem mulGen_length_le (e : List (R × List ℕ)) (i : ℕ) :
+    (mulGen h e i).length ≤ 2 * e.length := by
+  induction e with
+  | nil => simp [mulGen]
+  | cons p e ih =>
+      simp only [mulGen, List.flatMap_cons, List.length_append, List.length_cons] at ih ⊢
+      split_ifs <;> simp only [List.length_cons, List.length_nil] <;> omega
+
+/-- A word of length `ℓ` multiplies the number of terms by at most `2^ℓ`. -/
+theorem mulGens_length_le (l : List ℕ) (e : List (R × List ℕ)) :
+    (mulGens h e l).length ≤ 2 ^ l.length * e.length := by
+  induction l generalizing e with
+  | nil => simp [mulGens]
+  | cons i l ih =>
+      simp only [mulGens, List.foldl_cons] at ih ⊢
+      calc (List.foldl (mulGen h) (mulGen h e i) l).length
+          ≤ 2 ^ l.length * (mulGen h e i).length := ih _
+        _ ≤ 2 ^ l.length * (2 * e.length) := Nat.mul_le_mul_left _ (mulGen_length_le h e i)
+        _ = 2 ^ (l.length + 1) * e.length := by ring
+
+/-- **Expansion size.** The Hecke-basis expansion that `trWord` sums over has
+at most `2^ℓ` terms for a word of length `ℓ`. -/
+theorem trWord_expansion_length_le (n : ℕ) (w : List ℤ) :
+    (mulGens h [(1, List.range (n + 1))] (w.map Int.toNat)).length ≤ 2 ^ w.length := by
+  simpa using mulGens_length_le h (w.map Int.toNat) [(1, List.range (n + 1))]
+
+/-! Short words of the witness, for every commutative ring. -/
+
+example : trWord z h 2 [] = 1 := trWord_nil z h 2
+example : trWord z h 2 [0] = z := by
+  simp (config := {decide := true}) [trWord, mulGens, mulGen, trBasis, swapAt,
+    List.range_succ, List.idxOf_cons, List.set]
+example : trWord z h 2 [0, 0] = h * z + 1 := by
+  simp (config := {decide := true}) [trWord, mulGens, mulGen, trBasis, swapAt,
+    List.range_succ, List.idxOf_cons, List.set]
+example : trWord z h 2 [0, 1] = z ^ 2 := by
+  simp (config := {decide := true}) [trWord, mulGens, mulGen, trBasis, swapAt,
+    List.range_succ, List.range'_succ, List.set]; try ring
+example : trWord z h 2 [0, 1, 0] = z + h * z ^ 2 := by
+  simp (config := {decide := true}) [trWord, mulGens, mulGen, trBasis, swapAt,
+    List.range_succ, List.range'_succ, List.set]; try ring
+example : trWord z h 3 [0, 1, 2] = z ^ 3 := by
+  simp (config := {decide := true}) [trWord, mulGens, mulGen, trBasis, swapAt,
+    List.range_succ, List.range'_succ, List.set]; try ring
+
+/-! The two 11-crossing words, against the witness's symbolic output
+(`σ₁⁷σ₂⁴`, and `σ₁⁶σ₂⁴σ₁⁻¹` via `σ⁻¹ = σ − h`). Values at `q = 2, 3, 1/2`. -/
+
+example : trWord (8/5 : ℚ) (3/2) 2 [0,0,0,0,0,0,0,1,1,1,1] = 4627607/3200 := by
+  decide +kernel
+example : trWord (27/10 : ℚ) (8/3) 2 [0,0,0,0,0,0,0,1,1,1,1] = 16041386821/109350 := by
+  decide +kernel
+example : trWord (1/10 : ℚ) (-3/2) 2 [0,0,0,0,0,0,0,1,1,1,1] = -2738527/51200 := by
+  decide +kernel
+example : trWord (8/5 : ℚ) (3/2) 2 [0,0,0,0,0,0,1,1,1,1,0]
+    - 3/2 * trWord (8/5 : ℚ) (3/2) 2 [0,0,0,0,0,0,1,1,1,1] = 11567/32 := by
+  decide +kernel
+example : trWord (27/10 : ℚ) (8/3) 2 [0,0,0,0,0,0,1,1,1,1,0]
+    - 8/3 * trWord (27/10 : ℚ) (8/3) 2 [0,0,0,0,0,0,1,1,1,1] = 39608297/2430 := by
+  decide +kernel
+example : trWord (1/10 : ℚ) (-3/2) 2 [0,0,0,0,0,0,1,1,1,1,0]
+    - (-3/2) * trWord (1/10 : ℚ) (-3/2) 2 [0,0,0,0,0,0,1,1,1,1] = -34067/2560 := by
+  decide +kernel
+
+end ExpansionSize
 
 end Evaluator
 
