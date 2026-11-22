@@ -139,7 +139,8 @@ theorem h_q_squared_pos : h_q_squared > 0 := by
   · unfold experimental_mu_e_ratio; positivity
 
 /-- The quantum Planck constant is in (0, 1), ensuring q > 1. -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
+-- Ref: [leitner2026] ħ_q = 1 − 1/q is the framework's own definition (no external
+--      source; [witten1988] was cited here and is not one)
 theorem h_q_value_in_unit_interval :
     0 < h_q_value ∧ h_q_value < 1 := by
   unfold h_q_value

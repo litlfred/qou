@@ -34,7 +34,7 @@ IS this `(Q,W)`. That identification is the M3 bridge (categorified AJ / Hecke�
 literature-open, and gated by the anti-laundering rule. Nothing here derives `A_ω`;
 `A_ω = 3` remains certified-as-GGM-DT-count, conditionally adopted.
 
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 eqs (96)–(98), (188)
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 eqs (96)–(98), (188)
 -- Ref: [leitner2026] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md
 -/
 
