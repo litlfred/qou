@@ -316,6 +316,7 @@ import QOU.MathlibExt.PLMoveVertex
 import QOU.MathlibExt.PLMoveVertexNear
 import QOU.MathlibExt.PLMoveVertexGlue
 import QOU.MathlibExt.PLPerturb
+import QOU.MathlibExt.PLSubdivide
 import QOU.MathlibExt.PLAmbientIsotopy
 import QOU.MathlibExt.PLPush
 import QOU.MathlibExt.PLDeltaIsotopy

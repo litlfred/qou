@@ -104,6 +104,9 @@ def Reaches (L : PolygonalLink E) (m : Fin L.k) (P : Polygon E) : Prop :=
   ∃ L' : PolygonalLink E, DeltaEquiv L L' ∧
     ∃ hk : L.k = L'.k, ∀ i, L'.comp (Fin.cast hk i) = Function.update L.comp m P i
 
+lemma Reaches.refl (L : PolygonalLink E) (m : Fin L.k) : L.Reaches m (L.comp m) :=
+  ⟨L, Relation.EqvGen.refl _, rfl, fun i => by simp⟩
+
 /-- **Chaining.** The second step only needs to know the new component and the rest. -/
 theorem Reaches.trans' {L : PolygonalLink E} {m : Fin L.k} {P Q : Polygon E}
     (h1 : L.Reaches m P)

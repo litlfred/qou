@@ -164,8 +164,6 @@ theorem reaches_moveAt (L : PolygonalLink E) (m : Fin L.k) (V : Fin (N + 3) → 
   have := reaches_rotFn L2 m2 _ h2 (-(k + 1))
   rwa [rotFn_rotFn_neg] at this
 
-lemma Reaches.refl (L : PolygonalLink E) (m : Fin L.k) : L.Reaches m (L.comp m) :=
-  ⟨L, Relation.EqvGen.refl _, rfl, fun i => by simp⟩
 
 section Hybrid
 
