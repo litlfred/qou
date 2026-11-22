@@ -1991,6 +1991,8 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_with_state, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_cached, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_batch, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_word_lq_cache_stats, m)?)?;
     m.add_function(wrap_pyfunction!(atomic_reduce_cache_clear, m)?)?;
     m.add_function(wrap_pyfunction!(atomic_reduce_cache_size, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
@@ -2254,6 +2256,44 @@ fn tr_m_atomic_mpfr_cached(
 ) -> PyResult<String> {
     rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr_cached(&signed_word, n_strands, &q_str, dps)
         .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// **Batched [`tr_m_atomic_mpfr`] with shared-prefix reduction.**
+///
+/// `signed_words[i]` -> the same decimal string `tr_m_atomic_mpfr` returns
+/// for it alone (byte-identical; asserted in hecke-engine's tests). Words
+/// that share a prefix share its reduction, so a batch of expanded terms
+/// with common suffixes costs far fewer reduce steps than one call per word.
+/// `parallel=True` runs contiguous chunks of the sorted batch on rayon.
+/// The GIL is released for the whole batch.
+#[pyfunction]
+#[pyo3(signature = (signed_words, n_strands, q_str, dps=50, parallel=true))]
+fn tr_m_atomic_mpfr_batch(
+    py: Python<'_>,
+    signed_words: Vec<Vec<(i8, i32)>>,
+    n_strands: usize,
+    q_str: String,
+    dps: u32,
+    parallel: bool,
+) -> PyResult<Vec<String>> {
+    py.allow_threads(|| {
+        rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr_batch(
+            &signed_words, n_strands, &q_str, dps, parallel,
+        )
+    })
+    .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// `(hits, misses, wholesale_clears_at_cap, size)` of the Rust
+/// `tr_m_word_lq` recursion cache. Profiling only.
+#[pyfunction]
+#[pyo3(signature = (reset=false))]
+fn tr_m_word_lq_cache_stats(reset: bool) -> (u64, u64, u64, usize) {
+    let s = rust_tr_m_word_lq::cache_stats();
+    if reset {
+        rust_tr_m_word_lq::reset_cache_stats();
+    }
+    s
 }
 
 /// Empty the Rust-side atomic-reduce cache.  Call between
