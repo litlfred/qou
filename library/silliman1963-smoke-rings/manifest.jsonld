@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/silliman1963-smoke-rings",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "silliman1963-smoke-rings",
+  "contains": [
+    "library/silliman1963-smoke-rings/sections/page-001",
+    "library/silliman1963-smoke-rings/sections/page-002",
+    "library/silliman1963-smoke-rings/sections/page-003",
+    "library/silliman1963-smoke-rings/sections/page-004",
+    "library/silliman1963-smoke-rings/sections/page-005",
+    "library/silliman1963-smoke-rings/sections/page-006",
+    "library/silliman1963-smoke-rings/sections/page-007",
+    "library/silliman1963-smoke-rings/sections/page-008",
+    "library/silliman1963-smoke-rings/sections/page-009",
+    "library/silliman1963-smoke-rings/sections/page-010",
+    "library/silliman1963-smoke-rings/sections/page-011",
+    "library/silliman1963-smoke-rings/sections/page-012",
+    "library/silliman1963-smoke-rings/sections/page-013",
+    "library/silliman1963-smoke-rings/sections/page-014",
+    "library/silliman1963-smoke-rings/sections/page-015"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "silliman1963-smoke-rings",
+    "title_source": "slug",
+    "source_file": "silliman1963-smoke-rings.pdf",
+    "source_sha256": "c07f93df2630398691dfaf7162687820873244190f78eb42e1ea4bfddb6cc5bf",
+    "pages": 15,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

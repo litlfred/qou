@@ -1,0 +1,1 @@
+We shall denote the interaction of two particles P and Q by the expression PQ, but it is understood that the “value” of PQ is the result of the interaction, and this may partake of a number of possibilities.
