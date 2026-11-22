@@ -1,5 +1,5 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe over a ring $R$ ([quantum observable universe](#def:quantum-observable-universe)). One defines the *jet object*:
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe over a ring $R$ ([quantum observable universe](#def:quantum-observable-universe)). Assume $A$ is commutative, and let $\Omega^1_{A/R} = I/I^2$, $I = \ker(m \colon A \otimes A \to A)$, be the module of Kähler differentials, the complement of $A$ in the [jet object](#def:categorical-jet) $J^1(A) = (A \otimes A)/I^2$. One defines the *tangent algebra*
 $$
-  J^1(A) := (A \otimes A)/I^2, \qquad I = \ker(m \colon A \otimes A \to A),
+  T(A) := \mathrm{Sym}_A\bigl(\Omega^1_{A/R}\bigr).
 $$
-the [jet object](#def:categorical-jet), which contains $A$ as a direct summand with complement $I/I^2 = \Omega^1_{A/R}$, the module of Kähler differentials. The space $J^1(A)$ inherits a canonical Frobenius–Hopf structure directly from $A$. The quadruple $(\mathbf{C}, J^1(A), \tau', q)$—with the induced fibre functor $\tau'$—forms a quantum observable universe over $R$.
+Its degree-$\le 1$ truncation is $J^1(A) = A \oplus \Omega^1_{A/R}$. The structure map $\ell \colon A \to T(A)$ and the augmentation $r \colon T(A) \to A$, which kills $\Omega^1_{A/R}$, satisfy $r \circ \ell = \mathrm{id}_A$. When $A = \mathcal{O}(G)$ is the coordinate Hopf algebra of an affine group $G$, $T(A) = \mathcal{O}(TG)$ is the coordinate Hopf algebra of the tangent group $TG = G \ltimes \mathrm{Lie}(G)$, and $\ell$ and $r$ are Hopf maps: the pull-backs along the projection $TG \to G$ and along the zero section. The quadruple $(\mathbf{C}, T(A), \tau', q)$, with the induced fibre functor $\tau'$, forms a quantum observable universe over $R$.

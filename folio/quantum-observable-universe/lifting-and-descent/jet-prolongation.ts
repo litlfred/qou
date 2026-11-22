@@ -10,6 +10,25 @@ export default proposition({
   proofs: ["prf:jet-prolongation"],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-22",
+      body:
+        "Owner ruling 2026-11-22: the prolongation object is the tangent algebra " +
+        "$T(A) = \\mathrm{Sym}_A(\\Omega^1_{A/R})$, not $J^1(A)$. The splitting $r \\circ \\ell = \\mathrm{id}_A$ " +
+        "of the structure map and the augmentation is formalised " +
+        "(`QOU.LiftingDescent.tangentRetract_comp_tangentSection`, " +
+        "`QOU/LiftingDescent/TangentAlgebraSplitting.lean`, sorry-free). Cited, not formalised: for " +
+        "$A = \\mathcal{O}(G)$, $T(A) = \\mathcal{O}(TG)$ with $TG = G \\ltimes \\mathrm{Lie}(G)$ a group, so " +
+        "$T(A)$ is a commutative Hopf algebra and both maps are Hopf maps. Still open: the Frobenius form " +
+        "and the vanishing condition on $T(A)$. The proof's step deriving them from $A$ being a direct " +
+        "summand is not a valid argument, and for compact $G$ the group $TG$ is not compact, so no " +
+        "Haar-normalised integral is available. Non-commutative case: the two-sided jet " +
+        "$A \\ltimes M$ splits (`QOU/LiftingDescent/NoncommJet.lean`), and a square-zero skew-primitive " +
+        "escapes the characteristic-zero obstruction (`QOU.LiftingDescent.skewPrimitive_sq`); for " +
+        "$A = k[\\mathbb{Z}/2]$, $A \\ltimes \\Omega^1_u(A)$ has Sweedler's four-dimensional Hopf presentation " +
+        "(cited, not formalised).",
+    },
+    {
       kind: "caveat",
       date: "2026-11-22",
       body:
