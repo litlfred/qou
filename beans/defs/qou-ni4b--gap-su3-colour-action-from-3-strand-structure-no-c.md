@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-11-22T18:33:57Z
+updated_at: 2026-11-22T18:56:37Z
 parent: qou-8lxd
 ---
 
@@ -88,3 +88,5 @@ Verdict: a colour-breaking stabiliser, not electroweak. This is a reading argume
 NOT proved: the braid relation for Ř; the trace property on the image of H_n; Ocneanu uniqueness. So the D identification holds at the parameter level only.
 
 Verification: lean-direct exit 0; #print axioms shows no sorryAx.
+
+2026-11-22 coideal-colour probe (PR #9059, computations/probes/qcd_coideal_colour/; prereg 096d888f561, probe d97eaeddd46 35/35 exact Q(q,c1,c2), RESULT d14cd6d8b34): Letzter coideals of U_q(gl3), AI (so3) and AIII (gl2+gl1), s=0, c free. Both commute with Hecke and transport (inherited from B in U, not new), but the q->1 Lie dims are 3 and 4, not 8, so NOT colour (Q4 fail, pre-registered). AIII K-matrix: the RE on the commutant pencil cuts out J ~ J0^-1, a quadratic type-B generator with ratio -c2/(c1 q) set by the free c. On type-A H_n every B-invariant product twist T1(x)g^(n-1) gives z3 (Schur on the partial quantum trace); no c makes any rank-2 D twist B-invariant. D not recovered. Remaining untested lead: the (gl6, gl3+gl3) coideal on C3(x)C2, whose fixed points contain the diagonal sl3(x)1. Also: LITERATURE.md cites math/0512581 as Kolb-Stokman; it is Kolb, 'Quantum symmetric pairs and the reflection equation'. Gluon open. Bean stays open.
