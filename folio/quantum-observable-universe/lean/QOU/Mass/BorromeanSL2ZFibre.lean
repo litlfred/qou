@@ -1,6 +1,7 @@
 import QOU.Mass.BorromeanWordForcing
 import Mathlib.Data.Complex.Basic
 import QOU.MathlibExt.SL2ZPositiveWords
+import QOU.Mass.BraidThreeSL2ZKernel
 
 /-!
 # The same-character fibre of `β_Bor` at writhe 0, at every length
@@ -32,13 +33,14 @@ exactly `β_Bor`'s conjugacy class, at any length.
 ## Classical facts
 
 * `KernelIsDeltaFour` (from `BorromeanWordForcing`): the kernel of `B₃ → SL(2, ℤ)` is
-  `⟨Δ⁴⟩`, `Δ = σ₀σ₁σ₀`. **Still a named hypothesis** here; surjectivity is proved
-  (`burauNeg_surjective`).
+  `⟨Δ⁴⟩`, `Δ = σ₀σ₁σ₀`. **Proved** (`kernelIsDeltaFour`, in `BraidThreeSL2ZKernel`, by a
+  normal form `Δ^{2m}·(alternating word)` and ping-pong on sign patterns); surjectivity
+  is `burauNeg_surjective`.
 * `PositiveRepresentatives`: every element of `SL(2, ℤ)` of trace `> 2` is conjugate to
   a positive `R/L` word. **Proved** (`positiveRepresentatives`, via
   `QOU.MathlibExt.SL2Z.exists_conj_posProd`, sorry-free, standard axioms).
 
-So `fibre_of_kernel` is conditional on the kernel fact alone.
+So `fibre_unconditional` holds with no hypotheses beyond the word's own.
 
 No measured value enters.
 -/
@@ -479,5 +481,12 @@ theorem fibre_of_kernel (hK : KernelIsDeltaFour) (w : Word) (hw : InB3Letters w)
     (hχ : ∀ q : ℂ, q ≠ 0 → chi21 q w = chi21 q [a, b', a, b', a, b']) :
     IsConj (eval w) (eval [a, b', a, b', a, b']) :=
   fibre hK positiveRepresentatives w hw h0 hχ
+
+/-- **The same-character fibre of `β_Bor` at writhe 0, unconditionally.** Both classical
+facts are proved: `kernelIsDeltaFour` and `positiveRepresentatives`. -/
+theorem fibre_unconditional (w : Word) (hw : InB3Letters w) (h0 : writhe w = 0)
+    (hχ : ∀ q : ℂ, q ≠ 0 → chi21 q w = chi21 q [a, b', a, b', a, b']) :
+    IsConj (eval w) (eval [a, b', a, b', a, b']) :=
+  fibre_of_kernel BorromeanWordForcing.kernelIsDeltaFour w hw h0 hχ
 
 end QOU.Mass.BorromeanSL2ZFibre
