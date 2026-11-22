@@ -21,9 +21,10 @@ element with `b² = 1 + a·a'` (a square root, kept as a hypothesis so nothing a
 * `vertex_det` — `det(σ₀σ₁⁻¹) = 1`, with `σ₁⁻¹ = σ₁ − h`. So the eigenvalues are `λ, λ⁻¹`.
 * `vertex_trace` — `tr(σ₀σ₁⁻¹) = −(q⁴ − q² + 1)/q²`.
 * `vertex_cayley_hamilton` — `V² − (tr V)·V + 1 = 0`.
-* `trace_formula_at_one` — the trace formula at `q = 1` is `−1`, so the characteristic
+* `trace_formula_at_one` — the trace formula at `q = 1` is `−1` (any field), so the characteristic
   polynomial there is `x² + x + 1`: the eigenvalues are the primitive cube roots of unity.
-* `arccos_neg_half` — `arccos(−1/2) = 2π/3`, i.e. `t(1) = θ(1)/2π = 1/3` exactly.
+* Archimedean section (`ℝ`, last in the file): `arccos_neg_half` — `arccos(−1/2) = 2π/3`, i.e.
+  `t(1) = θ(1)/2π = 1/3` exactly; `phase_at_one`.
 
 The value at `q = 1` is taken from the closed-form trace, which is a polynomial in `q, q⁻¹`;
 the Hoefsmit entries themselves are singular at `q = 1` (`1 − q⁴ = 0`).
@@ -110,10 +111,18 @@ theorem vertex_cayley_hamilton (hq0 : q ≠ 0) (h4 : 1 - q ^ 4 ≠ 0) (h4' : 1 -
     simp [Matrix.mul_apply, Fin.sum_univ_two, Matrix.trace_fin_two] <;>
     first | ring1 | linear_combination hd | linear_combination -hd
 
+/-- The closed-form trace at `q = 1` is `−1`: the characteristic polynomial is `x² + x + 1`.
+Holds in any field. -/
+theorem trace_formula_at_one : (-(1 ^ 4 - 1 ^ 2 + 1) / 1 ^ 2 : R) = -1 := by norm_num
+
 end Generic
 
-/-- The closed-form trace at `q = 1` is `−1`: the characteristic polynomial is `x² + x + 1`. -/
-theorem trace_formula_at_one : (-(1 ^ 4 - 1 ^ 2 + 1) / 1 ^ 2 : ℚ) = -1 := by norm_num
+/-! ## Archimedean section (`ℝ`, §7c)
+
+Everything above is over a generic field. The two statements below use `Real.arccos` and
+`Real.pi`, so they are stated over `ℝ` and kept apart, after the generic results. -/
+
+section Archimedean
 
 /-- `arccos(−1/2) = 2π/3`, so the vertex phase at `q = 1` is `θ/2π = 1/3`. -/
 theorem arccos_neg_half : Real.arccos (-(1 / 2)) = 2 * Real.pi / 3 := by
@@ -123,5 +132,7 @@ theorem arccos_neg_half : Real.arccos (-(1 / 2)) = 2 * Real.pi / 3 := by
 
 theorem phase_at_one : Real.arccos (-(1 / 2)) / (2 * Real.pi) = 1 / 3 := by
   rw [arccos_neg_half]; field_simp [Real.pi_ne_zero]
+
+end Archimedean
 
 end QOU.MassTheory.GammaGammaVertexEigenvalues
