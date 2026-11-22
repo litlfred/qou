@@ -1,13 +1,13 @@
 ---
 # qou-5n04
 title: Repoint 9 lean.refs whose qualified name matches no declaration
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - lean
 created_at: 2026-11-22T09:43:52Z
-updated_at: 2026-11-22T10:49:15Z
+updated_at: 2026-11-22T15:11:40Z
 parent: qou-uwyf
 ---
 
@@ -20,3 +20,6 @@ Found by the triviality-probe triage (qou-y1qu), record docs/audits/2026-11-22-t
 
 ## 2026-11-22 — PR #9005 (issue #9004)
 Repointed 9 refs (6 from the triage list, 3 more found by the stricter ref audit). The triage list's qu-to-qou, brane-boundary and yekutieli-triple are VALID module-path refs, so they are unchanged; the probe learned that form in folio-assistant-sci#213 (resolveByModulePath). The ref audit now requires a qualified-name match (new row class grep_other_namespace): 0 rows; 1317/1324 ok, the 7 others are tracked (qou-02q4, qou-mhzl). The ref-target-audit short-name mismatch (MassIdentity.exists/unique, CategoricalAction.unique pointing at other files) is the same defect class and is closed by that rule. Status: in review, PR #9005.
+
+
+2026-11-22: 9 refs repointed in PR #9005 (merged). Ref audit now flags grep_other_namespace; 0 rows left. 7 unresolved refs remain under qou-02q4 / qou-mhzl.

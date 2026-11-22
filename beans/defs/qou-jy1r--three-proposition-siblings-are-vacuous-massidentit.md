@@ -1,14 +1,14 @@
 ---
 # qou-jy1r
 title: 'Three proposition siblings are vacuous: MassIdentity.exists, MassIdentity.unique, CategoricalAction.unique'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - lean
     - vacuity
 created_at: 2026-11-22T10:08:04Z
-updated_at: 2026-11-22T12:02:12Z
+updated_at: 2026-11-22T15:11:40Z
 parent: qou-uwyf
 ---
 
@@ -28,3 +28,6 @@ MassIdentity.unique restated as the scaling law t1 = c*t2 -> ||t1|| = ||c||*||t2
 - CategoricalAction.unique: restated as independence of the choice of right dual (card 'Upgrade unique, demote exists'); sorry-free, standard axioms.
 - MassIdentity.unique: scaling law (earlier commit).
 All three are done on the branch; complete this bean when #9005 merges.
+
+
+2026-11-22: done in PR #9005 (merged rebase, f2f943a4935). MassIdentity.exists demoted to rem:mass-identity-exists (owner card). MassIdentity.unique now proves t1=c*t2 -> |t1|=|c||t2|. CategoricalAction.unique now proves independence of the choice of right dual (transport via rightDualIso), sorry-free, axioms propext/Classical.choice/Quot.sound. QA: self-assuming audit rules 5 and 6.
