@@ -156,6 +156,7 @@ export default chapter({
             "em-spectral-completeness",
             "em-spectral-completeness-proof",
             "borromean-markov-trace-closed-form",
+            "borromean-colored-jones-habiro-prior-art",
             "borromean-markov-trace-closed-form-proof",
             "borromean-two-photon-factorisation",
             "trace-flavour-no-go",
