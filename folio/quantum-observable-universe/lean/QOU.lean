@@ -339,6 +339,8 @@ import QOU.MathlibExt.PLDeltaPoly
 import QOU.MathlibExt.PLHomeo
 import QOU.MathlibExt.PLAlexander
 import QOU.MathlibExt.PLTriangulation
+import QOU.MathlibExt.PLLipschitz
+import QOU.MathlibExt.PLScaling
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
