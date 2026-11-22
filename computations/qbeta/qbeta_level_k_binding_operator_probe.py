@@ -216,11 +216,25 @@ def binding_block(shape, qq):
     return d, dim
 
 
+def eigvals(m):
+    """Eigenvalues of `m` as a flat list of mpc/mpf.
+
+    mpmath 1.3.0's `mp.eig` ignores `left=False, right=False` for a 1x1
+    matrix: its `n == 1` branch returns the tuple `([A[0]], ER, EL)`
+    unconditionally. Iterating that tuple handed a LIST to `mp.im`, which is
+    the crash at the block loop (the dim-1 blocks (6) and (1^6)). Handle the
+    1x1 case directly, so the general path stays mpmath's own solver.
+    """
+    if m.rows == 1:
+        return [m[0, 0]]
+    return mp.eig(m, left=False, right=False)
+
+
 def small_phase(shape, qq):
     """The smallest eigenphase below 1 rad, or None if the block has no such
     complex-conjugate pair at this q."""
     d, _ = binding_block(shape, qq)
-    ev = mp.eig(d, left=False, right=False)
+    ev = eigvals(d)
     ph = [abs(mp.arg(z)) for z in ev if abs(mp.im(z)) >= mp.mpf("1e-18")]
     return min([p for p in ph if p < 1], default=None)
 
@@ -389,7 +403,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     spectra, small = {}, {}
     for sh in SHAPES:
         d_blk, dim = binding_block(sh, Q0)
-        ev = mp.eig(d_blk, left=False, right=False)
+        ev = eigvals(d_blk)
         nreal = sum(1 for z in ev if abs(mp.im(z)) < mp.mpf("1e-18"))
         ph = sorted({mp.mpf(mp.nstr(abs(mp.arg(z)), 12))
                      for z in ev if abs(mp.im(z)) >= mp.mpf("1e-18")})
