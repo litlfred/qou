@@ -62,3 +62,14 @@ the photon weights symbolic, and the report says exactly which.
    `HydrogenCaptureWeightSpace`; verified with lean-direct only; `#print axioms`.
 3. Out of scope: the adjacent capture σ₂⁻² (it does not commute with σ₁, so the mechanism above
    does not apply); any physical reading of the orientation.
+
+## Result (appended after the computation; the text above is unchanged)
+
+- sympy (`s46_sympy_check.py`, output `s46_sympy_check.out.txt`): 50/50 exact checks pass, including
+  the mechanism (K_L commutes with σ₀, σ₁; K_R with σ₁, σ₂) and S(K_L) = −h²[3]_q/q².
+- Lean (`HydrogenCaptureFactorisation.lean`): (i) and (ii) hold for every proton element, not only
+  the four arms, with hypothesis `q ≠ 0` only. The mechanism was as pre-registered; the
+  `q⁴ + q² + 1 ≠ 0` hypothesis (intertwiner) turned out not to be needed.
+- A sibling branch (`CapturePlacement.lean`, claude/electron-placement-gammagamma-2026-11-22)
+  proves the mirror for the REFLECTED proton word; the statement here is for the TRANSLATED proton
+  word, as in the probe. They are different statements.
