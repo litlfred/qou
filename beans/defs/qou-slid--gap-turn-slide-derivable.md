@@ -7,7 +7,7 @@ priority: normal
 tags:
     - pl-knots
 created_at: 2026-11-21T22:45:00Z
-updated_at: 2026-11-21T23:50:00Z
+updated_at: 2026-11-22T10:30:00Z
 ---
 
 Issue #8902, PR #8962. `Move.slide` in `QOU/MathlibExt/LinkDiagramCode.lean` moves `t` turns from
@@ -47,3 +47,22 @@ state sums are unlikely to show the slide independent.
 Route 1 notes: a turn can cross a crossing only through `r2anti` (antiparallel bigon), and
 braid strands meet only in parallel, so the obvious third-strand route needs an antiparallel pair.
 Not yet attempted in Lean.
+
+## 2026-11-22: owner picked routes 1 and 3
+
+- **Correction to the 2026-11-21 route-1 note.** In codes `r2anti` applies to ANY two joins
+  `(a,b,bigonTurn s)`, `(c,d,0)`: a code has no orientation of strands in the plane, so "braid
+  strands are parallel" is not an obstacle. The note above was wrong on that point.
+- A kink loop carries no net turn (`r1` removes it with turn `kinkTurn` inside), so the classical
+  curl-through-a-crossing trick moves no turn by itself. Only `r2anti` moves a turn across a crossing.
+- Model-level algebra (exact, by hand): `r2anti` for sign `false` follows from `r2anti` for sign
+  `true` (with `X-` the inverse of `X+`); the two are not independent constraints.
+- Numerical searches (mpmath 30 dps, LM, crossing matrix forced invertible via det*z = 1):
+  - all identities, k0^2 != k1^2 forced: 6 starts, none converge; drift to k1 = -k0 (slide holds);
+  - r2par + r2anti only: 4 starts at 3000 iterations stall at residual 1e-10..1e-11, drifting to
+    k0^2 = k1^2; dropping r1 or r3 separately: same drift;
+  - non-diagonalisable turn matrix K = lam [[1,1],[0,1]] (route 3, outside `Model`): 8 starts
+    converge (residual ~1e-34) with lam = +-1 and slide defect ~1e-17, i.e. the slide holds.
+  Reading (evidence only): the R2 identities alone appear to force the slide identity in every
+  model found. If that is a theorem about models, its proof should point to a diagrammatic
+  derivation using r2anti/r2par only.
