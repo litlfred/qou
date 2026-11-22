@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-22T11:09:02Z
+updated_at: 2026-11-22T11:16:10Z
 parent: qou-wxhi
 ---
 
@@ -26,3 +26,7 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 - The CAL-2 pin m_mu/m_e = Vol(4_1)/hbar_q^2 is dimensionless only if hbar_q is a pure number, and then c_q = q^-1/hbar_q is too. So reading A (c_q is the image of physical c, mapped to 1) contradicts the pin; reading B (c_q^2 an element of Q(q) evaluated at q0) is what the definitions literally say. Supports the other thread's point (2).
 - Under B, def:mass-energy defines a categorical energy, not physical rest energy E = m c^2 (c = 1 would force c_q = 1). The q = 1 pole is then real: the MeV n-p cell tends to 2 m_e = 1.022 MeV as q -> 1. That is a model statement, not a defect.
 - Agent's recommendation (judgement): keep reading B as the default, scope the 'speed of light' wording, and separately audit which energies use E0 and which use bare m_e (bean to follow if the owner agrees).
+
+
+
+2026-11-22 OWNER: '\frakE is categorical energy.  Needs scaling (coming form CAL123 hopefully)'. Recorded in docs/coordination/owner-rulings.md. Reading A (c_q^2 converts to physical energy) is not adopted. Now OPEN (this bean, retitled in spirit): derive the map from categorical energy E to MeV from CAL-1/2/3 alone. Sub-tasks: (1) is E0 = m_e c_q^2 hbar_q that map, i.e. does m_e (CAL-1) fix the categorical MASS unit and what fixes the energy unit; (2) the step-9 binding uses B = m_e*rho*[...] without c_q^2, so the corpus uses two different scales; one is wrong or they need a derived relation; (3) every E0-scaled row (Q_beta, log binding, n-p cell, vertex budgets) is conditional on the answer.
