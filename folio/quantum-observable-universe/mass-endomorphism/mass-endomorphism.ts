@@ -166,6 +166,7 @@ export default chapter({
       blocks: [
         "complex-volume-intro",
         "binding-qbeta-complex-volume",
+        "volume-function-polarization-scope",
         "channel-rotation-askey-lit",
         "whipple-rotation-intertwining",
         "complex-volume-character-variety-path",
