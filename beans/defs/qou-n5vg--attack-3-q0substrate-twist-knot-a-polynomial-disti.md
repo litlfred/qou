@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T00:19:26Z
-updated_at: 2026-10-04T15:16:25Z
+updated_at: 2026-11-22T21:15:51Z
 parent: c7vs
 ---
 
@@ -16,3 +16,7 @@ parent: c7vs
 - **Summary**: Proved distinguished `4_1` twist-knot trace specialization at `s^2 = 3`: root pair `(2 + s, 2 - s)` has trace `4`, reciprocal norm `1`, and quadratic discriminant `12`.
 - **80-dps Probe & Witness**: `computations/probes/habiro_cyclotomic_recurrence_and_hopf_cs_brick_probe.py` -> `computations/probes/habiro-cyclotomic-recurrence-and-hopf-cs-brick.witness.json` (`scriptCommitSha: aee44290d86add18624df3d3bce0a730246dc422`, PR head `eb8e68feba9367aa951532accb9ea1ab3a723c3a`)
 - **PR**: https://github.com/litlfred/qou/pulls (`status: in-progress` pending merge)
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. The latest note above points at batch PR #8257, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

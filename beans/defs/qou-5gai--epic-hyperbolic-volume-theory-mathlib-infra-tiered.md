@@ -7,7 +7,7 @@ priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T17:05:00Z
-updated_at: 2026-11-17T10:08:09Z
+updated_at: 2026-11-22T21:16:03Z
 parent: qou-c8p8
 ---
 
@@ -151,3 +151,7 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 - **80-dps Probe & 2-Commit Witness:** `computations/probes/hyperbolic_scaling_descartes_cubic_farkas_duality_probe.py` + `computations/probes/hyperbolic-scaling-descartes-cubic-farkas-duality.witness.json` (`scriptHash = 9b07010b5e8c`, `scriptCommitSha = 9f95671d31537da41246588ea9801b300607f995`, `allPassed = True`).
 - **Adversarial Cross-Review (Round 59):** Verified `litlfred/qou#8276` (`1909a7bd3bec6ebbdc594cc42f836c8a59fb6451`, `0` advisories) and remediated `3 major, 2 advisory` borrowed-name findings on sibling PR `litlfred/qou#8261`, pushing `77aeb5c622eb2876245d1628c2f107b5f85999f8` and posting `ready: 77aeb5c622eb2876245d1628c2f107b5f85999f8` (`https://github.com/litlfred/qou/pull/8261#issuecomment-6942739479`).
 - **Status:** Kept at `in-progress` pending Merge Manager verification and merge.
+
+## 2026-11-22 — correction to this bean's wording (bean `qou-6eik`, site B)
+
+This bean says Mathlib's `UpperHalfPlane` carries "no Riemannian metric" and calls the gap "total, not partial". The first half is false: `Mathlib/Analysis/Complex/UpperHalfPlane/Metric.lean` gives ℍ the hyperbolic metric (`Dist ℍ`, `dist_eq`, isometries incl. `ModularGroup.S`), and `Manifold.lean` a manifold structure. What it lacks is a volume measure and geodesics, and it is 2-dimensional; the dimension is the real reason it is not a route to H³, so the H1–H5 tier plan stands. Sibling `qou-b84o` already said this. Lean site A corrected on branch `claude/volume-conjecture-bean-drain-2026-11-22`.

@@ -2,13 +2,12 @@
 # wpdb
 title: The curvature-rank chain assumes a word-depth -> partition-depth bridge that is stated nowhere
 status: in-progress
-pr: 8193
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:30:00Z
-updated_at: 2026-11-16T20:41:00Z
+updated_at: 2026-11-22T21:15:54Z
 parent: qou-n4nr
 ---
 
@@ -516,3 +515,7 @@ Tracked under related carrier M12 of epic `qou-d8c7` "Mass endomorphism" (issue 
 - [x] Added `partitionCornerHook`, `partitionCornerHook_bounds` (`1 ≤ h(0,0) ≤ n`), `n_three_corner_hook_degenerate`, `n_four_corner_hook_stratification`, `WordPartitionDepthBridge`, `partDepth_unique_of_wordPartitionDepthBridge`, and `no_unshifted_degree_zero_stratum` to `folio/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification.lean` (`0 sorry`, `0` vacuity hits).
 - [x] Verified corner-hook bounds and `n = 3, 4` stratification in `computations/probes/route89_staircase_wpdb_stargram_probe.py` (`computations/probes/route89-staircase-wpdb-stargram.witness.json`, Commit 1 `f3d7f0a51d31a6d9fa4e53d717fcd6d96c6ad0de`).
 - [ ] Await CI verification and Merge Manager merge of PR #8193 (`9d88b10b75877699bcfe0134c2f9a3d95a32edf4`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; the bridge is open per the 2026-08-26 note. The latest note above points at batch PR #8193, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

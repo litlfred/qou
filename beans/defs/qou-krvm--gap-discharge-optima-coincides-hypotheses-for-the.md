@@ -1,15 +1,13 @@
 ---
 # qou-krvm
 title: 'GAP: discharge optima_coincide''s hypotheses for the actual m004/L6a4 polytopes'
-status: in-progress
-pr: 8235
-updated_at: 2026-11-17T06:55:36Z
+status: completed
 type: feature
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:10:13Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-22T21:15:42Z
 parent: qou-r9ih
 ---
 
@@ -178,3 +176,7 @@ gave m004 uniqueness. What was missing was **existence** — uniqueness alone is
 All sorry-free; QOU import cone rebuilt from current source, lean-direct
 `-DautoImplicit=false` exit 0. **Still open:** the volume functional is DEFINED as the
 Lobachevsky sum; that it is the hyperbolic volume is `qou-idvt` T2. Bean stays open on that.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+**Closed with evidence.** All four hypotheses of `SymmetricOptimum.optima_coincide` are discharged on `main` for both anchors, and the stronger existence + uniqueness statements are proved directly: `Knot/M004VolumeMaximum.lean` (`regularPoint_isMax`, `isMax_iff_regular`, `totalVol_regularPoint = 2·Cl₂(π/3)`), `Knot/L6a4VolumeMaximum.lean` (`vol_le_regularOctahedron`, `vol_lt_regularOctahedron`), `Knot/MultiTetVolumeConcave.lean`, `Knot/RivinConcavity.lean`; merged in PR #8535 (2026-11-20). The one thing left, that the Lobachevsky-sum functional IS the hyperbolic volume of the manifold, is bean `qou-idvt` T2 and bean `qou-8mtd`, not this bean.

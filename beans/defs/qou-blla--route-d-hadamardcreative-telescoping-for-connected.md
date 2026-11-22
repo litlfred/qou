@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T20:42:09Z
-updated_at: 2026-10-04T15:24:14Z
+updated_at: 2026-11-22T21:15:50Z
 parent: qou-n4nr
 ---
 
@@ -22,3 +22,7 @@ WHY IT IS ONLY A TEMPLATE: order is not depth. Creative telescoping operates at 
 CAUTION FOR THE NEXT AGENT: 'Hadamard' matches 24 beans in this tracker and NONE of them are this - they are all HadamardFactorization, the entire-function factorization theorem. Different Hadamard. Do not read those as prior work.
 
 - **Round 55 Progress (`2026-11-16T21:09:27Z`)**: Opened [`litlfred/qou#8202`](https://github.com/litlfred/qou/pull/8202) (`61d4706edbc97c195108082e38b072c982ba2984`, Commit 1 `842a8da69cdb997861cc48f6f16593cc33e1e707`). Keeping bean at `status: in-progress` pending owner review.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; template only, naive form excluded (`ConnectedSumAnnihilator.lean`). The latest note above points at batch PR #8202, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

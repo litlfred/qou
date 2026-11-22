@@ -10,7 +10,7 @@ tags:
     - open-problem
     - reorg-2026-10-04
 created_at: 2026-08-10T18:00:39Z
-updated_at: 2026-10-04T15:14:49Z
+updated_at: 2026-11-22T21:15:46Z
 parent: b9cj
 ---
 
@@ -201,3 +201,7 @@ unverified.
 
 ## Round 71 Update (PR #8483)
 - De-vacuified and extended in PR `litlfred/qou#8483` (`claude/round71-devacuify-6qbv-b9cj`, HEAD `ccf4b5dbe70005deb5de8ba21a4dcf809c5178db`, C1 `7580772c921dba1792c7df67cfdeb7db65a5b8f8`), compiled with Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all 6 directory-mode static audit scripts) and verified with 80-dps `mpmath` witness `computations/probes/round71-devacuify-6qbv-b9cj.witness.json`.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; the open parts are as the 2026-08-29 note says (Mostow rigidity, hyperbolisation, a triangulation of the knot complement). The PL-topology work (PR #9114, relative Moise) is owned by another thread. Related closures today: `qou-krvm` (volume maximum on `main` for m004/L6a4), `qou-f8lit` (exact `VOL_4_1`). The latest note above points at batch PR #8483, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

@@ -1,13 +1,16 @@
 ---
 # qou-xru7
 title: 'TL-capstone: assemble TransferLemmas instance (aj_mem+division[DONE]+minimality) ⇒ instance-discharge strong_aj_figure_eight unconditional; BLOCKED on TL-aj_mem + TL-minimality'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-20T04:47:59Z
-updated_at: 2026-10-04T15:25:06Z
+updated_at: 2026-11-22T21:15:43Z
 parent: c7vs
 ---
 
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+**Scrapped: impossible as stated.** The class it asks to instantiate is proved uninhabitable on `main`: `Machinery/StrongAJFigureEightInstances.lean`, `not_transferLemmas` / `transferLemmas_isEmpty` (sorry-free). Over any nontrivial ring, `L` is a unit of the localized torus, so `L⁻¹·Â ∈ I` has smaller `topDeg`, and the `minimality` field fails. `strong_aj_figure_eight_of_transfer` is therefore vacuous. The live question is whether to restate `minimality` with the L-length (`topDeg − bottomDeg`) or over the non-localized ring `A⟨L⟩`, as Nguyen–Tran do; that restatement is an owner decision and is carried by `qou-y7o7`.

@@ -2,7 +2,6 @@
 # thmb
 title: Picard–Lefschetz / thimble route to the 5₂ volume conjecture — literature + feasibility
 status: in-progress
-pr: 8298
 type: task
 priority: normal
 tags:
@@ -12,7 +11,7 @@ tags:
     - "5_2"
     - reorg-2026-10-04
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-11-17T10:22:30Z
+updated_at: 2026-11-22T21:15:55Z
 parent: qou-n4nr
 ---
 
@@ -125,3 +124,7 @@ and none of it is formalised. The identification above is a bridge to the
 - **Status:** `in-progress` (PR `litlfred/qou#8298`, head `92f8a80b907a40e6db76eb1a8a85f081c5960913`, Commit 1 `df446885b17718b4f18e584a2765ba2e802adb68`).
 - **Lean 4.24.0 Modules:** `folio/quantum-observable-universe/lean/QOU/BraidKnot/N5LevelSixRootThresholdAndThreeLinkTriad.lean` and `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoSaddleHessianAndFourOneStokesCrossCheck.lean` (`0` `sorry`, `0` `axiom`, `0` warnings, `0` advisories across all 5 static audits).
 - **80-dps Probe & Witness:** `computations/probes/round58_n5_level_six_ohtsuki_thimble_fourone_stokes_dilog_probe.py` and `computations/probes/round58-n5-level-six-ohtsuki-thimble-fourone-stokes-dilog.witness.json` (`allPassed: true`, `0` raw `float64`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; oscillatory control for 5₂ not formalised. Round 58 PR #8298 was closed unmerged.

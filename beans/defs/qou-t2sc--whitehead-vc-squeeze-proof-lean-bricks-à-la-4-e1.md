@@ -1,14 +1,14 @@
 ---
 # qou-t2sc
 title: Whitehead VC squeeze proof — Lean bricks (à la 4₁ E1-E5 / Borromean B1-B5), gated on the positive-sum form
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - close-candidate
     - reorg-2026-10-04
 created_at: 2026-08-01T19:45:02Z
-updated_at: 2026-10-04T15:14:24Z
+updated_at: 2026-11-22T21:15:42Z
 parent: qou-n4nr
 ---
 
@@ -82,3 +82,7 @@ Was in-progress with no bean update since 2026-08-01 and no main commit naming i
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8244 (`457d28e500f11a4249f57fd33fcd18112faef23b`, scriptCommitSha `1086b0ae6f630df61ca513a195514ef5d6137b5c`)
 - **Summary**: Added `whiteheadLinkPhase_fresnel_symm` and `whiteheadLinkPhase_arg_at_half_even` in `QOU/Knot/WhiteheadPhaseAlgebra.lean`, verified by 80-dps mpmath probe `frust_cubic_tower_jhopf_whitehead_probe.py`.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+**Closed with evidence.** The bricks this bean asked for are all on `main`, and the one input the 2026-08-01 note left open (`hsaddle`, the saddle term → 4G) is discharged: `QOU.Knot.WhiteheadSaddle.whiteheadS_explicit_saddle_tendsto` at `(n*,k*) = (⌊N/2⌋,⌊N/4⌋)`, giving `whitehead_vc_innerSum_half` (inner sum at `⌊N/2⌋` → 4G, unconditional). What remains of the Whitehead volume conjecture is the phased OUTER sum (`VdVWhiteheadLemma4`, epic `qou-u1b5`) and the general statement (bean `qou-r75d`); neither is a squeeze brick.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-10-04T15:19:23Z
+updated_at: 2026-11-22T21:15:53Z
 parent: qou-n4nr
 ---
 
@@ -26,3 +26,7 @@ NOT absolute-mass work (qou-exam): this is the W_lambda/ratio continuation, not 
 - **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/StateIntegralBridgeAndTwoBridgeLayeredNZBrick.lean` (`faddeev_modular_b_squared_upper_half_plane_convergence_witness`)
 - **Summary**: Proved upper-half-plane convergence condition `0 < -2 * u_r * u_i` for `-tau = -b^2` when `0 < u_r` and `u_i < 0`, plus norm-square factorization `(u_r^2 - u_i^2)^2 + (2 * u_r * u_i)^2 = (u_r^2 + u_i^2)^2`.
 - **80-dps Probe & Witness**: `computations/probes/state_integral_bridge_and_two_bridge_layered_nz_brick_probe.py` -> `computations/probes/state-integral-bridge-and-two-bridge-layered-nz-brick.witness.json` (`scriptCommitSha: 5a0a98fc8762e45b734969dd4e71c7271737dbf3`, PR head `564a7f62489ee3d8fa99df6e5a109d1af0b09d37`)
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. The latest note above points at batch PR #8222, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

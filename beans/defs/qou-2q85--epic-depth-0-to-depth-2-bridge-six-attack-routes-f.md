@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T20:42:08Z
-updated_at: 2026-11-18T07:49:45Z
+updated_at: 2026-11-22T21:15:46Z
 parent: qou-n4nr
 ---
 
@@ -50,3 +50,7 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 - Branch: `feat/round83-lambdasum-taupos-pairenergy-c1eval-nobranch-43c1`
 - Commit 1 (code + probe): `e226ba66ce53cea91430549ce1efc48cd1eeef24`
 - Commit 2 (witness): `17c21a76b062fd76e16d4f84b23687e02fc0050c` (`scriptSha256 = 0635fcc96bfd3bd66e7452f9553ce1314e6829b0b1a6b7202ea86d48b4b232a6`)
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. Routes A–D closed or non-crossing per the earlier notes; E (`qou-960k`) and F (`qou-zovy`) remain. The latest note above points at batch PR #8392, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

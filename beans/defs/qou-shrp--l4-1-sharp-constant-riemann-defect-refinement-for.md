@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T12:00:00Z
-updated_at: 2026-10-04T15:13:10Z
+updated_at: 2026-11-22T21:15:53Z
 parent: qou-n4nr
 ---
 
@@ -217,3 +217,7 @@ Was in-progress with no bean update since 2026-08-11 and no main commit naming i
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8238 (`dcfad8a84dddbefde9a4efb59eba72ba663b1d84`, scriptCommitSha `2b4b5612016793df004e2f2990d7681285f78653`)
 - **Summary**: Added `cell_defect_width_nonneg` and `cell_defect_sub_midpoint_le` in `QOU/Knot/EulerMaclaurinFirst.lean`, verified by 80-dps mpmath probe `interface_kappa_geodesic_em_connsum_probe.py` (`scriptHash: 5c337ec3fbc3`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. The latest note above points at batch PR #8238, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

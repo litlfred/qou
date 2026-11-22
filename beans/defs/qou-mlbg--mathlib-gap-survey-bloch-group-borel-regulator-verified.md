@@ -11,7 +11,7 @@ tags:
     - mathlib-gap
     - bloch-group
 created_at: 2026-08-07T18:05:00Z
-updated_at: 2026-10-04T15:21:31Z
+updated_at: 2026-11-22T21:15:51Z
 parent: qou-n4nr
 ---
 
@@ -157,3 +157,7 @@ cone already.
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
 - **Summary**: Added `LiTwo_reflection_diff_symm` and `LiTwo_sum_sub_two_LiTwo_half` in `QOU/Archimedean/DilogReflection.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+Bloch / Borel-regulator side belongs to the sibling thread "Work dilogarithm and Bloch beans"; not worked here. The latest note above points at batch PR #8231, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

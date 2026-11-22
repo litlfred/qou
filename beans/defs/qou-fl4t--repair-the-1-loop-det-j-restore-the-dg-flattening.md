@@ -12,7 +12,7 @@ tags:
     - compute
     - torsion
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-10-04T15:13:46Z
+updated_at: 2026-11-22T21:15:55Z
 parent: qou-n4nr
 ---
 
@@ -597,3 +597,7 @@ Was in-progress with no bean update since 2026-08-07 and no main commit naming i
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
 - **Summary**: Added `zeta_elementary_symm_two`, `zeta_cubes_sum_eq_three_prod`, and `det_sublattice_index_cross_eq` in `QOU/OneLoopEdgeLattice.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; repair done through the tenth pass. The latest note above points at batch PR #8231, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

@@ -11,7 +11,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-22T21:15:47Z
 parent: qou-n4nr
 ---
 
@@ -1387,3 +1387,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 
 ## Progress (Round 57)
 - Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `prod_x_sub_eq_x_mul_prod_one_sub`, `base_point_x_eq_one_pins_products`, and `root_and_shifts_invertible` in `FiveTwoCyclotomicBloch.lean` plus 80-dps mpmath witness.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; envelope theorem open. The latest note above points at batch PR #8213, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-08-02T08:33:15Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:15:44Z
 parent: qou-n4nr
 ---
 
@@ -30,3 +30,7 @@ Was in-progress with no bean update since 2026-08-02 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8301, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-07: "chore(beans): qou-kvvu completed (catalanG bridge verified); qou-1gkf lower-envelope progress"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+Re-scope, no status change. The analytic content is on `main` and unconditional: `WhiteheadSaddleClausen.whitehead_vc_innerSum_half` (inner sum at `⌊N/2⌋` → 4G). What this bean still literally asks is a port to the class `WhiteheadVolumeConjectureLimit`, which uses index `(N−1)/2`; for even `N` that is `N/2 − 1`, a different sequence, and the file itself calls it a placeholder link. Porting buys little: that class is about the inner sum, not `J_N(W)`. The mathematically live gap is the phased outer sum (`VdVWhiteheadLemma4`, epic `qou-u1b5`). Suggest: replace the placeholder index by `N/2` and instantiate the class from `whitehead_vc_innerSum_half` (a short Lean change), then close this bean; left for a Lean-capable pass because it edits a theorem statement.

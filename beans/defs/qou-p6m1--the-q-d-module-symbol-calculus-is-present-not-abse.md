@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-06T13:46:21Z
-updated_at: 2026-10-04T15:14:13Z
+updated_at: 2026-11-22T21:15:52Z
 parent: qou-n4nr
 ---
 
@@ -126,3 +126,7 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8222 (`95ddc04a72f67a43b1ccf1d77e08572625847a9b`, scriptCommitSha `4ed1888aba96f0c3e837a57c93b666bdd892604e`)
 - **Summary**: Added `ramified_vs_unramified_diff_pos`, `ramified_index_div_unramified_eq_e`, and `dyadic_ramified_index_strict_gt_unramified` in `QOU/TraceFormula/TwoAdicSwanConductor.lean`, verified by 80-dps mpmath probe `keystone_writhe_ramified_stokes_ladder_probe.py` (`scriptHash: 75539ba8f436`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. The eight-site correction it asks for is corpus-derived but touches content blocks across chapters, so it was not swept in this pass. The latest note above points at batch PR #8222, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

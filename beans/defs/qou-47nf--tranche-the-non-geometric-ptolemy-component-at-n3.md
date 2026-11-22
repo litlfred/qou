@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-10-12T20:57:57Z
+updated_at: 2026-11-22T21:15:46Z
 parent: qou-v2om
 ---
 
@@ -875,3 +875,7 @@ measurement in `docs/audits/2026-10-12-first-pytest-run.md`.
 
 ### Progress (Round 73 — PR litlfred/qou#8318)
 - Formalized in PR `litlfred/qou#8318` (`feat/round73-symsquare-fibretl-mu3slot-sleak-deuteronz-43c1`, Commit 1 `d5360fac6f1464f5fd03c06ef76e726e30c785fd`, Head `e58aca150b7054a3222889e8bb9937602e515ca4`, `scriptHash: 19f0b8589c79`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change in this pass; last substantive note 2026-10-12 (the §(xliii) regression guard has never run).

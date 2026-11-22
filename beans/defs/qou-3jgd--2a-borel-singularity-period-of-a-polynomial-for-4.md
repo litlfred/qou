@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-30T01:05:37Z
-updated_at: 2026-10-04T15:16:01Z
+updated_at: 2026-11-22T21:15:49Z
 parent: c7vs
 ---
 
@@ -16,3 +16,7 @@ parent: c7vs
 - **Summary**: Proved parabolic cusp factorization `figureEightAPoly 1 L = (L + 1)^2`, double root `figureEightAPoly 1 (-1) = 0`, and amphicheiral Borel period cancellation `omega_plus + (-omega_plus) = 0`.
 - **80-dps Probe & Witness**: `computations/probes/figure_eight_a_poly_period_and_takata_holonomic_brick_probe.py` -> `computations/probes/figure-eight-a-poly-period-and-takata-holonomic-brick.witness.json` (`scriptCommitSha: 5c4e30462ed53f77f251c4ddf47409b4459308ef`, PR head `f6277d470f462db4f8fd3f013f12ae4b9781d94b`)
 - **PR**: https://github.com/litlfred/qou/pull/8252 (`status: in-progress` pending merge)
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; open. The latest note above points at batch PR #8252, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

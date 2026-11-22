@@ -14,7 +14,7 @@ tags:
     - van-der-veen
     - gukov-murakami
 created_at: 2026-08-08T14:07:16Z
-updated_at: 2026-10-04T15:14:40Z
+updated_at: 2026-11-22T21:15:48Z
 parent: qou-n4nr
 ---
 
@@ -102,3 +102,7 @@ send it without that review actually happening.
 
 ## Round 79 progress (PR #8358)
 - Advanced in PR #8358 (`3d5e94f03a32259e850c4108650709877896bfd7`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. What is left is sending the correction note to van der Veen, which is outward-facing and needs the owner's review first; not done here.

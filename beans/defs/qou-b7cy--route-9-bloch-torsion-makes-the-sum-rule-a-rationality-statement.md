@@ -2,7 +2,6 @@
 # qou-b7cy
 title: 'Route 9: Bloch torsion at ℚ(ζ₇)⁺ makes the 5₂ sum rule a RATIONALITY statement'
 status: in-progress
-pr: 8193
 type: task
 priority: high
 tags:
@@ -13,7 +12,7 @@ tags:
     - reduction
     - reorg-2026-10-04
 created_at: 2026-08-07T17:05:00Z
-updated_at: 2026-11-16T20:41:00Z
+updated_at: 2026-11-22T21:15:47Z
 parent: qou-n4nr
 ---
 
@@ -214,3 +213,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - [x] Added `unit_inv_w`, `unit_inv_one_sub_w`, `unit_inv_one_add_w`, `norm_one_sub_w_eq_neg_one`, and `norm_one_add_w_eq_one` to `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoCyclotomicBloch.lean` (`0 sorry`, `0` vacuity hits).
 - [x] Verified 80-dps Route 9 Bloch polynomial identity, unit inverses, norms, and per-embedding level-7 Rogers dilogarithm ladder `(17, 5, -1)/42` in `computations/probes/route89_staircase_wpdb_stargram_probe.py` (`computations/probes/route89-staircase-wpdb-stargram.witness.json`).
 - [ ] Await CI verification and Merge Manager merge of PR #8193 (`9d88b10b75877699bcfe0134c2f9a3d95a32edf4`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+Bloch-torsion side belongs to the sibling thread "Work dilogarithm and Bloch beans"; not worked here. The latest note above points at batch PR #8193, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

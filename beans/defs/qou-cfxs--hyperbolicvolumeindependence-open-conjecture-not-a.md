@@ -7,7 +7,7 @@ priority: deferred
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T07:04:17Z
-updated_at: 2026-10-04T15:26:10Z
+updated_at: 2026-11-22T21:15:45Z
 parent: qou-n4nr
 ---
 
@@ -21,3 +21,7 @@ Filed as `draft`/`deferred` purely so the `sorry` is accounted for and
 nobody mistakes it for work someone forgot to do. **Do not attempt.**
 The only honest resolutions are: upstream mathematics settles it, or the
 dependent results get restated conditionally on the conjecture.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+Untouched by design: algebraic independence of the volumes is an open problem (Borel–Zagier circle). Stays draft/deferred.

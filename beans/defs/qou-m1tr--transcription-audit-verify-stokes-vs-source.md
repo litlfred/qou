@@ -9,7 +9,7 @@ tags:
     - integrity
     - reorg-2026-10-04
 created_at: 2026-08-11T10:50:00Z
-updated_at: 2026-10-04T15:15:08Z
+updated_at: 2026-11-22T21:15:47Z
 parent: qou-mub3
 ---
 
@@ -59,3 +59,7 @@ RESIDUAL EXPOSURE (now minimized, not eliminated): that the eq-(98) array itself
 correctly — one small matrix instead of the whole Stokes dataset. STILL OPEN in this bean:
 the A_{4_1} monomials (mitigated by the proved reciprocal symmetry) and the 5_2 boundary
 slopes (qou-52sn, the genuinely unverified input).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. Stokes matrices verified 2026-08-11 (`QBeta/StokesMatrixProvenance.lean`). Still open: the A_{4_1} monomials and the 5₂ boundary slopes (`qou-52sn`).

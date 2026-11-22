@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T03:32:44Z
-updated_at: 2026-10-04T15:12:41Z
+updated_at: 2026-11-22T21:15:48Z
 parent: qou-n4nr
 ---
 
@@ -60,3 +60,7 @@ Was in-progress with no bean update since 2026-07-19 and no main commit naming i
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8222 (`95ddc04a72f67a43b1ccf1d77e08572625847a9b`, scriptCommitSha `4ed1888aba96f0c3e837a57c93b666bdd892604e`)
 - **Summary**: Added `keystone_surgery_coeffs_coprime` (`Nat.Coprime 5 2`), `keystone_surgery_bezout_identity` (`5*1 - 2*2 = 1`), and `snappea_census_zero_vs_four_distinct` in `QOU/KeystoneManifold.lean`, verified by 80-dps mpmath probe `keystone_writhe_ramified_stokes_ladder_probe.py` (`scriptHash: 75539ba8f436`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; the wall is the Beasley–Witten localization construction. The latest note above points at batch PR #8222, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

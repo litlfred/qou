@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-31T19:30:00Z
-updated_at: 2026-10-04T15:15:05Z
+updated_at: 2026-11-22T21:15:47Z
 parent: qou-n4nr
 ---
 
@@ -135,3 +135,7 @@ buys nothing.
 
 ## Progress (Round 57)
 - Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `meridian_normSq_strict_mono_winding` and `off_lattice_inside_disk_ne_meridian` in `FigureEightDeformedMeridianWinding.lean` plus 80-dps mpmath witness.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; open research. The latest note above points at batch PR #8213, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

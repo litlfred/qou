@@ -1,13 +1,13 @@
 ---
 # qou-i5yp
 title: 'GAP: does a depth-<=8 Bring Gauss-Manin recurrence admit body-order period ratio a2:a3:a4 = 1:-0.52:+4.45?'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T07:05:23Z
-updated_at: 2026-10-04T15:19:57Z
+updated_at: 2026-11-22T21:15:45Z
 parent: qou-n4nr
 ---
 
@@ -71,3 +71,7 @@ Do not run the PF computation against three terms.
 
 ## Progress (Round 57)
 - Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `a_four_in_terms_of_a_two`, `a_five_in_terms_of_a_two`, and `depth_three_kernel_unique` in `BodyOrderRecurrenceDepth.lean` plus 80-dps mpmath witness.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+**Closed with evidence: answered as posed.** The question (does a depth-≤8 Gauss–Manin recurrence admit `a2:a3:a4 = 1:−0.52:+4.45`?) has the answer YES, vacuously, proved sorry-free in `MassTheory/BodyOrderRecurrenceDepth.lean` (`three_le_depth`, `depth_three_kernel_reaches`: at depth 3 the map to `(a3,a4)` is surjective). The answerable revised form needs `a5, a6` from ⁶Li/⁷Li, which is binding-front work owned by the L2 program (`qou-v2om`), not this list.

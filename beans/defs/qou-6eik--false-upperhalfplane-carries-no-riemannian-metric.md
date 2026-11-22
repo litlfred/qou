@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-10-04T15:14:50Z
+updated_at: 2026-11-22T21:15:44Z
 parent: qou-n4nr
 ---
 
@@ -71,3 +71,7 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F1, §F2,
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
 - **Summary**: Added `integral_Ioi_hemisphere_diff` and `integral_Ioi_hemisphere_strict_mono` in `QOU/Archimedean/HyperbolicVolumeMeasure.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+Fixed on branch `claude/volume-conjecture-bean-drain-2026-11-22`: `Archimedean/HyperbolicVolumeMeasure.lean` header now says ℍ carries the hyperbolic metric (`UpperHalfPlane/Metric.lean`: `Dist ℍ`, `dist_eq`, the isometries incl. `ModularGroup.S`) and a manifold structure, but no volume measure and no geodesics, and is 2-dimensional; the misleading "Analysis/Complex only" line is gone. Comment-only, exemption 2 (the Mathlib file decides it). Site B (bean `qou-5gai`) gets an appended correction note. Close when the PR merges. The latest note above points at batch PR #8231, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

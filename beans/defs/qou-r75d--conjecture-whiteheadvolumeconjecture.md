@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-04T01:49:55Z
-updated_at: 2026-11-21T12:10:00Z
+updated_at: 2026-11-22T21:15:44Z
 parent: qou-n4nr
 ---
 
@@ -61,3 +61,7 @@ Next: the combinatorial Markov theorem (Vogel + Traczyk), coordinated with the P
 Draft PR #8962. `normValue_eq` is sorry-free: for any model satisfying `Model.Invariant` (R1 up to θ, R2 parallel and antiparallel, R3), the writhe-normalised value is a Reidemeister invariant of diagram codes.
 
 Finding (measured with sympy): the sl₂ R-matrix is not such a model while codes carry no rotation data. A free circle evaluates to |ι| = 2, not [2], and the kink partial trace is diag(q, 2q − q⁻¹). With K = diag(q, q⁻¹) turn weights the four kinks give q^{±2}, and the antiparallel bigon holds with a K^{±1} turn on its over edge plus the compensating boundary turn. Fix proposed: integer turn markers. Owner decision pending (options: turn markers / Markov's theorem / stop). Conjecture remains open.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No status change; the conjecture for `J_N(W)` itself is open. On `main`: inner-sum limit unconditional (`whitehead_vc_innerSum_half`), polynomiality (#8944), diagram-invariant route (#8962, owner decision on turn markers pending). Remaining: `VdVWhiteheadLemma4` (outer-sum non-cancellation).

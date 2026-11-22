@@ -2,10 +2,10 @@
 # qou-v57s
 title: 'The cusp shape parameter is INDEX-BLIND: tau_arch is not a function of the algebraic seed (scope-(b), pigeonhole)'
 status: in-progress
-pr: 8187
 type: task
+priority: normal
 created_at: 2026-10-10T12:34:17Z
-updated_at: 2026-11-16T20:22:00Z
+updated_at: 2026-11-22T21:15:54Z
 parent: qou-n4nr
 ---
 
@@ -359,3 +359,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 
 - [x] Added `l6a4_orbit_step_one`, `l6a4_orbit_step_two`, `l6a4_orbit_step_three`, `tau_arch_not_injective_of_lt_roots`, `tau_arch_constant_of_single_isometry_class`, and `snappy_cusp_seeding_non_injective` in `folio/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean` + 80-dps `mpmath` probe (`litlfred/qou#8187`, `28237151a70df9ecb11495b374e141771a7b4a76`).
 - [ ] Await review and merge of `litlfred/qou#8187`.
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. The latest note above points at batch PR #8187 (closed), which was closed unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

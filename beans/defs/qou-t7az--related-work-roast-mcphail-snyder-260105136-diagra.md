@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T18:52:13Z
-updated_at: 2026-10-04T15:23:22Z
+updated_at: 2026-11-22T21:15:54Z
 parent: qou-n4nr
 ---
 
@@ -78,3 +78,7 @@ over-claim → "assess the fibre-evaluation bridge, if any"). Still OPEN.
 - **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/TwoRowFrobeniusStratumAndConnectedSumTraceBrick.lean` (`mcphail_snyder_diagrammatic_edge_lattice_rank_and_input_shift`)
 - **Summary**: Proved planar 4-valent knot diagram Euler identity `c - 2 * c + (c + 2) = 2` and non-vanishing phase shift `alpha * (mu + delta_mu) - alpha * mu = alpha * delta_mu != 0` under an input meridian perturbation `delta_mu != 0`.
 - **80-dps Probe & Witness**: `computations/probes/two_row_frobenius_stratum_and_connected_sum_trace_brick_probe.py` -> `computations/probes/two-row-frobenius-stratum-and-connected-sum-trace-brick.witness.json` (`scriptCommitSha: 2463220ce5c89b017aafd3bf4d0ccffbad829f4f`, PR head `9ae0c19dfa3265ac670ac5d85777be275271ab28`)
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; related work only. The latest note above points at batch PR #8222, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

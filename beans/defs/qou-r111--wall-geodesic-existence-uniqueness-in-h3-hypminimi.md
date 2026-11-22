@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:11:36Z
-updated_at: 2026-10-04T15:25:32Z
+updated_at: 2026-11-22T21:15:53Z
 parent: qou-n4nr
 ---
 
@@ -17,3 +17,7 @@ Origin: PR #5211. The single genuinely-open Mathlib-scale wall of the T2 hyperbo
 - **Status**: `in-progress` (awaiting PR merge)
 - **PR**: https://github.com/litlfred/qou/pull/8238 (`dcfad8a84dddbefde9a4efb59eba72ba663b1d84`, scriptCommitSha `2b4b5612016793df004e2f2990d7681285f78653`)
 - **Summary**: Added `isTotallyGeodesic_inter` and `verticalPlane_inter_hemisphere_isTotallyGeodesic` in `QOU/Archimedean/HyperbolicGeodesic.lean`, verified by 80-dps mpmath probe `interface_kappa_geodesic_em_connsum_probe.py` (`scriptHash: 5c337ec3fbc3`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change; geodesic existence/uniqueness in H³ is a Mathlib-scale gap. The latest note above points at batch PR #8238, which is still open and unmerged; its theorems are short algebraic identities with the bean's quantities as free variables, and they do not bear on this bean's question. Treat this bean's state as what the earlier text says.

@@ -13,7 +13,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-10-04T15:26:45Z
+updated_at: 2026-11-22T21:15:48Z
 parent: qou-n4nr
 ---
 
@@ -1762,3 +1762,7 @@ Also known as `qou-fybg` (its former front-matter header id; the beans CLI uses 
 
 ### Progress (Round 74 — PR litlfred/qou#8322)
 - Formalized in PR `litlfred/qou#8322` (`feat/round74-kashaev-stokes3-stokesamp-ohtsukinz-pauli-43c1`, Commit 1 `82ec77a3b69cc6d79a85c01e64b63d422fa51c45`, Head `d13ffedea3175ba61da12a5b2abf5cf08d471608`, `scriptHash: 79ed375a0246`).
+
+## 2026-11-22 — wave-2 drain (thread "Work the volume conjecture beans")
+
+No change. `hc` merged (#4729); `htau` needs the 1-loop torsion formalized (`tau_DG` has no Lean definition). The Round 74 note (#8322) is a closed batch PR.
