@@ -1368,3 +1368,9 @@ block, which is itself a label.
 the matter-Coulomb term: E₀ = m_e/(q(q−1)) is a definition and the Gap-5 lemmas are identities;
 E₀ on this term (≈ −0.93 MeV) is already recorded in the corpus as a selection against the target.
 The 3000× gap of §40 EM-1 stays open.
+
+**Ruling (owner, 2026-11-22): option A.** S is the Coulomb term, ℒ ⊃ −α·S, E ⊃ +α·S. Retired: the
+unit-coefficient S arms (§31 ±54 keV, §35 M2 and E-pot, §36 R1/R2 scalar-charge arms, §39 C2
+E-pot/M2) as double counts of the Coulomb term with an adopted coefficient. Live: the 𝒟² arms, the
+operator-charge terms as braid-built objects, and §40 EM-1 (−0.358 keV at q₀, −m_e/720 at q = 1),
+whose scale is still not derived.
