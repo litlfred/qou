@@ -50,7 +50,7 @@ unenforceable instruction turned into a checkable artifact.
 
 ## What you do
 
-1. **Run all six grep paths** — see memory. Report per-path: hit or empty,
+1. **Run all seven paths** (AGENTS.md §"Before declaring open": six greps plus the block's own `.qa.json` agent verdicts) — see memory. Report per-path: hit or empty,
    and for each hit the file, the claim, and its status.
 2. **Grep the claim SHAPE, not only the topic.** A topic grep answers "has
    anyone worked this?"; it does not answer "does the corpus assert the

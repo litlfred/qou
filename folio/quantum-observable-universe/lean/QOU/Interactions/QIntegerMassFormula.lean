@@ -188,7 +188,16 @@ class QIntegerMassFormula where
       binding energy `B_AME` in the AME database, the seven-term
       formula matches to within `tolerance` of the experimental value.
       This is the conjecture proper; the `sorry` in a concrete
-      instance carries this assertion. -/
+      instance carries this assertion.
+
+      **Comparison point, not a prediction (owner card 2026-11-22).**
+      `B_AME` is a MEASURED value (the Atomic Mass Evaluation). This field
+      compares a model expression with measured binding energies; it is
+      kept as a labelled comparison (owner choice "Keep as comparison",
+      bean `qou-ltal`), the same treatment as `v / m_e = 40 · q_0^90`.
+      The seven coefficients and `f_magic` were chosen against the
+      measured table and are NOT derived, so nothing downstream may cite
+      this field or `fits_AME_conditional` as a prediction. -/
   fits_AME :
     ∀ (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ) [IsAMEValue Z N B_AME],
       ∃ δ : ℝ, |δ| ≤ tolerance ∧
@@ -198,7 +207,10 @@ class QIntegerMassFormula where
     Conditional on `[QIntegerMassFormula]`, every (Z, N) admits a
     relative residual `δ` with `|δ| ≤ tolerance` between the AME
     binding energy and the seven-term prediction. Fully verified
-    by Lean once an instance is fixed. -/
+    by Lean once an instance is fixed.
+
+    Comparison point only: `B_AME` is measured, so this theorem is never a
+    prediction (owner card 2026-11-22, bean `qou-ltal`). -/
 theorem fits_AME_conditional [inst : QIntegerMassFormula]
     (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ) [IsAMEValue Z N B_AME] :
     ∃ δ : ℝ, |δ| ≤ inst.tolerance ∧
