@@ -25,6 +25,7 @@ HONESTY (STRICT): sorry-free, no axioms, no `decide`; two elementary
 facts, named for their role in the bridge. Nothing wired; `1/(8π)`
 stays phase-4.
 
+-- Ref: [garoufalidis-scholze-wheeler-zagier2024] https://arxiv.org/abs/2412.04241
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/

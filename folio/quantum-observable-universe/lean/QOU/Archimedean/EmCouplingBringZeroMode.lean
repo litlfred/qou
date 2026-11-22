@@ -246,18 +246,15 @@ theorem bringZeroMode_fully_tiling_derived :
   rw [bringTiling_b1_eq_firstBetti, bringSurfaceArea_eq_gaussBonnet]
   exact bringZeroMode_genus_determined.symm
 
-/- **Phase-1 wiring (2026-05-30).**  Reference to the Bloch-Wigner
-    unit-circle function `D(e^{iθ}) = Cl_2 θ` defined in the
-    Mathlib filler at
-    `predicted-spectra/bloch-wigner-mathlib-filler.lean`
-    (`noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`).
-
-    Declared here as an `axiom` for §3b-cond strengthening of the
-    `BringZeroModeBlochClass` field below.  Closing this axiom to a
-    direct namespace import is the Lake-tree wire-up Phase 1
-    follow-up (`folio/quantum-observable-universe/lean/QOU/...`);
-    until that lands, the axiom mirrors the filler's signature
-    exactly. -/
+/- **Phase-1 wiring (2026-05-30); updated 2026-11-22 (bean `qou-fv70`).**  The
+    Bloch-Wigner unit-circle function `D(e^{iθ}) = Cl_2 θ` is defined in
+    `QOU/Archimedean/BlochWignerUnitCircle.lean`
+    (`noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`) and
+    imported here. The `predicted-spectra/bloch-wigner-mathlib-filler.lean` path
+    this note used to cite never existed; the block is
+    `appendix-formalisation-notes/bloch-wigner-mathlib-filler.md` and its lemmas are in
+    `QOU/Archimedean/BlochWignerMathlibFiller.lean`. The axiom that stood here
+    is gone. -/
 -- axiom removed in favor of import QOU.Archimedean.BlochWignerUnitCircle
 
 /-- Bloch-Wigner identification of the Bring zero-mode contribution,

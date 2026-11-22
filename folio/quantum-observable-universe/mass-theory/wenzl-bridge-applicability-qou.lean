@@ -91,7 +91,9 @@ class MarkovTraceFamilyOneDim (R : Type*) [CommRing R] (q z : R) (n : ℕ)
       (∀ x, tr₂ (appendGen x) = z * tr₂ x) →
       tr₁ S.centraliser_unit = 1 → tr₂ S.centraliser_unit = 1 →
       tr₁ = tr₂
-  -- Ref: [chlouveraki2016-hdr] Chlouveraki 2016 HDR Theorem 6.20 (NOT the 2009 LNM monograph)
+  -- Ref: [chlouveraki2016-hdr] Chlouveraki 2016 HDR Theorem 6.20 (NOT the 2009 LNM monograph);
+  --   stated for the Yokonuma–Hecke tower Y_{d,n}(q), used here at d = 1, where it is the
+  --   Ocneanu trace on H_n(q) ≅ Y_{1,n}(q) (the sentence after the theorem)
 
 /-- **Step 4 (main applicability theorem).** Combining Steps 1–3,
     the Markov trace on `H_n(R, q)` produced by the QOU fibre
@@ -115,7 +117,9 @@ theorem wenzl_bridge_applicability_qou
       F.tr = tr' := by
   intro tr' hmarkov' htr1 htr1'
   exact U.unique F.tr tr' F.appendGen F.markov_property hmarkov' htr1 htr1'
-  -- Ref: [chlouveraki2016-hdr] Chlouveraki 2016 HDR Theorem 6.20 (NOT the 2009 LNM monograph)
+  -- Ref: [chlouveraki2016-hdr] Chlouveraki 2016 HDR Theorem 6.20 (NOT the 2009 LNM monograph);
+  --   stated for the Yokonuma–Hecke tower Y_{d,n}(q), used here at d = 1, where it is the
+  --   Ocneanu trace on H_n(q) ≅ Y_{1,n}(q) (the sentence after the theorem)
   -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n …"
   -- Ref: [leitner2026] prop:y-lambda-closed-form-wenzl-bridge
 

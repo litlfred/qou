@@ -37,7 +37,7 @@ using the corpus's validated `I_D` tetrahedron-index machinery
 ## The proper resummation — the state-integral saddle (uses symmetries)
 
 The state integral (Andersen–Kashaev; "closely related to the total index",
-GHRS arXiv:1604.02688 Rmk 1.13) is the **Borel sum** of the divergent
+GHRS arXiv:1303.5278 Rmk 1.13 [garoufalidis-hodgson-rubinstein-segerman2015]; corrected 2026-11-22, this read arXiv:1604.02688, which is GHHR, a different paper) is the **Borel sum** of the divergent
 perturbative series; its `ℏ→0` **saddle value** is the complex volume.
 Amphichirality of `4₁` (`CS = 0`) makes that saddle **purely real**, and the
 octahedral `S₃` symmetry fixes the Borromean shapes. The saddle value is the

@@ -56,7 +56,8 @@ Audit: `docs/audits/2026-07-05-keystone-selfduality-spectral-narrowing.md`.
 Ledger: `docs/coordination/s5-so3-keystone.md`.
 
 -- Ref: [bakalovkirillov2001] Lectures on Tensor Categories and Modular Functors (S-matrix, S²=C).
--- Ref: [koornwinderswarttouw1992] arXiv:1208.2521 — self-reciprocal q-Hankel transform on E_q(2).
+-- Ref: [koornwinderswarttouw1992] arXiv:1208.2521 — self-reciprocal q-Hankel transform pair (pp. 9–10);
+--      its E_q(2) (quantum plane-motion group) reading is Vaksman–Korogodskiĭ, cited there §1.
 -- Ref: [ciccolikoelinkkoornwinder1999] arXiv:math/9805023 — big q-Bessel / q-Laguerre spectral
 --      duality (dual orthogonality ↔ completed q-Laguerre, exchanged by a self-reciprocal
 --      q-Hankel-type transform): the analytic prototype of the self-reciprocality this file

@@ -268,7 +268,7 @@ Lean status:
 - **Not in Lean:** the leading coefficients read off the identities, and additivity over
   several bonds at A ≥ 3 (§7, §9), which is checked exactly but not proved.
 
-## 9. A = 3 with z free: additivity holds for every z (exploratory, not proved)
+## 9. A = 3 and A = 4 with z free: additivity holds for every z (exploratory, not proved)
 
 Probe `a3_bonds_generic_z_probe.py`, witness `a3-bonds-generic-z.witness.json`. The
 prediction was written in the probe's docstring before it was run, from the A = 2 identities
@@ -280,14 +280,29 @@ of §8: bonds add at leading order in h, so
 It is tested as an identity in z, exact over ℚ[h, z]: all 8 orders, four bond sets
 ({01, 12}, {01, 12, 02}, {02, 12}, {02}), over and under transport. **64 of 64 cells match**,
 and the free trace at h = 0 is z² in every cell. So Rule B of §7 is not a property of z_D:
-the per-bond coefficients and their sum hold for every Markov parameter. One A = 4 cell
-(order p n p n, chain bonds) was also checked as a timing test and agrees (0.26 s), but the
-A = 4 cells have not been swept.
+the per-bond coefficients and their sum hold for every Markov parameter. At A = 4 the
+same rule, also written down before the run (`a4_bonds_generic_z_probe.py`, witness
+`a4-bonds-generic-z.witness.json`), holds in **224 of 224 cells**: all 16 orders, over and
+under, for the γγ chain, the four all-pairs formation routes of §6 (bond placed after the
+running maximum of j, as there), and the non-chain sets {02, 13} and {13}. The free trace at
+h = 0 is z³ in every cell. At z = 1/2 the p p n n all-pairs cells give leading coefficient
+3/8, matching §6: only the bond 01 goes into a proton.
+
+So in every cell measured at A = 3 and A = 4, the leading order is the sum of the A = 2
+per-bond terms, a bond (i, j) counting as a bond into nucleon j. The sign changes of §6 come
+from higher orders, not from the leading one.
 
 What this does not show: it is a check on finitely many words, not a proof of additivity,
 and it says nothing about the orders beyond the leading one. For chain bonds the exact
 product form already follows from `towerTr_ggChain`; the non-chain cells (bond 02) are the
 new evidence.
+
+**Lean: still open.** The A = 2 proof evaluates a 4-strand tail and takes about 10 minutes.
+At A = 3 the tail has 7 strands and twice as many letters, so the same brute-force evaluation
+will not fit. A structural proof needs an argument that is not yet available. V³ − 1 is only
+O(h) as an algebra element, since (s₀s₁)³ = 1 in S₃, so the h⁴ comes from cancellation in the
+trace. Cross terms between two bonds are therefore not obviously of higher order. Leading-order
+additivity stays a conjecture, backed by the 288 exact cells above.
 
 ## Reproduce
 
@@ -298,6 +313,7 @@ python3 -u computations/probes/light_nuclei_a2_a3/he4_all_pairs_exact_probe.py  
 python3 -u computations/probes/light_nuclei_a2_a3/bond_leading_order_probe.py  # about 70 s
 python3 -u computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py  # about 1 s
 python3 -u computations/probes/light_nuclei_a2_a3/a3_bonds_generic_z_probe.py  # about 1 s, needs python-flint
+python3 -u computations/probes/light_nuclei_a2_a3/a4_bonds_generic_z_probe.py  # about 20 min on 4 cores
 lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-endomorphism/light-nuclei-a2-bond-tail.lean  # about 9 min; needs the reducer olean on LEAN_PATH
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```
