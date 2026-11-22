@@ -108,4 +108,140 @@ theorem ear_transfer {P Q₁ Q₂ : Polygon R2} {A V B : R2} (hD : cross A V B �
   rw [hsplit, e₃ y hy, Q₂.parity_const_of_isPreconnected (convex_openTri _ _ _).isPreconnected
     hdisj hy hy', hpar, add_zero]
 
+/-! ### Ears of a polygon, and their transfer from a cut piece -/
+
+/-- An **ear** at vertex `k`: the corner `w (k-1), w k, w (k+1)` is non-degenerate, its closed
+triangle meets the polygon only in its two sides at `w k`, and its inside lies inside the
+polygon (crossing parity `1`). -/
+def Polygon.IsEar (Q : Polygon R2) (k : ℕ) : Prop :=
+  cross (Q.w (k + Q.n)) (Q.w k) (Q.w (k + 1)) ≠ 0 ∧
+  convexHull ℝ {Q.w (k + Q.n), Q.w k, Q.w (k + 1)} ∩ Q.carrier ⊆
+    segment ℝ (Q.w (k + Q.n)) (Q.w k) ∪ segment ℝ (Q.w k) (Q.w (k + 1)) ∧
+  ∀ y ∈ openTri (Q.w (k + Q.n)) (Q.w k) (Q.w (k + 1)), Q.parity y = 1
+
+lemma seg_rotateBy (P : Polygon R2) (r j : ℕ) : (P.rotateBy r).seg j = P.seg (j + r) := by
+  unfold seg; rw [w_rotateBy, w_rotateBy, show j + 1 + r = j + r + 1 by omega]
+
+lemma carrier_cocut (P : Polygon R2) {β : ℕ} (hβn : β ≤ P.n) (h : 2 ≤ P.n + 1 - β) :
+    (P.cocut β h).carrier =
+      (⋃ j ∈ Finset.range (P.n + 1 - β), P.seg (j + β)) ∪ segment ℝ (P.w β) (P.w 0) := by
+  unfold cocut
+  rw [carrier_cut]
+  simp only [seg_rotateBy, w_rotateBy, zero_add]
+  rw [show P.n + 1 - β + β = P.n + 1 by omega, w_period]
+
+lemma cut_two_eq (P : Polygon R2) (h : 2 ≤ 2) :
+    P.cut 2 h = triPoly (P.w 0) (P.w 1) (P.w 2) := by
+  unfold cut triPoly
+  congr 1
+  funext i
+  fin_cases i <;> rfl
+
+/-- The midpoint of an edge is not a vertex. -/
+lemma midpoint_ne_w {P : Polygon R2} (hP : P.IsSimple) {k : ℕ} (hk : k + 1 ≤ P.n) {j : ℕ}
+    (hj : j ≤ P.n) : (1 / 2 : ℝ) • P.w k + (1 / 2 : ℝ) • P.w (k + 1) ≠ P.w j := by
+  intro he
+  have hne : P.w k ≠ P.w (k + 1) := fun h => by
+    have := hP.w_injOn (by omega) hk h; omega
+  have hm : P.w j ∈ P.seg k := by
+    rw [← he]; exact ⟨1 / 2, 1 / 2, by norm_num, by norm_num, by norm_num, rfl⟩
+  have hmod : (k + 1) % (P.n + 1) = k + 1 := Nat.mod_eq_of_lt (by omega)
+  have k1 : ∀ a b : R2, (1 / 2 : ℝ) • a + (1 / 2 : ℝ) • b = a → a = b := by
+    intro a b h
+    have e : b - a = (2 : ℝ) • ((1 / 2 : ℝ) • a + (1 / 2 : ℝ) • b - a) := by module
+    rw [h, sub_self, smul_zero, sub_eq_zero] at e; exact e.symm
+  have k2 : ∀ a b : R2, (1 / 2 : ℝ) • a + (1 / 2 : ℝ) • b = b → a = b := by
+    intro a b h
+    have e : a - b = (2 : ℝ) • ((1 / 2 : ℝ) • a + (1 / 2 : ℝ) • b - b) := by module
+    rw [h, sub_self, smul_zero, sub_eq_zero] at e; exact e
+  rcases hP.w_mem_seg hj (by omega) hm with h | h
+  · subst h; exact hne (k1 _ _ he)
+  · rw [hmod] at h; subst h; exact hne (k2 _ _ he)
+
+/-- **An ear of a cut piece, away from the chord, is an ear of the polygon.** The hypotheses
+`S₁`, `S₂` say that each piece sees the rest of `P` as outside. When the piece is a triangle
+(`β = 2`) its middle vertex is used. -/
+theorem isEar_of_cut {P : Polygon R2} (hP : P.IsSimple) {β : ℕ} (hβ : 2 ≤ β)
+    (h2 : 2 ≤ P.n + 1 - β)
+    (hchord : segment ℝ (P.w 0) (P.w β) ∩ P.carrier ⊆ {P.w 0, P.w β})
+    (S₁ : ∀ y ∈ P.carrier, y ∉ (P.cut β hβ).carrier → (P.cut β hβ).parity y = 0)
+    (S₂ : ∀ y ∈ P.carrier, y ∉ (P.cocut β h2).carrier → (P.cocut β h2).parity y = 0)
+    {k : ℕ} (hk1 : 1 ≤ k) (hkβ : k < β) (hE : (P.cut β hβ).IsEar k ∨ β = 2) : P.IsEar k := by
+  have hβn : β + 1 ≤ P.n := by omega
+  have hwp : P.w (k + P.n) = P.w (k - 1) := by
+    rw [show k + P.n = (k - 1) + (P.n + 1) by omega, w_add_period]
+  have hw1 : (P.cut β hβ).w (k + (P.cut β hβ).n) = P.w (k - 1) := by
+    rw [cut_n, cut_w, show k + β = (k - 1) + (β + 1) by omega, Nat.add_mod_right,
+      Nat.mod_eq_of_lt (by omega)]
+  have hwk : (P.cut β hβ).w k = P.w k := cut_w_of_le P (by omega)
+  have hwk1 : (P.cut β hβ).w (k + 1) = P.w (k + 1) := cut_w_of_le P (by omega)
+  obtain ⟨hD, e₂, e₃, e₄⟩ : cross (P.w (k - 1)) (P.w k) (P.w (k + 1)) ≠ 0 ∧
+      (∀ y ∈ convexHull ℝ {P.w (k - 1), P.w k, P.w (k + 1)}, y ∈ (P.cut β hβ).carrier →
+        y ∈ P.carrier → y ∈ segment ℝ (P.w (k - 1)) (P.w k) ∪ segment ℝ (P.w k) (P.w (k + 1))) ∧
+      (∀ y ∈ openTri (P.w (k - 1)) (P.w k) (P.w (k + 1)), (P.cut β hβ).parity y = 1) ∧
+      Disjoint (openTri (P.w (k - 1)) (P.w k) (P.w (k + 1))) (P.cut β hβ).carrier := by
+    rcases hE with hE | hβ2
+    · obtain ⟨d, sb, pa⟩ := hE
+      rw [hw1, hwk, hwk1] at d sb pa
+      refine ⟨d, fun y hy h1 _ => sb ⟨hy, h1⟩, pa, ?_⟩
+      rw [Set.disjoint_left]
+      intro y hy h1
+      exact Set.disjoint_left.mp (disjoint_openTri _ _ _) hy
+        (by rw [triPoly_carrier]; exact Or.inl (sb ⟨openTri_subset_hull d hy, h1⟩))
+    · subst hβ2
+      obtain rfl : k = 1 := by omega
+      have hQ : P.cut 2 hβ = triPoly (P.w 0) (P.w 1) (P.w 2) := cut_two_eq P hβ
+      have hQs := isSimple_cut hP hβ hβn hchord
+      have d := cross_ne_zero_of_isSimple hQs rfl
+      rw [cut_w_of_le P (by omega), cut_w_of_le P (by omega), cut_w_of_le P (by omega)] at d
+      refine ⟨d, ?_, ?_, ?_⟩
+      · intro y _ h1 hyP
+        rw [hQ, triPoly_carrier] at h1
+        rcases h1 with (h | h) | h
+        · exact Or.inl h
+        · exact Or.inr h
+        · rw [segment_symm] at h
+          rcases hchord ⟨h, hyP⟩ with rfl | rfl
+          · exact Or.inl (left_mem_segment _ _ _)
+          · exact Or.inr (right_mem_segment _ _ _)
+      · intro y hy
+        rw [hQ]
+        exact triPoly_parity_eq_one d (openTri_subset_hull d hy)
+          (fun h => Set.disjoint_left.mp (disjoint_openTri _ _ _) hy h)
+      · rw [hQ]; exact disjoint_openTri _ _ _
+  set m : R2 := (1 / 2 : ℝ) • P.w k + (1 / 2 : ℝ) • P.w (k + 1) with hm
+  have hmseg : m ∈ P.seg k := ⟨1 / 2, 1 / 2, by norm_num, by norm_num, by norm_num, rfl⟩
+  have hmP : m ∈ P.carrier := P.seg_subset_carrier (by omega) hmseg
+  have hmT : m ∈ convexHull ℝ {P.w (k - 1), P.w k, P.w (k + 1)} :=
+    segment_subset_convexHull (mem_insert_of_mem _ (mem_insert _ _))
+      (mem_insert_of_mem _ (mem_insert_of_mem _ (mem_singleton _))) hmseg
+  have hmQ : m ∉ (P.cocut β h2).carrier := by
+    rw [carrier_cocut P (by omega) h2]
+    rintro (h | h)
+    · simp only [mem_iUnion, Finset.mem_range] at h
+      obtain ⟨j, hj, hmj⟩ := h
+      have hin : m ∈ P.seg k ∩ P.seg (j + β) := ⟨hmseg, hmj⟩
+      rw [hP.seg_inter (by omega) (by omega) (by omega)] at hin
+      split_ifs at hin
+      · exact midpoint_ne_w hP (by omega) (by omega) hin
+      · exact midpoint_ne_w hP (by omega) (by omega) hin
+      · exact hin
+    · rw [segment_symm] at h
+      rcases hchord ⟨h, hmP⟩ with h | h
+      · exact midpoint_ne_w hP (by omega) (Nat.zero_le _) h
+      · exact midpoint_ne_w hP (by omega) (by omega) h
+  have hQ₂ : (P.cocut β h2).carrier ⊆ P.carrier ∪ (P.cut β hβ).carrier := by
+    rw [carrier_cocut P (by omega) h2, carrier_cut]
+    rintro y (h | h)
+    · simp only [mem_iUnion, Finset.mem_range] at h
+      obtain ⟨j, hj, hy⟩ := h
+      exact Or.inl (P.seg_subset_carrier (by omega) hy)
+    · rw [segment_symm] at h
+      exact Or.inr (Or.inr h)
+  obtain ⟨hsub, hpar⟩ := ear_transfer hD (fun y => parity_split P hβ h2 y) hQ₂ S₁ S₂ e₂ e₃ e₄
+    hmT hmP hmQ
+  unfold Polygon.IsEar
+  rw [hwp]
+  exact ⟨hD, hsub, hpar⟩
+
 end QOU.MathlibExt.PL
