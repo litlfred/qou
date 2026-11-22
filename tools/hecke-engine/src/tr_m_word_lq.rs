@@ -16,6 +16,7 @@
 
 use crate::laurent_poly_q::LaurentPolyQ;
 use std::collections::{BTreeMap, HashMap};
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Mutex, OnceLock};
 
 /// Formal polynomial in (z, h) with [`LaurentPolyQ`] coefficients.
@@ -157,6 +158,31 @@ fn cache() -> &'static Mutex<HashMap<CacheKey, ZHLaurent>> {
     TR_M_CACHE.get_or_init(|| Mutex::new(HashMap::new()))
 }
 
+// Cache statistics, for profiling only. They count lookups in
+// `tr_m_word_lq_impl` and wholesale clears at the size cap; they never
+// change a value.
+static CACHE_HITS: AtomicU64 = AtomicU64::new(0);
+static CACHE_MISSES: AtomicU64 = AtomicU64::new(0);
+static CACHE_CAP_CLEARS: AtomicU64 = AtomicU64::new(0);
+
+/// `(hits, misses, wholesale clears at the 100k cap, current size)` of the
+/// recursion cache since the process started or [`reset_cache_stats`].
+pub fn cache_stats() -> (u64, u64, u64, usize) {
+    (
+        CACHE_HITS.load(Ordering::Relaxed),
+        CACHE_MISSES.load(Ordering::Relaxed),
+        CACHE_CAP_CLEARS.load(Ordering::Relaxed),
+        cache().lock().map(|g| g.len()).unwrap_or(0),
+    )
+}
+
+/// Zero the counters of [`cache_stats`]. The cache itself is untouched.
+pub fn reset_cache_stats() {
+    CACHE_HITS.store(0, Ordering::Relaxed);
+    CACHE_MISSES.store(0, Ordering::Relaxed);
+    CACHE_CAP_CLEARS.store(0, Ordering::Relaxed);
+}
+
 /// Clear the global recursion cache. Call between independent atoms
 /// to prevent unbounded memory growth in long-running sessions.
 pub fn clear_cache() {
@@ -205,8 +231,10 @@ fn tr_m_word_lq_impl(
     // not just cache canonicalisation).
     let key: CacheKey = (canonical_cyclic(word), n_strands, max_depth);
     if let Some(cached) = cache().lock().unwrap().get(&key) {
+        CACHE_HITS.fetch_add(1, Ordering::Relaxed);
         return Ok(cached.clone());
     }
+    CACHE_MISSES.fetch_add(1, Ordering::Relaxed);
 
     let result = tr_m_word_lq_body(word, n_strands, max_depth, depth)?;
 
@@ -214,6 +242,7 @@ fn tr_m_word_lq_impl(
         // Bound the cache; drop everything if we hit the cap.
         if g.len() >= 100_000 {
             g.clear();
+            CACHE_CAP_CLEARS.fetch_add(1, Ordering::Relaxed);
         }
         g.insert(key, result.clone());
     }

@@ -152,6 +152,103 @@ pub fn tr_m_atomic_mpfr_cached(
     eval_reduced_to_mpfr(&reduced, n_strands, q_str, dps)
 }
 
+/// **Batched [`tr_m_atomic_mpfr`] with shared-prefix reduction.**
+///
+/// Returns, for every word of `signed_words` and in the same order,
+/// exactly the string [`tr_m_atomic_mpfr`] returns for that word alone.
+///
+/// Why it is faster. [`tr_m_atomic_mpfr`] reduces each word from the
+/// identity, one letter at a time. The reduced state after `k` letters
+/// is a function of those `k` letters only, so two words that share a
+/// prefix of length `k` share that state. A probe that expands a product
+/// of linear combinations into `2^m` signed words, and then appends a
+/// handful of suffixes to each, submits words that share long prefixes.
+/// Here the words are sorted, walked depth-first, and the state at every
+/// prefix that a later word still needs is kept and resumed from.
+///
+/// Why it is exact. Nothing is approximated: the same letters are applied
+/// in the same order through [`reduce_laurent::incremental_reduce_from_state`],
+/// with exact `LaurentRationalQ` coefficients. `LaurentHeckeElement` is a
+/// `BTreeMap`, so its iteration order, and hence the MPFR summation order in
+/// [`eval_reduced_to_mpfr`], does not depend on how the state was reached.
+/// The output string is byte-identical to the per-word call; the tests below
+/// assert that.
+///
+/// `parallel` splits the sorted list into contiguous chunks, one depth-first
+/// walk per rayon task. A chunk boundary only costs recomputing the shared
+/// prefix once more; it cannot change a value.
+pub fn tr_m_atomic_mpfr_batch(
+    signed_words: &[Vec<(i8, i32)>],
+    n_strands: usize,
+    q_str: &str,
+    dps: u32,
+    parallel: bool,
+) -> Result<Vec<String>, String> {
+    let mut order: Vec<usize> = (0..signed_words.len()).collect();
+    order.sort_by(|&a, &b| signed_words[a].cmp(&signed_words[b]));
+    let chunks: Vec<Vec<usize>> = if parallel && order.len() > 1 {
+        let k = rayon::current_num_threads().max(1) * 4;
+        let size = order.len().div_ceil(k).max(1);
+        order.chunks(size).map(|c| c.to_vec()).collect()
+    } else {
+        vec![order]
+    };
+    let run = |idx: &Vec<usize>| -> Result<Vec<(usize, String)>, String> {
+        walk_sorted(signed_words, idx, n_strands, q_str, dps)
+    };
+    let parts: Vec<Result<Vec<(usize, String)>, String>> = if parallel {
+        use rayon::prelude::*;
+        chunks.par_iter().map(run).collect()
+    } else {
+        chunks.iter().map(run).collect()
+    };
+    let mut out: Vec<Option<String>> = vec![None; signed_words.len()];
+    for part in parts {
+        for (i, v) in part? {
+            out[i] = Some(v);
+        }
+    }
+    Ok(out.into_iter().map(|v| v.expect("every word evaluated")).collect())
+}
+
+fn common_prefix(a: &[(i8, i32)], b: &[(i8, i32)]) -> usize {
+    a.iter().zip(b).take_while(|(x, y)| x == y).count()
+}
+
+/// Depth-first walk over words already sorted lexicographically.
+fn walk_sorted(
+    words: &[Vec<(i8, i32)>],
+    idx: &[usize],
+    n_strands: usize,
+    q_str: &str,
+    dps: u32,
+) -> Result<Vec<(usize, String)>, String> {
+    // stack[j] = (depth, reduced state after the first `depth` letters).
+    let mut stack: Vec<(usize, LaurentHeckeElement)> =
+        vec![(0, LaurentHeckeElement::identity())];
+    let mut out = Vec::with_capacity(idx.len());
+    for (pos, &i) in idx.iter().enumerate() {
+        let w = &words[i];
+        let lcp_prev = if pos == 0 { 0 } else { common_prefix(&words[idx[pos - 1]], w) };
+        let lcp_next = if pos + 1 < idx.len() { common_prefix(w, &words[idx[pos + 1]]) } else { 0 };
+        while stack.last().map(|(d, _)| *d > lcp_prev).unwrap_or(false) {
+            stack.pop();
+        }
+        let (d0, base) = stack.last().expect("identity at depth 0 is never popped");
+        let d0 = *d0;
+        let mut elem = base.clone();
+        let mut d = d0;
+        if lcp_next > d0 {
+            elem = reduce_laurent::incremental_reduce_from_state(elem, &w[d..lcp_next], 10_000);
+            d = lcp_next;
+            stack.push((d, elem.clone()));
+        }
+        elem = reduce_laurent::incremental_reduce_from_state(elem, &w[d..], 10_000);
+        out.push((i, eval_reduced_to_mpfr(&elem, n_strands, q_str, dps)?));
+    }
+    Ok(out)
+}
+
 /// MPFR evaluation of a reduced `LaurentHeckeElement` at `q₀`.
 /// Shared by `tr_m_atomic_mpfr*` entry points (factored out so
 /// the from-scratch / resume / cached paths reuse it bit-for-bit).
@@ -256,6 +353,37 @@ mod tests {
             v,
             expected
         );
+    }
+
+    /// The batch path must return byte-identical strings to the per-word
+    /// path, including on words that share prefixes, on duplicates, on the
+    /// empty word and in parallel mode.
+    #[test]
+    fn batch_matches_per_word_byte_for_byte() {
+        let base: Vec<(i8, i32)> = vec![(1, 0), (-1, 1), (1, 0), (1, 2), (-1, 1), (1, 3)];
+        let mut words: Vec<Vec<(i8, i32)>> = Vec::new();
+        for m in 0u32..16 {
+            let mut w = base.clone();
+            for b in 0..4 {
+                if (m >> b) & 1 == 1 {
+                    w[b + 1].0 = -w[b + 1].0;
+                }
+            }
+            words.push(w.clone());
+            let mut s = w.clone();
+            s.push((1, 0));
+            words.push(s);
+        }
+        words.push(vec![]);
+        words.push(words[3].clone());
+        let expect: Vec<String> = words
+            .iter()
+            .map(|w| tr_m_atomic_mpfr(w, 5, Q0_STR, 40).unwrap())
+            .collect();
+        for par in [false, true] {
+            let got = tr_m_atomic_mpfr_batch(&words, 5, Q0_STR, 40, par).unwrap();
+            assert_eq!(got, expect, "parallel = {par}");
+        }
     }
 
     #[test]
