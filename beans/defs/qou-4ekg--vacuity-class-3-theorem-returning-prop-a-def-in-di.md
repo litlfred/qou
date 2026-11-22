@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T11:54:19Z
-updated_at: 2026-10-04T15:25:24Z
+updated_at: 2026-11-22T21:23:48Z
 parent: qou-6qbv
 ---
 
@@ -85,3 +85,8 @@ regex, and it is a hard error rather than a heuristic — a theorem whose type i
 `Prop` is *always* miskinded.
 
 - **Round 55 update (in-progress):** De-vacuified in PR `litlfred/qou#8259` (HEAD `1be723e4c3e702d48db833cb3bedc75e89004822`), verified with Lean 4.24.0 (`0` `sorry`, `0` vacuity hits) and 80-dps `mpmath` witness.
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), re-measured on main 3c4c98fcc (not closed)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF.
+
+Both decls are now `def`s on main, so the instances are fixed. The detector half is not done: no audit flags `theorem … : Prop :=` yet.

@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-11-22T09:59:45Z
+updated_at: 2026-11-22T21:23:48Z
 parent: qou-6qbv
 ---
 
@@ -279,3 +279,8 @@ re-work item 1. The file is also candid about it in its own docstring
 
 
 2026-11-22 Lean-backed: mass_tower_coefficient_stratification CLOSES on the new cases-decide rung (step 7), Lean 4.24.0, restored cache. Record §6 of docs/audits/2026-11-22-triviality-decl-not-found-triage.md (PR #8994).
+
+## 2026-11-22 — wave-2 drain (lean-devacuify), re-measured on main 3c4c98fcc (not closed)
+Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF.
+
+Fixed on main: hadron_operations_closure, cp_violation. Still open: (1) `QOU/BraidKnot/LevelSufficiency.lean` still projects the class field `LevelSufficient.trace_eq` (self-assuming; needs a real Markov trace, M4). (2) `mass-theory/mass-tower-coefficient-stratification.lean:61` proves `stratumDepth term ≤ 4` by `cases term <;> decide`, which is vacuous: it checks a finite enum, not the stratification claim.
