@@ -776,4 +776,200 @@ theorem heckeMarkovTrace_connectedSum {m p n : ℕ} (hmn : m ≤ n) (hm : m < n)
 
 end Incl
 
+
+/-! ## Interface words between two clusters: the block-form rule and the overlapping γγ bond
+
+`MarkovTraceHeckeFunctional` proves the disjoint rule `towerTr_disjoint` and the
+one-crossing interface rule `towerTr_interface`. This file treats a bond made of a
+**word**, in two layouts.
+
+## Strand bookkeeping
+
+The tower generator `σ_i` crosses strands `i` and `i+1`. A cluster `x ∈ H_m`
+(generators `σ_0, …, σ_{m-1}`) lives on strands `0, …, m`. `shift h m B` with
+`B ∈ H_k` uses generators `σ_m, …, σ_{m+k-1}`, i.e. strands `m, …, m+k`.
+
+* **Block form** (`towerTr_interfaceWord`): `x · B↑ᵐ · Y↑ᵐ⁺ᵏ`. The bond shares strand
+  `m` with `x` and strand `m+k` with `Y`, but **no generator** with either. Then
+  `tr = tr x · tr B · tr Y`: the bond contributes the pair-independent factor `tr B`.
+* **Overlapping form** (`towerTr_overlapBond`), the corpus layout: the γγ bond
+  `G³ = (σ₂σ₃⁻¹)³` of `QOU.Mass.GammaGammaH6Interface.interfaceBond 3` sits between
+  `p(0,1)` (generators `σ₀, σ₁`) and `p(3,4)` (generators `σ₃, σ₄`); its letter `σ₃`
+  **is a generator of the second cluster**. This is `x · B↑ᵐ · Y↑ᵐ⁺¹` with `m = 2`,
+  `B = (σ₀σ₁⁻¹)³ ∈ H_2`. Then `tr = tr x · tr(B · Y↑¹)`: the factor
+  `tr(B·Y↑¹) / tr Y` depends on the second cluster `Y` and not on the first `x`.
+  No pair-independence is claimed for this layout.
+* `towerTr_overlapBond_appended` is the same statement with the bond appended after the
+  free word, `tr(x · Y↑ᵐ⁺¹ · B↑ᵐ)`, which is the order the probes use (`W_atom = W_free · bond`).
+
+Generic over `[CommRing R]` (§7c). Nothing here reads AME, CODATA, or a census.
+-/
+
+
+section InterfaceWord
+
+open QOU.MathlibExt.HeckeTowerWitness
+
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-! ## The shift on the filtration -/
+
+/-- `shift h m` carries `H_k` into `H_{m+k}`. -/
+theorem shift_mem_twH (m k : ℕ) {B : HeckeTower R h} (hB : B ∈ twH h k) :
+    shift h m B ∈ twH h (m + k) := by
+  have hle : twH h k ≤ (twH h (m + k)).comap (shift h m) := by
+    refine Algebra.adjoin_le ?_
+    rintro _ ⟨i, hi, rfl⟩
+    show shift h m (twGen h i) ∈ twH h (m + k)
+    rw [shift_twGen]
+    exact Algebra.subset_adjoin ⟨i + m, by simp only [Set.mem_setOf_eq] at hi ⊢; omega, rfl⟩
+  exact hle hB
+
+theorem shift_twGenInv (k m : ℕ) : shift h k (twGenInv h m) = twGenInv h (m + k) := by
+  simp only [twGenInv, map_sub, map_smul, map_one, shift_twGen]
+
+/-- Shifts compose. -/
+theorem shift_shift (a b : ℕ) (Y : HeckeTower R h) :
+    shift h a (shift h b Y) = shift h (b + a) Y := by
+  have hY := mem_allWords h Y
+  induction hY using Submodule.span_induction with
+  | mem y hy =>
+    obtain ⟨l, rfl⟩ := hy
+    rw [shift_twWord, shift_twWord, shift_twWord, List.map_map]
+    congr 2
+    funext i
+    simp only [Function.comp_apply]
+    omega
+  | zero => simp
+  | add u v _ _ hu hv => simp only [map_add, hu, hv]
+  | smul r u _ hu => simp only [map_smul, hu]
+
+/-! ## Block form: the bond on its own generators -/
+
+/-- **A bond word on its own block of generators is pair-independent.**
+    For `x ∈ H_m` (strands `0..m`), `B ∈ H_k` placed as `B↑ᵐ` (generators `σ_m..σ_{m+k-1}`,
+    strands `m..m+k`) and any `Y` placed as `Y↑ᵐ⁺ᵏ` (strands from `m+k` up):
+    `tr(x · B↑ᵐ · Y↑ᵐ⁺ᵏ) = tr x · tr B · tr Y`. The bond shares strand `m` with `x` and
+    strand `m+k` with `Y`, and no generator with either. -/
+theorem towerTr_interfaceWord (m k : ℕ) {X B : HeckeTower R h} (hX : X ∈ twH h m)
+    (hB : B ∈ twH h k) (Y : HeckeTower R h) :
+    towerTr z h (X * shift h m B * shift h (m + k) Y)
+      = towerTr z h X * towerTr z h B * towerTr z h Y := by
+  have hXB : X * shift h m B ∈ twH h (m + k) :=
+    Subalgebra.mul_mem _ (twH_mono h (Nat.le_add_right m k) hX) (shift_mem_twH h m k hB)
+  rw [towerTr_disjoint z h (m + k) hXB Y, towerTr_disjoint z h m hX B]
+
+/-- The vertex cube `V³ = (σ₀ σ₁⁻¹)³`. -/
+noncomputable def vertexCube : HeckeTower R h :=
+  (twGen h 0 * twGenInv h 1) * (twGen h 0 * twGenInv h 1) * (twGen h 0 * twGenInv h 1)
+
+theorem vertexCube_mem : vertexCube h ∈ twH h 2 := by
+  have h0 : twGen h 0 ∈ twH h 2 := twH_mono h (by norm_num) (twGen_mem h 0)
+  have h1 : twGenInv h 1 ∈ twH h 2 := twGenInv_mem h 1
+  have hv : twGen h 0 * twGenInv h 1 ∈ twH h 2 := Subalgebra.mul_mem _ h0 h1
+  exact Subalgebra.mul_mem _ (Subalgebra.mul_mem _ hv hv) hv
+
+theorem shift_vertexCube (m : ℕ) :
+    shift h m (vertexCube h)
+      = (twGen h m * twGenInv h (m + 1)) * (twGen h m * twGenInv h (m + 1))
+          * (twGen h m * twGenInv h (m + 1)) := by
+  simp only [vertexCube, map_mul, shift_twGen, shift_twGenInv, Nat.zero_add,
+    Nat.add_comm 1 m]
+
+/-- **Block-form γγ bond**: `(σ_m σ_{m+1}⁻¹)³` on strands `m..m+2`, with the second cluster
+    starting at strand `m+2`, contributes the pair-independent factor `tr(V³)`. -/
+theorem towerTr_vertexCube_block (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)
+    (Y : HeckeTower R h) :
+    towerTr z h (X * ((twGen h m * twGenInv h (m + 1)) * (twGen h m * twGenInv h (m + 1))
+        * (twGen h m * twGenInv h (m + 1))) * shift h (m + 2) Y)
+      = towerTr z h X * towerTr z h (vertexCube h) * towerTr z h Y := by
+  rw [← shift_vertexCube, towerTr_interfaceWord z h m 2 hX (vertexCube_mem h) Y]
+
+/-! ## Overlapping form: the corpus γγ bond -/
+
+/-- **A bond sharing a generator with the second cluster.** For `x ∈ H_m`, `B ∈ H_2` placed
+    as `B↑ᵐ` (generators `σ_m, σ_{m+1}`) and `Y` placed as `Y↑ᵐ⁺¹` (generators from
+    `σ_{m+1}` up — so `σ_{m+1}` is shared by the bond and the second cluster):
+    `tr(x · B↑ᵐ · Y↑ᵐ⁺¹) = tr x · tr(B · Y↑¹)`. The first cluster factors out; the bond
+    does not factor from the second. -/
+theorem towerTr_overlapBond (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)
+    (B Y : HeckeTower R h) :
+    towerTr z h (X * shift h m B * shift h (m + 1) Y)
+      = towerTr z h X * towerTr z h (B * shift h 1 Y) := by
+  have e : shift h m B * shift h (m + 1) Y = shift h m (B * shift h 1 Y) := by
+    rw [map_mul, shift_shift, Nat.add_comm 1 m]
+  rw [mul_assoc, e, towerTr_disjoint z h m hX]
+
+/-- The free word of the same layout factors: `tr(x · Y↑ᵐ⁺¹) = tr x · tr Y`. -/
+theorem towerTr_overlapFree (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)
+    (Y : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y) = towerTr z h X * towerTr z h Y :=
+  towerTr_disjoint z h (m + 1) (twH_mono h (Nat.le_succ m) hX) Y
+
+/-! ## Commutation of far-apart clusters, and the appended order -/
+
+theorem twGen_comm_twWord (a : ℕ) (l : List ℕ) (hl : ∀ b ∈ l, a + 1 < b) :
+    twGen h a * twWord (R := R) h l = twWord h l * twGen h a := by
+  induction l with
+  | nil => simp [twWord]
+  | cons b l ih =>
+    have hb : a + 1 < b := hl b (by simp)
+    have ih' := ih (fun c hc => hl c (List.mem_cons_of_mem _ hc))
+    have e : twWord (R := R) h (b :: l) = twGen h b * twWord h l := by simp [twWord]
+    rw [e, ← mul_assoc, ← twGen_far h b a hb, mul_assoc, ih', ← mul_assoc]
+
+theorem twWord_comm_twWord (l l' : List ℕ) (hll : ∀ a ∈ l, ∀ b ∈ l', a + 1 < b) :
+    twWord (R := R) h l * twWord h l' = twWord h l' * twWord h l := by
+  induction l with
+  | nil => simp [twWord]
+  | cons a l ih =>
+    have e : twWord (R := R) h (a :: l) = twGen h a * twWord h l := by simp [twWord]
+    have ih' := ih (fun c hc => hll c (List.mem_cons_of_mem _ hc))
+    rw [e, mul_assoc, ih', ← mul_assoc,
+      twGen_comm_twWord h a l' (hll a (by simp)), mul_assoc]
+
+/-- **Far-apart clusters commute**: for `x ∈ H_m`, `x · Y↑ᵐ⁺¹ = Y↑ᵐ⁺¹ · x`. -/
+theorem twH_comm_shift (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)
+    (Y : HeckeTower R h) :
+    X * shift h (m + 1) Y = shift h (m + 1) Y * X := by
+  have hW := twH_le_wordSpan h m hX
+  clear hX
+  induction hW using Submodule.span_induction with
+  | mem x hx =>
+    obtain ⟨l, hl, rfl⟩ := hx
+    have hY := mem_allWords h Y
+    induction hY using Submodule.span_induction with
+    | mem y hy =>
+      obtain ⟨l', rfl⟩ := hy
+      rw [shift_twWord]
+      refine twWord_comm_twWord h l _ ?_
+      intro a ha b hb
+      obtain ⟨c, _, rfl⟩ := List.mem_map.mp hb
+      have := hl a ha
+      omega
+    | zero => simp
+    | add u v _ _ hu hv => rw [map_add, mul_add, add_mul, hu, hv]
+    | smul r u _ hu => rw [map_smul, mul_smul_comm, smul_mul_assoc, hu]
+  | zero => simp
+  | add u v _ _ hu hv => rw [add_mul, mul_add, hu, hv]
+  | smul r u _ hu => rw [smul_mul_assoc, mul_smul_comm, hu]
+
+/-- **The probe order** `W_atom = W_free · bond`: `tr(x · Y↑ᵐ⁺¹ · B↑ᵐ) = tr x · tr(B · Y↑¹)`. -/
+theorem towerTr_overlapBond_appended (m : ℕ) {X : HeckeTower R h} (hX : X ∈ twH h m)
+    (B Y : HeckeTower R h) :
+    towerTr z h (X * shift h (m + 1) Y * shift h m B)
+      = towerTr z h X * towerTr z h (B * shift h 1 Y) := by
+  rw [twH_comm_shift h m hX Y, mul_assoc, towerTr_mul_comm,
+    towerTr_overlapBond z h m hX B Y]
+
+/-- **The corpus γγ bond `G³ = (σ₂σ₃⁻¹)³` between `x ∈ H_2` (strands `0..2`) and `Y↑³`
+    (strands `3..`)**, in the probe order: the first cluster factors out and the bond
+    factor `tr(V³ · Y↑¹)` is a function of the second cluster `Y`. -/
+theorem towerTr_gammaGammaBond (X : HeckeTower R h) (hX : X ∈ twH h 2) (Y : HeckeTower R h) :
+    towerTr z h (X * shift h 3 Y * shift h 2 (vertexCube h))
+      = towerTr z h X * towerTr z h (vertexCube h * shift h 1 Y) :=
+  towerTr_overlapBond_appended z h 2 hX (vertexCube h) Y
+
+end InterfaceWord
+
 end QOU.BraidKnot.HeckeFunctional

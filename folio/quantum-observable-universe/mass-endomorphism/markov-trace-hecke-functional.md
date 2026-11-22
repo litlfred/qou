@@ -26,3 +26,13 @@ $$
   \mathrm{tr}_n\bigl(x\,\sigma_m\,y^{\uparrow (m+1)}\bigr) = s z\,\mathrm{tr}_m(x)\,\mathrm{tr}_p(y), \qquad x \in H_m(q),\ y \in H_p(q).
 $$
 The factor $s$ comes from the rescaling $\sigma_m \mapsto s\,\sigma_m$.
+
+## Remark on bond words
+
+The same argument covers any bond word placed on its own block of generators. If $x \in H_m$, $B \in H_k$ and $y$ is arbitrary, then $B^{\uparrow m}$ uses $\sigma_m, \ldots, \sigma_{m+k-1}$ and shares one strand with each cluster, and
+$$
+  \mathrm{tr}_M\bigl(x\,B^{\uparrow m}\,y^{\uparrow (m+k)}\bigr) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(B)\,\mathrm{tr}_M(y).
+$$
+For $B = V^3 = (\sigma_0\sigma_1^{-1})^3$ the factor is $\mathrm{tr}_M(V^3) = 1 - h^4 + h^4 z^2 - h^5 z$, the Borromean trace.
+
+The $\gamma\gamma$ bond of the nucleon probes is not of this block form: its letter $\sigma_3$ is a generator of the second nucleon. For a bond that overlaps the second cluster, $\mathrm{tr}_M\bigl(x\,B^{\uparrow m}\,y^{\uparrow (m+1)}\bigr) = \mathrm{tr}_M(x)\,\mathrm{tr}_M\bigl(B\,y^{\uparrow 1}\bigr)$ for $x \in H_m$. The bond ratio is then independent of the first nucleon and depends on the second.
