@@ -104,6 +104,8 @@ class WhiteheadHH (R : Type u) [CommRing R]
   inner_of_derivation : ∀ (D : Derivation R A), ∃ x : A, D.d = innerDerivation x
   -- Ref: [cartan1956] Cartan-Eilenberg 1956, Ch. IX §7 (Whitehead's lemma);
   --      [weibel1994] Weibel 1994, §9.
+  --      Neither work is held in library/, so neither locator has been checked against
+  --      the source; this class is a conditional carrier resting on them.
 
 /-- **The central idempotents are idempotent.**  A re-export of the
     `SemisimpleAlgebra.e_idem` class field.
@@ -152,7 +154,8 @@ algebra: `H_n(R,q)` is semisimple at generic `q`, so Whitehead's lemma gives
 `HH^k = 0` for `k ≥ 1`.  What is missing is a Lean statement of that fact, and
 writing one requires (1) and (2) first.  Do not close this by renaming a
 different theorem back.
--- Ref: [cartan1956] Cartan-Eilenberg 1956, Ch. IX §7 (Whitehead's lemma)
+-- Ref: [cartan1956] Cartan-Eilenberg 1956, Ch. IX §7 (Whitehead's lemma; not held in
+--      library/, locator unchecked)
 -/
 
 /-- **q-deformed Wedderburn-block weight on λ.**
