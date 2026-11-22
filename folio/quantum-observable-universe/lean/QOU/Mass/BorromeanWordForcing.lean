@@ -2,6 +2,8 @@ import Mathlib.Tactic
 import Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup
 import QOU.MathlibExt.BraidGroup
 import QOU.Mass.GammaGammaWordSelection
+import QOU.Braiding.crossing_energy_channels
+import QOU.Mass.CrossingEnergySelectionEqualsCount
 
 /-!
 # What singles out the Borromean word `β_Bor = (σ₀σ₁⁻¹)³`
@@ -615,5 +617,103 @@ theorem markovTrace21_eq_of_chi {q : R} (hq : q ≠ 0) (y3 y21 y111 : R)
   rw [markovTrace21_writhe_zero hq _ _ _ hsum u hu, markovTrace21_writhe_zero hq _ _ _ hsum v hv, hχ]
 
 end Trace
+
+/-! ## Crossing energy is the crossing count on this family
+
+`def:crossing-energy` (`QOU.Braiding.crossingEnergy p m q = p·q − m·q⁻¹`) is the
+corpus's energy of a braid word. `QOU.Mass.CrossingEnergySelectionEqualsCount` shows
+energy and count give the same ordering at fixed writhe. Zero pairwise linking pins the
+writhe to `0` for every candidate here, so on this family minimising the energy **is**
+minimising the count, across different braid classes and not only within one. -/
+
+section Energy
+
+/-- Number of positive and of negative crossings of a word. -/
+def nPos (w : Word) : ℕ := (w.filter (fun c => c.pos)).length
+def nNeg (w : Word) : ℕ := (w.filter (fun c => !c.pos)).length
+
+/-- The crossing energy of a word, `def:crossing-energy`. -/
+noncomputable def wordEnergy (q : ℝ) (w : Word) : ℝ :=
+  QOU.Braiding.crossingEnergy (nPos w) (nNeg w) q
+
+theorem length_eq_nPos_add_nNeg (w : Word) : w.length = nPos w + nNeg w := by
+  induction w with
+  | nil => rfl
+  | cons c w ih => cases hc : c.pos <;> simp [nPos, nNeg, hc] at ih ⊢ <;> omega
+
+theorem writhe_eq_nPos_sub_nNeg (w : Word) : writhe w = (nPos w : ℤ) - nNeg w := by
+  induction w with
+  | nil => simp [writhe, nPos, nNeg]
+  | cons c w ih =>
+    have hw : writhe (c :: w) = sign c + writhe w := by simp [writhe]
+    rw [hw, ih]
+    cases hc : c.pos <;> simp [nPos, nNeg, hc, sign] <;> ring
+
+/-- One step adds the crossing's sign to the total of the three pair counts. -/
+theorem step_total (st : St) (c : Crossing) :
+    (step st c).l01 + (step st c).l02 + (step st c).l12
+      = st.l01 + st.l02 + st.l12 + sign c := by
+  unfold step bump sign
+  split_ifs <;> simp <;> ring
+
+theorem foldl_total (w : Word) (st : St) :
+    (w.foldl step st).l01 + (w.foldl step st).l02 + (w.foldl step st).l12
+      = st.l01 + st.l02 + st.l12 + writhe w := by
+  induction w generalizing st with
+  | nil => simp [writhe]
+  | cons c w ih =>
+    have hw : writhe (c :: w) = sign c + writhe w := by simp [writhe]
+    rw [List.foldl_cons, ih, step_total, hw]; ring
+
+/-- **Zero pairwise linking forces writhe `0`.** -/
+theorem writhe_eq_zero_of_pureZeroLinking (w : Word) (h : PureZeroLinking w = true) :
+    writhe w = 0 := by
+  have hrun : run w = St.init := by simpa [PureZeroLinking] using h
+  have := foldl_total w St.init
+  simp only [run] at hrun
+  rw [hrun] at this
+  simpa [St.init] using this.symm
+
+/-- At writhe `0` the energy is the count times `(q − q⁻¹)/2`. -/
+theorem wordEnergy_of_writhe_zero (q : ℝ) (w : Word) (hw : writhe w = 0) :
+    wordEnergy q w = (w.length : ℝ) * ((q - q⁻¹) / 2) := by
+  have h1 := writhe_eq_nPos_sub_nNeg w
+  rw [hw] at h1
+  have hpm : (nPos w : ℝ) = nNeg w := by exact_mod_cast (by omega : nPos w = nNeg w)
+  rw [wordEnergy, QOU.Braiding.crossingEnergy, length_eq_nPos_add_nNeg]
+  push_cast
+  rw [hpm]; ring
+
+/-- **`β_Bor` minimises the crossing energy** among reduced three-strand words that are
+pure with zero pairwise linking and not the identity, for `1 < q`. Any word reaching
+the minimum is conjugate to `β_Bor`. -/
+theorem borromean_minimises_energy {q : ℝ} (hq : 1 < q) (w : Word) (hl : InB3Letters w)
+    (hr : Reduced w = true) (hp : PureZeroLinking w = true) (hne : eval w ≠ 1) :
+    wordEnergy q borromean ≤ wordEnergy q w ∧
+      (wordEnergy q w = wordEnergy q borromean → IsConj (eval w) (eval borromean)) := by
+  obtain ⟨hshort, hsix, -⟩ := minimal_pure_zeroLinking
+  have hpos : 0 < (q - q⁻¹) / 2 := by
+    have := QOU.Mass.CrossingEnergySelectionEqualsCount.sub_inv_pos hq; linarith
+  have hbw : writhe borromean = 0 := writhe_eq_zero_of_pureZeroLinking _ (by decide)
+  have hbl : borromean.length = 6 := rfl
+  rw [wordEnergy_of_writhe_zero q _ hbw, wordEnergy_of_writhe_zero q _
+    (writhe_eq_zero_of_pureZeroLinking w hp), hbl]
+  have h6 : 6 ≤ w.length := by
+    by_contra hlt
+    have := hshort w hl hr hp (by omega)
+    exact hne (by rw [this]; rfl)
+  refine ⟨by
+    have : (6 : ℝ) ≤ w.length := by exact_mod_cast h6
+    nlinarith, fun heq => ?_⟩
+  have hlen : w.length = 6 := by
+    have : (w.length : ℝ) = 6 := by
+      have := mul_right_cancel₀ (ne_of_gt hpos) heq
+      exact_mod_cast this
+    exact_mod_cast this
+  rcases hsix w hl hr hp hlen with h1 | hc
+  · exact absurd h1 hne
+  · exact hc
+
+end Energy
 
 end QOU.Mass.BorromeanWordForcing
