@@ -25,20 +25,14 @@ Q_sym(ordering₁) = Q_sym(ordering₂) = Q_sym
 This follows from the idempotent property: `e_{(n)} · B · e_{(n)} = χ(B) · e_{(n)}`
 where `χ(B)` is the character in the symmetric representation.
 
-## Forward derivation
+## Proof
 
-1. The chain element `B = ∏ⱼ (𝔴⁺ⱼ σⱼ + 𝔴⁰ⱼ)` uses distinct generators.
-2. `e_{(n)}` projects onto the 1D symmetric representation.
-3. For a 1D idempotent: `e · B · e = χ(B) · e` where `χ(B) = ∏ⱼ (q · 𝔴⁺ⱼ + 𝔴⁰ⱼ)`.
-4. But `χ(B)` is the character evaluated at `σⱼ → q`, which is
-   `∏ⱼ (q · M_j[0][0] + M_j[1][0])` — this depends on the crossing
-   coefficients `(c, d)` at each position, NOT on which position each
-   nucleon occupies.
-5. Wait — the crossing coefficients DO depend on the ordering (which
-   nucleon is at which position determines the crossing types).
-6. BUT: the Young symmetrizer averages over ALL permutations of positions,
-   weighted by `q^{ℓ(w)}`.  This average is symmetric under permutation
-   of nucleons, making the result ordering-independent.
+By definition, `skeinPolynomialSym c = ∏_{j<k} f(c[j], c[k])` with
+`f(a, b) = 𝔴⁺(v)·q + 𝔴⁰(v)`, `v = vertexType a b`: each crossing is already
+evaluated in the symmetric representation `σ ↦ q`. Since `vertexType` is
+symmetric and `ℤ[t, t⁻¹]` is commutative, a product over unordered pairs is
+invariant under permuting the list (`pairProd_perm`), and two lists with the
+same counts are permutations of each other (`List.perm_iff_count`).
 
 ## Verified computationally
 
@@ -85,69 +79,116 @@ noncomputable def skeinPolynomialSym (config : NuclearConfig) : R_t :=
       ) 1
     factors.foldl (· * ·) 1
 
-/-- **Skein-multiset invariance — typeclass (Pattern 4).**
+/-! ## §2  Ordering independence
 
-    Per-pair witness that the symmetric Skein polynomial agrees on
-    two configurations sharing the same nucleon multiset. The
-    universal claim depends on the `List.Perm.prod_eq`
-    + multiset-of-pairs argument not yet in Mathlib; until then,
-    callers supply the witness for the specific configurations they
-    use (typically a fixed nucleus where computational verification
-    is available, e.g. tritium with 9 ordering checks). -/
-class SkeinMultisetInvariant
-    (config₁ config₂ : NuclearConfig)
-    (_h_same : config₁.length = config₂.length)
-    (_h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t) : Prop where
-  /-- Polynomials agree on configurations with the same nucleon multiset. -/
-  invariance : skeinPolynomialSym config₁ = skeinPolynomialSym config₂
+`skeinPolynomialSym` is, by its definition above, the product over all
+pairs `j < k` of the crossing factor `𝔴⁺(v)·q + 𝔴⁰(v)` with
+`v = vertexType c[j] c[k]`. `vertexType` is symmetric and `R_t` is
+commutative, so this product over unordered pairs depends only on the
+multiset of nucleons. That is the whole proof: nothing about Young
+symmetrizers or Hecke algebras is used, because the definition already
+evaluates each crossing in the symmetric representation (`σ ↦ q`).
 
-/-- Reflexivity instance: when both configs are the same, the
-    polynomials are trivially equal. -/
-instance skeinMultisetInvariant_refl (config : NuclearConfig)
-    (h_same : config.length = config.length)
-    (h_perm : ∀ t : NucleonType, config.count t = config.count t) :
-    SkeinMultisetInvariant config config h_same h_perm :=
-  ⟨rfl⟩
+This replaces the former class `SkeinMultisetInvariant`, whose single field
+was the conclusion (§3b-cond item 5; issue #8911). -/
 
-/-- Per-instance form: the deprecated free-function alias. -/
-theorem skein_multiset_invariance_axiom
-    (config₁ config₂ : NuclearConfig)
-    (h_same : config₁.length = config₂.length)
-    (h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t)
-    [hi : SkeinMultisetInvariant config₁ config₂ h_same h_perm] :
+/-- Product of `g a b` over all unordered pairs of positions in a list. -/
+def pairProd {α R : Type*} [CommMonoid R] (g : α → α → R) : List α → R
+  | [] => 1
+  | a :: l => (l.map (g a)).prod * pairProd g l
+
+/-- A pair product with a symmetric `g` is invariant under permutation. -/
+theorem pairProd_perm {α R : Type*} [CommMonoid R] (g : α → α → R)
+    (hg : ∀ a b, g a b = g b a) {l₁ l₂ : List α} (h : l₁.Perm l₂) :
+    pairProd g l₁ = pairProd g l₂ := by
+  induction h with
+  | nil => rfl
+  | cons a h ih => simp only [pairProd, ih, (h.map (g a)).prod_eq]
+  | swap a b l =>
+      simp only [pairProd, List.map_cons, List.prod_cons, hg a b]
+      ac_rfl
+  | trans _ _ ih₁ ih₂ => exact ih₁.trans ih₂
+
+/-- A left fold by multiplication is a list product. -/
+theorem foldl_mul_eq {α R : Type*} [CommMonoid R] (f : α → R) (l : List α) (a : R) :
+    l.foldl (fun acc b => acc * f b) a = a * (l.map f).prod := by
+  induction l generalizing a with
+  | nil => simp
+  | cons b l ih => simp [ih, mul_assoc]
+
+/-- The index form `∏_j ∏_{k>j} g c[j] c[k]` equals `pairProd`. -/
+theorem range_pairProd {α R : Type*} [CommMonoid R] [Inhabited α] (g : α → α → R) (c : List α) :
+    ((List.range c.length).map
+      (fun j => ((c.drop (j + 1)).map (g c[j]!)).prod)).prod = pairProd g c := by
+  induction c with
+  | nil => simp [pairProd]
+  | cons a l ih =>
+      rw [List.length_cons, List.range_succ_eq_map]
+      simp only [List.map_cons, List.map_map, List.prod_cons, pairProd]
+      rw [← ih]
+      simp [Function.comp_def]
+
+
+/-- The symmetric-representation factor of one crossing. -/
+noncomputable def crossingFactor (a b : NucleonType) : R_t :=
+  w_plus_t (vertexType a b) * q_from_t + w_zero_t (vertexType a b)
+
+theorem vertexType_comm (a b : NucleonType) : vertexType a b = vertexType b a := by
+  cases a <;> cases b <;> rfl
+
+theorem crossingFactor_comm (a b : NucleonType) : crossingFactor a b = crossingFactor b a := by
+  simp [crossingFactor, vertexType_comm a b]
+
+/-- `skeinPolynomialSym` is the pair product of `crossingFactor`. -/
+theorem skeinPolynomialSym_eq_pairProd (config : NuclearConfig) :
+    skeinPolynomialSym config = pairProd crossingFactor config := by
+  unfold skeinPolynomialSym
+  have hf : ∀ j, (config.drop (j + 1)).foldl (fun acc nk =>
+        acc * (w_plus_t (vertexType config[j]! nk) * q_from_t
+          + w_zero_t (vertexType config[j]! nk))) 1
+      = ((config.drop (j + 1)).map (crossingFactor config[j]!)).prod := by
+    intro j
+    have := foldl_mul_eq (crossingFactor config[j]!) (config.drop (j + 1)) 1
+    rw [one_mul] at this
+    exact this
+  simp only [hf]
+  rw [← range_pairProd]
+  split_ifs with h
+  · -- length < 2 : every factor is an empty product
+    rw [eq_comm, List.prod_eq_one]
+    intro x hx
+    simp only [List.mem_map, List.mem_range] at hx
+    obtain ⟨j, hj, rfl⟩ := hx
+    rw [List.drop_eq_nil_of_le (by omega)]
+    simp
+  · have hfold := foldl_mul_eq (R := R_t) id
+      ((List.range (config.length - 1)).map
+        (fun j => ((config.drop (j + 1)).map (crossingFactor config[j]!)).prod)) 1
+    simp only [id, one_mul] at hfold
+    rw [hfold]
+    obtain ⟨n, hn⟩ : ∃ n, config.length = n + 1 := ⟨config.length - 1, by omega⟩
+    rw [hn, List.range_succ, List.map_append, List.prod_append, Nat.add_sub_cancel]
+    rw [List.map_singleton, List.prod_singleton, List.drop_eq_nil_of_le (by omega)]
+    simp
+
+theorem skeinPolynomialSym_perm {c₁ c₂ : NuclearConfig} (h : c₁.Perm c₂) :
+    skeinPolynomialSym c₁ = skeinPolynomialSym c₂ := by
+  rw [skeinPolynomialSym_eq_pairProd, skeinPolynomialSym_eq_pairProd]
+  exact pairProd_perm crossingFactor crossingFactor_comm h
+
+theorem skein_multiset_invariance (c₁ c₂ : NuclearConfig)
+    (h_perm : ∀ t : NucleonType, c₁.count t = c₂.count t) :
+    skeinPolynomialSym c₁ = skeinPolynomialSym c₂ :=
+  skeinPolynomialSym_perm (List.perm_iff_count.mpr h_perm)
+
+
+/-- **Theorem (ordering independence).** Two nuclear configurations with the
+same number of protons and the same number of neutrons have the same
+symmetric skein polynomial. -/
+theorem ordering_independence (config₁ config₂ : NuclearConfig)
+    (h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t) :
     skeinPolynomialSym config₁ = skeinPolynomialSym config₂ :=
-  hi.invariance
-
-/-! ## §2  Ordering independence theorem -/
-
-/-- **Theorem (ordering independence).**
-    For any two orderings `σ₁, σ₂` of the same nuclear configuration,
-    the Young-symmetrized Q-value is identical:
-
-    `Q_sym(σ₁) = Q_sym(σ₂)`
-
-    **Proof sketch:**
-    1. `e_{(n)} = (1/P_n(q²)) Σ_{w ∈ S_n} q^{ℓ(w)} T_w`
-    2. `e · B(σ₁) · e = e · B(σ₂) · e` because the symmetrizer
-       sums over all permutations, absorbing any specific ordering.
-    3. More precisely: `B(σ₂) = T_{w₁₂} · B(σ₁) · T_{w₁₂}⁻¹`
-       where `w₁₂` is the permutation mapping `σ₁ → σ₂`.
-    4. `e · T_w · B · T_w⁻¹ · e = e · B · e` because
-       `e · T_w = q^{ℓ(w)} · e` (symmetric eigenvalue). -/
--- Ref: [murphy1992] Murphy, "On the representation theory of the symmetric groups and associated Hecke algebras," J. Algebra 152 (1992)
-theorem ordering_independence
-    (config₁ config₂ : NuclearConfig)
-    (h_same : config₁.length = config₂.length)
-    (h_perm : ∀ t : NucleonType,
-      config₁.count t = config₂.count t)
-    [SkeinMultisetInvariant config₁ config₂ h_same h_perm] :
-    skeinPolynomialSym config₁ = skeinPolynomialSym config₂ :=
-  skein_multiset_invariance_axiom config₁ config₂ h_same h_perm
-  -- Pass-through: the full argument is that the symmetric-rep
-  -- character χ(B) is a commutative product over crossing-type
-  -- pairs, and the multiset of crossing types is permutation-invariant
-  -- under h_perm.  Discharged via the axiom below.
-  -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+  skein_multiset_invariance config₁ config₂ h_perm
 
 /-! ## §3  The unique Q-value -/
 
