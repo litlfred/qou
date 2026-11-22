@@ -2906,6 +2906,12 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "chester-arsiwalla-kauffman-2025" },
   { id: "letzter2001" },
   { id: "balagovic-kolb-2015" },
+  // 2026-11-22: knotted-particles-history bibliographic review (PR #9095).
+  { id: "kauffman-lomonaco-2016" },
+  { id: "murasugi1987" },
+  { id: "thistlethwaite1987" },
+  { id: "menasco-thistlethwaite1991" },
+  { id: "menasco-thistlethwaite1993" },
 ];
 
 export const references: Reference[] = assemble(ORDER);
