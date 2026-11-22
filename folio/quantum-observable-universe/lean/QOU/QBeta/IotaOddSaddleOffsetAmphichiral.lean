@@ -86,7 +86,7 @@ no archimedean construct is required), reusing the *integer* certified Stokes
 data of `FiveTwoDTSpectrumSplit` by casting `ℤ → ℚ`.
 
 -- Ref: [leitner2026] docs/audits/2026-08-02-fivetwo-crossknot-34-resolution.md
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
 -/
 
 namespace QOU.QBeta.IotaOddSaddleOffsetAmphichiral

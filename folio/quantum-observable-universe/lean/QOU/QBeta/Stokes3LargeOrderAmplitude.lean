@@ -59,7 +59,7 @@ Two honest Lean layers below:
 drivers, and nothing claims the resurgent amplitude identification is closed.
 Base ring is `ℝ` (archimedean: `Real.cos`, order, limits).
 
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (Stokes constant 3; eq 46/60)
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (Stokes constant 3; eq 46/60)
 -- Ref: [leitner2026] docs/audits/2026-08-01-stokes3-largeorder-amplitude-41.md
 -/
 

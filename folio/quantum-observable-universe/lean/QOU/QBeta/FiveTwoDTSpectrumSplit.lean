@@ -74,7 +74,7 @@ alone (no Mathlib olean set required). It does **not** derive the number
 from the 13 categorical drivers, does **not** bridge to c₃, and does
 **not** pick a normalization.
 
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
 -- Ref: [leitner2026] docs/audits/2026-08-02-fivetwo-crossknot-34-resolution.md
 -/
 
