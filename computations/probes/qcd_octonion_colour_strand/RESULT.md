@@ -18,7 +18,7 @@ No q₀ is read anywhere.
 |---|---|---|---|---|
 | **S2** Furey ideal ℂ⁸ = 1⊕3⊕3̄⊕1′, Jimbo gl₈ | Hecke ✓, braid ✓ | **only as two independent gl₃'s** (one on 3, one on 3̄). One U_q(sl₃) on 3⊕3̄ fails at generic q (passes only at q = 1). | — | scope (a) negative for a single colour group |
 | **S5** oriented strand V = ℂ³, V* = 3̄ as the reversed strand (quantised walled Brauer) | mixed Yang–Baxter ✓ | **✓ at generic q** | the monodromy singlet; the octet is the eigenvalue-1 channel | passes every test in PREREG |
-| **S1** G₂ strand V₇ = Im 𝕆, U_q(g₂) | the only two-eigenvalue equivariant braiding is x = 1 + s·P₁, which is Temperley–Lieb, **Hecke at q′ with q′ + 1/q′ = ±dim_q V₇, not at q** | ✓ classically (su(3)_e ⊂ g₂ commutes with the cup-cap) | **the one-row channel** of H₃(q′), which convention D keeps | passes, at the cost of a second Hecke parameter |
+| **S1** G₂ strand V₇ = Im 𝕆, U_q(g₂) | the only two-eigenvalue equivariant braiding is x = 1 + s·P₁, which is Temperley–Lieb, **Hecke at q′ with q′ + 1/q′ = ±dim_q V₇, not at q** | ✓ classically, but **trivially**: the cup-cap is O(7)-invariant, so every subalgebra of so(7) commutes with it and the octonions play no role in the braid. At q ≠ 1 no colour su(3) inside U_q(g₂) exists as a Hopf subalgebra (`2026-11-15-colour-stabilizer-bridge.md` §8) | **the one-row channel** of H₃(q′), which convention D keeps | passes, at the cost of a second Hecke parameter |
 | **S4** Bring handles → ℍ or 𝕆 | — | — | — | **no equivariant unit and no equivariant i, j, k triad**: scope (b) |
 
 ## S2: Furey ideal with Jimbo braiding ([`furey_oriented_probe.py`](furey_oriented_probe.py), [`furey-oriented.witness.json`](furey-oriented.witness.json))
@@ -127,7 +127,9 @@ A single colour group acting on 3 ⊕ 3̄ and braiding at the substrate q is not
 
 For any of these the gluon is **not a braid word**. It is a channel or projector (S5's P₈) or an algebra action, never a word in σ. That holds on S2 by Q2f and on S5 by construction.
 
-**My judgement, not a finding:** option 1 needs the fewest new ingredients and is already the standard knot-theoretic home of quarks. Option 2 is the only one in which the octonions do real work. Which of the two is meant is the owner's question.
+**My judgement, not a finding:** option 1 needs the fewest new ingredients and is already the standard knot-theoretic home of quarks. In option 2 the octonions do work only through the trivalent vertex (the 3-form φ, the q-cross-product); the braiding itself sees only the norm.
+
+> **Correction (2026-11-22, same session).** This section first said option 2 is "the only one in which the octonions do real work" and that colour moves with the S1 strand. Both overstated it. The TL braiding 1 + u·e is built from the norm alone, so it commutes with all of O(7), not just with g₂ or su(3). Colour commuting with it is therefore automatic and is no evidence for octonions. The G₂ content enters only through invariant theory: φ is the unique G₂-invariant in V₇^⊗3, but it is one vector in the trivial-channel space of dimension at least 343 − 14 = 329. The same overstatement was repeated in `docs/audits/2026-11-22-colour-viewpoints-synthesis.md` §3 and D2, corrected in the same commit, and in a chat message. Which of the two is meant is the owner's question.
 
 **Default if nothing is decided:** nothing changes. This probe adds no content block and wires nothing.
 

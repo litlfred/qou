@@ -46,7 +46,7 @@ Gresnigt at one root of unity, CAK at the group level (no q), ours at formal q.
 | Letzter coideals AI, AIII on ℂ³ | — | Not colour: so₃ / gl₂⊕gl₁ (scope b, dimension) |
 | **(gl₆, gl₃⊕gl₃) coideal on ℂ³⊗ℂ²** | **Yes**; U_q(sl₃) relations hold n ≤ 3; gl₃⊗1 at q = 1 | Colour action depends on flavour at q ≠ 1; singlets carry the fermionic trace, not z_D |
 | Oriented strand (walled Brauer, 3̄ = reversed ℂ³) | Yes | A second strand type; octonions not needed |
-| G₂ strand (Im 𝕆) | Yes | Second Hecke parameter q′, q′ + 1/q′ = dim_q V₇ |
+| G₂ strand (Im 𝕆) | Classically yes, but trivially (the braid is O(7)-invariant); at q ≠ 1 no colour su(3) Hopf subalgebra of U_q(g₂) exists | Second Hecke parameter q′, q′ + 1/q′ = dim_q V₇; see `2026-11-22-g2-colour-strand-map.md` |
 | Furey ideal ℂ⁸ with gl₈ braiding | No (single su(3) needs q = 1) | — |
 
 In every route the gluon is a **channel** (e.g. the octet projector on V⊗V*),
@@ -90,7 +90,7 @@ coideal is recorded as failing it.
   strand type. Next step: relations for n ≥ 4, Lean for the §4 sign argument.
 - **Oriented strand.** Cleanest algebra (walled Brauer); needs 3̄ as reversed
   strand, which the corpus does not yet have.
-- **G₂ at q′.** The only genuinely octonionic route; needs a second algebra
+- **G₂ at q′.** The octonions enter through the trivalent vertex (3-form), not through the braid (see `2026-11-22-g2-colour-strand-map.md`); needs a second algebra
   H(q′) and an account of how it couples to the photon's H₃(q).
 
 **Recommendation (judgement):** gl₆ coideal first, oriented strand as its
