@@ -453,3 +453,38 @@ vertex energy is ΔE = E₀·ln(W(du)/W(ud)) = E₀·ln((q² + q⁻²)/2).
 
 **Expected verdict.** A scope-(a) negative: the split exists, but its size cannot reach 0.41980 MeV
 (placement B) or 0.78233 MeV (placement C), and its sign is a convention.
+
+## Addendum 18 (2026-11-22): the full vertex in H₄ (owner "Do all", item 1)
+
+Written before any H₄ number has been computed. Nothing below has been evaluated yet.
+
+**Candidate.** §28 split only the quark–lepton strand pair. Here all four strands (three quark,
+one lepton, in that tensor order) are split at once, by the Young channels of H₄(q).
+
+- Space: the weight-zero subspace of V^{⊗4} (two u labels, two d labels), dimension 6. Ř_i acts
+  on positions i, i+1 as in §28: uu ↦ q·uu, dd ↦ q·dd, ud ↦ du, du ↦ ud + h·du.
+- Channels: λ ∈ {(4), (3,1), (2,2)}, with central idempotents P_λ of H₄ on that space. (The
+  weight-zero space has multiplicities 1, 3, 2.)
+- Channel weight: q^{c(λ)}, with c(λ) the content sum (6, 2, 0). This is the n = 4 form of the §28
+  rule: there the weights q and q⁻¹ are q^{c(λ)} for (2) and (1,1).
+- State weight: W(s) = Σ_λ q^{c(λ)}·(P_λ)_{ss}.
+- Initial set: lepton = u (ν), quarks with one u: {uddu, dudu, dduu}. Final set: lepton = d (e),
+  quarks with two u: {uudd, udud, duud}. The two sets split the six basis states.
+- Vertex energy: ΔE₄ = E₀·ln(Σ_init W / Σ_final W).
+
+**Claims to check, preregistered:**
+1. Σ over all six states of W is q⁶ + 3q² + 2 (the trace of Σ_λ q^{c(λ)} P_λ).
+2. At n = 2 the same rule reproduces §28 (W(du) = (q² + q⁻²)/[2], W(ud) = 2/[2]).
+3. Reversing the tensor order (lepton first) negates ΔE₄, so the sign is a convention again.
+4. The size of |ΔE₄| at the proton q₀, set against 0.41979 MeV (placement B) and 0.78233 MeV
+   (placement C).
+
+**Method.** The P_λ are written as Lagrange polynomials in the full twist Δ², which acts on λ by
+q^{2c(λ)}; these values are distinct for q > 1. The Hecke and braid relations of the 6×6
+generators are Lean-proved. The diagonals are computed in exact ℚ(q) arithmetic (sympy), with no
+floats. If the 6×6 symbolic proof in Lean is too slow, that step stays an exact computation and is
+reported as such, not as a Lean proof.
+
+**Expected verdict.** Probably another scope-(a) negative of order h², but this is not yet
+measured. If |ΔE₄| lands within 10 % of either target, that is a near-match only and is not
+adopted without a derivation of the channel weight.
