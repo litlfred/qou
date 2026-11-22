@@ -228,7 +228,10 @@ def main() -> int:
         return ph.tr_m_atomic_mpfr_suffixes([list(word)], [list(sfx)], n, Q0S, DPS)[0][0]
 
     cache = TraceCache("tr-m-atomic-mpfr-suffixes", Q0S, DPS)
-    cache.verify(_one)
+    try:
+        cache.verify(_one)
+    except RuntimeError as exc:        # cache refused itself; compute everything
+        print(f"  🛑 {exc}", flush=True)
     table, failed = {}, {}
     chunk = int(os.environ.get("QOU_TRACE_CHUNK", "128"))
     for name, (n, ta, tf) in prepared.items():
