@@ -9,6 +9,7 @@ source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
 toc_source: outline
 doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
+duplicate_of: "arxiv-math-0203060v11"
 ---
 gory over C. So M = ⊕Mj is a direct sum of indecomposable subcategories. Now
 for each i choose semisimple algebras Ri with blocks labeled by simple objects of
