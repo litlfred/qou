@@ -411,13 +411,14 @@ representative has `r` letters `R` and `l` letters `L`, with `2 + r·l ≤ 18`
 `r ≡ l (mod 12)`; with `r·l ≤ 16` and the one-letter traces `2 + r`, `2 + l`, this leaves
 `r = l ≤ 4`. Among those, trace 18 is `(RL)³` or `R⁴L⁴` (`trace18_small`), and `R⁴L⁴`
 has a different character at `q = 2`. -/
-theorem fibre (hK : KernelIsDeltaFour) (hP : PositiveRepresentatives) (w : Word)
-    (hw : InB3Letters w) (h0 : writhe w = 0)
-    (hχ : ∀ q : ℂ, q ≠ 0 → chi21 q w = chi21 q [a, b', a, b', a, b']) :
+theorem fibre_two_point_of (hK : KernelIsDeltaFour) (hP : PositiveRepresentatives)
+    (w : Word) (hw : InB3Letters w) (h0 : writhe w = 0)
+    (hI : chi21 Complex.I w = chi21 Complex.I [a, b', a, b', a, b'])
+    (h2q : chi21 (2 : ℂ) w = chi21 (2 : ℂ) [a, b', a, b', a, b']) :
     IsConj (eval w) (eval [a, b', a, b', a, b']) := by
   have htr : ((burauNeg (eval w) : Matrix.SpecialLinearGroup (Fin 2) ℤ) :
       Matrix (Fin 2) (Fin 2) ℤ).trace = 18 := by
-    have := hχ Complex.I Complex.I_ne_zero
+    have := hI
     rw [chi21_I w hw h0, chi21_borromean_I] at this
     exact_mod_cast this
   obtain ⟨u, hu⟩ := hP _ (by rw [htr]; norm_num)
@@ -467,12 +468,20 @@ theorem fibre (hK : KernelIsDeltaFour) (hP : PositiveRepresentatives) (w : Word)
     · exact hk
     · exact hk.trans (eval_borOrbit_conj _ (by simp [borOrbit, toWord]))
   · exfalso
-    have h2 := hχ 2 two_ne_zero
+    have h2 := h2q
     rw [chi21_conj 2 two_ne_zero hw (toWord_letters u) hk] at h2
     simp only [r4l4, List.mem_cons, List.not_mem_nil, or_false] at hr44
     rcases hr44 with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
       (simp [chi21, rep21, toWord, heckeMat, Matrix.trace_fin_two] at h2; norm_num at h2)
 
+
+/-- The fibre statement with `χ` matched at every `q ≠ 0`, conditional on the two
+classical facts (both proved below and in `BraidThreeSL2ZKernel`). -/
+theorem fibre (hK : KernelIsDeltaFour) (hP : PositiveRepresentatives) (w : Word)
+    (hw : InB3Letters w) (h0 : writhe w = 0)
+    (hχ : ∀ q : ℂ, q ≠ 0 → chi21 q w = chi21 q [a, b', a, b', a, b']) :
+    IsConj (eval w) (eval [a, b', a, b', a, b']) :=
+  fibre_two_point_of hK hP w hw h0 (hχ _ Complex.I_ne_zero) (hχ (2 : ℂ) two_ne_zero)
 
 /-- `fibre` with the positive-representative fact discharged: conditional only on the
 kernel fact `KernelIsDeltaFour`. -/
@@ -481,6 +490,17 @@ theorem fibre_of_kernel (hK : KernelIsDeltaFour) (w : Word) (hw : InB3Letters w)
     (hχ : ∀ q : ℂ, q ≠ 0 → chi21 q w = chi21 q [a, b', a, b', a, b']) :
     IsConj (eval w) (eval [a, b', a, b', a, b']) :=
   fibre hK positiveRepresentatives w hw h0 hχ
+
+/-- **Two values of `χ` suffice.** A writhe-0 three-strand word whose `(2,1)` character
+agrees with `β_Bor`'s at `q = i` and at `q = 2` is conjugate to `β_Bor`. The proof of
+`fibre` reads `χ` only at these two points: `q = i` gives the `SL(2, ℤ)` trace 18, and
+`q = 2` separates `R⁴L⁴`. -/
+theorem fibre_two_point (w : Word) (hw : InB3Letters w) (h0 : writhe w = 0)
+    (hI : chi21 Complex.I w = chi21 Complex.I [a, b', a, b', a, b'])
+    (h2q : chi21 (2 : ℂ) w = chi21 (2 : ℂ) [a, b', a, b', a, b']) :
+    IsConj (eval w) (eval [a, b', a, b', a, b']) :=
+  fibre_two_point_of BorromeanWordForcing.kernelIsDeltaFour positiveRepresentatives
+    w hw h0 hI h2q
 
 /-- **The same-character fibre of `β_Bor` at writhe 0, unconditionally.** Both classical
 facts are proved: `kernelIsDeltaFour` and `positiveRepresentatives`. -/
