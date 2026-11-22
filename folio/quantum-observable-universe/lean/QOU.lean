@@ -345,6 +345,8 @@ import QOU.MathlibExt.PLLipschitz
 import QOU.MathlibExt.PLLipschitzPiecewise
 import QOU.MathlibExt.PLScaling
 import QOU.MathlibExt.PLMoiseAssembly
+import QOU.MathlibExt.PLSlice
+import QOU.MathlibExt.PLTies
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower

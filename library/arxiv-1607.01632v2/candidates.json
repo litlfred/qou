@@ -1,0 +1,121 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1607.01632v2",
+ "source": {
+  "structure_sha256": "bbfdc5c00d97adff74e26adec34d9479dfcad093d9b851baf27d7afdddd8f495",
+  "file": "arxiv-1607.01632v2.pdf"
+ },
+ "provenance": {
+  "title": "Charge speci\ufb01c baryon mass relations with deformed SU q (3) \ufb02avor symmetry",
+  "authors": "Niels G. Gresnigt",
+  "arxiv": {
+   "id": "1607.01632",
+   "version": "2",
+   "primary_class": "hep-ph",
+   "stamp_date": "19 Sep 2016"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "recommendation": 6
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We argue here that at the level of accuracy of the q-deformed mass relations, the mass splittings within isoplets become signi\ufb01cant and should be accounted for.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The values of the deformation parameter q that give these exceptionally accurate octet and decuplet baryons, together with the assertion made in [16,22] that there should be a direct connection between q and the Cabibbo angle conspire to suggest a particularly simple formula for the Cabibbo angle in terms of q and spin parity JP .",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-q-deformed-baryon-mass-relations.md",
+   "section_title": "q-Deformed baryon mass relations",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Solving for integer n suggests n = 16 should provide the best \ufb01t.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-24-decuplet-baryons.md",
+   "section_title": "Decuplet baryons",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To account for these mass splitting the speci\ufb01c charges or baryons must be inserted into the mass relations in such a way that the electromagnetic contribution to masses is the same on both sides of the equation.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-4-charge-specific-q-deformed-baryon-mass-relatio.md",
+   "section_title": "Charge specific q-deformed baryon mass relations",
+   "pages": "7-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The Cabibbo angle as a function of q and JP It is asserted in [16, 22] that there should be a direct connection between the deformation parameter q and the Cabibbo angle \u03b8C.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-5-the-cabibbo-angle-as-a-function-of-q-and-jp.md",
+   "section_title": "The Cabibbo angle as a function of q and JP",
+   "pages": "10-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The mass di\ufb00erences within the isoplets should not be ignored at the level of accuracy a\ufb00orded by these deformed mass relations because they exceed the error in these formulas (for the best \ufb01t value of the deformation parameter q).",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-6-discussion-and-conclusion.md",
+   "section_title": "Discussion and conclusion",
+   "pages": "10-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -230,6 +230,33 @@ Lean for it. A proof would need the h-expansion of the Ocneanu trace of a word w
 inserted, where V³ = 1 at q = 1: first-order additivity over bonds, plus the vanishing of
 orders y¹ to y³ (y¹ to y⁴ into a neutron).
 
+## 8. Why "into a proton": exact at A = 2 for every Markov parameter z
+
+Probe `bond_generic_z_probe.py`, witness `bond-generic-z.witness.json` (exploratory). The
+first nucleon factors out by `towerTr_disjoint`, so one bond (0, 1) acts on a 4-strand tail:
+the receiving block's word on σ₁, σ₂, followed by V³ on σ₀, σ₁. The tail shares σ₁ with
+the bond. The computation is exact over ℤ[h, z], with the trace parameter z left **free**:
+
+- **into a proton:** tr_atom − tr_free = h⁴ (z² − hz − 1) P_p(h, z) / 4, with
+  P_p = −h⁷ + h⁶z − 4h⁵ + 3h⁴z − 6h³ + 2h²z − 3h − 2z;
+- **into a neutron:** tr_atom − tr_free = h⁵ (h² + 1)(h² + 4)(hz − h² − 1)(z² − hz − 1) / 4.
+
+Since y = q h, these give the orders y⁴ and y⁵ of §7. The leading coefficients of
+ratio − 1 are (1 − z²)/2 into a proton and (1 − z²)/z into a neutron. At z_D(1) = 1/2 these
+are 3/8 and 3/2. So the per-bond rule at A = 2 holds for **every** z, not only z_D, and the
+extra power of h into a neutron is a fact about the two block words, not about the trace
+parameter. Both effects vanish exactly where z² − hz − 1 = 0, that is at z = q or z = −1/q.
+
+Lean status:
+
+- **Proved, sorry-free (pilot, kept in a scratch file, not committed):** σ₁²·V³ is
+  trace-neutral, tr(σ₁² V³) = tr(σ₁²) for every z and h. The proof runs the repo's verified
+  evaluator `trWord` (`markov-trace-recursive-reducer`) with simp and ring.
+- **Not proved in Lean:** the two identities above. Expanded naively they are 256 and 512
+  positive words, and simp ran out of memory after 12 minutes on the proton case. A proof
+  needs an evaluator that merges like terms, with a lemma that the merge preserves the
+  trace. Additivity over several bonds at A ≥ 3 (§7) is still a conjecture.
+
 ## Reproduce
 
 ```
@@ -237,5 +264,6 @@ python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a2_a3_probe.py
 python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_probe.py
 python3 -u computations/probes/light_nuclei_a2_a3/he4_all_pairs_exact_probe.py  # about 6 min, needs python-flint
 python3 -u computations/probes/light_nuclei_a2_a3/bond_leading_order_probe.py  # about 70 s
+python3 -u computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py  # about 1 s
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```

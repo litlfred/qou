@@ -1,0 +1,56 @@
+{
+  "$schema": "folio-library-extraction/v1",
+  "doc_id": "witten1989-cmp-jones",
+  "kinds": {
+    "contents": {
+      "state": "found",
+      "count": 10,
+      "note": "contents from inferred",
+      "tool": "pdf-structure.py",
+      "version": "0b311238188a",
+      "at": "2026-11-22"
+    },
+    "sections": {
+      "state": "found",
+      "count": 11,
+      "tool": "pdf-structure.py",
+      "version": "0b311238188a",
+      "at": "2026-11-22"
+    },
+    "figures": {
+      "state": "none",
+      "count": 0,
+      "note": "8 caption(s) read off the pages",
+      "tool": "pdf-images.py+pdf-vector-figures.py",
+      "at": "2026-11-22"
+    },
+    "tables": {
+      "state": "none",
+      "count": 0,
+      "note": "backend pdfplumber 0.11.10; 49 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)",
+      "tool": "pdf-tables.py",
+      "version": "b3b9e4012c21",
+      "at": "2026-11-22"
+    },
+    "references": {
+      "state": "found",
+      "count": 39,
+      "tool": "references-extract",
+      "version": "5ba2d9d9e337",
+      "at": "2026-11-22"
+    },
+    "glossary": {
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme",
+      "tool": "glossary-from-source",
+      "at": "2026-11-22"
+    },
+    "footnotes": {
+      "state": "found",
+      "count": 1,
+      "note": "called from the text; also kept: 41 foot-of-page line(s) no mark calls, 3 mark(s) with no note found",
+      "tool": "pdf-footnotes.py",
+      "at": "2026-11-22"
+    }
+  }
+}

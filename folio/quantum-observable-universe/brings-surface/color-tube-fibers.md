@@ -1,4 +1,4 @@
-Let $z \in \mathbb{P}^1(\mathbb{C})$. The **color tube** at $z$ is the affine curve defined over $\mathbb{Z}[z]$ by the color tube cubic. It is denoted $R_z$, $G_z$, or $B_z$ according to which color tube coordinate $\mathbf{r}_z$, $\mathbf{g}_z$, or $\mathbf{b}_z$ is used:
+Let $z \in \mathbb{P}^1(\mathbb{C})$. The **color tube** at $z$ is the zero-dimensional subscheme of $\mathbb{A}^1$ defined over $\mathbb{Z}[z]$ by the color tube cubic; for $z$ off the branch locus it consists of three points. It is denoted $R_z$, $G_z$, or $B_z$ according to which color tube coordinate $\mathbf{r}_z$, $\mathbf{g}_z$, or $\mathbf{b}_z$ is used:
 
 ```tex
 \begin{equation}\label{eq:color-tube-fiber-def}
@@ -17,4 +17,4 @@ $$
   \mathbf{b}_z = w_4 - z.
 $$
 
-As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the color elliptic fiber $\mathcal{E}_z$ of [color elliptic curve](#prop:color-elliptic) via the shift $X = \mathbf{c} + z$.
+As schemes, $R_z \cong G_z \cong B_z$ is isomorphic to the color fibre over $z$ of [color elliptic curve](#prop:color-elliptic), the three roots of the color cubic, via the shift $X = \mathbf{c} + z$.

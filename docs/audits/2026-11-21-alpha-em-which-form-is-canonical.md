@@ -603,3 +603,102 @@ reduce this to a question about the writhe-parity sign: `ι` differs from the co
 but that rule is scoped to `T(2,n)` and is open for the electron (ruling 2026-11-21), and
 `T(3,5)` is a knot of even writhe. So the reading `ι = C·(−1)^F` is not established and
 is not used here.
+
+## 23. Is `(−1)^{writhe}` a fermion parity? No: it counts components (2026-11-22)
+
+**Pre-registered question.** §22 reduced "why `ι`-odd" to the sign `(−1)^{writhe}`, and
+noted the tempting reading `ι = C·(−1)^F`. Test: on braid words, is `(−1)^{writhe}` the
+knot/link (fermion/boson) parity of `prop:fermion-boson-knot-link`? Outcomes written down
+beforehand: "agrees on B₂ and B₃", "agrees on B₂ only", "agrees nowhere".
+
+**Result: agrees on `B₂` only.** `QOU/AlphaEM/WrithePermutationSign.lean`, lean-direct
+exit 0, `#print axioms` `[propext, Classical.choice, Quot.sound]`:
+
+- `sign_wordPerm`: `(−1)^{writhe}` is the sign of the permutation the braid word induces
+  on its strands (every letter maps to a transposition).
+- `sign_eq_neg_one_pow_numCycles`, `writhe_parity_eq_components`: so on `n` strands
+  `(−1)^{writhe} = (−1)^{n − c}`, with `c` the number of components of the closure.
+- On `B₂`: odd writhe exactly for knots (`c = 1`). This is the `T(2,n)` fermion rule.
+- On `B₃`: odd writhe exactly for two-component links. The electron `σ₀σ₁σ₀` closes to
+  the Hopf link (`electron_two_components`) and has odd sign (`electron_sign`);
+  `T(3,5) = (σ₀σ₁)⁵` is a knot (`t35_one_component`) with even sign (`t35_sign`). Every
+  `T(3,3m+2)` is a knot of even writhe `2(3m+2)`.
+
+So `(−1)^{writhe}` is the sign character of `Sₙ` pulled back to `Bₙ`, and `ι` is charge
+conjugation `C` twisted by that character. It is not a fermion parity: on three strands it
+disagrees with "knots are fermions" on both the electron and `T(3,5)`. The reading
+`ι = C·(−1)^F` is refuted for `B₃` (scope (b), invariant: `sign σ = (−1)^{n − c}`).
+
+**What is still open.** Why α_em is odd under `C ⊗ sgn`. The sign character is the
+natural partner of the transpose `λ ↦ λ'` that `ι` performs on Young diagrams, so the
+question is now: why should α_em be the part of `tr_M` that is odd under
+"crossing reversal together with transposing the Young diagram"?
+
+## 24. Mass as the `ι`-even part of `tr_M`: pre-registration (2026-11-22)
+
+Written and pushed **before** any number below §25 was computed.
+
+**Reading under test.** `tr_M = E + O` with `O = (y₃/2)·τ` the `ι`-odd part (§21) and
+`E = y₂₁·χ₂₁ + (y₃/2)(χ₃ + χ₁₁₁)` the `ι`-even part, convention D
+(`y₃ = (q⁴+1)/(q²+1)²`, `y₂₁ = q²/(q²+1)²`, `y₁₁₁ = 0`). The reading: the mass of a
+braid word is read off `E`.
+
+**Test A (structural, no numbers).** Charge conjugation `C` (σ ↦ σ⁻¹) maps the electron
+word to the positron word. Question: does `E(Cw) = E(w)`? Outcomes fixed in advance:
+"equal for all words", "equal up to the sign `(−1)^{|w|}`", "neither".
+
+**Test B (one number).** `R = |E(β_p)| / |E(β_e)|` at the proton `q₀`, with
+`β_e = σ₀σ₁σ₀` (owner ruling, electron) and `β_p = (σ₀σ₁⁻¹)³` (Borromean core). Compare to
+`m_p/m_e = 1836.15267343` (CODATA 2022). Pass: within 1 %. Anything else is a scope-(a)
+negative for this construction alone. Caveat stated in advance: `q₀` itself is pinned on
+`m_p/m_e` through a different formula, so a pass would not be independent of the input;
+a fail is still informative. Expected beforehand: each `χ_λ` of a length-6 word is a
+Laurent polynomial of degree ≤ 6 in `q`, and `q₀⁶ ≈ 1.87`, so `R` near 1836 would need
+`E(β_e)` close to a zero. A fail is the likely outcome.
+
+## 25. Results: `ι` is the transpose; the mass reading fails both tests (2026-11-22)
+
+`QOU/AlphaEM/IotaEvenMass.lean`, lean-direct exit 0, `#print axioms`
+`[propext, Classical.choice, Quot.sound]`.
+
+**Why "`ι`-odd" (the §23 question).** `tauIota_eq_tau_transpose`: on `H₃(q)`, `ι` acts on
+block weights by the transpose `λ ↦ λ'`, swapping `(3) ↔ (1³)` and fixing `(2,1)`. This is
+the Iwahori–Goldman involution of the Hecke algebra, which sends `χ_λ` to `χ_λ'` in every
+rank `[geckpfeiffer2000]`. So "α_em is `ι`-odd" says the same thing as "α_em is
+antisymmetric under transposing the Young diagram". That is a restatement, not a
+derivation: why α_em should carry that antisymmetry is still open.
+
+The restatement has one consequence worth recording. The `ι`-odd functionals are spanned by
+`χ_λ − χ_λ'` over non-self-conjugate pairs, so their dimension is
+`(p(n) − sc(n))/2` (`p` = partitions, `sc` = self-conjugate ones):
+
+| n | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|
+| dim of `ι`-odd functionals | 1 | 1 | 2 | 3 | 5 | 7 |
+
+So the uniqueness in `iota_odd_iff` (the `(1, 0, −1)` weights are forced up to scale) holds
+only for `n ≤ 3`. On `H₄` and above, "`ι`-odd" no longer picks a single functional, and a
+second condition would be needed. (Counts by direct enumeration; the transpose action in
+rank ≥ 4 is cited, not formalized here.)
+
+**Test A: equal up to the sign `(−1)^{|w|}`.** `iotaEven_flip`: any `ι`-even block
+functional satisfies `E(Cw) = (−1)^{|w|} E(w)`. The electron `σ₀σ₁σ₀` has length 3, so
+`E(positron) = −E(electron)` (`electron_iotaEven_flip`). Read literally, the positron
+would have negative mass. The reading survives only if mass is `|E|`, which is an added
+choice, not something the trace supplies. Scope (b) for the signed reading (invariant:
+`E(Cw) = (−1)^{|w|} E(w)`, proved for all words).
+
+**Test B: FAIL.** `computations/audits/mass_iota_even_ratio_probe.py`, mpmath 70 dps,
+proton `q₀ = 1.1099785827513808…`:
+
+| quantity | value |
+|---|---|
+| `E(σ₀σ₁σ₀)` | 0.160798936000410727 |
+| `E((σ₀σ₁⁻¹)³)` | 0.998562163836787266 |
+| `R = |E(β_p)|/|E(β_e)|` | 6.21000479651330933 |
+| `R / (m_p/m_e)` | 0.00338 |
+
+Off by a factor of about 296. Scope (a): this construction alone does not give the
+proton/electron ratio. It does not exclude `E` as one factor of a larger mass formula.
+The probe also re-checks Test A numerically (`E(Cβ_e) = −E(β_e)` to 60 digits). A side
+fact: the Borromean core has writhe 0, so its `ι`-odd part is exactly 0 (`O(β_p) = 0`).

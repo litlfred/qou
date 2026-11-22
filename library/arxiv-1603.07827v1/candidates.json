@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1603.07827v1",
+ "source": {
+  "structure_sha256": "8f4959c11d26c8c2f4e094862e465fc0de8676bf3ac49165f597f08303e59991",
+  "file": "arxiv-1603.07827v1.pdf"
+ },
+ "provenance": {
+  "title": "Braiding With Majorana Fermions",
+  "authors": "Louis H. Kauffmana and Samuel J. Lomonaco Jr.2b",
+  "arxiv": {
+   "id": "1603.07827",
+   "version": "1",
+   "primary_class": "cond-mat.str-el",
+   "stamp_date": "25 Mar 2016"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "recommendation": 8
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall denote the interaction of two particles P and Q by the expression PQ, but it is understood that the \u201cvalue\u201d of PQ is the result of the interaction, and this may partake of a number of possibilities.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "INTRODUCTION",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the next sections we shall show how representations of the Artin braid group, rich enough to provide a dense set of transformations in the unitary groups, arise in relation to fermions and Majorana fermions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-2-braids.md",
+   "section_title": "BRAIDS",
+   "pages": "3-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(For more information on this topological interpretation of 2\u03c0 rotation for fermions, see.10 ) Without a further choice it is not evident which particle of the pair should receive the phase change.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-2-1-i-j-ij-i-1-ij-j.md",
+   "section_title": "(1 + I + J + IJ + I \u22121 \u2212IJ + J)",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Nevertheless, we shall now examine the braiding representations of the quaternions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-2-1-i-j-ij-i-1-ij-j.md",
+   "section_title": "(1 + I + J + IJ + I \u22121 \u2212IJ + J)",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the case of electrons in nano-wires, one at the present time must make do with long range correlations between ends of the wires and forgoe such local interactions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-2-1-i-j-ij-i-1-ij-j.md",
+   "section_title": "(1 + I + J + IJ + I \u22121 \u2212IJ + J)",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall use this identi\ufb01cation, and some facts about the quaternions to \ufb01nd the SU(2) representations of braiding.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-5-su2-representations-of-the-artin-braid-group.md",
+   "section_title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+   "pages": "10-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In fact we shall see just such representations21 by using a version of topological quantum \ufb01eld theory.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-5-su2-representations-of-the-artin-braid-group.md",
+   "section_title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+   "pages": "10-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall call this the Fibonacci representation of B3 to SU(2).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-5-su2-representations-of-the-artin-braid-group.md",
+   "section_title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+   "pages": "10-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

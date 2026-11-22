@@ -1,4 +1,4 @@
-The stability curve and the color fibration of Bring's surface share the same algebraic origin. The conjecture is that the nuclear degeneracy locus — the curve in the $(p, A)$-plane where adjacent nuclei have equal energy — forms an elliptic curve isogenous to the color fiber $\mathcal{E}_z$.
+The stability curve and the color fibration of Bring's surface share the same algebraic origin. The conjecture is that the nuclear degeneracy locus — the curve in the $(p, A)$-plane where adjacent nuclei have equal energy — forms an elliptic curve isogenous to the fibrewise color curve $\mathcal{E}_z$.
 
 **The two cubics.**
 
@@ -23,7 +23,7 @@ Both are cubics in one variable parametrized by another. The color cubic (C) car
 
 **Genus comparison.**
 
-The stability cubic (S) is rational. Solving for $p$ yields $p = t^3 / (2 + ct^2)$, confirming genus $0$. The color cubic (C) has genus $1$ for generic $z$ (it defines an elliptic curve whose $j$-invariant varies as a rational function of $z$).
+The stability cubic (S) is rational. Solving for $p$ yields $p = t^3 / (2 + ct^2)$, confirming genus $0$. The color cubic (C), as a curve in the $(X,z)$-plane, has genus $1$: its projective closure is the smooth plane cubic $\mathcal{E}_{\mathrm{col}}$ of [color elliptic](#prop:color-elliptic). For fixed $z$ it is three points, and the fibrewise curve $\mathcal{E}_z\colon y^2=F(X,z)$ is elliptic, with $j$-invariant a rational function of $z$.
 
 The physical stability problem incorporates the pairing energy $\pm \lambda_P / t^{3/2}$, distinguishing even-even, even-odd, odd-even, and odd-odd nuclei. The **degeneracy locus** is the set of $(p, t)$ at which an even-even nucleus $(p, A)$ and the odd-odd nucleus $(p+1, A)$ have equal energy. With the $p$-dependent energy $a_C p^2/A^{1/3} + a_A (A-2p)^2/A$ of [integer stability](#prop:integer-stability) and pairing $-\lambda_P/A^{1/2}$ (even-even) and $+\lambda_P/A^{1/2}$ (odd-odd), the condition $E(p+1) - E(p) = -2\lambda_P/A^{1/2}$, multiplied by $A/(4a_A)$ and written in $t$ and $\bar p = p + \tfrac12$, is:
 
@@ -47,7 +47,7 @@ This defines a degree-12 curve in $(\bar p, u)$. Factoring out the genus-$0$ com
 *Let $\mathcal{D} \subset \mathbb{A}^2$ be the degeneracy locus (D$'$) reduced by the pairing-free stability curve (S). Then:*
 
 1. *The smooth model of $\mathcal{D}$ forms an elliptic curve $\mathcal{E}_p$ over $\mathbb{Q}(q)$.*
-2. *There exists an isogeny $\varphi \colon \mathcal{E}_p \to \mathcal{E}_{z(p)}$ to the color fiber of the Bring's surface, where $z(p)$ is the spacetime ratio at which the quadratic coefficient of the color elliptic cubic (C) equals that of the stability cubic (S) under $X = t$:*
+2. *There exists an isogeny $\varphi \colon \mathcal{E}_p \to \mathcal{E}_{z(p)}$ to the fibrewise color curve of Bring's surface, where $z(p)$ is the spacetime ratio at which the quadratic coefficient of the color elliptic cubic (C) equals that of the stability cubic (S) under $X = t$:*
 
 $$
   z(p) =  -(cp + 1).
@@ -107,13 +107,13 @@ so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \maps
 If the conjecture holds:
 
 - The **three color tubes** $(r, g, b)$ of the color fibration correspond to the **three sectors** of nuclear binding: volume (strong), Coulomb (electromagnetic), and Pauli (exclusion).
-- The **elliptic fiber** $\mathcal{E}_z$ at spacetime $z$ encodes the allowed baryon configurations at that point; the **stability elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes the allowed nuclear configurations at that proton count.
+- The **fibrewise elliptic curve** $\mathcal{E}_z$ at spacetime $z$ encodes the allowed baryon configurations at that point; the **stability elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes the allowed nuclear configurations at that proton count.
 - The **isogeny** $\varphi$ connects them, representing the passage from single-baryon color structure to multi-baryon nuclear structure — the same passage that takes the proton ([proton](#def:categorical-proton)) from a color-linked triple to a nucleus ([stable nucleus](#def:stable-nucleus)).
 - The **stability pairs** act as the integer points of $\mathcal{E}_p$ — the $(p, A) \in \mathcal{E}_p(\mathbb{Z})$ where the even-even/odd-odd degeneracy falls on a lattice point.
 
 **Computational evidence.**
 
-The color elliptic curve ([Descartes elliptic curve](#prop:descartes-elliptic-curve)) at the substrate parameter $q_0$ is:
+The fibrewise color curve $\mathcal{E}_z$ at $z = s - s^{-1}$, $s = \sqrt{q_0}$ ([Descartes elliptic curve](#prop:descartes-elliptic-curve)), is:
 
 $$
   \mathcal{E}_q  :  y^2 = x^3 + 0.7087x + 0.8056,
