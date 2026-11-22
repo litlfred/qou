@@ -1,0 +1,1 @@
+All vortex-rings—and therefore, according to Sir William Thomson, all atoms of mat- ter—must necessarily be endless, that is to say, must have their ends finally united together after any number of convolutions or knottings.

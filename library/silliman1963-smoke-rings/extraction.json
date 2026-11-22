@@ -1,0 +1,57 @@
+{
+  "$schema": "folio-library-extraction/v1",
+  "doc_id": "silliman1963-smoke-rings",
+  "kinds": {
+    "contents": {
+      "state": "partial",
+      "note": "page granularity: Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not.",
+      "tool": "pdf-pages.py",
+      "version": "c1d4f6669728",
+      "at": "2026-11-22"
+    },
+    "sections": {
+      "state": "found",
+      "count": 15,
+      "note": "one section per page",
+      "tool": "pdf-pages.py",
+      "version": "c1d4f6669728",
+      "at": "2026-11-22"
+    },
+    "figures": {
+      "state": "found",
+      "count": 2,
+      "note": "2 raster, 0 vector",
+      "tool": "pdf-images.py+pdf-vector-figures.py",
+      "at": "2026-11-22"
+    },
+    "tables": {
+      "state": "none",
+      "count": 0,
+      "note": "backend pdfplumber 0.11.10; 15 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)",
+      "tool": "pdf-tables.py",
+      "version": "b3b9e4012c21",
+      "at": "2026-11-22"
+    },
+    "references": {
+      "state": "none",
+      "count": 0,
+      "note": "no reference list in the entry's sections",
+      "tool": "references-extract",
+      "version": "5ba2d9d9e337",
+      "at": "2026-11-22"
+    },
+    "glossary": {
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme",
+      "tool": "glossary-from-source",
+      "at": "2026-11-22"
+    },
+    "footnotes": {
+      "state": "found",
+      "count": 7,
+      "note": "called from the text; also kept: 34 foot-of-page line(s) no mark calls, 7 mark(s) with no note found",
+      "tool": "pdf-footnotes.py",
+      "at": "2026-11-22"
+    }
+  }
+}

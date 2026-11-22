@@ -64,6 +64,9 @@ differences of the roots. Sorry-free.
 -/
 import Mathlib.Tactic
 
+-- Homogeneous form (issue #9083): `QOU.Mass.BranchLocusStabiliser.scalar_of_three_eigenlines`
+-- states three-point rigidity on `[z:w]`, fixed points at `∞` included, and
+-- `moebius_id_of_three_fixed_of_eigenlines` recovers `moebius_id_of_three_fixed` at `w = 1`.
 namespace QOU.Mass.MoebiusThreePointRigidity
 
 variable {K : Type*} [Field K]

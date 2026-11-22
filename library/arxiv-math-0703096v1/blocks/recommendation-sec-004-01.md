@@ -1,0 +1,1 @@
+It should be noted, as ﬁrst observed by Kauﬀman, that bracket < >µ,A,B is an isotopy invariant of alternating links (and their connected sums) under the assumption that the third Tait conjecture (soon after proven by Menasco and Thistlethwaite [M-T-1, M-T-2]) holds.

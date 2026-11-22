@@ -1,0 +1,55 @@
+{
+  "$schema": "folio-library-extraction/v1",
+  "doc_id": "silver2006-knot-theory-odd-origins",
+  "kinds": {
+    "contents": {
+      "state": "found",
+      "count": 7,
+      "note": "contents from inferred",
+      "tool": "pdf-structure.py",
+      "version": "0b311238188a",
+      "at": "2026-11-22"
+    },
+    "sections": {
+      "state": "found",
+      "count": 8,
+      "tool": "pdf-structure.py",
+      "version": "0b311238188a",
+      "at": "2026-11-22"
+    },
+    "figures": {
+      "state": "partial",
+      "count": 14,
+      "note": "14 kept (14 raster, 0 vector); 5 vector render(s) not yet inspected; 7 caption(s) read off the pages",
+      "tool": "pdf-images.py+pdf-vector-figures.py",
+      "at": "2026-11-22"
+    },
+    "tables": {
+      "state": "found",
+      "count": 2,
+      "note": "drafts; backend pdfplumber 0.11.10; 1 candidate(s) dropped: under two columns or no row under the header; 5 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)",
+      "tool": "pdf-tables.py",
+      "version": "b3b9e4012c21",
+      "at": "2026-11-22"
+    },
+    "references": {
+      "state": "found",
+      "count": 16,
+      "tool": "references-extract",
+      "version": "5ba2d9d9e337",
+      "at": "2026-11-22"
+    },
+    "glossary": {
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme",
+      "tool": "glossary-from-source",
+      "at": "2026-11-22"
+    },
+    "footnotes": {
+      "state": "partial",
+      "note": "no footnote linked to a mark; 4 foot-of-page line(s) no mark calls, kept for a reader to judge",
+      "tool": "pdf-footnotes.py",
+      "at": "2026-11-22"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/witten1989-cmp-jones/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Canonical Quantization",
+  "pageStart": 16,
+  "pageEnd": 24,
+  "contains": [
+    "library/witten1989-cmp-jones/blocks/prose-sec-002",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-01",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-02",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-03",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-04",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-05",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-06",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-07",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-08",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-09",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-10",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-11",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-12",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-13",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-14",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-15",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-002-16"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "provenance": "ingested"
+}

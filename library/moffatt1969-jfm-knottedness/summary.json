@@ -1,0 +1,47 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "moffatt1969-jfm-knottedness",
+ "source_sha256": "279a07cbcbd5f86e",
+ "brief": "The degree of knottedness of tangled vortex lines (Moffatt, J. Fluid Mech. 35 (1969) 117–129) — helicity as a topological invariant counting linking of vortex lines",
+ "extended": "**The degree of knottedness of tangled vortex lines** — H. K. Moffatt. J. Fluid Mech. 35, part 1 (1969) 117–129.\n\nIn an inviscid barotropic fluid the integral of u·ω over a region bounded by vortex surfaces (the helicity) is invariant. For a field confined to thin unknotted vortex filaments the invariant equals a sum over pairs of the linking numbers times the product of the circulations; a knotted filament is decomposed into linked unknotted ones, which gives a degree of knottedness. Sections treat solid boundaries, a consequence of the invariance, and the analogous magnetohydrodynamic invariant (magnetic helicity).\n\n**Why it may bear here.** Registered as `moffatt1969`; cited in `helicity-conservation` and the knotted-particles history. It is the original of helicity = mutual linking, the fluid analogue of reading an interaction off linking numbers of closed components (cf. `procrsoclondona92`, Moffatt–Ricca 1992, on self-linking and the Călugăreanu invariant). Scanned original with a text layer: subscripts read as commas (C₁ appears as `C,`).",
+ "tokens": {
+  "brief": 41,
+  "extended": 265
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction-discrete-vortex-fields",
+   "title": "Introduction; discrete vortex fields",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-3-the-effect-of-the-presence-of-solid-boundaries",
+   "title": "The effect of the presence of solid boundaries",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-002-4-a-simple-consequence-of-the-invariance-of-i-in",
+   "title": "A simple consequence of the invariance of I in an incompressible",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-5-relation-with-the-magnetohydrodynamic-invarian",
+   "title": "Relation with the magnetohydrodynamic invariants of Woltjer",
+   "pages": "7-13"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "abstract",
+   "opening-text"
+  ],
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim; no result is asserted to be in use."
+ }
+}

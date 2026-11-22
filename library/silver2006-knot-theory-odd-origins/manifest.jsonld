@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/silver2006-knot-theory-odd-origins",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "silver2006-knot-theory-odd-origins",
+  "contains": [
+    "library/silver2006-knot-theory-odd-origins/sections/sec-front-matter",
+    "library/silver2006-knot-theory-odd-origins/sections/sec-000",
+    "library/silver2006-knot-theory-odd-origins/sections/sec-001",
+    "library/silver2006-knot-theory-odd-origins/sections/sec-002",
+    "library/silver2006-knot-theory-odd-origins/sections/sec-003",
+    "library/silver2006-knot-theory-odd-origins/sections/sec-004",
+    "library/silver2006-knot-theory-odd-origins/sections/sec-005",
+    "library/silver2006-knot-theory-odd-origins/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "silver2006-knot-theory-odd-origins",
+    "title_source": "slug",
+    "source_file": "silver2006-knot-theory-odd-origins.pdf",
+    "source_sha256": "fe12eed25824e8e97746f8a5a5e5eb32f6e6a137af674494cf5a42c1e3bf5f07",
+    "pages": 8,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

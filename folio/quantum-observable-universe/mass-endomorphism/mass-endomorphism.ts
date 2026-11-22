@@ -139,6 +139,7 @@ export default chapter({
         "markov-trace-recursive-reducer",
         "markov-trace-recursive-reducer-interpretation",
         "markov-trace-hecke-functional",
+        "light-nuclei-a2-bond-tail",
         "q-hecke-seminormal-character-closure",
         "recomputed-low-isotope-mass-table",
         "recomputed-low-isotope-mass-table-table4-data",

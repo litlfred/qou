@@ -68,3 +68,35 @@ reverse crossing signs ("under"), as in `he4_gg_all_pairs_probe.py`. Exact ℚ(q
   (in the mpmath witness they agree to 0 and 1.9e−62).
 
 No fit, no choice of order or variant, and AME is still comparison only.
+
+## Addendum 2, 2026-11-22: ⁴He with all six pairs bonded
+
+Owner, after #9053 merged: "Merge and continue". This addendum is written before any ⁴He
+all-pairs trace of this probe. What was run beforehand: a timing test of the word expansion
+(297 000 terms at q = 2), with no trace value printed, and a speed check of a flint-based
+exact trace on the ³H pnn over cell, which reproduces the Fraction trace at q = 2 exactly.
+
+Objects: the four formation routes of `he4_all_pairs_formation` (D+D pairing a, D+D pairing
+b, ³H+p, ³He+n), with over and under transport, gives 8 cells. Bonds are placed as in
+`he4_gg_all_pairs` (each after block max(j), in route order), in the production order p p n n.
+The γγ chain is the control. Reduction: everything after the first nucleon uses generators
+σ₂, σ₃, …, so `towerTr_disjoint` (proved) gives `tr_atom = tr N₀ · tr(tail)`, and the trace
+runs on 10 strands.
+
+- **P8 (control).** At the proton pin, every cell reproduces the ⁴He rows of
+  `he4-gg-all-pairs.witness.json` to below 1e−28, and the chain reproduces −0.862 keV.
+- **P9 (control).** At A = 3, tr N₀ · tr(tail on 7 strands) equals the 9-strand trace
+  exactly, in every cell of the first addendum.
+- **P10 (no prediction).** Report for each cell the factored `ratio − 1`, the leading order at
+  q = 1, the sign pattern of its sign factor in y = q² − 1, and every crossing in q > 1. The
+  A = 3 pattern (exactly one crossing) is **not** assumed.
+
+No fit, no choice of route or variant, and AME is comparison only.
+
+**Note added after the first run (2026-11-22), before any result was used.** The first run
+placed each bond after block j of that bond. P8 then failed on 6 of 8 cells (³He+n and the
+chain passed). `he4_gg_all_pairs.build` places each bond after the running maximum of j over
+the route so far, and that is what "in route order" above was meant to copy. The engine was
+changed to the running maximum and the run repeated. The per-bond placement makes ³H+p and
+³He+n the same word in the order p p n n; its rows are kept in the audit as a record, not as
+a result.

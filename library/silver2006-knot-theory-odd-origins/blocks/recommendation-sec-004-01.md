@@ -1,0 +1,1 @@
+One can well imagine him thinking, “Too bad, it would have been beautiful”: And here, I am afraid I must end by saying that the difficulties are so great in the way of forming anything like a comprehen- sive theory that we cannot even imagine a finger-post pointing to a way that leads us towards the explanation.

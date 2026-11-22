@@ -1,0 +1,146 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "silver2006-knot-theory-odd-origins",
+ "source": {
+  "structure_sha256": "fe12eed25824e8e97746f8a5a5e5eb32f6e6a137af674494cf5a42c1e3bf5f07",
+  "file": "silver2006-knot-theory-odd-origins.pdf"
+ },
+ "provenance": {
+  "title": "ake a length of rope, loop and weave it around itself and connect its ends. The re- sult, of course, is a knot",
+  "authors": "Creating a knot seems simple, yet knot theory",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "recommendation": 8
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "All vortex-rings\u2014and therefore, according to Sir William Thomson, all atoms of mat- ter\u2014must necessarily be endless, that is to say, must have their ends finally united together after any number of convolutions or knottings.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-smoke-ring-science.md",
+   "section_title": "Smoke-ring Science",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The sight of the rings sailing gracefully across the room must have been deeply satisfying to Tait and Thomson.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-smoke-ring-science.md",
+   "section_title": "Smoke-ring Science",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "John Tyndall, a champion of materialism, provoked many listeners with his address before the British As- sociation meeting at Belfast in 1874 by arguing that science must be divorced from religious doctrine.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-the-unseen-universe.md",
+   "section_title": "The Unseen Universe",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Religious arguments about the na- ture of the universe, he said, must accept their inferiority to scientific explanations.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-the-unseen-universe.md",
+   "section_title": "The Unseen Universe",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In a letter to Tait in 1878, he com- mented sarcastically that \u201cIf you think of ex- tending the collection of hymns given in the original work [Unseen Universe], do not forget to insert \u2018How happy could I be with Ether.\u2019\u201d A few months later, Maxwell reviewed Para- doxical Philosophy in Nature, again questioning the link between scientific and religious arguments: To exercise the mind in speculations on [ether] may be a most delightful employ- ment for those who are intellectually fitted to indulge in it, though we cannot see why they should on that account appropriate the words of St Paul ...",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-the-unseen-universe.md",
+   "section_title": "The Unseen Universe",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One can well imagine him thinking, \u201cToo bad, it would have been beautiful\u201d: And here, I am afraid I must end by saying that the difficulties are so great in the way of forming anything like a comprehen- sive theory that we cannot even imagine a finger-post pointing to a way that leads us towards the explanation.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-the-meaning-of-knots.md",
+   "section_title": "The Meaning of Knots",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "I cannot doubt but that these things, which now seem to us so mysteri- ous, will be no mysteries at all; that the scales will fall from our eyes; that we shall learn to look on things in a different way\u2014 when that which is now a difficulty will be the only common-sense and intelligible way of looking at the subject.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-the-meaning-of-knots.md",
+   "section_title": "The Meaning of Knots",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "All physics, he concluded, should derive from energy principles.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

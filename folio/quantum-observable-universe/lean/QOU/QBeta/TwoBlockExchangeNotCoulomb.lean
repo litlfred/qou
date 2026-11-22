@@ -198,4 +198,32 @@ theorem not_isospin_s2s3i : ¬ IsospinForm X_s2s3i := by
   simp only [dE, T_s2s3i_pp, T_s2s3i_nn, T_one_pp, T_one_nn] at this
   norm_num [X_s2s3i] at this
 
+/-! ### KZ monodromy (audit §28)
+
+`β_AB = (σ₂σ₁σ₀)(σ₃σ₂σ₁)(σ₄σ₃σ₂)` carries block `A` across block `B`; `M = β_AB²` is the full
+twist of one block around the other, i.e. the monodromy of the KZ connection. On the nucleon
+pairs it gives the same shift for `pp` and `nn`, so it is not Coulomb (where `pp ≠ nn` would be
+needed with `pn = nn`). Proved here at `q = 2`. -/
+
+/-- The block crossing `β_AB` followed by itself. -/
+def X_M : List (ℕ × Bool) :=
+  [(2, false), (1, false), (0, false), (3, false), (2, false), (1, false),
+   (4, false), (3, false), (2, false),
+   (2, false), (1, false), (0, false), (3, false), (2, false), (1, false),
+   (4, false), (3, false), (2, false)]
+
+theorem T_M_pp : T X_M 2 2 = 141244912971546624 := by decide +kernel
+theorem T_M_nn : T X_M 1 1 = 8827807060721664 := by decide +kernel
+
+theorem dE_M_pp_eq_nn : dE X_M 2 2 = dE X_M 1 1 := by
+  simp only [dE, T_M_pp, T_M_nn, T_one_pp, T_one_nn]
+  norm_num [X_M]
+
+/-- A Coulomb form needs `pp − nn = κ`; the monodromy therefore has no charge–charge term. -/
+theorem M_coulomb_kappa_zero (c κ : ℚ) (hpp : dE X_M 2 2 = c + κ) (hnn : dE X_M 1 1 = c) :
+    κ = 0 := by
+  have := dE_M_pp_eq_nn
+  rw [hpp, hnn] at this
+  linarith
+
 end QOU.QBeta.TwoBlockExchange

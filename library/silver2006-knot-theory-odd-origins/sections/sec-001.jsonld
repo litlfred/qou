@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/silver2006-knot-theory-odd-origins/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Smoke-ring Science",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "contains": [
+    "library/silver2006-knot-theory-odd-origins/blocks/prose-sec-001",
+    "library/silver2006-knot-theory-odd-origins/blocks/recommendation-sec-001-01",
+    "library/silver2006-knot-theory-odd-origins/blocks/recommendation-sec-001-02",
+    "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p004-1",
+    "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p004-2",
+    "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p004-4",
+    "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p004-6",
+    "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p005-1",
+    "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p005-2",
+    "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p005-3",
+    "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p006-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/silver2006-knot-theory-odd-origins",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/silver2006-knot-theory-odd-origins",
+  "provenance": "ingested"
+}
