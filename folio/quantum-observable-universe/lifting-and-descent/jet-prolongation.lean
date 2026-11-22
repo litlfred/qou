@@ -9,9 +9,11 @@ import Mathlib.Algebra.Module.Basic
 /-!
 # QOU.JetProlongation — First jet bundle in a QOU
 
-Given a quantum observable universe (C, A, ω), the jet object
-J¹(A) := A ⊗ Ω¹(A) carries a canonical Frobenius–Hopf structure
-inherited from A, and (C, J¹(A), ω') is again a QOU.
+Given a quantum observable universe (C, A, ω), the prolongation object is the
+tangent algebra T(A) = Sym_A(Ω¹(A)) (owner ruling 2026-11-22), with A as a direct
+summand. Its Frobenius–Hopf data are fields of the structure below: for
+A = 𝒪(G) the Hopf part is cited (T(A) = 𝒪(TG)), and the Frobenius form and
+the vanishing condition on T(A) are open.
 
 ## References
 
@@ -25,14 +27,9 @@ namespace QOU
 
 universe u v
 
-/-- **Jet prolongation data**: the categorical jet object J¹(A) = A ⊗ Ω¹(A)
-    together with its inherited Frobenius–Hopf structure.
-
-    The four steps of the proof are:
-    1. Ω¹(A) = ker(μ : A ⊗ A → A) is a direct summand (Frobenius non-degeneracy).
-    2. The Frobenius relation restricts to J¹(A), giving (Δ', ε', S').
-    3. Non-degeneracy of the pairing on A passes to J¹(A).
-    4. Adjoint vanishing: Ad(A) = 0 implies Ad(J¹(A)) = 0.
+/-- **Jet prolongation data**: the prolongation object T(A) = Sym_A(Ω¹(A)),
+    split over A, together with Frobenius–Hopf data carried as fields
+    (they are hypotheses here, not derived).
 
     LaTeX: `\label{prop:jet-prolongation}`
     Ref: [leitner2026] §3 -/
@@ -44,12 +41,16 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The Kähler differentials Ω¹(A) as an object of C.
       Abstractly: Ω¹(A) = ker(μ : A ⊗ A → A). -/
   differentials : C
-  /-- The jet object J¹(A) = A ⊗ Ω¹(A) in C. -/
+  /-- The prolongation object (owner ruling 2026-11-22: the tangent algebra
+      `T(A) = Sym_A(Ω¹(A))`; its degree-≤1 part is `J¹(A) = (A ⊗ A)/I²`). -/
   jetObj : C
-  /-- J¹(A) is the tensor product of A with Ω¹(A). -/
-  jet_is_tensor : jetObj = (fh.obj ⊗ differentials)
-  /-- The canonical inclusion A ↪ J¹(A) via the unit section. -/
+  /-- The structure map `ℓ : A → T(A)`. -/
   unitSection : fh.obj ⟶ jetObj
+  /-- The augmentation `r : T(A) → A`. -/
+  jetRetract : jetObj ⟶ fh.obj
+  /-- `A` is a direct summand: `ℓ ≫ r = 𝟙_A`
+      (commutative case: `QOU.LiftingDescent.tangentRetract_comp_tangentSection`). -/
+  section_retract : unitSection ≫ jetRetract = 𝟙 fh.obj
   /-- The inherited multiplication μ' : J¹(A) ⊗ J¹(A) → J¹(A). -/
   jetMul : (jetObj ⊗ jetObj) ⟶ jetObj
   /-- The inherited comultiplication Δ' : J¹(A) → J¹(A) ⊗ J¹(A). -/
