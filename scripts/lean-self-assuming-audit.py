@@ -118,6 +118,29 @@ PROJ_APP = re.compile(
 )
 
 
+# Rule 5's proof shapes: the term and tactic spellings of instance search.
+INSTANCE_PROOF = re.compile(r"(?:by\s+(?:exact\s+)?infer_instance|inferInstance|by\s+exact\s+inferInstance)")
+# Rule 6's proof shape: a single `rw`/`rewrite` whose rule list is the whole
+# proof. `subst`, `simp`, and chained tactics are out of scope.
+REWRITE_ONLY = re.compile(r"by\s+(?:rw|rewrite)\s*\[(?P<rules>[^\[\]]+)\]")
+
+
+def _is_equation(t: str) -> bool:
+    """A hypothesis type with a top-level `=` (not `≠`, not inside brackets)."""
+    depth = 0
+    for i, ch in enumerate(t):
+        if ch in "([{⟨":
+            depth += 1
+        elif ch in ")]}⟩":
+            depth -= 1
+        elif ch == "=" and depth == 0:
+            prev = t[i - 1] if i else ""
+            nxt = t[i + 1] if i + 1 < len(t) else ""
+            if prev not in ":<>≤≥!=" and nxt not in "=>":
+                return True
+    return False
+
+
 def parse_classes(src: str) -> dict[str, dict[str, str]]:
     """Map `class name -> {field: declared type}` for classes declared in this
     file.  Cross-file classes are NOT resolved — see the module docstring note."""
@@ -435,7 +458,13 @@ def analyze_text(raw: str, file_str: str = "<mem>"):
         is_bare = bool(re.fullmatch(r"[A-Za-z_][A-Za-z0-9_']*", proof))
         proj = None if is_bare else PROJ_APP.match(proof)
         tup = None if (is_bare or proj is not None) else tuple_components(proof)
-        if not is_bare and proj is None and tup is None:
+        # Rules 5 and 6 (qou-jy1r): two tactic proofs whose shape alone shows
+        # nothing is derived. `by infer_instance` closing a conclusion that is
+        # an instance binder's own type, and `by rw [h₁, …]` rewriting with
+        # the declaration's own equation hypotheses and nothing else.
+        inst_proof = bool(INSTANCE_PROOF.fullmatch(proof))
+        rw_m = None if (is_bare or proj is not None or tup is not None) else REWRITE_ONLY.fullmatch(proof)
+        if not is_bare and proj is None and tup is None and not inst_proof and rw_m is None:
             continue
         sig = body[:idx]
         # conclusion = text after the FIRST top-level `:` outside binders.
@@ -490,6 +519,29 @@ def analyze_text(raw: str, file_str: str = "<mem>"):
             )
 
         if not conclusion:
+            continue
+        # Rule 5 — `[inst : P] : P := by infer_instance`. The instance binder
+        # is the conclusion; `infer_instance` only finds it again. Anonymous
+        # `[P]` binders count too, whatever class they name.
+        if inst_proof:
+            inst_types = {norm(b.group("type")) for b in BINDER_INST.finditer(sig[:concl_at])}
+            inst_types |= {norm(b.group("type")) for b in BINDER_INST_ANON.finditer(sig[:concl_at])}
+            if conclusion in inst_types:
+                _hit(conclusion, "instance-is-conclusion")
+            continue
+        # Rule 6 — `by rw [h₁, …, hₙ]` where every rewrite is one of the
+        # declaration's own hypotheses and each is an equation. The goal then
+        # closes by `rfl` after substituting hypotheses: congruence, not a
+        # result. A rewrite with any lemma (`norm_mul`, `pow_succ`) is work
+        # and is not flagged. `←` is allowed; it rewrites with the same fact.
+        if rw_m is not None:
+            # A `:=` left in the conclusion means the split landed on a nested
+            # `have … := by rw [h]`, not the declaration's own proof.
+            if ":=" in conclusion:
+                continue
+            names = [n.strip().lstrip("←").strip() for n in rw_m.group("rules").split(",")]
+            if names and all(n in binders and _is_equation(binders[n]) for n in names):
+                _hit(", ".join(names), "rewrite-by-own-hypotheses")
             continue
         # Rule 1 — the proof IS a hypothesis whose type is the conclusion.
         if is_bare:
@@ -622,6 +674,8 @@ VARIANTS = (
     "class-field-is-conclusion",
     "conjunction-is-conclusion",
     "hypotheses-conjunction-is-conclusion",
+    "instance-is-conclusion",
+    "rewrite-by-own-hypotheses",
 )
 
 # (path, decl, expected-variant-or-None).  `None` means "must NOT be flagged".
@@ -646,12 +700,12 @@ _SELFTEST = (
     # no top-level `∧`.
     ("folio/quantum-observable-universe/lean/QOU/Knot/"
      "M004AngleStructure.lean", "Positive.sigma", None),
-    # Pins STRIP_LAMBDA_ASCRIPTIONS: this 4-way re-bundle is the ONLY corpus
-    # hit that needs the lambda arm, so without it here that flag can be
-    # flipped off and the selftest still passes (measured — it did).
+    # Was the pin for STRIP_LAMBDA_ASCRIPTIONS (a 4-way re-bundle). Rewritten
+    # in 642d84bd0 as a real derivation from LP strong duality, so it is now a
+    # NEGATIVE fixture: the detector must not flag a genuine proof. The lambda
+    # arm has no corpus positive left to pin it (measured 2026-11-22).
     ("folio/quantum-observable-universe/lean/QOU/ParticleInteractions/"
-     "lp_dual_stability.lean", "lp_dual_stability",
-     "conjunction-is-conclusion"),
+     "lp_dual_stability.lean", "lp_dual_stability", None),
     # The rules the conjunctive arm must not disturb.
     ("folio/quantum-observable-universe/lean/QOU/Torsion/"
      "JetProlongation.lean", "jet_prolongation_C", "class-field-is-conclusion"),
@@ -730,6 +784,26 @@ def selftest() -> int:
              "theorem ro (a b : Prop) (ha : a) (hb : b) : b ∧ a := "
              "⟨hb, ha⟩\n")],
          ["hypotheses-conjunction-is-conclusion"]),
+        # qou-jy1r: instance re-found, and rewriting with own hypotheses only.
+        ("instance binder re-found by infer_instance (qou-jy1r)",
+         [h["variant"] for h in analyze_text(
+             "theorem ex {R : Type} [Nonempty R] : Nonempty R := by\n"
+             "  infer_instance\n")],
+         ["instance-is-conclusion"]),
+        ("rewrite with own equations only (qou-jy1r)",
+         [h["variant"] for h in analyze_text(
+             "theorem un (S₁ S₂ e : Nat) (h₁ : S₁ = e) (h₂ : S₂ = e) : "
+             "S₁ = S₂ := by\n  rw [h₁, h₂]\n")],
+         ["rewrite-by-own-hypotheses"]),
+        ("rewrite that also uses a lemma is work, not caught (qou-jy1r)",
+         [h["variant"] for h in analyze_text(
+             "theorem sc (c t₁ t₂ : Nat) (h : t₁ = c * t₂) : "
+             "t₁ = t₂ * c := by\n  rw [h, Nat.mul_comm]\n")],
+         []),
+        ("rewrite with a non-equation hypothesis is not caught (qou-jy1r)",
+         [h["variant"] for h in analyze_text(
+             "theorem ne (a b : Nat) (h : a ≤ b) : a ≤ b := by\n  rw [h]\n")],
+         []),
         ("applied component is real work, not caught (qou-0exp)",
          [h["variant"] for h in analyze_text(
              "theorem rw (a b : Prop) (ha : a) (hab : a → b) : a ∧ b := "
@@ -801,6 +875,10 @@ def main():
             if v == "class-field-is-conclusion":
                 print(f"    class field {h['hypothesis']} : {h['statement']}"
                       f"  ⊢  {h['statement']}")
+            elif v == "instance-is-conclusion":
+                print(f"    [{h['hypothesis']}]  ⊢  {h['statement']}   (by infer_instance)")
+            elif v == "rewrite-by-own-hypotheses":
+                print(f"    rw [{h['hypothesis']}]  ⊢  {h['statement']}")
             elif v == "hypotheses-conjunction-is-conclusion":
                 print(f"    ⟨{h['hypothesis']}⟩   ({h['components']} bare "
                       f"hypotheses)")

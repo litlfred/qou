@@ -2860,6 +2860,10 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "geer-patureau-mirand-turaev-2009" },
   { id: "lickorish1993skeins" },
   { id: "jones2015vonneumann" },
+  { id: "arnold1969" },
+  { id: "deligne1970" },
+  { id: "zagier1991" },
+  { id: "mcphail-snyder-2025" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

@@ -223,6 +223,76 @@ theorem finrank_hwSpace_zero_le_one (q : K) (μ : Fin d → ℕ) :
   have := LinearMap.finrank_le_finrank_of_injective hf
   simpa using this
 
+/-- **The branching sum is bounded by `f^μ`**, given the bound one level down:
+`Σ_x dim HW_{μ − e_x}(m) ≤ f^μ` whenever `dim HW_ν(m) ≤ f^ν` for every dominant `ν`. -/
+theorem sum_finrank_hwSpace_sub_le_numSYT (q : K) (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0)
+    (hgen : GenericParameter.NotRootOfUnity q) (m : ℕ) (μ : Fin d → ℕ) (hμ : IsDom μ)
+    (hsum : ∑ y, μ y = m + 2)
+    (ih : ∀ (ν : Fin d → ℕ) (hν : IsDom ν),
+      Module.finrank K (hwSpace q m ν) ≤ numStandardYoungTableaux (rowDiagram ν hν)) :
+    ∑ x : Fin d, Module.finrank K (hwSpace q m (μ - Pi.single x 1))
+      ≤ numStandardYoungTableaux (rowDiagram μ hμ) := by
+  classical
+  set D := rowDiagram μ hμ
+  let F : ℕ × ℕ → ℕ := fun c =>
+    if hc : IsCornerCell D c then numStandardYoungTableaux (eraseCorner D c hc) else 0
+  let good : Finset (Fin d) :=
+    Finset.univ.filter fun x => 0 < μ x ∧ IsDom (μ - Pi.single x 1)
+  -- each term of the branching bound
+  have hterm : ∀ x : Fin d, Module.finrank K (hwSpace q m (μ - Pi.single x 1))
+      ≤ if x ∈ good then F (cornerOf μ x) else 0 := by
+    intro x
+    by_cases hgx : x ∈ good
+    · rw [if_pos hgx]
+      obtain ⟨hx, hd⟩ := (Finset.mem_filter.mp hgx).2
+      have hc := isCornerCell_cornerOf hμ hx hd
+      have : F (cornerOf μ x) = numStandardYoungTableaux (rowDiagram _ hd) := by
+        simp only [F, dif_pos hc, D]
+        rw [eraseCorner_cornerOf hμ hx hd]
+      rw [this]
+      exact ih _ hd
+    · rw [if_neg hgx]
+      have hz : hwSpace q m (μ - Pi.single x 1) = ⊥ := by
+        by_contra hne
+        have hd := isDom_of_ne_bot q hq hq2 hgen m _ hne
+        have hx : 0 < μ x := by
+          by_contra h0
+          push_neg at h0
+          have h0' : μ x = 0 := by omega
+          apply hne
+          apply hwSpace_eq_bot_of_sum_ne
+          have : μ - Pi.single x 1 = μ := by
+            funext y
+            by_cases hyx : y = x
+            · subst hyx; simp [h0']
+            · simp [Pi.single_eq_of_ne hyx]
+          rw [this, hsum]; omega
+        exact hgx (Finset.mem_filter.mpr ⟨Finset.mem_univ _, hx, hd⟩)
+      rw [hz, finrank_bot]
+  refine (Finset.sum_le_sum fun x _ => hterm x).trans ?_
+  rw [← Finset.sum_filter,
+    show (Finset.univ.filter fun x : Fin d => x ∈ good) = good by ext; simp]
+  rw [← Finset.sum_image (f := F) (fun x _ y _ h => cornerOf_injective μ h)]
+  have hsub : good.image (cornerOf μ) ⊆ D.cells.filter (IsCornerCell D) := by
+    intro c hc
+    obtain ⟨x, hgx, rfl⟩ := Finset.mem_image.mp hc
+    obtain ⟨hx, hd⟩ := (Finset.mem_filter.mp hgx).2
+    have hcc := isCornerCell_cornerOf hμ hx hd
+    exact Finset.mem_filter.mpr ⟨hcc.1, hcc⟩
+  refine (Finset.sum_le_sum_of_subset (f := F) hsub).trans ?_
+  rw [Finset.sum_subtype (D.cells.filter (IsCornerCell D))
+    (p := IsCornerCell D) (fun c => by simp only [Finset.mem_filter]; exact ⟨fun h => h.2,
+      fun h => ⟨h.1, h⟩⟩)]
+  by_cases hD : 0 < D.cells.card
+  · rw [numStandardYoungTableaux_branching hD]
+    exact le_of_eq (Finset.sum_congr rfl fun c _ => by simp only [F, dif_pos c.2])
+  · have hDe : D.cells = ∅ := Finset.card_eq_zero.mp (by omega)
+    haveI hemp : IsEmpty {c : ℕ × ℕ // IsCornerCell D c} :=
+      ⟨fun c => by
+        have h : c.1 ∈ D.cells := c.2.1
+        rw [hDe] at h; simp at h⟩
+    rw [Finset.univ_eq_empty, Finset.sum_empty]; exact Nat.zero_le _
+
 /-- **`dim HW_μ ≤ f^μ`** for every dominant weight `μ`. -/
 theorem finrank_hwSpace_le_numSYT (q : K) (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0)
     (hgen : GenericParameter.NotRootOfUnity q) :
@@ -240,66 +310,8 @@ theorem finrank_hwSpace_le_numSYT (q : K) (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0
       · rw [hb, finrank_bot]; exact Nat.zero_le _
       have hsum : ∑ y, μ y = m + 2 := by
         by_contra hc; exact hb (hwSpace_eq_bot_of_sum_ne q (m + 1) μ hc)
-      set D := rowDiagram μ hμ
-      let F : ℕ × ℕ → ℕ := fun c =>
-        if hc : IsCornerCell D c then numStandardYoungTableaux (eraseCorner D c hc) else 0
-      let good : Finset (Fin d) :=
-        Finset.univ.filter fun x => 0 < μ x ∧ IsDom (μ - Pi.single x 1)
-      -- each term of the branching bound
-      have hterm : ∀ x : Fin d, Module.finrank K (hwSpace q m (μ - Pi.single x 1))
-          ≤ if x ∈ good then F (cornerOf μ x) else 0 := by
-        intro x
-        by_cases hgx : x ∈ good
-        · rw [if_pos hgx]
-          obtain ⟨hx, hd⟩ := (Finset.mem_filter.mp hgx).2
-          have hc := isCornerCell_cornerOf hμ hx hd
-          have : F (cornerOf μ x) = numStandardYoungTableaux (rowDiagram _ hd) := by
-            simp only [F, dif_pos hc, D]
-            rw [eraseCorner_cornerOf hμ hx hd]
-          rw [this]
-          exact ih _ hd
-        · rw [if_neg hgx]
-          have hz : hwSpace q m (μ - Pi.single x 1) = ⊥ := by
-            by_contra hne
-            have hd := isDom_of_ne_bot q hq hq2 hgen m _ hne
-            have hx : 0 < μ x := by
-              by_contra h0
-              push_neg at h0
-              have h0' : μ x = 0 := by omega
-              apply hne
-              apply hwSpace_eq_bot_of_sum_ne
-              have : μ - Pi.single x 1 = μ := by
-                funext y
-                by_cases hyx : y = x
-                · subst hyx; simp [h0']
-                · simp [Pi.single_eq_of_ne hyx]
-              rw [this, hsum]; omega
-            exact hgx (Finset.mem_filter.mpr ⟨Finset.mem_univ _, hx, hd⟩)
-          rw [hz, finrank_bot]
-      have h1 := (finrank_hwSpace_succ_le q hq m μ).trans (Finset.sum_le_sum fun x _ => hterm x)
-      refine h1.trans ?_
-      rw [← Finset.sum_filter,
-        show (Finset.univ.filter fun x : Fin d => x ∈ good) = good by ext; simp]
-      rw [← Finset.sum_image (f := F) (fun x _ y _ h => cornerOf_injective μ h)]
-      have hsub : good.image (cornerOf μ) ⊆ D.cells.filter (IsCornerCell D) := by
-        intro c hc
-        obtain ⟨x, hgx, rfl⟩ := Finset.mem_image.mp hc
-        obtain ⟨hx, hd⟩ := (Finset.mem_filter.mp hgx).2
-        have hcc := isCornerCell_cornerOf hμ hx hd
-        exact Finset.mem_filter.mpr ⟨hcc.1, hcc⟩
-      refine (Finset.sum_le_sum_of_subset (f := F) hsub).trans ?_
-      rw [Finset.sum_subtype (D.cells.filter (IsCornerCell D))
-        (p := IsCornerCell D) (fun c => by simp only [Finset.mem_filter]; exact ⟨fun h => h.2,
-          fun h => ⟨h.1, h⟩⟩)]
-      by_cases hD : 0 < D.cells.card
-      · rw [numStandardYoungTableaux_branching hD]
-        exact le_of_eq (Finset.sum_congr rfl fun c _ => by simp only [F, dif_pos c.2])
-      · have hDe : D.cells = ∅ := Finset.card_eq_zero.mp (by omega)
-        haveI hemp : IsEmpty {c : ℕ × ℕ // IsCornerCell D c} :=
-          ⟨fun c => by
-            have h : c.1 ∈ D.cells := c.2.1
-            rw [hDe] at h; simp at h⟩
-        rw [Finset.univ_eq_empty, Finset.sum_empty]; exact Nat.zero_le _
+      exact (finrank_hwSpace_succ_le q hq m μ).trans
+        (sum_finrank_hwSpace_sub_le_numSYT q hq hq2 hgen m μ hμ hsum ih)
 
 end Bound
 

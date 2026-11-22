@@ -49,7 +49,7 @@ export default definition({
     "Two-row Wedderburn stratum $\\Lambda^2(n) := \\{\\lambda \\vdash n : \\ell(\\lambda) \\le 2\\}$",
   defines: ["two-row-stratum"],
   uses: ["prop:wedderburn-weight-canonical"],
-  lean: { ref: "qou:QOU.BraidKnot.TwoRowStratum" },
+  lean: { ref: "qou:QOU.BraidKnot.TwoRowStratum.TwoRowStratum" },
   tags: [
     "wedderburn-decomposition",
     "su2-schur-weyl",
