@@ -465,3 +465,53 @@ The ledger row says "whole-word U(1) neutrality". 10.2 shows H₃ has no U(1) gr
 > (`photon_prod_preserves`).
 
 No ledger row is edited until the owner approves.
+
+## Round 11 — 2026-11-22: owner "Do all" follow-ups
+
+Owner approved the "linking neutrality" wording (ledger row revised and a dated row
+added). The other items:
+
+### 11.1 Lean: the TL two-photon electron
+
+`QOU/MassTheory/ElectronTwoPhotonTL.lean` (lean-direct exit 0, axioms propext /
+Classical.choice / Quot.sound; generic field). For the family
+`γ₁ = γ(0, −q³/(q⁴−q²+1), −1)` with `λ = q/((q²−1)(q⁴−q²+1)²)`, it proves
+`electron_two_photon_block`, `electron_two_photon_triv`, `lam_ne_zero`, and
+`electron_two_photon_sign_defect` (sign mismatch
+`= (q²+1)(q²−q+1)(q²+q+1)/(q²(q²−1)(q⁴+1))`). These are block identities; the bridge
+to H₃(q)'s TL quotient as an algebra is not formalised (same as the sibling file).
+Checking it lean-direct needs an olean for `ElectronNotTwoPhoton`, built the same way
+first.
+
+### 11.2 Do the ruled Borromean weights fit the TL two-photon electron? No.
+
+Probe `electron_tl_borromean_weights_probe.py` (exact sympy, 27/27 checks):
+- With `γ₁ = γ(0,0,c)` the 2-dim block fixes `γ₂, λ` uniquely; the trivial block then
+  requires `F2(c) = (q²−1)c² − (q²−1)²c + q² = 0`. Its discriminant
+  `(q²−1)(q³−q²−q−1)(q³+q²−q+1)` is not a square in Q(q), so the admissible chiral
+  `c` are quadratic irrationals, complex at q₀ (real only for q at or above the
+  tribonacci constant). The partner `γ₂` is never chiral.
+- The ruled `c = qh` gives `F2 = −q²`; `c = −q⁻¹h` gives `F2 = −(q⁸−q⁶+2q²−1)/q⁴`.
+  Both nonzero for q > 1.
+- Two chiral photons `γ(0,0,c)γ(0,0,c′)` lie in span{1, V} and cannot equal `λE` for
+  any `λ ≠ 0`, even on the 2-dim block alone.
+- Reverse order (ruled photon as `γ₂`, checked in scratch): trivial-block residuals
+  `q²(q²−2)(q²−q+1)(q²+q+1)/(q²−1)` for `qh` and
+  `−(q²−q+1)(q²+q+1)(q⁴−q²+1)/(q²(q²−1))` for `−q⁻¹h`. Nonzero at generic q and at
+  q₀; the first vanishes only at q² = 2.
+
+### 11.3 Quantum norm options C and D
+
+Probe `quantum_norm_cd_probe.py` (exact sympy, 30/30 checks):
+- **C (unitarity, |q| = 1):** the unique invariant Hermitian form on the 2-dim block is
+  `H = [[1, −q/(q²+1)], [−q/(q²+1), 1]]`, positive for |θ| < π/3. Under it the adjoint
+  of σ is σ⁻¹, so unitarity equals `γγ† = 1`. Each Borromean photon is unitary on the
+  1-dim blocks, not on the 2-dim block. Their product is unitary only because it is
+  the braid word V³. Among chiral photons only `c = 0` is unitary on all blocks.
+- **D (Markov sphere, convention D):** `y₃ = (q⁴+1)/(q²+1)²`, `y₂₁ = q²/(q²+1)²`,
+  `y₁₁₁ = 0`. Each Borromean photon gives
+  `τ(γγ†) = −(q⁸−2q⁶−2q⁴−2q²+1)/(q²(q²+1)²)` (≈ 0.9671 at the proton q₀), not 1.
+  The product gives 1, again only as a braid word.
+
+So no quantum norm-1 option singles out the individual ruled photon weights; every
+option is satisfied by their product for the trivial reason that it is a braid word.
