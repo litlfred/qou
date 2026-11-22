@@ -10,6 +10,16 @@ export default proposition({
   proofs: ["prf:jet-prolongation"],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-22",
+      body:
+        "Owner ruling 2026-11-22: at tower levels $n \\ge 1$ the proposition requires only the Hopf structure " +
+        "on $T(A)$ and the splitting $r \\circ \\ell = \\mathrm{id}_A$; the Frobenius requirement is dropped and " +
+        "$(\\mathbf{C}, T(A), \\tau', q)$ is no longer claimed to be a quantum observable universe. Backup routes, " +
+        "kept on owner instruction and not pursued: (i) a non-invariant Frobenius form on $T(A)$, with no proof on " +
+        "record; (ii) a super or $q \\neq 1$ tower that escapes the characteristic-zero obstruction.",
+    },
+    {
       kind: "caveat",
       date: "2026-11-22",
       body:

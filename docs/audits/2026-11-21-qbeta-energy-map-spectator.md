@@ -983,3 +983,17 @@ Routes fixed in the prereg: the excess of the framed mass 𝔪 (`def:mass-identi
 - Hopf⁺ excess = −q⁻²·h·[3]/[2]. It shares w's q⁻² framing. What w needs in place of h·[3]/[2] is ℏ_q = h/(1+q), a one-sided deficit with no canonical Hecke or link counterpart found.
 
 The weight stays a definition: w = ℏ_q·(ℏ_q c_q)², from the corpus's c_q and ℏ_q. Bean `qou-91w7`. Probe `computations/probes/e0_weight/e0_weight_framed_link_probe.py`.
+
+## §38 Is ℏ_q a one-sided object? (prereg Addendum 3)
+
+Owner choice 2026-11-22: test whether ℏ_q = 1 − q⁻¹ comes from positive crossings only.
+
+**Result: no.** Lean `QOU/QBeta/E0WeightOneSided.lean` (sorry-free); probe
+`computations/probes/e0_weight/e0_weight_one_sided_probe.py`.
+- In the Hecke algebra σ⁻¹ = σ − h, so "positive only" singles out nothing there. No a + bσ with
+  b ≠ 0 is a scalar, so ℏ_q is not a one-sided skein scalar the way h is for σ − σ⁻¹.
+- Positive words: all 136 single-crossing increments are nonzero at q = 1 (order 0).
+- Two-crossing increments (124 objects): the framed mass never has coefficient 1. The 28 unframed
+  first-order matches all vanish at q = −1 while w(−1) = 2. They are h·τ(βσ), the skein route again.
+
+w = ℏ_q/q² stays a definition from the corpus constants. Bean `qou-91w7` open.

@@ -1,5 +1,6 @@
 import Mathlib.Tactic
 import Mathlib.GroupTheory.Perm.Cycle.Type
+import Mathlib.GroupTheory.SpecificGroups.Cyclic
 
 /-!
 # The genus-4 torus knots' algebraic fibres are not Bring's curve
@@ -82,5 +83,53 @@ theorem perm5_no_order_15 (σ : Perm (Fin 5)) : orderOf σ ≠ 15 := by
   have hle : σ.cycleType.sum ≤ 5 := by
     rw [Perm.sum_cycleType]; simpa using Finset.card_le_univ σ.support
   omega
+
+/-! ## No `S₅`-equivariant home for the genus-4 fibre surfaces
+
+Three group-theoretic facts used in audit §20. With two cited topological facts they rule
+out any `S₅`-equivariant embedding of a genus-4, one-boundary fibre surface into Bring's
+surface:
+
+* `perm5_not_isCyclic`: `S₅` is not cyclic. A finite group of holomorphic automorphisms
+  fixing a point of a Riemann surface is cyclic (it acts faithfully on the tangent line).
+* `perm5_no_order_18`: the `T(2,9)` monodromy has order 18, and `S₅` has no such element.
+* `no_overgroup_of_perm5`: a finite group of order at most 120 that contains `S₅` has no
+  element of order 15 or 18. With Kerckhoff's Nielsen realisation and the bound
+  `|Aut| ≤ 120` in genus 4, this excludes the `T(3,5)` and `T(2,9)` monodromies from any
+  finite group of mapping classes containing an `S₅`.
+-/
+
+open Equiv in
+/-- **`S₅` is not cyclic.** Two transpositions sharing a point do not commute. -/
+theorem perm5_not_isCyclic : ¬ IsCyclic (Perm (Fin 5)) := by
+  intro h
+  obtain ⟨g, hg⟩ := IsCyclic.exists_generator (α := Perm (Fin 5))
+  have key : ∀ a b : Perm (Fin 5), a * b = b * a := by
+    intro a b
+    obtain ⟨m, rfl⟩ := Subgroup.mem_zpowers_iff.1 (hg a)
+    obtain ⟨n, rfl⟩ := Subgroup.mem_zpowers_iff.1 (hg b)
+    exact (Commute.zpow_zpow_self g m n).eq
+  exact absurd (key (swap (0 : Fin 5) 1) (swap 1 2)) (by decide)
+
+open Equiv in
+/-- **`S₅` has no element of order 18.** Its square would have order 9. -/
+theorem perm5_no_order_18 (σ : Perm (Fin 5)) : orderOf σ ≠ 18 := by
+  intro h
+  have h9 : orderOf (σ ^ 2) = 9 := by
+    rw [orderOf_pow_of_dvd (by norm_num) (by rw [h]; norm_num), h]
+  exact perm5_no_order_9 _ h9
+
+open Equiv in
+/-- **No small overgroup of `S₅` has an element of order 15 or 18.** If `S₅` injects into a
+finite group `G` with `|G| ≤ 120`, the injection is onto, so every element of `G` has an
+order already realised in `S₅`. -/
+theorem no_overgroup_of_perm5 {G : Type*} [Group G] [Finite G] (hG : Nat.card G ≤ 120)
+    (φ : Perm (Fin 5) →* G) (hφ : Function.Injective φ) (g : G) :
+    orderOf g ≠ 15 ∧ orderOf g ≠ 18 := by
+  have hcard : Nat.card (Perm (Fin 5)) = 120 := by
+    rw [Nat.card_eq_fintype_card, Fintype.card_perm, Fintype.card_fin]; rfl
+  obtain ⟨σ, rfl⟩ := (hφ.bijective_of_nat_card_le (by omega)).2 g
+  rw [orderOf_injective φ hφ σ]
+  exact ⟨perm5_no_order_15 σ, perm5_no_order_18 σ⟩
 
 end QOU.AlphaEM.Saturation
