@@ -11,9 +11,10 @@ import Mathlib.Algebra.Module.Basic
 
 Given a quantum observable universe (C, A, ω), the prolongation object is the
 tangent algebra T(A) = Sym_A(Ω¹(A)) (owner ruling 2026-11-22), with A as a direct
-summand. Its Frobenius–Hopf data are fields of the structure below: for
-A = 𝒪(G) the Hopf part is cited (T(A) = 𝒪(TG)), and the Frobenius form and
-the vanishing condition on T(A) are open.
+summand. Its Hopf data are fields of the structure below: for A = 𝒪(G) they
+are cited (T(A) = 𝒪(TG)). No Frobenius form on T(A) is required (owner ruling
+2026-11-22); a Haar-type one is excluded in characteristic zero
+(`QOU.LiftingDescent.additive_no_integral`).
 
 ## References
 
@@ -28,7 +29,7 @@ namespace QOU
 universe u v
 
 /-- **Jet prolongation data**: the prolongation object T(A) = Sym_A(Ω¹(A)),
-    split over A, together with Frobenius–Hopf data carried as fields
+    split over A, together with Hopf data carried as fields
     (they are hypotheses here, not derived).
 
     LaTeX: `\label{prop:jet-prolongation}`
@@ -55,22 +56,14 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
   jetMul : (jetObj ⊗ jetObj) ⟶ jetObj
   /-- The inherited comultiplication Δ' : J¹(A) → J¹(A) ⊗ J¹(A). -/
   jetComul : jetObj ⟶ (jetObj ⊗ jetObj)
-  /-- The inherited Frobenius form λ' : J¹(A) → 𝟙. -/
-  jetFrobForm : jetObj ⟶ (𝟙_ C)
-  /-- The Frobenius relation holds for the inherited structure:
-      μ' ≫ Δ' = (Δ' ▷ J¹(A)) ≫ α ≫ (J¹(A) ◁ μ'). -/
-  jet_frobenius :
-    jetMul ≫ jetComul =
-      (jetComul ▷ jetObj) ≫ (α_ jetObj jetObj jetObj).hom ≫ (jetObj ◁ jetMul)
   /-- The unit section is a monomorphism (canonical embedding A ↪ J¹(A)). -/
   unitSection_mono : ∀ (f g : (𝟙_ C) ⟶ fh.obj),
     f ≫ unitSection = g ≫ unitSection → f = g
 
-/-- The jet prolongation of a QOU is again a QOU.
-
-    The key content: observability (adjoint vanishing) is preserved because
-    Ad(A) = 0 implies Ad(J¹(A)) = 0 — any invariant in Ad(J¹(A)) would
-    project to a non-zero invariant in Ad(A), contradicting the hypothesis.
+/-- Adjoint vanishing transfers to the prolongation object, given an injective
+    projection of invariants `Hom(𝟙, Ad(T(A))) → Hom(𝟙, Ad(A))` (a hypothesis,
+    not derived). This does not make `T(A)` a QOU: no Frobenius form on it is
+    required or supplied.
 
     LaTeX: `\label{prop:jet-prolongation}` (conclusion) -/
 -- Ref: [leitner2026] §3

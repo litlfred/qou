@@ -18,4 +18,4 @@ $$
 $$
 The counit is evaluation at $(e, 0)$ and the antipode is pullback along $(x, X) \mapsto (x^{-1}, -\mathrm{Ad}_x X)$. Because $\omega_a$ is not primitive in this coproduct, the obstruction recorded for $J^1(A)$ does not apply to $T(A)$.
 
-**QOU structure.** The induced fibre functor $\tau'$ retains the $1$-form coordinates while forgetting the $G$-action on sections. The quadruple $(\mathrm{Rep}(\mathrm{SU}(2)), T(A), \tau', q)$ formally constitutes a quantum observable universe. The group $T\,\mathrm{SU}(2)$ is not compact, so $T(A)$ carries no Haar-normalised integral, and the Frobenius form on $T(A)$ is not supplied by this construction.
+**QOU structure.** The induced fibre functor $\tau'$ retains the $1$-form coordinates while forgetting the $G$-action on sections. $T(A)$ is a commutative Hopf algebra, and no Frobenius form on it is required. The group $T\,\mathrm{SU}(2)$ contains the vector group $\mathfrak{su}(2)$, so $T(A)$ carries no nonzero integral in characteristic zero.
