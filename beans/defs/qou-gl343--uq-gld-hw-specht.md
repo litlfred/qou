@@ -35,3 +35,8 @@ Owner ruling via coordinator 2026-11-15: "work G3.4, dispatch siblings". Direct 
 Both hold over a linearly ordered field at q not a root of unity. The proof squeezes G3.4 (`range_jimbo_eq_commutant`), `finrank_range_jimbo` and `hstar_occWeights` together.
 
 Still open: HW_λ ≅ S_λ as H-modules, and the any-field case (#7874).
+
+## 2026-11-22 — identification at the level of characters (branch claude/gl343-hw-specht-identification-2026-11-22, 017b3df6fa6)
+
+`QOU.SchurWeyl.QuantumGL.hwCharStatement_all` (QuantumGLHWSpechtId.lean): for every dominant μ with Σμ = m+1 and every z ∈ H_{m+1}(q), tr(z | HW_μ) = tr(ρ_{rowDiagram μ}(z)) (seminormal rep). Ordered field, q not a root of unity. Sorry-free; axioms propext, Classical.choice, Quot.sound; lean-direct -DautoImplicit=false exit 0. Proof: induction on m via corner restriction + density injectivity; base m=1 separates row/column by the σ₀ eigenvalue (q vs −q⁻¹, using q² ≠ −1).
+Still open: module isomorphism HW_μ ≅ S_λ as H-modules (follows from characters + semisimplicity; not yet written). Bean stays open.
