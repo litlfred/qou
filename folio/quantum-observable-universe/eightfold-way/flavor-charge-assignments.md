@@ -48,7 +48,7 @@ where $T(t)/3$ is the colour-tube charge quantum of the quark picture
 (the helon-model normalisation \cite{bilson-thompson2005}).  The
 Gell-Mann--Nishijima relation holds by construction *if and only if*
 $Q_{\mathrm{twist}} = Q$ against an independently derived electric charge
-$Q$ --- a falsifiable consistency condition, not a definition. The halved
+$Q$ --- a falsifiable consistency condition. The halved
 writhe of [the Coulomb-charge definition](#def:coulomb-charge) cannot play
 that role, since it is not the electric charge, so the condition has no
 derived right-hand side yet.
@@ -134,8 +134,8 @@ Hypercharge alone does not give a Coulomb pair term. The exchange of the
 unbroken neutral bosons between two particles has charge factor
 $g^2\,T_3T_3' + g'^2\,(Y/2)(Y'/2)$, with no $T_3 \otimes Y$ cross term. On two
 three-quark blocks ($Y = 1$, $T_3 = \pm\tfrac{1}{2}$) it takes the same value
-on the proton pair and the neutron pair: it is an isospin coupling, not a
-Coulomb one. It splits identically as
+on the proton pair and the neutron pair: it is an isospin coupling with no
+Coulomb part. It splits identically as
 
 $$
   g^2\,T_3T_3' + g'^2\,\tfrac{Y}{2}\tfrac{Y'}{2}
