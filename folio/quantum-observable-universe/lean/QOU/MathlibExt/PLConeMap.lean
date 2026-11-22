@@ -35,10 +35,12 @@ Given cone points `p` (for `S`) and `q` (for `S'`) that see their sets along ray
 * `isLinearOn_coneComplex` — **the cone of a PL map is PL**: if `f` is linear on every face of
   `K`, then `coneFun p q K.space f` is linear on every face of `coneComplex K p hp hray`.
 
+* `IsLinearOn.continuousOn` — a map linear on every face of a finite complex is continuous on its
+  space; `continuousOn_coneFun` — so the cone of a PL map is continuous on `coneSet p K.space`.
+
 ## What is NOT proved here
 
-Continuity of the cone map on all of `coneSet` (it is PL on the cone complex, so continuous on
-each closed face; gluing needs finitely many faces). That is the next step.
+Continuity of the cone of a merely continuous (non-PL) map; part B only needs the PL case.
 -/
 
 namespace QOU.MathlibExt.PL
@@ -253,5 +255,28 @@ theorem isLinearOn_coneComplex [DecidableEq E] [FiniteDimensional ℝ E]
     subst hx
     rw [coneFun_apex hp]
     rfl
+
+/-- A map linear on every face of a finite complex is continuous on its space. -/
+theorem IsLinearOn.continuousOn {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
+    {K : Geometry.SimplicialComplex ℝ E} {f : E → F} (hf : IsLinearOn K f)
+    (hK : K.faces.Finite) : ContinuousOn f K.space := by
+  have : Finite K.faces := hK.to_subtype
+  have hsp : K.space = ⋃ s : K.faces, convexHull ℝ ((s : Finset E) : Set E) := by
+    ext x
+    simp [Geometry.SimplicialComplex.space]
+  rw [hsp]
+  refine (locallyFinite_of_finite _).continuousOn_iUnion
+    (fun s => s.1.finite_toSet.isCompact_convexHull.isClosed) fun s => ?_
+  obtain ⟨A, hA⟩ := hf s.1 s.2
+  exact A.cont.continuousOn.congr hA
+
+/-- **The cone of a PL map is continuous on the cone.** -/
+theorem continuousOn_coneFun [DecidableEq E] [FiniteDimensional ℝ E]
+    {K : Geometry.SimplicialComplex ℝ E} {p q : E} (hp : p ∉ K.space)
+    (hray : RaysMeetOnce p K.space) {f : E → E} (hf : IsLinearOn K f) (hK : K.faces.Finite) :
+    ContinuousOn (coneFun p q K.space f) (coneSet p K.space) := by
+  rw [coneSet_eq, ← coneComplex_space (hp := hp) (hray := hray)]
+  exact (isLinearOn_coneComplex (q := q) hp hray hf).continuousOn
+    (coneComplex_faces_finite (hp := hp) (hray := hray) hK)
 
 end QOU.MathlibExt.PL
