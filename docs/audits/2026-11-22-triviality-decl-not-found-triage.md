@@ -1,7 +1,7 @@
 # Triviality probe: the 156 `decl-not-found` skips, triaged
 
 Bean `qou-y1qu` (epic `qou-uwyf`). Follows §4 of
-`2026-11-22-lean-audit-snapshot-gaps.md` (added by PR #8977, not yet on `main` when this record merged).
+[`2026-11-22-lean-audit-snapshot-gaps.md`](2026-11-22-lean-audit-snapshot-gaps.md) (PR #8977).
 The probe fix is litlfred/folio-assistant-sci#213 (issue #212).
 
 ## 1. Result
@@ -148,3 +148,49 @@ are. Bean `qou-2a55`.
 
 The probe runs plain `lean`, not `lake build` with `-DautoImplicit=false`, as
 it always has; that is unchanged here.
+
+## 7. Reading the six new closures
+
+§6 lists seven closures. `mass_tower_coefficient_stratification` was already
+known (`qou-z3k1`). The other six were never measured before, so each
+statement was read on `main` (2026-11-22). A closure is a prompt to read, not a
+verdict; this is the reading.
+
+**Vacuous: the conclusion follows from the hypotheses by rewriting alone (3).**
+Each is the Lean sibling of a proposition block whose prose claims more.
+
+| declaration | Lean statement | what the block claims |
+|---|---|---|
+| `QOU.MassIdentity.exists` (`prop:mass-identity-exists`) | `[Nonempty R] : Nonempty R` | a mass function exists for a fixed universe and cycle |
+| `QOU.MassIdentity.unique` (`prop:mass-identity-unique`) | `(h : m₁ = m₂) : ‖m₁‖ = ‖m₂‖` | rescaling the Frobenius pairing by `c` rescales the mass by `\|c\|`, so the mass is unique once the pairing is normalised |
+| `QOU.CategoricalAction.unique` (`prop:categorical-action-unique`) | `(h₁ : S₁ = act Φ swap) (h₂ : S₂ = act Φ swap) : S₁ = S₂` | any `1 → 1` that factors as `ev ∘ (id ⊗ Φ) ∘ coev` equals `tr Φ` |
+
+None of the three is in the vacuity audits on `main`; `qou-qc6s` and
+`qou-puwe` cover `def:mass-identity`, not these propositions. The honest
+statement is a per-block choice (prove the block's claim, state it with a
+cited `sorry`, or demote), so none is edited here. Filed as `qou-jy1r`.
+
+**Elementary but contentful (3).** These were drained from self-assuming
+projections in June (beans `vq03`, `vq04`, `vq20`) and now state real
+consequences, which happen to be short.
+
+- `QOU.Archimedean.genus_maximal_descent` (`omega`): from `χ = 2(1 − g)`,
+  `χ = −6` and the Hurwitz bound `|Aut| ≤ 84(g − 1)`, conclude `g = 4` and
+  `|Aut| ≤ 252`. Arithmetic, with Hurwitz as a hypothesis.
+- `QOU.HyperellipticQuintic.minimal_z5_classification` (`aesop`): from
+  `g = 2` and `branch = branchCount g`, conclude `branch = 2g + 2 = 6`. The
+  first conjunct restates a hypothesis; the rest unfolds `branchCount`.
+- `QOU.Archimedean.torus_knot_shell_binding` (`aesop`): a conjunction of three
+  lemmas proved earlier in the same file (shell base case, the torus
+  recurrence, the magic-number values).
+
+No action proposed for these three.
+
+**A side observation on the ref-target audit.**
+`docs/audits/2026-11-21-lean-ref-target-audit.json` records the file for
+`QOU.MassIdentity.exists` as `lean/QOU/BraidKnot/KeystoneJucysMurphyTwist.lean`,
+and for `QOU.MassIdentity.unique` and `QOU.CategoricalAction.unique` as
+`lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`. Those files declare
+other things named `exists` and `unique`; the blocks' own siblings declare the
+referenced ones. This matches the short-name matching noted in §3 and is
+recorded under `qou-5n04`.
