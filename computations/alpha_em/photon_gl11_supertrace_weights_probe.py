@@ -38,6 +38,17 @@ Young projector trace tau = chi_(3) - chi_(1^3), weights (1, 0, -1)
   * No single super vector space gives tau through its supertrace (Lean:
     QOU.AlphaEM.YoungTrace.no_superdim_gives_young_trace, at q = 1).
 Nothing here says the photon selects the extremal sectors; that is open.
+
+Can an element of H_3(q), such as the photon, do the selecting? (added
+2026-11-22.) No. The ordinary trace of each sector gives its block
+multiplicities: k=0 (3), k=1 (3)+(2,1), k=2 (2,1)+(1^3), k=3 (1^3). The
+mixed sectors k=1,2 together contain all three blocks, so they are a
+faithful H_3(q)-module: an element acting by 0 on them is 0. Every element of
+H_3(q) preserves each sector (R preserves k), so none keeps the extremal
+sectors while removing the mixed ones. The selection has to come from the
+weight projector onto the extremal sectors, which is a Cartan element of
+U_q(gl(1|1)) (it commutes with H_3(q)), not from the Hecke side:
+tau(x) = str(P_ext x).
 """
 import sympy as sp
 
@@ -144,6 +155,21 @@ def main():
     t1, ts2 = tau(chars[words.index('')]), tau(chars[words.index('2')])
     checks.append(('tau(1) = 0 and tau(s2) = [2]_q, so tau is not Markov',
                    sp.simplify(t1) == 0 and sp.simplify(ts2 - (q + 1 / q)) == 0))
+    # Block multiplicities of each sector (ordinary trace) and faithfulness.
+    def sector_tr(x, k):
+        return sp.simplify(sum(x[i, i] for i, bb in
+                               enumerate(itertools.product([0, 1], repeat=3))
+                               if sum(bb) == k))
+    mult = {0: [1, 0, 0], 1: [1, 1, 0], 2: [0, 1, 1], 3: [0, 0, 1]}
+    for k, ex in mult.items():
+        vals = [sector_tr(word(w, s1, s2, sp.eye(8)), k) for w in words]
+        sol = sp.solve([sum(c[i] * W[i] for i in range(3)) - v
+                        for c, v in zip(chars, vals)], W, dict=True)
+        got = [sp.simplify(sol[0][x]) for x in W] if len(sol) == 1 else None
+        print(f'sector {k} block multiplicities {got}')
+        checks.append((f'sector k={k} multiplicities {ex}', got == ex))
+    checks.append(('mixed sectors contain every block (faithful)',
+                   all(mult[1][i] + mult[2][i] > 0 for i in range(3))))
     for n, c in checks:
         print(('PASS ' if c else 'FAIL ') + n)
     return 0 if all(c for _, c in checks) else 1
