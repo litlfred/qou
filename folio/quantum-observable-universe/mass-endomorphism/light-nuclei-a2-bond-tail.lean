@@ -25,6 +25,9 @@ Main results, all exact identities in `z` and `h`:
   any first nucleon `N₀ ∈ H₃` and any receiving word `N` on `σ_0, σ_1`.
 * `a2_bond_into_proton`, `a2_bond_into_neutron`: the two bond identities above, stated on
   the full A = 2 words (`ggChain` minus `freeTail`), times `tr N₀`.
+* `towerTr_shift_commutator`: the h² step. For every `Y` on strands `≥ 1`,
+  `tr(Y↑ (σ₀σ₁ − σ₁σ₀)) = 0`, at every `z` and `h`, over any commutative ring. The h² part of
+  `V³ − 1` is this commutator (the two 3-cycles), so it never reaches the trace.
 
 Method: `ME` is a merging evaluator (it collects like basis terms after each letter);
 `ME_eq_P` proves it equals the plain expansion `P`, and `tail_eq_trWord` writes `P` as a sum of
@@ -443,5 +446,50 @@ theorem a2_bond_into_neutron (h2 : (2 : K) ≠ 0) (N₀ : HeckeTower K h) (hN₀
   linear_combination (towerTr z h N₀) * bond_into_neutron z h h2
 
 end A2
+
+end QOU.LightNucleiBond
+
+/-! ### The h² step: the commutator `σ₀σ₁ − σ₁σ₀` after a shifted word has trace zero -/
+
+namespace QOU.LightNucleiBond
+open QOU.BraidKnot.HeckeFunctional QOU.MathlibExt.HeckeTowerWitness
+
+section HSquared
+variable {R : Type*} [CommRing R] (z h : R)
+
+theorem towerTr_twGen0_shift (Y : HeckeTower R h) :
+    towerTr z h (twGen h 0 * shift h 1 Y) = towerTr z h (twGen h 0) * towerTr z h Y :=
+  towerTr_disjoint z h 1 (twGen_mem h 0) Y
+
+theorem twGen_one_eq_shift : twGen h 1 = shift h 1 (twGen h 0) := by
+  rw [shift_twGen]
+
+/-- `tr(Y↑ σ₀σ₁) = tr σ₀ · tr(σ₀ Y)`. -/
+theorem towerTr_shift_s0s1 (Y : HeckeTower R h) :
+    towerTr z h (shift h 1 Y * (twGen h 0 * twGen h 1)) =
+      towerTr z h (twGen h 0) * towerTr z h (twGen h 0 * Y) := by
+  have key : shift h 1 Y * (twGen h 0 * twGen h 1) =
+      (shift h 1 Y * twGen h 0) * shift h 1 (twGen h 0) := by
+    rw [← twGen_one_eq_shift, mul_assoc]
+  rw [key, towerTr_mul_comm, ← mul_assoc, ← map_mul (shift h 1), towerTr_mul_comm,
+    towerTr_twGen0_shift]
+
+/-- `tr(Y↑ σ₁σ₀) = tr σ₀ · tr(Y σ₀)`. -/
+theorem towerTr_shift_s1s0 (Y : HeckeTower R h) :
+    towerTr z h (shift h 1 Y * (twGen h 1 * twGen h 0)) =
+      towerTr z h (twGen h 0) * towerTr z h (Y * twGen h 0) := by
+  have key : shift h 1 Y * (twGen h 1 * twGen h 0) =
+      shift h 1 (Y * twGen h 0) * twGen h 0 := by
+    rw [twGen_one_eq_shift, map_mul, mul_assoc]
+  rw [key, towerTr_mul_comm, towerTr_twGen0_shift]
+
+/-- **The h² step.** For any `Y` on strands `≥ 1`, the commutator `σ₀σ₁ − σ₁σ₀` placed
+after `Y↑` has Markov trace zero, for every `z` and `h`. -/
+theorem towerTr_shift_commutator (Y : HeckeTower R h) :
+    towerTr z h (shift h 1 Y * (twGen h 0 * twGen h 1 - twGen h 1 * twGen h 0)) = 0 := by
+  rw [mul_sub, map_sub, towerTr_shift_s0s1, towerTr_shift_s1s0, towerTr_mul_comm z h Y,
+    sub_self]
+
+end HSquared
 
 end QOU.LightNucleiBond

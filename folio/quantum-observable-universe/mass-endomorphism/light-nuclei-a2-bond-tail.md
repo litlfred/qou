@@ -49,3 +49,11 @@ by `isMarkovTrace_eq_trWord`. The reduction in **Setting** is also proved (`a2_r
 first nucleon $N_0 \in H_3$ the full chain `ggChain` and the free product `freeTail` have traces
 $\mathrm{tr}(N_0)$ times the bonded and free tails, so `a2_bond_into_proton` and
 `a2_bond_into_neutron` state the two identities on the full $A = 2$ words.
+
+**The $h^2$ step.** The file also proves `towerTr_shift_commutator`: for every $Y$ on strands
+$\geq 1$, $\mathrm{tr}\bigl(Y^{\uparrow}(\sigma_0\sigma_1 - \sigma_1\sigma_0)\bigr) = 0$, over any
+commutative ring and for every $z$ and $h$. Since $\sigma_1$ is the shift of $\sigma_0$,
+cyclicity and the Markov factorisation at the first strand reduce the two terms to
+$\mathrm{tr}(\sigma_0)\,\mathrm{tr}(\sigma_0 Y)$ and $\mathrm{tr}(\sigma_0)\,\mathrm{tr}(Y\sigma_0)$,
+which are equal. The $h^2$ part of $V^3 - 1$ is this commutator, so it never contributes to the
+trace of a bond, whatever the receiving word.

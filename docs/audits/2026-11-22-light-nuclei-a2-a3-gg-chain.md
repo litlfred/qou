@@ -315,8 +315,15 @@ numbers. This corrects the version of §9 merged in #9137, which said V³ − 1 
 
 **h².** At h = 0 the trace of a permutation w is z^(n − #cycles(w)). The bond's strand 0 is
 touched by nothing else. For every permutation w fixing strand 0, w·c and w·c⁻¹ have the same
-number of cycles (checked by enumeration for n = 3 to 8; not yet a written proof). So the h²
+number of cycles (checked by enumeration for n = 3 to 8). So the h²
 term dies for **every** receiving word, not just the production blocks.
+
+This is now proved in Lean, in a stronger form: `towerTr_shift_commutator` in
+`light-nuclei-a2-bond-tail.lean` states tr(Y↑ (σ₀σ₁ − σ₁σ₀)) = 0 for every Y on strands ≥ 1,
+over any commutative ring, at every z and h (not only at h = 0). Proof: σ₁ = shift(σ₀), so by
+cyclicity and the Markov factorisation at the first strand (`towerTr_disjoint`) the two terms
+become tr σ₀ · tr(σ₀Y) and tr σ₀ · tr(Yσ₀), which agree by cyclicity. The identification of the
+h² part of V³ − 1 with this commutator is the §10 (a) computation, not a Lean statement.
 
 **h³.** This one depends on the word. On all 15 basis words of length ≤ 3 on the receiving
 strands, the h³ term survives exactly when the two strands the bond shares with the receiving
@@ -338,8 +345,31 @@ So log(ratio), and hence the log binding, is additive over bonds exactly, except
 correction from pairs of bonds into the same nucleon that starts at h⁶. This explains §9: at
 leading order (h⁴, h⁵) that correction is invisible, so the per-bond terms just add. It also
 locates where §6's higher-order behaviour can come from in the all-pairs routes. This is
-measured at A = 3 only. The A = 4 version (pairs into the same nucleon, and triples) has not
-been run; at the A = 4 cell cost of §9 it would take several hours.
+measured here at A = 3; §11 runs the A = 4 version.
+
+## 11. The A = 4 product rule (exploratory)
+
+Probe `a4_product_rule_probe.py`, witness `a4-product-rule.witness.json`. Exact over ℚ[h, z],
+z free, about 25 minutes on 4 cores. The predictions were written into the probe's docstring
+before it ran, extrapolated from §10:
+
+- **Locality:** a single bond (i, j) in the A = 4 word gives exactly the A = 2 ratio for the
+  type of nucleon j. Result: **192 of 192** cells (16 orders, 6 bonds, over and under).
+- **Product rule:** for a bond set S, X = atom · free^(|S|−1) − ∏ single is exactly 0 when no
+  two bonds share a receiving nucleon. Otherwise X starts at h⁶, and X / free^|S| has leading
+  coefficient m(1 − z²), where m is the number of pairs of bonds with the same receiver.
+  Result: **736 of 736** cells. The sets were all 15 two-bond sets, the chain, the three bonds
+  into nucleon 3 (m = 3), {01, 23}, {02, 13}, and the four all-pairs formation routes
+  (six bonds each, m = 1 + 3 = 4).
+
+So the correction is additive over same-receiver pairs at its first order, each pair adding
+(1 − z²)h⁶, in every p/n order and both transports. Up to h⁵ the log binding is exactly a
+sum over bonds, and at h⁶ it is that sum plus (1 − z²) times the number of same-receiver
+pairs. Not proved in Lean; only the h² step (§10) is.
+
+**Not in these traces: the Coulomb term.** The bond traces carry no charge. The expected
+carrier of E_C is the hadron-line term κ·Q_A·Q_B from the #9123 thread, conditional on the
+identification t ↔ α_EM. No E_C value is imported here.
 
 ## Reproduce
 
@@ -352,6 +382,7 @@ python3 -u computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py  # abo
 python3 -u computations/probes/light_nuclei_a2_a3/a3_bonds_generic_z_probe.py  # about 1 s, needs python-flint
 python3 -u computations/probes/light_nuclei_a2_a3/a4_bonds_generic_z_probe.py  # about 20 min on 4 cores
 python3 -u computations/probes/light_nuclei_a2_a3/bond_structure_probe.py  # about 1 s
+python3 -u computations/probes/light_nuclei_a2_a3/a4_product_rule_probe.py  # about 25 min on 4 cores
 lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-endomorphism/light-nuclei-a2-bond-tail.lean  # about 9 min; needs the reducer olean on LEAN_PATH
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```
