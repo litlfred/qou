@@ -1,11 +1,12 @@
 import QOU.Mass.GammaGammaSelectionAllK
+import QOU.PhotonU1NeutralCut
 
 /-!
 # The neutrality rule selects `β_Bor` in the full photon-term grammar, for every crossing count
 
 Bean `qou-99qc`. Owner 2026-11-22: "Find proof of the selection as well. Can we do it for all n?"
 
-The adopted γγ rule (owner-rulings 2026-11-21) keeps the U(1)-neutral words of the photon
+The adopted γγ rule (owner-rulings 2026-11-21) keeps the linking-neutral words of the photon
 product grammar and then applies reading-3 Frobenius selection. The probe
 `computations/probes/gg_photon_cut/u1_neutral_cut_probe.py` checked this only up to 10
 crossings. Here it is proved for words of every length.
@@ -15,7 +16,7 @@ crossings. Here it is proved for words of every length.
 The non-identity terms of the ruled photon `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` are the blocks
 `σ₀`, `σ₁` and `V = σ₀σ₁⁻¹`. A word of the photon-term grammar is a concatenation of blocks.
 Its writhe is the number of `σ₀` and `σ₁` blocks, because `V` has writhe `0`
-(`writhe_photonTermWord`). A U(1)-neutral word has writhe `0`
+(`writhe_photonTermWord`). A linking-neutral word has writhe `0`
 (`QOU.PhotonU1NeutralCut.writhe_eq_zero_of_neutral`). So a neutral word has no `σ₀` or `σ₁`
 block and is `V^k` (`eq_vertexPow_of_writhe_zero`). Free reduction does not change the writhe, and
 `V^k` has no adjacent inverse pair, so the same holds for the freely reduced word
@@ -28,11 +29,16 @@ selects `V³ = β_Bor` uniquely.
   reduction, are exactly `gammaGammaH3Cands` (the `V^k`, `k ≥ 1`).
 * `frobeniusSelected_neutral_full_grammar` and `..._eq_borromean`: on `1 < q ≤ 23/20`, reading 3
   selects `β_Bor` among them, and nothing else.
+* `neutralCands_subset`, `frobeniusSelected_linkingNeutral` and `..._eq_borromean`: the same with
+  the candidates filtered by linking neutrality itself (`QOU.PhotonU1NeutralCut.Neutral`, every
+  self-writhe and pairwise crossing count of the closure zero), so the step from neutrality to
+  writhe `0` is mechanised, not prose.
 
 ## Scope
 
-* The filter used here is writhe `0`, which neutrality implies. So the result holds for the
-  neutrality rule and for the weaker writhe-0 rule alike.
+* The first pair of theorems filters by writhe `0`; the second by linking neutrality. Neutrality
+  implies writhe `0`, so the result holds for the neutrality rule and the weaker writhe-0 rule.
+* The window `1 < q ≤ 23/20` is inherited from `GammaGammaSelectionAllK`.
 * Three strands (`H₃`) only. Four or more strands is a different grammar and is not covered.
 * The probe's reduced words are cost-ranked by reduced length; on `V^k` reduced and unreduced
   length agree, so the cost is the same.
@@ -192,5 +198,52 @@ theorem frobeniusSelected_neutral_full_grammar_eq_borromean {q : ℝ} (hq1 : 1 <
     (hw : FrobeniusSelected (hoefsmitH3 q) y writheZeroCands (fun w => (w.length : ℝ)) w) :
     w = borromean := by
   rw [writhe_zero_cands_eq] at hw; exact frobeniusSelected_all_eq_borromean hq1 hq2 y hy hw
+
+/-! ## Linking neutrality itself, not only writhe `0` -/
+
+/-- A crossing as a letter of `QOU.PhotonU1NeutralCut` (generator, sign). -/
+def toLetter (c : Crossing) : QOU.PhotonU1NeutralCut.Letter := (c.gen, sign c)
+
+theorem u1Writhe_map_toLetter (w : Word) :
+    QOU.PhotonU1NeutralCut.writhe (w.map toLetter) = writhe w := by
+  induction w with
+  | nil => simp [QOU.PhotonU1NeutralCut.writhe, writhe]
+  | cons c w ih =>
+    simp only [List.map_cons, QOU.PhotonU1NeutralCut.writhe, toLetter, ih]
+    simp [writhe]
+
+/-- Candidates: non-empty freely reduced photon-term words that are linking-neutral. -/
+def neutralCands : Set Word :=
+  {r | ∃ bs, Reduces (termWord bs) r ∧ QOU.PhotonU1NeutralCut.Neutral (r.map toLetter) ∧ r ≠ []}
+
+theorem neutralCands_subset : neutralCands ⊆ writheZeroCands := by
+  rintro r ⟨bs, hr, hn, hne⟩
+  refine ⟨bs, hr, ?_, hne⟩
+  rw [← u1Writhe_map_toLetter]
+  exact QOU.PhotonU1NeutralCut.writhe_eq_zero_of_neutral _ hn
+
+theorem borromean_mem_neutralCands : borromean ∈ neutralCands := by
+  refine ⟨List.replicate 3 .v, ?_, ?_, by simp [borromean, vertex]⟩
+  · rw [termWord_all_v, vertexPow_three]; exact .refl _
+  · decide
+
+/-- **Reading 3 selects `β_Bor` among the linking-neutral words, for every crossing count.** -/
+theorem frobeniusSelected_linkingNeutral {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (y : H3Block → ℝ) (hy : 0 < y .std) :
+    FrobeniusSelected (hoefsmitH3 q) y neutralCands (fun w => (w.length : ℝ)) borromean := by
+  have h := frobeniusSelected_neutral_full_grammar hq1 hq2 y hy
+  exact ⟨borromean_mem_neutralCands, h.feasible,
+    fun w' hw' hf => h.minimal w' (neutralCands_subset hw') hf⟩
+
+theorem frobeniusSelected_linkingNeutral_eq_borromean {q : ℝ} (hq1 : 1 < q)
+    (hq2 : q ≤ 23 / 20) (y : H3Block → ℝ) (hy : 0 < y .std) {w : Word}
+    (hw : FrobeniusSelected (hoefsmitH3 q) y neutralCands (fun w => (w.length : ℝ)) w) :
+    w = borromean := by
+  have hb := frobeniusSelected_neutral_full_grammar hq1 hq2 y hy
+  have hle : (w.length : ℝ) ≤ (borromean.length : ℝ) :=
+    hw.minimal _ borromean_mem_neutralCands hb.feasible
+  refine frobeniusSelected_neutral_full_grammar_eq_borromean hq1 hq2 y hy
+    ⟨neutralCands_subset hw.mem, hw.feasible, fun w' hw' hf => ?_⟩
+  exact le_trans hle (hb.minimal w' hw' hf)
 
 end QOU.Mass.GammaGammaNeutralSelectionAllN
