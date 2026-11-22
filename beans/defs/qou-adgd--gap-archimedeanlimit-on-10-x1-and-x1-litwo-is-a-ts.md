@@ -31,3 +31,9 @@ Still open on this bean: the endpoint `x = -1` (the same route needs the limit a
 ## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
 
 **APPLIES.** pure analysis; (−1,0) proved this pass (a5ee034a3c, local); x=−1, x=1, x>1 remain.
+
+## 2026-11-22 — endpoints (dilog/Bloch thread, commit on claude/archimedean-limit-endpoints-2026-11-22)
+
+- **x = -1: proved**, `archimedeanLimit_neg_one` (ArchimedeanLimitEndpoints.lean). Direct Lipschitz-in-endpoint bound |F(-1) - F(y)| ≤ 1 + y, plus continuity of LiTwo on [-1,1]. No duplication needed.
+- **x = 1: the class is FALSE as stated**, `not_archimedeanLimit_one`. The k = 0 factor 1 - q⁰ of denomPolyLocal vanishes at x = 1, so the rescaled log is 0 while LiTwo 1 ≥ 1. Scope (b), invariant = that vanishing factor. The classical statement at x = 1 uses (q;q)_n from k = 1; restating is an owner decision.
+- **x > 1: still open** (needs Re Li₂ target; the tsum is 0 there). Bean stays open.
