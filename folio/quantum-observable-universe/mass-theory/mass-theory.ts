@@ -690,6 +690,7 @@ export default chapter({
             "rem-qstar-decay-sector-q0",
             "rem-ohtsuki-tower-bar-parity",
             "one-loop-prefactor-provenance",
+            "adjoint-torsion-derivative-duality-prior-art",
             "stokes-dt-bps-bridge",
             "aomega-fourone-dt-count",
             "dt-spectrum-bar-eigenspace",
